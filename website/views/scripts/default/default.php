@@ -1,163 +1,63 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Example</title>
-</head>
 
-<body>
-
-	<style type="text/css">
-		body {
-			padding:0;
-            margin: 0;
-			font-family: "Lucida Sans Unicode", Arial;
-			font-size: 14px;
-		}
-
-       #site {
-           margin: 0 auto;
-           width: 600px;
-           padding: 30px 0 0 0;
-       }
-
-		h1, h2, h3 {
-			font-size: 18px;
-			padding: 0 0 5px 0;
-            border-bottom: 1px solid #001428;
-            margin-bottom: 5px;
-		}
-
-        h3 {
-            font-size: 14px;
-            padding: 15px 0 5px 0;
-            margin-bottom: 5px;
-            border-color: #cccccc;
-        }
-
-		p {
-			padding: 0 0 5px 0;
-		}
-		
-		a {
-			color: #000;
-		}
-
-        .content-myTextarea {
-            color: #0464BB;
-            font-weight: bold;
-            font-style: italic;
-            text-shadow: 1px 1px #cccccc;
-        }
-
-        strong {
-            font-weight: bold;
-            color: #005c24;
-        }
-
-        #logo {
-            text-align: center;
-            padding: 0 0 10px 0;
-        }
-
-        #site ul {
-            padding: 10px 0 10px 20px;
-            list-style: circle;
-        }
-
-	</style>
-
-
-    <div id="site">
-        <div id="logo">
-            <img src="/pimcore/static/img/logo-gray.png" />
-        </div>
-
-        <h1>Hello World!</h1>
-        <p>
-            This is just a simple example page.
-            <br />
-            To learn how to create templates with pimcore, please visit our <a href="http://www.pimcore.org/wiki/" target="_blank">documentation</a> or install the example data package.
-            <br />
-            <br />
-        </p>
-
-        <h2>What's next?</h2>
-        <p>
-            pimcore is in many ways different from other CMS/CMF.
-            <br />
-        </p>
-        <ul>
-            <li>There are no themes to create or adopt.<br />Just take your individual HTML/CSS and make it editable!</li>
-            <li>Usually there's no need for modules or extensions, use the power of objects/classes!</li>
-        </ul>
-        <p>
-            ...  this is the reason why we don't include a default site, because it isn't necessary ;-)
-            <br />
-        </p>
-
-        <h2>Examples</h2>
-
-        <h3>Simple WYSIWYG</h3>
-        You can drag'n drop assets, documents, ...
-        <?= $this->wysiwyg("myWysiwyg", ["height" => 130]); ?>
-
-        <h3>Input &amp; Textarea</h3>
-        <div class="input-textarea">
-            Type something: <?= $this->input("myInput", ["width" => 400]); ?>
-            ... styles are inherited ...
-            <div class="content-myTextarea">
-                <?= $this->textarea("myTextarea", ["width" => 400, "height" => 60]); ?>
-            </div>
-        </div>
-
-        <h3>Images in a block element</h3>
-        Press the button:
-        <?php while($this->block("myImageBlock")->loop()) { ?>
-            <?= $this->image("myImage", ["height" => 100]); ?>
-        <?php } ?>
-
-        <h3>Relations</h3>
-        You can drop a single document, an asset or an object...
-        <?= $this->href("myHref"); ?>
-        ... and now multiple items ...
-        <?= $this->multihref("myMultihref"); ?>
-
-        <h3>Simple types</h3>
-        Date: <?= $this->date("myDate"); ?>
-        Checkbox: <br /><?= $this->checkbox("myCheckbox"); ?>
-        <br style="clear: both;" />
-        Link: <?= $this->link("myLink"); ?>
-        <br />
-        Number: <?= $this->numeric("myNumber"); ?>
-
-        <h3>Selections</h3>
-        <?= $this->select("mySelect", [
-            "store" => [
-                ["option1", "Option One"],
-                ["option2", "Option Two"],
-                ["option3", "Option Three"]
-            ]
-        ]); ?>
-        ... and multiple seletions ...
-        <?= $this->multiselect("multiselect", [
-            "width" => 200,
-            "height" => 100,
-            "store" => [
-                ["option1", "Option One"],
-                ["option2", "Option Two"],
-                ["option3", "Option Three"]
-            ]
-        ]) ?>
-
-        <br />
-        <strong>... and much more!
-        <br />
-        <strong>Check out our example data package for more advanced examples!</strong>
-
-
-
-    </div>
-
-</body>
-</html>
+		<div class="container">
+			<?php echo $this->areablock('bannerArea')?>
+			<div class="wrapper-special clearfix">
+				<?php echo $this->areablock('bannerProduct')?>
+				<div id="quicklinks">
+					<?php echo $this->areablock('layananKami')?>
+				</div>
+			</div>
+			<!-- Community -->
+			<div id="community" class="clearfix">
+				<h2>Allianz Community Tips</h2>
+				<div class="tips">
+					<?php 
+						$entries = new Object_Communitytips_List();
+						$entries->setLimit("6");
+						$entries->setOrderKey("date");
+						$entries->setOrder("desc");
+						
+						foreach($entries as $entry)
+						{
+					?>
+							<div class="tip">
+								<div class="photo">
+									<img src="<?php echo $entry->getImage()?>" width="298" height="110" />
+								</div>
+								<div class="description">
+									<h3><?php echo $entry->getTitle() ?></h3>
+									<div class="meta">
+										<div class="date"><?php echo date("d/m/Y", strtotime($entry->getDate())) ?></div>
+										<div class="category"><?php echo $entry->getCategory()?></div>
+									</div>
+								</div>
+							</div>
+					<?php 
+						}
+					?>
+				</div>
+			</div>
+			<!-- End Community -->
+			<!-- Map -->
+			<div class="wrapper clearfix">
+				<div id="agent-locator">
+					<h2>Marketing Office Location</h2>
+					<div id="maparea">
+						
+					</div>
+				</div>
+				<?php echo $this->area("mapArea", array("type" => "map-point")); ?>
+			</div>
+			<!-- End Map -->
+			<div class="wrapper clearfix">
+				<div id="social-media-activity">
+					<script async src="https://d36hc0p18k1aoc.cloudfront.net/public/js/modules/tintembed.js"></script>
+					<div class="tintup" data-id="sevenova" data-columns="2"  style="height:265px;width:100%;overflow-y: scroll">
+						<a href="http://www.tintup.com" style="width:118px;height:31px;background-image:url(//d33w9bm0n1egwm.cloudfront.net/assets/logos/poweredbytintsmall.png);position:absolute;bottom:10px;right: 20px;text-indent: -9999px;z-index:9;">hashtag campaign</a>
+					</div>
+				</div>
+				<div id="videos">
+					<?php echo $this->video('videoHome', array('width' => '100%' , "height" => '265')) ?>
+				</div>
+			</div>
+		</div>
