@@ -1,0 +1,12 @@
+/pimcore
+/plugins
+/.idea
+/website/var/cache
+/website/var/recyclebin
+/website/var/tmp
+/website/var/backup
+/img/captcha
+/website/var/versions
+/website/var/log
+/website/var/system
+/website/var/config/system.xml

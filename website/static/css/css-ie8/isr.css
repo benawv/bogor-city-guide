@@ -1,0 +1,548 @@
+.left{float: left;} 
+.right{float: right;} 
+
+.wi200{
+	width: 240px;
+	border: 0px solid #FF0;
+	margin-bottom: 20px;
+}
+#map-shortcut{
+	height: 270px;
+}
+
+.fixbox{
+	width: 251px;
+	height: 251px;
+	position: absolute;
+	top: 15px;
+}
+.left60{left: 60px;}
+.right60{right: 60px;}
+
+.bg-orange{background: #F16410;}
+.bg-purple{background: #850AA0;}
+.bg-lightgreen{background: #B3BE25;}
+.bg-red{background: #A40033;}
+
+.place-bg{
+	width: 100%;
+	float: left;
+	height: 220px;
+	color: #FFFFFF;
+}
+.place-bg h1{
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 10px;
+	font-size: 22px;
+	font-weight: normal;
+	line-height: 31px;
+	margin: 0;
+	display: block;
+
+}
+.place-bg p{
+	clear: both;
+	padding:0 10px;
+	font-size: 12px;
+	line-height: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.edge{
+	width: 100%;
+	float: left;
+	clear: both;
+	height: 30px;
+}
+.edge a {
+	background: transparent url(../../images/icons.png) -360px -119px no-repeat;
+	padding: 3px 0 5px 28px;
+	color: #FFFFFF;
+	font-size: 14px;
+	margin-left: 10px;
+}
+.e-orange{
+	background: url(../../images/edge-orange.png) no-repeat bottom right;
+}
+.e-purple{
+	background: url(../../images/edge-purple.png) no-repeat bottom right;
+}
+.e-lightgreen{
+	background: url(../../images/edge-lightgreen.png) no-repeat bottom right;
+}
+.e-red{
+	background: url(../../images/edge-red.png) no-repeat bottom right;
+}
+
+.photo img{
+	width: 100%;
+}
+.tab_button{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: #FFFFFF;
+	left: 0;
+	border-bottom: 1px solid #003781;
+	border-right: 1px solid #003781;
+	border-left: 1px solid #003781;
+}
+.tab_button ul,
+.tab_button li{
+	display: inline;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.tab_button ul li a{
+	float: left;
+	border-right: 1px solid #003781;
+	font-size: 11px;
+	padding: 12px 0;
+	width: 25%;
+	text-align: center;
+	color: #333333;
+}
+.tab_button ul li.last a{
+	border: 0 none;
+}
+.tab_button ul li a:hover,
+.tab_button ul li a.active{
+	background: #003781;
+	color: #FFFFFF;
+}
+
+.mainmenu {
+	width: 124px;
+	float: left;
+	border: 1px solid #F00;
+}
+.mainmenu li a{
+	color: #FFFFFF;
+	font-size: 12px;
+	padding: 5px 0;
+	display: block;
+}
+.mainmenu li a:hover{
+	color: #119dd7;
+}
+.noborder2{
+	border: 0 none;
+	margin-left: 15px;
+}
+
+.full-w{
+	width: 100%;
+	padding: 25px;
+	clear: both;
+	display: block;
+	margin: 10px 0;
+	float: left;
+	font-size: 14px;
+	line-height: 20px;
+}
+.bg-white{
+	background: #FFFFFF;
+}
+.full-w h1{
+	width: 100%;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+.full-w p{
+	font-size: 14px;
+	line-height: 20px;
+	width: 70%;
+	clear: both;
+}
+.main{
+		padding: 20px 0px;
+	}
+
+.place_photo{
+	clear: both;
+	float: left;
+	width: 30%;
+	margin-top: 20px;
+}
+
+.place_photo img{
+	width: 100%;
+}
+.bio{
+	float: right;
+	width: 67%;
+	margin-top: 20px;
+}
+
+.description{
+	font-size: 14px;
+	line-height: 20px;
+	width: 100%;
+}
+.ipNewsList .description{
+	width: 70%;
+}
+
+.description p{
+	width: 100%;
+}
+
+.tabwrap{
+	width: 100%;
+	float: left;
+	margin: 20px 0;
+}
+.menutab_dekstop{
+	float: left;
+	margin-right: 20px;
+}
+
+.menutab_dekstop ul, .menutab_dekstop li {
+	display: block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.menutab_dekstop li a {
+	border: 1px solid #e8e8e8;
+	width: 350px;
+	float: left;
+	clear: both;
+	font-size: 12px;
+	line-height: 18px;
+	color: #333333;
+	background: url(../../images/plus.png) no-repeat;
+	background-position: 98% 50%;
+	padding:10px 10px;
+	padding-right: 30px;
+	margin-top: -1px;
+
+}
+.menutab_dekstop li a:hover, 
+.menutab_dekstop li a.active {
+	background:#f5f6f6  url(../../images/tabarrow.png) no-repeat;
+	background-position: 98% 50%;
+	font-weight: bold;
+}
+
+.tabcontent{
+	float: left;
+	width: 50%;
+}
+
+.tabcontent ul {
+	list-style: none;
+	padding: 0;
+	display: block;
+	margin: 0;
+}
+
+.tabcontent ol,
+.tabcontent ol li {
+	list-style: decimal;
+	list-style-type: decimal;
+}
+
+
+.tabcontent li a.menumobile {
+	display: none;
+}
+.tabcontent li p {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	margin-bottom: 10px;
+	line-height: 24px;
+}
+
+.content_show{
+	border: 1px solid #e8e8e8;
+	background: #f5f6f6;
+	padding: 15px;
+	display: none;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.content_show ul,
+.content_show ol,
+.content_show li{
+	line-height: 20px;
+	margin-bottom: 10px;
+}
+
+.showme{
+	display: block;
+}
+
+.img_section{
+	float: right;
+	width: 288px;
+}
+
+.img_section img {
+	width: 100%;
+	margin-bottom: 5px;
+}
+.img_section h4{
+	color: #414141;
+	font-size: 12px;
+	line-height: 15px;
+	margin-top: 10px;
+}
+
+.text_section{
+	margin-top: 10px;
+	width: 599px;
+	float: left;
+	font-size: 14px;
+	line-height: 20px;
+	border: 0px solid #F00;
+}
+
+.text_section p {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	margin-bottom: 10px;
+	line-height: 18px;
+}
+
+.clear{
+	clear: both;
+}
+
+
+
+.buttonrow {
+	padding-top: 10px;
+	text-align: left;
+	clear: both;
+	position: relative;
+}
+button .icon, a.button .icon{
+	position: absolute;
+top: 8px;
+left: 9px;
+width: 25px;
+height: 25px;
+border: 0px solid #F00;
+}
+button.goto.prime, a.button.goto.prime{
+	background: #1f539a;
+background: -webkit-gradient(linear,left top,left bottom,from(#3e6fb3),to(#003781));
+background: -moz-linear-gradient(top,#3e6fb3,#003781);
+background: -o-linear-gradient(top,#3e6fb3,#003781);
+background: -ms-linear-gradient(top,#3e6fb3,#003781);
+background: linear-gradient(top,#3e6fb3,#003781);
+border-color: #003781;
+border-radius: 3px;
+}
+button.goto.prime .icon, a.button.goto.prime .icon{
+	background: transparent url('../../images/ic_buttons.png') -360px -119px no-repeat;
+}
+
+.mar20{
+	margin: 20px;
+}
+
+/* Layanan */
+.box30{
+	width: 30%;
+	float: left;
+	height: 500px;
+	margin: 10px;
+	background: #FFFFFF;
+	border: 1px solid #DDDDDD;
+}
+
+.books{
+	padding: 20px 30px;
+	float: left;
+	border: 0px solid #F00;
+	text-align: center;
+}
+
+@media only screen and (max-width : 640px){
+
+	.fixbox{
+		clear: both;
+		height: auto;
+		float: left;
+		width: 100%;
+		position: static;
+	}
+
+	.e-purple{background: #850AA0;}
+	.e-lightgreen{background: #B3BE25}
+	.e-red{background: #A40033;}
+	.e-orange{background: #F16410;}
+	.place-bg{
+		height: auto;
+	}
+
+	#slideshow .slide{
+	
+		height: auto;
+	}
+
+	#membername{
+		display: none;
+	}
+	
+	.full-w p, .description{
+		width: 100%;
+	}
+
+	.boxes-view .item_finansial .item{
+		width: 200px;
+	}
+
+	.main{
+		padding: 20px 0px;
+	}
+	.place_photo, .bio{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.table_cv .row .cell_left{
+		width: 100%;
+		border: 0 none;
+	}
+	.table_cv .row .cell_right{
+		width: 100%;
+		border: 0 none;
+	}
+
+	.menutab_dekstop{
+		display: none;
+	}
+
+	.tabcontent{
+		width: 100%;
+	}
+
+	.tabcontent li a.menumobile {
+		display: block;
+	}
+
+	.tabcontent li a.menumobile {
+	border: 1px solid #e8e8e8;
+	width: 100%;
+	float: left;
+	clear: both;
+	font-size: 12px;
+	line-height: 15px;
+	color: #333333;
+	background: url(../../images/plus.png) no-repeat;
+	background-position: 98% 50%;
+	padding:10px 10px;
+	padding-right: 30px;
+	margin-top: -1px;
+
+}
+.tabcontent li a.menumobile:hover, 
+.tabcontent li a.active {
+	background:#f5f6f6  url(../../images/tabarrow_mobile.png) no-repeat;
+	background-position: 98% 50%;
+	font-weight: bold;
+}
+	
+.content_show{
+	width: 100%;
+	float: left;
+}	
+
+.text_section, .img_section{
+	width: 100%;
+}
+
+.breadcrumb2{
+	margin-bottom: 20px;
+    margin-top: 10px;
+    max-width: 100%;
+    width: 100%;
+}
+#quicklinks{
+	clear: both;
+}
+
+.isi_kiri, .isi_kanan{
+	width: 100%;
+	clear: both;
+}
+.contact1, .contact2, .contact3{
+	width: 100%;
+	clear: both;
+	border: 0 none;
+	border-bottom: 5px solid #DDDDDD;
+	min-height: 0;
+}
+.forward{
+	width: 100%;
+}
+.forward h2 {
+    font-size: 18px;
+    max-width: 100% !important;
+}
+
+.jcarousel-pagination{
+	display: none;
+}
+.mar20{
+	margin: 0;
+}
+/*.boxes-view .page .items-container .finansial{
+	width: 306px;
+}
+.page .item_finansial .finansial .visimisi,.page .item_finansial .finansial .description{
+	width: 100%;
+	padding: 10px 25px;
+}
+.finansial .kiri{
+	clear: both;
+	width: 100%;
+}
+.finansial .kanan{
+	clear: both;
+	width: 100%;
+}*/
+
+.boxes-view .items-container{
+	width: 100%;
+}
+.boxes-view .items-container .item{
+	width: 100%;
+	margin: 10px 0;
+}
+
+.detail-border .kotak_kiri, 
+.detail-border .kotak_tengah,
+.detail-border .kotak_kanan{
+	width: 100%;
+	margin: 10px 0;
+	clear: both;
+}
+
+
+}
+
+/* added by Handri Pangestiaji June 20th 2014 */
+.full-w hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	width:95%;
+	text-align: center;
+	margin: 10px auto;
+	background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+	background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+	background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+	background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+}
+/* ========================================== */
+
