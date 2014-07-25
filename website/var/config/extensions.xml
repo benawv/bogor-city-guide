@@ -5,5 +5,9 @@
     <banner>1</banner>
     <quicklinks>1</quicklinks>
     <map-point>1</map-point>
+    <layanankami-quicklinks>1</layanankami-quicklinks>
+    <banner-tile/>
+    <static-banner>1</static-banner>
+    <tile-quicklinks>1</tile-quicklinks>
   </brick>
 </zend-config>
