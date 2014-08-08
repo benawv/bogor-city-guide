@@ -9,5 +9,6 @@
     <banner-tile/>
     <static-banner>1</static-banner>
     <tile-quicklinks>1</tile-quicklinks>
+    <container-box-6>1</container-box-6>
   </brick>
 </zend-config>
