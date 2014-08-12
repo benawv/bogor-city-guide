@@ -11,7 +11,7 @@
 		<h2>Allianz Community Tips</h2>
 		<div class="tips">
 			<?php 
-				$entries = new Object_Communitytips_List();
+				$entries = new Object_CommunityTips_List();
 				$entries->setLimit("6");
 				$entries->setOrderKey("date");
 				$entries->setOrder("desc");
