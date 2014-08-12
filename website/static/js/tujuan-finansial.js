@@ -3,50 +3,120 @@ $(document).ready(function(){
    $('.nd').hide();
    
    $('.selanjutnya').click(function(){
+      var soal = [];
+      for (var i=1; i<=6; i++) {
+            soal[i] = $('.soal'+i+':checked').val();
+      }
+      if (soal[1] == undefined || soal[2] == undefined || soal[3] == undefined || soal[4] == undefined || soal[5] == undefined || soal[6] == undefined){
+         alert('Semua data harus dilengkapi.');
+      }
+      else{
+         var content1 = $('.content-profil').height();
+         var cat = $('.soal6:checked').val();
+         $('.hide_tujuan').val(cat);
+         if (cat=="dd") {
+            $('.nd').hide();
+            $('.dana-darurat').show(); 
+         }
+         else if (cat=="dp") {
+            $('.nd').hide();
+            $('.dana-pensiun').show(); 
+         }
+         else if (cat=="pa") {
+            $('.nd').hide();
+            $('.dana-pendidikan').show(); 
+         }
+         var container = $('.items-container').height();
+         $('.desc-fin').empty();
+         var content2 = $('.content-profil').height();
+         var real_height = content2-content1;
+         $('.items-container').css('height', container+real_height+'px');
+         $(this).siblings('.nd').find('table td span').text('');
+         $(this).siblings('.nd').find('.span_desc span').text('.....');
+         $(this).siblings('.nd').find('input[type=radio]').prop('checked', false);
+         $(this).siblings('.nd').find('input[type=text]').val('');
+      }
+   });
+   
+   $('.reset_desc').click(function(){
       var content1 = $('.content-profil').height();
-      
-      
-      var cat = $('.soal6:checked').val();
-      if (cat=="dd") {
-         $('.nd').hide();
-         $('.dana-darurat').show(); 
-      }
-      else if (cat=="dp") {
-         $('.nd').hide();
-         $('.dana-pensiun').show(); 
-      }
-      else if (cat=="pa") {
-         $('.nd').hide();
-         $('.dana-pendidikan').show(); 
-      }
-      var container = $('.items-container').height();
+      $('.nd').hide();
       $('.desc-fin').empty();
+      var container = $('.items-container').height();
       var content2 = $('.content-profil').height();
-      var real_height = content2-content1;
-      $('.items-container').css('height', container+real_height+'px');
+      var real_height = content1-content2;
+      
+      $('.items-container').css('height', container-real_height+'px');
       $(this).siblings('.nd').find('table td span').text('');
+      $(this).siblings('.nd').find('.span_desc span').text('.....');
       $(this).siblings('.nd').find('input[type=radio]').prop('checked', false);
       $(this).siblings('.nd').find('input[type=text]').val('');
    });
    
    $('.calculate').click(function(){
-        var soal = [];
-        var content1 = $('.content-profil').height();
-        
-        for (var i=1; i<=6; i++) {
-            soal[i] = $('.soal'+i+':checked').val();
-        }
-        
-        function commaSeparateNumber(val){
-          while (/(\d+)(\d{3})/.test(val.toString())){
-            val = val.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
-          }
-          return val;
+      var cat = $('.hide_tujuan').val();
+      var pilihan = $('.member-polis:selected').val();
+      if (cat=="dd") {
+         $('.nd').hide();
+         $('.dana-darurat').show();
+         
+         if ($('.dana_darurat').val() == '' || $('.lama_waktu').val()=='' || $('.dd_kembali:checked').val()==undefined || $('.dd_inf:checked').val()==undefined)
+         {
+            alert('Semua data harus dilengkapi.');
          }
+         else
+         {
+            hasil(cat,pilihan);
+         }
+      }
+      else if (cat=="dp") {
+         $('.nd').hide();
+         $('.dana-pensiun').show();
+         
+         if ($('.dana_keluar').val() == '' || $('.lama_waktu_pensiun').val()=='' || $('.dp_inf:checked').val()==undefined || $('.dp_inv:checked').val()==undefined || $('.lama_menikmati').val() == '')
+         {
+            alert('Semua data harus dilengkapi.');
+         }
+         else
+         {
+            hasil(cat,pilihan);
+         }
+      }
+      else if (cat=="pa") {
+         $('.nd').hide();
+         $('.dana-pendidikan').show();
+         
+         if ($('.dana_pendidikan').val() == '' || $('.lama_waktu_pendidikan').val()=='' || $('.pa_inf:checked').val()==undefined || $('.pa_kembali:checked').val()==undefined)
+         {
+            alert('Semua data harus dilengkapi.');
+         }
+         else
+         {
+            hasil(cat,pilihan);
+         }
+      }
+      $('.soal6').filter('[value='+cat+']').prop('checked', true);
         
-        var pilihan = $('.member-polis:selected').val();
-        
-        if (soal[6]=='dd') {
+    });
+   
+   function hasil(cat,pilihan) {
+      var soal = [];
+      var content1 = $('.content-profil').height();
+      
+      for (var i=1; i<=6; i++) {
+          soal[i] = $('.soal'+i+':checked').val();
+      }
+      
+      function commaSeparateNumber(val){
+        while (/(\d+)(\d{3})/.test(val.toString())){
+          val = val.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
+        }
+        return val;
+       }
+       
+       $('.soal6').filter('[value='+cat+']').prop('checked', true);
+      
+      if (cat=='dd') {
          var dana_darurat = $('.dana_darurat').val();
          var lama_waktu = $('.lama_waktu').val();
          var inflasi = $('.dd_inf:checked').val();
@@ -62,7 +132,7 @@ $(document).ready(function(){
                     soal3:soal[3],
                     soal4:soal[4],
                     soal5:soal[5],
-                    soal6:soal[6],
+                    soal6:cat,
                     dd:dana_darurat,
                     lama:lama_waktu,
                     inflasi:inflasi,
@@ -93,7 +163,7 @@ $(document).ready(function(){
             });
             }
             
-         if (soal[6]=='dp') {
+         if (cat=='dp') {
             var dana_keluar = $('.dana_keluar').val();
             var lama_waktu_pensiun = $('.lama_waktu_pensiun').val();
             var dp_inf = $('.dp_inf:checked').val();
@@ -110,7 +180,7 @@ $(document).ready(function(){
                     soal3:soal[3],
                     soal4:soal[4],
                     soal5:soal[5],
-                    soal6:soal[6],
+                    soal6:cat,
                     dp:dana_keluar,
                     lama_pensiun:lama_waktu_pensiun,
                     inflasi:dp_inf,
@@ -147,12 +217,12 @@ $(document).ready(function(){
             });
             }
             
-            if (soal[6]=='pa') {
+         if (cat=='pa') {
             var dana_pendidikan = $('.dana_pendidikan').val();
             var lama_waktu_pendidikan = $('.lama_waktu_pendidikan').val();
             var pa_inf = $('.pa_inf:checked').val();
             var pa_inv = $('.pa_kembali:checked').val();
-               
+              
             $.ajax({
                 url: "allianz-tujuan-finansial-form.php",
                 type: "POST",
@@ -163,7 +233,7 @@ $(document).ready(function(){
                     soal3:soal[3],
                     soal4:soal[4],
                     soal5:soal[5],
-                    soal6:soal[6],
+                    soal6:cat,
                     pa:dana_pendidikan,
                     lama_waktu_pendidikan:lama_waktu_pendidikan,
                     inflasi:pa_inf,
@@ -196,6 +266,6 @@ $(document).ready(function(){
                     $('.items-container').css('height', container+real_height+'px');
                 }
             });
-            }
-    });
+         }
+   }
 });
