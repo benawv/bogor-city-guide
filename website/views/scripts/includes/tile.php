@@ -5,24 +5,21 @@
 		<!--<div class="hotline"><img width="30px" src="_assets/images/hotline.png">&nbsp;&nbsp;<span style="font-size:20px"><strong>021-2926 9999</strong></span></div>-->
 	</div>
 	<div class="wrapper-special clearfix">
-		<?php echo $this->areablock('banner')?>
+		<?php echo $this->areablock('banner', array(
+					"allowed" => array("banner", "static-banner")))?>
 		<div id="quicklinks">
-			<?php echo $this->areablock('layananKami')?>
+			<?php echo $this->areablock('layananKami', array(
+					"allowed" => array("tile-quicklinks", "quiclinks", "layanankami-quicklinks")))?>
 		</div>
 	</div><!-- .wrapper-special -->
+	
 	<!-- content -->
-		<?php echo $this->areablock('container')?>
+		<?php echo $this->areablock('container', array(
+					"allowed" => array("container-box-6", "gallery-carousel", "container-box-5")))?>
 	<!-- endcontent -->
-	<div class="wrapper clearfix">
-		<div id="agent-locator">
-			<h2>Lokasi Kantor Pemasaran</h2>
-			<div id="maparea">
-
-			</div>
-		</div>
-		<!-- Map-point -->
-		<?php //include("include/map-point.php"); ?>
-		<!-- End of map-point -->
-	</div>
-
+	
+	<!-- Map Location -->
+		<?php echo $this->areablock('maparea', array(
+					"allowed" => array("map", "map-point")))?>
+	<!-- End Map Location -->
 </div>

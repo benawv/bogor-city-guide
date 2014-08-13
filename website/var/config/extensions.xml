@@ -10,5 +10,7 @@
     <static-banner>1</static-banner>
     <tile-quicklinks>1</tile-quicklinks>
     <container-box-6>1</container-box-6>
+    <map>1</map>
+    <container-box-5>1</container-box-5>
   </brick>
 </zend-config>
