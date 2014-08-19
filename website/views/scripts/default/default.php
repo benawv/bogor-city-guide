@@ -1,9 +1,12 @@
 <div class="container">
-	<?php echo $this->areablock('bannerArea')?>
+	<?php echo $this->areablock('bannerArea', array(
+				'allowed' => array('gallery-carousel')))?>
 	<div class="wrapper-special clearfix">
-		<?php echo $this->areablock('bannerProduct')?>
+		<?php echo $this->areablock('bannerProduct', array(
+				'allowed' => array('banner', 'static-banner')))?>
 		<div id="quicklinks">
-			<?php echo $this->areablock('layananKami')?>
+			<?php echo $this->areablock('layananKami', array(
+				'allowed' => array('layanankami-quicklinks')))?>
 		</div>
 	</div>
 	<!-- Community -->
