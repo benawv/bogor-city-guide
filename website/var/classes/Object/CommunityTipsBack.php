@@ -1,15 +1,15 @@
 <?php 
 
-class Object_BackCommunity extends Object_Concrete {
+class Object_CommunityTipsBack extends Object_Concrete {
 
-public $o_classId = 8;
-public $o_className = "backCommunity";
+public $o_classId = 11;
+public $o_className = "communityTipsBack";
 public $image;
 
 
 /**
 * @param array $values
-* @return Object_BackCommunity
+* @return Object_CommunityTipsBack
 */
 public static function create($values = array()) {
 	$object = new self();
