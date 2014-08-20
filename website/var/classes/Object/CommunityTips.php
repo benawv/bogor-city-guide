@@ -8,8 +8,10 @@ public $title;
 public $image;
 public $description;
 public $link;
-public $category;
 public $date;
+public $recommended;
+public $popular;
+public $category;
 
 
 /**
@@ -99,25 +101,6 @@ public function setLink ($link) {
 }
 
 /**
-* @return string
-*/
-public function getCategory () {
-	$preValue = $this->preGetValue("category"); 
-	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
-	$data = $this->category;
-	 return $data;
-}
-
-/**
-* @param string $category
-* @return void
-*/
-public function setCategory ($category) {
-	$this->category = $category;
-	return $this;
-}
-
-/**
 * @return Pimcore_Date
 */
 public function getDate () {
@@ -136,7 +119,68 @@ public function setDate ($date) {
 	return $this;
 }
 
+/**
+* @return boolean
+*/
+public function getRecommended () {
+	$preValue = $this->preGetValue("recommended"); 
+	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
+	$data = $this->recommended;
+	 return $data;
+}
+
+/**
+* @param boolean $recommended
+* @return void
+*/
+public function setRecommended ($recommended) {
+	$this->recommended = $recommended;
+	return $this;
+}
+
+/**
+* @return float
+*/
+public function getPopular () {
+	$preValue = $this->preGetValue("popular"); 
+	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
+	$data = $this->popular;
+	 return $data;
+}
+
+/**
+* @param float $popular
+* @return void
+*/
+public function setPopular ($popular) {
+	$this->popular = $popular;
+	return $this;
+}
+
+/**
+* @return Document_Page | Document_Snippet | Document | Asset | Object_Abstract
+*/
+public function getCategory () {
+	$preValue = $this->preGetValue("category"); 
+	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
+	$data = $this->getClass()->getFieldDefinition("category")->preGetData($this);
+	 return $data;
+}
+
+/**
+* @param Document_Page | Document_Snippet | Document | Asset | Object_Abstract $category
+* @return void
+*/
+public function setCategory ($category) {
+	$this->category = $this->getClass()->getFieldDefinition("category")->preSetData($this, $category);
+	return $this;
+}
+
 protected static $_relationFields = array (
+  'category' => 
+  array (
+    'type' => 'href',
+  ),
 );
 
 public $lazyLoadedFields = NULL;

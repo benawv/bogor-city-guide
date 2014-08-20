@@ -1,6 +1,7 @@
 <link rel="stylesheet" type="text/css" href="/website/static/css/virgin.css">
 <?php
-	$backImage = new Object_BackCommunity_List();
+	$backImage = new Object_CommunityTipsBack_List();
+	$backImage->setLimit(1);
 	$backImage->setOrder("desc");
 	foreach($backImage as $hasil)
 	{
@@ -18,13 +19,41 @@
 										<div class="innr-wrp">
 										<?php
 											$entries = new Object_communityTips_List();
-											$x = 1;
+											$entries->setLimit(14);
+											$entries->setOrderKey("date");
+											$entries->setOrder("desc");
+											$x = 0;
+											$title = array();
+											$image = array();
+											$category = array();
+											$date = array();
 											foreach($entries as $result)
 											{
-												
-												echo $result->gettitle();
+												$title[$x] = $result->getTitle();
+												$image[$x] = $result->getImage();
+												$category[$x] = $result->getCategory();
+												$date[$x] = $result->getDate();
+												$desc[$x] = $result->getDescription();
+												$x++;
 											}
+											
+											$cate = new Object_CommunityTipsCategory_List();
+											$a = 0;
+											$category1 = array();
+											$titleCategory = array();
+											foreach($cate as $cate2)
+											{
+												$category1[$a] = $cate2->getPath().$cate2->getKey();
+												$titleCategory[$a] = $cate2->getTitleCategory();
+												$a++;
+											}
+											
+											$y = 0;
+											$b = 0;
+											while($y<count($title))
+											{
 										?>
+											<?php if($title[$y] != ''){?>
 											<div class="r">
 												<div class="c-2of3">
 													<article>
@@ -32,81 +61,123 @@
 														<i class="icon-video"></i>	
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="/website/static/images/tips/allianz_arena_views_44_72dpi.jpg" data-src="/website/static/images/tips/allianz_arena_views_44_72dpi.jpg" alt="">
-																	<div class="tg tg-shr">Allianz Arena</div>
+																	<img src="<?php echo $image[$y];?>"alt="">
+																	<div class="tg tg-shr">
+																		<?php for($i=0;$i<count($titleCategory);$i++){
+																			if($category[$y]==$category1[$i])
+																			{
+																				echo $titleCategory[$i];
+																			}
+																		}?>
+																	</div>
 																	<span class="art-hvr"></span>
 																</div>
 																<div class="txt-wrp">
-																	<time datetime="2014-07-10">
-																		10 July 2014
+																	<time>
+																		<?php echo date("M d, Y", strtotime($date[$y]));?>
 																	</time>
-																	<p class="authr-ttl">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+																	<p class="authr-ttl"><?php echo $title[$y];?></p>
 																</div>
 															</div>
 														</a>
 													</article>
 												</div>
-												<div class="c-1of3">
-													<article>
-														<a href="#">
-															<div class="outr-wrp">
-																<div class="img-wrp">
-																	<img src="/website/static/images/tips/formula1_490x300.jpg" data-src="/website/static/images/tips/formula1_490x300.jpg" alt="">
-																	<div class="tg tg-shr">Music</div>
-																	<span class="art-hvr"></span>
+												<?php if($title[$y+1] != ''){?>
+													<div class="c-1of3">
+														<article>
+															<a href="#">
+																<div class="outr-wrp">
+																	<div class="img-wrp">
+																		<img src="<?php echo $image[$y+1];?>"alt="">
+																		<div class="tg tg-shr">
+																			<?php for($i=0;$i<count($titleCategory);$i++){
+																				if($category[$y+1]==$category1[$i])
+																				{
+																					echo $titleCategory[$i];
+																				}
+																			}?>
+																		</div>
+																		<span class="art-hvr"></span>
+																	</div>
+																	<div class="txt-wrp">
+																		<time>
+																			<?php echo date("M d, Y", strtotime($date[$y+1]));?>
+																		</time>
+																		<p class="authr-ttl"><?php echo $title[$y+1];?></p>
+																	</div>
 																</div>
-																<div class="txt-wrp">
-																	<time datetime="2014-07-10">
-																		10 July 2014
-																	</time>
-																	<p class="authr-ttl">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-																</div>
-															</div>
-														</a>
-													</article>
-												</div>
+															</a>
+														</article>
+													</div>
+												<?php
+													}
+												?>
 											</div>
+											<?php
+												}
+												if($title[$y+2] != ''){
+											?>
 											<div class="r">
 												<div class="c-1of2">
 													<article>
 													   <a href="#">
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="/website/static/images/tips/allianz_arena_views_44_72dpi.jpg" data-src="/website/static/images/tips/allianz_arena_views_44_72dpi.jpg" alt="">
-																<div class="tg tg-shr">Entrepreneur</div>
+																<img src="<?php echo $image[$y+2];?>"alt="">
+																<div class="tg tg-shr">
+																	<?php for($i=0;$i<count($titleCategory);$i++){
+																		if($category[$y+2]==$category1[$i])
+																		{
+																			echo $titleCategory[$i];
+																		}
+																	}?>
+																</div>
 																<span class="art-hvr"></span>
 															</div>
 															<div class="txt-wrp">
-																<time datetime="2014-07-10">
-																	10 July 2014
+																<time>
+																	<?php echo date("M d, Y", strtotime($date[$y+2]));?>
 																</time>
-																<p class="authr-ttl">The world's best start-up hubs: Taghazout, Morocco</p>
+																<p class="authr-ttl"><?php echo $title[$y+2];?></p>
 															</div>
 														</div>
 														</a>
 													</article>
 												</div>
-												<div class="c-1of2">
-													<article>
-													   <a href="#">
-														<i class="icon-video"></i>
-														<div class="outr-wrp">
-															<div class="img-wrp">
-																<img src="/website/static/images/tips/allianz_arena_views_44_72dpi.jpg" data-src="/website/static/images/tips/allianz_arena_views_44_72dpi.jpg" alt="">
-																<div class="tg tg-shr">Travel</div>
-																<span class="art-hvr"></span>
+												<?php if($title[$y+3] != ''){?>
+													<div class="c-1of2">
+														<article>
+														   <a href="#">
+															<i class="icon-video"></i>
+															<div class="outr-wrp">
+																<div class="img-wrp">
+																	<img src="<?php echo $image[$y+3];?>"alt="">
+																	<div class="tg tg-shr">
+																		<?php for($i=0;$i<count($titleCategory);$i++){
+																			if($category[$y+3]==$category1[$i])
+																			{
+																				echo $titleCategory[$i];
+																			}
+																		}?>
+																	</div>
+																	<span class="art-hvr"></span>
+																</div>
+																<div class="txt-wrp">
+																	<time>
+																		<?php echo date("M d, Y", strtotime($date[$y+3]));?>
+																	</time>
+																	<p class="authr-ttl"><?php echo $title[$y+3];?></p>
+																</div>
 															</div>
-															<div class="txt-wrp">
-																<time datetime="2014-07-10">
-																	10 July 2014
-																</time>
-																<p class="authr-ttl">On your bike: Five amazing cycling innovations</p>
-															</div>
-														</div>
-													   </a>
-													</article>
-												</div>
+														   </a>
+														</article>
+													</div>
+												<?php }?>
 											</div>
+											<?php
+												}
+												if($title[$y+4] != ''){
+											?>
 											<div class="r">
 												<div class="c-1of3">
 													<article>
@@ -114,60 +185,89 @@
 															<i class="icon-video"></i>
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="/website/static/images/tips/allianzstikerbiru1.jpg" data-src="/website/static/images/tips/allianzstikerbiru1.jpg" alt="">
-																	<div class="tg tg-shr">Entrepreneurship</div>
+																	<img src="<?php echo $image[$y+4];?>"alt="">
+																	<div class="tg tg-shr">
+																		<?php for($i=0;$i<count($titleCategory);$i++){
+																			if($category[$y+4]==$category1[$i])
+																			{
+																				echo $titleCategory[$i];
+																			}
+																		}?>
+																	</div>
 																	<span class="art-hvr"></span>
 																</div>
 																<div class="txt-wrp">
-																	<time datetime="2014-07-10">
-																		10 July 2014
+																	<time>
+																		<?php echo date("M d, Y", strtotime($date[$y+4]));?>
 																	</time>
-																	<p class="authr-ttl">Film: The girl scouts of technology </p>
+																	<p class="authr-ttl"><?php echo $title[$y+4];?></p>
 																</div>
 															</div>
 														</a>
 													</article>
 												</div>
-												<div class="c-1of3">
-													<article>
-														<a href="#">
-															<div class="outr-wrp">
-																<div class="img-wrp">
-																	<img src="/website/static/images/tips/allianzstikerbiru1.jpg" data-src="/website/static/images/tips/allianzstikerbiru1.jpg" alt="">
-																	<div class="tg tg-shr">Allianz</div>
-																	<span class="art-hvr"></span>
+												<?php if($title[$y+5] != ''){?>
+													<div class="c-1of3">
+														<article>
+															<a href="#">
+																<div class="outr-wrp">
+																	<div class="img-wrp">
+																		<img src="<?php echo $image[$y+5];?>"alt="">
+																		<div class="tg tg-shr">
+																			<?php for($i=0;$i<count($titleCategory);$i++){
+																			if($category[$y+5]==$category1[$i])
+																			{
+																				echo $titleCategory[$i];
+																			}
+																		}?>
+																		</div>
+																		<span class="art-hvr"></span>
+																	</div>
+																	<div class="txt-wrp">
+																		<time>
+																			<?php echo date("M d, Y", strtotime($date[$y+5]));?>
+																		</time>
+																		<p class="authr-ttl"><?php echo $title[$y+5];?></p>
+																	</div>
 																</div>
-																<div class="txt-wrp">
-																	<time datetime="2014-07-10">
-																		10 July 2014
-																	</time>
-																	<p class="authr-ttl">Why travel advisories hurt countries and help terrorists </p>
+															</a>
+														</article>
+													</div>
+												<?php }?>
+												<?php if($title[$y+6] != ''){?>
+													<div class="c-1of3">
+														<article>
+															<a href="#">
+																<i class="icon-video"></i>
+																<div class="outr-wrp">
+																	<div class="img-wrp">
+																		<img src="<?php echo $image[$y+6];?>"alt="">
+																		<div class="tg tg-shr">
+																			<?php for($i=0;$i<count($titleCategory);$i++){
+																			if($category[$y+6]==$category1[$i])
+																			{
+																				echo $titleCategory[$i];
+																			}
+																		}?>
+																		</div>
+																		<span class="art-hvr"></span>
+																	</div>
+																	<div class="txt-wrp">
+																		<time>
+																			<?php echo date("M d, Y", strtotime($date[$y+6]));?>
+																		</time>
+																		<p class="authr-ttl"><?php echo $title[$y+6];?></p>
+																	</div>
 																</div>
-															</div>
-														</a>
-													</article>
-												</div>
-												<div class="c-1of3">
-													<article>
-														<a href="#">
-															<i class="icon-video"></i>
-															<div class="outr-wrp">
-																<div class="img-wrp">
-																	<img src="/website/static/images/tips/allianzstikerbiru1.jpg" data-src="/website/static/images/tips/allianzstikerbiru1.jpg" alt="">
-																	<div class="tg tg-shr">News</div>
-																	<span class="art-hvr"></span>
-																</div>
-																<div class="txt-wrp">
-																	<time datetime="2014-07-10">
-																		10 July 2014
-																	</time>
-																	<p class="authr-ttl">Have loyalty programmes got you trapped in a dysfunctional relationship?</p>
-																</div>
-															</div>
-														</a>
-													</article>
-												</div>
+															</a>
+														</article>
+													</div>
+												<?php }?>
 											</div>
+											<?php
+												}
+												$y = $y + 7 ;
+											}?>
 										</div>
 									</div>
 									<div class="srch-pgn clrd">
@@ -186,61 +286,64 @@
 				<div class="tips-item-kanan" id="item-right">
 					<div class="s-sbar sctn-spcfc">
 						<div class="social-ss ss-cnnct">
-							<a href="http://twitter.com/virgin" title="Twitter" class="cnnct-twttr" target="_blank" data-track="connect|click|twitter-at">
+							<a href="#" title="Twitter" class="cnnct-twttr" target="_blank" data-track="connect|click|twitter-at">
 							@AllianzId
 						    </a>
 						    <ul class="clrd">
+						    <li class="blnk"></li>
+								<li>
+							    <a href="#" title="Facebook" class="facebook" target="_blank" data-track="connect|click|facebook">
+								<span class="vhdn">Facebook</span>
+							    </a>
+							</li>
+							    
+								<li>
+							    <a href="#" title="Twitter" class="twitter" target="_blank" data-track="connect|click|twitter">
+								<span class="vhdn">Twitter</span>
+							    </a>
+							</li>
+							    
+								<li>
+							    <a href="#" title="Linkedin" class="linked-in" target="_blank" data-track="connect|click|linkedin">
+								<span class="vhdn">Linked In</span>
+							    </a>
+							</li>
+							    
+						    <li class="blnk"></li>        
+								<li>
+							    <a href="#" title="Instagram" class="instagram" target="_blank" data-track="connect|click|instagram">
+								<span class="vhdn">Instagram</span>
+							    </a>
+							</li>
+							    
 								<li class="blnk"></li>
-									<li>
-									<a href="#" title="Facebook" data-icon="." class="facebook" target="_blank" data-track="connect|click|facebook">
-									<span class="vhdn">Facebook</span>
-									</a>
-								</li>
-									
-									<li>
-									<a href="#" title="Twitter" data-icon="." class="twitter" target="_blank" data-track="connect|click|twitter">
-									<span class="vhdn">Twitter</span>
-									</a>
-								</li>
-									
-									<li>
-									<a href="#" title="Linkedin" data-icon="." class="linked-in" target="_blank" data-track="connect|click|linkedin">
-									<span class="vhdn">Linked In</span>
-									</a>
-								</li>
-									
-								<li class="blnk"></li>        
-									<li>
-									<a href="#" title="Instagram" data-icon="." class="instagram" target="_blank"  data-track="connect|click|instagram">
-									<span class="vhdn">Instagram</span>
-									</a>
-								</li>
-									
-									<li class="blnk"></li>
-									
-									<li>
-										<a href="#" title="Pinterest" data-icon="." class="pinterest" target="_blank"  data-track="connect|click|pinterest">
-										<span class="vhdn">Pinterest</span>
-										</a>
-									</li>
-									
-									  <li class="blnk"></li>
-								
-									<li>
-										<a href="#" title="Youtube" data-icon="." class="pinterest you2" style="background-color:#c4302b;" target="_blank" data-track="connect|click|pinterest">
-										<span class="vhdn">Pinterest</span>
-										</a>
-									</li>
+							    
+								<li>
+							    <a href="#" title="Pinterest" class="pinterest" target="_blank" data-track="connect|click|pinterest">
+								<span class="vhdn">Pinterest</span>
+							    </a>
+							</li>
+							    
+							      <li class="blnk"></li>
+						    
+								<li>
+							    <a href="#" title="YouTube" class="youtube" target="_blank" data-track="connect|click|youtube">
+								<span class="vhdn">Youtube</span>
+							    </a>
+							</li>
 							</ul>
 						</div>
 						
 						<div class="kat-desc description">
-							<img src="/website/static/images/hubby.jpg">
-							<img src="/website/static/images/kids.jpg">
-							<img src="/website/static/images/beverage1.jpg">
-							<img src="/website/static/images/beverage2.jpg">
-							<img src="/website/static/images/beverage3.jpg">
-							<img src="/website/static/images/beverage4.jpg">
+							<?php
+								$cat = new Object_CommunityTipsCategory_List();
+								foreach($cat as $category)
+								{
+							?>
+								<img src="<?php echo $category->getImageCategory();?>" >
+							<?php
+								}
+							?>
 						</div>
 					</div>
 					<div class="widget-twitter">
@@ -248,385 +351,120 @@
 							<a class="twitter-timeline" width="100%" height="400" href="https://twitter.com/AllianzId" data-widget-id="488606842243653632">Tweets by @AllianzId</a>
 							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 						</div>
-						<div class="sh_widget">
+						<!--<div class="sh_widget">
 							<img class="logo-float" src="/website/static/images/logo1.png">
 							<img class="logo-float" src="/website/static/images/logo2.png">
 							<img class="logo-float" src="/website/static/images/logo3.png">
-						</div>
+						</div>-->
 					</div>
 					<div class="s-sbar sctn-spcfc">
-					<div class="recommend-tips art-lst kntc-ct">
-                    <header>
-            	<div class="s-ct">
-                	<h2>Recommended</h2>
-                </div>
-            </header>
-        	    <section class="s-ct">
-	    	<div class="r-ib">
-	            
-<article class="art-itm">
-<div class="s-sbar-ct">
-<a href="/entrepreneur/the-worlds-best-start-up-hubs-birmingham-england" data-track="recommended|click|entrepreneur/the-worlds-best-start-up-hubs-birmingham-england|1">
-
-<div class="outr-wrp">
-<div class="img-wrp">
-<img src="/website/static/images/tips/allianz_arena_views_44_72dpi.jpg" alt="" />
-
-<div class="tg tg-shr">
-Entrepreneur
-</div>
-
-
-<!--<div class="shr"><span>177</span> Shares</div>-->
-
-<span class="art-hvr"></span>
-</div>
-<div class="txt-wrp">
-<time datetime="2014-07-16">16 July 2014</time>
-
-<p class="authr">Neeru Pallen</p>
-
-<p class="authr-ttl">The world's best start-up hubs: Birmingh...</p>
-</div>
-</div>
-</a>
-</div>
-</article>
-
-<article class="art-itm">
-<div class="s-sbar-ct">
-<a href="/music/do-band-reunions-still-excite-us" data-track="recommended|click|music/do-band-reunions-still-excite-us|2">
-<i class="icon-video"></i>
-<div class="outr-wrp">
-<div class="img-wrp">
-<img src="/website/static/images/tips/allianz_arena_views_44_72dpi.jpg" alt="" />
-
-<div class="tg tg-shr">
-Music
-</div>
-
-
-<!--<div class="shr"><span>28</span> Shares</div>-->
-
-<span class="art-hvr"></span>
-</div>
-<div class="txt-wrp">
-<time datetime="2014-04-28">28 April 2014</time>
-
-<p class="authr">Sophie Hall</p>
-
-<p class="authr-ttl">Do band reunions still excite us? </p>
-</div>
-</div>
-</a>
-</div>
-</article>
-
-<article class="art-itm">
-<div class="s-sbar-ct">
-<a href="/disruptors/video-dave-evans-on-regulation" data-track="recommended|click|disruptors/video-dave-evans-on-regulation|3">
-<i class="icon-video"></i>
-<div class="outr-wrp">
-<div class="img-wrp">
-<img src="/website/static/images/tips/allianz_arena_views_44_72dpi.jpg" alt="" />
-
-<div class="tg tg-shr">
-Disruptors
-</div>
-
-
-<!--<div class="shr"><span>259</span> Shares</div>-->
-
-<span class="art-hvr"></span>
-</div>
-<div class="txt-wrp">
-<time datetime="2014-05-07">7 May 2014</time>
-
-<p class="authr-ttl">Video: Dave Evans on regulation</p>
-</div>
-</div>
-</a>
-</div>
-</article>
-
-<article class="art-itm">
-<div class="s-sbar-ct">
-<a href="/richard-branson/5-ways-to-build-a-project-with-purpose" data-track="recommended|click|richard-branson/5-ways-to-build-a-project-with-purpose|4">
-<i class="icon-video"></i>
-<div class="outr-wrp">
-<div class="img-wrp">
-<img src="/website/static/images/tips/allianz_arena_views_44_72dpi.jpg" alt="" />
-
-<div class="tg tg-shr">
-MUSIC
-</div>
-
-
-<!--<div class="shr"><span>6.9k</span> Shares</div>-->
-
-<span class="art-hvr"></span>
-</div>
-<div class="txt-wrp">
-<time datetime="2014-07-16">16 July 2014</time>
-
-<p class="authr">Richard Branson</p>
-
-<p class="authr-ttl">5 ways to build a project with purpose</p>
-</div>
-</div>
-</a>
-</div>
-</article>
-
-<article class="art-itm">
-<div class="s-sbar-ct">
-<a href="/music/staying-out-for-the-summer-uk-indie-festivals-doing-it-right" data-track="recommended|click|music/staying-out-for-the-summer-uk-indie-festivals-doing-it-right|5">
-<i class="icon-video"></i>
-<div class="outr-wrp">
-<div class="img-wrp">
-<img src="/website/static/images/tips/allianz_arena_views_44_72dpi.jpg" alt="" />
-
-<div class="tg tg-shr">
-Music
-</div>
-
-
-<!--<div class="shr"><span>60</span> Shares</div>-->
-
-<span class="art-hvr"></span>
-</div>
-<div class="txt-wrp">
-<time datetime="2014-06-16">16 June 2014</time>
-
-<p class="authr">Jack pOp</p>
-
-<p class="authr-ttl">Staying out for the summer: UK indie fes...</p>
-</div>
-</div>
-</a>
-</div>
-</article>
-
-<article class="art-itm">
-<div class="s-sbar-ct">
-<a href="/travel/stranger-than-fiction-when-movie-transport-comes-to-life" data-track="recommended|click|travel/stranger-than-fiction-when-movie-transport-comes-to-life|6">
-<i class="icon-video"></i>
-<div class="outr-wrp">
-<div class="img-wrp">
-<img src="/website/static/images/tips/allianz_arena_views_44_72dpi.jpg" alt="" />
-
-<div class="tg tg-shr">
-Travel
-</div>
-
-
-<!--<div class="shr"><span>296</span> Shares</div>-->
-
-<span class="art-hvr"></span>
-</div>
-<div class="txt-wrp">
-<time datetime="2014-06-03">3 June 2014</time>
-
-<p class="authr">Sophie Hall</p>
-
-<p class="authr-ttl">Stranger than Fiction: When movie transp...</p>
-</div>
-</div>
-</a>
-</div>
-</article>
-
-<article class="art-itm">
-<div class="s-sbar-ct">
-<a href="/richard-branson/in-dallas-to-free-love-field" data-track="recommended|click|richard-branson/in-dallas-to-free-love-field|7">
-
-<div class="outr-wrp">
-<div class="img-wrp">
-<img src="/website/static/images/tips/allianz_arena_views_44_72dpi.jpg" alt="" />
-
-<div class="tg tg-shr">
-MUSIC
-</div>
-
-
-<!--<div class="shr"><span>2.7k</span> Shares</div>-->
-
-<span class="art-hvr"></span>
-</div>
-<div class="txt-wrp">
-<time datetime="2014-05-06">6 May 2014</time>
-
-<p class="authr">Richard Branson</p>
-
-<p class="authr-ttl">In Dallas to Free Love Field </p>
-</div>
-</div>
-</a>
-</div>
-</article>
-
-<article class="art-itm">
-<div class="s-sbar-ct">
-<a href="/music/who-has-the-perfect-voice-in-music" data-track="recommended|click|music/who-has-the-perfect-voice-in-music|8">
-<i class="icon-video"></i>
-<div class="outr-wrp">
-<div class="img-wrp">
-<img src="/website/static/images/tips/allianz_arena_views_44_72dpi.jpg" alt="" />
-
-<div class="tg tg-shr">
-Music
-</div>
-
-
-<!--<div class="shr"><span>92</span> Shares</div>-->
-
-<span class="art-hvr"></span>
-</div>
-<div class="txt-wrp">
-<time datetime="2014-05-30">30 May 2014</time>
-
-<p class="authr">Matthew Laidlow</p>
-
-<p class="authr-ttl">Who has the 'perfect voice' in music? </p>
-</div>
-</div>
-</a>
-</div>
-</article>
-
-
-
-	        </div>
-	    </section>
-	</div>
-					<div class="recommend-tips art-lst kntc-ct">
-							<header>
-						    <div class="s-ct">
-							    <h2>Popular</h2>
-						    </div>
-						</header>
-						    <section class="s-ct">
-						    <div class="r-ib">
-						    
-				    <article class="art-itm">
-				    <div class="s-sbar-ct">
-				    <a href="/richard-branson/my-illustrated-top-10-tips-for-success" data-track="mostpopular|click|richard-branson/my-illustrated-top-10-tips-for-success|1">
-				    
-				    <div class="outr-wrp">
-				    <div class="img-wrp">
-				    <img src="/website/static/images/tips/allianz_arena_views_44_72dpi.jpg" alt="" />
-				    
-				    <div class="tg tg-shr">
-				    MUSIC
-				    </div>
-				    
-				    
-				    <!--<div class="shr"><span>73.6k</span> Shares</div>
-				    -->
-				    <span class="art-hvr"></span>
-				    </div>
-				    <div class="txt-wrp">
-				    
-				    
-				    <p class="authr">Richard Branson</p>
-				    
-				    <p class="authr-ttl">My illustrated top 10 tips for success</p>
-				    </div>
-				    </div>
-				    </a>
-				    </div>
-				    </article>
-				    
-				    <article class="art-itm">
-				    <div class="s-sbar-ct">
-				    <a href="/richard-branson/why-ive-given-up-eating-beef" data-track="mostpopular|click|richard-branson/why-ive-given-up-eating-beef|2">
-				    
-				    <div class="outr-wrp">
-				    <div class="img-wrp">
-				    <img src="/website/static/images/tips/allianz_arena_views_44_72dpi.jpg" alt="" />
-				    
-				    <div class="tg tg-shr">
-				    MUSIC
-				    </div>
-				    
-				    
-				    <!--<div class="shr"><span>25.6k</span> Shares</div>
-				    -->
-				    <span class="art-hvr"></span>
-				    </div>
-				    <div class="txt-wrp">
-				    <time datetime="2014-07-09">9 July 2014</time>
-				    
-				    <p class="authr">Richard Branson</p>
-				    
-				    <p class="authr-ttl">Why I’ve given up eating beef</p>
-				    </div>
-				    </div>
-				    </a>
-				    </div>
-				    </article>
-				    
-				    <article class="art-itm">
-				    <div class="s-sbar-ct">
-				    <a href="/richard-branson/turn-your-food-photos-into-real-meals" data-track="mostpopular|click|richard-branson/turn-your-food-photos-into-real-meals|3">
-				    <i class="icon-video"></i>
-				    <div class="outr-wrp">
-				    <div class="img-wrp">
-				    <img src="/website/static/images/tips/allianz_arena_views_44_72dpi.jpg" alt="" />
-				    
-				    <div class="tg tg-shr">
-				    MUSIC
-				    </div>
-				    
-				    
-				    <!--<div class="shr"><span>7.2k</span> Shares</div>
-				    -->
-				    <span class="art-hvr"></span>
-				    </div>
-				    <div class="txt-wrp">
-				    <time datetime="2014-07-11">11 July 2014</time>
-				    
-				    <p class="authr">Richard Branson</p>
-				    
-				    <p class="authr-ttl">Turn your food photos into real meals</p>
-				    </div>
-				    </div>
-				    </a>
-				    </div>
-				    </article>
-				    
-				    <article class="art-itm">
-				    <div class="s-sbar-ct">
-				    <a href="/richard-branson/the-way-you-work-is-going-to-change" data-track="mostpopular|click|richard-branson/the-way-you-work-is-going-to-change|4">
-				    
-				    <div class="outr-wrp">
-				    <div class="img-wrp">
-				    <img src="/website/static/images/tips/allianz_arena_views_44_72dpi.jpg" alt="" />
-				    
-				    <div class="tg tg-shr">
-				    MUSIC
-				    </div>
-				    
-				    
-				    <!--<div class="shr"><span>10.9k</span> Shares</div>
-				    -->
-				    <span class="art-hvr"></span>
-				    </div>
-				    <div class="txt-wrp">
-				    <time datetime="2014-07-14">14 July 2014</time>
-				    
-				    <p class="authr">Richard Branson</p>
-				    
-				    <p class="authr-ttl">The way you work is going to change</p>
-				    </div>
-				    </div>
-				    </a>
-				    </div>
-				    </article>
-				    
-				    
-				    
+						<div class="recommend-tips art-lst kntc-ct">
+								<header>
+									<div class="s-ct">
+										<h2>Recommended</h2>
+									</div>
+								</header>
+								<section class="s-ct">
+									<div class="r-ib">
+										<?php
+											$entries = new Object_communityTips_List();
+											$entries->setLimit(3);
+											$entries->setOrderKey("recommended");
+											$entries->setOrder("desc");
+											$entries->setCondition("recommended = 1");
+											$c = 0;
+											foreach($entries as $result)
+											{
+										?>
+											<article class="art-itm">
+												<div class="s-sbar-ct">
+													<a href="#">
+													
+														<div class="outr-wrp">
+															<div class="img-wrp">
+																<img src="<?php echo $result->getImage();?>" alt="" />
+																
+																<div class="tg tg-shr">
+																	<?php
+																	for($i=0;$i<count($titleCategory);$i++){
+																		if($result->getCategory()==$category1[$i]){
+																			echo $titleCategory[$i];
+																		}
+																	}
+																	?>
+																</div>
+																
+																
+																<!--<div class="shr"><span>177</span> Shares</div>-->
+																
+																<span class="art-hvr"></span>
+															</div>
+															<div class="txt-wrp">
+																<time><?php echo date("M d, Y", strtotime($result->getDate()));?></time>
+																
+																<p class="authr-ttl"><?php echo $result->getTitle();?></p>
+															</div>
+														</div>
+													</a>
+												</div>
+											</article>
+										<?php
+											
+											}
+										?>
+							
+									</div>
+								</section>
 						</div>
+					<div class="recommend-tips art-lst kntc-ct">
+						<header>
+							<div class="s-ct">
+								<h2>Popular</h2>
+							</div>
+						</header>
+						<section class="s-ct">
+							<div class="r-ib">
+								<?php
+									$entries = new Object_communityTips_List();
+									$entries->setLimit(3);
+									$entries ->setOrderKey("popular");
+									$entries ->setOrder("desc");
+									$d = 0;
+									foreach($entries as $result)
+									{
+								?>
+									<article class="art-itm">
+									    <div class="s-sbar-ct">
+										    <a href="#">
+											    <div class="outr-wrp">
+												    <div class="img-wrp">
+													    <img src="<?php echo $result->getImage();?>" alt="" />
+													    <div class="tg tg-shr">
+														    <?php
+														    for($i=0;$i<count($titleCategory);$i++){
+															if($result->getCategory()==$category1[$i])
+															{
+															    echo $titleCategory[$i];
+															}
+														    }
+														    ?>
+													    </div>
+													    <span class="art-hvr"></span>
+												    </div>
+												    <div class="txt-wrp">
+													    <time><?php echo date("M d, Y", strtotime($result->getDate()));?></time>
+													    
+													    <p class="authr-ttl"><?php echo $result->getTitle();?></p>
+												    </div>
+											    </div>
+										    </a>
+									    </div>
+									</article>
+								<?php
+									
+									}
+								?>
+							</div>
 					    </section>
 					</div>
 					

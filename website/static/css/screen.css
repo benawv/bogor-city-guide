@@ -2061,11 +2061,18 @@ padding-left: 20px;
 }
 /* Badge */
 .badge {
-	float: right;
 	width: 80px;
-	right: 0;
 	z-index: 900;
-	position: absolute;
+}
+.badge-modal{
+	width: 100%;
+}
+footer.contentinfo .worldwide .badge-social a:before{
+	content: none;
+}
+.badge-social{
+	float: left;
+	margin-top: -30px;
 }
 /* Badge */
 
@@ -2251,7 +2258,7 @@ footer.contentinfo{
 
 	footer.contentinfo .worldwide{
 		background: #e8eaea;
-		padding: 20px 0;
+		padding: 30px 0;
 		color: #7b7b7b;
 	}
 	footer.contentinfo .worldwide .container{
@@ -2889,7 +2896,6 @@ div.radio_tujuan_finansial{
 .tips-main.main{
 	padding: 0px;
 	margin-top: -20px;
-	/*background: url("/website/static/images/slide-banner-gigi-1-ttm.jpg");*/
 	background-size: 1500px auto;
 	background-repeat: no-repeat;
 	background-position: 50% 0;
@@ -2901,7 +2907,8 @@ div.radio_tujuan_finansial{
 	margin-bottom: 20px;
 }
 .tips-item-kanan{
-	width: 325px;
+	width: 360px;
+	padding-left: 38px;
 	text-align: left;
 	overflow: hidden;
 	background: transparent;
@@ -2984,7 +2991,7 @@ img.logo-float{
 }
 @media only screen and (max-width: 360px){
 	.boxes-view .items-container .tips-item-kiri{
-		width: 327px;
+		width: 100%;
 	}
 	.tips-container .s-main .c-2of3, .tips-container .s-main .c-1of3, .tips-container .s-main .c-1of2, .tips-container .s-main .c-1of3{
 		width: 100% !important;
@@ -3054,6 +3061,9 @@ img.logo-float{
 		float: none !important;
 		width: 100% !important;
 	}
+	.tips-item-kanan{
+		padding-left: 0px;
+	}
 }
 .s-sbar-ct a:hover .authr-ttl{
 	color: #2b78e4 !important;
@@ -3098,51 +3108,4 @@ img.logo-float{
 }
 .s-sbar-ct .outr-wrp .txt-wrp .authr-ttl{
 	font-size: 16px;
-}
-.sctn-spcfc .ss-cnnct ul li a{
-	padding: 0px !important;
-}
-.sctn-spcfc .ss-cnnct ul li .youtube{
-
-}
-.sctn-spcfc .ss-cnnct ul li{
-	height: 55px !important;
-}
-.sctn-spcfc .ss-cnnct ul li  a{
-	height: 55px;
-}
-.sctn-spcfc .ss-cnnct ul li .facebook,.sctn-spcfc .ss-cnnct ul li .facebook:hover{
-	background-image:url("/website/static/images/soc/fb.png");
-	background-repeat:no-repeat;
-	color: #465ea4;
-	background-color:#465ea4 !important;
-}
-.sctn-spcfc .ss-cnnct ul li .twitter,.sctn-spcfc .ss-cnnct ul li .twitter:hover{
-	background-image:url("/website/static/images/soc/tw.png");
-	background-repeat:no-repeat;
-	color: #028ebf;
-}
-.sctn-spcfc .ss-cnnct ul li .linked-in,.sctn-spcfc .ss-cnnct ul li .linked-in:hover{
-	background-image:url("/website/static/images/soc/in.png");
-	background-repeat:no-repeat;
-	color: #069;
-	background-color:#069 !important;
-}
-.sctn-spcfc .ss-cnnct ul li .instagram,.sctn-spcfc .ss-cnnct ul li .instagram:hover{
-	background-image:url("/website/static/images/soc/ins.png");
-	background-repeat:no-repeat;
-	color: #b5a177;
-	background-color:#b5a177 !important;
-}
-.sctn-spcfc .ss-cnnct ul li .pinterest,.sctn-spcfc .ss-cnnct ul li .pinterest:hover{
-	background-image:url("/website/static/images/soc/path.png");
-	background-repeat:no-repeat;
-	color: #cf0000;
-	background-color:#cf0000 !important;
-}
-.sctn-spcfc .ss-cnnct ul li .pinterest.you2, .sctn-spcfc .ss-cnnct ul li .pinterest.you2:hover{
-	background-image:url("/website/static/images/soc/you.png");
-	background-repeat:no-repeat;
-	color: #c4302b;
-	background-color:#c4302b !important;
 }
