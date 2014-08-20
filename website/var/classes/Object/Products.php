@@ -7,6 +7,7 @@ public $o_className = "products";
 public $judul;
 public $image;
 public $kategori;
+public $deskripsi;
 
 
 /**
@@ -73,6 +74,25 @@ public function getKategori () {
 */
 public function setKategori ($kategori) {
 	$this->kategori = $this->getClass()->getFieldDefinition("kategori")->preSetData($this, $kategori);
+	return $this;
+}
+
+/**
+* @return string
+*/
+public function getDeskripsi () {
+	$preValue = $this->preGetValue("deskripsi"); 
+	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
+	$data = $this->getClass()->getFieldDefinition("deskripsi")->preGetData($this);
+	 return $data;
+}
+
+/**
+* @param string $deskripsi
+* @return void
+*/
+public function setDeskripsi ($deskripsi) {
+	$this->deskripsi = $deskripsi;
 	return $this;
 }
 

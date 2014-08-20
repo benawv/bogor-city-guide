@@ -13,6 +13,21 @@ class ProductController extends Website_Controller_Action {
 		$this->enableLayout();
 	}
 	
+	public function subproductAction()
+	{
+		$key = $this->_getParam('text');
+		$categoryId = $this->_getParam('id');
+		
+		$this->view->entries = $this->productsQuery($categoryId);
+		
+		/*
+		echo "<pre>";
+		die(print_r($this->view->entries));
+		*/
+		
+		$this->enableLayout();
+	}
+	
 	public function productsAction() {
 		$db = Pimcore_Resource_Mysql::get();
 
@@ -33,7 +48,7 @@ class ProductController extends Website_Controller_Action {
 		die(print_r($companyIds));
 	}
 	
-	private function productsQuery()
+	private function productsQuery($categoryId = null)
 	{
 		$db = Pimcore_Resource_Mysql::get();
 
@@ -42,9 +57,16 @@ class ProductController extends Website_Controller_Action {
 		if(!$class instanceof Object_Class) { throw new SomeErrorException; }
 		$table_id = $class->getId();
 		
-		$sql = "SELECT obj9.*, obj10.title
+		$sql = "SELECT obj9.*, obj10.title, assets.path, assets.filename, obs9.deskripsi as deskripsi_full
 				FROM allianzcms.object_9 as obj9
-				LEFT JOIN allianzcms.object_10 as obj10 ON (obj9.kategori__id = obj10.oo_id);"; //or whatever you need to do.
+				LEFT JOIN allianzcms.object_10 as obj10 ON (obj9.kategori__id = obj10.oo_id)
+				LEFT JOIN allianzcms.assets as assets ON (obj9.image = assets.id)
+				LEFT JOIN allianzcms.object_store_9 obs9 ON (obj9.oo_id = obs9.oo_id)"; //or whatever you need to do.
+		
+		if($categoryId != null)
+		{
+			$sql .= " WHERE obj9.kategori__id = ".$categoryId;
+		}
 		
 		$products = $db->fetchAll($sql);
 		
