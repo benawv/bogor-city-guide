@@ -1,13 +1,14 @@
-<?php
-//echo "<pre>";
-//print_r($this->fetchTips);
-//$image = Asset::getById(37);
-//print_r($image);die();
-// ...
-
-?>
 <link rel="stylesheet" type="text/css" href="/website/static/css/virgin.css">
-<div role="main" class="tips-main main" style="background: url(<?php echo $this->fetchBackground;?>);background-size: 1500px auto;background-repeat: no-repeat;">
+<?php
+	$backImage = new Object_CommunityTipsBack_List();
+	$backImage->setLimit(1);
+	$backImage->setOrder("desc");
+	foreach($backImage as $hasil)
+	{
+		$image = $hasil->getImage();
+	}
+?>
+<div role="main" class="tips-main main" style="background: url(<?php echo $image;?>);background-size: 1500px auto;background-repeat: no-repeat;">
 	<div class="tips-container container boxes-view">
 			<div class="tips-box items-container" id="product-sub" >
 				<div class="tips-item-kiri">
@@ -17,12 +18,42 @@
 									<div class="s-ct">
 										<div class="innr-wrp">
 										<?php
+											$entries = new Object_communityTips_List();
+											$entries->setLimit(14);
+											$entries->setOrderKey("date");
+											$entries->setOrder("desc");
+											$x = 0;
+											$title = array();
+											$image = array();
+											$category = array();
+											$date = array();
+											foreach($entries as $result)
+											{
+												$title[$x] = $result->getTitle();
+												$image[$x] = $result->getImage();
+												$category[$x] = $result->getCategory();
+												$date[$x] = $result->getDate();
+												$desc[$x] = $result->getDescription();
+												$x++;
+											}
+											
+											$cate = new Object_CommunityTipsCategory_List();
+											$a = 0;
+											$category1 = array();
+											$titleCategory = array();
+											foreach($cate as $cate2)
+											{
+												$category1[$a] = $cate2->getPath().$cate2->getKey();
+												$titleCategory[$a] = $cate2->getTitleCategory();
+												$a++;
+											}
+											
 											$y = 0;
-											$list = $this->fetchTips;
-											while($y<count($list))
+											$b = 0;
+											while($y<count($title))
 											{
 										?>
-											<?php if($list[$y][title]!= ''){?>
+											<?php if($title[$y] != ''){?>
 											<div class="r">
 												<div class="c-2of3">
 													<article>
@@ -30,43 +61,49 @@
 														<i class="icon-video"></i>	
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo $list[$y][filename];?>"alt="">
+																	<img src="<?php echo $image[$y];?>"alt="">
 																	<div class="tg tg-shr">
-																		<?php 
-																			echo $list[$y][titleCategory];
-																		?>
+																		<?php for($i=0;$i<count($titleCategory);$i++){
+																			if($category[$y]==$category1[$i])
+																			{
+																				echo $titleCategory[$i];
+																			}
+																		}?>
 																	</div>
 																	<span class="art-hvr"></span>
 																</div>
 																<div class="txt-wrp">
 																	<time>
-																		<?php echo gmdate("M d, Y", $list[$y][date]);?>
+																		<?php echo date("M d, Y", strtotime($date[$y]));?>
 																	</time>
-																	<p class="authr-ttl"><?php echo $list[$y][title];?></p>
+																	<p class="authr-ttl"><?php echo $title[$y];?></p>
 																</div>
 															</div>
 														</a>
 													</article>
 												</div>
-												<?php if($list[$y+1][title] != ''){?>
+												<?php if($title[$y+1] != ''){?>
 													<div class="c-1of3">
 														<article>
 															<a href="#">
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo $list[$y+1][filename];?>"alt="">
+																		<img src="<?php echo $image[$y+1];?>"alt="">
 																		<div class="tg tg-shr">
-																			<?php 
-																					echo $list[$y+1][titleCategory];
-																			?>
+																			<?php for($i=0;$i<count($titleCategory);$i++){
+																				if($category[$y+1]==$category1[$i])
+																				{
+																					echo $titleCategory[$i];
+																				}
+																			}?>
 																		</div>
 																		<span class="art-hvr"></span>
 																	</div>
 																	<div class="txt-wrp">
 																		<time>
-																			<?php echo gmdate("M d, Y", $list[$y+1][date]);?>
+																			<?php echo date("M d, Y", strtotime($date[$y+1]));?>
 																		</time>
-																		<p class="authr-ttl"><?php echo $list[$y+1][title];?></p>
+																		<p class="authr-ttl"><?php echo $title[$y+1];?></p>
 																	</div>
 																</div>
 															</a>
@@ -78,7 +115,7 @@
 											</div>
 											<?php
 												}
-												if($list[$y+2][title] != ''){
+												if($title[$y+2] != ''){
 											?>
 											<div class="r">
 												<div class="c-1of2">
@@ -86,44 +123,50 @@
 													   <a href="#">
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo $list[$y+2][filename];?>"alt="">
+																<img src="<?php echo $image[$y+2];?>"alt="">
 																<div class="tg tg-shr">
-																	<?php 
-																			echo $list[$y+2][titleCategory];
-																	?>
+																	<?php for($i=0;$i<count($titleCategory);$i++){
+																		if($category[$y+2]==$category1[$i])
+																		{
+																			echo $titleCategory[$i];
+																		}
+																	}?>
 																</div>
 																<span class="art-hvr"></span>
 															</div>
 															<div class="txt-wrp">
 																<time>
-																	<?php echo gmdate("M d, Y", $list[$y+2][date]);?>
+																	<?php echo date("M d, Y", strtotime($date[$y+2]));?>
 																</time>
-																<p class="authr-ttl"><?php echo $list[$y+2][title];?></p>
+																<p class="authr-ttl"><?php echo $title[$y+2];?></p>
 															</div>
 														</div>
 														</a>
 													</article>
 												</div>
-												<?php if($list[$y+3][title] != ''){?>
+												<?php if($title[$y+3] != ''){?>
 													<div class="c-1of2">
 														<article>
 														   <a href="#">
 															<i class="icon-video"></i>
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo $list[$y+3][filename];?>"alt="">
+																	<img src="<?php echo $image[$y+3];?>"alt="">
 																	<div class="tg tg-shr">
-																		<?php 
-																				echo $list[$y+3][titleCategory];
-																		?>
+																		<?php for($i=0;$i<count($titleCategory);$i++){
+																			if($category[$y+3]==$category1[$i])
+																			{
+																				echo $titleCategory[$i];
+																			}
+																		}?>
 																	</div>
 																	<span class="art-hvr"></span>
 																</div>
 																<div class="txt-wrp">
 																	<time>
-																		<?php echo gmdate("M d, Y", $list[$y+3][date]);?>
+																		<?php echo date("M d, Y", strtotime($date[$y+3]));?>
 																	</time>
-																	<p class="authr-ttl"><?php echo $list[$y+3][title];?></p>
+																	<p class="authr-ttl"><?php echo $title[$y+3];?></p>
 																</div>
 															</div>
 														   </a>
@@ -133,7 +176,7 @@
 											</div>
 											<?php
 												}
-												if($list[$y+4][title] != ''){
+												if($title[$y+4] != ''){
 											?>
 											<div class="r">
 												<div class="c-1of3">
@@ -142,69 +185,78 @@
 															<i class="icon-video"></i>
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo $list[$y+4][filename];?>"alt="">
+																	<img src="<?php echo $image[$y+4];?>"alt="">
 																	<div class="tg tg-shr">
-																		<?php 
-																				echo $list[$y+4][titleCategory];
-																		?>
+																		<?php for($i=0;$i<count($titleCategory);$i++){
+																			if($category[$y+4]==$category1[$i])
+																			{
+																				echo $titleCategory[$i];
+																			}
+																		}?>
 																	</div>
 																	<span class="art-hvr"></span>
 																</div>
 																<div class="txt-wrp">
 																	<time>
-																		<?php echo gmdate("M d, Y", $list[$y+4][date]);?>
+																		<?php echo date("M d, Y", strtotime($date[$y+4]));?>
 																	</time>
-																	<p class="authr-ttl"><?php echo $list[$y+4][title];?></p>
+																	<p class="authr-ttl"><?php echo $title[$y+4];?></p>
 																</div>
 															</div>
 														</a>
 													</article>
 												</div>
-												<?php if($list[$y+5][title] != ''){?>
+												<?php if($title[$y+5] != ''){?>
 													<div class="c-1of3">
 														<article>
 															<a href="#">
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo $list[$y+5][filename];?>"alt="">
+																		<img src="<?php echo $image[$y+5];?>"alt="">
 																		<div class="tg tg-shr">
-																			<?php 
-																					echo $list[$y+5][titleCategory];
-																			?>
+																			<?php for($i=0;$i<count($titleCategory);$i++){
+																			if($category[$y+5]==$category1[$i])
+																			{
+																				echo $titleCategory[$i];
+																			}
+																		}?>
 																		</div>
 																		<span class="art-hvr"></span>
 																	</div>
 																	<div class="txt-wrp">
 																		<time>
-																			<?php echo gmdate("M d, Y", $list[$y+5][date]);?>
+																			<?php echo date("M d, Y", strtotime($date[$y+5]));?>
 																		</time>
-																		<p class="authr-ttl"><?php echo $list[$y+5][title];?></p>
+																		<p class="authr-ttl"><?php echo $title[$y+5];?></p>
 																	</div>
 																</div>
 															</a>
 														</article>
 													</div>
 												<?php }?>
-												<?php if($list[$y+6][title] != ''){?>
+												<?php if($title[$y+6] != ''){?>
 													<div class="c-1of3">
 														<article>
 															<a href="#">
 																<i class="icon-video"></i>
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo $list[$y+6][filename];?>"alt="">
+																		<img src="<?php echo $image[$y+6];?>"alt="">
 																		<div class="tg tg-shr">
-																			<?php 
-																					echo $list[$y+6][titleCategory];
-																			?>
+																			<?php for($i=0;$i<count($titleCategory);$i++){
+																			if($category[$y+6]==$category1[$i])
+																			{
+																				echo $titleCategory[$i];
+																			}
+																		}?>
 																		</div>
 																		<span class="art-hvr"></span>
 																	</div>
 																	<div class="txt-wrp">
 																		<time>
-																			<?php echo gmdate("M d, Y", $list[$y+6][date]);?>
+																			<?php echo date("M d, Y", strtotime($date[$y+6]));?>
 																		</time>
-																		<p class="authr-ttl"><?php echo $list[$y+6][title];?></p>
+																		<p class="authr-ttl"><?php echo $title[$y+6];?></p>
 																	</div>
 																</div>
 															</a>
@@ -288,7 +340,7 @@
 								foreach($cat as $category)
 								{
 							?>
-									<img src="<?php echo $category->getImageCategory();?>" >
+								<img src="<?php echo $category->getImageCategory();?>" >
 							<?php
 								}
 							?>
@@ -315,7 +367,13 @@
 								<section class="s-ct">
 									<div class="r-ib">
 										<?php
-											foreach($this->fetchRecommended as $result)
+											$entries = new Object_communityTips_List();
+											$entries->setLimit(3);
+											$entries->setOrderKey("recommended");
+											$entries->setOrder("desc");
+											$entries->setCondition("recommended = 1");
+											$c = 0;
+											foreach($entries as $result)
 											{
 										?>
 											<article class="art-itm">
@@ -324,10 +382,15 @@
 													
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo $result[filename];?>" alt="" />
+																<img src="<?php echo $result->getImage();?>" alt="" />
+																
 																<div class="tg tg-shr">
 																	<?php
-																		echo $result[titleCategory];
+																	for($i=0;$i<count($titleCategory);$i++){
+																		if($result->getCategory()==$category1[$i]){
+																			echo $titleCategory[$i];
+																		}
+																	}
 																	?>
 																</div>
 																
@@ -337,9 +400,9 @@
 																<span class="art-hvr"></span>
 															</div>
 															<div class="txt-wrp">
-																<time><?php echo gmdate("M d, Y", $result[date])?></time>
+																<time><?php echo date("M d, Y", strtotime($result->getDate()));?></time>
 																
-																<p class="authr-ttl"><?php echo $result[title];?></p>
+																<p class="authr-ttl"><?php echo $result->getTitle();?></p>
 															</div>
 														</div>
 													</a>
@@ -362,36 +425,41 @@
 						<section class="s-ct">
 							<div class="r-ib">
 								<?php
-									foreach($this->fetchPopular as $result)
+									$entries = new Object_communityTips_List();
+									$entries->setLimit(3);
+									$entries ->setOrderKey("popular");
+									$entries ->setOrder("desc");
+									$d = 0;
+									foreach($entries as $result)
 									{
 								?>
 									<article class="art-itm">
-												<div class="s-sbar-ct">
-													<a href="#">
-													
-														<div class="outr-wrp">
-															<div class="img-wrp">
-																<img src="<?php echo $result[filename];?>" alt="" />
-																<div class="tg tg-shr">
-																	<?php
-																		echo $result[titleCategory];
-																	?>
-																</div>
-																
-																
-																<!--<div class="shr"><span>177</span> Shares</div>-->
-																
-																<span class="art-hvr"></span>
-															</div>
-															<div class="txt-wrp">
-																<time><?php echo gmdate("M d, Y", $result[date])?></time>
-																
-																<p class="authr-ttl"><?php echo $result[title];?></p>
-															</div>
-														</div>
-													</a>
-												</div>
-											</article>
+									    <div class="s-sbar-ct">
+										    <a href="#">
+											    <div class="outr-wrp">
+												    <div class="img-wrp">
+													    <img src="<?php echo $result->getImage();?>" alt="" />
+													    <div class="tg tg-shr">
+														    <?php
+														    for($i=0;$i<count($titleCategory);$i++){
+															if($result->getCategory()==$category1[$i])
+															{
+															    echo $titleCategory[$i];
+															}
+														    }
+														    ?>
+													    </div>
+													    <span class="art-hvr"></span>
+												    </div>
+												    <div class="txt-wrp">
+													    <time><?php echo date("M d, Y", strtotime($result->getDate()));?></time>
+													    
+													    <p class="authr-ttl"><?php echo $result->getTitle();?></p>
+												    </div>
+											    </div>
+										    </a>
+									    </div>
+									</article>
 								<?php
 									
 									}
