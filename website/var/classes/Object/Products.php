@@ -7,11 +7,6 @@ public $o_className = "products";
 public $judul;
 public $image;
 public $kategori;
-public $keunggulan;
-public $detilProduk;
-public $caraKlaim;
-public $faq;
-public $brosur;
 
 
 /**
@@ -78,101 +73,6 @@ public function getKategori () {
 */
 public function setKategori ($kategori) {
 	$this->kategori = $this->getClass()->getFieldDefinition("kategori")->preSetData($this, $kategori);
-	return $this;
-}
-
-/**
-* @return string
-*/
-public function getKeunggulan () {
-	$preValue = $this->preGetValue("keunggulan"); 
-	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
-	$data = $this->getClass()->getFieldDefinition("keunggulan")->preGetData($this);
-	 return $data;
-}
-
-/**
-* @param string $keunggulan
-* @return void
-*/
-public function setKeunggulan ($keunggulan) {
-	$this->keunggulan = $keunggulan;
-	return $this;
-}
-
-/**
-* @return string
-*/
-public function getDetilProduk () {
-	$preValue = $this->preGetValue("detilProduk"); 
-	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
-	$data = $this->getClass()->getFieldDefinition("detilProduk")->preGetData($this);
-	 return $data;
-}
-
-/**
-* @param string $detilProduk
-* @return void
-*/
-public function setDetilProduk ($detilProduk) {
-	$this->detilProduk = $detilProduk;
-	return $this;
-}
-
-/**
-* @return string
-*/
-public function getCaraKlaim () {
-	$preValue = $this->preGetValue("caraKlaim"); 
-	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
-	$data = $this->getClass()->getFieldDefinition("caraKlaim")->preGetData($this);
-	 return $data;
-}
-
-/**
-* @param string $caraKlaim
-* @return void
-*/
-public function setCaraKlaim ($caraKlaim) {
-	$this->caraKlaim = $caraKlaim;
-	return $this;
-}
-
-/**
-* @return string
-*/
-public function getFaq () {
-	$preValue = $this->preGetValue("faq"); 
-	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
-	$data = $this->getClass()->getFieldDefinition("faq")->preGetData($this);
-	 return $data;
-}
-
-/**
-* @param string $faq
-* @return void
-*/
-public function setFaq ($faq) {
-	$this->faq = $faq;
-	return $this;
-}
-
-/**
-* @return string
-*/
-public function getBrosur () {
-	$preValue = $this->preGetValue("brosur"); 
-	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
-	$data = $this->getClass()->getFieldDefinition("brosur")->preGetData($this);
-	 return $data;
-}
-
-/**
-* @param string $brosur
-* @return void
-*/
-public function setBrosur ($brosur) {
-	$this->brosur = $brosur;
 	return $this;
 }
 

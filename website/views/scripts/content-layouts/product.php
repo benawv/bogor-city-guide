@@ -16,10 +16,7 @@
 	<!-- content -->
 	<div class="items-container">
 		<?php 
-			$entries = new Object_ProductCategory_List();
-			$entries->setLimit("6");
-			
-			foreach($entries as $entry) {
+			foreach($this->entries as $entry) {
 		?>
 				<div class="item">
 					<div class="heading">
@@ -40,10 +37,13 @@
 					</a>
 					<div class="description">
 						<ul class="list-product">
-							<?php
-								$relationId = 146;
-								$products = new Object_Products_List();
-								$products->setCondition("kategori like  \"%".$relationId."%\"");
+							<?php 
+								foreach($this->products as $v) {
+									if($entry->getId() == $v['kategori__id'])
+									{
+										echo "<li><a href='#'>".$v['judul']."</a></li>";
+									}
+								}
 							?>
 						</ul>
 					</div>
