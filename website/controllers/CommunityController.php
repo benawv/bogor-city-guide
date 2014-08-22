@@ -71,16 +71,35 @@ class CommunityController extends Website_Controller_Action {
 	}
 	
 	public function template1Action($id,$key){
-		$entries = new Object_CommunityTips_List();
-		$entries->setCondition("oo_id = ".$id);
+		//$entries = new Object_CommunityTips_List();
+		//$entries->setCondition("oo_id = ".$id);
+		$entries = Object_Abstract::getById($id);
 		echo "<pre>";
 		foreach ($entries as $result)
 		{
-			//echo $result->getTitle();
+			print_r($result);
 		}
+		//$object = Object_Abstract::getById($id);
+		$v = $entries->getVideo();
+		$videoData = $v->getData();
+		
+		if($videoData) {
+			$video = new Document_Tag_Video();
+			$video->setOptions(["thumbnail" => "test1"]); // specify your thumbnail here - IMPORTANT!
+			$video->type = $v->getType();
+			$video->id = ($videoData instanceof Asset) ? $videoData->getId() : $videoData;
+			$video->title = $v->getTitle();
+			$video->description = $v->getDescription();
+			if($v->getPoster()) {
+				$video->poster = $v->getPoster()->getId();
+			}
+			echo $video->frontend();
+		
+		}
+		
 		$this->enableLayout();
 	}
 	public function template2Action($id,$key){
-		//echo "Test2";
+		echo "Test2";
 	}
 }

@@ -13,7 +13,7 @@ public $recommended;
 public $popular;
 public $category;
 public $template;
-public $videoTest;
+public $video;
 
 
 /**
@@ -200,19 +200,19 @@ public function setTemplate ($template) {
 /**
 * @return Object_Data_Video
 */
-public function getVideoTest () {
-	$preValue = $this->preGetValue("videoTest"); 
+public function getVideo () {
+	$preValue = $this->preGetValue("video"); 
 	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
-	$data = $this->videoTest;
+	$data = $this->video;
 	 return $data;
 }
 
 /**
-* @param Object_Data_Video $videoTest
+* @param Object_Data_Video $video
 * @return void
 */
-public function setVideoTest ($videoTest) {
-	$this->videoTest = $videoTest;
+public function setVideo ($video) {
+	$this->video = $video;
 	return $this;
 }
 
