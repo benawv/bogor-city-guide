@@ -26,7 +26,7 @@
 											<div class="r">
 												<div class="c-2of3">
 													<article>
-														<a href="#">
+														<a href="<?php echo $this->url(array($list[$y][o_key],$list[$y][oo_id],$list[$y][template]),"community-detail");?>">
 														<i class="icon-video"></i>	
 															<div class="outr-wrp">
 																<div class="img-wrp">
@@ -51,7 +51,7 @@
 												<?php if($list[$y+1][title] != ''){?>
 													<div class="c-1of3">
 														<article>
-															<a href="#">
+															<a href="<?php echo $this->url(array($list[$y+1][o_key],$list[$y+1][oo_id],$list[$y+1][template]),"community-detail");?>">
 																<div class="outr-wrp">
 																	<div class="img-wrp">
 																		<img src="<?php echo $list[$y+1][filename];?>"alt="">
@@ -83,7 +83,7 @@
 											<div class="r">
 												<div class="c-1of2">
 													<article>
-													   <a href="#">
+													   <a href="<?php echo $this->url(array($list[$y+2][o_key],$list[$y+2][oo_id],$list[$y+2][template]),"community-detail");?>">
 														<div class="outr-wrp">
 															<div class="img-wrp">
 																<img src="<?php echo $list[$y+2][filename];?>"alt="">
@@ -107,7 +107,7 @@
 												<?php if($list[$y+3][title] != ''){?>
 													<div class="c-1of2">
 														<article>
-														   <a href="#">
+														   <a href="<?php echo $this->url(array($list[$y+3][o_key],$list[$y+3][oo_id],$list[$y+3][template]),"community-detail");?>">
 															<i class="icon-video"></i>
 															<div class="outr-wrp">
 																<div class="img-wrp">
@@ -138,7 +138,7 @@
 											<div class="r">
 												<div class="c-1of3">
 													<article>
-														<a href="#">
+														<a href="<?php echo $this->url(array($list[$y+4][o_key],$list[$y+4][oo_id],$list[$y+4][template]),"community-detail");?>">
 															<i class="icon-video"></i>
 															<div class="outr-wrp">
 																<div class="img-wrp">
@@ -163,7 +163,7 @@
 												<?php if($list[$y+5][title] != ''){?>
 													<div class="c-1of3">
 														<article>
-															<a href="#">
+															<a href="<?php echo $this->url(array($list[$y+5][o_key],$list[$y+5][oo_id],$list[$y+5][template]),"community-detail");?>">
 																<div class="outr-wrp">
 																	<div class="img-wrp">
 																		<img src="<?php echo $list[$y+5][filename];?>"alt="">
@@ -188,7 +188,7 @@
 												<?php if($list[$y+6][title] != ''){?>
 													<div class="c-1of3">
 														<article>
-															<a href="#">
+															<a href="<?php echo $this->url(array($list[$y+6][o_key],$list[$y+6][oo_id],$list[$y+6][template]),"community-detail");?>">
 																<i class="icon-video"></i>
 																<div class="outr-wrp">
 																	<div class="img-wrp">

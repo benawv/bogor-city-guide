@@ -12,6 +12,8 @@ public $date;
 public $recommended;
 public $popular;
 public $category;
+public $template;
+public $videoTest;
 
 
 /**
@@ -173,6 +175,44 @@ public function getCategory () {
 */
 public function setCategory ($category) {
 	$this->category = $this->getClass()->getFieldDefinition("category")->preSetData($this, $category);
+	return $this;
+}
+
+/**
+* @return string
+*/
+public function getTemplate () {
+	$preValue = $this->preGetValue("template"); 
+	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
+	$data = $this->template;
+	 return $data;
+}
+
+/**
+* @param string $template
+* @return void
+*/
+public function setTemplate ($template) {
+	$this->template = $template;
+	return $this;
+}
+
+/**
+* @return Object_Data_Video
+*/
+public function getVideoTest () {
+	$preValue = $this->preGetValue("videoTest"); 
+	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
+	$data = $this->videoTest;
+	 return $data;
+}
+
+/**
+* @param Object_Data_Video $videoTest
+* @return void
+*/
+public function setVideoTest ($videoTest) {
+	$this->videoTest = $videoTest;
 	return $this;
 }
 
