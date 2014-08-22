@@ -8,6 +8,7 @@ public $judul;
 public $image;
 public $kategori;
 public $deskripsi;
+public $video;
 
 
 /**
@@ -93,6 +94,25 @@ public function getDeskripsi () {
 */
 public function setDeskripsi ($deskripsi) {
 	$this->deskripsi = $deskripsi;
+	return $this;
+}
+
+/**
+* @return Object_Data_Video
+*/
+public function getVideo () {
+	$preValue = $this->preGetValue("video"); 
+	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
+	$data = $this->video;
+	 return $data;
+}
+
+/**
+* @param Object_Data_Video $video
+* @return void
+*/
+public function setVideo ($video) {
+	$this->video = $video;
 	return $this;
 }
 
