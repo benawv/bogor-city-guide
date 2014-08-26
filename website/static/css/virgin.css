@@ -9383,3 +9383,15 @@ iframe {
     background-size: 314px 284px;
 }
 }
+#crumb .s-row.crmb ul.custom_ul{
+	padding: 0px;
+	margin-top: 0px;
+}
+.hero-bnnr.hero-bnnr2 h1, .hero-bnnr.hero-bnnr2 h2 {
+    font-size: 3rem;
+    line-height: 4.3rem;
+}
+.crmb.crmb1 a{
+	font-size: 2rem;
+    font-weight: normal;
+}
