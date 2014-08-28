@@ -6,6 +6,8 @@ public $o_classId = 12;
 public $o_className = "communityTipsCategory";
 public $titleCategory;
 public $imageCategory;
+public $colorPicker;
+public $hexacolor;
 
 
 /**
@@ -53,6 +55,44 @@ public function getImageCategory () {
 */
 public function setImageCategory ($imageCategory) {
 	$this->imageCategory = $imageCategory;
+	return $this;
+}
+
+/**
+* @return string
+*/
+public function getColorPicker () {
+	$preValue = $this->preGetValue("colorPicker"); 
+	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
+	$data = $this->colorPicker;
+	 return $data;
+}
+
+/**
+* @param string $colorPicker
+* @return void
+*/
+public function setColorPicker ($colorPicker) {
+	$this->colorPicker = $colorPicker;
+	return $this;
+}
+
+/**
+* @return string
+*/
+public function getHexacolor () {
+	$preValue = $this->preGetValue("hexacolor"); 
+	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
+	$data = $this->hexacolor;
+	 return $data;
+}
+
+/**
+* @param string $hexacolor
+* @return void
+*/
+public function setHexacolor ($hexacolor) {
+	$this->hexacolor = $hexacolor;
 	return $this;
 }
 

@@ -2698,6 +2698,28 @@ footer.contentinfo{
 	label div.radio_tujuan_finansial{
 		width: 15px;
 	}
+	.s-sbar-ct a:hover .authr-ttl,.s-sbar-ct a:hover .authr-ttl-virgin2{
+		color: #2b78e4 !important;
+	}
+	.s-row.crmb.cus-crmb{
+	    display: block !important;
+	}
+	.crmb.cus-crmb .cus-li a {
+	    display: table-cell !important;
+	    padding: 10px !important;
+	    text-align: center !important;
+	    vertical-align: middle !important;
+	    color: #fff;
+	    line-height: 3.2rem;
+	    text-transform: uppercase;
+	    font-weight: normal;
+	}
+	.crmb li.cus-li {
+    width: 147px;
+    height: 147px;
+    background-size: 147px 147px;
+    background-repeat: no-repeat;
+}
 }
 
 .table_cv{background-color: #F2F2F2; font-size: 14px;}
@@ -2929,8 +2951,8 @@ div.radio_tujuan_finansial{
 }
 .tips-container .innr-wrp .txt-wrp .authr-ttl{
 	margin: 0px;
-	font-family: sans-serif;
-	font-size: 16px;
+	/* font-family: sans-serif; */
+	font-family: "Sanchez",serif;
 }
 .tips-item-kanan .description img{
 	float: left;
@@ -3065,9 +3087,7 @@ img.logo-float{
 		padding-left: 0px;
 	}
 }
-.s-sbar-ct a:hover .authr-ttl{
-	color: #2b78e4 !important;
-}
+
 .description .investasi-p{
 	margin: 11px auto;
 }
@@ -3100,12 +3120,36 @@ img.logo-float{
 .tips-item-kiri .s-main{
 	width: 98%;
 }
-.txt-wrp p{
-	font-family: "Arial, Helvetica, sans-serif",sans-serif !important;
-}
 .s-sbar-ct .outr-wrp .txt-wrp .authr{
 	font-size: 14px;
 }
 .s-sbar-ct .outr-wrp .txt-wrp .authr-ttl{
-	font-size: 16px;
+	font-size: 18px;
+}
+
+/*VIRGIN*/
+.crmb li.cus-li {
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.8);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000, endColorstr=#CC000000);
+    zoom: 1;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    float: left;
+    max-width: 150px;
+    max-height: 150px;
+    display: table;
+    background-size: 150px 150px;
+    background-repeat: no-repeat;
+}
+.crmb-sctn.cus-li > a{
+	font-size: 1.5rem;
+}
+.s-row.crmb.cus-crmb ul{
+	padding-left: 0px;
+}
+.s-row.crmb.cus-crmb{
+	margin-left: 0px;
 }

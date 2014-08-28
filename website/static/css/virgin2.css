@@ -2222,7 +2222,7 @@ iframe {
     line-height: 1.6rem;
     text-transform: uppercase;
     font-weight: bold;
-    background-color: #c00;
+    background-color: #2b78e4;
     position: relative;
     display: block;
     /*padding: 4px 7px 3px;*/
@@ -2235,7 +2235,7 @@ iframe {
     bottom: 7px;
     max-width: 90%}
 .art-lst .tg-shr {
-    bottom: 30px;
+    bottom: 0px;
 }
 .art-lst .txt-wrp {
     padding: 0 10px;
@@ -5868,4 +5868,10 @@ h2, h4, h5, h6 {
 	text-align: left;
 	font-size: 1rem;
 	line-height: 1.5rem;
+}
+body .main-wrp .blue-allianz {
+    background-color: #003781;
+}
+body .main-wrp .blue-allianz:hover {
+    background-color: #00275b;
 }

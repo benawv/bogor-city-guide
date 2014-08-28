@@ -275,15 +275,31 @@
 						</div>
 						
 						<div class="kat-desc description">
-							<?php
-								$cat = new Object_CommunityTipsCategory_List();
-								foreach($cat as $category)
-								{
-							?>
-									<a href="<?php echo $this->url(array($category->getTitleCategory()),"list-category");?>"><img src="<?php echo $category->getImageCategory();?>" ></a>
-							<?php
-								}
-							?>
+							<div id="crumb" class="crmb-wrp">
+								<div class="s-row crmb cus-crmb">
+									<ul>
+										<?php
+											$cat = new Object_CommunityTipsCategory_List();
+											foreach($cat as $category)
+											{
+												if($category->getHexacolor()!='')
+												{
+													$color = $category->getHexaColor();
+												}
+												else
+												{
+													$color = $category->getColorPicker();
+												}
+										?>
+												<li style="background-color: <?php echo $color;?>" class="crmb-sctn cus-li">
+													<a class="no-bold" href="<?php echo $this->url(array($category->getTitleCategory()),"list-category");?>"><?php echo $category->getTitleCategory();?></a>
+												</li>
+										<?php
+											}
+										?>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="widget-twitter">

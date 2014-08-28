@@ -6,12 +6,11 @@
 			<div id="crumb" class="crmb-wrp">
 				<div class="s-row crmb">
 					<ul>
-						<li class="v-lgo" style="background-image:url(<?php //echo $this->data->getImage();?>)">
-							<a href="#">Allianz</a>
+						<li class="crmb-sctn blue-allianz">
+							<a href="/community-tips">Community</a>
 						</li>
-								
 						<li class="crmb-sctn bright-teal ">
-							<a href="/travel"><?php echo $this->data->getCategory()->titleCategory;?></a>
+							<a href="<?php echo $this->url(array($this->data->getCategory()->titleCategory),"list-category");?>"><?php echo $this->data->getCategory()->titleCategory;?></a>
 						</li>
 
 				   <!--<li class="crmb-sctn">
@@ -53,7 +52,7 @@
 					
 
 								<section class="art-athr">
-									<div class="t-r">
+									<!-- <div class="t-r">
 											<div class="t-c img-wrp">
 												<div class="img-pnl"><img src="_assets/images/community-tips/JP Shack.jpg" alt="Author Image for Jack Preston"></div>
 											</div>
@@ -70,7 +69,7 @@
 										<span data-icon="?" aria-hidden="true" class="icn-fnt newsletter"></span>
 										<span class="sgnup-txt">Newsletter Sign Up</span>
 									</a>
-								</div>
+								</div>-->
 					
 							</div> <!--art box end -->
 				
@@ -88,7 +87,7 @@
 						<section class="art-sctn clrd custom-text">
 						
 							<div class="s-ct">
-								<div class="c-1of1">  
+								<div class="c-1of1"> 
 										<?php echo $this->data->getDescription();?>
 								</div>  
 							</div>
@@ -97,9 +96,11 @@
 								<div class="c-1of1">  
 									<div class="visually_embed">
 										<?php
+											/*
 											if($this->data->getVideo()->data->filename!=""){
 												echo $this->video;
 											}
+											*/
 										?>
 									</div>  
 								</div>  
@@ -264,3 +265,10 @@
 </main>
 </div>		
 </div>
+<script>
+	$(document).ready(function(){
+		var json_video = '<?php echo $this->video; ?>';
+		var video = json_video.substring(1, json_video.length).substring(0, json_video.length-2);
+		$('.video').html(video);
+	});
+</script>

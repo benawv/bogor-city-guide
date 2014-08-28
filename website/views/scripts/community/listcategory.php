@@ -1,19 +1,29 @@
 <link rel="stylesheet" type="text/css" href="/website/static/css/virgin.css">
 <div role="main" class="tips-main main">
 
-<div id="js-main-wrp" class="main-wrp" style="background-image:url(/sites/default/files/styles/hero_background_hi/public/Backgrounds/bg_space.jpg?itok=Sw8pyVQq)">
+<div id="js-main-wrp" class="main-wrp" style="background: url(<?php echo $this->fetchBackground;?>);background-size: 1500px auto;background-repeat: no-repeat;">
 	<div class="tips-container tips-container2 container boxes-view">
 	<header id="header" class="hdr">
 	           
 			<div id="crumb" class="crmb-wrp">
 				<div class="s-row crmb crmb1">
 					<ul class="custom_ul">
-						<li class="v-lgo" style="background-image:url(/sites/all/themes/virgin/assets/i/components/nav/virgin_logo.png?v=1407359313)" data-src="/sites/all/themes/virgin/assets/i/components/nav/virgin_logo-hi.png?v=1407359313">
-							<a href="/">Virgin</a>
+						<li class="crmb-sctn blue-allianz">
+							<a href="/community-tips">Community</a>
 						</li>
 								
-						<li class="crmb-sctn bright-teal ">
-							<a href="/travel">Travel</a>
+						<?php
+							if($this->fetchData[0][hexacolor]!='')
+							{
+								$color = $this->fetchData[0][hexacolor];
+							}
+							else
+							{
+								$color =$this->fetchData[0][ColorPicker];
+							}
+						?>
+						<li style="background-color: <?php echo $color;?>;" class="crmb-sctn">
+							<a href="#"><?php echo $this->fetchData[0][titleCategory];?></a>
 						</li>
 
 				   <!-- <li class="crmb-sctn">
@@ -24,7 +34,7 @@
 			</div>
 			<div class="s-row hero-bnnr hero-bnnr2">
 				<div class="txt-wrp">
-					<h1>Infographic: How powerful is your passport?</h1>
+					<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
 				</div>
 				
 			</div>
@@ -303,15 +313,31 @@
 						</div>
 						
 						<div class="kat-desc description">
-							<?php
-								$cat = new Object_CommunityTipsCategory_List();
-								foreach($cat as $category)
-								{
-							?>
-									<a href="<?php echo $this->url(array($category->getTitleCategory()),"list-category");?>"><img src="<?php echo $category->getImageCategory();?>" ></a>
-							<?php
-								}
-							?>
+							<div id="crumb" class="crmb-wrp">
+								<div class="s-row crmb cus-crmb">
+									<ul>
+										<?php
+											$cat = new Object_CommunityTipsCategory_List();
+											foreach($cat as $category)
+											{
+												if($category->getHexacolor()!='')
+												{
+													$color = $category->getHexaColor();
+												}
+												else
+												{
+													$color = $category->getColorPicker();
+												}
+										?>
+												<li style="background-color: <?php echo $color;?>" class="crmb-sctn cus-li">
+													<a class="no-bold" href="<?php echo $this->url(array($category->getTitleCategory()),"list-category");?>"><?php echo $category->getTitleCategory();?></a>
+												</li>
+										<?php
+											}
+										?>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="widget-twitter">
@@ -340,7 +366,7 @@
 										?>
 											<article class="art-itm">
 												<div class="s-sbar-ct">
-													<a href="#">
+													<a href="<?php echo $this->url(array($result[o_key],$result[oo_id],$result[template]),"community-detail");?>">
 													
 														<div class="outr-wrp">
 															<div class="img-wrp">
@@ -387,7 +413,7 @@
 								?>
 									<article class="art-itm">
 												<div class="s-sbar-ct">
-													<a href="#">
+													<a href="<?php echo $this->url(array($result[o_key],$result[oo_id],$result[template]),"community-detail");?>">
 													
 														<div class="outr-wrp">
 															<div class="img-wrp">
