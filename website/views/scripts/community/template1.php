@@ -77,7 +77,9 @@
 							<div class="art-adv-intr">
 
 								<div class="art-adv-intr-innr">
-									<h2 class="h-b">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h2>
+									<h2 class="h-b">
+										<?php echo $this->data->getSummary();?>
+									</h2>
 
 								</div>
 							</div>
@@ -270,5 +272,9 @@
 		var json_video = '<?php echo $this->video; ?>';
 		var video = json_video.substring(1, json_video.length).substring(0, json_video.length-2);
 		$('.video').html(video);
+
+		$.ajax({
+
+		});
 	});
 </script>

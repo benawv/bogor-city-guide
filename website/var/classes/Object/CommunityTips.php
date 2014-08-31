@@ -14,6 +14,7 @@ public $popular;
 public $category;
 public $template;
 public $video;
+public $summary;
 
 
 /**
@@ -213,6 +214,25 @@ public function getVideo () {
 */
 public function setVideo ($video) {
 	$this->video = $video;
+	return $this;
+}
+
+/**
+* @return string
+*/
+public function getSummary () {
+	$preValue = $this->preGetValue("summary"); 
+	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
+	$data = $this->getClass()->getFieldDefinition("summary")->preGetData($this);
+	 return $data;
+}
+
+/**
+* @param string $summary
+* @return void
+*/
+public function setSummary ($summary) {
+	$this->summary = $summary;
 	return $this;
 }
 

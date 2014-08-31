@@ -1,9 +1,9 @@
 <link rel="stylesheet" type="text/css" href="/website/static/css/virgin.css">
 <div role="main" class="tips-main main">
 
-<div id="js-main-wrp" class="main-wrp" style="background: url(<?php echo $this->fetchBackground;?>);background-size: 1500px auto;background-repeat: no-repeat;">
+<div id="js-main-wrp" class="main-wrp" style="background: url(<?php echo $this->fetchBackground;?>);background-size: 1500px auto;height:620px; no-repeat;">
 	<div class="tips-container tips-container2 container boxes-view">
-	<header id="header" class="hdr">
+	
 	           
 			<div id="crumb" class="crmb-wrp">
 				<div class="s-row crmb crmb1">
@@ -32,13 +32,14 @@
 					</ul>
 				</div>
 			</div>
+			<?php if (isset($this->fetchData[0][summary])){?>
 			<div class="s-row hero-bnnr hero-bnnr2">
 				<div class="txt-wrp">
-					<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
+					<h1><?php echo $this->fetchData[0][summary];?></h1>
 				</div>
 				
 			</div>
-	</header>
+			<?php }else{echo "<div style=''></div>";}?>
 			<div class="tips-box items-container" id="product-sub" >
 				<div class="tips-item-kiri">
 					<div class="s-main">
