@@ -1,6 +1,45 @@
 <link rel="stylesheet" type="text/css" href="/website/static/css/virgin.css">
-<div role="main" class="tips-main main" style="background: url(<?php echo $this->fetchBackground;?>);background-size: 1500px auto;background-repeat: no-repeat;">
-	<div class="tips-container container boxes-view">
+<div role="main" class="tips-main main">
+
+<div id="js-main-wrp" class="main-wrp" style="background: url(<?php echo $this->fetchBackground;?>);background-size: 1500px auto;height:620px; no-repeat;">
+	<div class="tips-container tips-container2 container boxes-view">
+	
+	           
+			<div id="crumb" class="crmb-wrp">
+				<div class="s-row crmb crmb1">
+					<ul class="custom_ul">
+						<li class="crmb-sctn blue-allianz">
+							<a href="/community-tips">Community</a>
+						</li>
+								
+						<?php
+							if($this->fetchData[0][hexacolor]!='')
+							{
+								$color = $this->fetchData[0][hexacolor];
+							}
+							else
+							{
+								$color =$this->fetchData[0][ColorPicker];
+							}
+						?>
+						<li style="background-color: <?php echo $color;?>;" class="crmb-sctn">
+							<a href="#"><?php echo $this->fetchData[0][titleCategory];?></a>
+						</li>
+
+				   <!-- <li class="crmb-sctn">
+							<a href="/travel">Travel</a>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+			<?php if (isset($this->fetchData[0][summary])){?>
+			<div class="s-row hero-bnnr hero-bnnr2">
+				<div class="txt-wrp">
+					<h1><?php echo $this->fetchData[0][summary];?></h1>
+				</div>
+				
+			</div>
+			<?php }else{echo "<div style=''></div>";}?>
 			<div class="tips-box items-container" id="product-sub" >
 				<div class="tips-item-kiri">
 					<div class="s-main">
@@ -10,7 +49,7 @@
 										<div class="innr-wrp">
 										<?php
 											$y = 0;
-											$list = $this->fetchTips;
+											$list = $this->fetchData;
 											while($y<count($list))
 											{
 										?>
@@ -22,7 +61,7 @@
 														<i class="icon-video"></i>	
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo $list[$y][filename];?>"alt="">
+																	<img src="<?php echo "../".$list[$y][filename];?>"alt="">
 																	<div class="tg tg-shr">
 																		<?php 
 																			echo $list[$y][titleCategory];
@@ -46,7 +85,7 @@
 															<a href="<?php echo $this->url(array($list[$y+1][o_key],$list[$y+1][oo_id],$list[$y+1][template]),"community-detail");?>">
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo $list[$y+1][filename];?>"alt="">
+																		<img src="<?php echo "../".$list[$y+1][filename];?>"alt="">
 																		<div class="tg tg-shr">
 																			<?php 
 																					echo $list[$y+1][titleCategory];
@@ -78,7 +117,7 @@
 													   <a href="<?php echo $this->url(array($list[$y+2][o_key],$list[$y+2][oo_id],$list[$y+2][template]),"community-detail");?>">
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo $list[$y+2][filename];?>"alt="">
+																<img src="<?php echo "../".$list[$y+2][filename];?>"alt="">
 																<div class="tg tg-shr">
 																	<?php 
 																			echo $list[$y+2][titleCategory];
@@ -103,7 +142,7 @@
 															<i class="icon-video"></i>
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo $list[$y+3][filename];?>"alt="">
+																	<img src="<?php echo "../".$list[$y+3][filename];?>"alt="">
 																	<div class="tg tg-shr">
 																		<?php 
 																				echo $list[$y+3][titleCategory];
@@ -134,7 +173,7 @@
 															<i class="icon-video"></i>
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo $list[$y+4][filename];?>"alt="">
+																	<img src="<?php echo "../".$list[$y+4][filename];?>"alt="">
 																	<div class="tg tg-shr">
 																		<?php 
 																				echo $list[$y+4][titleCategory];
@@ -158,7 +197,7 @@
 															<a href="<?php echo $this->url(array($list[$y+5][o_key],$list[$y+5][oo_id],$list[$y+5][template]),"community-detail");?>">
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo $list[$y+5][filename];?>"alt="">
+																		<img src="<?php echo "../".$list[$y+5][filename];?>"alt="">
 																		<div class="tg tg-shr">
 																			<?php 
 																					echo $list[$y+5][titleCategory];
@@ -184,7 +223,7 @@
 																<i class="icon-video"></i>
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo $list[$y+6][filename];?>"alt="">
+																		<img src="<?php echo "../".$list[$y+6][filename];?>"alt="">
 																		<div class="tg tg-shr">
 																			<?php 
 																					echo $list[$y+6][titleCategory];
@@ -332,7 +371,7 @@
 													
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo $result[filename];?>" alt="" />
+																<img src="<?php echo "../".$result[filename];?>" alt="" />
 																<div class="tg tg-shr">
 																	<?php
 																		echo $result[titleCategory];
@@ -379,7 +418,7 @@
 													
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo $result[filename];?>" alt="" />
+																<img src="<?php echo "../".$result[filename];?>" alt="" />
 																<div class="tg tg-shr">
 																	<?php
 																		echo $result[titleCategory];
@@ -412,5 +451,11 @@
 				</div>
 				<div class="clear"></div>
 			</div>
-	</div> <!-- .items-container -->	
+	</div> <!-- .items-container -->
+			
 </div>
+
+<?php
+	//echo "<pre>";
+	//print_r($this->fetchData);
+?>
