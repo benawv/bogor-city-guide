@@ -24,12 +24,14 @@
         $anchors = (int) $this->select("anchors")->getData();
     }
 ?>
-<?php $style = $this->editmode?'height: 250px':''?>
+<?php 
+	$style = $this->editmode?'height: 250px':'';
+?>
 <ul id="membername" class="navi" style="<?php echo $style?>">
 	<?php for($i=0;$i<$anchors;$i++) { ?>
 		<?php $active = $i==0?'aktif':''?>
 		<li class="<?php echo $this->input('class_name_'.$i)->text?> <?php echo $active?>">
-			<div class="nav_menu">
+			<div class="nav_menu" <?php if($this->editmode) { ?> style="color: #000;" <?php } ?> >
 				<?php echo $this->editmode?'Class Name: '. $this->input('class_name_'.$i, array('width' => '75')) : ''?>
 				
 				<?php if($this->editmode) { ?>

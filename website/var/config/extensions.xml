@@ -13,5 +13,9 @@
     <map>1</map>
     <container-box-5>1</container-box-5>
     <anchor>1</anchor>
+    <container-box>1</container-box>
+    <sections>1</sections>
+    <modal>1</modal>
+    <sections-sectionpage/>
   </brick>
 </zend-config>
