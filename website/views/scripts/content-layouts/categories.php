@@ -7,6 +7,10 @@
 	<div class="wrapper-special clearfix">
 		<?php echo $this->areablock('banner', array(
 					"allowed" => array("banner", "static-banner")))?>
+		<div id="quicklinks">
+			<?php echo $this->areablock('layananKami', array(
+					"allowed" => array("tile-quicklinks", "quiclinks", "layanankami-quicklinks")))?>
+		</div>
 	</div><!-- .wrapper-special -->
 	
 	<!-- content -->

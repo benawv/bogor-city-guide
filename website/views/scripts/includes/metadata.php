@@ -15,15 +15,16 @@
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/flexslider.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/main.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/tabs-accordion.css">
+<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/product.css">
 
-
+<!--
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/flexslider.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/main.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/tabs-accordion.css">
-
+-->
 
  <!-- javascript -->
 <script src="/website/static/js/modernizr.js" type="text/javascript"></script>

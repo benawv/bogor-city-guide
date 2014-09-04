@@ -1224,6 +1224,11 @@ a.link{
 }*/
 /*END Mitra Kerja*/
 
+.modal-product ul{
+	list-style: disc !important;
+	display: block !important;
+}
+
 .modal-body ul{
 	list-style: none;
 	display: inline;

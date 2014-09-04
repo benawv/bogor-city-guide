@@ -2,17 +2,17 @@
 <script src="/website/static/js/jquery.tools.min.js" type="text/javascript"></script>
 <?php if(!$this->editmode):?>
 <script src="/website/static/js/sticky-jquery.js" type="text/javascript"></script>
-<?php endif; ?>
+<?php endif;?>
 <div class="container boxes-view">
-	<h5><a href="/"><span>Home</span></a> &rsaquo; <?php echo $this->navigation()->breadcrumbs()->setMinDepth(null); ?></h5>
-	<span class="breadcrumb"><a href="#"><?php echo $this->document->getTitle()?></a></span>
+	<h5><a href="/"><span>Produk</span></a> &rsaquo; <?php echo $this->navigation()->breadcrumbs()->setMinDepth(null); ?></h5>
+	<span class="breadcrumb"><a href="#"><?php //echo $this->document->getTitle()?></a></span>
 	
 	<div class="heading clearfix pagenav">
 		<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
-		<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks')))?>
 	</div>
+	
 	<div class="height_profil">
-		<?php echo $this->areablock('container', array('allowed' => array('sections', 'sections-sectionpage'))); ?>
+		<?php echo $this->areablock('container', array('allowed' => array('sections'))); ?>
 		
 		<?php echo $this->areablock('container-modal', array('allowed' => array('modal')))?>
 	</div>

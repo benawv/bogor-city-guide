@@ -14,13 +14,13 @@
 }
 
 .active-header {
-	background: url(../images/menu_toggle_up.png) #003781;
+	background: url(/website/static/images/menu_toggle_up.png) #003781;
 	background-repeat: no-repeat;
 	background-position: right 50%;
 }
 
 .inactive-header {
-	background: url(../images/menu_toggle_down.png) #003781;
+	background: url(/website/static/images/menu_toggle_down.png) #003781;
 	background-repeat: no-repeat;
 	background-position: right 50%;
 }
