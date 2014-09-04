@@ -7,3 +7,8 @@
 /website/var/log
 /website/var/system
 /website/var/config/system.xml
+.buildpath
+.project
+.settings/
+.externalToolBuilders/
+/website/var/assets/videos
