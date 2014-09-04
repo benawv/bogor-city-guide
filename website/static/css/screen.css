@@ -2952,7 +2952,7 @@ div.radio_tujuan_finansial{
 .tips-container .innr-wrp .txt-wrp .authr-ttl{
 	margin: 0px;
 	/* font-family: sans-serif; */
-	font-family: "Sanchez",serif;
+	font-family: "Sanchez",sans-serif;
 }
 .tips-item-kanan .description img{
 	float: left;
@@ -3085,6 +3085,10 @@ img.logo-float{
 	}
 	.tips-item-kanan{
 		padding-left: 0px;
+	}
+	.hero-bnnr.hero-bnnr2 h1, .hero-bnnr.hero-bnnr2 h2{
+		font-size: 1.5rem !important;
+		line-height: 2rem !important;
 	}
 }
 

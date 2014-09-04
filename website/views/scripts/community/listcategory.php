@@ -19,7 +19,7 @@
 							}
 							else
 							{
-								$color =$this->fetchData[0][ColorPicker];
+								$color =$this->fetchData[0][colorPicker];
 							}
 						?>
 						<li style="background-color: <?php echo $color;?>;" class="crmb-sctn">
