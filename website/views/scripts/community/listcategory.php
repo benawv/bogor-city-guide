@@ -321,7 +321,7 @@
 											$cat = new Object_CommunityTipsCategory_List();
 											foreach($cat as $category)
 											{
-												if($category->getHexacolor()!='')
+												if($category->getHexaColor()!='')
 												{
 													$color = $category->getHexaColor();
 												}

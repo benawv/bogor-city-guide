@@ -104,7 +104,7 @@ class CommunityController extends Website_Controller_Action {
 		$this->view->fetchBackground = $image;
 		
 		$db = Pimcore_Resource_Mysql::get();
-		$entries = new Object_communityTips_List();
+		$entries = new Object_CommunityTips_List();
 		$entries->setLimit(1);
 		foreach ($entries as $table)
 		{
@@ -166,7 +166,7 @@ class CommunityController extends Website_Controller_Action {
 		
 		
 		$db = Pimcore_Resource_Mysql::get();
-		$entries = new Object_communityTips_List();
+		$entries = new Object_CommunityTips_List();
 		$entries->setLimit(1);
 		foreach ($entries as $table)
 		{

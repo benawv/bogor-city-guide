@@ -7,7 +7,7 @@ public $o_className = "communityTipsCategory";
 public $titleCategory;
 public $summary;
 public $colorPicker;
-public $hexacolor;
+public $hexaColor;
 
 
 /**
@@ -80,19 +80,19 @@ public function setColorPicker ($colorPicker) {
 /**
 * @return string
 */
-public function getHexacolor () {
-	$preValue = $this->preGetValue("hexacolor"); 
+public function getHexaColor () {
+	$preValue = $this->preGetValue("hexaColor"); 
 	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
-	$data = $this->hexacolor;
+	$data = $this->hexaColor;
 	 return $data;
 }
 
 /**
-* @param string $hexacolor
+* @param string $hexaColor
 * @return void
 */
-public function setHexacolor ($hexacolor) {
-	$this->hexacolor = $hexacolor;
+public function setHexaColor ($hexaColor) {
+	$this->hexaColor = $hexaColor;
 	return $this;
 }
 
