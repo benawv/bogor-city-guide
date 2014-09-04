@@ -9,6 +9,7 @@
 	
 	<div class="heading clearfix pagenav">
 		<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
+		<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks')))?>
 	</div>
 	
 	<div class="height_profil">
