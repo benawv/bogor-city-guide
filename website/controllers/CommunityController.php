@@ -5,7 +5,7 @@ class CommunityController extends Website_Controller_Action {
 	public function homeAction () {
 		$this->enableLayout();
 		
-		$entries = new Object_communityTips_List();
+		$entries = new Object_CommunityTips_List();
 		$entries->setLimit(1);
 		foreach ($entries as $table)
 		{
@@ -205,14 +205,8 @@ class CommunityController extends Website_Controller_Action {
 	public function saveCookiesAction()
 	{
 		//$db = Object_Abstract::update();
-		/* $table = "object_store_6";
-		$bind = array("popular" => 100);
-		$where = "oo_id = 24";
-		$db = Pimcore_Resource_Mysql::get();
-		$db->update($table, $bind, $where); */
-		//$this->db->save();
 		
-		die();
+		//$this->db->save();
 		
 		$idcookies = new Object_List();
 		$idcookies->setCondition("o_key='community-tips-cookies'");
@@ -264,7 +258,10 @@ class CommunityController extends Website_Controller_Action {
 			}
 			
 			$sumPopular = $popular+1;
-
+			
+			$db->update("objects", array("o_path"=>"/community-tips-cookies/community-tips-cookies/", "o_parentId"=>$o_Pid), "o_id=".$o_id);
+			$db->update($table1, array("popular"=>$sumPopular), "oo_id=".$article);
+			$db->update($table2, array("popular"=>$sumPopular), "oo_id=".$article);
 			/* $sql4 = "update objects set o_path='/community-tips-cookies/community-tips-cookies/', o_parentId='".$o_Pid."' where o_id='".$o_id."'";
 			$db1->update($sql4);
 			
@@ -272,6 +269,12 @@ class CommunityController extends Website_Controller_Action {
 			$db1->update($sql2);
 			$sql3 = "update ".$table2." set popular='".$sumPopular."' where oo_id='".$article."'";
 			$db1->update($sql3); */
+			
+			/* $table = "object_store_6";
+			$bind = array("popular" => 100);
+			$where = "oo_id = 24";
+			$db = Pimcore_Resource_Mysql::get();
+			$db->update($table, $bind, $where); */
 			
 			$string = "Sudah di save";
 		}
