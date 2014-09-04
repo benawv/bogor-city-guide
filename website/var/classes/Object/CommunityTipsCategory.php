@@ -5,10 +5,9 @@ class Object_CommunityTipsCategory extends Object_Concrete {
 public $o_classId = 12;
 public $o_className = "communityTipsCategory";
 public $titleCategory;
-public $imageCategory;
 public $summary;
 public $colorPicker;
-public $hexacolor;
+public $hexaColor;
 
 
 /**
@@ -37,25 +36,6 @@ public function getTitleCategory () {
 */
 public function setTitleCategory ($titleCategory) {
 	$this->titleCategory = $titleCategory;
-	return $this;
-}
-
-/**
-* @return Asset_Image
-*/
-public function getImageCategory () {
-	$preValue = $this->preGetValue("imageCategory"); 
-	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
-	$data = $this->imageCategory;
-	 return $data;
-}
-
-/**
-* @param Asset_Image $imageCategory
-* @return void
-*/
-public function setImageCategory ($imageCategory) {
-	$this->imageCategory = $imageCategory;
 	return $this;
 }
 
@@ -100,19 +80,19 @@ public function setColorPicker ($colorPicker) {
 /**
 * @return string
 */
-public function getHexacolor () {
-	$preValue = $this->preGetValue("hexacolor"); 
+public function getHexaColor () {
+	$preValue = $this->preGetValue("hexaColor"); 
 	if($preValue !== null && !Pimcore::inAdmin()) { return $preValue;}
-	$data = $this->hexacolor;
+	$data = $this->hexaColor;
 	 return $data;
 }
 
 /**
-* @param string $hexacolor
+* @param string $hexaColor
 * @return void
 */
-public function setHexacolor ($hexacolor) {
-	$this->hexacolor = $hexacolor;
+public function setHexaColor ($hexaColor) {
+	$this->hexaColor = $hexaColor;
 	return $this;
 }
 

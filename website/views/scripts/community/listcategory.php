@@ -19,7 +19,7 @@
 							}
 							else
 							{
-								$color =$this->fetchData[0][ColorPicker];
+								$color =$this->fetchData[0][colorPicker];
 							}
 						?>
 						<li style="background-color: <?php echo $color;?>;" class="crmb-sctn">
@@ -321,7 +321,7 @@
 											$cat = new Object_CommunityTipsCategory_List();
 											foreach($cat as $category)
 											{
-												if($category->getHexacolor()!='')
+												if($category->getHexaColor()!='')
 												{
 													$color = $category->getHexaColor();
 												}

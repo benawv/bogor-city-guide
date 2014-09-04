@@ -9,6 +9,13 @@
 									<div class="s-ct">
 										<div class="innr-wrp">
 										<?php
+											$value = strtotime(date("YmdHis")).rand();
+											
+											if($_COOKIE["user"]=="")
+											{
+												setcookie("user", $value);
+											}
+										
 											$y = 0;
 											$list = $this->fetchTips;
 											while($y<count($list))
@@ -243,16 +250,16 @@
 							    </a>
 							</li>
 							    
-								<li>
-							    <a href="#" title="Linkedin" class="linked-in" target="_blank" data-track="connect|click|linkedin">
-								<span class="vhdn">Linked In</span>
+							<li>
+							    <a href="#" title="Instagram" class="instagram" target="_blank" data-track="connect|click|instagram">
+								<span class="vhdn">Instagram</span>
 							    </a>
 							</li>
 							    
 						    <li class="blnk"></li>        
 								<li>
-							    <a href="#" title="Instagram" class="instagram" target="_blank" data-track="connect|click|instagram">
-								<span class="vhdn">Instagram</span>
+							    <a href="#" title="Linkedin" class="linked-in" target="_blank" data-track="connect|click|linkedin">
+								<span class="vhdn">Linked In</span>
 							    </a>
 							</li>
 							    
@@ -282,7 +289,7 @@
 											$cat = new Object_CommunityTipsCategory_List();
 											foreach($cat as $category)
 											{
-												if($category->getHexacolor()!='')
+												if($category->getHexaColor()!='')
 												{
 													$color = $category->getHexaColor();
 												}

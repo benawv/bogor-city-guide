@@ -272,8 +272,8 @@ h1 {
     line-height: 7.5rem;
 }
 h2, h4, h5, h6 {
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 3rem;
+    /* font-family: "Josefin Sans", sans-serif; */
+    font-size: 2rem;
     line-height: 3.4rem;
 }
 p{
@@ -774,7 +774,7 @@ iframe {
     background: #c00;
 }
 .hero-bnnr h1, .hero-bnnr h2 {
-    font-family: "Sanchez Regular", serif;
+    font-family: "Sanchez", sans-serif;
     font-size: 3rem;
     line-height: 3.4rem;
     text-transform: none;
@@ -2250,7 +2250,7 @@ iframe {
 	text-align: left;
 }
 .art-lst p {
-    font-family: "Sanchez Regular", serif !important;
+    font-family: "Sanchez", sans-serif !important;
     font-size: 1.7rem;
     line-height: 2.1rem;
 }
@@ -2274,7 +2274,7 @@ iframe {
 }
 .main .kntc-ct h2 {
     text-transform: uppercase;
-	font-size: 2.7rem;
+	font-size: 2rem;
 	text-align: left;
 	line-height: 2.4rem;
 }
@@ -4050,7 +4050,7 @@ h2, h4, h5, h6 {
 }
 .art h2.art-intr, 
 .art h2.h-b {
-    font-family: "Sanchez Regular", serif;
+    font-family: "Sanchez", sans-serif;
     font-size: 1.7rem;
     line-height: 2.2rem;
 	text-align: left;
@@ -5874,4 +5874,7 @@ body .main-wrp .blue-allianz {
 }
 body .main-wrp .blue-allianz:hover {
     background-color: #00275b;
+}
+.s-row.crmb,.s-row.hero-bnnr{
+	margin-left: 11px;
 }

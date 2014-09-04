@@ -636,7 +636,7 @@ iframe {
     background: #2b78e4;
 }
 .hero-bnnr h1, .hero-bnnr h2 {
-    font-family: "Sanchez Regular", serif;
+    font-family: "Sanchez Regular", sans-serif;
     font-size: 3rem;
     line-height: 3.4rem;
     text-transform: none;
@@ -5331,7 +5331,7 @@ iframe {
     background: #2b78e4;
 }
 .hero-bnnr h1, .hero-bnnr h2 {
-    font-family: "Sanchez",serif;
+    font-family: "Sanchez",sans-serif;
     font-size: 3rem;
     line-height: 3.4rem;
     text-transform: none;
@@ -6785,7 +6785,7 @@ iframe {
 }
 .art-lst p {
     /* font-family: "Arial,  Helvetica,  sans-serif"; */
-    font-family: "Sanchez",serif;
+    font-family: "Sanchez",sans-serif;
     font-size: 1.8rem;
     line-height: 2.1rem;
 }
@@ -9516,4 +9516,7 @@ body .main-wrp .blue-allianz:hover {
 }
 #header.hdr{
 	margin-left: -5px;
+}
+.s-row.crmb.crmb1, .s-row.hero-bnnr.hero-bnnr2{
+	margin-left: 5px;
 }
