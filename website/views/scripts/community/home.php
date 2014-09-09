@@ -4,7 +4,7 @@
 			<div class="tips-box items-container" id="product-sub" >
 				<div class="tips-item-kiri">
 					<div class="s-main">
-						<div class="s-main-innr">
+						<div class="s-main-innr" id="pagingTop">
 							<div class="art-lst">
 									<div class="s-ct">
 										<div class="innr-wrp">
@@ -23,9 +23,9 @@
 										?>
 											<?php if($list[$y][title]!= ''){?>
 											<div class="r">
-												<div class="c-2of3">
+												<div class="c-2of3 cus_hide" id="div<?php echo $y;?>">
 													<article>
-														<a href="<?php echo $this->url(array($list[$y][o_key],$list[$y][oo_id],$list[$y][template]),"community-detail");?>">
+														<a id="more" href="<?php echo $this->url(array($list[$y][o_key],$list[$y][oo_id],$list[$y][template]),"community-detail");?>">
 														<i class="icon-video"></i>	
 															<div class="outr-wrp">
 																<div class="img-wrp">
@@ -48,7 +48,7 @@
 													</article>
 												</div>
 												<?php if($list[$y+1][title] != ''){?>
-													<div class="c-1of3">
+													<div class="c-1of3 cus_hide" id="div<?php echo $y+1;?>">
 														<article>
 															<a href="<?php echo $this->url(array($list[$y+1][o_key],$list[$y+1][oo_id],$list[$y+1][template]),"community-detail");?>">
 																<div class="outr-wrp">
@@ -80,7 +80,7 @@
 												if($list[$y+2][title] != ''){
 											?>
 											<div class="r">
-												<div class="c-1of2">
+												<div class="c-1of2 cus_hide" id="div<?php echo $y+2;?>">
 													<article>
 													   <a href="<?php echo $this->url(array($list[$y+2][o_key],$list[$y+2][oo_id],$list[$y+2][template]),"community-detail");?>">
 														<div class="outr-wrp">
@@ -104,7 +104,7 @@
 													</article>
 												</div>
 												<?php if($list[$y+3][title] != ''){?>
-													<div class="c-1of2">
+													<div class="c-1of2 cus_hide" id="div<?php echo $y+3;?>">
 														<article>
 														   <a href="<?php echo $this->url(array($list[$y+3][o_key],$list[$y+3][oo_id],$list[$y+3][template]),"community-detail");?>">
 															<i class="icon-video"></i>
@@ -135,7 +135,7 @@
 												if($list[$y+4][title] != ''){
 											?>
 											<div class="r">
-												<div class="c-1of3">
+												<div class="c-1of3 cus_hide" id="div<?php echo $y+4;?>">
 													<article>
 														<a href="<?php echo $this->url(array($list[$y+4][o_key],$list[$y+4][oo_id],$list[$y+4][template]),"community-detail");?>">
 															<i class="icon-video"></i>
@@ -160,7 +160,7 @@
 													</article>
 												</div>
 												<?php if($list[$y+5][title] != ''){?>
-													<div class="c-1of3">
+													<div class="c-1of3 cus_hide" id="div<?php echo $y+5;?>">
 														<article>
 															<a href="<?php echo $this->url(array($list[$y+5][o_key],$list[$y+5][oo_id],$list[$y+5][template]),"community-detail");?>">
 																<div class="outr-wrp">
@@ -185,7 +185,7 @@
 													</div>
 												<?php }?>
 												<?php if($list[$y+6][title] != ''){?>
-													<div class="c-1of3">
+													<div class="c-1of3 cus_hide" id="div<?php echo $y+6;?>">
 														<article>
 															<a href="<?php echo $this->url(array($list[$y+6][o_key],$list[$y+6][oo_id],$list[$y+6][template]),"community-detail");?>">
 																<i class="icon-video"></i>
@@ -220,9 +220,13 @@
 									<div class="srch-pgn clrd">
 										<div class="flt-l"></div>
 										<div class="flt-r">
-													<span>&lt; previous</span>
+													<span class="prevPage1">&lt; previous </span>
+													<a class="prevPage2" href="javascript:void(0)">&lt; previous </a>
+													<input type="hidden" value="0" class="indexPage_prev" />
 													|
-													<a href="?page=2">next &gt;</a>
+													<span class="nextPage1"> next &gt; </span>
+													<a class="nextPage2" href="javascript:void(0)"> next &gt; </a>
+													<input type="hidden" value="14" class="indexPage_next" />
 												</div>
 									 </div>
 							</div>
@@ -421,3 +425,197 @@
 			</div>
 	</div> <!-- .items-container -->	
 </div>
+<script type="text/javascript">
+	$(".prevPage2").hide();
+	$(".nextPage1").hide();
+	$(document).ready(function(){
+		$(this).on('click', '.nextPage2', function(){
+			var pageIndex_next = $(".indexPage_next").val();
+			var pageIndex_prev = $(".indexPage_prev").val();
+			$.ajax({
+				type: "POST",
+				url: "community-tips-page",
+				data: {indexPage: $(".indexPage_next").val()},
+				success: function(data){
+					//var objJSON = eval("(function(){return " + data + ";})()");
+					var obj = JSON.parse(data);
+					
+					if(parseInt(obj.count_all) > 0){
+						$('html, body').animate({
+		                    scrollTop: $("#pagingTop").offset().top
+		                }, 1000);
+						$(".cus_hide").fadeOut(1600, "linear",complete);
+					}
+					//console.log(obj[0].date);
+					//console.log(Object.keys(obj).length-1);
+					function complete() {
+						var z = 0; 
+						$.each($.parseJSON(data), function(k, index){
+							var gmbr = index.filename;
+							var key = index.o_key;
+							var id = index.oo_id;
+							var tmplt = index.template;
+							var title = index.title;
+							var cat = index.titleCategory;
+							
+							var today	= new Date((index.date)*1000);
+					        var h		= today.getHours();
+					        var m		= today.getMinutes();
+					        var s		= today.getSeconds();
+	
+					        var f		= today.getDay();
+					        var d		= today.getDate();
+					        var j		= today.getMonth();
+					        var y		= today.getFullYear();
+	
+					        //var day_arr	= [ "Monday", "Tuesday" , "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+					        var mon_arr = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+	
+					        if( m < 10 ) m = "0" + m;
+					        if( s < 10 ) s = "0" + s;
+	
+					        var dateStr	= mon_arr[ j ] + " " + d + ", " + y;
+					        
+					        var tgl   = dateStr;
+	
+					        if(z < Object.keys(obj).length-2)
+						    {
+								$("#div"+z).find("a").attr("href", "community-detail/"+key+"_"+id+"_"+tmplt);
+						        $("#div"+z).find("img").attr("src", gmbr);
+						        $("#div"+z).find(".tg-shr").empty();
+						        $("#div"+z).find(".tg-shr").append(cat);
+						        $("#div"+z).find("time").empty();
+						        $("#div"+z).find("time").append(tgl);
+						        $("#div"+z).find(".authr-ttl").empty();
+						        $("#div"+z).find(".authr-ttl").append(title);
+						        
+						    }
+						    z++;
+						});
+						
+						var total1 = parseInt(pageIndex_next)+parseInt((obj.count_all));
+						$(".indexPage_next").val(total1);
+
+						var total2 = parseInt(pageIndex_prev)+parseInt(14);
+						$(".indexPage_prev").val(total2);
+						
+						if(obj.offset_next > 0){
+							$(".prevPage2").show();
+							$(".prevPage1").hide();
+						}
+						else
+						{
+							$(".prevPage1").hide();
+							$(".prevPage2").show();
+							$(".nextPage2").hide();
+							$(".nextPage1").show();
+						}
+					}
+
+					var a;
+					for(a=0;a < Object.keys(obj).length-2;a++)
+				    {
+						$("#div"+a).fadeIn(1600);
+				    }
+					
+				}
+			});
+		});
+
+
+		$(this).on('click', '.prevPage2', function(){
+			var pageIndex_next = $(".indexPage_next").val();
+			var pageIndex_prev = $(".indexPage_prev").val();
+			$.ajax({
+				type: "POST",
+				url: "community-tips-page2",
+				data: {indexPage: ($(".indexPage_prev").val()-parseInt(14))},
+				success: function(data){
+					//var objJSON = eval("(function(){return " + data + ";})()");
+					var obj = JSON.parse(data);
+					
+					if(parseInt(obj.count_all) > 0){
+						$(".cus_hide").fadeOut(1600, "linear",complete);
+						$('html, body').animate({
+		                    scrollTop: $("#pagingTop").offset().top
+		                }, 1000);
+					}
+					//console.log(obj[0].date);
+					//console.log(Object.keys(obj).length-1);
+					function complete() {
+						var z = 0; 
+						$.each($.parseJSON(data), function(k, index){
+							var gmbr = index.filename;
+							var key = index.o_key;
+							var id = index.oo_id;
+							var tmplt = index.template;
+							var title = index.title;
+							var cat = index.titleCategory;
+							
+							var today	= new Date((index.date)*1000);
+					        var h		= today.getHours();
+					        var m		= today.getMinutes();
+					        var s		= today.getSeconds();
+	
+					        var f		= today.getDay();
+					        var d		= today.getDate();
+					        var j		= today.getMonth();
+					        var y		= today.getFullYear();
+	
+					        //var day_arr	= [ "Monday", "Tuesday" , "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+					        var mon_arr = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+	
+					        if( m < 10 ) m = "0" + m;
+					        if( s < 10 ) s = "0" + s;
+	
+					        var dateStr	= mon_arr[ j ] + " " + d + ", " + y;
+					        
+					        var tgl   = dateStr;
+	
+					        if(z < Object.keys(obj).length-2)
+						    {
+								$("#div"+z).find("a").attr("href", "community-detail/"+key+"_"+id+"_"+tmplt);
+						        $("#div"+z).find("img").attr("src", gmbr);
+						        $("#div"+z).find(".tg-shr").empty();
+						        $("#div"+z).find(".tg-shr").append(cat);
+						        $("#div"+z).find("time").empty();
+						        $("#div"+z).find("time").append(tgl);
+						        $("#div"+z).find(".authr-ttl").empty();
+						        $("#div"+z).find(".authr-ttl").append(title);
+						        
+						    }
+						    z++;
+						});
+						
+						var hasil_next = parseInt(pageIndex_next)-parseInt(14);
+						var total1 = parseInt(pageIndex_next) - hasil_next;
+						$(".indexPage_next").val(total1);
+
+						var total2 = parseInt(pageIndex_prev)-parseInt(14);
+						$(".indexPage_prev").val(total2);;
+						if(obj.offset_prev > 0){
+							$(".prevPage2").show();
+							$(".prevPage1").hide();
+							$(".nextPage1").hide();
+							$(".nextPage2").show();
+						}
+						else
+						{
+							$(".prevPage1").show();
+							$(".prevPage2").hide();
+							$(".nextPage2").show();
+							$(".nextPage1").hide();
+						}
+					}
+					var a;
+					for(a=0;a < Object.keys(obj).length-2;a++)
+				    {
+						$("#div"+a).fadeIn(1600);
+				    }
+					
+				}
+			});
+		});
+		
+	});
+</script>
