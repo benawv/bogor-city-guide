@@ -117,7 +117,7 @@
 		w += width;
 	});
 	
-	$('ul#navigate').width(w);
+	$('ul#navigate').width(w+5);
 	/* silde nav*/
 		
 	$(".hideme").hide();
