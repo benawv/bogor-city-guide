@@ -20,6 +20,9 @@
     <sections-tab>1</sections-tab>
     <container-box-carousel>1</container-box-carousel>
     <container-box-static>1</container-box-static>
+    <container-box-carousel-text>1</container-box-carousel-text>
+    <product-quicklinks>1</product-quicklinks>
+    <sections-video>1</sections-video>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>

@@ -41,7 +41,7 @@ $(function(){
 
 <header role="banner" class="banner">
 	<div class="container">
-		<h1 class="weblogo">Allianz<span onclick="window.location.href = 'index.php'"></span></h1>
+		<h1 class="weblogo">Allianz<span onclick="window.location.href = '<?php echo $this->url(array("document" => Document::getById(1)), "default", true)?>'"></span></h1>
 		<?php
     
 		    // get root node if there is no document defined (for pages which are routed directly through static route)
@@ -71,6 +71,17 @@ $(function(){
 				<?php
 				    echo $this->navigation()->menu()->render($navigation);
 				?>
+			</div>
+			<div class="search">
+				<div class="container clearfix">
+					<!--<form action="#" method="post">
+						<input type="hidden" name="csrf" value="<?php echo $_SESSION["token"]; ?>">
+						<input type="text" placeholder="Search" name="search" class="input-text">
+						<button type="submit" class="icon-search">Search</button>
+					</form> -->
+					
+					
+				</div>
 			</div>
 		</nav>
 		<div class="minibar clearfix">
