@@ -6,7 +6,7 @@
     <quicklinks>1</quicklinks>
     <map-point>1</map-point>
     <layanankami-quicklinks>1</layanankami-quicklinks>
-    <banner-tile></banner-tile>
+    <banner-tile/>
     <static-banner>1</static-banner>
     <tile-quicklinks>1</tile-quicklinks>
     <container-box-6>1</container-box-6>
@@ -17,9 +17,12 @@
     <sections>1</sections>
     <modal>1</modal>
     <sections-sectionpage/>
+    <sections-tab>1</sections-tab>
+    <container-box-carousel>1</container-box-carousel>
+    <container-box-static>1</container-box-static>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>
-    <DynamicDropdown></DynamicDropdown>
+    <DynamicDropdown/>
   </plugin>
 </zend-config>

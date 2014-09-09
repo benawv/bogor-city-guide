@@ -6,7 +6,7 @@
             <?php
                 // prepare the store
                 $selectStore = [];
-                for($i=2; $i<30; $i++) {
+                for($i=1; $i<30; $i++) {
                     $selectStore[] = [$i, $i];
                 }
             ?>

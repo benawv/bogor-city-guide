@@ -39,7 +39,7 @@
 <script src="/website/static/js/bootstrap.min.js" type="text/javascript"></script>
 
 <!--script src="/website/static/js/sticky-jquery.js" type="text/javascript"></script-->
-<script src="</website/static/js/accordion-jquery.js" type="text/javascript"></script>
+<script src="/website/static/js/accordion-jquery.js" type="text/javascript"></script>
 
 
 

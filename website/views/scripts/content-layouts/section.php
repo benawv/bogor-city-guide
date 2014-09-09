@@ -11,11 +11,9 @@
 		<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
 		<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks')))?>
 	</div>
-	<div class="height_profil">
-		<?php echo $this->areablock('container', array('allowed' => array('sections', 'sections-sectionpage'))); ?>
+		<?php echo $this->areablock('container', array('allowed' => array('sections', 'sections-tab'))); ?>
 		
 		<?php echo $this->areablock('container-modal', array('allowed' => array('modal')))?>
-	</div>
 </div>
 <script type="text/javascript">
 	$(document).ready(function(){
