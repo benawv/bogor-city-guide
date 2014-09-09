@@ -23,7 +23,7 @@ class CommunityController extends Website_Controller_Action {
 		
 		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				left join assets as ass on tblcommunity.image=ass.id
-				ORDER BY tblcommunity.date DESC limit 14"; //or whatever you need to do.
+				ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14"; //or whatever you need to do.
 		
 		$this->view->fetchTips = $db->fetchAll($sql);
 		
@@ -72,7 +72,7 @@ class CommunityController extends Website_Controller_Action {
 		$db = Pimcore_Resource_Mysql::get();
 		$entries = Object_Abstract::getById($id);
 		$data = $entries;
-		//$object = Object_Abstract::getById($id);
+		
 		if($entries->getVideo()){
 			$v = $entries->getVideo();
 			$videoData = $v->getData();
@@ -262,19 +262,6 @@ class CommunityController extends Website_Controller_Action {
 			$db->update("objects", array("o_path"=>"/community-tips-cookies/community-tips-cookies/", "o_parentId"=>$o_Pid), "o_id=".$o_id);
 			$db->update($table1, array("popular"=>$sumPopular), "oo_id=".$article);
 			$db->update($table2, array("popular"=>$sumPopular), "oo_id=".$article);
-			/* $sql4 = "update objects set o_path='/community-tips-cookies/community-tips-cookies/', o_parentId='".$o_Pid."' where o_id='".$o_id."'";
-			$db1->update($sql4);
-			
-			$sql2 = "update ".$table1." set popular='".$sumPopular."' where oo_id='".$article."'";
-			$db1->update($sql2);
-			$sql3 = "update ".$table2." set popular='".$sumPopular."' where oo_id='".$article."'";
-			$db1->update($sql3); */
-			
-			/* $table = "object_store_6";
-			$bind = array("popular" => 100);
-			$where = "oo_id = 24";
-			$db = Pimcore_Resource_Mysql::get();
-			$db->update($table, $bind, $where); */
 			
 			$string = "Sudah di save";
 		}
@@ -283,5 +270,80 @@ class CommunityController extends Website_Controller_Action {
 			
 		}
 		return $string;
+	}
+	
+	public function pagingAction()
+	{
+		$db = Pimcore_Resource_Mysql::get();
+		$offset = $this->_getParam('indexPage');
+		$entries = new Object_CommunityTips_List();
+		$entries->setLimit(1);
+		foreach ($entries as $table)
+		{
+			$nameCommunity = "object_".$table->getClassId();
+		}
+		
+		$entries = new Object_CommunityTipsCategory_List();
+		$entries->setLimit(1);
+		foreach ($entries as $table)
+		{
+			$nameCommunityCat = "object_".$table->getClassId();
+		}
+		
+		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+				left join assets as ass on tblcommunity.image=ass.id
+				ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14 offset ".$offset; //or whatever you need to do.
+		$data = $db->fetchAll($sql);
+		
+		$data['count_all'] = count($data);
+		
+		$offset2 = $offset+14;
+		$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+				left join assets as ass on tblcommunity.image=ass.id
+				ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14 offset ".$offset2; //or whatever you need to do.
+		$data2 = $db->fetchAll($sql2);
+		$data['offset_next'] = count($data2);
+		
+		echo json_encode($data);
+	}
+	
+	public function paging2Action()
+	{
+		$db = Pimcore_Resource_Mysql::get();
+		$offset = $this->_getParam('indexPage');
+		$entries = new Object_CommunityTips_List();
+		$entries->setLimit(1);
+		foreach ($entries as $table)
+		{
+			$nameCommunity = "object_".$table->getClassId();
+		}
+	
+		$entries = new Object_CommunityTipsCategory_List();
+		$entries->setLimit(1);
+		foreach ($entries as $table)
+		{
+			$nameCommunityCat = "object_".$table->getClassId();
+		}
+	
+		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+				left join assets as ass on tblcommunity.image=ass.id
+				ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14 offset ".$offset; //or whatever you need to do.
+		$data = $db->fetchAll($sql);
+	
+		$data['count_all'] = count($data);
+	
+		$offset3 = $offset-14;
+		if($offset3 < 0)
+		{
+			$data['offset_prev'] = 0;
+		}
+		else{
+			$sql3 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+			left join assets as ass on tblcommunity.image=ass.id
+			ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14 offset ".$offset3; //or whatever you need to do.
+			$data3 = $db->fetchAll($sql3);
+			$data['offset_prev'] = count($data3);
+		}
+		echo json_encode($data);
 	}
 }
