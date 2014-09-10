@@ -10,6 +10,7 @@ website/var/plugins/*
 website/var/recyclebin/*
 website/var/search/*
 website/var/system/*
+website/var/config/system.xml
 website/var/tmp/*
 website/var/versions/*
 website/var/webdav/*
