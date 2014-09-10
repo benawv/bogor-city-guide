@@ -9,9 +9,11 @@
 	
 	<div class="heading clearfix pagenav">
 		<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
+		<div id="quicklinks">
 		<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks')))?>
+		</div>
 	</div>
-		<?php echo $this->areablock('container', array('allowed' => array('sections', 'sections-tab'))); ?>
+		<?php echo $this->areablock('container', array('allowed' => array('sections', 'sections-tab', 'sections-video'))); ?>
 		
 		<?php echo $this->areablock('container-modal', array('allowed' => array('modal')))?>
 </div>

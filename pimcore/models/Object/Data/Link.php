@@ -300,6 +300,7 @@ class Object_Data_Link {
         }
         
         return '<a href="' . $this->getHref() . '" ' . implode(" ", $attribs) . '>' . htmlspecialchars($this->getText()) . '</a>';
+        //return '<a href="' . $this->getHref() . '" ' . implode(" ", $attribs) . '>' . $this->getText() . '</a>';
     }
     
     

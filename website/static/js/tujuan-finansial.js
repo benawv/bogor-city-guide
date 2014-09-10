@@ -123,7 +123,7 @@ $(document).ready(function(){
          var kembalian = $('.dd_kembali:checked').val();
          
             $.ajax({
-                url: "allianz-tujuan-finansial-form.php",
+                url: "kalkulasi-tujuan-finansial",
                 type: "POST",
                 data: {
                     member:pilihan,
@@ -171,7 +171,7 @@ $(document).ready(function(){
             var lama_menikmati = $('.lama_menikmati').val();
                
             $.ajax({
-                url: "allianz-tujuan-finansial-form.php",
+                url: "kalkulasi-tujuan-finansial",
                 type: "POST",
                 data: {
                     member:pilihan,
@@ -224,7 +224,7 @@ $(document).ready(function(){
             var pa_inv = $('.pa_kembali:checked').val();
               
             $.ajax({
-                url: "allianz-tujuan-finansial-form.php",
+                url: "kalkulasi-tujuan-finansial",
                 type: "POST",
                 data: {
                     member:pilihan,

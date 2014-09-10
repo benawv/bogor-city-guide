@@ -17,38 +17,6 @@
 	<div class="items-container">
 		<?php echo $this->areablock('container', array(
 					'allowed' => array('container-box')))?>
-		<!--
-		<?php 
-			foreach($this->entries as $entry) {
-		?>
-				<div class="item">
-					<div class="heading">
-						<h2 class="title_news"><a href="<?php echo $this->url(array($entry->getKey(), $entry->getId()), 'product-list')?>"><?php echo $entry->getTitle();?></a></h2>
-						<div class="btn-group">
-							<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
-							<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
-						</div>
-					</div>
-					<a href="product-sub-asuransi-kesehatan.php" class="thumbnail">
-						<img class="image_share" src="<?php echo $entry->getImage()?>" alt="<?php echo $entry->getTitle()?>">
-					</a>
-					<div class="description">
-						<ul class="list-product">
-							<?php 
-								foreach($this->products as $v) {
-									if($entry->getId() == $v['kategori__id'])
-									{
-										echo "<li><a href='#'>".$v['judul']."</a></li>";
-									}
-								}
-							?>
-						</ul>
-					</div>
-				</div>
-		<?php 
-			} 
-		?>
-		-->
 	</div>
 	<!-- endcontent -->
 	

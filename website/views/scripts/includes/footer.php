@@ -64,3 +64,43 @@
 	</div>
 </footer>
 <link rel="stylesheet" type="text/css" media="all" href="/website/static/css/css-ie8/isr.css">
+<script type="text/javascript">
+	function navigateMe(anchor)
+	{
+	
+			$(".pagenav .navi li").removeClass('aktif');
+			$(".pagenav .navi li .nav_menu div").css('background-position','0px -26px');
+			var element = $("." + anchor);
+			element.addClass('aktif');
+			$('li.aktif .nav_menu div').css('background-position', '0px 0px');
+		
+			//alert($(".heading").offset().top);
+			if(Math.floor( $(".heading").offset().top)<=212)
+	      	{
+		      	$('html, body').animate({scrollTop:$("#"+anchor).offset().top-190}, 500);
+	      	}
+			else
+			{
+				$('html, body').animate({scrollTop:$("#"+anchor).offset().top-90}, 500);
+			}
+	}
+	
+	$(window).bind("load", function() {
+		var hash = document.URL.substr(document.URL.indexOf('#')+1);
+		
+		if(Math.floor( $(".heading").offset().top)<=212)
+		{
+			$('html, body').animate({scrollTop:$("#"+hash).offset().top-190}, 500);
+		}
+		else
+		{
+			$('html, body').animate({scrollTop:$("#"+hash).offset().top-90}, 500);
+		}
+		$(".pagenav .navi li").removeClass('aktif');
+		$(".pagenav .navi li .nav_menu div").css('background-position','0px -26px');
+		var element = $("." + hash);
+		element.addClass('aktif');
+		$('li.aktif .nav_menu div').css('background-position', '0px 0px');
+		
+	});
+</script> 
