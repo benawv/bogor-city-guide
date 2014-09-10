@@ -103,4 +103,4 @@
 		$('li.aktif .nav_menu div').css('background-position', '0px 0px');
 		
 	});
-</script>
+</script> 
