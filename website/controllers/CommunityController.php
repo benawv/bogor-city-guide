@@ -182,7 +182,7 @@ class CommunityController extends Website_Controller_Action {
 		
 		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, tblcategory.colorPicker, tblcategory.hexacolor, tblcategory.summary FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				inner join assets as ass on tblcommunity.image=ass.id
-				WHERE tblcommunity.category__id=".$kriteria." ORDER BY tblcommunity.date DESC limit 14"; //or whatever you need to do.
+				WHERE tblcommunity.category__id=".$kriteria." ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14"; //or whatever you need to do.
 		
 		$this->view->fetchData = $db->fetchAll($sql);
 		
@@ -343,6 +343,103 @@ class CommunityController extends Website_Controller_Action {
 			ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14 offset ".$offset3; //or whatever you need to do.
 			$data3 = $db->fetchAll($sql3);
 			$data['offset_prev'] = count($data3);
+		}
+		echo json_encode($data);
+	}
+	
+	public function paging3Action(){
+		$cat = $this->_getParam('category');
+		$offset = $this->_getParam('indexPage');
+		
+		$path = new Object_CommunityTipsCategory_List();
+		$path->setLimit(1);
+		$path->setCondition('titleCategory="'.$cat.'"');
+		foreach ($path as $test)
+		{
+			$kriteria = $test->getID();
+		}
+		
+		$db = Pimcore_Resource_Mysql::get();
+		$entries = new Object_CommunityTips_List();
+		$entries->setLimit(1);
+		foreach ($entries as $table)
+		{
+			$nameCommunity = "object_".$table->getClassId();
+		}
+		
+		$entries = new Object_CommunityTipsCategory_List();
+		$entries->setLimit(1);
+		foreach ($entries as $table)
+		{
+			$nameCommunityCat = "object_".$table->getClassId();
+		}
+		
+		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, tblcategory.colorPicker, tblcategory.hexacolor, tblcategory.summary FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+				inner join assets as ass on tblcommunity.image=ass.id
+				WHERE tblcommunity.category__id=".$kriteria." ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14 offset ".$offset; //or whatever you need to do.
+		
+		$data = $db->fetchAll($sql);
+		
+		$data['count_all'] = count($data);
+		
+		$offset2 = $offset+14;
+		$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, tblcategory.colorPicker, tblcategory.hexacolor, tblcategory.summary FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+				inner join assets as ass on tblcommunity.image=ass.id
+				WHERE tblcommunity.category__id=".$kriteria." ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14 offset ".$offset2; //or whatever you need to do.
+		
+		$data2 = $db->fetchAll($sql2);
+		$data['offset_next'] = count($data2);
+		
+		echo json_encode($data);
+	}
+	
+	public function paging4Action(){
+		$cat = $this->_getParam('category');
+		$offset = $this->_getParam('indexPage');
+		
+		$path = new Object_CommunityTipsCategory_List();
+		$path->setLimit(1);
+		$path->setCondition('titleCategory="'.$cat.'"');
+		foreach ($path as $test)
+		{
+			$kriteria = $test->getID();
+		}
+		
+		$db = Pimcore_Resource_Mysql::get();
+		$entries = new Object_CommunityTips_List();
+		$entries->setLimit(1);
+		foreach ($entries as $table)
+		{
+			$nameCommunity = "object_".$table->getClassId();
+		}
+		
+		$entries = new Object_CommunityTipsCategory_List();
+		$entries->setLimit(1);
+		foreach ($entries as $table)
+		{
+			$nameCommunityCat = "object_".$table->getClassId();
+		}
+		
+		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, tblcategory.colorPicker, tblcategory.hexacolor, tblcategory.summary FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+				inner join assets as ass on tblcommunity.image=ass.id
+				WHERE tblcommunity.category__id=".$kriteria." ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14 offset ".$offset; //or whatever you need to do.
+		
+		$data = $db->fetchAll($sql);
+		
+		$data['count_all'] = count($data);
+		
+		$offset3 = $offset-14;
+		if($offset3 < 0)
+		{
+			$data['offset_prev'] = 0;
+		}
+		else{
+			$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, tblcategory.colorPicker, tblcategory.hexacolor, tblcategory.summary FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+					inner join assets as ass on tblcommunity.image=ass.id
+					WHERE tblcommunity.category__id=".$kriteria." ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14 offset ".$offset3; //or whatever you need to do.
+			
+			$data2 = $db->fetchAll($sql2);
+			$data['offset_prev'] = count($data2);
 		}
 		echo json_encode($data);
 	}
