@@ -302,10 +302,6 @@ $(document).ready(function(){
 				var obj = JSON.parse(data);
 				
 				if(parseInt(obj.count_all) > 0){
-					$(".cus_hide").fadeOut("slow", "linear",complete);
-					$('html, body').animate({
-	                    scrollTop: $("#pagingTop").offset().top
-	                }, 1000);
 					for(var a=0;a < 14;a++)
 				    {
 						$("#div"+a).find("a").attr("href", "");
@@ -314,6 +310,10 @@ $(document).ready(function(){
 				        $("#div"+a).find("time").empty();
 				        $("#div"+a).find(".authr-ttl").empty();
 				    }
+					$(".cus_hide").fadeOut("slow", "linear",complete);
+					$('html, body').animate({
+	                    scrollTop: $("#pagingTop").offset().top
+	                }, 1000);
 				}
 				
 				function complete() {
@@ -347,6 +347,7 @@ $(document).ready(function(){
 
 				        if(z < Object.keys(obj).length-2)
 					    {
+				        	$("#div"+z).fadeIn("slow");
 							$("#div"+z).find("a").attr("href", "../community-detail/"+key+"_"+id+"_"+tmplt);
 					        $("#div"+z).find("img").attr("src", "../"+gmbr);
 					        $("#div"+z).find(".tg-shr").empty();
@@ -355,7 +356,6 @@ $(document).ready(function(){
 					        $("#div"+z).find("time").append(tgl);
 					        $("#div"+z).find(".authr-ttl").empty();
 					        $("#div"+z).find(".authr-ttl").append(title);
-					        $("#div"+z).fadeIn("slow");
 					    }
 					    z++;
 					});

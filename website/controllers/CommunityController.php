@@ -164,7 +164,6 @@ class CommunityController extends Website_Controller_Action {
 			$kriteria = $test->getID();
 		}
 		
-		
 		$db = Pimcore_Resource_Mysql::get();
 		$entries = new Object_CommunityTips_List();
 		$entries->setLimit(1);
@@ -183,8 +182,19 @@ class CommunityController extends Website_Controller_Action {
 		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, tblcategory.colorPicker, tblcategory.hexacolor, tblcategory.summary FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				inner join assets as ass on tblcommunity.image=ass.id
 				WHERE tblcommunity.category__id=".$kriteria." ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14"; //or whatever you need to do.
-		
-		$this->view->fetchData = $db->fetchAll($sql);
+		$data1 = $db->fetchAll($sql);
+		if(count($data1) > 0)
+		{
+			$this->view->totalData = count($data1);
+			$this->view->fetchData = $data1;
+		}
+		else
+		{
+			$this->view->totalData = count($data1);
+			$sql2 = "SELECT * FROM ".$nameCommunityCat." as tblcategory 
+					WHERE tblcategory.oo_id=".$kriteria;
+			$this->view->fetchData = $db->fetchAll($sql2);
+		}
 		
 		//Recommended
 		$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id

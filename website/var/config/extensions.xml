@@ -23,6 +23,7 @@
     <container-box-carousel-text>1</container-box-carousel-text>
     <product-quicklinks>1</product-quicklinks>
     <sections-video>1</sections-video>
+    <sections-gallery>1</sections-gallery>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>

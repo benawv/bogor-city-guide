@@ -48,6 +48,7 @@
 					<div class="s-main">
 						<div class="s-main-innr" id="pagingTop">
 							<div class="art-lst">
+							<?php if ($this->totalData > 0){?>
 									<div class="s-ct">
 										<div class="innr-wrp">
 										<?php
@@ -264,6 +265,12 @@
 											<input type="hidden" value="14" class="indexPage_next" />
 										</div>
 									 </div>
+									 <?php
+										}
+										else{
+									?>
+											<h2 style="margin-top: 25px;">Tidak Ada Data</h2>
+									<?php }?>
 							</div>
 							
 						</div>
