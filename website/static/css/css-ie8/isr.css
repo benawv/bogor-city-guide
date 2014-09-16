@@ -179,7 +179,7 @@
 .description{
 	font-size: 14px;
 	line-height: 20px;
-	width: 100%;
+	width: 64.66666666%;
 }
 .ipNewsList .description{
 	width: 70%;
@@ -206,7 +206,7 @@
 	list-style: none;
 }
 
-.menutab_dekstop li a {
+.menutab_dekstop li a{
 	border: 1px solid #e8e8e8;
 	width: 350px;
 	float: left;

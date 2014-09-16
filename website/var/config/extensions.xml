@@ -23,6 +23,18 @@
     <container-box-carousel-text>1</container-box-carousel-text>
     <product-quicklinks>1</product-quicklinks>
     <sections-video>1</sections-video>
+    <sections-gallery>1</sections-gallery>
+    <sections-select>1</sections-select>
+    <tekskiri60-imagekanan40>1</tekskiri60-imagekanan40>
+    <tekskiri40-imagekanan60>1</tekskiri40-imagekanan60>
+    <tekskanan40-imagekiri60>1</tekskanan40-imagekiri60>
+    <tekskanan60-imagekiri40>1</tekskanan60-imagekiri40>
+    <tekskanan40-videokiri60>1</tekskanan40-videokiri60>
+    <tekskanan60-videokiri40>1</tekskanan60-videokiri40>
+    <tekskiri40-videokanan60>1</tekskiri40-videokanan60>
+    <tekskiri60-videokanan40>1</tekskiri60-videokanan40>
+    <teks-tabs>1</teks-tabs>
+    <smartlink-factsheet>1</smartlink-factsheet>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>

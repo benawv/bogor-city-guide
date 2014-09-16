@@ -3162,3 +3162,10 @@ img.logo-float{
 .s-row.crmb.cus-crmb{
 	margin-left: 0px;
 }
+
+/*Added by Handri Pangestiaji*/
+.gallery-box h3 {
+	color: #003781;
+    font-weight: bold;
+    margin-top: 10px;
+}
