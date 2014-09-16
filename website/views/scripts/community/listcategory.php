@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="/website/static/css/virgin.css">
+<script type="text/javascript" src="/website/static/js/paging.js"></script>
 <div role="main" class="tips-main main">
 
 <div id="js-main-wrp" class="main-wrp" style="background: url(<?php echo $this->fetchBackground;?>);background-size: 1500px auto;height:620px; no-repeat;">
@@ -13,15 +14,17 @@
 						</li>
 								
 						<?php
-							if($this->fetchData[0][hexacolor]!='')
+							if($this->fetchData[0][hexaColor]!='')
 							{
-								$color = $this->fetchData[0][hexacolor];
+								$color = $this->fetchData[0][hexaColor];
 							}
 							else
 							{
 								$color =$this->fetchData[0][colorPicker];
 							}
 						?>
+						<input type="hidden" value="<?php echo $this->fetchData[0][titleCategory];?>" class="category" />
+						
 						<li style="background-color: <?php echo $color;?>;" class="crmb-sctn">
 							<a href="#"><?php echo $this->fetchData[0][titleCategory];?></a>
 						</li>
@@ -43,8 +46,9 @@
 			<div class="tips-box items-container" id="product-sub" >
 				<div class="tips-item-kiri">
 					<div class="s-main">
-						<div class="s-main-innr">
+						<div class="s-main-innr" id="pagingTop">
 							<div class="art-lst">
+							<?php if ($this->totalData > 0){?>
 									<div class="s-ct">
 										<div class="innr-wrp">
 										<?php
@@ -55,7 +59,7 @@
 										?>
 											<?php if($list[$y][title]!= ''){?>
 											<div class="r">
-												<div class="c-2of3">
+												<div class="c-2of3 cus_hide" id="div<?php echo $y;?>">
 													<article>
 														<a href="<?php echo $this->url(array($list[$y][o_key],$list[$y][oo_id],$list[$y][template]),"community-detail");?>">
 														<i class="icon-video"></i>	
@@ -80,7 +84,7 @@
 													</article>
 												</div>
 												<?php if($list[$y+1][title] != ''){?>
-													<div class="c-1of3">
+													<div class="c-1of3 cus_hide" id="div<?php echo $y+1;?>">
 														<article>
 															<a href="<?php echo $this->url(array($list[$y+1][o_key],$list[$y+1][oo_id],$list[$y+1][template]),"community-detail");?>">
 																<div class="outr-wrp">
@@ -112,7 +116,7 @@
 												if($list[$y+2][title] != ''){
 											?>
 											<div class="r">
-												<div class="c-1of2">
+												<div class="c-1of2 cus_hide" id="div<?php echo $y+2;?>">
 													<article>
 													   <a href="<?php echo $this->url(array($list[$y+2][o_key],$list[$y+2][oo_id],$list[$y+2][template]),"community-detail");?>">
 														<div class="outr-wrp">
@@ -136,7 +140,7 @@
 													</article>
 												</div>
 												<?php if($list[$y+3][title] != ''){?>
-													<div class="c-1of2">
+													<div class="c-1of2 cus_hide" id="div<?php echo $y+3;?>">
 														<article>
 														   <a href="<?php echo $this->url(array($list[$y+3][o_key],$list[$y+3][oo_id],$list[$y+3][template]),"community-detail");?>">
 															<i class="icon-video"></i>
@@ -167,7 +171,7 @@
 												if($list[$y+4][title] != ''){
 											?>
 											<div class="r">
-												<div class="c-1of3">
+												<div class="c-1of3 cus_hide" id="div<?php echo $y+4;?>">
 													<article>
 														<a href="<?php echo $this->url(array($list[$y+4][o_key],$list[$y+4][oo_id],$list[$y+4][template]),"community-detail");?>">
 															<i class="icon-video"></i>
@@ -192,7 +196,7 @@
 													</article>
 												</div>
 												<?php if($list[$y+5][title] != ''){?>
-													<div class="c-1of3">
+													<div class="c-1of3 cus_hide" id="div<?php echo $y+5;?>">
 														<article>
 															<a href="<?php echo $this->url(array($list[$y+5][o_key],$list[$y+5][oo_id],$list[$y+5][template]),"community-detail");?>">
 																<div class="outr-wrp">
@@ -217,7 +221,7 @@
 													</div>
 												<?php }?>
 												<?php if($list[$y+6][title] != ''){?>
-													<div class="c-1of3">
+													<div class="c-1of3 cus_hide" id="div<?php echo $y+6;?>">
 														<article>
 															<a href="<?php echo $this->url(array($list[$y+6][o_key],$list[$y+6][oo_id],$list[$y+6][template]),"community-detail");?>">
 																<i class="icon-video"></i>
@@ -252,11 +256,21 @@
 									<div class="srch-pgn clrd">
 										<div class="flt-l"></div>
 										<div class="flt-r">
-													<span>&lt; previous</span>
-													|
-													<a href="?page=2">next &gt;</a>
-												</div>
+											<span class="prevPage3">&lt; previous </span>
+											<a class="prevPage4" href="javascript:void(0)">&lt; previous </a>
+											<input type="hidden" value="0" class="indexPage_prev" />
+											|
+											<span class="nextPage3"> next &gt; </span>
+											<a class="nextPage4" href="javascript:void(0)"> next &gt; </a>
+											<input type="hidden" value="14" class="indexPage_next" />
+										</div>
 									 </div>
+									 <?php
+										}
+										else{
+									?>
+											<h2 style="margin-top: 25px;">Tidak Ada Data</h2>
+									<?php }?>
 							</div>
 							
 						</div>
