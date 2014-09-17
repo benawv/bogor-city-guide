@@ -14,7 +14,7 @@
 			<?php echo $this->input('title')?>
 		<?php endif; ?>
 	</h2>
-	<div class="description">
+	<div class="description width-66">
 		<?php if($this->editmode): ?>
 			<?php echo "anchor name: ".$this->input('anchor', array("width" => 250))?>
 		<?php endif;?>
