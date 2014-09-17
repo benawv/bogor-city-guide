@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="/website/static/css/virgin.css">
 <?php
-	$backImage = new Object_CommunityTipsBack_List();
+	$backImage = new Object_CommunityTipsBackground_List();
 	$backImage->setLimit(1);
 	$backImage->setOrder("desc");
 	foreach($backImage as $hasil)

@@ -1949,13 +1949,14 @@ padding-left: 20px;
 	#community .tips .tip .description{
 		background: #fff;
 		padding: 10px;
+		padding-top: 5px;
 	}
 		#community .tips .tip .description h3{
 			font-size: .9em;
 			line-height: 1em;
-			margin-bottom: 1em;
 			font-weight: bold;
 			height: 2.5em;
+			/*margin-bottom: 1em;*/
 			overflow: hidden;
 		}
 			#community .tips .tip .description h3 a{
@@ -3161,4 +3162,12 @@ img.logo-float{
 }
 .s-row.crmb.cus-crmb{
 	margin-left: 0px;
+}
+.kat-desc.description{
+	width: 100%;
+}
+#community .tips .tip .description .meta .description-jurnal{
+	float: left;
+	font-weight: normal;
+	margin-top: -17px;
 }

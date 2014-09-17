@@ -126,11 +126,11 @@ $config = Pimcore_Config::getSystemConfig();
         <a href="/admin/login/lostpassword" class="lostpassword"><?php echo $this->translate("Forgot your password"); ?></a>
     </div>
 </div>
-<div id="footer">
+<!--<div id="footer">
     <a href="http://www.pimcore.org/">pimcore. Open Source Multichannel Experience and Engagement Platform</a>
     <br />
     &copy; 2009-<?php echo date("Y") ?> <a href="http://www.pimcore.org/">pimcore GmbH</a>, a proud member of the <a href="http://www.elements.at/">elements group</a>
-</div>
+</div>-->
 
 
 <script type="text/javascript">

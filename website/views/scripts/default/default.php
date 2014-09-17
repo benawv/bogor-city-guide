@@ -9,28 +9,30 @@
 				'allowed' => array('layanankami-quicklinks')))?>
 		</div>
 	</div>
+	<?php 
+		$entries = new Object_CommunityTips_List();
+		$entries->setLimit("6");
+		$entries->setOrderKey("date");
+		$entries->setOrder("desc");
+		if(count($entries)>0)
+		{
+	?>
 	<!-- Community -->
 	<div id="community" class="clearfix">
 		<h2>Allianz Community Tips</h2>
 		<div class="tips">
-			<?php 
-				$entries = new Object_CommunityTips_List();
-				$entries->setLimit("6");
-				$entries->setOrderKey("date");
-				$entries->setOrder("desc");
-				
+			<?php
 				foreach($entries as $entry)
 				{
 			?>
 					<div class="tip">
-						<div class="photo">
-							<img src="<?php echo $entry->getImage()?>" width="298" height="110" />
-						</div>
+						<div class="photo"><img src="<?php echo $entry->imageHomeAllianz->filename;?>" /></div>
 						<div class="description">
-							<h3><?php echo $entry->getTitle() ?></h3>
+							<h3><a href="<?php echo "community-detail/".$entry->getO_key()."_".$entry->getO_id()."_".$entry->getTemplate();?>"><?php echo $entry->getTitle();?></a></h3>
 							<div class="meta">
-								<div class="date"><?php echo date("d/m/Y", strtotime($entry->getDate())) ?></div>
-								<div class="category"><?php echo $entry->getCategory()?></div>
+								<div class="description-jurnal">
+									<?php echo $entry->getSummary();?>
+								</div>	
 							</div>
 						</div>
 					</div>
@@ -40,6 +42,15 @@
 		</div>
 	</div>
 	<!-- End Community -->
+	<?php
+		}
+		$value = strtotime(date("YmdHis")).rand();
+		
+		if($_COOKIE["user"]=="")
+		{
+			setcookie("user", $value);
+		}
+	?>
 	<!-- Map -->
 	<div class="wrapper clearfix">
 		<div id="agent-locator">
