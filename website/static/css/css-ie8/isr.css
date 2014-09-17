@@ -179,8 +179,13 @@
 .description{
 	font-size: 14px;
 	line-height: 20px;
+	width: 100%;
+}
+
+.width-66{
 	width: 64.66666666%;
 }
+
 .ipNewsList .description{
 	width: 70%;
 }
