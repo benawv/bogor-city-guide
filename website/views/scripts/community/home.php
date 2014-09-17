@@ -17,6 +17,8 @@
 												setcookie("user", $value);
 											}
 										
+										if($this->totalData > 0)
+										{
 											$y = 0;
 											$list = $this->fetchTips;
 											while($y<count($list))
@@ -27,10 +29,10 @@
 												<div class="c-2of3 cus_hide" id="div<?php echo $y;?>">
 													<article>
 														<a id="more" href="<?php echo $this->url(array($list[$y][o_key],$list[$y][oo_id],$list[$y][template]),"community-detail");?>">
-														<i class="icon-video"></i>	
+														<!-- <i class="icon-video"></i>	 -->
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo $list[$y][filename];?>"alt="">
+																	<img src="<?php echo "/".$list[$y][filename];?>"alt="">
 																	<div class="tg tg-shr">
 																		<?php 
 																			echo $list[$y][titleCategory];
@@ -54,7 +56,7 @@
 															<a href="<?php echo $this->url(array($list[$y+1][o_key],$list[$y+1][oo_id],$list[$y+1][template]),"community-detail");?>">
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo $list[$y+1][filename];?>"alt="">
+																		<img src="<?php echo "/".$list[$y+1][filename];?>"alt="">
 																		<div class="tg tg-shr">
 																			<?php 
 																					echo $list[$y+1][titleCategory];
@@ -86,7 +88,7 @@
 													   <a href="<?php echo $this->url(array($list[$y+2][o_key],$list[$y+2][oo_id],$list[$y+2][template]),"community-detail");?>">
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo $list[$y+2][filename];?>"alt="">
+																<img src="<?php echo "/".$list[$y+2][filename];?>"alt="">
 																<div class="tg tg-shr">
 																	<?php 
 																			echo $list[$y+2][titleCategory];
@@ -108,10 +110,10 @@
 													<div class="c-1of2 cus_hide" id="div<?php echo $y+3;?>">
 														<article>
 														   <a href="<?php echo $this->url(array($list[$y+3][o_key],$list[$y+3][oo_id],$list[$y+3][template]),"community-detail");?>">
-															<i class="icon-video"></i>
+															<!-- <i class="icon-video"></i> -->
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo $list[$y+3][filename];?>"alt="">
+																	<img src="<?php echo "/".$list[$y+3][filename];?>"alt="">
 																	<div class="tg tg-shr">
 																		<?php 
 																				echo $list[$y+3][titleCategory];
@@ -139,10 +141,10 @@
 												<div class="c-1of3 cus_hide" id="div<?php echo $y+4;?>">
 													<article>
 														<a href="<?php echo $this->url(array($list[$y+4][o_key],$list[$y+4][oo_id],$list[$y+4][template]),"community-detail");?>">
-															<i class="icon-video"></i>
+															<!-- <i class="icon-video"></i> -->
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo $list[$y+4][filename];?>"alt="">
+																	<img src="<?php echo "/".$list[$y+4][filename];?>"alt="">
 																	<div class="tg tg-shr">
 																		<?php 
 																				echo $list[$y+4][titleCategory];
@@ -166,7 +168,7 @@
 															<a href="<?php echo $this->url(array($list[$y+5][o_key],$list[$y+5][oo_id],$list[$y+5][template]),"community-detail");?>">
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo $list[$y+5][filename];?>"alt="">
+																		<img src="<?php echo "/".$list[$y+5][filename];?>"alt="">
 																		<div class="tg tg-shr">
 																			<?php 
 																					echo $list[$y+5][titleCategory];
@@ -189,10 +191,10 @@
 													<div class="c-1of3 cus_hide" id="div<?php echo $y+6;?>">
 														<article>
 															<a href="<?php echo $this->url(array($list[$y+6][o_key],$list[$y+6][oo_id],$list[$y+6][template]),"community-detail");?>">
-																<i class="icon-video"></i>
+																<!-- <i class="icon-video"></i>  -->
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo $list[$y+6][filename];?>"alt="">
+																		<img src="<?php echo "/".$list[$y+6][filename];?>"alt="">
 																		<div class="tg tg-shr">
 																			<?php 
 																					echo $list[$y+6][titleCategory];
@@ -215,7 +217,14 @@
 											<?php
 												}
 												$y = $y + 7 ;
-											}?>
+											}
+										}
+										else {
+											?>
+												<h2 style="margin-top: 25px;">Tidak Ada Data</h2>
+										<?php 
+											}
+										?>
 										</div>
 									</div>
 									<div class="srch-pgn clrd">
@@ -344,7 +353,7 @@
 													
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo $result[filename];?>" alt="" />
+																<img src="<?php echo "/".$result[filename];?>" alt="" />
 																<div class="tg tg-shr">
 																	<?php
 																		echo $result[titleCategory];
@@ -391,7 +400,7 @@
 													
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo $result[filename];?>" alt="" />
+																<img src="<?php echo "/".$result[filename];?>" alt="" />
 																<div class="tg tg-shr">
 																	<?php
 																		echo $result[titleCategory];

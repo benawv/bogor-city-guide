@@ -25721,28 +25721,6 @@ Ext.layout.ToolbarLayout = Ext.extend(Ext.layout.ContainerLayout, {
                             '</tbody>',
                         '</table>',
                     '</td>',
-                    '<td class="x-toolbar-right" align="right">',
-                        '<table cellspacing="0" class="x-toolbar-right-ct">',
-                            '<tbody>',
-                                '<tr>',
-                                    '<td>',
-                                        '<table cellspacing="0">',
-                                            '<tbody>',
-                                                '<tr class="x-toolbar-right-row"></tr>',
-                                            '</tbody>',
-                                        '</table>',
-                                    '</td>',
-                                    '<td>',
-                                        '<table cellspacing="0">',
-                                            '<tbody>',
-                                                '<tr class="x-toolbar-extras-row"></tr>',
-                                            '</tbody>',
-                                        '</table>',
-                                    '</td>',
-                                '</tr>',
-                            '</tbody>',
-                        '</table>',
-                    '</td>',
                 '</tr>',
             '</tbody>',
         '</table>'
@@ -28573,7 +28551,7 @@ cp.colors = ['000000', '993300', '333300'];
         '800000', 'FF6600', '808000', '008000', '008080', '0000FF', '666699', '808080',
         'FF0000', 'FF9900', '99CC00', '339966', '33CCCC', '3366FF', '800080', '969696',
         'FF00FF', 'FFCC00', 'FFFF00', '00FF00', '00FFFF', '00CCFF', '993366', 'C0C0C0',
-        'FF99CC', 'FFCC99', 'FFFF99', 'CCFFCC', 'CCFFFF', '99CCFF', 'CC99FF', 'FFFFFF'
+        'FF99CC', 'FFCC99', 'FFFF99', 'CCFFCC', 'CCFFFF', '99CCFF', 'CC99FF', '1D2755'
     ],
 
     /**

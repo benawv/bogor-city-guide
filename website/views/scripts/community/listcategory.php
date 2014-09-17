@@ -62,7 +62,7 @@
 												<div class="c-2of3 cus_hide" id="div<?php echo $y;?>">
 													<article>
 														<a href="<?php echo $this->url(array($list[$y][o_key],$list[$y][oo_id],$list[$y][template]),"community-detail");?>">
-														<i class="icon-video"></i>	
+														<!-- <i class="icon-video"></i>	 -->	
 															<div class="outr-wrp">
 																<div class="img-wrp">
 																	<img src="<?php echo "../".$list[$y][filename];?>"alt="">
@@ -143,7 +143,7 @@
 													<div class="c-1of2 cus_hide" id="div<?php echo $y+3;?>">
 														<article>
 														   <a href="<?php echo $this->url(array($list[$y+3][o_key],$list[$y+3][oo_id],$list[$y+3][template]),"community-detail");?>">
-															<i class="icon-video"></i>
+															<!-- <i class="icon-video"></i>	 -->
 															<div class="outr-wrp">
 																<div class="img-wrp">
 																	<img src="<?php echo "../".$list[$y+3][filename];?>"alt="">
@@ -174,7 +174,7 @@
 												<div class="c-1of3 cus_hide" id="div<?php echo $y+4;?>">
 													<article>
 														<a href="<?php echo $this->url(array($list[$y+4][o_key],$list[$y+4][oo_id],$list[$y+4][template]),"community-detail");?>">
-															<i class="icon-video"></i>
+															<!-- <i class="icon-video"></i>	 -->
 															<div class="outr-wrp">
 																<div class="img-wrp">
 																	<img src="<?php echo "../".$list[$y+4][filename];?>"alt="">
@@ -224,7 +224,7 @@
 													<div class="c-1of3 cus_hide" id="div<?php echo $y+6;?>">
 														<article>
 															<a href="<?php echo $this->url(array($list[$y+6][o_key],$list[$y+6][oo_id],$list[$y+6][template]),"community-detail");?>">
-																<i class="icon-video"></i>
+																<!-- <i class="icon-video"></i>	 -->
 																<div class="outr-wrp">
 																	<div class="img-wrp">
 																		<img src="<?php echo "../".$list[$y+6][filename];?>"alt="">

@@ -26,9 +26,10 @@ class CommunityController extends Website_Controller_Action {
 				ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14"; //or whatever you need to do.
 		
 		$this->view->fetchTips = $db->fetchAll($sql);
+		$this->view->totalData = count($db->fetchAll($sql));
 		
 		//Background Image
-		$backImage = new Object_CommunityTipsBack_List();
+		$backImage = new Object_CommunityTipsBackground_List();
 		$backImage->setLimit(1);
 		$backImage->setOrder("desc");
 		foreach($backImage as $hasil)
@@ -46,10 +47,24 @@ class CommunityController extends Website_Controller_Action {
 		$this->view->fetchRecommended = $db->fetchAll($sql2);
 		
 		//Popular
-		$sql3 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$entries = new Object_CommunityTipsCookies_List();
+		$entries->setLimit(1);
+		foreach ($entries as $table)
+		{
+			$nameCommunityCok = "object_".$table->getClassId();
+		}
+		
+		//$sql4 = "SELECT cookies.idArticle, count(cookies.idArticle) as total FROM ".$nameCommunityCok." as cookies group by cookies.idArticle order by total DESC limit 3";
+		
+		//$idArticle = $db->fetchAll($sql4);
+		
+		/*$sql3 = "SELECT tblcommunity.oo_id, tblcommunity.popular, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+				left join assets as ass on tblcommunity.image=ass.id
+				where tblcommunity.oo_id = ".$idArticle[0][idArticle]." or tblcommunity.oo_id = ".$idArticle[1][idArticle]." or tblcommunity.oo_id = ".$idArticle[2][idArticle]; //or whatever you need to do.
+		*/
+		$sql3 = "SELECT tblcommunity.oo_id, tblcommunity.popular, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				left join assets as ass on tblcommunity.image=ass.id
 				ORDER BY tblcommunity.popular DESC limit 3"; //or whatever you need to do.
-		
 		$this->view->fetchPopular = $db->fetchAll($sql3);
 		
 	}
@@ -87,21 +102,21 @@ class CommunityController extends Website_Controller_Action {
 					$video->poster = $v->getPoster()->getId();
 				}
 			}
-			$video->setOptions(array("height"=>"100%"));
+			//$video->setOptions(array("height"=>"450px"));
 			
 			$this->view->video = json_encode($video->frontend());
 		}
 		$this->view->data = $data;
 		
 		//Background Image
-		$backImage = new Object_CommunityTipsBack_List();
+		/*$backImage = new Object_CommunityTipsBackground_List();
 		$backImage->setLimit(1);
 		$backImage->setOrder("desc");
 		foreach($backImage as $hasil)
 		{
 			$image = $hasil->getImage();
 		}
-		$this->view->fetchBackground = $image;
+		$this->view->fetchBackground = $image;*/
 		
 		$db = Pimcore_Resource_Mysql::get();
 		$entries = new Object_CommunityTips_List();
@@ -133,6 +148,23 @@ class CommunityController extends Website_Controller_Action {
 		
 		$this->view->fetchPopular = $db->fetchAll($sql3);
 		
+		//Popular
+		/*$entries = new Object_CommunityTipsCookies_List();
+		$entries->setLimit(1);
+		foreach ($entries as $table)
+		{
+			$nameCommunityCok = "object_".$table->getClassId();
+		}
+		
+		$sql4 = "SELECT cookies.idArticle, count(cookies.idArticle) as total FROM ".$nameCommunityCok." as cookies group by cookies.idArticle order by total DESC limit 5";
+		
+		$idArticle = $db->fetchAll($sql4);
+		
+		$sql3 = "SELECT tblcommunity.oo_id, tblcommunity.popular, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+				left join assets as ass on tblcommunity.image=ass.id
+				where tblcommunity.oo_id = ".$idArticle[0][idArticle]." or tblcommunity.oo_id = ".$idArticle[1][idArticle]." or tblcommunity.oo_id = ".$idArticle[2][idArticle]." or tblcommunity.oo_id = ".$idArticle[3][idArticle]." or tblcommunity.oo_id = ".$idArticle[4][idArticle]; //or whatever you need to do.
+		//echo $sql3;
+		$this->view->fetchPopular = $db->fetchAll($sql3);*/
 		$this->render('template1');
 		$this->enableLayout();
 		
@@ -145,7 +177,7 @@ class CommunityController extends Website_Controller_Action {
 		$this->enableLayout();
 		
 		//Background Image
-		$backImage = new Object_CommunityTipsBack_List();
+		$backImage = new Object_CommunityTipsBackground_List();
 		$backImage->setLimit(1);
 		$backImage->setOrder("desc");
 		foreach($backImage as $hasil)
@@ -243,7 +275,7 @@ class CommunityController extends Website_Controller_Action {
 		$popular = 0;
 		foreach ($tips as $a)
 		{
-			$popular = $popular+$a->getPopular();
+			$popular = $popular+($a->getPopular());
 			$table1 = "object_store_".$a->getO_classId();
 			$table2 = "object_query_".$a->getO_classId();
 		}
@@ -268,11 +300,11 @@ class CommunityController extends Website_Controller_Action {
 			}
 			
 			$sumPopular = $popular+1;
-			
-			$db->update("objects", array("o_path"=>"/community-tips-cookies/community-tips-cookies/", "o_parentId"=>$o_Pid), "o_id=".$o_id);
-			$db->update($table1, array("popular"=>$sumPopular), "oo_id=".$article);
-			$db->update($table2, array("popular"=>$sumPopular), "oo_id=".$article);
-			
+			$where = "o_id=".$o_id;
+			$where2 = "oo_id=".$article;
+			$db->update("objects", array("o_path"=>"/community-tips-cookies/community-tips-cookies/", "o_parentId"=>$o_Pid), $where);
+			$db->update($table1, array("popular"=>$sumPopular), $where2);
+			$db->update($table2, array("popular"=>$sumPopular), $where2);
 			$string = "Sudah di save";
 		}
 		else{

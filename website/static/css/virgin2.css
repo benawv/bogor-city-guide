@@ -5878,3 +5878,22 @@ body .main-wrp .blue-allianz:hover {
 .s-row.crmb,.s-row.hero-bnnr{
 	margin-left: 11px;
 }
+.pimcore_tag_video
+{
+   float: none;
+   clear: both;
+   width: 100%;
+   position: relative;
+   padding-bottom: 56.25%;
+   padding-top: 25px;
+   height: 0;
+   margin-bottom: 12px;
+}
+.pimcore_tag_video > iframe 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
