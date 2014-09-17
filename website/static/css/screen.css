@@ -3163,11 +3163,18 @@ img.logo-float{
 .s-row.crmb.cus-crmb{
 	margin-left: 0px;
 }
-.kat-desc.description{
-	width: 100%;
+
+/*Added by Handri Pangestiaji*/
+.gallery-box h3 {
+	color: #003781;
+    font-weight: bold;
+    margin-top: 10px;
 }
 #community .tips .tip .description .meta .description-jurnal{
 	float: left;
 	font-weight: normal;
 	margin-top: -17px;
+}
+.kat-desc.description{
+	width: 100%;
 }
