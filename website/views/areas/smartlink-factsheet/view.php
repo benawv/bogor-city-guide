@@ -53,4 +53,18 @@
 			</select>
 		</p>
 	</div>
+	<div class="description">
+		<?php echo $this->image('image', array(
+								'title' => 'Drag your image here',
+								'thumbnail' => 'fundfactsheet'))?>
+		<ul>
+			<?php
+				$smartlinks = Object_FundFact::getList();
+				foreach($smartlinks as $v) {
+					$item = $v->getBulan().$v->getTahun();
+					echo '<li><a item=></a></li>';
+				}
+			?>
+		</ul>
+	</div>
 </div>
