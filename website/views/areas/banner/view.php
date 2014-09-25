@@ -40,8 +40,10 @@
 					</div>
 					<?php
 						$extra = $this->image("banner_".$i)->getHotspots();
-						$pos = $extra[0]['data'][0]['value'];
-						$color = $extra[0]['data'][1]['value'];
+						//$pos = $extra[0]['data'][0]['value'];
+						//$color = $extra[0]['data'][1]['value'];
+						$pos = $this->select('position_'.$i)->getData()?$this->select('position_'.$i)->getData():'left';
+						$color = $this->select('color_'.$i)->getData()?$this->select('color_'.$i)->getData():'orange';
 					?>
 					<div class="fixbox <?php echo $pos?>60">
 						<div class="place-bg bg-<?php echo $color?>">
@@ -52,6 +54,34 @@
 	                            <p>
 	                                <?php echo $this->textarea("banner-text-" . $i, ["width" => 251, "height" => 100]) ?>
 	                            </p>
+	                        <?php } ?>
+	                        <?php if($this->editmode) { ?>
+                        	<p>
+                        	<?php 
+                        		echo "Position: <br />";
+                        		echo $this->select("position_".$i,array(
+								    "store" => array(
+								        array("left", "Left"),
+								        array("right", "Right")
+								    )
+								)); 
+							?>
+                        	</p>
+                        	<p>
+	                        <?php 
+	                        	echo "Color: <br />";
+                        		echo $this->select("color_".$i,array(
+								    "store" => array(
+								        array("red", "Red"),
+								        array("lightgreen", "Light Green"),
+								        array("purple", "Purple"),
+								        array("blue", "Blue"),
+								        array("orange", "Orange")
+								    ),
+								    "reload" => true
+								)); 
+							?>
+                        	</p>
 	                        <?php } ?>
 						</div>
 						<div class="edge e-<?php echo $color?>">
