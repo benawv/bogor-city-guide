@@ -23,6 +23,7 @@ class CommunityController extends Website_Controller_Action {
 		
 		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				left join assets as ass on tblcommunity.image=ass.id
+				where tblcommunity.o_published = 1
 				ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14"; //or whatever you need to do.
 		
 		$this->view->fetchTips = $db->fetchAll($sql);
@@ -67,6 +68,66 @@ class CommunityController extends Website_Controller_Action {
 				ORDER BY tblcommunity.popular DESC limit 3"; //or whatever you need to do.
 		$this->view->fetchPopular = $db->fetchAll($sql3);
 		
+	}
+	
+	public function previewAction(){
+		$id = $this->_getParam('id');
+		
+		$db = Pimcore_Resource_Mysql::get();
+		$entries = Object_Abstract::getById($id);
+		$data = $entries;
+		
+		if($entries->getVideo()){
+			$v = $entries->getVideo();
+			$videoData = $v->getData();
+			
+			if($videoData) {
+				$video = new Document_Tag_Video();
+				$video->type = $v->getType();
+				$video->id = ($videoData instanceof Asset) ? $videoData->getId() : $videoData;
+				$video->title = $v->getTitle();
+				$video->description = $v->getDescription();
+				if($v->getPoster()) {
+					$video->poster = $v->getPoster()->getId();
+				}
+			}
+			//$video->setOptions(array("height"=>"450px"));
+			
+			$this->view->video = json_encode($video->frontend());
+		}
+		$this->view->data = $data;
+		
+		$db = Pimcore_Resource_Mysql::get();
+		$entries = new Object_CommunityTips_List();
+		$entries->setLimit(1);
+		foreach ($entries as $table)
+		{
+			$nameCommunity = "object_".$table->getClassId();
+		}
+		
+		$entries = new Object_CommunityTipsCategory_List();
+		$entries->setLimit(1);
+		foreach ($entries as $table)
+		{
+			$nameCommunityCat = "object_".$table->getClassId();
+		}
+		
+		//Recommended
+		$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+				left join assets as ass on tblcommunity.image=ass.id
+				where tblcommunity.recommended = 1
+				ORDER BY tblcommunity.recommended, tblcommunity.popular DESC limit 5"; //or whatever you need to do.
+		
+		$this->view->fetchRecommended = $db->fetchAll($sql2);
+		
+		//Popular
+		$sql3 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+				left join assets as ass on tblcommunity.image=ass.id
+				ORDER BY tblcommunity.popular DESC limit 5"; //or whatever you need to do.
+		
+		$this->view->fetchPopular = $db->fetchAll($sql3);
+		
+		$this->enableLayout();
 	}
 	
 	public function detailAction() {

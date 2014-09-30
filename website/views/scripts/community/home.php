@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="/website/static/css/virgin.css">
 <script type="text/javascript" src="/website/static/js/paging.js"></script>
-<div role="main" class="tips-main main" style="background: url(<?php echo $this->fetchBackground;?>);background-size: 1500px auto;background-repeat: no-repeat;">
+<div role="main" class="tips-main main" style="background: url(<?php echo $this->fetchBackground;?>);background-size: 1500px auto;background-repeat: no-repeat;background-position: top;">
 	<div class="tips-container container boxes-view">
 			<div class="tips-box items-container" id="product-sub" >
 				<div class="tips-item-kiri">
