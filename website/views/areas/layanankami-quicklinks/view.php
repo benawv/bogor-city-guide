@@ -1,4 +1,4 @@
-<div class="tab-wrapper">
+	<div class="tab-wrapper">
 	<div id="tab-quicklinks" class="tab-content">
 		<h3>Layanan Kami</h3>
 		<h4 style="margin-bottom: 10px;"><b>Info penting Asuransi Anda, di sini:</b></h4>		
@@ -69,10 +69,10 @@
 
 	<div class="tab_button">
 		<ul>
-			<li><a class="tab-layanan-anda" href="#tab-quicklinks">Layanan Kami</a></li>
-			<li><a class="tab-kontak" href="#tab-contact">Kontak</a></li>
-			<li><a class="tab-sosmed" href="#tab-socialmedia">Social Media</a></li>
-			<li class="last"><a class="tab-download" href="#tab-download">Download</a></li>
+			<li><a class="tab-layanan-anda" href="#tab-quicklinks"><?php echo $this->input('text-1')?></a></li>
+			<li><a class="tab-kontak" href="#tab-contact"><?php echo $this->input('text-2')?></a></li>
+			<li><a class="tab-sosmed" href="#tab-socialmedia"><?php echo $this->input('text-3')?></a></li>
+			<li class="last"><a class="tab-download" href="#tab-download"><?php echo $this->input('text-4')?></a></li>
 		</ul>
 	</div>
 

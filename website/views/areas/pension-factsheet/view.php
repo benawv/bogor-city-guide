@@ -48,7 +48,7 @@
 			<?php if($this->image('icon')->getSrc()):?>
 				<div style="background-image: url('<?php echo $this->image('icon')->getSrc()?>'); height: 31px; width: 31px; float: left; margin-right: 10px; "></div>
 			<?php endif;?>
-			Smartlink
+			Pension
 		<?php endif; ?>
 	</h2>
 	<div class="combo_section">
@@ -102,7 +102,7 @@
 								'thumbnail' => 'fundfactsheet'))?>
 		<ul>
 			<?php
-				$relationId = 294;
+				$relationId = 296;
 				//$smartlinks = Object_FundFact::getList();
 				$query = new Object_FundFact_List();
 				$query->setCondition("asuransi like '%,".$relationId.",%'");

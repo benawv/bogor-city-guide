@@ -15,7 +15,7 @@
 	</div>
 	
 	<div class="height_profil">
-		<?php echo $this->areablock('container', array('allowed' => array('sections', 'sections-video', 'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60', 'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40'))); ?>
+		<?php echo $this->areablock('container', array('allowed' => array('sections', 'sections-video', 'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60', 'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40', 'brosur', 'related-product-3'))); ?>
 		
 		<?php echo $this->areablock('container-modal', array('allowed' => array('modal')))?>
 	</div>

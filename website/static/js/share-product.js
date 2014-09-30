@@ -39,9 +39,10 @@ $(document).ready(function(){
                 {
                         desc = deskripsi;
                 }
+        loc = window.location.origin+'/website/static/fbshare/sharedfb.php';
 		$.ajax({
 				type: 'POST',
-				url: 'sharedfb.php',
+				url: loc,
 				data: {
 					filename: filename,
 					image_name: image,
@@ -51,7 +52,7 @@ $(document).ready(function(){
 				},
 				success: function(response)
 				{
-					var url = window.location.host+'/fbshare/'+response;
+					var url = window.location.origin+'/website/static/fbshare/'+response;
 					window.open('http://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), 'sharer', 'width=626,height=436');
 				}
 			});

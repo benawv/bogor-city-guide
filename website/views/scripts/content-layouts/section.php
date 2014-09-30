@@ -21,7 +21,9 @@
 														'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
 														'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
 														'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
-														'smartlink-factsheet'))); ?>
+														'smartlink-factsheet', 'syariah-factsheet',
+														'pension-factsheet', 'saving-factsheet',
+														'smartwealth-factsheet'))); ?>
 		
 		<?php echo $this->areablock('container-modal', array('allowed' => array('modal')))?>
 </div>

@@ -8,7 +8,7 @@
 .section-right-60 {
 	float: right;
 	width: 60%;
-	padding-left: 5px;
+	padding-left: 15px;
 	padding-right: 5px;
 }
 
@@ -80,4 +80,22 @@
 	.section-right-30 {
 		width: 100%;
 	}
+}
+
+.full-w .thumbnail {
+  position: relative;
+  color: #fff;
+  display: block;
+}
+
+.full-w .thumbnail.thumbnail-popup {
+  background: url(../images/loop.png) center center no-repeat;
+}
+
+.full-w .thumbnail.thumbnail-popup img {
+    opacity: 1;
+}
+
+.full-w .thumbnail.thumbnail-popup img:hover {
+    opacity: 0.5;
 }

@@ -35,6 +35,7 @@
     ?>
 	
 	<?php echo $this->template("includes/metadata.php")?>
+	
 </head>
 
 <body>
