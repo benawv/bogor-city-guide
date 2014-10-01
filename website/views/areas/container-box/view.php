@@ -46,7 +46,9 @@
 				'thumbnail'	=> 'product')
 		);?>
 	<?php } else { ?>
-		<?php echo $this->image('image-'.$i, array('image_share'))?>
+		<a href="<?php echo $this->link('title-'.$i)->getHref()?>" class="thumbnail">
+			<?php echo $this->image('image-'.$i, array('class' => 'image_share'))?>
+		</a>
 	<?php } ?>
 	<div class="description">
 		<?php echo $this->wysiwyg('description-'.$i)?>

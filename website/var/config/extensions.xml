@@ -35,6 +35,12 @@
     <tekskiri60-videokanan40>1</tekskiri60-videokanan40>
     <teks-tabs>1</teks-tabs>
     <smartlink-factsheet>1</smartlink-factsheet>
+    <syariah-factsheet>1</syariah-factsheet>
+    <pension-factsheet>1</pension-factsheet>
+    <saving-factsheet>1</saving-factsheet>
+    <smartwealth-quicklinks>1</smartwealth-quicklinks>
+    <brosur>1</brosur>
+    <related-product-3>1</related-product-3>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>

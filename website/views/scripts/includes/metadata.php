@@ -65,3 +65,4 @@
 
 	})
 </script>
+<script src="/website/static/js/share-product.js" type="text/javascript"></script>
