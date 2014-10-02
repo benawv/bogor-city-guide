@@ -10,20 +10,12 @@
 	<div class="heading clearfix pagenav">
 		<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
 		<div id="quicklinks">
-		<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks', 'product-quicklinks')))?>
+		<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks', 'product-quicklinks', 'layanankami-quicklinks')))?>
 		</div>
 	</div>
-		<?php echo $this->areablock('container', array('allowed' => array(
-														'sections', 'sections-tab', 'teks-tabs',
-														'sections-video', 'sections-gallery', 
-														'sections-select', 
-														'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
-														'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
-														'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
-														'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
-														'smartlink-factsheet', 'syariah-factsheet',
-														'pension-factsheet', 'saving-factsheet',
-														'smartwealth-factsheet', 'imagekiri-tabelkanan'))); ?>
+	<div class="full-w bg-white">	
+		<?php echo $this->areablock('container', array('allowed' => array('summary-berita', 'garis-pemisah', 'konten-berita'))); ?>
+	</div>
 		
 		<?php echo $this->areablock('container-modal', array('allowed' => array('modal')))?>
 </div>

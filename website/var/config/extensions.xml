@@ -41,6 +41,11 @@
     <smartwealth-quicklinks>1</smartwealth-quicklinks>
     <brosur>1</brosur>
     <related-product-3>1</related-product-3>
+    <imagekiri-tabelkanan>1</imagekiri-tabelkanan>
+    <summary-berita>1</summary-berita>
+    <garis-pemisah>1</garis-pemisah>
+    <konten-berita>1</konten-berita>
+    <smartwealth-factsheet>1</smartwealth-factsheet>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>
