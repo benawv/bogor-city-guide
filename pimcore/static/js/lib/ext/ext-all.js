@@ -14085,6 +14085,335 @@ Ext.ColorPalette = Ext.extend(Ext.Component, {
             
             while(z < 7)
             {
+                if(r[z]=="A" || r[z]=="a")
+                {
+                    r[z] = 10;
+                }
+                else if(r[z]=="B" || r[z]=="b")
+                {
+                    r[z] = 11;
+                }
+                else if(r[z]=="C" || r[z]=="c")
+                {
+                    r[z] = 12;
+                }
+                else if(r[z]=="D" || r[z]=="d")
+                {
+                    r[z] = 13;
+                }
+                else if(r[z]=="E" || r[z]=="e")
+                {
+                    r[z] = 14;
+                }
+                else if(r[z]=="F" || r[z]=="f")
+                {
+                    r[z] = 15;
+                }
+                z++;
+            }
+            
+            var R = (parseInt(r[1]) * parseInt(16)) + (parseInt(r[2]));
+            var G = (parseInt(r[3]) * parseInt(16)) + (parseInt(r[4]));
+            var B = (parseInt(r[5]) * parseInt(16)) + (parseInt(r[6]));
+            
+            var RGB = "R : "+R+"  G : "+G+"  B : "+B;
+            
+            $(this).attr("title","#"+result+"  "+RGB);
+        });
+        $( 'input[name="colorR"]' ).parent().parent().addClass("cus_css");
+        $( 'input[name="colorG"]' ).parent().parent().addClass("cus_css cus_margin");
+        $( 'input[name="colorB"]' ).parent().parent().addClass("cus_css cus_margin");
+        
+    },
+    afterRender: function () {
+        Ext.ColorPalette.superclass.afterRender.call(this);
+        if (this.value) {
+            var a = this.value;
+            this.value = null;
+            this.select(a, true);
+        }
+        
+        var test = $(".color-"+a+".colorPick.x-color-palette-sel").attr("id");
+        var color = "#"+test;
+        
+        var object_color = $(color).parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().attr("id");
+        
+        if($("#"+object_color).find('input[name="hexaColor"]').val()=="")
+        {
+            var input_hexa = $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('input[name="hexaColor"]').val("#"+a);
+        }
+        else
+        {
+            var input_hexa = $("#"+object_color).find('input[name="hexaColor"]').val();
+        }
+        var object = object_color.substring(7);
+        $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('input[name="hexaColor"]').addClass("hexaColor"+object);
+        
+        var hex = input_hexa.substring(1);
+        var r = new Array();
+        r[1] = hex.substring(0,1);
+        r[2] = hex.substring(1,2);
+        r[3] = hex.substring(2,3);
+        r[4] = hex.substring(3,4);
+        r[5] = hex.substring(4,5);
+        r[6] = hex.substring(5,6);
+        
+        $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('.x-color-palette-sel').removeClass("x-color-palette-sel");
+        $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('.color-'+hex).addClass("x-color-palette-sel");
+        
+        var z = 1;
+        
+        while(z < 7)
+        {
+            if(r[z]=="A" || r[z]=="a")
+            {
+                r[z] = 10;
+            }
+            else if(r[z]=="B" || r[z]=="b")
+            {
+                r[z] = 11;
+            }
+            else if(r[z]=="C" || r[z]=="c")
+            {
+                r[z] = 12;
+            }
+            else if(r[z]=="D" || r[z]=="d")
+            {
+                r[z] = 13;
+            }
+            else if(r[z]=="E" || r[z]=="e")
+            {
+                r[z] = 14;
+            }
+            else if(r[z]=="F" || r[z]=="f")
+            {
+                r[z] = 15;
+            }
+            z++;
+        }
+        
+        var input_r = $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('input[name="colorR"]').val((parseInt(r[1]) * parseInt(16)) + (parseInt(r[2])));
+        
+        $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('input[name="colorR"]').addClass("colorR"+object+" RGB"+object);
+        
+        var input_g = $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('input[name="colorG"]').val((parseInt(r[3]) * parseInt(16)) + (parseInt(r[4])));
+        
+        $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('input[name="colorG"]').addClass("colorG"+object+" RGB"+object);
+        
+        var input_b = $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('input[name="colorB"]').val((parseInt(r[5]) * parseInt(16)) + (parseInt(r[6])));
+        
+        $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('input[name="colorB"]').addClass("colorB"+object+" RGB"+object);
+    
+if($("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('.color-'+input_hexa.substring(1)).length == 0)
+    {
+       
+       $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('.x-color-palette-sel').attr("id",""); $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('.x-color-palette-sel').removeClass("x-color-palette-sel");
+    }
+
+$(".hexaColor"+object).change(function(){
+    
+    var Chexa = ($(".hexaColor"+object).val()).substring(1);
+    if(Chexa.length < 6)
+    {
+        var calc = 6 - Chexa.length;
+        var x = 0;
+        var y;
+        while(x < calc)
+        {
+            y = y+""+"0";
+            x++;
+        }
+        var hexa = (y+""+Chexa).substring(9);
+        $(".hexaColor"+object).val("#"+hexa);
+    }
+    else
+    {
+        var hexa = Chexa;
+    }
+        if($("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('.color-'+hexa).length == 0)
+    {
+        $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('.x-color-palette-sel').removeClass("x-color-palette-sel");
+    }
+    else
+    {
+        $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('.x-color-palette-sel').removeClass("x-color-palette-sel");
+        $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('.color-'+hexa).addClass("x-color-palette-sel");
+        
+    }
+    
+    var hex = hexa;
+    var r = new Array();
+    r[1] = hex.substring(0,1);
+    r[2] = hex.substring(1,2);
+    r[3] = hex.substring(2,3);
+    r[4] = hex.substring(3,4);
+    r[5] = hex.substring(4,5);
+    r[6] = hex.substring(5,6);
+    
+    var z = 1;
+    
+    while(z < 7)
+    {
+        if(r[z]=="A")
+        {
+            r[z] = 10;
+        }
+        else if(r[z]=="B")
+        {
+            r[z] = 11;
+        }
+        else if(r[z]=="C")
+        {
+            r[z] = 12;
+        }
+        else if(r[z]=="D")
+        {
+            r[z] = 13;
+        }
+        else if(r[z]=="E")
+        {
+            r[z] = 14;
+        }
+        else if(r[z]=="F")
+        {
+            r[z] = 15;
+        }
+        z++;
+    }
+    $('.colorR'+object).val((parseInt(r[1]) * parseInt(16)) + (parseInt(r[2])));
+    $('.colorG'+object).val((parseInt(r[3]) * parseInt(16)) + (parseInt(r[4])));
+    $('.colorB'+object).val((parseInt(r[5]) * parseInt(16)) + (parseInt(r[6])));
+    
+});
+
+$(".RGB"+object).change(function(){
+    var r = $(".colorR"+object).val();
+    var g = $(".colorG"+object).val();
+    var b = $(".colorB"+object).val();
+    
+    var kode_hexa = new Array();
+    kode_hexa[1] = Math.floor(r/16);
+    kode_hexa[2] = r%16;
+    kode_hexa[3] = Math.floor(g/16);
+    kode_hexa[4] = g%16;
+    kode_hexa[5] = Math.floor(b/16);
+    kode_hexa[6] = b%16;
+    
+    var z = 1;
+    
+    while(z < 7)
+    {
+        if(kode_hexa[z]==10)
+        {
+            kode_hexa[z] = "A";
+        }
+        else if(kode_hexa[z]==11)
+        {
+            kode_hexa[z] = "B";
+        }
+        else if(kode_hexa[z]==12)
+        {
+            kode_hexa[z] = "C";
+        }
+        else if(kode_hexa[z]==13)
+        {
+            kode_hexa[z] = "D";
+        }
+        else if(kode_hexa[z]==14)
+        {
+            kode_hexa[z] = "E";
+        }
+        else if(kode_hexa[z]==15)
+        {
+            kode_hexa[z] = "F";
+        }
+        z++;
+    }
+    
+    var hexa = kode_hexa[1]+""+kode_hexa[2]+""+kode_hexa[3]+""+kode_hexa[4]+""+kode_hexa[5]+""+kode_hexa[6];
+     if($("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('.color-'+hexa).length == 0)
+    {
+        $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('.x-color-palette-sel').removeClass("x-color-palette-sel");
+    }
+    else
+    {
+        $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('.x-color-palette-sel').removeClass("x-color-palette-sel");
+        $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('.color-'+hexa).addClass("x-color-palette-sel");
+        
+    }
+    $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('input[name="hexaColor"]').val("#"+hexa);
+    
+    var hex = hexa;
+    var r = new Array();
+    r[1] = hex.substring(0,1);
+    r[2] = hex.substring(1,2);
+    r[3] = hex.substring(2,3);
+    r[4] = hex.substring(3,4);
+    r[5] = hex.substring(4,5);
+    r[6] = hex.substring(5,6);
+    
+    var z = 1;
+    
+    while(z < 7)
+    {
+        if(r[z]=="A")
+        {
+            r[z] = 10;
+        }
+        else if(r[z]=="B")
+        {
+            r[z] = 11;
+        }
+        else if(r[z]=="C")
+        {
+            r[z] = 12;
+        }
+        else if(r[z]=="D")
+        {
+            r[z] = 13;
+        }
+        else if(r[z]=="E")
+        {
+            r[z] = 14;
+        }
+        else if(r[z]=="F")
+        {
+            r[z] = 15;
+        }
+        z++;
+    }
+    $('.colorR'+object).val((parseInt(r[1]) * parseInt(16)) + (parseInt(r[2])));
+    $('.colorG'+object).val((parseInt(r[3]) * parseInt(16)) + (parseInt(r[4])));
+    $('.colorB'+object).val((parseInt(r[5]) * parseInt(16)) + (parseInt(r[6])));
+});
+
+	
+
+    },
+    handleClick: function (b, a) {
+        b.preventDefault();
+        if (!this.disabled) {
+            var d = a.className.match(/(?:^|\s)color-(.{6})(?:\s|$)/)[1];
+            this.select(d.toUpperCase())
+            
+            var test = $(".color-"+d+".colorPick.x-color-palette-sel").attr("id");
+            var color = "#"+test;
+            var object_color = $(color).parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().attr("id");
+            var input_hexa = $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('input[name="hexaColor"]').val("#"+d);
+            
+            var hex = d;
+            var r = new Array();
+            r[1] = hex.substring(0,1);
+            r[2] = hex.substring(1,2);
+            r[3] = hex.substring(2,3);
+            r[4] = hex.substring(3,4);
+            r[5] = hex.substring(4,5);
+            r[6] = hex.substring(5,6);
+            
+            var z = 1;
+            
+            while(z < 7)
+            {
                 if(r[z]=="A")
                 {
                     r[z] = 10;
@@ -14112,29 +14441,11 @@ Ext.ColorPalette = Ext.extend(Ext.Component, {
                 z++;
             }
             
-            var R = (parseInt(r[1]) * parseInt(16)) + (parseInt(r[2]));
-            var G = (parseInt(r[3]) * parseInt(16)) + (parseInt(r[4]));
-            var B = (parseInt(r[5]) * parseInt(16)) + (parseInt(r[6]));
+            var input_r = $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('input[name="colorR"]').val((parseInt(r[1]) * parseInt(16)) + (parseInt(r[2])));
             
-            var RGB = "R : "+R+"  G : "+G+"  B : "+B;
+            var input_g = $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('input[name="colorG"]').val((parseInt(r[3]) * parseInt(16)) + (parseInt(r[4])));
             
-            $(this).attr("title","#"+result+"  "+RGB);
-        });
-    },
-    afterRender: function () {
-        Ext.ColorPalette.superclass.afterRender.call(this);
-        if (this.value) {
-            var a = this.value;
-            this.value = null;
-            this.select(a, true)
-        }
-        
-    },
-    handleClick: function (b, a) {
-        b.preventDefault();
-        if (!this.disabled) {
-            var d = a.className.match(/(?:^|\s)color-(.{6})(?:\s|$)/)[1];
-            this.select(d.toUpperCase())
+            var input_b = $("#"+object_color).children(".x-panel-bwrap").children(".x-panel-body").children(".x-tab-panel").children(".x-tab-panel-bwrap").children(".x-tab-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").children(".x-panel").children(".x-panel-bwrap").children(".x-panel-body").find('input[name="colorB"]').val((parseInt(r[5]) * parseInt(16)) + (parseInt(r[6])));
         }
     },
     select: function (b, a) {

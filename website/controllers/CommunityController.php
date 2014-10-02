@@ -272,7 +272,7 @@ class CommunityController extends Website_Controller_Action {
 			$nameCommunityCat = "object_".$table->getClassId();
 		}
 		
-		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, tblcategory.colorPicker, tblcategory.hexacolor, tblcategory.summary FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, tblcategory.colorPicker, tblcategory.hexaColor, tblcategory.colorR, tblcategory.colorG, tblcategory.colorB, tblcategory.summary FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				inner join assets as ass on tblcommunity.image=ass.id
 				WHERE tblcommunity.category__id=".$kriteria." ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14"; //or whatever you need to do.
 		$data1 = $db->fetchAll($sql);
