@@ -6,7 +6,7 @@
     <quicklinks>1</quicklinks>
     <map-point>1</map-point>
     <layanankami-quicklinks>1</layanankami-quicklinks>
-    <banner-tile/>
+    <banner-tile></banner-tile>
     <static-banner>1</static-banner>
     <tile-quicklinks>1</tile-quicklinks>
     <container-box-6>1</container-box-6>
@@ -16,7 +16,7 @@
     <container-box>1</container-box>
     <sections>1</sections>
     <modal>1</modal>
-    <sections-sectionpage/>
+    <sections-sectionpage></sections-sectionpage>
     <sections-tab>1</sections-tab>
     <container-box-carousel>1</container-box-carousel>
     <container-box-static>1</container-box-static>
@@ -46,9 +46,12 @@
     <garis-pemisah>1</garis-pemisah>
     <konten-berita>1</konten-berita>
     <smartwealth-factsheet>1</smartwealth-factsheet>
+    <summary-berita-abu>1</summary-berita-abu>
+    <summary-berita-teks-gambar>1</summary-berita-teks-gambar>
+    <summary-berita-gambar-teks>1</summary-berita-gambar-teks>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>
-    <DynamicDropdown/>
+    <DynamicDropdown></DynamicDropdown>
   </plugin>
 </zend-config>

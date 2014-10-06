@@ -1,20 +1,19 @@
 <script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
 <script src="/website/static/js/jquery.tools.min.js" type="text/javascript"></script>
 <?php if(!$this->editmode):?>
-<script src="/website/static/js/sticky-jquery.js" type="text/javascript"></script>
 <?php endif; ?>
 <div class="container boxes-view">
 	<h5><a href="/"><span>Home</span></a> &rsaquo; <?php echo $this->navigation()->breadcrumbs()->setMinDepth(null); ?></h5>
-	<span class="breadcrumb"><a href="#"><?php echo $this->document->getTitle()?></a></span>
 	
 	<div class="heading clearfix pagenav">
+		<span class="breadcrumb2"><?php echo $this->document->getTitle()?></span>
 		<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
 		<div id="quicklinks">
 		<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks', 'product-quicklinks', 'layanankami-quicklinks')))?>
 		</div>
 	</div>
 	<div class="full-w bg-white">	
-		<?php echo $this->areablock('container', array('allowed' => array('summary-berita', 'garis-pemisah', 'konten-berita'))); ?>
+		<?php echo $this->areablock('container', array('allowed' => array('summary-berita-abu','summary-berita-teks-gambar','summary-berita-gambar-teks','summary-berita', 'garis-pemisah', 'konten-berita'))); ?>
 	</div>
 		
 		<?php echo $this->areablock('container-modal', array('allowed' => array('modal')))?>
