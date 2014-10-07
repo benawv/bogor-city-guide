@@ -1,5 +1,5 @@
 <div>
-	<div class="text_section">
+	<div class="text_section cus_img">
 		<?php 
 			echo $this->image("image-berita-kiri", array(
 					"title" => "Drag your image here",
@@ -9,6 +9,6 @@
 		?>
 	</div>
 	<div class="isi_kanan_berita">
-		<?php echo $this->wysiwyg('summary')?>
+		<?php echo $this->wysiwyg('konten-beritaGambarTeks')?>
 	</div>
 </div>

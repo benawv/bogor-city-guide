@@ -1,6 +1,6 @@
 <div>
 	<div class="text_section">
-		<?php echo $this->wysiwyg('summary')?>
+		<?php echo $this->wysiwyg('konten-beritaTeksGambar')?>
 	</div>
 	<div class="isi_kanan_berita">
 		<?php 

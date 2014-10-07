@@ -13,7 +13,7 @@
 		</div>
 	</div>
 	<div class="full-w bg-white">	
-		<?php echo $this->areablock('container', array('allowed' => array('summary-berita-abu','summary-berita-teks-gambar','summary-berita-gambar-teks','summary-berita', 'garis-pemisah', 'konten-berita'))); ?>
+		<?php echo $this->areablock('container', array('allowed' => array('summary-berita-abu','konten-beritaTeksGambar','konten-beritaGambarTeks','summary-berita', 'garis-pemisah', 'konten-berita'))); ?>
 	</div>
 		
 		<?php echo $this->areablock('container-modal', array('allowed' => array('modal')))?>

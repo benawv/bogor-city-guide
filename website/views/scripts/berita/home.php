@@ -123,30 +123,29 @@
 						$list = new Document_List();
 						$list->setCondition("id=".$id);
 						$entries = $list->load();
-						/*echo "<pre>";
-						print_r($entries);
-						
-					}
-					die();*/
 				?>
-				<div id="list">
-                	<div class="ipNewsList">
-					     <div class="description">
-					            <span class="judul"><a href="<?php echo $entries[0]->path."".$entries[0]->key;?>"><?php echo $entries[0]->title;?></a></span>
-					            <div class="isi_berita">
-					            	<div>
-					                    <span class="tgl_berita"><?php echo gmdate("d-m-Y",$entries[0]->creationDate);?></span> | <span>Allianz SE</span><br>
-					                    <?php echo limit_words($entries[0]->elements["summarycontainer2"]->text,70);?>
-					                </div>
-					            </div>
-					            <div class="selengkapnya">
-					                <a href="<?php echo $entries[0]->path."".$entries[0]->key;?>">Selengkapnya</a>
-					            </div>
-					    </div>
-					</div>
-				</div>
+						<div id="list">
+		                	<div class="ipNewsList">
+							     <div class="description">
+							            <span class="judul"><a href="<?php echo $entries[0]->path."".$entries[0]->key;?>"><?php echo $entries[0]->title;?></a></span>
+							            <div class="isi_berita">
+							            	<div>
+							                    <span class="tgl_berita"><?php echo gmdate("d-m-Y",$entries[0]->creationDate);?></span> | <span>Allianz SE</span><br>
+							                    <?php 
+								                    $a = array_keys($entries[0]->getElements());
+								                    $match = preg_grep('/^konten-berita(\w+)/i', $a);
+								                    $el = array_values($match);
+							                    	echo limit_words($entries[0]->elements[$el[0]]->text,70);
+							                    ?>
+							                </div>
+							            </div>
+							            <div class="selengkapnya">
+							                <a href="<?php echo $entries[0]->path."".$entries[0]->key;?>">Selengkapnya</a>
+							            </div>
+							    </div>
+							</div>
+						</div>
 				<?php
-				//{ 
 					}
 				?>
 				
@@ -195,5 +194,32 @@
 				$('html, body').animate({scrollTop:$("#"+id[0]).offset().top-90}, 500);
 			}
 		});
+
+		$(".button_more").click(function(){
+			var offset = $(this).data('next-page');
+			var year = $("#combo_year").val();
+			
+			$.ajax({
+				url: 'load-more',
+				type: 'POST',
+				data: { 'offset': offset, 'created_at': year },
+				success: function(result) {
+					berita = $.parseJSON(result);
+					//console.log(berita);
+					$.each(berita, function(i , val){
+						console.log(val);
+					});
+				}
+			});
+			
+		});
+		
+		$("#combo_year").change(function(){
+			var year = $(this).val();
+			var hlist = $('#list').height();
+				$('#product-sub').css("height", hlist+100);
+				$(".button_more").data('next-page', 3);	
+			});
+		
 	});
 </script>
