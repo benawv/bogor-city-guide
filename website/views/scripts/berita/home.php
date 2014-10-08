@@ -12,8 +12,17 @@
                 <span>Year</span><br>
                 <select id="combo_year">
                     <option value="">All</option>
-                    <option value="2014">2014</option>
-                    <option value="2013">2013</option>
+                    <?php 
+						$db = Pimcore_Resource_Mysql::get();
+						$sql = "SELECT DATE_FORMAT(FROM_UNIXTIME(`creationDate`), '%Y') as tahun from documents where path='/berita/berita/arsip-berita/' GROUP BY tahun ORDER BY tahun DESC";
+						$tahun = $db->fetchAll($sql);
+						for($i=0;$i<count($tahun);$i++)
+						{
+					?>
+                    <option value="<?php echo $tahun[$i]["tahun"];?>"><?php echo $tahun[$i]["tahun"];?></option>
+                    <?php 
+						}
+                    ?>
                 </select>
             </div>
 
@@ -111,6 +120,7 @@
 		</div>
 	<div id="product-sub" class="items-container" style="position: relative; height: 735.5px;">
 			<div id="item-right" class="item item_visimisi" style="position: absolute; left: 0px; top: 0px;">
+				<div id="berita_berita">
 				<?php
 					function limit_words($string, $word_limit)
 					{
@@ -123,6 +133,7 @@
 						$list = new Document_List();
 						$list->setCondition("id=".$id);
 						$entries = $list->load();
+						
 				?>
 						<div id="list">
 		                	<div class="ipNewsList">
@@ -148,7 +159,7 @@
 				<?php
 					}
 				?>
-				
+				</div>
                 <div class="btn_more">
                     <a data-next-page="3" href="javascript:void(0)" class="button_more">Selanjutnya...</a>
                 </div>
@@ -195,6 +206,38 @@
 			}
 		});
 
+		function arrayKeys(input) {
+		    var output = new Array();
+		    var counter = 0;
+		    for (i in input) {
+		        output[counter++] = i;
+		    } 
+		    return output; 
+		}
+
+
+		function limitWords(textToLimit, wordLimit)
+		{
+			var finalText = "";
+	
+			var text2 = textToLimit.replace(/\s+/g, " ");
+	
+			var text3 = text2.split(' ');
+	
+			var numberOfWords = text3.length;
+	
+			var i=0;
+	
+			if(numberOfWords > wordLimit)
+			{
+			for(i=0; i< wordLimit; i++)
+			finalText = finalText+" "+ text3[i]+" ";
+	
+			return finalText+"...";
+			}
+			else return textToLimit;
+		}
+					
 		$(".button_more").click(function(){
 			var offset = $(this).data('next-page');
 			var year = $("#combo_year").val();
@@ -207,8 +250,66 @@
 					berita = $.parseJSON(result);
 					//console.log(berita);
 					$.each(berita, function(i , val){
-						console.log(val);
+						var a = arrayKeys(val[0].elements);
+						var match;
+						for(var z = 0; z < a.length; z++)
+						{
+							if(a[z].substring(0,13)=="konten-berita")
+							{
+								match = a[z];
+								z = a.length;
+							}
+						}
+	                    //var match = preg_grep("/konten-berita(\w+)/i",a);
+	                    var el = val[0].elements[match].text;
+
+	                    var today	= new Date((val[0].creationDate)*1000);
+				        var h		= today.getHours();
+				        var m		= today.getMinutes();
+				        var s		= today.getSeconds();
+
+				        var f		= today.getDay();
+				        var d		= today.getDate();
+				        var j		= today.getMonth();
+				        var y		= today.getFullYear();
+
+				        //var mon_arr = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+				        var mon_arr = [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ];
+				        var day_arr = [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ];
+				        
+				        if( m < 10 ) m = "0" + m;
+				        if( s < 10 ) s = "0" + s;
+
+				        var dateStr	= day_arr[d] + "-" + mon_arr[ j ] + "-" + y;
+	                    
+	                    //console.log(val[0].elements[match].text);
+						var html= '<div id="list">'+
+	                	 '<div class="ipNewsList">'+
+						     '<div class="description">'+
+						            '<span class="judul"><a href="'+val[0].path+''+val[0].key+'">'+val[0].title+'</a></span>'+
+						            '<div class="isi_berita">'+
+						            	'<div>'+
+						                    '<span class="tgl_berita">'+dateStr+'</span> | <span>Allianz SE</span><br>'+
+						                    limitWords(el,71)+
+						                '</div>'+
+						            '</div>'+
+						            '<div class="selengkapnya">'+
+						                '<a href="'+val[0].path+''+val[0].key+'">Selengkapnya</a>'+
+						            '</div>'+
+								    '</div>'+
+								'</div>'+
+							'</div>';
+						$('#berita_berita').append(html);
 					});
+					if(berita.length < 3)
+					{
+						$(".btn_more").css("display","none");
+					}
+					else{
+						$(".button_more").attr('data-next-page', offset+3);
+					}
+					var heightContainer = $("#item-right").height()+20;
+					$("#product-sub").css("height",heightContainer);
 				}
 			});
 			
@@ -216,10 +317,86 @@
 		
 		$("#combo_year").change(function(){
 			var year = $(this).val();
-			var hlist = $('#list').height();
-				$('#product-sub').css("height", hlist+100);
-				$(".button_more").data('next-page', 3);	
+
+			$.ajax({
+				url : "filter-tahun",
+				type: "POST",
+				data : {"created_at" : year},
+				success : function(result)
+				{
+					berita = $.parseJSON(result);
+					//console.log(berita);
+					
+					$('#berita_berita').empty();
+					$.each(berita, function(i , val){
+						var a = arrayKeys(val[0].elements);
+						var match;
+						for(var z = 0; z < a.length; z++)
+						{
+							if(a[z].substring(0,13)=="konten-berita")
+							{
+								match = a[z];
+								z = a.length;
+							}
+						}
+	                    //var match = preg_grep("/konten-berita(\w+)/i",a);
+	                    var el = val[0].elements[match].text;
+
+	                    var today	= new Date((val[0].creationDate)*1000);
+				        var h		= today.getHours();
+				        var m		= today.getMinutes();
+				        var s		= today.getSeconds();
+
+				        var f		= today.getDay();
+				        var d		= today.getDate();
+				        var j		= today.getMonth();
+				        var y		= today.getFullYear();
+
+				        //var mon_arr = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+				        var mon_arr = [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ];
+				        var day_arr = [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ];
+				        
+				        if( m < 10 ) m = "0" + m;
+				        if( s < 10 ) s = "0" + s;
+
+				        var dateStr	= day_arr[d] + "-" + mon_arr[ j ] + "-" + y;
+	                    
+	                    //console.log(val[0].elements[match].text);
+						var html= '<div id="list">'+
+	                	 '<div class="ipNewsList">'+
+						     '<div class="description">'+
+						            '<span class="judul"><a href="'+val[0].path+''+val[0].key+'">'+val[0].title+'</a></span>'+
+						            '<div class="isi_berita">'+
+						            	'<div>'+
+						                    '<span class="tgl_berita">'+dateStr+'</span> | <span>Allianz SE</span><br>'+
+						                    limitWords(el,71)+
+						                '</div>'+
+						            '</div>'+
+						            '<div class="selengkapnya">'+
+						                '<a href="'+val[0].path+''+val[0].key+'">Selengkapnya</a>'+
+						            '</div>'+
+								    '</div>'+
+								'</div>'+
+							'</div>';
+						$('#berita_berita').append(html);
+					});
+					if(berita.length < 3)
+					{
+						$(".btn_more").css("display","none");
+					}
+					else
+					{
+						$(".btn_more").css("display","block");
+					}
+					if(berita.length == 0)
+					{
+						var html = "<div id='list'><div class='ipNewsList' style='margin:30px auto;text-align:center;'><h2>Tidak Ada Berita</h2></div></div>"
+						$("#berita_berita").append(html);
+					}
+					var heightContainer = $("#item-right").height()+21;
+					$("#product-sub").css("height",heightContainer);
+				}
 			});
-		
+		});
 	});
 </script>
