@@ -5,7 +5,7 @@ class BeritaController extends Website_Controller_Action {
 	public function homeAction () {
 		$this->enableLayout();
 		$db = Pimcore_Resource_Mysql::get();
-		$sql = "SELECT id from documents where path='/berita/berita/arsip-berita/' ORDER BY creationDate DESC limit 3"; //or whatever you need to do.
+		$sql = "SELECT id from documents where path='/berita/berita/arsip-berita/' and published=1 ORDER BY creationDate DESC limit 3"; //or whatever you need to do.
 		$this->view->fetchBerita = $db->fetchAll($sql);
 	}
 	
@@ -18,11 +18,11 @@ class BeritaController extends Website_Controller_Action {
 		$sql = "SELECT id from documents "; //or whatever you need to do.
 		if($create!='')
 		{
-			$sql .= "where path='/berita/berita/arsip-berita/' and DATE_FORMAT(FROM_UNIXTIME(`creationDate`), '%Y') = ".$create." ORDER BY creationDate DESC limit 3 offset ".$offset;
+			$sql .= "where path='/berita/berita/arsip-berita/' and DATE_FORMAT(FROM_UNIXTIME(`creationDate`), '%Y') = ".$create." and published=1 ORDER BY creationDate DESC limit 3 offset ".$offset;
 		}
 		else 
 		{
-			$sql .= "where path='/berita/berita/arsip-berita/' ORDER BY creationDate DESC limit 3 offset ".$offset;
+			$sql .= "where path='/berita/berita/arsip-berita/' and published=1 ORDER BY creationDate DESC limit 3 offset ".$offset;
 		}
 		
 		$id = $db->fetchAll($sql);

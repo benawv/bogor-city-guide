@@ -161,7 +161,8 @@
 				?>
 				</div>
                 <div class="btn_more">
-                    <a data-next-page="3" href="javascript:void(0)" class="button_more">Selanjutnya...</a>
+                    <a href="javascript:void(0)" class="button_more">Selanjutnya...</a>
+                    <input type="hidden" value="3" class="offset" />
                 </div>
 			</div>
 	</div>
@@ -238,8 +239,8 @@
 			else return textToLimit;
 		}
 					
-		$(".button_more").click(function(){
-			var offset = $(this).data('next-page');
+		$(this).on('click', '.button_more', function(){
+			var offset = $(".offset").val();
 			var year = $("#combo_year").val();
 			
 			$.ajax({
@@ -249,64 +250,68 @@
 				success: function(result) {
 					berita = $.parseJSON(result);
 					//console.log(berita);
-					$.each(berita, function(i , val){
-						var a = arrayKeys(val[0].elements);
-						var match;
-						for(var z = 0; z < a.length; z++)
-						{
-							if(a[z].substring(0,13)=="konten-berita")
+					
+					if(berita.length != 0){
+						$.each(berita, function(i , val){
+							var a = arrayKeys(val[0].elements);
+							var match;
+							for(var z = 0; z < a.length; z++)
 							{
-								match = a[z];
-								z = a.length;
+								if(a[z].substring(0,13)=="konten-berita")
+								{
+									match = a[z];
+									z = a.length;
+								}
 							}
-						}
-	                    //var match = preg_grep("/konten-berita(\w+)/i",a);
-	                    var el = val[0].elements[match].text;
-
-	                    var today	= new Date((val[0].creationDate)*1000);
-				        var h		= today.getHours();
-				        var m		= today.getMinutes();
-				        var s		= today.getSeconds();
-
-				        var f		= today.getDay();
-				        var d		= today.getDate();
-				        var j		= today.getMonth();
-				        var y		= today.getFullYear();
-
-				        //var mon_arr = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
-				        var mon_arr = [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ];
-				        var day_arr = [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ];
-				        
-				        if( m < 10 ) m = "0" + m;
-				        if( s < 10 ) s = "0" + s;
-
-				        var dateStr	= day_arr[d] + "-" + mon_arr[ j ] + "-" + y;
-	                    
-	                    //console.log(val[0].elements[match].text);
-						var html= '<div id="list">'+
-	                	 '<div class="ipNewsList">'+
-						     '<div class="description">'+
-						            '<span class="judul"><a href="'+val[0].path+''+val[0].key+'">'+val[0].title+'</a></span>'+
-						            '<div class="isi_berita">'+
-						            	'<div>'+
-						                    '<span class="tgl_berita">'+dateStr+'</span> | <span>Allianz SE</span><br>'+
-						                    limitWords(el,71)+
-						                '</div>'+
-						            '</div>'+
-						            '<div class="selengkapnya">'+
-						                '<a href="'+val[0].path+''+val[0].key+'">Selengkapnya</a>'+
-						            '</div>'+
-								    '</div>'+
-								'</div>'+
-							'</div>';
-						$('#berita_berita').append(html);
-					});
+		                    //var match = preg_grep("/konten-berita(\w+)/i",a);
+		                    var el = val[0].elements[match].text;
+	
+		                    var today	= new Date((val[0].creationDate)*1000);
+					        var h		= today.getHours();
+					        var m		= today.getMinutes();
+					        var s		= today.getSeconds();
+	
+					        var f		= today.getDay();
+					        var d		= today.getDate();
+					        var j		= today.getMonth();
+					        var y		= today.getFullYear();
+	
+					        //var mon_arr = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+					        var mon_arr = [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ];
+					        var day_arr = [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ];
+					        
+					        if( m < 10 ) m = "0" + m;
+					        if( s < 10 ) s = "0" + s;
+	
+					        var dateStr	= day_arr[d] + "-" + mon_arr[ j ] + "-" + y;
+		                    
+		                    //console.log(val[0].elements[match].text);
+							var html= '<div id="list">'+
+		                	 '<div class="ipNewsList">'+
+							     '<div class="description">'+
+							            '<span class="judul"><a href="'+val[0].path+''+val[0].key+'">'+val[0].title+'</a></span>'+
+							            '<div class="isi_berita">'+
+							            	'<div>'+
+							                    '<span class="tgl_berita">'+dateStr+'</span> | <span>Allianz SE</span><br>'+
+							                    limitWords(el,71)+
+							                '</div>'+
+							            '</div>'+
+							            '<div class="selengkapnya">'+
+							                '<a href="'+val[0].path+''+val[0].key+'">Selengkapnya</a>'+
+							            '</div>'+
+									    '</div>'+
+									'</div>'+
+								'</div>';
+							$('#berita_berita').append(html);
+						});
+					}
 					if(berita.length < 3)
 					{
 						$(".btn_more").css("display","none");
+						$(".offset").val(parseInt(offset)+parseInt(berita.length));
 					}
 					else{
-						$(".button_more").attr('data-next-page', offset+3);
+						$(".offset").val(parseInt(offset)+parseInt(berita.length));
 					}
 					var heightContainer = $("#item-right").height()+20;
 					$("#product-sub").css("height",heightContainer);
@@ -383,10 +388,12 @@
 					if(berita.length < 3)
 					{
 						$(".btn_more").css("display","none");
+						$(".offset").val(parseInt(berita.length));
 					}
 					else
 					{
 						$(".btn_more").css("display","block");
+						$(".offset").val(parseInt(berita.length));
 					}
 					if(berita.length == 0)
 					{

@@ -55,6 +55,9 @@
     <konten-berita-teks-gambar></konten-berita-teks-gambar>
     <konten-beritaGambarTeks>1</konten-beritaGambarTeks>
     <konten-beritaTeksGambar>1</konten-beritaTeksGambar>
+    <tanggal></tanggal>
+    <community-tips>1</community-tips>
+    <video>1</video>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>

@@ -12,8 +12,9 @@
 		<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks', 'product-quicklinks', 'layanankami-quicklinks')))?>
 		</div>
 	</div>
-	<div class="full-w bg-white">	
-		<?php echo $this->areablock('container', array('allowed' => array('summary-berita-abu','konten-beritaTeksGambar','konten-beritaGambarTeks','summary-berita', 'garis-pemisah', 'konten-berita'))); ?>
+	
+	<div class="full-w bg-white cus-full">	
+		<?php echo $this->areablock('container', array('allowed' => array('video','summary-berita-abu','konten-beritaTeksGambar','konten-beritaGambarTeks','summary-berita', 'garis-pemisah', 'konten-berita'))); ?>
 	</div>
 		
 		<?php echo $this->areablock('container-modal', array('allowed' => array('modal')))?>

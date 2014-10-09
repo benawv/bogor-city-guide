@@ -9,13 +9,22 @@
 				'allowed' => array('layanankami-quicklinks')))?>
 		</div>
 	</div>
-	
+	<?php
+		function limit_words($string, $word_limit)
+		{
+			$words = explode(" ",$string);
+			return implode(" ",array_splice($words,0,$word_limit));
+		}
+	?>
 	<!-- Community -->
 		<?php echo $this->areablock('jurnalAllianz', array(
-				'allowed' => array('jurnal-allianz','tahukah-anda')))?>
+				'allowed' => array('jurnal-allianz','tahukah-anda','community-tips')))?>
 	
 		<?php echo $this->areablock('tahukahAnda', array(
-				'allowed' => array('jurnal-allianz','tahukah-anda')))?>
+				'allowed' => array('jurnal-allianz','tahukah-anda','community-tips')))?>
+				
+		<?php echo $this->areablock('communityTips', array(
+				'allowed' => array('jurnal-allianz','tahukah-anda','community-tips')))?>
 	
 	<!-- End Community -->
 	<?php

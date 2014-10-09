@@ -2000,7 +2000,7 @@ padding-left: 20px;
 	}
 		#community .tips .tip .description h3{
 			font-size: .9em;
-			line-height: 1em;
+			line-height: 1.1em;
 			font-weight: bold;
 			/*height: 2.5em;
 			margin-bottom: 1em;*/
@@ -3274,4 +3274,31 @@ img.logo-float{
 .cus_img img{
 	width: 100% !important;
 	height: 100% !important;
+}
+.full-w.bg-white.cus-full p{
+	width: 100%;
+}
+
+/* VIDEO PIMCORE */
+.pimcore_tag_video
+{
+   float: none;
+   clear: both;
+   width: 100%;
+   position: relative;
+   padding-bottom: 56.25%;
+   padding-top: 25px;
+   height: 0;
+   margin-bottom: 12px;
+}
+.pimcore_tag_video > iframe 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.pimcore_video_edit_button{
+	z-index: 99999 !important;
 }

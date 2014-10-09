@@ -3,12 +3,12 @@
 	<div class="tips">
 		<?php if($this->editmode) { ?>
 			<style>
-				.tip{
+				.tip.cus-tip{
 					height: 300px !important;
 				}
 			</style>
 		<?php }	?>
-		<div class="tip">
+		<div class="tip cus-tip">
 			<div class="photo"><?php echo $this->image("gambar-tahukah-anda1", array(
 													    "title" => "Drag your image here",
 													    "width" => 298,
@@ -32,7 +32,7 @@
 			</div>
 		</div>
 		
-		<div class="tip">
+		<div class="tip cus-tip">
 			<div class="photo"><?php echo $this->image("gambar-tahukah-anda2", array(
 													    "title" => "Drag your image here",
 													    "width" => 298,
@@ -56,7 +56,7 @@
 			</div>
 		</div>
 		
-		<div class="tip">
+		<div class="tip cus-tip">
 			<div class="photo"><?php echo $this->image("gambar-tahukah-anda3", array(
 													    "title" => "Drag your image here",
 													    "width" => 298,
