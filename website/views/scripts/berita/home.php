@@ -120,45 +120,47 @@
 		</div>
 	<div id="product-sub" class="items-container" style="position: relative; height: 735.5px;">
 			<div id="item-right" class="item item_visimisi" style="position: absolute; left: 0px; top: 0px;">
-				<div id="berita_berita">
-				<?php
-					function limit_words($string, $word_limit)
-					{
-						$words = explode(" ",$string);
-						return implode(" ",array_splice($words,0,$word_limit));
-					} 
-					for ($i = 0; $i < count($this->fetchBerita); $i++)
-					{
-						$id = $this->fetchBerita[$i]['id'];
-						$list = new Document_List();
-						$list->setCondition("id=".$id);
-						$entries = $list->load();
-						
-				?>
-						<div id="list">
-		                	<div class="ipNewsList">
-							     <div class="description">
-							            <span class="judul"><a href="<?php echo $entries[0]->path."".$entries[0]->key;?>"><?php echo $entries[0]->title;?></a></span>
-							            <div class="isi_berita">
-							            	<div>
-							                    <span class="tgl_berita"><?php echo gmdate("d-m-Y",$entries[0]->creationDate);?></span> | <span>Allianz SE</span><br>
-							                    <?php 
-								                    $a = array_keys($entries[0]->getElements());
-								                    $match = preg_grep('/^konten-berita(\w+)/i', $a);
-								                    $el = array_values($match);
-							                    	echo limit_words($entries[0]->elements[$el[0]]->text,70);
-							                    ?>
-							                </div>
-							            </div>
-							            <div class="selengkapnya">
-							                <a href="<?php echo $entries[0]->path."".$entries[0]->key;?>">Selengkapnya</a>
-							            </div>
-							    </div>
-							</div>
-						</div>
-				<?php
-					}
-				?>
+				<div>
+					<div id="berita_berita">
+						<?php
+							function limit_words($string, $word_limit)
+							{
+								$words = explode(" ",$string);
+								return implode(" ",array_splice($words,0,$word_limit));
+							} 
+							for ($i = 0; $i < count($this->fetchBerita); $i++)
+							{
+								$id = $this->fetchBerita[$i]['id'];
+								$list = new Document_List();
+								$list->setCondition("id=".$id);
+								$entries = $list->load();
+								
+						?>
+								<div id="list">
+				                	<div class="ipNewsList">
+									     <div class="description">
+									            <span class="judul"><a href="<?php echo $entries[0]->path."".$entries[0]->key;?>"><?php echo $entries[0]->title;?></a></span>
+									            <div class="isi_berita">
+									            	<div>
+									                    <span class="tgl_berita"><?php echo gmdate("d-m-Y",$this->fetchBerita[$i]['data']);?></span> | <span>Allianz SE</span><br>
+									                    <?php 
+										                    $a = array_keys($entries[0]->getElements());
+										                    $match = preg_grep('/^konten-berita(\w+)/i', $a);
+										                    $el = array_values($match);
+									                    	echo limit_words($entries[0]->elements[$el[0]]->text,70);
+									                    ?>
+									                </div>
+									            </div>
+									            <div class="selengkapnya">
+									                <a href="<?php echo $entries[0]->path."".$entries[0]->key;?>">Selengkapnya</a>
+									            </div>
+									    </div>
+									</div>
+								</div>
+						<?php
+							}
+						?>
+					</div>
 				</div>
                 <div class="btn_more">
                     <a href="javascript:void(0)" class="button_more">Selanjutnya...</a>
@@ -266,42 +268,23 @@
 		                    //var match = preg_grep("/konten-berita(\w+)/i",a);
 		                    var el = val[0].elements[match].text;
 	
-		                    var today	= new Date((val[0].creationDate)*1000);
-					        var h		= today.getHours();
-					        var m		= today.getMinutes();
-					        var s		= today.getSeconds();
-	
-					        var f		= today.getDay();
-					        var d		= today.getDate();
-					        var j		= today.getMonth();
-					        var y		= today.getFullYear();
-	
-					        //var mon_arr = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
-					        var mon_arr = [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ];
-					        var day_arr = [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ];
-					        
-					        if( m < 10 ) m = "0" + m;
-					        if( s < 10 ) s = "0" + s;
-	
-					        var dateStr	= day_arr[d] + "-" + mon_arr[ j ] + "-" + y;
-		                    
 		                    //console.log(val[0].elements[match].text);
 							var html= '<div id="list">'+
-		                	 '<div class="ipNewsList">'+
-							     '<div class="description">'+
-							            '<span class="judul"><a href="'+val[0].path+''+val[0].key+'">'+val[0].title+'</a></span>'+
-							            '<div class="isi_berita">'+
-							            	'<div>'+
-							                    '<span class="tgl_berita">'+dateStr+'</span> | <span>Allianz SE</span><br>'+
-							                    limitWords(el,71)+
-							                '</div>'+
-							            '</div>'+
-							            '<div class="selengkapnya">'+
-							                '<a href="'+val[0].path+''+val[0].key+'">Selengkapnya</a>'+
-							            '</div>'+
-									    '</div>'+
-									'</div>'+
-								'</div>';
+		                	 			'<div class="ipNewsList">'+
+							     			'<div class="description">'+
+							            		'<span class="judul"><a href="'+val[0].path+''+val[0].key+'">'+val[0].title+'</a></span>'+
+							            		'<div class="isi_berita">'+
+							            			'<div>'+
+							                    		'<span class="tgl_berita">'+val["tgl"]+'</span> | <span>Allianz SE</span><br>'+
+							                    			limitWords(el,71)+
+							                		'</div>'+
+							            		'</div>'+
+								            	'<div class="selengkapnya">'+
+									               	'<a href="'+val[0].path+''+val[0].key+'">Selengkapnya</a>'+
+									            '</div>'+
+										    '</div>'+
+										'</div>'+
+									'</div>';
 							$('#berita_berita').append(html);
 						});
 					}
@@ -347,25 +330,6 @@
 	                    //var match = preg_grep("/konten-berita(\w+)/i",a);
 	                    var el = val[0].elements[match].text;
 
-	                    var today	= new Date((val[0].creationDate)*1000);
-				        var h		= today.getHours();
-				        var m		= today.getMinutes();
-				        var s		= today.getSeconds();
-
-				        var f		= today.getDay();
-				        var d		= today.getDate();
-				        var j		= today.getMonth();
-				        var y		= today.getFullYear();
-
-				        //var mon_arr = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
-				        var mon_arr = [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ];
-				        var day_arr = [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ];
-				        
-				        if( m < 10 ) m = "0" + m;
-				        if( s < 10 ) s = "0" + s;
-
-				        var dateStr	= day_arr[d] + "-" + mon_arr[ j ] + "-" + y;
-	                    
 	                    //console.log(val[0].elements[match].text);
 						var html= '<div id="list">'+
 	                	 '<div class="ipNewsList">'+
@@ -373,7 +337,7 @@
 						            '<span class="judul"><a href="'+val[0].path+''+val[0].key+'">'+val[0].title+'</a></span>'+
 						            '<div class="isi_berita">'+
 						            	'<div>'+
-						                    '<span class="tgl_berita">'+dateStr+'</span> | <span>Allianz SE</span><br>'+
+						                    '<span class="tgl_berita">'+val["tgl"]+'</span> | <span>Allianz SE</span><br>'+
 						                    limitWords(el,71)+
 						                '</div>'+
 						            '</div>'+

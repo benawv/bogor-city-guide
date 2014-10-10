@@ -17,13 +17,13 @@
 					<div class="tip">
 						<div class="photo"><img src="<?php echo $entry->imageHomeAllianz->filename;?>" /></div>
 						<div class="description">
-							<h3><a href="<?php echo "community-detail/".$entry->getO_key()."_".$entry->getO_id();?>"><?php echo $entry->getTitle();?></a></h3>
+							<h3><a href="<?php echo "community-detail/".$entry->getO_key()."_".$entry->getO_id()."_".$entry->getTemplate();?>"><?php echo $entry->getTitle();?></a></h3>
 							<div class="meta">
 								<div class="description-jurnal">
 									<?php
-									if($entry->getDescription()!='')
+									if($entry->getSummaryHome()!='')
 									{
-										echo limit_words($entry->getDescription(),20);
+										echo limit_words($entry->getSummaryHome(),20);
 									}
 									else{
 										echo limit_words($entry->getDescription(),20);

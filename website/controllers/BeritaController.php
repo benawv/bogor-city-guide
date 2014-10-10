@@ -5,7 +5,12 @@ class BeritaController extends Website_Controller_Action {
 	public function homeAction () {
 		$this->enableLayout();
 		$db = Pimcore_Resource_Mysql::get();
-		$sql = "SELECT id from documents where path='/berita/berita/arsip-berita/' and published=1 ORDER BY creationDate DESC limit 3"; //or whatever you need to do.
+		$sql = "SELECT doc.id, doc_e.data from documents as doc inner join documents_elements as doc_e on doc.id=doc_e.documentId
+				where doc.path='/berita/berita/arsip-berita/' and doc.published=1 and doc_e.type='date'
+				ORDER BY doc_e.data DESC limit 3"; //or whatever you need to do.
+		/* echo "<pre>";
+		print_r($db->fetchAll($sql));
+		die(); */
 		$this->view->fetchBerita = $db->fetchAll($sql);
 	}
 	
@@ -15,23 +20,25 @@ class BeritaController extends Website_Controller_Action {
 		$create = $_POST["created_at"];
 		
 		$db = Pimcore_Resource_Mysql::get();
-		$sql = "SELECT id from documents "; //or whatever you need to do.
+		$sql = "SELECT doc.id, doc_e.data from documents as doc inner join documents_elements as doc_e on doc.id=doc_e.documentId "; //or whatever you need to do.
 		if($create!='')
 		{
-			$sql .= "where path='/berita/berita/arsip-berita/' and DATE_FORMAT(FROM_UNIXTIME(`creationDate`), '%Y') = ".$create." and published=1 ORDER BY creationDate DESC limit 3 offset ".$offset;
+			$sql .= "where doc.path='/berita/berita/arsip-berita/' and DATE_FORMAT(FROM_UNIXTIME(doc_e.data), '%Y') = ".$create." and doc.published=1 and doc_e.type='date' ORDER BY doc_e.data DESC limit 3 offset ".$offset;
 		}
 		else 
 		{
-			$sql .= "where path='/berita/berita/arsip-berita/' and published=1 ORDER BY creationDate DESC limit 3 offset ".$offset;
+			$sql .= "where doc.path='/berita/berita/arsip-berita/' and doc.published=1 and doc_e.type='date' ORDER BY doc_e.data DESC limit 3 offset ".$offset;
 		}
 		
 		$id = $db->fetchAll($sql);
+		
 		$entries = array();
 		for ($x = 0; $x < count($id) ; $x++)
 		{
 			$list = new Document_List();
 			$list->setCondition("id=".$id[$x]['id']);
 			$entries[$x] = $list->load();
+			$entries[$x]["tgl"] = gmdate("d-m-Y",$id[$x]['data']);
 		}
 		echo json_encode($entries);
 	}
@@ -40,14 +47,14 @@ class BeritaController extends Website_Controller_Action {
 	{
 		$create = $_POST["created_at"];
 		$db = Pimcore_Resource_Mysql::get();
-		$sql = "SELECT id from documents ";
+		$sql = "SELECT doc.id, doc_e.data from documents as doc inner join documents_elements as doc_e on doc.id=doc_e.documentId ";
 		if($create!='')
 		{
-			$sql .= "where path='/berita/berita/arsip-berita/' and DATE_FORMAT(FROM_UNIXTIME(`creationDate`), '%Y') = ".$create." ORDER BY creationDate DESC limit 3";
+			$sql .= "where doc.path='/berita/berita/arsip-berita/' and DATE_FORMAT(FROM_UNIXTIME(doc_e.data), '%Y') = ".$create." and doc.published=1 and doc_e.type='date' ORDER BY doc_e.data DESC limit 3";
 		}
 		else
 		{
-			$sql .= "where path='/berita/berita/arsip-berita/' ORDER BY creationDate DESC limit 3";
+			$sql .= "where doc.path='/berita/berita/arsip-berita/' and doc.published=1 and doc_e.type='date' ORDER BY doc_e.data DESC limit 3";
 		}
 		
 		
@@ -58,6 +65,7 @@ class BeritaController extends Website_Controller_Action {
 			$list = new Document_List();
 			$list->setCondition("id=".$id[$x]['id']);
 			$entries[$x] = $list->load();
+			$entries[$x]["tgl"] = gmdate("d-m-Y",$id[$x]['data']);
 		}
 		echo json_encode($entries);
 	}

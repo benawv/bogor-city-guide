@@ -12,7 +12,7 @@
 		<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks', 'product-quicklinks', 'layanankami-quicklinks')))?>
 		</div>
 	</div>
-	
+	<?php echo $this->areablock('tanggal-berita', array('allowed' => array('tanggal')))?>
 	<div class="full-w bg-white cus-full">	
 		<?php echo $this->areablock('container', array('allowed' => array('video','summary-berita-abu','konten-beritaTeksGambar','konten-beritaGambarTeks','summary-berita', 'garis-pemisah', 'konten-berita'))); ?>
 	</div>
