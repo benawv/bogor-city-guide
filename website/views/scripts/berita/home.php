@@ -14,7 +14,7 @@
                     <option value="">All</option>
                     <?php 
 						$db = Pimcore_Resource_Mysql::get();
-						$sql = "SELECT DATE_FORMAT(FROM_UNIXTIME(`creationDate`), '%Y') as tahun from documents where path='/berita/berita/arsip-berita/' GROUP BY tahun ORDER BY tahun DESC";
+						$sql = "SELECT doc_e.data, DATE_FORMAT(FROM_UNIXTIME(doc_e.data), '%Y') as tahun from documents as doc inner join documents_elements as doc_e on doc.id=doc_e.documentId where doc.path='/berita/berita/arsip-berita/' and doc.published=1 and doc_e.type='date' GROUP BY tahun ORDER BY tahun DESC";
 						$tahun = $db->fetchAll($sql);
 						for($i=0;$i<count($tahun);$i++)
 						{
@@ -120,8 +120,7 @@
 		</div>
 	<div id="product-sub" class="items-container" style="position: relative; height: 735.5px;">
 			<div id="item-right" class="item item_visimisi" style="position: absolute; left: 0px; top: 0px;">
-				<div>
-					<div id="berita_berita">
+				<div id="berita_berita">
 						<?php
 							function limit_words($string, $word_limit)
 							{
@@ -142,14 +141,14 @@
 									            <span class="judul"><a href="<?php echo $entries[0]->path."".$entries[0]->key;?>"><?php echo $entries[0]->title;?></a></span>
 									            <div class="isi_berita">
 									            	<div>
-									                    <span class="tgl_berita"><?php echo gmdate("d-m-Y",$this->fetchBerita[$i]['data']);?></span> | <span>Allianz SE</span><br>
+									                    <span class="tgl_berita"><?php echo gmdate("d-m-Y",$this->fetchBerita[$i]['data']);?></span> | <span>Allianz SE</span><br />
 									                    <?php 
 										                    $a = array_keys($entries[0]->getElements());
 										                    $match = preg_grep('/^konten-berita(\w+)/i', $a);
 										                    $el = array_values($match);
 									                    	echo limit_words($entries[0]->elements[$el[0]]->text,70);
 									                    ?>
-									                </div>
+									            	</div>
 									            </div>
 									            <div class="selengkapnya">
 									                <a href="<?php echo $entries[0]->path."".$entries[0]->key;?>">Selengkapnya</a>
@@ -160,7 +159,6 @@
 						<?php
 							}
 						?>
-					</div>
 				</div>
                 <div class="btn_more">
                     <a href="javascript:void(0)" class="button_more">Selanjutnya...</a>
