@@ -58,6 +58,7 @@
     <tanggal>1</tanggal>
     <community-tips>1</community-tips>
     <video>1</video>
+    <multi-video>1</multi-video>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>
