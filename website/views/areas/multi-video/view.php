@@ -6,6 +6,14 @@
 	.pimcore_tag_video{
 		padding-top: 0px !important;
 	}
+	.klikVideo img{
+		opacity: 0.5;
+	    filter: alpha(opacity=50);
+	}
+	.imgAktif img{
+		opacity: 1;
+	    filter: alpha(opacity=100);
+	}
 </style>
 <?php if($this->editmode) { ?>
 	<style type="text/css">
@@ -87,8 +95,16 @@
 					<div class="cus-slide prev"><span class="arrow"></span></div>
 					<div class="super_navi cus_super_navi">
 						<ul class="navi" style="width: 950px;float: left; position: absolute;">
-				<?php for($i=0;$i<$slides;$i++) { ?>
-						    <li class="<?php echo "klikVideo isiVideo".$videoId."_".$i;?>">
+				<?php for($i=0;$i<$slides;$i++) {
+					if($i==0)
+					{
+						$aktif = "imgAktif";
+					}
+					else{
+						$aktif = "";
+					}
+				?>
+						    <li class="<?php echo "klikVideo isiVideo".$videoId."_".$i." ".$aktif;?>">
 								<?php echo $this->image("videoImage".$i, array(
 										"width" => 80,
 										"height" => 72

@@ -93,6 +93,8 @@ $(document).ready(function(){
 			$(".assetsVideo"+divId).get(x).pause();
 			$(".assetsVideo"+divId).get(x).currentTime = 0;
 		}
+		$(this).siblings().removeClass("imgAktif");
+		$(this).addClass("imgAktif");
 		//$("video").pause();
 		//$("video").currentTime = 0;
 		$(".hideVideo"+divId).find("source").attr("src","");
