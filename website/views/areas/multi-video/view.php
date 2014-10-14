@@ -150,20 +150,13 @@
 		{
 			src = $("#isiVideo<?php echo $videoId."_";?>"+i).find("iframe").attr("src");
 		}
+		else
+		{
+			$("#isiVideo<?php echo $videoId."_";?>"+i).find("video").attr("class","assetsVideo<?php echo $videoId;?>");
+		}
 		
 		$(".tmpVideo_isiVideo<?php echo $videoId."_";?>"+i).attr("value",src);
 	}
-	$('.klikVideo').on('click', function(){
-		var idVideo = $(this).attr("class").substring(10);
-		var divId = $(this).find(".divId").val();
-
-		$(".hideVideo"+divId).hide();
-		$(".hideVideo"+divId).find("source").attr("src","");
-		$(".hideVideo"+divId).find("iframe").attr("src","");
-		var src = $(".tmpVideo_"+idVideo).val();
-		$("#"+idVideo).find("source").attr("src",src);
-		$("#"+idVideo).find("iframe").attr("src",src);
-		$("#"+idVideo).show();
-	});
+	
 	/* silde nav*/
 </script>
