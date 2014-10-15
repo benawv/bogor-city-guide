@@ -84,28 +84,33 @@ $(document).ready(function(){
 	
 	
 	$('.klikVideo').on('click', function(){
-		var idVideo = $(this).attr("class").substring(10);
+		var cClass = $(this).attr("class");
+		
+		var tmpId = $(this).attr("class").substring(10);
+		var splitId = tmpId.split(" ");
+		
+		var idVideo = splitId[0];
+		
 		var divId = $(this).find(".divId").val();
-
+		$(this).siblings().removeClass("imgAktif");
+		$(this).addClass("imgAktif");
+		
 		$(".hideVideo"+divId).hide();
 		var x = 0;
 		for(x ; x < $(".assetsVideo"+divId).length; x++){
 			$(".assetsVideo"+divId).get(x).pause();
 			$(".assetsVideo"+divId).get(x).currentTime = 0;
 		}
-		$(this).siblings().removeClass("imgAktif");
-		$(this).addClass("imgAktif");
-		//$("video").pause();
-		//$("video").currentTime = 0;
+		
 		$(".hideVideo"+divId).find("source").attr("src","");
 		$(".hideVideo"+divId).find("iframe").attr("src","");
+		
 		var src = $(".tmpVideo_"+idVideo).val();
 		$("#"+idVideo).find("source").attr("src",src);
 		$("#"+idVideo).find("iframe").attr("src",src);
 		$("#"+idVideo).show();
+		
 	});
-	
-
 });
 
 $(window).load(function() {

@@ -14,8 +14,28 @@
 		opacity: 1;
 	    filter: alpha(opacity=100);
 	}
+	/* VIDEO PIMCORE */
+	.pimcore_tag_video
+	{
+	   float: none;
+	   clear: both;
+	   width: 100%;
+	   position: relative;
+	   padding-bottom: 56.25%;
+	   padding-top: 25px;
+	   height: 0;
+	   margin-bottom: 12px;
+	}
+	.pimcore_tag_video > iframe 
+	{
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	}
 </style>
-<?php if($this->editmode) { ?>
+<?php //if($this->editmode) { ?>
 	<style type="text/css">
 		.x-panel-body.pimcore_tag_image_empty{
 			height: 79px !important;
@@ -28,17 +48,20 @@
 			height: auto !important;
 		}
 		.cus-slide.prev,.cus-slide.next{
-			height: 120px;
-			background-position: 0 20px;
+			height: 84px;
+			background-position: 0 5px;
 		}
 		.super_navi{
-			height: 120px;
+			height: 84px;
 		}
 		.navi{
-			height: 120px;
+			height: 84px;
+		}
+		.pimcore_iframe_mask{
+			z-index: -1 !important;
 		}
 	</style>
-<?php }?>
+<?php //}?>
 <div class="full-w bg-white">
 	<div id="slideshow" class="clearfix">
 	<?php if($this->editmode) { ?>
@@ -106,8 +129,8 @@
 				?>
 						    <li class="<?php echo "klikVideo isiVideo".$videoId."_".$i." ".$aktif;?>">
 								<?php echo $this->image("videoImage".$i, array(
-										"width" => 80,
-										"height" => 72
+										"width" => 84,
+										"height" => 84
 								));
 								?>
 								<input type="hidden" value="" class="tmpVideo_isiVideo<?php echo $videoId."_".$i;?>" />

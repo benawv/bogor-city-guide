@@ -1,3 +1,16 @@
+<style type="text/css">
+	#dvLoading
+	{
+	   background:#000 url(/loading.gif) no-repeat center center;
+	   height: 100%;
+	   width: 100%;
+	   position: fixed;
+	   z-index: 1000;
+	   opacity: 0.5;
+	   filter: alpha(opacity=50);
+	   margin: 0px;
+	}
+</style>
 <?php if($this->editmode) { ?>
     <div class="alert alert-info" style="height: 75px">
         <div class="col-xs-6">
@@ -23,7 +36,14 @@
         }
     </style>
 <?php } ?>
-<?php 
+<?php
+	$value = strtotime(date("YmdHis")).rand();
+		
+	if($_COOKIE["user"]=="")
+	{
+		setcookie("user", $value);
+	}
+
 	$id = "gallery-carousel-".uniqid();
 	$boxes = 1;
 	if(!$this->select("boxes")->isEmpty()){
@@ -35,6 +55,7 @@
 	<div class="heading">
 		<h2 class="title_news"><?php echo $this->link('title-'.$i)?></h2>
 		<div class="btn-group">
+			<a href="javascript:void(0);" class="shop"><i class="fa fa-shopping-cart"></i></a>
 			<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
 			<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
 			
@@ -55,3 +76,100 @@
 	</div>
 </div>
 <?php } ?>
+
+<!-- Modal -->
+<div class="modal fade" id="wishlistSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      		<button aria-hidden="true" data-dismiss="modal" class="close" type="button">&times;</button>
+      </div>
+      <div class="modal-body modal-edit">
+      		<h2>Wishlist</h2><br />
+      		<h3>Kamu sudah menambahkan :</h3>
+      		<ul>
+      			<li>
+      				<h3 class="itemInput"></h3>
+      			</li>
+      		</ul>
+      		<h3>Kedalam Wishlist Kamu.</h3>
+      		<h3>Terima Kasih</h3>
+      </div>
+      <div class="modal-footer">
+      	<button type="button" class="btn btn-primary checkout">Checkout</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="wishlistFail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      		<button aria-hidden="true" data-dismiss="modal" class="close" type="button">&times;</button>
+      </div>
+      <div class="modal-body modal-edit">
+      		<h2>Wishlist</h2><br />
+      		<h3>Mohon maaf, sebelumnya Kamu sudah menambahkan :</h3>
+      		<ul>
+      			<li>
+      				<h3 class="itemInput"></h3>
+      			</li>
+      		</ul>
+      		<h3>Kedalam Wishlist Kamu.</h3>
+      		<h3>Terima Kasih</h3>
+      </div>
+      <div class="modal-footer">
+     	<button type="button" class="btn btn-primary checkout">Checkout</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+	$(".shop").on("click",function(){
+		var href = $(this).parent().siblings("h2").find("a").attr("href");
+		var namaProduk = $(this).parent().siblings("h2").find("a").text();
+		var produk = href.split("/");
+		var path = "/"+produk[1]+"/"+produk[2];
+		var key = produk[3];
+		$("body").prepend("<div id='dvLoading'></div>");
+		$.ajax({
+			url : "save-wishlist",
+			type: "POST",
+			data:{"cookies":<?php echo $_COOKIE["user"];?>, "path":path, "key":key, "produk":namaProduk},
+			success: function(result) {
+				
+				var hasil = $.parseJSON(result);
+				//console.log(hasil.length); 5
+				$('#dvLoading').fadeOut(2000);
+				$( "#dvLoading" ).remove();
+				//$(".itemInput").text(namaProduk);
+				var z = 1;
+				if(hasil[0]=="saved")
+				{
+					$("#wishlistSuccess").find("li").remove();
+					for(z; z < hasil.length; z++)
+					{
+						$("#wishlistSuccess").find("ul").append("<li><h3>"+hasil[z]+"</h3></li>");
+					}
+					$("#wishlistSuccess").modal("show");
+				}
+				else
+				{
+					$("#wishlistFail").find("li").remove();
+					for(z; z < hasil.length; z++)
+					{
+						$("#wishlistFail").find("ul").append("<li><h3>"+hasil[z]+"</h3></li>");
+					}
+					$("#wishlistFail").modal("show");
+				}
+			}
+		});
+	});
+	$(".checkout").on("click",function(){
+		window.location.href = "/checkout";
+	});
+</script>
