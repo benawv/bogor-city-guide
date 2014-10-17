@@ -16,7 +16,7 @@
 	<!-- content -->
 	<div class="items-container">
 		<?php echo $this->areablock('container', array(
-					'allowed' => array('container-box')))?>
+					'allowed' => array('container-box', 'container-box-static')))?>
 	</div>
 	<!-- endcontent -->
 	
