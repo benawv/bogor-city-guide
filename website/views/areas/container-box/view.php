@@ -12,7 +12,7 @@
 	}
 </style>
 <?php if($this->editmode) { ?>
-    <div class="alert alert-info" style="height: 75px">
+    <div class="alert alert-info" style="height: 150px">
         <div class="col-xs-6">
             How many box you want to show?
 
@@ -50,15 +50,19 @@
         $boxes = (int) $this->select("boxes")->getData();
     }
 ?>
+
 <?php for($i=0;$i<$boxes;$i++) { ?>
-<div class="item">
+<?php 
+	$hide = $this->select('hide-container-'.$i)->getData();
+	$display = $hide=='hide'?'display:none;':'';
+?>
+<div class="item" style="<?php echo !$this->editmode?$display:'' ?>">
 	<div class="heading">
 		<h2 class="title_news"><?php echo $this->link('title-'.$i)?></h2>
 		<div class="btn-group">
 			<a href="javascript:void(0);" class="shop"><i class="fa fa-shopping-cart"></i></a>
 			<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
 			<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
-			
 		</div>
 	</div>
 	<?php if($this->editmode) { ?>
@@ -74,6 +78,18 @@
 	<div class="description">
 		<?php echo $this->wysiwyg('description-'.$i)?>
 	</div>
+	<?php 
+		if($this->editmode) {
+			echo 'Show this box: ';
+			echo $this->select('hide-container-'.$i, array(
+					'store' => array(
+							array('show', 'Yes'),
+							array('hide', 'No')
+					),
+					"reload" => true
+			));
+		}
+	?>
 </div>
 <?php } ?>
 
