@@ -22,10 +22,10 @@
 									<?php
 									if($entry->getSummaryHome()!='')
 									{
-										echo limit_words($entry->getSummaryHome(),20);
+										echo limit_words($entry->getSummaryHome(),15);
 									}
 									else{
-										echo limit_words($entry->getContent(),20);
+										echo limit_words($entry->getContent(),15);
 									}
 									?>
 								</div>	

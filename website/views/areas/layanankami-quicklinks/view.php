@@ -3,15 +3,15 @@
 		<h3>Layanan Kami</h3>
 		<h4 style="margin-bottom: 10px;"><b>Info penting Asuransi Anda, di sini:</b></h4>		
 		<ul class="list-links bold-list">
-			<li><a href="klaim.php">Prosedur Klaim</a></li>
-			<li><a href="customer-service.php#cs_premi" onclick="navigateMe('premi')">Info Cara Pembayaran Premi</a></li>
-			<li><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/" target="_blank">Customer Online Portal</a></li>
-			<li><a href="customer-service.php#cs_cara-membeli" onclick="navigateMe('cara-membeli')">Info Cara Membeli</a></li>
-			<li><a href="investasi.php">Harga Unit</a></li>
-			<li><a href="https://www.allianzlife.co.id/eBancassurance/" target="_blank">BancAssurance Portal</a></li>
-			<li><a href="https://www.allianzlife.co.id/ePension/" target="_blank">e-Pension</a></li>
-			<li><a href="allianz-platinum.php">Allianz Platinum</a></li>
-			<li><a href="faq.php">FAQ</a></li>
+		    <li><a href="/layanan/klaim#prosedur-klaim">Prosedur Klaim</a></li>
+		    <li><a onclick="navigateMe('cara-premi')" href="/layanan/customer-service#cara-premi">Info Cara Pembayaran Premi</a></li>
+		    <li><a target="_blank" href="https://www.allianzlife.co.id/CustomerOnlinePortal/">Customer Online Portal</a></li>
+		    <li><a onclick="navigateMe('cara-beli')" href="/layanan/customer-service#cara-beli">Info Cara Membeli</a></li>
+		    <li><a href="/investasi">Harga Unit</a></li>
+		    <li><a target="_blank" href="https://www.allianzlife.co.id/eBancassurance/">BancAssurance Portal</a></li>
+		    <li><a target="_blank" href="https://www.allianzlife.co.id/ePension/">e-Pension</a></li>
+		    <li><a href="https://www.allianzlife.co.id/eSaving/login.aspx" target="_blank">e-Saving</a></li>
+		    <li><a href="/layanan/faq">FAQ</a></li>
 		</ul>
 	</div>
 	<div id="tab-contact" class="tab-content">

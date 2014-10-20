@@ -6,6 +6,7 @@ class WishlistController extends Website_Controller_Action {
 	{
 		$cookies = $_POST["cookies"];
 		$produk = $_POST["produk"];
+		$asuransi = $_POST["asuransi"];
 		
 		$entries = new Object_Wishlist_List();
 		$entries->setCondition("idCookies = '".$cookies."' and produk = '".$produk."'");
@@ -15,6 +16,7 @@ class WishlistController extends Website_Controller_Action {
 			$cookie = new Object_Wishlist();
 			$cookie->setIdCookies($cookies);
 			$cookie->setProduk($produk);
+			$cookie->setKategori($asuransi);
 			$cookie->setO_key('wishlist_'.$cookies.strtotime(date("YmdHis")));
 			$cookie->setO_parentId('786');
 			$cookie->setO_index(0);
@@ -54,7 +56,7 @@ class WishlistController extends Website_Controller_Action {
 	public function checkoutAction()
 	{
 		$this->enableLayout();
-		$cookiesId = $_COOKIE["user"];
+		$cookiesId = $_COOKIE["userWishlist"];
 		$entries = new Object_Wishlist_List();
 		$entries->setCondition("idCookies = ".$cookiesId);
 		
@@ -63,79 +65,123 @@ class WishlistController extends Website_Controller_Action {
 	
 	public function deleteWishlistAction()
 	{
+		$db = Pimcore_Resource_Mysql::get();
 		$cookies = $_POST["cookies"];
 		$produk = $_POST["produk"];
 		
-		/* $entries = new Object_Wishlist();
-		$entries->setCondition("idCookies = '".$cookies."' and produk = '".$produk."'");
-		$entries->delete(); */
+		$entries = new Object_Wishlist_List();
+		$entries->setLimit("1");
+		
+		foreach ($entries as $row)
+		{
+			$table1 = "object_store_".$row->getO_classId();
+			$table2 = "object_query_".$row->getO_classId();
+		}
+		$where = "idCookies = '".$cookies."' and produk = '".$produk."'";
+		$db->delete($table1,$where);
+		$db->delete($table2,$where);
+		/* try{
+			if($entries->delete()){
+				echo json_encode(array("Delete" => "Ya"));
+			}
+			else{
+				echo json_encode(array("Delete" => "Tidak"));
+			}
+		}
+		catch (Exception $e) {
+			echo 'Caught exception: ',  $e->getMessage(), "\n";
+		} */
 	}
 	
-	public function homeAction () {
-		$this->enableLayout();
-		$db = Pimcore_Resource_Mysql::get();
-		$sql = "SELECT doc.id, doc_e.data from documents as doc inner join documents_elements as doc_e on doc.id=doc_e.documentId
-				where doc.path='/berita/berita/arsip-berita/' and doc.published=1 and doc_e.type='date'
-				ORDER BY doc_e.data DESC limit 3"; //or whatever you need to do.
-		/* echo "<pre>";
-		print_r($db->fetchAll($sql));
-		die(); */
-		$this->view->fetchBerita = $db->fetchAll($sql);
-	}
-	
-	public function loadMoreAction()
+	public function sendEmailAction ()
 	{
-		$offset = $_POST["offset"];
-		$create = $_POST["created_at"];
+		$cookiesId = $_POST["cookies"];
+		$produk = $_POST["produk"];
+		$nama = $_POST["nama"];
+		$email = $_POST["email"];
+		$no_telp = $_POST["no_telp"];
+		$no_ktp = $_POST["no_ktp"];
+		
+		$ent = new Object_Wishlist_List();
+		$ent->setLimit("1");
+		
+		foreach ($ent as $row)
+		{
+			$table = "object_".$row->getO_classId();
+		}
+		
+		$ent2 = new Object_EmailAsuransi_List();
+		$ent2->setLimit("1");
+		
+		foreach ($ent2 as $row)
+		{
+			$table2 = "object_".$row->getO_classId();
+		}
 		
 		$db = Pimcore_Resource_Mysql::get();
-		$sql = "SELECT doc.id, doc_e.data from documents as doc inner join documents_elements as doc_e on doc.id=doc_e.documentId "; //or whatever you need to do.
-		if($create!='')
+		$sql = "select kategori from ".$table." where idCookies = ".$cookiesId." GROUP BY kategori";
+		$result = $db->fetchAll($sql);
+		$cc = array();
+		$x = 0;
+		foreach ($result as $row)
 		{
-			$sql .= "where doc.path='/berita/berita/arsip-berita/' and DATE_FORMAT(FROM_UNIXTIME(doc_e.data), '%Y') = ".$create." and doc.published=1 and doc_e.type='date' ORDER BY doc_e.data DESC limit 3 offset ".$offset;
+			$tmp = $row["kategori"];
+			
+			$ent3 = new Object_EmailAsuransi_List();
+			$ent3->setCondition("namaAsuransi = '".$tmp."'");
+			
+			foreach ($ent3 as $row2)
+			{
+				$eml = $row2->email;
+			}
+			$cc[$x] = $eml;
+			$x++;
 		}
-		else 
+		$emailCC = $cc;
+		
+		$pesan = new Object_DaftarPemesanan();
+		$pesan->setNama($nama);
+		$pesan->setEmail($email);
+		$pesan->setNoTelp($no_telp);
+		$pesan->setNoKTP($no_ktp);
+		$pesan->setO_key($nama);
+		$pesan->setO_parentId('818');
+		$pesan->setO_index(0);
+		$pesan->setO_published(1);
+		$pesan->save();
+			
+		$entri = new Object_Wishlist_List();
+		$entri->setCondition("idCookies = '".$cookies."'");
+		$x = 1;
+		$z = array();
+		$z[0] = 'saved';
+		foreach ($entri as $row)
 		{
-			$sql .= "where doc.path='/berita/berita/arsip-berita/' and doc.published=1 and doc_e.type='date' ORDER BY doc_e.data DESC limit 3 offset ".$offset;
+			$z[$x] =  $row->getProduk();
+			$x++;
 		}
 		
-		$id = $db->fetchAll($sql);
 		
-		$entries = array();
-		for ($x = 0; $x < count($id) ; $x++)
-		{
-			$list = new Document_List();
-			$list->setCondition("id=".$id[$x]['id']);
-			$entries[$x] = $list->load();
-			$entries[$x]["tgl"] = gmdate("d-m-Y",$id[$x]['data']);
-		}
-		echo json_encode($entries);
-	}
-	
-	public function filterTahunAction()
-	{
-		$create = $_POST["created_at"];
-		$db = Pimcore_Resource_Mysql::get();
-		$sql = "SELECT doc.id, doc_e.data from documents as doc inner join documents_elements as doc_e on doc.id=doc_e.documentId ";
-		if($create!='')
-		{
-			$sql .= "where doc.path='/berita/berita/arsip-berita/' and DATE_FORMAT(FROM_UNIXTIME(doc_e.data), '%Y') = ".$create." and doc.published=1 and doc_e.type='date' ORDER BY doc_e.data DESC limit 3";
-		}
-		else
-		{
-			$sql .= "where doc.path='/berita/berita/arsip-berita/' and doc.published=1 and doc_e.type='date' ORDER BY doc_e.data DESC limit 3";
-		}
+		$mail = new Pimcore_Mail();
 		
+		$mail->setSubject("Testing");
+		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+		$mail->setBodyHtml("<b>Test Email</b>");
+		$mail->addTo($email);
+		$mail->addCc($emailCC);
 		
-		$id = $db->fetchAll($sql);
-		$entries = array();
-		for ($x = 0; $x < count($id) ; $x++)
-		{
-			$list = new Document_List();
-			$list->setCondition("id=".$id[$x]['id']);
-			$entries[$x] = $list->load();
-			$entries[$x]["tgl"] = gmdate("d-m-Y",$id[$x]['data']);
+		try {
+			if ($mail->send())
+			{
+				echo json_encode(array("status" => "Kirim"));
+			}
+			else
+			{
+				echo json_encode(array("status" => "Gagal"));
+			}
+		
+		} catch (Exception $e) {
+			echo 'Caught exception: ',  $e->getMessage(), "\n";
 		}
-		echo json_encode($entries);
 	}
 }

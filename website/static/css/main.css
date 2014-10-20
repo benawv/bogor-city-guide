@@ -221,7 +221,7 @@ padding: 10px 15px;
   display: inline-block;
   text-align: right;
   float: right;
-  visibility: visible;
+  /* visibility: visible; */
 }
 .boxes-view .items-container .item .heading .btn-group a {
   display: inline-block;
@@ -559,7 +559,7 @@ padding: 10px 15px;
     margin: 0 -10px 10px;
   }
   .boxes-view .items-container .item .heading .btn-group {
-    visibility: hidden;
+    /* visibility: hidden; */
   }
   .boxes-view .items-container .item .thumbnail.thumbnail-popup img {
     opacity: 1;

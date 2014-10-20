@@ -88,9 +88,11 @@
 			<div id="agent-locator">
 				<h3><font color="#4169e1"><?php echo $this->data->title;?></font></h3>
 				<div id="article-content"> 
-					<p><img border="0" src="<?php echo "../".$this->data->imageTitle->filename;?>" alt=""></p>
-	
-					<?php echo $this->data->content;?>
+					<div class="imgPopUp">
+						<p><img border="0" src="<?php echo "../".$this->data->imageTitle->filename;?>" alt=""></p>
+		
+						<?php echo $this->data->content;?>
+					</div>
 				</div>
 			</div>
 			

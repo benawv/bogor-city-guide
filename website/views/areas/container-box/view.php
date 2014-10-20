@@ -39,11 +39,15 @@
 <?php
 	$value = strtotime(date("YmdHis")).rand();
 		
-	if($_COOKIE["user"]=="")
+	if($_COOKIE["userWishlist"]=="")
 	{
-		setcookie("user", $value);
+		setcookie("userWishlist", $value);
 	}
-
+	$cookies = $_COOKIE["userWishlist"];
+	if($cookies == "")
+	{
+		$cookies = $value;
+	}
 	$id = "gallery-carousel-".uniqid();
 	$boxes = 1;
 	if(!$this->select("boxes")->isEmpty()){
@@ -155,7 +159,7 @@
 		$.ajax({
 			url : "save-wishlist",
 			type: "POST",
-			data:{"cookies":<?php echo $_COOKIE["user"];?>, "path":path, "key":key, "produk":namaProduk},
+			data:{"cookies":<?php echo $cookies;?>, "path":path, "key":key, "produk":namaProduk, "asuransi":produk[2]},
 			success: function(result) {
 				
 				var hasil = $.parseJSON(result);

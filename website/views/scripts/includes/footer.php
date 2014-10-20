@@ -1,3 +1,18 @@
+<div class="modal fade" id="modalPopUpImage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+		<div class="modal-header">
+	        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">&times;</button>
+	    </div>
+	    <div class="modal-body">
+			<h2></h2>
+			<p style="text-align: center;">
+				<img class="imageModal" src="">
+			</p>
+	    </div>
+	</div>
+  </div>
+</div>
 <footer role="contentinfo" class="contentinfo">
 	<div class="meta clearfix">
 		<div class="container">

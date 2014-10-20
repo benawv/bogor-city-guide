@@ -1,3 +1,16 @@
+<?php
+	$value = strtotime(date("YmdHis")).rand();
+			
+	if($_COOKIE["userWishlist"]=="")
+	{
+		setcookie("userWishlist", $value);
+	}
+	$cookies = $_COOKIE["userWishlist"];
+	if($cookies == "")
+	{
+		$cookies = $value;
+	}
+?>
 <style type="text/css">
 	.table {
     width:50%;
@@ -81,13 +94,19 @@ table td[class*=col-], table th[class*=col-] {
 .table-hover>tbody>tr>td.danger:hover, .table-hover>tbody>tr>th.danger:hover, .table-hover>tbody>tr.danger:hover>td, .table-hover>tbody>tr:hover>.danger, .table-hover>tbody>tr.danger:hover>th {
     background-color:#ebcccc
 }
+.submit_whislist{
+	float: left;margin-left: 5%;width: 30%;
+}
+.submit_whislist input{
+	margin: 5px auto;
+}
 </style>
 <div class="container boxes-view">
 	<div class="full-w bg-white">
 		<h1>Produk-produk yang dipesan</h1>
 		
 		<div class="description">
-			<table class="table table-hover">
+			<table style="float: left;" class="table table-hover">
 		      <thead>
 		        <tr>
 		          <th>Nama Produk</th>
@@ -96,17 +115,28 @@ table td[class*=col-], table th[class*=col-] {
 		      </thead>
 		      <tbody>
 		      	<?php
-					foreach ($this->fetchCookies as $row){
-				?>
-		        <tr>
-		          <td><?php echo $row->produk?></td>
-		          <td><button type="button" class="btn btn-default hapusProduk">Hapus</button></td>
-		        </tr>
-		        <?php 
+		      		if(count($this->fetchCookies) > 0){
+			      		$x = 0;
+						foreach ($this->fetchCookies as $row){
+					?>
+			        <tr>
+			          <td class="produk produk<?php echo $x;?>"><?php echo $row->produk?></td>
+			          <td><button type="button" class="btn btn-default hapusProduk">Hapus</button></td>
+			        </tr>
+			        <?php
+			        	$x++; 
+			        	}
 		        	}
 		        ?>
 		      </tbody>
 		    </table>
+			<div class="submit_whislist">
+		          	<input class="form-control" id="nama"  placeholder="Nama Lengkap">
+		          	<input class="form-control" id="email"  placeholder="Email">
+		          	<input class="form-control" id="no_telp"  placeholder="No Telp">
+		          	<input class="form-control" id="no_ktp"  placeholder="No KTP">
+		          	<button type="button" class="btn btn-primary simpanWishlist">Simpan</button>	          
+		    </div>
 		</div>
 	</div>
 </div>
@@ -118,7 +148,27 @@ table td[class*=col-], table th[class*=col-] {
 		$.ajax({
 			url: "hapus-wishlist",
 			type: "POST",
-			data: {"cookies":<?php echo $_COOKIE["user"];?>, "produk": produk},
+			data: {"cookies":<?php echo $cookies;?>, "produk": produk},
+			success: function(result) {
+				
+			}
+		});
+	});
+	$(".simpanWishlist").on("click",function(){
+		var nama = $("#nama").val();
+		var email = $("#email").val();
+		var no_telp = $("#no_telp").val();
+		var no_ktp = $("#no_ktp").val();
+		var z = 0;
+		var produk = new Array();
+		for(z; z < $(".produk").length; z++)
+		{
+			produk[z] = $(".produk"+z).text();
+		}
+		$.ajax({
+			url: "send-email",
+			type: "POST",
+			data: {"cookies":<?php echo $cookies;?>, "produk": produk, "nama":nama, "email":email, "no_telp":no_telp,"no_ktp":no_ktp},
 			success: function(result) {
 				
 			}
