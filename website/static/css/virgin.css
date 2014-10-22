@@ -2328,7 +2328,7 @@ iframe {
 .sctn-spcfc .ss-cnnct .cnnct-twttr {
     font-size: 2rem;
     line-height: 2.4rem;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     display: inline-block;
     padding: 20px 15px 20px 0;
     color: #2b78e4;
@@ -2391,8 +2391,9 @@ iframe {
 }
 .sctn-spcfc .ss-cnnct ul li .instagram {
     background-color: #b5a177;
-    height: 65px;
+    height: 47px;
     background: url(../images/icon/ins.png) no-repeat;
+    background-position: 0 -10px;
 }
 .sctn-spcfc .ss-cnnct ul li .linked-in {
     background-color: #069;
@@ -7019,9 +7020,9 @@ iframe {
     padding: 2.60417%;
     margin-bottom: 3.90625%}
 .sctn-spcfc .ss-cnnct .cnnct-twttr {
-    font-size: 24px;
+    font-size: 23px;
     line-height: 2.4rem;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     display: inline-block;
     padding: 20px 15px 20px 0;
     color: #2b78e4;
@@ -7072,8 +7073,9 @@ iframe {
 }
 .sctn-spcfc .ss-cnnct ul li .facebook {
     background-color: #465ea4;
-    height: 65px;
+    height: 47px;
     background: url(../images/icon/fb.png) no-repeat;
+    background-position: 0 -10px;
 }
 .sctn-spcfc .ss-cnnct ul li .flickr {
     background-color: #fe0883;
@@ -7120,8 +7122,9 @@ iframe {
     font-size: 4rem;
     line-height: 4rem;
     padding: 0px;
-    height: 65px;
+    height: 47px;
     background: url(../images/icon/you.png) no-repeat;
+    background-position: 0 -9px;
 }
 .sctn-spcfc .ss-cnnct ul li .youtube:before {
     position: relative;

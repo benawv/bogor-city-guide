@@ -15,7 +15,7 @@
 				{
 			?>
 					<div class="tip">
-						<div class="photo"><img src="<?php echo $entry->imageHomeAllianz->filename;?>" /></div>
+						<div class="photo"><img src="<?php echo $entry->imageHomeAllianz->path."".$entry->imageHomeAllianz->filename;?>" /></div>
 						<div class="description">
 							<h3><a href="<?php echo "community-detail/".$entry->getO_key()."_".$entry->getO_id()."_".$entry->getTemplate();?>"><?php echo $entry->getTitle();?></a></h3>
 							<div class="meta">

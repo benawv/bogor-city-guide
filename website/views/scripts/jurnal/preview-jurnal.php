@@ -6,7 +6,7 @@
 	</span></span></div>
 	<div class="wrapper-special clearfix margin-content">
 		<div class="banner_products" id="best-products">
-			<img alt="product1" src="<?php echo "../".$this->data->banner->filename;?>">
+			<img alt="product1" src="<?php echo $this->data->banner->path."".$this->data->banner->filename;?>">
 		</div>
 		<div id="quicklinks">
 			<div class="tab-wrapper">
@@ -88,7 +88,7 @@
 			<div id="agent-locator">
 				<h3><font color="#4169e1"><?php echo $this->data->title;?></font></h3>
 				<div id="article-content"> 
-					<p><img border="0" src="<?php echo "../".$this->data->imageTitle->filename;?>" alt=""></p>
+					<p><img border="0" src="<?php echo $this->data->imageTitle->path."".$this->data->imageTitle->filename;?>" alt=""></p>
 	
 					<?php echo $this->data->content;?>
 				</div>

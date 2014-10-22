@@ -190,6 +190,7 @@
 		});
 	});
 	$(".checkout").on("click",function(){
-		window.location.href = "/checkout";
+		var cookie = <?php echo $cookies;?>;
+		window.location.href = "/checkout/"+cookie;
 	});
 </script>

@@ -32,7 +32,7 @@
 														<!-- <i class="icon-video"></i>	 -->
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo "/".$list[$y][filename];?>"alt="">
+																	<img src="<?php echo $list[$y][path]."".$list[$y][filename];?>"alt="">
 																	<div class="tg tg-shr">
 																		<?php 
 																			echo $list[$y][titleCategory];
@@ -56,7 +56,7 @@
 															<a href="<?php echo $this->url(array($list[$y+1][o_key],$list[$y+1][oo_id],$list[$y+1][template]),"community-detail");?>">
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo "/".$list[$y+1][filename];?>"alt="">
+																		<img src="<?php echo $list[$y+1][path]."".$list[$y+1][filename];?>"alt="">
 																		<div class="tg tg-shr">
 																			<?php 
 																					echo $list[$y+1][titleCategory];
@@ -88,7 +88,7 @@
 													   <a href="<?php echo $this->url(array($list[$y+2][o_key],$list[$y+2][oo_id],$list[$y+2][template]),"community-detail");?>">
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo "/".$list[$y+2][filename];?>"alt="">
+																<img src="<?php echo $list[$y+2][path]."".$list[$y+2][filename];?>"alt="">
 																<div class="tg tg-shr">
 																	<?php 
 																			echo $list[$y+2][titleCategory];
@@ -113,7 +113,7 @@
 															<!-- <i class="icon-video"></i> -->
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo "/".$list[$y+3][filename];?>"alt="">
+																	<img src="<?php echo $list[$y+3][path]."".$list[$y+3][filename];?>"alt="">
 																	<div class="tg tg-shr">
 																		<?php 
 																				echo $list[$y+3][titleCategory];
@@ -144,7 +144,7 @@
 															<!-- <i class="icon-video"></i> -->
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo "/".$list[$y+4][filename];?>"alt="">
+																	<img src="<?php echo $list[$y+4][path]."".$list[$y+4][filename];?>"alt="">
 																	<div class="tg tg-shr">
 																		<?php 
 																				echo $list[$y+4][titleCategory];
@@ -168,7 +168,7 @@
 															<a href="<?php echo $this->url(array($list[$y+5][o_key],$list[$y+5][oo_id],$list[$y+5][template]),"community-detail");?>">
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo "/".$list[$y+5][filename];?>"alt="">
+																		<img src="<?php echo $list[$y+5][path]."".$list[$y+5][filename];?>"alt="">
 																		<div class="tg tg-shr">
 																			<?php 
 																					echo $list[$y+5][titleCategory];
@@ -194,7 +194,7 @@
 																<!-- <i class="icon-video"></i>  -->
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo "/".$list[$y+6][filename];?>"alt="">
+																		<img src="<?php echo $list[$y+6][path]."".$list[$y+6][filename];?>"alt="">
 																		<div class="tg tg-shr">
 																			<?php 
 																					echo $list[$y+6][titleCategory];
@@ -248,50 +248,27 @@
 					<div class="s-sbar sctn-spcfc">
 						<div class="social-ss ss-cnnct">
 							<a href="#" title="Twitter" class="cnnct-twttr" target="_blank" data-track="connect|click|twitter-at">
-							@AllianzId
+							Allianz Indonesia Community
 						    </a>
 						    <ul class="clrd">
-						    <li class="blnk"></li>
 								<li>
-							    <a href="#" title="Facebook" class="facebook" target="_blank" data-track="connect|click|facebook">
-								<span class="vhdn">Facebook</span>
-							    </a>
-							</li>
-							    
+								    <a href="#" title="Facebook" class="facebook" target="_blank" data-track="connect|click|facebook">
+									<span class="vhdn">Facebook</span>
+								    </a>
+								</li>
+								
 								<li>
-							    <a href="#" title="Twitter" class="twitter" target="_blank" data-track="connect|click|twitter">
-								<span class="vhdn">Twitter</span>
-							    </a>
-							</li>
-							    
-							<li>
-							    <a href="#" title="Instagram" class="instagram" target="_blank" data-track="connect|click|instagram">
-								<span class="vhdn">Instagram</span>
-							    </a>
-							</li>
-							    
-						    <li class="blnk"></li>        
+								    <a href="#" title="Instagram" class="instagram" target="_blank" data-track="connect|click|instagram">
+									<span class="vhdn">Instagram</span>
+								    </a>
+								</li>
+								
 								<li>
-							    <a href="#" title="Linkedin" class="linked-in" target="_blank" data-track="connect|click|linkedin">
-								<span class="vhdn">Linked In</span>
-							    </a>
-							</li>
-							    
-								<li class="blnk"></li>
-							    
-								<li>
-							    <a href="#" title="Pinterest" class="pinterest" target="_blank" data-track="connect|click|pinterest">
-								<span class="vhdn">Pinterest</span>
-							    </a>
-							</li>
-							    
-							      <li class="blnk"></li>
-						    
-								<li>
-							    <a href="#" title="YouTube" class="youtube" target="_blank" data-track="connect|click|youtube">
-								<span class="vhdn">Youtube</span>
-							    </a>
-							</li>
+								    <a href="#" title="YouTube" class="youtube" target="_blank" data-track="connect|click|youtube">
+									<span class="vhdn">Youtube</span>
+								    </a>
+								</li>
+							
 							</ul>
 						</div>
 						
@@ -325,8 +302,9 @@
 					</div>
 					<div class="widget-twitter">
 						<div>
-							<a class="twitter-timeline" width="100%" height="400" href="https://twitter.com/AllianzId" data-widget-id="488606842243653632">Tweets by @AllianzId</a>
+							<!-- <a class="twitter-timeline" width="100%" height="400" href="https://twitter.com/AllianzId" data-widget-id="488606842243653632">Tweets by @AllianzId</a>
 							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+							 -->
 						</div>
 						<!--<div class="sh_widget">
 							<img class="logo-float" src="/website/static/images/logo1.png">
@@ -353,7 +331,7 @@
 													
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo "/".$result[filename];?>" alt="" />
+																<img src="<?php echo $result[path]."".$result[filename];?>" alt="" />
 																<div class="tg tg-shr">
 																	<?php
 																		echo $result[titleCategory];
@@ -400,7 +378,7 @@
 													
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo "/".$result[filename];?>" alt="" />
+																<img src="<?php echo $result[path]."".$result[filename];?>" alt="" />
 																<div class="tg tg-shr">
 																	<?php
 																		echo $result[titleCategory];

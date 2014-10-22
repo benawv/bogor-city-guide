@@ -65,7 +65,7 @@
 														<!-- <i class="icon-video"></i>	 -->	
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo "../".$list[$y][filename];?>"alt="">
+																	<img src="<?php echo $list[$y][path]."".$list[$y][filename];?>"alt="">
 																	<div class="tg tg-shr">
 																		<?php 
 																			echo $list[$y][titleCategory];
@@ -89,7 +89,7 @@
 															<a href="<?php echo $this->url(array($list[$y+1][o_key],$list[$y+1][oo_id],$list[$y+1][template]),"community-detail");?>">
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo "../".$list[$y+1][filename];?>"alt="">
+																		<img src="<?php echo $list[$y+1][path]."".$list[$y+1][filename];?>"alt="">
 																		<div class="tg tg-shr">
 																			<?php 
 																					echo $list[$y+1][titleCategory];
@@ -121,7 +121,7 @@
 													   <a href="<?php echo $this->url(array($list[$y+2][o_key],$list[$y+2][oo_id],$list[$y+2][template]),"community-detail");?>">
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo "../".$list[$y+2][filename];?>"alt="">
+																<img src="<?php echo $list[$y+2][path]."".$list[$y+2][filename];?>"alt="">
 																<div class="tg tg-shr">
 																	<?php 
 																			echo $list[$y+2][titleCategory];
@@ -146,7 +146,7 @@
 															<!-- <i class="icon-video"></i>	 -->
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo "../".$list[$y+3][filename];?>"alt="">
+																	<img src="<?php echo $list[$y+3][path]."".$list[$y+3][filename];?>"alt="">
 																	<div class="tg tg-shr">
 																		<?php 
 																				echo $list[$y+3][titleCategory];
@@ -177,7 +177,7 @@
 															<!-- <i class="icon-video"></i>	 -->
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo "../".$list[$y+4][filename];?>"alt="">
+																	<img src="<?php echo $list[$y+4][path]."".$list[$y+4][filename];?>"alt="">
 																	<div class="tg tg-shr">
 																		<?php 
 																				echo $list[$y+4][titleCategory];
@@ -201,7 +201,7 @@
 															<a href="<?php echo $this->url(array($list[$y+5][o_key],$list[$y+5][oo_id],$list[$y+5][template]),"community-detail");?>">
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo "../".$list[$y+5][filename];?>"alt="">
+																		<img src="<?php echo $list[$y+5][path]."".$list[$y+5][filename];?>"alt="">
 																		<div class="tg tg-shr">
 																			<?php 
 																					echo $list[$y+5][titleCategory];
@@ -227,7 +227,7 @@
 																<!-- <i class="icon-video"></i>	 -->
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo "../".$list[$y+6][filename];?>"alt="">
+																		<img src="<?php echo $list[$y+6][path]."".$list[$y+6][filename];?>"alt="">
 																		<div class="tg tg-shr">
 																			<?php 
 																					echo $list[$y+6][titleCategory];
@@ -385,7 +385,7 @@
 													
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo "../".$result[filename];?>" alt="" />
+																<img src="<?php echo $result[path]."".$result[filename];?>" alt="" />
 																<div class="tg tg-shr">
 																	<?php
 																		echo $result[titleCategory];
@@ -432,7 +432,7 @@
 													
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo "../".$result[filename];?>" alt="" />
+																<img src="<?php echo $result[path]."".$result[filename];?>" alt="" />
 																<div class="tg tg-shr">
 																	<?php
 																		echo $result[titleCategory];

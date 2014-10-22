@@ -35,7 +35,7 @@ class CommunityController extends Website_Controller_Action {
 		$backImage->setOrder("desc");
 		foreach($backImage as $hasil)
 		{
-			$image = $hasil->getImage();
+			$image = $hasil->image->path."".$hasil->image->filename;
 		}
 		$this->view->fetchBackground = $image;
 		

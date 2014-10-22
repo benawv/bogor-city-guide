@@ -44,7 +44,7 @@
 											'height' 	=> 100,
 											'thumbnail'	=> 'icon')) ?>
 						<?php } else { ?>
-							<div style="background-image: url('<?php echo $this->image('icon_'.$i)->getSrc()?>'); margin-bottom: 3px; width: 25px; height: 25px;"></div>
+							<div style="background-image: url('<?php echo $this->image('icon_'.$i)->getSrc()?>'); margin-bottom: 3px; width: 25px; height: 25px;background-position: 0 -26px;"></div>
 						<?php } ?>
 						<?php echo $this->editmode?'Title: ':'' ?><?php echo $this->input('anchor_title_'.$i, array("width" => '75'))?>
 					</div>

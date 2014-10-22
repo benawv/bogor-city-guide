@@ -11,10 +11,10 @@
 		<div class="tips">
 			<?php
 				foreach($entries as $entry)
-				{
+				{	
 			?>
 					<div class="tip">
-						<div class="photo"><img src="<?php echo $entry->imageHome->filename;?>" /></div>
+						<div class="photo"><img src="<?php echo $entry->imageHome->path."".$entry->imageHome->filename;?>" /></div>
 						<div class="description">
 							<h3><a href="<?php echo "jurnal-allianz/".$entry->getO_key()."_".$entry->getO_id();?>"><?php echo $entry->getTitle();?></a></h3>
 							<div class="meta">

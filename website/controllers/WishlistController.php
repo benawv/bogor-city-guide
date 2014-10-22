@@ -56,10 +56,13 @@ class WishlistController extends Website_Controller_Action {
 	public function checkoutAction()
 	{
 		$this->enableLayout();
-		$cookiesId = $_COOKIE["userWishlist"];
+		$cookiesId = $this->getParam("id");
+		if($cookiesId==""){
+			$cookiesId = $_COOKIE["userWishlist"];
+		}
 		$entries = new Object_Wishlist_List();
 		$entries->setCondition("idCookies = ".$cookiesId);
-		
+		$this->view->idCookies = $cookiesId;
 		$this->view->fetchCookies = $entries;
 	}
 	
@@ -100,7 +103,7 @@ class WishlistController extends Website_Controller_Action {
 		$nama = $_POST["nama"];
 		$email = $_POST["email"];
 		$no_telp = $_POST["no_telp"];
-		$no_ktp = $_POST["no_ktp"];
+		//$no_ktp = $_POST["no_ktp"];
 		
 		$ent = new Object_Wishlist_List();
 		$ent->setLimit("1");
@@ -121,8 +124,7 @@ class WishlistController extends Website_Controller_Action {
 		$db = Pimcore_Resource_Mysql::get();
 		$sql = "select kategori from ".$table." where idCookies = ".$cookiesId." GROUP BY kategori";
 		$result = $db->fetchAll($sql);
-		$cc = array();
-		$x = 0;
+		$z = 1;
 		foreach ($result as $row)
 		{
 			$tmp = $row["kategori"];
@@ -134,41 +136,63 @@ class WishlistController extends Website_Controller_Action {
 			{
 				$eml = $row2->email;
 			}
-			$cc[$x] = $eml;
-			$x++;
+			
+			$ent4 = new Object_Wishlist_List();
+			$ent4->setCondition("idCookies = '".$cookiesId."' and kategori = '".$tmp."'");
+			$pro = array();
+			$x = 0;
+			foreach ($ent4 as $row3)
+			{
+				$pro[$x] = $row3->produk;
+				$x++;
+			}
+			$listProduk = "<ul><li>" . implode("</li><li>", $pro) . "</li></ul>";
+			
+			$text = "Nama : ".$nama."<br />";
+			$text .= "Email : ".$email."<br />";
+			$text .= "No Telepon : ".$no_telp."<br />";
+			//$text .= "No KTP : ".$no_ktp."<br />";
+			$text .= "Produk : ".$listProduk;
+			
+			$mail.$z = new Pimcore_Mail();
+			$mail.$z->setSubject("Pemesanan Produk");
+			$mail.$z->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+			$mail.$z->setBodyHtml($text);
+			$mail.$z->addTo($eml);
+			
+			try {
+				$mail.$z->send();
+			} catch (Exception $e) {
+				echo 'Caught exception: ',  $e->getMessage(), "\n";
+			}
+			
+			$z++;
 		}
-		$emailCC = $cc;
-		
+		$prod = implode(", ", $produk);
 		$pesan = new Object_DaftarPemesanan();
 		$pesan->setNama($nama);
 		$pesan->setEmail($email);
 		$pesan->setNoTelp($no_telp);
-		$pesan->setNoKTP($no_ktp);
+		//$pesan->setNoKTP($no_ktp);
+		$pesan->setProduk($prod);
 		$pesan->setO_key($nama);
 		$pesan->setO_parentId('818');
 		$pesan->setO_index(0);
 		$pesan->setO_published(1);
 		$pesan->save();
-			
-		$entri = new Object_Wishlist_List();
-		$entri->setCondition("idCookies = '".$cookies."'");
-		$x = 1;
-		$z = array();
-		$z[0] = 'saved';
-		foreach ($entri as $row)
-		{
-			$z[$x] =  $row->getProduk();
-			$x++;
-		}
 		
+		$text = "Dear <b>".$nama."</b>,<br />";
+		$text .= "Kami telah menerima pesanan Anda.<br />";
+		$text .= "Produk-produk yang Anda pesan sebagai berikut : "."<ul><li>" . implode("</li><li>", $produk) . "</li></ul>";
+		$text .= "Terima kasih telah memilih Allianz<br /><br />";
+		$text .= "Hormat Kami,<br /><b>Tim Allianz</b>";
 		
 		$mail = new Pimcore_Mail();
 		
-		$mail->setSubject("Testing");
+		$mail->setSubject("Pemesanan Asuransi Allianz");
 		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
-		$mail->setBodyHtml("<b>Test Email</b>");
+		$mail->setBodyHtml($text);
 		$mail->addTo($email);
-		$mail->addCc($emailCC);
 		
 		try {
 			if ($mail->send())

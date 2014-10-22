@@ -1,15 +1,5 @@
-<?php
-	$value = strtotime(date("YmdHis")).rand();
-			
-	if($_COOKIE["userWishlist"]=="")
-	{
-		setcookie("userWishlist", $value);
-	}
-	$cookies = $_COOKIE["userWishlist"];
-	if($cookies == "")
-	{
-		$cookies = $value;
-	}
+<?php 
+	$cookies = $this->idCookies;
 ?>
 <style type="text/css">
 	.table {
@@ -134,7 +124,7 @@ table td[class*=col-], table th[class*=col-] {
 		          	<input class="form-control" id="nama"  placeholder="Nama Lengkap">
 		          	<input class="form-control" id="email"  placeholder="Email">
 		          	<input class="form-control" id="no_telp"  placeholder="No Telp">
-		          	<input class="form-control" id="no_ktp"  placeholder="No KTP">
+		          	<!-- <input class="form-control" id="no_ktp"  placeholder="No KTP"> -->
 		          	<button type="button" class="btn btn-primary simpanWishlist">Simpan</button>	          
 		    </div>
 		</div>
@@ -158,19 +148,23 @@ table td[class*=col-], table th[class*=col-] {
 		var nama = $("#nama").val();
 		var email = $("#email").val();
 		var no_telp = $("#no_telp").val();
-		var no_ktp = $("#no_ktp").val();
 		var z = 0;
 		var produk = new Array();
 		for(z; z < $(".produk").length; z++)
 		{
 			produk[z] = $(".produk"+z).text();
 		}
+		$("body").prepend("<div id='dvLoading'></div>");
 		$.ajax({
 			url: "send-email",
 			type: "POST",
-			data: {"cookies":<?php echo $cookies;?>, "produk": produk, "nama":nama, "email":email, "no_telp":no_telp,"no_ktp":no_ktp},
+			data: {"cookies":<?php echo $cookies;?>, "produk": produk, "nama":nama, "email":email, "no_telp":no_telp},
 			success: function(result) {
-				
+				var hasil = $.parseJSON(result);
+				if(hasil.status == "kirim"){
+					$('#dvLoading').fadeOut(2000);
+					$( "#dvLoading" ).remove();
+				}
 			}
 		});
 	});

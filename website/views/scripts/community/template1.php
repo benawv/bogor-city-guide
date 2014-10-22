@@ -148,7 +148,7 @@
 
 										<div class="outr-wrp">
 											<div class="img-wrp">
-												<img src="<?php echo "../".$result[filename];?>" alt="">
+												<img src="<?php echo $result[path]."".$result[filename];?>" alt="">
 
 												<div class="tg tg-shr">
 													<?php
@@ -195,7 +195,7 @@
 									<a href="<?php echo $this->url(array($result[o_key],$result[oo_id],$result[template]),"community-detail");?>">
 										<div class="outr-wrp">
 											<div class="img-wrp">
-												<img src="<?php echo "../".$result[filename];?>" alt="">
+												<img src="<?php echo $result[path]."".$result[filename];?>" alt="">
 
 												<div class="tg tg-shr">
 													<?php
