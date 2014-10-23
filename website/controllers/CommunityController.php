@@ -21,7 +21,7 @@ class CommunityController extends Website_Controller_Action {
 		//ALL
 		$db = Pimcore_Resource_Mysql::get();
 		
-		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				left join assets as ass on tblcommunity.image=ass.id
 				where tblcommunity.o_published = 1
 				ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14"; //or whatever you need to do.
@@ -40,7 +40,7 @@ class CommunityController extends Website_Controller_Action {
 		$this->view->fetchBackground = $image;
 		
 		//Recommended
-		$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				left join assets as ass on tblcommunity.image=ass.id
 				where tblcommunity.recommended = 1 and tblcommunity.o_published = 1
 				ORDER BY tblcommunity.recommended DESC limit 3"; //or whatever you need to do.
@@ -55,7 +55,7 @@ class CommunityController extends Website_Controller_Action {
 			$nameCommunityCok = "object_".$table->getClassId();
 		}
 		
-		$sql3 = "SELECT tblcommunity.oo_id, tblcommunity.popular, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql3 = "SELECT tblcommunity.oo_id, tblcommunity.popular, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				left join assets as ass on tblcommunity.image=ass.id
 				where tblcommunity.o_published = 1
 				ORDER BY tblcommunity.popular DESC limit 3"; //or whatever you need to do.
@@ -106,7 +106,7 @@ class CommunityController extends Website_Controller_Action {
 		}
 		
 		//Recommended
-		$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				left join assets as ass on tblcommunity.image=ass.id
 				where tblcommunity.recommended = 1 and tblcommunity.o_published = 1
 				ORDER BY tblcommunity.recommended, tblcommunity.popular DESC limit 5"; //or whatever you need to do.
@@ -114,7 +114,7 @@ class CommunityController extends Website_Controller_Action {
 		$this->view->fetchRecommended = $db->fetchAll($sql2);
 		
 		//Popular
-		$sql3 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql3 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				left join assets as ass on tblcommunity.image=ass.id
 				where tblcommunity.o_published = 1
 				ORDER BY tblcommunity.popular DESC limit 5"; //or whatever you need to do.
@@ -179,7 +179,7 @@ class CommunityController extends Website_Controller_Action {
 		}
 		
 		//Recommended
-		$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				left join assets as ass on tblcommunity.image=ass.id
 				where tblcommunity.recommended = 1 and tblcommunity.o_published = 1
 				ORDER BY tblcommunity.recommended, tblcommunity.popular DESC limit 5"; //or whatever you need to do.
@@ -187,7 +187,7 @@ class CommunityController extends Website_Controller_Action {
 		$this->view->fetchRecommended = $db->fetchAll($sql2);
 		
 		//Popular
-		$sql3 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql3 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				left join assets as ass on tblcommunity.image=ass.id
 				where tblcommunity.o_published = 1
 				ORDER BY tblcommunity.popular DESC limit 5"; //or whatever you need to do.
@@ -240,7 +240,7 @@ class CommunityController extends Website_Controller_Action {
 			$nameCommunityCat = "object_".$table->getClassId();
 		}
 		
-		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, tblcategory.colorPicker, tblcategory.hexaColor, tblcategory.colorR, tblcategory.colorG, tblcategory.colorB, tblcategory.summary FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path, tblcategory.colorPicker, tblcategory.hexaColor, tblcategory.colorR, tblcategory.colorG, tblcategory.colorB, tblcategory.summary FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				inner join assets as ass on tblcommunity.image=ass.id
 				WHERE tblcommunity.category__id=".$kriteria." and tblcommunity.o_published = 1 ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14"; //or whatever you need to do.
 		$data1 = $db->fetchAll($sql);
@@ -258,7 +258,7 @@ class CommunityController extends Website_Controller_Action {
 		}
 		
 		//Recommended
-		$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				left join assets as ass on tblcommunity.image=ass.id
 				where tblcommunity.recommended = 1 and tblcommunity.o_published = 1
 				ORDER BY tblcommunity.recommended DESC limit 3"; //or whatever you need to do.
@@ -266,7 +266,7 @@ class CommunityController extends Website_Controller_Action {
 		$this->view->fetchRecommended = $db->fetchAll($sql2);
 		
 		//Popular
-		$sql3 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql3 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				left join assets as ass on tblcommunity.image=ass.id
 				where tblcommunity.o_published = 1
 				ORDER BY tblcommunity.popular DESC limit 3"; //or whatever you need to do.
@@ -362,7 +362,7 @@ class CommunityController extends Website_Controller_Action {
 			$nameCommunityCat = "object_".$table->getClassId();
 		}
 		
-		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				left join assets as ass on tblcommunity.image=ass.id
 				where tblcommunity.o_published = 1
 				ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14 offset ".$offset; //or whatever you need to do.
@@ -371,7 +371,7 @@ class CommunityController extends Website_Controller_Action {
 		$data['count_all'] = count($data);
 		
 		$offset2 = $offset+14;
-		$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				left join assets as ass on tblcommunity.image=ass.id
 				where tblcommunity.o_published = 1
 				ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14 offset ".$offset2; //or whatever you need to do.
@@ -399,7 +399,7 @@ class CommunityController extends Website_Controller_Action {
 			$nameCommunityCat = "object_".$table->getClassId();
 		}
 	
-		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				left join assets as ass on tblcommunity.image=ass.id
 				where tblcommunity.o_published = 1
 				ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14 offset ".$offset; //or whatever you need to do.
@@ -413,7 +413,7 @@ class CommunityController extends Website_Controller_Action {
 			$data['offset_prev'] = 0;
 		}
 		else{
-			$sql3 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+			$sql3 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 			left join assets as ass on tblcommunity.image=ass.id
 			where tblcommunity.o_published = 1
 			ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14 offset ".$offset3; //or whatever you need to do.
@@ -450,7 +450,7 @@ class CommunityController extends Website_Controller_Action {
 			$nameCommunityCat = "object_".$table->getClassId();
 		}
 		
-		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, tblcategory.colorPicker, tblcategory.hexacolor, tblcategory.summary FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path, tblcategory.colorPicker, tblcategory.hexacolor, tblcategory.summary FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				inner join assets as ass on tblcommunity.image=ass.id
 				WHERE tblcommunity.category__id=".$kriteria." and tblcommunity.o_published = 1 ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14 offset ".$offset; //or whatever you need to do.
 		
@@ -459,7 +459,7 @@ class CommunityController extends Website_Controller_Action {
 		$data['count_all'] = count($data);
 		
 		$offset2 = $offset+14;
-		$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, tblcategory.colorPicker, tblcategory.hexacolor, tblcategory.summary FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path, tblcategory.colorPicker, tblcategory.hexacolor, tblcategory.summary FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				inner join assets as ass on tblcommunity.image=ass.id
 				WHERE tblcommunity.category__id=".$kriteria." and tblcommunity.o_published = 1 ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14 offset ".$offset2; //or whatever you need to do.
 		
@@ -496,7 +496,7 @@ class CommunityController extends Website_Controller_Action {
 			$nameCommunityCat = "object_".$table->getClassId();
 		}
 		
-		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, tblcategory.colorPicker, tblcategory.hexacolor, tblcategory.summary FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path, tblcategory.colorPicker, tblcategory.hexacolor, tblcategory.summary FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				inner join assets as ass on tblcommunity.image=ass.id
 				WHERE tblcommunity.category__id=".$kriteria." and tblcommunity.o_published = 1 ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14 offset ".$offset; //or whatever you need to do.
 		
@@ -510,7 +510,7 @@ class CommunityController extends Website_Controller_Action {
 			$data['offset_prev'] = 0;
 		}
 		else{
-			$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, tblcategory.colorPicker, tblcategory.hexacolor, tblcategory.summary FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+			$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path, tblcategory.colorPicker, tblcategory.hexacolor, tblcategory.summary FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 					inner join assets as ass on tblcommunity.image=ass.id
 					WHERE tblcommunity.category__id=".$kriteria." and tblcommunity.o_published = 1 ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14 offset ".$offset3; //or whatever you need to do.
 			

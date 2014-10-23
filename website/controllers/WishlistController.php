@@ -56,7 +56,8 @@ class WishlistController extends Website_Controller_Action {
 	public function checkoutAction()
 	{
 		$this->enableLayout();
-		$cookiesId = $this->getParam("id");
+		$cookiesId = $this->_getParam('id');
+		
 		if($cookiesId==""){
 			$cookiesId = $_COOKIE["userWishlist"];
 		}

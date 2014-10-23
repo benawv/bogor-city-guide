@@ -43,11 +43,8 @@
 	{
 		setcookie("userWishlist", $value);
 	}
-	$cookies = $_COOKIE["userWishlist"];
-	if($cookies == "")
-	{
-		$cookies = $value;
-	}
+	
+	
 	$id = "gallery-carousel-".uniqid();
 	$boxes = 1;
 	if(!$this->select("boxes")->isEmpty()){
@@ -159,7 +156,7 @@
 		$.ajax({
 			url : "save-wishlist",
 			type: "POST",
-			data:{"cookies":<?php echo $cookies;?>, "path":path, "key":key, "produk":namaProduk, "asuransi":produk[2]},
+			data:{"cookies":<?php echo $_COOKIE["userWishlist"];?>, "path":path, "key":key, "produk":namaProduk, "asuransi":produk[2]},
 			success: function(result) {
 				
 				var hasil = $.parseJSON(result);
@@ -190,7 +187,7 @@
 		});
 	});
 	$(".checkout").on("click",function(){
-		var cookie = <?php echo $cookies;?>;
+		var cookie = <?php echo $_COOKIE["userWishlist"];?>;
 		window.location.href = "/checkout/"+cookie;
 	});
 </script>

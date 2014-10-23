@@ -3282,3 +3282,7 @@ img.logo-float{
 .super_navi.cus_super_navi .navi li{
 	margin-right: 5px;
 }
+
+#pimcore_admin_console .logo{
+	position: relative !important;
+}
