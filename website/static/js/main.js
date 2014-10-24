@@ -139,6 +139,19 @@ $(document).ready(function(){
 		}
 		$("#modalPopUpImage").modal("show");
 	});
+	
+	$(".hideme").hide();
+	$(".v").click(function(){
+		$(this).siblings('.hideme').slideToggle();
+		if($(this).find('.xicon').hasClass('down')){
+			$(this).find('.xicon').removeClass('down')
+			$(this).find('.xicon').addClass('up')
+		}
+		else{
+			$(this).find('.xicon').removeClass('up')
+			$(this).find('.xicon').addClass('down')
+		}
+	});
 });
 
 $(window).load(function() {

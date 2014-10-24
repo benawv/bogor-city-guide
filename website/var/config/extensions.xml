@@ -59,6 +59,7 @@
     <community-tips>1</community-tips>
     <video>1</video>
     <multi-video>1</multi-video>
+    <banner-without-note>1</banner-without-note>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>

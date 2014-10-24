@@ -3286,3 +3286,52 @@ img.logo-float{
 #pimcore_admin_console .logo{
 	position: relative !important;
 }
+#dvLoading
+{
+   background:#000 url(/website/static/images/loading.gif) no-repeat center center;
+   height: 100%;
+   width: 100%;
+   position: fixed;
+   z-index: 1000;
+   opacity: 0.5;
+   filter: alpha(opacity=50);
+   margin: 0px;
+}
+#slideshow .slides.cusSlides .slide{
+	height: 322px;
+	box-shadow: none;
+}
+#slideshow .slides.cusSlides .slide .photo, #slideshow .slides.cusSlides .slide{
+	background: transparent;
+}
+#slideshow .slides.cusSlides .slide .photo img{
+	margin: 0px auto;
+	width: auto;
+}
+@media only screen and (min-width: 960px) and (max-width: 1023px){
+	.boxes-view .items-container .tips-item-kiri{
+		width: 65%;
+	}
+	.tips-item-kanan{
+		width: 35%;
+	}
+}
+@media only screen and (max-width: 959px){
+	.s-sbar{
+		float: left !important;
+	}
+	.tips-item-kanan{
+		/* background: #fff; */
+	}
+	.social-ss.ss-cnnct{
+		width: 100% !important;
+	}
+}
+.pimcore_area_imagekiri-tabelkanan.pimcore_area_content{
+	width: 100%;
+	clear: both;
+	float: left;
+}
+.pimcore_area_teks-tabs.pimcore_area_content{
+	clear: both;
+}

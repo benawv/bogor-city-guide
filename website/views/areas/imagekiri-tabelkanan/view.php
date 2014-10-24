@@ -72,19 +72,3 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-	<?php if(!$this->editmode) { ?>
-	$(".hideme").hide();
-	$(".v").click(function(){
-		$(this).siblings('.hideme').slideToggle();
-		if($(this).find('.xicon').hasClass('down')){
-			$(this).find('.xicon').removeClass('down')
-			$(this).find('.xicon').addClass('up')
-		}
-		else{
-			$(this).find('.xicon').removeClass('up')
-			$(this).find('.xicon').addClass('down')
-		}
-	});
-	<?php } ?>
-</script>

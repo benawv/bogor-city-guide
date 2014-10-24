@@ -1,16 +1,3 @@
-<style type="text/css">
-	#dvLoading
-	{
-	   background:#000 url(/loading.gif) no-repeat center center;
-	   height: 100%;
-	   width: 100%;
-	   position: fixed;
-	   z-index: 1000;
-	   opacity: 0.5;
-	   filter: alpha(opacity=50);
-	   margin: 0px;
-	}
-</style>
 <?php if($this->editmode) { ?>
     <div class="alert alert-info" style="height: 150px">
         <div class="col-xs-6">

@@ -10,10 +10,10 @@
 	</div>
 	<div class="wrapper-special clearfix">
 		<?php echo $this->areablock('banner', array(
-					"allowed" => array("banner", "static-banner")))?>
+					"allowed" => array("banner", "static-banner", "banner-without-note")))?>
 		<div id="quicklinks">
 			<?php echo $this->areablock('layananKami-wrapper', array(
-					"allowed" => array("tile-quicklinks", "layanankami-quicklinks")))?>
+					"allowed" => array("tile-quicklinks", "layanankami-quicklinks", "quicklinks")))?>
 		</div>
 	</div><!-- .wrapper-special -->
 	
