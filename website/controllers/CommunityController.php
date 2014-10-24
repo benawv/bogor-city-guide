@@ -61,6 +61,11 @@ class CommunityController extends Website_Controller_Action {
 				ORDER BY tblcommunity.popular DESC limit 3"; //or whatever you need to do.
 		$this->view->fetchPopular = $db->fetchAll($sql3);
 		
+		$sliderImage = new Object_CommunityTipsImageSlider_List();
+		$sliderImage->setLimit(5);
+		$sliderImage->setOrder("desc");
+		$this->view->sliderImage = $sliderImage;
+		
 	}
 	
 	public function previewAction(){

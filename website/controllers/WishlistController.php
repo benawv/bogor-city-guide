@@ -61,9 +61,10 @@ class WishlistController extends Website_Controller_Action {
 		if($cookiesId==""){
 			$cookiesId = $_COOKIE["userWishlist"];
 		}
+		$this->view->idCookies = $cookiesId;
+		
 		$entries = new Object_Wishlist_List();
 		$entries->setCondition("idCookies = ".$cookiesId);
-		$this->view->idCookies = $cookiesId;
 		$this->view->fetchCookies = $entries;
 	}
 	

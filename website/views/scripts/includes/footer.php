@@ -72,9 +72,28 @@
 			</ul>
 		</div>
 	</nav>
+	<div class="modal fade" id="modalSoc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		    <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		</div>
+		<div class="modal-body">
+		    <a href="http://sociallydevoted.socialbakers.com" target="_blank">
+			<img class="badge-modal" src="/website/static/images/Socially-Devoted-Badge.png" alt="Socially Devoted Badge" title="We are Socially Devoted!"/>
+		    </a>
+		</div>
+	    </div>
+	  </div>
+	</div>
 	<div class="worldwide">
 		<div class="container">
-			Allianz worldwide <a href="http://allianz.com">allianz.com</a>
+			<div class="badge-social">
+				<a data-target="#modalSoc" href="#" data-toggle="modal"><img title="We are Socially Devoted!" alt="Socially Devoted Badge" src="/website/static/images/badge.png" class="badge"></a>
+			</div>
+			<div>
+				Allianz worldwide <a href="http://allianz.com">allianz.com</a>
+			</div>
 		</div>
 	</div>
 </footer>
