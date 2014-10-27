@@ -3,8 +3,28 @@
 <?php if(!$this->editmode):?>
 <script src="/website/static/js/sticky-jquery.js" type="text/javascript"></script>
 <?php endif;?>
+<style type="text/css">
+	.upperText{
+		text-transform: uppercase;
+	}
+</style>
 <div class="container boxes-view">
-	<h5><a href="/"><span>Produk</span></a> &rsaquo; <?php echo $this->navigation()->breadcrumbs()->setMinDepth(null); ?></h5>
+	<?php 
+		$url = $_SERVER['REQUEST_URI'];
+		$uri = explode("/", $url);
+		for($x = 2; $x < count($uri)-1; $x++)
+		{
+			$title = explode("-", $uri[$x]);
+			$textTitle = "";
+			$text = "";
+			for ($y = 0; $y < count($title); $y++)
+			{
+				$textTitle = " <span class='upperText'>".substr($title[$y], 0, 1)."</span>".substr($title[$y], 1);
+				$text .= $textTitle;
+			}
+		}
+	?>
+	<h5><a href="/<?php echo $uri[1];?>"><span>Produk</span></a> &rsaquo; <a href="/<?php echo $uri[1]."/".$uri[2];?>"><span><?php echo $text;?></span></a></h5>
 	<span class="breadcrumb"><a href="#"><?php //echo $this->document->getTitle()?></a></span>
 	
 	<div class="heading clearfix pagenav">
