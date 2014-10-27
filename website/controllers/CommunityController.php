@@ -32,6 +32,7 @@ class CommunityController extends Website_Controller_Action {
 		//Background Image
 		$backImage = new Object_CommunityTipsBackground_List();
 		$backImage->setLimit(1);
+		$backImage->setOrderKey("o_creationDate");
 		$backImage->setOrder("desc");
 		foreach($backImage as $hasil)
 		{
@@ -63,6 +64,7 @@ class CommunityController extends Website_Controller_Action {
 		
 		$sliderImage = new Object_CommunityTipsImageSlider_List();
 		$sliderImage->setLimit(5);
+		$sliderImage->setOrderKey("o_creationDate");
 		$sliderImage->setOrder("desc");
 		$this->view->sliderImage = $sliderImage;
 		
@@ -213,12 +215,19 @@ class CommunityController extends Website_Controller_Action {
 		//Background Image
 		$backImage = new Object_CommunityTipsBackground_List();
 		$backImage->setLimit(1);
+		$backImage->setOrderKey("o_creationDate");
 		$backImage->setOrder("desc");
 		foreach($backImage as $hasil)
 		{
 			$image = $hasil->getImage();
 		}
 		$this->view->fetchBackground = $image;
+		
+		$sliderImage = new Object_CommunityTipsImageSlider_List();
+		$sliderImage->setLimit(5);
+		$sliderImage->setOrderKey("o_creationDate");
+		$sliderImage->setOrder("desc");
+		$this->view->sliderImage = $sliderImage;
 		
 		
 		$cat = $this->_getParam('category');

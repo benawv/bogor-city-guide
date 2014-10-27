@@ -280,50 +280,27 @@
 					<div class="s-sbar sctn-spcfc">
 						<div class="social-ss ss-cnnct">
 							<a href="#" title="Twitter" class="cnnct-twttr" target="_blank" data-track="connect|click|twitter-at">
-							@AllianzId
+							Allianz Indonesia Community
 						    </a>
 						    <ul class="clrd">
-						    <li class="blnk"></li>
 								<li>
-							    <a href="#" title="Facebook" class="facebook" target="_blank" data-track="connect|click|facebook">
-								<span class="vhdn">Facebook</span>
-							    </a>
-							</li>
-							    
+								    <a href="#" title="Facebook" class="facebook" target="_blank" data-track="connect|click|facebook">
+									<span class="vhdn">Facebook</span>
+								    </a>
+								</li>
+								
 								<li>
-							    <a href="#" title="Twitter" class="twitter" target="_blank" data-track="connect|click|twitter">
-								<span class="vhdn">Twitter</span>
-							    </a>
-							</li>
-							    
+								    <a href="#" title="Instagram" class="instagram" target="_blank" data-track="connect|click|instagram">
+									<span class="vhdn">Instagram</span>
+								    </a>
+								</li>
+								
 								<li>
-							    <a href="#" title="Linkedin" class="linked-in" target="_blank" data-track="connect|click|linkedin">
-								<span class="vhdn">Linked In</span>
-							    </a>
-							</li>
-							    
-						    <li class="blnk"></li>        
-								<li>
-							    <a href="#" title="Instagram" class="instagram" target="_blank" data-track="connect|click|instagram">
-								<span class="vhdn">Instagram</span>
-							    </a>
-							</li>
-							    
-								<li class="blnk"></li>
-							    
-								<li>
-							    <a href="#" title="Pinterest" class="pinterest" target="_blank" data-track="connect|click|pinterest">
-								<span class="vhdn">Pinterest</span>
-							    </a>
-							</li>
-							    
-							      <li class="blnk"></li>
-						    
-								<li>
-							    <a href="#" title="YouTube" class="youtube" target="_blank" data-track="connect|click|youtube">
-								<span class="vhdn">Youtube</span>
-							    </a>
-							</li>
+								    <a href="#" title="YouTube" class="youtube" target="_blank" data-track="connect|click|youtube">
+									<span class="vhdn">Youtube</span>
+								    </a>
+								</li>
+							
 							</ul>
 						</div>
 						
@@ -356,15 +333,27 @@
 						</div>
 					</div>
 					<div class="widget-twitter">
-						<div>
-							<a class="twitter-timeline" width="100%" height="400" href="https://twitter.com/AllianzId" data-widget-id="488606842243653632">Tweets by @AllianzId</a>
+						<div id="slideshow" class="clearfix">
+							<div class="flex-viewport" style="overflow: hidden; position: relative;">
+								<ul class="slides cusSlides">
+									<?php
+										foreach ($this->sliderImage as $sliderImage)
+										{
+									?>
+									<li>
+										<div class="slide">
+											<div class="photo">
+												<img width="100%" height="100%" alt="" src="<?php echo $sliderImage->getImage();?>" />
+											</div>
+										</div>
+									</li>
+									<?php }?>
+								</ul>
+							<!-- <a class="twitter-timeline" width="100%" height="400" href="https://twitter.com/AllianzId" data-widget-id="488606842243653632">Tweets by @AllianzId</a>
 							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+							 -->
+							</div>
 						</div>
-						<!--<div class="sh_widget">
-							<img class="logo-float" src="/website/static/images/logo1.png">
-							<img class="logo-float" src="/website/static/images/logo2.png">
-							<img class="logo-float" src="/website/static/images/logo3.png">
-						</div>-->
 					</div>
 					<div class="s-sbar sctn-spcfc">
 						<div class="recommend-tips art-lst kntc-ct">
@@ -468,8 +457,9 @@
 	</div> <!-- .items-container -->
 			
 </div>
-
-<?php
-	//echo "<pre>";
-	//print_r($this->fetchData);
-?>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".flex-direction-nav").remove();
+});
+</script>

@@ -311,22 +311,14 @@
 									<li>
 										<div class="slide">
 											<div class="photo">
-												<img width="100%" height="100%" alt="" src="<?php echo $sliderImage->getImage();?>" />
+												<img alt="" src="<?php echo $sliderImage->getImage();?>" />
 											</div>
 										</div>
 									</li>
 									<?php }?>
 								</ul>
-							<!-- <a class="twitter-timeline" width="100%" height="400" href="https://twitter.com/AllianzId" data-widget-id="488606842243653632">Tweets by @AllianzId</a>
-							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-							 -->
 							</div>
 						</div>
-						<!--<div class="sh_widget">
-							<img class="logo-float" src="/website/static/images/logo1.png">
-							<img class="logo-float" src="/website/static/images/logo2.png">
-							<img class="logo-float" src="/website/static/images/logo3.png">
-						</div>-->
 					</div>
 					<div class="s-sbar sctn-spcfc">
 						<div class="recommend-tips art-lst kntc-ct">

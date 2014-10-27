@@ -156,15 +156,13 @@ table td[class*=col-], table th[class*=col-] {
 		}
 		$("body").prepend("<div id='dvLoading'></div>");
 		$.ajax({
-			url: "send-email",
+			url: "/send-email",
 			type: "POST",
 			data: {"cookies":<?php echo $cookies;?>, "produk": produk, "nama":nama, "email":email, "no_telp":no_telp},
 			success: function(result) {
-				var hasil = $.parseJSON(result);
-				if(hasil.status == "kirim"){
-					$('#dvLoading').fadeOut(2000);
-					$( "#dvLoading" ).remove();
-				}
+				$('#dvLoading').fadeOut(2000);
+				$( "#dvLoading" ).remove();
+				
 			}
 		});
 	});

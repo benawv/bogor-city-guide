@@ -8,7 +8,7 @@ class EmailController extends Website_Controller_Action {
 			
 		}
 		else{
-			$cookiesId = $_POST["cookies"];
+			/* $cookiesId = $_POST["cookies"];
 			if($cookiesId=="")
 			{
 				$cookiesId = "141377748326027";
@@ -32,7 +32,7 @@ class EmailController extends Website_Controller_Action {
 			$mail = new Pimcore_Mail();
 			
 			$mail->addTo('mrobbi.nugraha@gmail.com');
-			$mail->setDocument('/email/test');
+			$mail->setDocument('/email/test'); */
 		}
 	}
 }

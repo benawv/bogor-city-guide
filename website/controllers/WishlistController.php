@@ -162,11 +162,8 @@ class WishlistController extends Website_Controller_Action {
 			$mail.$z->setBodyHtml($text);
 			$mail.$z->addTo($eml);
 			
-			try {
-				$mail.$z->send();
-			} catch (Exception $e) {
-				echo 'Caught exception: ',  $e->getMessage(), "\n";
-			}
+			$mail.$z->send();
+			
 			
 			$z++;
 		}
@@ -197,15 +194,8 @@ class WishlistController extends Website_Controller_Action {
 		$mail->addTo($email);
 		
 		try {
-			if ($mail->send())
-			{
-				echo json_encode(array("status" => "Kirim"));
-			}
-			else
-			{
-				echo json_encode(array("status" => "Gagal"));
-			}
-		
+			$mail->send();
+			echo json_encode(array("status" => "Kirim"));
 		} catch (Exception $e) {
 			echo 'Caught exception: ',  $e->getMessage(), "\n";
 		}

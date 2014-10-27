@@ -3301,8 +3301,11 @@ img.logo-float{
 	height: 322px;
 	box-shadow: none;
 }
-#slideshow .slides.cusSlides .slide .photo, #slideshow .slides.cusSlides .slide{
+#slideshow .slides.cusSlides .slide .photo{
 	background: transparent;
+}
+#slideshow .slides.cusSlides .slide{
+ 	background: #fff;
 }
 #slideshow .slides.cusSlides .slide .photo img{
 	margin: 0px auto;
