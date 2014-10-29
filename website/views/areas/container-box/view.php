@@ -166,7 +166,7 @@
 		});
 	});
 	$(".checkout").on("click",function(){
-		var cookie = <?php echo $_COOKIE["userWishlist"];?>;
-		window.location.href = "/checkout/"+cookie;
+		//var cookie = <?php //echo $_COOKIE["userWishlist"];?>;
+		window.location.href = "/checkout/";
 	});
 </script>
