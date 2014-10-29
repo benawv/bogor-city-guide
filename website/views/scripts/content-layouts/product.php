@@ -1,3 +1,10 @@
+<?php 
+	if($_COOKIE["userWishlist"]=="")
+	{
+		$value = strtotime(date("YmdHis"))."".rand();
+		setcookie("userWishlist", $value);
+	}
+?>
 <style type="text/css">
 	.upperText{
 		text-transform: uppercase;

@@ -1,8 +1,7 @@
 <?php 
-	$value = strtotime(date("YmdHis")).rand();
-	
 	if($_COOKIE["userWishlist"]=="")
 	{
+		$value = strtotime(date("YmdHis"))."".rand();
 		setcookie("userWishlist", $value);
 	}
 ?>
