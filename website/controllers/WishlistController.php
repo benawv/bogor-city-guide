@@ -153,13 +153,13 @@ class WishlistController extends Website_Controller_Action {
 			//$text .= "No KTP : ".$no_ktp."<br />";
 			$text .= "Produk : ".$listProduk;
 			
-			$mail.$z = new Pimcore_Mail();
-			$mail.$z->setSubject("Pemesanan Produk");
-			$mail.$z->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
-			$mail.$z->setBodyHtml($text);
-			$mail.$z->addTo($eml);
+			$mail = new Pimcore_Mail();
+			$mail->setSubject("Pemesanan Produk");
+			$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+			$mail->setBodyHtml($text);
+			$mail->addTo($eml);
 			
-			$mail.$z->send();
+			$mail->send();
 			
 			
 			$z++;
