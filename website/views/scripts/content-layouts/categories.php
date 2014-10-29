@@ -1,3 +1,11 @@
+<?php 
+	$value = strtotime(date("YmdHis")).rand();
+	
+	if($_COOKIE["userWishlist"]=="")
+	{
+		setcookie("userWishlist", $value);
+	}
+?>
 <div class="container boxes-view">
 	<div class="heading clearfix">
 		<h5 style="visibility:hidden;"><span><a href="product.php">Produk</a></span> &raquo; <span><b>Asuransi Umum</b></span></h5>

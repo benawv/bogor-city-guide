@@ -24,14 +24,6 @@
     </style>
 <?php } ?>
 <?php
-	$value = strtotime(date("YmdHis")).rand();
-		
-	if($_COOKIE["userWishlist"]=="")
-	{
-		setcookie("userWishlist", $value);
-	}
-	
-	
 	$id = "gallery-carousel-".uniqid();
 	$boxes = 1;
 	if(!$this->select("boxes")->isEmpty()){
