@@ -176,7 +176,7 @@ $(document).ready(function(){
 	}
 	
 	$(".shop").on("click",function(){
-		console.log(getCookie('userWishlist'));
+		//console.log(getCookie('userWishlist'));
 		var href = $(this).parent().siblings("h2").find("a").attr("href");
 		var namaProduk = $(this).parent().siblings("h2").find("a").text();
 		var produk = href.split("/");
@@ -226,7 +226,7 @@ $(document).ready(function(){
 		var produk = $(this).parent().siblings("td").text();
 		$(this).parent().parent().remove();
 		$.ajax({
-			url: "hapus-wishlist",
+			url: "/hapus-wishlist",
 			type: "POST",
 			data: {"cookies":cookies, "produk": produk},
 			success: function(result) {
