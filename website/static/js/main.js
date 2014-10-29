@@ -218,7 +218,8 @@ $(document).ready(function(){
 	});
 	$(".checkout").on("click",function(){
 		//var cookie = <?php //echo $_COOKIE["userWishlist"];?>;
-		window.location.href = "/checkout/";
+		var cookies = getCookie('userWishlist');
+		window.location.href = "/checkout/"+cookies;
 	});
 	
 	// ------------ End Wishlist -------------- //

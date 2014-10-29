@@ -57,7 +57,7 @@ class WishlistController extends Website_Controller_Action {
 	{
 		$this->enableLayout();
 		
-		$cookiesId = $_COOKIE["userWishlist"];
+		$cookiesId = $this->_getParam('id');
 		$this->view->idCookies = $cookiesId;
 		
 		$entries = new Object_Wishlist_List();
