@@ -161,6 +161,67 @@ $(document).ready(function(){
 			$("#modal-"+title).modal();
 		}
 	});
+	
+	// --------- Wishlist ------------ //
+	
+	function getCookie(cname) {
+	    var name = cname + "=";
+	    var ca = document.cookie.split(';');
+	    for(var i=0; i<ca.length; i++) {
+	        var c = ca[i];
+	        while (c.charAt(0)==' ') c = c.substring(1);
+	        if (c.indexOf(name) != -1) return c.substring(name.length,c.length);
+	    }
+	    return "";
+	}
+	
+	$(".shop").on("click",function(){
+		console.log(getCookie('userWishlist'));
+		var href = $(this).parent().siblings("h2").find("a").attr("href");
+		var namaProduk = $(this).parent().siblings("h2").find("a").text();
+		var produk = href.split("/");
+		var path = "/"+produk[1]+"/"+produk[2];
+		var key = produk[3];
+		$("body").prepend("<div id='dvLoading'></div>");
+		$.ajax({
+			url : "save-wishlist",
+			type: "POST",
+			data:{"cookies": getCookie('userWishlist'), "path":path, "key":key, "produk":namaProduk, "asuransi":produk[2]},
+			success: function(result) {
+				
+				var hasil = $.parseJSON(result);
+				//console.log(hasil.length); 5
+				$('#dvLoading').fadeOut(2000);
+				$( "#dvLoading" ).remove();
+				//$(".itemInput").text(namaProduk);
+				var z = 1;
+				if(hasil[0]=="saved")
+				{
+					$("#wishlistSuccess").find("li").remove();
+					for(z; z < hasil.length; z++)
+					{
+						$("#wishlistSuccess").find("ul").append("<li><h3>"+hasil[z]+"</h3></li>");
+					}
+					$("#wishlistSuccess").modal("show");
+				}
+				else
+				{
+					$("#wishlistFail").find("li").remove();
+					for(z; z < hasil.length; z++)
+					{
+						$("#wishlistFail").find("ul").append("<li><h3>"+hasil[z]+"</h3></li>");
+					}
+					$("#wishlistFail").modal("show");
+				}
+			}
+		});
+	});
+	$(".checkout").on("click",function(){
+		//var cookie = <?php //echo $_COOKIE["userWishlist"];?>;
+		window.location.href = "/checkout/";
+	});
+	
+	// ------------ End Wishlist -------------- //
 });
 
 $(window).load(function() {
