@@ -152,6 +152,15 @@ $(document).ready(function(){
 			$(this).find('.xicon').addClass('down')
 		}
 	});
+	
+	$(".PopUpModal").on("click",function(){
+		if($(this).attr("href")=="#"){
+			var text = $(this).text();
+			var title = text.replace(/\s+/g, "-");
+			$(this).attr("data-target","modal-"+title);
+			$("#modal-"+title).modal();
+		}
+	});
 });
 
 $(window).load(function() {

@@ -60,8 +60,8 @@
     <video>1</video>
     <multi-video>1</multi-video>
     <banner-without-note>1</banner-without-note>
-    <container-box-static-modal-iframe>1</container-box-static-modal-iframe>
-    <container-box-static-modal-text>1</container-box-static-modal-text>
+    <container-box-static-modal-iframe></container-box-static-modal-iframe>
+    <container-box-static-modal-text></container-box-static-modal-text>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>

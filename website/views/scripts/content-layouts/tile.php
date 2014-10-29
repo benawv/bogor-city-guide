@@ -20,7 +20,7 @@
 	<div class="items-container">
 	<!-- content -->
 		<?php echo $this->areablock('container', array(
-					"allowed" => array("container-box-static", "container-box-carousel", "container-box-carousel-text", "container-box-static-modal-iframe", "container-box-static-modal-text")))?>
+					"allowed" => array("container-box-static", "container-box-carousel", "container-box-carousel-text")))?>
 	<!-- endcontent -->
 	</div>
 	
