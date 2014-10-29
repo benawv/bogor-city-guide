@@ -97,7 +97,7 @@ class WishlistController extends Website_Controller_Action {
 	
 	public function sendEmailAction ()
 	{
-		$cookiesId = $_POST["cookies"];
+		/* $cookiesId = $_POST["cookies"];
 		$produk = $_POST["produk"];
 		$nama = $_POST["nama"];
 		$email = $_POST["email"];
@@ -182,13 +182,13 @@ class WishlistController extends Website_Controller_Action {
 		$text .= "Produk-produk yang Anda pesan sebagai berikut : "."<ul><li>" . implode("</li><li>", $produk) . "</li></ul>";
 		$text .= "Terima kasih telah memilih Allianz<br /><br />";
 		$text .= "Hormat Kami,<br /><b>Tim Allianz</b>";
-		
+		 */
 		$mail = new Pimcore_Mail();
 		
 		$mail->setSubject("Pemesanan Asuransi Allianz");
 		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
-		$mail->setBodyHtml($text);
-		$mail->addTo($email);
+		$mail->setBodyHtml("test");
+		$mail->addTo("mrobbi.nugraha@gmail.com");
 		
 		try {
 			$mail->send();
