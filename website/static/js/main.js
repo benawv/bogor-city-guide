@@ -217,9 +217,45 @@ $(document).ready(function(){
 		});
 	});
 	$(".checkout").on("click",function(){
-		//var cookie = <?php //echo $_COOKIE["userWishlist"];?>;
 		var cookies = getCookie('userWishlist');
 		window.location.href = "/checkout/"+cookies;
+	});
+	
+	$(".hapusProduk").on("click",function(){
+		var cookies = getCookie('userWishlist');
+		var produk = $(this).parent().siblings("td").text();
+		$(this).parent().parent().remove();
+		$.ajax({
+			url: "hapus-wishlist",
+			type: "POST",
+			data: {"cookies":cookies, "produk": produk},
+			success: function(result) {
+				
+			}
+		});
+	});
+	$(".simpanWishlist").on("click",function(){
+		var cookies = getCookie('userWishlist');
+		var nama = $("#nama").val();
+		var email = $("#email").val();
+		var no_telp = $("#no_telp").val();
+		var z = 0;
+		var produk = new Array();
+		for(z; z < $(".produk").length; z++)
+		{
+			produk[z] = $(".produk"+z).text();
+		}
+		$("body").prepend("<div id='dvLoading'></div>");
+		$.ajax({
+			url: "/send-email",
+			type: "POST",
+			data: {"cookies":cookies, "produk": produk, "nama":nama, "email":email, "no_telp":no_telp},
+			success: function(result) {
+				$('#dvLoading').fadeOut(2000);
+				$( "#dvLoading" ).remove();
+				
+			}
+		});
 	});
 	
 	// ------------ End Wishlist -------------- //
