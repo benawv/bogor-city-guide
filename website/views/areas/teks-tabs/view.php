@@ -89,11 +89,17 @@
 		
 		$("#<?php echo $opentabid ?>_"+x).click(function(){
 			
-			$(".menutab_dekstop li a").removeClass();
+			$(".menutab_dekstop li a").removeClass("active");
 	    	$("a#<?php echo $opentabid ?>_"+x).addClass("active");
 	    	$(".<?php echo $showid?>").hide();
 	    	$("#<?php echo $tabcontentid?>_"+x).show();
-	    	
+	    	if($("#<?php echo $tabcontentid?>_"+x).find("ul").height() != null)
+	    	{
+		    	if($("#<?php echo $tabcontentid?>_"+x).find("ul").height() > 500)
+		    	{
+		    		$("#<?php echo $tabcontentid?>_"+x).find("ul").addClass("tab_bca");
+		    	}
+	    	}
 		});
 		
 		$("#<?php echo $opentabid ?>_"+x+"_m").click(function(){

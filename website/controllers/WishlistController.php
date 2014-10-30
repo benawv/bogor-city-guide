@@ -102,7 +102,6 @@ class WishlistController extends Website_Controller_Action {
 		$nama = $_POST["nama"];
 		$email = $_POST["email"];
 		$no_telp = $_POST["no_telp"];
-		//$no_ktp = $_POST["no_ktp"];
 		
 		$ent = new Object_Wishlist_List();
 		$ent->setLimit("1");
@@ -150,7 +149,7 @@ class WishlistController extends Website_Controller_Action {
 			$text = "Nama : ".$nama."<br />";
 			$text .= "Email : ".$email."<br />";
 			$text .= "No Telepon : ".$no_telp."<br />";
-			//$text .= "No KTP : ".$no_ktp."<br />";
+			
 			$text .= "Produk : ".$listProduk;
 			
 			$mail = new Pimcore_Mail();
@@ -169,7 +168,7 @@ class WishlistController extends Website_Controller_Action {
 		$pesan->setNama($nama);
 		$pesan->setEmail($email);
 		$pesan->setNoTelp($no_telp);
-		//$pesan->setNoKTP($no_ktp);
+		
 		$pesan->setProduk($prod);
 		$pesan->setO_key($nama);
 		$pesan->setO_parentId('818');
