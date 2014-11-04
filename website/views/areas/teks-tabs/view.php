@@ -3,6 +3,7 @@
 	$tabcontentid = "tabcontent_".uniqid();
 	$showid = "show_".uniqid();
 	$wysiwygid = "tabcontent-".uniqid();
+	$menutab = "menutab-".uniqid();
 ?>
 <div id="<?php echo $this->input('anchor')->text?>" class="full-w bg-white">
 	<h2>
@@ -52,7 +53,7 @@
 		        $tabs = (int) $this->select("tabs")->getData();
 		    }
 		?>
-		<div class="<?php if(!$this->editmode){?>menutab_dekstop<?php } ?>">
+		<div class="<?php if(!$this->editmode){?>menutab_dekstop<?php echo " ".$menutab;} ?>">
 			<ul>
 				<?php for($x=0;$x<$tabs;$x++) { ?>
 					<li>
@@ -89,7 +90,7 @@
 		
 		$("#<?php echo $opentabid ?>_"+x).click(function(){
 			
-			$(".menutab_dekstop li a").removeClass("active");
+			$(".<?php echo $menutab;?> li a").removeClass("active");
 	    	$("a#<?php echo $opentabid ?>_"+x).addClass("active");
 	    	$(".<?php echo $showid?>").hide();
 	    	$("#<?php echo $tabcontentid?>_"+x).show();
