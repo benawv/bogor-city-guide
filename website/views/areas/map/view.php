@@ -1,6 +1,6 @@
 <div class="wrapper clearfix">
 	<div id="agent-locator">
-		<h2>Lokasi Kantor Pemasaran</h2>
+		<h2><?php echo $this->input("lokasi_pemasaran", array("width" => 255));?></h2>
 		<div id="maparea">
 
 		</div>

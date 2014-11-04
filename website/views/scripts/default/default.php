@@ -38,7 +38,7 @@
 	<!-- Map -->
 	<div class="wrapper clearfix">
 		<div id="agent-locator">
-			<h2>Marketing Office Location</h2>
+			<h2><?php echo $this->input("judul_map", array("width" => 255));?></h2>
 			<div id="maparea">
 				
 			</div>

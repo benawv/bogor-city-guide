@@ -46,7 +46,18 @@
 						<?php } else { ?>
 							<div style="background-image: url('<?php echo $this->image('icon_'.$i)->getSrc()?>'); margin-bottom: 3px; width: 25px; height: 25px;"></div>
 						<?php } ?>
-						<?php echo $this->editmode?'Title: ':'' ?><?php echo $this->input('anchor_title_'.$i, array("width" => '75'))?>
+						
+						<?php if($this->editmode) { ?>
+							Icon White: <?php echo $this->image('icon_'.$i.'_'.$i, array(
+											'title' 	=> 'Drag your icon here',
+											'width' 	=> 100,
+											'height' 	=> 100,
+											'thumbnail'	=> 'icon')) ?>
+						<?php } else { ?>
+							<div class="white_image" style="background-image: url('<?php echo $this->image('icon_'.$i.'_'.$i)->getSrc()?>'); margin-bottom: 3px; width: 25px; height: 25px;"></div>
+						<?php } ?>
+						
+						<span class="cus_anchor_<?php echo $i;?>"><?php echo $this->editmode?'Title: ':'' ?><?php echo $this->input('anchor_title_'.$i, array("width" => '75'))?></span>
 					</div>
 				</li>
 			<?php } ?>
@@ -74,6 +85,17 @@
 								<?php } else { ?>
 									<div style="background-image: url('<?php echo $this->image('icon_'.$i)->getSrc()?>'); margin-bottom: 3px; width: 25px; height: 25px;"></div>
 								<?php } ?>
+								
+								<?php if($this->editmode) { ?>
+									Icon White: <?php echo $this->image('icon_'.$i.'_'.$i, array(
+													'title' 	=> 'Drag your icon here',
+													'width' 	=> 100,
+													'height' 	=> 100,
+													'thumbnail'	=> 'icon')) ?>
+								<?php } else { ?>
+									<div class="white_image" style="background-image: url('<?php echo $this->image('icon_'.$i.'_'.$i)->getSrc()?>'); margin-bottom: 3px; width: 25px; height: 25px;"></div>
+								<?php } ?>
+								
 								<?php echo $this->editmode?'Title: ':'' ?><?php echo $this->input('anchor_title_'.$i, array("width" => '75'))?>
 							</div>
 						</li>
@@ -85,7 +107,7 @@
 	<?php } ?>
 <?php else : ?>
 	<?php 
-		$style = $this->editmode?'height: 250px':'';
+		$style = $this->editmode?'height: 310px':'';
 	?>
 		<ul id="membername" class="navi" style="<?php echo $style?>">
 			<?php for($i=0;$i<$anchors;$i++) { ?>
@@ -103,12 +125,44 @@
 						<?php } else { ?>
 							<div style="background-image: url('<?php echo $this->image('icon_'.$i)->getSrc()?>'); margin-bottom: 3px; width: 25px; height: 25px;"></div>
 						<?php } ?>
+						
+						<?php if($this->editmode) { ?>
+							Icon White: <?php echo $this->image('icon_'.$i.'_'.$i, array(
+											'title' 	=> 'Drag your icon here',
+											'width' 	=> 100,
+											'height' 	=> 100,
+											'thumbnail'	=> 'icon')) ?>
+						<?php } else { ?>
+							<div class="white_image" style="background-image: url('<?php echo $this->image('icon_'.$i.'_'.$i)->getSrc()?>'); margin-bottom: 3px; width: 25px; height: 25px;"></div>
+						<?php } ?>
+						
 						<?php echo $this->editmode?'Title: ':'' ?><?php echo $this->input('anchor_title_'.$i, array("width" => '75'))?>
 					</div>
 				</li>
 			<?php } ?>
 		</ul>
 <?php endif;?>
+<?php for($i=0;$i<$anchors;$i++) { ?>
+	<script type="text/javascript">
+		var text = $(".cus_anchor_<?php echo $i;?>").text();
+		var pisah = text.split(" ");
+		var angka = (pisah.length)/2;
+		var batas = Math.floor(angka);
+
+		var isi = "";
+		for(var x = 0; x < pisah.length; x++)
+		{
+			if(x==(batas-1))
+			{
+				pisah[x] = pisah[x]+"<br />";
+			}
+			
+			isi += pisah[x]+" ";
+		}
+		$(".cus_anchor_<?php echo $i;?>").html(isi);
+	</script>
+<?php }?>
+
 <script type="text/javascript">
 	var w = 0;
 	
@@ -136,13 +190,13 @@
 	$('.next').on('click',function(){
 		var me_left = $('.super_navi').scrollLeft();
 		$('.super_navi').scrollLeft(me_left + 100);
-		console.log($('.super_navi').position().left);
+		//console.log($('.super_navi').position().left);
 	});
 	
 	$('.prev').on('click',function(){
 		var me_left = $('.super_navi').scrollLeft();
 		$('.super_navi').scrollLeft(me_left - 100);
-		console.log($('.super_navi').position().left);
+		//console.log($('.super_navi').position().left);
 	});
 	/* silde nav*/
 </script>

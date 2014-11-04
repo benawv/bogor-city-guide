@@ -1,7 +1,7 @@
 <?php 
 	$entries = new Object_JurnalAllianz_List();
 	$entries->setLimit("3");
-	$entries->setOrderKey("o_creationDate");
+	$entries->setOrderKey("tgl_jurnal");
 	$entries->setOrder("desc");
 	if(count($entries)>0)
 	{

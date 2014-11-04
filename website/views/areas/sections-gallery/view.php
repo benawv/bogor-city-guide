@@ -36,7 +36,7 @@
 		
 		<div class="wrapper1">
 			<div class="jcarousel-wrapper">
-				<div class="jcarousel">
+				<div class="jcarousel jc2">
 					<ul>
 						<?php while ($this->block("imageblock")->loop()) { ?>
 							<?php if($this->editmode) { ?>
