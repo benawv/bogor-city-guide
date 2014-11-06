@@ -1,5 +1,5 @@
 <?php 
-	if($_COOKIE["userWishlist"]=="")
+	if(!isset($_COOKIE["userWishlist"]))
 	{
 		$value = strtotime(date("YmdHis"))."".rand();
 		setcookie("userWishlist", $value);

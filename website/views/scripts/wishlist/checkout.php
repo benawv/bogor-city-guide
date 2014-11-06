@@ -1,3 +1,4 @@
+<script src="/website/static/js/jquery.numeric.js" type="text/javascript"></script>
 <?php 
 	$cookies = $this->idCookies;
 ?>
@@ -125,8 +126,12 @@ table td[class*=col-], table th[class*=col-] {
 		          	<input class="form-control" id="email"  placeholder="Email">
 		          	<input class="form-control" id="no_telp"  placeholder="No Telp">
 		          	<!-- <input class="form-control" id="no_ktp"  placeholder="No KTP"> -->
-		          	<button type="button" class="btn btn-primary simpanWishlist">Simpan</button>	          
+		          	<button type="button" class="btn btn-primary simpanWishlist">Simpan</button>
+		          	<span class="eror" style="color: red;"></span>	          
 		    </div>
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	$('#no_telp').numeric();
+</script>

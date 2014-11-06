@@ -222,40 +222,65 @@ $(document).ready(function(){
 	});
 	
 	$(".hapusProduk").on("click",function(){
-		var cookies = getCookie('userWishlist');
+		var tmp_cookies = window.location.pathname;
+		var cookies = tmp_cookies.split("/");
+		
 		var produk = $(this).parent().siblings("td").text();
 		$(this).parent().parent().remove();
 		$.ajax({
 			url: "/hapus-wishlist",
 			type: "POST",
-			data: {"cookies":cookies, "produk": produk},
+			data: {"cookies":cookies[(cookies.length)-1], "produk": produk},
 			success: function(result) {
 				
 			}
 		});
 	});
+	
 	$(".simpanWishlist").on("click",function(){
-		var cookies = getCookie('userWishlist');
+		var tmp_cookies = window.location.pathname;
+		var cookies = tmp_cookies.split("/");
+		
 		var nama = $("#nama").val();
 		var email = $("#email").val();
 		var no_telp = $("#no_telp").val();
-		var z = 0;
-		var produk = new Array();
-		for(z; z < $(".produk").length; z++)
+		$(".eror").text('');
+		
+		if(nama.length == 0 || email.length == 0 || no_telp.length == 0)
 		{
-			produk[z] = $(".produk"+z).text();
+			$(".eror").text('Semua kolom harus diisi.');
 		}
-		$("body").prepend("<div id='dvLoading'></div>");
-		$.ajax({
-			url: "/send-email",
-			type: "POST",
-			data: {"cookies":cookies, "produk": produk, "nama":nama, "email":email, "no_telp":no_telp},
-			success: function(result) {
-				$('#dvLoading').fadeOut(2000);
-				$( "#dvLoading" ).remove();
-				
-			}
-		});
+		else if (email.length != 0) {
+			var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            //var emailLegalReg =  /^([\w-\.]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!aol.com)([\w-]+\.)+[\w-]{2,4})?$/;
+
+            var emailaddressVal = email;
+            if(!emailReg.test(emailaddressVal)) {    
+            	$(".eror").text('Email tidak valid.');
+            } /*else if(emailLegalReg.test(emailaddressVal)) {    
+                $(".eror").text('Email tidak valid.');
+            }*/
+            else{
+    			var z = 0;
+    			var produk = new Array();
+    			for(z; z < $(".produk").length; z++)
+    			{
+    				produk[z] = $(".produk"+z).text();
+    			}
+    			$("body").prepend("<div id='dvLoading'></div>");
+    			$.ajax({
+    				url: "/send-email",
+    				type: "POST",
+    				data: {"cookies":cookies[(cookies.length)-1], "produk": produk, "nama":nama, "email":email, "no_telp":no_telp},
+    				success: function() {
+    					$('#dvLoading').fadeOut(2000);
+    					$( "#dvLoading" ).remove();
+    					
+    				}
+    			});
+    		}
+		}
+		
 	});
 	
 	// ------------ End Wishlist -------------- //
