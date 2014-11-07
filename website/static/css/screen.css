@@ -3338,3 +3338,22 @@ img.logo-float{
 .pimcore_area_teks-tabs.pimcore_area_content{
 	clear: both;
 }
+
+/*OJK*/
+.ojk-desc {
+	float:left; 
+	margin: -27px 0 0 26px;
+	
+}
+.ojk-desc p {
+	float: left;
+	margin: 13px 0 0 0;
+	text-align: left;
+	font-size: 1em;
+	line-height: 1.2;
+}
+.ojk-img { 
+	float:left; 
+	margin-top:-30px; 
+	margin-left: 15px;
+}
