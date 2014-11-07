@@ -94,6 +94,13 @@
 			<div>
 				Allianz worldwide <a href="http://allianz.com">allianz.com</a>
 			</div>
+			<div class="ojk-img">
+				<img width="120px" src="/website/static/images/OJK Logo.png">
+			</div>	
+			<div class="ojk-desc">
+				<p>Allianz dan Agen/Tenaga Penjualnya telah terdaftar pada dan diawasi <br />
+				oleh Otoritas Jasa Keuangan.</p>
+			</div>
 		</div>
 	</div>
 </footer>
