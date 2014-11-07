@@ -55,14 +55,20 @@ class WishlistController extends Website_Controller_Action {
 	
 	public function checkoutAction()
 	{
-		$this->enableLayout();
-		
 		$cookiesId = $this->_getParam('id');
-		$this->view->idCookies = $cookiesId;
-		
-		$entries = new Object_Wishlist_List();
-		$entries->setCondition("idCookies = ".$cookiesId);
-		$this->view->fetchCookies = $entries;
+		if($cookiesId!="")
+		{
+			$this->enableLayout();
+			$this->view->idCookies = $cookiesId;
+			
+			$entries = new Object_Wishlist_List();
+			$entries->setCondition("idCookies = ".$cookiesId);
+			$this->view->fetchCookies = $entries;
+		}
+		else
+		{
+			$this->redirect("/");
+		}
 	}
 	
 	public function deleteWishlistAction()
@@ -135,10 +141,12 @@ class WishlistController extends Website_Controller_Action {
 				
 				$ent3 = new Object_EmailAsuransi_List();
 				$ent3->setCondition("namaAsuransi = '".$tmp."'");
-				
+				$no = 0;
+				$eml = array();
 				foreach ($ent3 as $row2)
 				{
-					$eml = $row2->email;
+					$eml[$no] = $row2->email;
+					$no++;
 				}
 				
 				$ent4 = new Object_Wishlist_List();
@@ -202,6 +210,9 @@ class WishlistController extends Website_Controller_Action {
 			} catch (Exception $e) {
 				echo 'Caught exception: ',  $e->getMessage(), "\n";
 			}
+		}
+		else{
+			$this->redirect("/");
 		}
 	}
 }

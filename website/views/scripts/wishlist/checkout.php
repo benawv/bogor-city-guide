@@ -122,9 +122,11 @@ table td[class*=col-], table th[class*=col-] {
 		      </tbody>
 		    </table>
 			<div class="submit_whislist">
-		          	<input class="form-control" id="nama"  placeholder="Nama Lengkap">
-		          	<input class="form-control" id="email"  placeholder="Email">
-		          	<input class="form-control" id="no_telp"  placeholder="No Telp">
+		          	<input class="form-control" id="nama" type="text"  placeholder="Nama Lengkap">
+		          	<input class="form-control" id="email" type="text"  placeholder="Email">
+		          	<input class="form-control" id="no_telp" type="text"  placeholder="No Telp">
+		          	<input type="text" class="no-bot" value="no robot" style="display: none;">
+		          	<input type="hidden" class="no-bot2" value="">
 		          	<!-- <input class="form-control" id="no_ktp"  placeholder="No KTP"> -->
 		          	<button type="button" class="btn btn-primary simpanWishlist">Simpan</button>
 		          	<span class="eror" style="color: red;"></span>	          

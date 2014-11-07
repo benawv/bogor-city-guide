@@ -238,49 +238,53 @@ $(document).ready(function(){
 	});
 	
 	$(".simpanWishlist").on("click",function(){
-		var tmp_cookies = window.location.pathname;
-		var cookies = tmp_cookies.split("/");
-		
-		var nama = $("#nama").val();
-		var email = $("#email").val();
-		var no_telp = $("#no_telp").val();
-		$(".eror").text('');
-		
-		if(nama.length == 0 || email.length == 0 || no_telp.length == 0)
-		{
-			$(".eror").text('Semua kolom harus diisi.');
+		var no_bot = $(".no-bot").val();
+		var no_bot2 = $(".no-bot2").val();
+		if(no_bot=="no robot" && no_bot2==""){
+			var tmp_cookies = window.location.pathname;
+			var cookies = tmp_cookies.split("/");
+			
+			var nama = $("#nama").val();
+			var email = $("#email").val();
+			var no_telp = $("#no_telp").val();
+			$(".eror").text('');
+			
+			if(nama.length == 0 || email.length == 0 || no_telp.length == 0)
+			{
+				$(".eror").text('Semua kolom harus diisi.');
+			}
+			else if (email.length != 0) {
+				var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+	            //var emailLegalReg =  /^([\w-\.]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!aol.com)([\w-]+\.)+[\w-]{2,4})?$/;
+	
+	            var emailaddressVal = email;
+	            if(!emailReg.test(emailaddressVal)) {    
+	            	$(".eror").text('Email tidak valid.');
+	            } /*else if(emailLegalReg.test(emailaddressVal)) {    
+	                $(".eror").text('Email tidak valid.');
+	            }*/
+	            else{
+	    			var z = 0;
+	    			var produk = new Array();
+	    			for(z; z < $(".produk").length; z++)
+	    			{
+	    				produk[z] = $(".produk"+z).text();
+	    			}
+	    			$("body").prepend("<div id='dvLoading'></div>");
+	    			$.ajax({
+	    				url: "/send-email",
+	    				type: "POST",
+	    				data: {"cookies":cookies[(cookies.length)-1], "produk": produk, "nama":nama, "email":email, "no_telp":no_telp},
+	    				success: function(result) {
+	    					var hasil =jQuery.parseJSON(result);
+	    					if(hasil.status=="Kirim"){
+	    						window.location.href = "/terima_kasih/"+cookies[(cookies.length)-1];
+	    					}//$( "#dvLoading" ).remove();
+	    				}
+	    			});
+	    		}
+			}
 		}
-		else if (email.length != 0) {
-			var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-            //var emailLegalReg =  /^([\w-\.]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!aol.com)([\w-]+\.)+[\w-]{2,4})?$/;
-
-            var emailaddressVal = email;
-            if(!emailReg.test(emailaddressVal)) {    
-            	$(".eror").text('Email tidak valid.');
-            } /*else if(emailLegalReg.test(emailaddressVal)) {    
-                $(".eror").text('Email tidak valid.');
-            }*/
-            else{
-    			var z = 0;
-    			var produk = new Array();
-    			for(z; z < $(".produk").length; z++)
-    			{
-    				produk[z] = $(".produk"+z).text();
-    			}
-    			$("body").prepend("<div id='dvLoading'></div>");
-    			$.ajax({
-    				url: "/send-email",
-    				type: "POST",
-    				data: {"cookies":cookies[(cookies.length)-1], "produk": produk, "nama":nama, "email":email, "no_telp":no_telp},
-    				success: function() {
-    					$('#dvLoading').fadeOut(2000);
-    					$( "#dvLoading" ).remove();
-    					
-    				}
-    			});
-    		}
-		}
-		
 	});
 	
 	// ------------ End Wishlist -------------- //
