@@ -215,4 +215,21 @@ class WishlistController extends Website_Controller_Action {
 			$this->redirect("/");
 		}
 	}
+	public function terimakasihAction()
+	{
+		$id = $this->_getParam('id');
+		
+		$check = new Object_Wishlist_List();
+		$check->setLimit(1);
+		$check->setCondition("idCookies=".$id);
+		
+		if(count($check) >= 1)
+		{
+			$this->enableLayout();
+		}
+		else
+		{
+			$this->redirect("/");
+		}
+	}
 }
