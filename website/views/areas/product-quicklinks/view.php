@@ -2,15 +2,29 @@
 	$style = 'overflow: scroll;';
 ?>
 <script>
-	function changeHeader(object)
-	{
-		$("#accordion-header").html("");
-		$("#accordion-header").html("Asuransi " + object.text);
-	}
+	<?php if(!$this->editmode){?>
+		function changeHeader(object)
+		{
+			$("#accordion-header").html("");
+			$("#accordion-header").html("Asuransi " + object.text);
+		}
+	<?php }?>
 </script>
+<?php if($this->editmode){?>
+<style type="text/css">
+	.accordion-tab.inactive-header input.x-form-text.x-form-field{
+		color: #FFFFFF !important;
+	}
+	#quicklinks .tab-button ul li a
+	{
+		background: none repeat scroll 0 0 #003781 !important;
+		color: #FFFFFF !important;
+	}
+</style>
+<?php }?>
 <!-- Accordion -->
 <div id="accordion-container">
-	<h2 class="accordion-header" id="accordion-header">Asuransi Kesehatan</h2>
+	<h2 class="accordion-header" id="accordion-header"><?php echo $this->input("headline", array("width" => 200));?></h2>
 	<div class="accordion-content">
 		<!-- Tablink -->
 		<div class="tab-wrapper-short" style="<?php echo $this->editmode?$style:''?>">
@@ -89,10 +103,10 @@
 	<div class="tab-wrapper-hold">
 		<div class="tab-button">
 			<ul>
-				<li><a href="#tab-kesehatan" class="accordion-tab" onclick="changeHeader(this)">Kesehatan</a></li>
-				<li><a href="#tab-jiwa" class="accordion-tab" onclick="changeHeader(this)">Jiwa</a></li>
-				<li><a href="#tab-umum" class="accordion-tab" onclick="changeHeader(this)">Umum</a></li>
-				<li><a href="#tab-kumpulan" class="accordion-tab" onclick="changeHeader(this)">Kumpulan</a></li>
+				<li><a href="#tab-kesehatan" class="accordion-tab" onclick="changeHeader(this)"><?php echo $this->input("tab1", array("width" => 80));?></a></li>
+				<li><a href="#tab-jiwa" class="accordion-tab" onclick="changeHeader(this)"><?php echo $this->input("tab2", array("width" => 80));?></a></li>
+				<li><a href="#tab-umum" class="accordion-tab" onclick="changeHeader(this)"><?php echo $this->input("tab3", array("width" => 80));?></a></li>
+				<li><a href="#tab-kumpulan" class="accordion-tab" onclick="changeHeader(this)"><?php echo $this->input("tab4", array("width" => 80));?></a></li>
 				
 			</ul>
 		</div>	

@@ -42,7 +42,10 @@
 </div>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('li.aktif .nav_menu div').css('background-position', '0px 0px');
+		<?php if(!$this->editmode) { ?>
+		$('li.aktif .nav_menu div').css('display', 'none');
+		$('li .nav_menu .white_image').css('display', 'none');
+		$('li.aktif .nav_menu .white_image').css('display', 'block');
 		
 		var hash = window.location.hash.substring(1);
 		if(hash!=''){
@@ -51,9 +54,11 @@
 		}
 		$(".pagenav .navi li").click(function(){
 			$(".pagenav .navi li").removeClass('aktif');
-			$(".pagenav .navi li .nav_menu div").css('background-position','0px -26px');
+			$(".pagenav .navi li .nav_menu div").css('display','block');
+			$(".pagenav .navi li .nav_menu .white_image").css('display','none');
 			$(this).addClass('aktif');
-			$('li.aktif .nav_menu div').css('background-position', '0px 0px');
+			$('li.aktif .nav_menu div').css('display', 'none');
+			$('li.aktif .nav_menu .white_image').css('display', 'block');
 			
 			var data = $(this).attr('class');
 			var id = data.split(' ');
@@ -67,5 +72,6 @@
 				$('html, body').animate({scrollTop:$("#"+id[0]).offset().top-90}, 500);
 			}
 		});
+		<?php }?>
 	});
 </script>
