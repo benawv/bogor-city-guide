@@ -3102,6 +3102,9 @@ img.logo-float{
 		width: 50% !important;
 		float: left;
 	}
+	.terimaKasih .kata_kata{
+		left: 170px;
+	}
 }
 @media only screen and (max-width: 360px){
 	.boxes-view .items-container .tips-item-kiri{
@@ -3181,6 +3184,12 @@ img.logo-float{
 	.hero-bnnr.hero-bnnr2 h1, .hero-bnnr.hero-bnnr2 h2{
 		font-size: 1.5rem !important;
 		line-height: 2rem !important;
+	}
+	.kata_kata .kata-kiri{
+		width: 0px;
+	}
+	.terimaKasih .kata_kata{
+		width: 100%;
 	}
 }
 
@@ -3356,4 +3365,35 @@ img.logo-float{
 	float:left; 
 	margin-top:-30px; 
 	margin-left: 15px;
+}
+
+/*Terima Kasih*/
+.terimaKasih{
+	background: url("/website/static/images/terima_kasih/background.jpg");
+	background-repeat: no-repeat;
+	height: 400px;
+	width: 100%;
+	text-align: left;
+	padding-top: 150px;
+}
+.kata_kata{
+	width: 420px;
+	height: 130px;
+	background: #c3bab2;
+	margin: 0px auto;
+}
+.kata-kiri{
+	width: 120px;
+	height: 130px;
+	background: #002f6c;
+	float: left;
+}
+.kata-kanan{
+	width: 300px;
+	float: left;
+	padding-left: 12px;
+	padding-top: 5px;
+}
+.kata-kiri img{
+	margin: 38px;
 }
