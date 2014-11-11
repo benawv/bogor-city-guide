@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="/website/static/css/virgin2.css">
 <script type="text/javascript" src="/website/static/js/paging.js"></script>
-<div role="main" class="tips-main main" style="background: url(<?php echo "../".$this->data->imageBackgroundDetail->filename;?>);background-size: 1500px auto;background-repeat: no-repeat;background-position: top;">
+<div role="main" class="tips-main main" style="background: url(<?php echo $this->data->imageBackgroundDetail->path."".$this->data->imageBackgroundDetail->filename;?>);background-size: 1500px auto;background-repeat: no-repeat;background-position: top;">
 <div id="js-main-wrp" class="main-wrp" style="background-image:url(/sites/default/files/styles/hero_background_hi/public/Backgrounds/bg_space.jpg?itok=Sw8pyVQq)">
 	<header id="header" class="hdr">
 	           
