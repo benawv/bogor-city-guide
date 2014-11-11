@@ -16,7 +16,7 @@
 					"allowed" => array("banner", "static-banner")))?>
 		<div id="quicklinks">
 			<?php echo $this->areablock('layananKami', array(
-					"allowed" => array("tile-quicklinks", "quiclinks", "layanankami-quicklinks")))?>
+					"allowed" => array("tile-quicklinks", "quiclinks", "layanankami-quicklinks","product-quicklinks")))?>
 		</div>
 	</div><!-- .wrapper-special -->
 	
