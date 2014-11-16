@@ -2597,7 +2597,7 @@ footer.contentinfo{
 	/* by akbar */
 	#best-products .product .photo img{
 		/*min-height: 250px !important; */
-		min-height: auto !important;
+		height: auto;
 	}
 	#best-products .product .stickybox{
 		
@@ -2613,8 +2613,7 @@ footer.contentinfo{
 	}
 	#slideshow .slide .photo img{
 		/*min-height: 300px; */
-		min-height: auto;
-		width: auto !important;
+		height: auto;
 	}
 
 	footer.contentinfo .meta .statement{
@@ -3396,4 +3395,9 @@ img.logo-float{
 }
 .kata-kiri img{
 	margin: 38px;
+}
+
+.pimcore_area_content .description img{
+	width: 100%;
+	height: auto;
 }
