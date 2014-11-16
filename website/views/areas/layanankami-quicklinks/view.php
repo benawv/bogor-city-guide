@@ -10,7 +10,7 @@
 		    <li><a href="/investasi">Harga Unit</a></li>
 		    <li><a target="_blank" href="https://www.allianzlife.co.id/eBancassurance/">BancAssurance Portal</a></li>
 		    <li><a target="_blank" href="https://www.allianzlife.co.id/ePension/">e-Pension</a></li>
-		    <li><a href="https://www.allianzlife.co.id/eSaving/login.aspx" target="_blank">e-Saving</a></li>
+		    <li><a href="https://www.allianzlife.co.id/eSaving/login.aspx" target="_blank">e-GFA</a></li>
 		    <li><a href="/layanan/faq">FAQ</a></li>
 		</ul>
 	</div>
