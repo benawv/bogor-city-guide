@@ -27,7 +27,7 @@ class InvestmentController extends Website_Controller_Action
     public function homepageAction(){
     
         $db = Pimcore_Resource_Mysql::get();
-        $entries = new Object_investmentCategories_List();
+        $entries = new Object_InvestmentCategories_List();
         $this->view->data=$entries;		
     
     }
@@ -35,7 +35,7 @@ class InvestmentController extends Website_Controller_Action
     public function globalarticleAction(){
 
          $db = Pimcore_Resource_Mysql::get();
-         $entries = new Object_investmentCategories_List();
+         $entries = new Object_InvestmentCategories_List();
        //  $entries->setCondition('investment<>6');  
          $entries->setLimit(6);
          $this->view->data=$entries;			
@@ -48,7 +48,7 @@ class InvestmentController extends Website_Controller_Action
     	$cat = $this->_getParam('cat');
       
          $db = Pimcore_Resource_Mysql::get();
-         $entries = new Object_investmentCategories_List();
+         $entries = new Object_InvestmentCategories_List();
          $entries->setCondition('investment="'.$cat.'"');  
         
          $datainvestment=$this->investment_id($cat);
@@ -80,7 +80,7 @@ class InvestmentController extends Website_Controller_Action
     public function articlelistAction(){
 		
         $id = $this->_getParam('id');
-        $entries = new Object_investmentArticle_List();
+        $entries = new Object_InvestmentArticle_List();
         $entries->setCondition('category_investment="'.$id.'"');   
         
          $datainvestment=$this->investment_id($id);
