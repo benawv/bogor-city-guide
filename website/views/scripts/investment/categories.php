@@ -37,7 +37,7 @@
     <?php
         
         $id = $this->data->investment_id;
-        $entries = new Object_investmentPlan_List();
+        $entries = new Object_InvestmentPlan_List();
         $entries->setCondition('investment="'.$id.'"');   
         $entries->setLimit(4);
 

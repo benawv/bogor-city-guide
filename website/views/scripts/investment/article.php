@@ -93,7 +93,7 @@
 
 				<ul>
                     <?php
-                        $a_entries = new Object_investmentArticle_List();
+                        $a_entries = new Object_InvestmentArticle_List();
                         $a_entries->setCondition('category_investment="'.$id.'" and oo_id="'.$a_entrie->o_id.'"'); 
                         
                     foreach($a_entries as $a_entrie){
