@@ -26,11 +26,38 @@
 
 				<p>
 					
-                        
-						<input type="radio" id="rd_1" name="rd" value="1" />
-						<label for="rd_1">Education</label> <br />
-
-						<input type="radio" id="rd_2" name="rd" value="2" />
+                        <?php 
+                            $i=1; 
+                            foreach($this->data as $entrie){
+                                 $id=$entrie->investment;
+                                if($id==1){
+                                    $investmentname="Education";
+                                    $investmentcolor="bg_edu";    
+                                }elseif($id==2){
+                                    $investmentname="Fund";
+                                     $investmentcolor="bg_fund";
+                                }elseif($id==3){
+                                    $investmentname="Health";
+                                     $investmentcolor="bg_health lastone";
+                                }elseif($id==4){
+                                    $investmentname="Future";
+                                     $investmentcolor="bg_future";
+                                }elseif($id==5){
+                                     $investmentname="Pension";
+                                     $investmentcolor="bg_pension";
+                                }elseif($id==6){
+                                    $investmentname="Guide Me";
+                                    $investmentcolor="bg_guideme lastone";
+                                }
+                                
+                                
+                        ?>
+                              <input type="radio" id="rd_<?php echo $i; ?>" name="rd" value="<?php echo $i; ?>" />
+                              <label for="rd_1"><?php echo $investmentname; ?></label> <br />
+                        <?php
+                                $i++; 
+                        } ?>
+						<!--input type="radio" id="rd_2" name="rd" value="2" />
 						<label for="rd_2">Fund</label> <br />
 
 						<input type="radio" id="rd_3" name="rd" value="3" />
@@ -44,7 +71,7 @@
 						<label for="rd_5">Pension</label> <br />
 
 						<input type="radio" id="rd_6" name="rd" value="6" />
-						<label for="rd_6">Guide Me</label> <br />
+						<label for="rd_6">Guide Me</label> <br /-->
 
 				</p>
 			</div>

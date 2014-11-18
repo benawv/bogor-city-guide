@@ -11,7 +11,8 @@ class InvestmentController extends Website_Controller_Action
 	}
 
     public function setcustomercookiesAction () {//create cooke base one php
-            $value = $this->_getParam('name');
+        
+        $value = $this->_getParam('name');
         if (isset($_COOKIE['customername'])) {
             unset($_COOKIE['customername']);
             setcookie("customername",$value, time()+3600*1);
@@ -20,11 +21,16 @@ class InvestmentController extends Website_Controller_Action
         }
       
         return $_COOKIE["customername"];
+    
     }
     
     public function homepageAction(){
-         $this->render('homepage');       
-	}
+    
+        $db = Pimcore_Resource_Mysql::get();
+        $entries = new Object_investmentCategories_List();
+        $this->view->data=$entries;		
+    
+    }
     
     public function globalarticleAction(){
 
