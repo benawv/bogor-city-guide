@@ -113,7 +113,7 @@ class InvestmentController extends Website_Controller_Action
          $this->view->data = $data;
 
          $db = Pimcore_Resource_Mysql::get();
-         $entries = new Object_investmentArticle_List();
+         $entries = new Object_InvestmentArticle_List();
          $entries->setLimit(1);
          $entries->setCondition(1);
          foreach ($entries as $table)
