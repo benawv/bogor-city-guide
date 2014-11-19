@@ -94,7 +94,7 @@
 							
 							<ul>
 								<li class="menutitle"><span class="clickPage" onclick="link('product-sub-asuransi-kumpulan')">Risk Profile</span></li>
-								<li><a href="product-detail-allianz-smartpension.php">More Detail Risk Profile</a></li>
+								<li><a href="#">More Detail Risk Profile</a></li>
 								
 							</ul>
 							
@@ -107,7 +107,7 @@
 							<a href="#" class="back">Back</a>
 							<ul class="noborder">
 								<li class="menutitle">Allianz Fund</li>
-								<li><a href="#">Fund Information</a></li>
+								<li><a href="/investment/fund-information">Fund Information</a></li>
 								<li><a href="#">Daily NAV</a></li>
 								<li><a href="#">Fund Fact Sheet</a></li>
 								<li><a href="#">My Portfolio</a></li>
