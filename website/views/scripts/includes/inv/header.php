@@ -31,31 +31,19 @@
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/inv/css/respon.css">
 
 
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
- <!-- javascript -->
+<!-- javascript -->
 <script src="/website/static/inv/js/modernizr.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 
 <script src="/website/static/inv/js/main.js" type="text/javascript"></script>
-
-
-<!-- plugins -->
-<script src="/website/static/inv/js/jquery.flexslider.min.js" type="text/javascript"></script>
-
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-
 
 </head>
 
 <body>
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-<script type="text/javascript">
-$(function(){
-	
-});
-</script>
 
 <header role="banner" class="banner">
 	<div class="container">

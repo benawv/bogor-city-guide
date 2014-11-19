@@ -1,6 +1,5 @@
 <?php
 
-
 use Pimcore\Model\Asset;
 
 class InvestmentController extends Website_Controller_Action
@@ -127,6 +126,13 @@ class InvestmentController extends Website_Controller_Action
         
         $this->render('article');
         
+    }
+    
+    public function fundinformationAction() {
+	    
+	    $entries = new Object_InvestmentFundInformation_List();
+	    $this->view->data = $entries;
+	    
     }
         
 }

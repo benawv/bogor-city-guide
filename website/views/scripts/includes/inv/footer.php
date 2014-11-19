@@ -73,6 +73,11 @@
 
 
 <!-- End of Footer -->
+<link rel="stylesheet" type="text/css" media="all" href="/website/static/css/css-ie8/isr.css">
+
+
+<!-- plugins -->
+<script src="/website/static/inv/js/jquery.flexslider.min.js" type="text/javascript"></script>
 
 <script src="/website/static/inv/js/resizeimagetoparent.js"></script>
 <script src="/website/static/inv/js/javascripts.js"></script>
