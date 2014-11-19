@@ -138,5 +138,10 @@ class InvestmentController extends Website_Controller_Action
     public function fundfactsheetAction() {
 	    
     }
+    
+    // for iframe fact sheet purpose, Added By Handri Pangestiaji 19 November
+    public function iframefactsheetAction() {
+	    
+    }
         
 }
