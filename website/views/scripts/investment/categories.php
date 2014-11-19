@@ -13,11 +13,9 @@
                 <div class="textbanner bg_future">
                     <h1><?php echo $entrieC->title;?></h1>
 
-                    <p> Hi,<?php //print_r($_COOKIE); ?></p>
+                    <p> Hi,</p>
 
                     <?php echo $entrieC->quotes;?>
-
-
 
                 </div>
                 <div class="edge_textbanner edge_future">
@@ -38,7 +36,7 @@
         
         $id = $this->data->investment_id;
         $entries = new Object_InvestmentPlan_List();
-        $entries->setCondition('investment="'.$id.'"');   
+        $entries->setCondition('investment like "%'.$id.'%"');   
         $entries->setLimit(4);
 
 	if(count($entries)>0){
@@ -53,7 +51,7 @@
             <div class="box_c_text right">
                 <h2><?php echo $entrie->title ?></h2>
                 <p><?php echo $entrie->tips ?></p>
-                <a href="<?php if(isset($entrie->links)){ echo $entrie->links.$id; }else{ echo "#"; } ?>">Selengkapnya <i class="fa fa-angle-right"></i></a>
+                <a href="/investment<?php if(isset($entrie->links)){ echo $entrie->links.$id; }else{ echo "#"; } ?>_1">Selengkapnya <i class="fa fa-angle-right"></i></a>
             </div>
             <?php }else { ?>
             <div class="box_c_img right">
@@ -62,7 +60,7 @@
             <div class="box_c_text left">
                 <h2><?php echo $entrie->title ?></h2>
                 <p><?php echo $entrie->tips ?></p>
-                <a href="<?php if(isset($entrie->links)){ echo $entrie->links.$id; }else{ echo "#"; } ?>">Selengkapnya <i class="fa fa-angle-right"></i></a>
+                <a href="/investment<?php if(isset($entrie->links)){ echo $entrie->links.$id; }else{ echo "#"; } ?>_1">Selengkapnya <i class="fa fa-angle-right"></i></a>
             </div>
             <?php } ?>
         </div>

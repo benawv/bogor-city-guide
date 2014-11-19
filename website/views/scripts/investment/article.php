@@ -3,25 +3,12 @@
 <div class="header_page bg_future">
 	<div class="container">
 		<?php 
-            echo $this->data->title; 
+
             //sementara harus panggil class  public function investment_id($id)
                         
-            $id=$this->data->category_investment;
-            if( $id==1){
-                $investmentname="Education";
-            }elseif($id==2){
-                $investmentname="Fund";
-            }elseif($id==3){
-                $investmentname="Health";
-            }elseif($id==4){
-                $investmentname="Future";
-            }elseif($id==5){
-                $investmentname="Pension";
-            }elseif($id==6){
-                $investmentname="Guide Me";
-            }else{
-                $investmentname="<id_not_found>";
-            }                
+            $id=$this->data->category;
+           echo $this->data->title 
+              
         ?>
 	</div>
 </div>
@@ -34,10 +21,10 @@
 			<div class="bread">
 				<a href="/investasi/investment-homepage/">Home</a>  
 				<i class="fa fa-angle-right"></i> 
-				<a href="/investment-category/<?php echo $this->data->category_investment; ?>">Article</a>
+				<a href="/investment/investment-category/<?php echo str_replace(",","",$this->entries[0]['investment']); ?>">Article</a>
 
 				<i class="fa fa-angle-right"></i>
-				<a href="/investment-article-list/<?php echo $this->data->category_investment; ?>">Artikel Index <?php echo $investmentname; ?></a>
+				<a href="/investment/investment-article-list/<?php echo str_replace(",","",$this->entries[0]['investment']); ?>_1">Artikel Index <?php echo $id; ?></a>
 				<i class="fa fa-angle-right"></i>
 				<?php echo $this->data->title ?>
 
@@ -50,8 +37,8 @@
 
                 <p>
                     <strong>Tag :</strong>&nbsp;
-                    <a href="/investment-article-list/<?php echo($this->data->category_investment) ?>">
-                   <?php echo $investmentname; ?>
+                    <a href="/investment/investment-article-list/<?php echo str_replace(",","",$this->entries[0]['investment']); ?>_1">
+                   <?php foreach ($this->data->investment as $inv) { echo $inv->investment;}  ?>
                     </a>
                 </p>
 
@@ -93,16 +80,17 @@
 
 				<ul>
                     <?php
+
                         $a_entries = new Object_InvestmentArticle_List();
-                        $a_entries->setCondition('category_investment="'.$id.'" and oo_id="'.$a_entrie->o_id.'"'); 
-                        
+                        $a_entries->setCondition('investment like "%'.$id.'%"'); 
+                        $a_entries->setLimit(3);
                     foreach($a_entries as $a_entrie){
                     ?>
                         <li class="bg_future">
                             <h3><?php  echo $a_entrie->title; ?> </h3>
                             <p>Curabitur aliquet quam id dui posuere blandit. Donec rutrum congue leo eget malesuada.</p>
 
-                            <a href="#">Selengkapnya <i class="fa fa-angle-right"></i></a>
+                            <a href="investment/investment-article<?php echo $a_entrie->getO_key()."_".$a_entrie->getO_id()."_1";?>">Selengkapnya <i class="fa fa-angle-right"></i></a>
 
                         </li>
                     <?php } ?>
