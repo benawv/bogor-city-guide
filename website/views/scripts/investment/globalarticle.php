@@ -62,17 +62,17 @@
                         $investmentcolor="bg_edu";    
                     }elseif($id=="future"){
                          $investmentcolor="bg_fund";
-<<<<<<< HEAD
+
                     }elseif($id=="pension"){
                          $investmentcolor="bg_health lastone";
                     }elseif($id=="fund"){
-=======
+
                     }elseif($id==3){
                         $investmentname="Health";
                          $investmentcolor="bg_health";
                     }elseif($id==4){
                         $investmentname="Future";
->>>>>>> 7f86a746e62a4e2b5cbe8bcd726cd453dfc9b6ab
+                        
                          $investmentcolor="bg_future";
                     }elseif($id=="education"){
                          $investmentcolor="bg_pension";

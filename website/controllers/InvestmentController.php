@@ -176,7 +176,6 @@ class InvestmentController extends Website_Controller_Action
         
     }
     
-<<<<<<< HEAD
     public function subcategoryAction($id,$cat){
 
          $entries = new Object_InvestmentSubcategory_List();
@@ -194,7 +193,6 @@ class InvestmentController extends Website_Controller_Action
         
     }
     
-=======
     public function fundinformationAction() {
 	    
 	    $entries = new Object_InvestmentFundInformation_List();
@@ -214,6 +212,5 @@ class InvestmentController extends Website_Controller_Action
     public function iframefactAction() {
 
     }
->>>>>>> 7f86a746e62a4e2b5cbe8bcd726cd453dfc9b6ab
         
 }
