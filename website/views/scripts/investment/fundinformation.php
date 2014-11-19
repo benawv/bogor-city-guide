@@ -2,7 +2,7 @@
 
 <div class="header_page bg_future">
 	<div class="container">
-		
+		Fund Information
 	</div>
 </div>
 
