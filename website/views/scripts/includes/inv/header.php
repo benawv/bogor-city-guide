@@ -31,31 +31,19 @@
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/inv/css/respon.css">
 
 
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
- <!-- javascript -->
+<!-- javascript -->
 <script src="/website/static/inv/js/modernizr.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 
 <script src="/website/static/inv/js/main.js" type="text/javascript"></script>
-
-
-<!-- plugins -->
-<script src="/website/static/inv/js/jquery.flexslider.min.js" type="text/javascript"></script>
-
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-
 
 </head>
 
 <body>
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-<script type="text/javascript">
-$(function(){
-	
-});
-</script>
 
 <header role="banner" class="banner">
 	<div class="container">
@@ -106,7 +94,7 @@ $(function(){
 							
 							<ul>
 								<li class="menutitle"><span class="clickPage" onclick="link('product-sub-asuransi-kumpulan')">Risk Profile</span></li>
-								<li><a href="product-detail-allianz-smartpension.php">More Detail Risk Profile</a></li>
+								<li><a href="#">More Detail Risk Profile</a></li>
 								
 							</ul>
 							
@@ -119,7 +107,7 @@ $(function(){
 							<a href="#" class="back">Back</a>
 							<ul class="noborder">
 								<li class="menutitle">Allianz Fund</li>
-								<li><a href="#">Fund Information</a></li>
+								<li><a href="/investment/fund-information">Fund Information</a></li>
 								<li><a href="#">Daily NAV</a></li>
 								<li><a href="#">Fund Fact Sheet</a></li>
 								<li><a href="#">My Portfolio</a></li>

@@ -3265,3 +3265,9 @@ img.logo-float{
 	margin-top:-30px; 
 	margin-left: 15px;
 }
+
+/* added by Handri Pangestiaji 19 November 2014 */
+
+.tabcontent strong {
+	font-weight: bold;
+}
