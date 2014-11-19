@@ -3452,7 +3452,7 @@ img.logo-float{
 }
 
 .pimcore_area_content .description img{
-	width: 100%;
+	/* width: 100%; */
 	height: auto;
 }
 
