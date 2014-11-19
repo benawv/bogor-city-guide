@@ -3009,7 +3009,7 @@ div.radio_tujuan_finansial{
 .tips-main.main{
 	padding: 0px;
 	margin-top: -20px;
-	background-size: 1500px auto;
+	background-size: 1350px auto;
 	background-repeat: no-repeat;
 	background-position: 50% 0;
 }
@@ -3400,4 +3400,17 @@ img.logo-float{
 .pimcore_area_content .description img{
 	width: 100%;
 	height: auto;
+}
+
+/*Slider*/
+ul.flex-direction-nav{
+	display: none;
+}
+.clearfix:hover ul.flex-direction-nav{
+	display: block;
+}
+
+/*Tool Tip*/
+.backClose{
+	cursor: pointer;
 }
