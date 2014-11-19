@@ -72,7 +72,7 @@
                          $investmentcolor="bg_fund";
                     }elseif($id==3){
                         $investmentname="Health";
-                         $investmentcolor="bg_health lastone";
+                         $investmentcolor="bg_health";
                     }elseif($id==4){
                         $investmentname="Future";
                          $investmentcolor="bg_future";
