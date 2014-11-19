@@ -134,5 +134,9 @@ class InvestmentController extends Website_Controller_Action
 	    $this->view->data = $entries;
 	    
     }
+    
+    public function fundfactsheetAction() {
+	    
+    }
         
 }

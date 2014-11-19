@@ -109,7 +109,7 @@
 								<li class="menutitle">Allianz Fund</li>
 								<li><a href="/investment/fund-information">Fund Information</a></li>
 								<li><a href="#">Daily NAV</a></li>
-								<li><a href="#">Fund Fact Sheet</a></li>
+								<li><a href="/investment/fund-fact-sheet">Fund Fact Sheet</a></li>
 								<li><a href="#">My Portfolio</a></li>
 							</ul>
 							
