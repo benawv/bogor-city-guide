@@ -24,9 +24,52 @@
 		</div>
 	</div>
 	<nav>
+	<?php
+		$db = Pimcore_Resource_Mysql::get();
+		$sql = "SELECT o_id FROM objects
+				where o_key = 'footer'";
+		$footer = $db->fetchAll($sql);
+		$idFooter = $footer[0][o_id];
+		
+		$sql2 = "SELECT * FROM objects
+				where o_parentId = '".$idFooter."'";
+		$footerList = $db->fetchAll($sql2);
+	?>
 		<div class="container clearfix">
 			<ul class="footer-links level1">
-				<li class="left wi200">
+				<?php foreach ($footerList as $row){?>
+					<li class="left wi200">
+						<a>
+							<?php
+								$title = explode("-", $row[o_key]);
+								foreach ($title as $jdl)
+								{
+									echo strtoupper(substr($jdl, 0, 1))."".substr($jdl, 1)." ";
+								}
+							?>
+						</a>
+						<ul class="level2">
+							<?php
+								$sql3 = "SELECT o_id FROM objects
+										where o_parentId = '".$row[o_id]."'";
+								$list = $db->fetchAll($sql3);
+								foreach ($list as $row2){
+									$entries = new Object_Footer_List();
+									$entries->setCondition('oo_id="'.$row2[o_id].'"');
+									foreach ($entries as $data)
+									{
+							?>
+										<li><?php echo $data->getLink();?></li>
+							<?php
+									}
+								}
+							?>
+						</ul>
+					</li>
+				<?php }?>
+				
+				
+				<!--<li class="left wi200">
 					<a href="tentangkami.php">Tentang Kami</a>
 					<ul class="level2">
 						<li><a href="visi-misi-allianz.php"> Visi dan Misi</a></li>
@@ -67,7 +110,7 @@
 						<li><a href="allianz-platinum.php#free" onclick="navigateMe('free')">Free Medical Checkup</a></li>
 						<li><a href="allianz-platinum.php#spring" onclick="navigateMe('spring')">Spring Gathering</a></li>
 					</ul>
-				</li>
+				</li>-->
 							
 			</ul>
 		</div>
@@ -94,6 +137,7 @@
 			<div>
 				Allianz worldwide <a href="http://allianz.com">allianz.com</a>
 			</div>
+			<div class="mobileAktif"></div>
 			<div class="ojk-img">
 				<img width="120px" src="/website/static/images/OJK Logo.png">
 			</div>	
@@ -144,4 +188,5 @@
 		$('li.aktif .nav_menu div').css('background-position', '0px 0px');
 		
 	});
-</script> 
+</script>
+<script src="/website/static/js/custom_tooltip.js" type="text/javascript"></script>

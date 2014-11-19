@@ -2748,7 +2748,42 @@ footer.contentinfo{
 		margin-top: 10px;
 	}
 	/*END Visi Misi*/
+
 }
+/* footer ojk mobile */
+
+@media only screen and (max-width : 800px){
+    .ojk-desc {
+        float: none !important;
+    }
+	.worldwide .ojk-img {
+	    float: left;
+	    margin-left: 0;
+	    margin-top: 0;
+	}
+	.worldwide .ojk-desc p{
+		width: 200px;
+		float: right;
+		margin: 5px auto auto 5px;
+	}
+	.mobileAktif{
+		clear: both;
+	}
+	footer.contentinfo .worldwide{
+		height: 150px;
+	}
+	#membername {
+	    display: none;
+	}
+	.heading.clearfix ul.navi{
+		display: none;
+	}
+	.boxes-view .item_finansial .item{
+		width: 100% !important;
+	}
+}
+/* footer ojk mobile */
+
 @media only screen and (max-width : 639px){
 	#slideshow.clearfix.cus_slide,.wrapper-special.clearfix.cus_slide{
 		width: 240px !important;
@@ -2811,6 +2846,18 @@ footer.contentinfo{
     background-size: 150px 150px;
     background-repeat: no-repeat;
 }
+    /* footer ojk mobile */
+    .container .ojk-img {
+	    float: left;
+	    margin-left: 0;
+	    margin-top: 5px;
+	}
+	.container .ojk-desc p{
+		margin: 5px auto auto 5px;
+		width: 140px;
+		float: right;
+	}
+    /* footer ojk mobile */
 }
 
 .table_cv{background-color: #F2F2F2; font-size: 14px;}
@@ -3009,7 +3056,7 @@ div.radio_tujuan_finansial{
 .tips-main.main{
 	padding: 0px;
 	margin-top: -20px;
-	background-size: 1500px auto;
+	background-size: 100% auto;
 	background-repeat: no-repeat;
 	background-position: 50% 0;
 }
@@ -3349,16 +3396,23 @@ img.logo-float{
 
 /*OJK*/
 .ojk-desc {
-	float:left; 
-	margin: -27px 0 0 26px;
+	/*float:left; */
+	/* margin: -27px 0 0 26px; */
 	
 }
 .ojk-desc p {
-	float: left;
+	/*float: left;
 	margin: 13px 0 0 0;
 	text-align: left;
 	font-size: 1em;
-	line-height: 1.2;
+	line-height: 1.2;*/
+    
+    float: left;
+    margin: -13px 0 0 26px;
+    text-align: left;
+    font-size: 1em;
+    line-height: 1.2;
+    width: 40%;
 }
 .ojk-img { 
 	float:left; 
@@ -3398,6 +3452,19 @@ img.logo-float{
 }
 
 .pimcore_area_content .description img{
-	width: 100%;
+	/* width: 100%; */
 	height: auto;
+}
+
+/*Slider*/
+ul.flex-direction-nav{
+	display: none;
+}
+.clearfix:hover ul.flex-direction-nav{
+	display: block;
+}
+
+/*Tool Tip*/
+.backClose{
+	cursor: pointer;
 }

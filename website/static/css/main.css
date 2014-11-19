@@ -593,6 +593,7 @@ padding: 10px 15px;
 	top: 0;
     z-index: 100;  
     border-top: 0;  
+    -webkit-backface-visibility: hidden;  
 }  
 
 .pagenav {
@@ -603,7 +604,44 @@ padding: 10px 15px;
 }
  /* Sticky */
  
- 
- 
- 
 }
+
+/* Added by Akbar Fachriansyah */
+
+@media only screen and (max-width : 639px){
+    
+.description iframe {
+    width: 100%;  
+    height: auto;
+}
+}
+
+@media only screen and (max-width : 640px){
+
+	/* Sticky */
+  
+  .nav-sticky {  
+	width: 281px;
+    position: fixed;  
+	top: 0;
+    z-index: 100;  
+    border-top: 0;  
+	-webkit-backface-visibility: hidden;	
+}  
+
+.pagenav {
+	width: 281px; 
+    /*width: 302px;*/
+	height: 80px;
+	z-index: 200; 
+	background: #F5F6F6;
+}
+ /* Sticky */
+    
+
+.description table {
+    width: 100% !important;
+}    
+
+}
+
