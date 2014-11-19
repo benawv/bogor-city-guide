@@ -57,22 +57,14 @@
         
                 foreach($this->data as $entrie){ 
                     //harus diganti otomatis...call from existing class    
-                    $id=strtolower($entrie->investment);
+                   $id=strtolower($entrie->investment);
                     if($id=="health"){
                         $investmentcolor="bg_edu";    
                     }elseif($id=="future"){
                          $investmentcolor="bg_fund";
-
                     }elseif($id=="pension"){
                          $investmentcolor="bg_health lastone";
                     }elseif($id=="fund"){
-
-                    }elseif($id==3){
-                        $investmentname="Health";
-                         $investmentcolor="bg_health";
-                    }elseif($id==4){
-                        $investmentname="Future";
-                        
                          $investmentcolor="bg_future";
                     }elseif($id=="education"){
                          $investmentcolor="bg_pension";
