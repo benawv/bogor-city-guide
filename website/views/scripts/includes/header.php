@@ -90,7 +90,7 @@ $(function(){
 				<ul class="clearfix">
 					<li><a href="https://www.allianzlife.co.id/CustomerOnlinePortal" target="_blank" class="icon-user">Customer Login</a></li>
 					<li><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank" class="icon-mail hide-text">Registrasi</a></li>
-					<li><a href="product.php" class="icon-fav hide-text">My Product</a></li>
+					<li><a href="#" class="icon-fav hide-text">My Product</a></li>
 				</ul>
 				
 				<script type="text/javascript">
