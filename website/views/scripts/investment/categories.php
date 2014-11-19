@@ -43,7 +43,7 @@
     $i=1;
     foreach($entries as $entrie){
     ?>
-        <div class="box_c future_bg_<?php echo $i; ?>" style="background-color:<?php echo $entrie->colors ?>" >
+        <div class="box_c future_bg_<?php echo $i; ?>" style="background-color:<?php echo $entrie->hexaColor; ?>" >
             <?php if($i<3){ ?>
             <div class="box_c_img left">
                 <img src="<?php echo $entrie->images->path."".$entrie->images->filename; ?>" />

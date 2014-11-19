@@ -2,7 +2,7 @@
 
 <div class="homebanner banner_portal">
 	<div class="container">
-             <?php echo $this->image("banner", array("class" => "banner_img")) ?>
+             <?php //echo $this->image("banner", array("class" => "banner_img")) //css error?>
 		<div class="box_banner">
                
 			<div class="textbanner bg_green">

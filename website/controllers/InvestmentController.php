@@ -76,7 +76,7 @@ class InvestmentController extends Website_Controller_Action
 			$nameCommunity = "object_query_".$table->getClassId();
 		}
 
-        $sql_subcat="SELECT DISTINCT tblcommunity.investment FROM ".$nameCommunity." AS tblcommunity WHERE tblcommunity.oo_id LIKE '%".$id."%'";
+        $sql_subcat="SELECT DISTINCT tblcommunity.investment FROM ".$nameCommunity." AS tblcommunity WHERE tblcommunity.oo_id ='".$id."'";
         $inv=$db->fetchAll($sql_subcat);
         
         return $inv;
@@ -100,7 +100,7 @@ class InvestmentController extends Website_Controller_Action
     
     //show article by category of investment, url:investment-article-list
     public function articlelistAction(){
-		
+/*		
         $id = $this->_getParam('id');
         $cat = $this->_getParam('cat');
         
@@ -113,29 +113,44 @@ class InvestmentController extends Website_Controller_Action
 			$nameCommunity = "object_query_".$table->getClassId();
 		}
         
-        $sql_subcat="SELECT DISTINCT tblcommunity.subcategory FROM ".$nameCommunity." AS tblcommunity WHERE tblcommunity.investment LIKE '%".$id."%' AND subcategory IS NOT NULL";
+                $sql_subcat="SELECT DISTINCT tblcommunity.subcategory FROM ".$nameCommunity." AS tblcommunity WHERE tblcommunity.investment LIKE '%".$id."%' AND subcategory IS NOT NULL";
+
+                $dats=$db->fetchAll($sql_subcat);
         
-        $dats=$db->fetchAll($sql_subcat);
         
-        
-/*        if(count($dats)>0 and ($cat!=1)){
+        if(count($dats)>0 and ($cat!=1)){
 
             $this->subcategoryAction($id);
         
-        }else{*/
+        }else{
             
-            //if($cat!=1){
+            if($cat!=1){
                 $conditions='investment like "%'.$id.'%"';
-            //}else{
-              //  $conditions='subcategory like "%'.$id.'%"';
-            //}
+            }else{
+                $conditions='subcategory like "%'.$id.'%"';
+            }
+            
             $entries = new Object_InvestmentArticle_List();
-            $entries->setCondition($conditions);   
+            $entries->setCondition('investment like "%'.$id.'%"');   
+            
             $datainvestment=$this->investment_id($id);
             $entries->investment=$datainvestment;
             $entries->investment_id=$id;
             $this->view->data=$entries;	
-        //}
+        }*/ //end of new scrip eneble if you need subcategory
+
+        
+            //OLD script without subcategory
+            $id = $this->_getParam('id');//investment id
+
+            $entries = new Object_InvestmentArticle_List();
+            $entries->setCondition('investment like "%'.$id.'%"');  
+            
+            $datainvestment=$this->investment_id($id);
+            $entries->investment=$datainvestment;//get investment name
+            $entries->investment_id=$id;//get investment id
+        
+            $this->view->data=$entries;	
        
         
     }

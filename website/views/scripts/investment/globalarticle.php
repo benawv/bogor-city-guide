@@ -75,7 +75,7 @@
                 ?>
 				<div class="catbox <?php echo $investmentcolor?>"   >
 					<a href="/investment/investment-article-list/<?php echo  $entrie->o_id; ?>_0">
-						<img src="<?php echo $entrie->images->path."".$entrie->images->filename; ?>" style="height:200px" />
+						<img src="<?php echo $entrie->thumb->path."".$entrie->thumb->filename; ?>" style="height:200px" />
 					</a>
 					<a href="/investment/investment-article-list/<?php echo $entrie->o_id; ?>_0"><h2><?php echo $entrie->investment; ?></h2></a>
 				</div>			
