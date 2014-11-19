@@ -143,5 +143,9 @@ class InvestmentController extends Website_Controller_Action
     public function iframefactsheetAction() {
 	    
     }
+    
+    public function iframefactAction() {
+	    
+    }
         
 }

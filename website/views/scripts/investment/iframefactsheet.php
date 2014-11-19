@@ -47,370 +47,365 @@
 <div class="main_wrap">
 
 	<div class="row">
-		<div class="container">
 			
-			<!-- SMARTLINK -->
+		<!-- SMARTLINK -->
+		
+		<div id="smartlink" class="full-w bg-white">
 			
-			<div id="smartlink" class="full-w bg-white">
-				
-				<div class="icon-tentang-kami icon-section">&nbsp;</div><h1>Smartlink</h1>
-				
-				<div class="combo_section">
-					<p>Pilih Tahun
-					<br />
-					<select class="combo-width year-pick">
+			<div class="icon-tentang-kami icon-section">&nbsp;</div><h1>Smartlink</h1>
+			
+			<div class="combo_section">
+				<p>Pilih Tahun
+				<br />
+				<select class="combo-width year-pick">
+					<option value="" selected="selected">--Pilih Semua--</option>
+					<?php 
+						$smartlinks = Object_FundFact::getById(307);
+						$tahun = $smartlinks->getClass()->getFieldDefinition('tahun')->getOptions();
+						foreach($tahun as $y)
+						{
+							echo '<option value="'.$y['value'].'">'.$y['key'].'</option>';
+						}
+					?>
+				</select>
+				</p>
+				<p>
+					Pilih Bulan<br />
+					<select class="combo-width month-pick">
 						<option value="" selected="selected">--Pilih Semua--</option>
 						<?php 
-							$smartlinks = Object_FundFact::getById(307);
-							$tahun = $smartlinks->getClass()->getFieldDefinition('tahun')->getOptions();
-							foreach($tahun as $y)
+							$bulan = $smartlinks->getClass()->getFieldDefinition('bulan')->getOptions();
+							foreach($bulan as $v)
 							{
-								echo '<option value="'.$y['value'].'">'.$y['key'].'</option>';
+								echo '<option value="'.$v['value'].'">'.$v['key'].'</option>';
 							}
 						?>
 					</select>
-					</p>
-					<p>
-						Pilih Bulan<br />
-						<select class="combo-width month-pick">
-							<option value="" selected="selected">--Pilih Semua--</option>
-							<?php 
-								$bulan = $smartlinks->getClass()->getFieldDefinition('bulan')->getOptions();
-								foreach($bulan as $v)
-								{
-									echo '<option value="'.$v['value'].'">'.$v['key'].'</option>';
-								}
-							?>
-						</select>
-					</p>
-					<p>
-						Pilihan Jenis Fact Sheet<br />
-						<select class="combo-width type-pick">
-							<option value="" selected="selected">--Pilih Semua--</option>
-							<?php 
-								$jenis = Object_FundFactJenisSheet::getList();
-								foreach($jenis as $v)
-								{
-									echo '<option value="'.$v->getNama().'">'.$v->getNama().'</option>';
-								}
-							?>
-						</select>
-					</p>
-				</div>
-				
-				<div class="description">
-					<img src="/website/static/inv/images/fund/Image_Smartlink.jpg" />
-					<ul>
-						<?php
-							$relationId = 294;
-							//$smartlinks = Object_FundFact::getList();
-							$query = new Object_FundFact_List();
-							$query->setCondition("asuransi like '%,".$relationId.",%'");
-							$smartlinks = $query->load();
-							foreach($smartlinks as $v) {
-								$types = $v->getFactsheet();
-								$type = $types[0];
-								$tahun = substr($v->getTahun(), 2);
-								$item = $v->getBulan().'/'.$tahun.'/'.$type->getNama();
-								echo '<li><a item="'.$item.'" target="_blank" href="'.$v->getFile()->getPath().'">'.$v->getJudul().'</a></li>';
+				</p>
+				<p>
+					Pilihan Jenis Fact Sheet<br />
+					<select class="combo-width type-pick">
+						<option value="" selected="selected">--Pilih Semua--</option>
+						<?php 
+							$jenis = Object_FundFactJenisSheet::getList();
+							foreach($jenis as $v)
+							{
+								echo '<option value="'.$v->getNama().'">'.$v->getNama().'</option>';
 							}
 						?>
-					</ul>
-				</div>
-
+					</select>
+				</p>
 			</div>
 			
-			<!-- SYARIAH END -->
-						
-			<div id="syariah" class="full-w bg-white">
-				
-				<div class="icon-tentang-kami icon-section">&nbsp;</div><h1>Syariah</h1>
-				
-				<div class="combo_section">
-					<p>Pilih Tahun
-					<br />
-					<select class="combo-width year-pick">
-						<option value="" selected="selected">--Pilih Semua--</option>
-						<?php 
-							$smartlinks = Object_FundFact::getById(307);
-							$tahun = $smartlinks->getClass()->getFieldDefinition('tahun')->getOptions();
-							foreach($tahun as $y)
-							{
-								echo '<option value="'.$y['value'].'">'.$y['key'].'</option>';
-							}
-						?>
-					</select>
-					</p>
-					<p>
-						Pilih Bulan<br />
-						<select class="combo-width month-pick">
-							<option value="" selected="selected">--Pilih Semua--</option>
-							<?php 
-								$bulan = $smartlinks->getClass()->getFieldDefinition('bulan')->getOptions();
-								foreach($bulan as $v)
-								{
-									echo '<option value="'.$v['value'].'">'.$v['key'].'</option>';
-								}
-							?>
-						</select>
-					</p>
-					<p>
-						Pilihan Jenis Fact Sheet<br />
-						<select class="combo-width type-pick">
-							<option value="" selected="selected">--Pilih Semua--</option>
-							<?php 
-								$jenis = Object_FundFactJenisSheet::getList();
-								foreach($jenis as $v)
-								{
-									echo '<option value="'.$v->getNama().'">'.$v->getNama().'</option>';
-								}
-							?>
-						</select>
-					</p>
-				</div>
-				
-				<div class="description">
-					<img src="/website/static/inv/images/fund/Image_Syariah.jpg" />
-					<ul>
-						<?php
-							$relationId = 295;
-							//$smartlinks = Object_FundFact::getList();
-							$query = new Object_FundFact_List();
-							$query->setCondition("asuransi like '%,".$relationId.",%'");
-							$smartlinks = $query->load();
-							foreach($smartlinks as $v) {
-								$types = $v->getFactsheet();
-								$type = $types[0];
-								$tahun = substr($v->getTahun(), 2);
-								$item = $v->getBulan().'/'.$tahun.'/'.$type->getNama();
-								echo '<li><a item="'.$item.'" target="_blank" href="'.$v->getFile()->getPath().'">'.$v->getJudul().'</a></li>';
-							}
-						?>
-					</ul>
-				</div>
+			<div class="description">
+				<img src="/website/static/inv/images/fund/Image_Smartlink.jpg" />
+				<ul>
+					<?php
+						$relationId = 294;
+						//$smartlinks = Object_FundFact::getList();
+						$query = new Object_FundFact_List();
+						$query->setCondition("asuransi like '%,".$relationId.",%'");
+						$smartlinks = $query->load();
+						foreach($smartlinks as $v) {
+							$types = $v->getFactsheet();
+							$type = $types[0];
+							$tahun = substr($v->getTahun(), 2);
+							$item = $v->getBulan().'/'.$tahun.'/'.$type->getNama();
+							echo '<li><a item="'.$item.'" target="_blank" href="'.$v->getFile()->getPath().'">'.$v->getJudul().'</a></li>';
+						}
+					?>
+				</ul>
+			</div>
 
-			</div>			
-			<!-- SYARIAH END -->
-			
-			<!-- PENSION END -->
-						
-			<div id="pension" class="full-w bg-white">
-				
-				<div class="icon-tentang-kami icon-section">&nbsp;</div><h1>Pension</h1>
-				
-				<div class="combo_section">
-					<p>Pilih Tahun
-					<br />
-					<select class="combo-width year-pick">
-						<option value="" selected="selected">--Pilih Semua--</option>
-						<?php 
-							$smartlinks = Object_FundFact::getById(307);
-							$tahun = $smartlinks->getClass()->getFieldDefinition('tahun')->getOptions();
-							foreach($tahun as $y)
-							{
-								echo '<option value="'.$y['value'].'">'.$y['key'].'</option>';
-							}
-						?>
-					</select>
-					</p>
-					<p>
-						Pilih Bulan<br />
-						<select class="combo-width month-pick">
-							<option value="" selected="selected">--Pilih Semua--</option>
-							<?php 
-								$bulan = $smartlinks->getClass()->getFieldDefinition('bulan')->getOptions();
-								foreach($bulan as $v)
-								{
-									echo '<option value="'.$v['value'].'">'.$v['key'].'</option>';
-								}
-							?>
-						</select>
-					</p>
-					<p>
-						Pilihan Jenis Fact Sheet<br />
-						<select class="combo-width type-pick">
-							<option value="" selected="selected">--Pilih Semua--</option>
-							<?php 
-								$jenis = Object_FundFactJenisSheet::getList();
-								foreach($jenis as $v)
-								{
-									echo '<option value="'.$v->getNama().'">'.$v->getNama().'</option>';
-								}
-							?>
-						</select>
-					</p>
-				</div>
-				
-				<div class="description">
-					<img src="/website/static/inv/images/fund/Image_Pension.jpg" />
-					<ul>
-						<?php
-							$relationId = 296;
-							//$smartlinks = Object_FundFact::getList();
-							$query = new Object_FundFact_List();
-							$query->setCondition("asuransi like '%,".$relationId.",%'");
-							$smartlinks = $query->load();
-							foreach($smartlinks as $v) {
-								$types = $v->getFactsheet();
-								$type = $types[0];
-								$tahun = substr($v->getTahun(), 2);
-								$item = $v->getBulan().'/'.$tahun.'/'.$type->getNama();
-								echo '<li><a item="'.$item.'" target="_blank" href="'.$v->getFile()->getPath().'">'.$v->getJudul().'</a></li>';
-							}
-						?>
-					</ul>
-				</div>
-
-			</div>			
-			<!-- PENSION END -->
-			
-			<!-- Saving END -->
-						
-			<div id="saving" class="full-w bg-white">
-				
-				<div class="icon-tentang-kami icon-section">&nbsp;</div><h1>Saving</h1>
-				
-				<div class="combo_section">
-					<p>Pilih Tahun
-					<br />
-					<select class="combo-width year-pick">
-						<option value="" selected="selected">--Pilih Semua--</option>
-						<?php 
-							$smartlinks = Object_FundFact::getById(307);
-							$tahun = $smartlinks->getClass()->getFieldDefinition('tahun')->getOptions();
-							foreach($tahun as $y)
-							{
-								echo '<option value="'.$y['value'].'">'.$y['key'].'</option>';
-							}
-						?>
-					</select>
-					</p>
-					<p>
-						Pilih Bulan<br />
-						<select class="combo-width month-pick">
-							<option value="" selected="selected">--Pilih Semua--</option>
-							<?php 
-								$bulan = $smartlinks->getClass()->getFieldDefinition('bulan')->getOptions();
-								foreach($bulan as $v)
-								{
-									echo '<option value="'.$v['value'].'">'.$v['key'].'</option>';
-								}
-							?>
-						</select>
-					</p>
-					<p>
-						Pilihan Jenis Fact Sheet<br />
-						<select class="combo-width type-pick">
-							<option value="" selected="selected">--Pilih Semua--</option>
-							<?php 
-								$jenis = Object_FundFactJenisSheet::getList();
-								foreach($jenis as $v)
-								{
-									echo '<option value="'.$v->getNama().'">'.$v->getNama().'</option>';
-								}
-							?>
-						</select>
-					</p>
-				</div>
-				
-				<div class="description">
-					<img src="/website/static/inv/images/fund/Image_Saving.jpg" />
-					<ul>
-						<?php
-							$relationId = 297;
-							//$smartlinks = Object_FundFact::getList();
-							$query = new Object_FundFact_List();
-							$query->setCondition("asuransi like '%,".$relationId.",%'");
-							$smartlinks = $query->load();
-							foreach($smartlinks as $v) {
-								$types = $v->getFactsheet();
-								$type = $types[0];
-								$tahun = substr($v->getTahun(), 2);
-								$item = $v->getBulan().'/'.$tahun.'/'.$type->getNama();
-								echo '<li><a item="'.$item.'" target="_blank" href="'.$v->getFile()->getPath().'">'.$v->getJudul().'</a></li>';
-							}
-						?>
-					</ul>
-				</div>
-
-			</div>			
-			<!-- SAVING END -->
-			
-			<!-- SMARTWEALTH END -->
-						
-			<div id="smartwealth" class="full-w bg-white">
-				
-				<div class="icon-tentang-kami icon-section">&nbsp;</div><h1>Smartwealth</h1>
-				
-				<div class="combo_section">
-					<p>Pilih Tahun
-					<br />
-					<select class="combo-width year-pick">
-						<option value="" selected="selected">--Pilih Semua--</option>
-						<?php 
-							$smartlinks = Object_FundFact::getById(307);
-							$tahun = $smartlinks->getClass()->getFieldDefinition('tahun')->getOptions();
-							foreach($tahun as $y)
-							{
-								echo '<option value="'.$y['value'].'">'.$y['key'].'</option>';
-							}
-						?>
-					</select>
-					</p>
-					<p>
-						Pilih Bulan<br />
-						<select class="combo-width month-pick">
-							<option value="" selected="selected">--Pilih Semua--</option>
-							<?php 
-								$bulan = $smartlinks->getClass()->getFieldDefinition('bulan')->getOptions();
-								foreach($bulan as $v)
-								{
-									echo '<option value="'.$v['value'].'">'.$v['key'].'</option>';
-								}
-							?>
-						</select>
-					</p>
-					<p>
-						Pilihan Jenis Fact Sheet<br />
-						<select class="combo-width type-pick">
-							<option value="" selected="selected">--Pilih Semua--</option>
-							<?php 
-								$jenis = Object_FundFactJenisSheet::getList();
-								foreach($jenis as $v)
-								{
-									echo '<option value="'.$v->getNama().'">'.$v->getNama().'</option>';
-								}
-							?>
-						</select>
-					</p>
-				</div>
-				
-				<div class="description">
-					<img src="/website/static/inv/images/fund/Image_Smartwealth.jpg" />
-					<ul>
-						<?php
-							$relationId = 298;
-							//$smartlinks = Object_FundFact::getList();
-							$query = new Object_FundFact_List();
-							$query->setCondition("asuransi like '%,".$relationId.",%'");
-							$smartlinks = $query->load();
-							foreach($smartlinks as $v) {
-								$types = $v->getFactsheet();
-								$type = $types[0];
-								$tahun = substr($v->getTahun(), 2);
-								$item = $v->getBulan().'/'.$tahun.'/'.$type->getNama();
-								echo '<li><a item="'.$item.'" target="_blank" href="'.$v->getFile()->getPath().'">'.$v->getJudul().'</a></li>';
-							}
-						?>
-					</ul>
-				</div>
-
-			</div>			
-			<!-- SMARTWEALTH END -->
-			
-			
 		</div>
-		<!-- container end -->
+		
+		<!-- SYARIAH END -->
+					
+		<div id="syariah" class="full-w bg-white">
+			
+			<div class="icon-tentang-kami icon-section">&nbsp;</div><h1>Syariah</h1>
+			
+			<div class="combo_section">
+				<p>Pilih Tahun
+				<br />
+				<select class="combo-width year-pick">
+					<option value="" selected="selected">--Pilih Semua--</option>
+					<?php 
+						$smartlinks = Object_FundFact::getById(307);
+						$tahun = $smartlinks->getClass()->getFieldDefinition('tahun')->getOptions();
+						foreach($tahun as $y)
+						{
+							echo '<option value="'.$y['value'].'">'.$y['key'].'</option>';
+						}
+					?>
+				</select>
+				</p>
+				<p>
+					Pilih Bulan<br />
+					<select class="combo-width month-pick">
+						<option value="" selected="selected">--Pilih Semua--</option>
+						<?php 
+							$bulan = $smartlinks->getClass()->getFieldDefinition('bulan')->getOptions();
+							foreach($bulan as $v)
+							{
+								echo '<option value="'.$v['value'].'">'.$v['key'].'</option>';
+							}
+						?>
+					</select>
+				</p>
+				<p>
+					Pilihan Jenis Fact Sheet<br />
+					<select class="combo-width type-pick">
+						<option value="" selected="selected">--Pilih Semua--</option>
+						<?php 
+							$jenis = Object_FundFactJenisSheet::getList();
+							foreach($jenis as $v)
+							{
+								echo '<option value="'.$v->getNama().'">'.$v->getNama().'</option>';
+							}
+						?>
+					</select>
+				</p>
+			</div>
+			
+			<div class="description">
+				<img src="/website/static/inv/images/fund/Image_Syariah.jpg" />
+				<ul>
+					<?php
+						$relationId = 295;
+						//$smartlinks = Object_FundFact::getList();
+						$query = new Object_FundFact_List();
+						$query->setCondition("asuransi like '%,".$relationId.",%'");
+						$smartlinks = $query->load();
+						foreach($smartlinks as $v) {
+							$types = $v->getFactsheet();
+							$type = $types[0];
+							$tahun = substr($v->getTahun(), 2);
+							$item = $v->getBulan().'/'.$tahun.'/'.$type->getNama();
+							echo '<li><a item="'.$item.'" target="_blank" href="'.$v->getFile()->getPath().'">'.$v->getJudul().'</a></li>';
+						}
+					?>
+				</ul>
+			</div>
+
+		</div>			
+		<!-- SYARIAH END -->
+		
+		<!-- PENSION END -->
+					
+		<div id="pension" class="full-w bg-white">
+			
+			<div class="icon-tentang-kami icon-section">&nbsp;</div><h1>Pension</h1>
+			
+			<div class="combo_section">
+				<p>Pilih Tahun
+				<br />
+				<select class="combo-width year-pick">
+					<option value="" selected="selected">--Pilih Semua--</option>
+					<?php 
+						$smartlinks = Object_FundFact::getById(307);
+						$tahun = $smartlinks->getClass()->getFieldDefinition('tahun')->getOptions();
+						foreach($tahun as $y)
+						{
+							echo '<option value="'.$y['value'].'">'.$y['key'].'</option>';
+						}
+					?>
+				</select>
+				</p>
+				<p>
+					Pilih Bulan<br />
+					<select class="combo-width month-pick">
+						<option value="" selected="selected">--Pilih Semua--</option>
+						<?php 
+							$bulan = $smartlinks->getClass()->getFieldDefinition('bulan')->getOptions();
+							foreach($bulan as $v)
+							{
+								echo '<option value="'.$v['value'].'">'.$v['key'].'</option>';
+							}
+						?>
+					</select>
+				</p>
+				<p>
+					Pilihan Jenis Fact Sheet<br />
+					<select class="combo-width type-pick">
+						<option value="" selected="selected">--Pilih Semua--</option>
+						<?php 
+							$jenis = Object_FundFactJenisSheet::getList();
+							foreach($jenis as $v)
+							{
+								echo '<option value="'.$v->getNama().'">'.$v->getNama().'</option>';
+							}
+						?>
+					</select>
+				</p>
+			</div>
+			
+			<div class="description">
+				<img src="/website/static/inv/images/fund/Image_Pension.jpg" />
+				<ul>
+					<?php
+						$relationId = 296;
+						//$smartlinks = Object_FundFact::getList();
+						$query = new Object_FundFact_List();
+						$query->setCondition("asuransi like '%,".$relationId.",%'");
+						$smartlinks = $query->load();
+						foreach($smartlinks as $v) {
+							$types = $v->getFactsheet();
+							$type = $types[0];
+							$tahun = substr($v->getTahun(), 2);
+							$item = $v->getBulan().'/'.$tahun.'/'.$type->getNama();
+							echo '<li><a item="'.$item.'" target="_blank" href="'.$v->getFile()->getPath().'">'.$v->getJudul().'</a></li>';
+						}
+					?>
+				</ul>
+			</div>
+
+		</div>			
+		<!-- PENSION END -->
+		
+		<!-- Saving END -->
+					
+		<div id="saving" class="full-w bg-white">
+			
+			<div class="icon-tentang-kami icon-section">&nbsp;</div><h1>Saving</h1>
+			
+			<div class="combo_section">
+				<p>Pilih Tahun
+				<br />
+				<select class="combo-width year-pick">
+					<option value="" selected="selected">--Pilih Semua--</option>
+					<?php 
+						$smartlinks = Object_FundFact::getById(307);
+						$tahun = $smartlinks->getClass()->getFieldDefinition('tahun')->getOptions();
+						foreach($tahun as $y)
+						{
+							echo '<option value="'.$y['value'].'">'.$y['key'].'</option>';
+						}
+					?>
+				</select>
+				</p>
+				<p>
+					Pilih Bulan<br />
+					<select class="combo-width month-pick">
+						<option value="" selected="selected">--Pilih Semua--</option>
+						<?php 
+							$bulan = $smartlinks->getClass()->getFieldDefinition('bulan')->getOptions();
+							foreach($bulan as $v)
+							{
+								echo '<option value="'.$v['value'].'">'.$v['key'].'</option>';
+							}
+						?>
+					</select>
+				</p>
+				<p>
+					Pilihan Jenis Fact Sheet<br />
+					<select class="combo-width type-pick">
+						<option value="" selected="selected">--Pilih Semua--</option>
+						<?php 
+							$jenis = Object_FundFactJenisSheet::getList();
+							foreach($jenis as $v)
+							{
+								echo '<option value="'.$v->getNama().'">'.$v->getNama().'</option>';
+							}
+						?>
+					</select>
+				</p>
+			</div>
+			
+			<div class="description">
+				<img src="/website/static/inv/images/fund/Image_Saving.jpg" />
+				<ul>
+					<?php
+						$relationId = 297;
+						//$smartlinks = Object_FundFact::getList();
+						$query = new Object_FundFact_List();
+						$query->setCondition("asuransi like '%,".$relationId.",%'");
+						$smartlinks = $query->load();
+						foreach($smartlinks as $v) {
+							$types = $v->getFactsheet();
+							$type = $types[0];
+							$tahun = substr($v->getTahun(), 2);
+							$item = $v->getBulan().'/'.$tahun.'/'.$type->getNama();
+							echo '<li><a item="'.$item.'" target="_blank" href="'.$v->getFile()->getPath().'">'.$v->getJudul().'</a></li>';
+						}
+					?>
+				</ul>
+			</div>
+
+		</div>			
+		<!-- SAVING END -->
+		
+		<!-- SMARTWEALTH END -->
+					
+		<div id="smartwealth" class="full-w bg-white">
+			
+			<div class="icon-tentang-kami icon-section">&nbsp;</div><h1>Smartwealth</h1>
+			
+			<div class="combo_section">
+				<p>Pilih Tahun
+				<br />
+				<select class="combo-width year-pick">
+					<option value="" selected="selected">--Pilih Semua--</option>
+					<?php 
+						$smartlinks = Object_FundFact::getById(307);
+						$tahun = $smartlinks->getClass()->getFieldDefinition('tahun')->getOptions();
+						foreach($tahun as $y)
+						{
+							echo '<option value="'.$y['value'].'">'.$y['key'].'</option>';
+						}
+					?>
+				</select>
+				</p>
+				<p>
+					Pilih Bulan<br />
+					<select class="combo-width month-pick">
+						<option value="" selected="selected">--Pilih Semua--</option>
+						<?php 
+							$bulan = $smartlinks->getClass()->getFieldDefinition('bulan')->getOptions();
+							foreach($bulan as $v)
+							{
+								echo '<option value="'.$v['value'].'">'.$v['key'].'</option>';
+							}
+						?>
+					</select>
+				</p>
+				<p>
+					Pilihan Jenis Fact Sheet<br />
+					<select class="combo-width type-pick">
+						<option value="" selected="selected">--Pilih Semua--</option>
+						<?php 
+							$jenis = Object_FundFactJenisSheet::getList();
+							foreach($jenis as $v)
+							{
+								echo '<option value="'.$v->getNama().'">'.$v->getNama().'</option>';
+							}
+						?>
+					</select>
+				</p>
+			</div>
+			
+			<div class="description">
+				<img src="/website/static/inv/images/fund/Image_Smartwealth.jpg" />
+				<ul>
+					<?php
+						$relationId = 298;
+						//$smartlinks = Object_FundFact::getList();
+						$query = new Object_FundFact_List();
+						$query->setCondition("asuransi like '%,".$relationId.",%'");
+						$smartlinks = $query->load();
+						foreach($smartlinks as $v) {
+							$types = $v->getFactsheet();
+							$type = $types[0];
+							$tahun = substr($v->getTahun(), 2);
+							$item = $v->getBulan().'/'.$tahun.'/'.$type->getNama();
+							echo '<li><a item="'.$item.'" target="_blank" href="'.$v->getFile()->getPath().'">'.$v->getJudul().'</a></li>';
+						}
+					?>
+				</ul>
+			</div>
+
+		</div>			
+		<!-- SMARTWEALTH END -->
 
 	</div>
 	<!-- row end -->
