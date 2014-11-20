@@ -3495,6 +3495,9 @@ ul.flex-direction-nav{
 .clearfix:hover ul.flex-direction-nav{
 	display: block;
 }
+.clearfix.noArrow:hover ul.flex-direction-nav{
+	display: none;
+}
 
 /*Tool Tip*/
 .backClose{
@@ -3517,3 +3520,9 @@ ul.flex-direction-nav{
 .boxes-view .items-container.custom_item_home .item .description p{
 	font-weight: normal;
 }
+.boxes-view .items-container.custom_item_home .item .heading{
+	height: 70px;
+}
+.boxes-view .items-container .item:hover .heading .btn-group {
+    visibility: visible;
+  }

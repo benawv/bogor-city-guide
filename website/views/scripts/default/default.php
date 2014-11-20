@@ -1,7 +1,7 @@
 <div class="container">
 	<?php echo $this->areablock('bannerArea', array(
 				'allowed' => array('gallery-carousel')))?>
-	<div class="wrapper-special clearfix">
+	<div class="wrapper-special clearfix noArrow">
 		<?php /* echo $this->areablock('bannerProduct', array(
 				'allowed' => array('banner', 'static-banner'))) */?>
 		<div id="best-products">
