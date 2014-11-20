@@ -8,36 +8,29 @@ class InvestmentController extends Website_Controller_Action
        
 		$this->enableLayout();   
 	}
-
-    public function setcustomercookiesAction () {//create cooke base one php
-        
-        $value = $this->_getParam('name');
-        if (isset($_COOKIE['customername'])) {
-            unset($_COOKIE['customername']);
-            setcookie("customername",$value, time()+3600*1);
-        }else{
-            setcookie("customername",$value, time()+3600*1);
-        }
-      
-        return $_COOKIE["customername"];
-    
-    }
     
     public function homepageAction(){
     
         $db = Pimcore_Resource_Mysql::get();
         $entries = new Object_InvestmentCategories_List();
         $this->view->data=$entries;		
-    
+        $entries = new Object_InvestmentCategories_List();  
+        $this->view->categoryInv=$entries;
+     
     }
     
     public function globalarticleAction(){
 
          $db = Pimcore_Resource_Mysql::get();
          $entries = new Object_InvestmentCategories_List();
-       //  $entries->setCondition('investment<>6');  
          $entries->setLimit(6);
-         $this->view->data=$entries;			
+        
+         foreach($entries as $table){
+            	$nameCommunity = "object_query_".$table->getClassId();
+         }
+         
+        $this->view->data=$entries;	
+
     }
         
     
@@ -48,44 +41,117 @@ class InvestmentController extends Website_Controller_Action
       
          $db = Pimcore_Resource_Mysql::get();
          $entries = new Object_InvestmentCategories_List();
-         $entries->setCondition('investment="'.$cat.'"');  
+         $entries->setCondition('oo_id="'.$cat.'"');  
         
          $datainvestment=$this->investment_id($cat);
          $entries->investment=$datainvestment;
          $entries->investment_id=$cat;
          $this->view->data=$entries;			
     }
+    
+    
+        //show all category of investment, url:investment-category
+    public function subcategoriesAction(){
+        
+    	$cat = $this->_getParam('cat');
+        $cat_sub = $this->_getParam('sub_cat');
+      
+         $db = Pimcore_Resource_Mysql::get();
+         $entries = new Object_InvestmentCategories_List();
+         $entries->setCondition('investment="'.$cat.'" and subcategory="'.$cat_sub.'"' );  
+        
+         $datainvestment=$this->investment_id($cat);
+         $entries->investment=$datainvestment;
+         $entries->investment_id=$cat;
+         $this->view->data=$entries;			
+    }
+    
     public function investment_id($id){
             
-        if($id==1){
-        $investmentname="Education";
-        }elseif($id==2){
-            $investmentname="Fund";
-        }elseif($id==3){
-        $investmentname="Health";
-        }elseif($id==4){
-        $investmentname="Future";
-        }elseif($id==5){
-        $investmentname="Pension";
-        }elseif($id==6){
-        $investmentname="Guide Me";
-        }else{
-            $investmentname="<id_not_found>";
-        }
-        return $investmentname;
+        $db = Pimcore_Resource_Mysql::get();
+		$entries = new Object_InvestmentCategories_List();
+		$entries->setLimit(1);
+		foreach ($entries as $table)
+		{
+			$nameCommunity = "object_query_".$table->getClassId();
+		}
+
+        $sql_subcat="SELECT DISTINCT tblcommunity.investment FROM ".$nameCommunity." AS tblcommunity WHERE tblcommunity.oo_id ='".$id."'";
+        $inv=$db->fetchAll($sql_subcat);
+        
+        return $inv;
+    }
+    
+     public function article_investment_id($id){
+            
+        $db = Pimcore_Resource_Mysql::get();
+		$entries = new Object_InvestmentArticle_List();
+		$entries->setLimit(1);
+		foreach ($entries as $table)
+		{
+			$nameCommunity = "object_query_".$table->getClassId();
+		}
+
+        $sql_subcat="SELECT DISTINCT tblcommunity.investment FROM ".$nameCommunity." AS tblcommunity WHERE tblcommunity.oo_id LIKE '%".$id."%'";
+        $inv=$db->fetchAll($sql_subcat);
+        
+        return $inv;
     }
     
     //show article by category of investment, url:investment-article-list
     public function articlelistAction(){
-		
+/*		
         $id = $this->_getParam('id');
-        $entries = new Object_InvestmentArticle_List();
-        $entries->setCondition('category_investment="'.$id.'"');   
+        $cat = $this->_getParam('cat');
         
-         $datainvestment=$this->investment_id($id);
-         $entries->investment=$datainvestment;
-         $entries->investment_id=$id;
-         $this->view->data=$entries;	
+        
+        $db = Pimcore_Resource_Mysql::get();
+		$entries = new Object_InvestmentArticle_List();
+		$entries->setLimit(1);
+		foreach ($entries as $table)
+		{
+			$nameCommunity = "object_query_".$table->getClassId();
+		}
+        
+                $sql_subcat="SELECT DISTINCT tblcommunity.subcategory FROM ".$nameCommunity." AS tblcommunity WHERE tblcommunity.investment LIKE '%".$id."%' AND subcategory IS NOT NULL";
+
+                $dats=$db->fetchAll($sql_subcat);
+        
+        
+        if(count($dats)>0 and ($cat!=1)){
+
+            $this->subcategoryAction($id);
+        
+        }else{
+            
+            if($cat!=1){
+                $conditions='investment like "%'.$id.'%"';
+            }else{
+                $conditions='subcategory like "%'.$id.'%"';
+            }
+            
+            $entries = new Object_InvestmentArticle_List();
+            $entries->setCondition('investment like "%'.$id.'%"');   
+            
+            $datainvestment=$this->investment_id($id);
+            $entries->investment=$datainvestment;
+            $entries->investment_id=$id;
+            $this->view->data=$entries;	
+        }*/ //end of new scrip eneble if you need subcategory
+
+        
+            //OLD script without subcategory
+            $id = $this->_getParam('id');//investment id
+
+            $entries = new Object_InvestmentArticle_List();
+            $entries->setCondition('investment like "%'.$id.'%"');  
+            
+            $datainvestment=$this->investment_id($id);
+            $entries->investment=$datainvestment;//get investment name
+            $entries->investment_id=$id;//get investment id
+        
+            $this->view->data=$entries;	
+       
         
     }
     
@@ -115,16 +181,30 @@ class InvestmentController extends Website_Controller_Action
          $entries = new Object_InvestmentArticle_List();
          $entries->setLimit(1);
          $entries->setCondition(1);
-         foreach ($entries as $table)
-         {
-            $nameCommunity = "object_".$table->getClassId();
-         }
 
         $datainvestment=$this->investment_id($id);
         $entries->investment=$datainvestment;
-        $entries->investment_id=$id;
+        $entries->investment_id=$entries->investment_id;
+        $this->view->entries=$this->article_investment_id($entries->investment_id);
         
         $this->render('article');
+        
+    }
+    
+    public function subcategoryAction($id,$cat){
+
+         $entries = new Object_InvestmentSubcategory_List();
+         $entries->setLimit(6);
+         $entries->setCondition('category like "%'.$id.'%"');  
+         
+         $this->view->data=$entries; 
+        
+         $subcategoryInv = new Object_InvestmentLandingSubcategory_List();
+         $subcategoryInv->setLimit(1);
+         $subcategoryInv->setCondition('investment like "%'.$id.'%"  and content IS NOT NULL' ); 	
+         $this->view->subcategoryInv=$subcategoryInv;
+            
+         $this->render('subcategory');
         
     }
     
