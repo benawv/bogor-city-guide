@@ -2748,8 +2748,19 @@ footer.contentinfo{
 		margin-top: 10px;
 	}
 	/*END Visi Misi*/
+    
+    /* image investasi mobile */
+    
+    .banner_products img {
+    /* width: 600px !important; */
+        height: auto;
+    }
+    
+    /* image investasi mobile */
 
 }
+
+
 /* footer ojk mobile */
 
 @media only screen and (max-width : 800px){

@@ -645,3 +645,32 @@ padding: 10px 15px;
 
 }
 
+@media only screen and (max-width : 800px) and (min-width: 480px) {
+
+	/* Sticky */
+  
+  .nav-sticky {  
+	width: 94% !important;
+    position: fixed;  
+	top: 0;
+    z-index: 100;  
+    border-top: 0;  
+	-webkit-backface-visibility: hidden;	
+}  
+
+.pagenav {
+	width: 100%; 
+    /*width: 302px;*/
+	height: 80px;
+	z-index: 200; 
+	background: #F5F6F6;
+}
+ /* Sticky */
+    
+.description table {
+    width: 100% !important;
+}    
+
+}
+
+
