@@ -113,6 +113,13 @@ background-size: cover;
   font-weight: 700;
 }
 
+.desc_page ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: block;
+}
+
 .desc_page li {
 	list-style-type: disc;
 	font-size: 14px;
