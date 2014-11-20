@@ -5,7 +5,7 @@
 
 $(function(){
 
-    console.log( 'Document is ready, my Lord.' );
+    //console.log( 'Document is ready, my Lord.' );
 
     /* Resize image to parent script */
     $( 'img.resizeToParent' ).resizeToParent();

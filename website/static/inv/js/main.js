@@ -96,23 +96,9 @@ $(document).ready(function(){
             document.cookie="customername=''";    
             document.cookie="customername="+putname;
 
-        url = '/investment-category/'+inv_cat;
+        url = '/investment/investment-category/'+inv_cat;
         $(location).attr("href", url); 
-            /*$.ajax({
-                    url : '/cookie/'+putname,
-                    type: "get",
-                    data: {
-                    },
-                    success: function(response)
-                    {
-                        alert(response);
-                    },
-                    error : function(response){
-                        alert(response);
-                    },
-        
-            });
-*/
+           
         });
 });
 
