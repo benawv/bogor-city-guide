@@ -189,4 +189,5 @@
 		
 	});
 </script>
+<script src="/website/static/js/share-product.js" type="text/javascript"></script>
 <script src="/website/static/js/custom_tooltip.js" type="text/javascript"></script>

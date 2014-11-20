@@ -35,7 +35,7 @@
 	});
 </script>
 
-<div id="<?php echo $this->input('anchor')->text?>" class="full-w bg-white">
+<div id="<?php echo $this->input('anchor')->text?>" class="full-w bg-white cus_full-w">
 	<h2>
 		<?php if($this->editmode): ?>
 			Icon: <?php echo $this->image('icon', array(
