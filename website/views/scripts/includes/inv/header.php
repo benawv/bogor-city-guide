@@ -125,7 +125,7 @@
 								<li><a href="#">Investment Weekly</a></li>
 								<li><a href="#">Investment Outlook</a></li>
 								<li><a href="#">ULAR</a></li>
-								<li><a href="#">Education</a></li>
+								<li><a href="/investasi/investment-homepage/education">Education</a></li>
 								<li><a href="#">Articles</a></li>
 								
 							</ul>
