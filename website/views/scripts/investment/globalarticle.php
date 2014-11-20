@@ -55,23 +55,30 @@
 			</div>
                 <?php 
         
+                $i=1;
                 foreach($this->data as $entrie){ 
-                    //harus diganti otomatis...call from existing class    
-                   $id=strtolower($entrie->investment);
-                    if($id=="health"){
-                        $investmentcolor="bg_edu";    
-                    }elseif($id=="future"){
-                         $investmentcolor="bg_fund";
-                    }elseif($id=="pension"){
-                         $investmentcolor="bg_health lastone";
-                    }elseif($id=="fund"){
-                         $investmentcolor="bg_future";
-                    }elseif($id=="education"){
-                         $investmentcolor="bg_pension";
-                    }elseif($id=="guide me"){
-                        $investmentcolor="bg_guideme lastone";
+                    
+                    if($i%3==0){
+                        $lastone="lastone";
+                    }else{
+                        $lastone="";
                     }
-                  
+                      
+                    $id=strtolower($entrie->investment);
+                    if($id=="health"){
+                        $investmentcolor="bg_edu ".$lastone;    
+                    }elseif($id=="future"){
+                         $investmentcolor="bg_fund ".$lastone;
+                    }elseif($id=="pension"){
+                         $investmentcolor="bg_health ".$lastone;
+                    }elseif($id=="fund"){
+                         $investmentcolor="bg_future ".$lastone;
+                    }elseif($id=="education"){
+                         $investmentcolor="bg_pension ".$lastone;
+                    }elseif($id=="guide me"){
+                        $investmentcolor="bg_guideme ".$lastone;
+                    }
+                  $i++;
                 ?>
 				<div class="catbox <?php echo $investmentcolor?>"   >
 					<a href="/investment/investment-article-list/<?php echo  $entrie->o_id; ?>_0">
