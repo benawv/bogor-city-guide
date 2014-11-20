@@ -87,6 +87,67 @@
 
 
             <?php  
-    } ?>
+    }else{ ?>
+
+
+<div class="header_page bg_future">
+	<div class="container">
+		Artikel Belum Tersedia
+	</div>
+</div>
+
+
+<div class="main_wrap">
+	<div class="container">
+
+		<div class="row">
+			<div class="bread">
+				<a href="/investasi/investment-homepage">Home</a>  
+				<i class="fa fa-angle-right"></i> 
+				<a href="/investment/investment-category/<?php echo $this->data->investment_id; ?>">Artikel</a>
+
+				<i class="fa fa-angle-right"></i>
+				Artikel Index
+
+			</div>
+		</div>
+
+	</div>
+	<!-- container end -->
+
+
+	<div class="row">
+		<div class="container">
+
+			<div class="listarticle">
+
+                    -Artikel belum tersedia-
+                
+			</div>
+			<!-- listarticle end -->
+
+			<div class="paging">
+
+
+
+			</div>
+
+				
+
+
+			  
+			
+
+		</div>
+		<!-- container end -->
+
+	</div>
+	<!-- row end -->
+
+</div>
+
+
+
+<?php } ?>
 
 <?php echo $this->template("includes/inv/footer.php")?>
