@@ -2,8 +2,35 @@
 	<?php echo $this->areablock('bannerArea', array(
 				'allowed' => array('gallery-carousel')))?>
 	<div class="wrapper-special clearfix">
-		<?php echo $this->areablock('bannerProduct', array(
-				'allowed' => array('banner', 'static-banner')))?>
+		<?php /* echo $this->areablock('bannerProduct', array(
+				'allowed' => array('banner', 'static-banner'))) */?>
+		<div id="best-products">
+			<div style="overflow: hidden; position: relative;" class="flex-viewport">
+			<ul style="width: 1600%; transition-duration: 0.6s; transform: translate3d(-2540px, 0px, 0px);" class="slides">
+
+			<li style="width: 635px; float: left; display: block;" class="">
+				<div class="product">
+					<div class="photo">
+						<img draggable="false" alt="" src="/website/static/images/static_image/Image-static.png" height="380" width="635">
+					</div>
+					<div class="fixbox left60">
+						<div class="place-bg bg-blue">
+								<h1>Program Aktivasi Undian</h1>
+								<p>
+                                	Aktifkan aplikasi Allianz eAZy Claim.<br />
+                                	Periode 1 September - 31 Desember 2014
+                                </p>
+						</div>
+						<div class="edge e-blue">
+							<a href="/promo-sponsor/promo/program-undian-allianz-eazy-claim" target="_blank">Info selengkapnya</a>						</div>
+					</div>
+				</div>
+			</li>
+					
+					
+			</ul>
+			</div>
+		</div>
 		<div id="quicklinks">
 			<?php echo $this->areablock('layananKami', array(
 				'allowed' => array('layanankami-quicklinks')))?>
@@ -16,6 +43,8 @@
 			return implode(" ",array_splice($words,0,$word_limit));
 		}
 	?>
+	<div class="container boxes-view">
+	<div class="items-container custom_item_home">
 	<!-- Community -->
 		<?php echo $this->areablock('jurnalAllianz', array(
 				'allowed' => array('jurnal-allianz','tahukah-anda','community-tips')))?>
@@ -27,6 +56,8 @@
 				'allowed' => array('jurnal-allianz','tahukah-anda','community-tips')))?>
 	
 	<!-- End Community -->
+	</div> <!-- .items-container -->
+	</div>
 	<?php
 		$value = strtotime(date("YmdHis")).rand();
 		

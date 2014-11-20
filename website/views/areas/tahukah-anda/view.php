@@ -1,6 +1,3 @@
-<div id="community2" class="clearfix">	
-	<h2>Tahukah Anda?</h2>
-	<div class="tips">
 		<?php if($this->editmode) { ?>
 			<style>
 				.tip.cus-tip{
@@ -8,80 +5,89 @@
 				}
 			</style>
 		<?php }	?>
-		<div class="tip cus-tip">
-			<div class="photo"><?php echo $this->image("gambar-tahukah-anda1", array(
-													    "title" => "Drag your image here",
-													    "width" => 298,
-													    "height" => 110
-								));?>
+		
+		<div class="item" id="item-left">
+			<div class="heading">
+				<h2 class="title_news">
+					<?php echo $this->link("myLink-link1",array("class" => "thumbnail thumbnail-popup thumb1",
+														 "data-target" => "#modalpdf1",
+														 "data-toggle" => "modal"));?>
+				</h2>
+				<div class="btn-group">
+					<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
+					<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
+				</div>
 			</div>
-			<div class="description">
 			<?php if($this->editmode) {
 				echo "FlipGorilla ID: ".$this->input('file_id1', array("width" => 250));
 				}
 			?>
-				<h3><?php echo $this->link("myLink-link1",array("class" => "thumbnail thumbnail-popup thumb1",
-														 "data-target" => "#modalpdf1",
-														 "data-toggle" => "modal"));?>
-				</h3>
-				<div class="meta">
-					<div class="description-jurnal">
-						<?php echo $this->wysiwyg('deskripsi1')?>
-					</div>	
-				</div>
+			<?php echo $this->image("gambar-tahukah-anda1", array(
+								    "title" => "Drag your image here",
+								    "width" => 298,
+								    "height" => 110
+			));?>
+			
+			<div class="description">
+				<?php echo $this->wysiwyg('deskripsi1')?>
 			</div>
 		</div>
 		
-		<div class="tip cus-tip">
-			<div class="photo"><?php echo $this->image("gambar-tahukah-anda2", array(
-													    "title" => "Drag your image here",
-													    "width" => 298,
-													    "height" => 110
-								));?>
-			</div>
-			<div class="description">
-				<?php if($this->editmode) {
-					echo "FlipGorilla ID: ".$this->input('file_id2', array("width" => 250));
-					}
-				?>
-				<h3><?php echo $this->link("myLink-link2",array("class" => "thumbnail thumbnail-popup thumb2",
+		<div class="item" id="item-left">
+			<div class="heading">
+				<h2 class="title_news">
+					<?php echo $this->link("myLink-link2",array("class" => "thumbnail thumbnail-popup thumb2",
 														 "data-target" => "#modalpdf2",
 														 "data-toggle" => "modal"));?>
-				</h3>
-				<div class="meta">
-					<div class="description-jurnal">
-						<?php echo $this->wysiwyg('deskripsi2')?>
-					</div>	
+				</h2>
+				<div class="btn-group">
+					<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
+					<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
 				</div>
+			</div>
+			<?php if($this->editmode) {
+				echo "FlipGorilla ID: ".$this->input('file_id2', array("width" => 250));
+				}
+			?>
+			<?php echo $this->image("gambar-tahukah-anda2", array(
+								    "title" => "Drag your image here",
+								    "width" => 298,
+								    "height" => 110
+			));?>
+			
+			<div class="description">
+				<?php echo $this->wysiwyg('deskripsi2')?>
 			</div>
 		</div>
 		
-		<div class="tip cus-tip">
-			<div class="photo"><?php echo $this->image("gambar-tahukah-anda3", array(
-													    "title" => "Drag your image here",
-													    "width" => 298,
-													    "height" => 110
-								));?>
+		<div class="item" id="item-left">
+			<div class="heading">
+				<h2 class="title_news">
+					<?php echo $this->link("myLink-link3",array("class" => "thumbnail thumbnail-popup thumb3",
+														 "data-target" => "#modalpdf3",
+														 "data-toggle" => "modal"));?>
+				</h2>
+				<div class="btn-group">
+					<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
+					<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
+				</div>
 			</div>
-			<div class="description">
-				<?php if($this->editmode) {
+			<?php if($this->editmode) {
 					echo "FlipGorilla ID: ".$this->input('file_id3', array("width" => 250));
 					}
 				?>
-				<h3><?php echo $this->link("myLink-link3",array("class" => "thumbnail thumbnail-popup thumb3",
-														 "data-target" => "#modalpdf3",
-														 "data-toggle" => "modal"));?>
-				</h3>
-				<div class="meta">
-					<div class="description-jurnal">
-						<?php echo $this->wysiwyg('deskripsi3')?>
-					</div>	
-				</div>
+			<?php echo $this->image("gambar-tahukah-anda3", array(
+								    "title" => "Drag your image here",
+								    "width" => 298,
+								    "height" => 110
+			));?>
+			
+			<div class="description">
+				<?php echo $this->wysiwyg('deskripsi3')?>
 			</div>
 		</div>
 			
-	</div>
-</div>
+
 <!-- Modal Premi -->
 <div class="modal fade" id="modalpdf1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">

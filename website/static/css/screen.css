@@ -3500,3 +3500,20 @@ ul.flex-direction-nav{
 .backClose{
 	cursor: pointer;
 }
+
+/*Home > Jurnal, Tahukah, Community*/
+.boxes-view .items-container.custom_item_home #item-left.item{
+	/* height: 300px; */
+}
+.container.boxes-view .custom_item_home #item-left img{
+	height: auto;
+}
+.boxes-view .items-container.custom_item_home .item .thumbnail.thumbnail-popup{
+	background: none;
+}
+.boxes-view .items-container.custom_item_home .item .thumbnail{
+	color: #000;
+}
+.boxes-view .items-container.custom_item_home .item .description p{
+	font-weight: normal;
+}
