@@ -7,8 +7,7 @@
                
 			<div class="textbanner bg_green">
 				<h1>1 Yang Terpenting!</h1>
-				<p>Selamat datang <input type="text" name="putname" id="putname" /><br />
-					pilih 1 yang terpenting untuk anda,</p>
+				<p>Selamat datang pilih 1 yang terpenting untuk anda,</p>
 
 				<p>
 					
@@ -30,7 +29,7 @@
 			</div>
             
 			<div class="edge_textbanner edge_green">
-				<input type="button" class='send_customer' value="Klik Disini"></input>
+				<!--input type="button" class='send_customer' value="Klik Disini"></input-->
 			</div>
 
 		</div>

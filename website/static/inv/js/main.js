@@ -86,6 +86,9 @@ $(document).ready(function(){
     $( 'input[name="rd"]' ).each(function(index,value){
         $( this ).on( 'click', function(){
             inv_cat = $( this ).val();
+            
+            url = '/investment/investment-category/'+inv_cat;
+            $(location).attr("href", url); 
         });
     });
 
@@ -97,7 +100,9 @@ $(document).ready(function(){
             document.cookie="customername="+putname;
 
         url = '/investment/investment-category/'+inv_cat;
-        $(location).attr("href", url); 
+        
+        alert('asdasd');
+        //$(location).attr("href", url); 
            
         });
 });
