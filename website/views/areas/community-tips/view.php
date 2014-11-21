@@ -1,7 +1,7 @@
 <?php 
 	$entries = new Object_CommunityTips_List();
 	$entries->setLimit("3");
-	$entries->setOrderKey("o_creationDate");
+	$entries->setOrderKey("date");
 	$entries->setOrder("desc");
 	
 	if(count($entries)>0)
