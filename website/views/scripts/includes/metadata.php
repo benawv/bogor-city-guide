@@ -37,9 +37,15 @@
 <script src="/website/static/plugins/jquery.flexslider.min.js" type="text/javascript"></script>
 <script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
 <script src="/website/static/js/bootstrap.min.js" type="text/javascript"></script>
-<?php if($_SERVER["REQUEST_URI"]!="/"){?>
-<script src="/website/static/js/sticky-jquery.js" type="text/javascript"></script>
-<?php }?>
+<?php
+if(!$this->editmode){
+	if($_SERVER["REQUEST_URI"]!="/"){
+?>
+	<script src="/website/static/js/sticky-jquery.js" type="text/javascript"></script>
+<?php 
+	}
+}
+?>
 <script src="/website/static/js/accordion-jquery.js" type="text/javascript"></script>
 
 
