@@ -30,7 +30,7 @@
 								else{
 									echo limit_words($entry->getContent(),15);
 								}
-							?><br />
+							?>
 							<a href="<?php echo "jurnal-allianz/".$entry->getO_key()."_".$entry->getO_id();?>" class="more">Selengkapnya &raquo;</a>
 						</div>
 					</div>
