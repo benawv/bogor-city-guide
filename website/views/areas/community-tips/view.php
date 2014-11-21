@@ -31,7 +31,8 @@
 								else{
 									echo limit_words($entry->getDescription(),15);
 								}
-							?>
+							?><br />
+							<a href="<?php echo "community-detail/".$entry->getO_key()."_".$entry->getO_id()."_".$entry->getTemplate();?>" class="more">Selengkapnya &raquo;</a>
 						</div>
 					</div>
 			<?php 
