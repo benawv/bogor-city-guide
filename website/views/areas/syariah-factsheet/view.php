@@ -35,7 +35,7 @@
 	});
 </script>
 
-<div id="<?php echo $this->input('anchor')->text?>" class="full-w bg-white">
+<div id="<?php echo $this->input('anchor')->text?>" class="full-w bg-white cus_full-w">
 	<h2>
 		<?php if($this->editmode): ?>
 			Icon: <?php echo $this->image('icon', array(
@@ -51,17 +51,61 @@
 			Syariah
 		<?php endif; ?>
 	</h2>
+	<?php
+		$assets = new Asset_List();
+		$assets->setCondition("filename = 'syariah'");
+		foreach($assets as $row1)
+		{
+			$idAssets = $row1->id;
+			$jenis = new Asset_List();
+			$jenis->setCondition("parentId = '".$idAssets."'");
+			$year = array();
+			$list = array();
+			
+			foreach($jenis as $row2)
+			{
+				$idJenis = $row2->id;
+				$tahun = new Asset_List();
+				$tahun->setCondition("parentId = '".$idJenis."'");
+				
+				foreach($tahun as $row3)
+				{
+					$year[] = $row3->filename;
+					$x++;
+					$idTahun = $row3->id;
+					
+					$bulan = new Asset_List();
+					$bulan->setCondition("parentId = '".$idTahun."'");
+					foreach($bulan as $row4)
+					{
+						$idBulan = $row4->id;
+						
+						$data = new Asset_List();
+						$data->setCondition("parentId = '".$idBulan."'");
+						foreach($data as $isi)
+						{
+							$item = $row4->filename."/".substr($row3->filename, 2)."/".$row2->filename;
+							$list[] = '<li><a item="'.$item.'" target="_blank" href="'.$isi->path."".$isi->filename.'">'.$isi->filename.'</a></li>';
+						}
+					}
+				}
+			}
+			$full_data = $list;
+			$Listtahun = array_unique($year);
+			asort($Listtahun);
+		}
+	?>
+	
 	<div class="combo_section">
 		<p>
 			Pilih Tahun<br />
 			<select class="combo-width year-pick">
 				<option value="" selected="selected">--Pilih Semua--</option>
 				<?php 
-					$smartlinks = Object_FundFact::getById(307);
-					$tahun = $smartlinks->getClass()->getFieldDefinition('tahun')->getOptions();
-					foreach($tahun as $y)
+					foreach($Listtahun as $key => $val)
 					{
-						echo '<option value="'.$y['value'].'">'.$y['key'].'</option>';
+						$namaTahun = $val;
+						echo '<option value="'.$namaTahun.'">'.strtoupper($namaTahun).'</option>';
 					}
 				?>
 			</select>
@@ -70,13 +114,18 @@
 			Pilih Bulan<br />
 			<select class="combo-width month-pick">
 				<option value="" selected="selected">--Pilih Semua--</option>
-				<?php 
-					$bulan = $smartlinks->getClass()->getFieldDefinition('bulan')->getOptions();
-					foreach($bulan as $v)
-					{
-						echo '<option value="'.$v['value'].'">'.$v['key'].'</option>';
-					}
-				?>
+				<option value="januari">Januari</option>
+				<option value="februari">Februari</option>
+				<option value="maret">Maret</option>
+				<option value="april">April</option>
+				<option value="mei">Mei</option>
+				<option value="juni">Juni</option>
+				<option value="juli">Juli</option>
+				<option value="agustus">Agustus</option>
+				<option value="september">September</option>
+				<option value="oktober">Oktober</option>
+				<option value="november">November</option>
+				<option value="desember">Desember</option>
 			</select>
 		</p>
 		<p>
@@ -84,10 +133,10 @@
 			<select class="combo-width type-pick">
 				<option value="" selected="selected">--Pilih Semua--</option>
 				<?php 
-					$jenis = Object_FundFactJenisSheet::getList();
-					foreach($jenis as $v)
+					foreach($jenis as $row)
 					{
-						echo '<option value="'.$v->getNama().'">'.$v->getNama().'</option>';
+						$namaJenis = $row->filename;
+						echo '<option value="'.$namaJenis.'">'.strtoupper($namaJenis).'</option>';
 					}
 				?>
 			</select>
@@ -102,17 +151,8 @@
 								'thumbnail' => 'fundfactsheet'))?>
 		<ul>
 			<?php
-				$relationId = 295;
-				//$smartlinks = Object_FundFact::getList();
-				$query = new Object_FundFact_List();
-				$query->setCondition("asuransi like '%,".$relationId.",%'");
-				$smartlinks = $query->load();
-				foreach($smartlinks as $v) {
-					$types = $v->getFactsheet();
-					$type = $types[0];
-					$tahun = substr($v->getTahun(), 2);
-					$item = $v->getBulan().'/'.$tahun.'/'.$type->getNama();
-					echo '<li><a item="'.$item.'" target="_blank" href="'.$v->getFile()->getPath().'">'.$v->getJudul().'</a></li>';
+				foreach($full_data as $listData) {
+					echo $listData;
 				}
 			?>
 		</ul>

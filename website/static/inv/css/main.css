@@ -113,6 +113,21 @@ background-size: cover;
   font-weight: 700;
 }
 
+.desc_page ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: block;
+}
+
+.desc_page li {
+	list-style-type: disc;
+	font-size: 14px;
+	padding: 10px;
+	margin-left: 20px;
+	border-bottom: 1px dotted #CCCCCC;
+}
+
 
 .desc_page p{
   font-size: 14px;
@@ -477,8 +492,63 @@ margin-left: 20px;
   color: #666666;
 }
 
+/* Added by Handri Pangestiaji 19 November 2014 */
+.red {
+	background: #a50034;
+}
 
+.blue {
+	background: #003da5;
+}
 
+.purple {
+	background: #850aa0;
+}
+
+.brown {
+	background: #cc8a00;
+}
+
+.darkbrown {
+	background: #8b4720;
+}
+
+.green {
+	background: #64a70b;
+}
+
+.edge_red {
+	background: url(../images/edge-red.png) no-repeat top right;
+}
+
+.edge_blue {
+	background: url(../images/edge-blue.png) no-repeat top right;
+}
+
+.edge_purple {
+	background: url(../images/edge-purple.png) no-repeat top right;
+}
+
+.edge_brown {
+	background: url(../images/edge-brown.png) no-repeat top right;
+}
+
+.edge_darkbrown {
+	background: url(../images/edge-brown-2.png) no-repeat top right;
+}
+
+.edge_green {
+	background: url(../images/edge-green.png) no-repeat top right;
+}
+
+.h200 {
+	height: 200px;
+}
+
+p.small {
+	font-size: 10px;
+	line-height: 14px;
+}
 
 
 

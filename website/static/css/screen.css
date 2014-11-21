@@ -697,8 +697,8 @@ a.link{
 }
 .banner_products img{
 	/*width: 600px !important;*/
-	width: 100% !important;
-	max-height: 310px !important;
+	width: 100%;
+	max-height: 310px;
 }
 .main .margin-content{
 	margin-bottom: 0px !important;
@@ -2748,8 +2748,19 @@ footer.contentinfo{
 		margin-top: 10px;
 	}
 	/*END Visi Misi*/
+    
+    /* image investasi mobile */
+    
+    .banner_products img {
+    /* width: 600px !important; */
+        height: auto;
+    }
+    
+    /* image investasi mobile */
 
 }
+
+
 /* footer ojk mobile */
 
 @media only screen and (max-width : 800px){
@@ -2770,7 +2781,7 @@ footer.contentinfo{
 		clear: both;
 	}
 	footer.contentinfo .worldwide{
-		height: 150px;
+		height: 180px;
 	}
 	#membername {
 	    display: none;
@@ -2780,6 +2791,24 @@ footer.contentinfo{
 	}
 	.boxes-view .item_finansial .item{
 		width: 100% !important;
+	}
+	.pagenav {
+	    background: none repeat scroll 0 0 #f5f6f6;
+	    height: 80px;
+	    /*otomatis width pake javascript
+	    width: 960px; */
+	    z-index: 200;
+	}
+	.nav-sticky {
+	    border-top: 0 none;
+	    position: fixed;
+	    top: 0;
+	    z-index: 100;
+	}
+	#community.clearfix .tips .tip, #community.clearfix .tips .tip .photo,
+	#community2.clearfix .tips .tip, #community2.clearfix .tips .tip .photo,
+	.photo img{
+		height: auto;
 	}
 }
 /* footer ojk mobile */
@@ -2799,6 +2828,9 @@ footer.contentinfo{
 	}
 	.navi{
 		margin-left: 50px;
+	}
+	#community.clearfix .tips .tip, #community.clearfix .tips .tip .photo{
+		height: auto;
 	}
 }
 @media only screen and (max-width : 360px){
@@ -3463,8 +3495,34 @@ ul.flex-direction-nav{
 .clearfix:hover ul.flex-direction-nav{
 	display: block;
 }
+.clearfix.noArrow:hover ul.flex-direction-nav{
+	display: none;
+}
 
 /*Tool Tip*/
 .backClose{
 	cursor: pointer;
 }
+
+/*Home > Jurnal, Tahukah, Community*/
+.boxes-view .items-container.custom_item_home #item-left.item{
+	/* height: 300px; */
+}
+.container.boxes-view .custom_item_home #item-left img{
+	height: auto;
+}
+.boxes-view .items-container.custom_item_home .item .thumbnail.thumbnail-popup{
+	background: none;
+}
+.boxes-view .items-container.custom_item_home .item .thumbnail{
+	color: #000;
+}
+.boxes-view .items-container.custom_item_home .item .description p{
+	font-weight: normal;
+}
+.boxes-view .items-container.custom_item_home .item .heading{
+	height: 70px;
+}
+.boxes-view .items-container .item:hover .heading .btn-group {
+    visibility: visible;
+  }

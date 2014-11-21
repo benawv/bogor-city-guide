@@ -1,20 +1,20 @@
 $(document).ready(function(){
-    $('.twshare').click(function(){
-                var url = window.location.host+window.location.pathname;
-                var title = $(this).parent().siblings('h2.title_news').find('a').text();
-                
-                var tweet = title+" "+url;
-                var encodeTweet = encodeURIComponent(tweet);
-                window.open('https://twitter.com/intent/tweet?text='+encodeTweet, 'sharer', 'width=626,height=436');
+    $('.btn-group .twshare').click(function(){
+        var url = window.location.host+window.location.pathname;
+        var title = $(this).parent().siblings('h2.title_news').find('a').text();
+        
+        var tweet = title+" "+url;
+        var encodeTweet = encodeURIComponent(tweet);
+        window.open('https://twitter.com/intent/tweet?text='+encodeTweet, 'sharer', 'width=626,height=436');
 	});
 	
-	$('.fbshare').click(function(){
+	$('.btn-group .fbshare').click(function(){
 		var image = $(this).parents().siblings('a').find('.image_share').attr('src');
 		
 		var name = $(this).parent().siblings('h2.title_news').find('a').text();
 		var filename = name.replace(/\s/g,'-');
 		
-                var deskripsi = $(this).parents().parents().siblings('.description').find('.des').text();
+                var deskripsi = $(this).parents().parents().parents().find('.description').find('p').text();
                 var limit = 32;
                 var x;
                 var words = deskripsi.split(/\s/);
@@ -39,8 +39,9 @@ $(document).ready(function(){
                 {
                         desc = deskripsi;
                 }
+                
         loc = window.location.origin+'/website/static/fbshare/sharedfb.php';
-		$.ajax({
+        $.ajax({
 				type: 'POST',
 				url: loc,
 				data: {

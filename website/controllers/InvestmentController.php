@@ -227,5 +227,17 @@ class InvestmentController extends Website_Controller_Action
     public function iframefactAction() {
 
     }
+    
+    public function detailAction(){
+	    
+    }
+    
+    public function subdetailAction() {
+
+	    $id = $this->_getParam('id');
+	    $entry = Object_InvestmentEducation::getById($id);
+	    $this->view->data = $entry;
+	    //die(print_r($entry));
+    }
         
 }
