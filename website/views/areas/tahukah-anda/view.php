@@ -8,8 +8,8 @@
 		
 		<div class="item" id="item-left">
 			<div class="heading">
-				<h2 class="title_news">
-					<?php echo $this->link("myLink-link1",array("class" => "thumbnail thumbnail-popup thumb1",
+				<h2 class="title_news thumb1 clickPage">
+					<?php echo $this->link("myLink-link1",array("class" => "thumbnail thumbnail-popup",
 														 "data-target" => "#modalpdf1",
 														 "data-toggle" => "modal"));?>
 				</h2>
@@ -23,20 +23,21 @@
 				}
 			?>
 			<?php echo $this->image("gambar-tahukah-anda1", array(
+									"class" => "thumb1 clickPage",
 								    "title" => "Drag your image here",
 								    "width" => 298,
 								    "height" => 110
 			));?>
 			
-			<div class="description">
+			<div class="description thumb1 clickPage">
 				<?php echo $this->wysiwyg('deskripsi1')?>
 			</div>
 		</div>
 		
 		<div class="item" id="item-left">
 			<div class="heading">
-				<h2 class="title_news">
-					<?php echo $this->link("myLink-link2",array("class" => "thumbnail thumbnail-popup thumb2",
+				<h2 class="title_news thumb2 clickPage">
+					<?php echo $this->link("myLink-link2",array("class" => "thumbnail thumbnail-popup",
 														 "data-target" => "#modalpdf2",
 														 "data-toggle" => "modal"));?>
 				</h2>
@@ -50,20 +51,21 @@
 				}
 			?>
 			<?php echo $this->image("gambar-tahukah-anda2", array(
+									"class" => "thumb2 clickPage",
 								    "title" => "Drag your image here",
 								    "width" => 298,
 								    "height" => 110
 			));?>
 			
-			<div class="description">
+			<div class="description thumb2 clickPage">
 				<?php echo $this->wysiwyg('deskripsi2')?>
 			</div>
 		</div>
 		
 		<div class="item" id="item-left">
 			<div class="heading">
-				<h2 class="title_news">
-					<?php echo $this->link("myLink-link3",array("class" => "thumbnail thumbnail-popup thumb3",
+				<h2 class="title_news thumb3 clickPage">
+					<?php echo $this->link("myLink-link3",array("class" => "thumbnail thumbnail-popup",
 														 "data-target" => "#modalpdf3",
 														 "data-toggle" => "modal"));?>
 				</h2>
@@ -77,12 +79,13 @@
 					}
 				?>
 			<?php echo $this->image("gambar-tahukah-anda3", array(
+									"class" => "thumb3 clickPage",
 								    "title" => "Drag your image here",
 								    "width" => 298,
 								    "height" => 110
 			));?>
 			
-			<div class="description">
+			<div class="description thumb3 clickPage">
 				<?php echo $this->wysiwyg('deskripsi3')?>
 			</div>
 		</div>
@@ -116,7 +119,7 @@
 </div>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('.thumb1').click(function(){
+		$(".thumb1").on("click",function(){
 			html = '<div class="modal-header">'+
 				        '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>'+
 				    '</div>'+
@@ -132,9 +135,10 @@
 				    '</div>';
 			$('#modalpdf1 .modal-content').html(html);
 			$.getScript("http://www.flipgorilla.com/fg.js");
+			$("#modalpdf1").modal();
 		});
 
-		$('.thumb2').click(function(){
+		$('.thumb2').on("click",function(){
 			html = '<div class="modal-header">'+
 				        '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>'+
 				    '</div>'+
@@ -150,9 +154,10 @@
 				    '</div>';
 			$('#modalpdf2 .modal-content').html(html);
 			$.getScript("http://www.flipgorilla.com/fg.js");
+			$("#modalpdf2").modal();
 		});
 
-		$('.thumb3').click(function(){
+		$('.thumb3').on("click",function(){
 			html = '<div class="modal-header">'+
 				        '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>'+
 				    '</div>'+
@@ -168,6 +173,7 @@
 				    '</div>';
 			$('#modalpdf3 .modal-content').html(html);
 			$.getScript("http://www.flipgorilla.com/fg.js");
+			$("#modalpdf3").modal();
 		});
 	});
 </script>
