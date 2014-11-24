@@ -12,27 +12,28 @@
 			?>
 					<div class="item" id="item-left">
 						<div class="heading">
-							<h2 class="title_news"><a href="<?php echo "jurnal-allianz/".$entry->getO_key()."_".$entry->getO_id();?>"><?php echo $entry->getTitle();?></a></h2>
+							<a href="<?php echo "jurnal-allianz/".$entry->getO_key()."_".$entry->getO_id();?>">
+								<h2 class="title_news"><?php echo $entry->getTitle();?></h2>
+							</a>
 							<div class="btn-group">
 								<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
 								<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
 							</div>
 						</div>
-						<a href="<?php echo "jurnal-allianz/".$entry->getO_key()."_".$entry->getO_id();?>">
-							<img src="<?php echo $entry->imageHome->path."".$entry->imageHome->filename;?>" />
+						<a href="<?php echo "jurnal-allianz/".$entry->getO_key()."_".$entry->getO_id();?>" class="linkUrl">
+							<img class="image_share" src="<?php echo $entry->imageHome->path."".$entry->imageHome->filename;?>" />
+							<div class="description">
+								<?php
+									if($entry->getSummaryHome()!='')
+									{
+										echo limit_words($entry->getSummaryHome(),15);
+									}
+									else{
+										echo limit_words($entry->getContent(),15);
+									}
+								?>
+							</div>
 						</a>
-						<div class="description">
-							<?php
-								if($entry->getSummaryHome()!='')
-								{
-									echo limit_words($entry->getSummaryHome(),15);
-								}
-								else{
-									echo limit_words($entry->getContent(),15);
-								}
-							?>
-							<a href="<?php echo "jurnal-allianz/".$entry->getO_key()."_".$entry->getO_id();?>" class="more">Selengkapnya &raquo;</a>
-						</div>
 					</div>
 			<?php 
 				}
