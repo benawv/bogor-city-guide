@@ -18,7 +18,7 @@
 		<div class="container">
 			<div class="statement">&copy; Allianz 2014. All Rights Reserved.</div>
 			<ul class="static-links">
-				<li><a href="http://www.allianz.co.id/AZLIFE/Other/LegalInd.htm" target="_blank">Catatan Legal</a></li>
+				<li><a href="/data-privasi/prinsip-privasi">Prinsip Privasi</a></li>
 				<li><a href="sitemap.php" target="_blank">Sitemap</a></li>
 			</ul>
 		</div>
@@ -187,6 +187,12 @@
 		$('li.aktif .nav_menu div').css('background-position', '0px 0px');
 		
 	});
+	/*$(document).ready(function(){
+		$(".clickLink").on("click",function(){
+			var url = $(this).find(".linkUrl").attr("href");
+			window.location.href = url;
+		});
+	});*/
 </script>
-<script src="/website/static/js/share-product.js" type="text/javascript"></script>
+<!-- <script src="/website/static/js/share-product.js" type="text/javascript"></script> -->
 <script src="/website/static/js/custom_tooltip.js" type="text/javascript"></script>
