@@ -46,128 +46,42 @@
 
 
 <header role="banner" class="banner">
-	<div class="container">
-		<h1 class="weblogo">Allianz<span onclick="window.location.href = 'index.php'"></span></h1>
-		<nav class="primary" role="primarynavigation">
-			<h3 class="toggle-menu"><span>Main Navigation</span></h3>
-			<div class="menu-level1">
-				<ul class="clearfix">
-					<li>
-						<a href="#" onclick="link('tentangkami')">Financial Planning</a>
-						<div class="menu-level2">
-							<a href="#" class="back">Back</a>
-							
-								<ul class="noborder">
-								<li class="menutitle"><span class="clickPage" onclick="link('profil')">Financial Planning</span></li>
-									<li><a href="#">Cash Flow</a></li>
-									<li><a href="#">Investment</a></li>
-									<li><a href="#">Insurance</a></li>
-									<li><a href="#">Education</a></li>
-									<li><a href="#">Retirement</a></li>
-									
-								</ul>
-							<!--/div-->
-							
-							
-							
-							
-							
-						</div>
-					</li>
-					<li>
-						<a href="#" onclick="link('product')">Tools</a>
-						<div class="menu-level2">
-							<a href="#" class="back">Back</a>
-							
-							<ul class="noborder">
-								<li class="menutitle"><span class="clickPage">Financial Calculators</span></li>
-								<li><a href="#">Investment</a></li>
-								<li><a href="#">Insurance</a></li>
-								<li><a href="#">Education</a></li>
-								<li><a href="#">Retirement</a></li>
-							</ul>
-							<ul>
-								<li class="menutitle"><span class="clickPage">Cash Flow Tables</span></li>
-								<li><a href="#">Income Statement</a></li>
-								<li><a href="#">Balanced Sheet</a></li>
-							</ul>
-							
-							<ul>
-								<li class="menutitle"><span class="clickPage" onclick="link('product-sub-asuransi-kumpulan')">Risk Profile</span></li>
-								<li><a href="#">More Detail Risk Profile</a></li>
-								
-							</ul>
-							
-							
-						</div>
-					</li>
-					<li>
-						<a href="#" onclick="link('investasi')">Allianz Fund</a>
-						<div class="menu-level2">
-							<a href="#" class="back">Back</a>
-							<ul class="noborder">
-								<li class="menutitle">Allianz Fund</li>
-								<li><a href="/investment/fund-information">Fund Information</a></li>
-								<li><a href="#">Daily NAV</a></li>
-								<li><a href="/investment/fund-fact-sheet">Fund Fact Sheet</a></li>
-								<li><a href="#">My Portfolio</a></li>
-							</ul>
-							
-						</div>
-					</li>
-					<li>
-						<a href="#" onclick="link('news','')">Resources</a>
-						<div class="menu-level2">
-							<a href="#" class="back">Back</a>
-							<ul class="noborder">
-								<li class="menutitle">Resources</li>
-								<li><a href="#">Investment Daily</a></li>
-								<li><a href="#">Investment Weekly</a></li>
-								<li><a href="#">Investment Outlook</a></li>
-								<li><a href="#">ULAR</a></li>
-								<li><a href="/investasi/investment-homepage/education">Education</a></li>
-								<li><a href="#">Articles</a></li>
-								
-							</ul>
-							
-						</div>
-					</li>
-					
-					
-					<li>
-						<a href="#">Contact Us</a>
-						<div class="menu-level2">
-							<a href="#" class="back">Back</a>
-							
-							<ul class="noborder">
-								<li class="menutitle"><span class="clickPage">Asuransi Jiwa:</span></li>
-								<li><a href="#">Tel: <br />+6221-2926 9999</a></li>
-								<li><a href="#">Fax: <br />+6221-2926 8080</a></li>
-								<li><a href="#">Email: <br /> contactus@allianz.co.id</a></li>
-							</ul>
-							<ul>
-								<li class="menutitle"><span class="clickPage">Asuransi Umum</span></li>
-								<li><a href="#">Tel: <br />+6221-2926 9999</a></li>
-								<li><a href="#">Fax: <br />+6221-2926 9090</a></li>
-								<li><a href="#">Email: <br />Feedback@allianz.co.id</a></li>
-							</ul>
+            <?php
 
-							<ul>
-								<li class="menutitle"><span class="clickPage">Social Media</span></li>
-								<li><a href="#">Facebook: <br />AllianzIndonesiaCommunity</a></li>
-								<li><a href="#">Twitter: <br />
-									AllianzID</a></li>
-								<li><a href="#">Instagram: <br />AllianzIndonesia</a></li>
-							</ul>
-							
-							
-						</div>
-					</li>
+               // get root node if there is no document defined (for pages which are routed directly through static route)
+		    if(!$this->document instanceof Document_Page) {
+		        $this->document = Document::getByPath('/investasi/investment-homepage/');
+                //$this->document = Document::getById(1);
+		    }
+		 
+		    // get the document which should be used to start in navigation | default home
+		    $navStartNode = $this->document->getProperty("navigationRoot");
+		    if(!$navStartNode instanceof Document_Page) {
+		        //$navStartNode = Document::getById(1);
+                $navStartNode = Document::getByPath('/investasi/investment-homepage/');
+		    }
+		 
+		    //this is used as id prefix for the html menu element
+		    $htmlIdPrefix = "mainNav_";
+		 
+		    $navigation = $this->pimcoreNavigation()->getNavigation($this->document, $navStartNode, $htmlIdPrefix);
+		    $this->navigation()->menu()->setUseTranslator(false); // to deactivate the translator provided by the view helper
+		    $partial = array('includes/menu_inv.php', 'website');
+		    $this->navigation()->menu()->setPartial($partial);
+		    //$this->navigation($navigation);
 
-				</ul>
-			
-			</div>
+            ?>
 
+            <div class="container">
+                <h1 class="weblogo">Allianz<span onclick="window.location.href = 'index.php'"></span></h1>
+                <nav class="primary" role="primarynavigation">
+                <h3 class="toggle-menu"><span>Main Navigation</span></h3>
+                <div class="menu-level1">
+                    <?php
+                        echo $this->navigation()->menu()->render($navigation);
+                    ?>
+                </div>
+            </div>
 
 			<div class="search">
 				<div class="container clearfix">
