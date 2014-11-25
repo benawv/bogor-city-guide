@@ -1,52 +1,3 @@
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary, main {
-    display:block
-}
-audio, canvas, video {
-    display:inline-block
-}
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, figure, legend, input, button, textarea, p, blockquote, th, td {
-    margin:0;
-    padding:0
-}
-table {
-    border-collapse:collapse;
-    border-spacing:0
-}
-fieldset, img {
-    border:0
-}
-ol, ul {
-    list-style:none
-}
-caption, th {
-    text-align:left
-}
-h1, h2, h3, h4, h5, h6 {
-    font-size:100%;
-    font-weight:normal
-}
-q:before, q:after {
-    content:''
-}
-abbr, acronym {
-    border:0;
-    font-variant:normal
-}
-sup {
-    vertical-align:text-top
-}
-sub {
-    vertical-align:text-bottom
-}
-input, textarea, select {
-    font-family:inherit;
-    font-size:inherit;
-    font-weight:inherit
-}
-.anchor {
-    padding-top:80px;
-    margin-top:-80px
-}
 .clrd, .main, .s-row, .r, .t-r, .crmb ul, .body-donations-steps .frm .form-type-textfield, .body-donations-steps .frm .form-type-select, .authr .authr-cl, .cmpny .fltrs, .art-lst, .art-lst .outr-wrp, .prmtd-lst, .ss-fb.cnctd .pad, .unt-ftr, .newsletter-form, .newsletter-form .form-input-fields, .newsletter-form .form-input-fields .form-item, .newsletter-form .form-checkboxes, .newsletter-form .form-checkboxes .form-item, .art-sgn-up .mailchimp-signup-subscribe-form, .art-sgn-up .mailchimp-signup-subscribe-form .mailchimp-newsletter-mergefields .form-item, .art-sgn-up .mailchimp-signup-subscribe-form .form-type-checkboxes, .art-sgn-up .mailchimp-signup-subscribe-form .form-type-checkbox, .cntnt-grd-wrap .cntnt-grd-fltrs {
     zoom:1
 }
@@ -1124,9 +1075,6 @@ iframe {
     counter-increment:li;
     left:-18px;
     left:-1.8rem
-}
-.art.art-sctn p+ul, .art.art-sctn p+ol, .art .art-sctn p+ul, .art .art-sctn p+ol {
-    margin-top:-6.17284%
 }
 .art .art-dsclmr p {
     font-size:1.2rem;
