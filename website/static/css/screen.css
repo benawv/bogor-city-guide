@@ -3461,6 +3461,22 @@ img.logo-float{
 	text-align: left;
 	padding-top: 150px;
 }
+.terimaKasih.error{
+	background: none;
+	margin: 50px auto;
+	padding-top: 0px;
+	height: auto;
+}
+.terimaKasih.error .kata_kata{
+	background: #FFFFFF;
+	box-shadow: 2px 2px 5px #000;
+}
+.kata-kanan.error{
+	padding-top: 0;
+}
+.kata-kanan.error p{
+	margin: 10px auto;
+}
 .kata_kata{
 	width: 420px;
 	height: 130px;
@@ -3526,3 +3542,6 @@ ul.flex-direction-nav{
 .boxes-view .items-container .item:hover .heading .btn-group {
     visibility: visible;
   }
+.btn-section{
+	float: right !important;
+}
