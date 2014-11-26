@@ -332,13 +332,17 @@ $(document).ready(function(){
 		{
 			reTanya = $(this).parent().siblings('h2.title_news').find('a').text();
 		}
+		var deskripsi = $(this).parents().parents().siblings('.description').find('p').text();
+        if(deskripsi =="")
+    	{
+        	deskripsi = "";
+        	deskripsi = $(this).parents().parents().siblings('a').find('.description').find("p").text();
+    	}
 		//END HOME
 		
 		var name = reTanya.replace("?","");
 		var filename = name.replace(/\s/g,'-');
 		
-        var deskripsi = $(this).parents().parents().parents().find('.description').find('p').text();
-        
         //PRODUK
 	        if(window.location.pathname == "/produk")
 			{
@@ -376,10 +380,10 @@ $(document).ready(function(){
         }
                 
         loc = window.location.origin+'/website/static/fbshare/sharedfb.php';
-        console.log(image);
+        /*console.log(image);
         console.log(name);
         console.log(filename);
-        console.log(desc);
+        console.log(desc);*/
         $.ajax({
 				type: 'POST',
 				url: loc,
