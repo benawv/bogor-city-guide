@@ -315,7 +315,25 @@ $(document).ready(function(){
     		}
 		}
         //END PRODUK
-        var tweet = title+" : "+isi.substring(0,80)+".... "+url;
+        
+        //PROFIL
+        if(title == "")
+		{
+        	var split1 = (window.location.pathname).split("/");
+        	str = split1[split1.length-1].toLowerCase().replace(/\b[a-z]/g, function(letter) {
+        	    return letter.toUpperCase();
+        	});
+        	title = str;
+		}
+        //END PROFIL
+        if(isi.substring(0,80)!=""){
+        	var isiText = isi.substring(0,80)+".... ";
+        }
+        else
+    	{
+        	var isiText = "";
+    	}
+        var tweet = title+" : "+isiText+url;
         var encodeTweet = encodeURIComponent(tweet);
         window.open('https://twitter.com/intent/tweet?text='+encodeTweet, 'sharer', 'width=626,height=436');
 	});
@@ -340,10 +358,7 @@ $(document).ready(function(){
     	}
 		//END HOME
 		
-		var name = reTanya.replace("?","");
-		var filename = name.replace(/\s/g,'-');
-		
-        //PRODUK
+		//PRODUK
 	        if(window.location.pathname == "/produk")
 			{
 	        	deskripsi = "";
@@ -354,6 +369,29 @@ $(document).ready(function(){
 	    		}
 			}
         //END PRODUK
+	        
+	    //PROFIL
+	        if(reTanya == "")
+			{
+	        	var split1 = (window.location.pathname).split("/");
+				reTanya = split1[split1.length-1];
+			}
+			if(deskripsi =="")
+	    	{
+	        	deskripsi = "";
+	        	deskripsi = $(this).parent().parent().siblings('.description').find("p").text();
+	    	}
+	    //END PROFIL
+			
+		//MITRA KERJA
+		if(image == undefined)
+		{
+			image = $(this).parent().parent().siblings('img').attr('src');
+		}	
+		//END MITRA KERJA
+		
+	    var name = reTanya.replace("?","");
+		var filename = name.replace(/\s/g,'-');
         var limit = 32;
         var x;
         var words = deskripsi.split(/\s/);
