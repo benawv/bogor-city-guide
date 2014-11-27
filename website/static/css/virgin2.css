@@ -1185,14 +1185,14 @@ iframe {
     top: 1.1rem;
 }
 .art.art-sctn ol li:before, .art .art-sctn ol li:before {
-    color: #c00;
     content: counter(li);
     counter-increment: li;
     left: -18px;
     left: -1.8rem;
 }
-.art.art-sctn p+ul, .art.art-sctn p+ol, .art .art-sctn p+ul, .art .art-sctn p+ol {
-    margin-top: -6.17284%}
+.s-ct{
+	text-align: justify;
+}
 .art .art-dsclmr p {
     font-size: 1.2rem;
     line-height: 1.8rem;
