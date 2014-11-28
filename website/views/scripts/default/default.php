@@ -11,18 +11,18 @@
 			<li style="width: 635px; float: left; display: block;" class="">
 				<div class="product">
 					<div class="photo">
-						<img draggable="false" alt="" src="/website/static/images/static_image/Image-static.png" height="380" width="635">
+						<img draggable="false" alt="" src="/website/static/images/static_image/image_static_allianz_global.png" height="380" width="635">
 					</div>
-					<div class="fixbox left60">
+					<div class="fixbox right60">
 						<div class="place-bg bg-blue">
-								<h1>Program Aktivasi Undian</h1>
+								<h1>Allianz Global Benefits</h1>
 								<p>
-                                	Aktifkan aplikasi Allianz eAZy Claim.<br />
-                                	Periode 1 September - 31 Desember 2014
+                                	Allianz Global Benefits helps multinational corporations to optimize their employee benefit programs across countries.
                                 </p>
 						</div>
 						<div class="edge e-blue">
-							<a href="/promo-sponsor/promo/program-undian-allianz-eazy-claim" target="_blank">Info selengkapnya</a>						</div>
+							<a href="/produk/asuransi-kesehatan/allianz-global" target="_blank">Info selengkapnya</a>
+						</div>
 					</div>
 				</div>
 			</li>
