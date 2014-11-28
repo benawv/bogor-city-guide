@@ -1,4 +1,3 @@
-<?php include("include/htaccess.php");?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
 <head>
@@ -15,7 +14,7 @@
 <meta name="author" content="Allianz">
 <meta name="description" content="Asuransi Allianz Indonesia adalah perusahaan asuransi terbaik dan terpercaya di dunia.">
 <meta name="keywords" content="Asuransi Indonesia, Allianz Indonesia, Asuransi Terbaik, Asuransi Terpercaya">
-<?php include("include/header.php"); ?>
+<?php include("includes/header.php"); ?>
 
 </head>
 
@@ -68,10 +67,6 @@
             "Allianz"
             <span onclick="window.location.href = '/'"></span>
         </div>
-		<?php echo $this->image('icon', array(
-									'title' 	=> 'Drag your icon here',
-									'width' 	=> 600,
-									'height' 	=> 415)) ?>
 			HELOOOOOOOO %Text(firstName); %Text(lastName);
 			<?php echo $this->wysiwyg('description')?>
 		
