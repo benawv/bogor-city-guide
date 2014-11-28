@@ -21,7 +21,7 @@
                                 </p>
 						</div>
 						<div class="edge e-blue">
-							<a href="/produk/asuransi-kesehatan/allianz-global" target="_blank">Info selengkapnya</a>
+							<a href="/produk/asuransi-kesehatan/allianz-global">Info selengkapnya</a>
 						</div>
 					</div>
 				</div>
