@@ -14,7 +14,7 @@
 <meta name="author" content="Allianz">
 <meta name="description" content="Asuransi Allianz Indonesia adalah perusahaan asuransi terbaik dan terpercaya di dunia.">
 <meta name="keywords" content="Asuransi Indonesia, Allianz Indonesia, Asuransi Terbaik, Asuransi Terpercaya">
-<?php include("includes/header.php"); ?>
+<?php echo $this->template("includes/metadata.php")?>
 
 </head>
 
