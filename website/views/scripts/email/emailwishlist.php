@@ -41,20 +41,7 @@
 		
 		<div id="community" class="clearfix padding no-margin">
 			
-            <div class="blast-title">
-                <h2>Allianz peduli dengan hal terpenting Anda</h2>
-            </div>
-            
-			<div class="blast-desc">
-				<p>Nikmati kemudahan akses untuk mengetahui status polis Anda melalui layanan digital customer portal dan aplikasi klaim kami.</p>
-			</div>
-            
-            <div class="blast-link">
-				<p>
-                    <span>Ayo ceritakan 1 yang terpenting di:</span>
-                    <span><a href="https://indonesia.allianz.com">https://indonesia.allianz.com</a></span>
-                </p>    
-			</div>
+            <?php echo $this->wysiwyg('description')?>
             
 		</div> <!--Community-->
         
@@ -67,8 +54,7 @@
             "Allianz"
             <span onclick="window.location.href = '/'"></span>
         </div>
-			HELOOOOOOOO %Text(firstName); %Text(lastName);
-			<?php echo $this->wysiwyg('description')?>
+			
 		
 	</div>
 </div>

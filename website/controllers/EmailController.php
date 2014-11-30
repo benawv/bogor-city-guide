@@ -47,7 +47,38 @@ class EmailController extends Website_Controller_Action {
 			$mail->send(); */
 	}
 	public function sendemailAction(){
-		$document = '/email/email-wishlist';
+		/* $doc = new Document_List();
+		$doc->setCondition("type='email'");
+		$doc->setLimit(1);
+		foreach ($doc as $result)
+		{
+			print_r($result->elements['imgEmail']->image->path);
+		}
+		die(); */
+		
+		//TEXT
+		//$result->elements['description']->text;
+		//IMAGE
+		//$result->elements['imgEmail']->image->path;
+		//$result->elements['imgEmail']->image->filename;
+		$text = "";
+		$doc = new Document_List();
+		$doc->setCondition("type='email'");
+		$doc->setLimit(1);
+		
+		foreach ($doc as $result)
+		{
+			$text = "<html lang='en'><head><meta charset='utf-8'><title>Allianz Indonesia : Asuransi Indonesia Terbaik</title><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'><meta name='apple-mobile-web-app-capable' content='yes'><link rel='stylesheet' type='text/css' media='screen' id='screen-css' href='/website/static/css/blast.css'><link rel='stylesheet' type='text/css' media='screen' id='normalize-css' href='/website/static/css/normalize.css'><link rel='stylesheet' type='text/css' media='screen' id='normalize-css' href='/website/static/css/bootstrap.css'><link rel='stylesheet' type='text/css' media='screen' id='screen-css' href='/website/static/css/screen.css'><link rel='stylesheet' type='text/css' media='screen' id='screen-css' href='/website/static/css/flexslider.css'><link rel='stylesheet' type='text/css' media='screen' id='screen-css' href='/website/static/css/main.css'><link rel='stylesheet' type='text/css' media='screen' id='screen-css' href='/website/static/css/tabs-accordion.css'><link rel='stylesheet' type='text/css' media='screen' id='screen-css' href='/website/static/css/product.css'><meta name='author' content='Allianz'><meta name='description' content='Asuransi Allianz Indonesia adalah perusahaan asuransi terbaik dan terpercaya di dunia.'><meta name='keywords' content='Asuransi Indonesia, Allianz Indonesia, Asuransi Terbaik, Asuransi Terpercaya'></head><body> <div role='main' class='main no-gutter'><div class='blast-container'><div id='community no-gutter no-margin' class='clearfix'><div class='blast-img'><img src='".$result->elements['imgEmail']->image->path."".$result->elements['imgEmail']->image->filename."' /></div></div><div id='community' class='clearfix padding no-margin'>".$result->elements['description']->text." </div><div id='community' class='clearfix blast-footer'> </div><div class='blast-weblogo'> 'Allianz' <span onclick='window.location.href=/'></span> </div></div></div></body></html>";
+		}
+		$mail = new Pimcore_Mail();
+			
+		$mail->setSubject("Pemesanan Asuransi Allianz");
+		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+		$mail->setBodyHtml($text);
+		$mail->addTo("mrobbi.nugraha@gmail.com");
+			
+		$mail->send();
+		/* $document = '/email/email-wishlist';
 		$params = array('firstName' => 'Robbi',
 				'lastName' => 'Nugraha',
 				'product' => 73613);
@@ -58,6 +89,6 @@ class EmailController extends Website_Controller_Action {
 		$mail->setParams($params);
 		$mail->addTo("mrobbi.nugraha@gmail.com");
 		
-		$mail->send();
+		$mail->send(); */
 	}
 }
