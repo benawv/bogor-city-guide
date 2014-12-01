@@ -61,14 +61,16 @@ class EmailController extends Website_Controller_Action {
 		//IMAGE
 		//$result->elements['imgEmail']->image->path;
 		//$result->elements['imgEmail']->image->filename;
-		$text = "";
+		/* $text = "";
 		$doc = new Document_List();
 		$doc->setCondition("type='email'");
 		$doc->setLimit(1);
 		
 		foreach ($doc as $result)
 		{
-			$text = "<div role='main' class='main no-gutter'><div class='blast-container'><div id='community no-gutter no-margin' class='clearfix'><div class='blast-img'><img src='".$result->elements['imgEmail']->image->path."".$result->elements['imgEmail']->image->filename."' /></div></div><div id='community' class='clearfix padding no-margin'>".$result->elements['description']->text." </div><div id='community' class='clearfix blast-footer'> </div><div class='blast-weblogo'> 'Allianz' <span onclick='window.location.href=/'></span> </div></div></div>";
+			$text = "<html><head>";
+			$text .= "</head><body><div role='main' class='main no-gutter'><div class='blast-container'><div id='community no-gutter no-margin' class='clearfix'><div class='blast-img'><img src='".$result->elements['imgEmail']->image->path."".$result->elements['imgEmail']->image->filename."' /></div></div><div id='community' class='clearfix padding no-margin'>".$result->elements['description']->text." </div><div id='community' class='clearfix blast-footer'> </div><div class='blast-weblogo'> 'Allianz' <span onclick='window.location.href=/'></span> </div></div></div>";
+			$text .= "</body></html>";
 		}
 		$mail = new Pimcore_Mail();
 			
@@ -77,8 +79,8 @@ class EmailController extends Website_Controller_Action {
 		$mail->setBodyHtml($text);
 		$mail->addTo("mrobbi.nugraha@gmail.com");
 			
-		$mail->send();
-		/* $document = '/email/email-wishlist';
+		$mail->send(); */
+		$document = '/email/email-wishlist';
 		$params = array('firstName' => 'Robbi',
 				'lastName' => 'Nugraha',
 				'product' => 73613);
@@ -89,6 +91,6 @@ class EmailController extends Website_Controller_Action {
 		$mail->setParams($params);
 		$mail->addTo("mrobbi.nugraha@gmail.com");
 		
-		$mail->send(); */
+		$mail->send();
 	}
 }
