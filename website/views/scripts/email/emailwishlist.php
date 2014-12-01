@@ -15,7 +15,7 @@
 			<div class="blast-img" style="height: auto;">
                    <!-- <img src="_assets/css/bootstrap/edwin.jpg" /> -->
                    <?php echo $this->image('imgEmail', array(
-									'title' 	=> 'Drag your icon here',
+									'title' 	=> 'Image Size 600px X 400px',
 									'width' 	=> 600,
 									'height' 	=> 400)) ?>
 			</div>
@@ -23,7 +23,7 @@
 		</div> <!--Community-->
 		
 		<div id="community" class="clearfix padding no-margin" style="background: none repeat scroll 0 0 #fff;clear: both;margin-bottom: 20px;padding: 15px;padding: 15px 34px !important;margin: 0 !important;">
-			
+			<?php if(!$this->editmode){?><b>Dear %Text(firstName);%Text(lastName);,</b><?php }?>
             <?php echo $this->wysiwyg('description')?>
             
 		</div> <!--Community-->
