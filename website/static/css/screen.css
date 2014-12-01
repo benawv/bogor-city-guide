@@ -2757,7 +2757,11 @@ footer.contentinfo{
     }
     
     /* image investasi mobile */
-
+    
+    /* CHECKOUT */
+    .full-w.bg-white .description .submit_whislist{
+    	width: 45%;
+    }
 }
 
 
@@ -2832,6 +2836,13 @@ footer.contentinfo{
 	#community.clearfix .tips .tip, #community.clearfix .tips .tip .photo{
 		height: auto;
 	}
+	.full-w.bg-white .description .submit_whislist{
+    	width: 95%;
+    }
+    .full-w.bg-white .description table{
+    	max-width: 100%;
+    }
+	
 }
 @media only screen and (max-width : 360px){
 	/*Visi Misi*/
@@ -2890,6 +2901,7 @@ footer.contentinfo{
 		float: right;
 	}
     /* footer ojk mobile */
+    
 }
 
 .table_cv{background-color: #F2F2F2; font-size: 14px;}

@@ -244,12 +244,14 @@ $(document).ready(function(){
 			var tmp_cookies = window.location.pathname;
 			var cookies = tmp_cookies.split("/");
 			
-			var nama = $("#nama").val();
+			var salutation = $("#salutation").val();
+			var nama = $("#nama_depan").val();
+			var nama_belakang = $("#nama_belakang").val();
 			var email = $("#email").val();
 			var no_telp = $("#no_telp").val();
 			$(".eror").text('');
 			
-			if(nama.length == 0 || email.length == 0 || no_telp.length == 0)
+			if(nama.length == 0 || email.length == 0 || no_telp.length == 0 || nama_belakang.length == 0)
 			{
 				$(".eror").text('Semua kolom harus diisi.');
 			}
@@ -270,11 +272,12 @@ $(document).ready(function(){
 	    			{
 	    				produk[z] = $(".produk"+z).text();
 	    			}
+	    			var namaLengkap = salutation+". "+nama+" "+nama_belakang;
 	    			$("body").prepend("<div id='dvLoading'></div>");
 	    			$.ajax({
 	    				url: "/send-email",
 	    				type: "POST",
-	    				data: {"cookies":cookies[(cookies.length)-1], "produk": produk, "nama":nama, "email":email, "no_telp":no_telp},
+	    				data: {"cookies":cookies[(cookies.length)-1], "produk": produk, "nama":namaLengkap, "email":email, "no_telp":no_telp},
 	    				success: function(result) {
 	    					var hasil =jQuery.parseJSON(result);
 	    					if(hasil.status=="Kirim"){
