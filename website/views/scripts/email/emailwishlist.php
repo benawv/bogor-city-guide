@@ -1,7 +1,10 @@
-<html lang="en">
+<html>
 <head>
 <!-- Meta Tags -->
 <meta charset="utf-8">
+<style type="text/css">
+	body{background: aqua;}
+</style>
 </head>
 <body>
 <div role="main" class="main no-gutter">

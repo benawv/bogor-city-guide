@@ -68,7 +68,7 @@ class EmailController extends Website_Controller_Action {
 		
 		foreach ($doc as $result)
 		{
-			$text = "<html><head>";
+			$text = "<html><head><style type='text/css'>body{background:#000;}</style>";
 			$text .= "</head><body><div role='main' class='main no-gutter'><div class='blast-container'><div id='community no-gutter no-margin' class='clearfix'><div class='blast-img'><img src='".$result->elements['imgEmail']->image->path."".$result->elements['imgEmail']->image->filename."' /></div></div><div id='community' class='clearfix padding no-margin'>".$result->elements['description']->text." </div><div id='community' class='clearfix blast-footer'> </div><div class='blast-weblogo'> 'Allianz' <span onclick='window.location.href=/'></span> </div></div></div>";
 			$text .= "</body></html>";
 		}
