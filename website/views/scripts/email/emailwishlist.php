@@ -28,8 +28,8 @@
             
 		</div> <!--Community-->
         <img src="/website/static/images/Untitled-1_07.jpg" />
-        <div id="community" class="clearfix blast-footer" style="background: none repeat scroll 0 0 #fff;clear: both;margin-bottom: 20px;padding: 15px;background: none repeat scroll 0 0 #eee !important;height: 20px;margin: 0 !important;">
-		
+        <img src="/website/static/images/Untitled-1_08.jpg" />
+        
 	</div>
 </div>
 </body>
