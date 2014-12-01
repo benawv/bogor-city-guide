@@ -27,9 +27,7 @@
             <?php echo $this->wysiwyg('description')?>
             
 		</div> <!--Community-->
-        <img src="/website/static/images/Untitled-1_07.jpg" />
-        <img src="/website/static/images/Untitled-1_08.jpg" />
-        
+        <img src="/website/static/images/allianz-footer-logo.jpg" />
 	</div>
 </div>
 </body>
