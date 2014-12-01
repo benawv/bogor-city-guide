@@ -27,17 +27,8 @@
             <?php echo $this->wysiwyg('description')?>
             
 		</div> <!--Community-->
-        
-        <div id="community" class="clearfix blast-footer" style="background: none repeat scroll 0 0 #fff;clear: both;margin-bottom: 20px;padding: 15px;background: none repeat scroll 0 0 #eee !important;height: 110px;margin: 0 !important;">
-			
-           
-		</div> <!--Community-->
-        
-        <div class="blast-weblogo" style="background: none repeat scroll 0 0 #003781; bottom: 70px; display: block; height: 80px; margin: 0; overflow: hidden; padding: 0; position: absolute; right: 51px; text-indent: -9999px; width: 180px; z-index: 9999;">
-            "Allianz"
-            <span style='background: url("/website/static/images/weblogo.png") no-repeat scroll center center / 78% auto rgba(0, 0, 0, 0); cursor: pointer; display: block; height: 100%; left: 0; position: absolute; top: 0; width: 100%;' onclick="window.location.href = '/'"></span>
-        </div>
-			
+        <img src="/website/static/images/Untitled-1_07.jpg" />
+        <div id="community" class="clearfix blast-footer" style="background: none repeat scroll 0 0 #fff;clear: both;margin-bottom: 20px;padding: 15px;background: none repeat scroll 0 0 #eee !important;height: 20px;margin: 0 !important;">
 		
 	</div>
 </div>
