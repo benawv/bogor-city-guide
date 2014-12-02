@@ -93,4 +93,7 @@ class EmailController extends Website_Controller_Action {
 		
 		$mail->send();
 	}
+	public function emailpemesananAction(){
+		
+	}
 }
