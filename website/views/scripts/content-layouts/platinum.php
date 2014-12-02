@@ -1,3 +1,17 @@
+<?php if($this->editmode){?>
+	<style type="text/css">
+		.pagenav{
+			height: auto;
+		}
+		.platinum_nav{
+			background: none !important;
+		}
+		.backgroundBatik{
+			background-repeat: no-repeat !important;
+			background-repeat: repeat-x !important;
+		}
+	</style>
+<?php }?>
 <div class="backgroundBatik">
 	<script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
 	<script src="/website/static/js/jquery.tools.min.js" type="text/javascript"></script>

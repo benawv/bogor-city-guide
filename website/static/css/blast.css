@@ -1,0 +1,84 @@
+.no-gutter {
+    padding: 0 !important;
+}
+.no-margin {
+    margin: 0 !important;
+}
+
+.blast-container {
+    position: relative;
+    text-align: left;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 600px;
+}
+
+#community .blast-title h2 {
+    color: #000;
+    font-size: 1em;
+    margin-left: 0px;
+    margin-bottom: .5em;
+    font-weight: bold;
+}
+
+#community p{
+    margin: 25px 0 0 0;
+}
+
+.padding {
+    padding: 15px 34px !important;
+}
+
+.blast-img {
+    height: auto;
+}
+
+.blast-link {
+    font-size: 15px;
+    margin: 5px 0 0 0;
+}
+
+.blast-link span {
+    display: block;
+    margin: 5px 0 0 0;
+}
+
+.blast-link span a{
+    margin: 5px 0 0 0;
+    font-weight: bold;
+    font-style: italic;
+    color: #000;
+}
+
+.blast-footer {
+    height: 110px;
+    margin: 0 !important;
+    background: #eee !important;
+}
+
+.blast-weblogo {
+    display: block;
+    width: 180px;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 51px;
+    bottom: 70px;
+    z-index: 9999;
+    text-indent: -9999px;
+    background: #003781;
+}
+
+.blast-weblogo span {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(/website/static/images/weblogo.png) no-repeat center;
+    cursor: pointer;
+    background-size: 78%;
+}

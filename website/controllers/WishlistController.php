@@ -172,7 +172,7 @@ class WishlistController extends Website_Controller_Action {
 				$mail->setBodyHtml($text);
 				$mail->addTo($eml);
 				
-				$mail->send();
+				//$mail->send();
 				
 				$z++;
 			}
@@ -197,11 +197,21 @@ class WishlistController extends Website_Controller_Action {
 			$text .= "Terima kasih telah memilih Allianz<br /><br />";
 			$text .= "Hormat Kami,<br /><b>Tim Allianz</b>";
 			
-			$mail = new Pimcore_Mail();
+			/* $mail = new Pimcore_Mail();
 			
 			$mail->setSubject("Pemesanan Asuransi Allianz");
 			$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 			$mail->setBodyHtml($text);
+			$mail->addTo($email); */
+			
+			$document = '/email/email-wishlist';
+			$params = array('name' => $tmp_nama,
+							'produk' => implode(", ", $produk));
+			$mail = new Pimcore_Mail();
+			$mail->setSubject("Pemesanan Produk");
+			$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+			$mail->setDocument($document);
+			$mail->setParams($params);
 			$mail->addTo($email);
 			
 			try {

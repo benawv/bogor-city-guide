@@ -41,24 +41,19 @@
 
 </head>
 
-<body>
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-
-<header role="banner" class="banner">
-            <?php
+                <?php
 
                // get root node if there is no document defined (for pages which are routed directly through static route)
 		    if(!$this->document instanceof Document_Page) {
-		        $this->document = Document::getByPath('/investasi/investment-homepage/');
-                //$this->document = Document::getById(1);
+		        $this->document = Document::getConcreteByPath('/investasi/investment-homepage/');
+              //  $this->document = Document::getConcreteById(332);
 		    }
 		 
 		    // get the document which should be used to start in navigation | default home
 		    $navStartNode = $this->document->getProperty("navigationRoot");
 		    if(!$navStartNode instanceof Document_Page) {
-		        //$navStartNode = Document::getById(1);
-                $navStartNode = Document::getByPath('/investasi/investment-homepage/');
+                $navStartNode = Document::getConcreteByPath('/investasi/investment-homepage/');
+		        //$navStartNode = Document::getConcreteById(332);
 		    }
 		 
 		    //this is used as id prefix for the html menu element
@@ -71,22 +66,25 @@
 		    //$this->navigation($navigation);
 
             ?>
+<body>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<header role="banner" class="banner">
 
             <div class="container">
                 <h1 class="weblogo">Allianz<span onclick="window.location.href = 'index.php'"></span></h1>
-                <nav class="primary" role="primarynavigation">
-                <h3 class="toggle-menu"><span>Main Navigation</span></h3>
-                <div class="menu-level1">
-                    <?php
-                        echo $this->navigation()->menu()->render($navigation);
-                    ?>
-                </div>
-            </div>
-
+		<nav class="primary" role="primarynavigation">
+			<h3 class="toggle-menu"><span>Main Navigation</span></h3>
+			<div class="menu-level1">
+				<?php
+				    echo $this->navigation()->menu()->render($navigation);
+				?>
+			</div>
 			<div class="search">
 				<div class="container clearfix">
 					<!--<form action="#" method="post">
-						<input type="hidden" name="csrf" value="ae69b36b3500e0d8fb48e04a76efacd1">
+						<input type="hidden" name="csrf" value="<?php echo $_SESSION["token"]; ?>">
 						<input type="text" placeholder="Search" name="search" class="input-text">
 						<button type="submit" class="icon-search">Search</button>
 					</form> -->
@@ -94,7 +92,6 @@
 					
 				</div>
 			</div>
-			
 		</nav>
 		<div class="minibar clearfix">
 			

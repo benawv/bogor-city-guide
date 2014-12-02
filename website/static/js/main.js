@@ -244,12 +244,14 @@ $(document).ready(function(){
 			var tmp_cookies = window.location.pathname;
 			var cookies = tmp_cookies.split("/");
 			
-			var nama = $("#nama").val();
+			var salutation = $("#salutation").val();
+			var nama = $("#nama_depan").val();
+			var nama_belakang = $("#nama_belakang").val();
 			var email = $("#email").val();
 			var no_telp = $("#no_telp").val();
 			$(".eror").text('');
 			
-			if(nama.length == 0 || email.length == 0 || no_telp.length == 0)
+			if(nama.length == 0 || email.length == 0 || no_telp.length == 0 || nama_belakang.length == 0)
 			{
 				$(".eror").text('Semua kolom harus diisi.');
 			}
@@ -270,11 +272,12 @@ $(document).ready(function(){
 	    			{
 	    				produk[z] = $(".produk"+z).text();
 	    			}
+	    			var namaLengkap = salutation+". "+nama+" "+nama_belakang;
 	    			$("body").prepend("<div id='dvLoading'></div>");
 	    			$.ajax({
 	    				url: "/send-email",
 	    				type: "POST",
-	    				data: {"cookies":cookies[(cookies.length)-1], "produk": produk, "nama":nama, "email":email, "no_telp":no_telp},
+	    				data: {"cookies":cookies[(cookies.length)-1], "produk": produk, "nama":namaLengkap, "email":email, "no_telp":no_telp},
 	    				success: function(result) {
 	    					var hasil =jQuery.parseJSON(result);
 	    					if(hasil.status=="Kirim"){
@@ -315,7 +318,25 @@ $(document).ready(function(){
     		}
 		}
         //END PRODUK
-        var tweet = title+" : "+isi.substring(0,80)+".... "+url;
+        
+        //PROFIL
+        if(title == "")
+		{
+        	var split1 = (window.location.pathname).split("/");
+        	str = split1[split1.length-1].toLowerCase().replace(/\b[a-z]/g, function(letter) {
+        	    return letter.toUpperCase();
+        	});
+        	title = str;
+		}
+        //END PROFIL
+        if(isi.substring(0,80)!=""){
+        	var isiText = isi.substring(0,80)+".... ";
+        }
+        else
+    	{
+        	var isiText = "";
+    	}
+        var tweet = title+" : "+isiText+url;
         var encodeTweet = encodeURIComponent(tweet);
         window.open('https://twitter.com/intent/tweet?text='+encodeTweet, 'sharer', 'width=626,height=436');
 	});
@@ -340,10 +361,7 @@ $(document).ready(function(){
     	}
 		//END HOME
 		
-		var name = reTanya.replace("?","");
-		var filename = name.replace(/\s/g,'-');
-		
-        //PRODUK
+		//PRODUK
 	        if(window.location.pathname == "/produk")
 			{
 	        	deskripsi = "";
@@ -354,6 +372,29 @@ $(document).ready(function(){
 	    		}
 			}
         //END PRODUK
+	        
+	    //PROFIL
+	        if(reTanya == "")
+			{
+	        	var split1 = (window.location.pathname).split("/");
+				reTanya = split1[split1.length-1];
+			}
+			if(deskripsi =="")
+	    	{
+	        	deskripsi = "";
+	        	deskripsi = $(this).parent().parent().siblings('.description').find("p").text();
+	    	}
+	    //END PROFIL
+			
+		//MITRA KERJA
+		if(image == undefined)
+		{
+			image = $(this).parent().parent().siblings('img').attr('src');
+		}	
+		//END MITRA KERJA
+		
+	    var name = reTanya.replace("?","");
+		var filename = name.replace(/\s/g,'-');
         var limit = 32;
         var x;
         var words = deskripsi.split(/\s/);
