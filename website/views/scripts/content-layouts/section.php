@@ -13,7 +13,15 @@
 		<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks', 'product-quicklinks')))?>
 		</div>
 	</div>
+		<?php
+			function limit_words($string, $word_limit)
+			{
+				$words = explode(" ",$string);
+				return implode(" ",array_splice($words,0,$word_limit));
+			}
+		?>
 		<?php echo $this->areablock('container', array('allowed' => array(
+														'container-box2', 'community-tips2',
 														'sections', 'sections-tab', 'teks-tabs',
 														'sections-video', 'sections-gallery', 
 														'sections-select', 
