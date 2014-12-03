@@ -122,9 +122,38 @@ table td[class*=col-], table th[class*=col-] {
 		      </tbody>
 		    </table>
 			<div class="submit_whislist">
-		          	<input class="form-control" id="nama" type="text"  placeholder="Nama Lengkap">
-		          	<input class="form-control" id="email" type="text"  placeholder="Email">
-		          	<input class="form-control" id="no_telp" type="text"  placeholder="No Telp">
+			<table>
+				<tr>
+					<td>
+						<select id="salutation" class="form-control">
+							<option value="Bpk">Bpk</option>
+							<option value="Ibu">Ibu</option>
+							<option value="Mr">Mr</option>
+							<option value="Mrs">Mrs</option>
+							<option value="Miss">Miss</option>
+						</select>
+					</td>
+					<td>
+						<input class="form-control" id="nama_depan" type="text"  placeholder="Nama Depan">
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						<input class="form-control" id="nama_belakang" type="text"  placeholder="Nama Belakang">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input class="form-control" id="email" type="text"  placeholder="Email">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input class="form-control" id="no_telp" type="text"  placeholder="No Telp">
+					</td>
+				</tr>
+			</table>
 		          	<input type="text" class="no-bot" value="no robot" style="display: none;">
 		          	<input type="hidden" class="no-bot2" value="">
 		          	<!-- <input class="form-control" id="no_ktp"  placeholder="No KTP"> -->

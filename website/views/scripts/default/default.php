@@ -10,7 +10,7 @@
 
 			<li style="width: 635px; float: left; display: block;" class="">
 				<div class="product">
-					<div class="photo">
+					<!-- <div class="photo">
 						<img draggable="false" alt="" src="/website/static/images/static_image/image_static_allianz_global.png" height="380" width="635">
 					</div>
 					<div class="fixbox right60">
@@ -23,7 +23,62 @@
 						<div class="edge e-blue">
 							<a href="/produk/asuransi-kesehatan/allianz-global">Info selengkapnya</a>
 						</div>
+					</div> -->
+					<div class="photo">
+						<?php $i = "static";$id = "idStatic";
+							  echo $this->image("image_".$i, ["thumbnail" => "galleryCarousel", "dropClass" => $id . "-" . $i, 'title' 	=> 'Image Size 635px X 310px', "height" => "310px", "width" => "635px"]);
+						?>
 					</div>
+					<?php
+						$extra = $this->image("image_".$i)->getHotspots();
+						//$pos = $extra[0]['data'][0]['value'];
+						//$color = $extra[0]['data'][1]['value'];
+						$pos = $this->select('position_'.$i)->getData();
+						$color = $this->select('color_'.$i)->getData();
+					?>
+					<div class="fixbox <?php echo $pos?>60">
+						<div class="place-bg bg-<?php echo $color?>">
+								<?php if($this->editmode || !$this->input("caption-title-" . $i)->isEmpty()) { ?>
+		                            <h1><?php echo $this->input("caption-title-" . $i, ["width" => 251]) ?></h1>
+		                        <?php } ?>
+		                        <?php if($this->editmode || !$this->textarea("caption-text-" . $i)->isEmpty()) { ?>
+		                            <p>
+		                                <?php echo $this->textarea("caption-text-" . $i, ["width" => 251, "height" => 100]) ?>
+		                            </p>
+		                        <?php } ?>
+		                        <?php if($this->editmode) { ?>
+		                        	<p>
+		                        	<?php 
+		                        		echo "Position: <br />";
+		                        		echo $this->select("position_".$i,array(
+										    "store" => array(
+										        array("left", "Left"),
+										        array("right", "Right")
+										    )
+										)); 
+									?>
+		                        	</p>
+		                        	<p>
+			                        <?php 
+			                        	echo "Color: <br />";
+		                        		echo $this->select("color_".$i,array(
+										    "store" => array(
+										        array("red", "Red"),
+										        array("lightgreen", "Light Green"),
+										        array("purple", "Purple"),
+										        array("blue", "Blue"),
+										        array("orange", "Orange")
+										    ),
+										    "reload" => true
+										)); 
+									?>
+		                        	</p>
+		                        <?php } ?>
+							</div>
+							<div class="edge e-<?php echo $color?>">
+								<?php echo $this->link("boxlink_".$i); ?>
+							</div>
+						</div>
 				</div>
 			</li>
 					

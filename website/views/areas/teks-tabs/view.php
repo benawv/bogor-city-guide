@@ -20,6 +20,10 @@
 			<?php endif;?>
 			<?php echo $this->input('title')?>
 		<?php endif; ?>
+		<div class="btn-group btn-section">
+			<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
+			<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
+		</div>
 	</h2>
 	<div class="description">
 		<?php if($this->editmode): ?>

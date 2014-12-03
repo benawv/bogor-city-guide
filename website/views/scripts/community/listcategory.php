@@ -1,8 +1,8 @@
 <link rel="stylesheet" type="text/css" href="/website/static/css/virgin.css">
-<script type="text/javascript" src="/website/static/js/paging.js"></script>
-<div role="main" class="tips-main main">
 
-<div id="js-main-wrp" class="main-wrp" style="background: url(<?php echo $this->fetchBackground;?>);background-size: 1500px auto;height:620px; no-repeat;">
+<div role="main" class="tips-main main" style="background: url(<?php echo $this->fetchBackground;?>);background-size: 1500px auto;background-repeat: no-repeat;background-position: top;">
+
+<div id="js-main-wrp" class="main-wrp">
 	<div class="tips-container tips-container2 container boxes-view">
 	
 	           

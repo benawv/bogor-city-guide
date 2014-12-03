@@ -158,9 +158,9 @@ class WishlistController extends Website_Controller_Action {
 					$pro[$x] = $row3->produk;
 					$x++;
 				}
-				$listProduk = "<ul><li>" . implode("</li><li>", $pro) . "</li></ul>";
+				//$listProduk = "<ul><li>" . implode("</li><li>", $pro) . "</li></ul>";
 				
-				$text = "Nama : ".$tmp_nama."<br />";
+				/* $text = "Nama : ".$tmp_nama."<br />";
 				$text .= "Email : ".$email."<br />";
 				$text .= "No Telepon : ".$no_telp."<br />";
 				
@@ -170,6 +170,17 @@ class WishlistController extends Website_Controller_Action {
 				$mail->setSubject("Pemesanan Produk");
 				$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 				$mail->setBodyHtml($text);
+				$mail->addTo($eml); */
+				$document = '/email/email-pemesanan';
+				$params = array('name' => $tmp_nama,
+						'email' => $email,
+						'no_telp' => $no_telp,
+						'produk' => implode(", ", $pro));
+				$mail = new Pimcore_Mail();
+				$mail->setSubject("Pemesanan Produk");
+				$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+				$mail->setDocument($document);
+				$mail->setParams($params);
 				$mail->addTo($eml);
 				
 				$mail->send();
@@ -191,17 +202,27 @@ class WishlistController extends Website_Controller_Action {
 			
 			$pesan->save();
 			
-			$text = "Dear <b>".$tmp_nama."</b>,<br />";
+			/* $text = "Dear <b>".$tmp_nama."</b>,<br />";
 			$text .= "Kami telah menerima pesanan Anda.<br />";
 			$text .= "Produk-produk yang Anda pesan sebagai berikut : "."<ul><li>" . implode("</li><li>", $produk) . "</li></ul>";
 			$text .= "Terima kasih telah memilih Allianz<br /><br />";
-			$text .= "Hormat Kami,<br /><b>Tim Allianz</b>";
+			$text .= "Hormat Kami,<br /><b>Tim Allianz</b>"; */
 			
-			$mail = new Pimcore_Mail();
+			/* $mail = new Pimcore_Mail();
 			
 			$mail->setSubject("Pemesanan Asuransi Allianz");
 			$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 			$mail->setBodyHtml($text);
+			$mail->addTo($email); */
+			
+			$document = '/email/email-wishlist';
+			$params = array('name' => $tmp_nama,
+							'produk' => implode(", ", $produk));
+			$mail = new Pimcore_Mail();
+			$mail->setSubject("Pemesanan Produk");
+			$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+			$mail->setDocument($document);
+			$mail->setParams($params);
 			$mail->addTo($email);
 			
 			try {
