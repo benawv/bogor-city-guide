@@ -272,7 +272,7 @@
 		});
 		
 		$('.community-btn .fbshare').on("click",function(){
-			var image = $(this).parents().siblings('a').find('.image_share').attr('src');
+			var image = "";
 			var reTanya = $(".txt-wrp h1").text();
 			
 			var deskripsi = $(".h-b p").text();
@@ -282,7 +282,7 @@
 	        	deskripsi = $(".c-1of1 p").text();
 	    	}
 			
-		    var name = (reTanya.replace("?",""))+"-community";
+		    var name = (reTanya.replace(/[^a-zA-Z()]/g,''))+"-community";
 			var filename = name.replace(/\s/g,'-');
 	        var limit = 32;
 	        var x;
