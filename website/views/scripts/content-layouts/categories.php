@@ -19,7 +19,8 @@
 					"allowed" => array("tile-quicklinks", "quiclinks", "layanankami-quicklinks","product-quicklinks")))?>
 		</div>
 	</div><!-- .wrapper-special -->
-	
+	<?php echo $this->areablock('container-text', array(
+					'allowed' => array('tekskanan60-imagekiri40_2', 'tekskanan60-videokiri40_2')))?>
 	<!-- content -->
 	<div class="items-container">
 		<?php echo $this->areablock('container', array(
