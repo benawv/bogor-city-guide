@@ -1,3 +1,10 @@
+<style type="text/css">
+	.community-btn a{
+		font-size: 25px;
+		float: left;
+		margin: 0px 5px;
+	}
+</style>
 <link rel="stylesheet" type="text/css" href="/website/static/css/virgin2.css">
 <script type="text/javascript" src="/website/static/js/paging.js"></script>
 <div role="main" class="tips-main main" style="background: url(<?php echo $this->data->imageBackgroundDetail->path."".$this->data->imageBackgroundDetail->filename;?>);background-size: 1500px auto;background-repeat: no-repeat;background-position: top;">
@@ -55,14 +62,17 @@
 									<a class="addthis_button_linkedin_counter at300b" li:counter="top"><iframe frameborder="0" role="presentation" scrolling="no" allowtransparency="true" scrollbars="no" style="width:57px; height:55px;" src="//s7.addthis.com/static/r07/linkedin025.html#href=http%3A%2F%2Fwww.virgin.com%2Ftravel%2Finfographic-how-powerful-is-your-passport&amp;dr=http%3A%2F%2Fwww.virgin.com%2F&amp;conf=product%3Dtbx-300%26pubid%3Dra-51e518c82a3eaa6d&amp;share=passthrough%3Dtwitter%253Dvia%25253Dvirgin%2526pinterest_share%253Dmedia%25253Dhttps%2525253A%2525252F%2525252Fwww.virgin.com%2525252Fsites%2525252Fdefault%2525252Ffiles%2525252Fstyles%2525252Farticle_item%2525252Fpublic%2525252FArticles%2525252FTravel%2525252Fpassport_travel.jpg%2525253Fitok%2525253DHsqhEM_9%252526url%25253Dhttp%2525253A%2525252F%2525252Fwww.virgin.com%2525252Ftravel%2525252Finfographic-how-powerful-is-your-passport%252526description%25253DInfographic%2525253A%25252520How%25252520powerful%25252520is%25252520your%25252520passport%2525253F%25252520-%25252520Virgin.com%2526linkedin%253Dcounter%25253Dtop%26imp_url%3D0%26url%3Dhttp%253A%252F%252Fwww.virgin.com%252Ftravel%252Finfographic-how-powerful-is-your-passport%26title%3DInfographic%25253A%252520How%252520powerful%252520is%252520your%252520passport%25253F%252520-%252520Virgin.com%26smd%3Drsi%253D%2526rxi%253Dundefined%2526gen%253D0%2526rsc%253D%2526dr%253Dhttp%25253A%25252F%25252Fwww.virgin.com%25252F%2526sta%253DAT-ra-51e518c82a3eaa6d%25252F-%25252F-%25252F53ec22ccb0549c58%25252F1&amp;li=counter%3Dtop%26height%3D55%26width%3D57"></iframe></a>
 									<a class="addthis_counter"></a>-->
 									<div class="atclear"></div>
+									<div class="community-btn">
+										<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
+										<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
+									</div>
 								</section>        
-
+								
 								<p class="art-inf">
 									<time>
 										<?php echo gmdate("M d, Y" , strtotime($this->data->getDate()));?>
 									</time>
 								</p>
-					
 
 								<section class="art-athr">
 									<!-- <div class="t-r">
@@ -247,6 +257,81 @@
 				console.log(data);
 			}
 		});
+
+		$('.community-btn .twshare').on("click",function(){
+	        var url = window.location.host+window.location.pathname;
+	        
+	        var title = $(".txt-wrp h1").text();
+	        var isi = $(".h-b p").text();
+	        
+	        var isiText = isi.substring(0,80)+".... ";
+	        
+	        var tweet = title+" : "+isiText+url;
+	        var encodeTweet = encodeURIComponent(tweet);
+	        window.open('https://twitter.com/intent/tweet?text='+encodeTweet, 'sharer', 'width=626,height=436');
+		});
+		
+		$('.community-btn .fbshare').on("click",function(){
+			var image = "";
+			var reTanya = $(".txt-wrp h1").text();
+			
+			var deskripsi = $(".h-b p").text();
+	        if(deskripsi =="")
+	    	{
+	        	deskripsi = "";
+	        	deskripsi = $(".c-1of1 p").text();
+	    	}
+			
+		    var name = (reTanya.replace(/[^a-zA-Z()]/g,''))+"-community";
+			var filename = name.replace(/\s/g,'-');
+	        var limit = 32;
+	        var x;
+	        var words = deskripsi.split(/\s/);
+	        var desc='';
+	        
+	        if (words.length > limit)
+	        {
+	                for(x=0;x<limit;x++)
+	                {
+	                        if (x==0)
+	                        {
+	                                desc = desc+words[x];
+	                        }
+	                        else
+	                        {
+	                                desc = desc+' '+words[x];
+	                        }
+	                }
+	                desc = desc+'....';
+	        }
+	        else
+	        {
+	                desc = deskripsi;
+	        }
+	                
+	        loc = window.location.origin+'/website/static/fbshare/sharedfb.php';
+	        /*console.log(image);
+	        console.log(name);
+	        console.log(filename);
+	        console.log(desc);*/
+	        $.ajax({
+					type: 'POST',
+					url: loc,
+					data: {
+						filename: filename,
+						image_name: image,
+						description: desc,
+						url: window.location.host,
+						link_in_fb : window.location.host+window.location.pathname
+					},
+					success: function(response)
+					{
+						var url = window.location.origin+'/website/static/fbshare/'+response;
+						window.open('http://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), 'sharer', 'width=626,height=436');
+					}
+				});
+		});
+		
 		//$.getJSON("http://jsonip.com?callback=?", function (data) {
 		//    $.ajax({
 		//    	type: "POST",
