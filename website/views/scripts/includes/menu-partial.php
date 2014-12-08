@@ -1,7 +1,7 @@
 <ul class="clearfix">
 <?php foreach($this->container as $page): ?>
 	<li>
-		<a href="<?php echo $page->getUri()?>"><?php echo $page->getDocument()->getTitle()?></a>
+		<a href="<?php echo $page->getUri()?>"><?php echo $page->getDocument()->getProperty('navigation_title');?></a>
 		<div class="menu-level2">
 			<a href="#" class="back">Back</a>
 			<!--<ul class="noborder">
