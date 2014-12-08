@@ -149,7 +149,7 @@
 			</select>
 		</p>
 	</div>
-	<div class="description">
+	<div class="description fundfact">
 		<?php if($this->editmode): ?>
 			<?php echo "anchor name: ".$this->input('anchor', array("width" => 250))?>
 		<?php endif;?>
@@ -167,6 +167,6 @@
 </div>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('.description ul').hide();
+		$('.description.fundfact ul').hide();
 	});
 </script>
