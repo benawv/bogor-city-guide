@@ -30,7 +30,7 @@
 		</span>
 		<!--<div class="hotline"><img width="30px" src="_assets/images/hotline.png">&nbsp;&nbsp;<span style="font-size:20px"><strong>021-2926 9999</strong></span></div>-->
 		<div id="quicklinks">
-			<?php echo $this->areablock('product-quicklinks', array('allowed' => array('product-quicklinks')))?>
+			<?php echo $this->areablock('product-quicklinks', array('allowed' => array('product-quicklinks',"blank-tile-quicklinks-static")))?>
 		</div>
 	</div>
 	
