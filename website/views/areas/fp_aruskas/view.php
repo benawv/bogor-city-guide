@@ -5,11 +5,11 @@
 					<div class="simform-inner">
 						<ol class="questions">
 							<li>
-								<span><label for="q1">Berapakah biaya sekolah anda pada saat SMP?</label></span>
+								<span><label for="q1">Berapakah pendapatan anda saat ini??</label></span>
 								<input id="q1" name="q1" type="text"/>
 							</li>
 							<li>
-								<span><label for="q2">Jumlah tersebut saat ini hanya cukup untuk bersekolah berapa lama?</label></span>
+								<span><label for="q2">Berapa yang dapat anda sisihkan setiap bulannya untuk menabung?</label></span>
 								<input id="q2" name="q2" type="text"/>
 							</li>
 							
@@ -55,7 +55,7 @@
 
 					// let's just simulate something...
 					var messageEl = theForm.querySelector( '.final-message' );
-					messageEl.innerHTML = 'FAKTA <br> <h3>Secara rata-rata kenaikan biaya pendidikan di Indonesia dua kali lipat dari kenaikan harga barang-barang secara umum <br><br /> Ingin melakukan check up keuangan anda <br> <a href= "#"> Mari mulai perencanaan arus kas anda </a></h3>';
+					messageEl.innerHTML = 'FAKTA <br> <h3>Idealnya, seseorang dapat menyisihkan 10% <br>dari pendapatan bulanannya untuk tabungan yang disebut dengan financial ratio. <br>Financial ratio Anda adalah <br><br /> Ingin melakukan check up keuangan anda <br> <a href= "#"> Mari mulai perencanaan arus kas anda </a></h3>';
 					classie.addClass( messageEl, 'show' );
 				}
 			} );

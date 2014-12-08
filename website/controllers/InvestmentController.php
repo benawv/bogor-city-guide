@@ -239,5 +239,7 @@ class InvestmentController extends Website_Controller_Action
 	    $this->view->data = $entry;
 	    //die(print_r($entry));
     }
+    
+    public function calculatorAction(){}
         
 }
