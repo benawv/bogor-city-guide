@@ -1,5 +1,6 @@
 <?php
 		$filename = $_POST['filename'];
+		$title = $_POST['title_fb'];
 		$image_name = $_POST['image_name'];
 		$desc = $_POST['description'];
 		$url = 'http://'.$_POST['url'];
@@ -18,7 +19,7 @@
 		$html = '
 			<html>
 				<head>
-					<meta property="og:title" content="Allianz '.$filename.'" />
+					<meta property="og:title" content="Allianz '.$title.'" />
 					<meta property="og:type" content="website" />
 					<meta property="og:description" content="'.$desc.'" />
 					<meta property="og:image" content="'.$url.'/'.$image_name.'" />

@@ -26,12 +26,17 @@
             // use the manually set description if available
             $this->headMeta()->appendName('description', $this->document->getDescription());
         }
+        
+        if($this->document->getKeywords()) {
+            $this->headMeta()->appendName('keywords', $this->document->getKeywords());
+        }
 
         $this->headTitle()->append("Asuransi Indonesia Terbaik");
         $this->headTitle()->setSeparator(" : ");
 
         echo $this->headTitle();
         echo $this->headMeta();
+        
     ?>
 	
 	<?php echo $this->template("includes/metadata.php")?>

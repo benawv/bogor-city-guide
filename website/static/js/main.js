@@ -430,6 +430,7 @@ $(document).ready(function(){
 				url: loc,
 				data: {
 					filename: filename,
+					title_fb : reTanya,
 					image_name: image,
 					description: desc,
 					url: window.location.host,
