@@ -76,7 +76,7 @@ class InvestmentController extends Website_Controller_Action
 			$nameCommunity = "object_query_".$table->getClassId();
 		}
 
-        $sql_subcat="SELECT DISTINCT tblcommunity.investment FROM ".$nameCommunity." AS tblcommunity WHERE tblcommunity.oo_id ='".$id."'";
+        $sql_subcat="SELECT DISTINCT * FROM ".$nameCommunity." AS tblcommunity WHERE tblcommunity.oo_id ='".$id."'";
         $inv=$db->fetchAll($sql_subcat);
         
         return $inv;

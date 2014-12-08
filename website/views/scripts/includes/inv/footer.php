@@ -77,10 +77,13 @@
 
 
 <!-- plugins -->
+
 <script src="/website/static/inv/js/jquery.flexslider.min.js" type="text/javascript"></script>
 
 <script src="/website/static/inv/js/resizeimagetoparent.js"></script>
 <script src="/website/static/inv/js/javascripts.js"></script>
+
+
 
 
 </body>

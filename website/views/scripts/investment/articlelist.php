@@ -9,9 +9,9 @@
 	{
 ?>
             
-<div class="header_page bg_future">
+<div class="header_page bg_edu">
 	<div class="container">
-		Article <?php echo $this->data->investment; ?>
+		Artikel <?php foreach ($this->data->investment as $inv) { echo $inv['investment'];}  ?>
 	</div>
 </div>
 
@@ -23,13 +23,20 @@
 			<div class="bread">
 				<a href="/investasi/investment-homepage">Home</a>  
 				<i class="fa fa-angle-right"></i> 
-				<a href="/investment/investment-category/<?php echo $this->data->investment_id; ?>">Article</a>
+				<a href="/investment/investment-category/<?php echo $this->data->investment_id; ?>">Artikel</a>
 
 				<i class="fa fa-angle-right"></i>
-				Article Index <?php foreach ($this->data->investment as $inv) {  echo $inv['investment'];}  ?>
+				Artikel Index <?php foreach ($this->data->investment as $inv) {  echo $inv['investment'];}  ?>
 
 			</div>
 		</div>
+
+
+		
+
+		
+
+
 
 	</div>
 	<!-- container end -->
@@ -46,7 +53,7 @@
                         foreach($this->data as $entry)
 		                  {
                     ?>
-					<li class="bg_future">
+					<li class="bg_edu">
 						<h3><?php echo $entry->title ?></h3>
 						<p><?php echo substr($entry->content,0,100) ?>...</p>
 
@@ -83,6 +90,7 @@
 
 </div>
 <!-- homebanner end -->
+
 
 
 
