@@ -40,6 +40,11 @@
         <script src="/website/static/inv/css/form/js/classie.js"></script>
 		<script src="/website/static/inv/css/form/js/stepsForm.js"></script>
 		<script>
+			function fp_cashflow(pendapatan, tabungan){
+				var result = Number(tabungan) / Number(pendapatan) * 100;
+				return result.toFixed(2);
+			    }
+
 			var theForm = document.getElementById( 'theForm' );
 
 			new stepsForm( theForm, {
@@ -55,7 +60,12 @@
 
 					// let's just simulate something...
 					var messageEl = theForm.querySelector( '.final-message' );
-					messageEl.innerHTML = 'FAKTA <br> <h3>Idealnya, seseorang dapat menyisihkan 10% <br>dari pendapatan bulanannya untuk tabungan yang disebut dengan financial ratio. <br>Financial ratio Anda adalah <br><br /> Ingin melakukan check up keuangan anda <br> <a href= "#"> Mari mulai perencanaan arus kas anda </a></h3>';
+					var result = fp_cashflow($('#q1').val(), $('#q2').val());
+					var color = 'green';
+					if (result <= 10.00) {
+						color = 'red';
+					}
+					messageEl.innerHTML = 'FAKTA <br> <h3>Idealnya, seseorang dapat menyisihkan 10% <br>dari pendapatan bulanannya untuk tabungan yang disebut dengan financial ratio. <br><br>Financial ratio Anda adalah <br><span style="color:'+color+';">'+result+'%</span><br /><br> Ingin melakukan check up keuangan anda <br> <a href= "#"> Mari mulai perencanaan arus kas anda </a></h3>';
 					classie.addClass( messageEl, 'show' );
 				}
 			} );

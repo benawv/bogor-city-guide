@@ -8,10 +8,6 @@
 								<span><label for="q1">Berapakah biaya sekolah anda pada saat SMP?</label></span>
 								<input id="q1" name="q1" type="text"/>
 							</li>
-							<li>
-								<span><label for="q2">Jumlah tersebut saat ini hanya cukup untuk bersekolah berapa lama?</label></span>
-								<input id="q2" name="q2" type="text"/>
-							</li>
 							
 						</ol><!-- /questions -->
 						<button class="submit" type="submit">Send answers</button>
@@ -40,6 +36,11 @@
         <script src="/website/static/inv/css/form/js/classie.js"></script>
 		<script src="/website/static/inv/css/form/js/stepsForm.js"></script>
 		<script>
+			function fp_education(biaya){
+				var result = Number(biaya) / (1000000 / 30);
+				return result.toFixed();
+			    }
+			    
 			var theForm = document.getElementById( 'theForm' );
 
 			new stepsForm( theForm, {
@@ -54,8 +55,9 @@
 					*/
 
 					// let's just simulate something...
+					var result = fp_education($("#q1").val());
 					var messageEl = theForm.querySelector( '.final-message' );
-					messageEl.innerHTML = 'FAKTA <br> <h3>Secara rata-rata kenaikan biaya pendidikan di Indonesia dua kali lipat dari kenaikan harga barang-barang secara umum <br><br /> Ingin melakukan check up keuangan anda <br> <a href= "#"> Mari mulai perencanaan arus kas anda </a></h3>';
+					messageEl.innerHTML = 'Jumlah tersebut saat ini hanya cukup untuk bersekolah selama <br>' + result + ' hari <br><br> FAKTA <br> <h3>Secara rata-rata kenaikan biaya pendidikan di Indonesia dua kali lipat dari kenaikan harga barang-barang secara umum <br><br /> Ingin melakukan check up keuangan anda <br> <a href= "#"> Mari mulai perencanaan arus kas anda </a></h3>';
 					classie.addClass( messageEl, 'show' );
 				}
 			} );

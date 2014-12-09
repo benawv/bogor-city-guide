@@ -40,6 +40,12 @@
         <script src="/website/static/inv/css/form/js/classie.js"></script>
 		<script src="/website/static/inv/css/form/js/stepsForm.js"></script>
 		<script>
+			function fp_insurance(usia, pendapatan){
+				var new_usia = 55 - usia;
+				var new_asumsi = 0.02;
+				var result = Number(pendapatan) * 12 * ((1 - Math.pow(1 + Number(new_asumsi), Number(-new_usia))) / Number(new_asumsi)) * (1 + Number(new_asumsi));
+				return result.toFixed(2);
+			    }
 			var theForm = document.getElementById( 'theForm' );
 
 			new stepsForm( theForm, {
@@ -55,7 +61,8 @@
 
 					// let's just simulate something...
 					var messageEl = theForm.querySelector( '.final-message' );
-					messageEl.innerHTML = 'FAKTA <br> <h3>Pertanggungan sebesar <br /> Rp 7.500.000.000 <br> akan memastikan apa bila risiko meninggal dunia terjadi mereka yang dicintai tetap akan terdukung secara finansial hingga memasuki masa pensiun Anda <br> <a href= "#"> Mari mulai perencanaan arus kas anda </a></h3>';
+					var result = fp_insurance($('#q1').val(),$('#q2').val());
+					messageEl.innerHTML = 'FAKTA <br> <h3>Pertanggungan sebesar <br /> Rp. ' + result + ' <br> akan memastikan apa bila risiko meninggal dunia terjadi mereka yang dicintai tetap akan terdukung secara finansial hingga memasuki masa pensiun Anda <br> <a href= "#"> Mari mulai perencanaan arus kas anda </a></h3>';
 					classie.addClass( messageEl, 'show' );
 				}
 			} );
