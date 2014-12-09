@@ -26,16 +26,16 @@
 		<div id="#" class="article-wrap">
             
 			<div class="wrap30">
-                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Finansial Calculator Education</span> </h5>
+                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Kalkulator Finansial Pendidikan</span> </h5>
                 
                 <div class="bg-dark-orange">
-                    <h4>Finansial Calculator Education</h4>
+                    <h4>Kalkulator Finansial Pendidikan</h4>
                     <p></p>
                 </div>
             </div>
             
             <div class="wrap60">
-               <h4>Finansial Calculator Education</h4>
+               <h4>Kalkulator Finansial Pendidikan</h4>
                 
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
@@ -130,7 +130,7 @@ function setCookie(cname, cvalue, exdays) {
 	$('#result').html('Rp. ' + result);
 	
 	$("#edu2").click(function(){
-	    window.location.href = "/investasi/investment-homepage/tools/calculator-invest2";
+	    window.location.href = "/investasi/investment-homepage/tools/financial-calculators/calculator2";
         });
 	
 	function navigateMe(anchor)
