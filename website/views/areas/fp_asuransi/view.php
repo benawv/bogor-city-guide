@@ -62,7 +62,7 @@
 					// let's just simulate something...
 					var messageEl = theForm.querySelector( '.final-message' );
 					var result = fp_insurance($('#q1').val(),$('#q2').val());
-					messageEl.innerHTML = 'FAKTA <br> <h3>Pertanggungan sebesar <br /> Rp. ' + result + ' <br> akan memastikan apa bila risiko meninggal dunia terjadi mereka yang dicintai tetap akan terdukung secara finansial hingga memasuki masa pensiun Anda <br> <a href= "#"> Mari mulai perencanaan arus kas anda </a></h3>';
+					messageEl.innerHTML = 'FAKTA <br> <h3>Pertanggungan sebesar <br /> Rp. ' + result + ' <br> akan memastikan apa bila risiko meninggal dunia terjadi mereka yang dicintai tetap akan terdukung secara finansial hingga memasuki masa pensiun Anda <br> <a href= "/investasi/investment-homepage/tools/financial-calculators/pertanggungan"> Mari mulai perencanaan pertanggungan anda </a></h3>';
 					classie.addClass( messageEl, 'show' );
 				}
 			} );

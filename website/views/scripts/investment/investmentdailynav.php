@@ -8,8 +8,7 @@
 <link rel="stylesheet" href="/website/static/inv/js/rangeslider/component.css" type="text/css" media="all" />    
 <link rel="stylesheet" href="/website/static/inv/js/rangeslider/demo.css" type="text/css" media="all" />  
 <link rel="stylesheet" href="/website/static/inv/js/rangeslider/normalize.css" type="text/css" media="all" />  
-<link rel="stylesheet" href="/website/static/inv/js/rangeslider/style.css" type="text/css" media="all" />  
-
+<link rel="stylesheet" href="/website/static/inv/js/tablesorter/style.css" type="text/css" media="all" /> 
 
 <script src="/website/static/inv/js/rangeslider/masonry.min.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/rangeslider/jquery.tools.min.js" type="text/javascript"></script>
@@ -20,6 +19,7 @@
      
 <script src="/website/static/inv/js/tablesorter/jquery-latest.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/tablesorter/jquery.tablesorter.js" type="text/javascript"></script>   
+
 
 <script type="text/javascript">
 	$(function() {		

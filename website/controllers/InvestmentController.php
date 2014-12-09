@@ -240,6 +240,8 @@ class InvestmentController extends Website_Controller_Action
 	    //die(print_r($entry));
     }
 
+    public function investmentdailynavAction(){}
+
     public function calculatorAction(){}
     public function calculatorresultAction(){}
     public function calculator2Action(){}

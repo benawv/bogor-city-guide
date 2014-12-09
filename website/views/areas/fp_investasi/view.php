@@ -60,7 +60,7 @@
 					// let's just simulate something...
 					var messageEl = theForm.querySelector( '.final-message' );
 					var result = fp_investment($('#q1').val());
-					messageEl.innerHTML = 'FAKTA <br> <h3>30% dari jumlah yang sama setiap bulannya sudah dapat memberikan Anda <br />Rp. ' + result + '<br /> Melalui instrumen investasi dengan rata-rata imbal hasil tahunan sebesar 12% selama 5 tahun <br> <a href= "#"> Mari mulai perencanaan arus kas anda </a></h3>';
+					messageEl.innerHTML = 'FAKTA <br> <h3>30% dari jumlah yang sama setiap bulannya sudah dapat memberikan Anda <br />Rp. ' + result + '<br /> Melalui instrumen investasi dengan rata-rata imbal hasil tahunan sebesar 12% selama 5 tahun <br> <a href= "http://beta.allianz.co.id/investasi/investment-homepage/tools/financial-calculators/calculator-invest"> Mari mulai perencanaan investasi anda </a></h3>';
 					classie.addClass( messageEl, 'show' );
 				}
 			} );
