@@ -242,15 +242,21 @@ class InvestmentController extends Website_Controller_Action
 
     public function calculatorAction(){}
     public function calculatorresultAction(){}
+    public function calculator2Action(){}
+    public function calculatorresult2Action(){}
 
     public function calculatorpertanggunanAction(){}
     public function calculatorresultpertanggunganAction(){}
 
     public function calculatorinvestAction(){}
-    public function calculatortinvestresulAction(){}
-
+    public function calculatorinvestresulAction(){}
     public function calculatorinvest2Action(){}
-    public function calculatortinvest2resulAction(){}
+    public function calculatorinvest2resulAction(){}
+    
+    public function calculatorretirementAction(){}
+    public function calculatorretirementresulAction(){}
+    public function calculatorretirement2Action(){}
+    public function calculatorretirement2resulAction(){}
 
 
 
