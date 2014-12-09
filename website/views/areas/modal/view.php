@@ -34,7 +34,7 @@
 	<?php if($this->editmode){ ?>
 		<div id="<?php echo $this->input('anchor-'.$i)->text?>" class="full-w bg-white">
 			<div class="description">
-				<?php echo "Anchor Id: ".$this->input('anchor-'.$i, ['width' => 250])?>
+				<?php echo "<b>Anchor Name:</b> ".$this->input('anchor-'.$i, ['width' => 250])?>
 				<?php echo $this->wysiwyg('description-'.$i)?>
 			</div>
 		</div>

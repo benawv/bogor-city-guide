@@ -13,7 +13,7 @@
 					"allowed" => array("banner", "static-banner", "banner-without-note")))?>
 		<div id="quicklinks">
 			<?php echo $this->areablock('layananKami-wrapper', array(
-					"allowed" => array("tile-quicklinks", "layanankami-quicklinks", "quicklinks")))?>
+					"allowed" => array("tile-quicklinks", "layanankami-quicklinks", "quicklinks","blank-tile-quicklinks-static")))?>
 		</div>
 	</div><!-- .wrapper-special -->
 	

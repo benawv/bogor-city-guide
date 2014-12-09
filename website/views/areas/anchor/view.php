@@ -35,11 +35,11 @@
 				<?php $active = $i==0?'aktif':''?>
 				<li class="<?php echo $this->input('class_name_'.$i)->text?> <?php echo $active?>">
 					<div class="nav_menu" <?php if($this->editmode) { ?> style="color: #000;" <?php } ?> >
-						<?php echo $this->editmode?'Class Name: '. $this->input('class_name_'.$i, array('width' => '75')) : ''?>
+						<?php echo $this->editmode?'<b>Anchor Name:</b> '. $this->input('class_name_'.$i, array('width' => '75')) : ''?>
 						
 						<?php if($this->editmode) { ?>
-							Icon: <?php echo $this->image('icon_'.$i, array(
-											'title' 	=> 'Drag your icon here',
+							<b>Icon Inactive:</b> <?php echo $this->image('icon_'.$i, array(
+											'title' 	=> 'Image Size 25x25',
 											'width' 	=> 100,
 											'height' 	=> 100,
 											'thumbnail'	=> 'icon')) ?>
@@ -48,8 +48,8 @@
 						<?php } ?>
 						
 						<?php if($this->editmode) { ?>
-							Icon White: <?php echo $this->image('icon_'.$i.'_'.$i, array(
-											'title' 	=> 'Drag your icon here',
+							<b>Icon Active:</b> <?php echo $this->image('icon_'.$i.'_'.$i, array(
+											'title' 	=> 'Image Size 25x25',
 											'width' 	=> 100,
 											'height' 	=> 100,
 											'thumbnail'	=> 'icon')) ?>
@@ -74,11 +74,11 @@
 						<?php $active = $i==0?'aktif':''?>
 						<li class="<?php echo $this->input('class_name_'.$i)->text?> <?php echo $active?>">
 							<div class="nav_menu" <?php if($this->editmode) { ?> style="color: #000;" <?php } ?> >
-								<?php echo $this->editmode?'Class Name: '. $this->input('class_name_'.$i, array('width' => '75')) : ''?>
+								<?php echo $this->editmode?'<b>Anchor Name:</b> '. $this->input('class_name_'.$i, array('width' => '75')) : ''?>
 								
 								<?php if($this->editmode) { ?>
-									Icon: <?php echo $this->image('icon_'.$i, array(
-													'title' 	=> 'Drag your icon here',
+									<b>Icon Inactive:</b> <?php echo $this->image('icon_'.$i, array(
+													'title' 	=> 'Image Size 25x25',
 													'width' 	=> 100,
 													'height' 	=> 100,
 													'thumbnail'	=> 'icon')) ?>
@@ -87,8 +87,8 @@
 								<?php } ?>
 								
 								<?php if($this->editmode) { ?>
-									Icon White: <?php echo $this->image('icon_'.$i.'_'.$i, array(
-													'title' 	=> 'Drag your icon here',
+									<b>Icon Active:</b> <?php echo $this->image('icon_'.$i.'_'.$i, array(
+													'title' 	=> 'Image Size 25x25',
 													'width' 	=> 100,
 													'height' 	=> 100,
 													'thumbnail'	=> 'icon')) ?>
@@ -114,11 +114,11 @@
 				<?php $active = $i==0?'aktif':''?>
 				<li class="<?php echo $this->input('class_name_'.$i)->text?> <?php echo $active?>">
 					<div class="nav_menu" <?php if($this->editmode) { ?> style="color: #000;" <?php } ?> >
-						<?php echo $this->editmode?'Class Name: '. $this->input('class_name_'.$i, array('width' => '75')) : ''?>
+						<?php echo $this->editmode?'<b>Anchor Name:</b> '. $this->input('class_name_'.$i, array('width' => '75')) : ''?>
 						
 						<?php if($this->editmode) { ?>
-							Icon: <?php echo $this->image('icon_'.$i, array(
-											'title' 	=> 'Drag your icon here',
+							<b>Icon Inactive:</b> <?php echo $this->image('icon_'.$i, array(
+											'title' 	=> 'Image Size 25x25',
 											'width' 	=> 100,
 											'height' 	=> 100,
 											'thumbnail'	=> 'icon')) ?>
@@ -127,8 +127,8 @@
 						<?php } ?>
 						
 						<?php if($this->editmode) { ?>
-							Icon White: <?php echo $this->image('icon_'.$i.'_'.$i, array(
-											'title' 	=> 'Drag your icon here',
+							<b>Icon Active:</b> <?php echo $this->image('icon_'.$i.'_'.$i, array(
+											'title' 	=> 'Image Size 25x25',
 											'width' 	=> 100,
 											'height' 	=> 100,
 											'thumbnail'	=> 'icon')) ?>

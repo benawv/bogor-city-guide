@@ -30,7 +30,7 @@
 	<div class="heading clearfix pagenav">
 		<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
 		<div id="quicklinks">
-			<?php echo $this->areablock('product-quicklinks', array('allowed' => array('product-quicklinks', 'quicklinks')))?>
+			<?php echo $this->areablock('product-quicklinks', array('allowed' => array('product-quicklinks', 'quicklinks',"blank-tile-quicklinks-static")))?>
 		</div>
 	</div>
 	
