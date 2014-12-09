@@ -239,10 +239,19 @@ class InvestmentController extends Website_Controller_Action
 	    $this->view->data = $entry;
 	    //die(print_r($entry));
     }
-    
-    public function calculatorAction(){}
-    
-    public function calculatorresultAction(){}    
 
-    public function investmentdailynavAction(){} 
+    public function calculatorAction(){}
+    public function calculatorresultAction(){}
+
+    public function calculatorpertanggunanAction(){}
+    public function calculatorresultpertanggunganAction(){}
+
+    public function calculatorinvestAction(){}
+    public function calculatortinvestresulAction(){}
+
+    public function calculatorinvest2Action(){}
+    public function calculatortinvest2resulAction(){}
+
+
+
 }

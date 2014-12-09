@@ -12,98 +12,12 @@
     
 <script src="/website/static/inv/js/rangeslider/jquery.min.js" type="text/javascript"></script>     
 <script src="/website/static/inv/js/rangeslider/jquery-ui.min.js" type="text/javascript"></script>     
-<script>   
-    
-$(function() {           
-        
-var select = $( "#demo" );
-        var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
-            min: 1000000,
-            max: 100000000,
-        value: 1000000,
-            range: "min",
-change: function(event, ui) { 
-         var sliderValue = $( "#slider" ).slider( "option", "value" );
-        $('#sliderPosition').html(sliderValue);
-        }        
-        });
-        
 
-$('#increase').click(function() {
-var sliderCurrentValue = $( "#slider" ).slider( "option", "value" );
-  slider.slider( "value", sliderCurrentValue + 1000000 );
-});
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "16852030-1a9b-4882-8731-4afd4c1cfd9c", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 
-$('#decrease').click(function() {
-var sliderCurrentValue = $( "#slider" ).slider( "option", "value" );
-  slider.slider( "value", sliderCurrentValue - 1000000 );
-});
-      
 
-}); </script>  
-
-    
-<script>   
-    
-$(function() {           
-        
-var select = $( "#demo2" );
-        var slider = $( "<div id='slider2'></div>" ).insertAfter( select ).slider({
-            min: 1,
-            max: 100,
-        value: 1,
-            range: "min",
-change: function(event, ui) { 
-         var sliderValue = $( "#slider2" ).slider( "option", "value" );
-        $('#sliderPosition2').html(sliderValue);
-        }        
-        });
-        
-
-$('#increase2').click(function() {
-var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
-  slider.slider( "value", sliderCurrentValue + 1 );
-});
-
-$('#decrease2').click(function() {
-var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
-  slider.slider( "value", sliderCurrentValue - 1 );
-});
-      
-
-}); </script>   
-
-    
-<script>   
-    
-$(function() {           
-        
-var select = $( "#demo3" );
-        var slider = $( "<div id='slider3'></div>" ).insertAfter( select ).slider({
-            min: 1,
-            max: 10,
-        value: 1,
-            range: "min",
-change: function(event, ui) { 
-         var sliderValue = $( "#slider3" ).slider( "option", "value" );
-        $('#sliderPosition3').html(sliderValue);
-        }        
-        });
-        
-
-$('#increase3').click(function() {
-var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
-  slider.slider( "value", sliderCurrentValue + 1 );
-});
-
-$('#decrease3').click(function() {
-var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
-  slider.slider( "value", sliderCurrentValue - 1 );
-});
-      
-
-}); </script>       
-    
     
 <div role="main" class="main">
     
@@ -140,19 +54,19 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4>KALKULATOR PENDIDIKAN</h4>
+                <h4>KALKULATOR PERTANGGUNGAN</h4>
            </div>
             
              <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>HASIL KALKULASI BIAYA PENDIDIKAN DI MASA DEPAN ANDA ADALAH</h4></div>
+                        <div class="title-box"><h4>HASIL KALKULASI PERTANGGUNGAN ANDA ADALAH</h4></div>
                         <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
                    </div>
                    
                     <div class="calc-box2">    
                         <div class="count-result">
-                            <span>Rp. 50.000.000</span>
+                            <span id="result">Rp. 0</span>
                         </div>
                         <div class="share">
                             <span>Bagikan hasil tersebut dengan teman Anda:</span>
@@ -174,15 +88,15 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
            
            <div class="calc-machine">
                <div class="calc-submit">
-                    <input class="orange-color" type="button" value="BAGAIMANA MENCAPAINYA?">
-                </div>  
+                    <input id="investment2" class="orange-btn" type="button" value="BAGAIMANA MENCAPAINYA?">
+                </div>
                <div class="share">
-                    <span>Ingin menghitung kembali? <a href="/investasi/investment-homepage/tools/calculator">klik disini >></a></span>
+                    <span>Ingin menghitung kembali? <a href="allianz-investment-calculator.php">klik disini >></a></span>
                 </div>
                
                <div class="allianz-button">
-                    <input class="blue-color" type="button" value="Lihat Fund Allianz">
-                     <input class="blue-color" type="button" value="Lihat Produk Allianz">
+                    <input class="blue-btn" type="button" value="Lihat Fund Allianz">
+                     <input class="blue-btn" type="button" value="Lihat Produk Allianz">
                </div>
            </div>  
            
@@ -190,8 +104,32 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         </div>
     </div>    
     
-</div>      
+</div>    
+
+
+<!-- End of Footer -->
 <script type="text/javascript">
+	function setCookie(cname, cvalue, exdays) {
+	    var d = new Date();
+	    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	    var expires = "expires="+d.toUTCString();
+	    document.cookie = cname + "=" + cvalue + "; " + expires;
+	}
+	
+	function getCookie(cname) {
+	    var name = cname + "=";
+	    var ca = document.cookie.split(';');
+	    for(var i=0; i<ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1);
+		if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+	    }
+	    return "";
+	}
+
+	var result = getCookie('resp1_hasil');
+	$('#result').html('Rp. ' + result);
+	
 	function navigateMe(anchor)
 	{
 	

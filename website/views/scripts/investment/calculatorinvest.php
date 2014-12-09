@@ -120,13 +120,13 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                 <h5><span><a href="#">Home</a></span> &rsaquo; <span>Finansial Calculator Education</span> </h5>
                 
                 <div class="bg-dark-orange">
-                    <h4>Finansial Calculator Education</h4>
+                    <h4>Finansial Calculator Retirement</h4>
                     <p></p>
                 </div>
             </div>
             
             <div class="wrap60">
-               <h4>Finansial Calculator Education</h4>
+               <h4>Finansial Calculator Retirement</h4>
                 
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
@@ -145,12 +145,12 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4>KALKULATOR PENDIDIKAN</h4>
+                <h4>KALKULATOR INVESTASI</h4>
            </div>
            <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>BIAYA PENDIDIKAN SAAT INI</h4></div>
+                        <div class="title-box"><h4>BIAYA SAAT INI</h4></div>
                         <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
                    </div>
                    
@@ -228,46 +228,50 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         </div>
     </div>    
     
-</div> 
+</div>    
+<!-- End of Main -->
 
+
+
+
+<!-- End of Footer -->
 <script type="text/javascript">
-
-       function setCookie(cname, cvalue, exdays) {
-            var d = new Date();
-            d.setTime(d.getTime() + (exdays*24*60*60*1000));
-            var expires = "expires="+d.toUTCString();
-            document.cookie = cname + "=" + cvalue + "; " + expires;
-        }
+        function setCookie(cname, cvalue, exdays) {
+	    var d = new Date();
+	    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	    var expires = "expires="+d.toUTCString();
+	    document.cookie = cname + "=" + cvalue + "; " + expires;
+	}
+	
+	function getCookie(cname) {
+	    var name = cname + "=";
+	    var ca = document.cookie.split(';');
+	    for(var i=0; i<ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1);
+		if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+	    }
+	    return "";
+	}
         
-        function getCookie(cname) {
-            var name = cname + "=";
-            var ca = document.cookie.split(';');
-            for(var i=0; i<ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0)==' ') c = c.substring(1);
-                if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
-            }
-            return "";
-        }
-
-        function edu1(biaya, asumsi, waktu){
+        function investment1(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
             var result = Number(biaya) * (Math.pow(1 + Number(asumsi), Number(waktu)));
             return result.toFixed(2);
         }
         
         $(".orange-btn").click(function(){
-            var result = edu1($("#sliderPosition").val(),
+            var result = investment1($("#sliderPosition").val(),
                $("#sliderPosition2").val(),
                $("#sliderPosition3").val()
                );
             
-            setCookie('edu1_biaya_bulanan',$("#sliderPosition").val(),1);
-            setCookie('edu1_asumsi_inflasi',$("#sliderPosition2").val(),1);
-            setCookie('edu1_jangka_waktu',$("#sliderPosition3").val(),1);
-            setCookie('edu1_hasil',result,1);
+            setCookie('investment1_biaya',$("#sliderPosition").val(),1);
+            setCookie('investment1_asumsi_inflasi',$("#sliderPosition2").val(),1);
+            setCookie('investment1_jangka_waktu',$("#sliderPosition3").val(),1);
+            setCookie('investment1_hasil',result,1);
             
-            window.location.href = "/investasi/investment-homepage/tools/calculator_result";
+            window.location.href = "/investasi/investment-homepage/tools/calculator-invest-result";
         });
     
 	function navigateMe(anchor)

@@ -228,11 +228,15 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         </div>
     </div>    
     
-</div> 
+</div>    
 
+    
+
+<!-- End of Main -->
+<?php include("include/footer.php"); ?>
+<!-- End of Footer -->
 <script type="text/javascript">
-
-       function setCookie(cname, cvalue, exdays) {
+        function setCookie(cname, cvalue, exdays) {
             var d = new Date();
             d.setTime(d.getTime() + (exdays*24*60*60*1000));
             var expires = "expires="+d.toUTCString();
@@ -267,7 +271,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             setCookie('edu1_jangka_waktu',$("#sliderPosition3").val(),1);
             setCookie('edu1_hasil',result,1);
             
-            window.location.href = "/investasi/investment-homepage/tools/calculator_result";
+            window.location.href = "/investasi/investment-homepage/tools/calculator-invest-result2";
         });
     
 	function navigateMe(anchor)
