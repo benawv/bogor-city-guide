@@ -231,102 +231,279 @@
             
         </div> 
             <!-------Article end ---------->
+
+<script src="_assets/css/rangeslider/1.7.2-jquery.min.js"></script>
+<script src="_assets/css/rangeslider/jquery.flot.min.js"></script>  
         
         <div id="#" class="article-wrap bottom">
            
                <div class="table-wrap">
-                    
-                    <table id="myTable2" class="tablesorter2"> 
-                        <thead> 
-                        <tr>  
-                            <th class="">FUND NAME</th> 
-                            <th class="">UNIT DATE</th> 
-                            <th class="">BID</th> 
-                            <th class="">OFFER</th>
-                            <th class=""><img src="/website/static/inv/js/tablesorter/icon2.png" /></th>
-                            <th class=""><img src="/website/static/inv/js/tablesorter/icon1.png" /></th>
-                        </tr> 
-                        </thead> 
-                        <tbody> 
-                        <tr> 
-                            <td>IDR - SmartWealth Equity Fund</td> 
-                            <td>12/01/2014</td> 
-                            <td>2,235.1000</td> 
-                            <td>2,235.1000</td> 
-                            <td> </td>
-                            <td> </td>
-                        </tr>     
-                        <tr> 
-                            <td>IDR - SmartWealth Equity Fund</td> 
-                            <td>12/01/2014</td> 
-                            <td>2,235.1000</td> 
-                            <td>2,235.1000</td> 
-                            <td> </td>
-                            <td> </td>
-                        </tr>  
-                        <tr> 
-                            <td>IDR - SmartWealth Equity Fund</td> 
-                            <td>12/01/2014</td> 
-                            <td>2,235.1000</td> 
-                            <td>2,235.1000</td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>  
-                        <tr> 
-                            <td>IDR - SmartWealth Equity Fund</td> 
-                            <td>12/01/2014</td> 
-                            <td>2,235.1000</td> 
-                            <td>2,235.1000</td> 
-                            <td> </td>
-                            <td> </td>
-                        </tr>  
-                        <tr> 
-                            <td>IDR - SmartWealth Equity Fund</td> 
-                            <td>12/01/2014</td> 
-                            <td>2,235.1000</td> 
-                            <td>2,235.1000</td> 
-                            <td> </td>
-                            <td> </td>
-                        </tr>  
-                        <tr> 
-                            <td>IDR - SmartWealth Equity Fund</td> 
-                            <td>12/01/2014</td> 
-                            <td>2,235.1000</td> 
-                            <td>2,235.1000</td> 
-                            <td> </td>
-                            <td> </td>
-                        </tr>  
-                        <tr> 
-                            <td>IDR - SmartWealth Equity Fund</td> 
-                            <td>12/01/2014</td> 
-                            <td>2,235.1000</td> 
-                            <td>2,235.1000</td> 
-                            <td> </td>
-                            <td> </td>
-                        </tr>  
-                        <tr> 
-                            <td>IDR - SmartWealth Equity Fund</td> 
-                            <td>12/01/2014</td> 
-                            <td>2,235.1000</td> 
-                            <td>2,235.1000</td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>  
-                        </tbody> 
-                    </table> 
+                   
+                     <div class="title-chart">
+                            Nav Graph for Bond FUND (01/11/2014 - 08/12/2014)
+                            <a href="#" id="bars"><span></span></a>
+                            <a href="#" id="lines" class="active"><span></span></a>
+                    </div>
+                   
+                    <!-- Graph HTML -->
+                    <div id="graph-wrapper">
+<!--
+                        <div class="graph-info">
+
+                            <a href="javascript:void(0)" class="visitors">Visitors</a>
+                            <a href="javascript:void(0)" class="returning">Returning Visitors</a>
+
+
+
+                            <a href="#" id="bars"><span></span></a>
+                            <a href="#" id="lines" class="active"><span></span></a>
+
+                        </div>
+-->
+
+                        <div class="graph-container">
+                            <div id="graph-lines"></div>
+                            <div id="graph-bars"></div>
+                            
+                            <!--------- Table nab daily----------------->
+                   
+                           <table id="myTable2" class="tablesorter2"> 
+                                <thead> 
+                                <tr>  
+                                    <th class="">FUND NAME</th> 
+                                    <th class="">UNIT DATE</th> 
+                                    <th class="">BID</th> 
+                                    <th class="">OFFER</th>
+                                    <th class="">
+                                        <a href="#" id="bars" class="active"><span></span></a>
+                                        <a href="#" id="lines2"><span></span></a>
+                                    </th>
+                                    
+                                </tr> 
+                                </thead> 
+                                <tbody> 
+                                <tr> 
+                                    <td>IDR - SmartWealth Equity Fund</td> 
+                                    <td>12/01/2014</td> 
+                                    <td>2,235.1000</td> 
+                                    <td>2,235.1000</td> 
+                                    <td> </td>
+                                    
+                                </tr>     
+                                <tr> 
+                                    <td>IDR - SmartWealth Equity Fund</td> 
+                                    <td>12/01/2014</td> 
+                                    <td>2,235.1000</td> 
+                                    <td>2,235.1000</td> 
+                                    <td> </td>
+                                    
+                                </tr>  
+                                <tr> 
+                                    <td>IDR - SmartWealth Equity Fund</td> 
+                                    <td>12/01/2014</td> 
+                                    <td>2,235.1000</td> 
+                                    <td>2,235.1000</td>
+                                    <td> </td>
+                                    
+                                </tr>  
+                                <tr> 
+                                    <td>IDR - SmartWealth Equity Fund</td> 
+                                    <td>12/01/2014</td> 
+                                    <td>2,235.1000</td> 
+                                    <td>2,235.1000</td> 
+                                    <td> </td>
+                                    
+                                </tr>  
+                                <tr> 
+                                    <td>IDR - SmartWealth Equity Fund</td> 
+                                    <td>12/01/2014</td> 
+                                    <td>2,235.1000</td> 
+                                    <td>2,235.1000</td> 
+                                    <td> </td>
+                                    
+                                </tr>  
+                                <tr> 
+                                    <td>IDR - SmartWealth Equity Fund</td> 
+                                    <td>12/01/2014</td> 
+                                    <td>2,235.1000</td> 
+                                    <td>2,235.1000</td> 
+                                    <td> </td>
+                                    
+                                </tr>  
+                                <tr> 
+                                    <td>IDR - SmartWealth Equity Fund</td> 
+                                    <td>12/01/2014</td> 
+                                    <td>2,235.1000</td> 
+                                    <td>2,235.1000</td> 
+                                    <td> </td>
+                                    
+                                </tr>  
+                                <tr> 
+                                    <td>IDR - SmartWealth Equity Fund</td> 
+                                    <td>12/01/2014</td> 
+                                    <td>2,235.1000</td> 
+                                    <td>2,235.1000</td>
+                                    <td> </td>
+                                    
+                                </tr>  
+                                </tbody> 
+                            </table> 
+                            
+<!--                            <p class="footnote">Return: 3.24% ffff sejak 'dd/mm/yyyy' hingga 'dd/mm/yyyy' adalah xx%</p>-->
+
+                            <!--------- Table nab daily----------------->
+                            
+                        </div>
+                    </div>
+                    <!-- end Graph HTML -->
+                   
+                   
+                    <script>
+                    $(document).ready(function () {
+
+                        // Graph Data ##############################################
+                        var graphData = [{
+                                // Visits
+                                
+                                // Returning Visits
+                                data: [ [0, 50], [1, 21], [1.3, 33], [2.1, 33], [2.6, 40], [3, 29], [4, 20], [5, 30], [5.2, 40],[5.9, 33], [6.6, 33], [7, 20], [7.5, 50] ],
+                                color: '#77b7c5',
+                                points: { radius: 4, fillColor: '#77b7c5' }
+                            }
+                        ];
+
+                        // Lines Graph #############################################
+                        $.plot($('#graph-lines'), graphData, {
+                            series: {
+                                points: {
+                                    show: true,
+                                    radius: 5
+                                },
+                                lines: {
+                                    show: true
+                                },
+                                shadowSize: 0
+                            },
+                            grid: {
+                                color: '#646464',
+                                borderColor: 'transparent',
+                                borderWidth: 20,
+                                hoverable: true
+                            },
+                            xaxis: {
+                                tickColor: 'transparent',
+                                tickDecimals: 0
+                            },
+                            yaxis: {
+                                tickSize: 5
+                            }
+                        });
+
+                        // Bars Graph ##############################################
+                        $.plot($('#graph-bars'), graphData, {
+                            series: {
+                                bars: {
+                                    show: true,
+                                    barWidth: .9,
+                                    align: 'center'
+                                },
+                                shadowSize: 0
+                            },
+                            grid: {
+                                color: '#646464',
+                                borderColor: 'transparent',
+                                borderWidth: 20,
+                                hoverable: true
+                            },
+                            xaxis: {
+                                tickColor: 'transparent',
+                                tickDecimals: 2
+                            },
+                            yaxis: {
+                                tickSize: 1000
+                            }
+                        });
+
+                        // Graph Toggle ############################################
+                        $('#graph-bars').hide();
+                        $('#myTable2').hide();
+                        $('.footnote').hide();
+
+                        $('#lines').on('click', function (e) {
+                            $('#bars').removeClass('active');
+                            $('#myTable2').fadeOut();
+                            $(this).addClass('active');
+                            $('#graph-lines').show();
+                            $('.footnote').hide();
+                            e.preventDefault();
+                        });
+                        
+                        $('#lines2').on('click', function (e) {
+                            $('#bars').removeClass('active');
+                            $('#myTable2').hide();
+                            $(this).addClass('active');
+                            $('#graph-lines').show();
+                            $('.title-chart').show();
+                            $('.footnote').hide();
+                            e.preventDefault();
+                        });
+                        
+                        $('#bars').on('click', function (e) {
+                            $('#lines').removeClass('active');
+                            $('#graph-lines').hide();
+                            $('.title-chart').hide();
+                            $(this).addClass('active');
+                            $('#myTable2').show().removeClass('hidden');
+                            $('.footnote').fadeIn().removeClass('hidden');
+                            e.preventDefault();
+                        });
+                        
+                        
+
+                        // Tooltip #################################################
+                        function showTooltip(x, y, contents) {
+                            $('<div id="tooltips">' + contents + '</div>').css({
+                                top: y - 16,
+                                left: x + 20
+                            }).appendTo('body').fadeIn();
+                        }
+
+                        var previousPoint = null;
+
+                        $('#graph-lines, #graph-bars').bind('plothover', function (event, pos, item) {
+                            if (item) {
+                                if (previousPoint != item.dataIndex) {
+                                    previousPoint = item.dataIndex;
+                                    $('#tooltips').remove();
+                                    var x = item.datapoint[0],
+                                        y = item.datapoint[1];
+                                        showTooltip(item.pageX, item.pageY, y + ' visitors at ' + x + '.00h');
+                                }
+                            } else {
+                                $('#tooltips').remove();
+                                previousPoint = null;
+                            }
+                        });
+
+                    });
+                    </script>
                    
                    <p>Return: 3.24% ffff sejak 'dd/mm/yyyy' hingga 'dd/mm/yyyy' adalah xx%</p>
                     
                 </div>
                     <!--- End Table ------>
-               
-            
+                
+                
         </div> 
             <!-------Article end ---------->
         
 	</div>  
                 
 </div>
+<!-- End of Main -->
+
+
+<!-- End of Footer -->
 <script type="text/javascript">
 	function navigateMe(anchor)
 	{
