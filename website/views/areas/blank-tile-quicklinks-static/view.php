@@ -32,7 +32,11 @@
 	</div>
 	<div id="tab-contact" class="tab-content">
 		<h3 class="judul-quicklink"></h3>
-		<?php echo $this->wysiwyg('kontak')?>
+		<ul class="nav">
+			<?php while ($this->block("linkblock-contact")->loop()) { ?>
+						    <li><?php echo $this->link("myLink-contact"); ?></li>
+			<?php } ?>
+		</ul>
 		<!--
 		<h3>Kontak</h3>
 		Asuransi Jiwa:
@@ -86,28 +90,31 @@
 			</ul>
 		</p>
 	</div>
-	
 
-	<!--<div class="tab-button">
-		<ul>
-			<li><a href="#tab-quicklinks">Quick Links</a></li>
-			<li><a href="#tab-contact">Contact</a></li>
-			<li><a href="#tab-socialmedia">Social Media</a></li>
-			<li><a href="#tab-download">Download</a></li>
-		</ul>
-	</div>-->
-		<div class="tab-button">
+	<?php if(!$this->editmode) { ?>
+		<div class="tab_button">
 			<ul>
-				<li><a href="#tab-quicklinks" class="accordion-tab" onclick="changeHeader(this)"><?php echo $this->input("tab1-quicklink-static", array("width" => 80));?></a></li>
-				<li><a href="#tab-contact" class="accordion-tab" onclick="changeHeader(this)"><?php echo $this->input("tab2-quicklink-static", array("width" => 80));?></a></li>
-				<li><a href="#tab-socialmedia" class="accordion-tab" onclick="changeHeader(this)"><?php echo $this->input("tab3-quicklink-static", array("width" => 80));?></a></li>
-				<li><a href="#tab-download" class="accordion-tab" onclick="changeHeader(this)"><?php echo $this->input("tab4-quicklink-static", array("width" => 80));?></a></li>
-				
+				<li><a class="tab-layanan-anda" href="#tab-quicklinks" onclick="changeHeader(this)"><?php echo $this->input("tab1-quicklink-static");?></a></li>
+				<li><a class="tab-kontak" href="#tab-contact" onclick="changeHeader(this)"><?php echo $this->input("tab2-quicklink-static");?></a></li>
+				<li><a class="tab-sosmed" href="#tab-socialmedia" onclick="changeHeader(this)"><?php echo $this->input("tab3-quicklink-static");?></a></li>
+				<li class="last"><a class="tab-download" href="#tab-download" onclick="changeHeader(this)"><?php echo $this->input("tab4-quicklink-static");?></a></li>
 			</ul>
 		</div>
+	<?php } ?>
+		
 </div>
 <?php if($this->editmode){ ?>
 <!--Tab gantung -->
-		
+		<div class="tab-wrapper-hold">
+			<div class="tab-button">
+				<ul>
+					<li><a href="#tab-quicklinks" class="accordion-tab" onclick="changeHeader(this)"><?php echo $this->input("tab1-quicklink-static", array("width" => 80));?></a></li>
+					<li><a href="#tab-contact" class="accordion-tab" onclick="changeHeader(this)"><?php echo $this->input("tab2-quicklink-static", array("width" => 80));?></a></li>
+					<li><a href="#tab-socialmedia" class="accordion-tab" onclick="changeHeader(this)"><?php echo $this->input("tab3-quicklink-static", array("width" => 80));?></a></li>
+					<li><a href="#tab-download" class="accordion-tab" onclick="changeHeader(this)"><?php echo $this->input("tab4-quicklink-static", array("width" => 80));?></a></li>
+					
+				</ul>
+			</div>
+		</div>
 <!--Tab gantung -->
 <?php } ?>
