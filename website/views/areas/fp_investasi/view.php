@@ -1,4 +1,4 @@
-<div class="row" style="background:#ccc;">
+<div class="row">
 		<div class="container" >
 	<section>
 				<form id="theForm" class="simform" autocomplete="off">
