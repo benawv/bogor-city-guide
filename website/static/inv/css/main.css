@@ -386,6 +386,16 @@ margin-left: 20px;
   font-size: 18px;
 }
 
+.catbox h2 a{
+  text-align: center;
+  padding: 10px 0;
+  color: #FFFFFF;
+  text-transform: capitalize;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  display:block;
+}
+
 .lastone{
   float: right;
   margin:15px 0;

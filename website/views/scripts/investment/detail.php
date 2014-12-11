@@ -71,7 +71,7 @@
 
 	<div class="row">
 		
-		<?php echo $this->areablock('resources-object', array('allowed' => array('education','fp_pendidikan','fp_aruskas','fp_asuransi','fp_pensiun', 'fp_investasi', 'inv_box4')))?>
+		<?php echo $this->areablock('resources-object', array('allowed' => array('education','fp_pendidikan','fp_aruskas','fp_asuransi','fp_pensiun', 'fp_investasi','inv_box3', 'inv_box4', 'inv_box5', 'inv_box6')))?>
 		
 	</div>
 	<!-- row end -->

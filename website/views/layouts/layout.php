@@ -31,8 +31,8 @@
             $this->headMeta()->appendName('keywords', $this->document->getKeywords());
         }
 
-        $this->headTitle()->append("Asuransi Indonesia Terbaik");
-        $this->headTitle()->setSeparator(" : ");
+        /* $this->headTitle()->append("Asuransi Indonesia Terbaik");
+        $this->headTitle()->setSeparator(" : "); */
 
         echo $this->headTitle();
         echo $this->headMeta();

@@ -393,7 +393,7 @@ $(document).ready(function(){
 		}	
 		//END MITRA KERJA
 		
-	    var name = reTanya.replace("?","");
+	    var name = reTanya.replace(/[^a-zA-Z()]/g,'');
 		var filename = name.replace(/\s/g,'-');
         var limit = 32;
         var x;
