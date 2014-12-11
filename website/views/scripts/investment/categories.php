@@ -19,7 +19,7 @@
 
                 </div>
                 <div class="edge_textbanner <?php if($entrieC->edgeNote!=""){echo $entrieC->edgeNote;}else{echo "edge_future";}?>">
-                    <a href="#">Klik Disini</a>
+                    <a href="#" class="linkAnchor">Klik Disini</a>
                 </div>
 
         </div>
@@ -30,7 +30,7 @@
 <?php }  ?>
 
 
-<div class="box_cat">
+<div class="box_cat" id="linkAnchor">
 
     <?php
         
@@ -85,7 +85,11 @@
 	    }
 	    return "";
 	}
-
+	$(".linkAnchor").on("click",function(){
+		$(document.body).animate({
+		    'scrollTop':   $('#anchorName2').offset().top
+		}, 'slow');
+	});
 	var result = getCookie('visitorname');
 	$('.visitorname').html('Hi, ' + result);
  
