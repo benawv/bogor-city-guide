@@ -73,7 +73,7 @@
                          $investmentcolor="bg_health ".$lastone;
                     }elseif($id=="artikel masa depan"){
                          $investmentcolor="bg_future ".$lastone;
-                    }elseif($id=="artike pensiun"){
+                    }elseif($id=="artikel pensiun"){
                          $investmentcolor="bg_pension ".$lastone;
                     }
                   $i++;
