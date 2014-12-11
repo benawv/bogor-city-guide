@@ -68,6 +68,9 @@
     <fp_asuransi>1</fp_asuransi>
     <fp_investasi>1</fp_investasi>
     <fp_pensiun>1</fp_pensiun>
+    <inv-box5></inv-box5>
+    <inv_box5></inv_box5>
+    <inv_box4>1</inv_box4>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>

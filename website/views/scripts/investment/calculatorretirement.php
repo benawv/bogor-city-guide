@@ -109,36 +109,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 
 }); </script>       
     
-<script>   
     
-$(function() {           
-        
-var select = $( "#demo4" );
-        var slider = $( "<div id='slider4'></div>" ).insertAfter( select ).slider({
-            min: 1,
-            max: 10,
-        value: 1,
-            range: "min",
-change: function(event, ui) { 
-         var sliderValue = $( "#slider4" ).slider( "option", "value" );
-        $('#sliderPosition4').val(sliderValue);
-        }        
-        });
-        
-
-$('#increase4').click(function() {
-var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
-  slider.slider( "value", sliderCurrentValue + 1 );
-});
-
-$('#decrease4').click(function() {
-var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
-  slider.slider( "value", sliderCurrentValue - 1 );
-});
-      
-
-}); </script>
-
 <div role="main" class="main">
     
 	<div class="container boxes-view">
@@ -146,16 +117,16 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
 		<div id="#" class="article-wrap">
             
 			<div class="wrap30">
-                <h5><span><a href="#">Home</a></span> &rsaquo; <span>KALKULATOR FINANSIAL PERTANGGUNGAN</span> </h5>
+                <h5><span><a href="#">Home</a></span> &rsaquo; <span>KALKULATOR PENSIUN</span> </h5>
                 
                 <div class="bg-dark-orange">
-                    <h4>KALKULATOR FINANSIAL PERTANGGUNGAN</h4>
+                    <h4>KALKULATOR PERNSIUN</h4>
                     <p></p>
                 </div>
             </div>
             
             <div class="wrap60">
-               <h4>KALKULATOR FINANSIAL PERTANGGUNGAN</h4>
+               <h4>KALKULATOR PERNSIUN</h4>
                 
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
@@ -174,12 +145,12 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4>KALKULATOR FINANSIAL PERTANGGUNGAN</h4>
+                <h4>KALKULATOR PENSIUN</h4>
            </div>
            <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>BIAYA HIDUP / PENDAPATAN BULANAN SAAT INI</h4></div>
+                        <div class="title-box"><h4>BIAYA HIDUP BULANAN SAAT INI</h4></div>
                         <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
                    </div>
                    
@@ -224,10 +195,10 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                </div>
            </div>   
            
-            <div class="calc-machine">
+           <div class="calc-machine">
                <div id="demo3">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>ASUMSI IMBAL HASIL</h4></div>
+                        <div class="title-box"><h4>JANGKA WAKTU</h4></div>
                         <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
                    </div>
                    
@@ -246,30 +217,6 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                     </div><!-- End demo -->
                    
                </div>
-           </div>
-
-           <div class="calc-machine">
-               <div id="demo4">
-                   <div class="calc-box-title"> 
-                        <div class="title-box"><h4>JANGKA WAKTU</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
-                   </div>
-                   
-                    <div class="calc-box">    
-                        <input type="text" id="sliderPosition4" class="slider-wrap" value=1>
-                       </input> 
-                        
-                        <div id="decrease4">
-                          <span class="min">  </span>
-                        </div>
-                   
-                        <div id="increase4">
-                          <span class="add">  </span>
-                        </div>
-                        
-                    </div><!-- End demo -->
-                   
-               </div>
            </div> 
            
            <div class="calc-machine">
@@ -281,7 +228,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
         </div>
     </div>    
     
-</div>    
+</div>   
 
 <script type="text/javascript">
         function setCookie(cname, cvalue, exdays) {
@@ -302,27 +249,24 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
 	    return "";
 	}
         
-        function resp1(biaya, asumsi_inflasi, asumsi_imbal, waktu){
-            var new_asumsi = asumsi_imbal - asumsi_inflasi;
-            new_asumsi = new_asumsi / 100;
-            var result = Number(biaya) * 12 * ((1 - Math.pow(1 + Number(new_asumsi), Number(-waktu))) / Number(new_asumsi)) * (1 + Number(new_asumsi));
+        function pension1(biaya, asumsi, waktu){
+            asumsi = asumsi / 100;
+            var result = Number(biaya) * (Math.pow(1 + Number(asumsi), Number(waktu)));
             return result.toFixed(2);
         }
         
         $(".orange-btn").click(function(){
-            var result = resp1($("#sliderPosition").val(),
+            var result = pension1($("#sliderPosition").val(),
                $("#sliderPosition2").val(),
-               $("#sliderPosition3").val(),
-               $("#sliderPosition4").val()
+               $("#sliderPosition3").val()
                );
             
-            setCookie('resp1_biaya',$("#sliderPosition").val(),1);
-            setCookie('resp1_asumsi_inflasi',$("#sliderPosition2").val(),1);
-            setCookie('resp1_asumsi_imbal',$("#sliderPosition3").val(),1);
-            setCookie('resp1_jangka_waktu',$("#sliderPosition4").val(),1);
-            setCookie('resp1_hasil',result,1);
+            setCookie('pension1_biaya',$("#sliderPosition").val(),1);
+            setCookie('pension1_asumsi_inflasi',$("#sliderPosition2").val(),1);
+            setCookie('pension1_jangka_waktu',$("#sliderPosition3").val(),1);
+            setCookie('pension1_hasil',result,1);
             
-            window.location.href = "/investasi/investment-homepage/tools/financial-calculators/pertanggungan-result";
+            window.location.href = "/investasi/investment-homepage/tools/financial-calculators/calculator-retirement-result";
         });
     
 	function navigateMe(anchor)

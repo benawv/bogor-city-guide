@@ -26,16 +26,16 @@
 		<div id="#" class="article-wrap">
             
 			<div class="wrap30">
-                <h5><span><a href="#">Home</a></span> &rsaquo; <span>KALKULATOR FINANSIAL PERTANGGUNGAN</span> </h5>
+                <h5><span><a href="#">Home</a></span> &rsaquo; <span>KALKULATOR PENSIUN</span> </h5>
                 
                 <div class="bg-dark-orange">
-                    <h4>KALKULATOR FINANSIAL PERTANGGUNGAN</h4>
+                    <h4>KALKULATOR PENSIUN</h4>
                     <p></p>
                 </div>
             </div>
             
             <div class="wrap60">
-               <h4>KALKULATOR FINANSIAL PERTANGGUNGAN</h4>
+               <h4>KALKULATOR PENSIUN</h4>
                 
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
@@ -54,13 +54,13 @@
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4>KALKULATOR PERTANGGUNGAN</h4>
+                <h4>KALKULATOR PENSIUN</h4>
            </div>
             
              <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>HASIL KALKULASI PERTANGGUNGAN ANDA ADALAH</h4></div>
+                        <div class="title-box"><h4>HASIL KALKULASI BIAYA HIDUP BULANAN DI MASA DEPAN ANDA ADALAH</h4></div>
                         <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
                    </div>
                    
@@ -88,7 +88,7 @@
            
            <div class="calc-machine">
                <div class="calc-submit">
-                    <input id="investment2" class="orange-btn" type="button" value="BAGAIMANA MENCAPAINYA?">
+                    <input id="retirement2" class="orange-btn" type="button" value="BAGAIMANA MENCAPAINYA?">
                 </div>
                <div class="share">
                     <span>Ingin menghitung kembali? <a href="allianz-investment-calculator.php">klik disini >></a></span>
@@ -106,7 +106,10 @@
     
 </div>    
 
+    
 
+<!-- End of Main -->
+<?php include("include/footer.php"); ?>
 <!-- End of Footer -->
 <script type="text/javascript">
 	function setCookie(cname, cvalue, exdays) {
@@ -127,8 +130,12 @@
 	    return "";
 	}
 
-	var result = getCookie('resp1_hasil');
+	var result = getCookie('pension1_hasil');
 	$('#result').html('Rp. ' + result);
+	
+	$("#retirement2").click(function(){
+	    window.location.href = "/investasi/investment-homepage/tools/financial-calculators/calculator-retirement2";
+        });
 	
 	function navigateMe(anchor)
 	{
