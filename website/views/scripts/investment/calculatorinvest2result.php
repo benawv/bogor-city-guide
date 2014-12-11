@@ -10,7 +10,11 @@
 <script src="/website/static/inv/js/rangeslider/jquery.tools.min.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/rangeslider/sticky-jquery.js" type="text/javascript"></script>
     
-<script src="/website/static/inv/js/rangeslider/jquery.min.js" type="text/javascript"></script>     
+<script src="/website/static/inv/js/rangeslider/jquery.min.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="/website/static/inv/css/style-o.css" type="text/css" media="all" /> 
+<script src="/website/static/inv/js/javascripts-o.js" type="text/javascript"></script>
+    
 <script src="/website/static/inv/js/rangeslider/jquery-ui.min.js" type="text/javascript"></script>     
 
 <script type="text/javascript">var switchTo5x=true;</script>
@@ -61,7 +65,8 @@
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4>INVESTASI TAHUNAN YANG DIPERLUKAN ADALAH</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
+                        <!-- tambahin #overlayAppendix di href-nya bang -->
+                        <div class="tooltips"><a class="tooltip-left" href="#overlayAppendix" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
                    </div>
                    
                     <div class="calc-box2">    
@@ -71,7 +76,7 @@
 		    </div>
 		    <div class="calc-box-title"> 
                         <div class="title-box"><h4>INVESTASI BULANAN YANG DIPERLUKAN ADALAH</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
+                        <div class="tooltips"><a class="tooltip-left" href="#overlayAppendix" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
                     </div>
 		    <div class="calc-box2">    
                         <div class="count-result">
@@ -111,6 +116,114 @@
     </div>    
     
 </div>    
+<!-- popup -->
+<div class="calc-overlay" id="overlayAppendix">
+    <div class="calc-overlay-inner">
+        <div class="calc-overlay-box">
+            <a href="#" class="calc-overlay-close">&times;</a>
+            <h3>Appendix - Riset Biaya Pendidikan S1 di Beberapa Negara <small>(Dalam Jutaan)</small></h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pertahun dalam Rupiah</th>
+                        <th>Biaya Sekolah</th>
+                        <th>Biaya Hidup</th>
+                        <th>Total Biaya</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Australia</td>
+                        <td>261.6</td>
+                        <td>135.3</td>
+                        <td>396.9</td>
+                    </tr>
+                    <tr>
+                        <td>Amerika Serikat</td>
+                        <td>259.8</td>
+                        <td>107.9</td>
+                        <td>367.7</td>
+                    </tr>
+                    <tr>
+                        <td>Inggris</td>
+                        <td>198.7</td>
+                        <td>113.6</td>
+                        <td>312.3</td>
+                    </tr>
+                    <tr>
+                        <td>Uni Emirat Arab</td>
+                        <td>220.1</td>
+                        <td>61.8</td>
+                        <td>281.9</td>
+                    </tr>
+                    <tr>
+                        <td>Kanada</td>
+                        <td>190.3</td>
+                        <td>77.6</td>
+                        <td>267.9</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Singapura</strong></td>
+                        <td>153.3</td>
+                        <td>96.4</td>
+                        <td>249.7</td>
+                    </tr>
+                    <tr>
+                        <td>Hongkong</td>
+                        <td>135.7</td>
+                        <td>95.3</td>
+                        <td>231.0</td>
+                    </tr>
+                    <tr>
+                        <td>Jepang</td>
+                        <td>67.4</td>
+                        <td>130.2</td>
+                        <td>197.6</td>
+                    </tr>
+                    <tr>
+                        <td>China</td>
+                        <td>41.0</td>
+                        <td>49.2</td>
+                        <td>90.2</td>
+                    </tr>
+                    <tr>
+                        <td>Taiwan</td>
+                        <td>33.6</td>
+                        <td>51.3</td>
+                        <td>84.9</td>
+                    </tr>
+                    <tr>
+                        <td>Jerman</td>
+                        <td>6.5</td>
+                        <td>58.2</td>
+                        <td>64.7</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Indonesia (UPH)</strong></td>
+                        <td>95</td>
+                        <td>50.4</td>
+                        <td>145.4</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Indonesia (BINUS)</strong></td>
+                        <td>68.9</td>
+                        <td>50.4</td>
+                        <td>119.3</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            <small>Sumber: Riset HSBC Agustus 2013 &amp; ALlianz<br />Biaya untuk Fakultas Management</small>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            
+        </div><!--/ .calc-overlay-box -->
+    </div><!--/ .calc-inner -->
+</div><!--/ .calc-overlay -->
+
 <!-- End of Main -->
 
 <!-- End of Footer -->

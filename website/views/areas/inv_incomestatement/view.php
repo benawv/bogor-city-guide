@@ -296,7 +296,14 @@ jQuery(function($) {
 
 <script type="text/javascript">
 $(document).ready(function(){
-
+    
+    var total_bulanan=0;
+    var Bulanan1=0;
+    var Bulanan1=0;
+    var Bulanan1=0;
+    var Bulanan1=0;
+    var Bulanan1=0;
+    
     $("#prev_1").click(function(){
     $(".stepform").hide();
     $("#step_1").fadeIn();
