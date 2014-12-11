@@ -24,7 +24,7 @@ $(function() {
 var select = $( "#demo" );
         var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
             min: 1000000,
-            max: 100000000,
+            max: 1000000000,
             value: 1000000,
             range: "min",
 change: function(event, ui) { 
@@ -92,7 +92,7 @@ $(function() {
 var select = $( "#demo3" );
         var slider = $( "<div id='slider3'></div>" ).insertAfter( select ).slider({
             min: 1,
-            max: 10,
+            max: 100,
         value: 1,
             range: "min",
 change: function(event, ui) { 
