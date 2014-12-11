@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <zend-config xmlns:zf="http://framework.zend.com/xml/zend-config-xml/1.0/">
-    <id>container-box</id>
-    <name>Container Box</name>
+    <id>inv_box3</id>
+    <name>Investment 3 Box</name>
     <description></description>
     <author>Allianz ID</author>
     <version>1.0</version>
