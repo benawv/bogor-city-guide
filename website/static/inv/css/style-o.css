@@ -1,0 +1,252 @@
+/**
+ * css/style-o.css
+ * Update by Otoy @ 14/12/11
+ */
+
+.homebanner input#putname::-moz-placeholder
+{
+    color: rgba( 255, 255, 255, 0.8 ) !important; 
+    font-style: normal !important;
+}
+
+.homebanner input#putname::-webkit-input-placeholder
+{
+    color: rgba( 255, 255, 255, 0.8 ) !important;  
+    font-style: normal !important;
+}
+
+.homebanner input#putname:-ms-input-placeholder
+{  
+    color: rgba( 255, 255, 255, 0.8 ) !important;  
+    font-style: normal !important;
+}
+
+.box_banner_big .bg_future.blue
+{
+    background: #003781 !important;
+}
+
+.box_banner_big .edge_textbanner.blue
+{
+    background: url('../images/edge-blue-alt.png') no-repeat scroll right top transparent;
+}
+
+.box_banner_big .edge_textbanner.red
+{
+    background: url('../images/edge-red-alt.png') no-repeat scroll right top transparent;
+}
+
+.box_banner_big .edge_textbanner.brown
+{
+    background: url('../images/edge-brown-alt.png') no-repeat scroll right top transparent;
+}
+
+.box_banner_big .edge_textbanner.brown-darker
+{
+    background: url('../images/edge-brown-2-alt.png') no-repeat scroll right top transparent;
+}
+
+.form-container.blue
+{
+    background: #3c6092;
+}
+
+.form-container.blue section
+{
+    padding: 5em 2em 10em;
+}
+
+.form-container.blue,
+.form-container.blue input[type="text"],
+.form-container.blue input[type="number"],
+.form-container.blue input[type="email"],
+.form-container.blue input[type="search"],
+.form-container.blue input[type="number"],
+.form-container.blue span.error-message,
+.form-container.blue span.final-message,
+.form-container.blue span.final-message h3,
+.form-container.blue span.final-message p,
+.form-container.blue span.final-message a,
+.form-container.blue span.percentage
+{
+    color: white !important;
+}
+
+.form-container.blue span.final-message a:hover
+.form-container.red span.final-message a:hover
+{
+    color: rgba( 255, 255, 255, 0.8 ) !important;
+}
+
+.form-container.red
+{
+    background: #a31c3d;
+}
+
+.form-container.red,
+.form-container.red input[type="text"],
+.form-container.red input[type="number"],
+.form-container.red input[type="email"],
+.form-container.red input[type="search"],
+.form-container.red input[type="number"],
+.form-container.red span.error-message,
+.form-container.red span.final-message,
+.form-container.red span.final-message h3,
+.form-container.red span.final-message p,
+.form-container.red span.final-message a,
+.form-container.red span.percentage
+{
+    color: white !important;
+}
+
+.form-container.brown
+{
+    background: #d39e42;
+}
+
+.form-container.brown-darker
+{
+    background: #9c6c55;
+}
+
+.form-container span.final-message
+{
+    padding-top: 3em;
+}
+
+.form-container span.percentage
+{
+    font-weight: bold;
+    font-size: xx-large;
+    display: block;
+    margin: 10px 0;
+}
+
+/* Financial Planning Form */
+form.simform
+{
+    padding: 2em 0 !important;
+}
+
+form.simform .simform-inner > ol > li > span,
+form.simform .simform-inner > ol > li > span > label
+{
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 70%;
+}
+
+form.simform .simform-inner > ol > li > span > label
+{
+    margin-bottom: 8px;
+}
+
+/* Pop-up */
+.calc-overlay
+{
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+}
+
+.calc-overlay > .calc-overlay-inner
+{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.calc-overlay > .calc-overlay-inner > .calc-overlay-box
+{
+    display: block;
+    position: absolute;
+    background: white;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    transform: translate3d( -50%, -50%, 0);
+    padding: 48px 52px;
+}
+
+.calc-overlay > .calc-overlay-inner > .calc-overlay-box > a.calc-overlay-close
+{
+    display: block;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font-size: xx-large;
+    color: #999; /* rgba( 0, 0, 0, 0.3 ); */
+    min-width: 48px;
+    min-height: 48px;
+    line-height: 48px;
+}
+
+.calc-overlay > .calc-overlay-inner > .calc-overlay-box > a.calc-overlay-close:hover,
+.calc-overlay > .calc-overlay-inner > .calc-overlay-box > a.calc-overlay-close:focus
+{
+    color: #666; /* rgba( 0, 0, 0, 0.6 ); */
+}
+
+.calc-overlay > .calc-overlay-inner > .calc-overlay-box > h1,
+.calc-overlay > .calc-overlay-inner > .calc-overlay-box > h2,
+.calc-overlay > .calc-overlay-inner > .calc-overlay-box > h3,
+.calc-overlay > .calc-overlay-inner > .calc-overlay-box > h4,
+.calc-overlay > .calc-overlay-inner > .calc-overlay-box > h5,
+.calc-overlay > .calc-overlay-inner > .calc-overlay-box > h6
+{
+    margin: 0 0 12px;
+    padding: 0;
+    font-size: x-large;
+    font-weight: bold;
+    color: #003781;
+}
+
+.calc-overlay > .calc-overlay-inner > .calc-overlay-box > p
+{
+    color: #666;
+}
+
+.calc-overlay > .calc-overlay-inner > .calc-overlay-box > table
+{
+    text-align: left;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+.calc-overlay > .calc-overlay-inner > .calc-overlay-box > table td,
+.calc-overlay > .calc-overlay-inner > .calc-overlay-box > table th
+{
+    padding: 5px 10px;
+}
+
+.calc-overlay > .calc-overlay-inner > .calc-overlay-box > table > thead > tr > td,
+.calc-overlay > .calc-overlay-inner > .calc-overlay-box > table > thead > tr > th
+{
+    background: #003781;
+    color: white;
+}
+
+.calc-overlay > .calc-overlay-inner > .calc-overlay-box > table > tbody > tr > td
+{
+    background: #d0d8e8;
+}
+
+.calc-overlay > .calc-overlay-inner > .calc-overlay-box > table > tbody > tr:nth-child(even) > td
+{
+    background: #e9edf4;
+}
+
+.calc-overlay > .calc-overlay-inner > .calc-overlay-box > table > tfoot > tr > td
+{
+    font-size: small;
+    text-align: right;
+    padding: 8px 0;
+}
