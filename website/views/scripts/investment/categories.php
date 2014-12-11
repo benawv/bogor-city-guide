@@ -18,7 +18,7 @@
                     <?php echo $entrieC->quotes;?>
 
                 </div>
-                <div class="edge_textbanner edge_future">
+                <div class="edge_textbanner <?php echo $entrieC->edgeNote;?>">
                     <a href="#">Klik Disini</a>
                 </div>
 
