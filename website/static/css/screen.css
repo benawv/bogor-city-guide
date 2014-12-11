@@ -3557,3 +3557,13 @@ ul.flex-direction-nav{
 .btn-section{
 	float: right !important;
 }
+
+.upperText{
+	text-transform: uppercase;
+}
+
+/*COMMUNITY*/
+.art-adv .s-ct .art-box .custom-art.art-inf{
+	text-align: right;
+	clear: both;
+}

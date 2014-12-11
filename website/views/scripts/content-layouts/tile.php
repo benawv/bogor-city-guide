@@ -1,7 +1,7 @@
 <div class="container boxes-view">
 	<div class="heading clearfix pagenav">
 		<h5 style="visibility:hidden;"><span><a href="product.php">Produk</a></span> &raquo; <span><b>Asuransi Umum</b></span></h5>
-		<span class="title"><?php echo $this->document->getTitle()?></span>
+		<span class="title"><?php echo $this->document->getProperty('navigation_title');?></span>
 		<div id="quicklinks">
 			<?php echo $this->areablock('layananKami', array(
 					"allowed" => array("quicklinks")))?>
