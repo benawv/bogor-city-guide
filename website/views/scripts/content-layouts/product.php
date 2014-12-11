@@ -12,17 +12,20 @@
 </style>
 <div class="container boxes-view">
 	<div class="heading clearfix pagenav">
-		<span class="breadcrumb"><a href="#">Produk</a> &rsaquo; <?php 
-			$url = $_SERVER['REQUEST_URI'];
-			$uri = explode("/", $url);
-			for($x = 2; $x < count($uri); $x++)
-			{
-				$title = explode("-", $uri[$x]);
-				$textTitle = "";
-				for ($y = 0; $y < count($title); $y++)
+		<span class="breadcrumb"><a href="#">Produk</a> &rsaquo;
+		<?php
+			if(!$this->editmode) { 
+				$url = $_SERVER['REQUEST_URI'];
+				$uri = explode("/", $url);
+				for($x = 2; $x < count($uri); $x++)
 				{
-					$textTitle = " <span class='upperText'>".substr($title[$y], 0, 1)."</span>".substr($title[$y], 1);
-					echo $textTitle;
+					$title = explode("-", $uri[$x]);
+					$textTitle = "";
+					for ($y = 0; $y < count($title); $y++)
+					{
+						$textTitle = " <span class='upperText'>".substr($title[$y], 0, 1)."</span>".substr($title[$y], 1);
+						echo $textTitle;
+					}
 				}
 			}
 		?>
