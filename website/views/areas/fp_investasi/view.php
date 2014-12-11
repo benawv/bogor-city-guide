@@ -35,6 +35,7 @@
     
         <script src="/website/static/inv/css/form/js/classie.js"></script>
 		<script src="/website/static/inv/css/form/js/stepsForm.js"></script>
+		<script src="/website/static/inv/js/accounting.min.js"></script>
 		<script>
 			function fp_investment(biaya){
 				var waktu = 5
@@ -60,7 +61,8 @@
 					// let's just simulate something...
 					var messageEl = theForm.querySelector( '.final-message' );
 					var result = fp_investment($('#q1').val());
-					messageEl.innerHTML = 'FAKTA <br> <h3>30% dari jumlah yang sama setiap bulannya sudah dapat memberikan Anda <br />Rp. ' + result + '<br /> Melalui instrumen investasi dengan rata-rata imbal hasil tahunan sebesar 12% selama 5 tahun <br> <a href= "#"> Mari mulai perencanaan arus kas anda </a></h3>';
+					result = accounting.formatMoney(result,'Rp. ',2,'.',',');
+					messageEl.innerHTML = 'FAKTA <br> <h3>30% dari jumlah yang sama setiap bulannya sudah dapat memberikan Anda <br />' + result + '<br /> Melalui instrumen investasi dengan rata-rata imbal hasil tahunan sebesar 12% selama 5 tahun <br> <a href= "#"> Mari mulai perencanaan arus kas anda </a></h3>';
 					classie.addClass( messageEl, 'show' );
 				}
 			} );
