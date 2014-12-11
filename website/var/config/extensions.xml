@@ -73,6 +73,7 @@
     <inv_box4>1</inv_box4>
     <inv_box3>1</inv_box3>
     <inv_box6>1</inv_box6>
+    <inv_balancedsheet>1</inv_balancedsheet>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>

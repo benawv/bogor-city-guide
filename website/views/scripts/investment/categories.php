@@ -13,7 +13,7 @@
                 <div class="textbanner bg_future">
                     <h1><?php echo $entrieC->title;?></h1>
 
-                    <p> Hi,</p>
+                    <p class="visitorname"> Hi, </p>
 
                     <?php echo $entrieC->quotes;?>
 
@@ -72,4 +72,22 @@
     <?php
         }
 	?>	
+ 
+ <script>
+ 
+ 	function getCookie(cname) {
+	    var name = cname + "=";
+	    var ca = document.cookie.split(';');
+	    for(var i=0; i<ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1);
+		if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+	    }
+	    return "";
+	}
+
+	var result = getCookie('visitorname');
+	$('.visitorname').html('Hi, ' + result);
+ 
+ </script>
 <?php echo $this->template("includes/inv/footer.php")?>
