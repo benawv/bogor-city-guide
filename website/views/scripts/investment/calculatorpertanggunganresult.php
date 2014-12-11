@@ -87,9 +87,6 @@
            
            
            <div class="calc-machine">
-               <div class="calc-submit">
-                    <input id="investment2" class="orange-btn" type="button" value="BAGAIMANA MENCAPAINYA?">
-                </div>
                <div class="share">
                     <span>Ingin menghitung kembali? <a href="allianz-investment-calculator.php">klik disini >></a></span>
                 </div>

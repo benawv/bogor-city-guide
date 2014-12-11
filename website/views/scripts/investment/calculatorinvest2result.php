@@ -96,9 +96,6 @@
            
            
            <div class="calc-machine">
-               <div class="calc-submit">
-                    <input id="retirement3" class="orange-btn" type="button" value="BAGAIMANA MENCAPAINYA?" />
-                </div>
                <div class="share">
                     <span>Ingin menghitung kembali? <a href="/investasi/investment-homepage/tools/financial-calculators/calculator_invest">klik disini >></a></span>
                 </div>
