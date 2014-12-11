@@ -158,10 +158,10 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
 		<div id="#" class="article-wrap">
             
 			<div class="wrap30">
-                <h5><span><a href="#">Home</a></span> &rsaquo; <span>KALKULATOR FINANSIAL PERTANGGUNGAN</span> </h5>
+                <h5><span><a href="#">Home</a></span> &rsaquo; <span>KALKULATOR ASURANSI</span> </h5>
                 
                 <div class="bg-dark-orange">
-                    <h4>KALKULATOR FINANSIAL PERTANGGUNGAN</h4>
+                    <h4>KALKULATOR ASURANSI</h4>
                     <p></p>
                 </div>
             </div>
@@ -186,7 +186,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4>KALKULATOR FINANSIAL PERTANGGUNGAN</h4>
+                <h4>KALKULATOR ASURANSI</h4>
            </div>
            <div class="calc-machine">
                <div id="demo">
