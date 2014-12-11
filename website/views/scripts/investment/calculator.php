@@ -58,7 +58,7 @@ $(function() {
 var select = $( "#demo2" );
         var slider = $( "<div id='slider2'></div>" ).insertAfter( select ).slider({
             min: 1,
-            max: 100,
+            max: 20,
         value: 1,
             range: "min",
 change: function(event, ui) { 
@@ -126,16 +126,16 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 		<div id="#" class="article-wrap">
             
 			<div class="wrap30">
-                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Kalkulator Financial Pendidikan</span> </h5>
+                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Kalkulator Finansial Pendidikan</span> </h5>
                 
                 <div class="bg-dark-orange">
-                    <h4>Kalkulator Financial Pendidikan</h4>
+                    <h4>Kalkulator Finansial Pendidikan</h4>
                     <p></p>
                 </div>
             </div>
             
             <div class="wrap60">
-               <h4>Kalkulator Financial Pendidikan</h4>
+               <h4>Kalkulator Finansial Pendidikan</h4>
                 
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
@@ -262,7 +262,9 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 
         function edu1(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
-            var result = Number(biaya) * (Math.pow(1 + Number(asumsi), Number(waktu)));
+            var formula = 1 * Math.pow(1 + Number(asumsi), Number(waktu));
+            formula = formula.toFixed(3);
+            var result = Number(biaya) * formula;
             return result.toFixed(2);
         }
         

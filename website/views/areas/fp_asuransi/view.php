@@ -10,7 +10,7 @@
 							</li>
 							<li>
 								<span><label for="q2">Berapakah pendapatan Anda per bulan?</label></span>
-								<input id="q2" name="q2" type="text"/>
+								<input id="q2" name="q2" type="text"/ value="Rp. 0">
 							</li>
 							
 						</ol><!-- /questions -->
@@ -44,11 +44,37 @@
 			function fp_insurance(usia, pendapatan){
 				var new_usia = 55 - usia;
 				var new_asumsi = 0.02;
-				var result = Number(pendapatan) * 12 * ((1 - Math.pow(1 + Number(new_asumsi), Number(-new_usia))) / Number(new_asumsi)) * (1 + Number(new_asumsi));
+				var formula = 1 * ((1 - Math.pow(1 + Number(new_asumsi), Number(-new_usia))) / Number(new_asumsi)) * (1 + Number(new_asumsi));
+				formula = formula.toFixed(3);
+				var result = Number(pendapatan) * 12 * formula;
 				return result.toFixed(2);
 			    }
 			var theForm = document.getElementById( 'theForm' );
 
+			var usia = 0;
+			var pendapatan = 0;
+			$("#q1").keyup(function(){
+				var text = $(this).val();
+				text = text.replace(' tahun','');
+				text = text.replace(' tahu','');
+				text = text.replace(/\./g,'');
+				text = text.replace(/,/g,'');
+				if (event.keyCode == '8') {
+				    text = text.substr(0,text.length-1);
+				}
+				usia = text;
+				$(this).val(text + ' tahun');
+			    });
+			$("#q2").bind('input',function(){
+				var text = $(this).val();
+				text = text.replace('Rp. ','');
+				text = text.replace(/\./g,'');
+				text = text.replace(/,/g,'');
+				pendapatan = text;
+				text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+				$(this).val(text);
+			    });
+			
 			new stepsForm( theForm, {
 				onSubmit : function( form ) {
 					// hide form
@@ -62,7 +88,7 @@
 
 					// let's just simulate something...
 					var messageEl = theForm.querySelector( '.final-message' );
-					var result = fp_insurance($('#q1').val(),$('#q2').val());
+					var result = fp_insurance(usia,pendapatan);
 					result = accounting.formatMoney(result,'Rp. ',2,'.',',');
 					messageEl.innerHTML = 'FAKTA <br> <h3>Pertanggungan sebesar <br />' + result + ' <br> akan memastikan apa bila risiko meninggal dunia terjadi mereka yang dicintai tetap akan terdukung secara finansial hingga memasuki masa pensiun Anda <br> <a href= "#"> Mari mulai perencanaan arus kas anda </a></h3>';
 					classie.addClass( messageEl, 'show' );

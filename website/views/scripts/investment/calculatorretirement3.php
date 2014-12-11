@@ -30,6 +30,7 @@ var select = $( "#demo" );
 change: function(event, ui) { 
          var sliderValue = $( "#slider" ).slider( "option", "value" );
         $('#sliderPosition').val(sliderValue);
+        $('#sliderPosition').trigger('input');
         }        
         });
         
@@ -37,11 +38,13 @@ change: function(event, ui) {
 $('#increase').click(function() {
 var sliderCurrentValue = $( "#slider" ).slider( "option", "value" );
   slider.slider( "value", sliderCurrentValue + 1000000 );
+  $('#sliderPosition').trigger('input');
 });
 
 $('#decrease').click(function() {
 var sliderCurrentValue = $( "#slider" ).slider( "option", "value" );
   slider.slider( "value", sliderCurrentValue - 1000000 );
+  $('#sliderPosition').trigger('input');
 });
       
 
@@ -55,12 +58,13 @@ $(function() {
 var select = $( "#demo2" );
         var slider = $( "<div id='slider2'></div>" ).insertAfter( select ).slider({
             min: 1,
-            max: 100,
+            max: 30,
         value: 1,
             range: "min",
 change: function(event, ui) { 
          var sliderValue = $( "#slider2" ).slider( "option", "value" );
         $('#sliderPosition2').val(sliderValue);
+        $('#sliderPosition2').trigger('keyup');
         }        
         });
         
@@ -68,11 +72,13 @@ change: function(event, ui) {
 $('#increase2').click(function() {
 var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
   slider.slider( "value", sliderCurrentValue + 1 );
+  $('#sliderPosition2').trigger('keyup');
 });
 
 $('#decrease2').click(function() {
 var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
   slider.slider( "value", sliderCurrentValue - 1 );
+  $('#sliderPosition2').trigger('keyup');
 });
       
 
@@ -92,6 +98,7 @@ var select = $( "#demo3" );
 change: function(event, ui) { 
          var sliderValue = $( "#slider3" ).slider( "option", "value" );
         $('#sliderPosition3').val(sliderValue);
+        $('#sliderPosition3').trigger('keyup');
         }        
         });
         
@@ -99,11 +106,13 @@ change: function(event, ui) {
 $('#increase3').click(function() {
 var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
   slider.slider( "value", sliderCurrentValue + 1 );
+  $('#sliderPosition3').trigger('keyup');
 });
 
 $('#decrease3').click(function() {
 var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
   slider.slider( "value", sliderCurrentValue - 1 );
+  $('#sliderPosition3').trigger('keyup');
 });
       
 
@@ -150,12 +159,12 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
            <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>BIAYA HIDUP BULANAN YANG DIBUTUHKAN</h4></div>
+                        <div class="title-box"><h4>DANA PENSIUN YANG DIBUTUHKAN</h4></div>
                         <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition" class="slider-wrap" value=1000000>
+                        <input type="text" id="sliderPosition" class="slider-wrap" value="Rp. 0">
                        </input> 
                         
                         <div id="decrease">
@@ -174,12 +183,12 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
              <div class="calc-machine">
                <div id="demo2">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>ASUMSI IMBAL HASIL</h4></div>
+                        <div class="title-box"><h4>ASUMSI TINGKAT IMBAL HASIL</h4></div>
                         <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition2" class="slider-wrap" value=1>
+                        <input type="text" id="sliderPosition2" class="slider-wrap" value="1%">
                        </input> 
                         
                         <div id="decrease2">
@@ -198,12 +207,12 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
            <div class="calc-machine">
                <div id="demo3">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>JANGKA WAKTU MASA PENSIUN</h4></div>
+                        <div class="title-box"><h4>JANGKA WAKTU MENABUNG</h4></div>
                         <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition3" class="slider-wrap" value=1>
+                        <input type="text" id="sliderPosition3" class="slider-wrap" value="1 tahun">
                        </input> 
                         
                         <div id="decrease3">
@@ -232,6 +241,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 <!-- End of Main -->
 
 <!-- End of Footer -->
+<script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 <script type="text/javascript">
         function setCookie(cname, cvalue, exdays) {
 	    var d = new Date();
@@ -251,28 +261,69 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 	    return "";
 	}
         
-        $('#sliderPosition').val(getCookie('pension2_hasil'));
-        $('#sliderPosition3').val(getCookie('pension2_jangka_waktu'));
+        var pension2_hasil = getCookie('pension2_hasil');
+	var pension2_waktu = getCookie('pension2_jangka_waktu');
+	pension2_hasil = accounting.formatMoney(pension2_hasil,'Rp. ',2,'.',',');
+        $('#sliderPosition').val(pension2_hasil);
+        $('#sliderPosition3').val(pension2_waktu + ' tahun');
+
         
         function pension3(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
-            var result = Number(biaya) / ((Math.pow(1 + Number(asumsi), Number(waktu)) - 1) / Number(asumsi));
+            var formula = 1 * ((Math.pow(1 + Number(asumsi), Number(waktu)) - 1) / Number(asumsi))
+            formula = formula.toFixed(3);
+            var result = Number(biaya) / formula;
             return result.toFixed(2);
         }
         
+        var biaya = getCookie('pension2_hasil');
+        var asumsi = 1;
+        var waktu = getCookie('pension2_jangka_waktu');
+        $("#sliderPosition").bind('input',function(){
+            var text = $(this).val();
+            text = text.replace('Rp. ','');
+            text = text.replace(/\./g,'');
+            text = text.replace(/,/g,'');
+            biaya = text;
+            text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+            $(this).val(text);
+        });
+        
+        $("#sliderPosition2").keyup(function(){
+            var text = $(this).val();
+            text = text.replace('%','');
+            text = text.replace(/\./g,'');
+            text = text.replace(/,/g,'');
+            if (event.keyCode == '8') {
+                text = text.substr(0,text.length-1);
+            }
+            asumsi = text;
+            $(this).val(text + '%');
+        });
+
+        $("#sliderPosition3").keyup(function(){
+            var text = $(this).val();
+            text = text.replace(' tahun','');
+            text = text.replace(' tahu','');
+            text = text.replace(/\./g,'');
+            text = text.replace(/,/g,'');
+            if (event.keyCode == '8') {
+                text = text.substr(0,text.length-1);
+            }
+            waktu = text;
+            $(this).val(text + ' tahun');
+        });
+                
         $(".orange-btn").click(function(){
-            var result = pension3($("#sliderPosition").val(),
-               $("#sliderPosition2").val(),
-               $("#sliderPosition3").val()
-               );
+            var result = pension3(biaya,asumsi,waktu);
             
-            setCookie('pension3_biaya',$("#sliderPosition").val(),1);
-            setCookie('pension3_asumsi_inflasi',$("#sliderPosition2").val(),1);
-            setCookie('pension3_jangka_waktu',$("#sliderPosition3").val(),1);
+            setCookie('pension3_biaya',biaya,1);
+            setCookie('pension3_asumsi_inflasi',asumsi,1);
+            setCookie('pension3_jangka_waktu',waktu,1);
             setCookie('pension3_hasil_tahunan',result,1);
             setCookie('pension3_hasil_bulanan',result * 0.09,1);
             
-            window.location.href = "/investasi/investment-homepage/tools/financial-calculators/";
+            window.location.href = "/investasi/investment-homepage/tools/financial-calculators/calculator-retirement3-result";
         });
 
 	function navigateMe(anchor)

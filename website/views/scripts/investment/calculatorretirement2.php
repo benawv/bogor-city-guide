@@ -58,7 +58,7 @@ $(function() {
 var select = $( "#demo2" );
         var slider = $( "<div id='slider2'></div>" ).insertAfter( select ).slider({
             min: 1,
-            max: 100,
+            max: 20,
         value: 1,
             range: "min",
 change: function(event, ui) { 
@@ -263,7 +263,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 	    return "";
 	}
         
-        var pension1_hasil = getCookie('pension1_hasil')
+        var pension1_hasil = getCookie('pension1_hasil');
 	var pension1_waktu = getCookie('pension1_jangka_waktu');
 	pension1_hasil = accounting.formatMoney(pension1_hasil,'Rp. ',0,'.',',');
 	$('#sliderPosition').val(pension1_hasil);
@@ -271,13 +271,15 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         
         function pension2(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
-            var result = Number(biaya) * 12 * ((1 - Math.pow(1 + Number(asumsi), Number(-waktu))) / Number(asumsi)) * (1 + Number(asumsi));
+            var formula = ((1 - Math.pow(1 + Number(asumsi), Number(-waktu))) / Number(asumsi)) * (1 + Number(asumsi));
+            formula = formula.toFixed(3);
+            var result = Number(biaya) * 12 * formula;
             return result.toFixed(2);
         }
         
-        var biaya = 1000000;
+        var biaya = getCookie('pension1_hasil');
         var asumsi = 1;
-        var waktu = 1;
+        var waktu = getCookie('pension1_jangka_waktu');
         $("#sliderPosition").bind('input',function(){
             var text = $(this).val();
             text = text.replace('Rp. ','');

@@ -58,7 +58,7 @@ $(function() {
 var select = $( "#demo2" );
         var slider = $( "<div id='slider2'></div>" ).insertAfter( select ).slider({
             min: 1,
-            max: 100,
+            max: 20,
         value: 1,
             range: "min",
 change: function(event, ui) { 
@@ -266,7 +266,9 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         
         function investment1(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
-            var result = Number(biaya) * (Math.pow(1 + Number(asumsi), Number(waktu)));
+            var formula = 1 * (Math.pow(1 + Number(asumsi), Number(waktu)));
+            formula = formula.toFixed(3);
+            var result = Number(biaya) * formula;
             return result.toFixed(2);
         }
         

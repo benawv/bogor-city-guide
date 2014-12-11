@@ -6,7 +6,7 @@
 						<ol class="questions">
 							<li>
 								<span><label for="q1">Berapakah biaya sekolah anda pada saat SMP?</label></span>
-								<input id="q1" name="q1" type="text"/>
+								<input id="q1" name="q1" type="text" value="Rp. 0"/>
 							</li>
 							
 						</ol><!-- /questions -->
@@ -32,7 +32,7 @@
 
 	</div>
 	<!-- row end -->
-    
+    <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
         <script src="/website/static/inv/css/form/js/classie.js"></script>
 		<script src="/website/static/inv/css/form/js/stepsForm.js"></script>
 		<script>
@@ -42,7 +42,18 @@
 			    }
 			    
 			var theForm = document.getElementById( 'theForm' );
-
+		
+				var biaya = 0;
+			$("#q1").bind('input',function(){
+				var text = $(this).val();
+				text = text.replace('Rp. ','');
+				text = text.replace(/\./g,'');
+				text = text.replace(/,/g,'');
+				biaya = text;
+				text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+				$(this).val(text);
+			    });
+			
 			new stepsForm( theForm, {
 				onSubmit : function( form ) {
 					// hide form
@@ -55,7 +66,7 @@
 					*/
 
 					// let's just simulate something...
-					var result = fp_education($("#q1").val());
+					var result = fp_education(biaya);
 					var messageEl = theForm.querySelector( '.final-message' );
 					messageEl.innerHTML = 'Jumlah tersebut saat ini hanya cukup untuk bersekolah selama <br>' + result + ' hari <br><br> FAKTA <br> <h3>Secara rata-rata kenaikan biaya pendidikan di Indonesia dua kali lipat dari kenaikan harga barang-barang secara umum <br><br /> Ingin melakukan check up keuangan anda <br> <a href= "/investasi/investment-homepage/tools/financial-calculators/calculator"> Mari mulai perencanaan pendidikan anda </a></h3>';
 					classie.addClass( messageEl, 'show' );

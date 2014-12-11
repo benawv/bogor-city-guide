@@ -117,6 +117,7 @@
 <!-- End of Main -->
 
 <!-- End of Footer -->
+<script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 	function setCookie(cname, cvalue, exdays) {
 	    var d = new Date();
@@ -136,8 +137,12 @@
 	    return "";
 	}
 
-	$('#result_year').html('Rp. ' + Number(getCookie('pension3_hasil_tahunan')).toFixed(2));
-	$('#result_month').html('Rp. ' + Number(getCookie('pension3_hasil_bulanan')).toFixed(2));	
+	var result_year = getCookie('pension3_hasil_tahunan');
+	var result_month = getCookie('pension3_hasil_bulanan');
+	result_year = accounting.formatMoney(result_year,'Rp. ',2,'.',',');
+	result_month = accounting.formatMoney(result_month,'Rp. ',2,'.',',');
+	$('#result_year').html(result_year);
+	$('#result_month').html(result_month);		
 	
 	function navigateMe(anchor)
 	{

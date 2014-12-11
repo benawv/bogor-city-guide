@@ -58,7 +58,7 @@ $(function() {
 var select = $( "#demo2" );
         var slider = $( "<div id='slider2'></div>" ).insertAfter( select ).slider({
             min: 1,
-            max: 100,
+            max: 30,
         value: 1,
             range: "min",
 change: function(event, ui) { 
@@ -159,7 +159,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
            <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>BIAYA PENDIDIKAN SAAT INI</h4></div>
+                        <div class="title-box"><h4>BIAYA PENDIDIKAN YANG DIBUTUHKAN</h4></div>
                         <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
                    </div>
                    
@@ -183,7 +183,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
              <div class="calc-machine">
                <div id="demo2">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>ASUMSI TINGKAT INFLASI</h4></div>
+                        <div class="title-box"><h4>ASUMSI TINGKAT IMBAL HASIL</h4></div>
                         <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
                    </div>
                    
@@ -272,13 +272,15 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         
         function edu2(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
-            var result = Number(biaya) / ((Math.pow(1 + Number(asumsi), Number(waktu)) - 1) / Number(asumsi));
+            var formula = 1 * (Math.pow(1 + Number(asumsi), Number(waktu)) - 1) / Number(asumsi);
+            formula = formula.toFixed(3);
+            var result = Number(biaya) / formula;
             return result.toFixed(2);
         }
         
-        var biaya = 1000000;
+        var biaya = getCookie('edu1_hasil');
         var asumsi = 1;
-        var waktu = 1;
+        var waktu = getCookie('edu1_jangka_waktu');
         $("#sliderPosition").bind('input',function(){
             var text = $(this).val();
             text = text.replace('Rp. ','');

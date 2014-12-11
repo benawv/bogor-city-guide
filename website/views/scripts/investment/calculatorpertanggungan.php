@@ -58,7 +58,7 @@ $(function() {
 var select = $( "#demo2" );
         var slider = $( "<div id='slider2'></div>" ).insertAfter( select ).slider({
             min: 1,
-            max: 100,
+            max: 20,
         value: 1,
             range: "min",
 change: function(event, ui) { 
@@ -92,7 +92,7 @@ $(function() {
 var select = $( "#demo3" );
         var slider = $( "<div id='slider3'></div>" ).insertAfter( select ).slider({
             min: 1,
-            max: 100,
+            max: 30,
         value: 1,
             range: "min",
 change: function(event, ui) { 
@@ -239,7 +239,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
             <div class="calc-machine">
                <div id="demo3">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>ASUMSI IMBAL HASIL</h4></div>
+                        <div class="title-box"><h4>ASUMSI TINGKAT IMBAL HASIL</h4></div>
                         <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
                    </div>
                    
@@ -263,7 +263,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
            <div class="calc-machine">
                <div id="demo4">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>JANGKA WAKTU</h4></div>
+                        <div class="title-box"><h4>JANGKA WAKTU HINGGA PENSIUN</h4></div>
                         <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
                    </div>
                    
@@ -318,7 +318,9 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
         function resp1(biaya, asumsi_inflasi, asumsi_imbal, waktu){
             var new_asumsi = asumsi_imbal - asumsi_inflasi;
             new_asumsi = new_asumsi / 100;
-            var result = Number(biaya) * 12 * ((1 - Math.pow(1 + Number(new_asumsi), Number(-waktu))) / Number(new_asumsi)) * (1 + Number(new_asumsi));
+            var formula = 1 * ((1 - Math.pow(1 + Number(new_asumsi), Number(-waktu))) / Number(new_asumsi)) * (1 + Number(new_asumsi));
+            formula = formula.toFixed(3);
+            var result = Number(biaya) * 12 * formula;
             return result.toFixed(2);
         }
         

@@ -36,7 +36,7 @@
 
 	</div>
 	<!-- row end -->
-    
+		<script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
         <script src="/website/static/inv/css/form/js/classie.js"></script>
 		<script src="/website/static/inv/css/form/js/stepsForm.js"></script>
 		<script>
@@ -47,6 +47,27 @@
 
 			var theForm = document.getElementById( 'theForm' );
 
+			var pendapatan = 0;
+			var tabungan = 0;
+			$("#q1").bind('input',function(){
+				var text = $(this).val();
+				text = text.replace('Rp. ','');
+				text = text.replace(/\./g,'');
+				text = text.replace(/,/g,'');
+				pendapatan = text;
+				text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+				$(this).val(text);
+			    });
+			$("#q2").bind('input',function(){
+				var text = $(this).val();
+				text = text.replace('Rp. ','');
+				text = text.replace(/\./g,'');
+				text = text.replace(/,/g,'');
+				tabungan = text;
+				text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+				$(this).val(text);
+			    });
+			
 			new stepsForm( theForm, {
 				onSubmit : function( form ) {
 					// hide form
@@ -60,7 +81,7 @@
 
 					// let's just simulate something...
 					var messageEl = theForm.querySelector( '.final-message' );
-					var result = fp_cashflow($('#q1').val(), $('#q2').val());
+					var result = fp_cashflow(pendapatan, tabungan);
 					var color = 'green';
 					if (result <= 10.00) {
 						color = 'red';

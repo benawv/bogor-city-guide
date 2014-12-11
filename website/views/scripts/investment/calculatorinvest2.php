@@ -58,7 +58,7 @@ $(function() {
 var select = $( "#demo2" );
         var slider = $( "<div id='slider2'></div>" ).insertAfter( select ).slider({
             min: 1,
-            max: 100,
+            max: 30,
         value: 1,
             range: "min",
 change: function(event, ui) { 
@@ -271,13 +271,15 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         
         function investment3(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
-            var result = Number(biaya) / ((Math.pow(1 + Number(asumsi), Number(waktu)) - 1) / Number(asumsi));
+            var formula = 1 * ((Math.pow(1 + Number(asumsi), Number(waktu)) - 1) / Number(asumsi));
+            formula = formula.toFixed(3);
+            var result = Number(biaya) / formula;
             return result.toFixed(2);
         }
         
-        var biaya = 1000000;
+        var biaya = getCookie('investment1_hasil');
         var asumsi = 1;
-        var waktu = 1;
+        var waktu = getCookie('investment1_jangka_waktu');
         $("#sliderPosition").bind('input',function(){
             var text = $(this).val();
             text = text.replace('Rp. ','');
