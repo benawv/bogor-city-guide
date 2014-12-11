@@ -5,7 +5,7 @@
 <?php endif; ?>
 <div class="container boxes-view">
 	<h5><a href="/"><span>Home</span></a> &rsaquo; <?php echo $this->navigation()->breadcrumbs()->setMinDepth(null); ?></h5>
-	<span class="breadcrumb"><a href="#"><?php echo $this->document->getTitle()?></a></span>
+	<span class="breadcrumb"><a href="#"><?php echo $this->document->getProperty('navigation_title');?></a></span>
 	
 	<div class="heading clearfix pagenav">
 		<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
