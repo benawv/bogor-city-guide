@@ -22,7 +22,7 @@
 				{
 			?>
 					<ul class="<?php echo $i==0?'noborder':'' ?>">
-						<li class="menutitle"><span class="clickPage" onclick="link('<?php echo $subpage->getUri()?>','')"><?php echo $subpage->getDocument()->getTitle()?></span></li>
+						<li class="menutitle"><span class="clickPage" onclick="link('<?php echo $subpage->getUri()?>','')"><?php echo $subpage->getDocument()->getProperty('navigation_title');?></span></li>
 						<?php 
 							$list = new Document_List();
 							$list->setLimit(7);
