@@ -10,7 +10,7 @@
         <div class="box_banner">
 
 
-                <div class="textbanner bg_future">
+                <div class="textbanner bg_future" style="background:<?php echo $entrieC->hexaColor;?>">
                     <h1><?php echo $entrieC->title;?></h1>
 
                     <p class="visitorname"> Hi, </p>
