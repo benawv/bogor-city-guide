@@ -309,11 +309,17 @@
 										{
 									?>
 									<li>
+									<?php if (isset($sliderImage->link)){?>
+										<a href="<?php echo "/community-detail/".$sliderImage->link->o_key."_".$sliderImage->link->o_id."_".$sliderImage->link->template;?>">
+									<?php }else {?>
+										<a href="#">
+									<?php }?>
 										<div class="slide">
 											<div class="photo">
 												<img alt="" src="<?php echo $sliderImage->getImage();?>" />
 											</div>
 										</div>
+										</a>
 									</li>
 									<?php }?>
 								</ul>

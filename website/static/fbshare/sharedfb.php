@@ -19,7 +19,7 @@
 		$html = '
 			<html>
 				<head>
-					<meta property="og:title" content="Allianz '.$title.'" />
+					<meta property="og:title" content="Allianz - '.$title.'" />
 					<meta property="og:type" content="website" />
 					<meta property="og:description" content="'.$desc.'" />
 					<meta property="og:image" content="'.$url.'/'.$image_name.'" />
