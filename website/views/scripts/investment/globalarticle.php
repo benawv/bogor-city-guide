@@ -75,8 +75,6 @@
                          $investmentcolor="bg_future ".$lastone;
                     }elseif($id=="artike pensiun"){
                          $investmentcolor="bg_pension ".$lastone;
-                    }elseif($id=="guide me"){
-                        $investmentcolor="bg_guideme ".$lastone;
                     }
                   $i++;
                 ?>
