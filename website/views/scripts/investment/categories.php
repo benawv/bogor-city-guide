@@ -18,7 +18,7 @@
                     <?php echo $entrieC->quotes;?>
 
                 </div>
-                <div class="edge_textbanner <?php if($entrieC->edgeNote!=""){echo $entrieC->edgeNote;}else{echo "edge_future";}?>">
+                <div class="linkAnchor edge_textbanner <?php if($entrieC->edgeNote!=""){echo $entrieC->edgeNote;}else{echo "edge_future";}?>">
                     <a href="#" class="linkAnchor">Klik Disini</a>
                 </div>
 
@@ -85,9 +85,9 @@
 	    }
 	    return "";
 	}
-	$(".linkAnchor").on("click",function(){
-		$(document.body).animate({
-		    'scrollTop':   $('#anchorName2').offset().top
+ 	$(".linkAnchor").on("click",function(){
+		$('html, body').animate({
+		    'scrollTop':   $('#linkAnchor').offset().top
 		}, 'slow');
 	});
 	var result = getCookie('visitorname');
