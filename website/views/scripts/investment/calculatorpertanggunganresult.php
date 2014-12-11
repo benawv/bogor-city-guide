@@ -108,6 +108,7 @@
 
 
 <!-- End of Footer -->
+<script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 	function setCookie(cname, cvalue, exdays) {
 	    var d = new Date();
@@ -128,7 +129,8 @@
 	}
 
 	var result = getCookie('resp1_hasil');
-	$('#result').html('Rp. ' + result);
+	result = accounting.formatMoney(result,'Rp. ',2,'.',',');
+	$('#result').html(result);
 	
 	function navigateMe(anchor)
 	{

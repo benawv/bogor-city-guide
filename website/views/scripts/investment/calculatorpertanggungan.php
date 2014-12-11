@@ -30,6 +30,7 @@ var select = $( "#demo" );
 change: function(event, ui) { 
          var sliderValue = $( "#slider" ).slider( "option", "value" );
         $('#sliderPosition').val(sliderValue);
+        $('#sliderPosition').trigger('input');
         }        
         });
         
@@ -37,11 +38,13 @@ change: function(event, ui) {
 $('#increase').click(function() {
 var sliderCurrentValue = $( "#slider" ).slider( "option", "value" );
   slider.slider( "value", sliderCurrentValue + 1000000 );
+  $('#sliderPosition').trigger('input');
 });
 
 $('#decrease').click(function() {
 var sliderCurrentValue = $( "#slider" ).slider( "option", "value" );
   slider.slider( "value", sliderCurrentValue - 1000000 );
+  $('#sliderPosition').trigger('input');
 });
       
 
@@ -61,6 +64,7 @@ var select = $( "#demo2" );
 change: function(event, ui) { 
          var sliderValue = $( "#slider2" ).slider( "option", "value" );
         $('#sliderPosition2').val(sliderValue);
+        $('#sliderPosition2').trigger('keyup');
         }        
         });
         
@@ -68,11 +72,13 @@ change: function(event, ui) {
 $('#increase2').click(function() {
 var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
   slider.slider( "value", sliderCurrentValue + 1 );
+  $('#sliderPosition2').trigger('keyup');
 });
 
 $('#decrease2').click(function() {
 var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
   slider.slider( "value", sliderCurrentValue - 1 );
+  $('#sliderPosition2').trigger('keyup');
 });
       
 
@@ -86,12 +92,13 @@ $(function() {
 var select = $( "#demo3" );
         var slider = $( "<div id='slider3'></div>" ).insertAfter( select ).slider({
             min: 1,
-            max: 10,
+            max: 100,
         value: 1,
             range: "min",
 change: function(event, ui) { 
          var sliderValue = $( "#slider3" ).slider( "option", "value" );
         $('#sliderPosition3').val(sliderValue);
+        $('#sliderPosition3').trigger('keyup');
         }        
         });
         
@@ -99,11 +106,13 @@ change: function(event, ui) {
 $('#increase3').click(function() {
 var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
   slider.slider( "value", sliderCurrentValue + 1 );
+  $('#sliderPosition3').trigger('keyup');
 });
 
 $('#decrease3').click(function() {
 var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
   slider.slider( "value", sliderCurrentValue - 1 );
+  $('#sliderPosition3').trigger('keyup');
 });
       
 
@@ -122,6 +131,7 @@ var select = $( "#demo4" );
 change: function(event, ui) { 
          var sliderValue = $( "#slider4" ).slider( "option", "value" );
         $('#sliderPosition4').val(sliderValue);
+        $('#sliderPosition4').trigger('keyup');
         }        
         });
         
@@ -129,11 +139,13 @@ change: function(event, ui) {
 $('#increase4').click(function() {
 var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
   slider.slider( "value", sliderCurrentValue + 1 );
+  $('#sliderPosition4').trigger('keyup');
 });
 
 $('#decrease4').click(function() {
 var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
   slider.slider( "value", sliderCurrentValue - 1 );
+  $('#sliderPosition4').trigger('keyup');
 });
       
 
@@ -184,7 +196,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition" class="slider-wrap" value=1000000>
+                        <input type="text" id="sliderPosition" class="slider-wrap" value="Rp. 1.000.000">
                        </input> 
                         
                         <div id="decrease">
@@ -208,7 +220,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition2" class="slider-wrap" value=1>
+                        <input type="text" id="sliderPosition2" class="slider-wrap" value="1%">
                        </input> 
                         
                         <div id="decrease2">
@@ -232,7 +244,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition3" class="slider-wrap" value=1>
+                        <input type="text" id="sliderPosition3" class="slider-wrap" value="1%">
                        </input> 
                         
                         <div id="decrease3">
@@ -256,7 +268,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition4" class="slider-wrap" value=1>
+                        <input type="text" id="sliderPosition4" class="slider-wrap" value="1 tahun">
                        </input> 
                         
                         <div id="decrease4">
@@ -283,6 +295,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
     
 </div>    
 
+<script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 <script type="text/javascript">
         function setCookie(cname, cvalue, exdays) {
 	    var d = new Date();
@@ -309,20 +322,67 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
             return result.toFixed(2);
         }
         
+        var biaya = 1000000;
+        var asumsi_inflasi = 1;
+	var asumsi_imbal = 1;
+        var waktu = 1;
+        $("#sliderPosition").bind('input',function(){
+            var text = $(this).val();
+            text = text.replace('Rp. ','');
+            text = text.replace(/\./g,'');
+            text = text.replace(/,/g,'');
+            biaya = text;
+            text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+            $(this).val(text);
+        });
+        
+        $("#sliderPosition2").keyup(function(){
+            var text = $(this).val();
+            text = text.replace('%','');
+            text = text.replace(/\./g,'');
+            text = text.replace(/,/g,'');
+            if (event.keyCode == '8') {
+                text = text.substr(0,text.length-1);
+            }
+            asumsi_inflasi = text;
+            $(this).val(text + '%');
+        });
+        
+	$("#sliderPosition3").keyup(function(){
+            var text = $(this).val();
+            text = text.replace('%','');
+            text = text.replace(/\./g,'');
+            text = text.replace(/,/g,'');
+            if (event.keyCode == '8') {
+                text = text.substr(0,text.length-1);
+            }
+            asumsi_imbal = text;
+            $(this).val(text + '%');
+        });
+        
+        $("#sliderPosition4").keyup(function(){
+            var text = $(this).val();
+            text = text.replace(' tahun','');
+            text = text.replace(' tahu','');
+            text = text.replace(/\./g,'');
+            text = text.replace(/,/g,'');
+            if (event.keyCode == '8') {
+                text = text.substr(0,text.length-1);
+            }
+            waktu = text;
+            $(this).val(text + ' tahun');
+        });
+
         $(".orange-btn").click(function(){
-            var result = resp1($("#sliderPosition").val(),
-               $("#sliderPosition2").val(),
-               $("#sliderPosition3").val(),
-               $("#sliderPosition4").val()
-               );
+            var result = resp1(biaya,asumsi_inflasi,asumsi_imbal,waktu);
             
-            setCookie('resp1_biaya',$("#sliderPosition").val(),1);
-            setCookie('resp1_asumsi_inflasi',$("#sliderPosition2").val(),1);
-            setCookie('resp1_asumsi_imbal',$("#sliderPosition3").val(),1);
-            setCookie('resp1_jangka_waktu',$("#sliderPosition4").val(),1);
+            setCookie('resp1_biaya',biaya,1);
+            setCookie('resp1_asumsi_inflasi',asumsi_inflasi,1);
+            setCookie('resp1_asumsi_imbal',asumsi_imbal,1);
+            setCookie('resp1_jangka_waktu',waktu,1);
             setCookie('resp1_hasil',result,1);
             
-            window.location.href = "/investasi/investment-homepage/tools/financial-calculators/pertanggungan-result";
+            window.location.href = "/investasi/investment-homepage/tools/financial-calculators/calculator-resp1-result";
         });
     
 	function navigateMe(anchor)

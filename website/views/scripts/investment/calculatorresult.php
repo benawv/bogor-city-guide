@@ -106,6 +106,7 @@
     
 </div>  
 
+<script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 
 function setCookie(cname, cvalue, exdays) {
@@ -127,10 +128,11 @@ function setCookie(cname, cvalue, exdays) {
 	}
 
 	var result = getCookie('edu1_hasil');
-	$('#result').html('Rp. ' + result);
+	result = accounting.formatMoney(result,'Rp. ',2,'.',',');
+	$('#result').html(result);
 	
 	$("#edu2").click(function(){
-	    window.location.href = "/investasi/investment-homepage/tools/financial-calculators/calculator2";
+	    window.location.href = "/investasi/investment-homepage/tools/financial-calculators/calculator-education2";
         });
 	
 	function navigateMe(anchor)

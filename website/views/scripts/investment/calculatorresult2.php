@@ -60,15 +60,25 @@
              <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>HASIL KALKULASI BIAYA PENDIDIKAN DI MASA DEPAN ANDA ADALAH</h4></div>
+                        <div class="title-box"><h4>INVESTASI TAHUNAN YANG DIPERLUKAN ADALAH</h4></div>
                         <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
                    </div>
                    
                     <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result">Rp. 0</span>
+                            <span id="result_year">Rp. 0</span>
                         </div>
-                        <div class="share">
+		    </div>
+		    <div class="calc-box-title"> 
+                        <div class="title-box"><h4>INVESTASI BULANAN YANG DIPERLUKAN ADALAH</h4></div>
+                        <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
+                   </div>
+                   
+		    <div class="calc-box2">    
+                        <div class="count-result">
+                            <span id="result_month">Rp. 0</span>
+                        </div>
+		        <div class="share">
                             <span>Bagikan hasil tersebut dengan teman Anda:</span>
                         </div>
                         <div class="socmed">
@@ -88,10 +98,10 @@
            
            <div class="calc-machine">
                <div class="calc-submit">
-                    <input id="edu2" class="orange-btn" type="button" value="BAGAIMANA MENCAPAINYA?">
-                </div>
+                    <input class="orange-btn" type="button" value="BAGAIMANA MENCAPAINYA?">
+                </div>  
                <div class="share">
-                    <span>Ingin menghitung kembali? <a href="/investasi/investment-homepage/tools/financial-calculators/calculator">klik disini >></a></span>
+                    <span>Ingin menghitung kembali? <a href="allianz-investment-calculator.php">klik disini >></a></span>
                 </div>
                
                <div class="allianz-button">
@@ -105,9 +115,11 @@
     </div>    
     
 </div>    
+
 <!-- End of Main -->
 
 <!-- End of Footer -->
+<script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 	function setCookie(cname, cvalue, exdays) {
 	    var d = new Date();
@@ -127,8 +139,10 @@
 	    return "";
 	}
 
-	var result = getCookie('edu1_hasil');
-	$('#result').html('Rp. ' + result);
+	var result_year = getCookie('edu2_hasil_tahunan');
+	var result_month = getCookie('edu2_hasil_bulanan')
+	$('#result_year').html(accounting.formatMoney(result_year,'Rp. ',2,'.',','));
+	$('#result_month').html(accounting.formatMoney(result_month,'Rp. ',2,'.',','));
 	
 	$("#edu2").click(function(){
 	    window.location.href = "http://localhost/allianzcoid/allianz-investment-calculator-education2.php";
