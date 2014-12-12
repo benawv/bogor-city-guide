@@ -101,8 +101,8 @@
                 </div>
                
                <div class="allianz-button">
-                    <input class="blue-btn" type="button" value="Lihat Fund Allianz">
-                     <input class="blue-btn" type="button" value="Lihat Produk Allianz">
+                    <input id="fund_allianz" class="blue-btn" type="button" value="Lihat Fund Allianz">
+                    <input id="product_allianz" class="blue-btn" type="button" value="Lihat Produk Allianz">
                </div>
            </div>  
            
@@ -141,6 +141,14 @@
 	$('#result_year').html(result_year);
 	$('#result_month').html(result_month);		
 	
+    $("#fund_allianz").click(function(){
+	    window.location.href = "http://beta.allianz.co.id/investasi/investment-homepage/allianz-fund";
+     });
+     
+     $("#product_allianz").click(function(){
+	    window.location.href = "http://beta.allianz.co.id/produk";
+     });
+    
 	function navigateMe(anchor)
 	{
 	

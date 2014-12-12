@@ -37,7 +37,7 @@
             <div class="wrap60">
                <h4>KALKULATOR FINANSIAL PERTANGGUNGAN</h4>
                 
-                <p>Dalam perencanaan keuangan, asuransi memiliki fungsi untuk manajemen risiko memproteksi keuangan pribadi. Dan secara umum, setiap orang setidaknya wajib memiliki proteksi kerugian finansial karena sakit, sakit kritis, meninggal dunia dan cacat tetap total. Asuransi dibeli karena kita mencintai keluarga kita. Asuransi dibeli sebelum risiko datang menghampiri.</p><br />
+                <p>Dalam perencanaan keuangan, asuransi memiliki fungsi untuk manajemen risiko memproteksi keuangan pribadi. Dan secara umum, setiap orang setidaknya wajib memiliki proteksi kerugian finansial karena sakit, sakit kritis, meninggal dunia dan cacat tetap total. Asuransi dibeli karena kita mencintai keluarga kita. Asuransi dibeli sebelum risiko datang menghampiri.</p>
                 <p>Mari pastikan perlindungan yang kita miliki sudah cukup untuk menanggung orang-orang yang kita cintai dengan menghitung pertanggungan yang kita butuhkan.</p>                
         
             </div>
@@ -91,8 +91,8 @@
                 </div>
                
                <div class="allianz-button">
-                    <input class="blue-btn" type="button" value="Lihat Fund Allianz">
-                     <input class="blue-btn" type="button" value="Lihat Produk Allianz">
+                    <input id="fund_allianz" class="blue-btn" type="button" value="Lihat Fund Allianz">
+                    <input id="product_allianz" class="blue-btn" type="button" value="Lihat Produk Allianz">
                </div>
            </div>  
            
@@ -128,6 +128,15 @@
 	result = accounting.formatMoney(result,'Rp. ',2,'.',',');
 	$('#result').html(result);
 	
+    
+     $("#fund_allianz").click(function(){
+	    window.location.href = "http://beta.allianz.co.id/investasi/investment-homepage/allianz-fund";
+     });
+     
+     $("#product_allianz").click(function(){
+	    window.location.href = "http://beta.allianz.co.id/produk";
+     });
+     
 	function navigateMe(anchor)
 	{
 	
