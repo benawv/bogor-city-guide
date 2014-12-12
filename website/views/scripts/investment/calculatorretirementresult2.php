@@ -91,7 +91,7 @@
                     <input id="retirement3" class="orange-btn" type="button" value="BAGAIMANA MENCAPAINYA?">
                 </div>
                <div class="share">
-                    <span>Ingin menghitung kembali? <a href="/investasi/investment-homepage/kalkulator/financial-calculators/calculator-retirement">klik disini >></a></span>
+                    <span>Ingin menghitung kembali? <a href="/investasi/investment-homepage/kalkulator/financial-calculators/pensiun">klik disini >></a></span>
                 </div>
                
                <div class="allianz-button">
