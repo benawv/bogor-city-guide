@@ -235,7 +235,112 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                
         </div>
     </div>    
-    
+    <div class="calc-overlay" id="overlayAppendix">
+    <div class="calc-overlay-inner">
+        <div class="calc-overlay-box">
+            <a href="#" class="calc-overlay-close">&times;</a>
+            <h3>Appendix - Riset Biaya Pendidikan S1 di Beberapa Negara <small>(Dalam Jutaan)</small></h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pertahun dalam Rupiah</th>
+                        <th>Biaya Sekolah</th>
+                        <th>Biaya Hidup</th>
+                        <th>Total Biaya</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Australia</td>
+                        <td>261.6</td>
+                        <td>135.3</td>
+                        <td>396.9</td>
+                    </tr>
+                    <tr>
+                        <td>Amerika Serikat</td>
+                        <td>259.8</td>
+                        <td>107.9</td>
+                        <td>367.7</td>
+                    </tr>
+                    <tr>
+                        <td>Inggris</td>
+                        <td>198.7</td>
+                        <td>113.6</td>
+                        <td>312.3</td>
+                    </tr>
+                    <tr>
+                        <td>Uni Emirat Arab</td>
+                        <td>220.1</td>
+                        <td>61.8</td>
+                        <td>281.9</td>
+                    </tr>
+                    <tr>
+                        <td>Kanada</td>
+                        <td>190.3</td>
+                        <td>77.6</td>
+                        <td>267.9</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Singapura</strong></td>
+                        <td>153.3</td>
+                        <td>96.4</td>
+                        <td>249.7</td>
+                    </tr>
+                    <tr>
+                        <td>Hongkong</td>
+                        <td>135.7</td>
+                        <td>95.3</td>
+                        <td>231.0</td>
+                    </tr>
+                    <tr>
+                        <td>Jepang</td>
+                        <td>67.4</td>
+                        <td>130.2</td>
+                        <td>197.6</td>
+                    </tr>
+                    <tr>
+                        <td>China</td>
+                        <td>41.0</td>
+                        <td>49.2</td>
+                        <td>90.2</td>
+                    </tr>
+                    <tr>
+                        <td>Taiwan</td>
+                        <td>33.6</td>
+                        <td>51.3</td>
+                        <td>84.9</td>
+                    </tr>
+                    <tr>
+                        <td>Jerman</td>
+                        <td>6.5</td>
+                        <td>58.2</td>
+                        <td>64.7</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Indonesia (UPH)</strong></td>
+                        <td>95</td>
+                        <td>50.4</td>
+                        <td>145.4</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Indonesia (BINUS)</strong></td>
+                        <td>68.9</td>
+                        <td>50.4</td>
+                        <td>119.3</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            <small>Sumber: Riset HSBC Agustus 2013 &amp; ALlianz<br />Biaya untuk Fakultas Management</small>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            
+        </div><!--/ .calc-overlay-box -->
+    </div><!--/ .calc-inner -->
+</div><!--/ .calc-overlay -->
 </div> 
 
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
