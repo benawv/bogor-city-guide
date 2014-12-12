@@ -5,7 +5,7 @@
 	<div class="container">
 
 		<div class="row">
-			<div class="bread">
+			<!--div class="bread">
 				<a href="index.php">Home</a>  
 				<i class="fa fa-angle-right"></i> 
 				<a href="artikel.php">Article</a>
@@ -15,7 +15,7 @@
 
 				<i class="fa fa-angle-right"></i>
 				Judul Artikel
-			</div>
+			</div-->
 		</div>
 
 
