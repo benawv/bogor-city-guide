@@ -21,20 +21,28 @@
 				
                 if(month==splitedItem[1]){
                     visible2=true;
-                }else{
-                    visible2=false;
-                }
-                
-                if(year==splitedItem[2]){
+                }else if(month==' '){
                     visible2=true;
                 }else{
                     visible2=false;
                 }
-                visible = visible && visible2;
-			//	alert(visible);
+               // alert(visible2);
+                 visible = visible && visible2;
+                 
+                
+                if(year==splitedItem[2]){
+                    visible3=true;
+                }else if(year==' '){
+                     visible3=true;
+                }else{
+                    visible3=false;
+                }
+                //alert(visible3);
+                 visible = visible && visible3;
+               
                 //console.log(visible);
 
-				if(visible){
+				if(visible==true){
 					$(this).fadeIn('slow');
 					x++;
 				}
@@ -114,7 +122,7 @@
 	<div class="combo_section">
 		<p>
 			Pilih Tahun<br />
-			<select class="combo-width year-pick">
+			<select class="combo-width year-pick" style="color: black;">
 				<option value="" selected="selected">--Pilih Semua--</option>
 				<?php 
 					foreach($list_year  as $row)
@@ -127,9 +135,9 @@
 		</p>
 		<p>
 			Pilih Bulan<br />
-			<select class="combo-width month-pick">
-				<option value="" selected="selected">--Pilih Semua--</option>
-				<option value="januari">Januari</option>
+			<select class="combo-width month-pick" style="color: black;">
+				<option value=" " selected="selected">--Pilih Semua--</option>
+                <option value="januari">Januari</option>
 				<option value="februari">Februari</option>
 				<option value="maret">Maret</option>
 				<option value="april">April</option>
