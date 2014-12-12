@@ -126,10 +126,10 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 		<div id="#" class="article-wrap">
             
 			<div class="wrap30">
-                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Kalkulator Finansial Pendidikan</span> </h5>
+                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Kalkulator Edukasi</span> </h5>
                 
                 <div class="bg-dark-orange">
-                    <h4>Kalkulator Finansial Pendidikan</h4>
+                    <h4>Kalkulator Edukasi</h4>
                     <p></p>
                 </div>
             </div>
@@ -153,7 +153,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4>KALKULATOR PENDIDIKAN</h4>
+                <h4>KALKULATOR EDUKASI</h4>
            </div>
            <div class="calc-machine">
                <div id="demo">
@@ -417,7 +417,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             setCookie('edu1_jangka_waktu',waktu,1);
             setCookie('edu1_hasil',result,1);
             
-            window.location.href = "/investasi/investment-homepage/tools/financial-calculators/calculator-education1-result";
+            window.location.href = "/investasi/investment-homepage/kalkulator/financial-calculators/calculator-education1-result";
         });
     
 	function navigateMe(anchor)

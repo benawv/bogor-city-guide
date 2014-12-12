@@ -26,16 +26,16 @@
 		<div id="#" class="article-wrap">
             
 			<div class="wrap30">
-                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Kalkulator Finansial Pendidikan</span> </h5>
+                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Kalkulator Edukasi</span> </h5>
                 
                 <div class="bg-dark-orange">
-                    <h4>Kalkulator Finansial Pendidikan</h4>
+                    <h4>Kalkulator Edukasi</h4>
                     <p></p>
                 </div>
             </div>
             
             <div class="wrap60">
-               <h4>Kalkulator Finansial Pendidikan</h4>
+               <h4>Kalkulator Edukasi</h4>
                 
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
@@ -54,7 +54,7 @@
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4>KALKULATOR PENDIDIKAN</h4>
+                <h4>KALKULATOR EDUKASI</h4>
            </div>
             
              <div class="calc-machine">
