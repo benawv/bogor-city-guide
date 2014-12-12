@@ -86,7 +86,7 @@
 					if (result <= 10.00) {
 						color = 'red';
 					}
-					messageEl.innerHTML = 'FAKTA <br> <h3>Idealnya, seseorang dapat menyisihkan 10% <br>dari pendapatan bulanannya untuk tabungan yang disebut dengan financial ratio. <br><br>Financial ratio Anda adalah <br><span style="color:'+color+';">'+result+'%</span><br /><br> Ingin melakukan check up keuangan anda <br> <a href= "#"> Mari mulai perencanaan arus kas anda </a></h3><h3><a href="#" onclick="window.location.href=window.location.href">Ulangi lagi</a></h3>';
+					messageEl.innerHTML = 'FAKTA <br> <h3>Idealnya, seseorang dapat menyisihkan 10% <br>dari pendapatan bulanannya untuk tabungan yang disebut dengan financial ratio. <br><br>Financial ratio Anda adalah <br><span style="color:'+color+';">'+result+'%</span><br /><br> Ingin melakukan check up keuangan anda <br> <a href= "/investasi/investment-homepage/kalkulator/financial-calculators/pertanggungan"> Mari mulai perencanaan arus kas anda </a></h3><h3><a href="#" onclick="window.location.href=window.location.href">Ulangi lagi</a></h3>';
 					classie.addClass( messageEl, 'show' );
 				}
 			} );
