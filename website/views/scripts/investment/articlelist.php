@@ -7,7 +7,7 @@
 	if(count($this->data)>0)
 	{
 		$cls=strtolower($entrie->investment);
-        if($id=="artikel edukasi"){
+        if($cls=="artikel edukasi"){
             $investmentcolor="bg_edu ".$lastone;    
         }elseif($cls=="artikel investasi"){
              $investmentcolor="bg_fund ".$lastone;
