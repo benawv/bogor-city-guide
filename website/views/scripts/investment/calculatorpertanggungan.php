@@ -160,7 +160,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
 			<div class="wrap30">
                 <h5><span><a href="#">Home</a></span> &rsaquo; <span>KALKULATOR ASURANSI</span> </h5>
                 
-                <div class="bg-dark-orange">
+                <div class="bg-dark-orange" style="background-color: #a50034">
                     <h4>KALKULATOR ASURANSI</h4>
                     <p></p>
                 </div>
@@ -186,17 +186,17 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4>KALKULATOR ASURANSI</h4>
+                <h4 style="background-color: #a50034">KALKULATOR ASURANSI</h4>
            </div>
            <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>BIAYA HIDUP / PENDAPATAN BULANAN SAAT INI</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
+                        <div class="title-box"><h4 style="color: #a50034">BIAYA HIDUP / PENDAPATAN BULANAN SAAT INI</h4></div>
+                        <div class="tooltips" style="background-color: #a50034;"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition" class="slider-wrap" value="Rp. 1.000.000">
+                        <input type="text" id="sliderPosition" class="slider-wrap" style="border-color: #a50034" value="Rp. 1.000.000">
                        </input> 
                         
                         <div id="decrease">
@@ -215,12 +215,12 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
              <div class="calc-machine">
                <div id="demo2">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>ASUMSI TINGKAT INFLASI</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
+                        <div class="title-box"><h4 style="color: #a50034">ASUMSI TINGKAT INFLASI</h4></div>
+                        <div class="tooltips" style="background-color: #a50034"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition2" class="slider-wrap" value="1%">
+                        <input type="text" id="sliderPosition2" class="slider-wrap" style="border-color: #a50034" value="1%">
                        </input> 
                         
                         <div id="decrease2">
@@ -239,12 +239,12 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
             <div class="calc-machine">
                <div id="demo3">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>ASUMSI TINGKAT IMBAL HASIL</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
+                        <div class="title-box"><h4 style="color: #a50034">ASUMSI TINGKAT IMBAL HASIL</h4></div>
+                        <div class="tooltips" style="background-color: #a50034"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition3" class="slider-wrap" value="1%">
+                        <input type="text" id="sliderPosition3" class="slider-wrap" style="border-color: #a50034" value="1%">
                        </input> 
                         
                         <div id="decrease3">
@@ -263,12 +263,12 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
            <div class="calc-machine">
                <div id="demo4">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>JANGKA WAKTU HINGGA PENSIUN</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
+                        <div class="title-box"><h4 style="color: #a50034">JANGKA WAKTU HINGGA PENSIUN</h4></div>
+                        <div class="tooltips" style="background-color: #a50034"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition4" class="slider-wrap" value="1 tahun">
+                        <input type="text" id="sliderPosition4" class="slider-wrap" style="border-color: #a50034" value="1 tahun">
                        </input> 
                         
                         <div id="decrease4">

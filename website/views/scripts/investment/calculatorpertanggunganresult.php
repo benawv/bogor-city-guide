@@ -26,10 +26,10 @@
 		<div id="#" class="article-wrap">
             
 			<div class="wrap30">
-                <h5><span><a href="#">Home</a></span> &rsaquo; <span>KALKULATOR FINANSIAL PERTANGGUNGAN</span> </h5>
+                <h5><span><a href="#">Home</a></span> &rsaquo; <span>KALKULATOR ASURANSI</span> </h5>
                 
-                <div class="bg-dark-orange">
-                    <h4>KALKULATOR FINANSIAL PERTANGGUNGAN</h4>
+                <div class="bg-dark-orange" style="background-color: #a50034">
+                    <h4>KALKULATOR ASURANSI</h4>
                     <p></p>
                 </div>
             </div>
@@ -54,19 +54,19 @@
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4>KALKULATOR PERTANGGUNGAN</h4>
+                <h4 style="background-color: #a50034">KALKULATOR PERTANGGUNGAN</h4>
            </div>
             
              <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>HASIL KALKULASI PERTANGGUNGAN ANDA ADALAH</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
+                        <div class="title-box"><h4 style="color: #a50034">HASIL KALKULASI PERTANGGUNGAN ANDA ADALAH</h4></div>
+                        <div class="tooltips" style="background-color: #a50034"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
                    </div>
                    
                     <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result">Rp. 0</span>
+                            <span id="result" style="color: #a50034">Rp. 0</span>
                         </div>
                         <div class="share">
                             <span>Bagikan hasil tersebut dengan teman Anda:</span>
