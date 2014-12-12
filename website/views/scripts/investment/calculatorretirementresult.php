@@ -28,7 +28,7 @@
 			<div class="wrap30">
                 <h5><span><a href="#">Home</a></span> &rsaquo; <span>KALKULATOR PENSIUN</span> </h5>
                 
-                <div class="bg-dark-orange">
+                <div class="bg-dark-orange" style="background-color: #8b4720;">
                     <h4>KALKULATOR PENSIUN</h4>
                     <p></p>
                 </div>
@@ -54,19 +54,19 @@
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4>KALKULATOR PENSIUN</h4>
+                <h4 style="background-color: #8b4720;">KALKULATOR PENSIUN</h4>
            </div>
             
              <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>HASIL KALKULASI BIAYA HIDUP BULANAN DI MASA DEPAN ANDA ADALAH</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
+                        <div class="title-box"><h4 style="color: #8b4720;">HASIL KALKULASI BIAYA HIDUP BULANAN DI MASA DEPAN ANDA ADALAH</h4></div>
+                        <div class="tooltips" style="background-color: #8b4720;"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
                    </div>
                    
                     <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result">Rp. 0</span>
+                            <span id="result" style="color: #8b4720;">Rp. 0</span>
                         </div>
                         <div class="share">
                             <span>Bagikan hasil tersebut dengan teman Anda:</span>

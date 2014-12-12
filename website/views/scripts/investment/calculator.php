@@ -240,7 +240,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         <div class="calc-overlay-box">
             <a href="#" class="calc-overlay-close">&times;</a>
             <h3>Appendix - Riset Biaya Pendidikan S1 di Beberapa Negara <small>(Dalam Jutaan)</small></h3>
-            <table>
+            <table style="margin: auto;">
                 <thead>
                     <tr>
                         <th>Pertahun dalam Rupiah</th>
