@@ -61,7 +61,7 @@
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #113388">HASIL KALKULASI BIAYA KEBUTUHAN ANDA DI MASA DEPAN ADALAH</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" style="background-color: #113388" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
+                        <div class="tooltips" style="background-color: #113388"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
                    </div>
                    
                     <div class="calc-box2">    
