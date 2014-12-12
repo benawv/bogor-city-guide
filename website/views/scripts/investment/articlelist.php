@@ -6,17 +6,17 @@
     
 	if(count($this->data)>0)
 	{
-		$cls=strtolower($entrie->investment);
+		$cls=strtolower($inv['investment']);
         if($cls=="artikel edukasi"){
-            $investmentcolor="bg_edu ".$lastone;    
+            $investmentcolor="bg_edu ";    
         }elseif($cls=="artikel investasi"){
-             $investmentcolor="bg_fund ".$lastone;
+             $investmentcolor="bg_fund ";
         }elseif($cls=="artikel asuransi"){
-             $investmentcolor="bg_health ".$lastone;
+             $investmentcolor="bg_health ";
         }elseif($cls=="artikel masa depan"){
-             $investmentcolor="bg_future ".$lastone;
+             $investmentcolor="bg_future ";
         }elseif($cls=="artikel pensiun"){
-             $investmentcolor="bg_pension ".$lastone;
+             $investmentcolor="bg_pension ";
         }
 ?>
             
