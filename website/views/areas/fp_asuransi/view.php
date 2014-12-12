@@ -53,7 +53,7 @@
 
 			var usia = 0;
 			var pendapatan = 0;
-			$("#q1").keyup(function(){
+			$("#q1").keyup(function(event){
 				var text = $(this).val();
 				text = text.replace(/[^0-9\.]+/g,"");
 				if(event.keyCode == '8'){
