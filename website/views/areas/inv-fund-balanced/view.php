@@ -73,7 +73,7 @@
 			<?php if($this->image('icon')->getSrc()):?>
 				<div style="background-image: url('<?php echo $this->image('icon')->getSrc()?>'); height: 31px; width: 31px; float: left; margin-right: 10px; "></div>
 			<?php endif;?>
-			Smartlink
+				<?php echo $this->text('subtitle'); ?>
 		<?php endif; ?>
 	</h2>
 	<?php
