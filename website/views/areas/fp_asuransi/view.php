@@ -55,19 +55,15 @@
 			var pendapatan = 0;
 			$("#q1").keyup(function(){
 				var text = $(this).val();
-				text = text.replace(' tahun','');
-				text = text.replace(' tahu','');
-				text = text.replace(/\./g,'');
-				text = text.replace(/,/g,'');
-				if (event.keyCode == '8') {
-				    text = text.substr(0,text.length-1);
+				text = text.replace(/[^0-9\.]+/g,"");
+				if(event.keyCode == '8'){
+						text = text.substr(0,text.length-1);
 				}
-				usia = text;
 				$(this).val(text + ' tahun');
 			    });
 			$("#q2").bind('input',function(){
 				var text = $(this).val();
-				text = text.replace('Rp. ','');
+				text = text.replace(/[^0-9\.]+/g,"");
 				text = text.replace(/\./g,'');
 				text = text.replace(/,/g,'');
 				pendapatan = text;

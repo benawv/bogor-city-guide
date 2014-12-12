@@ -51,7 +51,7 @@
 			var tabungan = 0;
 			$("#q1").bind('input',function(){
 				var text = $(this).val();
-				text = text.replace('Rp. ','');
+				text = text.replace(/[^0-9\.]+/g,"");
 				text = text.replace(/\./g,'');
 				text = text.replace(/,/g,'');
 				pendapatan = text;
@@ -60,7 +60,7 @@
 			    });
 			$("#q2").bind('input',function(){
 				var text = $(this).val();
-				text = text.replace('Rp. ','');
+				text = text.replace(/[^0-9\.]+/g,"");
 				text = text.replace(/\./g,'');
 				text = text.replace(/,/g,'');
 				tabungan = text;
