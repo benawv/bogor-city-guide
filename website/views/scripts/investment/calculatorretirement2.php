@@ -183,7 +183,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
              <div class="calc-machine">
                <div id="demo2">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>ASUMSI TINGKAT INFLASI</h4></div>
+                        <div class="title-box"><h4>ASUMSI TINGKAT IMBAL HASIL</h4></div>
                         <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
                    </div>
                    
@@ -267,12 +267,18 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 	var pension1_waktu = getCookie('pension1_jangka_waktu');
 	pension1_hasil = accounting.formatMoney(pension1_hasil,'Rp. ',0,'.',',');
 	$('#sliderPosition').val(pension1_hasil);
+        $('#sliderPosition2').val("1%");
         $('#sliderPosition3').val(pension1_waktu + " tahun");
         
         function pension2(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
             var formula = ((1 - Math.pow(1 + Number(asumsi), Number(-waktu))) / Number(asumsi)) * (1 + Number(asumsi));
-            formula = formula.toFixed(3);
+            if (formula < 99) {
+                formula = formula.toFixed(3);
+            }
+            else{
+                formula = formula.toFixed(2);
+            }
             var result = Number(biaya) * 12 * formula;
             return result.toFixed(2);
         }

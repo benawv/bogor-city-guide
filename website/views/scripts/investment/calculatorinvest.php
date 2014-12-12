@@ -268,11 +268,19 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         function investment1(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
             var formula = 1 * (Math.pow(1 + Number(asumsi), Number(waktu)));
-            formula = formula.toFixed(3);
+            if (formula < 99) {
+                formula = formula.toFixed(3);
+            }
+            else{
+                formula = formula.toFixed(2);
+            }
             var result = Number(biaya) * formula;
             return result.toFixed(2);
         }
         
+        $('#sliderPosition').val("Rp. 1.000.000");
+        $('#sliderPosition2').val("1%");
+        $('#sliderPosition3').val("1 tahun");
         var biaya = 1000000;
         var asumsi = 1;
         var waktu = 1;

@@ -205,7 +205,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                </div>
            </div>   
            
-           <div class="calc-machine">
+           <!--div class="calc-machine">
                <div id="demo3">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #113388">JANGKA WAKTU</h4></div>
@@ -224,10 +224,10 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                           <span class="add">  </span>
                         </div>
                         
-                    </div><!-- End demo -->
+                    </div>
                    
                </div>
-           </div> 
+           </div--> 
            
            <div class="calc-machine">
                <div class="calc-submit bottom">
@@ -267,13 +267,19 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 	var investment1_jangka_waktu = getCookie('investment1_jangka_waktu');
 
         $('#sliderPosition').val(investment1_hasil);
+        $('#sliderPosition2').val("1%");
         $('#sliderPosition3').val(investment1_jangka_waktu + ' tahun');
 
         
         function investment3(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
             var formula = 1 * ((Math.pow(1 + Number(asumsi), Number(waktu)) - 1) / Number(asumsi));
-            formula = formula.toFixed(3);
+            if (formula < 99) {
+                formula = formula.toFixed(3);
+            }
+            else{
+                formula = formula.toFixed(2);
+            }
             var result = Number(biaya) / formula;
             return result.toFixed(2);
         }
@@ -281,6 +287,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         var biaya = getCookie('investment1_hasil');
         var asumsi = 1;
         var waktu = getCookie('investment1_jangka_waktu');
+        
         $("#sliderPosition").bind('input',function(){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");

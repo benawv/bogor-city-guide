@@ -319,15 +319,25 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
             var new_asumsi = asumsi_imbal - asumsi_inflasi;
             new_asumsi = new_asumsi / 100;
             var formula = 1 * ((1 - Math.pow(1 + Number(new_asumsi), Number(-waktu))) / Number(new_asumsi)) * (1 + Number(new_asumsi));
-            formula = formula.toFixed(3);
+            if (formula < 99) {
+                formula = formula.toFixed(3);
+            }
+            else{
+                formula = formula.toFixed(2);
+            }
             var result = Number(biaya) * 12 * formula;
             return result.toFixed(2);
         }
         
+        $('#sliderPosition').val("Rp. 1.000.000");
+        $('#sliderPosition2').val("1%");
+        $('#sliderPosition3').val("1%");
+        $('#sliderPosition4').val("1 tahun");
         var biaya = 1000000;
         var asumsi_inflasi = 1;
 	var asumsi_imbal = 1;
         var waktu = 1;
+        
         $("#sliderPosition").bind('input',function(){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
