@@ -62,7 +62,7 @@
 				text = accounting.formatMoney(text,'Rp. ',0,'.',',');
 				$(this).val(text);
 			    });
-			$("#q2").keyup(function(){
+			$("#q2").keyup(function(event){
 				var text = $(this).val();
 				text = text.replace(/[^0-9\.]+/g,"");
 				if (event.keyCode == '8') {
