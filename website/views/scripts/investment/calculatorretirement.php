@@ -138,8 +138,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <h4>KALKULATOR PENSIUN</h4>
                 
                 <p>Banyak orang terlupa menyusun rencana pensiun. Alhasil usia memasuki kepala 4 keuangan belum stabil. Dana pensiun Anda harus bisa menutupi pengeluaran di 10, 20, bahkan 30 tahun ke depan, baik untuk dana kesehatan, tempat tinggal, biaya hidup (makan, pakaian dan tempat tinggal), sampai dana plesiran. Selain menabung, investasi tidak kalah pentingnya dilakukan saat masa menjelang pensiun.</p>
- 
-		<p>Mari mulai persiapan dana pensiun dengan menghitung kebutuhan hidup pada saat pensiun dan bagaimana mencapainya.</p>
+                <p>Mari mulai persiapan dana pensiun dengan menghitung kebutuhan hidup pada saat pensiun dan bagaimana mencapainya.</p>
                 
         
             </div>

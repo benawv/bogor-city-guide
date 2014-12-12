@@ -28,7 +28,7 @@
 			<div class="wrap30">
                 <h5><span><a href="#">Home</a></span> &rsaquo; <span>KALKULATOR PENSIUN</span> </h5>
                 
-                <div class="bg-dark-orange">
+                <div class="bg-dark-orange" style="background-color: #8b4720;">
                     <h4>KALKULATOR PENSIUN</h4>
                     <p></p>
                 </div>
@@ -37,8 +37,8 @@
             <div class="wrap60">
                <h4>KALKULATOR PENSIUN</h4>
                 
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                <p>Banyak orang terlupa menyusun rencana pensiun. Alhasil usia memasuki kepala 4 keuangan belum stabil. Dana pensiun Anda harus bisa menutupi pengeluaran di 10, 20, bahkan 30 tahun ke depan, baik untuk dana kesehatan, tempat tinggal, biaya hidup (makan, pakaian dan tempat tinggal), sampai dana plesiran. Selain menabung, investasi tidak kalah pentingnya dilakukan saat masa menjelang pensiun.</p>
+                <p>Mari mulai persiapan dana pensiun dengan menghitung kebutuhan hidup pada saat pensiun dan bagaimana mencapainya.</p>
                 
         
             </div>
