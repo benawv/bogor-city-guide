@@ -135,7 +135,7 @@
 	$('#result').html(result);
 	
 	$("#investment2").click(function(){
-	    window.location.href = "/investasi/investment-homepage/tools/financial-calculators/calculator-investment2";
+	    window.location.href = "/investasi/investment-homepage/kalkulator/financial-calculators/calculator-investment2";
         });
 	
 	function navigateMe(anchor)

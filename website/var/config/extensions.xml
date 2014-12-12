@@ -76,6 +76,7 @@
     <inv_balancedsheet>1</inv_balancedsheet>
     <inv_incomestatement>1</inv_incomestatement>
     <inv_riskprofile>1</inv_riskprofile>
+    <inv-fund-moneymarket>1</inv-fund-moneymarket>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>

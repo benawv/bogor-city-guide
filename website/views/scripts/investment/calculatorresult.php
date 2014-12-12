@@ -132,7 +132,7 @@ function setCookie(cname, cvalue, exdays) {
 	$('#result').html(result);
 	
 	$("#edu2").click(function(){
-	    window.location.href = "/investasi/investment-homepage/tools/financial-calculators/calculator-education2";
+	    window.location.href = "/investasi/investment-homepage/kalkulator/financial-calculators/calculator-education2";
         });
 	
 	function navigateMe(anchor)

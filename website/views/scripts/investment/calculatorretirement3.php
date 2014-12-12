@@ -323,7 +323,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             setCookie('pension3_hasil_tahunan',result,1);
             setCookie('pension3_hasil_bulanan',result * 0.09,1);
             
-            window.location.href = "/investasi/investment-homepage/tools/financial-calculators/calculator-retirement3-result";
+            window.location.href = "/investasi/investment-homepage/kalkulator/financial-calculators/calculator-retirement3-result";
         });
 
 	function navigateMe(anchor)

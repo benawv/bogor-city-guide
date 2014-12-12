@@ -323,7 +323,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             setCookie('pension2_jangka_waktu',waktu,1);
             setCookie('pension2_hasil',result,1);
             
-            window.location.href = "/investasi/investment-homepage/tools/financial-calculators/calculator-retirement2-result";
+            window.location.href = "/investasi/investment-homepage/kalkulator/financial-calculators/calculator-retirement2-result";
         });
 
 	function navigateMe(anchor)

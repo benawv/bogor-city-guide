@@ -136,12 +136,7 @@
 	$('#result').html(result);
 	
 	$("#retirement2").click(function(){
-	    window.location.href = "/investasi/investment-homepage/tools/financial-calculators/calculator-retirement2";
-        });
-
-	
-	$("#retirement2").click(function(){
-	    window.location.href = "/investasi/investment-homepage/tools/financial-calculators/calculator-retirement2";
+	    window.location.href = "/investasi/investment-homepage/kalkulator/financial-calculators/calculator-retirement2";
         });
 	
 	function navigateMe(anchor)
