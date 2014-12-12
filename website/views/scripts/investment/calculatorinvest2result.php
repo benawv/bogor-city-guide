@@ -107,8 +107,8 @@
                 </div>
                
                <div class="allianz-button">
-                    <input class="blue-btn" type="button" value="Lihat Fund Allianz" />
-                     <input class="blue-btn" type="button" value="Lihat Produk Allianz" />
+                    <input id="fund_allianz" class="blue-btn" type="button" value="Lihat Fund Allianz">
+                    <input id="product_allianz" class="blue-btn" type="button" value="Lihat Produk Allianz">
                </div>
            </div>  
            

@@ -37,7 +37,7 @@
             <div class="wrap60">
                <h4>Kalkulator Pendidikan</h4>
                 
-                <p>Ketahuilah berapa besar dana pendidikan yang dibutuhkan putra putri Anda sebelum menentukan di mana akan menginvestasikan dana pendidikan tersebut. Akan lebih maksimal jika Anda sudah menyiapkan dana pendidikan anak Anda sejak masih dalam kandungan. Investasi dana pendidikan bisa dilakukan melalui tabungan, asuransi, properti atau reksadana.</p><br />
+                <p>Ketahuilah berapa besar dana pendidikan yang dibutuhkan putra putri Anda sebelum menentukan di mana akan menginvestasikan dana pendidikan tersebut. Akan lebih maksimal jika Anda sudah menyiapkan dana pendidikan anak Anda sejak masih dalam kandungan. Investasi dana pendidikan bisa dilakukan melalui tabungan, asuransi, properti atau reksadana.</p>
                 <p>Mari mulai persiapan dana pendidikan di masa depan dengan menghitung biaya dan menyiapkan investasinya.</p>
 
 
@@ -97,8 +97,8 @@
                 </div>
                
                <div class="allianz-button">
-                    <input class="blue-btn" type="button" value="Lihat Fund Allianz">
-                     <input class="blue-btn" type="button" value="Lihat Produk Allianz">
+                    <input id="fund_allianz" class="blue-btn" type="button" value="Lihat Fund Allianz">
+                    <input id="product_allianz" class="blue-btn" type="button" value="Lihat Produk Allianz">
                </div>
            </div>  
            
@@ -135,7 +135,15 @@ function setCookie(cname, cvalue, exdays) {
 	
 	$("#edu2").click(function(){
 	    window.location.href = "/investasi/investment-homepage/kalkulator/financial-calculators/calculator-education2";
-        });
+     });
+     
+     $("#fund_allianz").click(function(){
+	    window.location.href = "http://beta.allianz.co.id/investasi/investment-homepage/allianz-fund";
+     });
+     
+     $("#product_allianz").click(function(){
+	    window.location.href = "http://beta.allianz.co.id/produk";
+     });
 	
 	function navigateMe(anchor)
 	{

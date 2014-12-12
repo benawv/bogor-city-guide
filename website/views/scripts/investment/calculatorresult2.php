@@ -37,8 +37,7 @@
             <div class="wrap60">
                <h4>Kalkulator Finansial Pendidikan</h4>
                 
-                <p>Ketahuilah berapa besar dana pendidikan yang dibutuhkan putra putri Anda sebelum menentukan di mana akan menginvestasikan dana pendidikan tersebut. Akan lebih maksimal jika Anda sudah menyiapkan dana pendidikan anak Anda sejak masih dalam kandungan. Investasi dana pendidikan bisa dilakukan melalui tabungan, asuransi, properti atau reksadana.</p><br />
-                <p>Mari mulai persiapan dana pendidikan di masa depan dengan menghitung biaya dan menyiapkan investasinya.</p>
+                <p>Ketahuilah berapa besar dana pendidikan yang dibutuhkan putra putri Anda sebelum menentukan di mana akan menginvestasikan dana pendidikan tersebut. Akan lebih maksimal jika Anda sudah menyiapkan dana pendidikan anak Anda sejak masih dalam kandungan. Investasi dana pendidikan bisa dilakukan melalui tabungan, asuransi, properti atau reksadana.</p>
                 
             </div>
             			
@@ -101,8 +100,8 @@
                 </div>
                
                <div class="allianz-button">
-                    <input class="blue-btn" type="button" value="Lihat Fund Allianz">
-                     <input class="blue-btn" type="button" value="Lihat Produk Allianz">
+                    <input id="fund_allianz" class="blue-btn" type="button" value="Lihat Fund Allianz">
+                    <input id="product_allianz" class="blue-btn" type="button" value="Lihat Produk Allianz">
                </div>
            </div>  
            
@@ -144,6 +143,14 @@
 	    window.location.href = "http://localhost/allianzcoid/allianz-investment-calculator-education2.php";
         });
 	
+     $("#fund_allianz").click(function(){
+	    window.location.href = "http://beta.allianz.co.id/investasi/investment-homepage/allianz-fund";
+     });
+     
+     $("#product_allianz").click(function(){
+	    window.location.href = "http://beta.allianz.co.id/produk";
+     });
+    
 	function navigateMe(anchor)
 	{
 	
