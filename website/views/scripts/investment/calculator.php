@@ -126,16 +126,16 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 		<div id="#" class="article-wrap">
             
 			<div class="wrap30">
-                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Kalkulator Edukasi</span> </h5>
+                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Kalkulator Pendidikan</span> </h5>
                 
                 <div class="bg-dark-orange">
-                    <h4>Kalkulator Edukasi</h4>
+                    <h4>Kalkulator Pendidikan</h4>
                     <p></p>
                 </div>
             </div>
             
             <div class="wrap60">
-               <h4>Kalkulator Edukasi</h4>
+               <h4>Kalkulator Pendidikan</h4>
                 
                 <p>Ketahuilah berapa besar dana pendidikan yang dibutuhkan putra putri Anda sebelum menentukan di mana akan menginvestasikan dana pendidikan tersebut. Akan lebih maksimal jika Anda sudah menyiapkan dana pendidikan anak Anda sejak masih dalam kandungan. Investasi dana pendidikan bisa dilakukan melalui tabungan, asuransi, properti atau reksadana.</p>
                 <p>Mari mulai persiapan dana pendidikan di masa depan dengan menghitung biaya dan menyiapkan investasinya.</p>
@@ -153,7 +153,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4>KALKULATOR EDUKASI</h4>
+                <h4>KALKULATOR PENDIDIKAN</h4>
            </div>
            <div class="calc-machine">
                <div id="demo">
