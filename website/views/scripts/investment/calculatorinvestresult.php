@@ -28,7 +28,7 @@
 			<div class="wrap30">
                 <h5><span><a href="#">Home</a></span> &rsaquo; <span>KALKULATOR INVESTASI</span> </h5>
                 
-                <div class="bg-dark-orange">
+                <div class="bg-blue">
                     <h4>KALKULATOR INVESTASI</h4>
                     <p></p>
                 </div>
@@ -54,7 +54,7 @@
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4>KALKULATOR INVESTASI</h4>
+                <h4 style="background-color: #113388">KALKULATOR INVESTASI</h4>
            </div>
             
              <div class="calc-machine">
