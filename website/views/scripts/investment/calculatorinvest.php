@@ -277,7 +277,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         var waktu = 1;
         $("#sliderPosition").bind('input',function(){
             var text = $(this).val();
-            text = text.replace('Rp. ','');
+            text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
             text = text.replace(/,/g,'');
             biaya = text;
@@ -287,7 +287,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         
         $("#sliderPosition2").keyup(function(){
             var text = $(this).val();
-            text = text.replace('%','');
+            text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
             text = text.replace(/,/g,'');
             if (event.keyCode == '8') {
@@ -299,8 +299,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         
         $("#sliderPosition3").keyup(function(){
             var text = $(this).val();
-            text = text.replace(' tahun','');
-            text = text.replace(' tahu','');
+            text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
             text = text.replace(/,/g,'');
             if (event.keyCode == '8') {
