@@ -35,14 +35,38 @@
 		<div class="row">
 			<div class="bread">
 				<a href="<?php echo "/".$uri[1]."/".$uri[2]?>">Home</a>  
-				<i class="fa fa-angle-right"></i> 
-				<a href="#"><?php echo $this->document->getProperty('navigation_title')?></a>
-
-				<!-- <i class="fa fa-angle-right"></i>
-				<a href="artikel.php">Artikel Index Future</a>
-
-				<i class="fa fa-angle-right"></i>
-				Judul Artikel -->
+				<?php
+					$tmp = array();
+					$array_path = array();
+					for($x = 3; $x < count($uri); $x++)
+					{
+						$z = $x;
+						if(in_array($uri[$z], $tmp))
+						{
+							
+						}
+						else{
+							$path = "";
+							for ($y=1;$y<$z;$y++)
+							{
+								$path .= "/".$uri[$y];
+							}
+							$tmp[] = $uri[$z];
+							$array_path[] = $path."/";
+						}
+					}
+					for($z = 0; $z < count($tmp); $z++){
+							$list = new Document_List();
+							$list->setCondition("`key` = '".$tmp[$z]."' AND `path`= '".$array_path[$z]."'");
+							foreach ($list as $data)
+							{
+				?>
+								<i class="fa fa-angle-right"></i> 
+								<a href="<?php echo $data->path."".$data->key;?>"><?php echo $data->title;?></a>
+				<?php
+							}
+					}
+				?>
 			</div>
 		</div>
 
