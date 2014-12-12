@@ -37,10 +37,9 @@
             <div class="wrap60">
                <h4>Kalkulator Finansial Pendidikan</h4>
                 
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                <p>Ketahuilah berapa besar dana pendidikan yang dibutuhkan putra putri Anda sebelum menentukan di mana akan menginvestasikan dana pendidikan tersebut. Akan lebih maksimal jika Anda sudah menyiapkan dana pendidikan anak Anda sejak masih dalam kandungan. Investasi dana pendidikan bisa dilakukan melalui tabungan, asuransi, properti atau reksadana.</p><br />
+                <p>Mari mulai persiapan dana pendidikan di masa depan dengan menghitung biaya dan menyiapkan investasinya.</p>
                 
-        
             </div>
             			
 		</div>
@@ -98,7 +97,7 @@
            
            <div class="calc-machine">
                <div class="share">
-                    <span>Ingin menghitung kembali? <a href="allianz-investment-calculator.php">klik disini >></a></span>
+                    <span>Ingin menghitung kembali? <a href="/investasi/investment-homepage/kalkulator/financial-calculators/pendidikan">klik disini >></a></span>
                 </div>
                
                <div class="allianz-button">

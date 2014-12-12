@@ -126,19 +126,20 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 		<div id="#" class="article-wrap">
             
 			<div class="wrap30">
-                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Kalkulator Finansial Pendidikan</span> </h5>
+                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Kalkulator Pendidikan</span> </h5>
                 
                 <div class="bg-dark-orange">
-                    <h4>Kalkulator Finansial Pendidikan</h4>
+                    <h4>Kalkulator Pendidikan</h4>
                     <p></p>
                 </div>
             </div>
             
             <div class="wrap60">
-               <h4>Kalkulator Edukasi</h4>
+               <h4>Kalkulator Pendidikan</h4>
                 
-                <p>Ketahuilah berapa besar dana pendidikan yang dibutuhkan putra putri Anda sebelum menentukan di mana akan menginvestasikan dana pendidikan tersebut. Akan lebih maksimal jika Anda sudah menyiapkan dana pendidikan anak Anda sejak masih dalam kandungan. Investasi dana pendidikan bisa dilakukan melalui tabungan, asuransi, properti atau reksadana.</p>
+                <p>Ketahuilah berapa besar dana pendidikan yang dibutuhkan putra putri Anda sebelum menentukan di mana akan menginvestasikan dana pendidikan tersebut. Akan lebih maksimal jika Anda sudah menyiapkan dana pendidikan anak Anda sejak masih dalam kandungan. Investasi dana pendidikan bisa dilakukan melalui tabungan, asuransi, properti atau reksadana.</p><br />
                 <p>Mari mulai persiapan dana pendidikan di masa depan dengan menghitung biaya dan menyiapkan investasinya.</p>
+
         
             </div>
             			
@@ -240,7 +241,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         <div class="calc-overlay-box">
             <a href="#" class="calc-overlay-close">&times;</a>
             <h3>Appendix - Riset Biaya Pendidikan S1 di Beberapa Negara <small>(Dalam Jutaan)</small></h3>
-            <table>
+            <table style="margin: auto;">
                 <thead>
                     <tr>
                         <th>Pertahun dalam Rupiah</th>
@@ -417,7 +418,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             setCookie('edu1_jangka_waktu',waktu,1);
             setCookie('edu1_hasil',result,1);
             
-            window.location.href = "/investasi/investment-homepage/tools/financial-calculators/calculator-education1-result";
+            window.location.href = "/investasi/investment-homepage/kalkulator/financial-calculators/calculator-education1-result";
         });
     
 	function navigateMe(anchor)
