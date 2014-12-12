@@ -1,21 +1,49 @@
 <?php echo $this->template("includes/inv/header.php")?>
-
+<?php
+	if(!$this->editmode) { 
+		$url = $_SERVER['REQUEST_URI'];
+		$uri = explode("/", $url);
+		
+		for($x = 1; $x < count($uri); $x++)
+		{
+			$title = explode("-", $uri[$x]);
+			$textTitle = "";
+			$text = "";
+			for ($y = 0; $y < count($title); $y++)
+			{
+				$textTitle = " <span class='upperText'>".substr($title[$y], 0, 1)."</span>".substr($title[$y], 1);
+				$text .= $textTitle;
+			}
+		}
+		$menu = explode("-", $uri[1]);
+		$textTitle2 = "";
+		$text2 = "";
+		for ($y = 0; $y < count($menu); $y++)
+		{
+			$textTitle2 = " <span class='upperText'>".substr($menu[$y], 0, 1)."</span>".substr($menu[$y], 1);
+			$text2 .= $textTitle2;
+		}
+	}
+	else{
+		$text = "";
+	}
+?>
 <div class="main_wrap">
 	
 	<div class="container">
 
 		<div class="row">
-			<!--div class="bread">
-				<a href="index.php">Home</a>  
+			<div class="bread">
+				<a href="<?php echo "/".$uri[1]."/".$uri[2]?>">Home</a>  
 				<i class="fa fa-angle-right"></i> 
-				<a href="artikel.php">Article</a>
+				<a href="#"><?php echo $this->document->getProperty('navigation_title')?></a>
 
-				<i class="fa fa-angle-right"></i>
+				<!-- <i class="fa fa-angle-right"></i>
 				<a href="artikel.php">Artikel Index Future</a>
 
 				<i class="fa fa-angle-right"></i>
-				Judul Artikel
-			</div-->
+				Judul Artikel -->
+			</div>
 		</div>
 
 
