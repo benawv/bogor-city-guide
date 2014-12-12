@@ -34,11 +34,11 @@
 
 		<div class="row">
 			<div class="bread">
-				<a href="<?php echo $uri[1]."/".$uri[2]?>">Home</a>  
+				<a href="<?php echo "/".$uri[1]."/".$uri[2]?>">Home</a>  
 				<i class="fa fa-angle-right"></i> 
-				<!-- <a href="artikel.php">Article</a>
+				<a href="#"><?php echo $this->document->getProperty('navigation_title')?></a>
 
-				<i class="fa fa-angle-right"></i>
+				<!-- <i class="fa fa-angle-right"></i>
 				<a href="artikel.php">Artikel Index Future</a>
 
 				<i class="fa fa-angle-right"></i>
