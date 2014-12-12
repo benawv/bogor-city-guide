@@ -5,17 +5,17 @@
 	<div class="container">
 
 		<div class="row">
-			<!--div class="bread">
-				<a href="index.php">Home</a>  
+			<div class="bread">
+				<a href="<?php echo $uri[1]."/".$uri[2]?>">Home</a>  
 				<i class="fa fa-angle-right"></i> 
-				<a href="artikel.php">Article</a>
+				<!-- <a href="artikel.php">Article</a>
 
 				<i class="fa fa-angle-right"></i>
 				<a href="artikel.php">Artikel Index Future</a>
 
 				<i class="fa fa-angle-right"></i>
-				Judul Artikel
-			</div-->
+				Judul Artikel -->
+			</div>
 		</div>
 
 
