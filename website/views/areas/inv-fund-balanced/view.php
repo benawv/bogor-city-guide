@@ -70,7 +70,7 @@
 	</h2>
 	<?php
 		$assets = new Asset_List();
-		$assets->setCondition("filename = 'inv-money-market'");
+		$assets->setCondition("filename = 'inv-balanced'");
 		foreach($assets as $row1)
 		{
 
