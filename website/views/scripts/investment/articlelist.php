@@ -1,17 +1,28 @@
 <?php echo $this->template("includes/inv/header.php")?>
 
 
-
 <?php
     
     
 	if(count($this->data)>0)
 	{
+		$cls=strtolower($entrie->investment);
+        if($id=="artikel edukasi"){
+            $investmentcolor="bg_edu ".$lastone;    
+        }elseif($cls=="artikel investasi"){
+             $investmentcolor="bg_fund ".$lastone;
+        }elseif($cls=="artikel asuransi"){
+             $investmentcolor="bg_health ".$lastone;
+        }elseif($cls=="artikel masa depan"){
+             $investmentcolor="bg_future ".$lastone;
+        }elseif($cls=="artikel pensiun"){
+             $investmentcolor="bg_pension ".$lastone;
+        }
 ?>
             
-<div class="header_page bg_edu">
+<div class="header_page <?php echo $investmentcolor?$investmentcolor:'bg_fund'?>">
 	<div class="container">
-		Artikel <?php foreach ($this->data->investment as $inv) { echo $inv['investment'];}  ?>
+		<?php foreach ($this->data->investment as $inv) { echo $inv['investment'];}  ?>
 	</div>
 </div>
 
@@ -53,7 +64,7 @@
                         foreach($this->data as $entry)
 		                  {
                     ?>
-					<li class="bg_edu">
+					<li class="<?php echo $investmentcolor?$investmentcolor:'bg_fund'?>">
 						<h3><?php echo $entry->title ?></h3>
 						<p><?php echo substr($entry->content,0,100) ?>...</p>
 
