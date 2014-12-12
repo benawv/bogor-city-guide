@@ -6,18 +6,22 @@
     
 	if(count($this->data)>0)
 	{
-		$cls=strtolower($inv['investment']);
-        if($cls=="artikel edukasi"){
-            $investmentcolor="bg_edu ";    
-        }elseif($cls=="artikel investasi"){
-             $investmentcolor="bg_fund ";
-        }elseif($cls=="artikel asuransi"){
-             $investmentcolor="bg_health ";
-        }elseif($cls=="artikel masa depan"){
-             $investmentcolor="bg_future ";
-        }elseif($cls=="artikel pensiun"){
-             $investmentcolor="bg_pension ";
-        }
+		foreach ($this->data->investment as $inv) 
+		{ 	
+			$cls=strtolower($inv['investment']);
+	        if($cls=="artikel edukasi"){
+	            $investmentcolor="bg_edu ";    
+	        }elseif($cls=="artikel investasi"){
+	             $investmentcolor="bg_fund ";
+	        }elseif($cls=="artikel asuransi"){
+	             $investmentcolor="bg_health ";
+	        }elseif($cls=="artikel masa depan"){
+	             $investmentcolor="bg_future ";
+	        }elseif($cls=="artikel pensiun"){
+	             $investmentcolor="bg_pension ";
+	        }
+		}
+		
 ?>
             
 <div class="header_page <?php echo $investmentcolor?$investmentcolor:'bg_fund'?>">
