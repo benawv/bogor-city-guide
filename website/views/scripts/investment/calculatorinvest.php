@@ -134,12 +134,12 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
     
             <div class="box_banner_big">
     
-    			<div class="textbanner purple h200">
+    			<div class="textbanner blue h200">
     			    <h1><?php echo $this->input('title-desc1')?></h1>
     				<h3></h3>
                     <p></p>
 			     </div>
-    			<div class="edge_textbanner edge_future">
+    			<div class="edge_textbanner edge_blue">
     			
     			</div>
     
