@@ -68,6 +68,12 @@ class CommunityController extends Website_Controller_Action {
 		$sliderImage->setOrder("desc");
 		$this->view->sliderImage = $sliderImage;
 		
+		$icon = new Object_CommunityTipsSocialIcon_List();
+		$icon->setLimit(3);
+		$icon->setOrderKey("o_creationDate");
+		$icon->setOrder("desc");
+		$this->view->icon = $icon;
+		
 	}
 	
 	public function previewAction(){

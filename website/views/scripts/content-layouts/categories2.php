@@ -53,7 +53,7 @@
 	<!-- content -->
 	<div class="items-container">
 		<?php echo $this->areablock('container', array(
-					'allowed' => array('container-box', 'container-box-static')))?>
+					'allowed' => array('container-box', 'container-box-static','sections-video')))?>
 	</div>
 	<!-- endcontent -->
 	
