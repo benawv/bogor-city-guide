@@ -265,13 +265,20 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 	var pension2_waktu = getCookie('pension2_jangka_waktu');
 	pension2_hasil = accounting.formatMoney(pension2_hasil,'Rp. ',2,'.',',');
         $('#sliderPosition').val(pension2_hasil);
+        $('#sliderPosition2').val("1%");
         $('#sliderPosition3').val(pension2_waktu + ' tahun');
 
         
         function pension3(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
             var formula = 1 * ((Math.pow(1 + Number(asumsi), Number(waktu)) - 1) / Number(asumsi))
-            formula = formula.toFixed(3);
+            if (formula < 99) {
+                formula = formula.toFixed(3);
+            }
+            else{
+                formula = formula.toFixed(2);
+            }
+            
             var result = Number(biaya) / formula;
             return result.toFixed(2);
         }

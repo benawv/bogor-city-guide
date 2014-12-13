@@ -365,17 +365,29 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             return "";
         }
 
+        var edu1_biaya_bulanan = getCookie('edu1_biaya_bulanan');
+	edu1_biaya_bulanan = accounting.formatMoney(edu1_biaya_bulanan,'Rp. ',2,'.',',');
+	
         function edu1(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
             var formula = 1 * Math.pow(1 + Number(asumsi), Number(waktu));
-            formula = formula.toFixed(3);
+            if (formula < 99) {
+                formula = formula.toFixed(3);
+            }
+            else{
+                formula = formula.toFixed(2);
+            }
             var result = Number(biaya) * formula;
             return result.toFixed(2);
         }
         
+        $('#sliderPosition').val("Rp. 1.000.000");
+        $('#sliderPosition2').val("1%");
+        $('#sliderPosition3').val("1 tahun");
         var biaya = 1000000;
         var asumsi = 1;
         var waktu = 1;
+        
         $("#sliderPosition").bind('input',function(){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");

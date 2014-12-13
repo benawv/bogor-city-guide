@@ -135,7 +135,7 @@
 	$('#result').html(result);
 	
 	$("#retirement3").click(function(){
-	    window.location.href = "/investasi/investment-homepage/tools/financial-calculators/calculator-retirement3";
+	    window.location.href = "/investasi/investment-homepage/kalkulator/financial-calculators/calculator-retirement3";
         });
 	 
      $("#fund_allianz").click(function(){

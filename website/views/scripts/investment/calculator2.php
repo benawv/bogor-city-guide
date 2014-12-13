@@ -263,24 +263,29 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             }
             return "";
         }
-
-	var edu_hasil = getCookie('edu1_hasil');
-	edu_hasil= accounting.formatMoney(edu_hasil,'Rp. ',2,'.',',');
-	$('#sliderPosition').val(edu_hasil);
-
-	$('#sliderPosition3').val(getCookie('edu1_jangka_waktu') + ' tahun');
-        
+    
         function edu2(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
             var formula = 1 * (Math.pow(1 + Number(asumsi), Number(waktu)) - 1) / Number(asumsi);
-            formula = formula.toFixed(3);
+            if (formula < 99) {
+                formula = formula.toFixed(3);
+            }
+            else{
+                formula = formula.toFixed(2);
+            }
             var result = Number(biaya) / formula;
             return result.toFixed(2);
         }
-        
+    
+	var edu_hasil = getCookie('edu1_hasil');
+	edu_hasil= accounting.formatMoney(edu_hasil,'Rp. ',2,'.',',');
+	$('#sliderPosition').val(edu_hasil);
+        $('#sliderPosition2').val("1%");
+        $('#sliderPosition3').val(getCookie('edu1_jangka_waktu') + ' tahun');
         var biaya = getCookie('edu1_hasil');
         var asumsi = 1;
         var waktu = getCookie('edu1_jangka_waktu');
+        
         $("#sliderPosition").bind('input',function(){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
