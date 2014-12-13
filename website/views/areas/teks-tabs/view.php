@@ -6,7 +6,7 @@
 	$menutab = "menutab-".uniqid();
 ?>
 <div id="<?php echo $this->input('anchor')->text?>" class="full-w bg-white">
-	<h2>
+	<h2 class="social-icon">
 		<?php if($this->editmode): ?>
 			Icon: <?php echo $this->image('icon', array(
 								'title' 	=> 'Drag your icon here',

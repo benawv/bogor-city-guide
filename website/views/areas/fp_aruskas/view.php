@@ -1,6 +1,7 @@
-<div class="row form-container blue">
+
+    <div class="row form-container brown">
 		<div class="container" >
-	<section>
+	       <section>
 				<form id="theForm" class="simform" autocomplete="off">
 					<div class="simform-inner">
 						<ol class="questions">
@@ -30,10 +31,8 @@
 
 
 			</section>
-
-</div>
+        </div>
 		<!-- container end -->
-
 	</div>
 	<!-- row end -->
 		<script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>

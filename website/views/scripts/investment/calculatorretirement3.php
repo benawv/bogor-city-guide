@@ -126,19 +126,19 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 		<div id="#" class="article-wrap">
             
 			<div class="wrap30">
-                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Finansial Calculator Education</span> </h5>
+                <h5><span><a href="#">Home</a></span> &rsaquo; <span>KALKULATOR PENSIUN</span> </h5>
                 
-                <div class="bg-dark-orange">
-                    <h4>Finansial Calculator Retirement</h4>
+                <div class="bg-dark-orange" style="background-color: #8b4720;">
+                    <h4>KALKULATOR PENSIUN</h4>
                     <p></p>
                 </div>
             </div>
             
             <div class="wrap60">
-               <h4>Finansial Calculator Retirement</h4>
+               <h4>KALKULATOR PENSIUN</h4>
                 
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                <p>Banyak orang terlupa menyusun rencana pensiun. Alhasil usia memasuki kepala 4 keuangan belum stabil. Dana pensiun Anda harus bisa menutupi pengeluaran di 10, 20, bahkan 30 tahun ke depan, baik untuk dana kesehatan, tempat tinggal, biaya hidup (makan, pakaian dan tempat tinggal), sampai dana plesiran. Selain menabung, investasi tidak kalah pentingnya dilakukan saat masa menjelang pensiun.</p>
+                <p>Mari mulai persiapan dana pensiun dengan menghitung kebutuhan hidup pada saat pensiun dan bagaimana mencapainya.</p>
                 
         
             </div>
@@ -265,13 +265,20 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 	var pension2_waktu = getCookie('pension2_jangka_waktu');
 	pension2_hasil = accounting.formatMoney(pension2_hasil,'Rp. ',2,'.',',');
         $('#sliderPosition').val(pension2_hasil);
+        $('#sliderPosition2').val("1%");
         $('#sliderPosition3').val(pension2_waktu + ' tahun');
 
         
         function pension3(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
             var formula = 1 * ((Math.pow(1 + Number(asumsi), Number(waktu)) - 1) / Number(asumsi))
-            formula = formula.toFixed(3);
+            if (formula < 99) {
+                formula = formula.toFixed(3);
+            }
+            else{
+                formula = formula.toFixed(2);
+            }
+            
             var result = Number(biaya) / formula;
             return result.toFixed(2);
         }
@@ -289,7 +296,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             $(this).val(text);
         });
         
-        $("#sliderPosition2").keyup(function(){
+        $("#sliderPosition2").keyup(function(event){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
@@ -301,7 +308,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             $(this).val(text + '%');
         });
 
-        $("#sliderPosition3").keyup(function(){
+        $("#sliderPosition3").keyup(function(event){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');

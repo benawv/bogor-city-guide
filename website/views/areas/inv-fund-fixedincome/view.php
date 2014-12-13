@@ -21,20 +21,28 @@
 				
                 if(month==splitedItem[1]){
                     visible2=true;
-                }else{
-                    visible2=false;
-                }
-                
-                if(year==splitedItem[2]){
+                }else if(month==' '){
                     visible2=true;
                 }else{
                     visible2=false;
                 }
-                visible = visible && visible2;
-			//	alert(visible);
+               // alert(visible2);
+                 visible = visible && visible2;
+                 
+                
+                if(year==splitedItem[2]){
+                    visible3=true;
+                }else if(year==' '){
+                     visible3=true;
+                }else{
+                    visible3=false;
+                }
+                //alert(visible3);
+                 visible = visible && visible3;
+               
                 //console.log(visible);
 
-				if(visible){
+				if(visible==true){
 					$(this).fadeIn('slow');
 					x++;
 				}
@@ -53,21 +61,6 @@
 </script>
 
 <div id="<?php echo $this->input('anchor')->text?>" class="full-w bg-white cus_full-w">
-	<h2>
-		<?php if($this->editmode): ?>
-			Icon: <?php echo $this->image('icon', array(
-								'title' 	=> 'Drag your icon here',
-								'width' 	=> 100,
-								'height' 	=> 100,
-								'thumbnail'	=> 'icon')) ?>
-			<?php echo $this->input('title', ["width" => 250])?>
-		<?php else: ?>
-			<?php if($this->image('icon')->getSrc()):?>
-				<div style="background-image: url('<?php echo $this->image('icon')->getSrc()?>'); height: 31px; width: 31px; float: left; margin-right: 10px; "></div>
-			<?php endif;?>
-			Smartlink
-		<?php endif; ?>
-	</h2>
 	<?php
 		$assets = new Asset_List();
 		$assets->setCondition("filename = 'inv-fixed-income'");
@@ -114,7 +107,7 @@
 	<div class="combo_section">
 		<p>
 			Pilih Tahun<br />
-			<select class="combo-width year-pick">
+			<select class="combo-width year-pick" style="color: black;">
 				<option value="" selected="selected">--Pilih Semua--</option>
 				<?php 
 					foreach($list_year  as $row)
@@ -127,9 +120,9 @@
 		</p>
 		<p>
 			Pilih Bulan<br />
-			<select class="combo-width month-pick">
-				<option value="" selected="selected">--Pilih Semua--</option>
-				<option value="januari">Januari</option>
+			<select class="combo-width month-pick" style="color: black;">
+				<option value=" " selected="selected">--Pilih Semua--</option>
+                <option value="januari">Januari</option>
 				<option value="februari">Februari</option>
 				<option value="maret">Maret</option>
 				<option value="april">April</option>

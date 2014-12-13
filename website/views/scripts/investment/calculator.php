@@ -126,19 +126,20 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 		<div id="#" class="article-wrap">
             
 			<div class="wrap30">
-                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Kalkulator Finansial Pendidikan</span> </h5>
+                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Kalkulator Pendidikan</span> </h5>
                 
                 <div class="bg-dark-orange">
-                    <h4>Kalkulator Finansial Pendidikan</h4>
+                    <h4>Kalkulator Pendidikan</h4>
                     <p></p>
                 </div>
             </div>
             
             <div class="wrap60">
-               <h4>Kalkulator Edukasi</h4>
+               <h4>Kalkulator Pendidikan</h4>
                 
                 <p>Ketahuilah berapa besar dana pendidikan yang dibutuhkan putra putri Anda sebelum menentukan di mana akan menginvestasikan dana pendidikan tersebut. Akan lebih maksimal jika Anda sudah menyiapkan dana pendidikan anak Anda sejak masih dalam kandungan. Investasi dana pendidikan bisa dilakukan melalui tabungan, asuransi, properti atau reksadana.</p>
                 <p>Mari mulai persiapan dana pendidikan di masa depan dengan menghitung biaya dan menyiapkan investasinya.</p>
+
         
             </div>
             			
@@ -240,7 +241,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         <div class="calc-overlay-box">
             <a href="#" class="calc-overlay-close">&times;</a>
             <h3>Appendix - Riset Biaya Pendidikan S1 di Beberapa Negara <small>(Dalam Jutaan)</small></h3>
-            <table>
+            <table style="margin: auto;">
                 <thead>
                     <tr>
                         <th>Pertahun dalam Rupiah</th>
@@ -364,17 +365,29 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             return "";
         }
 
+        var edu1_biaya_bulanan = getCookie('edu1_biaya_bulanan');
+	edu1_biaya_bulanan = accounting.formatMoney(edu1_biaya_bulanan,'Rp. ',2,'.',',');
+	
         function edu1(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
             var formula = 1 * Math.pow(1 + Number(asumsi), Number(waktu));
-            formula = formula.toFixed(3);
+            if (formula < 99) {
+                formula = formula.toFixed(3);
+            }
+            else{
+                formula = formula.toFixed(2);
+            }
             var result = Number(biaya) * formula;
             return result.toFixed(2);
         }
         
+        $('#sliderPosition').val("Rp. 1.000.000");
+        $('#sliderPosition2').val("1%");
+        $('#sliderPosition3').val("1 tahun");
         var biaya = 1000000;
         var asumsi = 1;
         var waktu = 1;
+        
         $("#sliderPosition").bind('input',function(){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
@@ -385,7 +398,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             $(this).val(text);
         });
         
-        $("#sliderPosition2").keyup(function(){
+        $("#sliderPosition2").keyup(function(event){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
@@ -397,7 +410,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             $(this).val(text + '%');
         });
         
-        $("#sliderPosition3").keyup(function(){
+        $("#sliderPosition3").keyup(function(event){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
@@ -417,7 +430,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             setCookie('edu1_jangka_waktu',waktu,1);
             setCookie('edu1_hasil',result,1);
             
-            window.location.href = "/investasi/investment-homepage/tools/financial-calculators/calculator-education1-result";
+            window.location.href = "/investasi/investment-homepage/kalkulator/financial-calculators/calculator-education1-result";
         });
     
 	function navigateMe(anchor)

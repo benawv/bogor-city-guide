@@ -32,7 +32,7 @@
 			<div class="wrap30">
                 <h5><span><a href="#">Home</a></span> &rsaquo; <span>KALKULATOR INVESTASI</span> </h5>
                 
-                <div class="bg-dark-orange">
+                <div class="bg-blue">
                     <h4>KALKULATOR INVESTASI</h4>
                     <p></p>
                 </div>
@@ -41,8 +41,9 @@
             <div class="wrap60">
                <h4>KALKULATOR INVESTASI</h4>
                 
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                <p>Ketika berinvestasi, banyak orang telah memiliki tujuan spesifik dalam pikirannya. Misalnya ingin beli rumah, beli mobil, biaya persiapan pernikahan, kebutuhan sekolah anak dan lain sebagainya. Berinvestasilah dengan jumlah tertentu dalam jangka waktu dari tujuan investasi Anda.</p>
+                <p>Berinvestasi sebaiknya dilakukan secara rutin walaupun dalam jumlah yang relatif kecil. Mari mulai berinvestasi dengan menghitung bagaimana mencapai tujuan investasi Anda.</p>
+
                 
         
             </div>
@@ -58,29 +59,29 @@
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4>KALKULATOR INVESTASI</h4>
+                <h4 style="background-color: #113388">KALKULATOR INVESTASI</h4>
            </div>
             
              <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>INVESTASI TAHUNAN YANG DIPERLUKAN ADALAH</h4></div>
+                        <div class="title-box"><h4 style="color: #113388">INVESTASI TAHUNAN YANG DIPERLUKAN ADALAH</h4></div>
                         <!-- tambahin #overlayAppendix di href-nya bang -->
-                        <div class="tooltips"><a class="tooltip-left" href="#overlayAppendix" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
+                        <div class="tooltips" style="background-color: #113388"><a class="tooltip-left" href="#overlayAppendix" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
                    </div>
                    
                     <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result_year">Rp. 0</span>
+                            <span id="result_year" style="color: #113388">Rp. 0</span>
                         </div>
 		    </div>
 		    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>INVESTASI BULANAN YANG DIPERLUKAN ADALAH</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#overlayAppendix" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
+                        <div class="title-box"><h4 style="color: #113388">INVESTASI BULANAN YANG DIPERLUKAN ADALAH</h4></div>
+                        <div class="tooltips" style="background-color: #113388"><a class="tooltip-left" href="#overlayAppendix" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
                     </div>
 		    <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result_month">Rp. 0</span>
+                            <span id="result_month" style="color: #113388">Rp. 0</span>
                         </div>
                         <div class="share">
                             <span>Bagikan hasil tersebut dengan teman Anda:</span>
@@ -102,12 +103,12 @@
            
            <div class="calc-machine">
                <div class="share">
-                    <span>Ingin menghitung kembali? <a href="/investasi/investment-homepage/tools/financial-calculators/calculator_invest">klik disini >></a></span>
+                    <span>Ingin menghitung kembali? <a href="/investasi/investment-homepage/kalkulator/financial-calculators/calculator-invest">klik disini >></a></span>
                 </div>
                
                <div class="allianz-button">
-                    <input class="blue-btn" type="button" value="Lihat Fund Allianz" />
-                     <input class="blue-btn" type="button" value="Lihat Produk Allianz" />
+                    <input id="fund_allianz" class="blue-btn" type="button" value="Lihat Fund Allianz">
+                    <input id="product_allianz" class="blue-btn" type="button" value="Lihat Produk Allianz">
                </div>
            </div>  
            

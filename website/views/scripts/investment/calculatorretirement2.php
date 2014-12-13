@@ -128,7 +128,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 			<div class="wrap30">
                 <h5><span><a href="#">Home</a></span> &rsaquo; <span>KALKULATOR PENSIUN</span> </h5>
                 
-                <div class="bg-dark-orange">
+                <div class="bg-dark-orange" style="background-color: #8b4720;">
                     <h4>KALKULATOR PENSIUN</h4>
                     <p></p>
                 </div>
@@ -137,8 +137,8 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             <div class="wrap60">
                <h4>KALKULATOR PENSIUN</h4>
                 
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                <p>Banyak orang terlupa menyusun rencana pensiun. Alhasil usia memasuki kepala 4 keuangan belum stabil. Dana pensiun Anda harus bisa menutupi pengeluaran di 10, 20, bahkan 30 tahun ke depan, baik untuk dana kesehatan, tempat tinggal, biaya hidup (makan, pakaian dan tempat tinggal), sampai dana plesiran. Selain menabung, investasi tidak kalah pentingnya dilakukan saat masa menjelang pensiun.</p>
+                <p>Mari mulai persiapan dana pensiun dengan menghitung kebutuhan hidup pada saat pensiun dan bagaimana mencapainya.</p>
                 
         
             </div>
@@ -183,7 +183,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
              <div class="calc-machine">
                <div id="demo2">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>ASUMSI TINGKAT INFLASI</h4></div>
+                        <div class="title-box"><h4>ASUMSI TINGKAT IMBAL HASIL</h4></div>
                         <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
                    </div>
                    
@@ -267,18 +267,26 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 	var pension1_waktu = getCookie('pension1_jangka_waktu');
 	pension1_hasil = accounting.formatMoney(pension1_hasil,'Rp. ',0,'.',',');
 	$('#sliderPosition').val(pension1_hasil);
+        $('#sliderPosition2').val("1%");
         $('#sliderPosition3').val(pension1_waktu + " tahun");
         
-        function pension2(biaya, asumsi, waktu){
+        function pension2(biaya, asumsi, asumsi_inflasi, waktu){
+            asumsi = asumsi - asumsi_inflasi;
             asumsi = asumsi / 100;
             var formula = ((1 - Math.pow(1 + Number(asumsi), Number(-waktu))) / Number(asumsi)) * (1 + Number(asumsi));
-            formula = formula.toFixed(3);
+            if (formula < 99) {
+                formula = formula.toFixed(3);
+            }
+            else{
+                formula = formula.toFixed(2);
+            }
             var result = Number(biaya) * 12 * formula;
             return result.toFixed(2);
         }
         
         var biaya = getCookie('pension1_hasil');
         var asumsi = 1;
+        var asumsi_inflasi = getCookie('pension1_asumsi_inflasi');
         var waktu = getCookie('pension1_jangka_waktu');
         $("#sliderPosition").bind('input',function(){
             var text = $(this).val();
@@ -290,7 +298,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             $(this).val(text);
         });
         
-        $("#sliderPosition2").keyup(function(){
+        $("#sliderPosition2").keyup(function(event){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
@@ -302,7 +310,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             $(this).val(text + '%');
         });
         
-        $("#sliderPosition3").keyup(function(){
+        $("#sliderPosition3").keyup(function(event){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
@@ -315,7 +323,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         });
 
         $(".orange-btn").click(function(){
-            var result = pension2(biaya,asumsi,waktu);
+            var result = pension2(biaya,asumsi,asumsi_inflasi,waktu);
             
             setCookie('pension2_biaya',biaya,1);
             setCookie('pension2_asumsi_inflasi',asumsi,1);

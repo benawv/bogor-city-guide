@@ -137,8 +137,8 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             <div class="wrap60">
                <h4>Kalkulator Finansial Pendidikan</h4>
                 
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                <p>Ketahuilah berapa besar dana pendidikan yang dibutuhkan putra putri Anda sebelum menentukan di mana akan menginvestasikan dana pendidikan tersebut. Akan lebih maksimal jika Anda sudah menyiapkan dana pendidikan anak Anda sejak masih dalam kandungan. Investasi dana pendidikan bisa dilakukan melalui tabungan, asuransi, properti atau reksadana.</p>
+                <p>Mari mulai persiapan dana pendidikan di masa depan dengan menghitung biaya dan menyiapkan investasinya.</p>
                 
         
             </div>
@@ -263,24 +263,29 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             }
             return "";
         }
-
-	var edu_hasil = getCookie('edu1_hasil');
-	edu_hasil= accounting.formatMoney(edu_hasil,'Rp. ',2,'.',',');
-	$('#sliderPosition').val(edu_hasil);
-
-	$('#sliderPosition3').val(getCookie('edu1_jangka_waktu') + ' tahun');
-        
+    
         function edu2(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
             var formula = 1 * (Math.pow(1 + Number(asumsi), Number(waktu)) - 1) / Number(asumsi);
-            formula = formula.toFixed(3);
+            if (formula < 99) {
+                formula = formula.toFixed(3);
+            }
+            else{
+                formula = formula.toFixed(2);
+            }
             var result = Number(biaya) / formula;
             return result.toFixed(2);
         }
-        
+    
+	var edu_hasil = getCookie('edu1_hasil');
+	edu_hasil= accounting.formatMoney(edu_hasil,'Rp. ',2,'.',',');
+	$('#sliderPosition').val(edu_hasil);
+        $('#sliderPosition2').val("1%");
+        $('#sliderPosition3').val(getCookie('edu1_jangka_waktu') + ' tahun');
         var biaya = getCookie('edu1_hasil');
         var asumsi = 1;
         var waktu = getCookie('edu1_jangka_waktu');
+        
         $("#sliderPosition").bind('input',function(){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
@@ -291,7 +296,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             $(this).val(text);
         });
         
-        $("#sliderPosition2").keyup(function(){
+        $("#sliderPosition2").keyup(function(event){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
@@ -303,7 +308,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             $(this).val(text + '%');
         });
         
-        $("#sliderPosition3").keyup(function(){
+        $("#sliderPosition3").keyup(function(event){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
@@ -324,7 +329,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             setCookie('edu2_hasil_tahunan',result,1);
             setCookie('edu2_hasil_bulanan',Number(result)*0.09,1);
             
-            window.location.href = "/investasi/investment-homepage/tools/financial-calculators/calculator-education2-result";
+            window.location.href = "/investasi/investment-homepage/kalkulator/financial-calculators/calculator-education2-result";
         });
     
 	function navigateMe(anchor)
