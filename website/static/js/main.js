@@ -336,7 +336,7 @@ $(document).ready(function(){
     	{
         	var isiText = "";
     	}
-        var tweet = title+" : "+isiText+url;
+        var tweet = title+" : "+url;
         var encodeTweet = encodeURIComponent(tweet);
         window.open('https://twitter.com/intent/tweet?text='+encodeTweet, 'sharer', 'width=626,height=436');
 	});
@@ -419,17 +419,18 @@ $(document).ready(function(){
         {
                 desc = deskripsi;
         }
+        var judul = ($(this).parent().siblings("span.judul_section").text()).replace(/[^a-zA-Z()]/g,'-');
+        var judul_section = judul != "" ? judul : "";
+		
                 
         loc = window.location.origin+'/website/static/fbshare/sharedfb.php';
-        /*console.log(image);
-        console.log(name);
-        console.log(filename);
-        console.log(desc);*/
+        
         $.ajax({
 				type: 'POST',
 				url: loc,
 				data: {
 					filename: filename,
+					judul : judul_section,
 					title_fb : reTanya,
 					image_name: image,
 					description: desc,

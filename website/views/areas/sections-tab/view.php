@@ -38,7 +38,7 @@
 				<?php if($this->image('icon_'.$i)->getSrc()):?>
 				<div style="background-image: url('<?php echo $this->image('icon_'.$i)->getSrc()?>'); height: 31px; width: 31px; float: left; margin-right: 10px; "></div>
 				<?php endif;?>
-				<?php echo $this->input('title-'.$i)?>
+			<span class="judul_section"><?php echo $this->input('title-'.$i)?></span>
 			<?php endif; ?>
 		</h2>
 		<div class="description">
