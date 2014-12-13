@@ -61,21 +61,6 @@
 </script>
 
 <div id="<?php echo $this->input('anchor')->text?>" class="full-w bg-white cus_full-w">
-	<h2>
-		<?php if($this->editmode): ?>
-			Icon: <?php echo $this->image('icon', array(
-								'title' 	=> 'Drag your icon here',
-								'width' 	=> 100,
-								'height' 	=> 100,
-								'thumbnail'	=> 'icon')) ?>
-			<?php echo $this->input('title', ["width" => 250])?>
-		<?php else: ?>
-			<?php if($this->image('icon')->getSrc()):?>
-				<div style="background-image: url('<?php echo $this->image('icon')->getSrc()?>'); height: 31px; width: 31px; float: left; margin-right: 10px; "></div>
-			<?php endif;?>
-				<?php echo $this->text('subtitle'); ?>
-		<?php endif; ?>
-	</h2>
 	<?php
 		$assets = new Asset_List();
 		$assets->setCondition("filename = 'inv-fixed-income'");
