@@ -47,6 +47,8 @@
 			
 		});
 		
+		$('.social-icon').remove();
+		
 	});
 </script>
 
