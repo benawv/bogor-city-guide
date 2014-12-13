@@ -3,7 +3,7 @@
 		<div class="container">
 
     			<div class="title_section">
-    				Informasi Fund
+    				<?php echo $this->input('title-section')?>
     			</div>
 				<div class="catbox <?php echo $this->select('color1')->getData()?$this->select('color1')->getData():'blue'?>">
 					<a href="<?php echo $this->link('title-1')->getHref()?>">

@@ -3,7 +3,7 @@
 		<div class="container">
 
     			<div class="title_section">
-    				Informasi Fund
+    				<?php echo $this->input('title-section')?>
     			</div>
 				<div class="catbox" style="background-color: <?php echo $this->select('color1')->getData()?$this->select('color1')->getData():'blue'?>;">
 					<a href="/investasi/investment-homepage/allianz-fund/allianz-fund/fund-information/money-market">
