@@ -90,8 +90,12 @@
 		    'scrollTop':   $('#linkAnchor').offset().top
 		}, 'slow');
 	});
-	var result = getCookie('visitorname');
-	$('.visitorname').html('Hi, ' + result);
- 
+	//var result = getCookie('visitorname');
+	//$('.visitorname').html('Hi, ' + result);
+	var vname = localStorage.getItem('visitorname');
+	
+	if(vname != null) {
+		$('.visitorname').html('Hi, ' + vname);
+	}
  </script>
 <?php echo $this->template("includes/inv/footer.php")?>

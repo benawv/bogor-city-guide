@@ -421,6 +421,7 @@ $(document).ready(function(){
         }
         var judul = ($(this).parent().siblings("span.judul_section").text()).replace(/[^a-zA-Z()]/g,'-');
         var judul_section = judul != "" ? judul : "";
+        var judul2 = $(this).parent().siblings("span.judul_section").text() != "" ? $(this).parent().siblings("span.judul_section").text() : "";
 		
                 
         loc = window.location.origin+'/website/static/fbshare/sharedfb.php';
@@ -431,7 +432,7 @@ $(document).ready(function(){
 				data: {
 					filename: filename,
 					judul : judul_section,
-					title_fb : reTanya,
+					title_fb : reTanya+" "+judul2,
 					image_name: image,
 					description: desc,
 					url: window.location.host,
