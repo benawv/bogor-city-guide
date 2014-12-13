@@ -1,5 +1,6 @@
 <?php
 		$filename = $_POST['filename'];
+		$judul = "-".$_POST['judul'];
 		$title = $_POST['title_fb'];
 		$image_name = $_POST['image_name'];
 		$desc = $_POST['description'];
@@ -15,7 +16,7 @@
 		else
 			$image = $image_name;
 		*/
-		$file = fopen($filename.".php", "w");
+		$file = fopen($filename."".$judul.".php", "w");
 		$html = '
 			<html>
 				<head>

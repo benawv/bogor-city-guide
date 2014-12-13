@@ -11,7 +11,7 @@
 			<?php if($this->image('icon')->getSrc()):?>
 				<div style="background-image: url('<?php echo $this->image('icon')->getSrc()?>'); height: 31px; width: 31px; float: left; margin-right: 10px; "></div>
 			<?php endif;?>
-			<?php echo $this->input('title')?>
+		<span class="judul_section"><?php echo $this->input('title')?></span>
 		<?php endif; ?>
 	</h2>
 	<div class="description width-66">
@@ -22,7 +22,7 @@
 			<?php 
 				echo $this->video("video", array(
 			    "width" => 273,
-			    "height" => 167,
+			    "height" => 200,
 			    "attributes" => ["frameborder" => 0]
 				)); 
 			?>
