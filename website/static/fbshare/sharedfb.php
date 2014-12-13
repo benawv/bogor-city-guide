@@ -1,7 +1,7 @@
 <?php
 		$filename = $_POST['filename'];
 		$judul = "-".$_POST['judul'];
-		$title = $_POST['title_fb'];
+		$title = ucfirst($_POST['title_fb']);
 		$image_name = $_POST['image_name'];
 		$desc = $_POST['description'];
 		$url = 'http://'.$_POST['url'];
