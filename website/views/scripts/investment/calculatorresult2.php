@@ -37,10 +37,8 @@
             <div class="wrap60">
                <h4>Kalkulator Finansial Pendidikan</h4>
                 
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                <p>Ketahuilah berapa besar dana pendidikan yang dibutuhkan putra putri Anda sebelum menentukan di mana akan menginvestasikan dana pendidikan tersebut. Akan lebih maksimal jika Anda sudah menyiapkan dana pendidikan anak Anda sejak masih dalam kandungan. Investasi dana pendidikan bisa dilakukan melalui tabungan, asuransi, properti atau reksadana.</p>
                 
-        
             </div>
             			
 		</div>
@@ -98,12 +96,12 @@
            
            <div class="calc-machine">
                <div class="share">
-                    <span>Ingin menghitung kembali? <a href="allianz-investment-calculator.php">klik disini >></a></span>
+                    <span>Ingin menghitung kembali? <a href="/investasi/investment-homepage/kalkulator/financial-calculators/pendidikan">klik disini >></a></span>
                 </div>
                
                <div class="allianz-button">
-                    <input class="blue-btn" type="button" value="Lihat Fund Allianz">
-                     <input class="blue-btn" type="button" value="Lihat Produk Allianz">
+                    <input id="fund_allianz" class="blue-btn" type="button" value="Lihat Fund Allianz">
+                    <input id="product_allianz" class="blue-btn" type="button" value="Lihat Produk Allianz">
                </div>
            </div>  
            
@@ -145,6 +143,14 @@
 	    window.location.href = "http://localhost/allianzcoid/allianz-investment-calculator-education2.php";
         });
 	
+     $("#fund_allianz").click(function(){
+	    window.location.href = "http://beta.allianz.co.id/investasi/investment-homepage/allianz-fund";
+     });
+     
+     $("#product_allianz").click(function(){
+	    window.location.href = "http://beta.allianz.co.id/produk";
+     });
+    
 	function navigateMe(anchor)
 	{
 	

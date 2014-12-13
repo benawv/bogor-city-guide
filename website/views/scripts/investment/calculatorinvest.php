@@ -139,6 +139,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                 
                 <p>Ketika berinvestasi, banyak orang telah memiliki tujuan spesifik dalam pikirannya. Misalnya ingin beli rumah, beli mobil, biaya persiapan pernikahan, kebutuhan sekolah anak dan lain sebagainya. Berinvestasilah dengan jumlah tertentu dalam jangka waktu dari tujuan investasi Anda.</p>
                 <p>Berinvestasi sebaiknya dilakukan secara rutin walaupun dalam jumlah yang relatif kecil. Mari mulai berinvestasi dengan menghitung bagaimana mencapai tujuan investasi Anda.</p>
+
                 
         
             </div>
@@ -267,11 +268,19 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         function investment1(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
             var formula = 1 * (Math.pow(1 + Number(asumsi), Number(waktu)));
-            formula = formula.toFixed(3);
+            if (formula < 99) {
+                formula = formula.toFixed(3);
+            }
+            else{
+                formula = formula.toFixed(2);
+            }
             var result = Number(biaya) * formula;
             return result.toFixed(2);
         }
         
+        $('#sliderPosition').val("Rp. 1.000.000");
+        $('#sliderPosition2').val("1%");
+        $('#sliderPosition3').val("1 tahun");
         var biaya = 1000000;
         var asumsi = 1;
         var waktu = 1;
@@ -285,7 +294,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             $(this).val(text);
         });
         
-        $("#sliderPosition2").keyup(function(){
+        $("#sliderPosition2").keyup(function(event){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
@@ -297,7 +306,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             $(this).val(text + '%');
         });
         
-        $("#sliderPosition3").keyup(function(){
+        $("#sliderPosition3").keyup(function(event){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');

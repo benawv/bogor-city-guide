@@ -37,8 +37,9 @@
             <div class="wrap60">
                <h4>KALKULATOR INVESTASI</h4>
                 
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                <p>Ketika berinvestasi, banyak orang telah memiliki tujuan spesifik dalam pikirannya. Misalnya ingin beli rumah, beli mobil, biaya persiapan pernikahan, kebutuhan sekolah anak dan lain sebagainya. Berinvestasilah dengan jumlah tertentu dalam jangka waktu dari tujuan investasi Anda.</p>
+                <p>Berinvestasi sebaiknya dilakukan secara rutin walaupun dalam jumlah yang relatif kecil. Mari mulai berinvestasi dengan menghitung bagaimana mencapai tujuan investasi Anda.</p>
+
                 
         
             </div>
@@ -91,12 +92,12 @@
                     <input id="investment2" class="orange-btn" type="button" value="BAGAIMANA MENCAPAINYA?">
                 </div>
                <div class="share">
-                    <span>Ingin menghitung kembali? <a href="allianz-investment-calculator.php">klik disini >></a></span>
+                    <span>Ingin menghitung kembali? <a href="/investasi/investment-homepage/kalkulator/financial-calculators/calculator-invest">klik disini >></a></span>
                 </div>
                
                <div class="allianz-button">
-                    <input class="blue-btn" type="button" value="Lihat Fund Allianz">
-                     <input class="blue-btn" type="button" value="Lihat Produk Allianz">
+                    <input id="fund_allianz" class="blue-btn" type="button" value="Lihat Fund Allianz">
+                    <input id="product_allianz" class="blue-btn" type="button" value="Lihat Produk Allianz">
                </div>
            </div>  
            
@@ -138,6 +139,13 @@
 	    window.location.href = "/investasi/investment-homepage/kalkulator/financial-calculators/calculator-investment2";
         });
 	
+    $("#fund_allianz").click(function(){
+	    window.location.href = "http://beta.allianz.co.id/investasi/investment-homepage/allianz-fund";
+     });
+     
+    $("#product_allianz").click(function(){
+	    window.location.href = "http://beta.allianz.co.id/produk";
+     });
 	function navigateMe(anchor)
 	{
 	

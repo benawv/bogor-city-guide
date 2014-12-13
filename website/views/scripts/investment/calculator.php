@@ -139,6 +139,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                 
                 <p>Ketahuilah berapa besar dana pendidikan yang dibutuhkan putra putri Anda sebelum menentukan di mana akan menginvestasikan dana pendidikan tersebut. Akan lebih maksimal jika Anda sudah menyiapkan dana pendidikan anak Anda sejak masih dalam kandungan. Investasi dana pendidikan bisa dilakukan melalui tabungan, asuransi, properti atau reksadana.</p>
                 <p>Mari mulai persiapan dana pendidikan di masa depan dengan menghitung biaya dan menyiapkan investasinya.</p>
+
         
             </div>
             			
@@ -364,17 +365,29 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             return "";
         }
 
+        var edu1_biaya_bulanan = getCookie('edu1_biaya_bulanan');
+	edu1_biaya_bulanan = accounting.formatMoney(edu1_biaya_bulanan,'Rp. ',2,'.',',');
+	
         function edu1(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
             var formula = 1 * Math.pow(1 + Number(asumsi), Number(waktu));
-            formula = formula.toFixed(3);
+            if (formula < 99) {
+                formula = formula.toFixed(3);
+            }
+            else{
+                formula = formula.toFixed(2);
+            }
             var result = Number(biaya) * formula;
             return result.toFixed(2);
         }
         
+        $('#sliderPosition').val("Rp. 1.000.000");
+        $('#sliderPosition2').val("1%");
+        $('#sliderPosition3').val("1 tahun");
         var biaya = 1000000;
         var asumsi = 1;
         var waktu = 1;
+        
         $("#sliderPosition").bind('input',function(){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
@@ -385,7 +398,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             $(this).val(text);
         });
         
-        $("#sliderPosition2").keyup(function(){
+        $("#sliderPosition2").keyup(function(event){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
@@ -397,7 +410,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             $(this).val(text + '%');
         });
         
-        $("#sliderPosition3").keyup(function(){
+        $("#sliderPosition3").keyup(function(event){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');

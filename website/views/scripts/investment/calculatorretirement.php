@@ -138,8 +138,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <h4>KALKULATOR PENSIUN</h4>
                 
                 <p>Banyak orang terlupa menyusun rencana pensiun. Alhasil usia memasuki kepala 4 keuangan belum stabil. Dana pensiun Anda harus bisa menutupi pengeluaran di 10, 20, bahkan 30 tahun ke depan, baik untuk dana kesehatan, tempat tinggal, biaya hidup (makan, pakaian dan tempat tinggal), sampai dana plesiran. Selain menabung, investasi tidak kalah pentingnya dilakukan saat masa menjelang pensiun.</p>
- 
-		<p>Mari mulai persiapan dana pensiun dengan menghitung kebutuhan hidup pada saat pensiun dan bagaimana mencapainya.</p>
+                <p>Mari mulai persiapan dana pensiun dengan menghitung kebutuhan hidup pada saat pensiun dan bagaimana mencapainya.</p>
                 
         
             </div>
@@ -260,6 +259,9 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 	    return "";
 	}
         
+        $('#sliderPosition').val("Rp. 1.000.000");
+        $('#sliderPosition2').val("1%");
+        $('#sliderPosition3').val("1 tahun");
         var biaya = 1000000;
         var asumsi = 1;
         var waktu = 1;
@@ -273,7 +275,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             $(this).val(text);
         });
         
-        $("#sliderPosition2").keyup(function(){
+        $("#sliderPosition2").keyup(function(event){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
@@ -285,7 +287,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             $(this).val(text + '%');
         });
         
-        $("#sliderPosition3").keyup(function(){
+        $("#sliderPosition3").keyup(function(event){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
@@ -300,7 +302,12 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         function pension1(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
             var formula = 1 * (Math.pow(1 + Number(asumsi), Number(waktu)));
-            formula = formula.toFixed(3);
+            if (formula < 99) {
+                formula = formula.toFixed(3);
+            }
+            else{
+                formula = formula.toFixed(2);
+            }
             var result = Number(biaya) * formula;
             return result.toFixed(2);
         }

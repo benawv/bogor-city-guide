@@ -137,8 +137,9 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             <div class="wrap60">
                <h4>KALKULATOR INVESTASI</h4>
                 
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                <p>Ketika berinvestasi, banyak orang telah memiliki tujuan spesifik dalam pikirannya. Misalnya ingin beli rumah, beli mobil, biaya persiapan pernikahan, kebutuhan sekolah anak dan lain sebagainya. Berinvestasilah dengan jumlah tertentu dalam jangka waktu dari tujuan investasi Anda.</p>
+                <p>Berinvestasi sebaiknya dilakukan secara rutin walaupun dalam jumlah yang relatif kecil. Mari mulai berinvestasi dengan menghitung bagaimana mencapai tujuan investasi Anda.</p>
+
                 
         
             </div>
@@ -204,7 +205,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                </div>
            </div>   
            
-           <div class="calc-machine">
+           <!--div class="calc-machine">
                <div id="demo3">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #113388">JANGKA WAKTU</h4></div>
@@ -223,10 +224,10 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                           <span class="add">  </span>
                         </div>
                         
-                    </div><!-- End demo -->
+                    </div>
                    
                </div>
-           </div> 
+           </div--> 
            
            <div class="calc-machine">
                <div class="calc-submit bottom">
@@ -266,13 +267,19 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 	var investment1_jangka_waktu = getCookie('investment1_jangka_waktu');
 
         $('#sliderPosition').val(investment1_hasil);
+        $('#sliderPosition2').val("1%");
         $('#sliderPosition3').val(investment1_jangka_waktu + ' tahun');
 
         
         function investment3(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
             var formula = 1 * ((Math.pow(1 + Number(asumsi), Number(waktu)) - 1) / Number(asumsi));
-            formula = formula.toFixed(3);
+            if (formula < 99) {
+                formula = formula.toFixed(3);
+            }
+            else{
+                formula = formula.toFixed(2);
+            }
             var result = Number(biaya) / formula;
             return result.toFixed(2);
         }
@@ -280,6 +287,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         var biaya = getCookie('investment1_hasil');
         var asumsi = 1;
         var waktu = getCookie('investment1_jangka_waktu');
+        
         $("#sliderPosition").bind('input',function(){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
@@ -290,7 +298,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             $(this).val(text);
         });
         
-        $("#sliderPosition2").keyup(function(){
+        $("#sliderPosition2").keyup(function(event){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
@@ -302,7 +310,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             $(this).val(text + '%');
         });
         
-        $("#sliderPosition3").keyup(function(){
+        $("#sliderPosition3").keyup(function(event){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
