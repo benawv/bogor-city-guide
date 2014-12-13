@@ -35,7 +35,7 @@
 		<div class="box_banner_big">
 
 			<div class="textbanner red h200">
-				<h1><?php echo $this->input('title-calc')?></h1>
+				<h1><?php echo $this->input('title-calc1')?></h1>
 				<h3></h3>
 				<p></p>
 			</div>
