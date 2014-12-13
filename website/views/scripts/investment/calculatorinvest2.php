@@ -121,33 +121,38 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
     
 <div role="main" class="main">
     
-	<div class="container boxes-view">
-		
-		<div id="#" class="article-wrap">
-            
-			<div class="wrap30">
-                <h5><span><a href="#">Home</a></span> &rsaquo; <span>KALKULATOR INVESTASI</span> </h5>
-                
-                <div class="bg-blue">
-                    <h4>KALKULATOR INVESTASI</h4>
-                    <p></p>
-                </div>
-            </div>
-            
-            <div class="wrap60">
-               <h4>KALKULATOR INVESTASI</h4>
-                
-                <p>Ketika berinvestasi, banyak orang telah memiliki tujuan spesifik dalam pikirannya. Misalnya ingin beli rumah, beli mobil, biaya persiapan pernikahan, kebutuhan sekolah anak dan lain sebagainya. Berinvestasilah dengan jumlah tertentu dalam jangka waktu dari tujuan investasi Anda.</p>
-                <p>Berinvestasi sebaiknya dilakukan secara rutin walaupun dalam jumlah yang relatif kecil. Mari mulai berinvestasi dengan menghitung bagaimana mencapai tujuan investasi Anda.</p>
+	    <div class="container">
+    
+    		<div class="row">
+    			<div class="bread">
+    				<a href="/investasi/investment-homepage">Home</a>  
+    				<i class="fa fa-angle-right"></i> 
+   			        Kalkulator Investasi  
+               	</div>
+    		</div>
+    
+    
+            <div class="box_banner_big">
 
-                
-        
+			<div class="textbanner red h200">
+				<h1><?php echo $this->input('title-desc1')?></h1>
+				<h3></h3>
+                <p></p>
+			</div>
+			<div class="edge_textbanner edge_red">
+				
+			</div>
+
             </div>
-            			
-		</div>
-		<!-- merchandise end -->
-	
-	</div>
+    
+    		<div class="desc_page">
+	                <h1><?php echo $this->input('title-desc')?></h1>
+                    <?php echo $this->wysiwyg('desc-box')?>
+    		</div>
+    
+    
+    
+    	</div>
     
 </div>
     

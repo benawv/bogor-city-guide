@@ -21,33 +21,35 @@
     
 <div role="main" class="main">
     
-	<div class="container boxes-view">
-		
-		<div id="#" class="article-wrap">
-            
-			<div class="wrap30">
-                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Kalkulator Pendidikan</span> </h5>
-                
-                <div class="bg-dark-orange">
-                    <h4>Kalkulator Pendidikan</h4>
-                    <p></p>
-                </div>
-            </div>
-            
-            <div class="wrap60">
-               <h4>Kalkulator Pendidikan</h4>
-                
-                <p>Ketahuilah berapa besar dana pendidikan yang dibutuhkan putra putri Anda sebelum menentukan di mana akan menginvestasikan dana pendidikan tersebut. Akan lebih maksimal jika Anda sudah menyiapkan dana pendidikan anak Anda sejak masih dalam kandungan. Investasi dana pendidikan bisa dilakukan melalui tabungan, asuransi, properti atau reksadana.</p>
-                <p>Mari mulai persiapan dana pendidikan di masa depan dengan menghitung biaya dan menyiapkan investasinya.</p>
+	 <div class="container">
 
-
-                
-        
-            </div>
-            			
+		<div class="row">
+			<div class="bread">
+				<a href="index.php">Home</a>  
+				<i class="fa fa-angle-right"></i> 
+				Kalkulator Pendidikan
+			</div>
 		</div>
-		<!-- merchandise end -->
-	
+
+
+		<div class="box_banner_big">
+
+			<div class="textbanner bg_edu h200">
+				<h1><?php echo $this->input('title-box')?></h1>
+			</div>
+			<div class="edge_textbanner edge_edu">
+				
+			</div>
+
+		</div>
+
+		<div class="desc_page">
+			<h1><?php echo $this->input('title-desc')?></h1>
+			<?php echo $this->wysiwyg('desc-box')?>
+
+			
+		</div>
+        
 	</div>
     
 </div>
