@@ -44,5 +44,5 @@
 		fwrite($file, $html);
 		fclose($file);
 		
-		echo $filename.".php";
+		echo $filename."".$judul.".php";
 ?>
