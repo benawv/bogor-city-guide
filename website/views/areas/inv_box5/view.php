@@ -21,7 +21,8 @@
 							        array("red", "Red"),
 							        array("purple", "Purple"),
 							        array("blue", "Blue"),
-							        array("brown", "Brown"),
+							        array("blue_light", "Light Blue"),
+                                    array("brown", "Brown"),
 							        array('darkbrown', "Dark Brown"),
 							        array('green', "Green")
 							    ),
@@ -47,7 +48,8 @@
 							        array("red", "Red"),
 							        array("purple", "Purple"),
 							        array("blue", "Blue"),
-							        array("brown", "Brown"),
+							        array("blue_light", "Light Blue"),
+                                    array("brown", "Brown"),
 							        array('darkbrown', "Dark Brown"),
 							        array('green', "Green")
 							    ),
@@ -73,7 +75,8 @@
 							        array("red", "Red"),
 							        array("purple", "Purple"),
 							        array("blue", "Blue"),
-							        array("brown", "Brown"),
+							        array("blue_light", "Light Blue"),
+                                    array("brown", "Brown"),
 							        array('darkbrown', "Dark Brown"),
 							        array('green', "Green")
 							    ),
@@ -99,7 +102,8 @@
 							        array("red", "Red"),
 							        array("purple", "Purple"),
 							        array("blue", "Blue"),
-							        array("brown", "Brown"),
+							        array("blue_light", "Light Blue"),
+                                    array("brown", "Brown"),
 							        array('darkbrown', "Dark Brown"),
 							        array('green', "Green")
 							    ),
