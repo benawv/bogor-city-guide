@@ -92,7 +92,7 @@
 	});
 	//var result = getCookie('visitorname');
 	//$('.visitorname').html('Hi, ' + result);
-	var vname = sessionStorage.getItem('visitorname');
+	var vname = localStorage.getItem('visitorname');
 	
 	if(vname != null) {
 		$('.visitorname').html('Hi, ' + vname);
