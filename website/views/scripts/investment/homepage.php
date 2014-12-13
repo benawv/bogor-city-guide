@@ -125,7 +125,7 @@
             inv_cat = $( this ).val();
             var putname= $('input[name="putname"]').val();
             
-            sessionStorage.setItem('visitorname', putname?putname:'');
+            localStorage.setItem('visitorname', putname?putname:'');
             
             setCookie('visitorname',putname,1);            
             url = '/investment/investment-category/'+inv_cat;
