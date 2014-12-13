@@ -21,7 +21,7 @@
     
 <div role="main" class="main">
     
-    <div class="container">
+        <div class="container">
     
     		<div class="row">
     			<div class="bread">
@@ -32,27 +32,25 @@
     		</div>
     
     
-            <div class="box_banner_big">
+           <div class="box_banner_big">
 
-			<div class="textbanner red h200">
-				<h1><?php echo $this->input('title-desc1')?></h1>
-				<h3></h3>
-                <p></p>
-			</div>
-			<div class="edge_textbanner edge_red">
+    			<div class="textbanner purple h200">
+    			    <h1><?php echo $this->input('title-desc1')?></h1>
+    				<h3></h3>
+                    <p></p>
+			     </div>
+			<div class="edge_textbanner edge_purple">
 				
 			</div>
 
-            </div>
+		</div>
     
     		<div class="desc_page">
 	                <h1><?php echo $this->input('title-desc')?></h1>
                     <?php echo $this->wysiwyg('desc-box')?>
     		</div>
     
-    
-    
-    	</div>
+   	</div>
     
 </div>
     

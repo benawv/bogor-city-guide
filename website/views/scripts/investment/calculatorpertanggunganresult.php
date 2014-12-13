@@ -21,30 +21,37 @@
     
 <div role="main" class="main">
     
-	<div class="container boxes-view">
-		
-		<div id="#" class="article-wrap">
-            
-			<div class="wrap30">
-                <h5><span><a href="#">Home</a></span> &rsaquo; <span>KALKULATOR ASURANSI</span> </h5>
-                
-                <div class="bg-dark-orange" style="background-color: #a50034">
-                    <h4>KALKULATOR ASURANSI</h4>
-                    <p></p>
-                </div>
+	<div class="container">
+
+		<div class="row">
+			<div class="bread">
+				<a href="/investasi/investment-homepage">Home</a>  
+			     <i class="fa fa-angle-right"></i> 
+			     Kalkulator Pertanggungan
             </div>
-            
-            <div class="wrap60">
-               <h4>KALKULATOR FINANSIAL PERTANGGUNGAN</h4>
-                
-                <p>Dalam perencanaan keuangan, asuransi memiliki fungsi untuk manajemen risiko memproteksi keuangan pribadi. Dan secara umum, setiap orang setidaknya wajib memiliki proteksi kerugian finansial karena sakit, sakit kritis, meninggal dunia dan cacat tetap total. Asuransi dibeli karena kita mencintai keluarga kita. Asuransi dibeli sebelum risiko datang menghampiri.</p>
-                <p>Mari pastikan perlindungan yang kita miliki sudah cukup untuk menanggung orang-orang yang kita cintai dengan menghitung pertanggungan yang kita butuhkan.</p>                
-        
-            </div>
-            			
 		</div>
-		<!-- merchandise end -->
-	
+
+
+		<div class="box_banner_big">
+
+			<div class="textbanner red h200">
+				<h1><?php echo $this->input('title-calc')?></h1>
+				<h3></h3>
+				<p></p>
+			</div>
+			<div class="edge_textbanner edge_red">
+				
+			</div>
+
+		</div>
+
+		<div class="desc_page">
+			<h1><?php echo $this->input('title-calc')?></h1>
+			<?php echo $this->wysiwyg('desc-calc')?>
+		</div>
+
+
+
 	</div>
     
 </div>

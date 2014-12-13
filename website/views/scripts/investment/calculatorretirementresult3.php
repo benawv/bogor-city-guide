@@ -21,31 +21,35 @@
     
 <div role="main" class="main">
     
-	<div class="container boxes-view">
-		
-		<div id="#" class="article-wrap">
-            
-			<div class="wrap30">
-                <h5><span><a href="#">Home</a></span> &rsaquo; <span>KALKULATOR PENSIUN</span> </h5>
-                
-                <div class="bg-dark-orange" style="background-color: #8b4720;">
-                    <h4>KALKULATOR PENSIUN</h4>
-                    <p></p>
-                </div>
+    <div class="container">
+
+		<div class="row">
+			<div class="bread">
+				<a href="/investasi/investment-homepage">Home</a>  
+                    <i class="fa fa-angle-right"></i> 
+				    Kalkulator Pensiun
             </div>
-            
-            <div class="wrap60">
-               <h4>KALKULATOR PENSIUN</h4>
-                
-                <p>Banyak orang terlupa menyusun rencana pensiun. Alhasil usia memasuki kepala 4 keuangan belum stabil. Dana pensiun Anda harus bisa menutupi pengeluaran di 10, 20, bahkan 30 tahun ke depan, baik untuk dana kesehatan, tempat tinggal, biaya hidup (makan, pakaian dan tempat tinggal), sampai dana plesiran. Selain menabung, investasi tidak kalah pentingnya dilakukan saat masa menjelang pensiun.</p>
-                <p>Mari mulai persiapan dana pensiun dengan menghitung kebutuhan hidup pada saat pensiun dan bagaimana mencapainya.</p>
-                
-        
-            </div>
-            			
 		</div>
-		<!-- merchandise end -->
-	
+
+
+		<div class="box_banner_big">
+
+			<div class="textbanner darkbrown h200">
+				<h1><?php echo $this->input('title')?></h1>
+				<h3></h3>
+			    <p></p>
+			</div>
+			<div class="edge_textbanner edge_darkbrown">
+				
+			</div>
+
+		</div>
+
+		<div class="desc_page">
+			<h1><?php echo $this->input('title-box')?></h1>
+            <?php echo $this->wysiwyg('description')?>
+		</div>
+
 	</div>
     
 </div>
