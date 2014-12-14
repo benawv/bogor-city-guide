@@ -373,7 +373,7 @@ jQuery(function($) {
                         <td><a id="prev_8" href="javascript:void(0);">
                                 <img class="left" src="/website/static/inv/images/prev.png">
                             </a></td>
-                        <td>
+                        <td class="next_form">
                           <a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/income-statement" class="right">Lanjutkan dengan mengisi Income Statement &#187;</a>
                         </td>
                     </tr>
@@ -396,6 +396,31 @@ jQuery(function($) {
 <script type="text/javascript">
 $(document).ready(function(){
     
+    
+     function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+        
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1);
+                if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+            }
+            return "";
+        }
+        
+         var is_cincomestatment=getCookie('cincomestatment'); 
+         if(is_cincomestatment!=''){
+            $(".next_form").html("<a href='/investasi/investment-homepage/financial-planning/cash-flow-tables/rasio-finansial' class='right'>Lanjutkan Financial rasio</a>");
+         }   
+        
+        
              $( "#next_9" ).click(function(){
       
     		var liquid1 = 0;
@@ -721,8 +746,19 @@ $(document).ready(function(){
 
         /*===========SET Cookies kue kue============*/
         //setCookie('edu1_biaya_bulanan',biaya,1);
-        
+            var q1= {form1:liquid1, form2:liquid2, form3:liquid3, form4:liquid4};
+            var q2= {form1:investasi1, form2:investasi2, form3:investasi3, form4:investasi4, form5:investasi5};
+            var q3= {form1:tetap1, form2:tetap2, form3:tetap3};
+            var q4= {form1: pribadi1, form2: pribadi2, form3: pribadi3, form4: pribadi4};
+            var q5= {form1: pensiun1, form2: pensiun2, form3: pensiun3};
+            var q6= {form1: hjp1, form2: hjp2, form3: hjp3};
+            var q7= {form1: hjpa1, form2: hjpa2, form3: hjpa3};
+            var q8= {form1: lainya1};
+ 
+            var cbalanced={question1:q1, question2:q2, question3:q3, question4:q4, question5:q5, question6:q6, question7:q7, question8:q8}
+            setCookie('cbalanced',cbalanced,1);     
         /*=========ENDSET Cookies kue kue============*/
+            
         
     $("#prev_1").click(function(){
     $(".stepform").hide();

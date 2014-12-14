@@ -275,7 +275,7 @@ jQuery(function($) {
                         <td><a id="prev_5" href="javascript:void(0);">
                                 <img class="left" src="/website/static/inv/images/prev.png">
                             </a></td>
-                        <td>
+                        <td class="next_form">
                           <a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/balanced-sheet" class="right">Lanjutkan dengan mengisi Balance Sheet &#187;</a>
                         </td>
                     </tr>
@@ -297,6 +297,29 @@ jQuery(function($) {
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+    
+     function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+        
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1);
+                if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+            }
+            return "";
+        }
+        
+         var is_cbalanced=getCookie('cbalanced'); 
+         if(is_cbalanced!=''){
+            $(".next_form").html("<a href='/investasi/investment-homepage/financial-planning/cash-flow-tables/rasio-finansial' class='right'>Lanjutkan Financial rasio</a>");
+         }   
     
     $( "#next_6" ).click(function(){
     var total_pendapatan=0;
@@ -613,6 +636,15 @@ $(document).ready(function(){
             total_pendapatan_bersih=total_pendapatan+total_biaya_hidup+total_angsuran_hutang+total_biaya_lainnya+total_pengeluaran
             $( "#total_pendapatan_bersih" ).html( accounting.formatMoney(total_pendapatan_bersih,'Rp. ',2,'.',','));
 
+            var q1= {form1:pendapatan1, form2:pendapatan2, form3:pendapatan3, form4:pendapatan4, form5:pendapatan5};
+            var q2= {form1:kebutuhan1, form2:kebutuhan2, form3:kebutuhan3, form4:kebutuhan4, form5:kebutuhan5, form6:kebutuhan6, form7:kebutuhan7};
+            var q3= {form1:kegiatan1, form2:kegiatan2, form3:kegiatan3, form4:kegiatan4, form5:kegiatan5, form6:kegiatan6, form7:kegiatan7 };
+            var q4= {form1: angsuran1, form2: angsuran2, form3: angsuran3, form4: angsuran4, form5: angsuran5};
+            var q5= {form1: lainnya1, form2: lainnya2, form3: lainnya3, form4: lainnya4};
+ 
+            var cincomestatment={question1:q1, question2:q2, question3:q3, question4:q4, question5:q5}
+            setCookie('cincomestatment',cincomestatment,1); 
+    
         });
     
     $("#prev_1").click(function(){
