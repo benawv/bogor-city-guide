@@ -31,6 +31,10 @@
 						{
 							header("Location: '.$link_in_fb.'");
 						}
+						if($_SERVER["HTTP_REFERER"] == "http://m.facebook.com" || $_SERVER["HTTP_REFERER"] == "http://m.facebook.com/" || $_SERVER["HTTP_REFERER"] == "https://m.facebook.com/" || $_SERVER["HTTP_REFERER"] == "https://m.facebook.com")
+						{
+							header("Location: '.$link_in_fb.'");
+						}
 						$isiPad = (bool) strpos($_SERVER["HTTP_USER_AGENT"],"iPad");
 						if($isiPad == 1)
 						{
