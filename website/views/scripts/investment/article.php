@@ -7,8 +7,33 @@
 
     
 <div role="main" class="main no-gutter">
+
+<?php
     
-    <div class="bg100">
+    
+	if(count($this->data)>0)
+	{
+		foreach ($this->data->investment as $inv) 
+		{ 	
+			$cls=strtolower($inv->investment);
+		        if($cls=="edukasi"){
+		            $investmentcolor="bg_edu ";    
+		        }elseif($cls=="investasi"){
+		             $investmentcolor="bg_fund ";
+		        }elseif($cls=="asuransi"){
+		             $investmentcolor="bg_health ";
+		        }elseif($cls=="masa depan"){
+		             $investmentcolor="bg_future ";
+		        }elseif($cls=="pensiun"){
+		             $investmentcolor="bg_pension ";
+		        }
+		}
+	}
+		
+?>
+    
+    
+    <div class="<?php echo $investmentcolor?$investmentcolor:'bg_fund' ?>">
        <div class="container">
        
            <h1 class="article-title">

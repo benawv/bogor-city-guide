@@ -9,15 +9,15 @@
 		foreach ($this->data->investment as $inv) 
 		{ 	
 			$cls=strtolower($inv['investment']);
-	        if($cls=="artikel edukasi"){
+	        if($cls=="edukasi"){
 	            $investmentcolor="bg_edu ";    
-	        }elseif($cls=="artikel investasi"){
+	        }elseif($cls=="investasi"){
 	             $investmentcolor="bg_fund ";
-	        }elseif($cls=="artikel asuransi"){
+	        }elseif($cls=="asuransi"){
 	             $investmentcolor="bg_health ";
-	        }elseif($cls=="artikel masa depan"){
+	        }elseif($cls=="masa depan"){
 	             $investmentcolor="bg_future ";
-	        }elseif($cls=="artikel pensiun"){
+	        }elseif($cls=="pensiun"){
 	             $investmentcolor="bg_pension ";
 	        }
 		}

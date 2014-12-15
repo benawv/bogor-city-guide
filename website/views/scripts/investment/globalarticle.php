@@ -65,15 +65,15 @@
                     }
                       
                     $id=strtolower($entrie->investment);
-                    if($id=="artikel edukasi"){
+                    if($id=="edukasi"){
                         $investmentcolor="bg_edu ".$lastone;    
-                    }elseif($id=="artikel investasi"){
+                    }elseif($id=="investasi"){
                          $investmentcolor="bg_fund ".$lastone;
-                    }elseif($id=="artikel asuransi"){
+                    }elseif($id=="asuransi"){
                          $investmentcolor="bg_health ".$lastone;
-                    }elseif($id=="artikel masa depan"){
+                    }elseif($id=="masa depan"){
                          $investmentcolor="bg_future ".$lastone;
-                    }elseif($id=="artikel pensiun"){
+                    }elseif($id=="pensiun"){
                          $investmentcolor="bg_pension ".$lastone;
                     }
                   $i++;

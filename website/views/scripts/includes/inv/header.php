@@ -53,14 +53,14 @@
 
                // get root node if there is no document defined (for pages which are routed directly through static route)
 		    if(!$this->document instanceof Document_Page) {
-		        $this->document = Document::getConcreteByPath('/investasi/investment-homepage/');
+		        $this->document = Document::getConcreteByPath('/investment/');
               //  $this->document = Document::getConcreteById(332);
 		    }
 		 
 		    // get the document which should be used to start in navigation | default home
 		    $navStartNode = $this->document->getProperty("navigationRoot");
 		    if(!$navStartNode instanceof Document_Page) {
-                $navStartNode = Document::getConcreteByPath('/investasi/investment-homepage/');
+                $navStartNode = Document::getConcreteByPath('/investment/');
 		        //$navStartNode = Document::getConcreteById(332);
 		    }
 		 
