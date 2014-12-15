@@ -177,7 +177,7 @@
 					
 			</nav>
 
-			<a href="/investasi/investment-homepage">
+			<a href="/investment">
 				<img src="/website/static/inv/images/sitelabel.png" />
 			</a>
 		</div>
