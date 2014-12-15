@@ -24,7 +24,7 @@
     <product-quicklinks>1</product-quicklinks>
     <sections-video>1</sections-video>
     <sections-gallery>1</sections-gallery>
-    <sections-select>1</sections-select>
+    <sections-select></sections-select>
     <tekskiri60-imagekanan40>1</tekskiri60-imagekanan40>
     <tekskiri40-imagekanan60>1</tekskiri40-imagekanan60>
     <tekskanan40-imagekiri60>1</tekskanan40-imagekiri60>
@@ -81,6 +81,13 @@
     <inv-fund-balanced>1</inv-fund-balanced>
     <inv-fund-fixedincome>1</inv-fund-fixedincome>
     <inv_finansialrasio>1</inv_finansialrasio>
+    <banner2>1</banner2>
+    <blank-tile-quicklinks-static>1</blank-tile-quicklinks-static>
+    <community-tips2>1</community-tips2>
+    <container-box2>1</container-box2>
+    <inv_box2>1</inv_box2>
+    <tekskanan60-imagekiri40_2>1</tekskanan60-imagekiri40_2>
+    <tekskanan60-videokiri40_2>1</tekskanan60-videokiri40_2>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>

@@ -49,7 +49,7 @@
 	<?php endif; ?>
 	
 	<div class="container boxes-view">
-		<h5><a href="/"><span>Home</span></a> &rsaquo; <?php echo $text;?></h5>
+		<h5><a href="/"><span>Home</span></a> <?php echo $this->template("includes/breadcrumb.php")?></h5>
 		<span class="breadcrumb"><a href="#"><?php echo $this->document->getProperty('navigation_title');?></a></span>
 		
 		<div class="heading clearfix pagenav platinum_nav">

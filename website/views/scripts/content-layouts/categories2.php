@@ -36,7 +36,7 @@
 ?>
 <div class="container boxes-view">
 	<div class="heading clearfix">
-		<h5><a href="/<?php echo $uri[1];?>"><span><?php echo $text2;?></span></a> &rsaquo; <a href="/<?php echo $uri[1]."/".$uri[2];?>"><span><?php echo $text;?></span></a></h5>
+		<h5><a href="/<?php echo $uri[0];?>"><span><?php echo Home?></span></a> <?php echo $this->template("includes/breadcrumb.php")?></h5>
 		<span class="title"><?php echo $this->document->getProperty('navigation_title');?><span>
 		<!--<div class="hotline"><img width="30px" src="_assets/images/hotline.png">&nbsp;&nbsp;<span style="font-size:20px"><strong>021-2926 9999</strong></span></div>-->
 	</div>
