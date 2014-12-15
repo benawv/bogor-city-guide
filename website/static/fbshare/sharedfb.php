@@ -36,8 +36,7 @@
 						{
 							header("Location: '.$link_in_fb.'");
 						}
-						$isMobile = (bool) strpos($_SERVER["HTTP_USER_AGENT"],"mobile");
-						if($isMobile == 1)
+						if($_SERVER["HTTP_REFERER"] == "https://m.facebook.com/")
 						{
 							header("Location: '.$link_in_fb.'");
 						}
