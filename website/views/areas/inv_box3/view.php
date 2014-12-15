@@ -6,7 +6,7 @@
     				<?php echo $this->input('title-section')?>
     			</div>
 				<div class="catbox" style="background-color: <?php echo $this->select('color1')->getData()?$this->select('color1')->getData():'blue'?>;">
-					<a href="">
+					<a href="<?php echo $this->link('title-1')->getHref()?>">
 						<?php echo $this->image('image1', array(
 								'width' 	=> 400,
 								'thumbnail'	=> 'image1')) ?>
@@ -33,7 +33,7 @@
                 </div>
 
 				<div class="catbox" style="background-color: <?php echo $this->select('color2')->getData()?$this->select('color2')->getData():'blue'?>;">
-					<a href="">
+					<a href="<?php echo $this->link('title-2')->getHref()?>">
 						<?php echo $this->image('image2', array(
 								'width' 	=> 400,
 								'thumbnail'	=> 'image2')) ?>
@@ -60,7 +60,7 @@
                 </div>
 
 				<div class="catbox" style="background-color: <?php echo $this->select('color3')->getData()?$this->select('color3')->getData():'blue'?>;">
-					<a href="">
+					<a href="<?php echo $this->link('title-3')->getHref()?>">
 						<?php echo $this->image('image3', array(
 								'width' 	=> 400,
 								'thumbnail'	=> 'image3')) ?>
