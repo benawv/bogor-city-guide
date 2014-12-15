@@ -359,6 +359,7 @@ $(document).ready(function(){
         	deskripsi = "";
         	deskripsi = $(this).parents().parents().siblings('a').find('.description').find("p").text();
     	}
+		var link = $(this).parent().siblings('a').attr('href') != undefined ? window.location.host+'/'+$(this).parent().siblings('a').attr('href') : window.location.host+window.location.pathname;
 		//END HOME
 		
 		//PRODUK
@@ -436,7 +437,7 @@ $(document).ready(function(){
 					image_name: image,
 					description: desc,
 					url: window.location.host,
-					link_in_fb : window.location.host+window.location.pathname
+					link_in_fb : link
 				},
 				success: function(response)
 				{
