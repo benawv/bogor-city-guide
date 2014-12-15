@@ -54,28 +54,28 @@ jQuery(function($) {
                         <tbody> 
                         <tr> 
                             <td class="td-blue">LIKUIDITAS</td> 
-                            <td class="td-blue-sky">KAS DAN SETARA KAS PENGELUARAN</td> 
+                            <td class="td-blue-sky">Total Aset Likuid / Total Pengeluaran Bulana</td> 
                             <td class="td-blue">3 - 6 BULAN</td> 
                             <td class="td-blue-sky"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/income-statement">Isi laporan arus kas untuk melengkapi > </a></td> 
                             
                         </tr>       
                        <tr> 
                             <td class="td-blue">ASET LIKUID</td> 
-                            <td class="td-blue-sky">KAS DAN SETARA KAS PENGELUARAN</td> 
+                            <td class="td-blue-sky">Total Aset Liqud / Nilai Bersih Kekayaan</td> 
                             <td class="td-blue">MAKSIMAL 15%</td> 
                             <td class="td-blue-sky"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/income-statement">Isi laporan arus kas untuk melengkapi > </a></td> 
                             
                         </tr>    
                        <tr> 
-                            <td class="td-blue">DEBT TO ASSET</td> 
-                            <td class="td-blue-sky">KAS DAN SETARA KAS PENGELUARAN</td> 
+                            <td class="td-blue">HUTANG TERHADAP ASET</td> 
+                            <td class="td-blue-sky">Hutang / SAset</td> 
                             <td class="td-blue">MAKSIMAL 50%</td> 
                             <td class="td-blue-sky"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
                             
                         </tr>    
                         <tr> 
-                            <td class="td-blue">NET INVESTMENT ASSET TO NET WORTH RATIO</td> 
-                            <td class="td-blue-sky">KAS DAN SETARA KAS PENGELUARAN</td> 
+                            <td class="td-blue">TOTAL INVESTASI TERHADAP KEKAYAAN BERSIH</td> 
+                            <td class="td-blue-sky">Total Aset Investasi/Nilai Bersih Kekayaan</td> 
                             <td class="td-blue">> 50%</td> 
                             <td class="td-blue-sky"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
                             
@@ -122,12 +122,13 @@ $(document).ready(function(){
             return "";
         }
         
+         var is_cbalanced=getCookie('cbalanced');
          var is_cincomestatment=getCookie('cincomestatment'); 
-         if(is_cincomestatment!=''){
-            $(".next_form").html("<a href='/investasi/investment-homepage/financial-planning/cash-flow-tables/rasio-finansial' class='right'>Lanjutkan Financial rasio</a>");
-         }   
-        
-        
+         
+//         console.log(is_cbalanced);
+//         console.log(is_cincomestatment); 
+
+           
         /*=========ENDSET Cookies kue kue============*/
             
         

@@ -302,7 +302,7 @@ $(document).ready(function(){
             var d = new Date();
             d.setTime(d.getTime() + (exdays*24*60*60*1000));
             var expires = "expires="+d.toUTCString();
-            document.cookie = cname + "=" + cvalue + "; " + expires;
+            document.cookie = cname + "=" + JSON.stringify(cvalue)+ "; " + expires;
         }
         
         function getCookie(cname) {
@@ -321,46 +321,47 @@ $(document).ready(function(){
             $(".next_form").html("<a href='/investasi/investment-homepage/financial-planning/cash-flow-tables/rasio-finansial' class='right'>Lanjutkan Financial rasio</a>");
          }   
     
-    $( "#next_6" ).click(function(){
-    var total_pendapatan=0;
-    var pendapatan1=0;
-    var pendapatan2=0;
-    var pendapatan3=0;
-    var pendapatan4=0;
-    var pendapatan5=0;
-    
-    var total_biaya_hidup=0;
-    var kebutuhan1=0;
-    var kebutuhan2=0;
-    var kebutuhan3=0;
-    var kebutuhan4=0;
-    var kebutuhan5=0;
-    var kebutuhan6=0;
-    var kebutuhan7=0;
-   
-   var total_angsuran_hutang=0;
-    var kegiatan1=0;
-    var kegiatan2=0;
-    var kegiatan3=0;
-    var kegiatan4=0;
-    var kegiatan5=0;
-    var kegiatan6=0;
-    var kegiatan7=0;
-   
-   var total_biaya_lainnya=0;
-    var angsuran1=0;
-    var angsuran2=0;
-    var angsuran3=0;
-    var angsuran4=0;
-    var angsuran5=0;
-    
-    var total_pengeluaran=0;
-    var lainnya1=0;
-    var lainnya2=0;
-    var lainnya3=0;
-    var lainnya4=0;
-    
-    var total_pendapatan_bersih=0;
+        $( "#next_6" ).click(function(){
+            
+            var total_pendapatan=0;
+            var pendapatan1=0;
+            var pendapatan2=0;
+            var pendapatan3=0;
+            var pendapatan4=0;
+            var pendapatan5=0;
+            
+            var total_biaya_hidup=0;
+            var kebutuhan1=0;
+            var kebutuhan2=0;
+            var kebutuhan3=0;
+            var kebutuhan4=0;
+            var kebutuhan5=0;
+            var kebutuhan6=0;
+            var kebutuhan7=0;
+           
+            var total_angsuran_hutang=0;
+            var kegiatan1=0;
+            var kegiatan2=0;
+            var kegiatan3=0;
+            var kegiatan4=0;
+            var kegiatan5=0;
+            var kegiatan6=0;
+            var kegiatan7=0;
+           
+            var total_biaya_lainnya=0;
+            var angsuran1=0;
+            var angsuran2=0;
+            var angsuran3=0;
+            var angsuran4=0;
+            var angsuran5=0;
+            
+            var total_pengeluaran=0;
+            var lainnya1=0;
+            var lainnya2=0;
+            var lainnya3=0;
+            var lainnya4=0;
+            
+            var total_pendapatan_bersih=0;
     
             var text = $("#pendapatan1").val();
 			text = text.replace('Rp. ','');

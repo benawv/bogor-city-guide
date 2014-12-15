@@ -16,16 +16,14 @@
                             $i=1; 
                             foreach($this->categoryInv as $entrie)
                             {                                
-                                
-/*                                echo "<pre>";
-                                print_r($entrie);
-                                echo "</pre>";*/
-                        ?>
+                                                        ?>
                               <input type="radio" id="rd_<?php echo $i; ?>" name="rd" value="<?php  echo $entrie->o_id; ?>" />
                               <label for="rd_<?php echo $i?>"><?php  echo $entrie->investment; ?></label> <br />
                         <?php
                                 $i++; 
                         } ?>
+                             <input type="radio" id="" name="rd" value="x" />
+                             <label for="rd_10">Bantu Saya</label> <br />
 				</p>
 			</div>
             
@@ -124,14 +122,19 @@
     $( 'input[name="rd"]' ).each(function(index,value){
         $( this ).on( 'click', function(){
             inv_cat = $( this ).val();
-            var putname= $('input[name="putname"]').val();
-            
-            localStorage.setItem('visitorname', putname?putname:'');
-            
-            setCookie('visitorname',putname,1);            
-            url = '/investment/investment-category/'+inv_cat;
-            //$(location).attr("href", url); 
+            if(inv_cat!='x'){
+                var putname= $('input[name="putname"]').val();
+                
+                localStorage.setItem('visitorname', putname?putname:'');
+                
+                setCookie('visitorname',putname,1);            
+                url = '/investment/investment-category/'+inv_cat;
+                //$(location).attr("href", url); 
+            }else{
+                  url = '/investment/investment-category/1139'; //masih manual
+            }
             window.location.href = url;
+
         });
     });
         
