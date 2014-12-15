@@ -56,28 +56,28 @@ jQuery(function($) {
                             <td class="td-blue">LIKUIDITAS</td> 
                             <td class="td-blue-sky">Total Aset Likuid / Total Pengeluaran Bulana</td> 
                             <td class="td-blue">3 - 6 BULAN</td> 
-                            <td class="td-blue-sky"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/income-statement">Isi laporan arus kas untuk melengkapi > </a></td> 
+                            <td class="td-blue-sky likuiditas"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/income-statement">Isi laporan arus kas untuk melengkapi > </a></td> 
                             
                         </tr>       
                        <tr> 
                             <td class="td-blue">ASET LIKUID</td> 
                             <td class="td-blue-sky">Total Aset Liqud / Nilai Bersih Kekayaan</td> 
                             <td class="td-blue">MAKSIMAL 15%</td> 
-                            <td class="td-blue-sky"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/income-statement">Isi laporan arus kas untuk melengkapi > </a></td> 
+                            <td class="td-blue-sky aset_likuid"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/income-statement">Isi laporan arus kas untuk melengkapi > </a></td> 
                             
                         </tr>    
                        <tr> 
                             <td class="td-blue">HUTANG TERHADAP ASET</td> 
-                            <td class="td-blue-sky">Hutang / SAset</td> 
+                            <td class="td-blue-sky">Hutang / Aset</td> 
                             <td class="td-blue">MAKSIMAL 50%</td> 
-                            <td class="td-blue-sky"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
+                            <td class="td-blue-sky hutang_aset"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
                             
                         </tr>    
                         <tr> 
                             <td class="td-blue">TOTAL INVESTASI TERHADAP KEKAYAAN BERSIH</td> 
                             <td class="td-blue-sky">Total Aset Investasi/Nilai Bersih Kekayaan</td> 
                             <td class="td-blue">> 50%</td> 
-                            <td class="td-blue-sky"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
+                            <td class="td-blue-sky investasi"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
                             
                         </tr>  
                         
@@ -125,7 +125,22 @@ $(document).ready(function(){
          var is_cbalanced=getCookie('cbalanced');
          var is_cincomestatment=getCookie('cincomestatment'); 
          
-//         console.log(is_cbalanced);
+         var getCbalanced=JSON.parse(is_cbalanced);
+         var getCincomestatment=JSON.parse(is_cincomestatment);
+         
+         var liquid=getCbalanced.total_liquid;
+         var kekayaan_bersih=getCbalanced.kekayaan_bersih;
+         var tbulanan=getCincomestatment.total_pengeluaran;
+         var thutang=getCbalanced.total_hutang;
+         var thutang=getCbalanced.total_hutang;
+         var tasset=getCbalanced.total_asset;
+         
+            //Total Aset Likuid / Total Pengeluaran Bulana
+            var akhir1=
+             $('.likuiditas').html(parseInt(liquid)/parseInt(tbulanan));
+             $('.aset_likuid').html(Math.round(parseInt(liquid)/parseInt(kekayaan_bersih)*100)+"%");
+             $('.hutang_aset').html(Math.round(parseInt(thutang)/parseInt(kekayaan_bersih)*100)+"%");
+             $('.investasi').html(Math.round(parseInt(tasset)/parseInt(kekayaan_bersih)*100)+"%");
 //         console.log(is_cincomestatment); 
 
            

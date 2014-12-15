@@ -7,7 +7,7 @@ $( document ).ready(function(){
         $( 'div.tooltips > a[class*="tooltip-"]' ).click(function(){
             var href = $( this ).attr( 'href' );
             var prey = $( 'div.calc-overlay#' + href );
-            //console.log( 'href: ' + href );
+            console.log( 'href: ' + href );
             if( prey.length > 0 )
             {
                 prey.stop().fadeIn( 'fast', function(){

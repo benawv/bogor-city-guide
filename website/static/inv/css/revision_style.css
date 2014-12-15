@@ -166,9 +166,13 @@ h1.article-title {
 /* Left */
 .tooltip-left:before,
 .tooltip-left:after {
-  right: 100%;
+  /*right: 100%;
   bottom: 50%;
-  left: auto;
+  left: auto;*/
+    right: 5%;
+    bottom: 90%;
+    left: auto;
+
 }
 
 .tooltip-left:before {
@@ -241,7 +245,9 @@ h1.article-title {
 /* Move directional arrows down a bit for left/right tooltips */
 .tooltip-left:before,
 .tooltip-right:before {
-  top: 8px;
+  /*top: 8px; 
+  edit by fitraz*/
+    top:10%;
 }
 
 /* Vertically center tooltip content for left/right tooltips */

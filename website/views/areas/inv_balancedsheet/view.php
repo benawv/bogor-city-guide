@@ -298,8 +298,7 @@ jQuery(function($) {
 
 
             <div class="stepform" id="step_9">
-                <h2>Financial Ratio</h2>
-
+               
                 <table width="100%">
 
                     <tr>
@@ -754,7 +753,19 @@ $(document).ready(function(){
                 var q7= {"form1": hjpa1, "form2": hjpa2, "form3": hjpa3};
                 var q8= {"form1": lainya1};
      
-                var cbalanced={"question1":q1, "question2":q2, "question3":q3, "question4":q4, "question5":q5, "question6":q6, "question7":q7, "question8":q8}
+                var cbalanced={ "question1":q1, 
+                                "question2":q2, 
+                                "question3":q3, 
+                                "question4":q4, 
+                                "question5":q5, 
+                                "question6":q6, 
+                                "question7":q7, 
+                                "question8":q8,
+                                "total_liquid":total_liquid,
+                                "total_hutang":total_hutang,
+                                "kekayaan_bersih":kekayaan_bersih,
+                                "total_asset":total_asset
+                                }
                 setCookie('cbalanced',cbalanced,1); 
                 
                 /*=========ENDSET Cookies kue kue============*/

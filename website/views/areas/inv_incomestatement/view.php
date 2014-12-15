@@ -267,7 +267,7 @@ jQuery(function($) {
                         </td>
                     </tr>
                      <tr>
-                        <td>PENDAPATAN - PENGELUARAN</td>
+                        <td>PENDAPATAN-BIAYA+HUTANG</td>
                         <td class="right" id="total_pendapatan_bersih">Rp 0</td>
                     </tr>
                     
@@ -634,7 +634,7 @@ $(document).ready(function(){
             total_pengeluaran=(parseInt(lainnya1)+parseInt(lainnya2)+parseInt(lainnya3)+parseInt(lainnya4));
             $( "#total_pengeluaran" ).html( accounting.formatMoney(total_pengeluaran,'Rp. ',2,'.',','));
             
-            total_pendapatan_bersih=total_pendapatan+total_biaya_hidup+total_angsuran_hutang+total_biaya_lainnya+total_pengeluaran
+            total_pendapatan_bersih=total_pendapatan-((total_biaya_hidup+total_biaya_lainnya)+total_angsuran_hutang);
             $( "#total_pendapatan_bersih" ).html( accounting.formatMoney(total_pendapatan_bersih,'Rp. ',2,'.',','));
 
             var q1= {form1:pendapatan1, form2:pendapatan2, form3:pendapatan3, form4:pendapatan4, form5:pendapatan5};
@@ -643,7 +643,12 @@ $(document).ready(function(){
             var q4= {form1: angsuran1, form2: angsuran2, form3: angsuran3, form4: angsuran4, form5: angsuran5};
             var q5= {form1: lainnya1, form2: lainnya2, form3: lainnya3, form4: lainnya4};
  
-            var cincomestatment={question1:q1, question2:q2, question3:q3, question4:q4, question5:q5}
+            var cincomestatment={question1:q1,  
+                                 question2:q2, 
+                                 question3:q3, 
+                                 question4:q4, 
+                                 question5:q5, 
+                                 "total_pengeluaran":total_pengeluaran}
             setCookie('cincomestatment',cincomestatment,1); 
     
         });
