@@ -137,11 +137,11 @@
 	
     
      $("#fund_allianz").click(function(){
-	    window.location.href = "http://beta.allianz.co.id/investasi/investment-homepage/allianz-fund";
+	    window.location.href = "http://beta.allianz.co.id/investment/allianz-fund";
      });
      
      $("#product_allianz").click(function(){
-	    window.location.href = "http://beta.allianz.co.id/produk";
+	    window.location.href = "http://allianz.co.id/produk";
      });
      
 	function navigateMe(anchor)

@@ -146,15 +146,15 @@
 	$('#result_month').html(accounting.formatMoney(result_month,'Rp. ',2,'.',','));
 	
 	$("#edu2").click(function(){
-	    window.location.href = "http://localhost/allianzcoid/allianz-investment-calculator-education2.php";
+	    window.location.href = "/investment/kalkulator/financial-calculators/allianz-investment-calculator-education2.php";
         });
 	
      $("#fund_allianz").click(function(){
-	    window.location.href = "http://beta.allianz.co.id/investasi/investment-homepage/allianz-fund";
+	    window.location.href = "http://beta.allianz.co.id/investment/allianz-fund";
      });
      
      $("#product_allianz").click(function(){
-	    window.location.href = "http://beta.allianz.co.id/produk";
+	    window.location.href = "http://allianz.co.id/produk";
      });
     
 	function navigateMe(anchor)

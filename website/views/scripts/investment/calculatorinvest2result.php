@@ -29,7 +29,7 @@
     
     		<div class="row">
     			<div class="bread">
-    				<a href="/investasi/investment-homepage">Home</a>  
+    				<a href="/investment">Home</a>  
     				<i class="fa fa-angle-right"></i> 
    			        Kalkulator Investasi  
                	</div>
@@ -80,7 +80,7 @@
 		    </div>
 		    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #113388">INVESTASI BULANAN YANG DIPERLUKAN ADALAH</h4></div>
-                        <div class="tooltips" style="background-color: #113388"><a class="tooltip-left" href="#overlayAppendix" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
+                        <!--div class="tooltips" style="background-color: #113388"><a class="tooltip-left" href="#overlayAppendix" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div-->
                     </div>
 		    <div class="calc-box2">    
                         <div class="count-result">
@@ -257,6 +257,14 @@
 	result_month = accounting.formatMoney(result_month,'Rp. ',2,'.',',');
 	$('#result_year').html(result_year);
 	$('#result_month').html(result_month);	
+
+    $("#fund_allianz").click(function(){
+	    window.location.href = "http://beta.allianz.co.id/investment/allianz-fund";
+     });
+     
+     $("#product_allianz").click(function(){
+	    window.location.href = "http://allianz.co.id/produk";
+     });
 
 	function navigateMe(anchor)
 	{

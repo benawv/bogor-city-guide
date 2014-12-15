@@ -164,7 +164,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #113388">BIAYA SAAT INI</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" style="background-color: #113388" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
+                        <div class="tooltips"><a class="tooltip-left" href="#" style="background-color: white" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
@@ -188,7 +188,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo2">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #113388">ASUMSI TINGKAT INFLASI</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" style="background-color: #113388" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
+                        <!--div class="tooltips" style="background-color: #113388"><a class="tooltip-left" href="#" style="background-color: white" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div-->
                    </div>
                    
                     <div class="calc-box">    
@@ -212,7 +212,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo3">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #113388">JANGKA WAKTU</h4></div>
-                        <div class="tooltips" style="background-color: #113388"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
+                        <!--div class="tooltips" style="background-color: #113388"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div-->
                    </div>
                    
                     <div class="calc-box">    

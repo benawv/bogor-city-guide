@@ -25,7 +25,7 @@
 
 		<div class="row">
 			<div class="bread">
-				<a href="/investasi/investment-homepage">Home</a>  
+				<a href="/investment">Home</a>  
                     <i class="fa fa-angle-right"></i> 
 				    Kalkulator Pensiun
             </div>
@@ -95,7 +95,7 @@
                     <input id="retirement3" class="orange-btn" type="button" value="BAGAIMANA MENCAPAINYA?">
                 </div>
                <div class="share">
-                    <span>Ingin menghitung kembali? <a href="/investasi/investment-homepage/kalkulator/financial-calculators/pensiun">klik disini >></a></span>
+                    <span>Ingin menghitung kembali? <a href="/investment/kalkulator/financial-calculators/pensiun">klik disini >></a></span>
                 </div>
                
                <div class="allianz-button">
@@ -139,15 +139,15 @@
 	$('#result').html(result);
 	
 	$("#retirement3").click(function(){
-	    window.location.href = "/investasi/investment-homepage/kalkulator/financial-calculators/calculator-retirement3";
+	    window.location.href = "/investment/kalkulator/financial-calculators/calculator-retirement3";
         });
 	 
      $("#fund_allianz").click(function(){
-	    window.location.href = "http://beta.allianz.co.id/investasi/investment-homepage/allianz-fund";
+	    window.location.href = "http://beta.allianz.co.id/investment/allianz-fund";
      });
      
      $("#product_allianz").click(function(){
-	    window.location.href = "http://beta.allianz.co.id/produk";
+	    window.location.href = "http://allianz.co.id/produk";
      });
      
 	function navigateMe(anchor)

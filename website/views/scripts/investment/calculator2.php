@@ -333,7 +333,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             setCookie('edu2_hasil_tahunan',result,1);
             setCookie('edu2_hasil_bulanan',Number(result)*0.09,1);
             
-            window.location.href = "/investasi/investment-homepage/kalkulator/financial-calculators/calculator-education2-result";
+            window.location.href = "/investment/kalkulator/financial-calculators/calculator-education2-result";
         });
     
 	function navigateMe(anchor)

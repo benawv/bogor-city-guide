@@ -125,7 +125,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 
 		<div class="row">
 			<div class="bread">
-				<a href="/investasi/investment-homepage">Home</a>  
+				<a href="/investment">Home</a>  
                     <i class="fa fa-angle-right"></i> 
 				    Kalkulator Pensiun
             </div>
@@ -188,7 +188,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo2">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4>ASUMSI TINGKAT IMBAL HASIL</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
+                        <!--div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div-->
                    </div>
                    
                     <div class="calc-box">    
@@ -212,7 +212,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo3">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4>JANGKA WAKTU MENABUNG</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
+                        <!--div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div-->
                    </div>
                    
                     <div class="calc-box">    
@@ -333,7 +333,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             setCookie('pension3_hasil_tahunan',result,1);
             setCookie('pension3_hasil_bulanan',result * 0.09,1);
             
-            window.location.href = "/investasi/investment-homepage/kalkulator/financial-calculators/calculator-retirement3-result";
+            window.location.href = "/investment/kalkulator/financial-calculators/calculator-retirement3-result";
         });
 
 	function navigateMe(anchor)
