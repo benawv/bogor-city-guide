@@ -15,7 +15,12 @@ jQuery(function($) {
 		$("#myTable").tablesorter({sortList:[[0,0],[2,1]], widgets: ['zebra']});
 		$("#options").tablesorter({sortList: [[0,0]], headers: { 3:{sorter: false}, 4:{sorter: false}}});
 	});	
-</script>    
+</script>  
+
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "16852030-1a9b-4882-8731-4afd4c1cfd9c", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>    
+
 
 <div class="row bg_grey">
         <div class="container">
