@@ -33,7 +33,7 @@
 <script src="/website/static/js/sticky-jquery.js" type="text/javascript"></script>
 <?php endif; ?>
 <div class="container boxes-view">
-	<h5><a href="/"><span>Home</span></a> &rsaquo; <a href="/<?php echo $uri[1];?>"><span><?php echo $text2;?></span></a></h5>
+	<h5><a href="/"><span>Home</span></a> <?php echo $this->template("includes/breadcrumb.php")?></a></h5>
 	<span class="breadcrumb"><a href="#"><?php echo $this->document->getProperty('navigation_title');?></a></span>
 	
 	<div class="heading clearfix pagenav">
