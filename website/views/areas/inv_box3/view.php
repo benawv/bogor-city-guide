@@ -3,7 +3,7 @@
 		<div class="container">
 
     			<div class="title_section">
-    				Informasi Fund
+    				<?php echo $this->input('title-section')?>
     			</div>
 				<div class="catbox" style="background-color: <?php echo $this->select('color1')->getData()?$this->select('color1')->getData():'blue'?>;">
 					<a href="/investasi/investment-homepage/allianz-fund/allianz-fund/fund-information/money-market">
@@ -21,7 +21,8 @@
 							        array("red", "Red"),
 							        array("purple", "Purple"),
 							        array("blue", "Blue"),
-							        array("brown", "Brown"),
+							        array("blue_light", "Light Blue"),
+                                    array("brown", "Brown"),
 							        array('darkbrown', "Dark Brown"),
 							        array('green', "Green")
 							    ),
@@ -47,7 +48,8 @@
 							        array("red", "Red"),
 							        array("purple", "Purple"),
 							        array("blue", "Blue"),
-							        array("brown", "Brown"),
+							        array("blue_light", "Blue Light"),
+                                    array("brown", "Brown"),
 							        array('darkbrown', "Dark Brown"),
 							        array('green', "Green")
 							    ),
@@ -73,7 +75,8 @@
 							        array("red", "Red"),
 							        array("purple", "Purple"),
 							        array("blue", "Blue"),
-							        array("brown", "Brown"),
+							        array("blue_light", "Blue Light"),
+                                    array("brown", "Brown"),
 							        array('darkbrown', "Dark Brown"),
 							        array('green', "Green")
 							    ),

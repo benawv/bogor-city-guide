@@ -73,7 +73,7 @@
     <inv_box4>1</inv_box4>
     <inv_box3>1</inv_box3>
     <inv_box6>1</inv_box6>
-    <inv_balancedsheet></inv_balancedsheet>
+    <inv_balancedsheet>1</inv_balancedsheet>
     <inv_incomestatement>1</inv_incomestatement>
     <inv_riskprofile>1</inv_riskprofile>
     <inv-fund-moneymarket>1</inv-fund-moneymarket>
