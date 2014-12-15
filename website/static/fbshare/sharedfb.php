@@ -36,10 +36,6 @@
 						{
 							header("Location: '.$link_in_fb.'");
 						}
-						if($_SERVER["HTTP_REFERER"] == "https://m.facebook.com/")
-						{
-							header("Location: '.$link_in_fb.'");
-						}
 					?>
 					<img src="'.$url.'/'.$image_name.'" />
 				</body>
