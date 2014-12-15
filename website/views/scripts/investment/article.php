@@ -15,7 +15,7 @@
 	{
 		foreach ($this->data->investment as $inv) 
 		{ 	
-			$cls=strtolower($inv['investment']);
+			$cls=strtolower($inv->investment);
 		        if($cls=="edukasi"){
 		            $investmentcolor="bg_edu ";    
 		        }elseif($cls=="investasi"){
