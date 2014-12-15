@@ -6,7 +6,7 @@
     				<?php echo $this->input('title-section')?>
     			</div>
 				<div class="catbox" style="background-color: <?php echo $this->select('color1')->getData()?$this->select('color1')->getData():'blue'?>;">
-					<a href="/investasi/investment-homepage/allianz-fund/allianz-fund/fund-information/money-market">
+					<a href="<?php echo $this->link('title-1')->getHref()?>">
 						<?php echo $this->image('image1', array(
 								'width' 	=> 400,
 								'thumbnail'	=> 'image1')) ?>
@@ -32,7 +32,7 @@
                 </div>
 
 				<div class="catbox" style="background-color: <?php echo $this->select('color2')->getData()?$this->select('color2')->getData():'blue'?>;">
-					<a href="/investasi/investment-homepage/allianz-fund/allianz-fund/fund-information/fixed-income">
+					<a href="<?php echo $this->link('title-2')->getHref()?>">
 						<?php echo $this->image('image2', array(
 								'width' 	=> 400,
 								'thumbnail'	=> 'image2')) ?>
@@ -58,7 +58,7 @@
                 </div>
 
 				<div class="catbox" style="background-color: <?php echo $this->select('color3')->getData()?$this->select('color3')->getData():'blue'?>;">
-					<a href="/investasi/investment-homepage/allianz-fund/allianz-fund/fund-information/balanced">
+					<a href="<?php echo $this->link('title-3')->getHref()?>">
 						<?php echo $this->image('image3', array(
 								'width' 	=> 400,
 								'thumbnail'	=> 'image3')) ?>
@@ -84,7 +84,7 @@
                 </div>
                 
                 <div class="catbox" style="background-color: <?php echo $this->select('color4')->getData()?$this->select('color4')->getData():'blue'?>;">
-					<a href="/investasi/investment-homepage/allianz-fund/allianz-fund/fund-information/balanced">
+					<a href="<?php echo $this->link('title-4')->getHref()?>">
 						<?php echo $this->image('image4', array(
 								'width' 	=> 400,
 								'thumbnail'	=> 'image4')) ?>
@@ -110,7 +110,7 @@
                 </div>
                 
                 <div class="catbox" style="background-color: <?php echo $this->select('color5')->getData()?$this->select('color5')->getData():'blue'?>;">
-					<a href="/investasi/investment-homepage/allianz-fund/allianz-fund/fund-information/balanced">
+					<a href="<?php echo $this->link('title-5')->getHref()?>">
 						<?php echo $this->image('image5', array(
 								'width' 	=> 400,
 								'thumbnail'	=> 'image5')) ?>
@@ -136,7 +136,7 @@
                 </div>
                 
                 <div class="catbox" style="background-color: <?php echo $this->select('color6')->getData()?$this->select('color6')->getData():'blue'?>;">
-					<a href="/investasi/investment-homepage/allianz-fund/allianz-fund/fund-information/balanced">
+					<a href="<?php echo $this->link('title-6')->getHref()?>">
 						<?php echo $this->image('image6', array(
 								'width' 	=> 400,
 								'thumbnail'	=> 'image6')) ?>

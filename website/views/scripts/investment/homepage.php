@@ -46,54 +46,55 @@
 <div class="box_cat">
 
 	<div class="box_c bg_1">
-		<div class="box_c_img left">
-			 <?php echo $this->image("box1", array("class" => "boxs")) ?>
-		</div>
-		<div class="box_c_text right">
-			<h2><?php echo $this->input('text-1')?></h2>
-			<p><?php echo $this->wysiwyg("descr1") ?></p>
-            <?php echo $this->link('links1',array("class"=>"fa fa-angle-right"))?>
-		</div>
-
+        <a href="<?php echo $this->link('links1')->getHref()?>">
+    		<div class="box_c_img left">
+    			 <?php echo $this->image("box1", array("class" => "boxs")) ?>
+    		</div>
+    		<div class="box_c_text right">
+    			<h2><?php echo $this->input('text-1')?></h2>
+    			<p><?php echo $this->wysiwyg("descr1") ?></p>
+                <?php echo $this->link('links1')?>
+    		</div>
+        </a>
 	</div>
 
 	<div class="box_c bg_2">
-
-		<div class="box_c_img left">
-			<?php echo $this->image("box2", array("class" => "boxs")) ?>
-		</div>
-		<div class="box_c_text right">
-			<h2><?php echo $this->input('text-2')?></h2>
-			<p><?php echo $this->wysiwyg("descr2") ?></p>
-            <?php echo $this->link('links2',array("class"=>"fa fa-angle-right"))?>
-		</div>
-
+        <a href="<?php echo $this->link('links2')->getHref()?>">
+    		<div class="box_c_img left">
+    			<?php echo $this->image("box2", array("class" => "boxs")) ?>
+    		</div>
+    		<div class="box_c_text right">
+    			<h2><?php echo $this->input('text-2')?></h2>
+    			<p><?php echo $this->wysiwyg("descr2") ?></p>
+                <?php echo $this->link('links2')?>
+    		</div>
+        </a>
 	</div>
 
 	<div class="box_c bg_3">
-
-		<div class="box_c_img right">
-			<?php echo $this->image("box3", array("class" => "boxs")) ?>
-		</div>
-		<div class="box_c_text left">
-			<h2><?php echo $this->input('text-3')?></h2>
-			<p><?php echo $this->wysiwyg("descr3") ?></p>
-            <?php echo $this->link('links3',array("class"=>"fa fa-angle-right"))?>
-		</div>
-
+        <a href="<?php echo $this->link('links3')->getHref()?>">
+        		<div class="box_c_img right">
+        			<?php echo $this->image("box3", array("class" => "boxs")) ?>
+        		</div>
+        		<div class="box_c_text left">
+        			<h2><?php echo $this->input('text-3')?></h2>
+        			<p><?php echo $this->wysiwyg("descr3") ?></p>
+                    <?php echo $this->link('links3')?>
+        		</div>
+        </a>
 	</div>
 
 	<div class="box_c bg_4">
-
-		<div class="box_c_img right">
-			<?php echo $this->image("box4", array("class" => "boxs")) ?>
-		</div>
-		<div class="box_c_text left">
-			<h2><?php echo $this->input('text-4')?></h2>
-			<p><?php echo $this->wysiwyg("descr4") ?></p>
-            <?php echo $this->link('links4',array("class"=>"fa fa-angle-right"))?>
-        </div>
-
+        <a href="<?php echo $this->link('links4')->getHref()?>">
+    		<div class="box_c_img right">
+    			<?php echo $this->image("box4", array("class" => "boxs")) ?>
+    		</div>
+    		<div class="box_c_text left">
+    			<h2><?php echo $this->input('text-4')?></h2>
+    			<p><?php echo $this->wysiwyg("descr4") ?></p>
+                <?php echo $this->link('links4',array("class"=>"fa fa-angle-right"))?>
+            </div>
+        </a>
 	</div>
 
 </div>
