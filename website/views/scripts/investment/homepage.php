@@ -92,7 +92,7 @@
     		<div class="box_c_text left">
     			<h2><?php echo $this->input('text-4')?></h2>
     			<p><?php echo $this->wysiwyg("descr4") ?></p>
-                <?php echo $this->link('links4',array("class"=>"fa fa-angle-right"))?>
+                <?php echo $this->link('links4')?>
             </div>
         </a>
 	</div>
