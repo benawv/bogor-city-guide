@@ -16,17 +16,18 @@
 		foreach ($this->data->investment as $inv) 
 		{ 	
 			$cls=strtolower($inv['investment']);
-	        if($cls=="edukasi"){
-	            $investmentcolor="bg_edu ";    
-	        }elseif($cls=="investasi"){
-	             $investmentcolor="bg_fund ";
-	        }elseif($cls=="asuransi"){
-	             $investmentcolor="bg_health ";
-	        }elseif($cls=="masa depan"){
-	             $investmentcolor="bg_future ";
-	        }elseif($cls=="pensiun"){
-	             $investmentcolor="bg_pension ";
-	        }
+		        if($cls=="edukasi"){
+		            $investmentcolor="bg_edu ";    
+		        }elseif($cls=="investasi"){
+		             $investmentcolor="bg_fund ";
+		        }elseif($cls=="asuransi"){
+		             $investmentcolor="bg_health ";
+		        }elseif($cls=="masa depan"){
+		             $investmentcolor="bg_future ";
+		        }elseif($cls=="pensiun"){
+		             $investmentcolor="bg_pension ";
+		        }
+		}
 	}
 		
 ?>
