@@ -21,24 +21,32 @@
 
 
 
+
 <!-- css -->
 
-<link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/inv/css/normalize.css">
-<link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/inv/css/bootstrap.css">
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/inv/css/screen.css">
+<link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/inv/css/normalize.css" />
+<link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/inv/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/inv/css/screen.css" />
+<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/inv/css/revision_style.css" />
+<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/inv/css/main.css" />
+<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/inv/css/respon.css" />
 
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/inv/css/main.css">
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/inv/css/respon.css">
-
-
+<!-- fonts -->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+<!-- form -->
+<link rel="stylesheet" type="text/css" href="/website/static/inv/css/form/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="/website/static/inv/css/form/css/demo.css" />
+<link rel="stylesheet" type="text/css" href="/website/static/inv/css/form/css/component.css" />
+
+
 
 <!-- javascript -->
 <script src="/website/static/inv/js/modernizr.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/jquery-1.9.1.min.js" type="text/javascript"></script>
-
 <script src="/website/static/inv/js/main.js" type="text/javascript"></script>
 
+<script src="/website/static/inv/css/form/js/modernizr.custom.js"></script>
 </head>
 
                 <?php
@@ -73,7 +81,7 @@
 <header role="banner" class="banner">
 
             <div class="container">
-                <h1 class="weblogo">Allianz<span onclick="window.location.href = 'index.php'"></span></h1>
+                <h1 class="weblogo">Allianz<span onclick="window.location.href = '<?php echo $this->url(array("document" => Document::getById(1)), "default", true)?>'"></span></h1>
 		<nav class="primary" role="primarynavigation">
 			<h3 class="toggle-menu"><span>Main Navigation</span></h3>
 			<div class="menu-level1">
@@ -169,7 +177,7 @@
 					
 			</nav>
 
-			<a href="#">
+			<a href="/investasi/investment-homepage">
 				<img src="/website/static/inv/images/sitelabel.png" />
 			</a>
 		</div>

@@ -1,4 +1,4 @@
-<?php echo $this->template("includes/inv/header.php")?>
+	<?php echo $this->template("includes/inv/header.php")?>
 
 <div class="header_page bg_future">
 	<div class="container">
@@ -11,42 +11,7 @@
 	<div class="row">
 		<div class="container">
 
-			<div class="full-w bg-white">
-
-				<div class="tabwrap">
-					
-					<div class="menutab_dekstop">
-						<ul>
-							<?php if($this->data) { ?>
-								<?php $i = 0;?>
-								<?php foreach($this->data as $entry) { ?>
-									<li>
-										<a id="opentab_<?php echo $i ?>" href="javascript:void(0)" class="<?php echo $i==0?'active':''?>"><?php echo $entry->judul ?></a>
-									</li>
-									<?php $i++ ?>
-								<?php } ?>
-							<?php } ?>
-						</ul>
-					</div>
-					<div class="tabcontent">
-						<ul>
-							<?php if($this->data) { ?>
-								<?php $i = 0;?>
-								<?php foreach($this->data as $entry) { ?>
-									<li>
-										<div id="tabcontent_<?php echo $i ?>" class="content_show <?php echo $i==0?'showme':''?> show_1">
-											<?php echo $entry->deskripsi?>
-										</div>
-									</li>
-									<?php $i++ ?>
-								<?php } ?>
-							<?php } ?>
-						</ul>
-					</div>
-				</div>
-
-			</div>
-			<!-- listarticle end -->			
+			<?php echo $this->areablock('container', array('allowed' => array('teks-tabs'))) ?>			
 
 		</div>
 		<!-- container end -->
@@ -81,6 +46,8 @@
 			});
 			
 		});
+		
+		$('.social-icon').remove();
 		
 	});
 </script>

@@ -336,7 +336,7 @@ $(document).ready(function(){
     	{
         	var isiText = "";
     	}
-        var tweet = title+" : "+isiText+url;
+        var tweet = title+" : "+url;
         var encodeTweet = encodeURIComponent(tweet);
         window.open('https://twitter.com/intent/tweet?text='+encodeTweet, 'sharer', 'width=626,height=436');
 	});
@@ -359,6 +359,7 @@ $(document).ready(function(){
         	deskripsi = "";
         	deskripsi = $(this).parents().parents().siblings('a').find('.description').find("p").text();
     	}
+		var link = $(this).parent().siblings('a').attr('href') != undefined ? window.location.host+'/'+$(this).parent().siblings('a').attr('href') : window.location.host+window.location.pathname;
 		//END HOME
 		
 		//PRODUK
@@ -419,22 +420,24 @@ $(document).ready(function(){
         {
                 desc = deskripsi;
         }
+        var judul = ($(this).parent().siblings("span.judul_section").text()).replace(/[^a-zA-Z()]/g,'-');
+        var judul_section = judul != "" ? judul : "";
+        var judul2 = $(this).parent().siblings("span.judul_section").text() != "" ? $(this).parent().siblings("span.judul_section").text() : "";
+		
                 
         loc = window.location.origin+'/website/static/fbshare/sharedfb.php';
-        /*console.log(image);
-        console.log(name);
-        console.log(filename);
-        console.log(desc);*/
+        
         $.ajax({
 				type: 'POST',
 				url: loc,
 				data: {
 					filename: filename,
-					title_fb : reTanya,
+					judul : judul_section,
+					title_fb : reTanya+" "+judul2,
 					image_name: image,
 					description: desc,
 					url: window.location.host,
-					link_in_fb : window.location.host+window.location.pathname
+					link_in_fb : link
 				},
 				success: function(response)
 				{

@@ -1,59 +1,41 @@
+<?php
+   // get root node if there is no document defined (for pages which are routed directly through static route)
+		    if(!$this->document instanceof Document_Page) {
+		        $this->document = Document::getConcreteByPath('/investasi/investment-homepage/');
+              //  $this->document = Document::getConcreteById(332);
+		    }
+		 
+		    // get the document which should be used to start in navigation | default home
+		    $navStartNode = $this->document->getProperty("navigationRoot");
+		    if(!$navStartNode instanceof Document_Page) {
+                $navStartNode = Document::getConcreteByPath('/investasi/investment-homepage/');
+		        //$navStartNode = Document::getConcreteById(332);
+		    }
+		 
+		    //this is used as id prefix for the html menu element
+		    $htmlIdPrefix = "mainNav_";
+		 
+		    $navigation = $this->pimcoreNavigation()->getNavigation($this->document, $navStartNode, $htmlIdPrefix);
+		    $this->navigation()->menu()->setUseTranslator(false); // to deactivate the translator provided by the view helper
+		    $partial = array('includes/menu_footer_inv.php', 'website');
+		    $this->navigation()->menu()->setPartial($partial);
+		    //$this->navigation($navigation);
+?>
+
 
 <footer role="contentinfo" class="contentinfo">
 	<div class="meta clearfix">
 		<div class="container">
 			<div class="statement">&copy; Allianz 2014. All Rights Reserved.</div>
 			<ul class="static-links">
-				<li><a href="#" target="_blank">Disclaimer </a></li>
-				<li><a href="#" target="_blank">Prinsip Privasi </a></li>
-				<li><a href="sitemap.php" target="_blank">Sitemap</a></li>
+				<li><a href="/investasi/investment-homepage/footer/disclaimer" target="_blank">Disclaimer </a></li>
 			</ul>
 		</div>
 	</div>
 	<nav>
 		<div class="container clearfix">
 			<ul class="footer-links level1">
-				<li class="left wi200">
-					<a href="#">Financial Planning</a>
-					<ul class="level2">
-						<li><a href="#"> Cash Flow</a></li>
-						<li><a href="#"> Investment</a></li>
-						<li><a href="#"> Insurance</a></li>
-						<li><a href="#"> Education</a></li>
-						<li><a href="#"> Retirement</a></li>
-						
-					</ul>
-				</li>
-				<li class="left wi200">
-					<a href="#">Allianz Fund</a>
-					<ul class="level2">
-						<li><a href="#">Fund Information</a></li>
-						<li><a href="#">Daily Nav</a></li>
-						<li><a href="#">Fund Fact Sheet</a></li>
-						<li><a href="#">My Portfolio</a></li>
-						
-						
-					</ul>
-				</li>
-				<li class="left wi200">
-					<a href="#">Tools</a>
-					<ul class="level2">						
-						<li><a href="#">Financial Calculators</a></li>
-						<li><a href="#">Cash Flow Tables</a></li>
-						<li><a href="#">Risk Profile</a></li>
-					</ul>
-				</li>	
-				<li class="left wi200">
-					<a href="#">Related Pages</a>
-					<ul class="level2">
-						<li><a href="#">Allianz Website</a></li>
-						<li><a href="#">Allianz Facebook</a></li>
-						<li><a href="#">Allianz Twitter</a></li>
-						<li><a href="#">Journal Allianz</a></li>
-						<li><a href="#">AAJI / OJK</a></li>
-						
-					</ul>
-				</li>
+			<?php echo $this->navigation()->menu()->render($navigation); ?>
 							
 			</ul>
 		</div>
@@ -77,10 +59,13 @@
 
 
 <!-- plugins -->
+
 <script src="/website/static/inv/js/jquery.flexslider.min.js" type="text/javascript"></script>
 
 <script src="/website/static/inv/js/resizeimagetoparent.js"></script>
 <script src="/website/static/inv/js/javascripts.js"></script>
+
+
 
 
 </body>

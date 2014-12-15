@@ -1,17 +1,32 @@
 <?php echo $this->template("includes/inv/header.php")?>
 
 
-
 <?php
     
     
 	if(count($this->data)>0)
 	{
+		foreach ($this->data->investment as $inv) 
+		{ 	
+			$cls=strtolower($inv['investment']);
+	        if($cls=="artikel edukasi"){
+	            $investmentcolor="bg_edu ";    
+	        }elseif($cls=="artikel investasi"){
+	             $investmentcolor="bg_fund ";
+	        }elseif($cls=="artikel asuransi"){
+	             $investmentcolor="bg_health ";
+	        }elseif($cls=="artikel masa depan"){
+	             $investmentcolor="bg_future ";
+	        }elseif($cls=="artikel pensiun"){
+	             $investmentcolor="bg_pension ";
+	        }
+		}
+		
 ?>
             
-<div class="header_page bg_future">
+<div class="header_page <?php echo $investmentcolor?$investmentcolor:'bg_fund'?>">
 	<div class="container">
-		Article <?php echo $this->data->investment; ?>
+		<?php foreach ($this->data->investment as $inv) { echo $inv['investment'];}  ?>
 	</div>
 </div>
 
@@ -23,13 +38,20 @@
 			<div class="bread">
 				<a href="/investasi/investment-homepage">Home</a>  
 				<i class="fa fa-angle-right"></i> 
-				<a href="/investment/investment-category/<?php echo $this->data->investment_id; ?>">Article</a>
+				<a href="/investment/investment-category/<?php echo $this->data->investment_id; ?>">Artikel</a>
 
 				<i class="fa fa-angle-right"></i>
-				Article Index <?php foreach ($this->data->investment as $inv) {  echo $inv['investment'];}  ?>
+				Artikel Index <?php foreach ($this->data->investment as $inv) {  echo $inv['investment'];}  ?>
 
 			</div>
 		</div>
+
+
+		
+
+		
+
+
 
 	</div>
 	<!-- container end -->
@@ -46,7 +68,7 @@
                         foreach($this->data as $entry)
 		                  {
                     ?>
-					<li class="bg_future">
+					<li class="<?php echo $investmentcolor?$investmentcolor:'bg_fund'?>">
 						<h3><?php echo $entry->title ?></h3>
 						<p><?php echo substr($entry->content,0,100) ?>...</p>
 
@@ -83,6 +105,7 @@
 
 </div>
 <!-- homebanner end -->
+
 
 
 

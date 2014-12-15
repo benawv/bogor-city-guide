@@ -1,6 +1,7 @@
 <?php
 		$filename = $_POST['filename'];
-		$title = $_POST['title_fb'];
+		$judul = "-".$_POST['judul'];
+		$title = ucfirst($_POST['title_fb']);
 		$image_name = $_POST['image_name'];
 		$desc = $_POST['description'];
 		$url = 'http://'.$_POST['url'];
@@ -15,7 +16,7 @@
 		else
 			$image = $image_name;
 		*/
-		$file = fopen($filename.".php", "w");
+		$file = fopen($filename."".$judul.".php", "w");
 		$html = '
 			<html>
 				<head>
@@ -43,5 +44,5 @@
 		fwrite($file, $html);
 		fclose($file);
 		
-		echo $filename.".php";
+		echo $filename."".$judul.".php";
 ?>

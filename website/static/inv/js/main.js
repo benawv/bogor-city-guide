@@ -81,30 +81,7 @@ $(document).ready(function(){
 		if($(window).width() < 960)
 			$("nav.primary .menu-level1").toggleClass('active');
 	});
-	
-    var inv_cat = '';
-    $( 'input[name="rd"]' ).each(function(index,value){
-        $( this ).on( 'click', function(){
-            inv_cat = $( this ).val();
-            
-            url = '/investment/investment-category/'+inv_cat;
-            $(location).attr("href", url); 
-        });
-    });
 
-    $(this).on('click','.send_customer',
-        function() {
-            
-            var putname= $('input[name="putname"]').val();
-            document.cookie="customername=''";    
-            document.cookie="customername="+putname;
-
-        url = '/investment/investment-category/'+inv_cat;
-        
-        alert('asdasd');
-        //$(location).attr("href", url); 
-           
-        });
 });
 
 

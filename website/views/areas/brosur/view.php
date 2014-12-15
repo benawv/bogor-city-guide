@@ -11,7 +11,11 @@
 			<?php if($this->image('icon')->getSrc()):?>
 				<div style="background-image: url('<?php echo $this->image('icon')->getSrc()?>'); height: 31px; width: 31px; float: left; margin-right: 10px; "></div>
 			<?php endif;?>
-			Brosur
+			<span class="judul_section">Brosur</span>
+			<div class="btn-group btn-section">
+				<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
+				<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
+			</div>
 		<?php endif; ?>
 	</h2>
 	<div class="description width-66">

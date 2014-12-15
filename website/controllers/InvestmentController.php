@@ -76,7 +76,7 @@ class InvestmentController extends Website_Controller_Action
 			$nameCommunity = "object_query_".$table->getClassId();
 		}
 
-        $sql_subcat="SELECT DISTINCT tblcommunity.investment FROM ".$nameCommunity." AS tblcommunity WHERE tblcommunity.oo_id ='".$id."'";
+        $sql_subcat="SELECT DISTINCT * FROM ".$nameCommunity." AS tblcommunity WHERE tblcommunity.oo_id ='".$id."'";
         $inv=$db->fetchAll($sql_subcat);
         
         return $inv;
@@ -215,6 +215,7 @@ class InvestmentController extends Website_Controller_Action
 	    
     }
     
+    
     public function fundfactsheetAction() {
 	    
     }
@@ -239,5 +240,28 @@ class InvestmentController extends Website_Controller_Action
 	    $this->view->data = $entry;
 	    //die(print_r($entry));
     }
-        
+
+    public function investmentdailynavAction(){}
+
+    public function calculatorAction(){}
+    public function calculatorresultAction(){}
+    public function calculator2Action(){}
+    public function calculatorresult2Action(){}
+
+    public function calculatorpertanggunanAction(){}
+    public function calculatorresultpertanggunganAction(){}
+
+    public function calculatorinvestAction(){}
+    public function calculatorinvestresulAction(){}
+    public function calculatorinvest2Action(){}
+    public function calculatorinvest2resulAction(){}
+    
+    public function calculatorretirementAction(){}
+    public function calculatorretirementresulAction(){}
+    public function calculatorretirement2Action(){}
+    public function calculatorretirement2resulAction(){}
+    public function calculatorretirement3Action(){}
+    public function calculatorretirement3resulAction(){}
+
+
 }

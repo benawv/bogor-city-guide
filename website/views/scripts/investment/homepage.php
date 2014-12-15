@@ -1,5 +1,5 @@
 <?php echo $this->template("includes/inv/header.php")?>
-
+ 
 <div class="homebanner banner_portal">
 	<div class="container">
              <?php //echo $this->image("banner", array("class" => "banner_img")) //css error?>
@@ -7,7 +7,8 @@
                
 			<div class="textbanner bg_green">
 				<h1>1 Yang Terpenting!</h1>
-				<p>Selamat datang pilih 1 yang terpenting untuk anda,</p>
+					<p>Selamat datang, <input type="text" name="putname" id="putname" /><br />
+					pilih 1 yang terpenting untuk anda</p>
 
 				<p>
 					
@@ -97,5 +98,43 @@
 
 </div>
 <!-- box_cat end -->
+
+<script>
+ var inv_cat = '';
+ function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+        
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1);
+                if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+            }
+            return "";
+        }
+        
+        
+    $( 'input[name="rd"]' ).each(function(index,value){
+        $( this ).on( 'click', function(){
+            inv_cat = $( this ).val();
+            var putname= $('input[name="putname"]').val();
+            
+            localStorage.setItem('visitorname', putname?putname:'');
+            
+            setCookie('visitorname',putname,1);            
+            url = '/investment/investment-category/'+inv_cat;
+            //$(location).attr("href", url); 
+            window.location.href = url;
+        });
+    });
+        
+        
+</script>
 
 <?php echo $this->template("includes/inv/footer.php")?>

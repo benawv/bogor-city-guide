@@ -10,16 +10,16 @@
         <div class="box_banner">
 
 
-                <div class="textbanner bg_future">
+                <div class="textbanner bg_future" style="background:<?php echo $entrieC->hexaColor;?>">
                     <h1><?php echo $entrieC->title;?></h1>
 
-                    <p> Hi,</p>
+                    <p class="visitorname"> Hi, </p>
 
                     <?php echo $entrieC->quotes;?>
 
                 </div>
-                <div class="edge_textbanner edge_future">
-                    <a href="#">Klik Disini</a>
+                <div class="linkAnchor edge_textbanner <?php if($entrieC->edgeNote!=""){echo $entrieC->edgeNote;}else{echo "edge_future";}?>">
+                    <a href="#" class="linkAnchor">Klik Disini</a>
                 </div>
 
         </div>
@@ -30,7 +30,7 @@
 <?php }  ?>
 
 
-<div class="box_cat">
+<div class="box_cat" id="linkAnchor">
 
     <?php
         
@@ -51,7 +51,7 @@
             <div class="box_c_text right">
                 <h2><?php echo $entrie->title ?></h2>
                 <p><?php echo $entrie->tips ?></p>
-                <a href="/investment<?php if(isset($entrie->links)){ echo $entrie->links.$id; }else{ echo "#"; } ?>_1">Selengkapnya <i class="fa fa-angle-right"></i></a>
+                <a href="<?php if(isset($entrie->links)){ echo $entrie->links; }else{ echo "#"; } ?>">Selengkapnya <i class="fa fa-angle-right"></i></a>
             </div>
             <?php }else { ?>
             <div class="box_c_img right">
@@ -60,7 +60,7 @@
             <div class="box_c_text left">
                 <h2><?php echo $entrie->title ?></h2>
                 <p><?php echo $entrie->tips ?></p>
-                <a href="/investment<?php if(isset($entrie->links)){ echo $entrie->links.$id; }else{ echo "#"; } ?>_1">Selengkapnya <i class="fa fa-angle-right"></i></a>
+                <a href="<?php if(isset($entrie->links)){ echo $entrie->links; }else{ echo "#"; } ?>">Selengkapnya <i class="fa fa-angle-right"></i></a>
             </div>
             <?php } ?>
         </div>
@@ -72,4 +72,30 @@
     <?php
         }
 	?>	
+ 
+ <script>
+ 
+ 	function getCookie(cname) {
+	    var name = cname + "=";
+	    var ca = document.cookie.split(';');
+	    for(var i=0; i<ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1);
+		if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+	    }
+	    return "";
+	}
+ 	$(".linkAnchor").on("click",function(){
+		$('html, body').animate({
+		    'scrollTop':   $('#linkAnchor').offset().top
+		}, 'slow');
+	});
+	//var result = getCookie('visitorname');
+	//$('.visitorname').html('Hi, ' + result);
+	var vname = localStorage.getItem('visitorname');
+	
+	if(vname != null) {
+		$('.visitorname').html('Hi, ' + vname);
+	}
+ </script>
 <?php echo $this->template("includes/inv/footer.php")?>

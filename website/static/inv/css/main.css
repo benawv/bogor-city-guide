@@ -386,6 +386,16 @@ margin-left: 20px;
   font-size: 18px;
 }
 
+.catbox h2 a{
+  text-align: center;
+  padding: 10px 0;
+  color: #FFFFFF;
+  text-transform: capitalize;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  display:block;
+}
+
 .lastone{
   float: right;
   margin:15px 0;
@@ -501,6 +511,10 @@ margin-left: 20px;
 	background: #003da5;
 }
 
+.blue_light{
+    background: #073da6;    
+}
+
 .purple {
 	background: #850aa0;
 }
@@ -511,6 +525,10 @@ margin-left: 20px;
 
 .darkbrown {
 	background: #8b4720;
+}
+
+.darkbrown_light {
+	background: #985b2f;
 }
 
 .green {
