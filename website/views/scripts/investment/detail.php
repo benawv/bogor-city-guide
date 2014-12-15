@@ -123,7 +123,7 @@
 
 	<div class="row">
 		
-		<?php echo $this->areablock('resources-object', array('allowed' => array('education','fp_pendidikan','fp_aruskas','fp_asuransi','fp_pensiun', 'fp_investasi','inv_box3', 'inv_box4', 'inv_box5', 'inv_box6', 'inv_balancedsheet','inv_incomestatement','inv_riskprofile','inv-fund-moneymarket')))?>
+		<?php echo $this->areablock('resources-object', array('allowed' => array('education','fp_pendidikan','fp_aruskas','fp_asuransi','fp_pensiun', 'fp_investasi','inv_box3', 'inv_box4', 'inv_box5', 'inv_box6', 'inv_balancedsheet','inv_incomestatement','inv_riskprofile','inv-fund-moneymarket', 'inv_finansialrasio')))?>
 		
 	</div>
 	<!-- row end -->

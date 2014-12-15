@@ -69,3 +69,37 @@ table.tablesorter2 td {
     padding: 10px;
     color: #696868;
 }
+
+/*--------------Table 3 ----------------*/
+
+/* tables */
+table.tablesorter3 {
+	
+    background-color: #ffffff;
+/*	margin:10px 0pt 15px;*/
+	font-size: 11pt;
+    font-weight: bold;
+	width: 100%;
+	text-align: left;
+}
+
+table.tablesorter3 thead tr th, table.tablesorter3 tfoot tr th {
+     background-color: #A7C8FC; 
+    color: #135FB8;
+    /* border: 1px solid #FFF; */
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 25px 30px;
+}
+table.tablesorter3 td {
+    padding: 30px 30px;
+    color: #135FB8;
+    font-size: 9pt;
+}
+
+.td-blue {
+    background: #CCE0FF;
+}
+.td-blue-sky {
+    background: #DEE9FA;
+}

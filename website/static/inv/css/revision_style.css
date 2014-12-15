@@ -1,5 +1,5 @@
 
-.no-gutter {
+.no-gutter { 
     padding: 0 !important;
 }
  
@@ -303,6 +303,13 @@ h1.article-title {
     border-bottom: 1px solid #C7C7C7;
 /*    background: #eee;*/
 }
+.tag-non-top-border {
+    width: 100%;
+    height: 50px;
+    margin: 23px 0;
+    border-bottom: 1px solid #C7C7C7;
+/*    background: #eee;*/
+}
 .tag-left {
     padding: 14px 0;
     float: left;
@@ -470,9 +477,10 @@ h1.article-title {
     color: #D38802;
 }
 .tooltips {
+/*
     width: 25px;
     height: 25px;
-    /* float: right; */
+    float: right;
     margin: 0 auto;
     top: 88px;
     padding: 5px;
@@ -480,10 +488,23 @@ h1.article-title {
     position: absolute;
     font-size: 14px;
     border-radius: 25px;
+    font-weight: bold;
+    background: #D38802;
+*/
+    width: 25px;
+    height: 25px;
+    float: right;
+    margin: -22px 10px;
+    padding: 5px;
+    color: #fff;
+    /* right: 30px; */
+    /* position: absolute; */
+    font-size: 14px;
+    border-radius: 25px;
     /* font-weight: bold; */
     background: #D38802;
 }
-.tooltips a{
+.tooltips span a{
     color: #ffffff;
 }
 .slider-wrap {
@@ -577,6 +598,16 @@ input[type="button"] {
     font-weight: normal;
     text-align: center;
     border: none;
+}
+.edge-brown {
+    width: 300px;
+    height: 30px;
+    background-image: url("../images/edge-brown.png")
+}
+.edge-dark-blue {
+    width: 300px;
+    height: 30px;
+    background-image: url("../images/edge-dark-blue.png")
 }
 .orange-color {
     background: #D38802;

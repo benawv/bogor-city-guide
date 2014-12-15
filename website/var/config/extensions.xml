@@ -80,6 +80,7 @@
     <inv-fund-equity>1</inv-fund-equity>
     <inv-fund-balanced>1</inv-fund-balanced>
     <inv-fund-fixedincome>1</inv-fund-fixedincome>
+    <inv_finansialrasio>1</inv_finansialrasio>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>
