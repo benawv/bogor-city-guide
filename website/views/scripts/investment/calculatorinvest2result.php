@@ -106,7 +106,7 @@
            
            <div class="calc-machine">
                <div class="share">
-                    <span>Ingin menghitung kembali? <a href="/investasi/investment-homepage/kalkulator/financial-calculators/calculator-invest">klik disini >></a></span>
+                    <span>Ingin menghitung kembali? <a href="/investment/kalkulator/financial-calculators/calculator-invest">klik disini >></a></span>
                 </div>
                
                <div class="allianz-button">

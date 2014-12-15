@@ -125,7 +125,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
     
     		<div class="row">
     			<div class="bread">
-    				<a href="/investasi/investment-homepage">Home</a>  
+    				<a href="/investment">Home</a>  
     				<i class="fa fa-angle-right"></i> 
    			        Kalkulator Investasi  
                	</div>
@@ -329,7 +329,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             setCookie('investment1_jangka_waktu',waktu,1);
             setCookie('investment1_hasil',result,1);
             
-            window.location.href = "/investasi/investment-homepage/kalkulator/financial-calculators/calculator-investment1-result";
+            window.location.href = "/investment/kalkulator/financial-calculators/calculator-investment1-result";
         });
     
 	function navigateMe(anchor)
