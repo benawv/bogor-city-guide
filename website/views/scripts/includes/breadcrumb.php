@@ -52,7 +52,7 @@
 		foreach ($list as $data)
 		{
 ?>
-			&rsaquo; <a href="<?php echo $data->path."".$data->key;?>"><span><?php echo $data->title;?></span></a>
+			&rsaquo; <a href="<?php echo $data->path."".$data->key;?>"><span><?php echo $data->getProperty('navigation_title');?></span></a>
 <?php
 		}
 	}
