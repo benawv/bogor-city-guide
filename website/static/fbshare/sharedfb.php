@@ -36,6 +36,11 @@
 						{
 							header("Location: '.$link_in_fb.'");
 						}
+						$isMobile = (bool) strpos($_SERVER["HTTP_USER_AGENT"],"mobile");
+						if($isMobile == 1)
+						{
+							header("Location: '.$link_in_fb.'");
+						}
 					?>
 					<img src="'.$url.'/'.$image_name.'" />
 				</body>
