@@ -140,7 +140,7 @@ function setCookie(cname, cvalue, exdays) {
      });
      
      $("#fund_allianz").click(function(){
-	    window.location.href = "http://beta.allianz.co.id/investment/allianz-fund";
+	    window.location.href = "/investment/allianz-fund";
      });
      
      $("#product_allianz").click(function(){
