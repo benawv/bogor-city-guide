@@ -86,7 +86,7 @@
                             <div style="clear:both"></div>
                             <span><br /><br /><br />
                             <b>Disclaimer: <br /></b>
-                        Perhitungan di atas merupakan simulasi, dimana nilai riil akan di berikan setelah proses verifikasi
+                        Perhitungan di atas merupakan simulasi, <br /> dimana nilai riil akan di berikan setelah proses verifikasi
                             </span>
                             
                         </div>
