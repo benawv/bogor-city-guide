@@ -524,6 +524,12 @@ top: 335px !important;
 right: 30px !important;
 top: 580px !important;
 }
+
+.abs4 { 
+right: 30px !important;
+top: 780px !important;
+}
+
 .tooltips span a{
     color: #ffffff;
 }

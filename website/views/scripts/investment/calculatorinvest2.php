@@ -188,7 +188,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo2">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #113388">ASUMSI TINGKAT IMBAL HASIL</h4></div>
-                        <!--div class="tooltips" style="background-color: #113388"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div-->
+                        <div class="tooltips abs2" style="background-color: #113388"><a class="tooltip-left" href="#" data-tooltip="Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  <8% - Konservatif, 8-15% - Moderat, 15%< - Agresif">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
