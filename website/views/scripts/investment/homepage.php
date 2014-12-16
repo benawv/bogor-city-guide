@@ -131,7 +131,7 @@
                 url = '/investment/investment-category/'+inv_cat;
                 //$(location).attr("href", url); 
             }else{
-                  url = '/investment/investment-category/1139'; //masih manual
+                  url = '/investment/financial-planning'; //masih manual
             }
             window.location.href = url;
 
