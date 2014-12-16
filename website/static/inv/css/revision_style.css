@@ -483,7 +483,7 @@ h1.article-title {
     color: #D38802;
 }
 .tooltips {
-/*
+
     width: 25px;
     height: 25px;
     float: right;
@@ -496,7 +496,8 @@ h1.article-title {
     border-radius: 25px;
     font-weight: bold;
     background: #D38802;
-*/
+
+   /*
     width: 25px;
     height: 25px;
     float: right;
@@ -504,11 +505,24 @@ h1.article-title {
     padding: 5px;
     color: #fff;
     /* right: 30px; */
-    /* position: absolute; */
+    /* position: absolute; 
     font-size: 14px;
     border-radius: 25px;
-    /* font-weight: bold; */
+    /* font-weight: bold; 
     background: #D38802;
+    */
+    
+   
+}
+
+.abs2 { 
+right: 30px !important;
+top: 335px !important;
+}
+
+.abs3 { 
+right: 30px !important;
+top: 580px !important;
 }
 .tooltips span a{
     color: #ffffff;
