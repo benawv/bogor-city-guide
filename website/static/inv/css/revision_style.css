@@ -9,10 +9,17 @@
     height: 60px;
 }
 h1.article-title {
-    padding-top: 15px;
+    /*padding-top: 15px;
     font-size: 20px;
     font-weight: bold;
-    color: #ffffff;
+    color: #ffffff;*/
+    
+    padding: 15px 0;
+font-size: 20px;
+font-weight: bold;
+color: #ffffff;
+margin: 0;
+margin-bottom: 15px;
 }
 
 <!-------------Flaticon---------------->
@@ -524,6 +531,12 @@ top: 335px !important;
 right: 30px !important;
 top: 580px !important;
 }
+
+.abs4 { 
+right: 30px !important;
+top: 780px !important;
+}
+
 .tooltips span a{
     color: #ffffff;
 }

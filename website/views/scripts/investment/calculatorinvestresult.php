@@ -82,6 +82,13 @@
                                 <span class='st_pinterest' displayText=''></span>
                                 <span class='st_email' displayText=''></span>
                             </div>
+                            
+                            <div style="clear:both"></div>
+                            <span><br /><br /><br />
+                            <b>Disclaimer: <br /></b>
+                        Perhitungan di atas merupakan simulasi, dimana nilai riil akan di berikan setelah proses verifikasi
+                            </span>
+                            
                         </div>
                         <!--div class="socmed">
                             <a href="#">
