@@ -13,10 +13,10 @@
 			<?php endif;?>
 			<span class="judul_section"><?php echo $this->input('title')?></span>
 		<?php endif; ?>
-		<div class="btn-group btn-section">
+		<!--<div class="btn-group btn-section">
 			<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
 			<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
-		</div>
+		</div>-->
 	</h2>
 	<div class="description width-66">
 		<?php if($this->editmode): ?>
