@@ -674,6 +674,6 @@ padding: 10px 15px;
 
 }
 a.fbshare, a.twshare{
-	display: block !important;
+	display: inline-block;
 }
 
