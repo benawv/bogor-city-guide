@@ -51,7 +51,7 @@
             <div class="box_c_text right">
                 <h2><?php echo $entrie->title ?></h2>
                 <p><?php echo $entrie->tips ?></p>
-                <a href="<?php if(isset($entrie->links)){ echo $entrie->links; }else{ echo "#"; } ?>">Selengkapnya <i class="fa fa-angle-right"></i></a>
+                <?php if(isset($entrie->links)){ echo $entrie->links; } ?>
             </div>
             <?php }else { ?>
             <div class="box_c_img right">
@@ -60,7 +60,7 @@
             <div class="box_c_text left">
                 <h2><?php echo $entrie->title ?></h2>
                 <p><?php echo $entrie->tips ?></p>
-                <a href="<?php if(isset($entrie->links)){ echo $entrie->links; }else{ echo "#"; } ?>">Selengkapnya <i class="fa fa-angle-right"></i></a>
+               <?php if(isset($entrie->links)){ echo $entrie->links; } ?>
             </div>
             <?php } ?>
         </div>
