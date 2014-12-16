@@ -164,7 +164,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4>DANA PENSIUN YANG DIBUTUHKAN</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
+                        <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Jumlah dana yang dibutuhkan pada awal masa pensiun untuk mencukupi kebutuhan bulanan selama masa pensium yang direncanakan">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    

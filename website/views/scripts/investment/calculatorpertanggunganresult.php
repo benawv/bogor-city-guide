@@ -76,15 +76,23 @@
                         </div>
                         <div class="share">
                             <span>Bagikan hasil tersebut dengan teman Anda:</span>
+                            <div class="tag-center">
+                                <span class='st_sharethis' displayText='ShareThis'></span>
+                                <span class='st_facebook' displayText=''></span>
+                                <span class='st_twitter' displayText=''></span>
+                                <span class='st_linkedin' displayText=''></span>
+                                <span class='st_pinterest' displayText=''></span>
+                                <span class='st_email' displayText=''></span>
+                            </div>
                         </div>
-                        <div class="socmed">
+                        <!--div class="socmed">
                             <a href="#">
                                 <div class="fb-box"><span class="flaticon-facebook6">Share</span></div>
                             </a>
                             <a href="#">
                                 <div class="twit-box"><span class="flaticon-social">Share</span></div>
                             </a>
-                        </div>
+                        </div-->
                         
                     </div><!-- End demo -->
                    

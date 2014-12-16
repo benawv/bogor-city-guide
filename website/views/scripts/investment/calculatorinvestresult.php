@@ -65,7 +65,7 @@
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #113388">HASIL KALKULASI BIAYA KEBUTUHAN ANDA DI MASA DEPAN ADALAH</h4></div>
-                        <div class="tooltips" style="background-color: #113388"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
+                        <!--div class="tooltips" style="background-color: #113388"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div-->
                    </div>
                    
                     <div class="calc-box2">    
@@ -74,15 +74,23 @@
                         </div>
                         <div class="share">
                             <span>Bagikan hasil tersebut dengan teman Anda:</span>
+                            <div class="tag-center">
+                                <span class='st_sharethis' displayText='ShareThis'></span>
+                                <span class='st_facebook' displayText=''></span>
+                                <span class='st_twitter' displayText=''></span>
+                                <span class='st_linkedin' displayText=''></span>
+                                <span class='st_pinterest' displayText=''></span>
+                                <span class='st_email' displayText=''></span>
+                            </div>
                         </div>
-                        <div class="socmed">
+                        <!--div class="socmed">
                             <a href="#">
                                 <div class="fb-box"><span class="flaticon-facebook6">Share</span></div>
                             </a>
                             <a href="#">
                                 <div class="twit-box"><span class="flaticon-social">Share</span></div>
                             </a>
-                        </div>
+                        </div-->
                         
                     </div><!-- End demo -->
                    

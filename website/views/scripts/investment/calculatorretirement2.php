@@ -164,7 +164,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4>BIAYA HIDUP BULANAN YANG DIBUTUHKAN</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
+                        <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Biaya hidup setiap bulannya pada saat pensiun dengan memperhitunkan kenaikan harga kebutuhan setiap tahunnya">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    

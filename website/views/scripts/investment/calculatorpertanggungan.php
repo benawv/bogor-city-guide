@@ -198,7 +198,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #a50034">BIAYA HIDUP / PENDAPATAN BULANAN SAAT INI</h4></div>
-                        <div class="tooltips" style="background-color: #a50034;"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
+                        <div class="tooltips" style="background-color: #a50034;"><a class="tooltip-left" href="#" data-tooltip="Biaya yang dikeluarkan setiap bulannya untuk kebutuhan sehari-hari pada saat ini">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
