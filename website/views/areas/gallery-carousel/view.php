@@ -36,7 +36,7 @@
 		<li>
 			<div class="slide">
 				<div class="photo">
-					<?php echo $this->image("image_".$i, ["thumbnail" => "galleryCarousel", "dropClass" => $id . "-" . $i])?>
+					<?php echo $this->image("image_".$i, ["thumbnail" => "galleryCarousel", "dropClass" => $id . "-" . $i, "title" => "Image Size 960x400"])?>
 				</div>
 				<?php
 					$extra = $this->image("image_".$i)->getHotspots();

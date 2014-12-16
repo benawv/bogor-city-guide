@@ -24,9 +24,9 @@
 			?>
 			<?php echo $this->image("gambar-tahukah-anda1", array(
 									"class" => "thumb1 clickPage",
-								    "title" => "Drag your image here",
-								    "width" => 298,
-								    "height" => 110
+								    "title" => "Image Size 304x295",
+								    "width" => 304,
+								    "height" => 295
 			));?>
 			
 			<div class="description thumb1 clickPage">
@@ -52,9 +52,9 @@
 			?>
 			<?php echo $this->image("gambar-tahukah-anda2", array(
 									"class" => "thumb2 clickPage",
-								    "title" => "Drag your image here",
-								    "width" => 298,
-								    "height" => 110
+								    "title" => "Image Size 304x295",
+								    "width" => 304,
+								    "height" => 295
 			));?>
 			
 			<div class="description thumb2 clickPage">
@@ -80,9 +80,9 @@
 				?>
 			<?php echo $this->image("gambar-tahukah-anda3", array(
 									"class" => "thumb3 clickPage",
-								    "title" => "Drag your image here",
-								    "width" => 298,
-								    "height" => 110
+								    "title" => "Image Size 304x295",
+								    "width" => 304,
+								    "height" => 295
 			));?>
 			
 			<div class="description thumb3 clickPage">
