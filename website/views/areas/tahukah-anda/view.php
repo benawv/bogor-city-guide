@@ -41,10 +41,10 @@
 														 "data-target" => "#modalpdf2",
 														 "data-toggle" => "modal"));?>
 				</h2>
-				<!--<div class="btn-group">
+				<div class="btn-group">
 					<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
 					<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
-				</div>-->
+				</div>
 			</div>
 			<?php if($this->editmode) {
 				echo "FlipGorilla ID: ".$this->input('file_id2', array("width" => 250));

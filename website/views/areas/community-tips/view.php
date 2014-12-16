@@ -16,10 +16,10 @@
 							<a href="<?php echo "community-detail/".$entry->getO_key()."_".$entry->getO_id()."_".$entry->getTemplate();?>">
 								<h2 class="title_news"><?php echo $entry->getTitle();?></h2>
 							</a>
-							<!--<div class="btn-group">
+							<div class="btn-group">
 								<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
 								<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
-							</div>-->
+							</div>
 						</div>
 						<a href="<?php echo "community-detail/".$entry->getO_key()."_".$entry->getO_id()."_".$entry->getTemplate();?>" class="linkUrl">
 							<img class="image_share" src="<?php echo $entry->imageHomeAllianz->path."".$entry->imageHomeAllianz->filename;?>" />
