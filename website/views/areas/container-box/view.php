@@ -41,8 +41,8 @@
 		<h2 class="title_news"><?php echo $this->link('title-'.$i)?></h2>
 		<div class="btn-group">
 			<a href="javascript:void(0);" class="shop"><i class="fa fa-shopping-cart"></i></a>
-			<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
-			<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
+			<!--<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
+			<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>-->
 		</div>
 	</div>
 	<?php if($this->editmode) { ?>
