@@ -164,7 +164,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #113388">BIAYA SAAT INI</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" style="color: white" data-tooltip="Biaya yang dibutuhkan untuk membeli / memiliki kebutuhan tersebut saat ini">?  </a></div>
+                        <div class="tooltips" style="background-color: #113388"><a class="tooltip-left" href="#" style="color: white" data-tooltip="Biaya yang dibutuhkan untuk membeli / memiliki kebutuhan tersebut saat ini">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
