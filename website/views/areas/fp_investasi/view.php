@@ -42,7 +42,7 @@
 				var asumsi = 0.12;
 				var formula = ((Math.pow(1 + Number(asumsi), Number(waktu)) - 1) / Number(asumsi));
 				formula = formula.toFixed(3);
-				var result = Number(biaya) * 30 / 100 * formula;
+				var result = Number(biaya) * 12 * 30 / 100 * formula;
 				return result.toFixed(2);
 			    }
 	
