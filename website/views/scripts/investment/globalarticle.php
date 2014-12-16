@@ -78,7 +78,7 @@
                     }
                   $i++;
                 ?>
-				<div class="catbox <?php echo $investmentcolor?>"   >
+				<div class="catbox" style="background:<?php echo $entrie->hexaColor;/*$investmentcolor*/?>;" >
 					<a href="/investment/investment-article-list/<?php echo  $entrie->o_id; ?>_0">
 						<img src="<?php echo $entrie->thumb->path."".$entrie->thumb->filename; ?>" style="height:200px" />
 					</a>
