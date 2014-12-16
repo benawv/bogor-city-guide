@@ -52,7 +52,7 @@
             
 			<div class="wrap73">
                 <h5>
-                    <span><a href="/investasi/investment-homepage/">Home</a></span> &rsaquo; 
+                    <span><a href="/invesetment">Home</a></span> &rsaquo; 
                     <span><a href="/investment/investment-category/<?php echo str_replace(",","",$this->entries[0]['investment']); ?>">Article</a></span> &rsaquo; 
                     <span><a href="/investment/investment-article-list/<?php echo str_replace(",","",$this->entries[0]['investment']); ?>_1">Article Index <?php foreach ($this->data->investment as $inv) { echo $inv->investment;}  ?></a></span> &rsaquo; 
                     <span><?php echo $this->data->title ?></span>
@@ -98,7 +98,7 @@
                         <img style="width: 100%; height: 100%;" src="<?php echo $a_entrie->investment[0]->path."".$a_entrie->investment[0]->images; ?>" />
                     </div>
                     <div class="img-desc">
-                        <h5><a href="investment/investment-article<?php echo $a_entrie->getO_key()."_".$a_entrie->getO_id()."_1";?>"><?php  echo $a_entrie->title; ?></a></h5>
+                        <h5><a href="/investment/investment-article<?php echo $a_entrie->getO_key()."_".$a_entrie->getO_id()."_1";?>"><?php  echo $a_entrie->title; ?></a></h5>
                     </div>
                 </div>
                 <?php } ?>
