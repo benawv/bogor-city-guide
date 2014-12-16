@@ -164,7 +164,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #113388">BIAYA SAAT INI</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" style="background-color: white" data-tooltip="Biaya yang dibutuhkan untuk membeli / memiliki kebutuhan tersebut saat ini">?  </a></div>
+                        <div class="tooltips" style="background-color: #113388"><a class="tooltip-left" href="#"  data-tooltip="Biaya yang dibutuhkan untuk membeli / memiliki kebutuhan tersebut saat ini">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
@@ -188,7 +188,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo2">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #113388">ASUMSI TINGKAT INFLASI</h4></div>
-                        <div class="tooltips abs2" style="background-color: #113388"><a class="tooltip-left" href="#" style="background-color: white" data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%">?  </a></div>
+                        <div class="tooltips abs2" style="background-color: #113388"><a class="tooltip-left" href="#" data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
