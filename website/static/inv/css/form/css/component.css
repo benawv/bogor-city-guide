@@ -106,6 +106,22 @@
     color: white !important;
 }
 
+.form-container.purple,
+.form-container.purple input[type="text"],
+.form-container.purple input[type="number"],
+.form-container.purple input[type="email"],
+.form-container.purple input[type="search"],
+.form-container.purple input[type="number"],
+.form-container.purple span.error-message,
+.form-container.purple span.final-message,
+.form-container.purple span.final-message h3,
+.form-container.purple span.final-message p,
+.form-container.purple span.final-message a,
+.form-container.purple span.percentage
+{
+    color: white !important;
+}
+
 .form-container.brown
 {
     background: #d39e42;
