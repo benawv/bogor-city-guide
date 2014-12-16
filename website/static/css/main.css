@@ -673,7 +673,7 @@ padding: 10px 15px;
 }    
 
 }
-.boxes-view .items-container .item .heading .btn-group a.fbshare, .boxes-view .items-container .item .heading .btn-group a.twshare{
-	display: none;
+a.fbshare, a.twshare{
+	display: none !important;
 }
 
