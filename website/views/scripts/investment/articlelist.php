@@ -112,7 +112,14 @@
 
 
             <?php  
-    }else{ ?>
+    }else{ 
+        
+        		foreach ($this->data->investment as $inv) 
+        		{ 	
+        		  $bg_color=strtolower($inv['hexaColor']);
+        		}
+    
+        ?>
 
 
 <div class="header_page bg_future" style="background-color: <?php echo $bg_color?>">
