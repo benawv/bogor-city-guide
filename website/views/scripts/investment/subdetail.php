@@ -18,7 +18,7 @@
         <div class="tag">
             <div class="tag-left">
                 <h4>Tag :   <a href="/investment/investment-article-list/<?php echo str_replace(",","",$this->entries[0]['investment']); ?>_1">
-                <?php foreach ($this->data->investment as $inv) { echo $inv->investment;}  ?></a></h4>
+                Pustaka<?php foreach ($this->data->investment as $inv) { echo $inv->investment;}  ?></a></h4>
             </div>
                         <div class="tag-right">
                 <span class='st_sharethis' displayText='ShareThis'></span>
