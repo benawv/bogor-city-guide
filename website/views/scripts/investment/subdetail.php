@@ -64,9 +64,7 @@
                     $a_entries = new Object_InvestmentEducation_List();
                     $a_entries->setLimit(3);
                     foreach($a_entries as $a_entrie){
-                       // echo "<pre>";
-//                        print_r($a_entrie->image->path);
-//                        echo "</pre>";
+
                 ?>
                     
                 <div class="image-side">
@@ -74,7 +72,7 @@
                          <img style="width: 100%; height: 100%;" src="<?php echo $a_entrie->image->path."".$a_entrie->image->filename; ?>" alt="Image" />
                     </div>
                     <div class="img-desc">
-                        <h5><a href="/investment/detail/<?php echo $a_entrie->getO_key()."_".$a_entrie->getO_id();?>"><?php  echo $a_entrie->title; ?></a></h5>
+                        <h5><a href="/investment/detail/<?php echo $a_entrie->getO_key()."/".$a_entrie->getO_id();?>"><?php  echo $a_entrie->judul; ?></a></h5>
                     </div>
                 </div>
                     
