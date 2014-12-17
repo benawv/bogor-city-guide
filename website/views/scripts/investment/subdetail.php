@@ -17,7 +17,7 @@
 
         <div class="tag">
             <div class="tag-left">
-                <h4>Tag :   <a href="/investment/investment-article-list/<?php echo str_replace(",","",$this->entries[0]['investment']); ?>_1">
+                <h4>Tag :   <a href="/investment/resources/resources/education">
                 Pustaka<?php foreach ($this->data->investment as $inv) { echo $inv->investment;}  ?></a></h4>
             </div>
                         <div class="tag-right">
@@ -71,10 +71,10 @@
                     
                 <div class="image-side">
                     <div class="img-article">
-                         <img style="width: 100%; height: 100%;" src="<?php echo $a_entrie->image->path."".$a_entrie->image->filename; ?>" />
+                         <img style="width: 100%; height: 100%;" src="<?php echo $a_entrie->image->path."".$a_entrie->image->filename; ?>" alt="Image" />
                     </div>
                     <div class="img-desc">
-                        <h5><a href="investment/investment-article<?php echo $a_entrie->getO_key()."_".$a_entrie->getO_id();?>"><?php  echo $a_entrie->title; ?></a></h5>
+                        <h5><a href="/investment/detail/<?php echo $a_entrie->getO_key()."_".$a_entrie->getO_id();?>"><?php  echo $a_entrie->title; ?></a></h5>
                     </div>
                 </div>
                     
