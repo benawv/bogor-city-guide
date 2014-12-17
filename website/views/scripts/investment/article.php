@@ -76,10 +76,6 @@
                         <span class='st_email' displayText=''></span>
                     </div>
                 </div>
-                
-                <div class="main-img">
-                    <img src="<?php echo $this->data->investment[0]->path."".$this->data->investment[0]->images; ?>" />
-                </div>
                 <div class="main-desc">
                    <?php echo $this->data->content;?>
                 </div>
