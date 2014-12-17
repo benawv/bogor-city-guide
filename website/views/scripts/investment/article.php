@@ -93,15 +93,15 @@
                     $a_entries = new Object_InvestmentArticle_List();
                     $a_entries->setCondition('investment like "%'.$id.'%"'); 
                     $a_entries->setLimit(3);
-                foreach($a_entries as $a_entrie){
+                        foreach($a_entries as $a_entrie){
                 ?>
                     
                 <div class="image-side">
                     <div class="img-article">
-                        <img style="width: 100%; height: 100%;" src="<?php echo $a_entrie->investment[0]->path."".$a_entrie->investment[0]->images; ?>" />
+                        <img style="width: 100%; height: 100%;" src="<?php echo $a_entrie->investment[0]->path."".$a_entrie->investment[0]->images; ?>" alt="image" />
                     </div>
                     <div class="img-desc">
-                        <h5><a href="/investment/investment-article<?php echo $a_entrie->getO_key()."_".$a_entrie->getO_id()."_1";?>"><?php  echo $a_entrie->title; ?></a></h5>
+                        <h5><a href="/investment/investment-article-list/investment-article<?php echo $a_entrie->getO_key()."_".$a_entrie->getO_id()."_1";?>"><?php  echo $a_entrie->title; ?></a></h5>
                     </div>
                 </div>
                 <?php } ?>
