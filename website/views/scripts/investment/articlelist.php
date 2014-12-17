@@ -70,7 +70,7 @@
                         foreach($this->data as $entry)
 		                  {
                     ?>
-					<li class="<?php echo $investmentcolor?$investmentcolor:'bg_fund'?>" style="background-color: <?php echo $bg_color?>">
+					<li class="<?php echo $investmentcolor?$investmentcolor:'bg_fund'?>" style="background-color: <?php echo $bg_color?>" >
 						<h3><?php echo $entry->title ?></h3>
 						<p><?php echo substr($entry->content,0,100) ?>...</p>
 
@@ -115,7 +115,7 @@
     }else{ ?>
 
 
-<div class="header_page bg_future">
+<div class="header_page bg_future" style="background-color: <?php echo $bg_color?>">
 	<div class="container">
 		Artikel Belum Tersedia
 	</div>
