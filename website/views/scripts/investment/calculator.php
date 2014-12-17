@@ -409,6 +409,9 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
             text = text.replace(/,/g,'');
+            if (text == 0) {
+                text = 1;
+            }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
@@ -421,6 +424,9 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
             text = text.replace(/,/g,'');
+            if (text == 0) {
+                text = 1;
+            }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }

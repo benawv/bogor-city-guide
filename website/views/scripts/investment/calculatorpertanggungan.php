@@ -325,8 +325,15 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
 	}
         
         function resp1(biaya, asumsi_inflasi, asumsi_imbal, waktu){
-            var new_asumsi = asumsi_imbal - asumsi_inflasi;
-            new_asumsi = new_asumsi / 100;
+            var new_asumsi;
+            if (asumsi_imbal == asumsi_inflasi) {
+                new_asumsi = 1;
+            }
+            else{
+                new_asumsi = asumsi_imbal - asumsi_inflasi;
+            }
+            
+            new_asumsi = new_asumsi / 100;    
             var formula = 1 * ((1 - Math.pow(1 + Number(new_asumsi), Number(-waktu))) / Number(new_asumsi)) * (1 + Number(new_asumsi));
             if (formula < 99) {
                 formula = formula.toFixed(3);
@@ -362,9 +369,13 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
             text = text.replace(/,/g,'');
+            if (text == 0) {
+                text = 1;
+            }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
+            
             asumsi_inflasi = text;
             $(this).val(text + '%');
         });
@@ -374,6 +385,9 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
             text = text.replace(/,/g,'');
+            if (text == 0) {
+                text = 1;
+            }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
@@ -386,6 +400,9 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
             text = text.replace(/,/g,'');
+            if (text == 0) {
+                text = 1;
+            }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
