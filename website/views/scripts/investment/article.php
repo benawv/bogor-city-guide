@@ -14,9 +14,12 @@
 	if(count($this->data)>0)
 	{
 		foreach ($this->data->investment as $inv) 
-		{ 	
+		{
+			
 			$cls=strtolower($inv->investment);
-		        if($cls=="edukasi"){
+			$bg_color=strtolower($inv->hexaColor);
+		        
+			if($cls=="edukasi"){
 		            $investmentcolor="bg_edu ";    
 		        }elseif($cls=="investasi"){
 		             $investmentcolor="bg_fund ";
@@ -33,7 +36,7 @@
 ?>
     
     
-    <div class="<?php echo $investmentcolor?$investmentcolor:'bg_fund' ?>">
+    <div class="<?php echo $investmentcolor?$investmentcolor:'bg_fund' ?>" style="background-color: <?php echo $bg_color?>">
        <div class="container">
        
            <h1 class="article-title">

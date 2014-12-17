@@ -8,7 +8,9 @@
 	{
 		foreach ($this->data->investment as $inv) 
 		{ 	
-			$cls=strtolower($inv['investment']);
+		$cls=strtolower($inv['investment']);
+		$bg_color=strtolower($inv['hexaColor']);
+		
 	        if($cls=="edukasi"){
 	            $investmentcolor="bg_edu ";    
 	        }elseif($cls=="investasi"){
@@ -20,11 +22,11 @@
 	        }elseif($cls=="pensiun"){
 	             $investmentcolor="bg_pension ";
 	        }
-		}
+	}
 		
 ?>
             
-<div class="header_page <?php echo $investmentcolor?$investmentcolor:'bg_fund'?>">
+<div class="header_page <?php //echo $investmentcolor?$investmentcolor:'bg_fund'?>" style="background-color: <?php echo $bg_color?>" >
 	<div class="container">
 		<?php foreach ($this->data->investment as $inv) { echo $inv['investment'];}  ?>
 	</div>
@@ -68,7 +70,7 @@
                         foreach($this->data as $entry)
 		                  {
                     ?>
-					<li class="<?php echo $investmentcolor?$investmentcolor:'bg_fund'?>">
+					<li class="<?php echo $investmentcolor?$investmentcolor:'bg_fund'?>" style="background-color: <?php echo $bg_color?>">
 						<h3><?php echo $entry->title ?></h3>
 						<p><?php echo substr($entry->content,0,100) ?>...</p>
 
