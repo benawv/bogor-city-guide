@@ -76,6 +76,12 @@
                         <span class='st_email' displayText=''></span>
                     </div>
                 </div>
+                <?php if(isset($this->data->image->filename)!=""){ ?>
+                <div class="main-img">
+                    <img src="<?php echo $this->data->image->path."".$this->data->image->filename; ?>" />
+                </div>
+                <?php } ?>
+                
                 <div class="main-desc">
                    <?php echo $this->data->content;?>
                 </div>
@@ -87,21 +93,25 @@
                 <?php
 
                     $a_entries = new Object_InvestmentArticle_List();
-                    $a_entries->setCondition('investment like "%'.$id.'%"'); 
+                    $a_entries->setCondition('investment like "%'.$this->data->investment[0]->o_id.'%"');
                     $a_entries->setLimit(3);
+                    
                         foreach($a_entries as $a_entrie){
+                        
                 ?>
-                    
-                <div class="image-side">
-                    <div class="img-article">
-                        <img style="width: 100%; height: 100%;" src="<?php echo $a_entrie->investment[0]->path."".$a_entrie->investment[0]->images; ?>" alt="image" />
+                    <div class="image-side">
+                        <div class="img-article">
+                        <?php if($a_e) {?>
+                            <img style="width: 100%; height: 100%;" src="<?php echo $a_entrie->investment[0]->path."".$a_entrie->investment[0]->images; ?>" />
+                        <?php }else{ ?>
+                            <img style="width: 100%; height: 100%;" src="<?php echo $a_entrie->image->path."".$a_entrie->image->filename; ?>" alt="image" />
+                        <?php } ?>
+                        </div>
+                        <div class="img-desc">
+                            <h5><a href="/investment/investment-article/<?php echo $a_entrie->getO_key()."_".$a_entrie->getO_id()."_1";?>"><?php  echo $a_entrie->title; ?></a></h5>
+                        </div>
                     </div>
-                    <div class="img-desc">
-                        <h5><a href="/investment/investment-article-list/investment-article<?php echo $a_entrie->getO_key()."_".$a_entrie->getO_id()."_1";?>"><?php  echo $a_entrie->title; ?></a></h5>
-                    </div>
-                </div>
-                <?php } ?>
-                    
+                <?php } ?>                 
                 
 
 			</div>	
