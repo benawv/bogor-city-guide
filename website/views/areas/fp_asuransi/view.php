@@ -59,6 +59,7 @@
 				if(event.keyCode == '8'){
 						text = text.substr(0,text.length-1);
 				}
+				usia = text;
 				$(this).val(text + ' tahun');
 			    });
 			$("#q2").bind('input',function(){
