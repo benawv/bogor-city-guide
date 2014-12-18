@@ -262,7 +262,46 @@ class InvestmentController extends Website_Controller_Action
     public function calculatorretirement2resulAction(){}
     public function calculatorretirement3Action(){}
     public function calculatorretirement3resulAction(){}
-	
-	public function tileAction(){}
 
+	public function tileAction(){}
+	public function sendkalkulatorAction() {
+		$asumsi_inflasi = $_POST['asumsi_inflasi'];
+		$asumsi_imbalan = $_POST['asumsi_imbalan'];
+		$jangka_waktu = $_POST['jangka_waktu'];
+		$risiko = $_POST['risiko'];
+		$tahunan = $_POST['tahunan'];
+		$bulanan = $_POST['bulanan'];
+		$email = $_POST['email'];
+		
+		if($risiko<10)
+		{
+			$rekomen = "Jangka waktu investasi yang anda pilih termasuk jangka pendek. Untuk investasi jangka pendek sebaiknya menggunakan instrumen investasi yang memiliki risiko dan fluktuasi nilai yang rendah. Instrumen pasar uang seperti deposito, reksa dana pasar uang, ataupun instrumen obligasi seperti ORI, dan reksa dana pendapatan tetap dapat dijadikan pilihan";
+		}
+		else if(3 <= $risiko && $risiko <= 5)
+		{
+			$rekomen = "Jangka waktu investasi yang anda pilih termasuk jangka menengah. Untuk investasi jangka menengah sebaiknya menggunakan instrumen investasi yang memiliki risiko dan fluktuasi nilai yang sedang. Instrumen obligasi seperti ORI, dan reksa dana pendapatan tetap dapat dijadikan pilihan, atau Anda dapat memilih reksadana berimbang yang memiliki komponen instrumen saham dengan porsi yang relatif kecil.";
+		}
+		else
+		{
+			$rekomen = "Jangka waktu investasi yang anda pilih termasuk jangka panjang. Untuk investasi jangka panjang Anda dapat menggunakan instrumen investasi yang memiliki risiko dan fluktuasi nilai yang lebih tinggi dibandingkan jangka waktu lainnya. Instrumen saham dijadikan pilihan, atau Anda dapat memilih reksadana berimbang yang memiliki komponen instrumen saham dengan porsi yang cukup signifikan.";
+		}
+		
+		$document = '/email/kalkulator/email-kalkulator';
+		$params = array('asumsi_inflasi' => $asumsi_inflasi,
+				'asumsi_imbalan' => $asumsi_imbalan,
+				'jangka_waktu' => $jangka_waktu,
+				'risiko' => $risiko,
+				'tahunan' => $tahunan,
+				'bulanan' => $bulanan,
+				'rekomen' => $rekomen
+				);
+		$mail = new Pimcore_Mail();
+		$mail->setSubject("Kalkulator Investment");
+		$mail->setFrom("no-reply@allianz.co.id","Allianz Investment");
+		$mail->setDocument($document);
+		$mail->setParams($params);
+		$mail->addTo($email);
+		
+		$mail->send();
+    }
 }
