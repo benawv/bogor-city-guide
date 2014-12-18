@@ -1,6 +1,6 @@
 	<?php echo $this->template("includes/inv/header.php")?>
 
-<div class="header_page bg_future">
+<div class="header_page bg_future" style="background-color: #003DA5;">
 	<div class="container">
 		Fund Information
 	</div>

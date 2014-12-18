@@ -10,7 +10,7 @@
 							</li>
 							<li>
 								<span><label for="q2">Berapa lama lagi sebelum Anda memustuskan untuk pensiun?</label></span>
-								<input id="q2" name="q2" type="text"/>
+								<input id="q2" name="q2" type="text" value="0 tahun"/>
 							</li>
 							
 						</ol><!-- /questions -->
@@ -68,8 +68,11 @@
 				if (event.keyCode == '8') {
 				    text = text.substr(0,text.length-1);
 				}
+				if (isNaN(parseInt(text))) {
+						text = 0;
+				}
 				waktu = text;
-				$(this).val(text + ' tahun');
+				$(this).val(parseInt(text) + ' tahun');
 			    });
 			
 			

@@ -93,6 +93,10 @@
                                 <span class='st_email' displayText=''></span>
                             </div>
                         </div>
+						<div>
+							<input type="text" class="email-user" placeholder="Email" />
+							<input type='button' class='sendEmail' value='Send' />
+						</div>
                         <!--div class="socmed">
                             <a href="#">
                                 <div class="fb-box"><span class="flaticon-facebook6">Share</span></div>
@@ -251,6 +255,32 @@
 			$('.kanan2 div').addClass('hidden');
 			$('.kanan2 .'+id).removeClass('hidden');
 			$('.kanan2 .'+id).addClass('aktif_konten');
+		});
+		
+		$('.sendEmail').click(function(){
+			if($('.email-user').val() != "")
+			{
+				$.ajax({
+					type: 'POST',
+					url: '/sendkalkulator',
+					data: {
+						asumsi_inflasi: getCookie('edu1_asumsi_inflasi'),
+						asumsi_imbalan : getCookie('edu2_asumsi_imbal_hasil'),
+						jangka_waktu: getCookie('edu1_jangka_waktu'),
+						risiko: getCookie('edu2_asumsi_imbal_hasil'),
+						tahunan : getCookie('edu2_hasil_tahunan'),
+						bulanan : getCookie('edu2_hasil_bulanan'),
+						email : $('.email-user').val()
+					},
+					success: function()
+					{
+						//var url = window.location.origin+'/website/static/inv-fbshare/'+response;
+					}
+				});
+			}
+			else{
+				alert("Alamat email harus diisi.");
+			}
 		});
 	});
 </script>

@@ -60,7 +60,10 @@
 						text = text.substr(0,text.length-1);
 				}
 				usia = text;
-				$(this).val(text + ' tahun');
+				if (isNaN(parseInt(text))) {
+						text = 0;
+				}
+				$(this).val(parseInt(text) + ' tahun');
 			    });
 			$("#q2").bind('input',function(){
 				var text = $(this).val();
