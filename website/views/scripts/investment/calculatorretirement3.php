@@ -123,13 +123,13 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4>KALKULATOR PENSIUN</h4>
+                <h4 style="background-color: #8b4720;">KALKULATOR PENSIUN</h4>
            </div>
            <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4>DANA PENSIUN YANG DIBUTUHKAN</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Jumlah dana yang dibutuhkan pada awal masa pensiun untuk mencukupi kebutuhan bulanan selama masa pensium yang direncanakan">?  </a></div>
+                        <div class="tooltips" style="background-color: #8b4720;"><a class="tooltip-left" href="#" data-tooltip="Jumlah dana yang dibutuhkan pada awal masa pensiun untuk mencukupi kebutuhan bulanan selama masa pensium yang direncanakan">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
@@ -153,7 +153,7 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
                <div id="demo2">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4>ASUMSI TINGKAT IMBAL HASIL</h4></div>
-                        <div class="tooltips abs2"><a class="tooltip-left" href="#" data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%">?  </a></div-->
+                        <div class="tooltips abs2" style="background-color: #8b4720;"><a class="tooltip-left" href="#" data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%">?  </a></div-->
                    </div>
                    
                     <div class="calc-box">    
@@ -177,7 +177,7 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
                <div id="demo3">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4>JANGKA WAKTU MENABUNG</h4></div>
-                        <div class="tooltips abs3"><a class="tooltip-left" href="#" data-tooltip="Lamanya masa berinvestasi yang diinginkan untuk mencapai tujuan investasi ">?  </a></div>
+                        <div class="tooltips abs3" style="background-color: #8b4720;"><a class="tooltip-left" href="#" data-tooltip="Lamanya masa berinvestasi yang diinginkan untuk mencapai tujuan investasi ">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
@@ -199,7 +199,7 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
            
            <div class="calc-machine">
                <div class="calc-submit bottom">
-                    <input class="orange-btn" type="button" value="HITUNG">
+                    <input class="orange-btn bg_pension" type="button" value="HITUNG">
                 </div>   
            </div>   
                
