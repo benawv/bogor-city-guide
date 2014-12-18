@@ -82,41 +82,7 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
 });
       
 
-}); </script>   
-
-    
-<script>   
-    
-$(function() {           
-        
-var select = $( "#demo3" );
-        var slider = $( "<div id='slider3'></div>" ).insertAfter( select ).slider({
-            min: 1,
-            max: 100,
-        value: 1,
-            range: "min",
-change: function(event, ui) { 
-         var sliderValue = $( "#slider3" ).slider( "option", "value" );
-        $('#sliderPosition3').val(sliderValue);
-        $('#sliderPosition3').trigger('keyup');
-        }        
-        });
-        
-
-$('#increase3').click(function() {
-var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
-  slider.slider( "value", sliderCurrentValue + 1 );
-  $('#sliderPosition3').trigger('keyup');
-});
-
-$('#decrease3').click(function() {
-var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
-  slider.slider( "value", sliderCurrentValue - 1 );
-  $('#sliderPosition3').trigger('keyup');
-});
-      
-
-}); </script>       
+}); </script>
     
     
 <div role="main" class="main">
@@ -216,7 +182,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition3" class="slider-wrap" value="1 tahun">
+                        <input type="text" id="sliderPosition3" class="slider-wrap" value="1 tahun" disabled=disabled>
                        </input> 
                         
                         <div id="decrease3">
