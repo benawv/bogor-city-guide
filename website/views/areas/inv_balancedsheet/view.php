@@ -10,6 +10,24 @@ jQuery(function($) {
         <div class="container">
 
             <div class="form_cont">
+            
+            <div class="wiz">
+                <span class="bar_wiz"></span>
+                <ul>
+                    <li><a href="/investment/financial-planning/cash-flow-tables/income-statement">< IS</a></li>
+                    <li id="wiz_1" class="cur"><a href="javascript:void(0);">1</a></li>
+                    <li id="wiz_2"><a href="javascript:void(0);">2</a></li>
+                    <li id="wiz_3"><a href="javascript:void(0);">3</a></li>
+                    <li id="wiz_4"><a href="javascript:void(0);">4</a></li>
+                    <li id="wiz_5"><a href="javascript:void(0);">5</a></li>
+                    <li id="wiz_6"><a href="javascript:void(0);">6</a></li>
+                    <li id="wiz_7"><a href="javascript:void(0);">7</a></li>
+                    <li id="wiz_8"><a href="javascript:void(0);">8</a></li>
+                    <li id="wiz_9"><a href="javascript:void(0);">9</a></li>
+
+                </ul>
+            </div>
+            <!-- wiz end -->
 
             <h1>ASET</h1>
 
@@ -777,84 +795,46 @@ $(document).ready(function(){
 
         
         
-    $("#prev_1").click(function(){
-    $(".stepform").hide();
-    $("#step_1").fadeIn();
-  });
+    <?php
+        for ($i = 1; $i <= 10; $i++) {
+    ?>
+        $("#next_<?php echo $i ?>").click(function(){
+            $(".stepform").hide();
+            $("#step_<?php echo $i ?>").fadeIn();
+            $(".wiz li").removeClass();
+            $("#wiz_<?php echo $i ?>").addClass("cur");
+          });
+    <?php
+        }
+    ?>
 
-$("#prev_2").click(function(){
-    $(".stepform").hide();
-    $("#step_2").fadeIn();
-  });
+    <?php
+        for ($i = 1; $i <= 10; $i++) {
+    ?>
+        $("#prev_<?php echo $i ?>").click(function(){
+            $(".stepform").hide();
+            $("#step_<?php echo $i ?>").fadeIn();
+            $(".wiz li").removeClass();
+            $("#wiz_<?php echo $i ?>").addClass("cur");
+          });
+    <?php
+        }
+    ?>
 
-  $("#prev_3").click(function(){
-    $(".stepform").hide();
-    $("#step_3").fadeIn();
-  });
+    <?php
+        for ($i = 1; $i <= 10; $i++) {
+    ?>
+        $("#wiz_<?php echo $i ?>").click(function(){
+            $(".stepform").hide();
+            $("#step_<?php echo $i ?>").fadeIn();
+            $(".wiz li").removeClass();
+            $("#wiz_<?php echo $i ?>").addClass("cur");
+          });
+    <?php
+        }
+    ?>
 
-  $("#prev_4").click(function(){
-    $(".stepform").hide();
-    $("#step_4").fadeIn();
-  });
-
-  $("#prev_5").click(function(){
-    $(".stepform").hide();
-    $("#step_5").fadeIn();
-  });
-
-  $("#prev_6").click(function(){
-    $(".stepform").hide();
-    $("#step_6").fadeIn();
-  });
-
-  $("#prev_7").click(function(){
-    $(".stepform").hide();
-    $("#step_7").fadeIn();
-  });
-
-  $("#prev_8").click(function(){
-    $(".stepform").hide();
-    $("#step_8").fadeIn();
-  });
-
-  $("#next_2").click(function(){
-    $(".stepform").hide();
-    $("#step_2").fadeIn();
-  });
-
-  $("#next_3").click(function(){
-    $(".stepform").hide();
-    $("#step_3").fadeIn();
-  });
-
-  $("#next_4").click(function(){
-    $(".stepform").hide();
-    $("#step_4").fadeIn();
-  });
-
-  $("#next_5").click(function(){
-    $(".stepform").hide();
-    $("#step_5").fadeIn();
-  });
-
-  $("#next_6").click(function(){
-    $(".stepform").hide();
-    $("#step_6").fadeIn();
-  });
-
-  $("#next_7").click(function(){
-    $(".stepform").hide();
-    $("#step_7").fadeIn();
-  }); 
-  $("#next_8").click(function(){
-    $(".stepform").hide();
-    $("#step_8").fadeIn();
-  });
-
-  $("#next_9").click(function(){
-    $(".stepform").hide();
-    $("#step_9").fadeIn();
-  });
+ 
 
   $("#submit").click(function(){
     $(".stepform").hide();
