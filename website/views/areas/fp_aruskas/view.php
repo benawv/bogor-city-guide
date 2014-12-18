@@ -6,7 +6,7 @@
 					<div class="simform-inner">
 						<ol class="questions">
 							<li>
-								<span><label for="q1">Berapakah pendapatan anda saat ini??</label></span>
+								<span><label for="q1">Berapakah pendapatan anda saat ini?</label></span>
 								<input id="q1" name="q1" type="text" value="Rp. 0"/>
 							</li>
 							<li>
