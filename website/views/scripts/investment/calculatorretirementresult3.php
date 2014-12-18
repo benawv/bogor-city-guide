@@ -58,7 +58,7 @@
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4>KALKULATOR PENDIDIKAN</h4>
+                <h4 style="background-color: #8b4720;">KALKULATOR PENDIDIKAN</h4>
            </div>
             
              <div class="calc-machine">
@@ -70,7 +70,7 @@
                    
                     <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result_year">Rp. 0</span>
+                            <span id="result_year" style="color: #8b4720;">Rp. 0</span>
                         </div>
 		    </div>
 		    <div class="calc-box-title"> 
@@ -79,7 +79,7 @@
                     </div>
 		    <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result_month">Rp. 0</span>
+                            <span id="result_month" style="color: #8b4720;">Rp. 0</span>
                         </div>
                          <div class="share">
                             <span>Bagikan hasil tersebut dengan teman Anda:</span>

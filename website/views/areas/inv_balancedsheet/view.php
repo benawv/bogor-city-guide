@@ -29,7 +29,7 @@ jQuery(function($) {
             </div>
             <!-- wiz end -->
 
-            <h1>ASET</h1>
+            <h1>ASET & KEWAJIBAN</h1>
 
             <div class="stepform showform" id="step_1">
                 <h2>Aset Liquid</h2>
