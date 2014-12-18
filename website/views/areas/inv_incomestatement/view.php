@@ -272,11 +272,15 @@ jQuery(function($) {
                     </tr>
                     
                     <tr>    
-                        <td><a id="prev_5" href="javascript:void(0);">
+                        <td>
+                            <a id="prev_5" href="javascript:void(0);">
                                 <img class="left" src="/website/static/inv/images/prev.png">
-                            </a></td>
+                            </a>
+                        </td>
                         <td class="next_form">
-                          <a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/balanced-sheet" class="right">Lanjutkan dengan mengisi Balance Sheet &#187;</a>
+                            <a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/balanced-sheet" class="right">
+                                <img class="right" src="/website/static/inv/images/next.png" />
+                            </a>
                         </td>
                     </tr>
                 </table>

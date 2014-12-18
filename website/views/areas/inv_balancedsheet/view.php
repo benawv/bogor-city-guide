@@ -11,7 +11,7 @@ jQuery(function($) {
 
             <div class="form_cont">
 
-            <h1>ASET &amp; KEWAJIBAN</h1>
+            <h1>ASET</h1>
 
             <div class="stepform showform" id="step_1">
                 <h2>Aset Liquid</h2>
@@ -373,8 +373,11 @@ jQuery(function($) {
                                 <img class="left" src="/website/static/inv/images/prev.png">
                             </a></td>
                         <td class="next_form">
-                          <a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/income-statement" class="right">Lanjutkan dengan mengisi Income Statement &#187;</a>
+                          <a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/income-statement" class="right">
+                                <img class="right" src="/website/static/inv/images/next.png" />
+                          </a>
                         </td>
+
                     </tr>
                 </table>
 
@@ -416,7 +419,7 @@ $(document).ready(function(){
         
          var is_cincomestatment=getCookie('cincomestatment'); 
          if(is_cincomestatment!=''){
-            $(".next_form").html("<a href='/investasi/investment-homepage/financial-planning/cash-flow-tables/rasio-finansial' class='right'>Lanjutkan Financial rasio</a>");
+            $(".next_form").html("<a href='/investasi/investment-homepage/financial-planning/cash-flow-tables/rasio-finansial' class='right'><img class='right' src='/website/static/inv/images/next.png' /></a>");
          }   
         
         
