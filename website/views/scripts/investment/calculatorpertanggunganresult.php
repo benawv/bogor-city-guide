@@ -60,14 +60,13 @@
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4 style="background-color: #a50034">KALKULATOR PERTANGGUNGAN</h4>
+                <h4 style="background-color: #a50034">KALKULATOR ASURANSI</h4>
            </div>
             
              <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4 style="color: #a50034">HASIL KALKULASI PERTANGGUNGAN ANDA ADALAH</h4></div>
-                        <div class="tooltips" style="background-color: #a50034"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div>
+                        <div class="title-box"><h4 style="color: #a50034">HASIL KALKULASI UANG PERTANGGUNGAN ANDA</h4></div>
                    </div>
                    
                     <div class="calc-box2">    

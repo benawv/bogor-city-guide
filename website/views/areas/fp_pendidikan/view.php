@@ -5,7 +5,7 @@
 					<div class="simform-inner">
 						<ol class="questions">
 							<li>
-								<span><label for="q1">Berapakah biaya sekolah anda pada saat SMP?</label></span>
+								<span><label for="q1">Berapakah biaya sekolah pada saat anda SMP?</label></span>
 								<input id="q1" name="q1" type="text" value="Rp. 0"/>
 							</li>
 							
