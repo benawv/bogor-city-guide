@@ -40,11 +40,15 @@
 <link rel="stylesheet" type="text/css" href="/website/static/inv/css/form/css/component.css" />
 
 
-
 <!-- javascript -->
 <script src="/website/static/inv/js/modernizr.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/main.js" type="text/javascript"></script>
+
+<!-- plugins -->
+<script src="/website/static/plugins/jquery.flexslider.min.js" type="text/javascript"></script>
+<script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
+<script src="/website/static/js/bootstrap.min.js" type="text/javascript"></script>
 
 <script src="/website/static/inv/css/form/js/modernizr.custom.js"></script>
 </head>
