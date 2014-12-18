@@ -94,7 +94,7 @@
                             </div>
                         </div>
 						<div>
-							<input type="email" class="email" placeholder="Email" />
+							<input type="text" class="email-user" placeholder="Email" />
 							<input type='button' class='sendEmail' value='Send' />
 						</div>
                         <!--div class="socmed">
@@ -279,7 +279,7 @@
 					risiko: getCookie('edu2_asumsi_imbal_hasil'),
 					tahunan : getCookie('edu2_hasil_tahunan'),
 					bulanan : getCookie('edu2_hasil_bulanan'),
-					email : $('.email').text();
+					email : $('.email-user').text()
 				},
 				success: function(response)
 				{
