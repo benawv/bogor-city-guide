@@ -16,7 +16,7 @@ jQuery(function($) {
             <div class="wiz">
                  <span class="bar_wiz"></span>
                 <ul>
-                    <li><a href="/investment/financial-planning/cash-flow-tables/balanced-sheet">< BS</a></li>
+                    <li><a href="/investment/financial-planning/cash-flow-tables/balanced-sheet">< LN</a></li>
                     <li id="wiz_1" class="cur"><a href="javascript:void(0);">1</a></li>
                     <li id="wiz_2"><a href="javascript:void(0);">2</a></li>
                     <li id="wiz_3"><a href="javascript:void(0);">3</a></li>
@@ -28,7 +28,7 @@ jQuery(function($) {
             </div>
             <!-- wiz end -->
 
-            <h1>Income Statement</h1>
+            <h1>Laporan Arus Kas</h1>
 
             <div class="stepform showform" id="step_1">
                 <h2>Pendapatan Bulanan</h2>
@@ -253,7 +253,7 @@ jQuery(function($) {
             <!-- step_5 end -->
 
             <div class="stepform" id="step_6">
-                <h2>Financial Ratio</h2>
+               
 
                 <table width="100%">
 
@@ -266,7 +266,7 @@ jQuery(function($) {
                         <td id="total_biaya_hidup" class="right">Rp 0</td>
                     </tr>
                     <tr>
-                        <td>TOTAL ANGSURAN HUTANG</td>
+                        <td>TOTAL CICILAN HUTANG</td>
                         <td id="total_angsuran_hutang" class="right">Rp 0</td>
                     </tr>
                     <tr>
