@@ -64,7 +64,7 @@
              <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>INVESTASI TAHUNAN YANG DIPERLUKAN ADALAH</h4></div>
+                        <div class="title-box"><h4 style="color: #8b4720;" >INVESTASI TAHUNAN YANG DIPERLUKAN ADALAH</h4></div>
                         <!--div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div-->
                    </div>
                    
@@ -74,7 +74,7 @@
                         </div>
 		    </div>
 		    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>INVESTASI BULANAN YANG DIPERLUKAN ADALAH</h4></div>
+                        <div class="title-box"><h4 style="color: #8b4720;">INVESTASI BULANAN YANG DIPERLUKAN ADALAH</h4></div>
                         <!--div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div-->
                     </div>
 		    <div class="calc-box2">    
