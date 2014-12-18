@@ -568,8 +568,12 @@ p.small {
 	line-height: 14px;
 }
 
+p.visitorname {
+	font-size: 16px;
+	font-weight: bold;
+}
+
 .inv-btn{
 	float: right;
 }
-
 
