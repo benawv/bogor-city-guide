@@ -6,7 +6,7 @@
                     foreach($this->container as $page): 
                     ?>
                     	<li class="left wi200">
-                    		<div class="menu-level2">
+                    		<div class="menu-level2" style="display: block;">
                     
                     			<?php 
                                 $menu_loop;
