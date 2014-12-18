@@ -107,7 +107,7 @@
            
            <div class="calc-machine">
                <div class="calc-submit">
-                    <input id="investment2" class="orange-btn" type="button" value="BAGAIMANA MENCAPAINYA?">
+                    <input id="investment2" class="orange-btn bg_fund" type="button" value="BAGAIMANA MENCAPAINYA?">
                 </div>
                <div class="share">
                     <span>Ingin menghitung kembali? <a href="/investment/kalkulator/financial-calculators/calculator-invest">klik disini >></a></span>

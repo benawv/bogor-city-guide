@@ -14,7 +14,7 @@ jQuery(function($) {
             <div class="wiz">
                 <span class="bar_wiz"></span>
                 <ul>
-                    <li><a href="incomestatement.php">< IS</a></li>
+                    <li><a href="/investment/financial-planning/cash-flow-tables/income-statement">< IS</a></li>
                     <li id="wiz_1" class="cur"><a href="javascript:void(0);">1</a></li>
                     <li id="wiz_2"><a href="javascript:void(0);">2</a></li>
                     <li id="wiz_3"><a href="javascript:void(0);">3</a></li>
@@ -29,7 +29,7 @@ jQuery(function($) {
             </div>
             <!-- wiz end -->
 
-            <h1>ASET &amp; KEWAJIBAN</h1>
+            <h1>ASET</h1>
 
             <div class="stepform showform" id="step_1">
                 <h2>Aset Liquid</h2>
@@ -391,8 +391,11 @@ jQuery(function($) {
                                 <img class="left" src="/website/static/inv/images/prev.png">
                             </a></td>
                         <td class="next_form">
-                          <a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/income-statement" class="right">Lanjutkan dengan mengisi Income Statement &#187;</a>
+                          <a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/income-statement" class="right">
+                                <img class="right" src="/website/static/inv/images/next.png" />
+                          </a>
                         </td>
+
                     </tr>
                 </table>
 
@@ -434,7 +437,7 @@ $(document).ready(function(){
         
          var is_cincomestatment=getCookie('cincomestatment'); 
          if(is_cincomestatment!=''){
-            $(".next_form").html("<a href='/investasi/investment-homepage/financial-planning/cash-flow-tables/rasio-finansial' class='right'>Lanjutkan Financial rasio</a>");
+            $(".next_form").html("<a href='/investasi/investment-homepage/financial-planning/cash-flow-tables/rasio-finansial' class='right'><img class='right' src='/website/static/inv/images/next.png' /></a>");
          }   
         
         
