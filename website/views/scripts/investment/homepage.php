@@ -1,13 +1,13 @@
 <?php echo $this->template("includes/inv/header.php")?>
  
-<div class="homebanner banner_portal">
+<div class="homebanner banner_portal" style="background-position: center bottom;">
 	<div class="container">
              <?php //echo $this->image("banner", array("class" => "banner_img")) //css error?>
 		<div class="box_banner">
                
 			<div class="textbanner bg_green">
 				<h1>1 Yang Terpenting!</h1>
-					<p>Selamat datang, <input type="text" name="putname" id="putname" /><br />
+					<p>Selamat datang, <input type="text" name="putname" id="putname" placeholder="Ketik Nama Anda" /><br />
 					pilih 1 yang terpenting untuk anda</p>
 
 				<p>
