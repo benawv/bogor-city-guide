@@ -399,7 +399,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
             setCookie('resp1_jangka_waktu',waktu,1);
             setCookie('resp1_hasil',result,1);
             
-            window.location.href = "/investment/kalkulator/financial-calculators/calculator-resp1-result";
+            window.location.href = "/kalkulator/financial-calculators/calculator-resp1-result";
         });
     
 	function navigateMe(anchor)

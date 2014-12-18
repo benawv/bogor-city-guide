@@ -146,11 +146,11 @@
 	$('#result').html(result);
 	
 	$("#retirement2").click(function(){
-	    window.location.href = "/investment/kalkulator/financial-calculators/calculator-retirement2";
+	    window.location.href = "/kalkulator/financial-calculators/calculator-retirement2";
         });
 	 
      $("#fund_allianz").click(function(){
-	    window.location.href = "/investment/allianz-fund";
+	    window.location.href = "/allianz-fund";
      });
      
      $("#product_allianz").click(function(){

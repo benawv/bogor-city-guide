@@ -103,7 +103,7 @@
                     <input id="retirement3" class="orange-btn bg_pension" type="button" value="BAGAIMANA MENCAPAINYA?">
                 </div>
                <div class="share">
-                    <span>Ingin menghitung kembali? <a href="/investment/kalkulator/financial-calculators/pensiun">klik disini >></a></span>
+                    <span>Ingin menghitung kembali? <a href="/kalkulator/financial-calculators/pensiun">klik disini >></a></span>
                 </div>
                
                <div class="allianz-button">
@@ -147,11 +147,11 @@
 	$('#result').html(result);
 	
 	$("#retirement3").click(function(){
-	    window.location.href = "/investment/kalkulator/financial-calculators/calculator-retirement3";
+	    window.location.href = "/kalkulator/financial-calculators/calculator-retirement3";
         });
 	 
      $("#fund_allianz").click(function(){
-	    window.location.href = "/investment/allianz-fund";
+	    window.location.href = "/allianz-fund";
      });
      
      $("#product_allianz").click(function(){
