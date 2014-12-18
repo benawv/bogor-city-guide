@@ -58,19 +58,19 @@
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4>KALKULATOR PENSIUN</h4>
+                <h4 style="background-color: #8b4720;">KALKULATOR PENSIUN</h4>
            </div>
             
              <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>TOTAL DANA YANG DIBUTUHKAN DI AWAL MASA PENSIUN ADALAH</h4></div>
+                        <div class="title-box"><h4 style="color: #8b4720;">TOTAL DANA YANG DIBUTUHKAN DI AWAL MASA PENSIUN ADALAH</h4></div>
                         <!--div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div-->
                    </div>
                    
                     <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result">Rp. 0</span>
+                            <span id="result" style="color: #8b4720;">Rp. 0</span>
                         </div>
                          <div class="share">
                              <span>Bagikan hasil tersebut dengan teman Anda:</span>
@@ -100,7 +100,7 @@
            
            <div class="calc-machine">
                <div class="calc-submit">
-                    <input id="retirement3" class="orange-btn" type="button" value="BAGAIMANA MENCAPAINYA?">
+                    <input id="retirement3" class="orange-btn bg_pension" type="button" value="BAGAIMANA MENCAPAINYA?">
                 </div>
                <div class="share">
                     <span>Ingin menghitung kembali? <a href="/investment/kalkulator/financial-calculators/pensiun">klik disini >></a></span>
