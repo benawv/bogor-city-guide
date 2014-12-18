@@ -151,7 +151,7 @@ $(document).ready(function(){
              if(aset_likuid_val>15){
                 aset_likuid_val="<div style='color:red'>"+aset_likuid_val+"%</div>";
              }else{
-                likuditas_val="<div>"+likuditas_val+"%</div>"; 
+                aset_likuid_val="<div>"+aset_likuid_val+"%</div>"; 
              }
              
              if(hutang_aset_val>=50){
