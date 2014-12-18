@@ -65,3 +65,56 @@
 
 .hide{display: none;}
 .showform, hr{display: block;}
+
+
+.wiz{
+	width: 100%;
+	float: left;
+	margin: 10px 0;
+	margin-bottom: 30px;
+	position: relative;
+	height: 80px;
+}
+.bar_wiz{
+	width: 100%;
+	background: #003da5;
+	height: 10px;
+	position: absolute;
+	z-index: 0;
+	float: left;
+	top: 25px;
+}
+
+.wiz ul{
+	position: absolute;
+	z-index: 1;
+
+}
+
+.wiz ul,
+.wiz li{
+	list-style: none;
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+.wiz li a{
+	font-size: 24px;
+	float: left;
+	font-weight: bold;
+	margin:0 10px;
+	padding: 15px 25px;
+	background: #CCCCCC;
+	border: 1px solid #999999;
+	color: #999999;
+
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+.wiz li.cur a{
+	
+	background: #003da5;
+	border: 1px solid #003da5;
+	color: #FFFFFF;
+}
