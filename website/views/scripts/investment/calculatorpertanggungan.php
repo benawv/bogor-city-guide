@@ -292,7 +292,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
            
            <div class="calc-machine">
                <div class="calc-submit bottom">
-                    <input class="orange-btn" type="button" value="HITUNG">
+                    <input class="orange-btn bg_health" type="button" value="HITUNG">
                 </div>   
            </div>   
                

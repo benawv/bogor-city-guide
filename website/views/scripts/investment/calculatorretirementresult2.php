@@ -64,7 +64,7 @@
              <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>HASIL KALKULASI BIAYA PENSIUN ANDA ADALAH</h4></div>
+                        <div class="title-box"><h4>TOTAL DANA YANG DIBUTUHKAN DI AWAL MASA PENSIUN ADALAH</h4></div>
                         <!--div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div-->
                    </div>
                    

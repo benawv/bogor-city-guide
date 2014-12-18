@@ -1,3 +1,35 @@
+window.fbAsyncInit = function() {
+FB.init({
+  appId      : '394562987342152',
+  xfbml      : true,
+  version    : 'v2.1'
+});
+};
+
+(function(d, s, id){
+ var js, fjs = d.getElementsByTagName(s)[0];
+ if (d.getElementById(id)) {return;}
+ js = d.createElement(s); js.id = id;
+ js.src = "//connect.facebook.net/en_US/sdk.js";
+ fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+function FPShareTwitter(title, isi){
+	var url = window.location.host+window.location.pathname;
+	var tweet = isi+" - "+url;
+	var encodeTweet = encodeURIComponent(tweet);
+	window.open('https://twitter.com/intent/tweet?text='+encodeTweet, 'sharer', 'width=626,height=436');		
+}
+			
+function FPShareFB(title,isi){
+	var url = window.location.host+window.location.pathname;
+	FB.ui({
+		method: 'feed',
+		link: url,
+		caption: 'An example caption',
+	}, function(response){});
+}
+	
 $(document).ready(function(){
 	$('.tab-content').hide();
 	$('.tab-content:first').show();

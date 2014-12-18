@@ -6,11 +6,11 @@
 						<ol class="questions">
 							<li>
 								<span><label for="q1">Berapakah usia Anda?</label></span>
-								<input id="q1" name="q1" type="text"/>
+								<input id="q1" name="q1" type="text" value="0 tahun"/>
 							</li>
 							<li>
 								<span><label for="q2">Berapakah pendapatan Anda per bulan?</label></span>
-								<input id="q2" name="q2" type="text"/ value="Rp. 0">
+								<input id="q2" name="q2" type="text" value="Rp. 0"/>
 							</li>
 							
 						</ol><!-- /questions -->
@@ -59,6 +59,7 @@
 				if(event.keyCode == '8'){
 						text = text.substr(0,text.length-1);
 				}
+				usia = text;
 				$(this).val(text + ' tahun');
 			    });
 			$("#q2").bind('input',function(){
@@ -86,7 +87,7 @@
 					var messageEl = theForm.querySelector( '.final-message' );
 					var result = fp_insurance(usia,pendapatan);
 					result = accounting.formatMoney(result,'Rp. ',2,'.',',');
-					messageEl.innerHTML = 'FAKTA <br> <h3>Pertanggungan sebesar <br />' + result + ' <br> akan memastikan apa bila risiko meninggal dunia terjadi mereka yang dicintai tetap akan terdukung secara finansial hingga memasuki masa pensiun Anda <br> <a href= "/investment/kalkulator/financial-calculators/pertanggungan"> Mari mulai perencanaan asuransi anda </a></h3><h3><a href="#" onclick="window.location.href=window.location.href">Ulangi lagi</a></h3>';
+					messageEl.innerHTML = 'FAKTA <br> <h3>Pertanggungan sebesar <br />' + result + ' <br> akan memastikan apabila meninggal dunia mereka yang dicintai tetap akan terdukung secara finansial.<br> <a style="color:#F1295B !important" href= "/investment/kalkulator/financial-calculators/pertanggungan"> Mari mulai perencanaan asuransi anda ></a></h3><h3><a style="color:#F1295B !important" href="#" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';
 					classie.addClass( messageEl, 'show' );
 				}
 			} );
