@@ -82,8 +82,77 @@ $(document).ready(function(){
 			$("nav.primary .menu-level1").toggleClass('active');
 	});
 
+	$('.inv-btn .twshare').on("click",function(){
+		var url = window.location.host+window.location.pathname;
+		
+		var title = $(".form_cont .titleRisk").text();
+		var isi = $(".h-b p").text();
+		
+		var isiText = isi.substring(0,80)+".... ";
+		
+		var tweet = title+" : "+url;
+		var encodeTweet = encodeURIComponent(tweet);
+		window.open('https://twitter.com/intent/tweet?text='+encodeTweet, 'sharer', 'width=626,height=436');
+	});
+	
+	$('.inv-btn .fbshare').on("click",function(){
+		var reTanya = $(".form_cont .titleRisk").text();
+		
+		var deskripsi = $(".form_cont .result").text()+" : "+$(".form_cont .description").text();
+		
+		
+		var name = (reTanya.replace(/[^a-zA-Z()]/g,''))+"-risk";
+		var filename = name.replace(/\s/g,'-');
+		var limit = 32;
+		var x;
+		var words = deskripsi.split(/\s/);
+		var desc='';
+		
+		if (words.length > limit)
+		{
+				for(x=0;x<limit;x++)
+				{
+						if (x==0)
+						{
+								desc = desc+words[x];
+						}
+						else
+						{
+								desc = desc+' '+words[x];
+						}
+				}
+				desc = desc+'....';
+		}
+		else
+		{
+				desc = deskripsi;
+		}
+				
+		loc = window.location.origin+'/website/static/inv-fbshare/sharedfb.php';
+		/*console.log(loc);
+		console.log(reTanya);
+		console.log(filename);
+		console.log(desc);*/
+		$.ajax({
+				type: 'POST',
+				url: loc,
+				data: {
+					filename: filename,
+					title_fb : reTanya,
+					description: desc,
+					url: window.location.host,
+					link_in_fb : window.location.host+window.location.pathname
+				},
+				success: function(response)
+				{
+					var url = window.location.origin+'/website/static/inv-fbshare/'+response;
+					window.open('http://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), 'sharer', 'width=626,height=436');
+				}
+			});
+	});
 });
 
+	
 
 $(window).load(function() {
 	// --------- product page ----------

@@ -12,8 +12,11 @@ jQuery(function($) {
             
             <div class="form_cont">
             
-                <h1>Risk Profile</h1>
-                
+                <h1 class="titleRisk">Risk Profile</h1>
+                <div class="inv-btn">
+						<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
+						<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
+				</div>
                 <div class="stepform showform" id="step_1">
                     <table width="100%">
                         <tbody>
@@ -362,6 +365,7 @@ jQuery(function($) {
 <script type="text/javascript">
 $(document).ready(function(){
      $(document).ready(function(){
+		$('.inv-btn').hide();
         if( $( '.form_cont a.form-nav' ).length > 0 )
         {
             var rfValues = [];
@@ -401,7 +405,7 @@ $(document).ready(function(){
             });
             
             subButton.click(function(){
-                
+                $('.inv-btn').show();
                 $( '.form_cont .showform' ).hide();
                 $( '.stepform#step_8' ).stop().fadeIn( 'fast', function(){
                     $( this ).addClass( 'showform' );
