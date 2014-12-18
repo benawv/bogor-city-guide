@@ -1,6 +1,6 @@
 window.fbAsyncInit = function() {
 FB.init({
-  appId      : 'your-app-id',
+  appId      : '394562987342152',
   xfbml      : true,
   version    : 'v2.1'
 });
@@ -25,11 +25,9 @@ function FPShareFB(title,isi){
 	var url = window.location.host+window.location.pathname;
 	FB.ui({
 		method: 'feed',
-		name: title,
 		link: url,
 		caption: 'An example caption',
-		}, function(response){
-	});
+	}, function(response){});
 }
 	
 $(document).ready(function(){
