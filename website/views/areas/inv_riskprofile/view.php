@@ -313,7 +313,7 @@ jQuery(function($) {
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="" class="form-nav" setNav="prev">
+                                    <a href="" class="form-nav quiz_next" setPrev="step_7">
                                         <img class="left" src="/website/static/inv/images/prev.png">
                                     </a>
                                 </td>
