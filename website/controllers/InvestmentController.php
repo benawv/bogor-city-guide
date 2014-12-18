@@ -263,6 +263,7 @@ class InvestmentController extends Website_Controller_Action
     public function calculatorretirement3Action(){}
     public function calculatorretirement3resulAction(){}
 
+	public function tileAction(){}
 	public function sendkalkulatorAction() {
 		$asumsi_inflasi = $_POST['asumsi_inflasi'];
 		$asumsi_imbalan = $_POST['asumsi_imbalan'];

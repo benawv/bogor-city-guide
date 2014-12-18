@@ -44,43 +44,42 @@ jQuery(function($) {
                     
                     <table id="myTable2" class="tablesorter3 tbl-rasio"> 
                         <thead> 
-                        <tr>  
-                            <th class="">RASIO</th> 
-                            <th class="">PERHITUNGAN</th> 
-                            <th class="">IDEAL</th> 
-                            <th class="">AKTUAL</th>
-                        </tr> 
+                            <tr>  
+                                <th class="">RASIO</th> 
+                                <th class="">DESKRIPSI</th> 
+                                <th class="">IDEAL</th> 
+                                <th class="">AKTUAL</th>
+                            </tr> 
                         </thead> 
                         <tbody> 
-                        <tr> 
-                            <td class="td-blue">LIKUIDITAS</td> 
-                            <td class="td-blue-sky">Total Aset Likuid / Total Pengeluaran Bulana</td> 
-                            <td class="td-blue">3 - 6 BULAN</td> 
-                            <td class="td-blue-sky likuiditas"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/income-statement">Isi laporan arus kas untuk melengkapi > </a></td> 
-                            
-                        </tr>       
-                       <tr> 
-                            <td class="td-blue">ASET LIKUID</td> 
-                            <td class="td-blue-sky">Total Aset Liqud / Nilai Bersih Kekayaan</td> 
-                            <td class="td-blue">MAKSIMAL 15%</td> 
-                            <td class="td-blue-sky aset_likuid"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/income-statement">Isi laporan arus kas untuk melengkapi > </a></td> 
-                            
-                        </tr>    
-                       <tr> 
-                            <td class="td-blue">HUTANG TERHADAP ASET</td> 
-                            <td class="td-blue-sky">Hutang / Aset</td> 
-                            <td class="td-blue">MAKSIMAL 50%</td> 
-                            <td class="td-blue-sky hutang_aset"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
-                            
-                        </tr>    
-                        <tr> 
-                            <td class="td-blue">TOTAL INVESTASI TERHADAP KEKAYAAN BERSIH</td> 
-                            <td class="td-blue-sky">Total Aset Investasi/Nilai Bersih Kekayaan</td> 
-                            <td class="td-blue">> 50%</td> 
-                            <td class="td-blue-sky investasi"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
-                            
-                        </tr>  
-                        
+                            <tr> 
+                                <td class="td-blue">LIKUIDITAS</td> 
+                                <td class="td-blue-sky">Total Aset Likuid / Total Pengeluaran Bulana</td> 
+                                <td class="td-blue">3 - 6 BULAN</td> 
+                                <td class="td-blue-sky likuiditas"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/income-statement">Isi laporan arus kas untuk melengkapi > </a></td> 
+                                
+                            </tr>       
+                           <tr> 
+                                <td class="td-blue">ASET LIKUID</td> 
+                                <td class="td-blue-sky">Total Aset Liqud / Nilai Bersih Kekayaan</td> 
+                                <td class="td-blue">MAKSIMAL 15%</td> 
+                                <td class="td-blue-sky aset_likuid"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/income-statement">Isi laporan arus kas untuk melengkapi > </a></td> 
+                                
+                            </tr>    
+                           <tr> 
+                                <td class="td-blue">HUTANG TERHADAP ASET</td> 
+                                <td class="td-blue-sky">Hutang / Aset</td> 
+                                <td class="td-blue">MAKSIMAL 50%</td> 
+                                <td class="td-blue-sky hutang_aset"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
+                                
+                            </tr>    
+                            <tr> 
+                                <td class="td-blue">TOTAL INVESTASI TERHADAP KEKAYAAN BERSIH</td> 
+                                <td class="td-blue-sky">Total Aset Investasi/Nilai Bersih Kekayaan</td> 
+                                <td class="td-blue">> 50%</td> 
+                                <td class="td-blue-sky investasi"><a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
+                                
+                            </tr>  
                         </tbody> 
                     </table> 
                    
@@ -136,11 +135,42 @@ $(document).ready(function(){
          var tasset=getCbalanced.total_asset;
          
             //Total Aset Likuid / Total Pengeluaran Bulana
-            var akhir1=
-             $('.likuiditas').html(parseInt(liquid)/parseInt(tbulanan));
-             $('.aset_likuid').html(Math.round(parseInt(liquid)/parseInt(kekayaan_bersih)*100)+"%");
-             $('.hutang_aset').html(Math.round(parseInt(thutang)/parseInt(kekayaan_bersih)*100)+"%");
-             $('.investasi').html(Math.round(parseInt(tasset)/parseInt(kekayaan_bersih)*100)+"%");
+            //var akhir1=
+           
+            var likuditas_val=parseInt(liquid)/parseInt(tbulanan);
+            var aset_likuid_val=Math.round(parseInt(liquid)/parseInt(kekayaan_bersih)*100); 
+            var hutang_aset_val=Math.round(parseInt(thutang)/parseInt(kekayaan_bersih)*100); 
+            var investasi_val=Math.round(parseInt(tasset)/parseInt(kekayaan_bersih)*100);
+            
+            if(likuditas_val<3 || likuditas_val>6){
+                likuditas_val="<div style='color:red'>"+likuditas_val+"</div>";
+            }else{
+                likuditas_val="<div>"+likuditas_val+"</div>"; 
+            }
+
+             if(aset_likuid_val>15){
+                aset_likuid_val="<div style='color:red'>"+aset_likuid_val+"%</div>";
+             }else{
+                aset_likuid_val="<div>"+aset_likuid_val+"%</div>"; 
+             }
+             
+             if(hutang_aset_val>=50){
+                hutang_aset_val="<div style='color:red'>"+hutang_aset_val+"%</div>";
+             }else{
+                hutang_aset_val="<div>"+hutang_aset_val+"%</div>"; 
+             }
+             
+             if(investasi_val<50){
+                investasi_val="<div style='color:red'>"+investasi_val+"%</div>";
+             }else{
+                investasi_val="<div>"+investasi_val+"%</div>"; 
+             }
+             
+             $('.likuiditas').html(likuditas_val);
+             $('.aset_likuid').html(aset_likuid_val);
+             $('.hutang_aset').html(hutang_aset_val);
+             $('.investasi').html(investasi_val);
+
 //         console.log(is_cincomestatment); 
 
            

@@ -6,12 +6,12 @@
 					<div class="simform-inner">
 						<ol class="questions">
 							<li>
-								<span><label for="q1">Berapakah pendapatan anda saat ini??</label></span>
-								<input id="q1" name="q1" type="text"/>
+								<span><label for="q1">Berapakah pendapatan anda saat ini?</label></span>
+								<input id="q1" name="q1" type="text" value="Rp. 0"/>
 							</li>
 							<li>
 								<span><label for="q2">Berapa yang dapat anda sisihkan setiap bulannya untuk menabung?</label></span>
-								<input id="q2" name="q2" type="text"/>
+								<input id="q2" name="q2" type="text" value="Rp. 0"/>
 							</li>
 							
 						</ol><!-- /questions -->
@@ -38,7 +38,7 @@
 		<script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
         <script src="/website/static/inv/css/form/js/classie.js"></script>
 		<script src="/website/static/inv/css/form/js/stepsForm.js"></script>
-		<script>
+		<script>	
 			function fp_cashflow(pendapatan, tabungan){
 				var result = Number(tabungan) / Number(pendapatan) * 100;
 				return result.toFixed(2);
@@ -85,7 +85,7 @@
 					if (result <= 10.00) {
 						color = 'red';
 					}
-					messageEl.innerHTML = 'FAKTA <br> <h3>Idealnya, seseorang dapat menyisihkan 10% <br>dari pendapatan bulanannya untuk tabungan yang disebut dengan financial ratio. <br><br>Financial ratio Anda adalah <br><span style="color:'+color+';">'+result+'%</span><br /><br> Ingin melakukan check up keuangan anda <br> <a href= "/investment/financial-planning/cash-flow-tables/income-statement#step_1"> Mari mulai perencanaan arus kas anda </a></h3><h3><a href="#" onclick="window.location.href=window.location.href">Ulangi lagi</a></h3>';
+					messageEl.innerHTML = 'FAKTA <br> <h3>Idealnya, seseorang dapat menyisihkan 10% <br>dari pendapatan bulanannya untuk tabungan yang disebut dengan financial ratio. <br><br>Financial ratio Anda adalah <br><span style="color:'+color+';">'+result+'%</span><br /><div class="fp-share-btn" style="float: none;"><a href="javascript:FPShareFB(\'Financial Planning Cash Flow\',\'Financial ratio Anda adalah ' + result + '%\');" class="fbshare"><i class="fa fa-facebook"></i>&nbsp;</a><a href="javascript:FPShareTwitter(\'Financial Planning Cash Flow\',\'Financial ratio Anda adalah ' + result + '%\');" class="twshare"><i class="fa fa-twitter"></i></a></div><br> Ingin melakukan check up keuangan anda <br> <a href="/investment/financial-planning/cash-flow-tables/income-statement#step_1" style="color:#A17832"> Mari mulai perencanaan arus kas anda ></a></h3><h3><a style="color:#A17832" href="#" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';
 					classie.addClass( messageEl, 'show' );
 				}
 			} );

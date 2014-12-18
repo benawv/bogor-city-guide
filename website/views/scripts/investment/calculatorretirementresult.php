@@ -100,7 +100,7 @@
            
            <div class="calc-machine">
                <div class="calc-submit">
-                    <input id="retirement2" class="orange-btn" type="button" value="BAGAIMANA MENCAPAINYA?">
+                    <input id="retirement2" class="orange-btn bg_pension" type="button" value="BERAPA TOTAL DANA PENSIUN YANG SAYA BUTUHKAN?">
                 </div>
                 
             <!--div class="socmed">

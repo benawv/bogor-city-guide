@@ -83,41 +83,6 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
       
 
 }); </script>   
-
-    
-<script>   
-    
-$(function() {           
-        
-var select = $( "#demo3" );
-        var slider = $( "<div id='slider3'></div>" ).insertAfter( select ).slider({
-            min: 1,
-            max: 100,
-        value: 1,
-            range: "min",
-change: function(event, ui) { 
-         var sliderValue = $( "#slider3" ).slider( "option", "value" );
-        $('#sliderPosition3').val(sliderValue);
-        $('#sliderPosition3').trigger('keyup');
-        }        
-        });
-        
-
-$('#increase3').click(function() {
-var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
-  slider.slider( "value", sliderCurrentValue + 1 );
-  $('#sliderPosition3').trigger('keyup');
-});
-
-$('#decrease3').click(function() {
-var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
-  slider.slider( "value", sliderCurrentValue - 1 );
-  $('#sliderPosition3').trigger('keyup');
-});
-      
-
-}); </script>       
-    
     
 <div role="main" class="main">
     
@@ -158,13 +123,13 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4>KALKULATOR PENSIUN</h4>
+                <h4 style="background-color: #8b4720;">KALKULATOR PENSIUN</h4>
            </div>
            <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4>DANA PENSIUN YANG DIBUTUHKAN</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Jumlah dana yang dibutuhkan pada awal masa pensiun untuk mencukupi kebutuhan bulanan selama masa pensium yang direncanakan">?  </a></div>
+                        <div class="tooltips" style="background-color: #8b4720;"><a class="tooltip-left" href="#" data-tooltip="Jumlah dana yang dibutuhkan pada awal masa pensiun untuk mencukupi kebutuhan bulanan selama masa pensium yang direncanakan">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
@@ -188,7 +153,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo2">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4>ASUMSI TINGKAT IMBAL HASIL</h4></div>
-                        <div class="tooltips abs2"><a class="tooltip-left" href="#" data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%">?  </a></div-->
+                        <div class="tooltips abs2" style="background-color: #8b4720;"><a class="tooltip-left" href="#" data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%">?  </a></div-->
                    </div>
                    
                     <div class="calc-box">    
@@ -212,11 +177,11 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo3">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4>JANGKA WAKTU MENABUNG</h4></div>
-                        <div class="tooltips abs3"><a class="tooltip-left" href="#" data-tooltip="Lamanya masa berinvestasi yang diinginkan untuk mencapai tujuan investasi ">?  </a></div>
+                        <div class="tooltips abs3" style="background-color: #8b4720;"><a class="tooltip-left" href="#" data-tooltip="Lamanya masa berinvestasi yang diinginkan untuk mencapai tujuan investasi ">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition3" class="slider-wrap" value="1 tahun">
+                        <input type="text" id="sliderPosition3" class="slider-wrap" value="1 tahun" disabled=disabled>
                        </input> 
                         
                         <div id="decrease3">
@@ -234,7 +199,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
            
            <div class="calc-machine">
                <div class="calc-submit bottom">
-                    <input class="orange-btn" type="button" value="HITUNG">
+                    <input class="orange-btn bg_pension" type="button" value="HITUNG">
                 </div>   
            </div>   
                
@@ -266,7 +231,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 	}
         
         var pension2_hasil = getCookie('pension2_hasil');
-	var pension2_waktu = getCookie('pension2_jangka_waktu');
+	var pension2_waktu = getCookie('pension1_jangka_waktu');
 	pension2_hasil = accounting.formatMoney(pension2_hasil,'Rp. ',2,'.',',');
         $('#sliderPosition').val(pension2_hasil);
         $('#sliderPosition2').val("1%");
@@ -289,7 +254,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         
         var biaya = getCookie('pension2_hasil');
         var asumsi = 1;
-        var waktu = getCookie('pension2_jangka_waktu');
+        var waktu = getCookie('pension1_jangka_waktu');
         $("#sliderPosition").bind('input',function(){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");

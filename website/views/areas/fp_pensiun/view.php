@@ -10,7 +10,7 @@
 							</li>
 							<li>
 								<span><label for="q2">Berapa lama lagi sebelum Anda memustuskan untuk pensiun?</label></span>
-								<input id="q2" name="q2" type="text"/>
+								<input id="q2" name="q2" type="text" value="0 tahun"/>
 							</li>
 							
 						</ol><!-- /questions -->
@@ -68,8 +68,11 @@
 				if (event.keyCode == '8') {
 				    text = text.substr(0,text.length-1);
 				}
+				if (isNaN(parseInt(text))) {
+						text = 0;
+				}
 				waktu = text;
-				$(this).val(text + ' tahun');
+				$(this).val(parseInt(text) + ' tahun');
 			    });
 			
 			
@@ -90,7 +93,7 @@
 					var messageEl = theForm.querySelector( '.final-message' );
 					var result = fp_retirement(pendapatan,waktu);
 					result = accounting.formatMoney(result,'Rp. ',2,'.',',');
-					messageEl.innerHTML = 'FAKTA <br> <h3>Anda membutuhkan <br />'+result+'<br /> Untuk menikmati gaya hidup Anda saat ini di masa pensiun setiap bulannya <br> <a href= "/investment/kalkulator/financial-calculators/pensiun"> Mari mulai perencanaan pensiun anda </a></h3><h3><a href="#" onclick="window.location.href=window.location.href">Ulangi lagi</a></h3>';
+					messageEl.innerHTML = 'FAKTA <br> <h3>Anda membutuhkan <br />'+result+'<br /> Untuk menikmati gaya hidup Anda saat ini di masa pensiun setiap bulannya <br> <a style="color:#CD7A3F" href= "/investment/kalkulator/financial-calculators/pensiun"> Mari mulai perencanaan pensiun anda ></a></h3><h3><a href="#" style="color:#CD7A3F" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';
 					classie.addClass( messageEl, 'show' );
 				}
 			} );
