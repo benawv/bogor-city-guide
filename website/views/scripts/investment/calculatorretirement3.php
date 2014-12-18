@@ -83,41 +83,6 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
       
 
 }); </script>   
-
-    
-<script>   
-    
-$(function() {           
-        
-var select = $( "#demo3" );
-        var slider = $( "<div id='slider3'></div>" ).insertAfter( select ).slider({
-            min: 1,
-            max: 100,
-        value: 1,
-            range: "min",
-change: function(event, ui) { 
-         var sliderValue = $( "#slider3" ).slider( "option", "value" );
-        $('#sliderPosition3').val(sliderValue);
-        $('#sliderPosition3').trigger('keyup');
-        }        
-        });
-        
-
-$('#increase3').click(function() {
-var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
-  slider.slider( "value", sliderCurrentValue + 1 );
-  $('#sliderPosition3').trigger('keyup');
-});
-
-$('#decrease3').click(function() {
-var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
-  slider.slider( "value", sliderCurrentValue - 1 );
-  $('#sliderPosition3').trigger('keyup');
-});
-      
-
-}); </script>       
-    
     
 <div role="main" class="main">
     
@@ -216,7 +181,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition3" class="slider-wrap" value="1 tahun">
+                        <input type="text" id="sliderPosition3" class="slider-wrap" value="1 tahun" disabled=disabled>
                        </input> 
                         
                         <div id="decrease3">
@@ -266,7 +231,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 	}
         
         var pension2_hasil = getCookie('pension2_hasil');
-	var pension2_waktu = getCookie('pension2_jangka_waktu');
+	var pension2_waktu = getCookie('pension1_jangka_waktu');
 	pension2_hasil = accounting.formatMoney(pension2_hasil,'Rp. ',2,'.',',');
         $('#sliderPosition').val(pension2_hasil);
         $('#sliderPosition2').val("1%");
@@ -289,7 +254,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         
         var biaya = getCookie('pension2_hasil');
         var asumsi = 1;
-        var waktu = getCookie('pension2_jangka_waktu');
+        var waktu = getCookie('pension1_jangka_waktu');
         $("#sliderPosition").bind('input',function(){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
