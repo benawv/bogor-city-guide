@@ -222,8 +222,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                <div id="demo2">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #a50034">ASUMSI TINGKAT INFLASI</h4></div>
-                        <div class="tooltips abs2" style="background-color: #a50034">
-                        <a class="tooltip-left" href="#" style="color: #FFFFFF" data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10% ">?  </a></div>
+                        <div class="tooltips abs2" style="background-color: #a50034"><a class="tooltip-left" href="#" data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10% ">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
@@ -247,8 +246,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                <div id="demo3">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #a50034">ASUMSI TINGKAT IMBAL HASIL</h4></div>
-                        <div class="tooltips abs3" style="background-color: #a50034">
-                        <a class="tooltip-left" href="#" style="color: #FFFFFF" data-tooltip="Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  <8% - Konservatif, 8-15% - Moderat, 15%< - Agresif ">?  </a></div>
+                        <div class="tooltips abs3" style="background-color: #a50034"><a class="tooltip-left" href="#" data-tooltip="Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  <8% - Konservatif, 8-15% - Moderat, 15%< - Agresif ">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
@@ -272,8 +270,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                <div id="demo4">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #a50034">JANGKA WAKTU HINGGA PENSIUN</h4></div>
-                        <div class="tooltips abs4" style="background-color: #a50034">
-                        <a class="tooltip-left" href="#" style="color: #FFFFFF" data-tooltip="Lamanya masa pensiun yang direncanakan">?  </a></div>
+                        <div class="tooltips abs4" style="background-color: #a50034"><a class="tooltip-left" href="#" data-tooltip="Lamanya masa pensiun yang direncanakan">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
@@ -325,15 +322,8 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
 	}
         
         function resp1(biaya, asumsi_inflasi, asumsi_imbal, waktu){
-            var new_asumsi;
-            if (asumsi_imbal == asumsi_inflasi) {
-                new_asumsi = 1;
-            }
-            else{
-                new_asumsi = asumsi_imbal - asumsi_inflasi;
-            }
-            
-            new_asumsi = new_asumsi / 100;    
+            var new_asumsi = asumsi_imbal - asumsi_inflasi;
+            new_asumsi = new_asumsi / 100;
             var formula = 1 * ((1 - Math.pow(1 + Number(new_asumsi), Number(-waktu))) / Number(new_asumsi)) * (1 + Number(new_asumsi));
             if (formula < 99) {
                 formula = formula.toFixed(3);
@@ -369,13 +359,9 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
             text = text.replace(/,/g,'');
-            if (text == 0) {
-                text = 1;
-            }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
-            
             asumsi_inflasi = text;
             $(this).val(text + '%');
         });
@@ -385,9 +371,6 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
             text = text.replace(/,/g,'');
-            if (text == 0) {
-                text = 1;
-            }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
@@ -400,9 +383,6 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
             text = text.replace(/[^0-9\.]+/g,"");
             text = text.replace(/\./g,'');
             text = text.replace(/,/g,'');
-            if (text == 0) {
-                text = 1;
-            }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }

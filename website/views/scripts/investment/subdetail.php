@@ -79,6 +79,23 @@
                 <?php } ?>
 
 			</div>	
+                       // echo "<pre>";
+//                        print_r($a_entrie->image->path);
+//                        echo "</pre>";
+                ?>
+                    
+                <div class="image-side">
+                    <div class="img-article">
+                         <img style="width: 100%; height: 100%;" src="<?php echo $a_entrie->image->path."".$a_entrie->image->filename; ?>" />
+                    </div>
+                    <div class="img-desc">
+                        <h5><a href="investment/investment-article<?php echo $a_entrie->getO_key()."_".$a_entrie->getO_id();?>"><?php  echo $a_entrie->title; ?></a></h5>
+                    </div>
+                </div>
+                    
+                <?php } ?>
+
+			</div>	
    </div>
 	
 </div>

@@ -108,6 +108,7 @@
                         <?php } ?>
                         </div>
                         <div class="img-desc">
+                        <h5><a href="investment/investment-article<?php echo $a_entrie->getO_key()."_".$a_entrie->getO_id()."_1";?>"><?php  echo $a_entrie->title; ?></a></h5>
                             <h5><a href="/investment/investment-article/<?php echo $a_entrie->getO_key()."_".$a_entrie->getO_id()."_1";?>"><?php  echo $a_entrie->title; ?></a></h5>
                         </div>
                     </div>

@@ -15,6 +15,9 @@
 	<?php if($this->editmode) { ?>
 		<?php echo $this->image('image', array(
 				'class'  	=> 'image_share',
+				'title' 	=> 'Image Size 304x295',
+				'width' 	=> 304,
+				'height' 	=> 295,
 				'thumbnail'	=> 'product')
 		);?>
 	<?php } else { ?>
