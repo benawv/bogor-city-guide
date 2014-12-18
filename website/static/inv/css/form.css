@@ -82,7 +82,7 @@
 	position: absolute;
 	z-index: 0;
 	float: left;
-	top: 25px;
+	top: 17px;
 }
 
 .wiz ul{
@@ -99,11 +99,11 @@
 	padding: 0;
 }
 .wiz li a{
-	font-size: 24px;
+	font-size: 18px;
 	float: left;
 	font-weight: bold;
 	margin:0 10px;
-	padding: 15px 25px;
+	padding: 10px 15px;
 	background: #CCCCCC;
 	border: 1px solid #999999;
 	color: #999999;
