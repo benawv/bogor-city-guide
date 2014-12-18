@@ -7,11 +7,11 @@
 						<ol class="questions">
 							<li>
 								<span><label for="q1">Berapakah pendapatan anda saat ini??</label></span>
-								<input id="q1" name="q1" type="text"/>
+								<input id="q1" name="q1" type="text" value="Rp. 0"/>
 							</li>
 							<li>
 								<span><label for="q2">Berapa yang dapat anda sisihkan setiap bulannya untuk menabung?</label></span>
-								<input id="q2" name="q2" type="text"/>
+								<input id="q2" name="q2" type="text" value="Rp. 0"/>
 							</li>
 							
 						</ol><!-- /questions -->

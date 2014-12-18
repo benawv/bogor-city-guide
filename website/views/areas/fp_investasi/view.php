@@ -6,7 +6,7 @@
 						<ol class="questions">
 							<li>
 								<span><label for="q1">Berapakah  pengeluaran anda untuk hiburan dalam sebulan?</label></span>
-								<input id="q1" name="q1" type="text"/>
+								<input id="q1" name="q1" type="text" value="Rp. 0"/>
 							</li>
 							
 						</ol><!-- /questions -->
