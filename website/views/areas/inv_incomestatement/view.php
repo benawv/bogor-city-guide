@@ -176,7 +176,7 @@ jQuery(function($) {
             <!-- step_3 end -->
 
             <div class="stepform" id="step_4">
-                <h2>Angsuran Hutang</h2>
+                <h2>Hutang Bulanan</h2>
 
                 <table width="100%">
                     <tr>    
