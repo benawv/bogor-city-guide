@@ -20,6 +20,7 @@
 					<meta property="og:title" content="Allianz - '.$title.'" />
 					<meta property="og:type" content="website" />
 					<meta property="og:description" content="'.$desc.'" />
+					<meta property="og:image" content="" />
 				</head>
 				<body>
 					<?php
@@ -36,6 +37,7 @@
 						{
 							header("Location: '.$link_in_fb.'");
 						}
+						<img src="" />
 					?>
 				</body>
 			</html>

@@ -93,6 +93,10 @@
                                 <span class='st_email' displayText=''></span>
                             </div>
                         </div>
+						<div>
+							<input type="email" class="email" placeholder="Email" />
+							<input type='button' class='sendEmail' value='Send' />
+						</div>
                         <!--div class="socmed">
                             <a href="#">
                                 <div class="fb-box"><span class="flaticon-facebook6">Share</span></div>
@@ -251,6 +255,37 @@
 			$('.kanan2 div').addClass('hidden');
 			$('.kanan2 .'+id).removeClass('hidden');
 			$('.kanan2 .'+id).addClass('aktif_konten');
+		});
+		
+		function getCookie(cname) {
+			var name = cname + "=";
+			var ca = document.cookie.split(';');
+			for(var i=0; i<ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0)==' ') c = c.substring(1);
+				if (c.indexOf(name) != -1) return c.substring(name.length,c.length);
+			}
+			return "";
+		}
+		
+		$('.sendEmail').click(function(){
+			$.ajax({
+				type: 'POST',
+				url: '/sendkalkulator',
+				data: {
+					asumsi_inflasi: getCookie('edu1_asumsi_inflasi'),
+					asumsi_imbalan : getCookie('edu2_asumsi_imbal_hasil'),
+					jangka_waktu: getCookie('edu1_jangka_waktu'),
+					risiko: getCookie('edu2_asumsi_imbal_hasil'),
+					tahunan : getCookie('edu2_hasil_tahunan'),
+					bulanan : getCookie('edu2_hasil_bulanan'),
+					email : $('.email').text();
+				},
+				success: function(response)
+				{
+					//var url = window.location.origin+'/website/static/inv-fbshare/'+response;
+				}
+			});
 		});
 	});
 </script>
