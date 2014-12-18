@@ -257,35 +257,30 @@
 			$('.kanan2 .'+id).addClass('aktif_konten');
 		});
 		
-		function getCookie(cname) {
-			var name = cname + "=";
-			var ca = document.cookie.split(';');
-			for(var i=0; i<ca.length; i++) {
-				var c = ca[i];
-				while (c.charAt(0)==' ') c = c.substring(1);
-				if (c.indexOf(name) != -1) return c.substring(name.length,c.length);
-			}
-			return "";
-		}
-		
 		$('.sendEmail').click(function(){
-			$.ajax({
-				type: 'POST',
-				url: '/sendkalkulator',
-				data: {
-					asumsi_inflasi: getCookie('edu1_asumsi_inflasi'),
-					asumsi_imbalan : getCookie('edu2_asumsi_imbal_hasil'),
-					jangka_waktu: getCookie('edu1_jangka_waktu'),
-					risiko: getCookie('edu2_asumsi_imbal_hasil'),
-					tahunan : getCookie('edu2_hasil_tahunan'),
-					bulanan : getCookie('edu2_hasil_bulanan'),
-					email : $('.email-user').text()
-				},
-				success: function(response)
-				{
-					//var url = window.location.origin+'/website/static/inv-fbshare/'+response;
-				}
-			});
+			if($('.email-user').val() != "")
+			{
+				$.ajax({
+					type: 'POST',
+					url: '/sendkalkulator',
+					data: {
+						asumsi_inflasi: getCookie('edu1_asumsi_inflasi'),
+						asumsi_imbalan : getCookie('edu2_asumsi_imbal_hasil'),
+						jangka_waktu: getCookie('edu1_jangka_waktu'),
+						risiko: getCookie('edu2_asumsi_imbal_hasil'),
+						tahunan : getCookie('edu2_hasil_tahunan'),
+						bulanan : getCookie('edu2_hasil_bulanan'),
+						email : $('.email-user').val()
+					},
+					success: function()
+					{
+						//var url = window.location.origin+'/website/static/inv-fbshare/'+response;
+					}
+				});
+			}
+			else{
+				alert("Alamat email harus diisi.");
+			}
 		});
 	});
 </script>

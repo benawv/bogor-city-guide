@@ -277,7 +277,7 @@ class InvestmentController extends Website_Controller_Action
 		{
 			$rekomen = "Jangka waktu investasi yang anda pilih termasuk jangka pendek. Untuk investasi jangka pendek sebaiknya menggunakan instrumen investasi yang memiliki risiko dan fluktuasi nilai yang rendah. Instrumen pasar uang seperti deposito, reksa dana pasar uang, ataupun instrumen obligasi seperti ORI, dan reksa dana pendapatan tetap dapat dijadikan pilihan";
 		}
-		else if(3 <= $risiko && $risiko <= 5)
+		elseif(10 <= $risiko && $risiko <= 15)
 		{
 			$rekomen = "Jangka waktu investasi yang anda pilih termasuk jangka menengah. Untuk investasi jangka menengah sebaiknya menggunakan instrumen investasi yang memiliki risiko dan fluktuasi nilai yang sedang. Instrumen obligasi seperti ORI, dan reksa dana pendapatan tetap dapat dijadikan pilihan, atau Anda dapat memilih reksadana berimbang yang memiliki komponen instrumen saham dengan porsi yang relatif kecil.";
 		}
@@ -295,6 +295,7 @@ class InvestmentController extends Website_Controller_Action
 				'bulanan' => $bulanan,
 				'rekomen' => $rekomen
 				);
+		
 		$mail = new Pimcore_Mail();
 		$mail->setSubject("Kalkulator Investment");
 		$mail->setFrom("no-reply@allianz.co.id","Allianz Investment");
@@ -303,5 +304,6 @@ class InvestmentController extends Website_Controller_Action
 		$mail->addTo($email);
 		
 		$mail->send();
+		echo "Success";
     }
 }
