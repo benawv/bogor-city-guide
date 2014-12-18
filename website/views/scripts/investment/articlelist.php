@@ -40,10 +40,10 @@
 			<div class="bread">
 				<a href="/investasi/investment-homepage">Home</a>  
 				<i class="fa fa-angle-right"></i> 
-				<a href="/investment/investment-category/<?php echo $this->data->investment_id; ?>">Artikel</a>
+				<a href="/investment/resources/resources/global-article">Artikel</a>
 
 				<i class="fa fa-angle-right"></i>
-				Artikel Index <?php foreach ($this->data->investment as $inv) {  echo $inv['investment'];}  ?>
+				<?php foreach ($this->data->investment as $inv) {  echo $inv['investment'];}  ?>
 
 			</div>
 		</div>
