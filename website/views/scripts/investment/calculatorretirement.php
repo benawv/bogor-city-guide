@@ -213,7 +213,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo3">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #8b4720;">JANGKA WAKTU</h4></div>
-                        <div class="tooltips abs3" style="background-color: #8b4720;"><a class="tooltip-left"  data-tooltip="Lamanya masa berinvestasi yang diinginkan untuk mencapai tujuan investasi">?  </a></div>
+                        <div class="tooltips abs3" style="background-color: #8b4720;"><a class="tooltip-left"  data-tooltip="Berapa lama lagi anda akan pensiun">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
