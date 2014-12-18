@@ -20,7 +20,7 @@
 					<?php echo $entry->subjudul ?>
 				</p>
 				<a href="<?php echo $this->url(array($entry->o_key, $entry->o_id), 'education')?>">
-				Selengkpanya <i class="fa fa-angle-right"></i></a>
+				Selengkapnya <i class="fa fa-angle-right"></i></a>
 			</li>	
 					
 		<?php } ?>
