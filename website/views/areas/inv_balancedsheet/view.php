@@ -14,7 +14,7 @@ jQuery(function($) {
             <div class="wiz">
                 <span class="bar_wiz"></span>
                 <ul>
-                    <li><a href="incomestatement.php">< IS</a></li>
+                    <li><a href="/investment/financial-planning/cash-flow-tables/balanced-sheet">< IS</a></li>
                     <li id="wiz_1" class="cur"><a href="javascript:void(0);">1</a></li>
                     <li id="wiz_2"><a href="javascript:void(0);">2</a></li>
                     <li id="wiz_3"><a href="javascript:void(0);">3</a></li>
