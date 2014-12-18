@@ -437,7 +437,7 @@ $(document).ready(function(){
         
          var is_cincomestatment=getCookie('cincomestatment'); 
          if(is_cincomestatment!=''){
-            $(".next_form").html("<a href='/investasi/investment-homepage/financial-planning/cash-flow-tables/rasio-finansial' class='right'><img class='right' src='/website/static/inv/images/next.png' /></a>");
+            $(".next_form").html("<a href='/investment/financial-planning/cash-flow-tables/income-statement' class='right'><img class='right' src='/website/static/inv/images/next.png' /></a>");
          }   
         
         
