@@ -7,7 +7,7 @@
                
 			<div class="textbanner bg_green">
 				<h1>1 Yang Terpenting!</h1>
-					<p>Selamat datang, <input type="text" name="putname" id="putname" /><br />
+					<p>Selamat datang, <input type="text" name="putname" id="putname" placeholder="Ketik Nama Anda" /><br />
 					pilih 1 yang terpenting untuk anda</p>
 
 				<p>
