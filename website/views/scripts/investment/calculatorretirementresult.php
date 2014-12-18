@@ -102,17 +102,7 @@
                <div class="calc-submit">
                     <input id="retirement2" class="orange-btn" type="button" value="BERAPA TOTAL DANA PENSIUN YANG SAYA BUTUHKAN?">
                 </div>
-                <div class="share">
-                <span>Bagikan hasil tersebut dengan teman Anda:</span>
-                <div class="tag-center">
-                    <span class='st_sharethis' displayText='ShareThis'></span>
-                    <span class='st_facebook' displayText=''></span>
-                    <span class='st_twitter' displayText=''></span>
-                    <span class='st_linkedin' displayText=''></span>
-                    <span class='st_pinterest' displayText=''></span>
-                    <span class='st_email' displayText=''></span>
-                </div>
-            </div>
+                
             <!--div class="socmed">
                 <a href="#">
                     <div class="fb-box"><span class="flaticon-facebook6">Share</span></div>

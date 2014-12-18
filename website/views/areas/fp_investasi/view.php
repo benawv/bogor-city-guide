@@ -1,4 +1,4 @@
-<div class="row form-container purple">
+<div class="row form-container blue" style="background-color: #003da5;">
 		<div class="container" >
 	<section>
 				<form id="theForm" class="simform" autocomplete="off">
