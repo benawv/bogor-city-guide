@@ -28,7 +28,7 @@
 		<div class="container">
 			<div class="statement">&copy; Allianz 2014. All Rights Reserved.</div>
 			<ul class="static-links">
-				<li><a href="/investment/footer/disclaimer" target="_blank">Disclaimer </a></li>
+				<li><a href="/footer/disclaimer" target="_blank">Disclaimer </a></li>
 			</ul>
 		</div>
 	</div>
