@@ -15,6 +15,7 @@ website/var/tmp/*
 website/var/versions/*
 website/var/webdav/*
 website/static/fbshare/*
+website/static/config/*
 .htaccess
 !website/var/areas/.dummy
 !website/var/assets/.dummy
