@@ -102,9 +102,9 @@
                     <div class="image-side">
                         <div class="img-article">
                         <?php if($a_entrie->investment[0]->images != "") {?>
-                            <img style="width: 100%; height: 100%;" src="<?php echo $a_entrie->investment[0]->path."".$a_entrie->investment[0]->images; ?>" alt="Images" />
-                        <?php }else{ ?>
                              <img style="width: 100%; height: 100%;" src="<?php echo $a_entrie->image->path."".$a_entrie->image->filename; ?>" alt="image" />
+                        <?php }else{ ?>
+                            <img style="width: 100%; height: 100%;" src="<?php echo $a_entrie->investment[0]->path."".$a_entrie->investment[0]->images; ?>" alt="Images" />
                         <?php } ?>
                         </div>
                         <div class="img-desc">
