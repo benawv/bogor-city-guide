@@ -27,9 +27,8 @@
 		$text = "";
 	}
 ?>
-		<div class="row">
-			<div class="bread">
-				<a href="<?php echo "/".$uri[1]?>">Home</a>  
+		<h5 style="margin-bottom: 23px;">
+			<span><a href="<?php echo "/".$uri[1]?>">Home</a></span>  
 				<?php
 					$tmp = array();
 					$array_path = array();
@@ -57,10 +56,9 @@
 							{
 				?>
 								<i class="fa fa-angle-right"></i> 
-								<a href="<?php echo $data->path."".$data->key;?>"><?php echo $data->getProperty('navigation_title');?></a>
+								<span><a href="<?php echo $data->path."".$data->key;?>"><?php echo $data->getProperty('navigation_title');?></a></span>
 				<?php
 							}
 					}
 				?>
-			</div>
-		</div>
+		</h5>

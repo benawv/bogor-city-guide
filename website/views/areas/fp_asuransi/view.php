@@ -90,7 +90,7 @@
 					var messageEl = theForm.querySelector( '.final-message' );
 					var result = fp_insurance(usia,pendapatan);
 					result = accounting.formatMoney(result,'Rp. ',2,'.',',');
-					messageEl.innerHTML = 'FAKTA <br> <h3>Pertanggungan sebesar <br />' + result + ' <br> akan memastikan apabila meninggal dunia mereka yang dicintai tetap akan terdukung secara finansial.<br> <a style="color:#F1295B !important" href= "/investment/kalkulator/financial-calculators/pertanggungan"> Mari mulai perencanaan asuransi anda ></a></h3><h3><a style="color:#F1295B !important" href="#" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';
+					messageEl.innerHTML = 'FAKTA <br> <h3>Pertanggungan sebesar <br />' + result + ' <br> akan memastikan apabila meninggal dunia mereka yang dicintai tetap akan terdukung secara finansial.<br> <a style="color:#F1295B !important" href= "/kalkulator/financial-calculators/pertanggungan"> Mari mulai perencanaan asuransi anda ></a></h3><h3><a style="color:#F1295B !important" href="#" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';
 					classie.addClass( messageEl, 'show' );
 				}
 			} );

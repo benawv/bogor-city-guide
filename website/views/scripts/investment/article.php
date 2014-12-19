@@ -55,16 +55,16 @@
             
 			<div class="wrap73">
                 <h5>
-                    <span><a href="/invesetment">Home</a></span> &rsaquo; 
-                    <span><a href="/investment/investment-category/<?php echo str_replace(",","",$this->entries[0]['investment']); ?>">Article</a></span> &rsaquo; 
-                    <span><a href="/investment/investment-article-list/<?php echo str_replace(",","",$this->entries[0]['investment']); ?>_1">Article Index <?php foreach ($this->data->investment as $inv) { echo $inv->investment;}  ?></a></span> &rsaquo; 
+                    <span><a href="/investment">Home</a></span> &rsaquo; 
+                    <span><a href="/investment/resources/resources/global-article">Artikel</a></span> &rsaquo; 
+                    <span><a href="/investment/investment-article-list/<?php echo $this->data->investment[0]->o_id."_".$this->data->investment[0]->o_index ?>"><?php foreach ($this->data->investment as $inv) { echo $inv->investment;}  ?></a></span> &rsaquo; 
                     <span><?php echo $this->data->title ?></span>
                 </h5>
 			
             
                 <div class="tag">
                     <div class="tag-left">
-                        <h4>Tag :   <a href="/investment/investment-article-list/<?php echo str_replace(",","",$this->entries[0]['investment']); ?>_1">
+                        <h4>Tag :   <a href="/investment/investment-article-list/<?php echo $this->data->investment[0]->o_id."_".$this->data->investment[0]->o_index ?>">
                    <?php foreach ($this->data->investment as $inv) { echo $inv->investment;}  ?></a></h4>
                     </div>
                     <div class="tag-right">

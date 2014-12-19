@@ -128,7 +128,7 @@
            
            <div class="calc-machine">
                <div class="share">
-                    <span>Ingin menghitung kembali? <a href="/investment/kalkulator/financial-calculators/pertanggungan">klik disini >></a></span>
+                    <span>Ingin menghitung kembali? <a href="/kalkulator/financial-calculators/pertanggungan">klik disini >></a></span>
                 </div>
                
                <div class="allianz-button">
@@ -171,7 +171,7 @@
 	
     
      $("#fund_allianz").click(function(){
-	    window.location.href = "/investment/allianz-fund";
+	    window.location.href = "/allianz-fund";
      });
      
      $("#product_allianz").click(function(){

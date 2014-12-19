@@ -14,7 +14,7 @@ jQuery(function($) {
             <div class="wiz">
                 <span class="bar_wiz"></span>
                 <ul>
-                    <li><a href="/investment/financial-planning/cash-flow-tables/income-statement">< IS</a></li>
+                    <li><a href="/financial-planning/cash-flow-tables/income-statement">< AK</a></li>
                     <li id="wiz_1" class="cur"><a href="javascript:void(0);">1</a></li>
                     <li id="wiz_2"><a href="javascript:void(0);">2</a></li>
                     <li id="wiz_3"><a href="javascript:void(0);">3</a></li>
@@ -29,9 +29,10 @@ jQuery(function($) {
             </div>
             <!-- wiz end -->
 
-            <h1>ASET & KEWAJIBAN</h1>
+            
 
             <div class="stepform showform" id="step_1">
+            <h1>ASET</h1>
                 <h2>Aset Liquid</h2>
 
                 <table width="100%">
@@ -70,6 +71,7 @@ jQuery(function($) {
             <!-- step_1 end -->
 
             <div class="stepform" id="step_2">
+             <h1>ASET</h1>
                 <h2>Aset Investasi</h2>
 
                 <table width="100%">
@@ -114,6 +116,7 @@ jQuery(function($) {
             <!-- step_2 end -->
 
             <div class="stepform" id="step_3">
+             <h1>ASET</h1>
                 <h2>Aset Tetap</h2>
 
                 <table width="100%">
@@ -150,6 +153,7 @@ jQuery(function($) {
             <!-- step_3 end -->
 
             <div class="stepform" id="step_4">
+             <h1>ASET</h1>
                 <h2>Aset Pribadi</h2>
 
                 <table width="100%">
@@ -187,6 +191,7 @@ jQuery(function($) {
             <!-- step_4 end -->
 
             <div class="stepform" id="step_5">
+             <h1>ASET</h1>
                 <h2>Aset Masa Pensiun</h2>
 
                 <table width="100%">
@@ -221,6 +226,7 @@ jQuery(function($) {
             <!-- step_5 end -->
 
             <div class="stepform" id="step_6">
+             <h1>HUTANG</h1>
                 <h2>Hutang Jangka Pendek</h2>
 
                 <table width="100%">
@@ -255,6 +261,7 @@ jQuery(function($) {
             <!-- step_6 end -->
 
              <div class="stepform" id="step_7">
+             <h1>HUTANG</h1>
                 <h2>Hutang Jangka Panjang</h2>
 
                 <table width="100%">
@@ -287,6 +294,7 @@ jQuery(function($) {
             <!-- step_7 end -->
 
             <div class="stepform" id="step_8">
+            <h1>HUTANG</h1>
                 <h2>Hutang Lainnya</h2>
 
                 <table width="100%">
@@ -391,7 +399,7 @@ jQuery(function($) {
                                 <img class="left" src="/website/static/inv/images/prev.png">
                             </a></td>
                         <td class="next_form">
-                          <a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/income-statement" class="right">
+                          <a href="/financial-planning/cash-flow-tables/income-statement" class="right">
                                 <img class="right" src="/website/static/inv/images/next.png" />
                           </a>
                         </td>
@@ -437,7 +445,7 @@ $(document).ready(function(){
         
          var is_cincomestatment=getCookie('cincomestatment'); 
          if(is_cincomestatment!=''){
-            $(".next_form").html("<a href='/investment/financial-planning/cash-flow-tables/income-statement' class='right'><img class='right' src='/website/static/inv/images/next.png' /></a>");
+            $(".next_form").html("<a href='/financial-planning/cash-flow-tables/income-statement' class='right'><img class='right' src='/website/static/inv/images/next.png' /></a>");
          }   
         
         

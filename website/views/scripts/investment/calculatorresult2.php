@@ -174,11 +174,11 @@
 	$('#result_month').html(accounting.formatMoney(result_month,'Rp. ',2,'.',','));
 	
 	$("#edu2").click(function(){
-	    window.location.href = "/investment/kalkulator/financial-calculators/allianz-investment-calculator-education2.php";
+	    window.location.href = "/kalkulator/financial-calculators/allianz-investment-calculator-education2.php";
         });
 	
      $("#fund_allianz").click(function(){
-	    window.location.href = "/investment/allianz-fund";
+	    window.location.href = "/allianz-fund";
      });
      
      $("#product_allianz").click(function(){

@@ -51,6 +51,18 @@
 <script src="/website/static/js/bootstrap.min.js" type="text/javascript"></script>
 
 <script src="/website/static/inv/css/form/js/modernizr.custom.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+  ga('create', 'UA-44171460-6', 'auto');
+  ga('send', 'pageview');
+ 
+</script>
+
 </head>
 
                 <?php
@@ -85,7 +97,8 @@
 <header role="banner" class="banner">
 
             <div class="container">
-                <h1 class="weblogo">Allianz<span onclick="window.location.href = '<?php echo $this->url(array("document" => Document::getById(1)), "default", true)?>'"></span></h1>
+                <!-- <h1 class="weblogo">Allianz<span onclick="window.location.href = '<?php echo $this->url(array("document" => Document::getById(1)), "default", true)?>'"></span></h1> -->
+                <h1 class="weblogo">Allianz<span onclick="window.location.href = 'http://allianz.co.id'"></span></h1>
 		<nav class="primary" role="primarynavigation">
 			<h3 class="toggle-menu"><span>Main Navigation</span></h3>
 			<div class="menu-level1">
@@ -181,7 +194,7 @@
 					
 			</nav>
 
-			<a href="/investment">
+			<a href="/">
 				<img src="/website/static/inv/images/sitelabel.png" />
 			</a>
 		</div>
