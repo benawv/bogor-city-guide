@@ -68,7 +68,7 @@
 					// let's just simulate something...
 					var result = fp_education(biaya);
 					var messageEl = theForm.querySelector( '.final-message' );
-					messageEl.innerHTML = 'Jumlah tersebut saat ini hanya cukup untuk bersekolah selama <br>' + result + ' hari <br><br> FAKTA <br> <h3>Secara rata-rata kenaikan biaya pendidikan di Indonesia dua kali lipat dari kenaikan harga barang-barang secara umum <br><br /> Ingin melakukan check up keuangan anda <br> <a style="color:white;" href= "/investment/kalkulator/financial-calculators/pendidikan"> Mari mulai perencanaan pendidikan anda ></a></h3><h3><a style="color:white;" href="#" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';
+					messageEl.innerHTML = 'Jumlah tersebut saat ini hanya cukup untuk bersekolah selama <br>' + result + ' hari <br><br> FAKTA <br> <h3>Secara rata-rata kenaikan biaya pendidikan di Indonesia dua kali lipat dari kenaikan harga barang-barang secara umum <br><br /> Ingin melakukan check up keuangan anda <br> <a style="color:white;" href= "/kalkulator/financial-calculators/pendidikan"> Mari mulai perencanaan pendidikan anda ></a></h3><h3><a style="color:white;" href="#" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';
 					classie.addClass( messageEl, 'show' );
 				}
 			} );
