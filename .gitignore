@@ -16,6 +16,7 @@ website/var/versions/*
 website/var/webdav/*
 website/static/fbshare/*
 website/static/config/*
+website/static/inv-fbshare/*
 .htaccess
 !website/var/areas/.dummy
 !website/var/assets/.dummy
