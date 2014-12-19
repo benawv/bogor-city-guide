@@ -193,7 +193,7 @@
 					
 			</nav>
 
-			<a href="/investment">
+			<a href="/">
 				<img src="/website/static/inv/images/sitelabel.png" />
 			</a>
 		</div>
