@@ -101,15 +101,14 @@
                 ?>
                     <div class="image-side">
                         <div class="img-article">
-                        <?php if($a_e) {?>
-                            <img style="width: 100%; height: 100%;" src="<?php echo $a_entrie->investment[0]->path."".$a_entrie->investment[0]->images; ?>" />
+                        <?php if($a_entrie->investment[0]->images != "") {?>
+                            <img style="width: 100%; height: 100%;" src="<?php echo $a_entrie->investment[0]->path."".$a_entrie->investment[0]->images; ?>" alt="Images" />
                         <?php }else{ ?>
-                            <img style="width: 100%; height: 100%;" src="<?php echo $a_entrie->image->path."".$a_entrie->image->filename; ?>" alt="image" />
+                             <img style="width: 100%; height: 100%;" src="<?php echo $a_entrie->image->path."".$a_entrie->image->filename; ?>" alt="image" />
                         <?php } ?>
                         </div>
                         <div class="img-desc">
-                        <h5><a href="investment/investment-article<?php echo $a_entrie->getO_key()."_".$a_entrie->getO_id()."_1";?>"><?php  echo $a_entrie->title; ?></a></h5>
-                            <h5><a href="/investment/investment-article/<?php echo $a_entrie->getO_key()."_".$a_entrie->getO_id()."_1";?>"><?php  echo $a_entrie->title; ?></a></h5>
+                        <h5><a href="/investment/investment-article/<?php echo $a_entrie->getO_key()."_".$a_entrie->getO_id()."_1";?>"><?php  echo $a_entrie->title; ?></a></h5>
                         </div>
                     </div>
                 <?php } ?>                 
