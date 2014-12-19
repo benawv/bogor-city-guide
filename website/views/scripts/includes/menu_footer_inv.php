@@ -6,7 +6,7 @@
                     foreach($this->container as $page): 
                     ?>
                     	<li class="left wi200">
-                    		<div class="menu-level2">
+                    		<!-- <div class="menu-level2"> -->
                     
                     			<?php 
                                 $menu_loop;
@@ -42,7 +42,7 @@
                                     }
                     			?>
                     			
-                    		</div>
+                    		<!-- </div> -->
                     	</li>
                     <?php 
                     $menu_loop++;
@@ -50,7 +50,7 @@
                     endforeach;
                     ?>		
                     <li class="left wi200">
-                    	<div class="menu-level2">
+                    	<!-- <div class="menu-level2"> -->
                             <ul class="noborder">
                                 <li class="menutitle"><span class="clickPage" >Halaman Terkait</span></li>
                         		<li><a href="http://allianz.co.id">Allianz Website</a></li>
@@ -58,7 +58,7 @@
         						<li><a href="#">Allianz Twitter</a></li>
         						<li><a href="#">Journal Allianz</a></li>
                             </ul>
-                   		</div>
+                   		<!-- </div> -->
                    	</li>
 			</ul>
 		</div>

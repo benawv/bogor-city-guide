@@ -340,7 +340,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             setCookie('investment2_hasil_tahunan',result,1);
             setCookie('investment2_hasil_bulanan',result * 0.09,1);
             
-            window.location.href = "/investment/kalkulator/financial-calculators/calculator-investment2-result";
+            window.location.href = "/kalkulator/financial-calculators/calculator-investment2-result";
         });
     
 	function navigateMe(anchor)

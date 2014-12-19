@@ -335,7 +335,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             setCookie('investment1_jangka_waktu',waktu,1);
             setCookie('investment1_hasil',result,1);
             
-            window.location.href = "/investment/kalkulator/financial-calculators/calculator-investment1-result";
+            window.location.href = "/kalkulator/financial-calculators/calculator-investment1-result";
         });
     
 	function navigateMe(anchor)

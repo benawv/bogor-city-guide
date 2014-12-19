@@ -103,7 +103,7 @@
                     <input id="edu2" class="orange-btn bg_edu" type="button" value="BAGAIMANA MENCAPAINYA?">
                 </div>
                <div class="share">
-                    <span>Ingin menghitung kembali? <a href="/investment/kalkulator/financial-calculators/pendidikan">klik disini >></a></span>
+                    <span>Ingin menghitung kembali? <a href="/kalkulator/financial-calculators/pendidikan">klik disini >></a></span>
                 </div>
                
                <div class="allianz-button">
@@ -144,11 +144,11 @@ function setCookie(cname, cvalue, exdays) {
 	$('#result').html(result);
 	
 	$("#edu2").click(function(){
-	    window.location.href = "/investment/kalkulator/financial-calculators/calculator-education2";
+	    window.location.href = "/kalkulator/financial-calculators/calculator-education2";
      });
      
      $("#fund_allianz").click(function(){
-	    window.location.href = "/investment/allianz-fund";
+	    window.location.href = "/allianz-fund";
      });
      
      $("#product_allianz").click(function(){

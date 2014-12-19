@@ -45,9 +45,8 @@
 	<div class="container boxes-view">
 		
 		<div id="#" class="article-wrap">
-            
+            <?php echo $this->template("includes/inv/breadcrumb.php")?>
 			<div class="wrap30">
-                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Daily Nav</span></h5>
 			     <div class="bg-blue">
                     <h4>NAB Harian</h4>
                     <p></p>

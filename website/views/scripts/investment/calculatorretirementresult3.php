@@ -64,7 +64,7 @@
              <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>INVESTASI TAHUNAN YANG DIPERLUKAN ADALAH</h4></div>
+                        <div class="title-box"><h4 style="color: #8b4720;" >INVESTASI TAHUNAN YANG DIPERLUKAN ADALAH</h4></div>
                         <!--div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div-->
                    </div>
                    
@@ -74,7 +74,7 @@
                         </div>
 		    </div>
 		    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>INVESTASI BULANAN YANG DIPERLUKAN ADALAH</h4></div>
+                        <div class="title-box"><h4 style="color: #8b4720;">INVESTASI BULANAN YANG DIPERLUKAN ADALAH</h4></div>
                         <!--div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div-->
                     </div>
 		    <div class="calc-box2">    
@@ -109,7 +109,7 @@
            
            <div class="calc-machine">
                <div class="share">
-                    <span>Ingin menghitung kembali? <a href="/investment/kalkulator/financial-calculators/pensiun">klik disini >></a></span>
+                    <span>Ingin menghitung kembali? <a href="/kalkulator/financial-calculators/pensiun">klik disini >></a></span>
                 </div>
                
                <div class="allianz-button">
@@ -154,7 +154,7 @@
 	$('#result_month').html(result_month);		
 	
     $("#fund_allianz").click(function(){
-	    window.location.href = "/investment/allianz-fund";
+	    window.location.href = "/allianz-fund";
      });
      
      $("#product_allianz").click(function(){

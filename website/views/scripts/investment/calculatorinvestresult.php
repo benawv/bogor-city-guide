@@ -110,7 +110,7 @@
                     <input id="investment2" class="orange-btn bg_fund" type="button" value="BAGAIMANA MENCAPAINYA?">
                 </div>
                <div class="share">
-                    <span>Ingin menghitung kembali? <a href="/investment/kalkulator/financial-calculators/calculator-invest">klik disini >></a></span>
+                    <span>Ingin menghitung kembali? <a href="/kalkulator/financial-calculators/calculator-invest">klik disini >></a></span>
                 </div>
                
                <div class="allianz-button">
@@ -154,11 +154,11 @@
 	$('#result').html(result);
 	
 	$("#investment2").click(function(){
-	    window.location.href = "/investment/kalkulator/financial-calculators/calculator-investment2";
+	    window.location.href = "/kalkulator/financial-calculators/calculator-investment2";
         });
 	
     $("#fund_allianz").click(function(){
-	    window.location.href = "/investment/allianz-fund";
+	    window.location.href = "/allianz-fund";
      });
      
     $("#product_allianz").click(function(){

@@ -198,7 +198,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #a50034">BIAYA HIDUP / PENDAPATAN BULANAN SAAT INI</h4></div>
-                        <div class="tooltips" style="background-color: #a50034;"><a class="tooltip-left" href="#" data-tooltip="Biaya yang dikeluarkan setiap bulannya untuk kebutuhan sehari-hari pada saat ini">?  </a></div>
+                        <div class="tooltips" style="background-color: #a50034;"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Biaya yang dikeluarkan setiap bulannya untuk kebutuhan sehari-hari pada saat ini">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
@@ -222,7 +222,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                <div id="demo2">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #a50034">ASUMSI TINGKAT INFLASI</h4></div>
-                        <div class="tooltips abs2" style="background-color: #a50034"><a class="tooltip-left" href="#" data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10% ">?  </a></div>
+                        <div class="tooltips abs2" style="background-color: #a50034"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10% ">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
@@ -246,7 +246,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                <div id="demo3">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #a50034">ASUMSI TINGKAT IMBAL HASIL</h4></div>
-                        <div class="tooltips abs3" style="background-color: #a50034"><a class="tooltip-left" href="#" data-tooltip="Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  <8% - Konservatif, 8-15% - Moderat, 15%< - Agresif ">?  </a></div>
+                        <div class="tooltips abs3" style="background-color: #a50034"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  <8% - Konservatif, 8-15% - Moderat, 15%< - Agresif ">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
@@ -270,7 +270,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                <div id="demo4">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #a50034">JANGKA WAKTU HINGGA PENSIUN</h4></div>
-                        <div class="tooltips abs4" style="background-color: #a50034"><a class="tooltip-left" href="#" data-tooltip="Lamanya masa pensiun yang direncanakan">?  </a></div>
+                        <div class="tooltips abs4" style="background-color: #a50034"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Lamanya masa pensiun yang direncanakan">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
@@ -399,7 +399,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
             setCookie('resp1_jangka_waktu',waktu,1);
             setCookie('resp1_hasil',result,1);
             
-            window.location.href = "/investment/kalkulator/financial-calculators/calculator-resp1-result";
+            window.location.href = "/kalkulator/financial-calculators/calculator-resp1-result";
         });
     
 	function navigateMe(anchor)

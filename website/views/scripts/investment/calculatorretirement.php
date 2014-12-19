@@ -164,7 +164,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #8b4720;">BIAYA HIDUP BULANAN SAAT INI</h4></div>
-                        <div class="tooltips" style="background-color: #8b4720;"><a class="tooltip-left" href="#" data-tooltip="Biaya yang dikeluarkan setiap bulannya untuk kebutuhan sehari-hari pada saat ini">?  </a></div>
+                        <div class="tooltips" style="background-color: #8b4720;"><a class="tooltip-left"  data-tooltip="Biaya yang dikeluarkan setiap bulannya untuk kebutuhan sehari-hari pada saat ini">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
@@ -188,7 +188,8 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo2">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #8b4720;">ASUMSI TINGKAT INFLASI</h4></div>
-                        <div class="tooltips2" style="background-color: #8b4720;"><a class="tooltip-left" href="#" data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%">?  </a></div-->
+                        
+                        <div class="tooltips abs2" style="background-color: #8b4720;"><a class="tooltip-left"  data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
@@ -212,7 +213,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo3">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #8b4720;">JANGKA WAKTU</h4></div>
-                        <div class="tooltips abs3" style="background-color: #8b4720;"><a class="tooltip-left" href="#" data-tooltip="Lamanya masa berinvestasi yang diinginkan untuk mencapai tujuan investasi">?  </a></div>
+                        <div class="tooltips abs3" style="background-color: #8b4720;"><a class="tooltip-left"  data-tooltip="Berapa lama lagi anda akan pensiun">?  </a></div>
                    </div>
                    
                     <div class="calc-box">    
@@ -330,7 +331,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             setCookie('pension1_jangka_waktu',waktu,1);
             setCookie('pension1_hasil',result,1);
             
-            window.location.href = "/investment/kalkulator/financial-calculators/calculator-retirement1-result";
+            window.location.href = "/kalkulator/financial-calculators/calculator-retirement1-result";
         });
     
 	function navigateMe(anchor)
