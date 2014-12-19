@@ -294,7 +294,7 @@ jQuery(function($) {
                             </a>
                         </td>
                         <td class="next_form">
-                            <a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/balanced-sheet" class="right">
+                            <a href="/financial-planning/cash-flow-tables/balanced-sheet" class="right">
                                 <img class="right" src="/website/static/inv/images/next.png" />
                             </a>
                         </td>
@@ -338,7 +338,7 @@ $(document).ready(function(){
         
          var is_cbalanced=getCookie('cbalanced'); 
          if(is_cbalanced!=''){
-            $(".next_form").html("<a href='/investment/financial-planning/cash-flow-tables/rasio-finansial' class='right'><img class='right' src='/website/static/inv/images/next.png' /></a>");
+            $(".next_form").html("<a href='/financial-planning/cash-flow-tables/rasio-finansial' class='right'><img class='right' src='/website/static/inv/images/next.png' /></a>");
          }   
     
         $( "#next_6" ).click(function(){

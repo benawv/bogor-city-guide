@@ -54,30 +54,30 @@ jQuery(function($) {
                         <tbody> 
                             <tr> 
                                 <td class="td-blue">LIKUIDITAS</td> 
-                                <td class="td-blue-sky">Total Aset Likuid / Total Pengeluaran Bulana</td> 
+                                <td class="td-blue-sky">Total Aset Likuid / Total Pengeluaran Bulanan</td> 
                                 <td class="td-blue">3 - 6 BULAN</td> 
-                                <td class="td-blue-sky likuiditas"><a href="/investment/financial-planning/cash-flow-tables/income-statement">Isi laporan arus kas untuk melengkapi > </a></td> 
+                                <td class="td-blue-sky likuiditas"><a href="/financial-planning/cash-flow-tables/income-statement">Isi laporan arus kas untuk melengkapi > </a></td> 
                                 
                             </tr>       
                            <tr> 
                                 <td class="td-blue">ASET LIKUID</td> 
                                 <td class="td-blue-sky">Total Aset Liqud / Nilai Bersih Kekayaan</td> 
                                 <td class="td-blue">MAKSIMAL 15%</td> 
-                                <td class="td-blue-sky aset_likuid"><a href="/investment/financial-planning/cash-flow-tables/income-statement">Isi laporan arus kas untuk melengkapi > </a></td> 
+                                <td class="td-blue-sky aset_likuid"><a href="/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan arus kas untuk melengkapi > </a></td> 
                                 
                             </tr>    
                            <tr> 
                                 <td class="td-blue">HUTANG TERHADAP ASET</td> 
                                 <td class="td-blue-sky">Hutang / Aset</td> 
                                 <td class="td-blue">MAKSIMAL 50%</td> 
-                                <td class="td-blue-sky hutang_aset"><a href="/investment/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
+                                <td class="td-blue-sky hutang_aset"><a href="/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
                                 
                             </tr>    
                             <tr> 
                                 <td class="td-blue">TOTAL INVESTASI TERHADAP KEKAYAAN BERSIH</td> 
                                 <td class="td-blue-sky">Total Aset Investasi/Nilai Bersih Kekayaan</td> 
                                 <td class="td-blue">> 50%</td> 
-                                <td class="td-blue-sky investasi"><a href="/investment/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
+                                <td class="td-blue-sky investasi"><a href="/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
                                 
                             </tr>  
                         </tbody> 
