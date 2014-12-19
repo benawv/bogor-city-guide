@@ -97,6 +97,26 @@
                                 <span class='st_email' displayText=''></span>
                             </div>
                         </div>
+						<div>
+							<span>
+								Untuk mendapatkan hasil dan rincian kalkulator
+							</span><br />
+							<span>
+								masuk kan email Anda pada form dibawah.
+							</span><br />
+							<span>
+								Saya bersedia menerima email dari Allianz.
+							</span>
+						</div>
+						<div class="divEmail">
+							<input type="text" class="email-user" placeholder="Email" />
+							<input type='button' class='sendEmail' value='Send' />
+						</div>
+						<br />
+						<div class="sukses" style="color:#1cbd20;">
+							Terima kasih, email Anda sudah terkirim,<br />
+							cek inbox atau kotak spam Anda.
+						</div>
                         <!--div class="socmed">
                             <a href="#">
                                 <div class="fb-box"><span class="flaticon-facebook6">Share</span></div>
@@ -360,6 +380,36 @@
 			$('.kanan2 div').addClass('hidden');
 			$('.kanan2 .'+id).removeClass('hidden');
 			$('.kanan2 .'+id).addClass('aktif_konten');
+		});
+		
+		$('.sukses').hide();
+		$('.sendEmail').click(function(){
+			if($('.email-user').val() != "")
+			{
+				$.ajax({
+					type: 'POST',
+					url: '/sendkalkulator',
+					data: {
+						asumsi_inflasi: getCookie('investment1_asumsi_inflasi'),
+						asumsi_imbalan : getCookie('investment2_asumsi_imbal_hasil'),
+						jangka_waktu: getCookie('investment1_jangka_waktu'),
+						risiko: getCookie('investment2_asumsi_imbal_hasil'),
+						tahunan : getCookie('investment2_hasil_tahunan'),
+						bulanan : getCookie('investment2_hasil_bulanan'),
+						email : $('.email-user').val()
+					},
+					success: function()
+					{
+						$('.divEmail').hide();
+						$('.sukses').show();
+						//var url = window.location.origin+'/website/static/inv-fbshare/'+response;
+						//alert("Email telah dikirim, silahkan cek email Anda");
+					}
+				});
+			}
+			else{
+				alert("Alamat email harus diisi.");
+			}
 		});
 	});
 </script>

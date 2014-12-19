@@ -94,8 +94,24 @@
                             </div>
                         </div>
 						<div>
+							<span>
+								Untuk mendapatkan hasil dan rincian kalkulator
+							</span><br />
+							<span>
+								masuk kan email Anda pada form dibawah.
+							</span><br />
+							<span>
+								Saya bersedia menerima email dari Allianz.
+							</span>
+						</div>
+						<div class="divEmail">
 							<input type="text" class="email-user" placeholder="Email" />
 							<input type='button' class='sendEmail' value='Send' />
+						</div>
+						<br />
+						<div class="sukses" style="color:#1cbd20;">
+							Terima kasih, email Anda sudah terkirim,<br />
+							cek inbox atau kotak spam Anda.
 						</div>
                         <!--div class="socmed">
                             <a href="#">
@@ -257,6 +273,7 @@
 			$('.kanan2 .'+id).addClass('aktif_konten');
 		});
 		
+		$('.sukses').hide();
 		$('.sendEmail').click(function(){
 			if($('.email-user').val() != "")
 			{
@@ -274,7 +291,10 @@
 					},
 					success: function()
 					{
+						$('.divEmail').hide();
+						$('.sukses').show();
 						//var url = window.location.origin+'/website/static/inv-fbshare/'+response;
+						//alert("Email telah dikirim, silahkan cek email Anda");
 					}
 				});
 			}

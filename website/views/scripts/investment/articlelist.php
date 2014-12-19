@@ -36,7 +36,7 @@
 <div class="main_wrap">
 	<div class="container">
 
-		<div class="row">
+		<!--<div class="row">
 			<div class="bread">
 				<a href="/investasi/investment-homepage">Home</a>  
 				<i class="fa fa-angle-right"></i> 
@@ -46,8 +46,8 @@
 				<?php foreach ($this->data->investment as $inv) {  echo $inv['investment'];}  ?>
 
 			</div>
-		</div>
-
+		</div>-->
+		<?php echo $this->template("includes/inv/breadcrumb.php")?>
 
 		
 
