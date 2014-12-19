@@ -56,7 +56,7 @@
                         		<li><a href="http://allianz.co.id">Allianz Website</a></li>
         						<li><a href="#">Allianz Facebook</a></li>
         						<li><a href="#">Allianz Twitter</a></li>
-        						<li><a href="#">Journal Allianz</a></li>
+        						<li><a href="http://jurnal.allianz.co.id">Jurnal Allianz</a></li>
                             </ul>
                    		<!-- </div> -->
                    	</li>
