@@ -86,7 +86,7 @@
                             <div style="clear:both"></div>
                             <span><br /><br /><br />
                             <b>Disclaimer: <br /></b>
-                        Perhitungan di atas merupakan simulasi, dimana nilai riil akan di berikan setelah proses verifikasi
+                        Perhitungan diatas merupakan simulasi. Ada sedikit perbedaan dengan hasilnya, hal ini disebabkan perbedaan sistem pembulatan yang digunakan. Untuk hasil lebih tepatnya silakan <a href="/contact-us">hubungi Kami &rsaquo;</a>
                             </span>
                             
                         </div>
