@@ -45,7 +45,7 @@ jQuery(function($) {
                     <table id="myTable2" class="tablesorter3 tbl-rasio"> 
                         <thead> 
                             <tr>  
-                                <th class="">RASIO</th> 
+                                <th class=""  style="width: 20%;">RASIO</th> 
                                 <th class="">DESKRIPSI</th> 
                                 <th class="">IDEAL</th> 
                                 <th class="">AKTUAL</th>
@@ -54,28 +54,28 @@ jQuery(function($) {
                         <tbody> 
                             <tr> 
                                 <td class="td-blue">LIKUIDITAS</td> 
-                                <td class="td-blue-sky">Total Aset Likuid / Total Pengeluaran Bulanan</td> 
+                                <td class="td-blue-sky">Berapa lama tabungan Anda dapat mencukupi pengeluaran bulanan Anda tanpa adanya sumber pendapatan lainnya.</td> 
                                 <td class="td-blue">3 - 6 BULAN</td> 
                                 <td class="td-blue-sky likuiditas"><a href="/financial-planning/cash-flow-tables/income-statement">Isi laporan arus kas untuk melengkapi > </a></td> 
                                 
                             </tr>       
                            <tr> 
                                 <td class="td-blue">ASET LIKUID</td> 
-                                <td class="td-blue-sky">Total Aset Liqud / Nilai Bersih Kekayaan</td> 
+                                <td class="td-blue-sky">Perbandingan antara jumlah aset yang dalam bentuk kas/setara kas terhadap seluruh jumlah aset. jumlah aset likuid yang berlebih sebaiknya diinvestasikan ke dalam instrumen lain yang lebih produktif</td> 
                                 <td class="td-blue">MAKSIMAL 15%</td> 
                                 <td class="td-blue-sky aset_likuid"><a href="/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan arus kas untuk melengkapi > </a></td> 
                                 
                             </tr>    
                            <tr> 
                                 <td class="td-blue">HUTANG TERHADAP ASET</td> 
-                                <td class="td-blue-sky">Hutang / Aset</td> 
+                                <td class="td-blue-sky">Perbandingan antara total hutang dengan aset yang menunjukkan kemampuan pelunasan hutang dengan aset yang kita miliki. Semakin sedikit aset yang diperlukan untuk melunasi seluruh hutang semakin baik.</td> 
                                 <td class="td-blue">MAKSIMAL 50%</td> 
                                 <td class="td-blue-sky hutang_aset"><a href="/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
                                 
                             </tr>    
                             <tr> 
                                 <td class="td-blue">TOTAL INVESTASI TERHADAP KEKAYAAN BERSIH</td> 
-                                <td class="td-blue-sky">Total Aset Investasi/Nilai Bersih Kekayaan</td> 
+                                <td class="td-blue-sky">Menunjukkan seberapa besar kekayaan yang kita investasikan. Persentase yang semakin besar menunjukkan potensi produktivitas aset yang semakin tinggi.</td> 
                                 <td class="td-blue">> 50%</td> 
                                 <td class="td-blue-sky investasi"><a href="/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
                                 
