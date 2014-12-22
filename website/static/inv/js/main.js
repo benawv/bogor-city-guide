@@ -179,18 +179,4 @@ $(document).ready(function(){
 	});
 });
 
-	
-
-$(window).load(function() {
-	// --------- product page ----------
-	var $container = $('.items-container');
-	if($container != undefined){
-	$container.masonry({
-	  columnWidth: 326,
-	  itemSelector: '.item'
-	});
-	}
-	// -------- end product page -------
-});
-
 
