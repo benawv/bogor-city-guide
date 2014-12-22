@@ -26,39 +26,30 @@
 	else{
 		$text = "";
 	}
+	$id = $this->document->getId();
+	$parent_id = $this->document->getParentId();
+	$path = $this->document->getPath();
+	$key = $this->document->getKey();
+	// get root node if there is no document defined (for pages which are routed directly through static route)
+    if(!$this->document instanceof Document_Page) {
+        $this->document = Document::getById(475);
+    }
+ 
+    // get the document which should be used to start in navigation | default home
+    $navStartNode = $this->document->getProperty("navigationRoot");
+    if(!$navStartNode instanceof Document_Page) {
+        $navStartNode = Document::getById(475);
+    }
+ 
+    //this is used as id prefix for the html menu element
+    $htmlIdPrefix = "mainNav_";
+
+    $navigation = $this->pimcoreNavigation()->getNavigation($this->document, $navStartNode, $htmlIdPrefix);
+    $this->navigation()->menu()->setUseTranslator(false); // to deactivate the translator provided by the view helper
+    $this->navigation($navigation);
+    
 ?>
 		<h5 style="margin-bottom: 23px;">
-			<span><a href="<?php echo "/".$uri[1]?>">Home</a></span>  
-				<?php
-					$tmp = array();
-					$array_path = array();
-					for($x = 2; $x < count($uri); $x++)
-					{
-						$z = $x;
-						if(in_array($uri[$z], $tmp))
-						{
-							
-						}
-						else{
-							$path = "";
-							for ($y=1;$y<$z;$y++)
-							{
-								$path .= "/".$uri[$y];
-							}
-							$tmp[] = $uri[$z];
-							$array_path[] = $path."/";
-						}
-					}
-					for($z = 0; $z < count($tmp); $z++){
-							$list = new Document_List();
-							$list->setCondition("`key` = '".$tmp[$z]."' AND `path`= '".$array_path[$z]."'");
-							foreach ($list as $data)
-							{
-				?>
-								<i class="fa fa-angle-right"></i> 
-								<span><a href="<?php echo $data->path."".$data->key;?>"><?php echo $data->getProperty('navigation_title');?></a></span>
-				<?php
-							}
-					}
-				?>
+			<span><a href="/">Home </a></span>
+			<?php echo $this->navigation()->breadcrumbs()->setPartial(array('includes/inv/breadcrumb-partial.php', 'website'));?>
 		</h5>

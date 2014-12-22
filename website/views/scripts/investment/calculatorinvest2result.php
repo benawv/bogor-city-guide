@@ -27,13 +27,7 @@
     
         <div class="container">
     
-    		<div class="row">
-    			<div class="bread">
-    				<a href="/investment">Home</a>  
-    				<i class="fa fa-angle-right"></i> 
-   			        Kalkulator Investasi  
-               	</div>
-    		</div>
+    		<?php echo $this->template("includes/inv/breadcrumb.php")?>
     
     
             <div class="box_banner_big">

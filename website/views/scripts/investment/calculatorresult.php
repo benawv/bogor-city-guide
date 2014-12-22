@@ -23,13 +23,7 @@
     
 	 <div class="container">
 
-		<div class="row">
-			<div class="bread">
-				<a href="index.php">Home</a>  
-				<i class="fa fa-angle-right"></i> 
-				Kalkulator Pendidikan
-			</div>
-		</div>
+		<?php echo $this->template("includes/inv/breadcrumb.php")?>
 
 
 		<div class="box_banner_big">
