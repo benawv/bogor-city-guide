@@ -369,7 +369,7 @@ class InvestmentController extends Website_Controller_Action
                 $myfiles=($row2->filename);
                 
             }
-             $mysongs = simplexml_load_file("/allianz-investment/daily-nav/$myfiles");
+             $mysongs = simplexml_load_file("http://investment.allianz.co.id/allianz-investment/daily-nav/$myfiles");
              
              $i=0;
              foreach($mysongs as $nav_data){
