@@ -357,14 +357,15 @@ class InvestmentController extends Website_Controller_Action
 		foreach($assets as $row1)
 		{
             $idAssets = $row1->id;
-            print_r($idAssets);
 			$list_files = new Asset_List(); 
 			$list_files->setCondition("parentId = '".$idAssets."'");
 			$filename = array();
 			
 			foreach($list_files as $row2){
 		      
-            //    print_r($row2);
+              echo "<pre>";
+                print_r($row2);
+              echo "</pre>";
                 $myfiles=($row2->filename);
                 
             }
