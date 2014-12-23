@@ -152,14 +152,14 @@
             			
 		</div>
 		<!-- article end -->
-        
         <div id="#" class="article-wrap bottom">
            <div class="form-wrap bottom">
                <h5>Tentukan jangka waktu dan jenis fund</h5>
                
                <div class="wrap30 left">
                    <h5 class="top">Dari</h5>
-                    <select class="span1 blue-color day1">
+                    <select class="span1 blue-color day1" name="day1">
+                        <option value="0" selected="selected">--Pilih tanggal--</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -192,8 +192,9 @@
                         <option value="30">30</option>
                         <option value="31">31</option>
                     </select>
-                   <select class="span1 blue-color month1">
-                      <option value="1">Jan</option>
+                   <select class="span1 blue-color month1" name="month1">
+                       <option value="0" selected="selected">--Pilih bulan--</option>
+                       <option value="1">Jan</option>
                        <option value="2">Feb</option>
                        <option value="3">Mar</option>
                        <option value="4">Apr</option>
@@ -206,7 +207,8 @@
                        <option value="11">Nop</option>
                        <option value="12">Des</option>
                     </select>
-                   <select class="span1 blue-color year1">
+                   <select class="span1 blue-color year1" name="year1">
+                        <option value="0" selected="selected">--Pilih year--</option>
                         <option value="2014">2014</option>
                     </select>
                 </div>
@@ -214,6 +216,7 @@
                <div class="wrap30 left">
                    <h5 class="top">Hingga</h5>
                     <select class="span1 blue-color day2">
+                        <option value="0" selected="selected">--Pilih tanggal--</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -247,6 +250,7 @@
                         <option value="31">31</option>
                     </select>
                    <select class="span1 blue-color month2">
+                       <option value="0" selected="selected">--Pilih bulan--</option>
                        <option value="1">Jan</option>
                        <option value="2">Feb</option>
                        <option value="3">Mar</option>
@@ -261,6 +265,7 @@
                        <option value="12">Des</option>
                     </select>
                    <select class="span1 blue-color year1">
+                         <option value="0" selected="selected">--Pilih tahun--</option>
                         <option value="2014">2014</option>
                    </select>
                 </div>
@@ -282,8 +287,8 @@
                
             </div>
             
-        </div> 
-            <!-------Article end ---------->
+        </div>
+        <!-------Article end ---------->
 
 <script src="/website/static/inv/js/rangeslider/1.7.2-jquery.min.js"></script>
 <script src="/website/static/inv/js/rangeslider/jquery.flot.min.js"></script>  
@@ -321,7 +326,7 @@
                                     
                                 </tr> 
                                 </thead> 
-                                <tbody> 
+                                <tbody class="myTable2_items"> 
                                    <?php                    
                                    foreach($this->data as $items){
                                     ?>
@@ -350,26 +355,55 @@
                         
                         
                         $(this).on('click', '.filter_harga', function(e){
-                        
-            
-//                           $.ajax({
-//                                "url" : BASEURL + "case/mycase/CreateCase",
-//                                "data" : $(this).serialize() + "&popup="+thisElement.find('.btn-reassign').hasClass('popup'),
-//                                "type" : "POST",
-//                                "success" : function(response){
-//                                    if(response.success){
-//                                            
-//                                    }
-//                                    else{
-//                      
-//                                    }
-//
-//
-//                                },
-//                                "error" : function(response){
-//
-//                                }
-//                            });
+                            
+                            $('.day1').val();
+                            $('.month1').val();
+                            $('.year1').val();
+                            
+                           $.ajax({
+                                "url" : "/daily-nav/getfilter/",
+                                "data" : $(this).serialize() + "&filter=1&day1="+$('.day1').val()+"&month1="+$('.month1').val()+"&year1="+$('.year1').val()+"&day2="+$('.day2').val()+"&month2="+$('.month2').val()+"&year2="+$('.year2').val()+"",
+                                "type" : "POST",
+                                "success" : function(response){
+                                    if(response){
+                                            var IS_JSON = true;
+                                            try
+                                            {
+                                                var new_data = jQuery.parseJSON(response);
+                                               
+                                                var rows;
+                                                $('.myTable2_items').html("");
+                                                
+                                                if(new_data.xml_data.length >0){
+                                                    for(var i=0; i<new_data.xml_data.length; i++){
+                                                        
+                                                        rows+=("<tr>"+ 
+                                                                    "<td>"+new_data.xml_data[i]['fundName']+"</td>"+
+                                                                    "<td>"+new_data.xml_data[i]['unitDate']+"</td>"+
+                                                                    "<td>"+new_data.xml_data[i]['bid']+"</td>"+
+                                                                    "<td>"+new_data.xml_data[i]['offer']+"</td>"+
+                                                                "</tr>");
+                                                    
+                                                    }
+                                                }else{
+                                                    rows+=("<tr>"+ 
+                                                                "<td colspan=4>Data tidak ditemukan</td>"+
+                                                            "</tr>");
+                                                }
+                                                $('.myTable2_items').html(rows);
+                                            }
+                                            catch(err)
+                                            {
+                                                IS_JSON = false;
+                                            } 
+
+                                    }
+
+                                },
+                                "error" : function(response){
+
+                                }
+                            });
                         });
                         
 

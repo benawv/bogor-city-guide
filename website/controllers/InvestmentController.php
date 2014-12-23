@@ -343,14 +343,60 @@ class InvestmentController extends Website_Controller_Action
 		echo "Success";
     }
     
-    public function investmentdailynavAction(){
+    public function investmentdailynavAction(){//show data into table
+ 
         $entries = new Object_InvestmentNav_List();
         $entries->setOrderKey("unitdate");
         $entries->setOrder("desc");
+        $entries->setLimit(10);
         $this->view->data=$entries;	 
+          
     }
     
-    public function investmentNavAction(){
+     public function investmentdailynavfilterAction(){//show data filter into table
+
+            $filter=$_POST['filter'];
+            $day1=$_POST['day1']; 
+            $month1=$_POST['month1'];
+            $year1=$_POST['year1'];
+            $day2=$_POST['day2'];
+            $month2=$_POST['month2'];
+            $year2=$_POST['year2'];
+            
+            if(isset($filter) or ($filter=='1')){
+                if($day2>0){
+                     $conditions=" where unitdate > '$day1/$month1/$year1' and unitdate < '$day2/$month2/$year2'";
+                }else{
+                    $conditions=" where unitdate='$day1/$month1/$year1'";
+                }
+            }else{
+                $conditions="";
+            }
+            
+            //die($conditions);
+            
+            $db = Pimcore_Resource_Mysql::get();        
+            $entries = new Object_InvestmentNav_List();
+            $entries->setOrderKey("unitdate");
+            $entries->setOrder("desc");
+            
+            $this->view->data=$entries;	 
+       		foreach ($entries as $table)
+		      {
+			     $nameCommunity = "object_query_".$table->getClassId();
+		      }
+
+            $sql_subcat="SELECT * FROM ".$nameCommunity." AS xmlsource ".$conditions;
+            $xmldata=$db->fetchAll($sql_subcat);
+            
+            
+           $data['xml_data']=$xmldata;
+           $data['limit_data']=10;    
+           echo json_encode($data);
+          
+    }
+    
+    public function investmentNavAction(){//get data from xml
         
         $assets = new Asset_List();
 		$assets->setCondition("filename = 'daily-nav'");
