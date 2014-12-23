@@ -31,12 +31,14 @@ jQuery(function($) {
                         <h4>Tabel Laporan Keuangan</h4>
                     </div>
                     <div class="tag-right">
-                        <span class='st_sharethis' displayText='ShareThis'></span>
+                        <!--<span class='st_sharethis' displayText='ShareThis'></span>
                         <span class='st_facebook' displayText=''></span>
                         <span class='st_twitter' displayText=''></span>
                         <span class='st_linkedin' displayText=''></span>
                         <span class='st_pinterest' displayText=''></span>
-                        <span class='st_email' displayText=''></span>
+                        <span class='st_email' displayText=''></span>-->
+                        <input type="text" class="email-user" placeholder="Send to email" />
+                        <input type='button' class='sendEmail' value='Send' style="color:#000;" />
                     </div>
             </div>
             
@@ -101,8 +103,41 @@ jQuery(function($) {
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-    
-    
+        if(getCookie('cincomestatment')!="" && getCookie('cbalanced')!="")
+        {
+            $(".tag-right").show();
+        }
+        else
+        {
+            $(".tag-right").remove();
+        }
+        $('.sendEmail').click(function(){
+            if($('.email-user').val() != "")
+            {
+              $.ajax({
+                type: 'POST',
+                url: '/send_finansial_rasio',
+                data: {
+                  email : $('.email-user').val(),
+                  likuiditas : $('.likuiditas').text(),
+                  aset_likuid : $('.aset_likuid').text(),
+                  hutang_aset : $('.hutang_aset').text(),
+                  investasi : $('.investasi').text()
+                },
+                success: function()
+                {
+                  $('.divEmail').hide();
+                  $('.sukses').show();
+                  //var url = window.location.origin+'/website/static/inv-fbshare/'+response;
+                  //alert("Email telah dikirim, silahkan cek email Anda");
+                }
+              });
+            }
+            else{
+              alert("Alamat email harus diisi.");
+            }
+          });
+         
         function setCookie(cname, cvalue, exdays) {
             var d = new Date();
             d.setTime(d.getTime() + (exdays*24*60*60*1000));
