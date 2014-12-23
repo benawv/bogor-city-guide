@@ -42,11 +42,12 @@
     }
  
     //this is used as id prefix for the html menu element
-    $htmlIdPrefix = "mainNav_";
+    $htmlIdPrefix = "";
 
     $navigation = $this->pimcoreNavigation()->getNavigation($this->document, $navStartNode, $htmlIdPrefix);
     $this->navigation()->menu()->setUseTranslator(false); // to deactivate the translator provided by the view helper
     $this->navigation($navigation);
+    $this->navigation()->breadcrumbs()->setMinDepth(0);
     
 ?>
 		<h5 style="margin-bottom: 23px;">

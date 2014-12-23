@@ -344,4 +344,29 @@ class InvestmentController extends Website_Controller_Action
 		$mail->send();
 		echo "Success";
     }
+
+    public function sendfinansialrasioAction() {
+        $email = $_POST['email'];
+        $likuiditas = $_POST['likuiditas'];
+        $aset_likuid = $_POST['aset_likuid'];
+        $hutang_aset = $_POST['hutang_aset'];
+        $investasi = $_POST['investasi'];
+        
+        $document = '/email/finansialrasio/email-rasio';
+        $params = array('likuiditas' => $likuiditas,
+                'aset_likuid' => $aset_likuid,
+                'hutang_aset' => $hutang_aset,
+                'investasi' => $investasi
+                );
+        
+        $mail = new Pimcore_Mail();
+        $mail->setSubject("Finansial Rasio Investment");
+        $mail->setFrom("no-reply@allianz.co.id","Allianz Investment");
+        $mail->setDocument($document);
+        $mail->setParams($params);
+        $mail->addTo($email);
+        
+        $mail->send();
+        echo "Success";
+    }
 }

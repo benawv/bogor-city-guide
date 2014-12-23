@@ -2,7 +2,30 @@
 	//$z = 0;
 	$tmp = array();
 	$x = 1;
+	$label = "";
 	foreach($this->pages as $page) {
+		if($label == $page->getLabel())
+		{
+			$label = $page->getLabel();
+		}
+		else {
+			if($label == "")
+			{
+				echo " &gt; <span><a href='".$page->getUri()."'>".$page->getTitle()."</a></span>";
+				$label = $page->getLabel();
+			}
+			else {
+				if($x != count($this->pages))
+				{
+					echo " &gt; <span><a href='".$page->getUri()."'>".$page->getTitle()."</a></span>";
+				}
+				else {
+					echo " &gt; <span>".$page->getTitle()."</span>";
+				}
+				$label = $page->getLabel();
+			}
+		}
+		/*
 		if(in_array($page->getLabel(), $tmp))
 		{
 			
@@ -20,6 +43,7 @@
 				echo " &gt; <span>".$page->getTitle()."</span>";
 			}
 		}
+		*/
 		$x++;
 	}
 
