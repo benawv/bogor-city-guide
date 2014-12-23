@@ -44,7 +44,7 @@ class CommunityController extends Website_Controller_Action {
 		$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				left join assets as ass on tblcommunity.image=ass.id
 				where tblcommunity.recommended = 1 and tblcommunity.o_published = 1
-				ORDER BY tblcommunity.recommended DESC limit 3"; //or whatever you need to do.
+				ORDER BY tblcommunity.recommended, tblcommunity.popular DESC limit 3"; //or whatever you need to do.
 		
 		$this->view->fetchRecommended = $db->fetchAll($sql2);
 		
