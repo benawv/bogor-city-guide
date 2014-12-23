@@ -40,9 +40,7 @@ table {
 fieldset, img {
     border: 0;
 }
-ol, ul {
-    list-style: none;
-}
+
 caption, th {
     text-align: left;
 }
@@ -1172,18 +1170,7 @@ iframe {
 .art.art-sctn li:before, .art .art-sctn li:before {
     position: absolute;
 }
-.art.art-sctn ul li:before, .art .art-sctn ul li:before {
-    content: '';
-    background: #c00;
-    width: 4px;
-    width: 0.4rem;
-    height: 4px;
-    height: 0.4rem;
-    left: -15px;
-    left: -1.5rem;
-    top: 11px;
-    top: 1.1rem;
-}
+
 .art.art-sctn ol li:before, .art .art-sctn ol li:before {
     content: counter(li);
     counter-increment: li;
