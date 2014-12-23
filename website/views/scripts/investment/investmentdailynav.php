@@ -27,10 +27,6 @@
 		$("#options").tablesorter({sortList: [[0,0]], headers: { 3:{sorter: false}, 4:{sorter: false}}});
 	});	
 </script>  
-    
-<script type="text/javascript">var switchTo5x=true;</script>
-<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">stLight.options({publisher: "16852030-1a9b-4882-8731-4afd4c1cfd9c", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 
     
 <div role="main" class="main no-gutter">
@@ -58,7 +54,7 @@
                 <h4>NAB Harian</h4>
                 <p></p>
                 <p>Lihat NAB harian terbaru atau pilih NAB berdasar jenis fund anda.</p>
-                
+               
                 <div class="table-wrap">
                     
                     <table id="myTable" class="tablesorter"> 
@@ -163,52 +159,110 @@
                
                <div class="wrap30 left">
                    <h5 class="top">Dari</h5>
-                    <select class="span1 blue-color">
-                        <option>1</option>
-                        <option>2</option>
+                    <select class="span1 blue-color day1">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
                     </select>
-                   <select class="span1 blue-color">
-                        <option>Jan</option>
-                       <option>Feb</option>
-                       <option>Mar</option>
-                       <option>Apr</option>
-                       <option>May</option>
-                       <option>Jun</option>
-                       <option>Jul</option>
-                       <option>Aug</option>
-                       <option>Sep</option>
-                       <option>Oct</option>
-                       <option>Nop</option>
-                       <option>Des</option>
+                   <select class="span1 blue-color month1">
+                      <option value="1">Jan</option>
+                       <option value="2">Feb</option>
+                       <option value="3">Mar</option>
+                       <option value="4">Apr</option>
+                       <option value="5">May</option>
+                       <option value="6">Jun</option>
+                       <option value="7">Jul</option>
+                       <option value="8">Aug</option>
+                       <option value="9">Sep</option>
+                       <option value="10">Oct</option>
+                       <option value="11">Nop</option>
+                       <option value="12">Des</option>
                     </select>
-                   <select class="span1 blue-color">
-                        <option>2014</option>
+                   <select class="span1 blue-color year1">
+                        <option value="2014">2014</option>
                     </select>
                 </div>
                
                <div class="wrap30 left">
                    <h5 class="top">Hingga</h5>
-                    <select class="span1 blue-color">
-                        <option>1</option>
-                        <option>2</option>
+                    <select class="span1 blue-color day2">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
                     </select>
-                   <select class="span1 blue-color">
-                        <option>Jan</option>
-                       <option>Feb</option>
-                       <option>Mar</option>
-                       <option>Apr</option>
-                       <option>May</option>
-                       <option>Jun</option>
-                       <option>Jul</option>
-                       <option>Aug</option>
-                       <option>Sep</option>
-                       <option>Oct</option>
-                       <option>Nop</option>
-                       <option>Des</option>
+                   <select class="span1 blue-color month2">
+                       <option value="1">Jan</option>
+                       <option value="2">Feb</option>
+                       <option value="3">Mar</option>
+                       <option value="4">Apr</option>
+                       <option value="5">May</option>
+                       <option value="6">Jun</option>
+                       <option value="7">Jul</option>
+                       <option value="8">Aug</option>
+                       <option value="9">Sep</option>
+                       <option value="10">Oct</option>
+                       <option value="11">Nop</option>
+                       <option value="12">Des</option>
                     </select>
-                   <select class="span1 blue-color">
-                        <option>2014</option>
-                    </select>
+                   <select class="span1 blue-color year1">
+                        <option value="2014">2014</option>
+                   </select>
                 </div>
                
                <div class="wrap30 left">
@@ -222,8 +276,8 @@
                
                <div class="wrap10 left">
                    <h5 class="top" style="visibility:hidden">Dari</h5>
-                    <input class="select-btn blue-color" type="button" value="Lihat harga unit">
-                   
+                    <input class="select-btn blue-color filter_harga" type="button" value="Lihat harga unit" />
+               
                 </div>
                
             </div>
@@ -231,8 +285,8 @@
         </div> 
             <!-------Article end ---------->
 
-<script src="_assets/css/rangeslider/1.7.2-jquery.min.js"></script>
-<script src="_assets/css/rangeslider/jquery.flot.min.js"></script>  
+<script src="/website/static/inv/js/rangeslider/1.7.2-jquery.min.js"></script>
+<script src="/website/static/inv/js/rangeslider/jquery.flot.min.js"></script>  
         
         <div id="#" class="article-wrap bottom">
            
@@ -240,28 +294,15 @@
                    
                      <div class="title-chart">
                             Nav Graph for Bond FUND (01/11/2014 - 08/12/2014)
-                            <a href="#" id="bars"><span></span></a>
-                            <a href="#" id="lines" class="active"><span></span></a>
+                            <!--a href="#" id="bars" class="active"><span></span></a-->
+                            <!--a href="#" id="lines"><span></span></a-->
                     </div>
                    
                     <!-- Graph HTML -->
                     <div id="graph-wrapper">
-<!--
-                        <div class="graph-info">
-
-                            <a href="javascript:void(0)" class="visitors">Visitors</a>
-                            <a href="javascript:void(0)" class="returning">Returning Visitors</a>
-
-
-
-                            <a href="#" id="bars"><span></span></a>
-                            <a href="#" id="lines" class="active"><span></span></a>
-
-                        </div>
--->
 
                         <div class="graph-container">
-                            <div id="graph-lines"></div>
+                            <!--div id="graph-lines"></div-->
                             <div id="graph-bars"></div>
                             
                             <!--------- Table nab daily----------------->
@@ -274,77 +315,24 @@
                                     <th class="">BID</th> 
                                     <th class="">OFFER</th>
                                     <th class="">
-                                        <a href="#" id="bars" class="active"><span></span></a>
-                                        <a href="#" id="lines2"><span></span></a>
+                                        <!--a href="#" id="bars" class="active"><span></span></a-->
+                                        <!--a href="#" id="lines2"><span></span></a-->
                                     </th>
                                     
                                 </tr> 
                                 </thead> 
                                 <tbody> 
-                                <tr> 
-                                    <td>IDR - SmartWealth Equity Fund</td> 
-                                    <td>12/01/2014</td> 
-                                    <td>2,235.1000</td> 
-                                    <td>2,235.1000</td> 
-                                    <td> </td>
-                                    
-                                </tr>     
-                                <tr> 
-                                    <td>IDR - SmartWealth Equity Fund</td> 
-                                    <td>12/01/2014</td> 
-                                    <td>2,235.1000</td> 
-                                    <td>2,235.1000</td> 
-                                    <td> </td>
-                                    
-                                </tr>  
-                                <tr> 
-                                    <td>IDR - SmartWealth Equity Fund</td> 
-                                    <td>12/01/2014</td> 
-                                    <td>2,235.1000</td> 
-                                    <td>2,235.1000</td>
-                                    <td> </td>
-                                    
-                                </tr>  
-                                <tr> 
-                                    <td>IDR - SmartWealth Equity Fund</td> 
-                                    <td>12/01/2014</td> 
-                                    <td>2,235.1000</td> 
-                                    <td>2,235.1000</td> 
-                                    <td> </td>
-                                    
-                                </tr>  
-                                <tr> 
-                                    <td>IDR - SmartWealth Equity Fund</td> 
-                                    <td>12/01/2014</td> 
-                                    <td>2,235.1000</td> 
-                                    <td>2,235.1000</td> 
-                                    <td> </td>
-                                    
-                                </tr>  
-                                <tr> 
-                                    <td>IDR - SmartWealth Equity Fund</td> 
-                                    <td>12/01/2014</td> 
-                                    <td>2,235.1000</td> 
-                                    <td>2,235.1000</td> 
-                                    <td> </td>
-                                    
-                                </tr>  
-                                <tr> 
-                                    <td>IDR - SmartWealth Equity Fund</td> 
-                                    <td>12/01/2014</td> 
-                                    <td>2,235.1000</td> 
-                                    <td>2,235.1000</td> 
-                                    <td> </td>
-                                    
-                                </tr>  
-                                <tr> 
-                                    <td>IDR - SmartWealth Equity Fund</td> 
-                                    <td>12/01/2014</td> 
-                                    <td>2,235.1000</td> 
-                                    <td>2,235.1000</td>
-                                    <td> </td>
-                                    
-                                </tr>  
+                                   <?php                    
+                                   foreach($this->data as $items){
+                                    ?>
+                                        <tr> 
+                                        <td><?php echo $items->fundName; ?></td> 
+                                        <td><?php echo $items->unitDate; ?></td> 
+                                        <td><?php echo $items->bid; ?></td> 
+                                        <td><?php echo $items->offer; ?></td> 
+                                        <td> </td>
+                                        </tr>    
+                                    <?php } ?>                             
                                 </tbody> 
                             </table> 
                             
@@ -359,6 +347,31 @@
                    
                     <script>
                     $(document).ready(function () {
+                        
+                        
+                        $(this).on('click', '.filter_harga', function(e){
+                        
+            
+//                           $.ajax({
+//                                "url" : BASEURL + "case/mycase/CreateCase",
+//                                "data" : $(this).serialize() + "&popup="+thisElement.find('.btn-reassign').hasClass('popup'),
+//                                "type" : "POST",
+//                                "success" : function(response){
+//                                    if(response.success){
+//                                            
+//                                    }
+//                                    else{
+//                      
+//                                    }
+//
+//
+//                                },
+//                                "error" : function(response){
+//
+//                                }
+//                            });
+                        });
+                        
 
                         // Graph Data ##############################################
                         var graphData = [{

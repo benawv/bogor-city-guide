@@ -344,8 +344,7 @@ class InvestmentController extends Website_Controller_Action
 		$mail->send();
 		echo "Success";
     }
-
-    public function sendfinansialrasioAction() {
+	public function sendfinansialrasioAction() {
         $email = $_POST['email'];
         $likuiditas = $_POST['likuiditas'];
         $aset_likuid = $_POST['aset_likuid'];
@@ -369,4 +368,62 @@ class InvestmentController extends Website_Controller_Action
         $mail->send();
         echo "Success";
     }
+    
+    public function investmentdailynavAction(){
+        $entries = new Object_InvestmentNav_List();
+        $entries->setOrderKey("unitdate");
+        $entries->setOrder("desc");
+        $this->view->data=$entries;	 
+    }
+    
+    public function investmentNavAction(){
+        
+        $assets = new Asset_List();
+		$assets->setCondition("filename = 'daily-nav'");
+		foreach($assets as $row1)
+		{
+            $idAssets = $row1->id;
+			$list_files = new Asset_List(); 
+			$list_files->setCondition("parentId = '".$idAssets."'");
+			$filename = array();
+			
+			foreach($list_files as $row2){
+		      
+              echo "<pre>";
+                print_r($row2);
+              echo "</pre>";
+                $myfiles=($row2->filename);
+                
+            }
+             $mysongs = simplexml_load_file("http://investment.allianz.co.id/allianz-investment/daily-nav/$myfiles");
+             
+             $i=0;
+             foreach($mysongs as $nav_data){
+               
+               foreach($nav_data->items as $items){
+                $unit_date=$items->unit_date;
+                $bid=$items->bid;
+                $offer=$items->offer;
+                
+               }
+                
+                $navdata = new Object_InvestmentNav();
+    		    $navdata->setFundName("$nav_data->fund_name");
+    			$navdata->setUnitDate("$unit_date");
+    			$navdata->setBid("$bid");
+    			$navdata->setOffer("$offer");                
+                $navdata->setKey('nav_'.date('d_m_y')."$i");
+		        $navdata->setO_parentId('1296');
+		        $navdata->setIndex(0);
+			    $navdata->setPublished(1);
+               // die(print_r($navdata));
+                $navdata->save();                
+                $i++;
+             }
+        }      
+    }
+    
+    
+    
+    
 }

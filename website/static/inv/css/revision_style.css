@@ -748,7 +748,7 @@ label {
     position: relative;
 /*    width: 550px;*/
     width: 100%;
-    height: 330px;
+    height: 100%;
 /*    padding: 20px;*/
  
     -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,.1);
@@ -837,24 +837,24 @@ label {
     display: block;
     width: 34px;
     height: 32px;
-    background: url('rangeslider/img/lines.png') no-repeat 9px 12px;
+    background: url('/website/static/inv/js/rangeslider/img/lines.png') no-repeat 9px 12px;
 }
 
 #lines2 span, #bars2 span {
     display: block;
     width: 34px;
     height: 32px;
-    background: url('rangeslider/img/lines.png') no-repeat 9px 12px;
+    background: url('/website/static/inv/js/rangeslider/img/lines.png') no-repeat 9px 12px;
 }
  
-#bars span { background: url('rangeslider/img/bars.png') no-repeat center 10px; }
-#bars2 span { background: url('rangeslider/img/bars.png') no-repeat center 10px; }
+#bars span { background: url('/website/static/inv/js/rangeslider/img/bars.png') no-repeat center 10px; }
+#bars2 span { background: url('/website/static/inv/js/rangeslider/img/bars.png') no-repeat center 10px; }
  
-#lines.active span { background-image: url('rangeslider/img/lines_active.png'); }
-#lines2.active span { background-image: url('rangeslider/img/lines_active.png'); }
+#lines.active span { background-image: url('/website/static/inv/js/rangeslider/img/lines_active.png'); }
+#lines2.active span { background-image: url('/website/static/inv/js/rangeslider/img/lines_active.png'); }
  
-#bars.active span { background-image: url('rangeslider/img/bars_active.png'); }
-#bars2.active span { background-image: url('rangeslider/img/bars_active.png'); }
+#bars.active span { background-image: url('/website/static/inv/js/rangeslider/img/bars_active.png'); }
+#bars2.active span { background-image: url('/website/static/inv/js/rangeslider/img/bars_active.png'); }
 
 /* Clear Floats */
 .graph-info:before, .graph-info:after,
