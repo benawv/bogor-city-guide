@@ -387,7 +387,7 @@ class InvestmentController extends Website_Controller_Action
             $day2=$_POST['day2'];
             $month2=$_POST['month2'];
             $year2=$_POST['year2'];
-            
+            die('investmentdailynavfilterAction');
             if(isset($filter) or ($filter=='1')){
                 if($day2>0){
                      $conditions=" where unitdate > '$day1/$month1/$year1' and unitdate < '$day2/$month2/$year2'";
