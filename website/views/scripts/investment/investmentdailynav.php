@@ -70,78 +70,28 @@
                         </tr> 
                         </thead> 
                         <tbody> 
+                        
                         <tr> 
-                            <td><input type="checkbox"></td>
-                            <td class="blue-type">AAA Enhanced Strategy Fund</td> 
-                            <td>EF (RU)</td> 
-                            <td>1.14</td> 
-                            <td>-0.59</td> 
-                            <td>25.40</td> 
-                            <td>24.85</td> 
-                        </tr>     
-                        <tr> 
-                            <td><input type="checkbox"></td>
-                            <td class="blue-type" >AAA Enhanced Strategy Fund2</td> 
-                            <td>EF (RU)</td> 
-                            <td>1.14</td> 
-                            <td>-0.59</td> 
-                            <td>25.40</td> 
-                            <td>24.85</td> 
-                        </tr> 
-                        <tr> 
-                            <td><input type="checkbox"></td>
-                            <td class="blue-type" >AAA Enhanced Strategy Fund3</td> 
-                            <td>EF (RU)</td> 
-                            <td>1.14</td> 
-                            <td>-0.59</td> 
-                            <td>25.40</td> 
-                            <td>24.85</td> 
-                        </tr> 
-                        <tr> 
-                            <td><input type="checkbox"></td>
-                            <td class="blue-type">AAA Enhanced Strategy Fund4</td> 
-                            <td>EF (RU)</td> 
-                            <td>1.14</td> 
-                            <td>-0.59</td> 
-                            <td>25.40</td> 
-                            <td>24.85</td> 
-                        </tr> 
-                        <tr> 
-                            <td><input type="checkbox"></td>
-                            <td class="blue-type">AAA Enhanced Strategy Fund5</td> 
-                            <td>EF (RU)</td> 
-                            <td>1.14</td> 
-                            <td>-0.59</td> 
-                            <td>25.40</td> 
-                            <td>24.85</td> 
-                        </tr> 
-                        <tr> 
-                            <td><input type="checkbox"></td>
-                            <td class="blue-type">AAA Enhanced Strategy Fund6</td> 
-                            <td>EF (RU)</td> 
-                            <td>1.14</td> 
-                            <td>-0.59</td> 
-                            <td>25.40</td> 
-                            <td>24.85</td> 
-                        </tr> 
-                        <tr> 
-                            <td><input type="checkbox"></td>
-                            <td class="blue-type">AAA Enhanced Strategy Fund7</td> 
-                            <td>EF (RU)</td> 
-                            <td>1.14</td> 
-                            <td>-0.59</td> 
-                            <td>25.40</td> 
-                            <td>24.85</td> 
-                        </tr>  
-                        <tr> 
-                            <td><input type="checkbox"></td>
-                            <td class="blue-type">AAA Enhanced Strategy Fund8</td> 
-                            <td>EF (RU)</td> 
-                            <td>1.14</td> 
-                            <td>-0.59</td> 
-                            <td>25.40</td> 
-                            <td>24.85</td> 
-                        </tr> 
+                         <?php                    
+                                   foreach($this->data['ytd'] as $items){
+//                                    echo "<pre>";
+//                                    print_r($items);
+//                                    echo "</pre>";
+                                    
+                                    ?>
+                                        <tr> 
+                                        <td><input value="" type="checkbox"></td>
+                                        <td class="blue-type"><?php echo $items["fundname"]; ?></td> 
+                                        <td>EF (RU)</td> 
+                                        <td><?php echo $items["total_bid"]; ?></td> 
+                                        <td><?php echo $items["total_offer"]; ?></td> 
+                                        <td><?php echo $items["total_bid"]; ?></td>
+                                         <td>12</td> 
+                                        <td> </td>
+                                        </tr>    
+                                    <?php } ?>   
+
+                        </tr>    
                         </tbody> 
                     </table> 
                     
@@ -264,7 +214,7 @@
                        <option value="11">Nop</option>
                        <option value="12">Des</option>
                     </select>
-                   <select class="span1 blue-color year1">
+                   <select class="span1 blue-color year2">
                          <option value="0" selected="selected">--Pilih tahun--</option>
                         <option value="2014">2014</option>
                    </select>
@@ -272,9 +222,10 @@
                
                <div class="wrap30 left">
                    <h5 class="top">Jenis Fund</h5>
-                    <select class="span2 blue-color">
-                        <option>SmartWealth Equity Fund</option>
-                        <option>SmartWealth Equity Fund</option>
+                    <select class="span2 blue-color fundtype">
+                    <?php  foreach($this->data['ytd'] as $items){ ?>
+                        <option value="<?php echo $items["fundname"]; ?>"><?php echo $items["fundname"]; ?></option>
+                    <?php } ?>    
                     </select>
                    
                 </div>
@@ -328,13 +279,13 @@
                                 </thead> 
                                 <tbody class="myTable2_items"> 
                                    <?php                    
-                                   foreach($this->data as $items){
+                                   foreach($this->data['defult_data'] as $items){
                                     ?>
                                         <tr> 
-                                        <td><?php echo $items->fundName; ?></td> 
-                                        <td><?php echo $items->unitDate; ?></td> 
-                                        <td><?php echo $items->bid; ?></td> 
-                                        <td><?php echo $items->offer; ?></td> 
+                                        <td><?php echo $items["fundName"]; ?></td> 
+                                        <td><?php echo $items["unitdates"]; ?></td> 
+                                        <td><?php echo $items["bid"]; ?></td> 
+                                        <td><?php echo $items["offer"]; ?></td> 
                                         <td> </td>
                                         </tr>    
                                     <?php } ?>                             
@@ -362,7 +313,7 @@
                             
                            $.ajax({
                                 "url" : "/daily-nav/getfilter/",
-                                "data" : $(this).serialize() + "&filter=1&day1="+$('.day1').val()+"&month1="+$('.month1').val()+"&year1="+$('.year1').val()+"&day2="+$('.day2').val()+"&month2="+$('.month2').val()+"&year2="+$('.year2').val()+"",
+                                "data" : $(this).serialize() + "&filter=1&day1="+$('.day1').val()+"&month1="+$('.month1').val()+"&year1="+$('.year1').val()+"&day2="+$('.day2').val()+"&month2="+$('.month2').val()+"&year2="+$('.year2').val()+"&fundtype='"+$('.fundtype').val()+"'",
                                 "type" : "POST",
                                 "success" : function(response){
                                     if(response){
@@ -379,7 +330,7 @@
                                                         
                                                         rows+=("<tr>"+ 
                                                                     "<td>"+new_data.xml_data[i]['fundName']+"</td>"+
-                                                                    "<td>"+new_data.xml_data[i]['unitDate']+"</td>"+
+                                                                    "<td>"+new_data.xml_data[i]['unitdates']+"</td>"+
                                                                     "<td>"+new_data.xml_data[i]['bid']+"</td>"+
                                                                     "<td>"+new_data.xml_data[i]['offer']+"</td>"+
                                                                 "</tr>");

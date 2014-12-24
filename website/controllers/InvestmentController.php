@@ -369,12 +369,30 @@ class InvestmentController extends Website_Controller_Action
     
     public function investmentdailynavAction(){//show data into table
  
- 
+        $db = Pimcore_Resource_Mysql::get(); 
         $entries = new Object_InvestmentNav_List();
-        $entries->setOrderKey("unitdate");
-        $entries->setOrder("desc");
-        $entries->setLimit(10);
-        $this->view->data=$entries;	 
+   	    foreach ($entries as $table)
+		{
+			 $nameCommunity = "object_query_".$table->getClassId();
+        }
+             
+        $sql_subcat="SELECT *, FROM_UNIXTIME(unitdate,'%d-%m-%Y') AS unitdates  FROM ".$nameCommunity." AS xmlsource order by unitdate desc limit 10";
+        $xmldata=$db->fetchAll($sql_subcat);
+        
+        $firstday=mktime(0,0,0,1,1,date("Y"));
+        $today=mktime(0,0,0,date("m"),date("d"),date("Y"));
+        
+        $sql_byfundname="SELECT DISTINCT fundname,SUM(bid) AS total_bid, SUM(offer) AS total_offer 
+                         FROM object_query_29 
+                         WHERE unitdate >= $firstday AND unitdate <= $today 
+                         GROUP BY fundName ORDER BY 1";
+        $xmldata2=$db->fetchAll($sql_byfundname);
+        
+        $alldata['defult_data']=$xmldata;
+        $alldata['ytd']=$xmldata2;
+
+                                            
+        $this->view->data=$alldata;	 
           
     }
     
@@ -387,17 +405,33 @@ class InvestmentController extends Website_Controller_Action
             $day2=$_POST['day2'];
             $month2=$_POST['month2'];
             $year2=$_POST['year2'];
+            $fundtype=$_POST['fundtype'];
+            //print $fundtype;
+            $start=$dates=mktime(0,0,0,$month1,$day1,$year1);
+            $end=$dates=mktime(0,0,0,$month2,$day2, $year2);
             
-            if(isset($filter) or ($filter=='1')){
+             if(strlen($fundtype)>1){
+                $fundtypes=" fundname like $fundtype";
+             }else{
+                $fundtypes="";
+             }
+                     
+            if($day1>0){
                 if($day2>0){
-                     $conditions=" where unitdate > '$day1/$month1/$year1' and unitdate < '$day2/$month2/$year2'";
+                   
+                     $conditions=" unitdate >= $start and unitdate <= $end and ".$fundtypes;
                 }else{
-                    $conditions=" where unitdate='$day1/$month1/$year1'";
+                    $conditions=" unitdate=$start and ".$fundtypes;
                 }
+            }else{
+                $conditions=$fundtypes;
+            }
+    
+            if(strlen($conditions)>1){
+                $conditions=" where ".$conditions;
             }else{
                 $conditions="";
             }
-            
             //die($conditions);
             
             $db = Pimcore_Resource_Mysql::get();        
@@ -411,11 +445,11 @@ class InvestmentController extends Website_Controller_Action
 			     $nameCommunity = "object_query_".$table->getClassId();
 		      }
 
-            $sql_subcat="SELECT * FROM ".$nameCommunity." AS xmlsource ".$conditions;
+            $sql_subcat="SELECT *,FROM_UNIXTIME(unitdate,'%d-%m-%Y') AS unitdates FROM ".$nameCommunity." AS xmlsource ".$conditions." order by fundname desc,unitdate";
             $xmldata=$db->fetchAll($sql_subcat);
             
-            
            $data['xml_data']=$xmldata;
+           $data['resume_data']=$resumedata;
            $data['limit_data']=10;    
            echo json_encode($data);
           
@@ -434,9 +468,9 @@ class InvestmentController extends Website_Controller_Action
 			
 			foreach($list_files as $row2){
 		      
-              echo "<pre>";
-                print_r($row2);
-              echo "</pre>";
+//              echo "<pre>";
+//                print_r($row2);
+//              echo "</pre>";
                 $myfiles=($row2->filename);
                 
             }
@@ -451,14 +485,22 @@ class InvestmentController extends Website_Controller_Action
                 $offer=$items->offer;
                 
                }
+                $unitdates = explode("/", $unit_date);
+                $unitdates[0]; //day
+                $unitdates[1]; //month
+                $unitdates[2]; //year
+                
+                //$unitdates=$unitdates[1]."/".$unitdates[0]."/".$unitdates[2];
+                $dates=mktime(0,0,0,$unitdates[1],$unitdates[0], $unitdates[2]);
+                //die(mktime(0,0,0,12, 24, 2014));;
                 
                 $navdata = new Object_InvestmentNav();
     		    $navdata->setFundName("$nav_data->fund_name");
-    			$navdata->setUnitDate("$unit_date");
+    			$navdata->setUnitDate($dates);
     			$navdata->setBid("$bid");
     			$navdata->setOffer("$offer");                
                 $navdata->setKey('nav_'.date('d_m_y')."$i");
-		        $navdata->setO_parentId('1296');
+		        $navdata->setO_parentId('1296');//live 1296 local//1292
 		        $navdata->setIndex(0);
 			    $navdata->setPublished(1);
                // die(print_r($navdata));
