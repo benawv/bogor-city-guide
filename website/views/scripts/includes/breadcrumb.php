@@ -23,7 +23,7 @@
     $this->navigation()->breadcrumbs()->setMinDepth(0);
     
 ?>
-		<h5 style="margin-bottom: 23px;">
+		<h5>
 			<span><a href="/">Home </a></span>
 			<?php echo $this->navigation()->breadcrumbs()->setPartial(array('includes/breadcrumb-partial.php', 'website'));?>
 		</h5>
