@@ -219,7 +219,7 @@
                         <option value="2014">2014</option>
                    </select>
                 </div>
-               
+               <?php die("test /daily-nav/show/"); ?>
                <div class="wrap30 left">
                    <h5 class="top">Jenis Fund</h5>
                     <select class="span2 blue-color fundtype">
