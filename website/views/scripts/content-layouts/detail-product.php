@@ -4,7 +4,7 @@
 <script src="/website/static/js/sticky-jquery.js" type="text/javascript"></script>
 <?php endif;?>
 <div class="container boxes-view">
-	<h5><a href="/"><span>Home</span></a> <?php echo $this->template("includes/breadcrumb.php")?></h5>
+	<?php echo $this->template("includes/breadcrumb.php")?>
 	<span class="breadcrumb"><a href="#"><?php //echo $this->document->getTitle()?></a></span>
 	
 	<div class="heading clearfix pagenav">

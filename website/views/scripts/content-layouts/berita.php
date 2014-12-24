@@ -1,7 +1,7 @@
 <script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
 <script src="/website/static/js/jquery.tools.min.js" type="text/javascript"></script>
 <div class="container boxes-view">
-	<h5><a href="/"><span>Home</span></a> <?php echo $this->template("includes/breadcrumb.php")?></h5>
+	<?php echo $this->template("includes/breadcrumb.php")?>
 	
 	<div class="heading clearfix pagenav">
 		<span class="breadcrumb2"><?php echo $this->document->getTitle()?></span>

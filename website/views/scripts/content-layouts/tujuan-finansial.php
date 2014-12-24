@@ -1,8 +1,6 @@
 <div class="container boxes-view">
 	<div class="heading clearfix">
-		<h5><span><a href="investasi.php"><span>Investasi </span></a>&rsaquo; Tujuan Finansial<br /></h5>
-        <span class="breadcrumb"><a href="#">Tujuan Finansial</a></span>
-		
+		<?php echo $this->template("includes/breadcrumb.php")?>
 	</div>
 	
 	<div class="items-container">

@@ -29,7 +29,7 @@
 ?>
 <div class="container boxes-view">
 	<div class="heading clearfix pagenav">
-		<h5><a href="/"><span>Home</span></a> <?php echo $this->template("includes/breadcrumb.php")?></a></h5>
+		<?php echo $this->template("includes/breadcrumb.php")?>
 		<span class="title"><?php echo $this->document->getProperty('navigation_title');?></span>
 		<div id="quicklinks">
 			<?php echo $this->areablock('layananKami', array(
