@@ -375,7 +375,9 @@ class InvestmentController extends Website_Controller_Action
 		{
 			 $nameCommunity = "object_query_".$table->getClassId();
         }
-             
+        
+        die("test /daily-nav/show/"); 
+        
         $sql_subcat="SELECT *, FROM_UNIXTIME(unitdate,'%d-%m-%Y') AS unitdates  FROM ".$nameCommunity." AS xmlsource order by unitdate desc limit 10";
         $xmldata=$db->fetchAll($sql_subcat);
         
