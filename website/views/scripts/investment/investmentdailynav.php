@@ -223,6 +223,7 @@
                <div class="wrap30 left">
                    <h5 class="top">Jenis Fund</h5>
                     <select class="span2 blue-color fundtype">
+                        <option value="0" selected="selected">--Pilih Jenis Fund--</option>
                     <?php  foreach($this->data['ytd'] as $items){ ?>
                         <option value="<?php echo $items["fundname"]; ?>"><?php echo $items["fundname"]; ?></option>
                     <?php } ?>    
