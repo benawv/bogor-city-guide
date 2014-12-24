@@ -381,9 +381,9 @@ class InvestmentController extends Website_Controller_Action
         
         $firstday=mktime(0,0,0,1,1,date("Y"));
         $today=mktime(0,0,0,date("m"),date("d"),date("Y"));
-         die("test controler /daily-nav/show/"); 
+         
         $sql_byfundname="SELECT DISTINCT fundname,SUM(bid) AS total_bid, SUM(offer) AS total_offer 
-                         FROM object_query_29 
+                         FROM $nameCommunity 
                          WHERE unitdate >= $firstday AND unitdate <= $today 
                          GROUP BY fundName ORDER BY 1";
         $xmldata2=$db->fetchAll($sql_byfundname);
