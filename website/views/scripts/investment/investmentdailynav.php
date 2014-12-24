@@ -311,7 +311,7 @@
                             var awal=parseInt($('.day1').val())+parseInt($('.month1').val())+parseInt($('.year1').val());
                             var akhir=parseInt($('.day2').val())+parseInt($('.month2').val())+parseInt($('.year2').val())
                             
-                            if(akhir<=awal && akhir>13){
+                            if(akhir<=awal && akhir>13 && akhir!=awal ){
                                 alert("Silahkan cek kembali tanggal yang ada masukan")
                             }else{
                             
