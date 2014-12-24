@@ -308,54 +308,59 @@
                         
                         $(this).on('click', '.filter_harga', function(e){
                             
-                            $('.day1').val();
-                            $('.month1').val();
-                            $('.year1').val();
+                            var awal=parseInt($('.day1').val())+parseInt($('.month1').val())+parseInt($('.year1').val());
+                            var akhir=parseInt($('.day2').val())+parseInt($('.month2').val())+parseInt($('.year2').val())
                             
-                           $.ajax({
-                                "url" : "/daily-nav/getfilter/",
-                                "data" : $(this).serialize() + "&filter=1&day1="+$('.day1').val()+"&month1="+$('.month1').val()+"&year1="+$('.year1').val()+"&day2="+$('.day2').val()+"&month2="+$('.month2').val()+"&year2="+$('.year2').val()+"&fundtype='"+$('.fundtype').val()+"'",
-                                "type" : "POST",
-                                "success" : function(response){
-                                    if(response){
-                                            var IS_JSON = true;
-                                            try
-                                            {
-                                                var new_data = jQuery.parseJSON(response);
-                                               
-                                                var rows;
-                                                $('.myTable2_items').html("");
-                                                
-                                                if(new_data.xml_data.length >0){
-                                                    for(var i=0; i<new_data.xml_data.length; i++){
-                                                        
-                                                        rows+=("<tr>"+ 
-                                                                    "<td>"+new_data.xml_data[i]['fundName']+"</td>"+
-                                                                    "<td>"+new_data.xml_data[i]['unitdates']+"</td>"+
-                                                                    "<td>"+new_data.xml_data[i]['bid']+"</td>"+
-                                                                    "<td>"+new_data.xml_data[i]['offer']+"</td>"+
-                                                                "</tr>");
+                            if(akhir<=awal && akhir>13){
+                                alert("Silahkan cek kembali tanggal yang ada masukan")
+                            }else{
+                            
+                               $.ajax({
+                                    "url" : "/daily-nav/getfilter/",
+                                    "data" : $(this).serialize() + "&filter=1&day1="+$('.day1').val()+"&month1="+$('.month1').val()+"&year1="+$('.year1').val()+"&day2="+$('.day2').val()+"&month2="+$('.month2').val()+"&year2="+$('.year2').val()+"&fundtype='"+$('.fundtype').val()+"'",
+                                    "type" : "POST",
+                                    "success" : function(response){
+                                        if(response){
+                                                var IS_JSON = true;
+                                                try
+                                                {
+                                                    var new_data = jQuery.parseJSON(response);
+                                                   
+                                                    var rows;
+                                                    $('.myTable2_items').html("");
                                                     
+                                                    if(new_data.xml_data.length >0){
+                                                        for(var i=0; i<new_data.xml_data.length; i++){
+                                                            
+                                                            rows+=("<tr>"+ 
+                                                                        "<td>"+new_data.xml_data[i]['fundName']+"</td>"+
+                                                                        "<td>"+new_data.xml_data[i]['unitdates']+"</td>"+
+                                                                        "<td>"+new_data.xml_data[i]['bid']+"</td>"+
+                                                                        "<td>"+new_data.xml_data[i]['offer']+"</td>"+
+                                                                    "</tr>");
+                                                        
+                                                        }
+                                                    }else{
+                                                        rows+=("<tr>"+ 
+                                                                    "<td colspan=4>Data tidak ditemukan</td>"+
+                                                                "</tr>");
                                                     }
-                                                }else{
-                                                    rows+=("<tr>"+ 
-                                                                "<td colspan=4>Data tidak ditemukan</td>"+
-                                                            "</tr>");
+                                                    $('.myTable2_items').html(rows);
                                                 }
-                                                $('.myTable2_items').html(rows);
-                                            }
-                                            catch(err)
-                                            {
-                                                IS_JSON = false;
-                                            } 
-
+                                                catch(err)
+                                                {
+                                                    IS_JSON = false;
+                                                } 
+    
+                                        }
+    
+                                    },
+                                    "error" : function(response){
+    
                                     }
-
-                                },
-                                "error" : function(response){
-
-                                }
-                            });
+                                });//end ajax
+                            }
+                                
                         });
                         
 

@@ -410,7 +410,7 @@ class InvestmentController extends Website_Controller_Action
             $start=$dates=mktime(0,0,0,$month1,$day1,$year1);
             $end=$dates=mktime(0,0,0,$month2,$day2, $year2);
             
-             if(strlen($fundtype)>1){
+             if(strlen($fundtype)>3){
                 $fundtypes=" fundname like $fundtype";
              }else{
                 $fundtypes="";
@@ -418,10 +418,19 @@ class InvestmentController extends Website_Controller_Action
                      
             if($day1>0){
                 if($day2>0){
-                   
-                     $conditions=" unitdate >= $start and unitdate <= $end and ".$fundtypes;
+                    
+                    if($fundtypes!=""){
+                        $conditions=" unitdate >= $start and unitdate <= $end and ".$fundtypes;
+                    }else{
+                        $conditions=" unitdate >= $start and unitdate <= $end ";
+                    }
                 }else{
-                    $conditions=" unitdate=$start and ".$fundtypes;
+                    
+                    if($fundtypes!=""){
+                        $conditions=" unitdate=$start and ".$fundtypes;
+                    }else{
+                         $conditions=" unitdate=$start";
+                    }    
                 }
             }else{
                 $conditions=$fundtypes;
@@ -432,7 +441,7 @@ class InvestmentController extends Website_Controller_Action
             }else{
                 $conditions="";
             }
-            //die($conditions);
+           // die($conditions);
             
             $db = Pimcore_Resource_Mysql::get();        
             $entries = new Object_InvestmentNav_List();
