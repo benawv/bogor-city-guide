@@ -542,7 +542,6 @@ top: 825px !important;
 }
 .slider-wrap {
     width: 500px;
-    height: 40px;
     height: 45px;
     margin: 0 auto;
     padding: 10px;
@@ -1041,3 +1040,7 @@ input[type="checkbox"] {
 
 
 
+
+.calc-box input[type="text"] {
+	font-size: 20px;
+}
