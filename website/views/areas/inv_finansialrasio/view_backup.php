@@ -1,0 +1,302 @@
+
+<script src="/website/static/inv/js/tablesorter/jquery.tablesorter.js" type="text/javascript"></script>   
+<link rel="stylesheet" href="/website/static/inv/js/tablesorter/style.css" /> 
+
+<link rel="stylesheet" href="/website/static/inv/css/form.css" />
+<script type="text/javascript" src="/website/static/inv/js/autoNumeric.js"></script>
+<script type="text/javascript">
+jQuery(function($) {
+    $('.auto').autoNumeric('init');
+});
+</script>
+
+<script type="text/javascript">
+	$(function() {		
+		$("#myTable").tablesorter({sortList:[[0,0],[2,1]], widgets: ['zebra']});
+		$("#options").tablesorter({sortList: [[0,0]], headers: { 3:{sorter: false}, 4:{sorter: false}}});
+	});	
+</script>  
+
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "16852030-1a9b-4882-8731-4afd4c1cfd9c", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>    
+
+
+<div class="row bg_grey">
+        <div class="container">
+        <div id="#" class="article-wrap bottom">
+           
+            <div class="tag-non-top-border">
+                    <div class="tag-left">
+                        <h4>Tabel Laporan Keuangan</h4>
+                    </div>
+                    <div class="tag-right">
+                        <!--<span class='st_sharethis' displayText='ShareThis'></span>
+                        <span class='st_facebook' displayText=''></span>
+                        <span class='st_twitter' displayText=''></span>
+                        <span class='st_linkedin' displayText=''></span>
+                        <span class='st_pinterest' displayText=''></span>
+                        <span class='st_email' displayText=''></span>-->
+                        <input type="text" class="email-user" placeholder="Send to email" />
+                        <input type='button' class='sendEmail' value='Send' style="color:#000;" />
+                    </div>
+            </div>
+            
+             <div class="table-wrap">
+                    
+                    <table id="myTable2" class="tablesorter3 tbl-rasio"> 
+                        <thead> 
+                            <tr>  
+                                <th class=""  style="width: 20%;">RASIO</th> 
+                                <th class="">DESKRIPSI</th> 
+                                <th class="">IDEAL</th> 
+                                <th class="">AKTUAL</th>
+                            </tr> 
+                        </thead> 
+                        <tbody> 
+                            <tr> 
+                                <td class="td-blue">LIKUIDITAS</td> 
+                                <td class="td-blue-sky">Berapa lama tabungan Anda dapat mencukupi pengeluaran bulanan Anda tanpa adanya sumber pendapatan lainnya.</td> 
+                                <td class="td-blue">3 - 6 BULAN</td> 
+                                <td class="td-blue-sky likuiditas"><a href="/financial-planning/cash-flow-tables/income-statement">Isi laporan arus kas untuk melengkapi > </a></td> 
+                                
+                            </tr>       
+                           <tr> 
+                                <td class="td-blue">ASET LIKUID</td> 
+                                <td class="td-blue-sky">Perbandingan antara jumlah aset yang dalam bentuk kas/setara kas terhadap seluruh jumlah aset. jumlah aset likuid yang berlebih sebaiknya diinvestasikan ke dalam instrumen lain yang lebih produktif</td> 
+                                <td class="td-blue">MAKSIMAL 15%</td> 
+                                <td class="td-blue-sky aset_likuid"><a href="/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan arus kas untuk melengkapi > </a></td> 
+                                
+                            </tr>    
+                           <tr> 
+                                <td class="td-blue">HUTANG TERHADAP ASET</td> 
+                                <td class="td-blue-sky">Perbandingan antara total hutang dengan aset yang menunjukkan kemampuan pelunasan hutang dengan aset yang kita miliki. Semakin sedikit aset yang diperlukan untuk melunasi seluruh hutang semakin baik.</td> 
+                                <td class="td-blue">MAKSIMAL 50%</td> 
+                                <td class="td-blue-sky hutang_aset"><a href="/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
+                                
+                            </tr>    
+                            <tr> 
+                                <td class="td-blue">TOTAL INVESTASI TERHADAP KEKAYAAN BERSIH</td> 
+                                <td class="td-blue-sky">Menunjukkan seberapa besar kekayaan yang kita investasikan. Persentase yang semakin besar menunjukkan potensi produktivitas aset yang semakin tinggi.</td> 
+                                <td class="td-blue">> 50%</td> 
+                                <td class="td-blue-sky investasi"><a href="/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
+                                
+                            </tr>  
+                        </tbody> 
+                    </table> 
+                   
+                    
+                </div>
+                    <!--- End Table ------>
+            			
+		</div>
+		<!-- merchandise end -->
+
+        </div>
+        <!-- container end -->
+	</div>
+	<!-- row end -->
+
+</div>
+<!-- homebanner end -->
+
+<script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+        if(getCookie('cincomestatment')!="" && getCookie('cbalanced')!="")
+        {
+            $(".tag-right").show();
+        }
+        else
+        {
+            $(".tag-right").remove();
+        }
+        $('.sendEmail').click(function(){
+            if($('.email-user').val() != "")
+            {
+              $.ajax({
+                type: 'POST',
+                url: '/send_finansial_rasio',
+                data: {
+                  email : $('.email-user').val(),
+                  likuiditas : $('.likuiditas').text(),
+                  aset_likuid : $('.aset_likuid').text(),
+                  hutang_aset : $('.hutang_aset').text(),
+                  investasi : $('.investasi').text()
+                },
+                success: function()
+                {
+                  $('.divEmail').hide();
+                  $('.sukses').show();
+                  //var url = window.location.origin+'/website/static/inv-fbshare/'+response;
+                  //alert("Email telah dikirim, silahkan cek email Anda");
+                }
+              });
+            }
+            else{
+              alert("Alamat email harus diisi.");
+            }
+          });
+         
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+        
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1);
+                if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+            }
+            return "";
+        }
+        
+         var is_cbalanced=getCookie('cbalanced');
+         var is_cincomestatment=getCookie('cincomestatment'); 
+         
+         var getCbalanced=JSON.parse(is_cbalanced);
+         var getCincomestatment=JSON.parse(is_cincomestatment);
+         
+         var liquid=getCbalanced.total_liquid;
+         var kekayaan_bersih=getCbalanced.kekayaan_bersih;
+         var tbulanan=getCincomestatment.total_pengeluaran;
+         var thutang=getCbalanced.total_hutang;
+         var thutang=getCbalanced.total_hutang;
+         var tasset=getCbalanced.total_asset;
+         
+            //Total Aset Likuid / Total Pengeluaran Bulana
+            //var akhir1=
+           
+            var likuditas_val=parseInt(liquid)/parseInt(tbulanan);
+            var aset_likuid_val=Math.round(parseInt(liquid)/parseInt(kekayaan_bersih)*100); 
+            var hutang_aset_val=Math.round(parseInt(thutang)/parseInt(kekayaan_bersih)*100); 
+            var investasi_val=Math.round(parseInt(tasset)/parseInt(kekayaan_bersih)*100);
+            
+            if(likuditas_val<3 || likuditas_val>6){
+                likuditas_val="<div style='color:red'>"+likuditas_val+"</div>";
+            }else{
+                likuditas_val="<div>"+likuditas_val+"</div>"; 
+            }
+
+             if(aset_likuid_val>15){
+                aset_likuid_val="<div style='color:red'>"+aset_likuid_val+"%</div>";
+             }else{
+                aset_likuid_val="<div>"+aset_likuid_val+"%</div>"; 
+             }
+             
+             if(hutang_aset_val>=50){
+                hutang_aset_val="<div style='color:red'>"+hutang_aset_val+"%</div>";
+             }else{
+                hutang_aset_val="<div>"+hutang_aset_val+"%</div>"; 
+             }
+             
+             if(investasi_val<50){
+                investasi_val="<div style='color:red'>"+investasi_val+"%</div>";
+             }else{
+                investasi_val="<div>"+investasi_val+"%</div>"; 
+             }
+             
+             $('.likuiditas').html(likuditas_val);
+             $('.aset_likuid').html(aset_likuid_val);
+             $('.hutang_aset').html(hutang_aset_val);
+             $('.investasi').html(investasi_val);
+
+//         console.log(is_cincomestatment); 
+
+           
+        /*=========ENDSET Cookies kue kue============*/
+            
+        
+    $("#prev_1").click(function(){
+    $(".stepform").hide();
+    $("#step_1").fadeIn();
+  });
+
+$("#prev_2").click(function(){
+    $(".stepform").hide();
+    $("#step_2").fadeIn();
+  });
+
+  $("#prev_3").click(function(){
+    $(".stepform").hide();
+    $("#step_3").fadeIn();
+  });
+
+  $("#prev_4").click(function(){
+    $(".stepform").hide();
+    $("#step_4").fadeIn();
+  });
+
+  $("#prev_5").click(function(){
+    $(".stepform").hide();
+    $("#step_5").fadeIn();
+  });
+
+  $("#prev_6").click(function(){
+    $(".stepform").hide();
+    $("#step_6").fadeIn();
+  });
+
+  $("#prev_7").click(function(){
+    $(".stepform").hide();
+    $("#step_7").fadeIn();
+  });
+
+  $("#prev_8").click(function(){
+    $(".stepform").hide();
+    $("#step_8").fadeIn();
+  });
+
+  $("#next_2").click(function(){
+    $(".stepform").hide();
+    $("#step_2").fadeIn();
+  });
+
+  $("#next_3").click(function(){
+    $(".stepform").hide();
+    $("#step_3").fadeIn();
+  });
+
+  $("#next_4").click(function(){
+    $(".stepform").hide();
+    $("#step_4").fadeIn();
+  });
+
+  $("#next_5").click(function(){
+    $(".stepform").hide();
+    $("#step_5").fadeIn();
+  });
+
+  $("#next_6").click(function(){
+    $(".stepform").hide();
+    $("#step_6").fadeIn();
+  });
+
+  $("#next_7").click(function(){
+    $(".stepform").hide();
+    $("#step_7").fadeIn();
+  }); 
+  $("#next_8").click(function(){
+    $(".stepform").hide();
+    $("#step_8").fadeIn();
+  });
+
+  $("#next_9").click(function(){
+    $(".stepform").hide();
+    $("#step_9").fadeIn();
+  });
+
+  $("#submit").click(function(){
+    $(".stepform").hide();
+    $("#step_7").fadeIn();
+  });
+  
+
+})
+</script>
+
