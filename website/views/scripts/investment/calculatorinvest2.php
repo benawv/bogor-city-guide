@@ -26,7 +26,7 @@ var select = $( "#demo" );
             min: 1000000,
             max: 1000000000,
             value: 1000000,
-            range: "min",
+            step: 1000000,
 change: function(event, ui) { 
          var sliderValue = $( "#slider" ).slider( "option", "value" );
         $('#sliderPosition').val(sliderValue);
@@ -424,6 +424,8 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 			$('.kanan2 .'+id).removeClass('hidden');
 			$('.kanan2 .'+id).addClass('aktif_konten');
 		});
+		
+		
 	});
 </script>
 <?php echo $this->template("includes/inv/footer.php")?>    

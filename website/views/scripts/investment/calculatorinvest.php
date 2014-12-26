@@ -27,6 +27,7 @@ var select = $( "#demo" );
             max: 1000000000,
             value: 1000000,
             range: "min",
+            step: 1000000,
 change: function(event, ui) { 
          var sliderValue = $( "#slider" ).slider( "option", "value" );
         $('#sliderPosition').val(sliderValue);
@@ -48,7 +49,10 @@ var sliderCurrentValue = $( "#slider" ).slider( "option", "value" );
 });
       
 
-}); </script>  
+}); 
+
+
+</script>  
 
     
 <script>   
@@ -420,6 +424,36 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 			$('.kanan2 .'+id).removeClass('hidden');
 			$('.kanan2 .'+id).addClass('aktif_konten');
 		});
+		
+
+		/* added by Handri Pangestiaji 24 Des 2014 */
+		
+		$("#sliderPosition").focusout(function(event){
+			
+			val = this.value;
+			val = val.replace("Rp. ", "");
+			val = val.replace(".", "");
+			val = val.replace("0.0", "00");
+			$("#slider").slider( "value" , val);
+			
+		});
+		
+		$("#sliderPosition2").focusout(function(event){
+			
+			val = this.value;
+			val = val.replace("%", "");
+			$("#slider2").slider( "value" , val);
+			
+		});
+		
+		$("#sliderPosition3").focusout(function(event){
+			
+			val = this.value;
+			val = val.replace(" tahun", "");
+			$("#slider3").slider( "value" , val);
+			
+		});
+		
 	});
 </script>
 <?php echo $this->template("includes/inv/footer.php")?>    
