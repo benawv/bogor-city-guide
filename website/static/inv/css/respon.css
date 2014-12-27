@@ -116,6 +116,10 @@
   height: auto;
 }
 
+.head_wiz_1{
+  width: 100%;
+}
+
 .wiz{
 	display:none;
 }

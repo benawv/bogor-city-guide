@@ -2,309 +2,477 @@
 <script type="text/javascript" src="/website/static/inv/js/autoNumeric.js"></script>
 <script type="text/javascript">
 jQuery(function($) {
-    $('.auto').autoNumeric('init');
+    $('.auto').autoNumeric('init', {
+        aSep: '.', 
+        aDec: ',',
+        wEmpty: 'sign',
+        aPad: false
+    });
 });
 </script>
 
+<script src="/website/static/inv/js/tablesorter/jquery.tablesorter.js" type="text/javascript"></script>   
+<link rel="stylesheet" href="/website/static/inv/js/tablesorter/style.css" /> 
+<script type="text/javascript">
+    $(function() {      
+        $("#myTable").tablesorter({sortList:[[0,0],[2,1]], widgets: ['zebra']});
+        $("#options").tablesorter({sortList: [[0,0]], headers: { 3:{sorter: false}, 4:{sorter: false}}});
+    }); 
+</script>  
+
 <div class="main_wrap">
-	<div class="row bg_grey">
+	<div class="row">
         <div class="container">
 
-            <div class="form_cont">
             
-            
-            <div class="wiz">
-                 <span class="bar_wiz"></span>
-                <ul>
-                    <li><a href="/investment/financial-planning/cash-flow-tables/balanced-sheet">< LN</a></li>
-                    <li id="wiz_1" class="cur"><a href="javascript:void(0);">1</a></li>
-                    <li id="wiz_2"><a href="javascript:void(0);">2</a></li>
-                    <li id="wiz_3"><a href="javascript:void(0);">3</a></li>
-                    <li id="wiz_4"><a href="javascript:void(0);">4</a></li>
-                    <li id="wiz_5"><a href="javascript:void(0);">5</a></li>
-                    <li id="wiz_6"><a href="javascript:void(0);">6</a></li>
+            <div class="box_wiz">
+                <div class="head_wiz">
+                    <div id="open_head_1" class="head_wiz_1 active">
+                        1. Laporan Arus Kas
+                    </div>
+                    <div id="open_head_2" class="head_wiz_1">
+                        2. Laporan Neraca
+                    </div>
+                    <div id="open_head_3" class="head_wiz_1">
+                        3. Rasio Keuangan
+                    </div>
+                </div>
 
-                </ul>
-            </div>
-            <!-- wiz end -->
+                <div class="head_1">
+                    <div class="head_desc">
+                        <p>Laporan arus kas mengungkapkan jumlah uang yang diterima dan dikeluarkan pada satu periode waktu tertentu. Laporan ini akan memberikan gambaran pola pemasukan dan pengeluaran pada periode tersebut.</p>
+<p>
+Komponen pendapatan berisikan seluruh pendapatan pada suatu periode baik pendapatan tetap ataupun pendapatan insidentil. Sedangakan komponen dari pengeluaran adalah seluruh kegiatan yang menyebabkan uang keluar termasuk memberikan pinjaman dan juga beramal selain belanja kebutuhan periodik.</p>
+                    </div>
 
-            <h1>Laporan Arus Kas</h1>
+                    <div class="wiz">
+                         <span class="bar_wiz"></span>
+                        <ul>
+                           
+                            <li id="wiz_1" class="cur"><a href="javascript:void(0);">1</a></li>
+                            <li id="wiz_2"><a href="javascript:void(0);">2</a></li>
+                            <li id="wiz_3"><a href="javascript:void(0);">3</a></li>
+                            
 
-            <div class="stepform showform" id="step_1">
-                <h2>Pendapatan Bulanan</h2>
+                        </ul>
+                    </div>
+                    <!-- wiz end -->
 
-                <table width="100%">
-                    <tr>    
-                        <td>Gaji Bersih</td>
-                        <td><input type="text" id="pendapatan1" class="auto" data-a-sign="Rp "></td>
-                    </tr>
-                    <tr>    
-                        <td>Komisi</td>
-                        <td><input type="text" id="pendapatan2" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>    
-                        <td>Pendapatan Bunga</td>
-                        <td><input type="text" id="pendapatan3" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>    
-                        <td>Deviden</td>
-                        <td><input type="text" id="pendapatan4" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>    
-                        <td>Pendapatan Lainnya</td>
-                        <td><input type="text" id="pendapatan5" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>    
-                        <td></td>
-                        <td>
-                            <a id="next_2" href="javascript:void(0);">
-                                <img class="right" src="/website/static/inv/images/next.png">
-                            </a>
-                        </td>
-                    </tr>
-                </table>
 
-            </div>
-            <!-- step_1 end -->
 
-            <div class="stepform" id="step_2">
-                <h2>Pengeluaran Bulanan: Biaya Hidup</h2>
-                <h3>Kebutuhan</h3>
+                    <div class="stepform showform" id="step_1">
+                        <h2>Pendapatan Bulanan</h2>
 
-                <table width="100%">
-                    <tr>    
-                        <td>Makanan &amp; Minuman</td>
-                        <td><input type="text" id="kebutuhan1" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>    
-                        <td>Biaya Air</td>
-                        <td><input type="text" id="kebutuhan2" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>    
-                        <td>Biaya Listrik</td>
-                        <td><input type="text" id="kebutuhan3" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>    
-                        <td>Biaya Telepon</td>
-                        <td><input type="text" id="kebutuhan4" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>    
-                        <td>Biaya Transportasi</td>
-                        <td><input type="text" id="kebutuhan5" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                     <tr>    
-                        <td>Asuransi</td>
-                        <td><input type="text" id="kebutuhan6" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                     <tr>    
-                        <td>Biaya Lainnya</td>
-                        <td><input type="text" id="kebutuhan7" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>    
-                        <td><a id="prev_1" href="javascript:void(0);">
-                                <img class="left" src="/website/static/inv/images/prev.png">
-                            </a></td>
-                        <td>
-                            <a id="next_3" href="javascript:void(0);">
-                                <img class="right" src="/website/static/inv/images/next.png">
-                            </a>
-                        </td>
-                    </tr>
-                </table>
+                        <table width="100%">
+                            <tr>    
+                                <td>Pendapatan Utama</td>
+                                <td><input type="text" id="pendapatan1" class="auto" data-a-sign="Rp " value="Rp 0"></td>
+                            </tr>
+                            <tr>    
+                                <td>Pendapatan Investasi</td>
+                                <td><input type="text" id="pendapatan2" class="auto" data-a-sign="Rp " value="Rp 0"/></td>
+                            </tr>
+                            <tr>    
+                                <td>Pendapatan Lainnya</td>
+                                <td><input type="text" id="pendapatan3" class="auto" data-a-sign="Rp " value="Rp 0" /></td>
+                            </tr>
+                           
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>    
+                                <td></td>
+                                <td>
+                                    <a id="next_2" href="javascript:void(0);">
+                                        <img class="right" src="/website/static/inv/images/next.png">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
 
-            </div>
-            <!-- step_2 end -->
+                    </div>
+                    <!-- step_1 end -->
 
-            <div class="stepform" id="step_3">
-                <h2>Pengeluaran Bulanan: Biaya Hidup</h2>
-                <h3>Keinginan</h3>
+                    <div class="stepform" id="step_2">
+                        <h2>Pengeluaran Bulanan</h2>
 
-                <table width="100%">
-                    <tr>    
-                        <td>Pakaian</td>
-                        <td><input type="text" id="kegiatan1" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>    
-                        <td>Biaya TV Berlangganan</td>
-                        <td><input type="text" id="kegiatan2" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>    
-                        <td>Makan di Luar</td>
-                        <td><input type="text" id="kegiatan3" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>    
-                        <td>Hobby</td>
-                        <td><input type="text" id="kegiatan4" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>    
-                        <td>Liburan</td>
-                        <td><input type="text" id="kegiatan5" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                     <tr>    
-                        <td>Amal</td>
-                        <td><input type="text" id="kegiatan6" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                     <tr>    
-                        <td>Lainnya</td>
-                        <td><input type="text" id="kegiatan7" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>    
-                        <td><a id="prev_2" href="javascript:void(0);">
-                                <img class="left" src="/website/static/inv/images/prev.png">
-                            </a></td>
-                        <td>
-                            <a id="next_4" href="javascript:void(0);">
-                                <img class="right" src="/website/static/inv/images/next.png">
-                            </a>
-                        </td>
-                    </tr>
-                </table>
+                        <table width="100%">
+                            <tr>    
+                                <td>Tabungan & Investasi</td>
+                                <td><input type="text" id="pendapatan1" class="auto" data-a-sign="Rp " value="Rp 0"></td>
+                            </tr>
+                            <tr>    
+                                <td>Pengeluaran Rutin</td>
+                                <td><input type="text" id="pendapatan2" class="auto" data-a-sign="Rp " value="Rp 0"/></td>
+                            </tr>
+                            <tr>    
+                                <td>Pengeluaran Lainnya</td>
+                                <td><input type="text" id="pendapatan3" class="auto" data-a-sign="Rp " value="Rp 0" /></td>
+                            </tr> 
+                            <tr>    
+                                <td>Pengeluaran Hutang</td>
+                                <td><input type="text" id="pendapatan3" class="auto" data-a-sign="Rp " value="Rp 0" /></td>
+                            </tr>
+                           
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>    
+                                <td><a id="prev_1" href="javascript:void(0);">
+                                        <img class="left" src="/website/static/inv/images/prev.png">
+                                    </a></td>
+                                <td>
+                                    <a id="next_3" href="javascript:void(0);">
+                                        <img class="right" src="/website/static/inv/images/next.png">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
 
-            </div>
-            <!-- step_3 end -->
+                    </div>
+                    <!-- step_2 end -->
 
-            <div class="stepform" id="step_4">
-                <h2>Hutang Bulanan</h2>
-
-                <table width="100%">
-                    <tr>    
-                        <td>Rumah</td>
-                        <td><input type="text" id="angsuran1" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>    
-                        <td>Kendaraan</td>
-                        <td><input type="text" id="angsuran2" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>    
-                        <td>KTA</td>
-                        <td><input type="text" id="angsuran3" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>    
-                        <td>Kartu Kredit</td>
-                        <td><input type="text" id="angsuran4" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>    
-                        <td>Hutang Lainnya</td>
-                        <td><input type="text" id="angsuran5" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    
-                    <tr>    
-                        <td><a id="prev_3" href="javascript:void(0);">
-                                <img class="left" src="/website/static/inv/images/prev.png">
-                            </a></td>
-                        <td>
-                            <a id="next_5" href="javascript:void(0);">
-                                <img class="right" src="/website/static/inv/images/next.png">
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-
-            </div>
-            <!-- step_4 end -->
-
-            <div class="stepform" id="step_5">
-                <h2>Biaya Lainnya</h2>
-
-                <table width="100%">
-                    <tr>    
-                        <td>Pajak</td>
-                        <td><input type="text" id="lainnya1" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>    
-                        <td>Uang sekolah anak</td>
-                        <td><input type="text" id="lainnya2" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    <tr>    
-                        <td>Uang saku anak</td>
-                        <td><input type="text" id="lainnya3" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    
-                    <tr>    
-                        <td>Lainnya</td>
-                        <td><input type="text" id="lainnya4" class="auto" data-a-sign="Rp " /></td>
-                    </tr>
-                    
-                    <tr>    
-                        <td><a id="prev_4" href="javascript:void(0);">
-                                <img class="left" src="/website/static/inv/images/prev.png">
-                            </a></td>
-                        <td>
-                           <a id="next_6" href="javascript:void(0);">
-                                <img class="right" src="/website/static/inv/images/next.png">
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-
-            </div>
-            <!-- step_5 end -->
-
-            <div class="stepform" id="step_6">
+                    <div class="stepform" id="step_3">
                
 
-                <table width="100%">
+                        <table width="100%">
 
-                    <tr>
-                        <td>TOTAL PENDAPATAN</td>
-                        <td id="total_pendapatan" class="right">Rp 0</td>
-                    </tr>
-                    <tr>
-                        <td>TOTAL BIAYA HIDUP</td>
-                        <td id="total_biaya_hidup" class="right">Rp 0</td>
-                    </tr>
-                    <tr>
-                        <td>TOTAL CICILAN HUTANG</td>
-                        <td id="total_angsuran_hutang" class="right">Rp 0</td>
-                    </tr>
-                    <tr>
-                        <td>TOTAL BIAYA LAINNYA</td>
-                        <td id="total_biaya_lainnya" class="right">Rp 0</td>
-                    </tr>
-                    <tr>
-                        <td>TOTAL PENGELUARAN</td>
-                        <td id="total_pengeluaran" class="right">Rp 0</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <hr size="1" color="#333333" />
-                        </td>
-                    </tr>
-                     <tr>
-                        <td>PENDAPATAN-BIAYA+HUTANG</td>
-                        <td class="right" id="total_pendapatan_bersih">Rp 0</td>
-                    </tr>
+                            <tr>
+                                <td>TOTAL PENDAPATAN</td>
+                                <td id="total_pendapatan" class="right">Rp 0</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>TOTAL PENGELUARAN</td>
+                                <td id="total_pengeluaran" class="right">Rp 0</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr size="1" color="#333333" />
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>PENDAPATAN = (BIAYA+HUTANG)</td>
+                                <td class="right" id="total_pendapatan_bersih">Rp 0</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+
+                            <tr>    
+                                <td>
+                                    <a id="prev_2" href="javascript:void(0);">
+                                        <img class="left" src="/website/static/inv/images/prev.png">
+                                    </a>
+                                </td>
+                                <td class="next_form">
+                                     <a id="next_4" href="javascript:void(0);">
+                                        <img class="right" src="/website/static/inv/images/next.png">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <!-- step_3 end -->
+
+                </div>
+                <!-- head_1 end -->
+
+                <div class="head_2">
+                    <div class="head_desc">
+                        <p>Laporan neraca mengindikasikan aset yang dimiliki beserta kewajibannya pada satu tanggal tertentu. Hal yang diperhatikanadalah posisi aset (kekayaan) dan posisi hutang (kewajiban).</p>
+<p>
+Total kekayaan terdiri dari terdiri dari aset likuid (Kas), aset investasi, serta aset pribadi. Sedangkan total kewajiban terdiri dari hutang jangka pendek dan hutang jangka panjang. Selisih dari total kekayaan dengan total kewajiban disebut dengan kekayaan bersih.</p>
+                    </div>
+
+                    <div class="wiz">
+                         <span class="bar_wiz"></span>
+                        <ul>
+                           
+                            <li id="wiz_4" class="cur"><a href="javascript:void(0);">4</a></li>
+                            <li id="wiz_5"><a href="javascript:void(0);">5</a></li>
+                            <li id="wiz_6"><a href="javascript:void(0);">6</a></li>
+                            
+
+                        </ul>
+                    </div>
+                    <!-- wiz end -->
+
+
+
+                    <div class="stepform showform" id="step_4">
+                        <h2>Aset</h2>
+
+                        <table width="100%">
+                            <tr>    
+                                <td width="40%">Tabungan & Deposito</td>
+                                <td><input type="text" id="pendapatan1" class="auto" data-a-sign="Rp " value="Rp 0"></td>
+                            </tr>
+                            <tr>    
+                                <td>Aset Investasi (reksadana, saham, emas, dsb)</td>
+                                <td><input type="text" id="pendapatan2" class="auto" data-a-sign="Rp " value="Rp 0"/></td>
+                            </tr>
+                            <tr>    
+                                <td>Aset Pribadi (rumah, kendaraan, tanah)</td>
+                                <td><input type="text" id="pendapatan3" class="auto" data-a-sign="Rp " value="Rp 0" /></td>
+                            </tr>
+                           
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>    
+                                <td><a id="prev_3" href="javascript:void(0);">
+                                        <img class="left" src="/website/static/inv/images/prev.png">
+                                    </a></td>
+                                <td>
+                                    <a id="next_5" href="javascript:void(0);">
+                                        <img class="right" src="/website/static/inv/images/next.png">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <!-- step_1 end -->
+
+                    <div class="stepform" id="step_5">
+                        <h2>Hutang (sisa cicilan hutang)</h2>
+
+                        <table width="100%">
+                            <tr>    
+                                <td width="40%">Hutang Jangka Pendek (Kartu Kredit, KTA, dsb)</td>
+                                <td><input type="text" id="pendapatan1" class="auto" data-a-sign="Rp " value="Rp 0"></td>
+                            </tr>
+                            <tr>    
+                                <td>Hutang Jangka Panjang (kredit rumah, kredit kendaraan dsb)</td>
+                                <td><input type="text" id="pendapatan2" class="auto" data-a-sign="Rp " value="Rp 0"/></td>
+                            </tr>
+                            <tr>    
+                                <td>Hutang Lainnya</td>
+                                <td><input type="text" id="pendapatan3" class="auto" data-a-sign="Rp " value="Rp 0" /></td>
+                            </tr> 
+                            
+                           
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>    
+                                <td><a id="prev_4" href="javascript:void(0);">
+                                        <img class="left" src="/website/static/inv/images/prev.png">
+                                    </a></td>
+                                <td>
+                                    <a id="next_6" href="javascript:void(0);">
+                                        <img class="right" src="/website/static/inv/images/next.png">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <!-- step_2 end -->
+
+                    <div class="stepform" id="step_6">
+               
+
+                        <table width="100%">
+
+                            <tr>
+                                <td>TOTAL ASET</td>
+                                <td id="total_pendapatan" class="right">Rp 0</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>TOTAL HUTANG</td>
+                                <td id="total_pengeluaran" class="right">Rp 0</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr size="1" color="#333333" />
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>KEKAYAAN BERSIH (TOTAL ASET - TOTAL HUTANG)</td>
+                                <td class="right" id="total_pendapatan_bersih">Rp 0</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            
+                            <tr>    
+                                <td>
+                                    <a id="prev_5" href="javascript:void(0);">
+                                        <img class="left" src="/website/static/inv/images/prev.png">
+                                    </a>
+                                </td>
+                                <td class="next_form">
+                                     <a id="next_7" href="javascript:void(0);">
+                                        <img class="right" src="/website/static/inv/images/next.png">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <!-- step_3 end -->
+
+                </div>
+                <!-- head_2 end -->
+
+                <div class="head_3">
+                    <div class="head_desc">
+                        <p>Satu hal terpenting merencanakan keuangan anda adalah dimulai dari menghitung arus kas anda. Hal ini untuk mengetahui kondisi keuangan anda. Setelah itu ketahui dimana profil risiko keuangan dan baru mulai hitung kebutuhan dan tujuan financial anda.</p>
+                        <p>Berikut merupakan laporan finansial rasio anda:</p>
+                    </div>
+
+                    <div class="wiz">
+                         <span class="bar_wiz"></span>
+                        <ul>
+                           
+                            <li id="wiz_7" class="cur"><a href="javascript:void(0);">7</a></li>
+                            <li id="wiz_8"><a href="javascript:void(0);">FINISH</a></li>
+                            
+
+                        </ul>
+                    </div>
+                    <!-- wiz end -->
+
+                    <div class="stepform" id="step_7">
                     
-                    <tr>    
-                        <td>
-                            <a id="prev_5" href="javascript:void(0);">
-                                <img class="left" src="/website/static/inv/images/prev.png">
-                            </a>
-                        </td>
-                        <td class="next_form">
-                            <a href="/financial-planning/cash-flow-tables/balanced-sheet" class="right">
-                                <img class="right" src="/website/static/inv/images/next.png" />
-                            </a>
-                        </td>
-                    </tr>
-                </table>
+                    <div class="table-wrap">
+                    
+                        <table id="myTable2" class="tablesorter3 tbl-rasio"> 
+                            <thead> 
+                                <tr>  
+                                    <th class=""  style="width: 20%;">RASIO</th> 
+                                    <th class="">DESKRIPSI</th> 
+                                    <th class="">IDEAL</th> 
+                                    <th class="">AKTUAL</th>
+                                </tr> 
+                            </thead> 
+                            <tbody> 
+                                <tr> 
+                                    <td class="td-blue">LIKUIDITAS</td> 
+                                    <td class="td-blue-sky">Berapa lama tabungan Anda dapat mencukupi pengeluaran bulanan Anda tanpa adanya sumber pendapatan lainnya.</td> 
+                                    <td class="td-blue">3 - 6 BULAN</td> 
+                                    <td class="td-blue-sky likuiditas"><a href="/financial-planning/cash-flow-tables/income-statement">Isi laporan arus kas untuk melengkapi > </a></td> 
+                                    
+                                </tr>       
+                               <tr> 
+                                    <td class="td-blue">ASET LIKUID</td> 
+                                    <td class="td-blue-sky">Perbandingan antara jumlah aset yang dalam bentuk kas/setara kas terhadap seluruh jumlah aset. jumlah aset likuid yang berlebih sebaiknya diinvestasikan ke dalam instrumen lain yang lebih produktif</td> 
+                                    <td class="td-blue">MAKSIMAL 15%</td> 
+                                    <td class="td-blue-sky aset_likuid"><a href="/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan arus kas untuk melengkapi > </a></td> 
+                                    
+                                </tr>    
+                               <tr> 
+                                    <td class="td-blue">HUTANG TERHADAP ASET</td> 
+                                    <td class="td-blue-sky">Perbandingan antara total hutang dengan aset yang menunjukkan kemampuan pelunasan hutang dengan aset yang kita miliki. Semakin sedikit aset yang diperlukan untuk melunasi seluruh hutang semakin baik.</td> 
+                                    <td class="td-blue">MAKSIMAL 50%</td> 
+                                    <td class="td-blue-sky hutang_aset"><a href="/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
+                                    
+                                </tr>    
+                                <tr> 
+                                    <td class="td-blue">TOTAL INVESTASI TERHADAP KEKAYAAN BERSIH</td> 
+                                    <td class="td-blue-sky">Menunjukkan seberapa besar kekayaan yang kita investasikan. Persentase yang semakin besar menunjukkan potensi produktivitas aset yang semakin tinggi.</td> 
+                                    <td class="td-blue">> 50%</td> 
+                                    <td class="td-blue-sky investasi"><a href="/financial-planning/cash-flow-tables/balanced-sheet">Isi laporan neraca untuk melengkapi > </a></td> 
+                                    
+                                </tr>  
+                            </tbody> 
+                        </table> 
+
+                        <table width="100%">
+
+
+                            
+                            
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            
+                            <tr>    
+                                <td>
+                                    <a id="prev_6" href="javascript:void(0);">
+                                        <img class="left" src="/website/static/inv/images/prev.png">
+                                    </a>
+                                </td>
+                                <td class="next_form">
+                                     <a id="next_8" href="javascript:void(0);">
+                                        <img class="right" src="/website/static/inv/images/next.png">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                       
+                        
+                    </div>
+                        <!--- End Table ------>
+
+                    </div>
+                    <!-- step_7 end -->
+
+                    <div class="stepform" id="step_8">
+                    
+                    
+
+                        <table width="100%">
+
+                             <tr>
+                                <td>SUMMARY</td>
+                            </tr>
+                            
+                            <tr>
+                                <td colspan="2">
+                                    <hr size="1" color="#333333" />
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            
+                            <tr>    
+                                <td>
+                                    <a id="prev_7" href="javascript:void(0);">
+                                        <img class="left" src="/website/static/inv/images/prev.png">
+                                    </a>
+                                </td>
+                                <td >
+                                     
+                                </td>
+                            </tr>
+                        </table>
+                       
+                        
+                    </div>
+                        <!--- End Table ------>
+
+                    </div>
+                    <!-- step_8 end -->
+
+
+                    
+
+                </div>
+                <!-- head_3 end -->
 
             </div>
-            <!-- step_5 end -->
+            <!-- box_wiz end-->
 
-            </div>
 
         </div>
         <!-- container end -->
@@ -317,361 +485,55 @@ jQuery(function($) {
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-    
-     function setCookie(cname, cvalue, exdays) {
-            var d = new Date();
-            d.setTime(d.getTime() + (exdays*24*60*60*1000));
-            var expires = "expires="+d.toUTCString();
-            document.cookie = cname + "=" + JSON.stringify(cvalue)+ "; " + expires;
-        }
+
+    $("#open_head_1").click(function(){
         
-        function getCookie(cname) {
-            var name = cname + "=";
-            var ca = document.cookie.split(';');
-            for(var i=0; i<ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0)==' ') c = c.substring(1);
-                if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
-            }
-            return "";
-        }
+        $(".head_2").hide();
+        $(".head_3").hide();
+        $(".head_1").fadeIn();
+
+        $("#open_head_2").removeClass("active");
+        $("#open_head_3").removeClass("active");
+        $(this).addClass("head_wiz_1 active");
+
+        $(".stepform").hide();
+        $("#step_1").fadeIn();
+        $(".wiz li").removeClass();
+        $("#wiz_1").addClass("cur");
+
+    });
+    $("#open_head_2").click(function(){
         
-         var is_cbalanced=getCookie('cbalanced'); 
-         if(is_cbalanced!=''){
-            $(".next_form").html("<a href='/financial-planning/cash-flow-tables/rasio-finansial' class='right'><img class='right' src='/website/static/inv/images/next.png' /></a>");
-         }   
-    
-        $( "#next_6" ).click(function(){
-            
-            var total_pendapatan=0;
-            var pendapatan1=0;
-            var pendapatan2=0;
-            var pendapatan3=0;
-            var pendapatan4=0;
-            var pendapatan5=0;
-            
-            var total_biaya_hidup=0;
-            var kebutuhan1=0;
-            var kebutuhan2=0;
-            var kebutuhan3=0;
-            var kebutuhan4=0;
-            var kebutuhan5=0;
-            var kebutuhan6=0;
-            var kebutuhan7=0;
-           
-            var total_angsuran_hutang=0;
-            var kegiatan1=0;
-            var kegiatan2=0;
-            var kegiatan3=0;
-            var kegiatan4=0;
-            var kegiatan5=0;
-            var kegiatan6=0;
-            var kegiatan7=0;
-           
-            var total_biaya_lainnya=0;
-            var angsuran1=0;
-            var angsuran2=0;
-            var angsuran3=0;
-            var angsuran4=0;
-            var angsuran5=0;
-            
-            var total_pengeluaran=0;
-            var lainnya1=0;
-            var lainnya2=0;
-            var lainnya3=0;
-            var lainnya4=0;
-            
-            var total_pendapatan_bersih=0;
-    
-            var text = $("#pendapatan1").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			pendapatan1 = $('#pendapatan1').autoNumeric('get');
-            if(pendapatan1==''){
-                pendapatan1=0;
-            }    
+        $(".head_1").hide();
+        $(".head_3").hide();
+        $(".head_2").fadeIn();
+        $("#open_head_1").removeClass("active");
+        $("#open_head_3").removeClass("active");
+        $(this).addClass("head_wiz_1 active");
 
-            var text = $("#pendapatan2").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			pendapatan2 = $('#pendapatan2').autoNumeric('get');
-            if(pendapatan2==''){
-                pendapatan2=0;
-            }
-            
-            var text = $("#pendapatan3").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			pendapatan3 = $('#pendapatan3').autoNumeric('get');
-            if(pendapatan3==''){
-                pendapatan3=0;
-            }
-            
-            var text = $("#pendapatan4").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			pendapatan4 = $('#pendapatan4').autoNumeric('get');
-            if(pendapatan4==''){
-                pendapatan4=0;
-            }
-            
-            var text = $("#pendapatan5").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			pendapatan5 = $('#pendapatan5').autoNumeric('get');
-            if(pendapatan5==''){
-                pendapatan5=0;
-            }
-            
-            total_pendapatan=(parseInt(pendapatan1)+parseInt(pendapatan2)+parseInt(pendapatan3)+parseInt(pendapatan4)+parseInt(pendapatan5));
-            $( "#total_pendapatan" ).html( accounting.formatMoney(total_pendapatan,'Rp. ',2,'.',','));
-            
-            
-            var text = $("#kebutuhan1").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			kebutuhan1 = $('#kebutuhan1').autoNumeric('get');
-            if(kebutuhan1==''){
-                kebutuhan1=0;
-            }    
-
-            var text = $("#kebutuhan2").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			kebutuhan2 = $('#kebutuhan2').autoNumeric('get');
-            if(kebutuhan2==''){
-                kebutuhan2=0;
-            }
-            
-            var text = $("#kebutuhan3").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			kebutuhan3 = $('#kebutuhan3').autoNumeric('get');
-            if(kebutuhan3==''){
-                kebutuhan3=0;
-            }
-            
-            var text = $("#kebutuhan4").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			kebutuhan4 = $('#kebutuhan4').autoNumeric('get');
-            if(kebutuhan4==''){
-                kebutuhan4=0;
-            }
-            
-            var text = $("#kebutuhan5").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			kebutuhan5 = $('#kebutuhan5').autoNumeric('get');
-            if(kebutuhan5==''){
-                kebutuhan5=0;
-            }
-            
-            var text = $("#kebutuhan6").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			kebutuhan6 = $('#kebutuhan6').autoNumeric('get');
-            if(kebutuhan6==''){
-                kebutuhan6=0;
-            }
-            
-            var text = $("#kebutuhan7").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			kebutuhan7 = $('#kebutuhan7').autoNumeric('get');
-            if(kebutuhan7==''){
-                kebutuhan7=0;
-            }
-            
-            total_biaya_hidup=(parseInt(kebutuhan1)+parseInt(kebutuhan2)+parseInt(kebutuhan3)+parseInt(kebutuhan4)+parseInt(kebutuhan5)+parseInt(kebutuhan6)+parseInt(kebutuhan7));
-            $( "#total_biaya_hidup" ).html( accounting.formatMoney(total_biaya_hidup,'Rp. ',2,'.',','));
-    
-
-            var text = $("#kegiatan1").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			kegiatan1 = $('#kegiatan1').autoNumeric('get');
-            if(kegiatan1==''){
-                kegiatan1=0;
-            }    
-
-            var text = $("#kegiatan2").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			kegiatan2 = $('#kegiatan2').autoNumeric('get');
-            if(kegiatan2==''){
-                kegiatan2=0;
-            }
-            
-            var text = $("#kegiatan3").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			kegiatan3 = $('#kegiatan3').autoNumeric('get');
-            if(kegiatan3==''){
-                kegiatan3=0;
-            }
-            
-            var text = $("#kegiatan4").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			kegiatan4= $('#kegiatan4').autoNumeric('get');
-            if(kegiatan4==''){
-                kegiatan4=0;
-            }
-            
-            var text = $("#kegiatan5").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			kegiatan5 = $('#kegiatan5').autoNumeric('get');
-            if(kegiatan5 ==''){
-                kegiatan5 =0;
-            }
-            
-            var text = $("#kegiatan6").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			kegiatan6 = $('#kegiatan6').autoNumeric('get');
-            if(kegiatan6==''){
-                kegiatan6=0;
-            }
-            
-            var text = $("#kegiatan7").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			kegiatan7 = $('#kegiatan7').autoNumeric('get');
-            if(kegiatan7==''){
-                kegiatan7=0;
-            }
-            
-            total_angsuran_hutang=(parseInt(kegiatan1)+parseInt(kegiatan2)+parseInt(kegiatan3)+parseInt(kegiatan4)+parseInt(kegiatan5)+parseInt(kegiatan6)+parseInt(kegiatan7));
-            $( "#total_angsuran_hutang" ).html( accounting.formatMoney(total_angsuran_hutang,'Rp. ',2,'.',','));
+        $(".stepform").hide();
+        $("#step_4").fadeIn();
+        $(".wiz li").removeClass();
+        $("#wiz_4").addClass("cur");
         
+    });
+    $("#open_head_3").click(function(){
+        
+        $(".head_1").hide();
+        $(".head_2").hide();
+        $(".head_3").fadeIn();
+        $("#open_head_1").removeClass("active");
+        $("#open_head_2").removeClass("active");
+        $(this).addClass("head_wiz_1 active");
 
-            var text = $("#angsuran1").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			angsuran1 = $('#angsuran1').autoNumeric('get');
-            if(angsuran1==''){
-                angsuran1=0;
-            }
-                
-            var text = $("#angsuran2").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			angsuran2 = $('#angsuran2').autoNumeric('get');
-            if(angsuran2==''){
-                angsuran2=0;
-            }
-            
-            var text = $("#angsuran3").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			angsuran3 = $('#angsuran3').autoNumeric('get');
-            if(angsuran3==''){
-                angsuran3=0;
-            }
-            
-            var text = $("#angsuran4").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			angsuran4= $('#angsuran4').autoNumeric('get');
-            if(angsuran4==''){
-                angsuran4=0;
-            }
-            
-            var text = $("#angsuran5").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			angsuran5 = $('#angsuran5').autoNumeric('get');
-            if(angsuran5==''){
-                angsuran5=0;
-            }
-            
-            total_biaya_lainnya=(parseInt(angsuran1)+parseInt(angsuran2)+parseInt(angsuran3)+parseInt(angsuran4)+parseInt(angsuran5));
-            $( "#total_biaya_lainnya" ).html( accounting.formatMoney(total_biaya_lainnya,'Rp. ',2,'.',','));
+        $(".stepform").hide();
+        $("#step_7").fadeIn();
+        $(".wiz li").removeClass();
+        $("#wiz_7").addClass("cur");
+        
+    });
     
-
-            var text = $("#lainnya1").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			lainnya1 = $('#lainnya1').autoNumeric('get');
-            if(lainnya1==''){
-                lainnya1=0;
-            }    
-
-            var text = $("#lainnya2").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			lainnya2 = $('#lainnya2').autoNumeric('get');
-            if(lainnya2==''){
-                lainnya2=0;
-            }
-            
-            var text = $("#lainnya3").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			lainnya3 = $('#lainnya3').autoNumeric('get');
-            if(lainnya3==''){
-                lainnya3=0;
-            }
-            
-            var text = $("#lainnya4").val();
-			text = text.replace('Rp. ','');
-			text = text.replace(/\./g,'');
-			text = text.replace(/,/g,'');
-			lainnya4= $('#lainnya4').autoNumeric('get');
-            if(lainnya4==''){
-                lainnya4=0;
-            }
-
-            total_pengeluaran=(parseInt(lainnya1)+parseInt(lainnya2)+parseInt(lainnya3)+parseInt(lainnya4));
-            $( "#total_pengeluaran" ).html( accounting.formatMoney(total_pengeluaran,'Rp. ',2,'.',','));
-            
-            total_pendapatan_bersih=total_pendapatan-((total_biaya_hidup+total_biaya_lainnya)+total_angsuran_hutang);
-            $( "#total_pendapatan_bersih" ).html( accounting.formatMoney(total_pendapatan_bersih,'Rp. ',2,'.',','));
-
-            var q1= {form1:pendapatan1, form2:pendapatan2, form3:pendapatan3, form4:pendapatan4, form5:pendapatan5};
-            var q2= {form1:kebutuhan1, form2:kebutuhan2, form3:kebutuhan3, form4:kebutuhan4, form5:kebutuhan5, form6:kebutuhan6, form7:kebutuhan7};
-            var q3= {form1:kegiatan1, form2:kegiatan2, form3:kegiatan3, form4:kegiatan4, form5:kegiatan5, form6:kegiatan6, form7:kegiatan7 };
-            var q4= {form1: angsuran1, form2: angsuran2, form3: angsuran3, form4: angsuran4, form5: angsuran5};
-            var q5= {form1: lainnya1, form2: lainnya2, form3: lainnya3, form4: lainnya4};
- 
-            var cincomestatment={question1:q1,  
-                                 question2:q2, 
-                                 question3:q3, 
-                                 question4:q4, 
-                                 question5:q5, 
-                                 "total_pengeluaran":total_pengeluaran}
-            setCookie('cincomestatment',cincomestatment,1); 
-    
-        });
+     
     
     <?php
         for ($i = 1; $i <= 10; $i++) {
@@ -712,10 +574,71 @@ $(document).ready(function(){
         }
     ?>
 
-  $("#submit").click(function(){
-    $(".stepform").hide();
-    $("#step_7").fadeIn();
-  });
+    $("#prev_3").click(function(){
+
+        $(".head_2").hide();
+        $(".head_3").hide();
+        $(".head_1").fadeIn();
+
+        $("#open_head_2").removeClass("active");
+        $("#open_head_3").removeClass("active");
+        $("#open_head_1").addClass("head_wiz_1 active");
+
+        $(".stepform").hide();
+        $("#step_3").fadeIn();
+        $(".wiz li").removeClass();
+        $("#wiz_3").addClass("cur");
+
+    });
+
+
+    $("#prev_6").click(function(){
+
+        $(".head_1").hide();
+        $(".head_3").hide();
+        $(".head_2").fadeIn();
+        $("#open_head_1").removeClass("active");
+        $("#open_head_3").removeClass("active");
+        $("#open_head_2").addClass("head_wiz_1 active");
+
+        $(".stepform").hide();
+        $("#step_6").fadeIn();
+        $(".wiz li").removeClass();
+        $("#wiz_6").addClass("cur");
+
+    });
+
+    $("#next_4").click(function(){
+
+        $(".head_1").hide();
+        $(".head_3").hide();
+        $(".head_2").fadeIn();
+        $("#open_head_1").removeClass("active");
+        $("#open_head_3").removeClass("active");
+        $("#open_head_2").addClass("head_wiz_1 active");
+
+        $(".stepform").hide();
+        $("#step_4").fadeIn();
+        $(".wiz li").removeClass();
+        $("#wiz_4").addClass("cur");
+    });
+
+    $("#next_7").click(function(){
+
+       $(".head_1").hide();
+        $(".head_2").hide();
+        $(".head_3").fadeIn();
+        $("#open_head_1").removeClass("active");
+        $("#open_head_2").removeClass("active");
+        $("#open_head_3").addClass("head_wiz_1 active");
+
+        $(".stepform").hide();
+        $("#step_7").fadeIn();
+        $(".wiz li").removeClass();
+        $("#wiz_7").addClass("cur");
+    });
+
+  
   
 
 })
