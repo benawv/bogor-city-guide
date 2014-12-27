@@ -158,7 +158,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #113388">BIAYA YANG DIBUTUHKAN</h4></div>
-                        <div class="tooltips" style="background-color: #113388"><a class="tooltip-left" href="#" data-tooltip="Biaya yang dibutuhkan untuk membeli / memiliki kebutuhan tersebut saat ini ">?  </a></div>
+                        <div class="sub_form">Biaya yang dibutuhkan untuk membeli / memiliki kebutuhan tersebut saat ini</div>
                    </div>
                    
                     <div class="calc-box">    
@@ -182,7 +182,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo2">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #113388">ASUMSI TINGKAT IMBAL HASIL</h4></div>
-                        <div class="tooltips abs2" style="background-color: #113388"><a class="tooltip-left" href="#" data-tooltip="Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  <8% - Konservatif, 8-15% - Moderat, 15%< - Agresif">?  </a></div>
+                        <div class="sub_form">Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  &lt; 8% - Konservatif, 8-15% - Moderat, 15% &lt; - Agresif</div>
                    </div>
                    
                     <div class="calc-box">    
