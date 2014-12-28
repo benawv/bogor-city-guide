@@ -283,24 +283,17 @@
 							Allianz Indonesia Community
 						    </a>
 						    <ul class="clrd">
-								<li>
-								    <a href="#" title="Facebook" class="facebook" target="_blank" data-track="connect|click|facebook">
-									<span class="vhdn">Facebook</span>
-								    </a>
-								</li>
-								
-								<li>
-								    <a href="#" title="Instagram" class="instagram" target="_blank" data-track="connect|click|instagram">
-									<span class="vhdn">Instagram</span>
-								    </a>
-								</li>
-								
-								<li>
-								    <a href="#" title="YouTube" class="youtube" target="_blank" data-track="connect|click|youtube">
-									<span class="vhdn">Youtube</span>
-								    </a>
-								</li>
-							
+						    	<?php 
+									foreach($this->icon as $icon)
+									{
+								?>
+									<li>
+									    <a href="<?php echo $icon->getLink()->direct;?>" title="<?php echo $icon->getLink()->text;?>" class="facebook" style="background: url('<?php echo $icon->getImage();?>') no-repeat scroll 0 0px;" target="<?php echo $icon->getLink()->target;?>" data-track="connect|click|facebook">
+									    </a>
+									</li>
+								<?php 
+									}
+								?>
 							</ul>
 						</div>
 						

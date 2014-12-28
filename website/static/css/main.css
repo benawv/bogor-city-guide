@@ -680,3 +680,6 @@ a.fbshare, a.twshare{
 	display: inline-block !important;
 }
 
+.clearfix .share{
+  padding-top: 5px;
+}

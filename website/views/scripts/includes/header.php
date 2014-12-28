@@ -32,6 +32,9 @@ function check_user_agent ( $type = NULL ) {
 }
 ?>
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "16852030-1a9b-4882-8731-4afd4c1cfd9c", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 
 <script type="text/javascript">
 $(function(){
@@ -90,7 +93,16 @@ $(function(){
 				<ul class="clearfix">
 					<li><a href="https://www.allianzlife.co.id/CustomerOnlinePortal" target="_blank" class="icon-user">Customer Login</a></li>
 					<li><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank" class="icon-mail hide-text">Registrasi</a></li>
-					<li><a href="#" class="icon-fav hide-text">My Product</a></li>
+					<!--<li><a href="#" class="icon-fav hide-text">My Product</a></li>-->
+					<li class="share">
+                        <div class="tag-center">
+                            <span class='st_facebook' displayText=''></span>
+                            <span class='st_twitter' displayText=''></span>
+                            <span class='st_linkedin' displayText=''></span>
+                            <span class='st_pinterest' displayText=''></span>
+                            <span class='st_email' displayText=''></span>
+                        </div>
+                    </li>
 				</ul>
 				
 				<script type="text/javascript">
