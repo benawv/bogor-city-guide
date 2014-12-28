@@ -161,7 +161,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                         <div class="title-box"><h4 style="color: #8b4720;">BIAYA HIDUP BULANAN YANG DIBUTUHKAN</h4></div>
                         <!--<div class="tooltips" style="background-color: #8b4720;"><a class="tooltip-left" href="javascript:void(0)" data-tooltip="Biaya hidup setiap bulannya pada saat pensiun dengan memperhitunkan kenaikan harga kebutuhan setiap tahunnya">?  </a></div>-->
 
-                        <div class="sub_form">Biaya hidup setiap bulannya pada saat pensiun dengan memperhitunkan kenaikan harga kebutuhan setiap tahunnya</div>
+                        <div class="sub_form">Biaya hidup setiap bulannya pada saat pensiun dengan memperhitungkan kenaikan harga kebutuhan setiap tahunnya</div>
                    </div>
                    
                     <div class="calc-box">    
@@ -180,14 +180,19 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                    
                </div>
            </div>
-            
-             <div class="calc-machine">
+           
+           <!-- 
+           <div class="calc-machine">
                <div id="demo2">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #8b4720;">ASUMSI TINGKAT IMBAL HASIL TAHUNAN</h4></div>
-                        <!--<div class="tooltips abs2" style="background-color: #8b4720;"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  <8% - Konservatif, 8-15% - Moderat, 15%< - Agresif ">?  </a></div>-->
+                        <!--<div class="tooltips abs2" style="background-color: #8b4720;"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  <8% - Konservatif, 8-15% - Moderat, 15%< - Agresif ">?  </a></div>
 
-                        <div class="sub_form">Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  &lt;8% - Konservatif, 8-15% - Moderat, 15%&lt; - Agresif</div>
+                        <div class="sub_form">Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  
+	                    <br />&lt; 8% - Konservatif, 
+	                    <br />8-15% - Moderat, 
+	                    <br />15% &lt; - Agresif
+	                    </div>
                    </div>
                    
                     <div class="calc-box">    
@@ -202,10 +207,11 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                           <span class="add">  </span>
                         </div>
                         
-                    </div><!-- End demo -->
+                    </div><!-- End demo 
                    
                </div>
-           </div>   
+           </div>  
+           --> 
            
            <div class="calc-machine">
                <div id="demo3">
@@ -290,8 +296,8 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         }
         
         var biaya = getCookie('pension1_hasil');
-        var asumsi = 1;
         var asumsi_inflasi = getCookie('pension1_asumsi_inflasi');
+        var asumsi = parseInt(asumsi_inflasi) + 2;
         var waktu = getCookie('pension1_jangka_waktu');
         $("#sliderPosition").bind('input',function(){
             var text = $(this).val();
@@ -303,6 +309,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             $(this).val(text);
         });
         
+        /*
         $("#sliderPosition2").keyup(function(event){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
@@ -317,6 +324,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             asumsi = text;
             $(this).val(text + '%');
         });
+        */
         
         $("#sliderPosition3").keyup(function(event){
             var text = $(this).val();
