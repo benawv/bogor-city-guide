@@ -86,6 +86,7 @@
                                 <span class='st_pinterest' displayText=''></span>
                                 <span class='st_email' displayText=''></span>
                             </div>
+			    
                         </div>
 						<div>
 							<span>
@@ -107,6 +108,13 @@
 							Terima kasih, email Anda sudah terkirim,<br />
 							cek inbox atau kotak spam Anda.
 						</div>
+						
+			    <div style="clear:both"></div>
+                            <span><br /><br /><br />
+                            <b>Disclaimer: <br /></b>
+				Perhitungan diatas merupakan simulasi yang  menggunakan sistem pembulatan. Untuk hasil lebih tepatnya silakan <a href="/contact-us">hubungi Kami &rsaquo;</a>
+                            </span>
+
                         <!--div class="socmed">
                             <a href="#">
                                 <div class="fb-box"><span class="flaticon-facebook6">Share</span></div>

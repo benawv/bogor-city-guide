@@ -58,7 +58,7 @@ $(function() {
 var select = $( "#demo2" );
         var slider = $( "<div id='slider2'></div>" ).insertAfter( select ).slider({
             min: 1,
-            max: 30,
+            max: 50,
         value: 1,
             range: "min",
 change: function(event, ui) { 
@@ -228,7 +228,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
            
            <div class="calc-machine">
                <div class="calc-submit bottom">
-                    <input class="orange-btn bg_fund" type="button" value="HITUNG">
+                    <input class="orange-btn bg_fund" type="button" value="Hitung Investasi Tahunan / Bulanan yang Saya Butuhkan">
                 </div>   
            </div>   
                
@@ -425,7 +425,29 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 			$('.kanan2 .'+id).addClass('aktif_konten');
 		});
 		
+		/* added by Ahmad Somadi 27 Des 2014 */
+                
+                var newValue = $("#sliderPosition").val().replace("Rp. ", "").replace(/\./g, "").replace(",00", "");
+                $("#slider").slider( "value" , newValue);
 		
+		$("#sliderPosition").focusout(function(event){
+			
+			val = this.value;
+			val = val.replace("Rp. ", "");
+			val = val.replace(".", "");
+			val = val.replace("0.0", "00");
+			$("#slider").slider( "value" , val);
+			
+		});
+		
+		$("#sliderPosition2").focusout(function(event){
+			
+			val = this.value;
+			val = val.replace("%", "");
+			$("#slider2").slider( "value" , val);
+			
+		});
+				
 	});
 </script>
 <?php echo $this->template("includes/inv/footer.php")?>    

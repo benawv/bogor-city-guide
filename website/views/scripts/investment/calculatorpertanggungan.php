@@ -27,6 +27,7 @@ var select = $( "#demo" );
             max: 1000000000,
             value: 1000000,
             range: "min",
+            step: 1000000,
 change: function(event, ui) { 
          var sliderValue = $( "#slider" ).slider( "option", "value" );
         $('#sliderPosition').val(sliderValue);
@@ -92,7 +93,7 @@ $(function() {
 var select = $( "#demo3" );
         var slider = $( "<div id='slider3'></div>" ).insertAfter( select ).slider({
             min: 1,
-            max: 30,
+            max: 50,
         value: 1,
             range: "min",
 change: function(event, ui) { 
@@ -192,7 +193,9 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #a50034">BIAYA HIDUP / PENDAPATAN BULANAN SAAT INI</h4></div>
-                        <div class="tooltips" style="background-color: #a50034;"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Biaya yang dikeluarkan setiap bulannya untuk kebutuhan sehari-hari pada saat ini">?  </a></div>
+                        <!--<div class="tooltips" style="background-color: #a50034;"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Biaya yang dikeluarkan setiap bulannya untuk kebutuhan sehari-hari pada saat ini">?  </a></div>-->
+
+                        <div class="sub_form">Biaya yang dikeluarkan setiap bulannya untuk kebutuhan sehari-hari pada saat ini</div>
                    </div>
                    
                     <div class="calc-box">    
@@ -216,7 +219,9 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                <div id="demo2">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #a50034">ASUMSI TINGKAT INFLASI</h4></div>
-                        <div class="tooltips abs2" style="background-color: #a50034"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10% ">?  </a></div>
+                        <!--<div class="tooltips abs2" style="background-color: #a50034"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10% ">?  </a></div>-->
+
+                        <div class="sub_form">Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%</div>
                    </div>
                    
                     <div class="calc-box">    
@@ -239,8 +244,10 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
             <div class="calc-machine">
                <div id="demo3">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4 style="color: #a50034">ASUMSI TINGKAT IMBAL HASIL</h4></div>
-                        <div class="tooltips abs3" style="background-color: #a50034"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  <8% - Konservatif, 8-15% - Moderat, 15%< - Agresif ">?  </a></div>
+                        <div class="title-box"><h4 style="color: #a50034">ASUMSI TINGKAT IMBAL HASIL TAHUNAN</h4></div>
+                        <!--<div class="tooltips abs3" style="background-color: #a50034"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  <8% - Konservatif, 8-15% - Moderat, 15%< - Agresif ">?  </a></div>-->
+
+                        <div class="sub_form">Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  &lt;8% - Konservatif, 8-15% - Moderat, 15%&lt; - Agresif </div>
                    </div>
                    
                     <div class="calc-box">    
@@ -264,7 +271,9 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                <div id="demo4">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #a50034">JANGKA WAKTU HINGGA PENSIUN</h4></div>
-                        <div class="tooltips abs4" style="background-color: #a50034"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Lamanya masa pensiun yang direncanakan">?  </a></div>
+                        <!--<div class="tooltips abs4" style="background-color: #a50034"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Lamanya masa pensiun yang direncanakan">?  </a></div>-->
+
+                        <div class="sub_form">Rata-rata Umur Pensiun di Indonesia 55 tahun</div>
                    </div>
                    
                     <div class="calc-box">    
@@ -286,7 +295,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
            
            <div class="calc-machine">
                <div class="calc-submit bottom">
-                    <input class="orange-btn bg_health" type="button" value="HITUNG">
+                    <input class="orange-btn bg_health" type="button" value="Hitung Uang Pertanggungan yang Saya Butuhkan">
                 </div>   
            </div>   
                
@@ -483,6 +492,43 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
 			$('.kanan2 .'+id).removeClass('hidden');
 			$('.kanan2 .'+id).addClass('aktif_konten');
 		});
+
+		/* added by Ahmad Somadi 27 Des 2014 */
+                		
+		$("#sliderPosition").focusout(function(event){
+			
+			val = this.value;
+			val = val.replace("Rp. ", "");
+			val = val.replace(".", "");
+			val = val.replace("0.0", "00");
+			$("#slider").slider( "value" , val);
+			
+		});
+		
+		$("#sliderPosition2").focusout(function(event){
+			
+			val = this.value;
+			val = val.replace("%", "");
+			$("#slider2").slider( "value" , val);
+			
+		});
+
+		$("#sliderPosition3").focusout(function(event){
+			
+			val = this.value;
+			val = val.replace("%", "");
+			$("#slider3").slider( "value" , val);
+			
+		});
+ 
+ 		$("#sliderPosition4").focusout(function(event){
+			
+			val = this.value;
+			val = val.replace(" tahun", "");
+			$("#slider4").slider( "value" , val);
+			
+		});
+
 	});
 </script>
 <?php echo $this->template("includes/inv/footer.php")?>    

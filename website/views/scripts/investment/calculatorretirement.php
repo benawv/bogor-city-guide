@@ -27,6 +27,7 @@ var select = $( "#demo" );
             max: 1000000000,
             value: 1000000,
             range: "min",
+            step: 1000000,
 change: function(event, ui) { 
          var sliderValue = $( "#slider" ).slider( "option", "value" );
         $('#sliderPosition').val(sliderValue);
@@ -157,7 +158,9 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #8b4720;">BIAYA HIDUP BULANAN SAAT INI</h4></div>
-                        <div class="tooltips" style="background-color: #8b4720;"><a class="tooltip-left"  data-tooltip="Biaya yang dikeluarkan setiap bulannya untuk kebutuhan sehari-hari pada saat ini">?  </a></div>
+                        <!--<div class="tooltips" style="background-color: #8b4720;"><a class="tooltip-left"  data-tooltip="Biaya yang dikeluarkan setiap bulannya untuk kebutuhan sehari-hari pada saat ini">?  </a></div>-->
+                        
+                        <div class="sub_form">Biaya yang dikeluarkan setiap bulannya untuk kebutuhan sehari-hari pada saat ini</div>
                    </div>
                    
                     <div class="calc-box">    
@@ -180,9 +183,10 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
              <div class="calc-machine">
                <div id="demo2">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4 style="color: #8b4720;">ASUMSI TINGKAT INFLASI</h4></div>
-                        
-                        <div class="tooltips abs2" style="background-color: #8b4720;"><a class="tooltip-left"  data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%">?  </a></div>
+                        <div class="title-box"><h4 style="color: #8b4720;">ASUMSI TINGKAT INFLASI</h4></div>                        
+                        <!--<div class="tooltips abs2" style="background-color: #8b4720;"><a class="tooltip-left"  data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%">?  </a></div>-->
+
+                        <div class="sub_form">Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%</div>
                    </div>
                    
                     <div class="calc-box">    
@@ -205,8 +209,10 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
            <div class="calc-machine">
                <div id="demo3">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4 style="color: #8b4720;">JANGKA WAKTU</h4></div>
-                        <div class="tooltips abs3" style="background-color: #8b4720;"><a class="tooltip-left"  data-tooltip="Berapa lama lagi anda akan pensiun">?  </a></div>
+                        <div class="title-box"><h4 style="color: #8b4720;">JANGKA WAKTU HINGGA PENSIUN</h4></div>
+                        <!--<div class="tooltips abs3" style="background-color: #8b4720;"><a class="tooltip-left"  data-tooltip="Berapa lama lagi anda akan pensiun">?  </a></div>-->
+
+                        <div class="sub_form">Rata-rata usia pensiun di Indonesia adalah 55 tahun</div>
                    </div>
                    
                     <div class="calc-box">    
@@ -228,7 +234,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
            
            <div class="calc-machine">
                <div class="calc-submit bottom">
-                    <input class="orange-btn bg_pension" type="button" value="HITUNG">
+                    <input class="orange-btn bg_pension" type="button" value="Hitung Biaya Hidup Bulanan Saya di Masa Depan">
                 </div>   
            </div>   
                
@@ -414,6 +420,35 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 			$('.kanan2 .'+id).removeClass('hidden');
 			$('.kanan2 .'+id).addClass('aktif_konten');
 		});
+
+		/* added by Ahmad Somadi 27 Des 2014 */
+                		
+		$("#sliderPosition").focusout(function(event){
+			
+			val = this.value;
+			val = val.replace("Rp. ", "");
+			val = val.replace(".", "");
+			val = val.replace("0.0", "00");
+			$("#slider").slider( "value" , val);
+			
+		});
+		
+		$("#sliderPosition2").focusout(function(event){
+			
+			val = this.value;
+			val = val.replace("%", "");
+			$("#slider2").slider( "value" , val);
+			
+		});
+
+		$("#sliderPosition3").focusout(function(event){
+			
+			val = this.value;
+			val = val.replace(" tahun", "");
+			$("#slider3").slider( "value" , val);
+			
+		});
+
 	});
 </script>
 <?php echo $this->template("includes/inv/footer.php")?>    

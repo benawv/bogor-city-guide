@@ -76,6 +76,14 @@
                                 <span class='st_pinterest' displayText=''></span>
                                 <span class='st_email' displayText=''></span>
                             </div>
+			    
+			    <div style="clear:both"></div>
+                            <span><br /><br /><br />
+                            <b>Disclaimer: <br /></b>
+				Perhitungan diatas merupakan simulasi yang  menggunakan sistem pembulatan. Untuk hasil lebih tepatnya silakan <a href="/contact-us">hubungi Kami &rsaquo;</a>
+                            </span>
+
+			    
                         </div>
                         <!--div class="socmed">
                             <a href="#">

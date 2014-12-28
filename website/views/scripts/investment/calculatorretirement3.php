@@ -27,6 +27,7 @@ var select = $( "#demo" );
             max: 1000000000,
             value: 1000000,
             range: "min",
+            step: 1000000,
 change: function(event, ui) { 
          var sliderValue = $( "#slider" ).slider( "option", "value" );
         $('#sliderPosition').val(sliderValue);
@@ -58,8 +59,8 @@ $(function() {
 var select = $( "#demo2" );
         var slider = $( "<div id='slider2'></div>" ).insertAfter( select ).slider({
             min: 1,
-            max: 30,
-        value: 1,
+            max: 50,
+            value: 1,
             range: "min",
 change: function(event, ui) { 
          var sliderValue = $( "#slider2" ).slider( "option", "value" );
@@ -123,7 +124,9 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #8b4720;">DANA PENSIUN YANG DIBUTUHKAN</h4></div>
-                        <div class="tooltips" style="background-color: #8b4720;"><a class="tooltip-left" data-tooltip="Jumlah dana yang dibutuhkan pada awal masa pensiun untuk mencukupi kebutuhan bulanan selama masa pensium yang direncanakan">?  </a></div>
+                        <!--<div class="tooltips" style="background-color: #8b4720;"><a class="tooltip-left" data-tooltip="Jumlah dana yang dibutuhkan pada awal masa pensiun untuk mencukupi kebutuhan bulanan selama masa pensium yang direncanakan">?  </a></div>-->
+
+                        <div class="sub_form">Jumlah dana yang dibutuhkan pada awal masa pensiun untuk mencukupi kebutuhan bulanan selama masa pensium yang direncanakan</div>
                    </div>
                    
                     <div class="calc-box">    
@@ -147,7 +150,9 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
                <div id="demo2">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #8b4720;">ASUMSI TINGKAT IMBAL HASIL</h4></div>
-                        <div class="tooltips abs2" style="background-color: #8b4720;"><a class="tooltip-left" data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%">?  </a></div>
+                        <!--<div class="tooltips abs2" style="background-color: #8b4720;"><a class="tooltip-left" data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%">?  </a></div>-->
+
+                        <div class="sub_form">Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%</div>
                    </div>
                    
                     <div class="calc-box">    
@@ -171,7 +176,9 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
                <div id="demo3">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #8b4720;">JANGKA WAKTU MENABUNG</h4></div>
-                        <div class="tooltips abs3" style="background-color: #8b4720;"><a class="tooltip-left" data-tooltip="Lamanya masa berinvestasi yang diinginkan untuk mencapai tujuan investasi ">?  </a></div>
+                        <!--<div class="tooltips abs3" style="background-color: #8b4720;"><a class="tooltip-left" data-tooltip="Lamanya masa berinvestasi yang diinginkan untuk mencapai tujuan investasi ">?  </a></div>-->
+
+                        <div class="sub_form">Lamanya masa berinvestasi yang diinginkan untuk mencapai tujuan investasi</div>
                    </div>
                    
                     <div class="calc-box">    
@@ -388,6 +395,28 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
 			$('.kanan2 .'+id).removeClass('hidden');
 			$('.kanan2 .'+id).addClass('aktif_konten');
 		});
+				
+		/* added by Ahmad Somadi 27 Des 2014 */
+                
+                var newValue = $("#sliderPosition").val().replace("Rp. ", "").replace(/\./g, "").replace(",00", "");
+                $("#slider").slider( "value" , newValue);
+		
+		$("#sliderPosition").focusout(function(event){			
+			val = this.value;
+			val = val.replace("Rp. ", "");
+			val = val.replace(".", "");
+			val = val.replace("0.0", "00");
+			$("#slider").slider( "value" , val);
+			
+		});
+		
+		$("#sliderPosition2").focusout(function(event){			
+			val = this.value;
+			val = val.replace("%", "");
+			$("#slider2").slider( "value" , val);
+			
+		});
+                
 	});
 </script>
 <?php echo $this->template("includes/inv/footer.php")?>    
