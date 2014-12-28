@@ -52,7 +52,7 @@
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4 style="background-color: #8b4720;">KALKULATOR PENDIDIKAN</h4>
+                <h4 style="background-color: #8b4720;">KALKULATOR PENSIUN</h4>
            </div>
             
              <div class="calc-machine">
