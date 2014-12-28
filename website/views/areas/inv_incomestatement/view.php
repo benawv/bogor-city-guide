@@ -76,6 +76,15 @@ Komponen pendapatan berisikan seluruh pendapatan pada suatu periode baik pendapa
                                 <td>Pendapatan Lainnya</td>
                                 <td><input type="text" id="pendapatan3" class="auto" data-a-sign="Rp " value="Rp 0" /></td>
                             </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr size="1" color="#333333" />
+                                </td>
+                            </tr>
+                            <tr>
+	                            <td>Total Pendapatan</td>
+	                            <td><input type="text" id="totalpendapatan" disabled="disabled" class="auto" data-a-sign="Rp " value="Rp 0" /></td>
+                            </tr>
                            
                             <tr>
                                 <td>&nbsp;</td>
@@ -100,20 +109,30 @@ Komponen pendapatan berisikan seluruh pendapatan pada suatu periode baik pendapa
                         <table width="100%">
                             <tr>    
                                 <td>Tabungan & Investasi</td>
-                                <td><input type="text" id="pendapatan1" class="auto" data-a-sign="Rp " value="Rp 0"></td>
+                                <td><input type="text" id="pengeluaran1" class="auto" data-a-sign="Rp " value="Rp 0"></td>
                             </tr>
                             <tr>    
                                 <td>Pengeluaran Rutin</td>
-                                <td><input type="text" id="pendapatan2" class="auto" data-a-sign="Rp " value="Rp 0"/></td>
+                                <td><input type="text" id="pengeluaran2" class="auto" data-a-sign="Rp " value="Rp 0"/></td>
                             </tr>
                             <tr>    
                                 <td>Pengeluaran Lainnya</td>
-                                <td><input type="text" id="pendapatan3" class="auto" data-a-sign="Rp " value="Rp 0" /></td>
+                                <td><input type="text" id="pengeluaran3" class="auto" data-a-sign="Rp " value="Rp 0" /></td>
                             </tr> 
                             <tr>    
                                 <td>Pengeluaran Hutang</td>
-                                <td><input type="text" id="pendapatan3" class="auto" data-a-sign="Rp " value="Rp 0" /></td>
+                                <td><input type="text" id="pengeluaran4" class="auto" data-a-sign="Rp " value="Rp 0" /></td>
                             </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr size="1" color="#333333" />
+                                </td>
+                            </tr>
+                            <tr>
+	                            <td>Total Pengeluaran</td>
+	                            <td><input type="text" id="totalpengeluaran" disabled="disabled" class="auto" data-a-sign="Rp " value="Rp 0" /></td>
+                            </tr>
+                            
                            
                             <tr>
                                 <td>&nbsp;</td>
@@ -154,8 +173,8 @@ Komponen pendapatan berisikan seluruh pendapatan pada suatu periode baik pendapa
                                 </td>
                             </tr>
                              <tr>
-                                <td>PENDAPATAN = (BIAYA+HUTANG)</td>
-                                <td class="right" id="total_pendapatan_bersih">Rp 0</td>
+                                <td>PENDAPATAN BERSIH BULANAN <br />(TOTAL PENDAPATAN - TOTAL PENGELUARAN)</td>
+                                <td class="right auto" data-a-sign="Rp " id="total_pendapatan_bersih">Rp 0</td>
                             </tr>
                             
                             <tr>
@@ -211,15 +230,24 @@ Total kekayaan terdiri dari terdiri dari aset likuid (Kas), aset investasi, sert
                         <table width="100%">
                             <tr>    
                                 <td width="40%">Tabungan & Deposito</td>
-                                <td><input type="text" id="pendapatan1" class="auto" data-a-sign="Rp " value="Rp 0"></td>
+                                <td><input type="text" id="aset1" class="auto" data-a-sign="Rp " value="Rp 0"></td>
                             </tr>
                             <tr>    
                                 <td>Aset Investasi (reksadana, saham, emas, dsb)</td>
-                                <td><input type="text" id="pendapatan2" class="auto" data-a-sign="Rp " value="Rp 0"/></td>
+                                <td><input type="text" id="aset2" class="auto" data-a-sign="Rp " value="Rp 0"/></td>
                             </tr>
                             <tr>    
                                 <td>Aset Pribadi (rumah, kendaraan, tanah)</td>
-                                <td><input type="text" id="pendapatan3" class="auto" data-a-sign="Rp " value="Rp 0" /></td>
+                                <td><input type="text" id="aset3" class="auto" data-a-sign="Rp " value="Rp 0" /></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr size="1" color="#333333" />
+                                </td>
+                            </tr>
+                            <tr>
+	                            <td>Total Aset</td>
+	                            <td><input type="text" id="subtotalaset" disabled="disabled" class="auto" data-a-sign="Rp " value="Rp 0" /></td>
                             </tr>
                            
                             <tr>
@@ -247,16 +275,25 @@ Total kekayaan terdiri dari terdiri dari aset likuid (Kas), aset investasi, sert
                         <table width="100%">
                             <tr>    
                                 <td width="40%">Hutang Jangka Pendek (Kartu Kredit, KTA, dsb)</td>
-                                <td><input type="text" id="pendapatan1" class="auto" data-a-sign="Rp " value="Rp 0"></td>
+                                <td><input type="text" id="hutang1" class="auto" data-a-sign="Rp " value="Rp 0"></td>
                             </tr>
                             <tr>    
                                 <td>Hutang Jangka Panjang (kredit rumah, kredit kendaraan dsb)</td>
-                                <td><input type="text" id="pendapatan2" class="auto" data-a-sign="Rp " value="Rp 0"/></td>
+                                <td><input type="text" id="hutang2" class="auto" data-a-sign="Rp " value="Rp 0"/></td>
                             </tr>
                             <tr>    
                                 <td>Hutang Lainnya</td>
-                                <td><input type="text" id="pendapatan3" class="auto" data-a-sign="Rp " value="Rp 0" /></td>
+                                <td><input type="text" id="hutang3" class="auto" data-a-sign="Rp " value="Rp 0" /></td>
                             </tr> 
+                            <tr>
+                                <td colspan="2">
+                                    <hr size="1" color="#333333" />
+                                </td>
+                            </tr>
+                            <tr>
+	                            <td>Total Hutang</td>
+	                            <td><input type="text" id="subtotalhutang" disabled="disabled" class="auto" data-a-sign="Rp " value="Rp 0" /></td>
+                            </tr>
                             
                            
                             <tr>
@@ -285,12 +322,12 @@ Total kekayaan terdiri dari terdiri dari aset likuid (Kas), aset investasi, sert
 
                             <tr>
                                 <td>TOTAL ASET</td>
-                                <td id="total_pendapatan" class="right">Rp 0</td>
+                                <td id="total_aset" class="right">Rp 0</td>
                             </tr>
                             
                             <tr>
                                 <td>TOTAL HUTANG</td>
-                                <td id="total_pengeluaran" class="right">Rp 0</td>
+                                <td id="total_hutang" class="right">Rp 0</td>
                             </tr>
                             <tr>
                                 <td colspan="2">
@@ -299,7 +336,7 @@ Total kekayaan terdiri dari terdiri dari aset likuid (Kas), aset investasi, sert
                             </tr>
                              <tr>
                                 <td>KEKAYAAN BERSIH (TOTAL ASET - TOTAL HUTANG)</td>
-                                <td class="right" id="total_pendapatan_bersih">Rp 0</td>
+                                <td class="right auto" id="kekayaan_bersih" data-a-sign="Rp ">Rp 0</td>
                             </tr>
                             
                             <tr>
@@ -638,8 +675,258 @@ $(document).ready(function(){
         $("#wiz_7").addClass("cur");
     });
 
-  
-  
+/* =============== Added by Handri Pangestiaji 28 Desember 2014 ================= */
+
+	/* ====================== Pendapatan Segment ======================== */
+	
+	$("#pendapatan1").focusout(function(event){
+		
+		var p_utama = $('#pendapatan1').autoNumeric('get');
+		var p_investasi = $('#pendapatan2').autoNumeric('get');
+		var p_lainnya = $('#pendapatan3').autoNumeric('get');
+		
+		var total = "";
+		
+		total = parseInt(p_utama) + parseInt(p_investasi) + parseInt(p_lainnya);
+		
+		$('#totalpendapatan').autoNumeric('set', total);
+		
+	});
+	
+	
+	$('#pendapatan2').focusout(function(event){
+		var p_utama = $('#pendapatan1').autoNumeric('get');
+		var p_investasi = $('#pendapatan2').autoNumeric('get');
+		var p_lainnya = $('#pendapatan3').autoNumeric('get');
+		
+		var total = "";
+		
+		total = parseInt(p_utama) + parseInt(p_investasi) + parseInt(p_lainnya);
+		
+		$('#totalpendapatan').autoNumeric('set', total);
+	});
+	
+	$('#pendapatan3').focusout(function(event){
+		var p_utama = $('#pendapatan1').autoNumeric('get');
+		var p_investasi = $('#pendapatan2').autoNumeric('get');
+		var p_lainnya = $('#pendapatan3').autoNumeric('get');
+		
+		var total = "";
+		
+		total = parseInt(p_utama) + parseInt(p_investasi) + parseInt(p_lainnya);
+		
+		$('#totalpendapatan').autoNumeric('set', total);
+	});
+	
+	/* ================= End of Pendapatan Segment ================== */
+	
+	/* ==================== Pengeluaran Segment ===================== */
+	
+	$('#pengeluaran1').focusout(function(e){
+		
+		var tab_investasi = $('#pengeluaran1').autoNumeric('get');
+		var p_rutin = $('#pengeluaran2').autoNumeric('get');
+		var p_lainnya = $('#pengeluaran3').autoNumeric('get');
+		var p_hutang = $('#pengeluaran4').autoNumeric('get');
+		
+		var total = "";
+		
+		total = parseInt(tab_investasi) + parseInt(p_rutin) + parseInt(p_lainnya) + parseInt(p_hutang);
+		
+		$('#totalpengeluaran').autoNumeric('set', total);
+	});
+	
+	$('#pengeluaran2').focusout(function(e){
+		
+		var tab_investasi = $('#pengeluaran1').autoNumeric('get');
+		var p_rutin = $('#pengeluaran2').autoNumeric('get');
+		var p_lainnya = $('#pengeluaran3').autoNumeric('get');
+		var p_hutang = $('#pengeluaran4').autoNumeric('get');
+		
+		var total = "";
+		
+		total = parseInt(tab_investasi) + parseInt(p_rutin) + parseInt(p_lainnya) + parseInt(p_hutang);
+		
+		$('#totalpengeluaran').autoNumeric('set', total);
+	});
+	
+	$('#pengeluaran3').focusout(function(e){
+		
+		var tab_investasi = $('#pengeluaran1').autoNumeric('get');
+		var p_rutin = $('#pengeluaran2').autoNumeric('get');
+		var p_lainnya = $('#pengeluaran3').autoNumeric('get');
+		var p_hutang = $('#pengeluaran4').autoNumeric('get');
+		
+		var total = "";
+		
+		total = parseInt(tab_investasi) + parseInt(p_rutin) + parseInt(p_lainnya) + parseInt(p_hutang);
+		
+		$('#totalpengeluaran').autoNumeric('set', total);
+	});
+	
+	$('#pengeluaran4').focusout(function(e){
+		
+		var tab_investasi = $('#pengeluaran1').autoNumeric('get');
+		var p_rutin = $('#pengeluaran2').autoNumeric('get');
+		var p_lainnya = $('#pengeluaran3').autoNumeric('get');
+		var p_hutang = $('#pengeluaran4').autoNumeric('get');
+		
+		var total = "";
+		
+		total = parseInt(tab_investasi) + parseInt(p_rutin) + parseInt(p_lainnya) + parseInt(p_hutang);
+		
+		$('#totalpengeluaran').autoNumeric('set', total);
+	});
+	
+	/* ================== End of Pengeluaran Segment ==================== */
+	
+	/* ================== Arus Kas ====================================== */
+	
+	$('#next_3').click(function(){
+		
+		$('#total_pendapatan').html($('#totalpendapatan').val());
+		
+		$('#total_pengeluaran').html($('#totalpengeluaran').val());
+		
+		var total_bersih = parseInt($('#totalpendapatan').autoNumeric('get')) - parseInt($('#totalpengeluaran').autoNumeric('get'));
+		
+		$('#total_pendapatan_bersih').autoNumeric('set', total_bersih);
+		
+	});
+	
+	$('#wiz_3').click(function(){
+		
+		$('#total_pendapatan').html($('#totalpendapatan').val());
+		
+		$('#total_pengeluaran').html($('#totalpengeluaran').val());
+		
+		var total_bersih = parseInt($('#totalpendapatan').autoNumeric('get')) - parseInt($('#totalpengeluaran').autoNumeric('get'));
+		
+		$('#total_pendapatan_bersih').autoNumeric('set', total_bersih);
+		
+	});
+	
+	/* ================= End of Arus Kas ================================ */
+	
+	/* ================= Aset Segment on Laporan Necara ================= */
+	
+	$('#aset1').focusout(function(e){
+		
+		var tab_deposito = $('#aset1').autoNumeric('get');
+		var aset_investasi = $('#aset2').autoNumeric('get');
+		var aset_pribadi = $('#aset3').autoNumeric('get');
+		
+		total = "";
+		
+		total = parseInt(tab_deposito) + parseInt(aset_investasi) + parseInt(aset_pribadi);
+		
+		$('#subtotalaset').autoNumeric('set', total);
+		
+	});
+	
+	$('#aset2').focusout(function(e){
+		
+		var tab_deposito = $('#aset1').autoNumeric('get');
+		var aset_investasi = $('#aset2').autoNumeric('get');
+		var aset_pribadi = $('#aset3').autoNumeric('get');
+		
+		total = "";
+		
+		total = parseInt(tab_deposito) + parseInt(aset_investasi) + parseInt(aset_pribadi);
+		
+		$('#subtotalaset').autoNumeric('set', total);
+		
+	});
+	
+	$('#aset3').focusout(function(e){
+		
+		var tab_deposito = $('#aset1').autoNumeric('get');
+		var aset_investasi = $('#aset2').autoNumeric('get');
+		var aset_pribadi = $('#aset3').autoNumeric('get');
+		
+		total = "";
+		
+		total = parseInt(tab_deposito) + parseInt(aset_investasi) + parseInt(aset_pribadi);
+		
+		$('#subtotalaset').autoNumeric('set', total);
+		
+	});
+	
+	/* ================= End of Aset segment ============================ */
+	
+	/* ================= Hutang Segment on Laporan Necara =============== */
+	
+	$('#hutang1').focusout(function(e){
+		
+		var hutang_pendek = $('#hutang1').autoNumeric('get');
+		var hutang_panjang = $('#hutang2').autoNumeric('get');
+		var hutang_lainnya = $('#hutang3').autoNumeric('get');
+		
+		total = "";
+		
+		total = parseInt(hutang_pendek) + parseInt(hutang_panjang) + parseInt(hutang_lainnya);
+		
+		$('#subtotalhutang').autoNumeric('set', total);
+		
+	});
+	
+	$('#hutang2').focusout(function(e){
+		
+		var hutang_pendek = $('#hutang1').autoNumeric('get');
+		var hutang_panjang = $('#hutang2').autoNumeric('get');
+		var hutang_lainnya = $('#hutang3').autoNumeric('get');
+		
+		total = "";
+		
+		total = parseInt(hutang_pendek) + parseInt(hutang_panjang) + parseInt(hutang_lainnya);
+		
+		$('#subtotalhutang').autoNumeric('set', total);
+		
+	});
+	
+	$('#hutang3').focusout(function(e){
+		
+		var hutang_pendek = $('#hutang1').autoNumeric('get');
+		var hutang_panjang = $('#hutang2').autoNumeric('get');
+		var hutang_lainnya = $('#hutang3').autoNumeric('get');
+		
+		total = "";
+		
+		total = parseInt(hutang_pendek) + parseInt(hutang_panjang) + parseInt(hutang_lainnya);
+		
+		$('#subtotalhutang').autoNumeric('set', total);
+		
+	});
+	
+	/* ================= End of Hutang Segment on Laporan Necara ========= */
+	
+	/* ================= Laporan Neraca ================================== */
+	
+	$('#next_6').click(function(e){
+		
+		$('#total_aset').html($('#subtotalaset').val());
+		
+		$('#total_hutang').html($('#subtotalhutang').val());
+		
+		var kekayaan_bersih = parseInt($('#subtotalaset').autoNumeric('get')) - parseInt($('#subtotalhutang').autoNumeric('get'));
+		
+		$('#kekayaan_bersih').autoNumeric('set', kekayaan_bersih);
+	});
+	
+	$('#wiz_6').click(function(e){
+		
+		$('#total_aset').html($('#subtotalaset').val());
+		
+		$('#total_hutang').html($('#subtotalhutang').val());
+		
+		var kekayaan_bersih = parseInt($('#subtotalaset').autoNumeric('get')) - parseInt($('#subtotalhutang').autoNumeric('get'));
+		
+		$('#kekayaan_bersih').autoNumeric('set', kekayaan_bersih);
+	});
+	
+	/* ================= End of Laporan Neraca ============================ */
+	
+/* =============== Added by Handri Pangestiaji 28 Desember 2014 ================= */
 
 })
 </script>
