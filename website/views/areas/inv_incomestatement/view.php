@@ -366,8 +366,8 @@ Total kekayaan terdiri dari terdiri dari aset likuid (Kas), aset investasi, sert
 
                 <div class="head_3">
                     <div class="head_desc">
-                        <p>Satu hal terpenting merencanakan keuangan anda adalah dimulai dari menghitung arus kas anda. Hal ini untuk mengetahui kondisi keuangan anda. Setelah itu ketahui dimana profil risiko keuangan dan baru mulai hitung kebutuhan dan tujuan financial anda.</p>
-                        <p>Berikut merupakan laporan finansial rasio anda:</p>
+                        <p>Satu hal terpenting merencanakan keuangan anda adalah dimulai dari menghitung arus kas anda. Hal ini untuk mengetahui kondisi keuangan anda. Setelah itu ketahui dimana profil risiko keuangan dan baru mulai hitung kebutuhan dan tujuan keuangan anda.</p>
+                        <p>Berikut merupakan laporan rasio keuangan anda:</p>
                     </div>
 
                     <div class="wiz">
