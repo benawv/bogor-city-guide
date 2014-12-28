@@ -80,7 +80,9 @@
                             <div style="clear:both"></div>
                             <span><br /><br /><br />
                             <b>Disclaimer: <br /></b>
-				Perhitungan diatas merupakan simulasi yang  menggunakan sistem pembulatan. Untuk hasil lebih tepatnya silakan <a href="/contact-us">hubungi Kami &rsaquo;</a>
+				Perhitungan diatas merupakan simulasi yang  menggunakan sistem pembulatan.
+				<br />
+				Untuk hasil lebih tepatnya silakan <a href="/contact-us">hubungi Kami &rsaquo;</a>
                             </span>
                             
                         </div>
