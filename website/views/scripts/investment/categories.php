@@ -13,7 +13,8 @@
                 <div class="textbanner bg_future" style="background:<?php echo $entrieC->hexaColor;?>">
                     <h1><?php echo $entrieC->title;?></h1>
 
-                    <p class="visitorname"> Hi, </p>
+                    <!-- <p class="visitorname"> Hi, </p> -->
+                    <p>Selamat Datang, </p>
 
                     <?php echo $entrieC->quotes;?>
 
