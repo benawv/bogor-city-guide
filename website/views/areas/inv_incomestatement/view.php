@@ -954,10 +954,12 @@ $(document).ready(function(){
 			likuiditas_teks = "<div style='color:red'>"+likuiditas+"</div>";
 		}
 		else {
-			likuiditas_teks = "<div>"+likuiditas+"</div>";
+			if(isNaN(likuiditas) == false)
+				likuiditas_teks = "<div>"+likuiditas+"</div>";
 		}
 		
-		$('.likuiditas').html(likuiditas_teks);
+		if(likuiditas_teks!="")
+			$('.likuiditas').html(likuiditas_teks);
 		
 		/* ---------- Aset Likuid --------- */
 		
@@ -970,10 +972,12 @@ $(document).ready(function(){
 		}
 		else 
 		{
-			aset_likuid_teks = "<div>"+aset_likuid+"</div>";
+			if(isNaN(aset_likuid) == false)
+				aset_likuid_teks = "<div>"+aset_likuid+"</div>";
 		}
 		
-		$('.aset_likuid').html(aset_likuid_teks);
+		if(aset_likuid_teks!="")
+			$('.aset_likuid').html(aset_likuid_teks);
 		
 		/* ---------- Hutang Terhadap Aset ---- */
 		
@@ -986,10 +990,12 @@ $(document).ready(function(){
 		}
 		else
 		{
-			hutang_aset_teks = "<div>" + hutang_aset + "</div>";
+			if(isNaN(hutang_aset) == false)
+				hutang_aset_teks = "<div>" + hutang_aset + "</div>";
 		}
 		
-		$('.hutang_aset').html(hutang_aset_teks);
+		if(hutang_aset_teks!="")
+			$('.hutang_aset').html(hutang_aset_teks);
 		
 		/* ---------- Total Investasi Terhadap Kekayaan Bersih -------- */
 		
@@ -1002,10 +1008,12 @@ $(document).ready(function(){
 		}
 		else
 		{
-			total_investasi_teks = "<div>" + total_investasi + "</div>";
+			if(isNaN(total_investasi) == false)
+				total_investasi_teks = "<div>" + total_investasi + "</div>";
 		}
 		
-		$('.investasi').html(total_investasi_teks);
+		if(total_investasi_teks!="")
+			$('.investasi').html(total_investasi_teks);
 		
 	});
 	
@@ -1015,7 +1023,7 @@ $(document).ready(function(){
 		var total_pengeluaran = $('#totalpengeluaran').autoNumeric('get');
 		var kekayaan_bersih = $('#kekayaan_bersih').autoNumeric('get');
 		var total_hutang = $('#subtotalhutang').autoNumeric('get');
-		console.log(kekayaan_bersih);
+		
 		
 		/* --------- Likuiditas ---------- */
 		
@@ -1028,10 +1036,12 @@ $(document).ready(function(){
 			likuiditas_teks = "<div style='color:red'>"+likuiditas+"</div>";
 		}
 		else {
-			likuiditas_teks = "<div>"+likuiditas+"</div>";
+			if(isNaN(likuiditas) == false)
+				likuiditas_teks = "<div>"+likuiditas+"</div>";
 		}
 		
-		$('.likuiditas').html(likuiditas_teks);
+		if(likuiditas_teks!="")
+			$('.likuiditas').html(likuiditas_teks);
 		
 		/* ---------- Aset Likuid --------- */
 		
@@ -1044,10 +1054,12 @@ $(document).ready(function(){
 		}
 		else 
 		{
-			aset_likuid_teks = "<div>"+aset_likuid+"</div>";
+			if(isNaN(aset_likuid) == false)
+				aset_likuid_teks = "<div>"+aset_likuid+"</div>";
 		}
 		
-		$('.aset_likuid').html(aset_likuid_teks);
+		if(aset_likuid_teks!="")
+			$('.aset_likuid').html(aset_likuid_teks);
 		
 		/* ---------- Hutang Terhadap Aset ---- */
 		
@@ -1060,10 +1072,12 @@ $(document).ready(function(){
 		}
 		else
 		{
-			hutang_aset_teks = "<div>" + hutang_aset + "</div>";
+			if(isNaN(hutang_aset) == false)
+				hutang_aset_teks = "<div>" + hutang_aset + "</div>";
 		}
 		
-		$('.hutang_aset').html(hutang_aset_teks);
+		if(hutang_aset_teks!="")
+			$('.hutang_aset').html(hutang_aset_teks);
 		
 		/* ---------- Total Investasi Terhadap Kekayaan Bersih -------- */
 		
@@ -1076,10 +1090,12 @@ $(document).ready(function(){
 		}
 		else
 		{
-			total_investasi_teks = "<div>" + total_investasi + "</div>";
+			if(isNaN(total_investasi) == false)
+				total_investasi_teks = "<div>" + total_investasi + "</div>";
 		}
 		
-		$('.investasi').html(total_investasi_teks);
+		if(total_investasi_teks!="")
+			$('.investasi').html(total_investasi_teks);
 		
 	});
 	
@@ -1102,19 +1118,18 @@ $(document).ready(function(){
     
     $(".aktual-neraca").click(function(){
         
-        $(".head_2").hide();
+        $(".head_1").hide();
         $(".head_3").hide();
-        $(".head_1").fadeIn();
-
-        $("#open_head_2").removeClass("active");
+        $(".head_2").fadeIn();
+        $("#open_head_1").removeClass("active");
         $("#open_head_3").removeClass("active");
         $("#open_head_2").addClass("head_wiz_1 active");
 
         $(".stepform").hide();
-        $("#step_1").fadeIn();
+        $("#step_4").fadeIn();
         $(".wiz li").removeClass();
-        $("#wiz_1").addClass("cur");
-
+        $("#wiz_4").addClass("cur");
+        
     });
     
     /* ================= End of Rasio Keuangan ====================== */
