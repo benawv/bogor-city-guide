@@ -477,9 +477,88 @@ Total kekayaan terdiri dari terdiri dari aset likuid (Kas), aset investasi, sert
                                 </td>
                             </tr>
                              <tr>
-                                <td>Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus.</td>
+                                
+                                <td>
+                                    <h3><b>Likuiditas</b></h3>
+                                    <p>
+                                    Selamat! Anda sudah memiliki dana darurat yang cukup untuk menutupi kebutuhan rutin bulanan Anda antara 3 - 6 bulan. Dana darurat berfungsi untuk menutupi pengeluaran yang bersifat insidentil yang tidak diperhitungkan dalam pengeluaran bulanan Anda. Contoh dari penggunaan dana darurat adalah untuk biaya pengobatan.</p></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr size="1" color="#333333" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                
+                                <td>
+                                    <h3><b>Aset Likuid</b></h3>
+                                    <p>
+                                    Selamat! Aset likuid yang Anda miliki sudah dalam rentang yang ideal, yaitu kurang dari 15% total aset Anda. Jumlah aset likuid yang terlalu tinggi akan menurunkan tingkat produktivitas aset Anda.</p></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr size="1" color="#333333" />
+                                </td>
+                            </tr>
+
+                             <tr>
+                                
+                                <td>
+                                    <h3><b>Tabungan & Investasi</b></h3>
+                                    <p>
+                                    Porsi pendapatan bulanan yang Anda sisihkan untuk tabungan & investasi masih di bawah angka ideal, yaitu minimal 10% dari pendapatan bulanan. Anda dapat meningkatkan rasio ini dengan menambahkan alokasi bulanan Anda untuk menabung / investasi. Salah satu cara yang dapat dilakukan adalah dengan segera menyisihkan porsi untuk tabungan / investasi setelah mendapatkan pendapatan, sehingga yang Anda tabung / investasikan bukanlah sisa dari pendapatan Anda. Dengan alokasi aset yang konsisten, Anda dapat meningkatkan total aset yang Anda miliki.</p></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr size="1" color="#333333" />
+                                </td>
                             </tr>
                             
+                            <tr>
+                                
+                                <td>
+                                    <h3><b>Hutang terhadap aset</b></h3>
+                                    <p>
+                                    Selamat! Perbandingan antara total hutang dan aset Anda sudah baik, yaitu di bawah 50%. Dengan kondisi ini apabila hutang Anda harus dilunasi secepatnya, maka maksimal hanya 50% dari aset Anda yang diperlukan untuk melunasinya. Semakin tinggi angka dari rasio ini, maka risiko terjadinya kebangkrutan akan semakin tinggi.</p></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr size="1" color="#333333" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                
+                                <td>
+                                    <h3><b>Total investasi terhadap kekayaan bersih</b></h3>
+                                    <p>
+                                    Total aset investasi Anda masih kurang dari porsi yang ideal, yaitu minimal 50% total aset Anda. Apabila ada hutang yang harus segera dilunasi dan aset likuid tidak mencukupi, aset investasi Anda tidak dapat menutupi kekurangan tersebut sehingga kondisi finansial Anda akan terdampak. Untuk peningkatan aset investasi, Anda dapat meningkatkan porsi investasi bulanan dari pendapatan yang Anda terima.</p></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr size="1" color="#333333" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                
+                                <td>
+                                    <h3><b>Share ke Email</b></h3>
+                                    <p>
+                                        <input type="email" />&nbsp;
+                                        <input type="submit" value="Send" />    
+                                    </p>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr size="1" color="#333333" />
+                                </td>
+                            </tr>
+
+
                             <tr>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
