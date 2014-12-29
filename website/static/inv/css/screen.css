@@ -1430,6 +1430,10 @@ nav.primary .search{
 	right: -5px;
 	/*top: 5px; */
 	font-size: .75em;
+	margin-top: 15px;
+}
+.minibar a img{
+	width: 210px;
 }
 .minibar .minilogo{
 	float: left;
