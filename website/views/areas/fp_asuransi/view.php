@@ -42,7 +42,7 @@
 		<script src="/website/static/inv/js/accounting.min.js"></script>
 		<script>
 			function fp_insurance(usia, pendapatan){
-				var new_usia = 55 - usia;
+				var new_usia = 75 - usia;
 				var new_asumsi = 0.02;
 				var formula = 1 * ((1 - Math.pow(1 + Number(new_asumsi), Number(-new_usia))) / Number(new_asumsi)) * (1 + Number(new_asumsi));
 				formula = formula.toFixed(3);
