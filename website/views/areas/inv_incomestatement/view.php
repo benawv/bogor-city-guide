@@ -547,9 +547,9 @@ Total kekayaan terdiri dari terdiri dari aset likuid (Kas), aset investasi, sert
                                     <h3><b>Share ke Email</b></h3>
                                     <p>
                                         <input type="email" class="email-user" />&nbsp;
-                                        <input type="button" class='sendEmail' value="Send" />    
+                                        <input type="submit" class='sendEmail' value="Send" />    
                                     </p>
-
+									<div style="color: #003da5;" class="sukses"></div>
                                 </td>
                             </tr>
                             <tr>
@@ -1228,8 +1228,7 @@ $(document).ready(function(){
 	        },
 	        success: function()
 	        {
-	          $('.divEmail').hide();
-	          $('.sukses').show();
+		      $('.sukses').html('<p> Email telah terkirim, silahkan cek email Anda </p>');
 	          //var url = window.location.origin+'/website/static/inv-fbshare/'+response;
 	          //alert("Email telah dikirim, silahkan cek email Anda");
 	        }
