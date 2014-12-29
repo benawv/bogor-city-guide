@@ -546,8 +546,8 @@ Total kekayaan terdiri dari terdiri dari aset likuid (Kas), aset investasi, sert
                                 <td>
                                     <h3><b>Share ke Email</b></h3>
                                     <p>
-                                        <input type="email" />&nbsp;
-                                        <input type="submit" value="Send" />    
+                                        <input type="email" class="email-user" />&nbsp;
+                                        <input type="button" class='sendEmail' value="Send" />    
                                     </p>
 
                                 </td>
@@ -1018,7 +1018,7 @@ $(document).ready(function(){
 		
 		var total_aset = $('#subtotalaset').autoNumeric('get');
 		var total_pengeluaran = $('#totalpengeluaran').autoNumeric('get');
-		var kekayaan_bersih = $('#kekayaan_bersih_hidden').autoNumeric('get');
+		var kekayaan_bersih = $('#kekayaan_bersih').autoNumeric('get');
 		var total_hutang = $('#subtotalhutang').autoNumeric('get');
 		
 		
@@ -1212,6 +1212,33 @@ $(document).ready(function(){
     });
     
     /* ================= End of Rasio Keuangan ====================== */
+    
+    $('.sendEmail').click(function(){
+	    if($('.email-user').val() != "")
+	    {
+	      $.ajax({
+	        type: 'POST',
+	        url: '/send_finansial_rasio',
+	        data: {
+	          email : $('.email-user').val(),
+	          likuiditas : $('.likuiditas').text(),
+	          aset_likuid : $('.aset_likuid').text(),
+	          hutang_aset : $('.hutang_aset').text(),
+	          investasi : $('.investasi').text()
+	        },
+	        success: function()
+	        {
+	          $('.divEmail').hide();
+	          $('.sukses').show();
+	          //var url = window.location.origin+'/website/static/inv-fbshare/'+response;
+	          //alert("Email telah dikirim, silahkan cek email Anda");
+	        }
+	      });
+	    }
+	    else{
+	      alert("Alamat email harus diisi.");
+	    }
+	});
 	
 /* =============== Added by Handri Pangestiaji 28 Desember 2014 ================= */
 
