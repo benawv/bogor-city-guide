@@ -336,7 +336,10 @@ Total kekayaan terdiri dari terdiri dari aset likuid (Kas), aset investasi, sert
                             </tr>
                              <tr>
                                 <td>KEKAYAAN BERSIH (TOTAL ASET - TOTAL HUTANG)</td>
-                                <td class="right auto" id="kekayaan_bersih" data-a-sign="Rp ">Rp 0</td>
+                                <td class="right auto" id="kekayaan_bersih" data-a-sign="Rp ">
+	                                Rp 0
+	                                <input type="hidden" data-a-sign="Rp " class="auto" id="kekayaan_bersih_hidden" />
+	                            </td>
                             </tr>
                             
                             <tr>
@@ -911,6 +914,8 @@ $(document).ready(function(){
 		var kekayaan_bersih = parseInt($('#subtotalaset').autoNumeric('get')) - parseInt($('#subtotalhutang').autoNumeric('get'));
 		
 		$('#kekayaan_bersih').autoNumeric('set', kekayaan_bersih);
+		
+		$('#kekayaan_bersih_hidden').autoNumeric('set', kekayaan_bersih);
 	});
 	
 	$('#wiz_6').click(function(e){
@@ -922,9 +927,161 @@ $(document).ready(function(){
 		var kekayaan_bersih = parseInt($('#subtotalaset').autoNumeric('get')) - parseInt($('#subtotalhutang').autoNumeric('get'));
 		
 		$('#kekayaan_bersih').autoNumeric('set', kekayaan_bersih);
+		
+		$('#kekayaan_bersih_hidden').autoNumeric('set', kekayaan_bersih);
 	});
 	
 	/* ================= End of Laporan Neraca ============================ */
+	
+	/* ================= Rasio Keuangan ================================== */
+	
+	$('#next_7').click(function(e){
+		
+		var total_aset = $('#subtotalaset').autoNumeric('get');
+		var total_pengeluaran = $('#totalpengeluaran').autoNumeric('get');
+		var kekayaan_bersih = $('#kekayaan_bersih_hidden').autoNumeric('get');
+		var total_hutang = $('#subtotalhutang').autoNumeric('get');
+		
+		
+		/* --------- Likuiditas ---------- */
+		
+		var x = parseInt(total_aset) / parseInt(total_pengeluaran);
+		var likuiditas = Math.round(x);
+		var likuiditas_teks = "";
+		
+		if(likuiditas < 3 || likuiditas > 6) 
+		{
+			likuiditas_teks = "<div style='color:red'>"+likuiditas+"</div>";
+		}
+		else {
+			likuiditas_teks = "<div>"+likuiditas+"</div>";
+		}
+		
+		$('.likuiditas').html(likuiditas_teks);
+		
+		/* ---------- Aset Likuid --------- */
+		
+		var aset_likuid = Math.round( ( parseInt(total_aset) / parseInt(kekayaan_bersih) ) * 100 );
+		var aset_likuid_teks = "";
+		
+		if(aset_likuid > 15) 
+		{
+			aset_likuid_teks = "<div style='color:red'>"+aset_likuid+"</div>";
+		}
+		else 
+		{
+			aset_likuid_teks = "<div>"+aset_likuid+"</div>";
+		}
+		
+		$('.aset_likuid').html(aset_likuid_teks);
+		
+		/* ---------- Hutang Terhadap Aset ---- */
+		
+		var hutang_aset = Math.round( ( parseInt(total_hutang) / parseInt(kekayaan_bersih) ) * 100 );
+		var hutang_aset_teks = "";
+		
+		if(hutang_aset > 50)
+		{
+			hutang_aset_teks = "<div style='color:red'>" + hutang_aset + "</div>";
+		}
+		else
+		{
+			hutang_aset_teks = "<div>" + hutang_aset + "</div>";
+		}
+		
+		$('.hutang_aset').html(hutang_aset_teks);
+		
+		/* ---------- Total Investasi Terhadap Kekayaan Bersih -------- */
+		
+		var total_investasi = Math.round( ( parseInt(total_aset) / parseInt(kekayaan_bersih) ) * 100 );
+		var total_investasi_teks = "";
+		
+		if(total_investasi < 50)
+		{
+			total_investasi_teks = "<div style='color:red'>" + total_investasi + "</div>";
+		}
+		else
+		{
+			total_investasi_teks = "<div>" + total_investasi + "</div>";
+		}
+		
+		$('.investasi').html(total_investasi_teks);
+		
+	});
+	
+	$('#open_head_3').click(function(e){
+		
+		var total_aset = $('#subtotalaset').autoNumeric('get');
+		var total_pengeluaran = $('#totalpengeluaran').autoNumeric('get');
+		var kekayaan_bersih = $('#kekayaan_bersih').autoNumeric('get');
+		var total_hutang = $('#subtotalhutang').autoNumeric('get');
+		console.log(kekayaan_bersih);
+		
+		/* --------- Likuiditas ---------- */
+		
+		var x = parseInt(total_aset) / parseInt(total_pengeluaran);
+		var likuiditas = Math.round(x);
+		var likuiditas_teks = "";
+		
+		if(likuiditas < 3 || likuiditas > 6) 
+		{
+			likuiditas_teks = "<div style='color:red'>"+likuiditas+"</div>";
+		}
+		else {
+			likuiditas_teks = "<div>"+likuiditas+"</div>";
+		}
+		
+		$('.likuiditas').html(likuiditas_teks);
+		
+		/* ---------- Aset Likuid --------- */
+		
+		var aset_likuid = Math.round( ( parseInt(total_aset) / parseInt(kekayaan_bersih) ) * 100 );
+		var aset_likuid_teks = "";
+		
+		if(aset_likuid > 15) 
+		{
+			aset_likuid_teks = "<div style='color:red'>"+aset_likuid+"</div>";
+		}
+		else 
+		{
+			aset_likuid_teks = "<div>"+aset_likuid+"</div>";
+		}
+		
+		$('.aset_likuid').html(aset_likuid_teks);
+		
+		/* ---------- Hutang Terhadap Aset ---- */
+		
+		var hutang_aset = Math.round( ( parseInt(total_hutang) / parseInt(kekayaan_bersih) ) * 100 );
+		var hutang_aset_teks = "";
+		
+		if(hutang_aset > 50)
+		{
+			hutang_aset_teks = "<div style='color:red'>" + hutang_aset + "</div>";
+		}
+		else
+		{
+			hutang_aset_teks = "<div>" + hutang_aset + "</div>";
+		}
+		
+		$('.hutang_aset').html(hutang_aset_teks);
+		
+		/* ---------- Total Investasi Terhadap Kekayaan Bersih -------- */
+		
+		var total_investasi = Math.round( ( parseInt(total_aset) / parseInt(kekayaan_bersih) ) * 100 );
+		var total_investasi_teks = "";
+		
+		if(total_investasi < 50)
+		{
+			total_investasi_teks = "<div style='color:red'>" + total_investasi + "</div>";
+		}
+		else
+		{
+			total_investasi_teks = "<div>" + total_investasi + "</div>";
+		}
+		
+		$('.investasi').html(total_investasi_teks);
+		
+	});
 	
 	$(".aktual-aruskas").click(function(){
         
@@ -959,6 +1116,8 @@ $(document).ready(function(){
         $("#wiz_1").addClass("cur");
 
     });
+    
+    /* ================= End of Rasio Keuangan ====================== */
 	
 /* =============== Added by Handri Pangestiaji 28 Desember 2014 ================= */
 
