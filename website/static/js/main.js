@@ -174,6 +174,10 @@ $(document).ready(function(){
 	    }
 	    return "";
 	}
+
+	function setCookie(cname, cvalue) {
+	    document.cookie = cname + "=" + cvalue + ";";
+	}
 	
 	$(".shop").on("click",function(){
 		//console.log(getCookie('userWishlist'));
@@ -219,6 +223,17 @@ $(document).ready(function(){
 	$(".checkout").on("click",function(){
 		var cookies = getCookie('userWishlist');
 		window.location.href = "/checkout/"+cookies;
+	});
+	$(".linkWizard").on("click",function(){
+		setCookie("showWizard","Hide");
+		window.location.href = "/wizard/wizard";
+	});
+	$(".close").on("click",function(){
+		setCookie("showWizard","Hide");
+	});
+	$(".linkProduk").on("click",function(){
+		setCookie("showWizard","Hide");
+		window.location.href = "/produk";
 	});
 	
 	$(".hapusProduk").on("click",function(){

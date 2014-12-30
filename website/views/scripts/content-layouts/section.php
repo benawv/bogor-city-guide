@@ -8,11 +8,12 @@
 	<span class="breadcrumb"><a href="#"><?php echo $this->document->getProperty('navigation_title');?></a></span>
 	
 	<div class="heading clearfix pagenav">
-		<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
+		<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor','title-wizard'))); ?>
 		<div id="quicklinks">
 		<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks', 'product-quicklinks',"blank-tile-quicklinks-static")))?>
 		</div>
 	</div>
+	<div>
 		<?php
 			function limit_words($string, $word_limit)
 			{
@@ -24,7 +25,7 @@
 														'container-box2', 'community-tips2',
 														'sections', 'sections-tab', 'teks-tabs',
 														'sections-video', 'sections-gallery', 
-														'sections-select', 
+														'sections-select', 'tekskanan60-imagekiri40_wizard', 
 														'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
 														'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
 														'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
@@ -34,6 +35,7 @@
 														'smartwealth-factsheet', 'imagekiri-tabelkanan'))); ?>
 		
 		<?php echo $this->areablock('container-modal', array('allowed' => array('modal')))?>
+	</div>
 </div>
 <script type="text/javascript">
 	$(document).ready(function(){

@@ -2762,6 +2762,14 @@ footer.contentinfo{
     .full-w.bg-white .description .submit_whislist{
     	width: 45%;
     }
+
+    /* WIZARD */
+    .wishlist-content .logo img{
+    	right: 10px;
+    }
+    .button-cart .btn-width{
+    	width: 140px;
+    }
 }
 
 

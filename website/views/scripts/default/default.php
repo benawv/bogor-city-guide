@@ -121,6 +121,7 @@
 			setcookie("user", $value);
 		}
 	?>
+	
 	<!-- Map -->
 	<div class="wrapper clearfix">
 		<div id="agent-locator">
@@ -143,4 +144,6 @@
 			<?php echo $this->video('videoHome', array('width' => '100%' , "height" => '265')) ?>
 		</div>
 	</div>
+
+	<?php echo $this->areablock('modal-box-home', array('allowed' => array('modal-home')));?>
 </div>

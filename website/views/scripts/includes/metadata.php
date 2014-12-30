@@ -16,6 +16,8 @@
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/main.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/tabs-accordion.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/product.css">
+<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/wishlist-cart.css">
+
 
 <!--
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
@@ -76,5 +78,17 @@ ga('send', 'pageview');
 		});
 
 	})
+	<?php
+		if(!$this->editmode) {
+			$showWizard = "showWizard";
+			if($_COOKIE[$showWizard] == "") {
+	?>
+				$(document).ready(function(){
+					//$('#modal-cart').modal("show");
+				});
+	<?php 	
+			}
+		}
+	?>
 </script>
 <script src="/website/static/js/share-product.js" type="text/javascript"></script>
