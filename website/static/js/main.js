@@ -270,6 +270,10 @@ $(document).ready(function(){
 			{
 				$(".eror").text('Semua kolom harus diisi.');
 			}
+			else if($("input:checked").length == 0)
+			{
+				$(".eror").text('Anda harus menyetujui persyaratan dan ketentuan.');
+			}
 			else if (email.length != 0) {
 				var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 	            //var emailLegalReg =  /^([\w-\.]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!aol.com)([\w-]+\.)+[\w-]{2,4})?$/;
