@@ -388,7 +388,7 @@ class InvestmentController extends Website_Controller_Action
                          GROUP BY fundName ORDER BY 1";
         $xmldata2=$db->fetchAll($sql_byfundname);
         
-        $alldata['defult_data']=$xmldata;
+        //$alldata['defult_data']=$xmldata;
         $alldata['ytd']=$xmldata2;
 
                                             
@@ -439,7 +439,7 @@ class InvestmentController extends Website_Controller_Action
             if(strlen($conditions)>1){
                 $conditions=" where ".$conditions;
             }else{
-                $conditions="";
+                $conditions=" where unitdate=''";
             }
            // die($conditions);
             

@@ -62,7 +62,7 @@
                         <tr> 
                             <th></th> 
                             <th class="header headerSortDown">Fund Name</th> 
-                            <th class="header">Type</th> 
+                            <th class="header">Offer</th> 
                             <th class="header">1M</th> 
                             <th class="header">3M</th> 
                             <th class="header">YTD</th>
@@ -80,9 +80,9 @@
                                     
                                     ?>
                                         <tr> 
-                                        <td><input value="" type="checkbox"></td>
+                                        <td></td>
                                         <td class="blue-type"><?php echo $items["fundname"]; ?></td> 
-                                        <td>EF (RU)</td> 
+                                        <td><?php echo $items["total_offer"]; ?></td> 
                                         <td><?php echo $items["total_bid"]; ?></td> 
                                         <td><?php echo $items["total_offer"]; ?></td> 
                                         <td><?php echo $items["total_bid"]; ?></td>
@@ -249,11 +249,11 @@
            
                <div class="table-wrap">
                    
-                     <div class="title-chart">
+                     <!---div class="title-chart">
                             Nav Graph for Bond FUND (01/11/2014 - 08/12/2014)
-                            <!--a href="#" id="bars" class="active"><span></span></a-->
+                            <!--a href="#" id="bars" class="active"><!--span></span></a-->
                             <!--a href="#" id="lines"><span></span></a-->
-                    </div>
+                    <!--/div-->
                    
                     <!-- Graph HTML -->
                     <div id="graph-wrapper">
