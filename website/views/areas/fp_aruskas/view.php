@@ -6,11 +6,11 @@
 					<div class="simform-inner">
 						<ol class="questions">
 							<li>
-								<span><label for="q1">Berapakah pendapatan anda saat ini?</label></span>
+								<span><label for="q1">Berapakah pendapatan Anda saat ini?</label></span>
 								<input id="q1" name="q1" type="text" value="Rp. 0"/>
 							</li>
 							<li>
-								<span><label for="q2">Berapa yang dapat anda sisihkan setiap bulannya untuk menabung?</label></span>
+								<span><label for="q2">Berapa yang dapat Anda sisihkan setiap bulannya untuk menabung?</label></span>
 								<input id="q2" name="q2" type="text" value="Rp. 0"/>
 							</li>
 							
@@ -85,7 +85,7 @@
 					if (result <= 10.00) {
 						color = 'crimson';
 					}
-					messageEl.innerHTML = '<h2>FAKTA</h2> <h3>Idealnya, seseorang dapat menyisihkan 10% <br>dari pendapatan bulanannya untuk tabungan yang disebut dengan financial ratio. <br><br>Financial ratio Anda adalah </h3><h2 style="color:'+color+';">'+result+'%</h2><h3> Ingin melakukan check up keuangan anda <br> <a href="/financial-planning/cash-flow-tables/income-statement#step_1" style="color:#A17832"> Mari mulai perencanaan arus kas anda ></a></h3><h3><a style="color:#A17832" href="#" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';
+					messageEl.innerHTML = '<h2>FAKTA</h2> <h3>Idealnya, seseorang dapat menyisihkan 10% <br>dari pendapatan bulanannya untuk tabungan yang disebut dengan financial ratio. <br><br>Financial ratio Anda adalah </h3><h2 style="color:'+color+';">'+result+'%</h2><h3> Ingin melakukan check up keuangan Anda <br> <a href="/financial-planning/cash-flow-tables/income-statement#step_1" style="color:#A17832"> Mari mulai perencanaan arus kas Anda ></a></h3><h3><a style="color:#A17832" href="#" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';
 					classie.addClass( messageEl, 'show' );
 				}
 			} );

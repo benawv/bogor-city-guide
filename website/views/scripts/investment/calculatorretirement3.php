@@ -28,7 +28,7 @@ var select = $( "#demo" );
             value: 1000000,
             range: "min",
             step: 1000000,
-slide: function(event, ui) { 
+change: function(event, ui) { 
          var sliderValue = $( "#slider" ).slider( "option", "value" );
         $('#sliderPosition').val(sliderValue);
         $('#sliderPosition').trigger('input');
@@ -62,7 +62,7 @@ var select = $( "#demo2" );
             max: 50,
             value: 1,
             range: "min",
-slide: function(event, ui) { 
+change: function(event, ui) { 
          var sliderValue = $( "#slider2" ).slider( "option", "value" );
         $('#sliderPosition2').val(sliderValue);
         $('#sliderPosition2').trigger('keyup');

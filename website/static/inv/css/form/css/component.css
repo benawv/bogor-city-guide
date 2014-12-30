@@ -157,7 +157,7 @@ form.simform .simform-inner > ol > li > span > label
     display: block;
     padding: 0;
     margin: 0;
-    font-size: 70%;
+    font-size: 24px;
 }
 
 form.simform .simform-inner > ol > li > span > label
@@ -361,7 +361,7 @@ form.simform .simform-inner > ol > li > span > label
 	margin: 0.4em 0;
 	width: 3em;
 	font-weight: 700;
-	font-size: 0.4em;
+	font-size: 14px;
 }
 
 .simform .number:after {

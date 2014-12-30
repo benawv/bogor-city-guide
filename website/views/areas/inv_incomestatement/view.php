@@ -336,7 +336,10 @@ Total kekayaan terdiri dari terdiri dari aset likuid (Kas), aset investasi, sert
                             </tr>
                              <tr>
                                 <td>KEKAYAAN BERSIH (TOTAL ASET - TOTAL HUTANG)</td>
-                                <td class="right auto" id="kekayaan_bersih" data-a-sign="Rp ">Rp 0</td>
+                                <td class="right auto" id="kekayaan_bersih" data-a-sign="Rp ">
+	                                Rp 0
+	                                <input type="hidden" data-a-sign="Rp " class="auto" id="kekayaan_bersih_hidden" />
+	                            </td>
                             </tr>
                             
                             <tr>
@@ -474,9 +477,88 @@ Total kekayaan terdiri dari terdiri dari aset likuid (Kas), aset investasi, sert
                                 </td>
                             </tr>
                              <tr>
-                                <td>Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus.</td>
+                                
+                                <td>
+                                    <h3><b>Likuiditas</b></h3>
+                                    <p>
+                                    Selamat! Anda sudah memiliki dana darurat yang cukup untuk menutupi kebutuhan rutin bulanan Anda antara 3 - 6 bulan. Dana darurat berfungsi untuk menutupi pengeluaran yang bersifat insidentil yang tidak diperhitungkan dalam pengeluaran bulanan Anda. Contoh dari penggunaan dana darurat adalah untuk biaya pengobatan.</p></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr size="1" color="#333333" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                
+                                <td>
+                                    <h3><b>Aset Likuid</b></h3>
+                                    <p>
+                                    Selamat! Aset likuid yang Anda miliki sudah dalam rentang yang ideal, yaitu kurang dari 15% total aset Anda. Jumlah aset likuid yang terlalu tinggi akan menurunkan tingkat produktivitas aset Anda.</p></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr size="1" color="#333333" />
+                                </td>
+                            </tr>
+
+                             <tr>
+                                
+                                <td>
+                                    <h3><b>Tabungan & Investasi</b></h3>
+                                    <p>
+                                    Porsi pendapatan bulanan yang Anda sisihkan untuk tabungan & investasi masih di bawah angka ideal, yaitu minimal 10% dari pendapatan bulanan. Anda dapat meningkatkan rasio ini dengan menambahkan alokasi bulanan Anda untuk menabung / investasi. Salah satu cara yang dapat dilakukan adalah dengan segera menyisihkan porsi untuk tabungan / investasi setelah mendapatkan pendapatan, sehingga yang Anda tabung / investasikan bukanlah sisa dari pendapatan Anda. Dengan alokasi aset yang konsisten, Anda dapat meningkatkan total aset yang Anda miliki.</p></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr size="1" color="#333333" />
+                                </td>
                             </tr>
                             
+                            <tr>
+                                
+                                <td>
+                                    <h3><b>Hutang terhadap aset</b></h3>
+                                    <p>
+                                    Selamat! Perbandingan antara total hutang dan aset Anda sudah baik, yaitu di bawah 50%. Dengan kondisi ini apabila hutang Anda harus dilunasi secepatnya, maka maksimal hanya 50% dari aset Anda yang diperlukan untuk melunasinya. Semakin tinggi angka dari rasio ini, maka risiko terjadinya kebangkrutan akan semakin tinggi.</p></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr size="1" color="#333333" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                
+                                <td>
+                                    <h3><b>Total investasi terhadap kekayaan bersih</b></h3>
+                                    <p>
+                                    Total aset investasi Anda masih kurang dari porsi yang ideal, yaitu minimal 50% total aset Anda. Apabila ada hutang yang harus segera dilunasi dan aset likuid tidak mencukupi, aset investasi Anda tidak dapat menutupi kekurangan tersebut sehingga kondisi finansial Anda akan terdampak. Untuk peningkatan aset investasi, Anda dapat meningkatkan porsi investasi bulanan dari pendapatan yang Anda terima.</p></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr size="1" color="#333333" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                
+                                <td>
+                                    <h3><b>Share ke Email</b></h3>
+                                    <p>
+                                        <input type="email" class="email-user" />&nbsp;
+                                        <input type="submit" class='sendEmail' value="Send" />    
+                                    </p>
+									<div style="color: #003da5;" class="sukses"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr size="1" color="#333333" />
+                                </td>
+                            </tr>
+
+
                             <tr>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
@@ -911,6 +993,8 @@ $(document).ready(function(){
 		var kekayaan_bersih = parseInt($('#subtotalaset').autoNumeric('get')) - parseInt($('#subtotalhutang').autoNumeric('get'));
 		
 		$('#kekayaan_bersih').autoNumeric('set', kekayaan_bersih);
+		
+		$('#kekayaan_bersih_hidden').autoNumeric('set', kekayaan_bersih);
 	});
 	
 	$('#wiz_6').click(function(e){
@@ -922,9 +1006,177 @@ $(document).ready(function(){
 		var kekayaan_bersih = parseInt($('#subtotalaset').autoNumeric('get')) - parseInt($('#subtotalhutang').autoNumeric('get'));
 		
 		$('#kekayaan_bersih').autoNumeric('set', kekayaan_bersih);
+		
+		$('#kekayaan_bersih_hidden').autoNumeric('set', kekayaan_bersih);
 	});
 	
 	/* ================= End of Laporan Neraca ============================ */
+	
+	/* ================= Rasio Keuangan ================================== */
+	
+	$('#next_7').click(function(e){
+		
+		var total_aset = $('#subtotalaset').autoNumeric('get');
+		var total_pengeluaran = $('#totalpengeluaran').autoNumeric('get');
+		var kekayaan_bersih = $('#kekayaan_bersih').autoNumeric('get');
+		var total_hutang = $('#subtotalhutang').autoNumeric('get');
+		
+		
+		/* --------- Likuiditas ---------- */
+		
+		var x = parseInt(total_aset) / parseInt(total_pengeluaran);
+		var likuiditas = Math.round(x);
+		var likuiditas_teks = "";
+		
+		if(likuiditas < 3 || likuiditas > 6) 
+		{
+			likuiditas_teks = "<div style='color:red'>"+likuiditas+"</div>";
+		}
+		else {
+			if(isNaN(likuiditas) == false)
+				likuiditas_teks = "<div>"+likuiditas+"</div>";
+		}
+		
+		if(likuiditas_teks!="")
+			$('.likuiditas').html(likuiditas_teks);
+		
+		/* ---------- Aset Likuid --------- */
+		
+		var aset_likuid = Math.round( ( parseInt(total_aset) / parseInt(kekayaan_bersih) ) * 100 );
+		var aset_likuid_teks = "";
+		
+		if(aset_likuid > 15) 
+		{
+			aset_likuid_teks = "<div style='color:red'>"+aset_likuid+"</div>";
+		}
+		else 
+		{
+			if(isNaN(aset_likuid) == false)
+				aset_likuid_teks = "<div>"+aset_likuid+"</div>";
+		}
+		
+		if(aset_likuid_teks!="")
+			$('.aset_likuid').html(aset_likuid_teks);
+		
+		/* ---------- Hutang Terhadap Aset ---- */
+		
+		var hutang_aset = Math.round( ( parseInt(total_hutang) / parseInt(kekayaan_bersih) ) * 100 );
+		var hutang_aset_teks = "";
+		
+		if(hutang_aset > 50)
+		{
+			hutang_aset_teks = "<div style='color:red'>" + hutang_aset + "</div>";
+		}
+		else
+		{
+			if(isNaN(hutang_aset) == false)
+				hutang_aset_teks = "<div>" + hutang_aset + "</div>";
+		}
+		
+		if(hutang_aset_teks!="")
+			$('.hutang_aset').html(hutang_aset_teks);
+		
+		/* ---------- Total Investasi Terhadap Kekayaan Bersih -------- */
+		
+		var total_investasi = Math.round( ( parseInt(total_aset) / parseInt(kekayaan_bersih) ) * 100 );
+		var total_investasi_teks = "";
+		
+		if(total_investasi < 50)
+		{
+			total_investasi_teks = "<div style='color:red'>" + total_investasi + "</div>";
+		}
+		else
+		{
+			if(isNaN(total_investasi) == false)
+				total_investasi_teks = "<div>" + total_investasi + "</div>";
+		}
+		
+		if(total_investasi_teks!="")
+			$('.investasi').html(total_investasi_teks);
+		
+	});
+	
+	$('#open_head_3').click(function(e){
+		
+		var total_aset = $('#subtotalaset').autoNumeric('get');
+		var total_pengeluaran = $('#totalpengeluaran').autoNumeric('get');
+		var kekayaan_bersih = $('#kekayaan_bersih').autoNumeric('get');
+		var total_hutang = $('#subtotalhutang').autoNumeric('get');
+		
+		
+		/* --------- Likuiditas ---------- */
+		
+		var x = parseInt(total_aset) / parseInt(total_pengeluaran);
+		var likuiditas = Math.round(x);
+		var likuiditas_teks = "";
+		
+		if(likuiditas < 3 || likuiditas > 6) 
+		{
+			likuiditas_teks = "<div style='color:red'>"+likuiditas+"</div>";
+		}
+		else {
+			if(isNaN(likuiditas) == false)
+				likuiditas_teks = "<div>"+likuiditas+"</div>";
+		}
+		
+		if(likuiditas_teks!="")
+			$('.likuiditas').html(likuiditas_teks);
+		
+		/* ---------- Aset Likuid --------- */
+		
+		var aset_likuid = Math.round( ( parseInt(total_aset) / parseInt(kekayaan_bersih) ) * 100 );
+		var aset_likuid_teks = "";
+		
+		if(aset_likuid > 15) 
+		{
+			aset_likuid_teks = "<div style='color:red'>"+aset_likuid+"</div>";
+		}
+		else 
+		{
+			if(isNaN(aset_likuid) == false)
+				aset_likuid_teks = "<div>"+aset_likuid+"</div>";
+		}
+		
+		if(aset_likuid_teks!="")
+			$('.aset_likuid').html(aset_likuid_teks);
+		
+		/* ---------- Hutang Terhadap Aset ---- */
+		
+		var hutang_aset = Math.round( ( parseInt(total_hutang) / parseInt(kekayaan_bersih) ) * 100 );
+		var hutang_aset_teks = "";
+		
+		if(hutang_aset > 50)
+		{
+			hutang_aset_teks = "<div style='color:red'>" + hutang_aset + "</div>";
+		}
+		else
+		{
+			if(isNaN(hutang_aset) == false)
+				hutang_aset_teks = "<div>" + hutang_aset + "</div>";
+		}
+		
+		if(hutang_aset_teks!="")
+			$('.hutang_aset').html(hutang_aset_teks);
+		
+		/* ---------- Total Investasi Terhadap Kekayaan Bersih -------- */
+		
+		var total_investasi = Math.round( ( parseInt(total_aset) / parseInt(kekayaan_bersih) ) * 100 );
+		var total_investasi_teks = "";
+		
+		if(total_investasi < 50)
+		{
+			total_investasi_teks = "<div style='color:red'>" + total_investasi + "</div>";
+		}
+		else
+		{
+			if(isNaN(total_investasi) == false)
+				total_investasi_teks = "<div>" + total_investasi + "</div>";
+		}
+		
+		if(total_investasi_teks!="")
+			$('.investasi').html(total_investasi_teks);
+		
+	});
 	
 	$(".aktual-aruskas").click(function(){
         
@@ -945,20 +1197,47 @@ $(document).ready(function(){
     
     $(".aktual-neraca").click(function(){
         
-        $(".head_2").hide();
+        $(".head_1").hide();
         $(".head_3").hide();
-        $(".head_1").fadeIn();
-
-        $("#open_head_2").removeClass("active");
+        $(".head_2").fadeIn();
+        $("#open_head_1").removeClass("active");
         $("#open_head_3").removeClass("active");
         $("#open_head_2").addClass("head_wiz_1 active");
 
         $(".stepform").hide();
-        $("#step_1").fadeIn();
+        $("#step_4").fadeIn();
         $(".wiz li").removeClass();
-        $("#wiz_1").addClass("cur");
-
+        $("#wiz_4").addClass("cur");
+        
     });
+    
+    /* ================= End of Rasio Keuangan ====================== */
+    
+    $('.sendEmail').click(function(){
+	    if($('.email-user').val() != "")
+	    {
+	      $.ajax({
+	        type: 'POST',
+	        url: '/send_finansial_rasio',
+	        data: {
+	          email : $('.email-user').val(),
+	          likuiditas : $('.likuiditas').text(),
+	          aset_likuid : $('.aset_likuid').text(),
+	          hutang_aset : $('.hutang_aset').text(),
+	          investasi : $('.investasi').text()
+	        },
+	        success: function()
+	        {
+		      $('.sukses').html('<p> Email telah terkirim, silahkan cek email Anda </p>');
+	          //var url = window.location.origin+'/website/static/inv-fbshare/'+response;
+	          //alert("Email telah dikirim, silahkan cek email Anda");
+	        }
+	      });
+	    }
+	    else{
+	      alert("Alamat email harus diisi.");
+	    }
+	});
 	
 /* =============== Added by Handri Pangestiaji 28 Desember 2014 ================= */
 
