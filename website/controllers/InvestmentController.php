@@ -385,7 +385,10 @@ class InvestmentController extends Website_Controller_Action
         $sql_byfundname="SELECT DISTINCT fundname,SUM(bid) AS total_bid, SUM(offer) AS total_offer 
                          FROM $nameCommunity 
                          WHERE unitdate >= $firstday AND unitdate <= $today 
-                         GROUP BY fundName ORDER BY 1";
+                         GROUP BY fundName 
+                         ORDER BY 1
+                         LIMIT 10
+                         ";
         $xmldata2=$db->fetchAll($sql_byfundname);
         
         //$alldata['defult_data']=$xmldata;
