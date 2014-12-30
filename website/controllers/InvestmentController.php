@@ -376,6 +376,8 @@ class InvestmentController extends Website_Controller_Action
 			 $nameCommunity = "object_query_".$table->getClassId();
         }
         
+        
+        /*
         $sql_subcat="SELECT *, FROM_UNIXTIME(unitdate,'%d-%m-%Y') AS unitdates  FROM ".$nameCommunity." AS xmlsource order by unitdate desc limit 10";
         $xmldata=$db->fetchAll($sql_subcat);
         
@@ -387,16 +389,114 @@ class InvestmentController extends Website_Controller_Action
                          WHERE unitdate >= $firstday AND unitdate <= $today 
                          GROUP BY fundName 
                          ORDER BY 1
-                         LIMIT 10
-                         ";
+                         LIMIT 10";
         $xmldata2=$db->fetchAll($sql_byfundname);
+        */
         
-        //$alldata['defult_data']=$xmldata;
-        $alldata['ytd']=$xmldata2;
+         $getLastDay1M=" SELECT LAST_DAY(STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y')) AS last_one_month 
+                        FROM $nameCommunity 
+                        WHERE STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y') > DATE_ADD(NOW(), INTERVAL- 1 MONTH)
+                        ORDER BY unitdate ASC
+                        LIMIT 1 ";
+        $lastday1M=$db->fetchAll($getLastDay1M);   
+        $unitdates = explode("-", $lastday1M[0]['last_one_month']);
+                $unitdates[0]; //day
+                $unitdates[1]; //month
+                $unitdates[2]; //year   
+                $getday= $unitdates[2]."-".$unitdates[1]."-".$unitdates[0];       
+        
+        $getLast1MDay="SELECT LAST_DAY(STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y')) AS last_one_month 
+                        FROM $nameCommunity 
+                        WHERE STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y') > DATE_ADD(NOW(), INTERVAL- 2 MONTH)
+                        ORDER BY unitdate ASC
+                        LIMIT 1";
+        $last1MDay=$db->fetchAll($getLast1MDay); 
+        $unitdates2 = explode("-", $last1MDay[0]['last_one_month']);
+                $unitdates2[0]; //day
+                $unitdates2[1]; //month
+                $unitdates2[2]; //year   
+                $getLastMonth= $unitdates2[2]."-".$unitdates2[1]."-".$unitdates2[0]; 
+        
+        /*get data by fundname*/
+        $getAllFundName="SELECT DISTINCT fundname FROM $nameCommunity AS a 
+                         WHERE  STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y') < STR_TO_DATE('$getday','%d-%m-%Y')  AND
+	                            STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y') > DATE_ADD(NOW(), INTERVAL- 2 MONTH)
+                         ORDER  BY 1 DESC";
+                         
+        $xmldata2=$db->fetchAll($getAllFundName);
+        
+        foreach($xmldata2 as $items){
+            
+            $getToday="SELECT a.fundname,bid,offer,STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') AS last_one_month
+                       FROM $nameCommunity AS a
+                       WHERE fundname='".$items['fundname']."' AND 
+                       STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')<= NOW()
+                       ORDER BY 1 DESC
+                       LIMIT 1";
+            $todayData=$db->fetchAll($getToday);
+           
+            /*===========get 1 month=========*/
+            $getfirst1m="SELECT a.fundname,bid,offer,STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') AS last_one_month
+                        FROM $nameCommunity AS a
+                        WHERE fundname='".$items['fundname']."' AND 
+                        STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')<=DATE_ADD(NOW(), INTERVAL- 1 MONTH)
+                        ORDER BY 1 DESC
+                        LIMIT 1";
+            $first1mData=$db->fetchAll($getfirst1m);
+            
+            $getlast="SELECT a.fundname,bid,offer,STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') AS last_one_month
+                        FROM $nameCommunity AS a
+                        WHERE fundname='".$items['fundname']."' AND 
+                        STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')<=NOW()
+                        ORDER BY 1 DESC
+                        LIMIT 1";
+            $lastData=$db->fetchAll($getlast);
+            
+            $getLast3m="SELECT a.fundname,bid,offer,STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') AS last_one_month
+                        FROM $nameCommunity AS a
+                        WHERE fundname='".$items['fundname']."' AND 
+                        STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')<=DATE_ADD(NOW(), INTERVAL- 3 MONTH)
+                        ORDER BY 1 DESC
+                        LIMIT 1";
+            $last3mData=$db->fetchAll($getLast3m);
+  
 
-                                            
-        $this->view->data=$alldata;	 
-          
+            $getYtd="SELECT DISTINCT a.fundname,SUM(bid)AS ytd_bid,SUM(offer) AS ytd_offer,STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') AS today
+                    FROM $nameCommunity AS a
+                    WHERE	fundname='".$items['fundname']."' AND 
+                    	STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') < STR_TO_DATE('30-12-2014','%d-%m-%Y') AND
+                    	STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') >= DATE_FORMAT(NOW() ,'%Y-01-01')
+                    GROUP BY fundname";                    
+            $ytdData=$db->fetchAll($getYtd);
+            
+            
+            /*1 YAER*/
+            $get1year="SELECT a.fundname,bid,offer,STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') AS last_year
+                    FROM $nameCommunity AS a
+                    WHERE fundname='".$items['fundname']."' AND
+                    STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') <=DATE_ADD(NOW(), INTERVAL- 1 YEAR)
+                    ORDER BY unitdate DESC
+                    LIMIT 1";                    
+            $last1year=$db->fetchAll($get1year);
+            /*1 YAER*/
+            
+            $last_data['today']=$todayData;
+            $last_data['lastdata']=$lastData;
+            $last_data['lastmonth']=$last1mData;
+            $last_data['last3month']=$last3mData;
+            $last_data['last1year']=$last1year;            
+            $last_data['ytd']=$ytdData;
+      
+            $arrayLastData[]=$last_data;
+        }
+        
+        sort($arrayLastData);      
+        $alldata['ytd']=$arrayLastData;
+        $this->view->data=$alldata;     
+
+        //$alldata['defult_data']=$xmldata;
+       // $alldata['ytd']=$last_data;
+       	   
     }
     
      public function investmentdailynavfilterAction(){//show data filter into table
@@ -521,6 +621,22 @@ class InvestmentController extends Website_Controller_Action
              }
         }      
     }
+    
+   function pagination($query, $per_page = 10,$page = 1, $url = '?'){        
+   
+        $db = Pimcore_Resource_Mysql::get(); 
+        $entries = new Object_InvestmentNav_List();
+   	    foreach ($entries as $table)
+		{
+			 $nameCommunity = "object_query_".$table->getClassId();
+        }
+        
+        $sql_subcat="SELECT *, FROM_UNIXTIME(unitdate,'%d-%m-%Y') AS unitdates  FROM ".$nameCommunity." AS xmlsource order by unitdate desc limit 10";
+        $xmldata=$db->fetchAll($sql_subcat);
+        
+        return $xmldata;
+        
+   } 
     
     
     
