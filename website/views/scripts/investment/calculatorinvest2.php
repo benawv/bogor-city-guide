@@ -25,10 +25,10 @@ $(function() {
         
 var select = $( "#demo" );
         var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
-            min: 1000000,
-            max: 1000000000,
-            value: 1000000,
-            step: 1000000,
+            min: 10000000,
+            max: 5000000000,
+            value: 10000000,
+            step: 10000000,
             range: "min",
 change: function(event, ui) { 
          var sliderValue = $( "#slider" ).slider( "option", "value" );
@@ -165,7 +165,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition" class="slider-wrap" style="border-color: #113388;" value="Rp. 1.000.000">
+                        <input type="text" id="sliderPosition" class="slider-wrap" style="border-color: #113388;" value="Rp. 10.000.000">
                        </input> 
                         
                         <div id="decrease">
