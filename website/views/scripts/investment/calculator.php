@@ -157,6 +157,25 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             <div class="calc-title">
                 <h4>KALKULATOR PENDIDIKAN</h4>
            </div>
+            <div class="calc-machine">
+               <div id="demox">
+                   <div class="calc-box-title"> 
+                        <div class="title-box"><h4>JENJANG PENDIDIKAN</h4></div>
+                   </div>
+                    <div class="calc-box">    
+                        <select class="jenjang" style="border:solid 1px; color: black;">
+                            <option value="KB">KB</option>
+                            <option value="TK">TK</option>
+                            <option value="SD">SD</option>
+                            <option value="SMP">SMP</option>
+                            <option value="SMA">SMA</option>
+                            <option value="PT">Perguruan Tinggi</option>
+                        </select> 
+                    </div><!-- End demo -->
+                   
+               </div>
+           </div>
+       
            <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
@@ -438,6 +457,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         $(".orange-btn").click(function(){
             var result = edu1(biaya, asumsi, waktu);
             
+            setCookie('edu1_jenjang',$('.jenjang').val(),1);
             setCookie('edu1_biaya_bulanan',biaya,1);
             setCookie('edu1_asumsi_inflasi',asumsi,1);
             setCookie('edu1_jangka_waktu',waktu,1);
