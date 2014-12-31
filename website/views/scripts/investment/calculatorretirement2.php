@@ -457,7 +457,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                 $("#slider").slider( "value" , newValue);
 		
                 newValue = $("#sliderPosition3").val().replace(" tahun", "");
-                $( "#slider3" ).slider( "option", "max", newValue);
+                //$( "#slider3" ).slider( "option", "max", newValue);
                 $("#slider3").slider( "value" , newValue);                
                 
 		$("#sliderPosition").focusout(function(event){			
