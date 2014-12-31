@@ -231,6 +231,9 @@ $(document).ready(function(){
 	$(".close").on("click",function(){
 		setCookie("showWizard","Hide");
 	});
+	$("#modal-cart").on("click",function(){
+		setCookie("showWizard","Hide");
+	});
 	$(".linkProduk").on("click",function(){
 		setCookie("showWizard","Hide");
 		window.location.href = "/produk";

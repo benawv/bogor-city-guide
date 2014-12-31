@@ -78,17 +78,18 @@ ga('send', 'pageview');
 		});
 
 	})
-	<?php
-		if(!$this->editmode) {
-			$showWizard = "showWizard";
-			if($_COOKIE[$showWizard] == "") {
-	?>
-				$(document).ready(function(){
-					//$('#modal-cart').modal("show");
-				});
-	<?php 	
+	$(document).ready(function(){
+		<?php
+			if(!$this->editmode) {
+				$showWizard = "showWizard";
+				if($_COOKIE[$showWizard] == "") {
+		?>
+					
+						$('#modal-cart').modal("show");
+		<?php 	
+				}
 			}
-		}
-	?>
+		?>
+	});
 </script>
 <script src="/website/static/js/share-product.js" type="text/javascript"></script>
