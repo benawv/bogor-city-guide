@@ -31,14 +31,14 @@
 			<?php echo $this->wysiwyg('title-teks_'.$z)?>
 		</h2>
 		<div class="description">
-			<div class="section-left-40">
+			<div class="section-left-60">
 				<?php echo $this->image('image-kiri_'.$z, array(
-										'title' => 'Image Size 354x315',
-										'width' => 354,
-										'height' => 315,
+										'title' => 'Image Size 536x477',
+										'width' => 536,
+										'height' => 477,
 										'thumbnail' => 'wizard'))?>
 			</div>
-			<div class="section-right-60">
+			<div class="section-right-40">
 				<?php echo $this->wysiwyg('teks-kanan_'.$z)?>
 			</div>
 		</div>
