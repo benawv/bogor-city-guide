@@ -9,7 +9,7 @@
 								<input id="q1" name="q1" type="text" value="Rp. 0"/>
 							</li>
 							<li>
-								<span><label for="q2">Berapa lama lagi sebelum Anda memustuskan untuk pensiun?</label></span>
+								<span><label for="q2">Berapa lama lagi sebelum Anda memutuskan untuk pensiun?</label></span>
 								<input id="q2" name="q2" type="text" value="0 tahun"/>
 							</li>
 							
