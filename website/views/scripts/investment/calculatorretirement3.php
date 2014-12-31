@@ -86,7 +86,26 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
       
 
 }); </script>   
+
+<script>   
     
+$(function() {           
+        
+var select = $( "#demo3" );
+        var slider = $( "<div id='slider3'></div>" ).insertAfter( select ).slider({
+            min: 1,
+            max: 100,
+            value: 1,
+            range: "min",
+change: function(event, ui) { 
+         var sliderValue = $( "#slider3" ).slider( "option", "value" );
+        $('#sliderPosition3').val(sliderValue);
+        $('#sliderPosition3').trigger('keyup');
+        }        
+        });
+
+}); </script>
+
 <div role="main" class="main">
     
 	<div class="container">
@@ -234,11 +253,11 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
 	}
         
         var pension2_hasil = getCookie('pension2_hasil');
-	var pension2_waktu = getCookie('pension1_jangka_waktu');
+	var pension1_waktu = getCookie('pension1_jangka_waktu');
 	pension2_hasil = accounting.formatMoney(pension2_hasil,'Rp. ',2,'.',',');
         $('#sliderPosition').val(pension2_hasil);
         $('#sliderPosition2').val("1%");
-        $('#sliderPosition3').val(pension2_waktu + ' tahun');
+        $('#sliderPosition3').val(pension1_waktu + ' tahun');
 
         
         function pension3(biaya, asumsi, waktu){
@@ -403,6 +422,10 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
                 var newValue = $("#sliderPosition").val().replace("Rp. ", "").replace(/\./g, "").replace(",00", "");
                 $("#slider").slider( "value" , newValue);
 		
+                newValue = $("#sliderPosition3").val().replace(" tahun", "");
+                $( "#slider3" ).slider( "option", "max", newValue);
+                $("#slider3").slider( "value" , newValue);
+                
 		$("#sliderPosition").focusout(function(event){			
 			val = this.value;
 			val = val.replace("Rp. ", "");
