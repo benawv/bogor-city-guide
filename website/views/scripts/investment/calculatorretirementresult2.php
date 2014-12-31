@@ -157,7 +157,7 @@
      });
      
      $("#product_allianz").click(function(){
-	    window.location.href = "http://allianz.co.id/produk";
+	    window.open("http://allianz.co.id/produk",'_blank');
      });
      
 	function navigateMe(anchor)
