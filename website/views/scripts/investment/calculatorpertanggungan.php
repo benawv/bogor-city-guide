@@ -200,7 +200,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition" class="slider-wrap" style="border-color: #a50034" value="Rp. 5.000.000">
+                        <input type="text" id="sliderPosition" class="slider-wrap" style="border-color: #a50034" value="Rp 5.000.000">
                        </input> 
                         
                         <div id="decrease">
@@ -343,7 +343,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
             return result.toFixed(2);
         }
         
-        $('#sliderPosition').val("Rp. 5.000.000");
+        $('#sliderPosition').val("Rp 5.000.000");
         $('#sliderPosition2').val("1%");
         $('#sliderPosition3').val("1%");
         $('#sliderPosition4').val("1 tahun");
@@ -358,7 +358,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
             text = text.replace(/\./g,'');
             text = text.replace(/,/g,'');
             biaya = text;
-            text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+            text = accounting.formatMoney(text,'Rp ',0,'.',',');
             $(this).val(text);
         });
         
@@ -503,7 +503,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
 		$("#sliderPosition").focusout(function(event){
 			
 			val = this.value;
-			val = val.replace("Rp. ", "");
+			val = val.replace("Rp ", "");
 			val = val.replace(".", "");
 			val = val.replace("0.0", "00");
 			$("#slider").slider( "value" , val);

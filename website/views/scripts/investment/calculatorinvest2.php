@@ -165,7 +165,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition" class="slider-wrap" style="border-color: #113388;" value="Rp. 10.000.000">
+                        <input type="text" id="sliderPosition" class="slider-wrap" style="border-color: #113388;" value="Rp 10.000.000">
                        </input> 
                         
                         <div id="decrease">
@@ -267,7 +267,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 	}
         
         var investment1_hasil = getCookie('investment1_hasil');
-	investment1_hasil = accounting.formatMoney(investment1_hasil,'Rp. ',2,'.',',');
+	investment1_hasil = accounting.formatMoney(investment1_hasil,'Rp ',2,'.',',');
 	var investment1_jangka_waktu = getCookie('investment1_jangka_waktu');
 
         $('#sliderPosition').val(investment1_hasil);
@@ -298,7 +298,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             text = text.replace(/\./g,'');
             text = text.replace(/,/g,'');
             biaya = text;
-            text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+            text = accounting.formatMoney(text,'Rp ',0,'.',',');
             $(this).val(text);
         });
         
@@ -434,13 +434,13 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 		
 		/* added by Ahmad Somadi 27 Des 2014 */
                 
-                var newValue = $("#sliderPosition").val().replace("Rp. ", "").replace(/\./g, "").replace(",00", "");
+                var newValue = $("#sliderPosition").val().replace("Rp ", "").replace(/\./g, "").replace(",00", "");
                 $("#slider").slider( "value" , newValue);
 		
 		$("#sliderPosition").focusout(function(event){
 			
 			val = this.value;
-			val = val.replace("Rp. ", "");
+			val = val.replace("Rp ", "");
 			val = val.replace(".", "");
 			val = val.replace("0.0", "00");
 			$("#slider").slider( "value" , val);

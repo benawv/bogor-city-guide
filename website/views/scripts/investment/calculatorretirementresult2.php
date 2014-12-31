@@ -64,7 +64,7 @@
                    
                     <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result" style="color: #8b4720;">Rp. 0</span>
+                            <span id="result" style="color: #8b4720;">Rp 0</span>
                         </div>
                          <div class="share">
                              <span>Bagikan hasil tersebut dengan teman Anda:</span>
@@ -145,7 +145,7 @@
 	}
 
 	var result = getCookie('pension2_hasil');
-	result = accounting.formatMoney(result,'Rp. ',2,'.',',');
+	result = accounting.formatMoney(result,'Rp ',2,'.',',');
 	$('#result').html(result);
 	
 	$("#retirement3").click(function(){

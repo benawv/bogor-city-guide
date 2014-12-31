@@ -167,7 +167,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition" class="slider-wrap" value="Rp. 5.000.000">
+                        <input type="text" id="sliderPosition" class="slider-wrap" value="Rp 5.000.000">
                        </input> 
                         
                         <div id="decrease">
@@ -278,7 +278,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         
         var pension1_hasil = getCookie('pension1_hasil');
 	var pension1_waktu = getCookie('pension1_jangka_waktu');
-	pension1_hasil = accounting.formatMoney(pension1_hasil,'Rp. ',0,'.',',');
+	pension1_hasil = accounting.formatMoney(pension1_hasil,'Rp ',0,'.',',');
 	$('#sliderPosition').val(pension1_hasil);
         $('#sliderPosition2').val("1%");
         $('#sliderPosition3').val(pension1_waktu + " tahun");
@@ -307,7 +307,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             text = text.replace(/\./g,'');
             text = text.replace(/,/g,'');
             biaya = text;
-            text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+            text = accounting.formatMoney(text,'Rp ',0,'.',',');
             $(this).val(text);
         });
         
@@ -453,7 +453,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                 
                 /* added by Ahmad Somadi 27 Des 2014 */
                 
-                var newValue = $("#sliderPosition").val().replace("Rp. ", "").replace(/\./g, "").replace(",00", "");
+                var newValue = $("#sliderPosition").val().replace("Rp ", "").replace(/\./g, "").replace(",00", "");
                 $("#slider").slider( "value" , newValue);
 		
                 newValue = $("#sliderPosition3").val().replace(" tahun", "");
@@ -462,7 +462,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                 
 		$("#sliderPosition").focusout(function(event){			
 			val = this.value;
-			val = val.replace("Rp. ", "");
+			val = val.replace("Rp ", "");
 			val = val.replace(".", "");
 			val = val.replace("0.0", "00");
 			$("#slider").slider( "value" , val);
