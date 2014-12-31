@@ -6,7 +6,7 @@
 						<ol class="questions">
 							<li>
 								<span><label for="q1">Berapakah biaya sekolah pada saat Anda SMP?</label></span>
-								<input id="q1" name="q1" type="text" value="Rp. 0"/>
+								<input id="q1" name="q1" type="text" value="Rp 0"/>
 							</li>
 							
 						</ol><!-- /questions -->
@@ -50,7 +50,7 @@
 				text = text.replace(/\./g,'');
 				text = text.replace(/,/g,'');
 				biaya = text;
-				text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+				text = accounting.formatMoney(text,'Rp ',0,'.',',');
 				$(this).val(text);
 			    });
 			

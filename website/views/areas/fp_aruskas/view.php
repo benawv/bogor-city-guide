@@ -7,11 +7,11 @@
 						<ol class="questions">
 							<li>
 								<span><label for="q1">Berapakah pendapatan Anda saat ini?</label></span>
-								<input id="q1" name="q1" type="text" value="Rp. 0"/>
+								<input id="q1" name="q1" type="text" value="Rp 0"/>
 							</li>
 							<li>
 								<span><label for="q2">Berapa yang dapat Anda sisihkan setiap bulannya untuk menabung?</label></span>
-								<input id="q2" name="q2" type="text" value="Rp. 0"/>
+								<input id="q2" name="q2" type="text" value="Rp 0"/>
 							</li>
 							
 						</ol><!-- /questions -->
@@ -54,7 +54,7 @@
 				text = text.replace(/\./g,'');
 				text = text.replace(/,/g,'');
 				pendapatan = text;
-				text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+				text = accounting.formatMoney(text,'Rp ',0,'.',',');
 				$(this).val(text);
 			    });
 			$("#q2").bind('input',function(){
@@ -63,7 +63,7 @@
 				text = text.replace(/\./g,'');
 				text = text.replace(/,/g,'');
 				tabungan = text;
-				text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+				text = accounting.formatMoney(text,'Rp ',0,'.',',');
 				$(this).val(text);
 			    });
 			
