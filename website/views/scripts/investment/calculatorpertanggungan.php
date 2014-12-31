@@ -275,10 +275,10 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
            <div class="calc-machine">
                <div id="demo4">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4 style="color: #a50034">JANGKA WAKTU HINGGA PENSIUN</h4></div>
+                        <div class="title-box"><h4 style="color: #a50034">JANGKA WAKTU PERTANGGUNGAN</h4></div>
                         <!--<div class="tooltips abs4" style="background-color: #a50034"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Lamanya masa pensiun yang direncanakan">?  </a></div>-->
 
-                        <div class="sub_form">Rata-rata Umur Pensiun di Indonesia 55 tahun</div>
+                        <div class="sub_form">Lamanya uang pertanggungan mencukupi kebutuhan finansial</div>
                    </div>
                    
                     <div class="calc-box">    
