@@ -149,7 +149,7 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
              <div class="calc-machine">
                <div id="demo2">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4 style="color: #8b4720;">ASUMSI TINGKAT IMBAL HASIL</h4></div>
+                        <div class="title-box"><h4 style="color: #8b4720;">ASUMSI IMBAL HASIL TAHUNAN</h4></div>
                         <!--<div class="tooltips abs2" style="background-color: #8b4720;"><a class="tooltip-left" data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%">?  </a></div>-->
 
                         <div class="sub_form">Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%</div>
