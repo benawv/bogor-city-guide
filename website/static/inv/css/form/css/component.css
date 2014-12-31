@@ -73,7 +73,6 @@
 .form-container.blue span.final-message,
 .form-container.blue span.final-message h3,
 .form-container.blue span.final-message p,
-.form-container.blue span.final-message a,
 .form-container.blue span.percentage
 {
     color: white !important;
@@ -100,7 +99,6 @@
 .form-container.red span.final-message,
 .form-container.red span.final-message h3,
 .form-container.red span.final-message p,
-.form-container.red span.final-message a,
 .form-container.red span.percentage
 {
     color: white !important;
@@ -116,7 +114,6 @@
 .form-container.purple span.final-message,
 .form-container.purple span.final-message h3,
 .form-container.purple span.final-message p,
-.form-container.purple span.final-message a,
 .form-container.purple span.percentage
 {
     color: white !important;
@@ -449,6 +446,11 @@ margin-top: 15px;
 	transition-delay: 0.5s;
 }
 
+.final-message.show h3 a{
+		color: rgba(255,255,255,0.5);
+		font-size: 18px;
+}
+
 /* Final hiding of form / showing message */
 .simform-inner.hide {
 	visibility: hidden;
@@ -494,5 +496,43 @@ input[type=text]::-ms-clear {
 @media screen and (max-width: 33.5625em) {
 	.simform {
 		font-size: 1.2em;
+	}
+	.error-message.show,
+	.final-message.show {
+	  visibility: visible;
+	  opacity: 1;
+	  font-size: 24px;
+	}
+
+	.final-message.show h1,
+	.final-message.show h2,
+	.final-message.show h3 {
+	
+		font-style: italic;
+		font-size: 24px;
+		margin: 15px 0;
+		color: #FFFFFF;
+	}
+	.final-message.show h2{
+		font-size: 36px;
+		font-weight: bold;
+		border-bottom: 1px solid #FFFFFF;
+		padding-bottom: 15px;
+	}
+	.final-message.show h3{
+		font-size: 24px;
+		font-weight: normal;
+		border-bottom: 1px solid #FFFFFF;
+		padding: 15px 0;
+	}
+	.final-message.show h1{
+		font-size: 28px;
+		font-weight: bold;
+		border-bottom: 1px solid #FFFFFF;
+		padding: 15px 0;
+	}
+	.final-message.show h3 a{
+		color: rgba(255,255,255,0.5);
+		font-size: 18px;
 	}
 }
