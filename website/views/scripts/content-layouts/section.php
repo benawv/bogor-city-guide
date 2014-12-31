@@ -32,7 +32,7 @@
 														'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
 														'smartlink-factsheet', 'syariah-factsheet',
 														'pension-factsheet', 'saving-factsheet','multi-video',
-														'smartwealth-factsheet', 'imagekiri-tabelkanan'))); ?>
+														'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap'))); ?>
 		
 		<?php echo $this->areablock('container-modal', array('allowed' => array('modal')))?>
 	</div>
