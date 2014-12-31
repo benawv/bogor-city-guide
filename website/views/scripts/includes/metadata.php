@@ -82,7 +82,7 @@ ga('send', 'pageview');
 		<?php
 			if(!$this->editmode) {
 				$showWizard = "showWizard";
-				if($_COOKIE[$showWizard] == "") {
+				if($_COOKIE[$showWizard] != "Hide") {
 		?>
 					
 						$('#modal-cart').modal("show");
