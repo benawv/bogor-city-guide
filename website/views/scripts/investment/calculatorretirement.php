@@ -1,5 +1,7 @@
 <?php echo $this->template("includes/inv/header.php")?>
-
+<style>
+div.ui-slider-range{background-color:#8b4720;}
+</style>
 
 <link rel="stylesheet" href="/website/static/inv/js/rangeslider/jquery-ui.css" type="text/css" media="all" />
 

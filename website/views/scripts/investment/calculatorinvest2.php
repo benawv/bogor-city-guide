@@ -1,5 +1,7 @@
 <?php echo $this->template("includes/inv/header.php")?>
-
+<style>
+div.ui-slider-range{background-color:#113388;}
+</style>
 
 <link rel="stylesheet" href="/website/static/inv/js/rangeslider/jquery-ui.css" type="text/css" media="all" />
 
@@ -27,6 +29,7 @@ var select = $( "#demo" );
             max: 1000000000,
             value: 1000000,
             step: 1000000,
+            range: "min",
 change: function(event, ui) { 
          var sliderValue = $( "#slider" ).slider( "option", "value" );
         $('#sliderPosition').val(sliderValue);
