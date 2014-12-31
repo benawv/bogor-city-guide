@@ -158,7 +158,7 @@ table td[class*=col-], table th[class*=col-] {
 		          	<input type="hidden" class="no-bot2" value="">
 		          	<!-- <input class="form-control" id="no_ktp"  placeholder="No KTP"> -->
 		          	<label>
-				      <input type="checkbox" class="privasi"> Saya telah membaca dan menerima prinsip privasi.
+				      <input type="checkbox" class="privasi"> Saya telah membaca dan menerima <a href="/data-privasi/prinsip-privasi" target="_blank">prinsip privasi.</a>
 				    </label>
 		          	<button type="button" class="btn btn-primary simpanWishlist" style="float:left;margin-right:10px;">Simpan</button>
 		          	<span class="eror" style="color: red;"></span>	          
