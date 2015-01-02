@@ -341,7 +341,7 @@
            document.getElementById("myTable2_filter").remove();   
      
             $(this).on('click', '.filter_harga', function(e){
-                alert('asd');
+                //alert('asd');
                 var awal=parseInt($('.day1').val())+parseInt($('.month1').val())+parseInt($('.year1').val());
                 var akhir=parseInt($('.day2').val())+parseInt($('.month2').val())+parseInt($('.year2').val())
                 
