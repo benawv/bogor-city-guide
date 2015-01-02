@@ -64,7 +64,7 @@
                    
                     <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result_year" style="color: #8b4720;">Rp. 0</span>
+                            <span id="result_year" style="color: #8b4720;">Rp 0</span>
                         </div>
 		    </div>
 		    <div class="calc-box-title"> 
@@ -73,7 +73,7 @@
                     </div>
 		    <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result_month" style="color: #8b4720;">Rp. 0</span>
+                            <span id="result_month" style="color: #8b4720;">Rp 0</span>
                         </div>
                          <div class="share">
                             <span>Bagikan hasil tersebut dengan teman Anda:</span>
@@ -169,8 +169,8 @@
 
 	var result_year = getCookie('pension3_hasil_tahunan');
 	var result_month = getCookie('pension3_hasil_bulanan');
-	result_year = accounting.formatMoney(result_year,'Rp. ',2,'.',',');
-	result_month = accounting.formatMoney(result_month,'Rp. ',2,'.',',');
+	result_year = accounting.formatMoney(result_year,'Rp ',2,'.',',');
+	result_month = accounting.formatMoney(result_month,'Rp ',2,'.',',');
 	$('#result_year').html(result_year);
 	$('#result_month').html(result_month);		
 	
@@ -179,7 +179,7 @@
      });
      
      $("#product_allianz").click(function(){
-	    window.location.href = "http://allianz.co.id/produk";
+	    window.open("http://allianz.co.id/produk",'_blank');
      });
     
 	function navigateMe(anchor)

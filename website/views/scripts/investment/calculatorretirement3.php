@@ -1,5 +1,7 @@
 <?php echo $this->template("includes/inv/header.php")?>
-
+<style>
+div.ui-slider-range{background-color:#8b4720;}
+</style>
 
 <link rel="stylesheet" href="/website/static/inv/js/rangeslider/jquery-ui.css" type="text/css" media="all" />
 
@@ -23,11 +25,11 @@ $(function() {
         
 var select = $( "#demo" );
         var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
-            min: 1000000,
+            min: 5000000,
             max: 1000000000,
-            value: 1000000,
+            value: 5000000,
             range: "min",
-            step: 1000000,
+            step: 5000000,
 change: function(event, ui) { 
          var sliderValue = $( "#slider" ).slider( "option", "value" );
         $('#sliderPosition').val(sliderValue);
@@ -84,7 +86,26 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
       
 
 }); </script>   
+
+<script>   
     
+$(function() {           
+        
+var select = $( "#demo3" );
+        var slider = $( "<div id='slider3'></div>" ).insertAfter( select ).slider({
+            min: 1,
+            max: 100,
+            value: 1,
+            range: "min",
+change: function(event, ui) { 
+         var sliderValue = $( "#slider3" ).slider( "option", "value" );
+        $('#sliderPosition3').val(sliderValue);
+        $('#sliderPosition3').trigger('keyup');
+        }        
+        });
+
+}); </script>
+
 <div role="main" class="main">
     
 	<div class="container">
@@ -130,7 +151,7 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition" class="slider-wrap" value="Rp. 0">
+                        <input type="text" id="sliderPosition" class="slider-wrap" value="Rp 0">
                        </input> 
                         
                         <div id="decrease">
@@ -149,7 +170,7 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
              <div class="calc-machine">
                <div id="demo2">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4 style="color: #8b4720;">ASUMSI TINGKAT IMBAL HASIL</h4></div>
+                        <div class="title-box"><h4 style="color: #8b4720;">ASUMSI IMBAL HASIL TAHUNAN</h4></div>
                         <!--<div class="tooltips abs2" style="background-color: #8b4720;"><a class="tooltip-left" data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%">?  </a></div>-->
 
                         <div class="sub_form">Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%</div>
@@ -232,11 +253,11 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
 	}
         
         var pension2_hasil = getCookie('pension2_hasil');
-	var pension2_waktu = getCookie('pension1_jangka_waktu');
-	pension2_hasil = accounting.formatMoney(pension2_hasil,'Rp. ',2,'.',',');
+	var pension1_waktu = getCookie('pension1_jangka_waktu');
+	pension2_hasil = accounting.formatMoney(pension2_hasil,'Rp ',2,'.',',');
         $('#sliderPosition').val(pension2_hasil);
         $('#sliderPosition2').val("1%");
-        $('#sliderPosition3').val(pension2_waktu + ' tahun');
+        $('#sliderPosition3').val(pension1_waktu + ' tahun');
 
         
         function pension3(biaya, asumsi, waktu){
@@ -262,7 +283,7 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
             text = text.replace(/\./g,'');
             text = text.replace(/,/g,'');
             biaya = text;
-            text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+            text = accounting.formatMoney(text,'Rp ',0,'.',',');
             $(this).val(text);
         });
         
@@ -398,12 +419,16 @@ var sliderCurrentValue = $( "#slider2" ).slider( "option", "value" );
 				
 		/* added by Ahmad Somadi 27 Des 2014 */
                 
-                var newValue = $("#sliderPosition").val().replace("Rp. ", "").replace(/\./g, "").replace(",00", "");
+                var newValue = $("#sliderPosition").val().replace("Rp ", "").replace(/\./g, "").replace(",00", "");
                 $("#slider").slider( "value" , newValue);
 		
+                newValue = $("#sliderPosition3").val().replace(" tahun", "");
+                $( "#slider3" ).slider( "option", "max", newValue);
+                $("#slider3").slider( "value" , newValue);
+                
 		$("#sliderPosition").focusout(function(event){			
 			val = this.value;
-			val = val.replace("Rp. ", "");
+			val = val.replace("Rp ", "");
 			val = val.replace(".", "");
 			val = val.replace("0.0", "00");
 			$("#slider").slider( "value" , val);

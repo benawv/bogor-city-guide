@@ -64,7 +64,7 @@
                    
                     <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result_year">Rp. 0</span>
+                            <span id="result_year">Rp 0</span>
                         </div>
 		    </div>
 		    <div class="calc-box-title"> 
@@ -74,7 +74,7 @@
                    
 		    <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result_month">Rp. 0</span>
+                            <span id="result_month">Rp 0</span>
                         </div>
                         <div class="share">
                             <span>Bagikan hasil tersebut dengan teman Anda:</span>
@@ -174,8 +174,8 @@
 
 	var result_year = getCookie('edu2_hasil_tahunan');
 	var result_month = getCookie('edu2_hasil_bulanan')
-	$('#result_year').html(accounting.formatMoney(result_year,'Rp. ',2,'.',','));
-	$('#result_month').html(accounting.formatMoney(result_month,'Rp. ',2,'.',','));
+	$('#result_year').html(accounting.formatMoney(result_year,'Rp ',2,'.',','));
+	$('#result_month').html(accounting.formatMoney(result_month,'Rp ',2,'.',','));
 	
 	$("#edu2").click(function(){
 	    window.location.href = "/kalkulator/financial-calculators/allianz-investment-calculator-education2.php";
@@ -186,7 +186,7 @@
      });
      
      $("#product_allianz").click(function(){
-	    window.location.href = "http://allianz.co.id/produk";
+	    window.open("http://allianz.co.id/produk",'_blank');
      });
     
 	function navigateMe(anchor)

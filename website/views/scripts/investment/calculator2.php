@@ -1,5 +1,7 @@
 <?php echo $this->template("includes/inv/header.php")?>
-
+<style>
+div.ui-slider-range{background-color:#D38802;}
+</style>
 
 <link rel="stylesheet" href="/website/static/inv/js/rangeslider/jquery-ui.css" type="text/css" media="all" />
 
@@ -23,11 +25,11 @@ $(function() {
         
 var select = $( "#demo" );
         var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
-            min: 1000000,
+            min: 5000000,
             max: 1000000000,
-            value: 1000000,
+            value: 5000000,
             range: "min",
-            step: 1000000,
+            step: 5000000,
 change: function(event, ui) { 
          var sliderValue = $( "#slider" ).slider( "option", "value" );
         $('#sliderPosition').val(sliderValue);
@@ -165,7 +167,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition" class="slider-wrap" value="Rp. 1.000.000">
+                        <input type="text" id="sliderPosition" class="slider-wrap" value="Rp 5.000.000">
                        </input> 
                         
                         <div id="decrease">
@@ -286,7 +288,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         }
     
 	var edu_hasil = getCookie('edu1_hasil');
-	edu_hasil= accounting.formatMoney(edu_hasil,'Rp. ',2,'.',',');
+	edu_hasil= accounting.formatMoney(edu_hasil,'Rp ',2,'.',',');
 	$('#sliderPosition').val(edu_hasil);
         $('#sliderPosition2').val("1%");
         $('#sliderPosition3').val(getCookie('edu1_jangka_waktu') + ' tahun');
@@ -300,7 +302,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             text = text.replace(/\./g,'');
             text = text.replace(/,/g,'');
             biaya = text;
-            text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+            text = accounting.formatMoney(text,'Rp ',0,'.',',');
             $(this).val(text);
         });
         
@@ -436,7 +438,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 
 		/* added by Ahmad Somadi 27 Des 2014 */
                 
-                var newValue = $("#sliderPosition").val().replace("Rp. ", "").replace(/\./g, "").replace(",00", "");
+                var newValue = $("#sliderPosition").val().replace("Rp ", "").replace(/\./g, "").replace(",00", "");
                 $("#slider").slider( "value" , newValue);
 		
                 newValue = $("#sliderPosition3").val().replace(" tahun", "");
@@ -445,7 +447,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                 
 		$("#sliderPosition").focusout(function(event){			
 			val = this.value;
-			val = val.replace("Rp. ", "");
+			val = val.replace("Rp ", "");
 			val = val.replace(".", "");
 			val = val.replace("0.0", "00");
 			$("#slider").slider( "value" , val);

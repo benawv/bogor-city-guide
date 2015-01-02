@@ -1,5 +1,7 @@
 <?php echo $this->template("includes/inv/header.php")?>
-
+<style>
+div.ui-slider-range{background-color:#D38802;}
+</style>
 
 <link rel="stylesheet" href="/website/static/inv/js/rangeslider/jquery-ui.css" type="text/css" media="all" />
 <link rel="stylesheet" href="/website/static/inv/js/rangeslider/ui.theme.css" type="text/css" media="all" />
@@ -25,11 +27,11 @@ $(function() {
         
 var select = $( "#demo" );
         var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
-            min: 1000000,
+            min: 5000000,
             max: 1000000000,
-            value: 1000000,
+            value: 5000000,
             range: "min",
-            step: 1000000,
+            step: 5000000,
 change: function(event, ui) { 
          var sliderValue = $( "#slider" ).slider( "option", "value" );
         $('#sliderPosition').val(sliderValue);
@@ -157,6 +159,25 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             <div class="calc-title">
                 <h4>KALKULATOR PENDIDIKAN</h4>
            </div>
+            <div class="calc-machine">
+               <div id="demox">
+                   <div class="calc-box-title"> 
+                        <div class="title-box"><h4>JENJANG PENDIDIKAN</h4></div>
+                   </div>
+                    <div class="calc-box">    
+                        <select class="jenjang" style="border:solid 1px; color: black;">
+                            <option value="KB">KB</option>
+                            <option value="TK">TK</option>
+                            <option value="SD">SD</option>
+                            <option value="SMP">SMP</option>
+                            <option value="SMA">SMA</option>
+                            <option value="PT">Perguruan Tinggi</option>
+                        </select> 
+                    </div><!-- End demo -->
+                   
+               </div>
+           </div>
+       
            <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
@@ -167,7 +188,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition" class="slider-wrap" value="Rp. 1.000.000">
+                        <input type="text" id="sliderPosition" class="slider-wrap" value="Rp 5.000.000">
                        </input> 
                         
                         <div id="decrease">
@@ -373,7 +394,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         }
 
         var edu1_biaya_bulanan = getCookie('edu1_biaya_bulanan');
-	edu1_biaya_bulanan = accounting.formatMoney(edu1_biaya_bulanan,'Rp. ',2,'.',',');
+	edu1_biaya_bulanan = accounting.formatMoney(edu1_biaya_bulanan,'Rp ',2,'.',',');
 	
         function edu1(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
@@ -388,10 +409,10 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             return result.toFixed(2);
         }
         
-        $('#sliderPosition').val("Rp. 1.000.000");
+        $('#sliderPosition').val("Rp 5.000.000");
         $('#sliderPosition2').val("1%");
         $('#sliderPosition3').val("1 tahun");
-        var biaya = 1000000;
+        var biaya = 5000000;
         var asumsi = 1;
         var waktu = 1;
         
@@ -401,7 +422,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             text = text.replace(/\./g,'');
             text = text.replace(/,/g,'');
             biaya = text;
-            text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+            text = accounting.formatMoney(text,'Rp ',0,'.',',');
             $(this).val(text);
         });
         
@@ -438,6 +459,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         $(".orange-btn").click(function(){
             var result = edu1(biaya, asumsi, waktu);
             
+            setCookie('edu1_jenjang',$('.jenjang').val(),1);
             setCookie('edu1_biaya_bulanan',biaya,1);
             setCookie('edu1_asumsi_inflasi',asumsi,1);
             setCookie('edu1_jangka_waktu',waktu,1);
@@ -539,7 +561,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 		$("#sliderPosition").focusout(function(event){
 			
 			val = this.value;
-			val = val.replace("Rp. ", "");
+			val = val.replace("Rp ", "");
 			val = val.replace(".", "");
 			val = val.replace("0.0", "00");
 			$("#slider").slider( "value" , val);

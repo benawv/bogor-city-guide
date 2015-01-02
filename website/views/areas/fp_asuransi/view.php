@@ -10,7 +10,7 @@
 							</li>
 							<li>
 								<span><label for="q2">Berapakah pendapatan Anda per bulan?</label></span>
-								<input id="q2" name="q2" type="text" value="Rp. 0"/>
+								<input id="q2" name="q2" type="text" value="Rp 0"/>
 							</li>
 							
 						</ol><!-- /questions -->
@@ -71,7 +71,7 @@
 				text = text.replace(/\./g,'');
 				text = text.replace(/,/g,'');
 				pendapatan = text;
-				text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+				text = accounting.formatMoney(text,'Rp ',0,'.',',');
 				$(this).val(text);
 			    });
 			
@@ -89,8 +89,8 @@
 					// let's just simulate something...
 					var messageEl = theForm.querySelector( '.final-message' );
 					var result = fp_insurance(usia,pendapatan);
-					result = accounting.formatMoney(result,'Rp. ',2,'.',',');
-					messageEl.innerHTML = '<h2>FAKTA</h2><h3>Pertanggungan sebesar </h3><h2 style="color:orange">'+result+'</h2><h3> akan memastikan apabila meninggal dunia mereka yang dicintai tetap akan terdukung secara finansial.<br>(Perhitungan uang pertanggungan hingga usia 75 tahun) <br/><a style="color:#F1295B !important" href= "/kalkulator/financial-calculators/pertanggungan"> Mari mulai perencanaan asuransi anda ></a></h3><h3><a style="color:#F1295B !important" href="#" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';
+					result = accounting.formatMoney(result,'Rp ',2,'.',',');
+					messageEl.innerHTML = '<h2>FAKTA</h2><h3>Uang Pertanggungan sebesar </h3><h1 style="margin:0px;">'+result+'</h1><h3> akan memastikan apabila meninggal dunia mereka yang dicintai tetap akan terdukung secara finansial.<br>(Perhitungan uang pertanggungan hingga usia 75 tahun) <br/><a href= "/kalkulator/financial-calculators/pertanggungan"> Mari mulai perencanaan asuransi anda ></a></h3><h3><a href="#" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';
 					classie.addClass( messageEl, 'show' );
 				}
 			} );

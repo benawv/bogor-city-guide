@@ -64,7 +64,7 @@
                    
                     <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result">Rp. 0</span>
+                            <span id="result">Rp 0</span>
                         </div>
                         <div class="share">
                             <span>Bagikan hasil tersebut dengan teman Anda:</span>
@@ -144,7 +144,7 @@ function setCookie(cname, cvalue, exdays) {
 	}
 
 	var result = getCookie('edu1_hasil');
-	result = accounting.formatMoney(result,'Rp. ',2,'.',',');
+	result = accounting.formatMoney(result,'Rp ',2,'.',',');
 	$('#result').html(result);
 	
 	$("#edu2").click(function(){
@@ -156,7 +156,7 @@ function setCookie(cname, cvalue, exdays) {
      });
      
      $("#product_allianz").click(function(){
-	    window.location.href = "http://allianz.co.id/produk";
+	    window.open("http://allianz.co.id/produk",'_blank');
      });
 	
 	function navigateMe(anchor)
