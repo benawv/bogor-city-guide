@@ -592,33 +592,45 @@ class InvestmentController extends Website_Controller_Action
              foreach($mysongs as $nav_data){
                
                foreach($nav_data->items as $items){
-                $unit_date=$items->unit_date;
-                $bid=$items->bid;
-                $offer=$items->offer;
-                
+                    $unit_date=$items->unit_date;
+                    $bid=$items->bid;
+                    $offer=$items->offer;
+                                
+                    $unitdates = explode("/", $unit_date);
+                    $unitdates[0]; //day
+                    $unitdates[1]; //month
+                    $unitdates[2]; //year
+                    
+                    //$unitdates=$unitdates[1]."/".$unitdates[0]."/".$unitdates[2];
+                    $dates=mktime(0,0,0,$unitdates[1],$unitdates[0], $unitdates[2]);
+                    //die(mktime(0,0,0,12, 24, 2014));;
+                    
+                    $navdata = new Object_InvestmentNav();
+        		    $navdata->setFundName("$nav_data->fund_name");
+        			$navdata->setUnitDate($dates);
+        			$navdata->setBid("$bid");
+        			$navdata->setOffer("$offer");                
+                    $navdata->setKey('nav_'.date('d_m_y')."$i");
+    		        $navdata->setO_parentId('1296');//live 1296 local//1292
+    		        $navdata->setIndex(0);
+    			    $navdata->setPublished(1);
+                   // die(print_r($navdata));
+                    $navdata->save();                
+                    $i++;
+                    
+                    $input['fundname']=$nav_data->fund_name;
+                    $input['dates']=$dates."_".$unitdates[1]."-".$unitdates[0]."-".$unitdates[2];
+                    $input['bid']=$bid;
+                    $input['offer']=$offer;
+                    $navdata_r['xml_input']=$input;
+                    
+                    echo "<pre>";
+                    print_r($input);
+                    echo "</pre>";    
                }
-                $unitdates = explode("/", $unit_date);
-                $unitdates[0]; //day
-                $unitdates[1]; //month
-                $unitdates[2]; //year
                 
-                //$unitdates=$unitdates[1]."/".$unitdates[0]."/".$unitdates[2];
-                $dates=mktime(0,0,0,$unitdates[1],$unitdates[0], $unitdates[2]);
-                //die(mktime(0,0,0,12, 24, 2014));;
-                
-                $navdata = new Object_InvestmentNav();
-    		    $navdata->setFundName("$nav_data->fund_name");
-    			$navdata->setUnitDate($dates);
-    			$navdata->setBid("$bid");
-    			$navdata->setOffer("$offer");                
-                $navdata->setKey('nav_'.date('d_m_y')."$i");
-		        $navdata->setO_parentId('1296');//live 1296 local//1292
-		        $navdata->setIndex(0);
-			    $navdata->setPublished(1);
-               // die(print_r($navdata));
-                $navdata->save();                
-                $i++;
              }
+
         }      
     }
     
