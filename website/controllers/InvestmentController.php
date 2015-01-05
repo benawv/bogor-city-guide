@@ -419,7 +419,15 @@ class InvestmentController extends Website_Controller_Action
         
         /*get data by fundname*/
         $getAllFundName="SELECT DISTINCT fundname FROM $nameCommunity AS a 
-                         WHERE  STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y') < STR_TO_DATE('$getday','%d-%m-%Y')  AND
+                         WHERE  
+                         fundname NOT IN('Allisya Money market', 
+                                         'smartwealth equity performa', 
+                                         'smartwealth money market', 
+                                         'smartwealth sectoral equity', 
+                                         'smartweatlh equity fund', 
+                                         'smartwealth balanced fund', 
+                                         'smartlikn rupiah deposit fund') and
+                         STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y') < STR_TO_DATE('$getday','%d-%m-%Y')  AND
 	                            STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y') > DATE_ADD(NOW(), INTERVAL- 2 MONTH)
                          ORDER  BY 1 DESC";
                          
