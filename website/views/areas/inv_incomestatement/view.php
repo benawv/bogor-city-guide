@@ -760,7 +760,7 @@ $(document).ready(function(){
 /* =============== Added by Handri Pangestiaji 28 Desember 2014 ================= */
 
 	/* ====================== Pendapatan Segment ======================== */
-	
+	    
 	$("#pendapatan1").focusout(function(event){
 		
 		var p_utama = $('#pendapatan1').autoNumeric('get');
@@ -1240,6 +1240,13 @@ $(document).ready(function(){
 	});
 	
 /* =============== Added by Handri Pangestiaji 28 Desember 2014 ================= */
+
+/* =============== Added by Bena 05 Jan 2015 ================= */
+$(".auto").keyup(function(event){	
+	    var nilai = $(this).autoNumeric('get');
+	    $(this).autoNumeric('set', nilai);
+	});
+/* =============== Added by Bena 05 Jan 2015 ================= */
 
 })
 </script>
