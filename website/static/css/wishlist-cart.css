@@ -71,6 +71,10 @@ input[type="button"] {
     .wishtlist-wrap {
         padding: 35px 21px;
     }
+    .guide-btn .btn-width {
+        width: 130px;
+        margin-bottom: 10px;
+    }
 }
 @media only screen and (max-width : 480px) {  
     .cart {
