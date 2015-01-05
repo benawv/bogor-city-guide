@@ -526,21 +526,29 @@ class InvestmentController extends Website_Controller_Action
              }else{
                 $fundtypes="";
              }
+             
+             $takeoff_fundname="fundname NOT IN('Allisya Money market fund', 
+                                         'smartwealth equity performa fund', 
+                                         'smartwealth money market fund', 
+                                         'smartwealth sectoral equity fund', 
+                                         'smartweatlh equity fund', 
+                                         'smartwealth balanced fund', 
+                                         'smartlikn rupiah deposit fund')";
                      
             if($day1>0){
                 if($day2>0){
                     
                     if($fundtypes!=""){
-                        $conditions=" unitdate >= $start and unitdate <= $end and ".$fundtypes;
+                        $conditions=" $takeoff_fundname and unitdate >= $start and unitdate <= $end and ".$fundtypes;
                     }else{
-                        $conditions=" unitdate >= $start and unitdate <= $end ";
+                        $conditions=" $takeoff_fundname and unitdate >= $start and unitdate <= $end ";
                     }
                 }else{
                     
                     if($fundtypes!=""){
-                        $conditions=" unitdate=$start and ".$fundtypes;
+                        $conditions=" $takeoff_fundname and unitdate=$start and ".$fundtypes;
                     }else{
-                         $conditions=" unitdate=$start";
+                         $conditions=" $takeoff_fundname and unitdate=$start";
                     }    
                 }
             }else{
