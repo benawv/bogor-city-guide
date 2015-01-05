@@ -17,11 +17,12 @@
 						{
 	                    	echo "Color: ";
 	                		echo $this->select("color1",array(
-							    "store" => array(
+							     "store" => array(
 							        array("red", "Red"),
 							        array("purple", "Purple"),
 							        array("blue", "Blue"),
-							        array("brown", "Brown"),
+							        array("blue_light", "Light Blue"),
+                                    array("brown", "Brown"),
 							        array('darkbrown', "Dark Brown"),
 							        array('green', "Green")
 							    ),
@@ -43,11 +44,12 @@
 						{
 	                    	echo "Color: ";
 	                		echo $this->select("color2",array(
-							    "store" => array(
+							     "store" => array(
 							        array("red", "Red"),
 							        array("purple", "Purple"),
 							        array("blue", "Blue"),
-							        array("brown", "Brown"),
+							        array("blue_light", "Light Blue"),
+                                    array("brown", "Brown"),
 							        array('darkbrown', "Dark Brown"),
 							        array('green', "Green")
 							    ),
@@ -69,11 +71,12 @@
 						{
 	                    	echo "Color: ";
 	                		echo $this->select("color3",array(
-							    "store" => array(
+							     "store" => array(
 							        array("red", "Red"),
 							        array("purple", "Purple"),
 							        array("blue", "Blue"),
-							        array("brown", "Brown"),
+							        array("blue_light", "Light Blue"),
+                                    array("brown", "Brown"),
 							        array('darkbrown', "Dark Brown"),
 							        array('green', "Green")
 							    ),
@@ -95,11 +98,12 @@
 						{
 	                    	echo "Color: ";
 	                		echo $this->select("color4",array(
-							    "store" => array(
+							     "store" => array(
 							        array("red", "Red"),
 							        array("purple", "Purple"),
 							        array("blue", "Blue"),
-							        array("brown", "Brown"),
+							        array("blue_light", "Light Blue"),
+                                    array("brown", "Brown"),
 							        array('darkbrown', "Dark Brown"),
 							        array('green', "Green")
 							    ),
@@ -125,7 +129,8 @@
 							        array("red", "Red"),
 							        array("purple", "Purple"),
 							        array("blue", "Blue"),
-							        array("brown", "Brown"),
+							        array("blue_light", "Light Blue"),
+                                    array("brown", "Brown"),
 							        array('darkbrown', "Dark Brown"),
 							        array('green', "Green")
 							    ),
@@ -147,11 +152,12 @@
 						{
 	                    	echo "Color: ";
 	                		echo $this->select("color6",array(
-							    "store" => array(
+							     "store" => array(
 							        array("red", "Red"),
 							        array("purple", "Purple"),
 							        array("blue", "Blue"),
-							        array("brown", "Brown"),
+							        array("blue_light", "Light Blue"),
+                                    array("brown", "Brown"),
 							        array('darkbrown', "Dark Brown"),
 							        array('green', "Green")
 							    ),
