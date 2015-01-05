@@ -420,10 +420,10 @@ class InvestmentController extends Website_Controller_Action
         /*get data by fundname*/
         $getAllFundName="SELECT DISTINCT fundname FROM $nameCommunity AS a 
                          WHERE  
-                         fundname NOT IN('Allisya Money market', 
-                                         'smartwealth equity performa', 
-                                         'smartwealth money market', 
-                                         'smartwealth sectoral equity', 
+                         fundname NOT IN('Allisya Money market fund', 
+                                         'smartwealth equity performa fund', 
+                                         'smartwealth money market fund', 
+                                         'smartwealth sectoral equity fund', 
                                          'smartweatlh equity fund', 
                                          'smartwealth balanced fund', 
                                          'smartlikn rupiah deposit fund') and
