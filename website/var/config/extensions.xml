@@ -88,6 +88,8 @@
     <inv_box2>1</inv_box2>
     <tekskanan60-imagekiri40_2>1</tekskanan60-imagekiri40_2>
     <tekskanan60-videokiri40_2>1</tekskanan60-videokiri40_2>
+    <inv-fund-savingsplan>1</inv-fund-savingsplan>
+    <inv-fund-dplk>1</inv-fund-dplk>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>
