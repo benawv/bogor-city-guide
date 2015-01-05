@@ -6,7 +6,8 @@ jQuery(function($) {
         aSep: '.', 
         aDec: ',',
         wEmpty: 'sign',
-        aPad: false
+        aPad: false,
+	vMin: '-9999999999.99'
     });
 });
 </script>
@@ -871,9 +872,12 @@ $(document).ready(function(){
 		$('#total_pengeluaran').html($('#totalpengeluaran').val());
 		
 		var total_bersih = parseInt($('#totalpendapatan').autoNumeric('get')) - parseInt($('#totalpengeluaran').autoNumeric('get'));
-		
+		var color = 'green';
+		if (total_bersih < 0) {
+		    color = 'red';
+		}
 		$('#total_pendapatan_bersih').autoNumeric('set', total_bersih);
-		
+		$('#total_pendapatan_bersih').css('color',color);
 	});
 	
 	$('#wiz_3').click(function(){
