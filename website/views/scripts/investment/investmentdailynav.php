@@ -18,8 +18,10 @@
 
 <script src="/website/static/inv/js/rangeslider/1.7.2-jquery.min.js" type="text/javascript"></script> 
 <script src="/website/static/inv/js/rangeslider/jquery.flot.min.js"></script>
-<script type="text/javascript" language="javascript" src="/website/static/inv/js/datatable/jquery.dataTable.min.js"></script>
-
+<script src="/website/static/inv/js/datatable/jquery.dataTable.min.js" type="text/javascript" language="javascript" ></script>
+<script src="/website/static/inv/js/highchart/highcharts.js"></script>
+<script src="/website/static/inv/js/highchart/exporting.js"></script>
+    
     
 <div role="main" class="main no-gutter">
     
@@ -56,7 +58,7 @@
                         <tr> 
                              
                             <th class="header headerSortDown">Fund Name</th> 
-                            <th class="header">Type</th> 
+                            <th class="header">Offer</th> 
                             <th class="header">1M</th> 
                             <th class="header">3M</th> 
                             <th class="header">YTD</th>
@@ -279,7 +281,7 @@
                <div class="table-wrap">
                    
                      <div id="title" class="title-chart" style="display:none" >
-                            <span>Nav Graph for Bond FUND (01/11/2014 - 08/12/2014)</span>
+                            <span>Nav Graph for Bond FUND (01/11/2014 - 05/01/2014)</span>
                             <a href="#" id="bars"><span></span></a>
                             <a href="#" id="lines" class="active"><span></span></a>
                     </div> 
@@ -305,7 +307,67 @@
                                 <div id="graph-bars"></div>
 
                                 <!--------- Table nab daily----------------->
-
+                            <div id="container" style="min-width: 900px; height: 500px; margin: 0 auto; padding: 20px; display:none"></div>
+                            
+                            <script>
+                                $(function () {
+                                $('#container').highcharts({
+                                    title: {
+                                        text: ' ',
+                                        x: -20 //center
+                                    },
+                                    //subtitle: {
+                                    //    text: 'Source: WorldClimate.com',
+                                     //   x: -20
+                                    //},
+                                    xAxis: {
+                                        categories: ['1', '2', '3', '4', '5', '6',
+                                            '7', '8', '9', '10', '11', '12', '13',
+                                            '14', '15', '16','17', '18', '19', 
+                                            '20', '21', '22', '23','24', '25', '26', 
+                                            '27','28', '29', '30', '31']
+                                    },
+                                    yAxis: {
+                                        title: {
+                                            text: 'Offer'
+                                        },
+                                        plotLines: [{
+                                            value: 0,
+                                            width: 1,
+                                            color: '#808080'
+                                        }]
+                                    },
+                                    tooltip: {
+                                        valueSuffix: '%'
+                                    },
+                                    legend: {
+                                        enabled: true,
+                                        floating: true,
+                                        verticalAlign: 'bottom',
+                                        align:'center',
+                                        y:-30,
+                                        padding:20
+                                    },
+                                    credits: {
+                                          enabled: false
+                                    },
+                                    series: [{
+                                        name: 'AlliSya Rupiah Equity Fund',
+                                        data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6, 9.3]
+                                    }, {
+                                        name: 'AlliSya Rupiah Balanced Fund',
+                                        data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+                                    }, {
+                                        name: 'AlliSya Rupiah Fixed Income Fund',
+                                        data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+                                    }, {
+                                        name: 'Guardian Dana Pendapatan Teteap',
+                                        data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+                                    }]
+                                });
+                            });
+                        </script>   
+                        
                                <div id="tablex" style="width: 98%; display: block;">
                                 <table id="myTable2" class="display" cellspacing="0" width="100%">
                                     <thead class="title-data"> 
@@ -373,6 +435,8 @@
               
             $(this).on('click', '.filter_harga', function(e){
               
+                     
+                     
                     var awal=parseInt($('.day1').val())+parseInt($('.month1').val())+parseInt($('.year1').val());
                     var akhir=parseInt($('.day2').val())+parseInt($('.month2').val())+parseInt($('.year2').val())
                      
@@ -417,7 +481,7 @@
                                             }
                                            
                                             if ( $.fn.dataTable.isDataTable( '#myTable2' ) ) {
-                                                    $('#myTable2').DataTable();
+                                                    $('#myTable2').dataTable();
                                             }else {
                                             
                                                 $('#myTable2').dataTable( {
@@ -450,43 +514,43 @@
 
               
 
-                // Graph Data ##############################################
-                var graphData = [{
-                                        // Visits
-
-                                        // Returning Visits
-                                        data: [ [0, 10],[0.1, 20],[0.2, 30],[1, 10],[1, 20],[1, 50],[1.2, 20],[1.2, 30],[1.2, 50],[1.3, 30],[1.3, 40],[1.5, 20],[1.5, 20],[2.6, 50], [1, 21], [1.3, 33], [2.1, 33], [2.6, 40], [3, 29], [4, 20], [5, 30], [5.2, 40],[5.9, 33], [6.6, 33], [7, 20], [7.5, 50] ],
-                                        color: '#77b7c5',
-                                        points: { radius: 4, fillColor: '#77b7c5' }
-                                    }
-                                ];
-
-                // Lines Graph #############################################
-                $.plot($('#graph-lines'), graphData, {
-                    series: {
-                        points: {
-                            show: true,
-                            radius: 5
-                        },
-                        lines: {
-                            show: true
-                        },
-                        shadowSize: 0
-                    },
-                    grid: {
-                        color: '#646464',
-                        borderColor: 'transparent',
-                        borderWidth: 20,
-                        hoverable: true
-                    },
-                    xaxis: {
-                        tickColor: 'transparent',
-                        tickDecimals: 0
-                    },
-                    yaxis: {
-                        tickSize: 5
-                    }
-                });
+               // // Graph Data ##############################################
+//                var graphData = [{
+//                                        // Visits
+//
+//                                        // Returning Visits
+//                                        data: [ [0, 10],[1, 20],[2, 30],[2, 10],[3, 20],[4, 50],[5, 20],[6, 30],[7, 50],[8, 30],[9, 40],[10, 20],[11, 20],[12, 50], [13, 21], [14, 33], [16, 33], [17, 40], [18, 29], [19, 20], [20, 30], [21, 40],[22, 33], [23, 33], [24, 20], [25, 50] ],
+//                                        color: '#77b7c5',
+//                                        points: { radius: 4, fillColor: '#77b7c5' }
+//                                    }
+//                                ];
+//
+//                // Lines Graph #############################################
+//                $.plot($('#graph-lines'), graphData, {
+//                    series: {
+//                        points: {
+//                            show: true,
+//                            radius: 1
+//                        },
+//                        lines: {
+//                            show: true
+//                        },
+//                        shadowSize: 0
+//                    },
+//                    grid: {
+//                        color: '#646464',
+//                        borderColor: 'transparent',
+//                        borderWidth: 25,
+//                        hoverable: true
+//                    },
+//                    xaxis: {
+//                        tickColor: 'transparent',
+//                        tickDecimals: 0
+//                    },
+//                    yaxis: {
+//                        tickSize: 2
+//                    }
+//                });
               
 
                 // Graph Toggle ############################################
@@ -503,6 +567,7 @@
                 
                 $('#lines2').on('click', function (e) {
 //                                alert('hai');
+                    $('#container').fadeIn();
                     $('#bars').removeClass('active');
                     $('#graph-bars').hide();
                     $('#tablex').hide();
@@ -513,6 +578,7 @@
                 });
 
                 $('#bars').on('click', function (e) {
+                     $('#container').hide();
                     $('#lines2').removeClass('active');
                     $('#graph-lines').hide();
                     $(this).addClass('active');
@@ -538,7 +604,7 @@
                             $('#tooltip').remove();
                             var x = item.datapoint[0],
                                 y = item.datapoint[1];
-                                showTooltip(item.pageX, item.pageY, y + ' visitors at ' + x + '.00h');
+                                showTooltip(item.pageX, item.pageY, y + '  at ' + x + '.day');
                         }
                     } else {
                         $('#tooltip').remove();
