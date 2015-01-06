@@ -21,6 +21,7 @@
 	<?php echo $this->areablock('container-text', array(
 					'allowed' => array('tekskanan60-imagekiri40_2', 'tekskanan60-videokiri40_2', 'sections-video')))?>
 	<!-- content -->
+	<div style="clear: both"></div>
 	<div class="items-container">
 		<?php echo $this->areablock('container', array(
 					'allowed' => array('container-box', 'container-box-static')))?>
