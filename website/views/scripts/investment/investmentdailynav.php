@@ -363,7 +363,7 @@
                                         ?>
                                         {
                                             name: '<?php echo $items['perform1year'][$i]['fundname'];?>',
-                                            data: [<?php print $items['perform1year'][$i]['offer11'];?>, <?php print $items['perform1year'][$i]['offer12'];?>]
+                                            data: [<?php print $items['perform1year'][$i]['offer11'];?>, <?php print $items['perform1year'][$i]['offer12'];?>, <?php print $items['perform1year'][$i]['offer1'];?>]
                                         }, 
                                         <?php 
                                         $i++;
