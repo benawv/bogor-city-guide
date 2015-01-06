@@ -3,6 +3,10 @@
 
 <link rel="stylesheet" href="/website/static/inv/js/flaticon/flaticon.css" type="text/css" media="all" />
 
+
+<link rel="stylesheet" href="/website/static/inv/js/datatable/jquery.dataTable.css" type="text/css" media="all" />    
+<link rel="stylesheet" href="/website/static/inv/js/rangeslider/graph.css" type="text/css" media="all" />   
+
 <script src="/website/static/inv/js/rangeslider/masonry.min.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/rangeslider/jquery.tools.min.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/rangeslider/jquery.sticky.js" type="text/javascript"></script>
@@ -10,7 +14,11 @@
 <script src="/website/static/inv/js/rangeslider/jquery.min.js" type="text/javascript"></script>     
 <script src="/website/static/inv/js/rangeslider/jquery-ui.min.js" type="text/javascript"></script>
 
+<script>$ = jQuery.noConflict();</script>
 
+<script src="/website/static/inv/js/rangeslider/1.7.2-jquery.min.js" type="text/javascript"></script> 
+<script src="/website/static/inv/js/rangeslider/jquery.flot.min.js"></script>
+<script type="text/javascript" language="javascript" src="/website/static/inv/js/datatable/jquery.dataTable.min.js"></script>
 
     
 <div role="main" class="main no-gutter">
@@ -25,8 +33,9 @@
 	<div class="container boxes-view">
 		
 		<div id="#" class="article-wrap">
-            <?php echo $this->template("includes/inv/breadcrumb.php")?>
+            
 			<div class="wrap30">
+                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Daily Nav</span></h5>
 			     <div class="bg-blue">
                     <h4>NAB Harian</h4>
                     <p></p>
@@ -38,15 +47,16 @@
                 <h4>NAB Harian</h4>
                 <p></p>
                 <p>Lihat NAB harian terbaru atau pilih NAB berdasar jenis fund anda.</p>
-               
+                
                 <div class="table-wrap">
+                    
                     <table id="fundtype" class="display" cellspacing="0" width="100%">
                         
                         <thead class="table-head"> 
                         <tr> 
                              
                             <th class="header headerSortDown">Fund Name</th> 
-                            <th class="header">Offer</th> 
+                            <th class="header">Type</th> 
                             <th class="header">1M</th> 
                             <th class="header">3M</th> 
                             <th class="header">YTD</th>
@@ -54,7 +64,6 @@
                         </tr> 
                         </thead> 
                         <tbody class="table-body"> 
-                        
                         <?php  
                             
                             foreach($this->data['ytd'] as $items){ 
@@ -111,9 +120,12 @@
                                 %
                             </td> 
                         </tr>
-                       <?php } ?>      
+                       <?php } ?>     
+                        
                         </tbody> 
                     </table> 
+
+                    
                 </div>
                     <!--- End Table ------>
                 
@@ -261,36 +273,68 @@
         </div>
         <!-------Article end ---------->
 
+        
         <div id="#" class="article-wrap bottom">
            
                <div class="table-wrap">
                    
-                     <!---div class="title-chart">
-                            Nav Graph for Bond FUND (01/11/2014 - 08/12/2014)
-                            <!--a href="#" id="bars" class="active"><!--span></span></a-->
-                            <!--a href="#" id="lines"><span></span></a-->
-                    <!--/div-->
+                     <div id="title" class="title-chart" style="display:none" >
+                            <span>Nav Graph for Bond FUND (01/11/2014 - 08/12/2014)</span>
+                            <a href="#" id="bars"><span></span></a>
+                            <a href="#" id="lines" class="active"><span></span></a>
+                    </div> 
                    
                     <!-- Graph HTML -->
                     <div id="graph-wrapper">
+                        
+                        <!--<div class="graph-info">
 
-                        <div class="graph-container">
-                            <!--div id="graph-lines"></div-->
-                            <div id="graph-bars"></div>
+                            <a href="javascript:void(0)" class="visitors">Visitors</a>
+                            <a href="javascript:void(0)" class="returning">Returning Visitors</a>
+
+
+
+                            <a href="#" id="bars"><span></span></a>
+                            <a href="#" id="lines" class="active"><span></span></a>
+
+                        </div>-->
+
+                        <div id="graph-height" class="graph-container">
                             
-                            <!--------- Table nab daily----------------->
-                   
-                           <table id="myTable2" class="tablesorter2"> 
-                                <thead> 
-                                <tr>  
-                                    <th class="">FUND NAME</th> 
-                                    <th class="">UNIT DATE</th> 
-                                    <th class="">BID</th> 
-                                    <th class="">OFFER</th>
-                                </tr> 
-                                </thead> 
-                                <tbody class="myTable2_items"> 
-                                   <?php                    
+                                <div id="graph-lines"></div>
+                                <div id="graph-bars"></div>
+
+                                <!--------- Table nab daily----------------->
+
+                               <div id="tablex" style="width: 98%; display: block;">
+                                <table id="myTable2" class="display" cellspacing="0" width="100%">
+                                    <thead class="title-data"> 
+                                    <tr>  
+                                        <th class="">FUND NAME</th> 
+                                        <th class="">UNIT DATE</th> 
+                                        <th class="">BID</th> 
+                                        <th class="">OFFER</th>
+                                    </tr> 
+                                    </thead> 
+
+                                    <div id="title2" style="
+                                        top: -3.7%;
+                                        width: 102%;
+                                        left: -19px;
+                                        position: relative;">
+                                           <a href="#" id="bars" class="active" style="
+                                                position: relative;
+                                                top: 12px;
+                                                left: -28px;
+                                            "><span></span></a>
+                                            <a href="#" id="lines2" style="
+                                            position: relative;
+                                            top: 12px;
+                                            left: -27px;
+                                            "><span></span></a>
+                                    </div>
+                                    <tbody class="table-body-2 myTable2_items"> 
+                                    <?php                    
                                    foreach($this->data['defult_data'] as $items){
                                     ?>
                                         <tr> 
@@ -299,19 +343,214 @@
                                         <td><?php echo $items["bid"]; ?></td> 
                                         <td><?php echo $items["offer"]; ?></td> 
                                         </tr>    
-                                    <?php } ?>                             
-                                </tbody> 
-                            </table> 
-                            
-<!--                            <p class="footnote">Return: 3.24% ffff sejak 'dd/mm/yyyy' hingga 'dd/mm/yyyy' adalah xx%</p>-->
+                                    <?php } ?>      
+                                    
+                                    </tbody>
+                                   
+                                </table>
+                            </div>
+                                
+                                <!--<p class="footnote">Return: 3.24% ffff sejak 'dd/mm/yyyy' hingga 'dd/mm/yyyy' adalah xx%</p>-->
 
-                            <!--------- Table nab daily----------------->
-                            
-                        </div>
+                                <!--------- Table nab daily----------------->
+
+                           
+                        </div>    
                     </div>
                     <!-- end Graph HTML -->
                    
-                   <p>Return: 3.24% ffff sejak 'dd/mm/yyyy' hingga 'dd/mm/yyyy' adalah xx%</p>
+                   
+                   <script>
+                   
+                  
+ 
+    $(document).ready(function () {
+ 
+                 
+                //datatable ##############################################
+                $('#fundtype').DataTable();
+              
+              
+            $(this).on('click', '.filter_harga', function(e){
+              
+                    var awal=parseInt($('.day1').val())+parseInt($('.month1').val())+parseInt($('.year1').val());
+                    var akhir=parseInt($('.day2').val())+parseInt($('.month2').val())+parseInt($('.year2').val())
+                     
+                    if(akhir<=awal && akhir>13 && akhir!=awal ){
+                        alert("Silahkan cek kembali tanggal yang ada masukan")
+                    }else{
+                    
+                    //alert($('.day1').val()+"&month1="+$('.month1').val()+"&year1="+$('.year1').val()+"&day2="+$('.day2').val()+"&month2="+$('.month2').val()+"&year2="+$('.year2').val()+"&fundtype='"+$('.fundtype').val());
+                      var dataSets=[];
+                      
+                      $.ajax({
+                            "url" : "/daily-nav/getfilter/",
+                            "data" : $(this).serialize() + "&filter=1&day1="+$('.day1').val()+"&month1="+$('.month1').val()+"&year1="+$('.year1').val()+"&day2="+$('.day2').val()+"&month2="+$('.month2').val()+"&year2="+$('.year2').val()+"&fundtype='"+$('.fundtype').val()+"'",
+                            "type" : "POST",
+                            "success" : function(response){
+                                if(response){
+                                        var IS_JSON = true;
+                                        try
+                                        {
+    
+                                            var new_data = jQuery.parseJSON(response);                                           
+                                            var rows;
+                                            $('.myTable2_items').html("");
+                            
+                                            if(new_data.xml_data.length >0){
+                                                
+                                                for(var i=0; i<new_data.xml_data.length; i++){
+                                                    
+                        //                                rows+=("<tr>"+ 
+//                                                                "<td>"+new_data.xml_data[i]['fundName']+"</td>"+
+//                                                                "<td>"+new_data.xml_data[i]['unitdates']+"</td>"+
+//                                                                "<td>"+new_data.xml_data[i]['bid']+"</td>"+
+//                                                                "<td>"+new_data.xml_data[i]['offer']+"</td>"+
+//                                                            "</tr>");
+                                                dataSets.push(new Array(new_data.xml_data[i]['fundName'],new_data.xml_data[i]['unitdates'],new_data.xml_data[i]['bid'],new_data.xml_data[i]['offer']));
+                                            }
+                                                
+                                            }else{
+                                                rows+=("<tr>"+ 
+                                                            "<td colspan=4>Data tidak ditemukan</td>"+
+                                                        "</tr>");
+                                            }
+                                           
+                                            if ( $.fn.dataTable.isDataTable( '#myTable2' ) ) {
+                                                    $('#myTable2').DataTable();
+                                            }else {
+                                            
+                                                $('#myTable2').dataTable( {
+                                                    "searching": false,
+                                                    "bLengthChange": false,
+                                                    "data": dataSets                               
+                                                });
+                                            }
+                                                  
+                                            ///$('.myTable2_items').html(rows);
+                                        }
+                                        catch(err)
+                                        {
+                                            IS_JSON = false;
+                                        } 
+                                        //response action
+                                        
+                                }
+    
+                            },
+                            "error" : function(response){
+    
+                            }
+                        });//end ajax
+
+                    }
+                    
+                        
+                });
+
+              
+
+                // Graph Data ##############################################
+                var graphData = [{
+                                        // Visits
+
+                                        // Returning Visits
+                                        data: [ [0, 10],[0.1, 20],[0.2, 30],[1, 10],[1, 20],[1, 50],[1.2, 20],[1.2, 30],[1.2, 50],[1.3, 30],[1.3, 40],[1.5, 20],[1.5, 20],[2.6, 50], [1, 21], [1.3, 33], [2.1, 33], [2.6, 40], [3, 29], [4, 20], [5, 30], [5.2, 40],[5.9, 33], [6.6, 33], [7, 20], [7.5, 50] ],
+                                        color: '#77b7c5',
+                                        points: { radius: 4, fillColor: '#77b7c5' }
+                                    }
+                                ];
+
+                // Lines Graph #############################################
+                $.plot($('#graph-lines'), graphData, {
+                    series: {
+                        points: {
+                            show: true,
+                            radius: 5
+                        },
+                        lines: {
+                            show: true
+                        },
+                        shadowSize: 0
+                    },
+                    grid: {
+                        color: '#646464',
+                        borderColor: 'transparent',
+                        borderWidth: 20,
+                        hoverable: true
+                    },
+                    xaxis: {
+                        tickColor: 'transparent',
+                        tickDecimals: 0
+                    },
+                    yaxis: {
+                        tickSize: 5
+                    }
+                });
+              
+
+                // Graph Toggle ############################################
+                $('#graph-lines').hide();
+                $('#title').hide();
+
+                $('#lines').on('click', function (e) {
+                    $('#bars').removeClass('active');
+                    $('#graph-bars').fadeOut();
+                    $(this).addClass('active');
+                    $('#graph-lines').fadeIn();
+                    e.preventDefault();
+                });
+                
+                $('#lines2').on('click', function (e) {
+//                                alert('hai');
+                    $('#bars').removeClass('active');
+                    $('#graph-bars').hide();
+                    $('#tablex').hide();
+                    $('#title').fadeIn();
+                    $(this).addClass('active');
+                    $('#graph-lines').fadeIn();
+                    e.preventDefault();
+                });
+
+                $('#bars').on('click', function (e) {
+                    $('#lines2').removeClass('active');
+                    $('#graph-lines').hide();
+                    $(this).addClass('active');
+                    $('#tablex').fadeIn().removeClass('hidden');
+                    $('#title').hide();
+                    e.preventDefault();
+                });
+
+                // Tooltip #################################################
+                function showTooltip(x, y, contents) {
+                    $('<div id="tooltip">' + contents + '</div>').css({
+                        top: y - 16,
+                        left: x + 20
+                    }).appendTo('body').fadeIn();
+                }
+
+                var previousPoint = null;
+
+                $('#graph-lines, #graph-bars').bind('plothover', function (event, pos, item) {
+                    if (item) {
+                        if (previousPoint != item.dataIndex) {
+                            previousPoint = item.dataIndex;
+                            $('#tooltip').remove();
+                            var x = item.datapoint[0],
+                                y = item.datapoint[1];
+                                showTooltip(item.pageX, item.pageY, y + ' visitors at ' + x + '.00h');
+                        }
+                    } else {
+                        $('#tooltip').remove();
+                        previousPoint = null;
+                    }
+                });
+
+            });
+            </script>
+
+                   
+                    <!--<p>Return: 3.24% ffff sejak 'dd/mm/yyyy' hingga 'dd/mm/yyyy' adalah xx%</p>-->
                     
                 </div>
                     <!--- End Table ------>
@@ -326,202 +565,4 @@
 <!-- End of Main -->
 
 <link rel="stylesheet" type="text/css" href="/website/static/inv/js/datatable/jquery.dataTable.css" />
-<script src="/website/static/inv/js/datatable/jquery-1.11.1.min.js" type="text/javascript"></script> 
-<script type="text/javascript" language="javascript" src="/website/static/inv/js/datatable/jquery.dataTable.min.js"></script>
-
-
-<script type="text/javascript" language="javascript" class="init">
-    $(document).ready(function() {
-
-		   $('#fundtype').DataTable();
-           document.getElementById("fundtype_length").remove(); 
-           document.getElementById("fundtype_filter").remove(); 
-           $('#myTable2').DataTable();
-           document.getElementById("myTable2_length").remove(); 
-           document.getElementById("myTable2_filter").remove();   
-     
-            $(this).on('click', '.filter_harga', function(e){
-                //alert('asd');
-                var awal=parseInt($('.day1').val())+parseInt($('.month1').val())+parseInt($('.year1').val());
-                var akhir=parseInt($('.day2').val())+parseInt($('.month2').val())+parseInt($('.year2').val())
-                
-                if(akhir<=awal && akhir>13 && akhir!=awal ){
-                    alert("Silahkan cek kembali tanggal yang ada masukan")
-                }else{
-                
-                   $.ajax({
-                        "url" : "/daily-nav/getfilter/",
-                        "data" : $(this).serialize() + "&filter=1&day1="+$('.day1').val()+"&month1="+$('.month1').val()+"&year1="+$('.year1').val()+"&day2="+$('.day2').val()+"&month2="+$('.month2').val()+"&year2="+$('.year2').val()+"&fundtype='"+$('.fundtype').val()+"'",
-                        "type" : "POST",
-                        "success" : function(response){
-                            if(response){
-                                    var IS_JSON = true;
-                                    try
-                                    {
-                                        var new_data = jQuery.parseJSON(response);
-                                       
-                                        var rows;
-                                        $('.myTable2_items').html("");
-                                        
-                                        if(new_data.xml_data.length >0){
-                                            for(var i=0; i<new_data.xml_data.length; i++){
-                                                
-                                                rows+=("<tr>"+ 
-                                                            "<td>"+new_data.xml_data[i]['fundName']+"</td>"+
-                                                            "<td>"+new_data.xml_data[i]['unitdates']+"</td>"+
-                                                            "<td>"+new_data.xml_data[i]['bid']+"</td>"+
-                                                            "<td>"+new_data.xml_data[i]['offer']+"</td>"+
-                                                        "</tr>");
-                                            
-                                            }
-                                        }else{
-                                            rows+=("<tr>"+ 
-                                                        "<td colspan=4>Data tidak ditemukan</td>"+
-                                                    "</tr>");
-                                        }
-                                        $('.myTable2_items').html(rows);
-                                    }
-                                    catch(err)
-                                    {
-                                        IS_JSON = false;
-                                    } 
-
-                            }
-
-                        },
-                        "error" : function(response){
-
-                        }
-                    });//end ajax
-                }
-                    
-            });
-            
-
-            // Graph Data ##############################################
-            var graphData = [{
-                    // Visits
-                    
-                    // Returning Visits
-                    data: [ [0, 50], [1, 21], [1.3, 33], [2.1, 33], [2.6, 40], [3, 29], [4, 20], [5, 30], [5.2, 40],[5.9, 33], [6.6, 33], [7, 20], [7.5, 50] ],
-                    color: '#77b7c5',
-                    points: { radius: 4, fillColor: '#77b7c5' }
-                }
-            ];
-
-            // Lines Graph #############################################
-            $.plot($('#graph-lines'), graphData, {
-                series: {
-                    points: {
-                        show: true,
-                        radius: 5
-                    },
-                    lines: {
-                        show: true
-                    },
-                    shadowSize: 0
-                },
-                grid: {
-                    color: '#646464',
-                    borderColor: 'transparent',
-                    borderWidth: 20,
-                    hoverable: true
-                },
-                xaxis: {
-                    tickColor: 'transparent',
-                    tickDecimals: 0
-                },
-                yaxis: {
-                    tickSize: 5
-                }
-            });
-
-            // Bars Graph ##############################################
-            $.plot($('#graph-bars'), graphData, {
-                series: {
-                    bars: {
-                        show: true,
-                        barWidth: .9,
-                        align: 'center'
-                    },
-                    shadowSize: 0
-                },
-                grid: {
-                    color: '#646464',
-                    borderColor: 'transparent',
-                    borderWidth: 20,
-                    hoverable: true
-                },
-                xaxis: {
-                    tickColor: 'transparent',
-                    tickDecimals: 2
-                },
-                yaxis: {
-                    tickSize: 1000
-                }
-            });
-
-            // Graph Toggle ############################################
-            $('#graph-bars').hide();
-            $('#myTable2').hide();
-            $('.footnote').hide();
-
-            $('#lines').on('click', function (e) {
-                $('#bars').removeClass('active');
-                $('#myTable2').fadeOut();
-                $(this).addClass('active');
-                $('#graph-lines').show();
-                $('.footnote').hide();
-                e.preventDefault();
-            });
-            
-            $('#lines2').on('click', function (e) {
-                $('#bars').removeClass('active');
-                $('#myTable2').hide();
-                $(this).addClass('active');
-                $('#graph-lines').show();
-                $('.title-chart').show();
-                $('.footnote').hide();
-                e.preventDefault();
-            });
-            
-            $('#bars').on('click', function (e) {
-                $('#lines').removeClass('active');
-                $('#graph-lines').hide();
-                $('.title-chart').hide();
-                $(this).addClass('active');
-                $('#myTable2').show().removeClass('hidden');
-                $('.footnote').fadeIn().removeClass('hidden');
-                e.preventDefault();
-            });
-            
-            
-
-            // Tooltip #################################################
-            function showTooltip(x, y, contents) {
-                $('<div id="tooltips">' + contents + '</div>').css({
-                    top: y - 16,
-                    left: x + 20
-                }).appendTo('body').fadeIn();
-            }
-
-            var previousPoint = null;
-
-            $('#graph-lines, #graph-bars').bind('plothover', function (event, pos, item) {
-                if (item) {
-                    if (previousPoint != item.dataIndex) {
-                        previousPoint = item.dataIndex;
-                        $('#tooltips').remove();
-                        var x = item.datapoint[0],
-                            y = item.datapoint[1];
-                            showTooltip(item.pageX, item.pageY, y + ' visitors at ' + x + '.00h');
-                    }
-                } else {
-                    $('#tooltips').remove();
-                    previousPoint = null;
-                }
-            });
-
-        });
-</script>
 <?php echo $this->template("includes/inv/footer.php")?>    
