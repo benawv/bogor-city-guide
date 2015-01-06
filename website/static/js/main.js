@@ -162,6 +162,16 @@ $(document).ready(function(){
 		}
 	});
 	
+	$("p a").on("click", function(){
+		var href = $(this).attr("href");
+		var subHref = href.substring(0,6);
+		if(subHref == "#modal")
+		{
+			modalPopUp = href.substring(6);
+			$("#modal"+modalPopUp).modal('show');
+		}
+	});
+	
 	// --------- Wishlist ------------ //
 	
 	function getCookie(cname) {
