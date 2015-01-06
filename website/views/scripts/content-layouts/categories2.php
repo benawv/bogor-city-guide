@@ -19,11 +19,11 @@
 		</div>
 	</div><!-- .wrapper-special -->
 	<?php echo $this->areablock('container-text', array(
-					'allowed' => array('tekskanan60-imagekiri40_2', 'tekskanan60-videokiri40_2')))?>
+					'allowed' => array('tekskanan60-imagekiri40_2', 'tekskanan60-videokiri40_2', 'sections-video')))?>
 	<!-- content -->
 	<div class="items-container">
 		<?php echo $this->areablock('container', array(
-					'allowed' => array('container-box', 'container-box-static','sections-video')))?>
+					'allowed' => array('container-box', 'container-box-static')))?>
 	</div>
 	<!-- endcontent -->
 	
