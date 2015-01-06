@@ -683,3 +683,6 @@ a.fbshare, a.twshare{
 .clearfix .share{
   padding-top: 5px;
 }
+.stButton .sharethis{
+  background-image: url("/website/static/images/shareThis/16x16.png") !important;
+}
