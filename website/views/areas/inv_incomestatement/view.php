@@ -234,11 +234,11 @@ Total kekayaan terdiri dari terdiri dari aset likuid (Kas), aset investasi, sert
                                 <td><input type="text" id="aset1" class="auto" data-a-sign="Rp " value="Rp 0"></td>
                             </tr>
                             <tr>    
-                                <td>Aset Investasi (reksadana, saham, emas, dsb)</td>
+                                <td>Aset Investasi <p style="margin-top:0px; font-size:18px;">(reksadana, saham, emas, dsb)</p></td>
                                 <td><input type="text" id="aset2" class="auto" data-a-sign="Rp " value="Rp 0"/></td>
                             </tr>
                             <tr>    
-                                <td>Aset Pribadi (rumah, kendaraan, tanah)</td>
+                                <td>Aset Pribadi <p style="margin-top:0px; font-size:18px;">(rumah, kendaraan, tanah)</p></td>
                                 <td><input type="text" id="aset3" class="auto" data-a-sign="Rp " value="Rp 0" /></td>
                             </tr>
                             <tr>
