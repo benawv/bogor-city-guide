@@ -996,7 +996,12 @@ $(document).ready(function(){
 		
 		var kekayaan_bersih = parseInt($('#subtotalaset').autoNumeric('get')) - parseInt($('#subtotalhutang').autoNumeric('get'));
 		
+		var color = 'green';
+		if (kekayaan_bersih < 0) {
+		    color = 'red';
+		}
 		$('#kekayaan_bersih').autoNumeric('set', kekayaan_bersih);
+		$('#kekayaan_bersih').css('color',color);
 		
 		$('#kekayaan_bersih_hidden').autoNumeric('set', kekayaan_bersih);
 	});
