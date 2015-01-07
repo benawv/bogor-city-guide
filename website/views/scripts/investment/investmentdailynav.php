@@ -439,10 +439,14 @@
     $(document).ready(function () {
  
                  
-                //datatable ##############################################
-                $('#fundtype').DataTable();
-              
-              
+            //datatable ##############################################
+            $('#fundtype').DataTable();
+            
+            function toTitleCase(str)
+                {
+                    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+                }
+            
             $(this).on('click', '.filter_harga', function(e){
               
                      
@@ -481,7 +485,8 @@
 //                                                                "<td>"+new_data.xml_data[i]['bid']+"</td>"+
 //                                                                "<td>"+new_data.xml_data[i]['offer']+"</td>"+
 //                                                            "</tr>");
-                                                dataSets.push(new Array(new_data.xml_data[i]['fundName'],new_data.xml_data[i]['unitdates'],new_data.xml_data[i]['bid'],new_data.xml_data[i]['offer']));
+                                                
+                                                dataSets.push(new Array(toTitleCase(new_data.xml_data[i]['fundName']),new_data.xml_data[i]['unitdates'],new_data.xml_data[i]['bid'],new_data.xml_data[i]['offer']));
                                             }
                                                 
                                             }else{
