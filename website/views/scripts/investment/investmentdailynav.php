@@ -72,7 +72,7 @@
 
                         ?>
                         <tr> 
-                            <td><a href="#"><?php echo $items['today'][0]['fundname']?></a></td> 
+                            <td><a href="#"><?php echo  ucwords(strtolower($items['today'][0]['fundname']))?></a></td> 
                             <td>
                                 <?php echo $items['today'][0]['offer']; ?>
                             </td> 
@@ -258,7 +258,7 @@
                     <select class="span2 blue-color fundtype">
                         <option value="0" selected="selected">--Pilih Jenis Fund--</option>
                     <?php  foreach($this->data['ytd'] as $items){ ?>
-                        <option value="<?php echo $items['today'][0]['fundname']; ?>"><?php echo $items['today'][0]['fundname']; ?></option>
+                        <option value="<?php echo $items['today'][0]['fundname']; ?>"><?php echo  ucwords(strtolower($items['today'][0]['fundname'])); ?></option>
                     <?php } ?>    
                     </select>
                    
@@ -410,7 +410,7 @@
                                    foreach($this->data['defult_data'] as $items){
                                     ?>
                                         <tr> 
-                                        <td><?php echo $items["fundName"]; ?></td> 
+                                        <td><?php echo ucwords(strtolower($items["fundName"])); ?></td> 
                                         <td><?php echo $items["unitdates"]; ?></td> 
                                         <td><?php echo $items["bid"]; ?></td> 
                                         <td><?php echo $items["offer"]; ?></td> 
