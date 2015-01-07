@@ -275,11 +275,11 @@ Total kekayaan terdiri dari terdiri dari aset likuid (Kas), aset investasi, sert
 
                         <table width="100%">
                             <tr>    
-                                <td width="40%">Hutang Jangka Pendek (Kartu Kredit, KTA, dsb)</td>
+                                <td width="40%">Hutang Jangka Pendek<p style="margin-top:0px; font-size:18px;">(Kartu Kredit, KTA, dsb)</p></td>
                                 <td><input type="text" id="hutang1" class="auto" data-a-sign="Rp " value="Rp 0"></td>
                             </tr>
                             <tr>    
-                                <td>Hutang Jangka Panjang (kredit rumah, kredit kendaraan dsb)</td>
+                                <td>Hutang Jangka Panjang<p style="margin-top:0px; font-size:18px;">(kredit rumah, kredit kendaraan dsb)</p></td>
                                 <td><input type="text" id="hutang2" class="auto" data-a-sign="Rp " value="Rp 0"/></td>
                             </tr>
                             <tr>    
