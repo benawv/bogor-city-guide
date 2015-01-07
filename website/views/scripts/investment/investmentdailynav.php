@@ -72,7 +72,7 @@
 
                         ?>
                         <tr> 
-                            <td><a href="#"><?php echo $items['today'][0]['fundname']?></a></td> 
+                            <td><a href="#"><?php echo  ucwords(strtolower($items['today'][0]['fundname']))?></a></td> 
                             <td>
                                 <?php echo $items['today'][0]['offer']; ?>
                             </td> 
@@ -258,7 +258,7 @@
                     <select class="span2 blue-color fundtype">
                         <option value="0" selected="selected">--Pilih Jenis Fund--</option>
                     <?php  foreach($this->data['ytd'] as $items){ ?>
-                        <option value="<?php echo $items['today'][0]['fundname']; ?>"><?php echo $items['today'][0]['fundname']; ?></option>
+                        <option value="<?php echo $items['today'][0]['fundname']; ?>"><?php echo  ucwords(strtolower($items['today'][0]['fundname'])); ?></option>
                     <?php } ?>    
                     </select>
                    
@@ -275,7 +275,7 @@
         </div>
         <!-------Article end ---------->
 
-        
+
         <div id="#" class="article-wrap bottom">
            
                <div class="table-wrap">
@@ -308,6 +308,7 @@
 
                                 <!--------- Table nab daily----------------->
                             <div id="container" style="min-width: 900px; height: 500px; margin: 0 auto; padding: 20px; display:none"></div>
+                           
                             
                             <script>
                                 $(function () {
@@ -321,49 +322,58 @@
                                      //   x: -20
                                     //},
                                     xAxis: {
-                                        categories: ['1', '2', '3', '4', '5', '6',
-                                            '7', '8', '9', '10', '11', '12', '13',
-                                            '14', '15', '16','17', '18', '19', 
-                                            '20', '21', '22', '23','24', '25', '26', 
-                                            '27','28', '29', '30', '31']
+                                       categories: ['Nov', 'Dec','Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                                            'Jul', 'Aug', 'Sep', 'Oct']
                                     },
                                     yAxis: {
                                         title: {
-                                            text: 'Offer'
+                                            text: 'Offer (Avarage)'
                                         },
                                         plotLines: [{
                                             value: 0,
-                                            width: 1,
+                                            width: 500,
                                             color: '#808080'
                                         }]
                                     },
                                     tooltip: {
-                                        valueSuffix: '%'
+                                        valueSuffix: ''
                                     },
                                     legend: {
-                                        enabled: true,
-                                        floating: true,
-                                        verticalAlign: 'bottom',
-                                        align:'center',
-                                        y:-30,
-                                        padding:20
+                                        //enabled: false,
+//                                        floating: true,
+//                                        verticalAlign: 'left',
+//                                        align:'center',
+//                                        y:-30,
+//                                        padding:20
+                                            layout: 'vertical',
+                                            align: 'right',
+                                            verticalAlign: 'middle',
+                                            borderWidth: 0
                                     },
                                     credits: {
                                           enabled: false
                                     },
-                                    series: [{
-                                        name: 'AlliSya Rupiah Equity Fund',
-                                        data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6, 9.3]
-                                    }, {
-                                        name: 'AlliSya Rupiah Balanced Fund',
-                                        data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
-                                    }, {
-                                        name: 'AlliSya Rupiah Fixed Income Fund',
-                                        data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
-                                    }, {
-                                        name: 'Guardian Dana Pendapatan Teteap',
-                                        data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
-                                    }]
+                                    series: [
+                                        <?php 
+                                        
+                                        //echo "<pre>";
+                                        $i=0;
+                                        foreach($this->data['dataPerforms'] as $items){
+                                            
+                                        ?>
+                                        {
+                                            name: '<?php echo $items['perform1year'][$i]['fundname'];?>',
+                                            data: [<?php print $items['perform1year'][$i]['offer11'];?>, <?php print $items['perform1year'][$i]['offer12'];?>, <?php print $items['perform1year'][$i]['offer1'];?>]
+                                        }, 
+                                        <?php 
+                                        $i++;
+                                        } ?>
+                                        
+                                        {
+                                            name: '-',
+                                            data: []
+                                        }
+                                    ]
                                 });
                             });
                         </script>   
@@ -400,7 +410,7 @@
                                    foreach($this->data['defult_data'] as $items){
                                     ?>
                                         <tr> 
-                                        <td><?php echo $items["fundName"]; ?></td> 
+                                        <td><?php echo ucwords(strtolower($items["fundName"])); ?></td> 
                                         <td><?php echo $items["unitdates"]; ?></td> 
                                         <td><?php echo $items["bid"]; ?></td> 
                                         <td><?php echo $items["offer"]; ?></td> 
