@@ -166,6 +166,28 @@ class InvestmentController extends Website_Controller_Action
 		
     }   
 
+    //show detile article
+    public function articlepreviewAction(){
+        
+		$id = $this->_getParam('id');
+		$db = Pimcore_Resource_Mysql::get();
+        $entries = Object_Abstract::getById($id);
+        $data = $entries;
+
+
+         $this->view->data = $data;
+
+         $db = Pimcore_Resource_Mysql::get();
+         $entries = new Object_InvestmentArticle_List();
+         $entries->setLimit(1);
+         $entries->setCondition(1);
+
+        $datainvestment=$this->investment_id($id);
+        $entries->investment=$datainvestment;
+        $entries->investment_id=$entries->investment_id;
+        $this->view->entries=$this->article_investment_id($entries->investment_id);
+		
+    } 
     
     //templte article list
     public function template1Action($id,$key){
