@@ -58,7 +58,7 @@
                         <tr> 
                              
                             <th class="header headerSortDown">Fund Name</th> 
-                            <th class="header">Offer</th> 
+                            <th class="header">Bid</th> 
                             <th class="header">1M</th> 
                             <th class="header">3M</th> 
                             <th class="header">YTD</th>
@@ -74,7 +74,7 @@
                         <tr> 
                             <td><a href="#"><?php echo  ucwords(strtolower($items['today'][0]['fundname']))?></a></td> 
                             <td>
-                                <?php echo $items['today'][0]['offer']; ?>
+                                <?php echo $items['today'][0]['bid']; ?>
                             </td> 
                             <td>
                                 <?php 
