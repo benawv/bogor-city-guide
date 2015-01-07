@@ -249,9 +249,9 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                         <!--<div class="tooltips abs3" style="background-color: #a50034"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  <8% - Konservatif, 8-15% - Moderat, 15%< - Agresif ">?  </a></div>-->
 
                         <div class="sub_form">Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  
-	                    <br />&lt; 8% - Konservatif, 
-	                    <br />8-15% - Moderat, 
-	                    <br />15% &lt; - Agresif
+	                    <br /> &lt; 8% - Konservatif, 
+	                    <br /> 8 - 15% - Moderat, 
+	                    <br /> &gt; 15%  - Agresif
 	                    </div>
                    </div>
                    

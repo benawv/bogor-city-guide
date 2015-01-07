@@ -188,7 +188,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                         <div class="sub_form">Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  
 	                    <br />&lt; 8% - Konservatif, 
 	                    <br />8-15% - Moderat, 
-	                    <br />15% &lt; - Agresif
+	                    <br />&gt; 15% - Agresif
 	                    </div>
                    </div>
                    
