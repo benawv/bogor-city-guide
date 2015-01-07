@@ -3616,3 +3616,9 @@ a.x-menu-item {
 .cus_css .x-form-element{
     padding-left:20px !important;
 }
+table.x-btn-text-icon {
+	width: 100% !important;
+}
+.x-panel-collapsed{
+    overflow: auto !important;
+}

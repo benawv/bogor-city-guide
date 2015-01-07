@@ -758,12 +758,12 @@ pimcore.document.tags.areablock = Class.create(pimcore.document.tag, {
 
             var toolbar = new Ext.Window({
                 title: areaBlockToolbarSettings.title,
-                width: areaBlockToolbarSettings.width,
+                width: "250",//areaBlockToolbarSettings.width,
                 border:false,
                 shadow: false,
                 resizable: false,
-                autoHeight: true,
-                style: "position:fixed;",
+                //autoHeight: true,
+                style: "position:fixed;overflow:scroll;height: 550px;",
                 collapsible: true,
                 cls: "pimcore_areablock_toolbar",
                 closable: false,
@@ -828,7 +828,8 @@ pimcore.document.tags.areablock = Class.create(pimcore.document.tag, {
             xtype: "button",
             tooltip: "<b>" + brick.name + "</b><br />" + brick.description,
             icon: brick.icon,
-            text: brick.name.length > maxButtonCharacters ? brick.name.substr(0,maxButtonCharacters) + "..."
+            //maxButtonCharacters
+            text: brick.name.length > 30 ? brick.name.substr(0,30) + "..."
                 : brick.name,
             width: areaBlockToolbarSettings.buttonWidth,
             listeners: {

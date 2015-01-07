@@ -333,3 +333,7 @@
 }
 
 
+.x-window.pimcore_areablock_toolbar.x-window-noborder{
+    width: 250px !important;
+    top: 0 !important;
+}
