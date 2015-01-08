@@ -186,7 +186,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
              <div class="calc-machine">
                <div id="demo2">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>ASUMSI TINGKAT IMBAL HASIL TAHUNAN</h4></div>
+                        <div class="title-box"><h4>ASUMSI IMBAL HASIL TAHUNAN</h4></div>
                         <!--<div class="tooltips abs2"><a class="tooltip-left"  data-tooltip="Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  <8% - Konservatif, 8-15% - Moderat, 15%< - Agresif">?  </a></div>-->
 
                         <div class="sub_form">Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  

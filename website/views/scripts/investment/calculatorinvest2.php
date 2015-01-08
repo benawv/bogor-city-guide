@@ -184,7 +184,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
              <div class="calc-machine">
                <div id="demo2">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4 style="color: #113388">ASUMSI TINGKAT IMBAL HASIL</h4></div>
+                        <div class="title-box"><h4 style="color: #113388">ASUMSI IMBAL HASIL TAHUNAN</h4></div>
                         <div class="sub_form">Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  
 	                    <br />&lt; 8% - Konservatif, 
 	                    <br />8-15% - Moderat, 
