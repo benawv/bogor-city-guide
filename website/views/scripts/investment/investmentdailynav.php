@@ -141,8 +141,8 @@
                
                <div class="wrap30 left">
                    <h5 class="top">Dari</h5>
-                    <select class="span1 blue-color day1" name="day1">
-                        <option value="0" selected="selected">--Pilih tanggal--</option>
+                    <select class="span1 blue-color day1" name="day1" style="width: 100px;">
+                        <option value="0" selected="selected">Tanggal</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -176,7 +176,7 @@
                         <option value="31">31</option>
                     </select>
                    <select class="span1 blue-color month1" name="month1">
-                       <option value="0" selected="selected">--Pilih bulan--</option>
+                       <option value="0" selected="selected">Bulan</option>
                        <option value="1">Jan</option>
                        <option value="2">Feb</option>
                        <option value="3">Mar</option>
@@ -191,15 +191,22 @@
                        <option value="12">Des</option>
                     </select>
                    <select class="span1 blue-color year1" name="year1">
-                        <option value="0" selected="selected">--Pilih year--</option>
-                        <option value="2014">2014</option>
+                        <option value="0" selected="selected">Tahun</option>
+                        <?php
+                        for($i=date('Y'); $i>2013; $i--) {
+                            $selected = '';
+                            if ($birthdayYear == $i) $selected = ' selected="selected"';
+                            print('<option value="'.$i.'"'.$selected.'>'.$i.'</option>'."\n");
+                        }
+                        
+                        ?>
                     </select>
                 </div>
                
                <div class="wrap30 left">
                    <h5 class="top">Hingga</h5>
-                    <select class="span1 blue-color day2">
-                        <option value="0" selected="selected">--Pilih tanggal--</option>
+                    <select class="span1 blue-color day2" style="width: 100px;">
+                        <option value="0" selected="selected">Tanggal</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -233,7 +240,7 @@
                         <option value="31">31</option>
                     </select>
                    <select class="span1 blue-color month2">
-                       <option value="0" selected="selected">--Pilih bulan--</option>
+                       <option value="0" selected="selected">Bulan</option>
                        <option value="1">Jan</option>
                        <option value="2">Feb</option>
                        <option value="3">Mar</option>
@@ -248,15 +255,22 @@
                        <option value="12">Des</option>
                     </select>
                    <select class="span1 blue-color year2">
-                         <option value="0" selected="selected">--Pilih tahun--</option>
-                        <option value="2014">2014</option>
+                        <option value="0" selected="selected">Tahun</option>
+                        <?php
+                        for($i=date('Y'); $i>2013; $i--) {
+                            $selected = '';
+                            if ($birthdayYear == $i) $selected = ' selected="selected"';
+                            print('<option value="'.$i.'"'.$selected.'>'.$i.'</option>'."\n");
+                        }
+                        
+                        ?>
                    </select>
                 </div>
                
                <div class="wrap30 left">
                    <h5 class="top">Jenis Fund</h5>
                     <select class="span2 blue-color fundtype">
-                        <option value="0" selected="selected">--Pilih Jenis Fund--</option>
+                        <option value="0" selected="selected">Jenis Fund</option>
                     <?php  foreach($this->data['ytd'] as $items){ ?>
                         <option value="<?php echo $items['today'][0]['fundname']; ?>"><?php echo  ucwords(strtolower($items['today'][0]['fundname'])); ?></option>
                     <?php } ?>    
@@ -440,7 +454,17 @@
  
                  
             //datatable ##############################################
-            $('#fundtype').DataTable();
+            $('#fundtype').DataTable({
+                    "oLanguage": {
+                      "sSearch": "Cari:",
+                      "sLengthMenu": "Tampilkan _MENU_ baris",            
+                      "sInfo": "Tota _TOTAL_ baris, ditampilan dari (_START_ s/d _END_)",
+                      "oPaginate": {
+                        "sPrevious": "Sebelumnya"
+                      }
+                    }
+           } );
+           
             
             function toTitleCase(str)
                 {
@@ -500,6 +524,14 @@
                                             }else {
                                             
                                                 $('#myTable2').dataTable( {
+                                                    "oLanguage": {
+                                                      "sSearch": "Cari:",
+                                                      "sLengthMenu": "Tampilkan _MENU_ baris",            
+                                                      "sInfo": "Tota _TOTAL_ baris, ditampilan dari (_START_ s/d _END_)",
+                                                      "oPaginate": {
+                                                        "sPrevious": "Sebelumnya"
+                                                      }
+                                                    },
                                                     "searching": false,
                                                     "bLengthChange": false,
                                                     "data": dataSets                               
