@@ -573,8 +573,61 @@ class InvestmentController extends Website_Controller_Action
             $arrayLastData[]=$last_data;
         }
         
+        
+        /*bid fund*/            
+            $getfundnamefilter="SELECT DISTINCT (a.fundname)
+            	FROM $nameCommunity AS a 
+            	WHERE STR_TO_DATE (FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')<=NOW()
+            	GROUP BY a.fundname, DAY(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'))";
+            $fundnamefilter=$db->fetchAll($getfundnamefilter);     
+             
+            foreach($fundnamefilter as $fundnames){                
+                $isFundName=$fundnames['fundname'];
+                $getFundBidMonth="SELECT a.fundname,
+                		AVG(bid) AS bid,
+                		AVG(offer) AS offer,
+                		DAY(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')) AS days,
+                		MONTH(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')) AS months,
+                		YEAR(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')) AS yaers
+                	FROM $nameCommunity AS a 
+                	WHERE 
+                    a.fundname ='$isFundName' and
+                    STR_TO_DATE (FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')<=NOW()
+                	GROUP BY a.fundname, DAY(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'))
+                	ORDER BY a.fundname,DAY(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'))";
+                    
+                $fundBidMonth[]=$db->fetchAll($getFundBidMonth);
+            
+            }
+            
+    //        echo "<pre>";
+//            print_r($fundBidMonth);
+//            echo "</pre>";
+            
+            foreach($fundBidMonth as $result){
+             
+                $itemss['fundname']=$result[0]['fundname'];
+                $itemss['total']=count($result);
+                $itemss['year']=$result[0]['yaers'];
+                $itemss['month']=$result[0]['months'];
+                
+                for($j=0; $j<count($result);$j++){
+                        
+                      $bid.=$result[$j]['bid'].",";
+                      $biddate.=$result[$j]['days'].",";
+                    
+                }
+               // echo $bid ."<br>";
+                //$itemss['datebid']=$datebid;
+                $itemss['fundbit']=substr($bid, 0, -1);
+                $itemss['biddate']=substr($biddate, 0, -1);
+                $arrayItem[]= $itemss;
+                $bid="";
+            }    
+        
         sort($arrayLastData);      
         $alldata['ytd']=$arrayLastData;
+        $alldata['dataGraph']=$arrayItem;
         $alldata['dataPerforms']=$dataPerform;
         $this->view->data=$alldata;     
 
