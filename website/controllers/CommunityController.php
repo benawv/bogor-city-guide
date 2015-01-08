@@ -341,7 +341,7 @@ class CommunityController extends Website_Controller_Action {
 			$cookies->setCookies($idcookies);
 			$cookies->setIdArticle($article);
 			$cookies->setKey('cookies_'.$parent);
-			$cookies->setO_parentId('182');
+			$cookies->setO_parentId($o_Pid);
 			$cookies->setIndex(0);
 			$cookies->setPublished(1);
 			$cookies->save();
@@ -358,7 +358,7 @@ class CommunityController extends Website_Controller_Action {
 			$sumPopular = $popular+1;
 			$where = "o_id=".$o_id;
 			$where2 = "oo_id=".$article;
-			$db->update("objects", array("o_path"=>"/community-tips-cookies/community-tips-cookies/", "o_parentId"=>$o_Pid), $where);
+			$db->update("objects", array("o_path"=>"/community-tips-cookies/", "o_parentId"=>$o_Pid), $where);
 			$db->update($table1, array("popular"=>$sumPopular), $where2);
 			$db->update($table2, array("popular"=>$sumPopular), $where2);
 			$string = "Sudah di save";
