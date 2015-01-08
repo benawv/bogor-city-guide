@@ -25,7 +25,7 @@ $(function() {
 var select = $( "#demo" );
         var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
             min: 5000000,
-            max: 1000000000,
+            max: 10000000000,
             value: 5000000,
             range: "min",
             step: 5000000,
