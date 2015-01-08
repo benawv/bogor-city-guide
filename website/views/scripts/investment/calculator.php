@@ -346,16 +346,10 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                         <td>64.7</td>
                     </tr>
                     <tr>
-                        <td><strong>Indonesia (UPH)</strong></td>
+                        <td><strong>Indonesia</strong></td>
                         <td>95</td>
                         <td>50.4</td>
                         <td>145.4</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Indonesia (BINUS)</strong></td>
-                        <td>68.9</td>
-                        <td>50.4</td>
-                        <td>119.3</td>
                     </tr>
                 </tbody>
                 <tfoot>
