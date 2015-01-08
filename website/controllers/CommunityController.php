@@ -358,7 +358,7 @@ class CommunityController extends Website_Controller_Action {
 			$sumPopular = $popular+1;
 			$where = "o_id=".$o_id;
 			$where2 = "oo_id=".$article;
-			$db->update("objects", array("o_path"=>"/community-tips-cookies/", "o_parentId"=>$o_Pid), $where);
+			//$db->update("objects", array("o_path"=>"/community-tips-cookies/", "o_parentId"=>$o_Pid), $where);
 			$db->update($table1, array("popular"=>$sumPopular), $where2);
 			$db->update($table2, array("popular"=>$sumPopular), $where2);
 			$string = "Sudah di save";
