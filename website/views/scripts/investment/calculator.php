@@ -184,7 +184,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                         <div class="title-box"><h4>BIAYA PENDIDIKAN SAAT INI</h4></div>
                         <!--div class="tooltips"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div!-->
 
-                        <div class="sub_form">Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to <span class='appendix' style="cursor: pointer; color: blue;">appendix</span></div>
+                        <div class="sub_form">Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *refer to <span class='appendix' style="cursor: pointer; color: blue;">appendix</span></div>
                    </div>
                    
                     <div class="calc-box">    
