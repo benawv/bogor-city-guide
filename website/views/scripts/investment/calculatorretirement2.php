@@ -297,16 +297,10 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             return result.toFixed(2);
         }
         
-        var biaya = getCookie('pension1_hasil');
         var asumsi_inflasi = getCookie('pension1_asumsi_inflasi');
         var asumsi = parseInt(asumsi_inflasi) + 2;
-        var waktu = getCookie('pension1_jangka_waktu');
         $("#sliderPosition").bind('input',function(){
-            var text = $(this).val();
-            text = text.replace(/[^0-9\.]+/g,"");
-            text = text.replace(/\./g,'');
-            text = text.replace(/,/g,'');
-            biaya = text;
+            var text = clearFormat($(this).val());
             text = accounting.formatMoney(text,'Rp ',0,'.',',');
             $(this).val(text);
         });
@@ -329,17 +323,13 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         */
         
         $("#sliderPosition3").keyup(function(event){
-            var text = $(this).val();
-            text = text.replace(/[^0-9\.]+/g,"");
-            text = text.replace(/\./g,'');
-            text = text.replace(/,/g,'');
+            var text = clearFormat($(this).val());
             if (text == 0) {
                 text = 1;
             }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
-            waktu = text;
             $(this).val(text + ' tahun');
         });
 
@@ -348,6 +338,8 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             /* added validasi by Ahmad Somadi 27 Des 2014 */
 
             if (asumsi > asumsi_inflasi) {
+                var biaya = clearFormat($("#sliderPosition").val());
+                var waktu = clearFormat($("#sliderPosition3").val());
                 var result = pension2(biaya,asumsi,asumsi_inflasi,waktu);
                 
                 setCookie('pension2_biaya',biaya,1);
@@ -454,7 +446,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                 /* added by Ahmad Somadi 27 Des 2014 */
                 
                 var newValue = $("#sliderPosition").val().replace("Rp ", "").replace(/\./g, "").replace(",00", "");
-                $("#slider").slider( "value" , newValue);
+                //$("#slider").slider( "value" , newValue);
 		
                 newValue = $("#sliderPosition3").val().replace(" tahun", "");
                 $( "#slider3" ).slider( "option", "max", newValue);
@@ -465,7 +457,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 			val = val.replace("Rp ", "");
 			val = val.replace(".", "");
 			val = val.replace("0.0", "00");
-			$("#slider").slider( "value" , val);
+			//$("#slider").slider( "value" , val);
 			
 		});
 		

@@ -523,7 +523,7 @@ class InvestmentController extends Website_Controller_Action
             /*1 YAER*/
             
             /*GET ALLDATA DISTING BY FUNDNAME PERMONTH*/
-            $getAllfundnamePermonth="SELECT DISTINCT (a.fundname), b.offer11, c.offer12 , d.offer1
+            $getAllfundnamePermonth="SELECT DISTINCT (a.fundname), b.bid11, c.bid12 , d.bid1
                                     FROM $nameCommunity AS a LEFT OUTER JOIN
                                     	(
                                     	SELECT a.fundname,

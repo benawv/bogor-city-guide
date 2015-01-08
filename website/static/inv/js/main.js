@@ -179,4 +179,10 @@ $(document).ready(function(){
 	});
 });
 
-
+//===== added by Bena 08 Jan 2015 =====//
+function clearFormat(value) {
+    value = value.replace(/[^0-9\.]+/g,"");
+    value = value.replace(/\./g,'');
+    value = value.replace(/,/g,'');
+    return value;
+}

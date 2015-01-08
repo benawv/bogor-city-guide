@@ -412,51 +412,39 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         $('#sliderPosition').val("Rp 5.000.000");
         $('#sliderPosition2').val("1%");
         $('#sliderPosition3').val("1 tahun");
-        var biaya = 5000000;
-        var asumsi = 1;
-        var waktu = 1;
         
         $("#sliderPosition").bind('input',function(){
-            var text = $(this).val();
-            text = text.replace(/[^0-9\.]+/g,"");
-            text = text.replace(/\./g,'');
-            text = text.replace(/,/g,'');
-            biaya = text;
+            var text = clearFormat($(this).val());
             text = accounting.formatMoney(text,'Rp ',0,'.',',');
             $(this).val(text);
         });
         
         $("#sliderPosition2").keyup(function(event){
-            var text = $(this).val();
-            text = text.replace(/[^0-9\.]+/g,"");
-            text = text.replace(/\./g,'');
-            text = text.replace(/,/g,'');
+            var text = clearFormat($(this).val());
             if (text == 0) {
                 text = 1;
             }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
-            asumsi = text;
             $(this).val(text + '%');
         });
         
         $("#sliderPosition3").keyup(function(event){
-            var text = $(this).val();
-            text = text.replace(/[^0-9\.]+/g,"");
-            text = text.replace(/\./g,'');
-            text = text.replace(/,/g,'');
+            var text = clearFormat($(this).val());
             if (text == 0) {
                 text = 1;
             }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
-            waktu = text;
             $(this).val(text + ' tahun');
         });
         
         $(".orange-btn").click(function(){
+            var biaya = clearFormat($("#sliderPosition").val());
+            var asumsi = clearFormat($("#sliderPosition2").val());
+            var waktu = clearFormat($("#sliderPosition3").val());
             var result = edu1(biaya, asumsi, waktu);
             
             setCookie('edu1_jenjang',$('.jenjang').val(),1);
@@ -467,7 +455,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             
             window.location.href = "/kalkulator/financial-calculators/calculator-education1-result";
         });
-    
+
 	function navigateMe(anchor)
 	{
 	
@@ -568,8 +556,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 			val = val.replace("Rp ", "");
 			val = val.replace(".", "");
 			val = val.replace("0.0", "00");
-			$("#slider").slider( "value" , val);
-			
+			//$("#slider").slider( "value" , val);
 		});
 		
 		$("#sliderPosition2").focusout(function(event){
@@ -585,7 +572,6 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 			val = this.value;
 			val = val.replace(" tahun", "");
 			$("#slider3").slider( "value" , val);
-			
 		});
 
 	});
