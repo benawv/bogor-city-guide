@@ -288,51 +288,38 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             return result.toFixed(2);
         }
         
-        var biaya = getCookie('investment1_hasil');
-        var asumsi = 1;
-        var waktu = getCookie('investment1_jangka_waktu');
-        
         $("#sliderPosition").bind('input',function(){
-            var text = $(this).val();
-            text = text.replace(/[^0-9\.]+/g,"");
-            text = text.replace(/\./g,'');
-            text = text.replace(/,/g,'');
-            biaya = text;
+            var text = clearFormat($(this).val());
             text = accounting.formatMoney(text,'Rp ',0,'.',',');
             $(this).val(text);
         });
         
         $("#sliderPosition2").keyup(function(event){
-            var text = $(this).val();
-            text = text.replace(/[^0-9\.]+/g,"");
-            text = text.replace(/\./g,'');
-            text = text.replace(/,/g,'');
+            var text = clearFormat($(this).val());
             if (text == 0) {
                 text = 1;
             }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
-            asumsi = text;
             $(this).val(text + '%');
         });
         
         $("#sliderPosition3").keyup(function(event){
-            var text = $(this).val();
-            text = text.replace(/[^0-9\.]+/g,"");
-            text = text.replace(/\./g,'');
-            text = text.replace(/,/g,'');
+            var text = clearFormat($(this).val());
             if (text == 0) {
                 text = 1;
             }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
-            waktu = text;
             $(this).val(text + ' tahun');
         });
 
         $(".orange-btn").click(function(){
+            var biaya = clearFormat($("#sliderPosition").val());
+            var asumsi = 1;
+            var waktu = clearFormat($("#sliderPosition2").val());
             var result = investment3(biaya,asumsi,waktu);
             
             setCookie('investment2_biaya',biaya,1);
@@ -435,7 +422,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 		/* added by Ahmad Somadi 27 Des 2014 */
                 
                 var newValue = $("#sliderPosition").val().replace("Rp ", "").replace(/\./g, "").replace(",00", "");
-                $("#slider").slider( "value" , newValue);
+                //$("#slider").slider( "value" , newValue);
 		
 		$("#sliderPosition").focusout(function(event){
 			
@@ -443,7 +430,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 			val = val.replace("Rp ", "");
 			val = val.replace(".", "");
 			val = val.replace("0.0", "00");
-			$("#slider").slider( "value" , val);
+			//$("#slider").slider( "value" , val);
 			
 		});
 		
