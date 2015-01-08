@@ -763,7 +763,7 @@ pimcore.document.tags.areablock = Class.create(pimcore.document.tag, {
                 shadow: false,
                 resizable: false,
                 //autoHeight: true,
-                style: "position:fixed;overflow:scroll;height: 550px;",
+                style: "position:fixed;overflow:auto;height: 550px;",
                 collapsible: true,
                 cls: "pimcore_areablock_toolbar",
                 closable: false,
