@@ -236,7 +236,7 @@ $(document).ready(function(){
 	});
 	$(".linkWizard").on("click",function(){
 		setCookie("showWizard","Hide");
-		window.location.href = "/wizard/wizard";
+		window.location.href = "/wishlist/panduan-wishlist";
 	});
 	$(".close").on("click",function(){
 		setCookie("showWizard","Hide");
