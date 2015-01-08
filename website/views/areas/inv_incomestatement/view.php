@@ -1079,7 +1079,7 @@ $(document).ready(function(){
 		{
 			$('.likuiditas').html(likuiditas_teks);
 			$('.likuiditas_ket').html(likuiditas_ket);
-			$('.sum_likuiditas').html("<span> = "+likuiditas+"</span>");
+			$('.sum_likuiditas').html("<span> Anda bernilai "+likuiditas+" bulan</span>");
 			$('.sum_likuiditas_ket').html(likuiditas_ket);
 		}
 		
@@ -1107,7 +1107,7 @@ $(document).ready(function(){
 		{
 			$('.aset_likuid').html(aset_likuid_teks);
 			$('.aset_likuid_ket').html(aset_likuid_ket);
-			$('.sum_aset_likuid').html("<span> = "+rasio_aset_likuid+"</span>");
+			$('.sum_aset_likuid').html("<span> Anda bernilai "+rasio_aset_likuid+"%</span>");
 			$('.sum_aset_likuid_ket').html(aset_likuid_ket);
 		}
 			
@@ -1134,7 +1134,7 @@ $(document).ready(function(){
 		{
 			$('.rasio_tabungan_investasi').html(tabungan_investasi_teks);
 			$('.tabungan_investasi_ket').html(tabungan_investasi_ket);
-			$('.sum_tabungan_investasi').html("<span> = "+rasio_tabungan_investasi+"</span>");
+			$('.sum_tabungan_investasi').html("<span> Anda bernilai "+rasio_tabungan_investasi+"%</span>");
 			$('.sum_tabungan_investasi_ket').html(tabungan_investasi_ket);
 		}
 		
@@ -1162,7 +1162,7 @@ $(document).ready(function(){
 		{
 			$('.hutang_aset').html(hutang_aset_teks);
 			$('.hutang_aset_ket').html(hutang_aset_ket);
-			$('.sum_hutang_aset').html("<span> = "+hutang_aset+"</span>");
+			$('.sum_hutang_aset').html("<span> Anda bernilai "+hutang_aset+"%</span>");
 			$('.sum_hutang_aset_ket').html(hutang_aset_ket);
 		}
 		
@@ -1190,7 +1190,7 @@ $(document).ready(function(){
 		{
 			$('.investasi').html(total_investasi_teks);
 			$('.investasi_ket').html(total_investasi_ket);
-			$('.sum_investasi').html("<span> = "+total_investasi+"</span>");
+			$('.sum_investasi').html("<span> Anda bernilai "+total_investasi+"%</span>");
 			$('.sum_investasi_ket').html(total_investasi_ket);
 		}
 		
@@ -1239,7 +1239,7 @@ $(document).ready(function(){
 		{
 			$('.likuiditas').html(likuiditas_teks);
 			$('.likuiditas_ket').html(likuiditas_ket);
-			$('.sum_likuiditas').html("<span> = "+likuiditas+"</span>");
+			$('.sum_likuiditas').html("<span> Anda bernilai "+likuiditas+" bulan</span>");
 			$('.sum_likuiditas_ket').html(likuiditas_ket);
 		}
 		
@@ -1267,7 +1267,7 @@ $(document).ready(function(){
 		{
 			$('.aset_likuid').html(aset_likuid_teks);
 			$('.aset_likuid_ket').html(aset_likuid_ket);
-			$('.sum_aset_likuid').html("<span> = "+rasio_aset_likuid+"</span>");
+			$('.sum_aset_likuid').html("<span> Anda bernilai "+rasio_aset_likuid+"%</span>");
 			$('.sum_aset_likuid_ket').html(aset_likuid_ket);
 		}
 			
@@ -1294,7 +1294,7 @@ $(document).ready(function(){
 		{
 			$('.rasio_tabungan_investasi').html(tabungan_investasi_teks);
 			$('.tabungan_investasi_ket').html(tabungan_investasi_ket);
-			$('.sum_tabungan_investasi').html("<span> = "+rasio_tabungan_investasi+"</span>");
+			$('.sum_tabungan_investasi').html("<span> Anda bernilai "+rasio_tabungan_investasi+"%</span>");
 			$('.sum_tabungan_investasi_ket').html(tabungan_investasi_ket);
 		}
 		
@@ -1322,7 +1322,7 @@ $(document).ready(function(){
 		{
 			$('.hutang_aset').html(hutang_aset_teks);
 			$('.hutang_aset_ket').html(hutang_aset_ket);
-			$('.sum_hutang_aset').html("<span> = "+hutang_aset+"</span>");
+			$('.sum_hutang_aset').html("<span> Anda bernilai "+hutang_aset+"%</span>");
 			$('.sum_hutang_aset_ket').html(hutang_aset_ket);
 		}
 		
@@ -1350,7 +1350,7 @@ $(document).ready(function(){
 		{
 			$('.investasi').html(total_investasi_teks);
 			$('.investasi_ket').html(total_investasi_ket);
-			$('.sum_investasi').html("<span> = "+total_investasi+"</span>");
+			$('.sum_investasi').html("<span> Anda bernilai "+total_investasi+"%</span>");
 			$('.sum_investasi_ket').html(total_investasi_ket);
 		}
 		
@@ -1401,8 +1401,15 @@ $(document).ready(function(){
 	          email : $('.email-user').val(),
 	          likuiditas : $('.likuiditas').text(),
 	          aset_likuid : $('.aset_likuid').text(),
+	          tabungan_investasi : $('.rasio_tabungan_investasi').text(),
 	          hutang_aset : $('.hutang_aset').text(),
-	          investasi : $('.investasi').text()
+	          investasi : $('.investasi').text(),
+	          likuiditas_ket : $('.sum_likuiditas_ket').text(),
+	          aset_likuid_ket : $('.sum_aset_likuid_ket').text(),
+	          tabungan_investasi_ket : $('.sum_tabungan_investasi_ket').text(),
+	          hutang_aset_ket : $('.sum_hutang_aset_ket').text(),
+	          investasi_ket : $('.sum_investasi_ket').text()
+	          
 	        },
 	        success: function()
 	        {

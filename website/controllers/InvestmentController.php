@@ -368,14 +368,26 @@ class InvestmentController extends Website_Controller_Action
         $email = $_POST['email'];
         $likuiditas = $_POST['likuiditas'];
         $aset_likuid = $_POST['aset_likuid'];
+        $tabungan_investasi = $_POST['tabungan_investasi'];
         $hutang_aset = $_POST['hutang_aset'];
         $investasi = $_POST['investasi'];
+        $likuiditas_ket = $_POST['likuiditas_ket'];
+        $aset_likuid_ket = $_POST['aset_likuid_ket'];
+        $tabungan_investasi_ket = $_POST['tabungan_investasi_ket'];
+        $hutang_aset_ket = $_POST['hutang_aset_ket'];
+        $investasi_ket = $_POST['investasi_ket'];
         
-        $document = '/email/finansialrasio/email-rasio';
+        $document = '/email/finansialrasio/email-summary-rasio';
         $params = array('likuiditas' => $likuiditas,
                 'aset_likuid' => $aset_likuid,
+                'tabungan_investasi' => $tabungan_investasi,
                 'hutang_aset' => $hutang_aset,
-                'investasi' => $investasi
+                'investasi' => $investasi,
+                'likuiditas_ket' => $likuiditas_ket,
+                'aset_likuid_ket' => $aset_likuid_ket,
+                'tabungan_investasi_ket' => $tabungan_investasi_ket,
+                'hutang_aset_ket' => $hutang_aset_ket,
+                'investasi_ket' => $investasi_ket
                 );
         
         $mail = new Pimcore_Mail();
