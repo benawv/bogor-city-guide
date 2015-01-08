@@ -241,7 +241,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
            
            <div class="calc-machine">
                <div class="calc-submit bottom">
-                    <input class="orange-btn bg_edu" type="button" value="Hitung Investasi Tahunan / Bulanan yang Saya Butuhkan">
+                    <input class="orange-btn bg_edu" type="button" value="Hitung Investasi Bulanan / Tahunan yang Saya Butuhkan">
                 </div>   
            </div>   
                
