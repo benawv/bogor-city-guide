@@ -553,7 +553,7 @@ Total kekayaan terdiri dari terdiri dari aset likuid (Kas), aset investasi, sert
                                         <input type="submit" class='sendEmail' value="Kirim" />    
                                     </p>
                                     <div class="allianz-button" style="text-align: left;">
-					                    <input id="keuangan" class="blue-btn" type="button" value="Laporan Keuangan">
+					                    <input id="keuangan" class="blue-btn" type="button" value="Perencanaan Keuangan">
 					                    <input id="kalkulator" class="blue-btn" type="button" value="Kalkulator">
 					               </div>
 									<div style="color: #003da5;" class="sukses"></div>
@@ -1430,7 +1430,7 @@ $(".auto").keyup(function(event){
 
 /* =============== Added by Handri Pangestiaji 8 Jan 2015 ======================= */
 $("#keuangan").click(function(){
-    window.location.href = "/financial-planning/cash-flow-tables/income-statement";
+    window.location.href = "/financial-planning/financial-planning";
  });
  
 $("#kalkulator").click(function(){
