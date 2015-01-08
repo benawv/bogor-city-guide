@@ -383,15 +383,21 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
             var asumsi_inflasi = clearFormat($("#sliderPosition2").val());
             var asumsi_imbal = clearFormat($("#sliderPosition3").val());
             var waktu = clearFormat($("#sliderPosition4").val());
-            var result = resp1(biaya,asumsi_inflasi,asumsi_imbal,waktu);
             
-            setCookie('resp1_biaya',biaya,1);
-            setCookie('resp1_asumsi_inflasi',asumsi_inflasi,1);
-            setCookie('resp1_asumsi_imbal',asumsi_imbal,1);
-            setCookie('resp1_jangka_waktu',waktu,1);
-            setCookie('resp1_hasil',result,1);
-            
-            window.location.href = "/kalkulator/financial-calculators/calculator-resp1-result";
+            if (asumsi_inflasi != asumsi_imbal) {
+                var result = resp1(biaya,asumsi_inflasi,asumsi_imbal,waktu);
+                
+                setCookie('resp1_biaya',biaya,1);
+                setCookie('resp1_asumsi_inflasi',asumsi_inflasi,1);
+                setCookie('resp1_asumsi_imbal',asumsi_imbal,1);
+                setCookie('resp1_jangka_waktu',waktu,1);
+                setCookie('resp1_hasil',result,1);
+                
+                window.location.href = "/kalkulator/financial-calculators/calculator-resp1-result";
+            }
+            else{
+                alert('Asumsi imbal hasil tahunan tidak boleh sama dengan asumsi tingkat inflasi');
+            }
         });
     
 	function navigateMe(anchor)
