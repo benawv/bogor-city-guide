@@ -295,11 +295,41 @@
                <div class="table-wrap">
                    
                      <div id="title" class="title-chart" style="display:none" >
-                            <span>Nav Graph for Bond FUND (01/11/2014 - 05/01/2014)</span>
+                            <span class="date-range"></span>
                             <a href="#" id="bars"><span></span></a>
                             <a href="#" id="lines" class="active"><span></span></a>
                     </div> 
                    
+                   <?php 
+                   //$no=0;
+//
+//                     foreach($this->data['dataPerforms'] as $items){
+//                       //echo count($items['perform1year']);
+//                       for($i=0;$i<count($items['perform1year']);$i++){
+//                           if($items['perform1year'][$i-1]['fundname']==$items['perform1year'][$i]['fundname']){
+//                            
+//                 //               if($i==0){
+////                                    echo "[";
+////                                }
+//                            
+//                               echo "'".$items['perform1year'][$i]['bid']."',";
+//                                
+//                 //               if(($i-1)==count($items['perform1year'])){
+////                                    echo "]";
+////                                }
+// 
+//                                                           
+//                           }else{
+//                                echo "<br>";
+//                                    echo $items['perform1year'][$i]['fundname'];
+//                                echo "<br>";      
+//                                                
+//                           }    
+//                          
+//                        }
+//
+//                     }
+                   ?>
                     <!-- Graph HTML -->
                     <div id="graph-wrapper">
                         
@@ -341,7 +371,7 @@
                                     },
                                     yAxis: {
                                         title: {
-                                            text: 'Offer (Avarage)'
+                                            text: 'Bid (Avarage)'
                                         },
                                         plotLines: [{
                                             value: 0,
@@ -377,7 +407,7 @@
                                         ?>
                                         {
                                             name: '<?php echo $items['perform1year'][$i]['fundname'];?>',
-                                            data: [<?php print $items['perform1year'][$i]['offer11'];?>, <?php print $items['perform1year'][$i]['offer12'];?>, <?php print $items['perform1year'][$i]['offer1'];?>]
+                                            data: [<?php print $items['perform1year'][$i]['bid11'];?>, <?php print $items['perform1year'][$i]['bid12'];?>, <?php print $items['perform1year'][$i]['bid1'];?>]
                                         }, 
                                         <?php 
                                         $i++;
