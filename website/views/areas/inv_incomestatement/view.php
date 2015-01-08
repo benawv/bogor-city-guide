@@ -397,7 +397,6 @@ Total kekayaan terdiri dari terdiri dari aset likuid (Kas), aset investasi, sert
                                     <th class="">IDEAL</th> 
                                     <th class="">AKTUAL</th>
                                     <th class="">DESKRIPSI</th> 
-                                    <th class="">KETERANGAN</th>
                                 </tr> 
                             </thead> 
                             <tbody> 
@@ -406,36 +405,30 @@ Total kekayaan terdiri dari terdiri dari aset likuid (Kas), aset investasi, sert
                                     <td class="td-blue-sky">3 - 6 BULAN</td> 
                                     <td class="td-blue likuiditas"><a href="javascript:void(0);" class="aktual-aruskas">Isi laporan arus kas untuk melengkapi > </a></td> 
                                     <td class="td-blue-sky">Berapa lama tabungan Anda dapat mencukupi pengeluaran bulanan Anda tanpa adanya sumber pendapatan lainnya.</td> 
-                                  	<td class="td-blue likuiditas_ket"></td>  
                                 </tr>       
                                <tr> 
                                     <td class="td-blue">ASET LIKUID</td>  
                                     <td class="td-blue-sky">MAKSIMAL 15%</td> 
                                     <td class="td-blue aset_likuid"><a href="javascript:void(0);" class="aktual-aruskas">Isi laporan arus kas untuk melengkapi > </a></td> 
                                     <td class="td-blue-sky">Perbandingan antara jumlah aset yang dalam bentuk kas/setara kas terhadap seluruh jumlah aset. jumlah aset likuid yang berlebih sebaiknya diinvestasikan ke dalam instrumen lain yang lebih produktif</td>
-                                    
-                                    <td class="td-blue aset_likuid_ket"></td>
                                 </tr>
                                 <tr> 
                                     <td class="td-blue">TABUNGAN</td>  
                                     <td class="td-blue-sky">MINIMAL 10%</td> 
                                     <td class="td-blue rasio_tabungan_investasi"><a href="javascript:void(0);" class="aktual-aruskas">Isi laporan arus kas untuk melengkapi > </a></td> 
                                     <td class="td-blue-sky">Perbandingan antara Tabungan & Investasi terhadap Pendapatan.</td>
-                                    <td class="td-blue tabungan_investasi_ket"></td>
                                 </tr>     
                                <tr> 
                                     <td class="td-blue">HUTANG TERHADAP ASET</td>  
                                     <td class="td-blue-sky">MAKSIMAL 50%</td> 
                                     <td class="td-blue hutang_aset"><a href="javascript:void(0);" class="aktual-neraca">Isi laporan neraca untuk melengkapi > </a></td> 
                                     <td class="td-blue-sky">Perbandingan antara total hutang dengan aset yang menunjukkan kemampuan pelunasan hutang dengan aset yang kita miliki. Semakin sedikit aset yang diperlukan untuk melunasi seluruh hutang semakin baik.</td>
-                                    <td class="td-blue hutang_aset_ket"></td>
                                 </tr>    
                                 <tr> 
                                     <td class="td-blue">TOTAL INVESTASI TERHADAP KEKAYAAN BERSIH</td>  
                                     <td class="td-blue-sky">> 50%</td> 
                                     <td class="td-blue investasi"><a href="javascript:void(0);" class="aktual-neraca">Isi laporan neraca untuk melengkapi > </a></td> 
                                     <td class="td-blue-sky">Menunjukkan seberapa besar kekayaan yang kita investasikan. Persentase yang semakin besar menunjukkan potensi produktivitas aset yang semakin tinggi.</td>
-                                    <td class="td-blue investasi_ket"></td>
                                 </tr>  
                             </tbody> 
                         </table> 
@@ -1059,18 +1052,18 @@ $(document).ready(function(){
 		{
 			if(likuiditas > 6)
 			{
-				likuiditas_teks = "<div style='font-size: 18px;'>"+likuiditas+"</div>";
+				likuiditas_teks = "<div style='font-size: 18px;'>"+likuiditas+" bulan</div>";
 				likuiditas_ket = "Selamat! Dana Darurat yang Anda miliki lebih dari cukup untuk menutupi kebutuhan rutin bulanan Anda antara 3 - 6 bulan. Dana darurat berfungsi untuk menutupi pengeluaran yang bersifat insidentil yang tidak diperhitungkan pengeluaran bulanan Anda. Contoh dari penggunaan dana darurat adalah untuk biaya pengobatan. Dana darurat yang berlebih dapat Anda investasikan agar aset Anda lebih produktif.";
 			}
 			else {
-				likuiditas_teks = "<div style='color:red; font-size: 18px;'>"+likuiditas+"</div>";
+				likuiditas_teks = "<div style='color:red; font-size: 18px;'>"+likuiditas+" bulan</div>";
 				likuiditas_ket = "Anda belum memiliki dana darurat yang cukup untuk menutupi kebutuhan rutin bulanan Anda antara 3 - 6 bulan. Dana darurat berfungsi untuk menutupi pengeluaran yang bersifat insidentil yang tidak diperhitungkan dalam pengeluaran bulanan Anda. Contoh dari penggunaan dana darurat adalah untuk biaya pengobatan. Sebaiknya Anda terlebih dahulu meningkatkan dana darurat Anda sebelum mulai berinvestasi";
 			}
 		}
 		else {
 			if(isNaN(likuiditas) == false)
 			{
-				likuiditas_teks = "<div style='font-size: 18px;'>"+likuiditas+"</div>";
+				likuiditas_teks = "<div style='font-size: 18px;'>"+likuiditas+" bulan</div>";
 				likuiditas_ket = "Selamat! Anda sudah memiliki dana darurat yang cukup untuk menutupi rutin bulanan Anda antara 3 - 6 bulan. Dana darurat berfungsi untuk menutupi pengeluaran yang bersifat insidentil yang tidak diperhitungkan dalam pengeluaran bulanan Anda.";
 			}
 		}
@@ -1091,14 +1084,14 @@ $(document).ready(function(){
 		
 		if(rasio_aset_likuid > 15) 
 		{
-			aset_likuid_teks = "<div style='color:red; font-size: 18px;'>"+rasio_aset_likuid+"</div>";
+			aset_likuid_teks = "<div style='color:red; font-size: 18px;'>"+rasio_aset_likuid+"%</div>";
 			aset_likuid_ket = "Aset yang Anda miliki lebih tinggi dibandingkan porsi idealnya, yaitu 15% dari total aset Anda. Jumlah aset likuid yang terlalu tinggi akan menurunkan tingkat produktivitas aset. Anda dapat melakukan realokasi aset likuid ke dalam bentuk investasi yang lebih produktif";
 		}
 		else 
 		{
 			if(isNaN(rasio_aset_likuid) == false)
 			{
-				aset_likuid_teks = "<div style='font-size: 18px;'>"+rasio_aset_likuid+"</div>";
+				aset_likuid_teks = "<div style='font-size: 18px;'>"+rasio_aset_likuid+"%</div>";
 				aset_likuid_ket = "Selamat! Aset likuid yang Anda miliki sudah dalam rentang yang ideal, yaitu kurang dari 15% total aset Anda. Jumlah aset likuid yang terlalu tinggi akan menurunkan tingka produktivitas aset Anda.";
 			}
 		}
@@ -1118,14 +1111,14 @@ $(document).ready(function(){
 		var tabungan_investasi_ket = "";
 		if(rasio_tabungan_investasi < 10)
 		{
-			tabungan_investasi_teks = "<div style='color:red; font-size: 18px;'>"+rasio_tabungan_investasi+"</div>";
+			tabungan_investasi_teks = "<div style='color:red; font-size: 18px;'>"+rasio_tabungan_investasi+"%</div>";
 			tabungan_investasi_ket = "Porsi pendapatan bulanan yang Anda sisihkan untuk tabungan & investasi masih di bawah angka ideal, yaitu minimal 10% dari pendapatan bulanan. Anda dapat meningkatkan rasio ini dengan menambahkan alokasi bulanan Anda untuk menabung / investasi. Salah satu cara yang dapat dilakukan adalah dengan segera menyisihkan porsi untuk tabungan / investasi setelah mendapatkan pendapatan, sehingga yang Anda tabung / investasikan bukanlah sisa dari pendapatan Anda. Dengan alokasi aset yang konsisten, Anda dapat meningkatkan total aset yang Anda miliki.";
 		}
 		else 
 		{
 			if(isNaN(rasio_tabungan_investasi) == false)
 			{
-				tabungan_investasi_teks = "<div style='font-size: 18px;'>"+rasio_tabungan_investasi+"</div>";
+				tabungan_investasi_teks = "<div style='font-size: 18px;'>"+rasio_tabungan_investasi+"%</div>";
 				tabungan_investasi_ket = "Selamat! Porsi pendapatan bulanan yang Anda sisihkan untuk tabungan & investasi sudah baik, yaitu minimal 10% dari pendapatan bulanan. Dengan alokasi aset yang konsisten, Anda akan meningkatkan total aset yang Anda miliki.";
 			}
 		}
@@ -1146,14 +1139,14 @@ $(document).ready(function(){
 		
 		if(hutang_aset > 50)
 		{
-			hutang_aset_teks = "<div style='color:red; font-size: 18px;'>" + hutang_aset + "</div>";
+			hutang_aset_teks = "<div style='color:red; font-size: 18px;'>" + hutang_aset + "%</div>";
 			hutang_aset_ket = "Perbandingan antara total hutang dan aset Anda melebihi angka ideal, yaitu di bawah 50%. Dengan kondisi ini apabila hutang Anda harus dilunasi secepatnya, maka diperlukan lebihdari 50% aset Anda untuk melunasinya. Semakin tinggi angka dari rasio ini, maka risiko terjadinya kebangkrutan akan semakin tinggi. Untuk menekan angka rasio ini, sebaiknya hutang konsumtif dikurangi. Apabila Anda masih memiliki porsi lebih dari pendapatan yang belum dialokasikan maka segerakan pelunasan cicilah hutang Anda.";
 		}
 		else
 		{
 			if(isNaN(hutang_aset) == false)
 			{
-				hutang_aset_teks = "<div style='font-size: 18px;'>" + hutang_aset + "</div>";
+				hutang_aset_teks = "<div style='font-size: 18px;'>" + hutang_aset + "%</div>";
 				hutang_aset_ket = "Selamat! Perbandingan antara total hutang dan aset Anda sudah baik, yaitu di bawah 50%. Dengan kondisi ini apabila hutang Anda harus dilunasi secepatnya, maka maksimal hanya 50% dari aset Anda yang diperlukan untuk melunasinya. Semakin tinggi angka dari rasio ini, maka risiko terjadinya kebangkrutan akan semakin tinggi.";
 			}
 		}
@@ -1174,14 +1167,14 @@ $(document).ready(function(){
 		
 		if(total_investasi < 50)
 		{
-			total_investasi_teks = "<div style='color:red; font-size: 18px;'>" + total_investasi + "</div>";
+			total_investasi_teks = "<div style='color:red; font-size: 18px;'>" + total_investasi + "%</div>";
 			total_investasi_ket = "Total aset investasi Anda masih kurang dari porsi yang ideal, yaitu minimal 50% total aset Anda. Apabila ada hutang yang harus segera dilunasi dan aset likuid tidak mencukupi, aset investasi Anda tidak dapat menutupi kekurangan tersebut sehingga kondisi finansial Anda akan terdampak. Untuk peningkatan aset investasi, Anda dapat meningkatkan porsi investasi bulanan dari pendapatan yang Anda terima.";
 		}
 		else
 		{
 			if(isNaN(total_investasi) == false)
 			{
-				total_investasi_teks = "<div style='font-size: 18px'>" + total_investasi + "</div>";
+				total_investasi_teks = "<div style='font-size: 18px'>" + total_investasi + "%</div>";
 				total_investasi_ket = "Selamat! Total aset investasi Anda sudah berada pada porsi yang ideal, yaitu lebih dari 50% total aset Anda. Apabila ada hutang yang harus segera dilunasi dan aset likuid tidak mencukupi, Anda masih dapat menggunakan aset investasi sehingga kondisi finansial Anda akan tetap stabil. Dengan alokasi aset investasi yang konsisten, Anda akan memiliki produktivitas aset yang tinggi.";
 			}
 		}
@@ -1219,18 +1212,18 @@ $(document).ready(function(){
 		{
 			if(likuiditas > 6)
 			{
-				likuiditas_teks = "<div style='font-size: 18px;'>"+likuiditas+"</div>";
+				likuiditas_teks = "<div style='font-size: 18px;'>"+likuiditas+" bulan</div>";
 				likuiditas_ket = "Selamat! Dana Darurat yang Anda miliki lebih dari cukup untuk menutupi kebutuhan rutin bulanan Anda antara 3 - 6 bulan. Dana darurat berfungsi untuk menutupi pengeluaran yang bersifat insidentil yang tidak diperhitungkan pengeluaran bulanan Anda. Contoh dari penggunaan dana darurat adalah untuk biaya pengobatan. Dana darurat yang berlebih dapat Anda investasikan agar aset Anda lebih produktif.";
 			}
 			else {
-				likuiditas_teks = "<div style='color:red; font-size: 18px;'>"+likuiditas+"</div>";
+				likuiditas_teks = "<div style='color:red; font-size: 18px;'>"+likuiditas+" bulan</div>";
 				likuiditas_ket = "Anda belum memiliki dana darurat yang cukup untuk menutupi kebutuhan rutin bulanan Anda antara 3 - 6 bulan. Dana darurat berfungsi untuk menutupi pengeluaran yang bersifat insidentil yang tidak diperhitungkan dalam pengeluaran bulanan Anda. Contoh dari penggunaan dana darurat adalah untuk biaya pengobatan. Sebaiknya Anda terlebih dahulu meningkatkan dana darurat Anda sebelum mulai berinvestasi";
 			}
 		}
 		else {
 			if(isNaN(likuiditas) == false)
 			{
-				likuiditas_teks = "<div style='font-size: 18px;'>"+likuiditas+"</div>";
+				likuiditas_teks = "<div style='font-size: 18px;'>"+likuiditas+" bulan</div>";
 				likuiditas_ket = "Selamat! Anda sudah memiliki dana darurat yang cukup untuk menutupi rutin bulanan Anda antara 3 - 6 bulan. Dana darurat berfungsi untuk menutupi pengeluaran yang bersifat insidentil yang tidak diperhitungkan dalam pengeluaran bulanan Anda.";
 			}
 		}
@@ -1251,14 +1244,14 @@ $(document).ready(function(){
 		
 		if(rasio_aset_likuid > 15) 
 		{
-			aset_likuid_teks = "<div style='color:red; font-size: 18px;'>"+rasio_aset_likuid+"</div>";
+			aset_likuid_teks = "<div style='color:red; font-size: 18px;'>"+rasio_aset_likuid+"%</div>";
 			aset_likuid_ket = "Aset yang Anda miliki lebih tinggi dibandingkan porsi idealnya, yaitu 15% dari total aset Anda. Jumlah aset likuid yang terlalu tinggi akan menurunkan tingkat produktivitas aset. Anda dapat melakukan realokasi aset likuid ke dalam bentuk investasi yang lebih produktif";
 		}
 		else 
 		{
 			if(isNaN(rasio_aset_likuid) == false)
 			{
-				aset_likuid_teks = "<div style='font-size: 18px;'>"+rasio_aset_likuid+"</div>";
+				aset_likuid_teks = "<div style='font-size: 18px;'>"+rasio_aset_likuid+"%</div>";
 				aset_likuid_ket = "Selamat! Aset likuid yang Anda miliki sudah dalam rentang yang ideal, yaitu kurang dari 15% total aset Anda. Jumlah aset likuid yang terlalu tinggi akan menurunkan tingka produktivitas aset Anda.";
 			}
 		}
@@ -1278,14 +1271,14 @@ $(document).ready(function(){
 		var tabungan_investasi_ket = "";
 		if(rasio_tabungan_investasi < 10)
 		{
-			tabungan_investasi_teks = "<div style='color:red; font-size: 18px;'>"+rasio_tabungan_investasi+"</div>";
+			tabungan_investasi_teks = "<div style='color:red; font-size: 18px;'>"+rasio_tabungan_investasi+"%</div>";
 			tabungan_investasi_ket = "Porsi pendapatan bulanan yang Anda sisihkan untuk tabungan & investasi masih di bawah angka ideal, yaitu minimal 10% dari pendapatan bulanan. Anda dapat meningkatkan rasio ini dengan menambahkan alokasi bulanan Anda untuk menabung / investasi. Salah satu cara yang dapat dilakukan adalah dengan segera menyisihkan porsi untuk tabungan / investasi setelah mendapatkan pendapatan, sehingga yang Anda tabung / investasikan bukanlah sisa dari pendapatan Anda. Dengan alokasi aset yang konsisten, Anda dapat meningkatkan total aset yang Anda miliki.";
 		}
 		else 
 		{
 			if(isNaN(rasio_tabungan_investasi) == false)
 			{
-				tabungan_investasi_teks = "<div style='font-size: 18px;'>"+rasio_tabungan_investasi+"</div>";
+				tabungan_investasi_teks = "<div style='font-size: 18px;'>"+rasio_tabungan_investasi+"%</div>";
 				tabungan_investasi_ket = "Selamat! Porsi pendapatan bulanan yang Anda sisihkan untuk tabungan & investasi sudah baik, yaitu minimal 10% dari pendapatan bulanan. Dengan alokasi aset yang konsisten, Anda akan meningkatkan total aset yang Anda miliki.";
 			}
 		}
@@ -1306,14 +1299,14 @@ $(document).ready(function(){
 		
 		if(hutang_aset > 50)
 		{
-			hutang_aset_teks = "<div style='color:red; font-size: 18px;'>" + hutang_aset + "</div>";
+			hutang_aset_teks = "<div style='color:red; font-size: 18px;'>" + hutang_aset + "%</div>";
 			hutang_aset_ket = "Perbandingan antara total hutang dan aset Anda melebihi angka ideal, yaitu di bawah 50%. Dengan kondisi ini apabila hutang Anda harus dilunasi secepatnya, maka diperlukan lebihdari 50% aset Anda untuk melunasinya. Semakin tinggi angka dari rasio ini, maka risiko terjadinya kebangkrutan akan semakin tinggi. Untuk menekan angka rasio ini, sebaiknya hutang konsumtif dikurangi. Apabila Anda masih memiliki porsi lebih dari pendapatan yang belum dialokasikan maka segerakan pelunasan cicilah hutang Anda.";
 		}
 		else
 		{
 			if(isNaN(hutang_aset) == false)
 			{
-				hutang_aset_teks = "<div style='font-size: 18px;'>" + hutang_aset + "</div>";
+				hutang_aset_teks = "<div style='font-size: 18px;'>" + hutang_aset + "%</div>";
 				hutang_aset_ket = "Selamat! Perbandingan antara total hutang dan aset Anda sudah baik, yaitu di bawah 50%. Dengan kondisi ini apabila hutang Anda harus dilunasi secepatnya, maka maksimal hanya 50% dari aset Anda yang diperlukan untuk melunasinya. Semakin tinggi angka dari rasio ini, maka risiko terjadinya kebangkrutan akan semakin tinggi.";
 			}
 		}
@@ -1334,14 +1327,14 @@ $(document).ready(function(){
 		
 		if(total_investasi < 50)
 		{
-			total_investasi_teks = "<div style='color:red; font-size: 18px;'>" + total_investasi + "</div>";
+			total_investasi_teks = "<div style='color:red; font-size: 18px;'>" + total_investasi + "%</div>";
 			total_investasi_ket = "Total aset investasi Anda masih kurang dari porsi yang ideal, yaitu minimal 50% total aset Anda. Apabila ada hutang yang harus segera dilunasi dan aset likuid tidak mencukupi, aset investasi Anda tidak dapat menutupi kekurangan tersebut sehingga kondisi finansial Anda akan terdampak. Untuk peningkatan aset investasi, Anda dapat meningkatkan porsi investasi bulanan dari pendapatan yang Anda terima.";
 		}
 		else
 		{
 			if(isNaN(total_investasi) == false)
 			{
-				total_investasi_teks = "<div style='font-size: 18px'>" + total_investasi + "</div>";
+				total_investasi_teks = "<div style='font-size: 18px'>" + total_investasi + "%</div>";
 				total_investasi_ket = "Selamat! Total aset investasi Anda sudah berada pada porsi yang ideal, yaitu lebih dari 50% total aset Anda. Apabila ada hutang yang harus segera dilunasi dan aset likuid tidak mencukupi, Anda masih dapat menggunakan aset investasi sehingga kondisi finansial Anda akan tetap stabil. Dengan alokasi aset investasi yang konsisten, Anda akan memiliki produktivitas aset yang tinggi.";
 			}
 		}
