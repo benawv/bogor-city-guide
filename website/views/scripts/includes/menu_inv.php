@@ -26,6 +26,8 @@
 						<?php 
 							$list = new Document_List();
 							$list->setLimit(7);
+							$list->setOrderKey('index');
+							$list->setOrder('asc');
 							$list->setCondition('parentId = '.$subpage->getDocument()->getId());
 							$documents = $list->load();
 							//echo '<pre>'; die(print_r($documents));
