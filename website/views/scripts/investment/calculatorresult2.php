@@ -300,14 +300,14 @@
 					url: '/sendkalkulatorpendidikan',
 					data: {
 						kalkulator: 'Pendidikan',
-						biaya : getCookie('edu1_biaya_bulanan'),
-						result_1 : getCookie('edu1_hasil'),
+						biaya : accounting.formatMoney(getCookie('edu1_biaya_bulanan'),'Rp ',2,'.',','),
+						result_1 : accounting.formatMoney(getCookie('edu1_hasil'),'Rp ',2,'.',','),
 						asumsi_inflasi: getCookie('edu1_asumsi_inflasi'),
 						asumsi_imbalan : getCookie('edu2_asumsi_imbal_hasil'),
 						jangka_waktu: getCookie('edu1_jangka_waktu'),
 						risiko: getCookie('edu2_asumsi_imbal_hasil'),
-						tahunan : getCookie('edu2_hasil_tahunan'),
-						bulanan : getCookie('edu2_hasil_bulanan'),
+						tahunan : accounting.formatMoney(getCookie('edu2_hasil_tahunan'),'Rp ',2,'.',','),
+						bulanan : accounting.formatMoney(getCookie('edu2_hasil_bulanan'),'Rp ',2,'.',','),
 						email : $('.email-user').val()
 					},
 					success: function()
