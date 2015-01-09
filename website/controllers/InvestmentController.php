@@ -461,8 +461,7 @@ class InvestmentController extends Website_Controller_Action
                                          'smartweatlh equity fund', 
                                          'smartwealth balanced fund', 
                                          'smartlikn rupiah deposit fund') and
-                         STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y') < STR_TO_DATE('$getday','%d-%m-%Y')  AND
-	                            STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y') > DATE_ADD(NOW(), INTERVAL- 2 MONTH)
+                         STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y') > STR_TO_DATE('$getday','%d-%m-%Y')
                          ORDER  BY 1 DESC";
                          
         $xmldata2=$db->fetchAll($getAllFundName);
