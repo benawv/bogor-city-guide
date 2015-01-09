@@ -246,71 +246,8 @@
                            
                             
                             <script>
-                                $(function () {
-                                $('#container').highcharts({
-                                    title: {
-                                        text: ' ',
-                                        x: -20 //center
-                                    },
-                                    //subtitle: {
-                                    //    text: 'Source: WorldClimate.com',
-                                     //   x: -20
-                                    //},
-                                    xAxis: {
-                                       categories: [<?php echo $this->data['dataGraph'][0]['biddate'];?>]
-                                    },
-                                    yAxis: {
-                                        title: {
-                                            text: 'Bid (Avarage)'
-                                        },
-                                        plotLines: [{
-                                            value: 0,
-                                            width: 500,
-                                            color: '#808080'
-                                        }]
-                                    },
-                                    tooltip: {
-                                        valueSuffix: ''
-                                    },
-                                    legend: {
-                                        enabled: true,
-//                                        floating: true,
-//                                        verticalAlign: 'left',
-//                                        align:'center',
-//                                        y:-30,
-//                                        padding:20
-                                            layout: 'vertical',
-                                            align: 'right',
-                                            verticalAlign: 'middle',
-                                            borderWidth: 0
-                                    },
-                                    credits: {
-                                          enabled: false
-                                    },
-                                    series: [
-                                        <?php 
-                                        
-                                        //echo "<pre>";
-                                        $i=0;
-                                        foreach($this->data['dataGraph'] as $items){
-                                            
-                                        ?>
-                                        {
-                                            name: '<?php echo $items['fundname']; ?>',
-                                            data: [<?php echo $items['fundbit']; ?>]
-                                        }, 
-                                        <?php
-                                        $i++;
-                                        } ?>
-                                        
-                                        {
-                                            name: '-',
-                                            data: []
-                                        }
-                                    ]
-                                });
-                            });
-                        </script>   
+                            
+                            </script>    
                         
                                <div id="tablex" style="width: 98%; display: block;">
                                 <table id="myTable2" class="display" cellspacing="0" width="100%">
@@ -415,6 +352,7 @@
                             "type" : "POST",
                             "success" : function(response){
                                 if(response){
+                                        console.log(jQuery.parseJSON(response));
                                         var IS_JSON = true;
                                         try
                                         {
@@ -426,16 +364,8 @@
                                             if(new_data.xml_data.length >0){
                                                 
                                                 for(var i=0; i<new_data.xml_data.length; i++){
-                                                    
-                        //                                rows+=("<tr>"+ 
-//                                                                "<td>"+new_data.xml_data[i]['fundName']+"</td>"+
-//                                                                "<td>"+new_data.xml_data[i]['unitdates']+"</td>"+
-//                                                                "<td>"+new_data.xml_data[i]['bid']+"</td>"+
-//                                                                "<td>"+new_data.xml_data[i]['offer']+"</td>"+
-//                                                            "</tr>");
-                                                
-                                                dataSets.push(new Array(toTitleCase(new_data.xml_data[i]['fundName']),new_data.xml_data[i]['unitdates'],new_data.xml_data[i]['bid'],new_data.xml_data[i]['offer']));
-                                            }
+                                                    dataSets.push(new Array(toTitleCase(new_data.xml_data[i]['fundName']),new_data.xml_data[i]['unitdates'],new_data.xml_data[i]['bid'],new_data.xml_data[i]['offer']));
+                                                }
                                                 
                                             }else{
                                                 rows+=("<tr>"+ 
@@ -474,7 +404,53 @@
                                                     "data": dataSets                               
                                                 });
                                             }
-                                                  
+                                             console.log(new_data.resume_graph.fundname);
+                                             console.log(new_data.resume_graph.biddate);
+                                             console.log(new_data.resume_graph.fundbid);
+                                             
+                                            var fundname=new_data.resume_graph.fundname.toString();
+                                            var biddate=new_data.resume_graph.biddate;
+                                            
+                                            var fundbid=new_data.resume_graph.fundbid;
+                                            
+                                            $(function () {
+                                                $('#container').highcharts({
+                                                    title: {
+                                                        text: ' ',
+                                                        x: -20 //center
+                                                    },
+                                                    //subtitle: {
+                                                    //    text: 'Source: WorldClimate.com',
+                                                     //   x: -20
+                                                    //},
+                                                    xAxis: {
+                                                        categories: biddate
+                                                    },
+                                                    yAxis: {
+                                                        title: {
+                                                            text: ' '
+                                                        },
+                                                        plotLines: [{
+                                                            value: 0,
+                                                            width: 1,
+                                                            color: '#808080'
+                                                        }]
+                                                    },
+                                                    tooltip: {
+                                                        valueSuffix: '°C'
+                                                    },
+                                                    legend: {
+                                                        layout: 'vertical',
+                                                        align: 'middle',
+                                                        verticalAlign: 'bottom',
+                                                        borderWidth: 0
+                                                    },
+                                                    series: [{
+                                                        name: fundname,
+                                                        data: fundbid
+                                                    }]
+                                                });
+                                            });     
                                             ///$('.myTable2_items').html(rows);
                                         }
                                         catch(err)
@@ -495,47 +471,6 @@
                     
                         
                 });
-
-              
-
-               // // Graph Data ##############################################
-//                var graphData = [{
-//                                        // Visits
-//
-//                                        // Returning Visits
-//                                        data: [ [0, 10],[1, 20],[2, 30],[2, 10],[3, 20],[4, 50],[5, 20],[6, 30],[7, 50],[8, 30],[9, 40],[10, 20],[11, 20],[12, 50], [13, 21], [14, 33], [16, 33], [17, 40], [18, 29], [19, 20], [20, 30], [21, 40],[22, 33], [23, 33], [24, 20], [25, 50] ],
-//                                        color: '#77b7c5',
-//                                        points: { radius: 4, fillColor: '#77b7c5' }
-//                                    }
-//                                ];
-//
-//                // Lines Graph #############################################
-//                $.plot($('#graph-lines'), graphData, {
-//                    series: {
-//                        points: {
-//                            show: true,
-//                            radius: 1
-//                        },
-//                        lines: {
-//                            show: true
-//                        },
-//                        shadowSize: 0
-//                    },
-//                    grid: {
-//                        color: '#646464',
-//                        borderColor: 'transparent',
-//                        borderWidth: 25,
-//                        hoverable: true
-//                    },
-//                    xaxis: {
-//                        tickColor: 'transparent',
-//                        tickDecimals: 0
-//                    },
-//                    yaxis: {
-//                        tickSize: 2
-//                    }
-//                });
-              
 
                 // Graph Toggle ############################################
                 $('#graph-lines').hide();
