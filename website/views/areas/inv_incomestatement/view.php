@@ -496,7 +496,7 @@ Total kekayaan terdiri dari terdiri dari aset likuid (Kas), aset investasi, sert
                                 
                                 <td>
                                     <h3><b>Aset Likuid <span class="sum_aset_likuid"> </span></b></h3>
-                                    <p class="sum_aset_likud_ket">
+                                    <p class="sum_aset_likuid_ket">
                                     Selamat! Aset likuid yang Anda miliki sudah dalam rentang yang ideal, yaitu kurang dari 15% total aset Anda. Jumlah aset likuid yang terlalu tinggi akan menurunkan tingkat produktivitas aset Anda.</p></td>
                             </tr>
                             <tr>
