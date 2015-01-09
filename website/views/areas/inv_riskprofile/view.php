@@ -12,7 +12,7 @@ jQuery(function($) {
             
             <div class="form_cont">
             
-                <h1 class="titleRisk">Risk Profile</h1>
+                <h1 class="titleRisk">Profil Risiko</h1>
                 <div class="inv-btn">
 						<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
 						<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
