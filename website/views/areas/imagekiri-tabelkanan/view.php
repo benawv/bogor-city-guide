@@ -26,7 +26,7 @@
 		<div class="section-right-60">
 			<div class="table_cv">
 				<div class="row">
-					<div class="left cell_left"><?php echo $this->input('text-row-1')?></div>
+					<div class="left cell_left"><?php echo $this->input('text-row-1', array("width" => "auto"))?></div>
 					<div class="left cell_right">
 						<?php echo $this->wysiwyg('data-row-1')?>
 					</div>
@@ -34,14 +34,14 @@
 				</div>
 				<div class="hideme">
 					<div class="row">
-						<div class="left cell_left"><?php echo $this->input('text-row-2')?></div>
+						<div class="left cell_left"><?php echo $this->input('text-row-2', array("width" => "auto"))?></div>
 						<div class="left cell_right">
 							<?php echo $this->wysiwyg('data-row-2')?>
 						</div>
 						<br clear="all"/>
 					</div>
 					<div class="row">
-						<div class="left cell_left"><?php echo $this->input('text-row-3')?></div>
+						<div class="left cell_left"><?php echo $this->input('text-row-3', array("width" => "auto"))?></div>
 						<div class="left cell_right">
 							<?php echo $this->wysiwyg('data-row-3')?>
 						</div>
@@ -49,7 +49,7 @@
 					</div>
 					<?php if($this->editmode) { ?>
 					<div class="row">
-						<div class="left cell_left"><?php echo $this->input('text-row-4')?></div>
+						<div class="left cell_left"><?php echo $this->input('text-row-4', array("width" => "auto"))?></div>
 						<div class="left cell_right">
 							<?php echo $this->wysiwyg('data-row-4')?>
 						</div>
@@ -58,7 +58,7 @@
 					<?php } else { ?>
 						<?php if($this->input('text-row-4')->text) { ?>
 							<div class="row">
-								<div class="left cell_left"><?php echo $this->input('text-row-4')?></div>
+								<div class="left cell_left"><?php echo $this->input('text-row-4', array("width" => "auto"))?></div>
 								<div class="left cell_right">
 									<?php echo $this->wysiwyg('data-row-4')?>
 								</div>
