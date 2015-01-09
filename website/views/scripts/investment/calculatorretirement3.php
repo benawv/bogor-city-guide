@@ -277,6 +277,9 @@ change: function(event, ui) {
         var asumsi = 1;
         $("#sliderPosition").bind('input',function(){
             var text = clearFormat($(this).val());
+            if (text > 100000000000) {
+                text = 100000000000;
+            }
             text = accounting.formatMoney(text,'Rp ',0,'.',',');
             $(this).val(text);
         });
