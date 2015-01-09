@@ -80,6 +80,9 @@
                         <div class="count-result">
                             <span id="result_month" style="color: #113388">Rp 0</span>
                         </div>
+		    </div>
+		    <div class="calc-box2"> 
+		    <p class="calc-result-description investment">Untuk mencapai <span id="investment2_biaya"></span> dengan asumsi imbal hasil sebesar <span id="investment2_asumsi_imbal_hasil"></span> dalam <span id="investment2_jangka_waktu"></span>, Anda membutuhkan investasi tahunan sebesar <span id="investment2_hasil_tahunan"></span> atau investasi bulanan sebesar <span id="investment2_hasil_bulanan"></span>.</p><p class="calc-result-description investment">Segera hubungi agen asuransi Allianz untuk mendapatkan solusi kebutuhan finansial Anda. <a href="http://investment.allianz.co.id/contact-us">Hubungi Kami</a></p>
                         <div class="share">
                             <span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
@@ -288,8 +291,21 @@
 	result_year = accounting.formatMoney(result_year,'Rp ',2,'.',',');
 	result_month = accounting.formatMoney(result_month,'Rp ',2,'.',',');
 	$('#result_year').html(result_year);
-	$('#result_month').html(result_month);	
+	$('#investment2_hasil_tahunan').html(result_year);
+	$('#result_month').html(result_month);
+	$('#investment2_hasil_bulanan').html(result_month);
 
+	var investment2_asumsi_imbal_hasil = getCookie('investment2_asumsi_imbal_hasil');
+	$('#investment2_asumsi_imbal_hasil').html(investment2_asumsi_imbal_hasil + '%');
+	var investment2_biaya = getCookie('investment2_biaya');
+	$('#investment2_biaya').html(accounting.formatMoney(investment2_biaya,'Rp ',2,'.',','));
+	var investment2_jangka_waktu = getCookie('investment2_jangka_waktu');
+	$('#investment2_jangka_waktu').html(investment2_jangka_waktu + ' tahun');
+	var investment2_jangka_waktu = getCookie('investment2_jangka_waktu');
+	
+	var edu2_biaya = getCookie('edu2_biaya');
+	$('#edu2_biaya').html(accounting.formatMoney(edu2_biaya,'Rp ',2,'.',','));
+	
     $("#fund_allianz").click(function(){
 	    window.location.href = "/allianz-fund";
      });

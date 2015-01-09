@@ -1241,3 +1241,24 @@ input[type="checkbox"] {
 	font-size: 26px;
 	font-weight: bold;
 }
+
+/* Bena 09012015 */
+.calc-result-description{
+    margin: 20px 50px;
+}
+.calc-result-description.education > span,
+.calc-result-description.education > a{
+    color: #D38802;
+}
+.calc-result-description.insurance > span,
+.calc-result-description.insurance > a{
+    color: #a50034;
+}
+.calc-result-description.investment > span,
+.calc-result-description.investment > a{
+    color: #113388;
+}
+.calc-result-description.retirement > span,
+.calc-result-description.retirement > a{
+    color: #8b4720;
+}

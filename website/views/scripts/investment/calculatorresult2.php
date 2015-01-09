@@ -76,6 +76,10 @@
                         <div class="count-result">
                             <span id="result_year">Rp 0</span>
                         </div>
+		    </div>
+                    <div class="calc-box2">
+			<p class="calc-result-description education">Untuk mencapai biaya pendidikan <span id="edu2_biaya"></span> dengan asumsi imbal hasil sebesar <span id="edu2_asumsi_imbal_hasil"></span> dalam <span id="edu2_jangka_waktu"></span>, Anda membutuhkan investasi tahunan sebesar<span id="edu2_hasil_tahunan"></span> atau investasi bulanan sebesar <span id="edu2_hasil_bulanan"></span>.
+<p class="calc-result-description education">Segera hubungi agen asuransi Allianz untuk mendapatkan solusi kebutuhan biaya pendidikan  Anda. <a href="http://investment.allianz.co.id/contact-us">Hubungi Kami</a></p>
                         <div class="share">
                             <span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
@@ -173,9 +177,19 @@
 	}
 
 	var result_year = getCookie('edu2_hasil_tahunan');
-	var result_month = getCookie('edu2_hasil_bulanan')
+	var result_month = getCookie('edu2_hasil_bulanan');
 	$('#result_year').html(accounting.formatMoney(result_year,'Rp ',2,'.',','));
 	$('#result_month').html(accounting.formatMoney(result_month,'Rp ',2,'.',','));
+	
+	$('#edu2_hasil_tahunan').html(accounting.formatMoney(result_year,'Rp ',2,'.',','));
+	$('#edu2_hasil_bulanan').html(accounting.formatMoney(result_month,'Rp ',2,'.',','));
+	
+	var edu2_biaya = getCookie('edu2_biaya');
+	$('#edu2_biaya').html(accounting.formatMoney(edu2_biaya,'Rp ',2,'.',','));
+	var edu2_asumsi_imbal_hasil = getCookie('edu2_asumsi_imbal_hasil');
+	$('#edu2_asumsi_imbal_hasil').html(edu2_asumsi_imbal_hasil + '%');
+	var edu2_jangka_waktu = getCookie('edu2_jangka_waktu');
+	$('#edu2_jangka_waktu').html(edu2_jangka_waktu + ' tahun');
 	
 	$("#edu2").click(function(){
 	    window.location.href = "/kalkulator/financial-calculators/allianz-investment-calculator-education2.php";

@@ -66,6 +66,9 @@
                         <div class="count-result">
                             <span id="result">Rp 0</span>
                         </div>
+		    </div>
+		    <div class="calc-box2">
+			<p class="calc-result-description education">Dengan total biaya pendidikan saat ini sebesar <span id="edu1_biaya_bulanan">0</span>, dan inflasi sebesar <span id="edu1_asumsi_inflasi">0</span>, maka dalam <span id="edu1_jangka_waktu">0</span> biaya pendidikan tersebut akan mencapai <span id="edu1_hasil">0</span>.</p>
                         <div class="share">
                             <span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
@@ -146,6 +149,17 @@ function setCookie(cname, cvalue, exdays) {
 	var result = getCookie('edu1_hasil');
 	result = accounting.formatMoney(result,'Rp ',2,'.',',');
 	$('#result').html(result);
+	$('#edu1_hasil').html(result);
+	
+	var edu1_biaya_bulanan = getCookie('edu1_biaya_bulanan');
+	edu1_biaya_bulanan = accounting.formatMoney(edu1_biaya_bulanan,'Rp ',2,'.',',');
+	$('#edu1_biaya_bulanan').html(edu1_biaya_bulanan);
+	
+	var edu1_asumsi_inflasi = getCookie('edu1_asumsi_inflasi') + '%';
+	$('#edu1_asumsi_inflasi').html(edu1_asumsi_inflasi);
+	
+	var edu1_jangka_waktu = getCookie('edu1_jangka_waktu') + ' tahun';
+	$('#edu1_jangka_waktu').html(edu1_jangka_waktu);
 	
 	$("#edu2").click(function(){
 	    window.location.href = "/kalkulator/financial-calculators/calculator-education2";
