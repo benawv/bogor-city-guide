@@ -5,7 +5,7 @@
 					<div class="simform-inner">
 						<ol class="questions">
 							<li>
-								<span><label for="q1">Berapakah biaya sekolah pada saat Anda SMP?</label></span>
+								<span><label for="q1">Berapakah biaya pendidikan tahunan saat ini?</label></span>
 								<input id="q1" name="q1" type="text" value="Rp 0"/>
 							</li>
 							
@@ -89,7 +89,7 @@
 					var result = fp_education(biaya);
 					var messageEl = theForm.querySelector( '.final-message' );
 					/*messageEl.innerHTML = '<h3>Jumlah tersebut saat ini hanya cukup untuk bersekolah selama </h3><br><h1 style="margin:0px;">'+result+' hari</h1><h3>FAKTA</h3><h3>Secara rata-rata kenaikan biaya pendidikan di Indonesia dua kali lipat dari kenaikan harga barang-barang secara umum <br><br /> Ingin melakukan kalkulasi biaya pendidikan Anda? <br> <a href= "/kalkulator/financial-calculators/pendidikan"> Mari mulai perencanaan pendidikan Anda ></a></h3><h3><a  href="#" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';*/
-					messageEl.innerHTML = '<h3>Jumlah tersebut saat ini hanya cukup untuk bersekolah selama </h3><h1 style="margin:0px;">'+result+' bulan</h1><h3> Secara rata-rata kenaikan biaya pendidikan di Indonesia dua kali lipat dari kenaikan harga barang-barang secara umum <br><br /> Ingin melakukan kalkulasi biaya pendidikan Anda?<br/><br><a href= "/kalkulator/financial-calculators/pendidikan"> Mari mulai perencanaan pendidikan Anda ></a></h3><div class="fp_separator"></div><h3 style="margin-top:0px;"><a  href="#" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';
+					messageEl.innerHTML = '<h3>Jumlah tersebut dalam 4 tahun hanya cukup untuk bersekolah selama </h3><h1 style="margin:0px;">'+result+' bulan</h1><h3> Secara rata-rata kenaikan biaya pendidikan di Indonesia dua kali lipat dari kenaikan harga barang-barang secara umum <br><br /> Ingin melakukan kalkulasi biaya pendidikan Anda?<br/><br><a href= "/kalkulator/financial-calculators/pendidikan"> Mari mulai perencanaan pendidikan Anda ></a></h3><div class="fp_separator"></div><h3 style="margin-top:0px;"><a  href="#" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';
 					classie.addClass( messageEl, 'show' );
 				}
 			} );
