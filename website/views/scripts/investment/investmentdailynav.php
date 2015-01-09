@@ -301,34 +301,13 @@
                     </div> 
                    
                    <?php 
-                   //$no=0;
-//
-//                     foreach($this->data['dataPerforms'] as $items){
-//                       //echo count($items['perform1year']);
-//                       for($i=0;$i<count($items['perform1year']);$i++){
-//                           if($items['perform1year'][$i-1]['fundname']==$items['perform1year'][$i]['fundname']){
-//                            
-//                 //               if($i==0){
-////                                    echo "[";
-////                                }
-//                            
-//                               echo "'".$items['perform1year'][$i]['bid']."',";
-//                                
-//                 //               if(($i-1)==count($items['perform1year'])){
-////                                    echo "]";
-////                                }
-// 
-//                                                           
-//                           }else{
-//                                echo "<br>";
-//                                    echo $items['perform1year'][$i]['fundname'];
-//                                echo "<br>";      
-//                                                
-//                           }    
-//                          
-//                        }
-//
-//                     }
+ 
+//                    echo "<pre>";
+//                    print $this->data['dataGraph'][0]['biddate'];
+////                     foreach($this->data['dataGraph'][0]['biddate'] as $items){
+////                        print_r($items);
+////                     }
+//                     echo "</pre>";
                    ?>
                     <!-- Graph HTML -->
                     <div id="graph-wrapper">
@@ -366,8 +345,7 @@
                                      //   x: -20
                                     //},
                                     xAxis: {
-                                       categories: ['Nov', 'Dec','Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                                            'Jul', 'Aug', 'Sep', 'Oct']
+                                       categories: [<?php echo $this->data['dataGraph'][0]['biddate'];?>]
                                     },
                                     yAxis: {
                                         title: {
@@ -383,7 +361,7 @@
                                         valueSuffix: ''
                                     },
                                     legend: {
-                                        //enabled: false,
+                                        enabled: true,
 //                                        floating: true,
 //                                        verticalAlign: 'left',
 //                                        align:'center',
@@ -402,14 +380,14 @@
                                         
                                         //echo "<pre>";
                                         $i=0;
-                                        foreach($this->data['dataPerforms'] as $items){
+                                        foreach($this->data['dataGraph'] as $items){
                                             
                                         ?>
                                         {
-                                            name: '<?php echo $items['perform1year'][$i]['fundname'];?>',
-                                            data: [<?php print $items['perform1year'][$i]['bid11'];?>, <?php print $items['perform1year'][$i]['bid12'];?>, <?php print $items['perform1year'][$i]['bid1'];?>]
+                                            name: '<?php echo $items['fundname']; ?>',
+                                            data: [<?php echo $items['fundbit']; ?>]
                                         }, 
-                                        <?php 
+                                        <?php
                                         $i++;
                                         } ?>
                                         
