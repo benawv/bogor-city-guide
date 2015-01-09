@@ -66,6 +66,9 @@
                         <div class="count-result">
                             <span id="result" style="color: #8b4720;">Rp 0</span>
                         </div>
+		    </div>
+		    <div class="calc-box2">
+			<p class="calc-result-description retirement">Dengan asumsi biaya hidup bulanan pada saat pensiun sebesar <span id="pension2_biaya"></span> dan masa pensiun selama <span id="pension2_jangka_waktu"></span>, maka Anda membutuhkan dana pensiun sebesar <span id="pension2_hasil"></span>.</p>
                          <div class="share">
                              <span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
@@ -147,6 +150,11 @@
 	var result = getCookie('pension2_hasil');
 	result = accounting.formatMoney(result,'Rp ',2,'.',',');
 	$('#result').html(result);
+	$('#pension2_hasil').html(result);
+	var pension2_biaya = getCookie('pension2_biaya');
+	$('#pension2_biaya').html(accounting.formatMoney(pension2_biaya,'Rp ',2,'.',','));
+	var pension2_jangka_waktu = getCookie('pension2_jangka_waktu');
+	$('#pension2_jangka_waktu').html(pension2_jangka_waktu + ' tahun');
 	
 	$("#retirement3").click(function(){
 	    window.location.href = "/kalkulator/financial-calculators/calculator-retirement3";

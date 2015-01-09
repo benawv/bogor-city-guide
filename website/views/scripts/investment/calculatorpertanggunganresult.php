@@ -67,6 +67,10 @@
                         <div class="count-result">
                             <span id="result" style="color: #a50034">Rp 0</span>
                         </div>
+		    </div>
+		    <div class="calc-box2">
+			<p class="calc-result-description insurance">Dengan asumsi biaya hidup / pendapatan bulanan sebesar <span id="resp1_biaya"></span>, inflasi <span id="resp1_asumsi_inflasi"></span>, serta tingkat imbal hasil yang diharapkan sebesar <span id="resp1_asumsi_imbal"></span>, Anda membutuhkan uang pertanggungan sebesar <span id="resp1_hasil"></span> yang akan mencukupi kebutuhan finansial keluarga yang dicintai selama <span id="resp1_jangka_waktu"></span>.</p>
+<p class="calc-result-description insurance">Segera hubungi agen asuransi Allianz untuk memastikan bahwa Anda sudah memiliki uang pertanggungan yang cukup. <a href="http://investment.allianz.co.id/contact-us">Hubungi Kami</a></p>
                         <div class="share">
                             <span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
@@ -164,8 +168,17 @@
 	var result = getCookie('resp1_hasil');
 	result = accounting.formatMoney(result,'Rp ',2,'.',',');
 	$('#result').html(result);
+	$('#resp1_hasil').html(result);
 	
-    
+	var resp1_biaya = getCookie('resp1_biaya');
+	$('#resp1_biaya').html(accounting.formatMoney(resp1_biaya,'Rp ',2,'.',','));
+	var resp1_asumsi_imbal = getCookie('resp1_asumsi_imbal');
+	$('#resp1_asumsi_imbal').html(resp1_asumsi_imbal + '%');
+	var resp1_asumsi_inflasi = getCookie('resp1_asumsi_inflasi');
+	$('#resp1_asumsi_inflasi').html(resp1_asumsi_inflasi + '%');
+	var resp1_jangka_waktu = getCookie('resp1_jangka_waktu');
+	$('#resp1_jangka_waktu').html(resp1_jangka_waktu + ' tahun');
+	
      $("#fund_allianz").click(function(){
 	    window.location.href = "/allianz-fund";
      });

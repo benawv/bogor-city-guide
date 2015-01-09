@@ -75,6 +75,10 @@
                         <div class="count-result">
                             <span id="result_month" style="color: #8b4720;">Rp 0</span>
                         </div>
+		    </div>
+		    <div class="calc-box2">
+			<p class="calc-result-description retirement">Untuk mencapai dana pensiun <span id="pension3_biaya"></span> dengan asumsi imbal hasil sebesar <span id="pension3_asumsi_inflasi"></span> dalam <span id="pension3_jangka_waktu"></span>, Anda membutuhkan investasi tahunan sebesar <span id="pension3_hasil_tahunan"></span> atau investasi bulanan sebesar <span id="pension3_hasil_bulanan"></span>.</p>
+<p class="calc-result-description retirement">Segera hubungi agen asuransi Allianz untuk mendapatkan solusi kebutuhan dana pensiun Anda. <a href="http://investment.allianz.co.id/contact-us">Hubungi Kami</a></p>
                          <div class="share">
                             <span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
@@ -172,7 +176,16 @@
 	result_year = accounting.formatMoney(result_year,'Rp ',2,'.',',');
 	result_month = accounting.formatMoney(result_month,'Rp ',2,'.',',');
 	$('#result_year').html(result_year);
-	$('#result_month').html(result_month);		
+	$('#result_month').html(result_month);
+	$('#pension3_hasil_tahunan').html(result_year);
+	$('#pension3_hasil_bulanan').html(result_month);
+	
+	var pension3_asumsi_inflasi = getCookie('pension3_asumsi_inflasi');
+	$('#pension3_asumsi_inflasi').html(pension3_asumsi_inflasi + '%');
+	var pension3_biaya = getCookie('pension3_biaya');
+	$('#pension3_biaya').html(accounting.formatMoney(pension3_biaya,'Rp ',2,'.',','));
+	var pension3_jangka_waktu = getCookie('pension3_jangka_waktu');
+	$('#pension3_jangka_waktu').html(pension3_jangka_waktu + ' tahun');
 	
     $("#fund_allianz").click(function(){
 	    window.location.href = "/allianz-fund";

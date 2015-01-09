@@ -66,6 +66,9 @@
                         <div class="count-result">
                             <span id="result" style="color: #8b4720;">Rp 0</span>
                         </div>
+		    </div>
+		    <div class="calc-box2">
+			<p class="calc-result-description retirement">Dengan biaya hidup bulanan saat ini sebesar <span id="pension1_biaya"></span>, dan inflasi sebesar <span id="pension1_asumsi_inflasi"></span>, maka dalam <span id="pension1_jangka_waktu"></span> biaya hidup bulanan tersebut akan mencapai <span id="pension1_hasil"></span>.</p>
                          <div class="share">
                             <span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
@@ -146,6 +149,15 @@
 	var result = getCookie('pension1_hasil');
 	result = accounting.formatMoney(result,'Rp ',2,'.',',');
 	$('#result').html(result);
+	$('#pension1_hasil').html(result);
+	
+	var pension1_asumsi_inflasi = getCookie('pension1_asumsi_inflasi');
+	$('#pension1_asumsi_inflasi').html(pension1_asumsi_inflasi + '%');
+	var pension1_biaya = getCookie('pension1_biaya');
+	$('#pension1_biaya').html(accounting.formatMoney(pension1_biaya,'Rp ',2,'.',','));
+	var pension1_jangka_waktu = getCookie('pension1_jangka_waktu');
+	$('#pension1_jangka_waktu').html(pension1_jangka_waktu + ' tahun');
+	
 	
 	$("#retirement2").click(function(){
 	    window.location.href = "/kalkulator/financial-calculators/calculator-retirement2";
