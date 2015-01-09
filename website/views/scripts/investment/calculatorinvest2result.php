@@ -411,14 +411,14 @@
 					url: '/sendkalkulator',
 					data: {
 						kalkulator : 'Investasi',
-						result_1 : getCookie('investment1_hasil'),
-						biaya : getCookie('investment1_biaya'),
+						result_1 : accounting.formatMoney(getCookie('investment1_hasil'),'Rp ',2,'.',','),
+						biaya : accounting.formatMoney(getCookie('investment1_biaya'),'Rp ',2,'.',','),
 						asumsi_inflasi: getCookie('investment1_asumsi_inflasi'),
 						asumsi_imbalan : getCookie('investment2_asumsi_imbal_hasil'),
 						jangka_waktu: getCookie('investment1_jangka_waktu'),
 						risiko: getCookie('investment2_asumsi_imbal_hasil'),
-						tahunan : getCookie('investment2_hasil_tahunan'),
-						bulanan : getCookie('investment2_hasil_bulanan'),
+						tahunan : accounting.formatMoney(getCookie('investment2_hasil_tahunan'),'Rp ',2,'.',','),
+						bulanan : accounting.formatMoney(getCookie('investment2_hasil_bulanan'),'Rp ',2,'.',','),
 						email : $('.email-user').val()
 					},
 					success: function()
