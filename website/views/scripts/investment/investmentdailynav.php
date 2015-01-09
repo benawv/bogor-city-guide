@@ -528,7 +528,20 @@
                                             }
                                            
                                             if ( $.fn.dataTable.isDataTable( '#myTable2' ) ) {
-                                                    $('#myTable2').dataTable();
+                                                    $('#myTable2').dataTable({
+                                                        destroy: true,
+                                                    "oLanguage": {
+                                                      "sSearch": "Cari:",
+                                                      "sLengthMenu": "Tampilkan _MENU_ baris",            
+                                                      "sInfo": "Tota _TOTAL_ baris, ditampilan dari (_START_ s/d _END_)",
+                                                      "oPaginate": {
+                                                        "sPrevious": "Sebelumnya"
+                                                      }
+                                                    },
+                                                    "searching": false,
+                                                    "bLengthChange": false,
+                                                    "data": dataSets                               
+                                                });
                                             }else {
                                             
                                                 $('#myTable2').dataTable( {
