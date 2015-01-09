@@ -644,7 +644,8 @@ class InvestmentController extends Website_Controller_Action
                 $itemss['biddate']=substr($biddate, 0, -1);
                 $arrayItem[]= $itemss;
                 $bid="";
-            }    
+            }   
+        /*end bid fund*/     
         
         sort($arrayLastData);      
         $alldata['ytd']=$arrayLastData;
@@ -725,9 +726,55 @@ class InvestmentController extends Website_Controller_Action
 
             $sql_subcat="SELECT *,FROM_UNIXTIME(unitdate,'%d-%m-%Y') AS unitdates FROM ".$nameCommunity." AS xmlsource ".$conditions." order by fundname desc,unitdate";
             $xmldata=$db->fetchAll($sql_subcat);
+           
+           
+          /*bid fund*/            
+                if($day2>0){
+                    if($fundtypes!=""){
+                        $conditions=" a.unitdate >= $start and a.unitdate <= $end";
+                    }else{
+                        $conditions=" a.unitdate = $start ";
+                    }
+                }
+                $isFundName=$fundtype;
+                $getFundBidMonth="SELECT a.fundname,
+                		AVG(bid) AS bid,
+                		AVG(offer) AS offer,
+                		DAY(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')) AS days,
+                		MONTH(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')) AS months,
+                		YEAR(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')) AS yaers
+                	FROM $nameCommunity AS a 
+                	WHERE a.fundname=$fundtype and $conditions
+                	GROUP BY a.fundname, DAY(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'))
+                	ORDER BY a.fundname,DAY(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'))";
+                                   
+                $fundBidMonth=$db->fetchAll($getFundBidMonth);
+                
+
+                //print_r($fundBidMonth); 
+                $itemss['fundname']=$fundBidMonth[0]['fundname'];
+                $itemss['total']=count($fundBidMonth);
+                $itemss['year']=$fundBidMonth[0]['yaers'];
+                $itemss['month']=$fundBidMonth[0]['months'];
+                
+                
+                $i = 0;
+                foreach($fundBidMonth as $itemsbid){
+                    $itemsbid['bid'];
+
+                    $array_day[$i] =$itemsbid['days']+0;
+                    $array_bid[$i] = $itemsbid['bid'] + 0;
+                $i++;
+                }
             
+             $itemss['fundbid']=$array_bid;
+             $itemss['biddate']=$array_day;
+               
+        /*end bid fund*/ 
+
            $data['xml_data']=$xmldata;
            $data['resume_data']=$resumedata;
+           $data['resume_graph']=$itemss;
            $data['limit_data']=10;    
            echo json_encode($data);
           
