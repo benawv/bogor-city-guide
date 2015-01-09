@@ -83,7 +83,11 @@ jQuery(function($) {
                              <tr>
                                 <td>
                                     <a href="" class="form-nav quiz_next" setPrev="step_1">
-                                        <img class="left" src="/website/static/inv/images/prev.png">
+                                        <!-- <img class="left" src="/website/static/inv/images/prev.png"> -->
+                                        
+                                        <span style="border:1px solid #17549c; background: #17549c; color: #FFFFFF; font-size: 14px; font-weight: bold; padding: 5px 10px; margin-left: 30px; ">
+                                        &#171; kembali
+                                        </span>
                                     </a>
                                 </td>
                             </tr>
@@ -125,8 +129,12 @@ jQuery(function($) {
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="" class="form-nav quiz_next" setPrev="step_2">
-                                       <img class="left" src="/website/static/inv/images/prev.png">
+                                    <a href="" class="form-nav quiz_next" setPrev="step_2" style="">
+                                       <!-- <img class="left" src="/website/static/inv/images/prev.png"> -->
+                                        
+                                        <span style="border:1px solid #17549c; background: #17549c; color: #FFFFFF; font-size: 14px; font-weight: bold; padding: 5px 10px; margin-left: 30px; ">
+                                        &#171; kembali
+                                        </span>
                                     </a>
                                 </td>
                             </tr>
@@ -164,7 +172,11 @@ jQuery(function($) {
                             <tr>
                                 <td>
                                     <a href="" class="form-nav quiz_next" setPrev="step_3">
-                                        <img class="left" src="/website/static/inv/images/prev.png">
+                                        <!-- <img class="left" src="/website/static/inv/images/prev.png"> -->
+                                        
+                                        <span style="border:1px solid #17549c; background: #17549c; color: #FFFFFF; font-size: 14px; font-weight: bold; padding: 5px 10px; margin-left: 30px; ">
+                                        &#171; kembali
+                                        </span>
                                     </a>
                                 </td>
                             </tr>
@@ -205,8 +217,12 @@ jQuery(function($) {
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="" class="form-nav quiz_next" setPrev="prev">
-                                        <img class="left" src="/website/static/inv/images/prev.png">
+                                    <a href="" class="form-nav quiz_next" setPrev="step_4">
+                                        <!-- <img class="left" src="/website/static/inv/images/prev.png"> -->
+                                        
+                                        <span style="border:1px solid #17549c; background: #17549c; color: #FFFFFF; font-size: 14px; font-weight: bold; padding: 5px 10px; margin-left: 30px; ">
+                                        &#171; kembali
+                                        </span>
                                     </a>
                                 </td>
                             </tr>
@@ -241,15 +257,19 @@ jQuery(function($) {
                                     <div class="checkbox disabled">
                                         <label>
                                             <input type="radio" name="opt_6" value="3" class="quiz_next" setNext="step_7" />
-                                            Setidaknya akan mampu mengimbangi inflasi
+                                            Akan melampui angka inflasi
                                         </label>
                                     </div><!--/ .checkbox -->
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="" class="form-nav quiz_next" setPrev="prev">
-                                        <img class="left" src="/website/static/inv/images/prev.png">
+                                    <a href="" class="form-nav quiz_next" setPrev="step_5">
+                                        <!-- <img class="left" src="/website/static/inv/images/prev.png"> -->
+                                        
+                                        <span style="border:1px solid #17549c; background: #17549c; color: #FFFFFF; font-size: 14px; font-weight: bold; padding: 5px 10px; margin-left: 30px; ">
+                                        &#171; kembali
+                                        </span>
                                     </a>
                                 </td>
                             </tr>
@@ -287,16 +307,23 @@ jQuery(function($) {
                                             Saya dapat menerima penurunan lebih dari 50%
                                         </label>
                                     </div><!--/ .checkbox -->
-                                    <button type="button" class="btn btn-primary margintop20" id="submitForm">Submit</button>
+                                    <!--<button type="button" class="btn btn-primary margintop20" id="submitForm">Submit</button>-->
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <a href="" class="form-nav quiz_next" setPrev="step_6">
-                                        <img class="left" src="/website/static/inv/images/prev.png">
+                                        <!-- <img class="left" src="/website/static/inv/images/prev.png"> -->
+                                        
+                                        <span style="border:1px solid #17549c; background: #17549c; color: #FFFFFF; font-size: 14px; font-weight: bold; padding: 7px 10px; margin-left: 30px; margin-right: 20px; ">
+                                        &#171; kembali
+                                        </span>
                                     </a>
+                                    <button type="button" class="btn btn-primary" id="submitForm">Submit</button>
                                 </td>
-                                <td></td>
+                                <td>
+	                                
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -308,14 +335,28 @@ jQuery(function($) {
                             <tr>
                                 <td colspan="2">
                                     <h2 class="result"></h2>
-                                    <h3 class="description">Loading&hellip;</h3>
+                                    <h3 class="description">Loading&hellip;</h3> 
+                                    
+                                    
+					               
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <a href="" class="form-nav quiz_next" setPrev="step_7">
-                                        <img class="left" src="/website/static/inv/images/prev.png">
+                                        <!-- <img class="left" src="/website/static/inv/images/prev.png"> -->
+                                        
+                                        <span style="border:1px solid #17549c; background: #17549c; color: #FFFFFF; font-size: 14px; font-weight: bold; padding: 5px 10px; ">
+                                        &#171; kembali
+                                        </span>
                                     </a>
+                                    <br />
+                                    <div class="allianz-button" style="text-align: left;">
+					                    <input id="keuangan" class="blue-btn" type="button" value="Perencanaan Keuangan">
+					                    <input id="kalkulator" class="blue-btn" type="button" value="Kalkulator">
+					               </div>
+					               
+					               
                                 </td>
                                 <td></td>
                             </tr>
