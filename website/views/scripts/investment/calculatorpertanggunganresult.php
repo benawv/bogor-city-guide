@@ -281,8 +281,11 @@
 			{
 				$.ajax({
 					type: 'POST',
-					url: '/sendkalkulator2',
+					url: '/sendkalkulator',
 					data: {
+						kalkulator : 'Asuransi',
+						biaya: getCookie('resp1_biaya'),
+						result_1: getCookie('resp1_hasil'),
 						asumsi_inflasi: getCookie('resp1_asumsi_inflasi'),
 						asumsi_imbalan : getCookie('resp1_asumsi_imbal'),
 						jangka_waktu: getCookie('resp1_jangka_waktu'),
