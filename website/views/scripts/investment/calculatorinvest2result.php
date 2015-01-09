@@ -410,6 +410,9 @@
 					type: 'POST',
 					url: '/sendkalkulator',
 					data: {
+						kalkulator : 'Investasi',
+						result_1 : getCookie('investment1_hasil'),
+						biaya : getCookie('investment1_biaya'),
 						asumsi_inflasi: getCookie('investment1_asumsi_inflasi'),
 						asumsi_imbalan : getCookie('investment2_asumsi_imbal_hasil'),
 						jangka_waktu: getCookie('investment1_jangka_waktu'),

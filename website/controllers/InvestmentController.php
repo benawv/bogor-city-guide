@@ -285,39 +285,61 @@ class InvestmentController extends Website_Controller_Action
 
 	public function tileAction(){}
 	public function sendkalkulatorAction() {
-		$asumsi_inflasi = $_POST['asumsi_inflasi'];
-		$asumsi_imbalan = $_POST['asumsi_imbalan'];
-		$jangka_waktu = $_POST['jangka_waktu'];
-		$risiko = $_POST['risiko'];
-		$tahunan = $_POST['tahunan'];
-		$bulanan = $_POST['bulanan'];
-		$email = $_POST['email'];
+		$kalkulator = $_POST['kalkulator'];
+		$result_1 = $_POST['result_1']?$_POST['result_1']:'';
+		$result_2 = $_POST['result_2']?$_POST['result_2']:'';
+		$biaya_2 = $_POST['biaya_2']?$_POST['biaya_2']:'';
+		$biaya = $_POST['biaya']?$_POST['biaya']:'';
+		$asumsi_inflasi = $_POST['asumsi_inflasi']?$_POST['asumsi_inflasi']:'';
+		$asumsi_imbalan = $_POST['asumsi_imbalan']?$_POST['asumsi_imbalan']:'';
+		$jangka_waktu = $_POST['jangka_waktu']?$_POST['jangka_waktu']:'';
+		$jangka_waktu_2 = $_POST['jangka_waktu_2']?$_POST['jangka_waktu_2']:''; 
+		$jangka_waktu_3 = $_POST['jangka_waktu_3']?$_POST['jangka_waktu_3']:''; 
+		$risiko = $_POST['risiko']?$_POST['risiko']:'';
+		$tahunan = $_POST['tahunan']?$_POST['tahunan']:'';
+		$bulanan = $_POST['bulanan']?$_POST['bulanan']:'';
+		$email = $_POST['email']?$_POST['email']:'';
 		
-		if($risiko<10)
+		if($jangka_waktu < 3)
 		{
-			$rekomen = "Jangka waktu investasi yang anda pilih termasuk jangka pendek. Untuk investasi jangka pendek sebaiknya menggunakan instrumen investasi yang memiliki risiko dan fluktuasi nilai yang rendah. Instrumen pasar uang seperti deposito, reksa dana pasar uang, ataupun instrumen obligasi seperti ORI, dan reksa dana pendapatan tetap dapat dijadikan pilihan";
+			$deskripsi_jangka_waktu = "Jangka waktu investasi yang anda pilih termasuk jangka pendek. Untuk investasi jangka pendek sebaiknya menggunakan instrumen investasi yang memiliki risiko dan fluktuasi nilai yang rendah. Intrumen investasi yang dapat dijadikan pilihan antara lain Instrumen pasar uang seperti deposito, unit link atau reksa dana pasar uang, ataupun instrumen pendapatan tetap seperti ORI (obligasi ritel Indonesia), unit link atau reksa dana pendapatan tetap. ";
 		}
-		elseif(10 <= $risiko && $risiko <= 15)
+		else if($jangka_waktu > 3 && $jangka_waktu < 5)
 		{
-			$rekomen = "Jangka waktu investasi yang anda pilih termasuk jangka menengah. Untuk investasi jangka menengah sebaiknya menggunakan instrumen investasi yang memiliki risiko dan fluktuasi nilai yang sedang. Instrumen obligasi seperti ORI, dan reksa dana pendapatan tetap dapat dijadikan pilihan, atau Anda dapat memilih reksadana berimbang yang memiliki komponen instrumen saham dengan porsi yang relatif kecil.";
+			$deskripsi_jangka_waktu = "Jangka waktu investasi yang anda pilih termasuk jangka menengah. Untuk investasi jangka menengah sebaiknya menggunakan instrumen investasi yang memiliki risiko dan fluktuasi nilai yang sedang. Instrumen investasi yang dapat dijadikan pilihan antara lain instrumen pendapatan tetap seperti ORI (obligasi ritel Indonesia), unit link atau reksa dana pendapatan tetap, atau Anda dapat memilih unit link atau reksadana berimbang yang memiliki komponen instrumen saham dengan porsi yang relatif kecil.";
 		}
-		else
-		{
-			$rekomen = "Jangka waktu investasi yang anda pilih termasuk jangka panjang. Untuk investasi jangka panjang Anda dapat menggunakan instrumen investasi yang memiliki risiko dan fluktuasi nilai yang lebih tinggi dibandingkan jangka waktu lainnya. Instrumen saham dijadikan pilihan, atau Anda dapat memilih reksadana berimbang yang memiliki komponen instrumen saham dengan porsi yang cukup signifikan.";
+		else {
+			$deskripsi_jangka_waktu = "Jangka waktu investasi yang anda pilih termasuk jangka panjang. Untuk investasi jangka panjang Anda dapat menggunakan instrumen investasi yang memiliki risiko dan fluktuasi nilai yang lebih tinggi. Instrumen investasi yang dapat dijadikan pilihan antara lain saham, unit link atau reksadana saham, atau Anda dapat memilih unit link atau reksadana berimbang yang memiliki komponen instrumen saham dengan porsi yang cukup signifikan.";
 		}
-		
-		$document = '/email/kalkulator/email-kalkulator';
+		$document = '/email/kalkulator/email-kalkulator-pendidikan';
+		if($kalkulator == 'Pendidikan')
+			$document = '/email/kalkulator/email-kalkulator-pendidikan';
+		else if($kalkulator == 'Asuransi')
+			$document = '/email/kalkulator/email-kalkulator-asuransi';
+		else if($kalkulator == 'Investasi')
+			$document = '/email/kalkulator/email-kalkulator-investasi';
+		else if($kalkulator == 'Pensiun')
+			$document = '/email/kalkulator/email-kalkulator-pensiun';
+			
 		$params = array('asumsi_inflasi' => $asumsi_inflasi,
 				'asumsi_imbalan' => $asumsi_imbalan,
 				'jangka_waktu' => $jangka_waktu,
 				'risiko' => $risiko,
 				'tahunan' => $tahunan,
 				'bulanan' => $bulanan,
-				'rekomen' => $rekomen
+				'rekomen' => $rekomen,
+				'kalkulator' => $kalkulator,
+				'result_1' => $result_1,
+				'result_2' => $result_2,
+				'jangka_waktu_2' => $jangka_waktu_2,
+				'jangka_waktu_3' => $jangka_waktu_3,
+				'biaya' => $biaya,
+				'biaya_2' => $biaya_2,
+				'deskripsi_jangka_waktu' => $deskripsi_jangka_waktu
 				);
 		
 		$mail = new Pimcore_Mail();
-		$mail->setSubject("Kalkulator Investment");
+		$mail->setSubject("Hasil Kalkulasi Kalkulator ".$kalkulator);
 		$mail->setFrom("no-reply@allianz.co.id","Allianz Investment");
 		$mail->setDocument($document);
 		$mail->setParams($params);
@@ -391,7 +413,7 @@ class InvestmentController extends Website_Controller_Action
                 );
         
         $mail = new Pimcore_Mail();
-        $mail->setSubject("Finansial Rasio Investment");
+        $mail->setSubject("Hasil Kalkulasi Rasio Keuangan");
         $mail->setFrom("no-reply@allianz.co.id","Allianz Investment");
         $mail->setDocument($document);
         $mail->setParams($params);
