@@ -166,12 +166,12 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                    </div>
                     <div class="calc-box">    
                         <select class="jenjang" style="border:solid 1px; color: black;">
-                            <option value="KB">KB</option>
-                            <option value="TK">TK</option>
-                            <option value="SD">SD</option>
-                            <option value="SMP">SMP</option>
-                            <option value="SMA">SMA</option>
-                            <option value="PT">Perguruan Tinggi</option>
+                            <option value="KB">Kelompok Bermain (KB)</option>
+                            <option value="TK">Taman Kanak-Kanak (TK)</option>
+                            <option value="SD">Sekolah Dasar (SD)</option>
+                            <option value="SMP">Sekolah Menengah Pertama (SMP)</option>
+                            <option value="SMA">Sekolah Menengah Atas (SMA)</option>
+                            <option value="PT">Perguruan Tinggi (PT)</option>
                         </select> 
                     </div><!-- End demo -->
                    
@@ -184,7 +184,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                         <div class="title-box"><h4>BIAYA PENDIDIKAN SAAT INI</h4></div>
                         <!--div class="tooltips"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div!-->
 
-                        <div class="sub_form">Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *refer to <span class='appendix' style="cursor: pointer; color: blue;">appendix</span></div>
+                        <div class="sub_form">Estimasi biaya pendidikan untuk KB/TK/SD/SMP/SMA/PT saat ini *lihat <span class='appendix' style="cursor: pointer; color: blue;">acuan</span></div>
                    </div>
                    
                     <div class="calc-box">    

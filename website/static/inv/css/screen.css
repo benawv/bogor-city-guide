@@ -3275,3 +3275,11 @@ img.logo-float{
 .tabcontent strong {
 	font-weight: bold;
 }
+
+/* added by Bena 09 Jan 2015 */
+.fp_separator{
+	height:1px;
+	background-color:white;
+	margin:0px auto;
+	width: 350px;
+}
