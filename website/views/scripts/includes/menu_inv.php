@@ -1,7 +1,7 @@
 <ul class="clearfix">
 <?php foreach($this->container as $page): ?>
 	<li>
-		<a href="<?php echo $page->getUri()?>"><?php echo $page->getDocument()->getProperty('navigation_title');?></a>
+		<a href="javascript:void(0);"><?php echo $page->getDocument()->getProperty('navigation_title');?></a>
 		<div class="menu-level2">
 			<a href="#" class="back">Back</a>
 			<!--<ul class="noborder">
@@ -22,10 +22,12 @@
 				{
 			?>
 					<ul class="<?php echo $i==0?'noborder':'' ?>">
-						<li class="menutitle"><span class="clickPage" onclick=""><?php echo $subpage->getDocument()->getProperty('navigation_title');?></span></li>
+						<li class="menutitle"><span class="clickPage" onclick="link('<?php echo $subpage->getUri()?>','')"><?php echo $subpage->getDocument()->getProperty('navigation_title');?></span></li>
 						<?php 
 							$list = new Document_List();
 							$list->setLimit(7);
+							$list->setOrderKey('index');
+							$list->setOrder('asc');
 							$list->setCondition('parentId = '.$subpage->getDocument()->getId());
 							$documents = $list->load();
 							//echo '<pre>'; die(print_r($documents));
