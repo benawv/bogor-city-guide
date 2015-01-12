@@ -67,10 +67,36 @@
             
 			<div class="wrap30">
                 <h5><span><a href="#">Home</a></span> &rsaquo; <span>Daily Nav</span></h5>
-			     <div class="bg-blue">
-                    <h4>NAB Harian</h4>
-                    <p></p>
-                </div>
+			     			<div class="textbanner <?php echo $this->select('color')->getData()?$this->select('color')->getData():'blue'?> h200">
+                				<h1><?php echo $this->input('title-note')?></h1>
+                				
+                
+                				<h3>
+                					<?php echo $this->wysiwyg('desc-note')?>
+                				</h3>
+                			
+                				<p>
+                					<?php 
+                						if($this->editmode)
+                						{
+                	                    	echo "Color: ";
+                	                		echo $this->select("color",array(
+                							    "store" => array(
+                							        array("red", "Red"),
+                							        array("purple", "Purple"),
+                							        array("blue", "Blue"),
+                							        array("brown", "Brown"),
+                							        array('darkbrown', "Dark Brown"),
+                							        array('green', "Green")
+                							    ),
+                							    "reload" => true
+                							)); 
+                						}
+                					?>
+                				</p>
+                
+                			</div>
+                            <div class="edge_textbanner edge_<?php echo $this->select('color')->getData()?$this->select('color')->getData():'blue'; ?>"></div>
             
             </div>	    
             
