@@ -94,7 +94,8 @@ $(function(){
 					<li><a href="https://www.allianzlife.co.id/CustomerOnlinePortal" target="_blank" class="icon-user">Customer Login</a></li>
 					<li><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank" class="icon-mail hide-text">Registrasi</a></li>
 					<!--<li><a href="#" class="icon-fav hide-text">My Product</a></li>-->
-					<li class="share">
+					<li>
+						<a href="javascript:void(0);" class="fbshare-fullpage"><img src="/website/static/images/icon-share/facebook.png" /></a>
                         <!--<div class="tag-center">
                         	<span class='st_sharethis' displayText='  '></span>
                              <span class='st_facebook' displayText=''></span>
@@ -103,7 +104,10 @@ $(function(){
                             <span class='st_pinterest' displayText=''></span>
                             <span class='st_email' displayText=''></span> 
                         </div>-->
-                    </li>
+					 </li>
+					<li>
+						<a href="javascript:void(0);" class="twshare-fullpage"><img src="/website/static/images/icon-share/twitter.png" /></a>
+					</li>
 				</ul>
 				
 				<script type="text/javascript">

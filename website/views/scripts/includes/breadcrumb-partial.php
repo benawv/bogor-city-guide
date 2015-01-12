@@ -20,7 +20,7 @@
 					echo " &rsaquo; <span><a href='".$page->getUri()."'>".$page->getTitle()."</a></span>";
 				}
 				else {
-					echo " &rsaquo; <span>".$page->getTitle()."</span>";
+					echo " &rsaquo; <span class='currentPage'>".$page->getTitle()."</span>";
 				}
 				$label = $page->getLabel();
 			}

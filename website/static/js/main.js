@@ -478,6 +478,97 @@ $(document).ready(function(){
 				}
 			});
 	});
+	
+	$('.twshare-fullpage').on("click",function(){
+		var url = window.location.host+window.location.pathname;
+		
+		var title = $(document).find("title").text();
+		//var isi = $(this).parent().parent().siblings("a").find('.description p').text();
+		
+		var tweet = title+"  "+url;
+		var encodeTweet = encodeURIComponent(tweet);
+		window.open('https://twitter.com/intent/tweet?text='+encodeTweet, 'sharer', 'width=626,height=436');
+	});
+	
+	$('.fbshare-fullpage').on("click",function(){
+		var image = $(".pimcore_area_static-banner").find("img").attr('src');
+		if (image==undefined) {
+			image = $("ul.slides li").eq(1).find("img").attr('src');
+		}
+		if (image==undefined) {
+			image = "/website/static/images/logo-Allz.png";
+		}
+		var reTanya = $(document).find("title").text();
+		if (reTanya == "") {
+			reTanya = $("span.currentPage").text();
+		}
+		if (reTanya == "") {
+			reTanya = $("span.title").text();
+		}
+		
+		var deskripsi = $('meta[name=description]').attr('content');
+		
+		var link = $(this).parent().siblings('a').attr('href') != undefined ? window.location.host+'/'+$(this).parent().siblings('a').attr('href') : window.location.host+window.location.pathname;
+		
+		var name = reTanya.replace(/[^a-zA-Z()]/g,'');
+		var filename = name.replace(/\s/g,'-');
+		
+		var limit = 32;
+		var x;
+		
+		if (deskripsi != undefined) {
+			var words = deskripsi.split(/\s/);
+			var desc='';
+			
+			if (words.length > limit)
+			{
+				for(x=0;x<limit;x++)
+				{
+					if (x==0)
+					{
+						desc = desc+words[x];
+					}
+					else
+					{
+						desc = desc+' '+words[x];
+					}
+				}
+				desc = desc+'....';
+			}
+			else
+			{
+				desc = deskripsi;
+			}
+		}
+		else
+		{
+			desc = "";
+		}
+		var judul_section = $("span.title").text();
+		var judul2 = "";
+			
+		loc = window.location.origin+'/website/static/fbshare/sharedfb-page.php';
+		
+	
+		$.ajax({
+				type: 'POST',
+				url: loc,
+				data: {
+					filename: filename,
+					judul : "",
+					title_fb : reTanya+" "+judul2,
+					image_name: image,
+					description: desc,
+					url: window.location.host,
+					link_in_fb : link
+				},
+				success: function(response)
+				{
+					var url = window.location.origin+'/website/static/fbshare/'+response;
+					window.open('http://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), 'sharer', 'width=626,height=436');
+				}
+			});
+	});
 });
 
 $(window).load(function() {
