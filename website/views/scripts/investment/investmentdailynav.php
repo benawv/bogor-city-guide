@@ -136,9 +136,9 @@
                                 <?php 
                                     if(empty($items['lastmonth'][0]['bid'])){
                                         $lastmonth=$items['lastdata'][0]['bid'];
-                                        echo ($lastmonth/$lastmonth)*100;
+                                        echo round(($lastmonth/$lastmonth)*100);
                                     }else{
-                                        echo ($items['lastdata'][0]['bid']/$items['lastmonth'][0]['bid'])*100;
+                                        echo round(($items['lastdata'][0]['bid']/$items['lastmonth'][0]['bid'])*100);
                                     }
                                 ?>
                                 %
@@ -147,9 +147,9 @@
                                 <?php 
                                     if(empty($items['last3month'][0]['bid'])){
                                         $lastmonth=$items['lastdata'][0]['bid'];
-                                        echo ($lastmonth/$lastmonth)*100;
+                                        echo round(($lastmonth/$lastmonth)*100);
                                     }else{
-                                        echo ($items['lastdata'][0]['bid']/$items['last3month'][0]['bid'])*100;
+                                        echo round(($items['lastdata'][0]['bid']/$items['last3month'][0]['bid'])*100);
                                     }
 
                                 ?>
@@ -159,9 +159,9 @@
                                 <?php 
                                     if(empty($items['ytd'][0]['bid'])){
                                         $lastmonth=$items['lastdata'][0]['bid'];
-                                        echo ($lastmonth/$lastmonth)*100;
+                                        echo round(($lastmonth/$lastmonth)*100);
                                     }else{
-                                        echo ($items['lastdata'][0]['bid']/$items['ytd'][0]['bid'])*100;
+                                        echo round(($items['lastdata'][0]['bid']/$items['ytd'][0]['bid'])*100);
                                     }
                                 ?>
                                 %
@@ -170,9 +170,9 @@
                                <?php 
                                     if(empty($items['last1year'][0]['bid'])){
                                         $lastmonth=$items['lastdata'][0]['bid'];
-                                        echo ($lastmonth/$lastmonth)*100;
+                                        echo round(($lastmonth/$lastmonth)*100);
                                     }else{
-                                        echo ($items['lastdata'][0]['bid']/$items['last1year'][0]['bid'])*100;
+                                        echo round(($items['lastdata'][0]['bid']/$items['last1year'][0]['bid'])*100);
                                     }
                                 ?>
                                 %
@@ -370,9 +370,6 @@
                     var formfundtype=$('.fundtype').val();
                     
                     
-                    $('.date-range').html("Fund name: "+formfundtype+". Periode: "+awal+" s/d "+akhir);
-                    $('.table-range').html("Fund name: "+formfundtype+". Periode: "+awal+" s/d "+akhir);
-                    $('.return-foot').html('<p class="return-foot">Return: 3.24% '+formfundtype+' sejak '+arr_awal[0]+'/'+arr_awal[1]+'/'+arr_awal[2]+' hingga '+arr_akhir[0]+'/'+arr_akhir[1]+'/'+arr_akhir[2]+' adalah xx%</p>')
                     
                     if(formfundtype =='0'){
                         alert("Silahkan pilih jenis fund");
@@ -493,7 +490,9 @@
                                         } 
                                         //response action
                                         
-                                        $('.').html("<p class='footnote'>Return: 3.24% ffff sejak 'dd/mm/yyyy' hingga 'dd/mm/yyyy' adalah xx%</p>")
+                                        $('.date-range').html("Fund name: "+formfundtype+". Periode: "+awal+" s/d "+akhir);
+                                        $('.table-range').html("Fund name: "+formfundtype+". Periode: "+awal+" s/d "+akhir);
+                                        $('.return-foot').html('<p class="return-foot">Return: 3.24% '+formfundtype+' sejak '+arr_awal[0]+'/'+arr_awal[1]+'/'+arr_awal[2]+' hingga '+arr_akhir[0]+'/'+arr_akhir[1]+'/'+arr_akhir[2]+' adalah xx%</p>')
                                 }
     
                             },
