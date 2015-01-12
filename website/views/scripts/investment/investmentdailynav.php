@@ -67,6 +67,7 @@
             
 			<div class="wrap30">
                 <h5><span><a href="#">Home</a></span> &rsaquo; <span>Daily Nav</span></h5>
+                        <div class="box_banner_big">
 			     			<div class="textbanner <?php echo $this->select('color')->getData()?$this->select('color')->getData():'blue'?> h200">
                 				<h1><?php echo $this->input('title-note')?></h1>
                 				
@@ -97,10 +98,10 @@
                 
                 			</div>
                             <div class="edge_textbanner edge_<?php echo $this->select('color')->getData()?$this->select('color')->getData():'blue'; ?>"></div>
-            
+                        </div>
             </div>	    
             
-            <div class="wrap60">
+            <div class="wrap60" style="width: 55%;">
                 <h4>NAB Harian</h4>
                 <p></p>
                 <p>Lihat NAB harian terbaru atau pilih NAB berdasar jenis fund anda.</p>
@@ -365,6 +366,8 @@
                     
                     
                     $('.date-range').html(formfundtype+" periode: "+awal+" s/d "+akhir);
+                    $('.return-foot').html('<p class="return-foot">Return: 3.24% '+formfundtype+' sejak '+arr_awal[0]+'/'+arr_awal[1]+'/'+arr_awal[2]+' hingga '+arr_akhir[0]+'/'+arr_akhir[1]+'/'+arr_akhir[2]+' adalah xx%</p>')
+                    
                     if(formfundtype =='0'){
                         alert("Silahkan pilih jenis fund");
                     }else{
@@ -430,9 +433,9 @@
                                                     "data": dataSets                               
                                                 });
                                             }
-                                             console.log(new_data.resume_graph.fundname);
-                                             console.log(new_data.resume_graph.biddate);
-                                             console.log(new_data.resume_graph.fundbid);
+//                                             console.log(new_data.resume_graph.fundname);
+//                                             console.log(new_data.resume_graph.biddate);
+//                                             console.log(new_data.resume_graph.fundbid);
                                              
                                             var fundname=new_data.resume_graph.fundname.toString();
                                             var biddate=new_data.resume_graph.biddate;
@@ -561,7 +564,7 @@
             </script>
 
                    
-                    <!--<p>Return: 3.24% ffff sejak 'dd/mm/yyyy' hingga 'dd/mm/yyyy' adalah xx%</p>-->
+                    <p class="return-foot"></p>
                     
                 </div>
                     <!--- End Table ------>
