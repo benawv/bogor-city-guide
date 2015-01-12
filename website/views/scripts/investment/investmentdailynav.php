@@ -100,7 +100,6 @@
                             <div class="edge_textbanner edge_<?php echo $this->select('color')->getData()?$this->select('color')->getData():'blue'; ?>"></div>
                         </div>
             </div>	    
-            <?php die('disini'); ?>
             <div class="wrap60" style="width: 55%;">
                 <h4>NAB Harian</h4>
                 <p></p>
