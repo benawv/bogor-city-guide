@@ -395,6 +395,9 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 	.place-bg{
 		height: 169px;
 	}
+	.place-bg.place-bg-static{
+		height: auto;
+	}
 
 	#slideshow .slide{
 	
