@@ -1,7 +1,11 @@
 <ul class="clearfix">
 <?php foreach($this->container as $page): ?>
 	<li>
-		<a href="javascript:void(0);"><?php echo $page->getDocument()->getProperty('navigation_title');?></a>
+		<?php if($page->getDocument()->getKey() != 'contact-us') { ?>
+			<a href="javascript:void(0);"><?php echo $page->getDocument()->getProperty('navigation_title');?></a>
+		<?php } else { ?>
+			<a href="<?php echo $page->getUri()?>"><?php echo $page->getDocument()->getProperty('navigation_title');?></a>
+		<?php } ?>
 		<div class="menu-level2">
 			<a href="#" class="back">Back</a>
 			<!--<ul class="noborder">
