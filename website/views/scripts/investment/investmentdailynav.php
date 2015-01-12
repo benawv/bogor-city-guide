@@ -122,7 +122,64 @@
                         </tr> 
                         </thead> 
                         <tbody class="table-body"> 
-                     
+                        <?php  
+                            
+                            foreach($this->data['ytd'] as $items){ 
+
+                        ?>
+                        <tr> 
+                            <td><a href="#"><?php echo  ucwords(strtolower($items['today'][0]['fundname']))?></a></td> 
+                            <td>
+                                <?php echo $items['today'][0]['bid']; ?>
+                            </td> 
+                            <td>
+                                <?php 
+                                    if(empty($items['lastmonth'][0]['bid'])){
+                                        $lastmonth=$items['lastdata'][0]['bid'];
+                                        echo round(($lastmonth/$lastmonth)*100);
+                                    }else{
+                                        echo round(($items['lastdata'][0]['bid']/$items['lastmonth'][0]['bid'])*100);
+                                    }
+                                ?>
+                                %
+                            </td> 
+                            <td>
+                                <?php 
+                                    if(empty($items['last3month'][0]['bid'])){
+                                        $lastmonth=$items['lastdata'][0]['bid'];
+                                        echo round(($lastmonth/$lastmonth)*100);
+                                    }else{
+                                        echo round(($items['lastdata'][0]['bid']/$items['last3month'][0]['bid'])*100);
+                                    }
+
+                                ?>
+                                %
+                            </td> 
+                            <td>
+                                <?php 
+                                    if(empty($items['ytd'][0]['bid'])){
+                                        $lastmonth=$items['lastdata'][0]['bid'];
+                                        echo round(($lastmonth/$lastmonth)*100);
+                                    }else{
+                                        echo round(($items['lastdata'][0]['bid']/$items['ytd'][0]['bid'])*100);
+                                    }
+                                ?>
+                                %
+                            </td> 
+                            <td>
+                               <?php 
+                                    if(empty($items['last1year'][0]['bid'])){
+                                        $lastmonth=$items['lastdata'][0]['bid'];
+                                        echo round(($lastmonth/$lastmonth)*100);
+                                    }else{
+                                        echo round(($items['lastdata'][0]['bid']/$items['last1year'][0]['bid'])*100);
+                                    }
+                                ?>
+                                %
+                            </td> 
+                        </tr>
+                       <?php } ?>     
+                        
                         </tbody> 
                     </table> 
 
@@ -132,7 +189,8 @@
                 
 			</div>	
             			
-		</div>
+	    </div>
+		<?php die('disini'); ?>
 		<!-- article end -->
         <div id="#" class="article-wrap bottom">
            <div class="form-wrap bottom">
