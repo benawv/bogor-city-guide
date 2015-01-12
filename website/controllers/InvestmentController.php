@@ -724,17 +724,21 @@ class InvestmentController extends Website_Controller_Action
            // die($conditions);
             
             $db = Pimcore_Resource_Mysql::get();        
-            $entries = new Object_InvestmentNav_List();
+            /*
+	    $entries = new Object_InvestmentNav_List();
             $entries->setOrderKey("unitdate");
             $entries->setOrder("desc");
             
             $this->view->data=$entries;	 
-       		foreach ($entries as $table)
+       		/*
+		foreach ($entries as $table)
 		      {
 			     $nameCommunity = "object_query_".$table->getClassId();
 		      }
-
-            $sql_subcat="SELECT *,FROM_UNIXTIME(unitdate,'%d-%m-%Y') AS unitdates FROM ".$nameCommunity." AS xmlsource ".$conditions." order by fundname desc,unitdate";
+		*/
+	    $nameCommunity = "object_query_30"; //tulis manual
+            
+	    $sql_subcat="SELECT *,FROM_UNIXTIME(unitdate,'%d-%m-%Y') AS unitdates FROM ".$nameCommunity." AS xmlsource ".$conditions." order by fundname desc,unitdate";
             $xmldata=$db->fetchAll($sql_subcat);
            
            
