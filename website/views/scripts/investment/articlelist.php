@@ -73,7 +73,7 @@
 					<li class="<?php echo $investmentcolor?$investmentcolor:'bg_fund'?>" style="background-color: <?php echo $bg_color?>" >
                         <span style="font-size: 12px;"><?php echo date("d M Y", $entry->o_creationDate) ?></span>
                         <h3><?php echo $entry->title ?></h3>
-						<p><?php echo $entry->deskripsisingkat ?>...</p>
+						<p><?php echo $entry->deskripsisingkat ?></p>
 
                         <a href="/investment/investment-article/<?php echo $entry->getO_key()."_".$entry->getO_id()."_1";?>">Selengkapnya <i class="fa fa-angle-right"></i></a>
 
