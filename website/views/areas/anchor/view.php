@@ -108,11 +108,11 @@
 <?php else : ?>
 	<?php
 		if($anchors <= 7) {
-			$style = $this->editmode?'height: 355px':'';
+			$style = $this->editmode?'height: 310px':'';
 		}
 		else {
 			$countHeight = $anchors/7;
-			$height = 355 * (ceil($countHeight));
+			$height = 310 * (ceil($countHeight));
 			
 			$style = $this->editmode?'height: '.$height.'px':'';
 		}
