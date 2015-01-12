@@ -3621,4 +3621,5 @@ table.x-btn-text-icon {
 }
 .x-panel-collapsed{
     overflow: auto !important;
+    height: 25px !important;
 }
