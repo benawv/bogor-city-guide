@@ -425,6 +425,7 @@ class InvestmentController extends Website_Controller_Action
     
     public function investmentdailynavAction(){//show data into table
  
+ die('mati');
         $db = Pimcore_Resource_Mysql::get(); 
         $entries = new Object_InvestmentNav_List();
    	    foreach ($entries as $table)
@@ -432,7 +433,7 @@ class InvestmentController extends Website_Controller_Action
 			 $nameCommunity = "object_query_".$table->getClassId();
         }
         
-        die('die');
+        
         /*
         $sql_subcat="SELECT *, FROM_UNIXTIME(unitdate,'%d-%m-%Y') AS unitdates  FROM ".$nameCommunity." AS xmlsource order by unitdate desc limit 10";
         $xmldata=$db->fetchAll($sql_subcat);
