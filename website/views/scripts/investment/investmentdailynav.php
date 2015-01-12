@@ -270,17 +270,22 @@
 
                                 <!--------- Table nab daily----------------->
                             <div id="container" style="min-width: 900px; height: 500px; margin: 0 auto; padding: 20px; display:none"></div>
-                           
-                            
-                            <script>
-                            
-                            </script>    
-                        
+    
                                <div id="tablex" style="width: 98%; display: block;">
+                               <div id="title" class="title-chart" style="
+                                    top: -19px;
+                                    width: 102.2%;
+                                    position: relative;
+                                    right: 21px;
+                                ">
+                                                            
+                               <span></span>
+                              <div class="table-range" style="position: absolute;top: 12px;left: 12px;"></div>
+                               </div>
                                 <table id="myTable2" class="display" cellspacing="0" width="100%">
+                    
                                     <thead class="title-data"> 
                                     <tr>  
-                                        <th class="">FUND NAME</th> 
                                         <th class="">UNIT DATE</th> 
                                         <th class="">BID</th> 
                                         <th class="">OFFER</th>
@@ -288,7 +293,7 @@
                                     </thead> 
 
                                     <div id="title2" style="
-                                        top: -3.7%;
+                                        top: -11.7%;
                                         width: 102%;
                                         left: -19px;
                                         position: relative;">
@@ -308,10 +313,10 @@
                                    foreach($this->data['defult_data'] as $items){
                                     ?>
                                         <tr> 
-                                        <td><?php echo ucwords(strtolower($items["fundName"])); ?></td> 
-                                        <td><?php echo $items["unitdates"]; ?></td> 
-                                        <td><?php echo $items["bid"]; ?></td> 
-                                        <td><?php echo $items["offer"]; ?></td> 
+                                            <td><?php echo ucwords(strtolower($items["fundName"])); ?></td> 
+                                            <td><?php echo $items["unitdates"]; ?></td> 
+                                            <td><?php echo $items["bid"]; ?></td> 
+                                            <td><?php echo $items["offer"]; ?></td> 
                                         </tr>    
                                     <?php } ?>      
                                     
@@ -365,7 +370,8 @@
                     var formfundtype=$('.fundtype').val();
                     
                     
-                    $('.date-range').html(formfundtype+" periode: "+awal+" s/d "+akhir);
+                    $('.date-range').html("Fund name: "+formfundtype+". Periode: "+awal+" s/d "+akhir);
+                    $('.table-range').html("Fund name: "+formfundtype+". Periode: "+awal+" s/d "+akhir);
                     $('.return-foot').html('<p class="return-foot">Return: 3.24% '+formfundtype+' sejak '+arr_awal[0]+'/'+arr_awal[1]+'/'+arr_awal[2]+' hingga '+arr_akhir[0]+'/'+arr_akhir[1]+'/'+arr_akhir[2]+' adalah xx%</p>')
                     
                     if(formfundtype =='0'){
@@ -381,7 +387,7 @@
                             "type" : "POST",
                             "success" : function(response){
                                 if(response){
-                                        console.log(jQuery.parseJSON(response));
+                                        //console.log(jQuery.parseJSON(response));
                                         var IS_JSON = true;
                                         try
                                         {
@@ -393,7 +399,7 @@
                                             if(new_data.xml_data.length >0){
                                                 
                                                 for(var i=0; i<new_data.xml_data.length; i++){
-                                                    dataSets.push(new Array(toTitleCase(new_data.xml_data[i]['fundName']),new_data.xml_data[i]['unitdates'],new_data.xml_data[i]['bid'],new_data.xml_data[i]['offer']));
+                                                    dataSets.push(new Array(new_data.xml_data[i]['unitdates'],new_data.xml_data[i]['bid'],new_data.xml_data[i]['offer']));
                                                 }
                                                 
                                             }else{
@@ -439,7 +445,6 @@
                                              
                                             var fundname=new_data.resume_graph.fundname.toString();
                                             var biddate=new_data.resume_graph.biddate;
-                                            
                                             var fundbid=new_data.resume_graph.fundbid;
                                             
                                             $(function () {
@@ -488,6 +493,7 @@
                                         } 
                                         //response action
                                         
+                                        $('.').html("<p class='footnote'>Return: 3.24% ffff sejak 'dd/mm/yyyy' hingga 'dd/mm/yyyy' adalah xx%</p>")
                                 }
     
                             },
