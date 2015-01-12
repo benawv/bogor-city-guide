@@ -437,7 +437,7 @@
                                                         }]
                                                     },
                                                     tooltip: {
-                                                        valueSuffix: '°C'
+                                                        valueSuffix: ''
                                                     },
                                                     legend: {
                                                         layout: 'vertical',

@@ -76,7 +76,7 @@
                         <span class='st_email' displayText=''></span>
                     </div>
                 </div>
-                    <div style="text-align: end;padding-bottom: 10px; font-style: italic;"> Create date: <?php echo date("Y-m-d H:i:s", $this->data->o_creationDate) ?></div>
+                    <div style="text-align: end;padding-bottom: 10px; font-style: italic;"> Tanggal Pembuatan: <?php echo date("d M Y", $this->data->o_creationDate) ?></div>
                 <?php if(isset($this->data->image->filename)!=""){ ?>
                 <div class="main-img">
                     <img src="<?php echo $this->data->image->path."".$this->data->image->filename; ?>" />
