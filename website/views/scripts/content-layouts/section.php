@@ -1,3 +1,21 @@
+<?php
+	if($this->editmode) {
+?>
+		<style>
+			.navi{
+				margin-bottom: 50px;
+			}
+			.flex-viewport{
+				margin-bottom: 50px;
+			}
+			.wrapper-special{
+				margin-bottom: 100px;
+			}
+			.navi li{
+				float: none;
+			}
+		</style>
+<?php } ?>
 <script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
 <script src="/website/static/js/jquery.tools.min.js" type="text/javascript"></script>
 <?php if(!$this->editmode):?>
