@@ -1,4 +1,81 @@
 <div class="container boxes-view">
+
+<ul id="membername" class="navi" style="">
+	<li>
+		<a href="/allianz-fund/allianz-fund/fund-fact-sheet/equity">
+			<div class="nav_menu">
+													
+			<div style="margin-bottom: 3px; width: 25px; height: 25px; display: block; background-image: url(http://www.allianz.co.id/icon_anchor/icon-inactive/tentang_allianz.png);"></div>
+													
+			<div class="white_image" style="margin-bottom: 3px; width: 25px; height: 25px; display: none; background-image: url(http://www.allianz.co.id/icon_anchor/icon-active/tentang-kami.png);"></div>
+													
+			<span class="cus_anchor_0">Equity </span>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="/allianz-fund/allianz-fund/fund-fact-sheet/fund-balanced">
+		<div class="nav_menu">
+												
+			<div style="margin-bottom: 3px; width: 25px; height: 25px; display: block; background-image: url(http://www.allianz.co.id/icon_anchor/icon-inactive/tentang_allianz.png);"></div>
+												
+			<div class="white_image" style="margin-bottom: 3px; width: 25px; height: 25px; display: none; background-image: url(http://www.allianz.co.id/icon_anchor/icon-active/tentang-kami.png);"></div>
+												
+			<span class="cus_anchor_1">Balanced </span>
+		</div>
+		</a>
+	</li>
+	<li>
+		<a href="/allianz-fund/allianz-fund/fund-fact-sheet/fixed-income">
+			<div class="nav_menu">
+													
+				<div style="margin-bottom: 3px; width: 25px; height: 25px; display: block; background-image: url(http://www.allianz.co.id/icon_anchor/icon-inactive/tentang_allianz.png);"></div>
+													
+				<div class="white_image" style="margin-bottom: 3px; width: 25px; height: 25px; display: none; background-image: url(http://www.allianz.co.id/icon_anchor/icon-active/tentang-kami.png);"></div>
+													
+				<span class="cus_anchor_2">Fix Income </span>
+			</div>
+		</a>
+	</li>
+	<li  class="aktif">
+
+		<a href="/allianz-fund/allianz-fund/fund-fact-sheet/fund-moneymarket">
+		<div class="nav_menu">
+												
+		<div style="margin-bottom: 3px; width: 25px; height: 25px; display: none; background-image: url(http://www.allianz.co.id/icon_anchor/icon-inactive/tentang_allianz.png);"></div>
+												
+		<div class="white_image" style="margin-bottom: 3px; width: 25px; height: 25px; display: block; background-image: url(http://www.allianz.co.id/icon_anchor/icon-active/tentang-kami.png); "></div>
+												
+		<span class="cus_anchor_3">Money Market </span>
+		</div>
+		</a>
+	</li>
+	<li>
+		<a href="/allianz-fund/allianz-fund/fund-fact-sheet/savings-plan">
+		<div class="nav_menu">
+													
+		<div style="margin-bottom: 3px; width: 25px; height: 25px; display: block; background-image: url(http://www.allianz.co.id/icon_anchor/icon-inactive/tentang_allianz.png);"></div>
+													
+		<div class="white_image" style="margin-bottom: 3px; width: 25px; height: 25px; display: none; background-image: url(http://www.allianz.co.id/icon_anchor/icon-active/tentang-kami.png); "></div>
+													
+		<span class="cus_anchor_4">Saving Plan </span>
+		</div>
+		</a>
+	</li>
+	<li>
+		<a href="/allianz-fund/allianz-fund/fund-fact-sheet/dplk">
+		<div class="nav_menu">
+													
+		<div style="margin-bottom: 3px; width: 25px; height: 25px; display: block; background-image: url(http://www.allianz.co.id/icon_anchor/icon-inactive/tentang_allianz.png);"></div>
+													
+		<div class="white_image" style="margin-bottom: 3px; width: 25px; height: 25px; display: none; background-image: url(http://www.allianz.co.id/icon_anchor/icon-active/tentang-kami.png); "></div>
+													
+		<span class="cus_anchor_4">DPLK </span>
+		</div>
+		</a>
+	</li>
+</ul>
+
 <script type="text/javascript">
 	$(function(){
 		$('.year-pick, .month-pick, .type-pick').change(function(){
@@ -167,4 +244,37 @@
 		$('.description.fundfact ul').hide();
 	});
 </script>
+</div>
+
+<div class="row">
+		
+	
+	<div class="row">
+
+			<div class="container">
+
+    			<div class="title_section">
+    			</div>
+
+				<div class="catbox blue">
+					<h2><a href="/allianz-fund/allianz-fund/fund-information">Informasi Fund</a></h2>
+				</div>
+
+				<div class="catbox blue">
+					
+					<h2><a href="/allianz-fund/allianz-fund/daily-nav">NAB Harian</a></h2>
+				</div>
+
+				<!--<div class="catbox blue">
+				
+					<h2><a href="/allianz-fund/allianz-fund/fund-fact-sheet">Fund Fact Sheet</a></h2>
+				</div>-->
+                
+                
+                
+			</div>
+			<!-- container end -->
+
+	</div>
+		
 </div>
