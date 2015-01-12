@@ -503,7 +503,7 @@ class InvestmentController extends Website_Controller_Action
                        FROM $nameCommunity AS a
                        WHERE fundname='".$items['fundname']."' AND 
                        STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')<= NOW()
-                       ORDER BY 1 DESC
+                       ORDER BY a.unitdate DESC
                        LIMIT 1";
             $todayData=$db->fetchAll($getToday);
            
@@ -512,7 +512,7 @@ class InvestmentController extends Website_Controller_Action
                         FROM $nameCommunity AS a
                         WHERE fundname='".$items['fundname']."' AND 
                         STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')<=DATE_ADD(NOW(), INTERVAL- 1 MONTH)
-                        ORDER BY 1 DESC
+                        ORDER BY a.unitdate DESC
                         LIMIT 1";
             $first1mData=$db->fetchAll($getfirst1m);
             
@@ -520,7 +520,7 @@ class InvestmentController extends Website_Controller_Action
                         FROM $nameCommunity AS a
                         WHERE fundname='".$items['fundname']."' AND 
                         STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')<=NOW()
-                        ORDER BY 1 DESC
+                        ORDER BY a.unitdate DESC
                         LIMIT 1";
             $lastData=$db->fetchAll($getlast);
             
@@ -528,7 +528,7 @@ class InvestmentController extends Website_Controller_Action
                         FROM $nameCommunity AS a
                         WHERE fundname='".$items['fundname']."' AND 
                         STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')<=DATE_ADD(NOW(), INTERVAL- 3 MONTH)
-                        ORDER BY 1 DESC
+                        ORDER BY a.unitdate DESC
                         LIMIT 1";
             $last3mData=$db->fetchAll($getLast3m);
   
