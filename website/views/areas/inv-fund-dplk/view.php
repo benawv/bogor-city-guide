@@ -30,9 +30,9 @@
 		<a href="/allianz-fund/allianz-fund/fund-fact-sheet/fixed-income">
 			<div class="nav_menu">
 													
-				<div style="margin-bottom: 3px; width: 25px; height: 25px; display: none; background-image: url(http://www.allianz.co.id/icon_anchor/icon-inactive/tentang_allianz.png);"></div>
+				<div style="margin-bottom: 3px; width: 25px; height: 25px; display: block; background-image: url(http://www.allianz.co.id/icon_anchor/icon-inactive/tentang_allianz.png);"></div>
 													
-				<div class="white_image" style="margin-bottom: 3px; width: 25px; height: 25px; display: block; background-image: url(http://www.allianz.co.id/icon_anchor/icon-active/tentang-kami.png);"></div>
+				<div class="white_image" style="margin-bottom: 3px; width: 25px; height: 25px; display: none; background-image: url(http://www.allianz.co.id/icon_anchor/icon-active/tentang-kami.png);"></div>
 													
 				<span class="cus_anchor_2">Fix Income </span>
 			</div>
