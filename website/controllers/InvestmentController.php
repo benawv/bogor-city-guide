@@ -536,8 +536,8 @@ class InvestmentController extends Website_Controller_Action
             $getYtd="SELECT DISTINCT a.fundname,SUM(bid)AS ytd_bid,SUM(offer) AS ytd_offer,STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') AS today
                     FROM $nameCommunity AS a
                     WHERE	fundname='".$items['fundname']."' AND 
-                    	STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') < STR_TO_DATE('30-12-2014','%d-%m-%Y') AND
-                    	STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') >= DATE_FORMAT(NOW() ,'%Y-01-01')
+                    	STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') > STR_TO_DATE('30-12-2014','%d-%m-%Y') AND
+                    	STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') <= DATE_FORMAT(NOW() ,'%Y-01-01')
                     GROUP BY fundname";                    
             $ytdData=$db->fetchAll($getYtd);
             
