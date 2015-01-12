@@ -39,6 +39,7 @@
         $entries = new Object_InvestmentPlan_List();
         $entries->setCondition('investment like "%'.$id.'%"');   
         $entries->setLimit(4);
+        $entries->setOrderKey("indexorder");
 
 	if(count($entries)>0){
     $i=1;
