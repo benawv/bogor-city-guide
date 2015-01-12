@@ -106,8 +106,16 @@
 		</div>
 	<?php } ?>
 <?php else : ?>
-	<?php 
-		$style = $this->editmode?'height: 310px':'';
+	<?php
+		if($anchors <= 7) {
+			$style = $this->editmode?'height: 355px':'';
+		}
+		else {
+			$countHeight = $anchors/7;
+			$height = 355 * (ceil($countHeight));
+			
+			$style = $this->editmode?'height: '.$height.'px':'';
+		}
 	?>
 		<ul id="membername" class="navi" style="<?php echo $style?>">
 			<?php for($i=0;$i<$anchors;$i++) { ?>
@@ -174,7 +182,7 @@
 	$('ul#navigate').width(w+5);
 	/* silde nav*/
 		
-	$(".hideme").hide();
+	/*$(".hideme").hide();
 	$(".v").click(function(){
 		$(this).siblings('.hideme').slideToggle();
 		if($(this).find('.xicon').hasClass('down')){
@@ -185,7 +193,7 @@
 			$(this).find('.xicon').removeClass('up')
 			$(this).find('.xicon').addClass('down')
 		}
-	});
+	});*/
 	
 	$('.next').on('click',function(){
 		var me_left = $('.super_navi').scrollLeft();
