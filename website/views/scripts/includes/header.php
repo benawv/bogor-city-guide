@@ -95,14 +95,14 @@ $(function(){
 					<li><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank" class="icon-mail hide-text">Registrasi</a></li>
 					<!--<li><a href="#" class="icon-fav hide-text">My Product</a></li>-->
 					<li class="share">
-                        <div class="tag-center">
+                        <!--<div class="tag-center">
                         	<span class='st_sharethis' displayText='  '></span>
-                            <!-- <span class='st_facebook' displayText=''></span>
+                             <span class='st_facebook' displayText=''></span>
                             <span class='st_twitter' displayText=''></span>
                             <span class='st_linkedin' displayText=''></span>
                             <span class='st_pinterest' displayText=''></span>
-                            <span class='st_email' displayText=''></span> -->
-                        </div>
+                            <span class='st_email' displayText=''></span> 
+                        </div>-->
                     </li>
 				</ul>
 				
