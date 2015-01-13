@@ -250,7 +250,13 @@
 			var val = '';
 			for(var i=0; i<newStr.length; i++){
 				if(newStr[i]){
-					newStr[i] = newStr[i].charAt(0).toUpperCase() + newStr[i].substr(1).toLowerCase();
+					if (newStr[0]) {
+						newStr[i] = newStr[i].toUpperCase();
+					}
+					else{
+						newStr[i] = newStr[i].charAt(0).toUpperCase() + newStr[i].substr(1).toLowerCase();	
+					}
+					
 					val = val + ' ' + newStr[i];
 				}
 			}
