@@ -138,6 +138,7 @@
                                         echo round(($lastmonth/$lastmonth)*100);
                                     }else{
                                         echo round(($items['lastdata'][0]['bid']/$items['lastmonth'][0]['bid'])*100);
+					echo "beda";
                                     }
                                 ?>
                                 %
@@ -149,6 +150,7 @@
                                         echo round(($lastmonth/$lastmonth)*100);
                                     }else{
                                         echo round(($items['lastdata'][0]['bid']/$items['last3month'][0]['bid'])*100);
+					echo "beda";
                                     }
 
                                 ?>
@@ -161,6 +163,7 @@
                                         echo round(($lastmonth/$lastmonth)*100);
                                     }else{
                                         echo round(($items['lastdata'][0]['bid']/$items['ytd'][0]['bid'])*100);
+					echo "beda";
                                     }
                                 ?>
                                 %
@@ -172,6 +175,7 @@
                                         echo round(($lastmonth/$lastmonth)*100);
                                     }else{
                                         echo round(($items['lastdata'][0]['bid']/$items['last1year'][0]['bid'])*100);
+					echo "beda";
                                     }
                                 ?>
                                 %
