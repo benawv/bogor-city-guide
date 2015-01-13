@@ -15,6 +15,7 @@
 		<?php foreach($entries as $entry) { ?>
 		
 			<li class="bg_fund">
+				<span style="font-size: 12px;"><?php echo date("d M Y", $entry->o_creationDate) ?></span>
 				<h3><?php echo $entry->judul ?></h3>
 				<p>
 					<?php echo $entry->subjudul ?>
