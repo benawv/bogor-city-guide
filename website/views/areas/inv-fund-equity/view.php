@@ -242,6 +242,20 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('.description.fundfact ul').hide();
+		var listItems = $(".description.fundfact ul li");
+		listItems.each(function(li) {
+			var str = li.html();
+			str = str.replace(/.pdf/g,'');
+			var newStr = str.split('-');
+			var val = '';
+			for(var i=0; i<newStr.length; i++){
+				if(newStr[i]){
+					newStr[i] = newStr[i].charAt(0).toUpperCase() + newStr[i].substr(1).toLowerCase();
+					val = val + ' ' + newStr[i];
+				}
+			}
+			li.html(str);
+		});
 	});
 </script>
 </div>
