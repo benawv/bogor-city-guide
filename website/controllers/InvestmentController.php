@@ -282,6 +282,9 @@ class InvestmentController extends Website_Controller_Action
     public function calculatorretirement2resulAction(){}
     public function calculatorretirement3Action(){}
     public function calculatorretirement3resulAction(){}
+    
+    public function acuanAction(){}
+    
 
 	public function tileAction(){}
 	public function sendkalkulatorAction() {
@@ -434,8 +437,8 @@ class InvestmentController extends Website_Controller_Action
 			 $nameCommunity = "object_query_".$table->getClassId();
 		}
         */
-        $nameCommunity = "object_query_30";
-        //$nameCommunity = "object_query_29";
+        //$nameCommunity = "object_query_30";
+        $nameCommunity = "object_query_29";
         //print_r($nameCommunity);
         // die('mati');
         
@@ -635,8 +638,8 @@ class InvestmentController extends Website_Controller_Action
 			     $nameCommunity = "object_query_".$table->getClassId();
 		      }
 		*/
-	    $nameCommunity = "object_query_30"; //tulis manual
-            //$nameCommunity = "object_query_29"; //tulis manual
+	    //$nameCommunity = "object_query_30"; //tulis manual
+            $nameCommunity = "object_query_29"; //tulis manual
 	    
 	    $sql_subcat="SELECT *,FROM_UNIXTIME(unitdate,'%d-%m-%Y') AS unitdates FROM ".$nameCommunity." AS xmlsource ".$conditions." order by fundname desc,unitdate";
             $xmldata=$db->fetchAll($sql_subcat);

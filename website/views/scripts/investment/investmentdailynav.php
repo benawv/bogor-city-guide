@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="/website/static/inv/js/jquery-ui-1.11.2/jquery-ui.css" type="text/css" media="all" />
 <link rel="stylesheet" href="/website/static/inv/js/jquery-ui-1.11.2/jquery-ui.theme.css" type="text/css" media="all" />
 
-<link rel="stylesheet" href="/website/static/inv/js/datatable/jquery.dataTable.css" type="text/css" media="all" />    
+<link rel="stylesheet" href="/website/static/inv/js/DataTables-1.10.4/media/css/jquery.dataTables.css" type="text/css" media="all" />    
 <link rel="stylesheet" href="/website/static/inv/js/rangeslider/graph.css" type="text/css" media="all" />   
 
 <script src="/website/static/inv/js/rangeslider/masonry.min.js" type="text/javascript"></script>
@@ -24,7 +24,7 @@
 <script src="/website/static/inv/js/rangeslider/jquery.flot.min.js"></script>
 <script src="/website/static/inv/js/highchart/highcharts.js"></script>
 <script src="/website/static/inv/js/highchart/exporting.js"></script>
-<script src="/website/static/inv/js/datatable/jquery.dataTable.min.js" type="text/javascript" language="javascript" ></script>
+<script src="/website/static/inv/js/DataTables-1.10.4/media/js/jquery.dataTables.min.js" type="text/javascript" language="javascript" ></script>
     
 
 
