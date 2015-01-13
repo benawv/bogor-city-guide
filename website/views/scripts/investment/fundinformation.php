@@ -5,6 +5,10 @@
 		Fund Information
 	</div>
 </div>
+<?php
+	$geturls=$_SERVER['REQUEST_URI'];
+	$urlExplode = explode("/", $geturls);
+?>
 
 <div class="main_wrap">
 
@@ -13,7 +17,7 @@
 
 
 <ul id="membername" class="navi" style="">
-	<li >
+	<li <?php if($urlExplode[6]=="equity"){ ?> class="aktif" <?php } ?> >
 		<a href="/allianz-fund/allianz-fund/fund-information/equity">
 			<div class="nav_menu">
 													
@@ -25,7 +29,7 @@
 			</div>
 		</a>
 	</li>
-	<li class="aktif">
+	<li <?php if($urlExplode[6]=="balanced"){ ?> class="aktif" <?php } ?> >
 		<a href="/allianz-fund/allianz-fund/fund-information/balanced">
 		<div class="nav_menu">
 												
@@ -38,7 +42,7 @@
 		</a>
 	</li>
 	
-	<li>
+	<li <?php if($urlExplode[6]=="fixed-income"){ ?> class="aktif" <?php } ?> >
 
 		<a href="/allianz-fund/allianz-fund/fund-information/fixed-income">
 		<div class="nav_menu">
@@ -51,7 +55,7 @@
 		</div>
 		</a>
 	</li>
-	<li>
+	<li <?php if($urlExplode[6]=="money-market"){ ?> class="aktif" <?php } ?> >
 		<a href="/allianz-fund/allianz-fund/fund-information/money-market">
 		<div class="nav_menu">
 													
