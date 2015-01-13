@@ -186,3 +186,16 @@ function clearFormat(value) {
     value = value.replace(/,/g,'');
     return value;
 }
+
+// ===== Added By Handri 13 Jan 2015 ==== //
+$(window).load(function() {
+	// --------- product page ----------
+	var $container = $('.items-container');
+	if($container != undefined){
+	$container.masonry({
+	  columnWidth: 326,
+	  itemSelector: '.item'
+	});
+	}
+	// -------- end product page -------
+});
