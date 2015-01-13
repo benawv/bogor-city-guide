@@ -25,6 +25,7 @@
 <script src="/website/static/inv/js/highchart/highcharts.js"></script>
 <script src="/website/static/inv/js/highchart/exporting.js"></script>
 <script src="/website/static/inv/js/DataTables-1.10.4/media/js/jquery.dataTables.min.js" type="text/javascript" language="javascript" ></script>
+<script src="/website/static/inv/js/DataTables-1.10.4/extensions/TableTools/js/dataTables.tableTools.min.js" type="text/javascript" language="javascript" ></script>
     
 
 
@@ -351,10 +352,15 @@
                       "oPaginate": {
                         "sPrevious": "Sebelumnya"
                       }
-                    }
+                    },
+		    dom: 'T<"clear">lfrtip',
+		    tableTools: {
+		    sSwfPath: '/swf/copy_csv_xls_pdf.swf',
+		    aButtons: [ 'csv', 'pdf', 'print' ]
+		    }
+		    
            } );
-           
-            
+	            
             function toTitleCase(str)
                 {
                     return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});

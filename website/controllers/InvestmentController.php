@@ -437,7 +437,7 @@ class InvestmentController extends Website_Controller_Action
 			 $nameCommunity = "object_query_".$table->getClassId();
 		}
         */
-        $nameCommunity = "object_query_30";
+        $nameCommunity = "object_query_30"; //table yang digunakan di live server
         //$nameCommunity = "object_query_29";
         //print_r($nameCommunity);
         // die('mati');
@@ -638,7 +638,7 @@ class InvestmentController extends Website_Controller_Action
 			     $nameCommunity = "object_query_".$table->getClassId();
 		      }
 		*/
-	    $nameCommunity = "object_query_30"; //tulis manual
+	    $nameCommunity = "object_query_30"; //table yang digunakan di live server
             //$nameCommunity = "object_query_29"; //tulis manual
 	    
 	    $sql_subcat="SELECT *,FROM_UNIXTIME(unitdate,'%d-%m-%Y') AS unitdates FROM ".$nameCommunity." AS xmlsource ".$conditions." order by fundname desc,unitdate";
