@@ -508,7 +508,7 @@ class InvestmentController extends Website_Controller_Action
             $getfirst1m="SELECT a.fundname,bid,offer,STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') AS last_one_month
                         FROM $nameCommunity AS a
                         WHERE fundname='".$items['fundname']."' AND 
-                        STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')<=DATE_ADD($getlastdate, INTERVAL- 1 MONTH)
+                        STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')<=DATE_ADD(NOW(), INTERVAL- 1 MONTH)
                         ORDER BY a.unitdate DESC
                         LIMIT 1";
             $first1mData=$db->fetchAll($getfirst1m);
@@ -518,7 +518,7 @@ class InvestmentController extends Website_Controller_Action
             $getLast3m="SELECT a.fundname,bid,offer,STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') AS last_one_month
                         FROM $nameCommunity AS a
                         WHERE fundname='".$items['fundname']."' AND 
-                        STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')<=DATE_ADD($getlastdate, INTERVAL- 3 MONTH)
+                        STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')<=DATE_ADD(NOW(), INTERVAL- 3 MONTH)
                         ORDER BY a.unitdate DESC
                         LIMIT 1";
             $last3mData=$db->fetchAll($getLast3m);
@@ -528,7 +528,7 @@ class InvestmentController extends Website_Controller_Action
                     FROM $nameCommunity AS a
                     WHERE	fundname='".$items['fundname']."' AND 
                     	STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') > STR_TO_DATE('30-12-2014','%d-%m-%Y') AND
-                    	STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') <= DATE_FORMAT($getlastdate ,'%Y-01-01')
+                    	STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') <= DATE_FORMAT(NOW(),'%Y-01-01')
                     GROUP BY fundname";                    
             $ytdData=$db->fetchAll($getYtd);
             
@@ -537,7 +537,7 @@ class InvestmentController extends Website_Controller_Action
             $get1year="SELECT a.fundname,bid,offer,STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') AS last_year
                     FROM $nameCommunity AS a
                     WHERE fundname='".$items['fundname']."' AND
-                    STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') <=DATE_ADD($getlastdate, INTERVAL- 1 YEAR)
+                    STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') <=DATE_ADD(NOW(), INTERVAL- 1 YEAR)
                     ORDER BY unitdate DESC
                     LIMIT 1";                    
             $last1year=$db->fetchAll($get1year);
@@ -564,7 +564,6 @@ class InvestmentController extends Website_Controller_Action
        // $alldata['dataGraph']=$arrayItem;
         $alldata['dataPerforms']=$dataPerform;
         $this->view->data=$alldata;     
-
        	   
     }
     
