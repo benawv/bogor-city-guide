@@ -595,7 +595,7 @@
 
 				<div class="catbox blue">
 					<h2><a href="/allianz-fund/allianz-fund/fund-information">Informasi Fund</a></h2>
-				</div>-->
+				</div>
 
 				<!--<div class="catbox blue">
 					
