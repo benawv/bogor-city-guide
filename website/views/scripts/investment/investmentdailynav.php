@@ -356,7 +356,7 @@
                     },
 		    dom: 'T<"clear">lfrtip',
 		    tableTools: {
-		    sSwfPath: '../swf/copy_csv_xls_pdf.swf',
+			sSwfPath: '/website/static/inv/js/DataTables-1.10.4/extensions/TableTools/swf/copy_csv_xls_pdf.swf',
 		    }
 		    
            } );
@@ -414,17 +414,21 @@
                                             if ( $.fn.dataTable.isDataTable( '#myTable2' ) ) {
                                                     $('#myTable2').dataTable({
                                                         destroy: true,
-                                                    "oLanguage": {
-                                                      "sSearch": "Cari:",
-                                                      "sLengthMenu": "Tampilkan _MENU_ baris",            
-                                                      "sInfo": "Tota _TOTAL_ baris, ditampilan dari (_START_ s/d _END_)",
-                                                      "oPaginate": {
-                                                        "sPrevious": "Sebelumnya"
-                                                      }
-                                                    },
-                                                    "searching": false,
-                                                    "bLengthChange": false,
-                                                    "data": dataSets                               
+							"oLanguage": {
+							  "sSearch": "Cari:",
+							  "sLengthMenu": "Tampilkan _MENU_ baris",            
+							  "sInfo": "Tota _TOTAL_ baris, ditampilan dari (_START_ s/d _END_)",
+							  "oPaginate": {
+							    "sPrevious": "Sebelumnya"
+							  }
+							},
+							"searching": false,
+							"bLengthChange": false,
+							"data": dataSets,
+							dom: 'T<"clear">lfrtip',
+							tableTools: {
+							    sSwfPath: '/website/static/inv/js/DataTables-1.10.4/extensions/TableTools/swf/copy_csv_xls_pdf.swf',
+							}
                                                 });
                                             }else {
                                             
@@ -439,7 +443,11 @@
                                                     },
                                                     "searching": false,
                                                     "bLengthChange": false,
-                                                    "data": dataSets                               
+                                                    "data": dataSets,
+						    dom: 'T<"clear">lfrtip',
+						    tableTools: {
+							sSwfPath: '/website/static/inv/js/DataTables-1.10.4/extensions/TableTools/swf/copy_csv_xls_pdf.swf',
+						    }
                                                 });
                                             }
 //                                             console.log(new_data.resume_graph.fundname);
