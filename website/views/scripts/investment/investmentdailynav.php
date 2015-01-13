@@ -14,19 +14,18 @@
 <script src="/website/static/inv/js/rangeslider/masonry.min.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/rangeslider/jquery.tools.min.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/rangeslider/jquery.sticky.js" type="text/javascript"></script>
-    
-<script src="/website/static/inv/js/rangeslider/jquery.min.js" type="text/javascript"></script>     
-<script src="/website/static/inv/js/rangeslider/jquery-ui.min.js" type="text/javascript"></script>
+
 <script src="/website/static/inv/js/rangeslider/1.7.2-jquery.min.js" type="text/javascript"></script> 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+
 
 <script>$ = jQuery.noConflict();</script>
 
 <script src="/website/static/inv/js/rangeslider/jquery.flot.min.js"></script>
 <script src="/website/static/inv/js/highchart/highcharts.js"></script>
 <script src="/website/static/inv/js/highchart/exporting.js"></script>
-<script src="/website/static/inv/js/DataTables-1.10.4/media/js/jquery.dataTables.min.js" type="text/javascript" language="javascript" ></script>
+
+<script src="/website/static/inv/js/DataTables-1.10.4/media/js/jquery.dataTables.js" type="text/javascript" language="javascript" ></script>
 <script src="/website/static/inv/js/DataTables-1.10.4/extensions/TableTools/js/dataTables.tableTools.min.js" type="text/javascript" language="javascript" ></script>
     
 
@@ -357,7 +356,7 @@
                     },
 		    dom: 'T<"clear">lfrtip',
 		    tableTools: {
-		    sSwfPath: '../swf/copy_csv_xls_pdf.swf'
+		    sSwfPath: '../swf/copy_csv_xls_pdf.swf',
 		    }
 		    
            } );
