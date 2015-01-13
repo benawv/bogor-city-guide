@@ -254,7 +254,7 @@
 					val = val + ' ' + newStr[i];
 				}
 			}
-			li.html(str);
+			$(this).html(str);
 		});
 	});
 </script>
