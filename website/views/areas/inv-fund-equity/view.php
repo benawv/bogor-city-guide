@@ -244,7 +244,7 @@
 		$('.description.fundfact ul').hide();
 		var listItems = $(".description.fundfact ul li");
 		listItems.each(function() {
-			var str = $(this).html();
+			var str = $(this).find('a').html();
 			str = str.replace(/.pdf/g,'');
 			var newStr = str.split('-');
 			var val = '';
@@ -260,7 +260,7 @@
 					val = val + ' ' + newStr[i];
 				}
 			}
-			$(this).html(val);
+			$(this).find('a').html(val);
 		});
 	});
 </script>
