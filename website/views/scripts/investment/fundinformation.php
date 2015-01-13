@@ -22,9 +22,9 @@
 		<a href="/allianz-fund/allianz-fund/fund-information/equity">
 			<div class="nav_menu">
 													
-			<div style="margin-bottom: 3px; width: 25px; height: 25px; display: block; background-image: url(http://www.allianz.co.id/icon_anchor/icon-inactive/tentang_allianz.png);"></div>
+			<div style="margin-bottom: 3px; width: 25px; height: 25px; <?php if($urlExplode[4]=="equity"){ ?> display: none; <?php }else{?> display: block; <?php } ?> ?>  background-image: url(http://www.allianz.co.id/icon_anchor/icon-inactive/tentang_allianz.png);"></div>
 													
-			<div class="white_image" style="margin-bottom: 3px; width: 25px; height: 25px; display: none; background-image: url(http://www.allianz.co.id/icon_anchor/icon-active/tentang-kami.png);"></div>
+			<div class="white_image" style="margin-bottom: 3px; width: 25px; height: 25px; <?php if($urlExplode[4]=="equity"){ ?> display: block; <?php } else{ ?> display: none; <?php } ?>  background-image: url(http://www.allianz.co.id/icon_anchor/icon-active/tentang-kami.png);"></div>
 													
 			<span class="cus_anchor_0">Equity </span>
 			</div>
@@ -34,9 +34,9 @@
 		<a href="/allianz-fund/allianz-fund/fund-information/balanced">
 		<div class="nav_menu">
 												
-			<div style="margin-bottom: 3px; width: 25px; height: 25px; display: none; background-image: url(http://www.allianz.co.id/icon_anchor/icon-inactive/tentang_allianz.png);"></div>
+			<div style="margin-bottom: 3px; width: 25px; height: 25px; <?php if($urlExplode[4]=="balanced"){ ?> display: none; <?php }else{?> display: block; <?php } ?> ?> background-image: url(http://www.allianz.co.id/icon_anchor/icon-inactive/tentang_allianz.png);"></div>
 												
-			<div class="white_image" style="margin-bottom: 3px; width: 25px; height: 25px; display: block; background-image: url(http://www.allianz.co.id/icon_anchor/icon-active/tentang-kami.png);"></div>
+			<div class="white_image" style="margin-bottom: 3px; width: 25px; height: 25px; d<?php if($urlExplode[4]=="balanced"){ ?> display: block; <?php } else{ ?> display: none; <?php } ?> background-image: url(http://www.allianz.co.id/icon_anchor/icon-active/tentang-kami.png);"></div>
 												
 			<span class="cus_anchor_1">Balanced </span>
 		</div>
@@ -48,9 +48,9 @@
 		<a href="/allianz-fund/allianz-fund/fund-information/fixed-income">
 		<div class="nav_menu">
 												
-		<div style="margin-bottom: 3px; width: 25px; height: 25px; display: block; background-image: url(http://www.allianz.co.id/icon_anchor/icon-inactive/tentang_allianz.png);"></div>
+		<div style="margin-bottom: 3px; width: 25px; height: 25px; <?php if($urlExplode[4]=="fixed-income"){ ?> display: none; <?php }else{?> display: block; <?php } ?> ?> background-image: url(http://www.allianz.co.id/icon_anchor/icon-inactive/tentang_allianz.png);"></div>
 												
-		<div class="white_image" style="margin-bottom: 3px; width: 25px; height: 25px; display: none; background-image: url(http://www.allianz.co.id/icon_anchor/icon-active/tentang-kami.png); "></div>
+		<div class="white_image" style="margin-bottom: 3px; width: 25px; height: 25px; <?php if($urlExplode[4]=="fixed-income"){ ?> display: block; <?php } else{ ?> display: none; <?php } ?> background-image: url(http://www.allianz.co.id/icon_anchor/icon-active/tentang-kami.png); "></div>
 												
 		<span class="cus_anchor_3">Fix Income </span>
 		</div>
@@ -60,9 +60,9 @@
 		<a href="/allianz-fund/allianz-fund/fund-information/money-market">
 		<div class="nav_menu">
 													
-		<div style="margin-bottom: 3px; width: 25px; height: 25px; display: block; background-image: url(http://www.allianz.co.id/icon_anchor/icon-inactive/tentang_allianz.png);"></div>
+		<div style="margin-bottom: 3px; width: 25px; height: 25px; <?php if($urlExplode[4]=="money-market"){ ?> display: none; <?php }else{?> display: block; <?php } ?> background-image: url(http://www.allianz.co.id/icon_anchor/icon-inactive/tentang_allianz.png);"></div>
 													
-		<div class="white_image" style="margin-bottom: 3px; width: 25px; height: 25px; display: none; background-image: url(http://www.allianz.co.id/icon_anchor/icon-active/tentang-kami.png); "></div>
+		<div class="white_image" style="margin-bottom: 3px; width: 25px; height: 25px; <?php if($urlExplode[4]=="money-market"){ ?> display: block; <?php }else{?> display: none; <?php } ?> background-image: url(http://www.allianz.co.id/icon_anchor/icon-active/tentang-kami.png); "></div>
 													
 		<span class="cus_anchor_4">Money Market </span>
 		</div>
