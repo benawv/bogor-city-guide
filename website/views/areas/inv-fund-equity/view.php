@@ -243,8 +243,8 @@
 	$(document).ready(function(){
 		$('.description.fundfact ul').hide();
 		var listItems = $(".description.fundfact ul li");
-		listItems.each(function(li) {
-			var str = li.html();
+		listItems.each(function() {
+			var str = $(this).html();
 			str = str.replace(/.pdf/g,'');
 			var newStr = str.split('-');
 			var val = '';
