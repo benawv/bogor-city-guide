@@ -357,7 +357,10 @@
 		    dom: 'T<"clear">lfrtip',
 		    tableTools: {
 			sSwfPath: '/website/static/inv/js/DataTables-1.10.4/extensions/TableTools/swf/copy_csv_xls_pdf.swf',
+			"aButtons": [ "copy", "pdf","xls","print" ]
+		    
 		    }
+		    
 		    
            } );
 	            
@@ -428,6 +431,7 @@
 							dom: 'T<"clear">lfrtip',
 							tableTools: {
 							    sSwfPath: '/website/static/inv/js/DataTables-1.10.4/extensions/TableTools/swf/copy_csv_xls_pdf.swf',
+							    "aButtons": [ "copy", "pdf","xls","print" ]
 							}
                                                 });
                                             }else {
@@ -447,6 +451,7 @@
 						    dom: 'T<"clear">lfrtip',
 						    tableTools: {
 							sSwfPath: '/website/static/inv/js/DataTables-1.10.4/extensions/TableTools/swf/copy_csv_xls_pdf.swf',
+							"aButtons": [ "copy", "pdf","xls","print" ]
 						    }
                                                 });
                                             }
