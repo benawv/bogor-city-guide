@@ -13,9 +13,9 @@ http://vladimirkudinov.com
 
 /* Resets */
 .graph-container,
-.graph-container div,
+.graph-container div/*,
 .graph-container a,
-.graph-container span {
+.graph-container span */{
 	margin: 0;
 	padding: 0;
 }
