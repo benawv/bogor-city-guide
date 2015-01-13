@@ -250,7 +250,7 @@
 			var val = '';
 			for(var i=0; i<newStr.length; i++){
 				if(newStr[i]){
-					if (newStr[0]) {
+					if (i == 0) {
 						newStr[i] = newStr[i].toUpperCase();
 					}
 					else{
