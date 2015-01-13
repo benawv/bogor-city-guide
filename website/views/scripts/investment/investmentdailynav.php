@@ -583,5 +583,38 @@
 </div>
 <!-- End of Main -->
 
+<div class="row">
+		
+	
+	<div class="row">
+
+			<div class="container">
+
+    			<div class="title_section">
+    			</div>
+
+				<div class="catbox blue">
+					<h2><a href="/allianz-fund/allianz-fund/fund-information">Informasi Fund</a></h2>
+				</div>-->
+
+				<!--<div class="catbox blue">
+					
+					<h2><a href="/allianz-fund/allianz-fund/daily-nav">NAB Harian</a></h2>
+				</div>-->
+
+				<div class="catbox blue">
+				
+					<h2><a href="/allianz-fund/allianz-fund/fund-fact-sheet">Fund Fact Sheet</a></h2>
+				</div>
+                
+                
+                
+			</div>
+			<!-- container end -->
+
+	</div>
+		
+</div>
+
 <link rel="stylesheet" type="text/css" href="/website/static/inv/js/datatable/jquery.dataTable.css" />
 <?php echo $this->template("includes/inv/footer.php")?>    
