@@ -43,6 +43,8 @@
 
 	<div class="worldwide">
 		<div class="container">
+
+			<div style="float:left;">Tampilan optimal menggunakan browser Firefox, Google Chrome, dan Safari versi terbaru dengan resolusi layar 1024x768.</div>
 			
 			<div>
 				Allianz Indonesia <a href="http://allianz.co.id">allianz.co.id</a>
