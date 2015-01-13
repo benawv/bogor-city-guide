@@ -23,7 +23,7 @@
 
 <script src="/website/static/inv/js/rangeslider/jquery.flot.min.js"></script>
 <script src="/website/static/inv/js/highchart/highcharts.js"></script>
-<!--script src="/website/static/inv/js/highchart/exporting.js"></script-->
+<script src="/website/static/inv/js/highchart/exporting.js"></script>
 <script src="/website/static/inv/js/datatable/jquery.dataTable.min.js" type="text/javascript" language="javascript" ></script>
     
 
