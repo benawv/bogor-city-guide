@@ -26,14 +26,14 @@
 	                <h4>Tag :   <a href="/investment/resources/resources/education">
 	                Pustaka<?php foreach ($this->data->investment as $inv) { echo $inv->investment;}  ?></a></h4>
 	            </div>
-	                        <div class="tag-right">
+	        <!--div class="tag-right">
 	                <span class='st_sharethis' displayText='ShareThis'></span>
 	                <span class='st_facebook' displayText=''></span>
 	                <span class='st_twitter' displayText=''></span>
 	                <span class='st_linkedin' displayText=''></span>
 	                <span class='st_pinterest' displayText=''></span>
 	                <span class='st_email' displayText=''></span>
-	            </div>            
+	            </div!-->            
 	        </div>                    
 			<!--div class="bread">
 				<a href="index.php">Home</a>  

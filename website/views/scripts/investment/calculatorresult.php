@@ -70,7 +70,7 @@
 		    <div class="calc-box2">
 			<p class="calc-result-description education">Dengan total biaya pendidikan saat ini sebesar <span id="edu1_biaya_bulanan">0</span>, dan inflasi sebesar <span id="edu1_asumsi_inflasi">0</span>, maka dalam <span id="edu1_jangka_waktu">0</span> biaya pendidikan tersebut akan mencapai <span id="edu1_hasil">0</span>.</p>
                         <div class="share">
-                            <span>Bagikan hasil tersebut dengan teman Anda:</span>
+                            <!--span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
                                 <span class='st_sharethis' displayText='ShareThis'></span>
                                 <span class='st_facebook' displayText=''></span>
@@ -78,7 +78,7 @@
                                 <span class='st_linkedin' displayText=''></span>
                                 <span class='st_pinterest' displayText=''></span>
                                 <span class='st_email' displayText=''></span>
-                            </div>
+                            </div!-->
 			    
 			    <div style="clear:both"></div>
                             <span><br /><br /><br />

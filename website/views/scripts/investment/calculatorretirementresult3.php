@@ -80,7 +80,7 @@
 			<p class="calc-result-description retirement">Untuk mencapai dana pensiun <span id="pension3_biaya"></span> dengan asumsi imbal hasil sebesar <span id="pension3_asumsi_inflasi"></span> dalam <span id="pension3_jangka_waktu"></span>, Anda membutuhkan investasi tahunan sebesar <span id="pension3_hasil_tahunan"></span> atau investasi bulanan sebesar <span id="pension3_hasil_bulanan"></span>.</p>
 <p class="calc-result-description retirement">Segera hubungi agen asuransi Allianz untuk mendapatkan solusi kebutuhan dana pensiun Anda. <a href="http://investment.allianz.co.id/contact-us">Hubungi Kami</a></p>
                          <div class="share">
-                            <span>Bagikan hasil tersebut dengan teman Anda:</span>
+                            <!--span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
                                 <span class='st_sharethis' displayText='ShareThis'></span>
                                 <span class='st_facebook' displayText=''></span>
@@ -88,7 +88,7 @@
                                 <span class='st_linkedin' displayText=''></span>
                                 <span class='st_pinterest' displayText=''></span>
                                 <span class='st_email' displayText=''></span>
-                            </div>
+                            </div!-->
                         </div>
 						<div>
 							<span>

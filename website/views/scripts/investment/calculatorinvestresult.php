@@ -70,7 +70,7 @@
 		    <div class="calc-box2">
 			<p class="calc-result-description investment">Dengan biaya saat ini sebesar <span id="investment1_biaya"></span>, dan inflasi sebesar <span id="investment1_asumsi_inflasi"></span>, maka dalam <span id="investment1_jangka_waktu"></span> biaya tersebut akan mencapai <span id="investment1_hasil"></span>.</p>
                         <div class="share">
-                            <span>Bagikan hasil tersebut dengan teman Anda:</span>
+                            <!--span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
                                 <span class='st_sharethis' displayText='ShareThis'></span>
                                 <span class='st_facebook' displayText=''></span>
@@ -78,7 +78,7 @@
                                 <span class='st_linkedin' displayText=''></span>
                                 <span class='st_pinterest' displayText=''></span>
                                 <span class='st_email' displayText=''></span>
-                            </div>
+                            </div!-->
                             
                             <div style="clear:both"></div>
                             <span><br /><br /><br />

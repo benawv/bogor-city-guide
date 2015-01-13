@@ -70,7 +70,7 @@
 		    <div class="calc-box2">
 			<p class="calc-result-description retirement">Dengan asumsi biaya hidup bulanan pada saat pensiun sebesar <span id="pension2_biaya"></span> dan masa pensiun selama <span id="pension2_jangka_waktu"></span>, maka Anda membutuhkan dana pensiun sebesar <span id="pension2_hasil"></span>.</p>
                          <div class="share">
-                             <span>Bagikan hasil tersebut dengan teman Anda:</span>
+                             <!--span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
                                 <span class='st_sharethis' displayText='ShareThis'></span>
                                 <span class='st_facebook' displayText=''></span>
@@ -78,7 +78,7 @@
                                 <span class='st_linkedin' displayText=''></span>
                                 <span class='st_pinterest' displayText=''></span>
                                 <span class='st_email' displayText=''></span>
-                            </div>
+                            </div!-->
 			    <div style="clear:both"></div>
                             <span><br /><br /><br />
                             <b>Disclaimer: <br /></b>

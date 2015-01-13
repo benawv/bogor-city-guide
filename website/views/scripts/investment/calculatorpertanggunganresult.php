@@ -72,7 +72,7 @@
 			<p class="calc-result-description insurance">Dengan asumsi biaya hidup / pendapatan bulanan sebesar <span id="resp1_biaya"></span>, inflasi <span id="resp1_asumsi_inflasi"></span>, serta tingkat imbal hasil yang diharapkan sebesar <span id="resp1_asumsi_imbal"></span>, Anda membutuhkan uang pertanggungan sebesar <span id="resp1_hasil"></span> yang akan mencukupi kebutuhan finansial keluarga yang dicintai selama <span id="resp1_jangka_waktu"></span>.</p>
 <p class="calc-result-description insurance">Segera hubungi agen asuransi Allianz untuk memastikan bahwa Anda sudah memiliki uang pertanggungan yang cukup. <a href="http://investment.allianz.co.id/contact-us">Hubungi Kami</a></p>
                         <div class="share">
-                            <span>Bagikan hasil tersebut dengan teman Anda:</span>
+                            <!--span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
                                 <span class='st_sharethis' displayText='ShareThis'></span>
                                 <span class='st_facebook' displayText=''></span>
@@ -80,7 +80,7 @@
                                 <span class='st_linkedin' displayText=''></span>
                                 <span class='st_pinterest' displayText=''></span>
                                 <span class='st_email' displayText=''></span>
-                            </div><br />
+                            </div!--><br />
 							<div>
 								<span>
 									Untuk mendapatkan hasil dan rincian kalkulator

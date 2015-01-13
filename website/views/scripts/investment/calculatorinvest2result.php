@@ -84,7 +84,7 @@
 		    <div class="calc-box2"> 
 		    <p class="calc-result-description investment">Untuk mencapai <span id="investment2_biaya"></span> dengan asumsi imbal hasil sebesar <span id="investment2_asumsi_imbal_hasil"></span> dalam <span id="investment2_jangka_waktu"></span>, Anda membutuhkan investasi tahunan sebesar <span id="investment2_hasil_tahunan"></span> atau investasi bulanan sebesar <span id="investment2_hasil_bulanan"></span>.</p><p class="calc-result-description investment">Segera hubungi agen asuransi Allianz untuk mendapatkan solusi kebutuhan finansial Anda. <a href="http://investment.allianz.co.id/contact-us">Hubungi Kami</a></p>
                         <div class="share">
-                            <span>Bagikan hasil tersebut dengan teman Anda:</span>
+                            <!--span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
                                 <span class='st_sharethis' displayText='ShareThis'></span>
                                 <span class='st_facebook' displayText=''></span>
@@ -92,7 +92,7 @@
                                 <span class='st_linkedin' displayText=''></span>
                                 <span class='st_pinterest' displayText=''></span>
                                 <span class='st_email' displayText=''></span>
-                            </div>
+                            </div!-->
 			    
                         </div>
 						<div>

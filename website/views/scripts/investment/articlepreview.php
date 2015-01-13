@@ -74,14 +74,14 @@
                         <h4>Tag :   <a href="/investment/investment-article-list/<?php echo $this->data->investment[0]->o_id."_".$this->data->investment[0]->o_index ?>">
                    <?php foreach ($this->data->investment as $inv) { echo $inv->investment;}  ?></a></h4>
                     </div>
-                    <div class="tag-right">
+                    <!--div class="tag-right">
                         <span class='st_sharethis' displayText='ShareThis'></span>
                         <span class='st_facebook' displayText=''></span>
                         <span class='st_twitter' displayText=''></span>
                         <span class='st_linkedin' displayText=''></span>
                         <span class='st_pinterest' displayText=''></span>
                         <span class='st_email' displayText=''></span>
-                    </div>
+                    </div!-->
                 </div>
                     <div style="text-align: end;padding-bottom: 10px; font-style: italic;"> Create date: <?php echo date("Y-m-d H:i:s", $this->data->o_creationDate) ?></div>
                 <?php if(isset($this->data->image->filename)!=""){ ?>

@@ -81,7 +81,7 @@
 			<p class="calc-result-description education">Untuk mencapai biaya pendidikan <span id="edu2_biaya"></span> dengan asumsi imbal hasil sebesar <span id="edu2_asumsi_imbal_hasil"></span> dalam <span id="edu2_jangka_waktu"></span>, Anda membutuhkan investasi tahunan sebesar<span id="edu2_hasil_tahunan"></span> atau investasi bulanan sebesar <span id="edu2_hasil_bulanan"></span>.
 <p class="calc-result-description education">Segera hubungi agen asuransi Allianz untuk mendapatkan solusi kebutuhan biaya pendidikan  Anda. <a href="http://investment.allianz.co.id/contact-us">Hubungi Kami</a></p>
                         <div class="share">
-                            <span>Bagikan hasil tersebut dengan teman Anda:</span>
+                            <!--span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
                                 <span class='st_sharethis' displayText='ShareThis'></span>
                                 <span class='st_facebook' displayText=''></span>
@@ -89,7 +89,7 @@
                                 <span class='st_linkedin' displayText=''></span>
                                 <span class='st_pinterest' displayText=''></span>
                                 <span class='st_email' displayText=''></span>
-                            </div>
+                            </div!-->
 			    
                         </div>
 						<div>
