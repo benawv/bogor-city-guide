@@ -657,9 +657,9 @@ class InvestmentController extends Website_Controller_Action
                 $getFundBidMonth="SELECT a.fundname,
                 		AVG(bid) AS bid,
                 		AVG(offer) AS offer,
-                		DAY(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')) AS days,
-                		MONTH(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')) AS months,
-                		YEAR(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')) AS yaers
+                		DAY(DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)) AS days,
+                		MONTH(DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)) AS months,
+                		YEAR(DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)) AS yaers
                 	FROM $nameCommunity AS a 
                 	WHERE a.fundname=$fundtype and $conditions
                 	GROUP BY a.fundname, DAY(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'))
@@ -680,7 +680,7 @@ class InvestmentController extends Website_Controller_Action
                     $itemsbid['bid'];
 
                     $array_day[$i] =$itemsbid['days']+0;
-                    $array_bid[$i] = $itemsbid['bid'] + 0;
+                    $array_bid[$i] = $itemsbid['bid']+ 0;
                 $i++;
                 }
             
