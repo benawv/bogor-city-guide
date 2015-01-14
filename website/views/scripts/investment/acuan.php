@@ -1,6 +1,8 @@
 <style type="text/css">
 body{
     font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: auto;
 }
 </style>
 
@@ -10,98 +12,279 @@ body{
 <hr />
 <h1>Australia</h1>
 <p>
-    Biaya Sekolah : 261.6 <br />
-    Biaya Hidup : 135.3 <br />
-    Total Biaya : 396.9
+    <table border="0" cellpadding="5" cellspacing="0">
+        <tr>
+            <td>Biaya Sekolah </td>
+            <td>: </td>
+            <td>135.3</td>
+        </tr>
+        <tr>
+            <td>Biaya Hidup </td>
+            <td>: </td>
+            <td>135.3</td>
+        </tr>
+        <tr>
+            <td>Total Biaya</td>
+            <td>: </td>
+            <td>396.9</td>
+        </tr>
+    </table>
+    
 </p>
 <hr />
 
 <h1>Amerika Serikat</h1>
 <p>
-    Biaya Sekolah : 259.8 <br />
-    Biaya Hidup : 107.9 <br />
-    Total Biaya : 367.7
+
+    <table border="0" cellpadding="5" cellspacing="0">
+        <tr>
+            <td>Biaya Sekolah </td>
+            <td>: </td>
+            <td>259.8</td>
+        </tr>
+        <tr>
+            <td>Biaya Hidup </td>
+            <td>: </td>
+            <td>107.9</td>
+        </tr>
+        <tr>
+            <td>Total Biaya</td>
+            <td>: </td>
+            <td>367.7</td>
+        </tr>
+    </table>
+
 </p>
 <hr />
 
 
 <h1>Inggris</h1>
 <p>
-    Biaya Sekolah : 198.7 <br />
-    Biaya Hidup : 113.6 <br />
-    Total Biaya : 312.3
+    <table border="0" cellpadding="5" cellspacing="0">
+        <tr>
+            <td>Biaya Sekolah </td>
+            <td>: </td>
+            <td>198.7</td>
+        </tr>
+        <tr>
+            <td>Biaya Hidup </td>
+            <td>: </td>
+            <td>113.6</td>
+        </tr>
+        <tr>
+            <td>Total Biaya</td>
+            <td>: </td>
+            <td>312.3</td>
+        </tr>
+    </table>
+
 </p>
 <hr />
 
 <h1>Uni Emirat Arab</h1>
 <p>
-    Biaya Sekolah : 220.1 <br />
-    Biaya Hidup : 61.8<br />
-    Total Biaya : 281.9
+    <table border="0" cellpadding="5" cellspacing="0">
+        <tr>
+            <td>Biaya Sekolah </td>
+            <td>: </td>
+            <td>220.1</td>
+        </tr>
+        <tr>
+            <td>Biaya Hidup </td>
+            <td>: </td>
+            <td>61.8</td>
+        </tr>
+        <tr>
+            <td>Total Biaya</td>
+            <td>: </td>
+            <td>281.9</td>
+        </tr>
+    </table>
+
 </p>
 <hr />
 
 <h1>Kanada</h1>
 <p>
-    Biaya Sekolah :190.3 <br />
-    Biaya Hidup :77.6<br />
-    Total Biaya : 267.9
+    <table border="0" cellpadding="5" cellspacing="0">
+        <tr>
+            <td>Biaya Sekolah </td>
+            <td>: </td>
+            <td>190.3</td>
+        </tr>
+        <tr>
+            <td>Biaya Hidup </td>
+            <td>: </td>
+            <td>77.6</td>
+        </tr>
+        <tr>
+            <td>Total Biaya</td>
+            <td>: </td>
+            <td>267.9</td>
+        </tr>
+    </table>
+
 </p>
 <hr />
 
 <h1>Singapura</h1>
 <p>
-    Biaya Sekolah : 153.3<br />
-    Biaya Hidup : 96.4<br />
-    Total Biaya : 249.7
+    <table border="0" cellpadding="5" cellspacing="0">
+        <tr>
+            <td>Biaya Sekolah </td>
+            <td>: </td>
+            <td>153.3</td>
+        </tr>
+        <tr>
+            <td>Biaya Hidup </td>
+            <td>: </td>
+            <td>96.4</td>
+        </tr>
+        <tr>
+            <td>Total Biaya</td>
+            <td>: </td>
+            <td>249.7</td>
+        </tr>
+    </table>
 </p>
 <hr />
 
 <h1>Hongkong</h1>
 <p>
-    Biaya Sekolah : 135.7<br />
-    Biaya Hidup : 95.3<br />
-    Total Biaya : 231.0
+    <table border="0" cellpadding="5" cellspacing="0">
+        <tr>
+            <td>Biaya Sekolah </td>
+            <td>: </td>
+            <td>135.7</td>
+        </tr>
+        <tr>
+            <td>Biaya Hidup </td>
+            <td>: </td>
+            <td>95.3</td>
+        </tr>
+        <tr>
+            <td>Total Biaya</td>
+            <td>: </td>
+            <td>231.0</td>
+        </tr>
+    </table>
+
 </p>
 <hr />
 
 <h1>Jepang</h1>
 <p>
-    Biaya Sekolah : 67.4<br />
-    Biaya Hidup : 130.2<br />
-    Total Biaya : 197.6
+
+    <table border="0" cellpadding="5" cellspacing="0">
+        <tr>
+            <td>Biaya Sekolah </td>
+            <td>: </td>
+            <td>67.4</td>
+        </tr>
+        <tr>
+            <td>Biaya Hidup </td>
+            <td>: </td>
+            <td>130.2</td>
+        </tr>
+        <tr>
+            <td>Total Biaya</td>
+            <td>: </td>
+            <td>197.6</td>
+        </tr>
+    </table>
+
 </p>
 <hr />
 
 <h1>China</h1>
 <p>
-    Biaya Sekolah : 41.0<br />
-    Biaya Hidup : 49.2<br />
-    Total Biaya : 90.2
+    <table border="0" cellpadding="5" cellspacing="0">
+        <tr>
+            <td>Biaya Sekolah </td>
+            <td>: </td>
+            <td>41.0</td>
+        </tr>
+        <tr>
+            <td>Biaya Hidup </td>
+            <td>: </td>
+            <td>49.2</td>
+        </tr>
+        <tr>
+            <td>Total Biaya</td>
+            <td>: </td>
+            <td>90.2</td>
+        </tr>
+    </table>
+
 </p>
 <hr />
 
 <h1>Taiwan</h1>
 <p>
-    Biaya Sekolah : 33.6<br />
-    Biaya Hidup : 51.3<br />
-    Total Biaya : 84.9
+    <table border="0" cellpadding="5" cellspacing="0">
+        <tr>
+            <td>Biaya Sekolah </td>
+            <td>: </td>
+            <td>33.6</td>
+        </tr>
+        <tr>
+            <td>Biaya Hidup </td>
+            <td>: </td>
+            <td>51.3</td>
+        </tr>
+        <tr>
+            <td>Total Biaya</td>
+            <td>: </td>
+            <td>84.9</td>
+        </tr>
+    </table>
+
 </p>
 <hr />
 
 <h1>Jerman</h1>
 <p>
-    Biaya Sekolah : 6.5<br />
-    Biaya Hidup : 58.2<br />
-    Total Biaya : 64.7
+    <table border="0" cellpadding="5" cellspacing="0">
+        <tr>
+            <td>Biaya Sekolah </td>
+            <td>: </td>
+            <td>6.5</td>
+        </tr>
+        <tr>
+            <td>Biaya Hidup </td>
+            <td>: </td>
+            <td>58.2</td>
+        </tr>
+        <tr>
+            <td>Total Biaya</td>
+            <td>: </td>
+            <td>64.7</td>
+        </tr>
+    </table>
+
 </p>
 <hr />
 
 <h1>Indonesia</h1>
 <p>
-    Biaya Sekolah : 95<br />
-    Biaya Hidup : 50.4<br />
-    Total Biaya : 145.4
+    <table border="0" cellpadding="5" cellspacing="0">
+        <tr>
+            <td>Biaya Sekolah </td>
+            <td>: </td>
+            <td>95</td>
+        </tr>
+        <tr>
+            <td>Biaya Hidup </td>
+            <td>: </td>
+            <td>50.4</td>
+        </tr>
+        <tr>
+            <td>Total Biaya</td>
+            <td>: </td>
+            <td>145.4</td>
+        </tr>
+    </table>
+
 </p>
 <hr />
 
