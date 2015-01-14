@@ -288,7 +288,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         }
     
 	var edu_hasil = getCookie('edu1_hasil');
-	edu_hasil= accounting.formatMoney(edu_hasil,'Rp ',2,'.',',');
+	edu_hasil= accounting.formatMoney(edu_hasil,'Rp ',0,'.',',');
 	$('#sliderPosition').val(edu_hasil);
         $('#sliderPosition2').val("1%");
         $('#sliderPosition3').val(getCookie('edu1_jangka_waktu') + ' tahun');

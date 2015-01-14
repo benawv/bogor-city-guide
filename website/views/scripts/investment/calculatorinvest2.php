@@ -267,7 +267,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 	}
         
         var investment1_hasil = getCookie('investment1_hasil');
-	investment1_hasil = accounting.formatMoney(investment1_hasil,'Rp ',2,'.',',');
+	investment1_hasil = accounting.formatMoney(investment1_hasil,'Rp ',0,'.',',');
 	var investment1_jangka_waktu = getCookie('investment1_jangka_waktu');
 
         $('#sliderPosition').val(investment1_hasil);
