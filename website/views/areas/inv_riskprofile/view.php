@@ -14,8 +14,10 @@ jQuery(function($) {
             
                 <h1 class="titleRisk">Profil Risiko</h1>
                 <div class="inv-btn">
+	                <!--
 						<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
 						<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
+					-->
 				</div>
                 <div class="stepform showform" id="step_1">
                     <table width="100%">
@@ -469,5 +471,14 @@ $(document).ready(function(){
   
 
 })
+/* =============== Added by Handri Pangestiaji 14 Jan 2015 ======================= */
+$("#keuangan").click(function(){
+    window.location.href = "/financial-planning/financial-planning";
+ });
+ 
+$("#kalkulator").click(function(){
+    window.location.href = "/kalkulator";
+ }); 
+/* =============== Added by Handri Pangestiaji 14 Jan 2015 ======================= */
 </script>
 
