@@ -18,7 +18,7 @@
 		<div class="container">
 			<div class="statement">&copy; Allianz 2014. All Rights Reserved.</div>
 			<ul class="static-links">
-				<li><a href="/data-privasi/prinsip-privasi">Prinsip Privasi</a></li>
+				<li><a href="/data-privasi/prinsip-privasi">Kebijakan Privasi</a></li>
 				<li><a href="/sitemap/sitemap" target="_blank">Sitemap</a></li>
 			</ul>
 		</div>
