@@ -67,7 +67,7 @@
 		
 		<div id="#" class="article-wrap">
             
-			<div class="wrap30">
+		<div class="wrap30">
                 <h5><span><a href="#">Home</a></span> &rsaquo; <span>Daily Nav</span></h5>
                         <div class="box_banner_big">
 			     			<div class="textbanner <?php echo $this->select('color')->getData()?$this->select('color')->getData():'blue'?> h200">
@@ -265,21 +265,20 @@
 
                         </div>-->
 
-                        <div id="graph-height" class="graph-container">
+                        <div id="graph-height" class="graph-container" style="height: auto;">
                             
                                 <div id="graph-lines"></div>
                                 <div id="graph-bars"></div>
 
                                 <!--------- Table nab daily----------------->
-                            <div id="container" style="min-width: 900px; height: 500px; margin: 0 auto; padding: 20px; display:none"></div>
+                            <div id="container" style="min-width: 900px; height: 500px; margin: 0 auto; padding: 20px; display:none; position: relative"></div>
     
-                               <div id="tablex" style="width: 98%; display: block;">
+                               <div id="tablex" style="width: 98%; display: block; position: relative">
                                <div id="title" class="title-chart" style="
                                     top: -19px;
-                                    width: 102.2%;
+                                    width: 106.6%;
                                     position: relative;
-                                    right: 21px;
-                                ">
+                                    right: 21px;">
                                                             
                                <span></span>
                               <div class="table-range" style="position: absolute;top: 12px;left: 12px;"></div>
@@ -295,19 +294,18 @@
                                     </thead> 
 
                                     <div id="title2" style="
-                                        top: -11.7%;
-                                        width: 102%;
-                                        left: -19px;
-                                        position: relative;">
+                                            position: relative;
+                                            top: -52px;
+                                            left: 18px;">
                                            <a href="#" id="bars" class="active" style="
                                                 position: relative;
-                                                top: 12px;
-                                                left: -28px;
+                                                top: 0px;
+                                                left: 0px;
                                             "><span></span></a>
                                             <a href="#" id="lines2" style="
                                             position: relative;
-                                            top: 12px;
-                                            left: -27px;
+                                            top: 0px;
+                                            left: 0px;
                                             "><span></span></a>
                                     </div>
                                     <tbody class="table-body-2 myTable2_items"> 
@@ -406,8 +404,8 @@
                                                 
                                                 for(var i=0; i<new_data.xml_data.length; i++){
                                                     dataSets.push(new Array(new_data.xml_data[i]['unitdates'],new_data.xml_data[i]['bid'],new_data.xml_data[i]['offer']));
-                                                }
-                                                
+						}
+
                                             }else{
                                                 rows+=("<tr>"+ 
                                                             "<td colspan=4>Data tidak ditemukan</td>"+
@@ -500,18 +498,22 @@
                                                         data: fundbid
                                                     }]
                                                 });
-                                            });     
+                                            });
+					    	console.log('awal:'+new_data.xml_data[0]['bid']);
+						console.log('awal:'+new_data.xml_data[new_data.xml_data.length-1]['bid']);
+                                                console.log(new_data.xml_data.length);
                                             ///$('.myTable2_items').html(rows);
+					     $('.return-foot').html('<p class="return-foot">Return: '+formfundtype+' sejak '+arr_awal[0]+'/'+arr_awal[1]+'/'+arr_awal[2]+' hingga '+arr_akhir[0]+'/'+arr_akhir[1]+'/'+arr_akhir[2]+' adalah '+((((new_data.xml_data[0]['bid']/new_data.xml_data[new_data.xml_data.length-1]['bid'])*100)-100).toFixed(2))+'% '+'</p>')
                                         }
                                         catch(err)
                                         {
                                             IS_JSON = false;
                                         } 
                                         //response action
-                                        
+                                        					
                                         $('.date-range').html("Fund name: "+formfundtype+". Periode: "+awal+" s/d "+akhir);
                                         $('.table-range').html("Fund name: "+formfundtype+". Periode: "+awal+" s/d "+akhir);
-                                        $('.return-foot').html('<p class="return-foot">Return: 3.24% '+formfundtype+' sejak '+arr_awal[0]+'/'+arr_awal[1]+'/'+arr_awal[2]+' hingga '+arr_akhir[0]+'/'+arr_akhir[1]+'/'+arr_akhir[2]+' adalah xx%</p>')
+                                       
                                 }
     
                             },
