@@ -641,7 +641,7 @@ class InvestmentController extends Website_Controller_Action
 	    $nameCommunity = "object_query_30"; //table yang digunakan di live server
             //$nameCommunity = "object_query_29"; //tulis manual
 	    
-	    $sql_subcat="SELECT *,FROM_UNIXTIME(unitdate,'%d-%m-%Y') AS unitdates FROM ".$nameCommunity." AS xmlsource ".$conditions." order by fundname desc,unitdate";
+	    $sql_subcat="SELECT *,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS unitdates FROM ".$nameCommunity." AS xmlsource ".$conditions." order by fundname desc,unitdate";
             $xmldata=$db->fetchAll($sql_subcat);
            
            
