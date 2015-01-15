@@ -254,7 +254,7 @@ change: function(event, ui) {
         
         var pension2_hasil = getCookie('pension2_hasil');
 	var pension1_waktu = getCookie('pension1_jangka_waktu');
-	pension2_hasil = accounting.formatMoney(pension2_hasil,'Rp ',2,'.',',');
+	pension2_hasil = accounting.formatMoney(pension2_hasil,'Rp ',0,'.',',');
         $('#sliderPosition').val(pension2_hasil);
         $('#sliderPosition2').val("1%");
         $('#sliderPosition3').val(pension1_waktu + ' tahun');

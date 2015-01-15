@@ -38,7 +38,7 @@
             maxDate:"+30D",
             numberOfMonths: 1,
             onSelect: function(selected) {
-              $("#txtToDate").datepicker("option","minDate", selected)
+              $("#txtToDate").datepicker("option","minDate", selected);
             }
         });
         $("#txtToDate").datepicker({ 
@@ -46,7 +46,7 @@
             maxDate:"+30D",
             numberOfMonths: 1,
             onSelect: function(selected) {
-               $("#txtFromDate").datepicker("option","maxDate", selected)
+               $("#txtFromDate").datepicker("option","maxDate", selected);
             }
         });  
     });
@@ -67,7 +67,7 @@
 		
 		<div id="#" class="article-wrap">
             
-			<div class="wrap30">
+		<div class="wrap30">
                 <h5><span><a href="#">Home</a></span> &rsaquo; <span>Daily Nav</span></h5>
                         <div class="box_banner_big">
 			     			<div class="textbanner <?php echo $this->select('color')->getData()?$this->select('color')->getData():'blue'?> h200">
@@ -128,57 +128,57 @@
                             foreach($this->data['ytd'] as $items){ 
 
                         ?>
-                        <tr> 
-                            <td><a href="#"><?php echo  ucwords(strtolower($items['today'][0]['fundname']))?></a></td> 
-                            <td>
-                                <?php echo $items['today'][0]['bid']; ?>
-                            </td> 
-                            <td>
-                                <?php 
-                                    if(empty($items['lastmonth'][0]['bid'])){
-                                        $lastmonth=$items['lastdata'][0]['bid'];
-                                        echo round(($lastmonth/$lastmonth)*100);
-                                    }else{
-                                        echo round(($items['lastdata'][0]['bid']/$items['lastmonth'][0]['bid'])*100);
-                                    }
-                                ?>
-                                %
-                            </td> 
-                            <td>
-                                <?php 
-                                    if(empty($items['last3month'][0]['bid'])){
-                                        $lastmonth=$items['lastdata'][0]['bid'];
-                                        echo round(($lastmonth/$lastmonth)*100);
-                                    }else{
-                                        echo round(($items['lastdata'][0]['bid']/$items['last3month'][0]['bid'])*100);
-                                    }
-
-                                ?>
-                                %
-                            </td> 
-                            <td>
-                                <?php 
-                                    if(empty($items['ytd'][0]['bid'])){
-                                        $lastmonth=$items['lastdata'][0]['bid'];
-                                        echo round(($lastmonth/$lastmonth)*100);
-                                    }else{
-                                        echo round(($items['lastdata'][0]['bid']/$items['ytd'][0]['bid'])*100);
-                                    }
-                                ?>
-                                %
-                            </td> 
-                            <td>
-                               <?php 
-                                    if(empty($items['last1year'][0]['bid'])){
-                                        $lastmonth=$items['lastdata'][0]['bid'];
-                                        echo round(($lastmonth/$lastmonth)*100);
-                                    }else{
-                                        echo round(($items['lastdata'][0]['bid']/$items['last1year'][0]['bid'])*100);
-                                    }
-                                ?>
-                                %
-                            </td> 
-                        </tr>
+			    <tr> 
+				<td><a href="#"><?php echo  ucwords(strtolower($items['today'][0]['fundname']))?></a></td> 
+				<td>
+				    <?php echo $items['today'][0]['bid']; ?>
+				</td> 
+				<td>
+				    <?php 
+					if(empty($items['lastmonth'][0]['bid'])){
+					    $lastmonth=$items['lastdata'][0]['bid'];
+					    echo round(($lastmonth/$lastmonth)*100)-100;
+					}else{
+					    echo round(($items['lastdata'][0]['bid']/$items['lastmonth'][0]['bid'])*100,2)-100;
+					}
+				    ?>
+				    %
+				</td> 
+				<td>
+				    <?php 
+					if(empty($items['last3month'][0]['bid'])){
+					    $lastmonth=$items['lastdata'][0]['bid'];
+					    echo round(($lastmonth/$lastmonth)*100)-100;
+					}else{
+					    echo round(($items['lastdata'][0]['bid']/$items['last3month'][0]['bid'])*100,2)-100;
+					}
+    
+				    ?>
+				    %
+				</td> 
+				<td>
+				    <?php 
+					if(empty($items['ytd'][0]['bid'])){
+					    $lastmonth=$items['lastdata'][0]['bid'];
+					    echo round(($lastmonth/$lastmonth)*100)-100;
+					}else{
+					    echo round(($items['lastdata'][0]['bid']/$items['ytd'][0]['bid'])*100,2)-100;
+					}
+				    ?>
+				    %
+				</td> 
+				<td>
+				   <?php 
+					if(empty($items['last1year'][0]['bid'])){
+					    $lastmonth=$items['lastdata'][0]['bid'];
+					    echo round(($lastmonth/$lastmonth)*100)-100;
+					}else{
+					    echo round(($items['lastdata'][0]['bid']/$items['last1year'][0]['bid'])*100,2)-100;
+					}
+				    ?>
+				    %
+				</td> 
+			    </tr>
                        <?php } ?>     
                         
                         </tbody> 
@@ -188,11 +188,11 @@
                 </div>
                     <!--- End Table ------>
                 
-			</div>	
+		</div>	
             			
 	    </div>
-		
-		<!-- article end -->
+
+	<!-- article end -->
         <div id="#" class="article-wrap bottom">
            <div class="form-wrap bottom">
                 
@@ -265,21 +265,20 @@
 
                         </div>-->
 
-                        <div id="graph-height" class="graph-container">
+                        <div id="graph-height" class="graph-container" style="height: auto;">
                             
                                 <div id="graph-lines"></div>
                                 <div id="graph-bars"></div>
 
                                 <!--------- Table nab daily----------------->
-                            <div id="container" style="min-width: 900px; height: 500px; margin: 0 auto; padding: 20px; display:none"></div>
+                            <div id="container" style="min-width: 900px; height: 500px; margin: 0 auto; padding: 20px; display:none; position: relative"></div>
     
-                               <div id="tablex" style="width: 98%; display: block;">
+                               <div id="tablex" style="width: 98%; display: block; position: relative">
                                <div id="title" class="title-chart" style="
                                     top: -19px;
-                                    width: 102.2%;
+                                    width: 106.6%;
                                     position: relative;
-                                    right: 21px;
-                                ">
+                                    right: 21px;">
                                                             
                                <span></span>
                               <div class="table-range" style="position: absolute;top: 12px;left: 12px;"></div>
@@ -295,19 +294,18 @@
                                     </thead> 
 
                                     <div id="title2" style="
-                                        top: -11.7%;
-                                        width: 102%;
-                                        left: -19px;
-                                        position: relative;">
+                                            position: relative;
+                                            top: -52px;
+                                            left: 18px;">
                                            <a href="#" id="bars" class="active" style="
                                                 position: relative;
-                                                top: 12px;
-                                                left: -28px;
+                                                top: 0px;
+                                                left: 0px;
                                             "><span></span></a>
                                             <a href="#" id="lines2" style="
                                             position: relative;
-                                            top: 12px;
-                                            left: -27px;
+                                            top: 0px;
+                                            left: 0px;
                                             "><span></span></a>
                                     </div>
                                     <tbody class="table-body-2 myTable2_items"> 
@@ -384,7 +382,6 @@
                         alert("Silahkan pilih jenis fund");
                     }else{
                     
-                    //alert($('.day1').val()+"&month1="+$('.month1').val()+"&year1="+$('.year1').val()+"&day2="+$('.day2').val()+"&month2="+$('.month2').val()+"&year2="+$('.year2').val()+"&fundtype='"+$('.fundtype').val());
                       var dataSets=[];
                       
                       $.ajax({
@@ -393,7 +390,7 @@
                             "type" : "POST",
                             "success" : function(response){
                                 if(response){
-                                        //console.log(jQuery.parseJSON(response));
+                        
                                         var IS_JSON = true;
                                         try
                                         {
@@ -406,8 +403,8 @@
                                                 
                                                 for(var i=0; i<new_data.xml_data.length; i++){
                                                     dataSets.push(new Array(new_data.xml_data[i]['unitdates'],new_data.xml_data[i]['bid'],new_data.xml_data[i]['offer']));
-                                                }
-                                                
+						}
+
                                             }else{
                                                 rows+=("<tr>"+ 
                                                             "<td colspan=4>Data tidak ditemukan</td>"+
@@ -455,63 +452,96 @@
 						    }
                                                 });
                                             }
-//                                             console.log(new_data.resume_graph.fundname);
-//                                             console.log(new_data.resume_graph.biddate);
-//                                             console.log(new_data.resume_graph.fundbid);
+
                                              
                                             var fundname=new_data.resume_graph.fundname.toString();
                                             var biddate=new_data.resume_graph.biddate;
                                             var fundbid=new_data.resume_graph.fundbid;
                                             
-                                            $(function () {
+					   var databid=new Array();
+		
+					    for(var d=0;d<new_data.resume_graph.bidyear.length; d++){
+						//console.log("y:"+new_data.resume_graph.bidyear[d]+","+new_data.resume_graph.bidmonth[d]+","+new_data.resume_graph.bidday[d]+",y:"+new_data.resume_graph.fundbid[d]);						
+						databid[d]={x: Date.UTC(new_data.resume_graph.bidyear[d], new_data.resume_graph.bidmonth[d], new_data.resume_graph.bidday[d]), y: new_data.resume_graph.fundbid[d]};
+						//console.log(databid[d]);
+					    }
+					     var date_awal=Date.UTC(new_data.resume_graph.bidyear[0],new_data.resume_graph.bidmonth[0],new_data.resume_graph.bidday[0]);
+					     // console.log("awal"+date_awal);
+					     // console.log("a awal"+new_data.resume_graph.bidyear[0]+","+new_data.resume_graph.bidmonth[0]+","+new_data.resume_graph.bidday[0])
+					      
+					    $(function () {
                                                 $('#container').highcharts({
-                                                    title: {
-                                                        text: ' ',
-                                                        x: -20 //center
-                                                    },
-                                                    //subtitle: {
-                                                    //    text: 'Source: WorldClimate.com',
-                                                     //   x: -20
-                                                    //},
-                                                    xAxis: {
-                                                        categories: biddate
-                                                    },
-                                                    yAxis: {
-                                                        title: {
-                                                            text: ' '
-                                                        },
-                                                        plotLines: [{
-                                                            value: 0,
-                                                            width: 1,
-                                                            color: '#808080'
-                                                        }]
-                                                    },
-                                                    tooltip: {
-                                                        valueSuffix: ''
-                                                    },
-                                                    legend: {
-                                                        layout: 'vertical',
-                                                        align: 'middle',
-                                                        verticalAlign: 'bottom',
-                                                        borderWidth: 0
-                                                    },
-                                                    series: [{
-                                                        name: fundname,
-                                                        data: fundbid
-                                                    }]
+							chart: {
+							    zoomType: 'x',
+							    panning: true,
+							    panKey: 'shift',
+							    renderTo: 'container'
+							},
+							title:{
+							     text: ''
+							},
+							subtitle: {
+							    text: 'Click and drag to zoom in. Hold down shift key to pan.'
+							},
+							xAxis: {
+								type: 'datetime',
+								minRange: 30 * 24 * 3600000 // fourteen days
+							    },
+							yAxis: {
+							    title: {
+								text: 'Nilai Bid'
+							    }
+							},
+							legend: {
+							    layout: 'vertical',
+							    align: 'middle',
+							    verticalAlign: 'bottom',
+							    borderWidth: 0
+							},
+							plotOptions: {
+							    area: {
+								fillColor: {
+								    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
+								    stops: [
+									[0, Highcharts.getOptions().colors[0]],
+									[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+								    ]
+								},
+								marker: {
+								    radius: 2
+								},
+								lineWidth: 1,
+								states: {
+								    hover: {
+									lineWidth: 1
+								    }
+								},
+								threshold: null
+							    }
+							},
+							series: [{
+							   // pointInterval: 1,
+							    //pointStart: Date.UTC(arr_awal[2], arr_awal[0], arr_awal[1]),
+							    // pointInterval: 24 * 3600 * 1000,
+							    pointInterval: 24 * 3600 * 1000,
+							    pointStart: date_awal,
+							    name: fundname,
+							    data: databid
+							}]
                                                 });
-                                            });     
+                                            });
                                             ///$('.myTable2_items').html(rows);
+					     $('.return-foot').html('<p class="return-foot">Return: '+formfundtype+' sejak '+arr_awal[0]+'/'+arr_awal[1]+'/'+arr_awal[2]+' hingga '+arr_akhir[0]+'/'+arr_akhir[1]+'/'+arr_akhir[2]+' adalah '+((((new_data.xml_data[0]['bid']/new_data.xml_data[new_data.xml_data.length-1]['bid'])*100)-100).toFixed(2))+'% '+'</p>')
                                         }
                                         catch(err)
                                         {
                                             IS_JSON = false;
                                         } 
                                         //response action
-                                        
+                                        					
                                         $('.date-range').html("Fund name: "+formfundtype+". Periode: "+awal+" s/d "+akhir);
                                         $('.table-range').html("Fund name: "+formfundtype+". Periode: "+awal+" s/d "+akhir);
-                                        $('.return-foot').html('<p class="return-foot">Return: 3.24% '+formfundtype+' sejak '+arr_awal[0]+'/'+arr_awal[1]+'/'+arr_awal[2]+' hingga '+arr_akhir[0]+'/'+arr_akhir[1]+'/'+arr_akhir[2]+' adalah xx%</p>')
+                                       
                                 }
     
                             },

@@ -489,7 +489,7 @@ class InvestmentController extends Website_Controller_Action
         foreach($xmldata2 as $items){
 	    
 	    //get last data perbandingan	
-            $getlast="SELECT a.fundname,bid,offer,STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') AS last_one_month
+            $getlast="SELECT a.fundname,bid,offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS last_one_month
                         FROM $nameCommunity AS a
                         WHERE fundname='".$items['fundname']."' AND 
                         STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')<=NOW()
@@ -499,48 +499,48 @@ class InvestmentController extends Website_Controller_Action
 	    $getlastdate=$lastData[0]['last_one_month'];
 	    
 	                
-            $getToday="SELECT a.fundname,bid,offer,STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') AS last_one_month
+            $getToday="SELECT a.fundname,bid,offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS last_one_month
                        FROM $nameCommunity AS a
                        WHERE fundname='".$items['fundname']."' AND 
-                       STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')<= NOW()
+                       DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)<= NOW()
                        ORDER BY a.unitdate DESC
                        LIMIT 1";
             $todayData=$db->fetchAll($getToday);
            
             /*===========get 1 month=========*/
-            $getfirst1m="SELECT a.fundname,bid,offer,STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') AS last_one_month
+            $getfirst1m="SELECT a.fundname,bid,offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS last_one_month
                         FROM $nameCommunity AS a
                         WHERE fundname='".$items['fundname']."' AND 
-                        STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')<=DATE_ADD(NOW(), INTERVAL- 1 MONTH)
+                        DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)<=DATE_ADD(NOW(), INTERVAL- 1 MONTH)
                         ORDER BY a.unitdate DESC
                         LIMIT 1";
             $first1mData=$db->fetchAll($getfirst1m);
             
 
             
-            $getLast3m="SELECT a.fundname,bid,offer,STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') AS last_one_month
+            $getLast3m="SELECT a.fundname,bid,offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS last_one_month
                         FROM $nameCommunity AS a
                         WHERE fundname='".$items['fundname']."' AND 
-                        STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')<=DATE_ADD(NOW(), INTERVAL- 3 MONTH)
+                        DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)<=DATE_ADD(NOW(), INTERVAL- 3 MONTH)
                         ORDER BY a.unitdate DESC
                         LIMIT 1";
             $last3mData=$db->fetchAll($getLast3m);
   
 
-            $getYtd="SELECT DISTINCT a.fundname,SUM(bid)AS ytd_bid,SUM(offer) AS ytd_offer,STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') AS today
+            $getYtd="SELECT DISTINCT a.fundname,SUM(bid)AS ytd_bid,SUM(offer) AS ytd_offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS today
                     FROM $nameCommunity AS a
                     WHERE	fundname='".$items['fundname']."' AND 
-                    	STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') > STR_TO_DATE('30-12-2014','%d-%m-%Y') AND
-                    	STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') <= DATE_FORMAT(NOW(),'%Y-01-01')
+                    	DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) > STR_TO_DATE('30-12-2014','%d-%m-%Y') AND
+                    	DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) <= DATE_FORMAT(NOW(),'%Y-01-01')
                     GROUP BY fundname";                    
             $ytdData=$db->fetchAll($getYtd);
             
             
             /*1 YAER*/
-            $get1year="SELECT a.fundname,bid,offer,STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') AS last_year
+            $get1year="SELECT a.fundname,bid,offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS last_year
                     FROM $nameCommunity AS a
                     WHERE fundname='".$items['fundname']."' AND
-                    STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y') <=DATE_ADD(NOW(), INTERVAL- 1 YEAR)
+                    DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) <=DATE_ADD(NOW(), INTERVAL- 1 YEAR)
                     ORDER BY unitdate DESC
                     LIMIT 1";                    
             $last1year=$db->fetchAll($get1year);
@@ -641,7 +641,7 @@ class InvestmentController extends Website_Controller_Action
 	    $nameCommunity = "object_query_30"; //table yang digunakan di live server
             //$nameCommunity = "object_query_29"; //tulis manual
 	    
-	    $sql_subcat="SELECT *,FROM_UNIXTIME(unitdate,'%d-%m-%Y') AS unitdates FROM ".$nameCommunity." AS xmlsource ".$conditions." order by fundname desc,unitdate";
+	    $sql_subcat="SELECT *,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS unitdates FROM ".$nameCommunity." AS xmlsource ".$conditions." order by fundname desc,unitdate";
             $xmldata=$db->fetchAll($sql_subcat);
            
            
@@ -657,35 +657,39 @@ class InvestmentController extends Website_Controller_Action
                 $getFundBidMonth="SELECT a.fundname,
                 		AVG(bid) AS bid,
                 		AVG(offer) AS offer,
-                		DAY(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')) AS days,
-                		MONTH(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')) AS months,
-                		YEAR(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')) AS yaers
+				DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS fulldays,
+                		DAY(DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)) AS days,
+                		MONTH(DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)) AS months,
+                		YEAR(DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)) AS yaers
                 	FROM $nameCommunity AS a 
                 	WHERE a.fundname=$fundtype and $conditions
                 	GROUP BY a.fundname, DAY(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'))
-                	ORDER BY a.fundname,DAY(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'))";
-                                   
+                	ORDER BY DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)";
+			
                 $fundBidMonth=$db->fetchAll($getFundBidMonth);
-                
-
-                //print_r($fundBidMonth); 
-                $itemss['fundname']=$fundBidMonth[0]['fundname'];
+        
+                //print_r($getFundBidMonth); 
+                //die('s');
+		$itemss['fundname']=$fundBidMonth[0]['fundname'];
                 $itemss['total']=count($fundBidMonth);
                 $itemss['year']=$fundBidMonth[0]['yaers'];
                 $itemss['month']=$fundBidMonth[0]['months'];
-                
-                
+		
                 $i = 0;
                 foreach($fundBidMonth as $itemsbid){
                     $itemsbid['bid'];
-
-                    $array_day[$i] =$itemsbid['days']+0;
-                    $array_bid[$i] = $itemsbid['bid'] + 0;
+                    $array_fulldays[$i] =$itemsbid['fulldays'];
+		    $array_day[$i] =$itemsbid['days']+0;
+                    $array_month[$i] =$itemsbid['months']+0;
+		    $array_year[$i] =$itemsbid['yaers']+0;
+                    $array_bid[$i] = $itemsbid['bid']+ 0;
                 $i++;
                 }
-            
              $itemss['fundbid']=$array_bid;
-             $itemss['biddate']=$array_day;
+	     $itemss['bidday']=$array_day;
+	     $itemss['bidmonth']=$array_month;
+	     $itemss['bidyear']=$array_year;
+	     $itemss['bidfulldate']=$array_fulldays;
                
         /*end bid fund*/ 
 

@@ -1204,7 +1204,7 @@ $(document).ready(function(){
 		/* --------- Likuiditas ---------- */
 		
 		var x = parseInt(aset_likuid) / parseInt(total_pengeluaran);
-		var likuiditas = Math.round(x);
+		var likuiditas = Math.floor(x);
 		var likuiditas_teks = "";
 		var likuiditas_ket = "";
 		

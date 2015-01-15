@@ -12,13 +12,11 @@ jQuery(function($) {
             
             <div class="form_cont">
             
-                <h1 class="titleRisk">Profil Risiko</h1>
-                <div class="inv-btn">
-	                <!--
+                <h1 class="titleRisk">Profil Resiko</h1>
+                <!--div class="inv-btn">
 						<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
 						<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
-					-->
-				</div>
+				</div!-->
                 <div class="stepform showform" id="step_1">
                     <table width="100%">
                         <tbody>
@@ -354,8 +352,8 @@ jQuery(function($) {
                                     </a>
                                     <br />
                                     <div class="allianz-button" style="text-align: left;">
-					                    <input id="keuangan" class="blue-btn" type="button" value="Perencanaan Keuangan">
-					                    <input id="kalkulator" class="blue-btn" type="button" value="Kalkulator">
+					                    <a href="http://investment.allianz.co.id/financial-planning/financial-planning"><input id="keuangan" class="blue-btn" type="button" value="Perencanaan Keuangan"></a>
+					                    <a href="http://investment.allianz.co.id/kalkulator"><input id="kalkulator" class="blue-btn" type="button" value="Kalkulator"></a>
 					               </div>
 					               
 					               
@@ -471,14 +469,5 @@ $(document).ready(function(){
   
 
 })
-/* =============== Added by Handri Pangestiaji 14 Jan 2015 ======================= */
-$("#keuangan").click(function(){
-    window.location.href = "/financial-planning/financial-planning";
- });
- 
-$("#kalkulator").click(function(){
-    window.location.href = "/kalkulator";
- }); 
-/* =============== Added by Handri Pangestiaji 14 Jan 2015 ======================= */
 </script>
 
