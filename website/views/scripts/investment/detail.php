@@ -45,7 +45,7 @@
 
 		<div class="desc_page">
 			<h1><?php echo $this->input('title')?></h1>
-			<?php echo $this->areablock('referensi-object-pdf', array('allowed' => array('inv-daily')))?>
+			<?php echo $this->areablock('referensi-object-pdf', array('allowed' => array('investment-daily')))?>
 			<p>
 				<?php echo $this->wysiwyg('description')?>
 			</p>
