@@ -352,8 +352,8 @@ jQuery(function($) {
                                     </a>
                                     <br />
                                     <div class="allianz-button" style="text-align: left;">
-					                    <input id="keuangan" class="blue-btn" type="button" value="Perencanaan Keuangan">
-					                    <input id="kalkulator" class="blue-btn" type="button" value="Kalkulator">
+					                    <a href="http://investment.allianz.co.id/financial-planning/financial-planning"><input id="keuangan" class="blue-btn" type="button" value="Perencanaan Keuangan"></a>
+					                    <a href="http://investment.allianz.co.id/kalkulator"><input id="kalkulator" class="blue-btn" type="button" value="Kalkulator"></a>
 					               </div>
 					               
 					               
