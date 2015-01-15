@@ -13,10 +13,10 @@ jQuery(function($) {
             <div class="form_cont">
             
                 <h1 class="titleRisk">Profil Risiko</h1>
-                <div class="inv-btn">
+                <!--div class="inv-btn">
 						<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
 						<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
-				</div>
+				</div!-->
                 <div class="stepform showform" id="step_1">
                     <table width="100%">
                         <tbody>
