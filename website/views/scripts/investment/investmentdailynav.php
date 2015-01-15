@@ -452,16 +452,23 @@
 						    }
                                                 });
                                             }
-//                                             console.log(new_data.resume_graph);
-//                                             console.log(new_data.resume_graph.biddate);
-//                                             console.log(new_data.resume_graph.fundbid);
-					       //console.log(new_data.resume_graph.bidday[0]);
+
                                              
                                             var fundname=new_data.resume_graph.fundname.toString();
                                             var biddate=new_data.resume_graph.biddate;
                                             var fundbid=new_data.resume_graph.fundbid;
                                             
-                                            $(function () {
+					   var databid=new Array();
+		
+					    for(var d=0;d<new_data.resume_graph.bidyear.length; d++){
+						//console.log(new_data.resume_graph.bidyear[d]);
+						//console.log(new_data.resume_graph.bidmonth[d]);
+						//console.log(new_data.resume_graph.bidday[d]);
+						
+						databid[d]={x: Date.UTC(new_data.resume_graph.bidyear[d], new_data.resume_graph.bidmonth[d], new_data.resume_graph.bidday[d]), y: new_data.resume_graph.fundbid[d]};
+					    }
+                                           
+					    $(function () {
                                                 $('#container').highcharts({
 							chart: {
 							    type: 'line',
@@ -478,7 +485,7 @@
 							xAxis: {
 								type: 'datetime',
 								zoomType: 'x',
-								 minRange: 14 * 24 * 3600000 // fourteen days
+								 minRange: 7* 24 * 3600000 // fourteen days
 							    },
 							yAxis: {
 							    title: {
@@ -502,42 +509,17 @@
 							    verticalAlign: 'bottom',
 							    borderWidth: 0
 							},
-							plotOptions: {
-							    area: {
-								fillColor: {
-								    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
-								    stops: [
-									[0, Highcharts.getOptions().colors[0]],
-									[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-								    ]
-								},
-								marker: {
-								    radius: 2
-								},
-								lineWidth: 1,
-								states: {
-								    hover: {
-									lineWidth: 1
-								    }
-								},
-								threshold: null
-							    }
-							},
+							plotLines: [{
+							    value: 0,
+							    width: 1,
+							    color: '#808080'
+							}],
 							series: [{
 							   // pointInterval: 1,
 							    //pointStart: Date.UTC(arr_awal[2], arr_awal[0], arr_awal[1]),
 							     pointInterval: 24 * 3600 * 1000,
 							    name: fundname,
-							    data: [
-								<?php
-								    for($d=0; $d<20; $d++){
-									if($d<19){
-									    ?> {x: Date.UTC(new_data.resume_graph.bidyear[<?php echo $d; ?>], new_data.resume_graph.bidmonth[<?php echo $d; ?>], new_data.resume_graph.bidday[<?php echo $d; ?>]), y: new_data.resume_graph.fundbid[<?php echo $d; ?>]}, //one data point for each day
-									<?php }else{  ?>
-									{x: Date.UTC(new_data.resume_graph.bidyear[<?php echo $d; ?>],new_data.resume_graph.bidmonth[<?php echo $d; ?>], new_data.resume_graph.bidday[<?php echo $d; ?>]), y: new_data.resume_graph.fundbid[<?php echo $d; ?>]} //one data point for each day
-								    <?php }
-								    } ?>
-								  ]
+							    data: databid
 							}]
                                                 });
                                             });
