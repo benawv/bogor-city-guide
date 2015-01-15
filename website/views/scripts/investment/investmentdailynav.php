@@ -499,12 +499,12 @@
 							    borderWidth: 0
 							},
 							series: [{
-							    //pointInterval: 24 * 3600 * 1000,
+							    pointInterval: 1,
 							    //pointStart: Date.UTC(arr_awal[2], arr_awal[0], arr_awal[1]),
 							    name: fundname,
 							    data: [
 								<?php
-								    for($d=0; $d<20; $d++){
+								    for($d=0; $d<200; $d++){
 								    if($d==19){
 									?> {x: Date.UTC(new_data.resume_graph.bidyear[<?php echo $d; ?>], 0, new_data.resume_graph.bidday[<?php echo $d; ?>]), y: new_data.resume_graph.fundbid[<?php echo $d; ?>]}, //one data point for each day
 									<?php
