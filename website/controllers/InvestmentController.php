@@ -664,9 +664,7 @@ class InvestmentController extends Website_Controller_Action
                 	FROM $nameCommunity AS a 
                 	WHERE a.fundname=$fundtype and $conditions
                 	GROUP BY a.fundname, DAY(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'))
-                	ORDER BY YEAR(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')),
-				MONTH(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')),
-				DAY(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'))";
+                	ORDER BY DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)";
 			
                 $fundBidMonth=$db->fetchAll($getFundBidMonth);
         

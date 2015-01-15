@@ -38,7 +38,7 @@
             maxDate:"+30D",
             numberOfMonths: 1,
             onSelect: function(selected) {
-              $("#txtToDate").datepicker("option","minDate", selected)
+              $("#txtToDate").datepicker("option","minDate", selected);
             }
         });
         $("#txtToDate").datepicker({ 
@@ -46,7 +46,7 @@
             maxDate:"+30D",
             numberOfMonths: 1,
             onSelect: function(selected) {
-               $("#txtFromDate").datepicker("option","maxDate", selected)
+               $("#txtFromDate").datepicker("option","maxDate", selected);
             }
         });  
     });
@@ -461,20 +461,21 @@
 					   var databid=new Array();
 		
 					    for(var d=0;d<new_data.resume_graph.bidyear.length; d++){
-						//console.log(new_data.resume_graph.bidyear[d]);
-						//console.log(new_data.resume_graph.bidmonth[d]);
-						//console.log(new_data.resume_graph.bidday[d]);
-						
+						//console.log("y:"+new_data.resume_graph.bidyear[d]+","+new_data.resume_graph.bidmonth[d]+","+new_data.resume_graph.bidday[d]+",y:"+new_data.resume_graph.fundbid[d]);						
 						databid[d]={x: Date.UTC(new_data.resume_graph.bidyear[d], new_data.resume_graph.bidmonth[d], new_data.resume_graph.bidday[d]), y: new_data.resume_graph.fundbid[d]};
+						//console.log(databid[d]);
 					    }
-                                           
+					     var date_awal=Date.UTC(new_data.resume_graph.bidyear[0],new_data.resume_graph.bidmonth[0],new_data.resume_graph.bidday[0]);
+					     // console.log("awal"+date_awal);
+					     // console.log("a awal"+new_data.resume_graph.bidyear[0]+","+new_data.resume_graph.bidmonth[0]+","+new_data.resume_graph.bidday[0])
+					      
 					    $(function () {
                                                 $('#container').highcharts({
 							chart: {
-							    type: 'line',
 							    zoomType: 'x',
 							    panning: true,
-							    panKey: 'shift'
+							    panKey: 'shift',
+							    renderTo: 'container'
 							},
 							title:{
 							     text: ''
@@ -484,24 +485,12 @@
 							},
 							xAxis: {
 								type: 'datetime',
-								zoomType: 'x',
-								 minRange: 7* 24 * 3600000 // fourteen days
+								minRange: 30 * 24 * 3600000 // fourteen days
 							    },
 							yAxis: {
 							    title: {
-								text: ' '
-							    },
-							    plotLines: [{
-								value: 0,
-								width: 1,
-								color: '#808080'
-							    }]
-							},
-							tooltip: {
-							    valueSuffix: ''
-							},
-							marker: {
-							    radius: 1
+								text: 'Nilai Bid'
+							    }
 							},
 							legend: {
 							    layout: 'vertical',
@@ -509,15 +498,33 @@
 							    verticalAlign: 'bottom',
 							    borderWidth: 0
 							},
-							plotLines: [{
-							    value: 0,
-							    width: 1,
-							    color: '#808080'
-							}],
+							plotOptions: {
+							    area: {
+								fillColor: {
+								    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
+								    stops: [
+									[0, Highcharts.getOptions().colors[0]],
+									[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+								    ]
+								},
+								marker: {
+								    radius: 2
+								},
+								lineWidth: 1,
+								states: {
+								    hover: {
+									lineWidth: 1
+								    }
+								},
+								threshold: null
+							    }
+							},
 							series: [{
 							   // pointInterval: 1,
 							    //pointStart: Date.UTC(arr_awal[2], arr_awal[0], arr_awal[1]),
-							     pointInterval: 24 * 3600 * 1000,
+							    // pointInterval: 24 * 3600 * 1000,
+							    pointInterval: 24 * 3600 * 1000,
+							    pointStart: date_awal,
 							    name: fundname,
 							    data: databid
 							}]
