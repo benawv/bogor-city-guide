@@ -382,7 +382,6 @@
                         alert("Silahkan pilih jenis fund");
                     }else{
                     
-                    //alert($('.day1').val()+"&month1="+$('.month1').val()+"&year1="+$('.year1').val()+"&day2="+$('.day2').val()+"&month2="+$('.month2').val()+"&year2="+$('.year2').val()+"&fundtype='"+$('.fundtype').val());
                       var dataSets=[];
                       
                       $.ajax({
@@ -391,7 +390,7 @@
                             "type" : "POST",
                             "success" : function(response){
                                 if(response){
-                                        //console.log(jQuery.parseJSON(response));
+                        
                                         var IS_JSON = true;
                                         try
                                         {
@@ -453,9 +452,10 @@
 						    }
                                                 });
                                             }
-//                                             console.log(new_data.resume_graph.fundname);
+//                                             console.log(new_data.resume_graph);
 //                                             console.log(new_data.resume_graph.biddate);
 //                                             console.log(new_data.resume_graph.fundbid);
+					       //console.log(new_data.resume_graph.bidday[0]);
                                              
                                             var fundname=new_data.resume_graph.fundname.toString();
                                             var biddate=new_data.resume_graph.biddate;
@@ -463,45 +463,61 @@
                                             
                                             $(function () {
                                                 $('#container').highcharts({
-                                                    title: {
-                                                        text: ' ',
-                                                        x: -20 //center
-                                                    },
-                                                    //subtitle: {
-                                                    //    text: 'Source: WorldClimate.com',
-                                                     //   x: -20
-                                                    //},
-                                                    xAxis: {
-                                                        categories: biddate
-                                                    },
-                                                    yAxis: {
-                                                        title: {
-                                                            text: ' '
-                                                        },
-                                                        plotLines: [{
-                                                            value: 0,
-                                                            width: 1,
-                                                            color: '#808080'
-                                                        }]
-                                                    },
-                                                    tooltip: {
-                                                        valueSuffix: ''
-                                                    },
-                                                    legend: {
-                                                        layout: 'vertical',
-                                                        align: 'middle',
-                                                        verticalAlign: 'bottom',
-                                                        borderWidth: 0
-                                                    },
-                                                    series: [{
-                                                        name: fundname,
-                                                        data: fundbid
-                                                    }]
+							chart: {
+							    type: 'line',
+							    zoomType: 'x',
+							    panning: true,
+							    panKey: 'shift'
+							},
+							title:{
+							     text: ''
+							},
+							subtitle: {
+							    text: 'Click and drag to zoom in. Hold down shift key to pan.'
+							},
+							xAxis: {
+								type: 'datetime',
+								zoomType: 'x'
+							    },
+							yAxis: {
+							    title: {
+								text: ' '
+							    },
+							    plotLines: [{
+								value: 0,
+								width: 1,
+								color: '#808080'
+							    }]
+							},
+							tooltip: {
+							    valueSuffix: ''
+							},
+							legend: {
+							    layout: 'vertical',
+							    align: 'middle',
+							    verticalAlign: 'bottom',
+							    borderWidth: 0
+							},
+							series: [{
+							    pointInterval: 24 * 3600 * 1000,
+							    pointStart: Date.UTC(arr_awal[2], arr_awal[0], arr_awal[1]),
+							    name: fundname,
+							    data: [
+								<?php
+								    for($d=0; $d<20; $d++){
+								    if($d==19){
+									?> {x: Date.UTC(new_data.resume_graph.bidyear[<?php echo $d; ?>], 0, new_data.resume_graph.bidday[<?php echo $d; ?>]), y: new_data.resume_graph.fundbid[<?php echo $d; ?>]}, //one data point for each day
+									<?php
+								    }else{        
+								?>
+								    {x: Date.UTC(new_data.resume_graph.bidyear[<?php echo $d; ?>],0, new_data.resume_graph.bidday[<?php echo $d; ?>]), y: new_data.resume_graph.fundbid[<?php echo $d; ?>]}, //one data point for each day
+								    
+								<?php }
+								    } ?>
+								  ]
+							}]
                                                 });
                                             });
-					    	console.log('awal:'+new_data.xml_data[0]['bid']);
-						console.log('awal:'+new_data.xml_data[new_data.xml_data.length-1]['bid']);
-                                                console.log(new_data.xml_data.length);
                                             ///$('.myTable2_items').html(rows);
 					     $('.return-foot').html('<p class="return-foot">Return: '+formfundtype+' sejak '+arr_awal[0]+'/'+arr_awal[1]+'/'+arr_awal[2]+' hingga '+arr_akhir[0]+'/'+arr_akhir[1]+'/'+arr_akhir[2]+' adalah '+((((new_data.xml_data[0]['bid']/new_data.xml_data[new_data.xml_data.length-1]['bid'])*100)-100).toFixed(2))+'% '+'</p>')
                                         }

@@ -657,6 +657,7 @@ class InvestmentController extends Website_Controller_Action
                 $getFundBidMonth="SELECT a.fundname,
                 		AVG(bid) AS bid,
                 		AVG(offer) AS offer,
+				DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS fulldays,
                 		DAY(DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)) AS days,
                 		MONTH(DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)) AS months,
                 		YEAR(DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)) AS yaers
@@ -664,28 +665,30 @@ class InvestmentController extends Website_Controller_Action
                 	WHERE a.fundname=$fundtype and $conditions
                 	GROUP BY a.fundname, DAY(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'))
                 	ORDER BY a.fundname,DAY(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'))";
-                                   
+			
                 $fundBidMonth=$db->fetchAll($getFundBidMonth);
-                
-
+        
                 //print_r($fundBidMonth); 
                 $itemss['fundname']=$fundBidMonth[0]['fundname'];
                 $itemss['total']=count($fundBidMonth);
                 $itemss['year']=$fundBidMonth[0]['yaers'];
                 $itemss['month']=$fundBidMonth[0]['months'];
-                
-                
+		
                 $i = 0;
                 foreach($fundBidMonth as $itemsbid){
                     $itemsbid['bid'];
-
-                    $array_day[$i] =$itemsbid['days']+0;
+                    $array_fulldays[$i] =$itemsbid['fulldays'];
+		    $array_day[$i] =$itemsbid['days']+0;
+                    $array_month[$i] =$itemsbid['months']+0;
+		    $array_year[$i] =$itemsbid['yaers']+0;
                     $array_bid[$i] = $itemsbid['bid']+ 0;
                 $i++;
                 }
-            
              $itemss['fundbid']=$array_bid;
-             $itemss['biddate']=$array_day;
+	     $itemss['bidday']=$array_day;
+	     $itemss['bidmonth']=$array_month;
+	     $itemss['bidyear']=$array_year;
+	     $itemss['bidfulldate']=$array_fulldays;
                
         /*end bid fund*/ 
 
