@@ -137,7 +137,7 @@
 				    <?php 
 					if(empty($items['lastmonth'][0]['bid'])){
 					    $lastmonth=$items['lastdata'][0]['bid'];
-					    echo round(($lastmonth/$lastmonth)*100);
+					    echo round(($lastmonth/$lastmonth)*100)-100;
 					}else{
 					    echo round(($items['lastdata'][0]['bid']/$items['lastmonth'][0]['bid'])*100,2)-100;
 					}
@@ -148,7 +148,7 @@
 				    <?php 
 					if(empty($items['last3month'][0]['bid'])){
 					    $lastmonth=$items['lastdata'][0]['bid'];
-					    echo round(($lastmonth/$lastmonth)*100);
+					    echo round(($lastmonth/$lastmonth)*100)-100;
 					}else{
 					    echo round(($items['lastdata'][0]['bid']/$items['last3month'][0]['bid'])*100,2)-100;
 					}
@@ -160,7 +160,7 @@
 				    <?php 
 					if(empty($items['ytd'][0]['bid'])){
 					    $lastmonth=$items['lastdata'][0]['bid'];
-					    echo round(($lastmonth/$lastmonth)*100);
+					    echo round(($lastmonth/$lastmonth)*100)-100;
 					}else{
 					    echo round(($items['lastdata'][0]['bid']/$items['ytd'][0]['bid'])*100,2)-100;
 					}
@@ -171,7 +171,7 @@
 				   <?php 
 					if(empty($items['last1year'][0]['bid'])){
 					    $lastmonth=$items['lastdata'][0]['bid'];
-					    echo round(($lastmonth/$lastmonth)*100);
+					    echo round(($lastmonth/$lastmonth)*100)-100;
 					}else{
 					    echo round(($items['lastdata'][0]['bid']/$items['last1year'][0]['bid'])*100,2)-100;
 					}
@@ -477,7 +477,8 @@
 							},
 							xAxis: {
 								type: 'datetime',
-								zoomType: 'x'
+								zoomType: 'x',
+								 minRange: 14 * 24 * 3600000 // fourteen days
 							    },
 							yAxis: {
 							    title: {
@@ -492,27 +493,49 @@
 							tooltip: {
 							    valueSuffix: ''
 							},
+							marker: {
+							    radius: 1
+							},
 							legend: {
 							    layout: 'vertical',
 							    align: 'middle',
 							    verticalAlign: 'bottom',
 							    borderWidth: 0
 							},
+							plotOptions: {
+							    area: {
+								fillColor: {
+								    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
+								    stops: [
+									[0, Highcharts.getOptions().colors[0]],
+									[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+								    ]
+								},
+								marker: {
+								    radius: 2
+								},
+								lineWidth: 1,
+								states: {
+								    hover: {
+									lineWidth: 1
+								    }
+								},
+								threshold: null
+							    }
+							},
 							series: [{
-							    pointInterval: 1,
+							   // pointInterval: 1,
 							    //pointStart: Date.UTC(arr_awal[2], arr_awal[0], arr_awal[1]),
+							     pointInterval: 24 * 3600 * 1000,
 							    name: fundname,
 							    data: [
 								<?php
-								    for($d=0; $d<200; $d++){
-								    if($d==19){
-									?> {x: Date.UTC(new_data.resume_graph.bidyear[<?php echo $d; ?>], 0, new_data.resume_graph.bidday[<?php echo $d; ?>]), y: new_data.resume_graph.fundbid[<?php echo $d; ?>]}, //one data point for each day
-									<?php
-								    }else{        
-								?>
-								    {x: Date.UTC(new_data.resume_graph.bidyear[<?php echo $d; ?>],0, new_data.resume_graph.bidday[<?php echo $d; ?>]), y: new_data.resume_graph.fundbid[<?php echo $d; ?>]}, //one data point for each day
-								    
-								<?php }
+								    for($d=0; $d<20; $d++){
+									if($d<19){
+									    ?> {x: Date.UTC(new_data.resume_graph.bidyear[<?php echo $d; ?>], new_data.resume_graph.bidmonth[<?php echo $d; ?>], new_data.resume_graph.bidday[<?php echo $d; ?>]), y: new_data.resume_graph.fundbid[<?php echo $d; ?>]}, //one data point for each day
+									<?php }else{  ?>
+									{x: Date.UTC(new_data.resume_graph.bidyear[<?php echo $d; ?>],new_data.resume_graph.bidmonth[<?php echo $d; ?>], new_data.resume_graph.bidday[<?php echo $d; ?>]), y: new_data.resume_graph.fundbid[<?php echo $d; ?>]} //one data point for each day
+								    <?php }
 								    } ?>
 								  ]
 							}]
