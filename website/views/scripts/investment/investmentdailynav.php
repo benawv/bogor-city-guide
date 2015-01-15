@@ -506,11 +506,11 @@
 								<?php
 								    for($d=0; $d<20; $d++){
 								    if($d==19){
-									?> {x: Date.UTC(new_data.resume_graph.bidyear[<?php echo $d; ?>], 0, new_data.resume_graph.bidday[<?php echo $d; ?>]), y: new_data.resume_graph.fundbid[<?php echo $d; ?>]}, //one data point for each day
+									?> {x: Date.UTC(new_data.resume_graph.bidyear[<?php echo $d; ?>], Date.UTC(new_data.resume_graph.bidmonth[<?php echo $d; ?>], new_data.resume_graph.bidday[<?php echo $d; ?>]), y: new_data.resume_graph.fundbid[<?php echo $d; ?>]}, //one data point for each day
 									<?php
 								    }else{        
 								?>
-								    {x: Date.UTC(new_data.resume_graph.bidyear[<?php echo $d; ?>],0, new_data.resume_graph.bidday[<?php echo $d; ?>]), y: new_data.resume_graph.fundbid[<?php echo $d; ?>]}, //one data point for each day
+								    {x: Date.UTC(new_data.resume_graph.bidyear[<?php echo $d; ?>],Date.UTC(new_data.resume_graph.bidmonth[<?php echo $d; ?>], new_data.resume_graph.bidday[<?php echo $d; ?>]), y: new_data.resume_graph.fundbid[<?php echo $d; ?>]}, //one data point for each day
 								    
 								<?php }
 								    } ?>
