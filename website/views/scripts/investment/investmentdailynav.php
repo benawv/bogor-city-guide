@@ -27,6 +27,7 @@
 
 <script src="/website/static/inv/js/DataTables-1.10.4/media/js/jquery.dataTables.js" type="text/javascript" language="javascript" ></script>
 <script src="/website/static/inv/js/DataTables-1.10.4/extensions/TableTools/js/dataTables.tableTools.min.js" type="text/javascript" language="javascript" ></script>
+<script src="/website/static/inv/js/DataTables-1.10.4/media/js/date-dd-MMM-yyyy.js" type="text/javascript" language="javascript" ></script>
     
 
 
@@ -308,6 +309,7 @@
                                             left: 0px;
                                             "><span></span></a>
                                     </div>
+				     <p class="return-foot"></p>  
                                     <tbody class="table-body-2 myTable2_items"> 
                                     <?php                    
                                    foreach($this->data['defult_data'] as $items){
@@ -429,7 +431,10 @@
 							tableTools: {
 							    sSwfPath: '/website/static/inv/js/DataTables-1.10.4/extensions/TableTools/swf/copy_csv_xls_pdf.swf',
 							    "aButtons": [ "copy", "pdf","xls","print" ]
-							}
+							},
+							columnDefs: [
+							    { type: 'date-dd-mmm-yyyy', targets: 0 }
+							]
                                                 });
                                             }else {
                                             
@@ -449,7 +454,10 @@
 						    tableTools: {
 							sSwfPath: '/website/static/inv/js/DataTables-1.10.4/extensions/TableTools/swf/copy_csv_xls_pdf.swf',
 							"aButtons": [ "copy", "pdf","xls","print" ]
-						    }
+						    },
+						    columnDefs: [
+							{ type: 'date-dd-mmm-yyyy', targets: 0 }
+						    ]
                                                 });
                                             }
 
@@ -461,9 +469,11 @@
 					   var databid=new Array();
 		
 					    for(var d=0;d<new_data.resume_graph.bidyear.length; d++){
-						//console.log("y:"+new_data.resume_graph.bidyear[d]+","+new_data.resume_graph.bidmonth[d]+","+new_data.resume_graph.bidday[d]+",y:"+new_data.resume_graph.fundbid[d]);						
-						databid[d]={x: Date.UTC(new_data.resume_graph.bidyear[d], new_data.resume_graph.bidmonth[d], new_data.resume_graph.bidday[d]), y: new_data.resume_graph.fundbid[d]};
-						//console.log(databid[d]);
+						
+						databid[d]={x: Date.UTC(new_data.resume_graph.bidyear[d], new_data.resume_graph.bidmonth[d]-1, new_data.resume_graph.bidday[d]), y: new_data.resume_graph.fundbid[d]};
+						
+						console.log("y:"+new_data.resume_graph.bidyear[d]+","+new_data.resume_graph.bidmonth[d]+","+new_data.resume_graph.bidday[d]+",y:"+new_data.resume_graph.fundbid[d]);						
+						console.log(databid[d]);
 					    }
 					     var date_awal=Date.UTC(new_data.resume_graph.bidyear[0],new_data.resume_graph.bidmonth[0],new_data.resume_graph.bidday[0]);
 					     // console.log("awal"+date_awal);
@@ -485,7 +495,7 @@
 							},
 							xAxis: {
 								type: 'datetime',
-								minRange: 30 * 24 * 3600000 // fourteen days
+								minRange: new_data.resume_graph.bidyear.length * 24 * 3600000 // fourteen days
 							    },
 							yAxis: {
 							    title: {
@@ -616,10 +626,6 @@
 
             });
             </script>
-
-                   
-                    <p class="return-foot"></p>
-                    
                 </div>
                     <!--- End Table ------>
                 
