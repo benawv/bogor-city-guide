@@ -1,5 +1,7 @@
 <div class="container boxes-view">
 
+
+
 <ul id="membername" class="navi" style="">
 	<li class="aktif">
 		<a href="/allianz-fund/allianz-fund/fund-fact-sheet/equity">
@@ -75,6 +77,35 @@
 		</a>
 	</li>
 </ul>
+
+<!-- 770 display mobile menu -->
+
+		<div class="dropdownmobile">
+
+			<div class="dropshow">
+				<a href="javascript:void(0);" id="opendropdown">Pilih Info Fund :</a>
+			</div>
+			<div class="drophide">
+				<a href="/allianz-fund/allianz-fund/fund-fact-sheet/equity">Equity</a>
+			</div>
+			<div class="drophide">
+				<a href="/allianz-fund/allianz-fund/fund-fact-sheet/fund-balanced">Balanced</a>
+			</div>
+			<div class="drophide">
+				<a href="/allianz-fund/allianz-fund/fund-fact-sheet/fixed-income">Fixed Income</a>
+			</div>
+			<div class="drophide">
+				<a href="/allianz-fund/allianz-fund/fund-fact-sheet/fund-moneymarket">Money Market</a>
+			</div>
+			<div class="drophide">
+				<a href="/allianz-fund/allianz-fund/fund-fact-sheet/savings-plan">Saving Plan</a>
+			</div>
+			<div class="drophide">
+				<a href="/allianz-fund/allianz-fund/fund-fact-sheet/dplk">DPLK</a>
+			</div>
+
+		</div>
+		<!-- dropdownmobile end -->
 
 <script type="text/javascript">
 	$(function(){
@@ -262,6 +293,12 @@
 			}
 			$(this).find('a').html(val);
 		});
+
+		$("#opendropdown").click(function(){
+			$(".drophide").toggle();
+		});
+
+
 	});
 </script>
 </div>

@@ -1,4 +1,6 @@
-
+.dropdownmobile{
+  display: none;
+}
 
 /* Tablet 960 */
 @media screen and (max-width: 960px){
@@ -52,6 +54,35 @@
 
 /* Tablet 770 */
 @media screen and (max-width: 768px){
+
+  .dropdownmobile{
+    display: block;
+  }
+
+  .dropdownmobile{
+    width: 100%;
+    border: 1px solid #CCCCCC;
+    
+    background: #FFFFFF;
+  }
+
+  .dropshow{
+    display: block;
+    font-weight: bold;
+    width: 100%;
+    padding:10px 15px;
+    border-bottom: 1px solid #CCCCCC;
+  }
+  .dropshow a{
+    display: block;
+  }
+  .drophide{
+    display: none;
+    width: 100%;
+    padding:10px 15px;
+    border-bottom: 1px solid #CCCCCC;
+  }
+
 
 
 
@@ -137,6 +168,15 @@ color: rgba(0,0,0,0.7);
 font-style: italic;
 font-size: 24px;
 margin-top: 15px;
+}
+
+.fundfact img{
+  width: 100%;
+  height: auto;
+}
+
+.combo_section{
+  width: 100%;
 }
 
 }

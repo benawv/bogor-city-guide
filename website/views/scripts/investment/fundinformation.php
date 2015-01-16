@@ -16,6 +16,29 @@
 	<div class="row">
 		<div class="container">
 
+			<!-- 770 display mobile menu -->
+
+		<div class="dropdownmobile">
+
+			<div class="dropshow">
+				<a href="javascript:void(0);" id="opendropdown">Pilih Info Fund :</a>
+			</div>
+			<div class="drophide">
+				<a href="/allianz-fund/allianz-fund/fund-information/equity">Equity</a>
+			</div>
+			<div class="drophide">
+				<a href="/allianz-fund/allianz-fund/fund-information/balanced">Balanced</a>
+			</div>
+			<div class="drophide">
+				<a href="/allianz-fund/allianz-fund/fund-information/fixed-income">Fixed Income</a>
+			</div>
+			<div class="drophide">
+				<a href="/allianz-fund/allianz-fund/fund-information/money-market">Money Market</a>
+			</div>
+
+		</div>
+		<!-- dropdownmobile end -->
+
 
 <ul id="membername" class="navi" style="">
 	<li <?php if($urlExplode[4]=="equity"){ ?> class="aktif" <?php } ?> >
@@ -52,7 +75,7 @@
 												
 		<div class="white_image" style="margin-bottom: 3px; width: 25px; height: 25px; <?php if($urlExplode[4]=="fixed-income"){ ?> display: block; <?php } else{ ?> display: none; <?php } ?> background-image: url(http://www.allianz.co.id/icon_anchor/icon-active/tentang-kami.png); "></div>
 												
-		<span class="cus_anchor_3">Fix Income </span>
+		<span class="cus_anchor_3">Fixed Income </span>
 		</div>
 		</a>
 	</li>
@@ -71,7 +94,10 @@
 	
 </ul>
 
-			<?php echo $this->areablock('container', array('allowed' => array('teks-tabs'))) ?>			
+			<?php echo $this->areablock('container', array('allowed' => array('teks-tabs'))) ?>		
+
+
+
 
 		</div>
 		<!-- container end -->
@@ -108,6 +134,10 @@
 		});
 		
 		$('.social-icon').remove();
+
+		$("#opendropdown").click(function(){
+			$(".drophide").toggle();
+		});
 		
 	});
 </script>
