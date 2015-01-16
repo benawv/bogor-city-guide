@@ -27,6 +27,7 @@
 
 <script src="/website/static/inv/js/DataTables-1.10.4/media/js/jquery.dataTables.js" type="text/javascript" language="javascript" ></script>
 <script src="/website/static/inv/js/DataTables-1.10.4/extensions/TableTools/js/dataTables.tableTools.min.js" type="text/javascript" language="javascript" ></script>
+<script src="/website/static/inv/js/DataTables-1.10.4/media/js/date-dd-MMM-yyyy.js" type="text/javascript" language="javascript" ></script>
     
 
 
@@ -430,7 +431,10 @@
 							tableTools: {
 							    sSwfPath: '/website/static/inv/js/DataTables-1.10.4/extensions/TableTools/swf/copy_csv_xls_pdf.swf',
 							    "aButtons": [ "copy", "pdf","xls","print" ]
-							}
+							},
+							columnDefs: [
+							    { type: 'date-dd-mmm-yyyy', targets: 0 }
+							]
                                                 });
                                             }else {
                                             
@@ -450,7 +454,10 @@
 						    tableTools: {
 							sSwfPath: '/website/static/inv/js/DataTables-1.10.4/extensions/TableTools/swf/copy_csv_xls_pdf.swf',
 							"aButtons": [ "copy", "pdf","xls","print" ]
-						    }
+						    },
+						    columnDefs: [
+							{ type: 'date-dd-mmm-yyyy', targets: 0 }
+						    ]
                                                 });
                                             }
 
