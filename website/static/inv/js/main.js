@@ -179,8 +179,15 @@ $(document).ready(function(){
 	});
 });
 
-	
+//===== added by Bena 08 Jan 2015 =====//
+function clearFormat(value) {
+    value = value.replace(/[^0-9\.]+/g,"");
+    value = value.replace(/\./g,'');
+    value = value.replace(/,/g,'');
+    return value;
+}
 
+// ===== Added By Handri 13 Jan 2015 ==== //
 $(window).load(function() {
 	// --------- product page ----------
 	var $container = $('.items-container');
@@ -192,5 +199,3 @@ $(window).load(function() {
 	}
 	// -------- end product page -------
 });
-
-

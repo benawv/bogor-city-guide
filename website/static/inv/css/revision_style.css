@@ -542,7 +542,7 @@ top: 825px !important;
 }
 .slider-wrap {
     width: 500px;
-    height: 40px;
+    height: 45px;
     margin: 0 auto;
     padding: 10px;
     border: 1px solid #D38802;
@@ -748,7 +748,7 @@ label {
     position: relative;
 /*    width: 550px;*/
     width: 100%;
-    height: 330px;
+    height: auto;
 /*    padding: 20px;*/
  
     -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,.1);
@@ -757,11 +757,11 @@ label {
 }
  
 .graph-container > div {
-    position: absolute;
+    /*position: absolute;
     width: inherit;
     height: inherit;
     top: -10px;
-    left: 25px;
+    left: 25px;*/
 }
  
 .graph-info {
@@ -837,24 +837,24 @@ label {
     display: block;
     width: 34px;
     height: 32px;
-    background: url('rangeslider/img/lines.png') no-repeat 9px 12px;
+    background: url('/website/static/inv/js/rangeslider/img/lines.png') no-repeat 9px 12px;
 }
 
 #lines2 span, #bars2 span {
     display: block;
     width: 34px;
     height: 32px;
-    background: url('rangeslider/img/lines.png') no-repeat 9px 12px;
+    background: url('/website/static/inv/js/rangeslider/img/lines.png') no-repeat 9px 12px;
 }
  
-#bars span { background: url('rangeslider/img/bars.png') no-repeat center 10px; }
-#bars2 span { background: url('rangeslider/img/bars.png') no-repeat center 10px; }
+#bars span { background: url('/website/static/inv/js/rangeslider/img/bars.png') no-repeat center 10px; }
+#bars2 span { background: url('/website/static/inv/js/rangeslider/img/bars.png') no-repeat center 10px; }
  
-#lines.active span { background-image: url('rangeslider/img/lines_active.png'); }
-#lines2.active span { background-image: url('rangeslider/img/lines_active.png'); }
+#lines.active span { background-image: url('/website/static/inv/js/rangeslider/img/lines_active.png'); }
+#lines2.active span { background-image: url('/website/static/inv/js/rangeslider/img/lines_active.png'); }
  
-#bars.active span { background-image: url('rangeslider/img/bars_active.png'); }
-#bars2.active span { background-image: url('rangeslider/img/bars_active.png'); }
+#bars.active span { background-image: url('/website/static/inv/js/rangeslider/img/bars_active.png'); }
+#bars2.active span { background-image: url('/website/static/inv/js/rangeslider/img/bars_active.png'); }
 
 /* Clear Floats */
 .graph-info:before, .graph-info:after,
@@ -904,6 +904,212 @@ label {
     background: #003781;
 }
 /*----------------------- Graph------------------------------*/
+
+/* Pagination */
+
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 0 0 20px 0;
+  border-radius: 4px;
+  width: 100%;    
+}
+.pagination > li {
+  display: inline;
+}
+.pagination > li > a,
+.pagination > li > span {
+  position: relative;
+  float: left;
+  font-size: 11px;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+  color: #23527c;
+  background-color: #eee;
+  border-color: #ddd;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  z-index: 2;
+  color: #fff;
+  cursor: default;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+}
+/*pagination 2*/
+.pagination2 {
+  display: inline-block;
+  padding-left: 0;
+  margin: 0 0 20px 0;
+  border-radius: 4px;
+  width: 100%;    
+}
+.pagination2 > li {
+  display: inline;
+}
+.pagination2 > li > a,
+.pagination2 > li > span {
+  position: relative;
+  float: left;
+  font-size: 11px;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.pagination2 > li:first-child > a,
+.pagination2 > li:first-child > span {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.pagination2 > li:last-child > a,
+.pagination2 > li:last-child > span {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.pagination2 > li > a:hover,
+.pagination2 > li > span:hover,
+.pagination2 > li > a:focus,
+.pagination2 > li > span:focus {
+  color: #23527c;
+  background-color: #eee;
+  border-color: #ddd;
+}
+.pagination2 > .active > a,
+.pagination2 > .active > span,
+.pagination2 > .active > a:hover,
+.pagination2 > .active > span:hover,
+.pagination2 > .active > a:focus,
+.pagination2 > .active > span:focus {
+  z-index: 2;
+  color: #fff;
+  cursor: default;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.pagination2 > .disabled > span,
+.pagination2 > .disabled > span:hover,
+.pagination2 > .disabled > span:focus,
+.pagination2 > .disabled > a,
+.pagination2 > .disabled > a:hover,
+.pagination2 > .disabled > a:focus {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+}
+/*pagination 2 */
+
+.pagination-lg > li > a,
+.pagination-lg > li > span {
+  padding: 10px 16px;
+  font-size: 18px;
+}
+.pagination-lg > li:first-child > a,
+.pagination-lg > li:first-child > span {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.pagination-lg > li:last-child > a,
+.pagination-lg > li:last-child > span {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+.pagination-sm > li:first-child > a,
+.pagination-sm > li:first-child > span {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.pagination-sm > li:last-child > a,
+.pagination-sm > li:last-child > span {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.pager {
+  padding-left: 0;
+  margin: 20px 0;
+  text-align: center;
+  list-style: none;
+}
+.pager li {
+  display: inline;
+}
+.pager li > a,
+.pager li > span {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+.pager li > a:hover,
+.pager li > a:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+.pager .next > a,
+.pager .next > span {
+  float: right;
+}
+.pager .previous > a,
+.pager .previous > span {
+  float: left;
+}
+.pager .disabled > a,
+.pager .disabled > a:hover,
+.pager .disabled > a:focus,
+.pager .disabled > span {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
+}
+
+/* Pagination */
 
 
 /*------------------------ Media Query ----------------------*/
@@ -1023,4 +1229,36 @@ input[type="checkbox"] {
 @media only screen and (max-width : 320px) {  
     
 
+}
+
+.sub_form{
+    font-size: 14px;
+    padding: 15px;
+    color: #000000;
+}
+
+.calc-box input[type="text"] {
+	font-size: 26px;
+	font-weight: bold;
+}
+
+/* Bena 09012015 */
+.calc-result-description{
+    margin: 20px 50px;
+}
+.calc-result-description.education > span,
+.calc-result-description.education > a{
+    color: #D38802;
+}
+.calc-result-description.insurance > span,
+.calc-result-description.insurance > a{
+    color: #a50034;
+}
+.calc-result-description.investment > span,
+.calc-result-description.investment > a{
+    color: #113388;
+}
+.calc-result-description.retirement > span,
+.calc-result-description.retirement > a{
+    color: #8b4720;
 }

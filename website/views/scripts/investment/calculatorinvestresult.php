@@ -23,13 +23,7 @@
     
         <div class="container">
     
-    		<div class="row">
-    			<div class="bread">
-    				<a href="/investasi/investment-homepage">Home</a>  
-    				<i class="fa fa-angle-right"></i> 
-   			        Kalkulator Investasi  
-               	</div>
-    		</div>
+    		<?php echo $this->template("includes/inv/breadcrumb.php")?>
     
     
            <div class="box_banner_big">
@@ -70,10 +64,13 @@
                    
                     <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result" style="color: #113388">Rp. 0</span>
+                            <span id="result" style="color: #113388">Rp 0</span>
                         </div>
+		    </div>
+		    <div class="calc-box2">
+			<p class="calc-result-description investment">Dengan biaya saat ini sebesar <span id="investment1_biaya"></span>, dan inflasi sebesar <span id="investment1_asumsi_inflasi"></span>, maka dalam <span id="investment1_jangka_waktu"></span> biaya tersebut akan mencapai <span id="investment1_hasil"></span>.</p>
                         <div class="share">
-                            <span>Bagikan hasil tersebut dengan teman Anda:</span>
+                            <!--span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
                                 <span class='st_sharethis' displayText='ShareThis'></span>
                                 <span class='st_facebook' displayText=''></span>
@@ -81,12 +78,14 @@
                                 <span class='st_linkedin' displayText=''></span>
                                 <span class='st_pinterest' displayText=''></span>
                                 <span class='st_email' displayText=''></span>
-                            </div>
+                            </div!-->
                             
                             <div style="clear:both"></div>
                             <span><br /><br /><br />
                             <b>Disclaimer: <br /></b>
-                        Perhitungan di atas merupakan simulasi, dimana nilai riil akan di berikan setelah proses verifikasi
+				Perhitungan diatas merupakan simulasi yang  menggunakan sistem pembulatan.
+				<br />
+				Untuk hasil lebih tepatnya silakan <a href="/contact-us">hubungi Kami &rsaquo;</a>
                             </span>
                             
                         </div>
@@ -150,8 +149,17 @@
 	}
 
 	var result = getCookie('investment1_hasil');
-	result = accounting.formatMoney(result,'Rp. ',2,'.',',');
+	result = accounting.formatMoney(result,'Rp ',2,'.',',');
 	$('#result').html(result);
+	$('#investment1_hasil').html(result);
+	
+	var investment1_biaya = getCookie('investment1_biaya');
+	$('#investment1_biaya').html(accounting.formatMoney(investment1_biaya,'Rp ',2,'.',','));
+	var investment1_asumsi_inflasi = getCookie('investment1_asumsi_inflasi');
+	$('#investment1_asumsi_inflasi').html(investment1_asumsi_inflasi + ' %');
+	var investment1_jangka_waktu = getCookie('investment1_jangka_waktu');
+	$('#investment1_jangka_waktu').html(investment1_jangka_waktu + ' tahun');
+	
 	
 	$("#investment2").click(function(){
 	    window.location.href = "/kalkulator/financial-calculators/calculator-investment2";
@@ -162,7 +170,7 @@
      });
      
     $("#product_allianz").click(function(){
-	    window.location.href = "http://allianz.co.id/produk";
+	    window.open("http://allianz.co.id/produk",'_blank');
      });
 	function navigateMe(anchor)
 	{
@@ -251,6 +259,7 @@
 			$('.kanan2 .'+id).removeClass('hidden');
 			$('.kanan2 .'+id).addClass('aktif_konten');
 		});
+
 	});
 </script>
 <?php echo $this->template("includes/inv/footer.php")?>    

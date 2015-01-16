@@ -36,7 +36,7 @@
 <div class="main_wrap">
 	<div class="container">
 
-		<div class="row">
+		<!--<div class="row">
 			<div class="bread">
 				<a href="/investasi/investment-homepage">Home</a>  
 				<i class="fa fa-angle-right"></i> 
@@ -46,8 +46,8 @@
 				<?php foreach ($this->data->investment as $inv) {  echo $inv['investment'];}  ?>
 
 			</div>
-		</div>
-
+		</div>-->
+		<?php echo $this->template("includes/inv/breadcrumb.php")?>
 
 		
 
@@ -71,8 +71,9 @@
 		                  {
                     ?>
 					<li class="<?php echo $investmentcolor?$investmentcolor:'bg_fund'?>" style="background-color: <?php echo $bg_color?>" >
-						<h3><?php echo $entry->title ?></h3>
-						<p><?php echo substr($entry->content,0,100) ?></p>
+                        <span style="font-size: 12px;"><?php echo date("d M Y", $entry->o_creationDate) ?></span>
+                        <h3><?php echo $entry->title ?></h3>
+						<p><?php echo $entry->deskripsisingkat ?></p>
 
                         <a href="/investment/investment-article/<?php echo $entry->getO_key()."_".$entry->getO_id()."_1";?>">Selengkapnya <i class="fa fa-angle-right"></i></a>
 
@@ -132,7 +133,7 @@
 <div class="main_wrap">
 	<div class="container">
 
-		<div class="row">
+		<!--<div class="row">
 			<div class="bread">
 				<a href="/investasi/investment-homepage">Home</a>  
 				<i class="fa fa-angle-right"></i> 
@@ -142,7 +143,8 @@
 				Artikel Index
 
 			</div>
-		</div>
+		</div>-->
+		<?php echo $this->template("includes/inv/breadcrumb.php")?>
 
 	</div>
 	<!-- container end -->

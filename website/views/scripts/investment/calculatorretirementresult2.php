@@ -23,13 +23,7 @@
     
 	<div class="container">
 
-		<div class="row">
-			<div class="bread">
-				<a href="/investment">Home</a>  
-                    <i class="fa fa-angle-right"></i> 
-				    Kalkulator Pensiun
-            </div>
-		</div>
+		<?php echo $this->template("includes/inv/breadcrumb.php")?>
 
 
 		<div class="box_banner_big">
@@ -70,10 +64,13 @@
                    
                     <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result" style="color: #8b4720;">Rp. 0</span>
+                            <span id="result" style="color: #8b4720;">Rp 0</span>
                         </div>
+		    </div>
+		    <div class="calc-box2">
+			<p class="calc-result-description retirement">Dengan asumsi biaya hidup bulanan pada saat pensiun sebesar <span id="pension2_biaya"></span> dan masa pensiun selama <span id="pension2_jangka_waktu"></span>, maka Anda membutuhkan dana pensiun sebesar <span id="pension2_hasil"></span>.</p>
                          <div class="share">
-                             <span>Bagikan hasil tersebut dengan teman Anda:</span>
+                             <!--span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
                                 <span class='st_sharethis' displayText='ShareThis'></span>
                                 <span class='st_facebook' displayText=''></span>
@@ -81,7 +78,15 @@
                                 <span class='st_linkedin' displayText=''></span>
                                 <span class='st_pinterest' displayText=''></span>
                                 <span class='st_email' displayText=''></span>
-                            </div>
+                            </div!-->
+			    <div style="clear:both"></div>
+                            <span><br /><br /><br />
+                            <b>Disclaimer: <br /></b>
+				Perhitungan diatas merupakan simulasi yang  menggunakan sistem pembulatan.
+				<br />
+				Untuk hasil lebih tepatnya silakan <a href="/contact-us">hubungi Kami &rsaquo;</a>
+                            </span>
+
                         </div>
                         <!--div class="socmed">
                             <a href="#">
@@ -143,8 +148,13 @@
 	}
 
 	var result = getCookie('pension2_hasil');
-	result = accounting.formatMoney(result,'Rp. ',2,'.',',');
+	result = accounting.formatMoney(result,'Rp ',2,'.',',');
 	$('#result').html(result);
+	$('#pension2_hasil').html(result);
+	var pension2_biaya = getCookie('pension2_biaya');
+	$('#pension2_biaya').html(accounting.formatMoney(pension2_biaya,'Rp ',2,'.',','));
+	var pension2_jangka_waktu = getCookie('pension2_jangka_waktu');
+	$('#pension2_jangka_waktu').html(pension2_jangka_waktu + ' tahun');
 	
 	$("#retirement3").click(function(){
 	    window.location.href = "/kalkulator/financial-calculators/calculator-retirement3";
@@ -155,7 +165,7 @@
      });
      
      $("#product_allianz").click(function(){
-	    window.location.href = "http://allianz.co.id/produk";
+	    window.open("http://allianz.co.id/produk",'_blank');
      });
      
 	function navigateMe(anchor)

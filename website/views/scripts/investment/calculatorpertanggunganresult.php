@@ -23,13 +23,7 @@
     
 	<div class="container">
 
-		<div class="row">
-			<div class="bread">
-				<a href="/investasi/investment-homepage">Home</a>  
-			     <i class="fa fa-angle-right"></i> 
-			     Kalkulator Pertanggungan
-            </div>
-		</div>
+		<?php echo $this->template("includes/inv/breadcrumb.php")?>
 
 
 		<div class="box_banner_big">
@@ -71,10 +65,14 @@
                    
                     <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result" style="color: #a50034">Rp. 0</span>
+                            <span id="result" style="color: #a50034">Rp 0</span>
                         </div>
+		    </div>
+		    <div class="calc-box2">
+			<p class="calc-result-description insurance">Dengan asumsi biaya hidup / pendapatan bulanan sebesar <span id="resp1_biaya"></span>, inflasi <span id="resp1_asumsi_inflasi"></span>, serta tingkat imbal hasil yang diharapkan sebesar <span id="resp1_asumsi_imbal"></span>, Anda membutuhkan uang pertanggungan sebesar <span id="resp1_hasil"></span> yang akan mencukupi kebutuhan finansial keluarga yang dicintai selama <span id="resp1_jangka_waktu"></span>.</p>
+<p class="calc-result-description insurance">Segera hubungi agen asuransi Allianz untuk memastikan bahwa Anda sudah memiliki uang pertanggungan yang cukup. <a href="http://investment.allianz.co.id/contact-us">Hubungi Kami</a></p>
                         <div class="share">
-                            <span>Bagikan hasil tersebut dengan teman Anda:</span>
+                            <!--span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
                                 <span class='st_sharethis' displayText='ShareThis'></span>
                                 <span class='st_facebook' displayText=''></span>
@@ -82,13 +80,35 @@
                                 <span class='st_linkedin' displayText=''></span>
                                 <span class='st_pinterest' displayText=''></span>
                                 <span class='st_email' displayText=''></span>
-                            </div>
+                            </div!--><br />
+							<div>
+								<span>
+									Untuk mendapatkan hasil dan rincian kalkulator
+								</span><br />
+								<span>
+									masuk kan email Anda pada form dibawah.
+								</span><br />
+								<span>
+									Saya bersedia menerima email dari Allianz.
+								</span>
+							</div>
+							<div class="divEmail">
+								<input type="text" class="email-user" placeholder="Email" />
+								<input type='button' class='sendEmail' value='Send' />
+							</div>
+							<br />
+							<div class="sukses" style="color:#1cbd20;">
+								Terima kasih, email Anda sudah terkirim,<br />
+								cek inbox atau kotak spam Anda.
+							</div>
                             
                             <div style="clear:both"></div>
                             <span><br /><br /><br />
                             <b>Disclaimer: <br /></b>
-                        Perhitungan di atas merupakan simulasi, dimana nilai riil akan di berikan setelah proses verifikasi
-                            </span>
+				Perhitungan diatas merupakan simulasi yang  menggunakan sistem pembulatan.
+				<br />
+				Untuk hasil lebih tepatnya silakan <a href="/contact-us">hubungi Kami &rsaquo;</a>
+			    </span>
                             
                         </div>
                         <!--div class="socmed">
@@ -146,16 +166,25 @@
 	}
 
 	var result = getCookie('resp1_hasil');
-	result = accounting.formatMoney(result,'Rp. ',2,'.',',');
+	result = accounting.formatMoney(result,'Rp ',2,'.',',');
 	$('#result').html(result);
+	$('#resp1_hasil').html(result);
 	
-    
+	var resp1_biaya = getCookie('resp1_biaya');
+	$('#resp1_biaya').html(accounting.formatMoney(resp1_biaya,'Rp ',2,'.',','));
+	var resp1_asumsi_imbal = getCookie('resp1_asumsi_imbal');
+	$('#resp1_asumsi_imbal').html(resp1_asumsi_imbal + '%');
+	var resp1_asumsi_inflasi = getCookie('resp1_asumsi_inflasi');
+	$('#resp1_asumsi_inflasi').html(resp1_asumsi_inflasi + '%');
+	var resp1_jangka_waktu = getCookie('resp1_jangka_waktu');
+	$('#resp1_jangka_waktu').html(resp1_jangka_waktu + ' tahun');
+	
      $("#fund_allianz").click(function(){
 	    window.location.href = "/allianz-fund";
      });
      
      $("#product_allianz").click(function(){
-	    window.location.href = "http://allianz.co.id/produk";
+	    window.open("http://allianz.co.id/produk",'_blank');
      });
      
 	function navigateMe(anchor)
@@ -244,6 +273,37 @@
 			$('.kanan2 div').addClass('hidden');
 			$('.kanan2 .'+id).removeClass('hidden');
 			$('.kanan2 .'+id).addClass('aktif_konten');
+		});
+		
+		$('.sukses').hide();
+		$('.sendEmail').click(function(){
+			if($('.email-user').val() != "")
+			{
+				$.ajax({
+					type: 'POST',
+					url: '/sendkalkulator',
+					data: {
+						kalkulator : 'Asuransi',
+						biaya: accounting.formatMoney(getCookie('resp1_biaya'),'Rp ',2,'.',','),
+						result_1: accounting.formatMoney(getCookie('resp1_hasil'),'Rp ',2,'.',','),
+						asumsi_inflasi: getCookie('resp1_asumsi_inflasi'),
+						asumsi_imbalan : getCookie('resp1_asumsi_imbal'),
+						jangka_waktu: getCookie('resp1_jangka_waktu'),
+						risiko: getCookie('resp1_asumsi_imbal'),
+						email : $('.email-user').val()
+					},
+					success: function()
+					{
+						$('.divEmail').hide();
+						$('.sukses').show();
+						//var url = window.location.origin+'/website/static/inv-fbshare/'+response;
+						//alert("Email telah dikirim, silahkan cek email Anda");
+					}
+				});
+			}
+			else{
+				alert("Alamat email harus diisi.");
+			}
 		});
 	});
 </script>

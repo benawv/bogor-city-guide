@@ -7,7 +7,7 @@
                
 			<div class="textbanner bg_green">
 				<h1>1 Yang Terpenting!</h1>
-					<p>Selamat datang, <input type="text" name="putname" id="putname" placeholder="Ketik Nama Anda" /><br />
+					<p>Selamat datang, <!-- <input type="text" name="putname" id="putname" placeholder="Ketik Nama Anda" /> -->
 					pilih 1 yang terpenting untuk anda</p>
 
 				<p>
@@ -56,7 +56,7 @@
         </a>
 	</div>
 
-	<div class="box_c bg_2">
+	<div class="box_c bg_3">
         <a href="<?php echo $this->link('links2')->getHref()?>">
     		<div class="box_c_img left">
     			<?php echo $this->image("box2", array("class" => "boxs")) ?>
@@ -69,7 +69,7 @@
         </a>
 	</div>
 
-	<div class="box_c bg_3">
+	<div class="box_c bg_2">
         <a href="<?php echo $this->link('links3')->getHref()?>">
         		<div class="box_c_img right">
         			<?php echo $this->image("box3", array("class" => "boxs")) ?>

@@ -23,13 +23,7 @@
     
     <div class="container">
 
-		<div class="row">
-			<div class="bread">
-				<a href="/investment">Home</a>  
-                    <i class="fa fa-angle-right"></i> 
-				    Kalkulator Pensiun
-            </div>
-		</div>
+		<?php echo $this->template("includes/inv/breadcrumb.php")?>
 
 
 		<div class="box_banner_big">
@@ -58,7 +52,7 @@
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4 style="background-color: #8b4720;">KALKULATOR PENDIDIKAN</h4>
+                <h4 style="background-color: #8b4720;">KALKULATOR PENSIUN</h4>
            </div>
             
              <div class="calc-machine">
@@ -70,7 +64,7 @@
                    
                     <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result_year" style="color: #8b4720;">Rp. 0</span>
+                            <span id="result_year" style="color: #8b4720;">Rp 0</span>
                         </div>
 		    </div>
 		    <div class="calc-box-title"> 
@@ -79,10 +73,14 @@
                     </div>
 		    <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result_month" style="color: #8b4720;">Rp. 0</span>
+                            <span id="result_month" style="color: #8b4720;">Rp 0</span>
                         </div>
+		    </div>
+		    <div class="calc-box2">
+			<p class="calc-result-description retirement">Untuk mencapai dana pensiun <span id="pension3_biaya"></span> dengan asumsi imbal hasil sebesar <span id="pension3_asumsi_inflasi"></span> dalam <span id="pension3_jangka_waktu"></span>, Anda membutuhkan investasi tahunan sebesar <span id="pension3_hasil_tahunan"></span> atau investasi bulanan sebesar <span id="pension3_hasil_bulanan"></span>.</p>
+<p class="calc-result-description retirement">Segera hubungi agen asuransi Allianz untuk mendapatkan solusi kebutuhan dana pensiun Anda. <a href="http://investment.allianz.co.id/contact-us">Hubungi Kami</a></p>
                          <div class="share">
-                            <span>Bagikan hasil tersebut dengan teman Anda:</span>
+                            <!--span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
                                 <span class='st_sharethis' displayText='ShareThis'></span>
                                 <span class='st_facebook' displayText=''></span>
@@ -90,8 +88,35 @@
                                 <span class='st_linkedin' displayText=''></span>
                                 <span class='st_pinterest' displayText=''></span>
                                 <span class='st_email' displayText=''></span>
-                            </div>
+                            </div!-->
                         </div>
+						<div>
+							<span>
+								Untuk mendapatkan hasil dan rincian kalkulator
+							</span><br />
+							<span>
+								masuk kan email Anda pada form dibawah.
+							</span><br />
+							<span>
+								Saya bersedia menerima email dari Allianz.
+							</span>
+						</div>
+						<div class="divEmail">
+							<input type="text" class="email-user" placeholder="Email" />
+							<input type='button' class='sendEmail' value='Send' />
+						</div>
+						<br />
+						<div class="sukses" style="color:#1cbd20;">
+							Terima kasih, email Anda sudah terkirim,<br />
+							cek inbox atau kotak spam Anda.
+						</div>
+                            <span><br /><br /><br />
+                            <b>Disclaimer: <br /></b>
+				Perhitungan diatas merupakan simulasi yang  menggunakan sistem pembulatan.
+				<br />
+				Untuk hasil lebih tepatnya silakan <a href="/contact-us">hubungi Kami &rsaquo;</a>
+                            </span>
+
                         <!--div class="socmed">
                             <a href="#">
                                 <div class="fb-box"><span class="flaticon-facebook6">Share</span></div>
@@ -148,17 +173,26 @@
 
 	var result_year = getCookie('pension3_hasil_tahunan');
 	var result_month = getCookie('pension3_hasil_bulanan');
-	result_year = accounting.formatMoney(result_year,'Rp. ',2,'.',',');
-	result_month = accounting.formatMoney(result_month,'Rp. ',2,'.',',');
+	result_year = accounting.formatMoney(result_year,'Rp ',2,'.',',');
+	result_month = accounting.formatMoney(result_month,'Rp ',2,'.',',');
 	$('#result_year').html(result_year);
-	$('#result_month').html(result_month);		
+	$('#result_month').html(result_month);
+	$('#pension3_hasil_tahunan').html(result_year);
+	$('#pension3_hasil_bulanan').html(result_month);
+	
+	var pension3_asumsi_inflasi = getCookie('pension3_asumsi_inflasi');
+	$('#pension3_asumsi_inflasi').html(pension3_asumsi_inflasi + '%');
+	var pension3_biaya = getCookie('pension3_biaya');
+	$('#pension3_biaya').html(accounting.formatMoney(pension3_biaya,'Rp ',2,'.',','));
+	var pension3_jangka_waktu = getCookie('pension3_jangka_waktu');
+	$('#pension3_jangka_waktu').html(pension3_jangka_waktu + ' tahun');
 	
     $("#fund_allianz").click(function(){
 	    window.location.href = "/allianz-fund";
      });
      
      $("#product_allianz").click(function(){
-	    window.location.href = "http://allianz.co.id/produk";
+	    window.open("http://allianz.co.id/produk",'_blank');
      });
     
 	function navigateMe(anchor)
@@ -247,6 +281,43 @@
 			$('.kanan2 div').addClass('hidden');
 			$('.kanan2 .'+id).removeClass('hidden');
 			$('.kanan2 .'+id).addClass('aktif_konten');
+		});
+		
+		$('.sukses').hide();
+		$('.sendEmail').click(function(){
+			if($('.email-user').val() != "")
+			{
+				$.ajax({
+					type: 'POST',
+					url: '/sendkalkulator',
+					data: {
+						kalkulator : 'Pensiun',
+						biaya : accounting.formatMoney(getCookie('pension1_biaya'),'Rp ',2,'.',','),
+						result_1 : accounting.formatMoney(getCookie('pension1_hasil'),'Rp ',2,'.',','),
+						biaya_2 : accounting.formatMoney(getCookie('pension2_biaya'),'Rp ',2,'.',','),
+						result_2 : accounting.formatMoney(getCookie('pension2_hasil'),'Rp ',2,'.',','),
+						jangka_waktu_2 : getCookie('pension2_jangka_waktu'),
+						jangak_waktu_3 : getCookie('pension3_jangka_waktu'),
+						asumsi_inflasi: getCookie('pension1_asumsi_inflasi'),
+						asumsi_imbalan : getCookie('pension3_asumsi_inflasi'),
+						jangka_waktu: getCookie('pension1_jangka_waktu'),
+						risiko: getCookie('pension3_asumsi_inflasi'),
+						tahunan : accounting.formatMoney(getCookie('pension3_hasil_tahunan'),'Rp ',2,'.',','),
+						bulanan : accounting.formatMoney(getCookie('pension3_hasil_bulanan'),'Rp ',2,'.',','),
+						email : $('.email-user').val()
+					},
+					success: function()
+					{
+						$('.divEmail').hide();
+						$('.sukses').show();
+						//var url = window.location.origin+'/website/static/inv-fbshare/'+response;
+						//alert("Email telah dikirim, silahkan cek email Anda");
+					}
+				});
+			}
+			else{
+				alert("Alamat email harus diisi.");
+			}
 		});
 	});
 </script>

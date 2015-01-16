@@ -1,5 +1,7 @@
 <?php echo $this->template("includes/inv/header.php")?>
-
+<style>
+div.ui-slider-range{background-color:#8b4720;}
+</style>
 
 <link rel="stylesheet" href="/website/static/inv/js/rangeslider/jquery-ui.css" type="text/css" media="all" />
 
@@ -23,10 +25,11 @@ $(function() {
         
 var select = $( "#demo" );
         var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
-            min: 1000000,
+            min: 5000000,
             max: 1000000000,
-            value: 1000000,
+            value: 5000000,
             range: "min",
+            step: 5000000,
 change: function(event, ui) { 
          var sliderValue = $( "#slider" ).slider( "option", "value" );
         $('#sliderPosition').val(sliderValue);
@@ -58,7 +61,7 @@ $(function() {
 var select = $( "#demo2" );
         var slider = $( "<div id='slider2'></div>" ).insertAfter( select ).slider({
             min: 1,
-            max: 20,
+            max: 50,
         value: 1,
             range: "min",
 change: function(event, ui) { 
@@ -123,13 +126,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
     
 	<div class="container">
 
-		<div class="row">
-			<div class="bread">
-				<a href="/investment">Home</a>  
-                    <i class="fa fa-angle-right"></i> 
-				    Kalkulator Pensiun
-            </div>
-		</div>
+		<?php echo $this->template("includes/inv/breadcrumb.php")?>
 
 
 		<div class="box_banner_big">
@@ -164,11 +161,13 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #8b4720;">BIAYA HIDUP BULANAN YANG DIBUTUHKAN</h4></div>
-                        <div class="tooltips" style="background-color: #8b4720;"><a class="tooltip-left" href="javascript:void(0)" data-tooltip="Biaya hidup setiap bulannya pada saat pensiun dengan memperhitunkan kenaikan harga kebutuhan setiap tahunnya">?  </a></div>
+                        <!--<div class="tooltips" style="background-color: #8b4720;"><a class="tooltip-left" href="javascript:void(0)" data-tooltip="Biaya hidup setiap bulannya pada saat pensiun dengan memperhitunkan kenaikan harga kebutuhan setiap tahunnya">?  </a></div>-->
+
+                        <div class="sub_form">Biaya hidup setiap bulannya pada saat pensiun dengan memperhitungkan kenaikan harga kebutuhan setiap tahunnya</div>
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition" class="slider-wrap" value="Rp. 1.000.000">
+                        <input type="text" id="sliderPosition" class="slider-wrap" value="Rp 5.000.000">
                        </input> 
                         
                         <div id="decrease">
@@ -183,12 +182,19 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                    
                </div>
            </div>
-            
-             <div class="calc-machine">
+           
+           <!-- 
+           <div class="calc-machine">
                <div id="demo2">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4 style="color: #8b4720;">ASUMSI TINGKAT IMBAL HASIL</h4></div>
-                        <div class="tooltips abs2" style="background-color: #8b4720;"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  <8% - Konservatif, 8-15% - Moderat, 15%< - Agresif ">?  </a></div>
+                        <div class="title-box"><h4 style="color: #8b4720;">ASUMSI TINGKAT IMBAL HASIL TAHUNAN</h4></div>
+                        <!--<div class="tooltips abs2" style="background-color: #8b4720;"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  <8% - Konservatif, 8-15% - Moderat, 15%< - Agresif ">?  </a></div>
+
+                        <div class="sub_form">Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  
+	                    <br />&lt; 8% - Konservatif, 
+	                    <br />8-15% - Moderat, 
+	                    <br />15% &lt; - Agresif
+	                    </div>
                    </div>
                    
                     <div class="calc-box">    
@@ -203,16 +209,19 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                           <span class="add">  </span>
                         </div>
                         
-                    </div><!-- End demo -->
+                    </div><!-- End demo 
                    
                </div>
-           </div>   
+           </div>  
+           --> 
            
            <div class="calc-machine">
                <div id="demo3">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4 style="color: #8b4720;">JANGKA WAKTU MASA PENSIUN</h4></div>
-                        <div class="tooltips abs3" style="background-color: #8b4720;"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Lamanya masa pensiun yang direncanakan ">?  </a></div>
+                        <div class="title-box"><h4 style="color: #8b4720;"> LAMANYA MASA PENSIUN YANG DIRENCANAKAN </h4></div>
+                        <!--<div class="tooltips abs3" style="background-color: #8b4720;"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Lamanya masa pensiun yang direncanakan ">?  </a></div>-->
+
+                        <div class="sub_form">Rata-rata kebutuhan dana pensiun direncanakan untuk 20 tahun masa pensiun</div>
                    </div>
                    
                     <div class="calc-box">    
@@ -269,7 +278,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         
         var pension1_hasil = getCookie('pension1_hasil');
 	var pension1_waktu = getCookie('pension1_jangka_waktu');
-	pension1_hasil = accounting.formatMoney(pension1_hasil,'Rp. ',0,'.',',');
+	pension1_hasil = accounting.formatMoney(pension1_hasil,'Rp ',0,'.',',');
 	$('#sliderPosition').val(pension1_hasil);
         $('#sliderPosition2').val("1%");
         $('#sliderPosition3').val(pension1_waktu + " tahun");
@@ -288,20 +297,18 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             return result.toFixed(2);
         }
         
-        var biaya = getCookie('pension1_hasil');
-        var asumsi = 1;
         var asumsi_inflasi = getCookie('pension1_asumsi_inflasi');
-        var waktu = getCookie('pension1_jangka_waktu');
+        var asumsi = parseInt(asumsi_inflasi) + 2;
         $("#sliderPosition").bind('input',function(){
-            var text = $(this).val();
-            text = text.replace(/[^0-9\.]+/g,"");
-            text = text.replace(/\./g,'');
-            text = text.replace(/,/g,'');
-            biaya = text;
-            text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+            var text = clearFormat($(this).val());
+            if (text > 100000000000) {
+                text = 100000000000;
+            }
+            text = accounting.formatMoney(text,'Rp ',0,'.',',');
             $(this).val(text);
         });
         
+        /*
         $("#sliderPosition2").keyup(function(event){
             var text = $(this).val();
             text = text.replace(/[^0-9\.]+/g,"");
@@ -316,31 +323,39 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             asumsi = text;
             $(this).val(text + '%');
         });
+        */
         
         $("#sliderPosition3").keyup(function(event){
-            var text = $(this).val();
-            text = text.replace(/[^0-9\.]+/g,"");
-            text = text.replace(/\./g,'');
-            text = text.replace(/,/g,'');
+            var text = clearFormat($(this).val());
             if (text == 0) {
                 text = 1;
             }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
-            waktu = text;
             $(this).val(text + ' tahun');
         });
 
         $(".orange-btn").click(function(){
-            var result = pension2(biaya,asumsi,asumsi_inflasi,waktu);
             
-            setCookie('pension2_biaya',biaya,1);
-            setCookie('pension2_asumsi_inflasi',asumsi,1);
-            setCookie('pension2_jangka_waktu',waktu,1);
-            setCookie('pension2_hasil',result,1);
-            
-            window.location.href = "/kalkulator/financial-calculators/calculator-retirement2-result";
+            /* added validasi by Ahmad Somadi 27 Des 2014 */
+
+            if (asumsi > asumsi_inflasi) {
+                var biaya = clearFormat($("#sliderPosition").val());
+                var waktu = clearFormat($("#sliderPosition3").val());
+                var result = pension2(biaya,asumsi,asumsi_inflasi,waktu);
+                
+                setCookie('pension2_biaya',biaya,1);
+                setCookie('pension2_asumsi_inflasi',asumsi,1);
+                setCookie('pension2_jangka_waktu',waktu,1);
+                setCookie('pension2_hasil',result,1);
+
+                window.location.href = "/kalkulator/financial-calculators/calculator-retirement2-result";
+            }
+            else{
+                alert("Asumsi imbal hasil tahunan harus lebih besar dari inflasi");
+            }
+
         });
 
 	function navigateMe(anchor)
@@ -430,6 +445,39 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 			$('.kanan2 .'+id).removeClass('hidden');
 			$('.kanan2 .'+id).addClass('aktif_konten');
 		});
+                
+                /* added by Ahmad Somadi 27 Des 2014 */
+                
+                var newValue = $("#sliderPosition").val().replace("Rp ", "").replace(/\./g, "").replace(",00", "");
+                //$("#slider").slider( "value" , newValue);
+		
+                newValue = $("#sliderPosition3").val().replace(" tahun", "");
+                //$( "#slider3" ).slider( "option", "max", newValue);
+                $("#slider3").slider( "value" , newValue);                
+                
+		$("#sliderPosition").focusout(function(event){			
+			val = this.value;
+			val = val.replace("Rp ", "");
+			val = val.replace(".", "");
+			val = val.replace("0.0", "00");
+			//$("#slider").slider( "value" , val);
+			
+		});
+		
+		$("#sliderPosition2").focusout(function(event){			
+			val = this.value;
+			val = val.replace("%", "");
+			$("#slider2").slider( "value" , val);
+			
+		});
+                
+                $("#sliderPosition3").focusout(function(event){			
+			val = this.value;
+			val = val.replace(" tahun", "");
+			$("#slider3").slider( "value" , val);
+			
+		});
+
 	});
 </script>
 <?php echo $this->template("includes/inv/footer.php")?>    

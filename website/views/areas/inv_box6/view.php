@@ -5,7 +5,7 @@
     			<div class="title_section">
     				<?php echo $this->input('title-section')?>
     			</div>
-				<div class="catbox" style="background-color: <?php echo $this->select('color1')->getData()?$this->select('color1')->getData():'blue'?>;">
+				<div class="catbox <?php echo $this->select('color1')->getData()?$this->select('color1')->getData():'blue'?>">
 					<a href="<?php echo $this->link('title-1')->getHref()?>">
 						<?php echo $this->image('image1', array(
 								'width' 	=> 400,
@@ -17,11 +17,12 @@
 						{
 	                    	echo "Color: ";
 	                		echo $this->select("color1",array(
-							    "store" => array(
+							     "store" => array(
 							        array("red", "Red"),
 							        array("purple", "Purple"),
 							        array("blue", "Blue"),
-							        array("brown", "Brown"),
+							        array("blue_light", "Light Blue"),
+                                    array("brown", "Brown"),
 							        array('darkbrown', "Dark Brown"),
 							        array('green', "Green")
 							    ),
@@ -31,7 +32,7 @@
 					?>
                 </div>
 
-				<div class="catbox" style="background-color: <?php echo $this->select('color2')->getData()?$this->select('color2')->getData():'blue'?>;">
+				<div class="catbox <?php echo $this->select('color2')->getData()?$this->select('color2')->getData():'blue'?>">
 					<a href="<?php echo $this->link('title-2')->getHref()?>">
 						<?php echo $this->image('image2', array(
 								'width' 	=> 400,
@@ -43,11 +44,12 @@
 						{
 	                    	echo "Color: ";
 	                		echo $this->select("color2",array(
-							    "store" => array(
+							     "store" => array(
 							        array("red", "Red"),
 							        array("purple", "Purple"),
 							        array("blue", "Blue"),
-							        array("brown", "Brown"),
+							        array("blue_light", "Light Blue"),
+                                    array("brown", "Brown"),
 							        array('darkbrown', "Dark Brown"),
 							        array('green', "Green")
 							    ),
@@ -57,7 +59,7 @@
 					?>
                 </div>
 
-				<div class="catbox" style="background-color: <?php echo $this->select('color3')->getData()?$this->select('color3')->getData():'blue'?>;">
+				<div class="catbox <?php echo $this->select('color3')->getData()?$this->select('color3')->getData():'blue'?>">
 					<a href="<?php echo $this->link('title-3')->getHref()?>">
 						<?php echo $this->image('image3', array(
 								'width' 	=> 400,
@@ -69,11 +71,12 @@
 						{
 	                    	echo "Color: ";
 	                		echo $this->select("color3",array(
-							    "store" => array(
+							     "store" => array(
 							        array("red", "Red"),
 							        array("purple", "Purple"),
 							        array("blue", "Blue"),
-							        array("brown", "Brown"),
+							        array("blue_light", "Light Blue"),
+                                    array("brown", "Brown"),
 							        array('darkbrown', "Dark Brown"),
 							        array('green', "Green")
 							    ),
@@ -83,7 +86,7 @@
 					?>
                 </div>
                 
-                <div class="catbox" style="background-color: <?php echo $this->select('color4')->getData()?$this->select('color4')->getData():'blue'?>;">
+                <div class="catbox <?php echo $this->select('color4')->getData()?$this->select('color4')->getData():'blue'?>">
 					<a href="<?php echo $this->link('title-4')->getHref()?>">
 						<?php echo $this->image('image4', array(
 								'width' 	=> 400,
@@ -95,11 +98,12 @@
 						{
 	                    	echo "Color: ";
 	                		echo $this->select("color4",array(
-							    "store" => array(
+							     "store" => array(
 							        array("red", "Red"),
 							        array("purple", "Purple"),
 							        array("blue", "Blue"),
-							        array("brown", "Brown"),
+							        array("blue_light", "Light Blue"),
+                                    array("brown", "Brown"),
 							        array('darkbrown', "Dark Brown"),
 							        array('green', "Green")
 							    ),
@@ -109,7 +113,7 @@
 					?>
                 </div>
                 
-                <div class="catbox" style="background-color: <?php echo $this->select('color5')->getData()?$this->select('color5')->getData():'blue'?>;">
+                <div class="catbox <?php echo $this->select('color5')->getData()?$this->select('color5')->getData():'blue'?>">
 					<a href="<?php echo $this->link('title-5')->getHref()?>">
 						<?php echo $this->image('image5', array(
 								'width' 	=> 400,
@@ -125,7 +129,8 @@
 							        array("red", "Red"),
 							        array("purple", "Purple"),
 							        array("blue", "Blue"),
-							        array("brown", "Brown"),
+							        array("blue_light", "Light Blue"),
+                                    array("brown", "Brown"),
 							        array('darkbrown', "Dark Brown"),
 							        array('green', "Green")
 							    ),
@@ -135,7 +140,7 @@
 					?>
                 </div>
                 
-                <div class="catbox" style="background-color: <?php echo $this->select('color6')->getData()?$this->select('color6')->getData():'blue'?>;">
+                <div class="catbox <?php echo $this->select('color6')->getData()?$this->select('color6')->getData():'blue'?>">
 					<a href="<?php echo $this->link('title-6')->getHref()?>">
 						<?php echo $this->image('image6', array(
 								'width' 	=> 400,
@@ -147,11 +152,12 @@
 						{
 	                    	echo "Color: ";
 	                		echo $this->select("color6",array(
-							    "store" => array(
+							     "store" => array(
 							        array("red", "Red"),
 							        array("purple", "Purple"),
 							        array("blue", "Blue"),
-							        array("brown", "Brown"),
+							        array("blue_light", "Light Blue"),
+                                    array("brown", "Brown"),
 							        array('darkbrown', "Dark Brown"),
 							        array('green', "Green")
 							    ),

@@ -23,13 +23,7 @@
     
 	 <div class="container">
 
-		<div class="row">
-			<div class="bread">
-				<a href="index.php">Home</a>  
-				<i class="fa fa-angle-right"></i> 
-			     Kalkulator Pendidikan
-			</div>
-		</div>
+		<?php echo $this->template("includes/inv/breadcrumb.php")?>
 
 
 		<div class="box_banner_big">
@@ -64,26 +58,30 @@
              <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>INVESTASI TAHUNAN YANG DIPERLUKAN ADALAH</h4></div>
+                        <div class="title-box"><h4>INVESTASI BULANAN YANG DIPERLUKAN ADALAH</h4></div>
                         <!--div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div-->
                    </div>
                    
                     <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result_year">Rp. 0</span>
+                            <span id="result_month">Rp 0</span>
                         </div>
 		    </div>
 		    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>INVESTASI BULANAN YANG DIPERLUKAN ADALAH</h4></div>
+                        <div class="title-box"><h4>INVESTASI TAHUNAN YANG DIPERLUKAN ADALAH</h4></div>
                         <!--div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div-->
                    </div>
                    
 		    <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result_month">Rp. 0</span>
+                            <span id="result_year">Rp 0</span>
                         </div>
+		    </div>
+                    <div class="calc-box2">
+			<p class="calc-result-description education">Untuk mencapai biaya pendidikan <span id="edu2_biaya"></span> dengan asumsi imbal hasil sebesar <span id="edu2_asumsi_imbal_hasil"></span> dalam <span id="edu2_jangka_waktu"></span>, Anda membutuhkan investasi tahunan sebesar<span id="edu2_hasil_tahunan"></span> atau investasi bulanan sebesar <span id="edu2_hasil_bulanan"></span>.
+<p class="calc-result-description education">Segera hubungi agen asuransi Allianz untuk mendapatkan solusi kebutuhan biaya pendidikan  Anda. <a href="http://investment.allianz.co.id/contact-us">Hubungi Kami</a></p>
                         <div class="share">
-                            <span>Bagikan hasil tersebut dengan teman Anda:</span>
+                            <!--span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
                                 <span class='st_sharethis' displayText='ShareThis'></span>
                                 <span class='st_facebook' displayText=''></span>
@@ -91,12 +89,38 @@
                                 <span class='st_linkedin' displayText=''></span>
                                 <span class='st_pinterest' displayText=''></span>
                                 <span class='st_email' displayText=''></span>
-                            </div>
+                            </div!-->
+			    
                         </div>
 						<div>
+							<span>
+								Untuk mendapatkan hasil dan rincian kalkulator
+							</span><br />
+							<span>
+								masuk kan email Anda pada form dibawah.
+							</span><br />
+							<span>
+								Saya bersedia menerima email dari Allianz.
+							</span>
+						</div>
+						<div class="divEmail">
 							<input type="text" class="email-user" placeholder="Email" />
 							<input type='button' class='sendEmail' value='Send' />
 						</div>
+						<br />
+						<div class="sukses" style="color:#1cbd20;">
+							Terima kasih, email Anda sudah terkirim,<br />
+							cek inbox atau kotak spam Anda.
+						</div>
+						
+			    <div style="clear:both"></div>
+                            <span><br /><br /><br />
+                            <b>Disclaimer: <br /></b>
+				Perhitungan diatas merupakan simulasi yang  menggunakan sistem pembulatan.
+				<br />
+				Untuk hasil lebih tepatnya silakan <a href="/contact-us">hubungi Kami &rsaquo;</a>
+                            </span>
+
                         <!--div class="socmed">
                             <a href="#">
                                 <div class="fb-box"><span class="flaticon-facebook6">Share</span></div>
@@ -153,9 +177,19 @@
 	}
 
 	var result_year = getCookie('edu2_hasil_tahunan');
-	var result_month = getCookie('edu2_hasil_bulanan')
-	$('#result_year').html(accounting.formatMoney(result_year,'Rp. ',2,'.',','));
-	$('#result_month').html(accounting.formatMoney(result_month,'Rp. ',2,'.',','));
+	var result_month = getCookie('edu2_hasil_bulanan');
+	$('#result_year').html(accounting.formatMoney(result_year,'Rp ',2,'.',','));
+	$('#result_month').html(accounting.formatMoney(result_month,'Rp ',2,'.',','));
+	
+	$('#edu2_hasil_tahunan').html(accounting.formatMoney(result_year,'Rp ',2,'.',','));
+	$('#edu2_hasil_bulanan').html(accounting.formatMoney(result_month,'Rp ',2,'.',','));
+	
+	var edu2_biaya = getCookie('edu2_biaya');
+	$('#edu2_biaya').html(accounting.formatMoney(edu2_biaya,'Rp ',2,'.',','));
+	var edu2_asumsi_imbal_hasil = getCookie('edu2_asumsi_imbal_hasil');
+	$('#edu2_asumsi_imbal_hasil').html(edu2_asumsi_imbal_hasil + '%');
+	var edu2_jangka_waktu = getCookie('edu2_jangka_waktu');
+	$('#edu2_jangka_waktu').html(edu2_jangka_waktu + ' tahun');
 	
 	$("#edu2").click(function(){
 	    window.location.href = "/kalkulator/financial-calculators/allianz-investment-calculator-education2.php";
@@ -166,7 +200,7 @@
      });
      
      $("#product_allianz").click(function(){
-	    window.location.href = "http://allianz.co.id/produk";
+	    window.open("http://allianz.co.id/produk",'_blank');
      });
     
 	function navigateMe(anchor)
@@ -257,24 +291,31 @@
 			$('.kanan2 .'+id).addClass('aktif_konten');
 		});
 		
+		$('.sukses').hide();
 		$('.sendEmail').click(function(){
 			if($('.email-user').val() != "")
 			{
 				$.ajax({
 					type: 'POST',
-					url: '/sendkalkulator',
+					url: '/sendkalkulatorpendidikan',
 					data: {
+						kalkulator: 'Pendidikan',
+						biaya : accounting.formatMoney(getCookie('edu1_biaya_bulanan'),'Rp ',2,'.',','),
+						result_1 : accounting.formatMoney(getCookie('edu1_hasil'),'Rp ',2,'.',','),
 						asumsi_inflasi: getCookie('edu1_asumsi_inflasi'),
 						asumsi_imbalan : getCookie('edu2_asumsi_imbal_hasil'),
 						jangka_waktu: getCookie('edu1_jangka_waktu'),
 						risiko: getCookie('edu2_asumsi_imbal_hasil'),
-						tahunan : getCookie('edu2_hasil_tahunan'),
-						bulanan : getCookie('edu2_hasil_bulanan'),
+						tahunan : accounting.formatMoney(getCookie('edu2_hasil_tahunan'),'Rp ',2,'.',','),
+						bulanan : accounting.formatMoney(getCookie('edu2_hasil_bulanan'),'Rp ',2,'.',','),
 						email : $('.email-user').val()
 					},
 					success: function()
 					{
+						$('.divEmail').hide();
+						$('.sukses').show();
 						//var url = window.location.origin+'/website/static/inv-fbshare/'+response;
+						//alert("Email telah dikirim, silahkan cek email Anda");
 					}
 				});
 			}

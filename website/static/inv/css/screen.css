@@ -1105,6 +1105,8 @@ a.link{
 	background: -ms-linear-gradient(top,#fff,#e6e6e6);
 	background: linear-gradient(top,#fff,#e6e6e6);
 	height: 72px;
+
+	margin-bottom: 20px;
 }
 .navi li{
 	display: inline-block;
@@ -1112,13 +1114,16 @@ a.link{
 	margin: 0;
 	float: left;
 	height: 72px;
+	font-weight: bold;
 	
 }
 .nav_menu{
 	/*background: #003781;*/
 	color: #414141;
-	padding: 10px 10px;
+	padding: 10px 20px;
 	height: 72px;
+	text-align: center;
+	border-right: 1px solid #CCCCCC;
 }
 .navi .aktif{
 	background-color: #199dd7;
@@ -1430,6 +1435,10 @@ nav.primary .search{
 	right: -5px;
 	/*top: 5px; */
 	font-size: .75em;
+	margin-top: 15px;
+}
+.minibar a img{
+	width: 210px;
 }
 .minibar .minilogo{
 	float: left;
@@ -3270,4 +3279,12 @@ img.logo-float{
 
 .tabcontent strong {
 	font-weight: bold;
+}
+
+/* added by Bena 09 Jan 2015 */
+.fp_separator{
+	height:1px;
+	background-color:white;
+	margin:0px auto;
+	width: 350px;
 }
