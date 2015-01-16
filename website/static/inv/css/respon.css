@@ -178,6 +178,10 @@ margin-top: 15px;
 .combo_section{
   width: 100%;
 }
+#title2
+{
+  display: none;
+}
 
 }
 

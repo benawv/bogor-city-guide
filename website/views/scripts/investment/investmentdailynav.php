@@ -103,7 +103,7 @@
                             <div class="edge_textbanner edge_<?php echo $this->select('color')->getData()?$this->select('color')->getData():'blue'; ?>"></div>
                         </div>
             </div>	    
-            <div class="wrap60" style="width: 55%;">
+            <div class="desc_page">
                 <h4>NAB Harian</h4>
                 <p></p>
                 <p>Lihat NAB harian terbaru atau pilih NAB berdasar jenis fund anda.</p>
