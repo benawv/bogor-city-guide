@@ -473,10 +473,11 @@
 						databid[d]={x: Date.UTC(new_data.resume_graph.bidyear[d], new_data.resume_graph.bidmonth[d]-1, new_data.resume_graph.bidday[d]), y: new_data.resume_graph.fundbid[d]};
 						
 						console.log("y:"+new_data.resume_graph.bidyear[d]+","+new_data.resume_graph.bidmonth[d]+","+new_data.resume_graph.bidday[d]+",y:"+new_data.resume_graph.fundbid[d]);						
-						console.log(databid[d]);
+						//console.log(databid[d]);
 					    }
 					     var date_awal=Date.UTC(new_data.resume_graph.bidyear[0],new_data.resume_graph.bidmonth[0],new_data.resume_graph.bidday[0]);
-					     // console.log("awal"+date_awal);
+						console.log(new_data.resume_graph.fundbid.length);
+					      
 					     // console.log("a awal"+new_data.resume_graph.bidyear[0]+","+new_data.resume_graph.bidmonth[0]+","+new_data.resume_graph.bidday[0])
 					      
 					    $(function () {

@@ -602,16 +602,16 @@ class InvestmentController extends Website_Controller_Action
                 if($day2>0){
                     
                     if($fundtypes!=""){
-                        $conditions=" $takeoff_fundname and unitdate >= $start and unitdate <= $end and ".$fundtypes;
+                        $conditions=" $takeoff_fundname and DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) >= STR_TO_DATE('$day1-$month1-$year1','%d-%m-%Y') and DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) <= STR_TO_DATE('$day2-$month2-$year2','%d-%m-%Y') and ".$fundtypes;
                     }else{
-                        $conditions=" $takeoff_fundname and unitdate >= $start and unitdate <= $end ";
+                        $conditions=" $takeoff_fundname and DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) >= STR_TO_DATE('$day1-$month1-$year1','%d-%m-%Y') and DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) <= STR_TO_DATE('$day2-$month2-$year2','%d-%m-%Y') ";
                     }
                 }else{
                     
                     if($fundtypes!=""){
-                        $conditions=" $takeoff_fundname and unitdate=$start and ".$fundtypes;
+                        $conditions=" $takeoff_fundname and DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)=$start and ".$fundtypes;
                     }else{
-                         $conditions=" $takeoff_fundname and unitdate=$start";
+                         $conditions=" $takeoff_fundname and DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)=$start";
                     }    
                 }
             }else{
@@ -641,16 +641,16 @@ class InvestmentController extends Website_Controller_Action
 	    $nameCommunity = "object_query_30"; //table yang digunakan di live server
             //$nameCommunity = "object_query_29"; //tulis manual
 	    
-	    $sql_subcat="SELECT *,DATE_FORMAT(DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY),'%d-%b-%y') AS unitdates FROM ".$nameCommunity." AS xmlsource ".$conditions." order by fundname desc,unitdate";
+	    $sql_subcat="SELECT distinct unitdate, bid,offer,DATE_FORMAT(DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY),'%d-%b-%y') AS unitdates FROM ".$nameCommunity." AS xmlsource ".$conditions." order by fundname desc,unitdate";
             $xmldata=$db->fetchAll($sql_subcat);
            
            
           /*bid fund*/            
                 if($day2>0){
                     if($fundtypes!=""){
-                        $conditions=" a.unitdate >= $start and a.unitdate <= $end";
+                        $conditions=" DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) >= STR_TO_DATE('$day1-$month1-$year1','%d-%m-%Y') and DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) <= STR_TO_DATE('$day2-$month2-$year2','%d-%m-%Y')";
                     }else{
-                        $conditions=" a.unitdate = $start ";
+                        $conditions=" DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) = STR_TO_DATE('$day1-$month1-$year1','%d-%m-%Y') ";
                     }
                 }
                 $isFundName=$fundtype;
@@ -663,12 +663,14 @@ class InvestmentController extends Website_Controller_Action
                 		YEAR(DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)) AS yaers
                 	FROM $nameCommunity AS a 
                 	WHERE a.fundname=$fundtype and $conditions
-                	GROUP BY a.fundname, DAY(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'))
+                	GROUP BY a.fundname, DAY(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')),bid,offer
                 	ORDER BY DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)";
-			
+		
+		 //print_r($getFundBidMonth);
+		 //die();
                 $fundBidMonth=$db->fetchAll($getFundBidMonth);
         
-                //print_r($getFundBidMonth); 
+               
                 //die('s');
 		$itemss['fundname']=$fundBidMonth[0]['fundname'];
                 $itemss['total']=count($fundBidMonth);
