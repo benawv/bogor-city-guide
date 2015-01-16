@@ -472,13 +472,12 @@
 						
 						databid[d]={x: Date.UTC(new_data.resume_graph.bidyear[d], new_data.resume_graph.bidmonth[d]-1, new_data.resume_graph.bidday[d]), y: new_data.resume_graph.fundbid[d]};
 						
-						console.log("y:"+new_data.resume_graph.bidyear[d]+","+new_data.resume_graph.bidmonth[d]+","+new_data.resume_graph.bidday[d]+",y:"+new_data.resume_graph.fundbid[d]);						
+						//console.log("y:"+new_data.resume_graph.bidyear[d]+","+new_data.resume_graph.bidmonth[d]+","+new_data.resume_graph.bidday[d]+",y:"+new_data.resume_graph.fundbid[d]);						
 						//console.log(databid[d]);
 					    }
 					     var date_awal=Date.UTC(new_data.resume_graph.bidyear[0],new_data.resume_graph.bidmonth[0],new_data.resume_graph.bidday[0]);
-						console.log(new_data.resume_graph.fundbid.length);
-					      
-					     // console.log("a awal"+new_data.resume_graph.bidyear[0]+","+new_data.resume_graph.bidmonth[0]+","+new_data.resume_graph.bidday[0])
+						//console.log(new_data.resume_graph.fundbid.length);
+					        //console.log("a awal"+new_data.resume_graph.bidyear[0]+","+new_data.resume_graph.bidmonth[0]+","+new_data.resume_graph.bidday[0])
 					      
 					    $(function () {
                                                 $('#container').highcharts({
@@ -496,7 +495,7 @@
 							},
 							xAxis: {
 								type: 'datetime',
-								minRange: new_data.resume_graph.bidyear.length * 24 * 3600000 // fourteen days
+								minRange: 14 * 24 * 3600000 // fourteen days
 							    },
 							yAxis: {
 							    title: {
@@ -531,9 +530,9 @@
 							    }
 							},
 							series: [{
-							   // pointInterval: 1,
+							    //pointInterval: 1,
 							    //pointStart: Date.UTC(arr_awal[2], arr_awal[0], arr_awal[1]),
-							    // pointInterval: 24 * 3600 * 1000,
+							    //pointInterval: 24 * 3600 * 1000,
 							    pointInterval: 24 * 3600 * 1000,
 							    pointStart: date_awal,
 							    name: fundname,
