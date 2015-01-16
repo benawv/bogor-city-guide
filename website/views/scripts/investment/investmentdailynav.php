@@ -495,7 +495,7 @@
 							},
 							xAxis: {
 								type: 'datetime',
-								minRange: 30 * 24 * 3600000 // fourteen days
+								minRange: new_data.resume_graph.bidyear.length * 24 * 3600000 // fourteen days
 							    },
 							yAxis: {
 							    title: {
