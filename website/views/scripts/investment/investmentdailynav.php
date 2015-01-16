@@ -308,6 +308,7 @@
                                             left: 0px;
                                             "><span></span></a>
                                     </div>
+				     <p class="return-foot"></p>  
                                     <tbody class="table-body-2 myTable2_items"> 
                                     <?php                    
                                    foreach($this->data['defult_data'] as $items){
@@ -616,10 +617,6 @@
 
             });
             </script>
-
-                   
-                    <p class="return-foot"></p>
-                    
                 </div>
                     <!--- End Table ------>
                 
