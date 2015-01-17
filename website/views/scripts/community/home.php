@@ -42,7 +42,7 @@
 																</div>
 																<div class="txt-wrp">
 																	<time>
-																		<?php echo gmdate("M d, Y", $list[$y][date]);?>
+																		<?php echo date("M d, Y", $list[$y][date]);?>
 																	</time>
 																	<p class="authr-ttl"><?php echo $list[$y][title];?></p>
 																</div>
@@ -66,7 +66,7 @@
 																	</div>
 																	<div class="txt-wrp">
 																		<time>
-																			<?php echo gmdate("M d, Y", $list[$y+1][date]);?>
+																			<?php echo date("M d, Y", $list[$y+1][date]);?>
 																		</time>
 																		<p class="authr-ttl"><?php echo $list[$y+1][title];?></p>
 																	</div>
@@ -98,7 +98,7 @@
 															</div>
 															<div class="txt-wrp">
 																<time>
-																	<?php echo gmdate("M d, Y", $list[$y+2][date]);?>
+																	<?php echo date("M d, Y", $list[$y+2][date]);?>
 																</time>
 																<p class="authr-ttl"><?php echo $list[$y+2][title];?></p>
 															</div>
@@ -123,7 +123,7 @@
 																</div>
 																<div class="txt-wrp">
 																	<time>
-																		<?php echo gmdate("M d, Y", $list[$y+3][date]);?>
+																		<?php echo date("M d, Y", $list[$y+3][date]);?>
 																	</time>
 																	<p class="authr-ttl"><?php echo $list[$y+3][title];?></p>
 																</div>
@@ -154,7 +154,7 @@
 																</div>
 																<div class="txt-wrp">
 																	<time>
-																		<?php echo gmdate("M d, Y", $list[$y+4][date]);?>
+																		<?php echo date("M d, Y", $list[$y+4][date]);?>
 																	</time>
 																	<p class="authr-ttl"><?php echo $list[$y+4][title];?></p>
 																</div>
@@ -178,7 +178,7 @@
 																	</div>
 																	<div class="txt-wrp">
 																		<time>
-																			<?php echo gmdate("M d, Y", $list[$y+5][date]);?>
+																			<?php echo date("M d, Y", $list[$y+5][date]);?>
 																		</time>
 																		<p class="authr-ttl"><?php echo $list[$y+5][title];?></p>
 																	</div>
@@ -204,7 +204,7 @@
 																	</div>
 																	<div class="txt-wrp">
 																		<time>
-																			<?php echo gmdate("M d, Y", $list[$y+6][date]);?>
+																			<?php echo date("M d, Y", $list[$y+6][date]);?>
 																		</time>
 																		<p class="authr-ttl"><?php echo $list[$y+6][title];?></p>
 																	</div>
@@ -352,7 +352,7 @@
 																<span class="art-hvr"></span>
 															</div>
 															<div class="txt-wrp">
-																<time><?php echo gmdate("M d, Y", $result[date])?></time>
+																<time><?php echo date("M d, Y", $result[date])?></time>
 																
 																<p class="authr-ttl"><?php echo $result[title];?></p>
 															</div>
@@ -399,7 +399,7 @@
 																<span class="art-hvr"></span>
 															</div>
 															<div class="txt-wrp">
-																<time><?php echo gmdate("M d, Y", $result[date])?></time>
+																<time><?php echo date("M d, Y", $result[date])?></time>
 																
 																<p class="authr-ttl"><?php echo $result[title];?></p>
 															</div>
