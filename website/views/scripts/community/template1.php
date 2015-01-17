@@ -64,7 +64,7 @@
 								
 								<p class="custom-art art-inf">
 									<time>
-										<?php echo gmdate("M d, Y" , strtotime($this->data->getDate()));?>
+										<?php echo date("M d, Y" , strtotime($this->data->getDate()));?>
 									</time>
 								</p>
 
