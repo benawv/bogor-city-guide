@@ -210,8 +210,8 @@ pimcore.document.tags.link = Class.create(pimcore.document.tag, {
 
         this.window = new Ext.Window({
             modal: true,
-            width: 500,
-            height: 330,
+            width: 600,
+            height: 365,
             title: t("edit_link"),
             items: [this.form],
             layout: "fit"

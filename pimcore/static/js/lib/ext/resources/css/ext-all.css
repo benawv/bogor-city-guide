@@ -3623,3 +3623,6 @@ table.x-btn-text-icon {
     overflow: auto !important;
     height: 25px !important;
 }
+.cus_edit_link{
+    z-index: 10002 !important;
+}

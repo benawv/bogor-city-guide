@@ -26,7 +26,7 @@ pimcore.document.tags.video = Class.create(pimcore.document.tag, {
         this.setupWrapper();
 
         var element = Ext.get("pimcore_video_" + name);
-        element.insertHtml("afterBegin", '<div class="pimcore_video_edit_button"></div>');
+        element.insertHtml("afterBegin", '<div class="pimcore_video_edit_button cus_edit_link"></div>');
 
         var button = new Ext.Button({
             iconCls: "pimcore_icon_edit_video",
@@ -145,8 +145,8 @@ pimcore.document.tags.video = Class.create(pimcore.document.tag, {
 
         this.window = new Ext.Window({
             modal: true,
-            width: 500,
-            height: 250,
+            width: 520,
+            height: 265,
             title: t("video"),
             items: [this.form],
             layout: "fit",
