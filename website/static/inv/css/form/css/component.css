@@ -73,7 +73,6 @@
 .form-container.blue span.final-message,
 .form-container.blue span.final-message h3,
 .form-container.blue span.final-message p,
-.form-container.blue span.final-message a,
 .form-container.blue span.percentage
 {
     color: white !important;
@@ -100,7 +99,6 @@
 .form-container.red span.final-message,
 .form-container.red span.final-message h3,
 .form-container.red span.final-message p,
-.form-container.red span.final-message a,
 .form-container.red span.percentage
 {
     color: white !important;
@@ -116,7 +114,6 @@
 .form-container.purple span.final-message,
 .form-container.purple span.final-message h3,
 .form-container.purple span.final-message p,
-.form-container.purple span.final-message a,
 .form-container.purple span.percentage
 {
     color: white !important;
@@ -157,7 +154,7 @@ form.simform .simform-inner > ol > li > span > label
     display: block;
     padding: 0;
     margin: 0;
-    font-size: 70%;
+    font-size: 24px;
 }
 
 form.simform .simform-inner > ol > li > span > label
@@ -166,74 +163,6 @@ form.simform .simform-inner > ol > li > span > label
 }
 
 /*--otoy end--*/
-
-.form_cont{
-	width: 100%;
-	float: left;
-	margin: 30px 0;
-}
-
-.form_cont h1{
-	color: #666666;
-	font-size: 20px;
-	font-weight: bold;
-	border-bottom: 1px solid #CCCCCC;
-	padding: 15px 0;
-	margin-bottom: 15px;
-}
-
-.stepform{
-	border-bottom: 3px solid #CCCCCC;
-	padding-bottom: 20px;
-	display: none;
-}
-
-.form_cont h2{
-	color: #666666;
-	font-size: 16px;
-	font-weight: bold;
-	margin-bottom: 20px;
-}
-
-.form_cont h3{
-	color: #666666;
-	font-size: 14px;
-	font-weight: bold;
-	margin-bottom: 20px;
-}
-
-.stepform table td{
-	font-size: 14px;
-	color: #666666;
-	vertical-align: middle;
-	padding-bottom: 10px;
-
-}
-.stepform table td input[type="text"]{
-	width: 90%;
-	float: right;
-	padding: 5px 10px;
-	background: #CCCCCC;
-	border: 0 none;
-	font-size: 14px;
-	outline: 0;
-	margin-bottom: 10px;
-	text-align:right;
-}
-
-.submit_button {
-	font-size: 16px;
-	padding: 10px 20px;
-	border: 1px solid #666666;
-	background: #FFFFFF;
-	outline: none;
-}
-.bg_grey{
-  background: #e5e5e5;
-}
-
-.hide{display: none;}
-.showform, hr{display: block;}
 
 
 .simform {
@@ -429,7 +358,7 @@ form.simform .simform-inner > ol > li > span > label
 	margin: 0.4em 0;
 	width: 3em;
 	font-weight: 700;
-	font-size: 0.4em;
+	font-size: 14px;
 }
 
 .simform .number:after {
@@ -517,6 +446,11 @@ margin-top: 15px;
 	transition-delay: 0.5s;
 }
 
+.final-message.show h3 a{
+		color: rgba(255,255,255,0.5);
+		font-size: 18px;
+}
+
 /* Final hiding of form / showing message */
 .simform-inner.hide {
 	visibility: hidden;
@@ -562,5 +496,48 @@ input[type=text]::-ms-clear {
 @media screen and (max-width: 33.5625em) {
 	.simform {
 		font-size: 1.2em;
+	}
+	.error-message.show,
+	.final-message.show {
+	  visibility: visible;
+	  opacity: 1;
+	  font-size: 24px;
+	}
+
+	.final-message.show h1,
+	.final-message.show h2,
+	.final-message.show h3 {
+	
+		font-style: italic;
+		font-size: 24px;
+		margin: 15px 0;
+		color: #FFFFFF;
+	}
+	.final-message.show h2{
+		font-size: 36px;
+		font-weight: bold;
+		border-bottom: 1px solid #FFFFFF;
+		padding-bottom: 15px;
+	}
+	.final-message.show h3{
+		font-size: 24px;
+		font-weight: normal;
+		border-bottom: 1px solid #FFFFFF;
+		padding: 15px 0;
+	}
+	.final-message.show h1{
+		font-size: 28px;
+		font-weight: bold;
+		border-bottom: 1px solid #FFFFFF;
+		padding: 15px 0;
+	}
+	.final-message.show h3 a{
+		color: rgba(255,255,255,0.5);
+		font-size: 18px;
+	}
+	
+	/* bena090115 */
+	.fp_separator{
+		display: none;
 	}
 }

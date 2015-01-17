@@ -1,5 +1,7 @@
 <?php echo $this->template("includes/inv/header.php")?>
-
+<style>
+div.ui-slider-range{background-color:#113388;}
+</style>
 
 <link rel="stylesheet" href="/website/static/inv/js/rangeslider/jquery-ui.css" type="text/css" media="all" />
 
@@ -23,9 +25,10 @@ $(function() {
         
 var select = $( "#demo" );
         var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
-            min: 1000000,
-            max: 1000000000,
-            value: 1000000,
+            min: 10000000,
+            max: 5000000000,
+            value: 10000000,
+            step: 10000000,
             range: "min",
 change: function(event, ui) { 
          var sliderValue = $( "#slider" ).slider( "option", "value" );
@@ -58,7 +61,7 @@ $(function() {
 var select = $( "#demo2" );
         var slider = $( "<div id='slider2'></div>" ).insertAfter( select ).slider({
             min: 1,
-            max: 30,
+            max: 50,
         value: 1,
             range: "min",
 change: function(event, ui) { 
@@ -123,13 +126,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
     
 	        <div class="container">
     
-    		<div class="row">
-    			<div class="bread">
-    				<a href="/investasi/investment-homepage">Home</a>  
-    				<i class="fa fa-angle-right"></i> 
-   			        Kalkulator Investasi  
-               	</div>
-    		</div>
+    		<?php echo $this->template("includes/inv/breadcrumb.php")?>
     
     
             <div class="box_banner_big">
@@ -164,11 +161,11 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4 style="color: #113388">BIAYA YANG DIBUTUHKAN</h4></div>
-                        <div class="tooltips" style="background-color: #113388"><a class="tooltip-left" href="#" data-tooltip="Biaya yang dibutuhkan untuk membeli / memiliki kebutuhan tersebut saat ini ">?  </a></div>
+                        <div class="sub_form">Biaya yang dibutuhkan untuk membeli / memiliki kebutuhan tersebut saat ini</div>
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition" class="slider-wrap" style="border-color: #113388;" value="Rp. 1.000.000">
+                        <input type="text" id="sliderPosition" class="slider-wrap" style="border-color: #113388;" value="Rp 10.000.000">
                        </input> 
                         
                         <div id="decrease">
@@ -187,8 +184,12 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
              <div class="calc-machine">
                <div id="demo2">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4 style="color: #113388">ASUMSI TINGKAT IMBAL HASIL</h4></div>
-                        <div class="tooltips abs2" style="background-color: #113388"><a class="tooltip-left" href="#" data-tooltip="Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  <8% - Konservatif, 8-15% - Moderat, 15%< - Agresif">?  </a></div>
+                        <div class="title-box"><h4 style="color: #113388">ASUMSI IMBAL HASIL TAHUNAN</h4></div>
+                        <div class="sub_form">Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  
+	                    <br />&lt; 8% - Konservatif, 
+	                    <br />8-15% - Moderat, 
+	                    <br />&gt; 15% - Agresif
+	                    </div>
                    </div>
                    
                     <div class="calc-box">    
@@ -234,7 +235,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
            
            <div class="calc-machine">
                <div class="calc-submit bottom">
-                    <input class="orange-btn bg_fund" type="button" value="HITUNG">
+                    <input class="orange-btn bg_fund" type="button" value="Hitung Investasi Tahunan / Bulanan yang Saya Butuhkan">
                 </div>   
            </div>   
                
@@ -266,7 +267,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 	}
         
         var investment1_hasil = getCookie('investment1_hasil');
-	investment1_hasil = accounting.formatMoney(investment1_hasil,'Rp. ',2,'.',',');
+	investment1_hasil = accounting.formatMoney(investment1_hasil,'Rp ',0,'.',',');
 	var investment1_jangka_waktu = getCookie('investment1_jangka_waktu');
 
         $('#sliderPosition').val(investment1_hasil);
@@ -287,51 +288,41 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             return result.toFixed(2);
         }
         
-        var biaya = getCookie('investment1_hasil');
-        var asumsi = 1;
-        var waktu = getCookie('investment1_jangka_waktu');
-        
         $("#sliderPosition").bind('input',function(){
-            var text = $(this).val();
-            text = text.replace(/[^0-9\.]+/g,"");
-            text = text.replace(/\./g,'');
-            text = text.replace(/,/g,'');
-            biaya = text;
-            text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+            var text = clearFormat($(this).val());
+            if (text > 100000000000) {
+                text = 100000000000;
+            }
+            text = accounting.formatMoney(text,'Rp ',0,'.',',');
             $(this).val(text);
         });
         
         $("#sliderPosition2").keyup(function(event){
-            var text = $(this).val();
-            text = text.replace(/[^0-9\.]+/g,"");
-            text = text.replace(/\./g,'');
-            text = text.replace(/,/g,'');
+            var text = clearFormat($(this).val());
             if (text == 0) {
                 text = 1;
             }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
-            asumsi = text;
             $(this).val(text + '%');
         });
         
         $("#sliderPosition3").keyup(function(event){
-            var text = $(this).val();
-            text = text.replace(/[^0-9\.]+/g,"");
-            text = text.replace(/\./g,'');
-            text = text.replace(/,/g,'');
+            var text = clearFormat($(this).val());
             if (text == 0) {
                 text = 1;
             }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
-            waktu = text;
             $(this).val(text + ' tahun');
         });
 
         $(".orange-btn").click(function(){
+            var biaya = clearFormat($("#sliderPosition").val());
+            var asumsi = 1;
+            var waktu = clearFormat($("#sliderPosition2").val());
             var result = investment3(biaya,asumsi,waktu);
             
             setCookie('investment2_biaya',biaya,1);
@@ -430,6 +421,30 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 			$('.kanan2 .'+id).removeClass('hidden');
 			$('.kanan2 .'+id).addClass('aktif_konten');
 		});
+		
+		/* added by Ahmad Somadi 27 Des 2014 */
+                
+                var newValue = $("#sliderPosition").val().replace("Rp ", "").replace(/\./g, "").replace(",00", "");
+                //$("#slider").slider( "value" , newValue);
+		
+		$("#sliderPosition").focusout(function(event){
+			
+			val = this.value;
+			val = val.replace("Rp ", "");
+			val = val.replace(".", "");
+			val = val.replace("0.0", "00");
+			//$("#slider").slider( "value" , val);
+			
+		});
+		
+		$("#sliderPosition2").focusout(function(event){
+			
+			val = this.value;
+			val = val.replace("%", "");
+			$("#slider2").slider( "value" , val);
+			
+		});
+				
 	});
 </script>
 <?php echo $this->template("includes/inv/footer.php")?>    

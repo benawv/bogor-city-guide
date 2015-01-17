@@ -116,8 +116,27 @@
   height: auto;
 }
 
+.head_wiz_1{
+  width: 100%;
+}
+
 .wiz{
 	display:none;
+}
+
+.error-message.show,
+.final-message.show {
+  visibility: visible;
+  opacity: 1;
+  font-size: 24px;
+}
+
+.final-message.show h3 {
+width: 100%;
+color: rgba(0,0,0,0.7);
+font-style: italic;
+font-size: 24px;
+margin-top: 15px;
 }
 
 }

@@ -6,10 +6,10 @@
 						<ol class="questions">
 							<li>
 								<span><label for="q1">Berapakah biaya hidup bulanan Anda saat ini?</label></span>
-								<input id="q1" name="q1" type="text" value="Rp. 0"/>
+								<input id="q1" name="q1" type="text" value="Rp 0"/>
 							</li>
 							<li>
-								<span><label for="q2">Berapa lama lagi sebelum Anda memustuskan untuk pensiun?</label></span>
+								<span><label for="q2">Berapa lama lagi sebelum Anda memutuskan untuk pensiun?</label></span>
 								<input id="q2" name="q2" type="text" value="0 tahun"/>
 							</li>
 							
@@ -59,7 +59,7 @@
 				text = text.replace(/\./g,'');
 				text = text.replace(/,/g,'');
 				pendapatan = text;
-				text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+				text = accounting.formatMoney(text,'Rp ',0,'.',',');
 				$(this).val(text);
 			    });
 			$("#q2").keyup(function(event){
@@ -92,8 +92,8 @@
 					// let's just simulate something...
 					var messageEl = theForm.querySelector( '.final-message' );
 					var result = fp_retirement(pendapatan,waktu);
-					result = accounting.formatMoney(result,'Rp. ',2,'.',',');
-					messageEl.innerHTML = 'FAKTA <br> <h3>Anda membutuhkan <br />'+result+'<br /> Untuk menikmati gaya hidup Anda saat ini di masa pensiun setiap bulannya <br> <a style="color:#CD7A3F" href= "/kalkulator/financial-calculators/pensiun"> Mari mulai perencanaan pensiun anda ></a></h3><h3><a href="#" style="color:#CD7A3F" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';
+					result = accounting.formatMoney(result,'Rp ',2,'.',',');
+					messageEl.innerHTML = '<h2>FAKTA</h2><h3>Anda membutuhkan </h3><h1 style="margin:0px">'+result+'</h1><h3> Untuk menikmati gaya hidup Anda saat ini di masa pensiun setiap bulannya <br> <br><a href= "/kalkulator/financial-calculators/pensiun"> Mari mulai perencanaan pensiun anda ></a></h3><div class="fp_separator"></div><h3 style="margin-top:0px;"><a href="#" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';
 					classie.addClass( messageEl, 'show' );
 				}
 			} );

@@ -23,13 +23,7 @@
     
 	<div class="container">
 
-		<div class="row">
-			<div class="bread">
-				<a href="/investasi/investment-homepage">Home</a>  
-                    <i class="fa fa-angle-right"></i> 
-				    Kalkulator Pensiun
-            </div>
-		</div>
+		<?php echo $this->template("includes/inv/breadcrumb.php")?>
 
 
 		<div class="box_banner_big">
@@ -70,10 +64,13 @@
                    
                     <div class="calc-box2">    
                         <div class="count-result">
-                            <span id="result" style="color: #8b4720;">Rp. 0</span>
+                            <span id="result" style="color: #8b4720;">Rp 0</span>
                         </div>
+		    </div>
+		    <div class="calc-box2">
+			<p class="calc-result-description retirement">Dengan biaya hidup bulanan saat ini sebesar <span id="pension1_biaya"></span>, dan inflasi sebesar <span id="pension1_asumsi_inflasi"></span>, maka dalam <span id="pension1_jangka_waktu"></span> biaya hidup bulanan tersebut akan mencapai <span id="pension1_hasil"></span>.</p>
                          <div class="share">
-                            <span>Bagikan hasil tersebut dengan teman Anda:</span>
+                            <!--span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
                                 <span class='st_sharethis' displayText='ShareThis'></span>
                                 <span class='st_facebook' displayText=''></span>
@@ -81,8 +78,16 @@
                                 <span class='st_linkedin' displayText=''></span>
                                 <span class='st_pinterest' displayText=''></span>
                                 <span class='st_email' displayText=''></span>
-                            </div>
+                            </div!-->
+			    <div style="clear:both"></div>
+                            <span><br /><br /><br />
+                            <b>Disclaimer: <br /></b>
+				Perhitungan diatas merupakan simulasi yang  menggunakan sistem pembulatan.
+				<br />
+				Untuk hasil lebih tepatnya silakan <a href="/contact-us">hubungi Kami &rsaquo;</a>
+                            </span>
                         </div>
+			
                         <!--div class="socmed">
                             <a href="#">
                                 <div class="fb-box"><span class="flaticon-facebook6">Share</span></div>
@@ -100,7 +105,7 @@
            
            <div class="calc-machine">
                <div class="calc-submit">
-                    <input id="retirement2" class="orange-btn bg_pension" type="button" value="BERAPA TOTAL DANA PENSIUN YANG SAYA BUTUHKAN?">
+                    <input id="retirement2" class="orange-btn bg_pension" type="button" value="BAGAIMANA MENCAPAINYA?">
                 </div>
                 
             <!--div class="socmed">
@@ -142,8 +147,17 @@
 	}
 
 	var result = getCookie('pension1_hasil');
-	result = accounting.formatMoney(result,'Rp. ',2,'.',',');
+	result = accounting.formatMoney(result,'Rp ',2,'.',',');
 	$('#result').html(result);
+	$('#pension1_hasil').html(result);
+	
+	var pension1_asumsi_inflasi = getCookie('pension1_asumsi_inflasi');
+	$('#pension1_asumsi_inflasi').html(pension1_asumsi_inflasi + '%');
+	var pension1_biaya = getCookie('pension1_biaya');
+	$('#pension1_biaya').html(accounting.formatMoney(pension1_biaya,'Rp ',2,'.',','));
+	var pension1_jangka_waktu = getCookie('pension1_jangka_waktu');
+	$('#pension1_jangka_waktu').html(pension1_jangka_waktu + ' tahun');
+	
 	
 	$("#retirement2").click(function(){
 	    window.location.href = "/kalkulator/financial-calculators/calculator-retirement2";
@@ -154,7 +168,7 @@
      });
      
      $("#product_allianz").click(function(){
-	    window.location.href = "http://allianz.co.id/produk";
+	    window.open("http://allianz.co.id/produk",'_blank');
      });
      
 	function navigateMe(anchor)

@@ -10,7 +10,7 @@
 
 <div class="row">
 		
-		<?php echo $this->areablock('resources-object', array('allowed' => array('inv-fund-moneymarket','inv-fund-balanced','inv-fund-equity','inv-fund-fixedincome')))?>
+		<?php echo $this->areablock('resources-object', array('allowed' => array('inv-fund-moneymarket','inv-fund-balanced','inv-fund-equity','inv-fund-fixedincome','inv-fund-dplk','inv-fund-savingsplan')))?>
 		
 	</div>	<!-- row end -->
 

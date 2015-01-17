@@ -1,5 +1,7 @@
 <?php echo $this->template("includes/inv/header.php")?>
-
+<style>
+div.ui-slider-range{background-color:#D38802;}
+</style>
 
 <link rel="stylesheet" href="/website/static/inv/js/rangeslider/jquery-ui.css" type="text/css" media="all" />
 
@@ -23,10 +25,11 @@ $(function() {
         
 var select = $( "#demo" );
         var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
-            min: 1000000,
+            min: 5000000,
             max: 1000000000,
-            value: 1000000,
+            value: 5000000,
             range: "min",
+            step: 5000000,
 change: function(event, ui) { 
          var sliderValue = $( "#slider" ).slider( "option", "value" );
         $('#sliderPosition').val(sliderValue);
@@ -58,7 +61,7 @@ $(function() {
 var select = $( "#demo2" );
         var slider = $( "<div id='slider2'></div>" ).insertAfter( select ).slider({
             min: 1,
-            max: 30,
+            max: 50,
         value: 1,
             range: "min",
 change: function(event, ui) { 
@@ -123,13 +126,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
     
 	 <div class="container">
 
-		<div class="row">
-			<div class="bread">
-				<a href="index.php">Home</a>  
-				<i class="fa fa-angle-right"></i> 
-				Kalkulator Pendidikan
-			</div>
-		</div>
+		<?php echo $this->template("includes/inv/breadcrumb.php")?>
 
 
 		<div class="box_banner_big">
@@ -164,11 +161,13 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4>BIAYA PENDIDIKAN YANG DIBUTUHKAN</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="#overlayAppendix" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
+                        <!--<div class="tooltips"><a class="tooltip-left" href="#overlayAppendix" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>-->
+
+                        <div class="sub_form">Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix</div>
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition" class="slider-wrap" value="Rp. 1.000.000">
+                        <input type="text" id="sliderPosition" class="slider-wrap" value="Rp 5.000.000">
                        </input> 
                         
                         <div id="decrease">
@@ -187,8 +186,14 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
              <div class="calc-machine">
                <div id="demo2">
                    <div class="calc-box-title"> 
-                        <div class="title-box"><h4>ASUMSI TINGKAT IMBAL HASIL</h4></div>
-                        <div class="tooltips abs2"><a class="tooltip-left"  data-tooltip="Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  <8% - Konservatif, 8-15% - Moderat, 15%< - Agresif">?  </a></div>
+                        <div class="title-box"><h4>ASUMSI IMBAL HASIL TAHUNAN</h4></div>
+                        <!--<div class="tooltips abs2"><a class="tooltip-left"  data-tooltip="Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  <8% - Konservatif, 8-15% - Moderat, 15%< - Agresif">?  </a></div>-->
+
+                        <div class="sub_form">Asumsi dari imbal hasil yang dihasilkan oleh instrumen investasi.  
+	                    <br />&lt; 8% - Konservatif, 
+	                    <br />8-15% - Moderat, 
+	                    <br />&gt; 15% - Agresif
+	                    </div>
                    </div>
                    
                     <div class="calc-box">    
@@ -212,7 +217,9 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo3">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4>JANGKA WAKTU</h4></div>
-                        <div class="tooltips abs3"><a class="tooltip-left"  data-tooltip="Lamanya masa berinvestasi yang diinginkan untuk mencapai tujuan investasi">?  </a></div>
+                        <!--<div class="tooltips abs3"><a class="tooltip-left"  data-tooltip="Lamanya masa berinvestasi yang diinginkan untuk mencapai tujuan investasi">?  </a></div>-->
+
+                        <div class="sub_form">Jangka waktu investasi harus lebih pendek atau sama dengan jangka waktu menuju jenjang pendidikan</div>
                    </div>
                    
                     <div class="calc-box">    
@@ -234,7 +241,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
            
            <div class="calc-machine">
                <div class="calc-submit bottom">
-                    <input class="orange-btn bg_edu" type="button" value="HITUNG">
+                    <input class="orange-btn bg_edu" type="button" value="Hitung Investasi Bulanan / Tahunan yang Saya Butuhkan">
                 </div>   
            </div>   
                
@@ -281,55 +288,46 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         }
     
 	var edu_hasil = getCookie('edu1_hasil');
-	edu_hasil= accounting.formatMoney(edu_hasil,'Rp. ',2,'.',',');
+	edu_hasil= accounting.formatMoney(edu_hasil,'Rp ',0,'.',',');
 	$('#sliderPosition').val(edu_hasil);
         $('#sliderPosition2').val("1%");
         $('#sliderPosition3').val(getCookie('edu1_jangka_waktu') + ' tahun');
-        var biaya = getCookie('edu1_hasil');
-        var asumsi = 1;
-        var waktu = getCookie('edu1_jangka_waktu');
         
         $("#sliderPosition").bind('input',function(){
-            var text = $(this).val();
-            text = text.replace(/[^0-9\.]+/g,"");
-            text = text.replace(/\./g,'');
-            text = text.replace(/,/g,'');
-            biaya = text;
-            text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+            var text = clearFormat($(this).val());
+            if (text > 100000000000) {
+                text = 100000000000;
+            }
+            text = accounting.formatMoney(text,'Rp ',0,'.',',');
             $(this).val(text);
         });
         
         $("#sliderPosition2").keyup(function(event){
-            var text = $(this).val();
-            text = text.replace(/[^0-9\.]+/g,"");
-            text = text.replace(/\./g,'');
-            text = text.replace(/,/g,'');
+            var text = clearFormat($(this).val());
             if (text == 0) {
                 text = 1;
             }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
-            asumsi = text;
             $(this).val(text + '%');
         });
         
         $("#sliderPosition3").keyup(function(event){
-            var text = $(this).val();
-            text = text.replace(/[^0-9\.]+/g,"");
-            text = text.replace(/\./g,'');
-            text = text.replace(/,/g,'');
+            var text = clearFormat($(this).val());
             if (text == 0) {
                 text = 1;
             }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
-            waktu = text;
             $(this).val(text + ' tahun');
         });
         
         $(".orange-btn").click(function(){
+            var biaya = clearFormat($("#sliderPosition").val());
+            var asumsi = clearFormat($("#sliderPosition2").val());
+            var waktu = clearFormat($("#sliderPosition3").val());
             var result = edu2(biaya, asumsi, waktu);
             
             setCookie('edu2_biaya',biaya,1);
@@ -428,6 +426,40 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 			$('.kanan2 .'+id).removeClass('hidden');
 			$('.kanan2 .'+id).addClass('aktif_konten');
 		});
+
+		/* added by Ahmad Somadi 27 Des 2014 */
+                
+                var newValue = $("#sliderPosition").val().replace("Rp ", "").replace(/\./g, "").replace(",00", "");
+                //$("#slider").slider( "value" , newValue);
+		
+                newValue = $("#sliderPosition3").val().replace(" tahun", "");
+                $( "#slider3" ).slider( "option", "max", newValue);
+                $("#slider3").slider( "value" , newValue);                
+                
+		$("#sliderPosition").focusout(function(event){			
+			val = this.value;
+			val = val.replace("Rp ", "");
+			val = val.replace(".", "");
+			val = val.replace("0.0", "00");
+			//$("#slider").slider( "value" , val);
+			
+		});
+		
+		$("#sliderPosition2").focusout(function(event){			
+			val = this.value;
+			val = val.replace("%", "");
+			$("#slider2").slider( "value" , val);
+			
+		});
+                
+                $("#sliderPosition3").focusout(function(event){			
+			val = this.value;
+			val = val.replace(" tahun", "");
+			$("#slider3").slider( "value" , val);
+			
+		});
+
+                
 	});
 </script>
 <?php echo $this->template("includes/inv/footer.php")?>    

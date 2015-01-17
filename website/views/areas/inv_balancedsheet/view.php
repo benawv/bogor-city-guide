@@ -14,7 +14,7 @@ jQuery(function($) {
             <div class="wiz">
                 <span class="bar_wiz"></span>
                 <ul>
-                    <li><a href="/investment/financial-planning/cash-flow-tables/income-statement">< AK</a></li>
+                    <li><a href="/financial-planning/cash-flow-tables/income-statement">< AK</a></li>
                     <li id="wiz_1" class="cur"><a href="javascript:void(0);">1</a></li>
                     <li id="wiz_2"><a href="javascript:void(0);">2</a></li>
                     <li id="wiz_3"><a href="javascript:void(0);">3</a></li>
@@ -399,7 +399,7 @@ jQuery(function($) {
                                 <img class="left" src="/website/static/inv/images/prev.png">
                             </a></td>
                         <td class="next_form">
-                          <a href="/investasi/investment-homepage/financial-planning/cash-flow-tables/income-statement" class="right">
+                          <a href="/financial-planning/cash-flow-tables/income-statement" class="right">
                                 <img class="right" src="/website/static/inv/images/next.png" />
                           </a>
                         </td>
@@ -445,7 +445,7 @@ $(document).ready(function(){
         
          var is_cincomestatment=getCookie('cincomestatment'); 
          if(is_cincomestatment!=''){
-            $(".next_form").html("<a href='/investment/financial-planning/cash-flow-tables/income-statement' class='right'><img class='right' src='/website/static/inv/images/next.png' /></a>");
+            $(".next_form").html("<a href='/financial-planning/cash-flow-tables/rasio-finansial' class='right'><img class='right' src='/website/static/inv/images/next.png' /></a>");
          }   
         
         

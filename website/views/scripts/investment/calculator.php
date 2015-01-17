@@ -1,5 +1,7 @@
 <?php echo $this->template("includes/inv/header.php")?>
-
+<style>
+div.ui-slider-range{background-color:#D38802;}
+</style>
 
 <link rel="stylesheet" href="/website/static/inv/js/rangeslider/jquery-ui.css" type="text/css" media="all" />
 <link rel="stylesheet" href="/website/static/inv/js/rangeslider/ui.theme.css" type="text/css" media="all" />
@@ -25,10 +27,11 @@ $(function() {
         
 var select = $( "#demo" );
         var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
-            min: 1000000,
+            min: 5000000,
             max: 1000000000,
-            value: 1000000,
+            value: 5000000,
             range: "min",
+            step: 5000000,
 change: function(event, ui) { 
          var sliderValue = $( "#slider" ).slider( "option", "value" );
         $('#sliderPosition').val(sliderValue);
@@ -125,13 +128,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
     
     <div class="container">
 
-		<div class="row">
-			<div class="bread">
-				<a href="index.php">Home</a>  
-				<i class="fa fa-angle-right"></i> 
-				Kalkulator Pendidikan
-			</div>
-		</div>
+		<?php echo $this->template("includes/inv/breadcrumb.php")?>
 
 
 		<div class="box_banner_big">
@@ -162,15 +159,66 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             <div class="calc-title">
                 <h4>KALKULATOR PENDIDIKAN</h4>
            </div>
+            <div class="calc-machine">
+               <div id="demox">
+                   <div class="calc-box-title"> 
+                        <div class="title-box"><h4>JENJANG PENDIDIKAN</h4></div>
+                   </div>
+                    <div class="calc-box">    
+                        <select class="jenjang" style="border:solid 1px; color: black;">
+                            <option value="KB">Kelompok Bermain (KB)</option>
+                            <option value="TK">Taman Kanak-Kanak (TK)</option>
+                            <option value="SD">Sekolah Dasar (SD)</option>
+                            <option value="SMP">Sekolah Menengah Pertama (SMP)</option>
+                            <option value="SMA">Sekolah Menengah Atas (SMA)</option>
+                            <option value="PT">Perguruan Tinggi (PT)</option>
+                        </select> 
+                    </div><!-- End demo -->
+                   
+               </div>
+           </div>
+       
            <div class="calc-machine">
                <div id="demo">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4>BIAYA PENDIDIKAN SAAT INI</h4></div>
-                        <div class="tooltips"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div>
+                        <!--div class="tooltips"><a class="tooltip-left" href="javascript:void(0);" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?  </a></div!-->
+
+                        <style type="text/css">
+                        #for_mobile{
+                            display: none;
+                        }
+
+                        @media screen and (max-width: 800px){
+
+                            #for_desktop{
+                                display: none;
+                            }
+                            #for_mobile{
+                                display: block;
+                            }
+
+
+                        }
+                        </style>
+
+                        <div id="for_desktop" class="sub_form">Estimasi biaya pendidikan untuk KB/TK/SD/SMP/SMA/PT saat ini *lihat <span class='appendix' style="cursor: pointer; color: blue;">acuan</span></div>
+
+                        <div id="for_mobile" class="sub_form">
+                            Estimasi biaya pendidikan untuk KB/TK/SD/SMP/SMA/PT saat ini *lihat 
+                            <span style="cursor: pointer; color: blue;">
+                                <a href="/acuan" target="_blank">acuan</a>
+                            </span>
+                        </div>
+
+
+
+
+
                    </div>
                    
                     <div class="calc-box">    
-                        <input type="text" id="sliderPosition" class="slider-wrap" value="Rp. 1.000.000">
+                        <input type="text" id="sliderPosition" class="slider-wrap" value="Rp 5.000.000">
                        </input> 
                         
                         <div id="decrease">
@@ -190,7 +238,9 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo2">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4>ASUMSI TINGKAT INFLASI</h4></div>
-                        <div class="tooltips abs2"><a class="tooltip-left" data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%">?  </a></div>
+                        <!--<div class="tooltips abs2"><a class="tooltip-left" data-tooltip="Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%">?  </a></div>-->
+
+                        <div class="sub_form">Asumsi dari tingkat rata-rata kenaikan harga barang setiap tahunnya. Rata-rata inflasi 30 tahun terakhir adalah 10%</div>
                    </div>
                    
                     <div class="calc-box">    
@@ -214,7 +264,9 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                <div id="demo3">
                    <div class="calc-box-title"> 
                         <div class="title-box"><h4>JANGKA WAKTU</h4></div>
-                        <div class="tooltips abs3"><a class="tooltip-left" data-tooltip="Lamanya masa berinvestasi yang diinginkan untuk mencapai tujuan investasi">?  </a></div>
+                        <!--<div class="tooltips abs3"><a class="tooltip-left" data-tooltip="Lamanya masa berinvestasi yang diinginkan untuk mencapai tujuan investasi">?  </a></div>-->
+
+                        <div class="sub_form">Jangka waktu investasi harus lebih pendek atau sama dengan jangka waktu menuju jenjang pendidikan</div>
                    </div>
                    
                     <div class="calc-box">    
@@ -236,7 +288,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
            
            <div class="calc-machine">
                <div class="calc-submit bottom">
-                    <input class="orange-btn bg_edu" type="button" value="HITUNG">
+                    <input class="orange-btn bg_edu" type="button" value="Hitung Biaya Pendidikan di Masa Depan">
                 </div>   
            </div>   
                
@@ -324,16 +376,10 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                         <td>64.7</td>
                     </tr>
                     <tr>
-                        <td><strong>Indonesia (UPH)</strong></td>
+                        <td><strong>Indonesia</strong></td>
                         <td>95</td>
                         <td>50.4</td>
                         <td>145.4</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Indonesia (BINUS)</strong></td>
-                        <td>68.9</td>
-                        <td>50.4</td>
-                        <td>119.3</td>
                     </tr>
                 </tbody>
                 <tfoot>
@@ -372,7 +418,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         }
 
         var edu1_biaya_bulanan = getCookie('edu1_biaya_bulanan');
-	edu1_biaya_bulanan = accounting.formatMoney(edu1_biaya_bulanan,'Rp. ',2,'.',',');
+	edu1_biaya_bulanan = accounting.formatMoney(edu1_biaya_bulanan,'Rp ',2,'.',',');
 	
         function edu1(biaya, asumsi, waktu){
             asumsi = asumsi / 100;
@@ -387,56 +433,48 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             return result.toFixed(2);
         }
         
-        $('#sliderPosition').val("Rp. 1.000.000");
+        $('#sliderPosition').val("Rp 5.000.000");
         $('#sliderPosition2').val("1%");
         $('#sliderPosition3').val("1 tahun");
-        var biaya = 1000000;
-        var asumsi = 1;
-        var waktu = 1;
         
         $("#sliderPosition").bind('input',function(){
-            var text = $(this).val();
-            text = text.replace(/[^0-9\.]+/g,"");
-            text = text.replace(/\./g,'');
-            text = text.replace(/,/g,'');
-            biaya = text;
-            text = accounting.formatMoney(text,'Rp. ',0,'.',',');
+            var text = clearFormat($(this).val());
+            if (text > 100000000000) {
+                text = 100000000000;
+            }
+            text = accounting.formatMoney(text,'Rp ',0,'.',',');
             $(this).val(text);
         });
         
         $("#sliderPosition2").keyup(function(event){
-            var text = $(this).val();
-            text = text.replace(/[^0-9\.]+/g,"");
-            text = text.replace(/\./g,'');
-            text = text.replace(/,/g,'');
+            var text = clearFormat($(this).val());
             if (text == 0) {
                 text = 1;
             }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
-            asumsi = text;
             $(this).val(text + '%');
         });
         
         $("#sliderPosition3").keyup(function(event){
-            var text = $(this).val();
-            text = text.replace(/[^0-9\.]+/g,"");
-            text = text.replace(/\./g,'');
-            text = text.replace(/,/g,'');
+            var text = clearFormat($(this).val());
             if (text == 0) {
                 text = 1;
             }
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
-            waktu = text;
             $(this).val(text + ' tahun');
         });
         
         $(".orange-btn").click(function(){
+            var biaya = clearFormat($("#sliderPosition").val());
+            var asumsi = clearFormat($("#sliderPosition2").val());
+            var waktu = clearFormat($("#sliderPosition3").val());
             var result = edu1(biaya, asumsi, waktu);
             
+            setCookie('edu1_jenjang',$('.jenjang').val(),1);
             setCookie('edu1_biaya_bulanan',biaya,1);
             setCookie('edu1_asumsi_inflasi',asumsi,1);
             setCookie('edu1_jangka_waktu',waktu,1);
@@ -444,7 +482,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
             
             window.location.href = "/kalkulator/financial-calculators/calculator-education1-result";
         });
-    
+
 	function navigateMe(anchor)
 	{
 	
@@ -464,6 +502,10 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 	}
 	
 	$(document).ready(function(){
+            $('.appendix').click(function(){
+                $('#overlayAppendix').css('display','block');
+                });
+            
 		$(".pagenav .navi li").click(function(){
 			$(".pagenav .navi li").removeClass('aktif');
 			$(this).addClass('aktif');
@@ -532,6 +574,33 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 			$('.kanan2 .'+id).removeClass('hidden');
 			$('.kanan2 .'+id).addClass('aktif_konten');
 		});
+
+		/* added by Ahmad Somadi 27 Des 2014 */
+                		
+		$("#sliderPosition").focusout(function(event){
+			
+			val = this.value;
+			val = val.replace("Rp ", "");
+			val = val.replace(".", "");
+			val = val.replace("0.0", "00");
+			//$("#slider").slider( "value" , val);
+		});
+		
+		$("#sliderPosition2").focusout(function(event){
+			
+			val = this.value;
+			val = val.replace("%", "");
+			$("#slider2").slider( "value" , val);
+			
+		});
+
+		$("#sliderPosition3").focusout(function(event){
+			
+			val = this.value;
+			val = val.replace(" tahun", "");
+			$("#slider3").slider( "value" , val);
+		});
+
 	});
 </script>
 <?php echo $this->template("includes/inv/footer.php")?>    

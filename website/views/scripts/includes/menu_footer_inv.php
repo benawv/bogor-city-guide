@@ -53,10 +53,10 @@
                     	<!-- <div class="menu-level2"> -->
                             <ul class="noborder">
                                 <li class="menutitle"><span class="clickPage" >Halaman Terkait</span></li>
-                        		<li><a href="http://allianz.co.id">Allianz Website</a></li>
-        						<li><a href="#">Allianz Facebook</a></li>
-        						<li><a href="#">Allianz Twitter</a></li>
-        						<li><a href="#">Journal Allianz</a></li>
+                        		<li><a target="_blank" href="http://allianz.co.id">Allianz Website</a></li>
+        						<li><a target="_blank" href="https://www.facebook.com/AllianzIndonesiaCommunity">Allianz Facebook</a></li>
+        						<li><a target="_blank" href="https://twitter.com/AllianzId">Allianz Twitter</a></li>
+        						<li><a target="_blank" href="http://jurnal.allianz.co.id">Jurnal Allianz</a></li>
                             </ul>
                    		<!-- </div> -->
                    	</li>
