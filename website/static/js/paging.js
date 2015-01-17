@@ -78,7 +78,7 @@ $(document).ready(function(){
 				        if(z < Object.keys(obj).length-2)
 					    {
 							$("#div"+z).find("a").attr("href", "community-detail/"+key+"_"+id+"_"+tmplt);
-					        $("#div"+z).find("img").attr("src", "/"+gmbr);
+					        $("#div"+z).find("img").attr("src", gmbr);
 					        $("#div"+z).find(".tg-shr").empty();
 					        $("#div"+z).find(".tg-shr").append(cat);
 					        $("#div"+z).find("time").empty();
@@ -171,7 +171,7 @@ $(document).ready(function(){
 				        if(z < Object.keys(obj).length-2)
 					    {
 							$("#div"+z).find("a").attr("href", "community-detail/"+key+"_"+id+"_"+tmplt);
-					        $("#div"+z).find("img").attr("src", "/"+gmbr);
+					        $("#div"+z).find("img").attr("src", gmbr);
 					        $("#div"+z).find(".tg-shr").empty();
 					        $("#div"+z).find(".tg-shr").append(cat);
 					        $("#div"+z).find("time").empty();
@@ -265,7 +265,7 @@ $(document).ready(function(){
 				        if(z < Object.keys(obj).length-2)
 					    {
 							$("#div"+z).find("a").attr("href", "../community-detail/"+key+"_"+id+"_"+tmplt);
-					        $("#div"+z).find("img").attr("src", "../"+gmbr);
+					        $("#div"+z).find("img").attr("src", gmbr);
 					        $("#div"+z).find(".tg-shr").empty();
 					        $("#div"+z).find(".tg-shr").append(cat);
 					        $("#div"+z).find("time").empty();
@@ -359,7 +359,7 @@ $(document).ready(function(){
 					    {
 				        	$("#div"+z).fadeIn("slow");
 							$("#div"+z).find("a").attr("href", "../community-detail/"+key+"_"+id+"_"+tmplt);
-					        $("#div"+z).find("img").attr("src", "../"+gmbr);
+					        $("#div"+z).find("img").attr("src", gmbr);
 					        $("#div"+z).find(".tg-shr").empty();
 					        $("#div"+z).find(".tg-shr").append(cat);
 					        $("#div"+z).find("time").empty();
