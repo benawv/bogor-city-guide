@@ -106,6 +106,7 @@ class WishlistController extends Website_Controller_Action {
 		$cookiesId = $_POST["cookies"];
 		$produk = $_POST["produk"];
 		$tmp_nama = $_POST["nama"];
+		$gender = $_POST["gender"];
 		$tmp_lower = strtolower($tmp_nama);
 		
 		$nama = str_replace(" ", "-",$tmp_lower);
@@ -175,6 +176,7 @@ class WishlistController extends Website_Controller_Action {
 				$params = array('name' => $tmp_nama,
 						'email' => $email,
 						'no_telp' => $no_telp,
+						'gender' => $gender,
 						'produk' => implode(", ", $pro));
 				$mail = new Pimcore_Mail();
 				$mail->setSubject("Pemesanan Produk");
@@ -192,6 +194,7 @@ class WishlistController extends Website_Controller_Action {
 			$pesan->setNama($tmp_nama);
 			$pesan->setEmail($email);
 			$pesan->setNoTelp($no_telp);
+			$pesan->setGender($gender);
 			
 			$pesan->setProduk($prod);
 			$pesan->setO_key($nama_key);

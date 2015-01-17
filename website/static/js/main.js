@@ -304,12 +304,12 @@ $(document).ready(function(){
 	    			{
 	    				produk[z] = $(".produk"+z).text();
 	    			}
-	    			var namaLengkap = salutation+". "+nama+" "+nama_belakang;
+	    			var namaLengkap = nama+" "+nama_belakang;
 	    			$("body").prepend("<div id='dvLoading'></div>");
 	    			$.ajax({
 	    				url: "/send-email",
 	    				type: "POST",
-	    				data: {"cookies":cookies[(cookies.length)-1], "produk": produk, "nama":namaLengkap, "email":email, "no_telp":no_telp},
+	    				data: {"cookies":cookies[(cookies.length)-1], "produk": produk, "nama":namaLengkap, "email":email, "no_telp":no_telp, "gender":salutation},
 	    				success: function(result) {
 	    					var hasil =jQuery.parseJSON(result);
 	    					if(hasil.status=="Kirim"){

@@ -126,11 +126,11 @@ table td[class*=col-], table th[class*=col-] {
 				<tr>
 					<td>
 						<select id="salutation" class="form-control">
-							<option value="Bpk">Bpk</option>
-							<option value="Ibu">Ibu</option>
-							<option value="Mr">Mr</option>
-							<option value="Mrs">Mrs</option>
-							<option value="Miss">Miss</option>
+							<option value="laki-laki">Bpk</option>
+							<option value="perempuan">Ibu</option>
+							<option value="laki-laki">Mr</option>
+							<option value="perempuan">Mrs</option>
+							<option value="perempuan">Miss</option>
 						</select>
 					</td>
 					<td>
