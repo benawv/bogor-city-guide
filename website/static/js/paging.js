@@ -49,7 +49,7 @@ $(document).ready(function(){
 				function complete() {
 					var z = 0; 
 					$.each($.parseJSON(data), function(k, index){
-						var gmbr = index.filename;
+						var gmbr = index.path+""+index.filename;
 						var key = index.o_key;
 						var id = index.oo_id;
 						var tmplt = index.template;
@@ -142,7 +142,7 @@ $(document).ready(function(){
 				function complete() {
 					var z = 0; 
 					$.each($.parseJSON(data), function(k, index){
-						var gmbr = index.filename;
+						var gmbr = index.path+""+index.filename;
 						var key = index.o_key;
 						var id = index.oo_id;
 						var tmplt = index.template;
@@ -236,7 +236,7 @@ $(document).ready(function(){
 				function complete() {
 					var z = 0; 
 					$.each($.parseJSON(data), function(k, index){
-						var gmbr = index.filename;
+						var gmbr = index.path+""+index.filename;
 						var key = index.o_key;
 						var id = index.oo_id;
 						var tmplt = index.template;
@@ -329,7 +329,7 @@ $(document).ready(function(){
 				function complete() {
 					var z = 0; 
 					$.each($.parseJSON(data), function(k, index){
-						var gmbr = index.filename;
+						var gmbr = index.path+""+index.filename;
 						var key = index.o_key;
 						var id = index.oo_id;
 						var tmplt = index.template;
