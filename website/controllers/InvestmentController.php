@@ -516,21 +516,20 @@ class InvestmentController extends Website_Controller_Action
                         LIMIT 1";
             $last1mData=$db->fetchAll($getfirst1m);
             
-
             
             $getLast3m="SELECT a.fundname,a.bid,a.offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS last_3_month
                         FROM $nameCommunity AS a
-                        WHERE fundname LIKE'".$items['fundname']."' AND 
+                        WHERE fundname LIKE '".$items['fundname']."' AND 
                         DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)<=DATE_ADD(NOW(), INTERVAL- 3 MONTH)
                         ORDER BY a.unitdate DESC
                         LIMIT 1";
             $last3mData=$db->fetchAll($getLast3m);
   
-
+	    /*$getday= tanggal terakhir di ahir taun*/	 			
             $getYtd="SELECT DISTINCT a.fundname, a.bid, a.offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS today
                     FROM $nameCommunity as a
                     WHERE fundname LIKE '".$items['fundname']."' AND 
-                    DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) <= STR_TO_DATE('31-12-2014','%d-%m-%Y')
+                    DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) <= STR_TO_DATE('$getday','%d-%m-%Y')
                     GROUP BY fundname,a.bid,a.offer,a.unitdate
 		    ORDER BY a.unitdate desc
 		    limit 1";                    
