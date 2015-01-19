@@ -126,8 +126,10 @@
                         <tbody class="table-body"> 
                         <?php  
                             
-                            foreach($this->data['ytd'] as $items){ 
-
+                            foreach($this->data['ytd'] as $items){
+//echo "<pre>";
+//print_r($items['lastmonth']);
+//echo "</pre>";
                         ?>
 			    <tr> 
 				<td><a href="#"><?php echo  ucwords(strtolower($items['today'][0]['fundname']))?></a></td> 
@@ -135,12 +137,14 @@
 				    <?php echo $items['today'][0]['bid']; ?>
 				</td> 
 				<td>
-				    <?php 
+				    <?php
+				    
 					if(empty($items['lastmonth'][0]['bid'])){
 					    $lastmonth=$items['lastdata'][0]['bid'];
-					    echo round(($lastmonth/$lastmonth)*100)-100;
+					    echo round(($lastmonth/$lastmonth)-1)*100;
 					}else{
-					    echo round(($items['lastdata'][0]['bid']/$items['lastmonth'][0]['bid'])-1,2)*100;
+					    echo round((($items['lastdata'][0]['bid']/$items['lastmonth'][0]['bid'])-1)*100,2);
+					
 					}
 				    ?>
 				    %
@@ -149,9 +153,9 @@
 				    <?php 
 					if(empty($items['last3month'][0]['bid'])){
 					    $lastmonth=$items['lastdata'][0]['bid'];
-					    echo round(($lastmonth/$lastmonth)*100)-100;
+					    echo round(($lastmonth/$lastmonth)-1)*100;
 					}else{
-					    echo round(($items['lastdata'][0]['bid']/$items['last3month'][0]['bid'])-1,2)*100;
+					    echo round((($items['lastdata'][0]['bid']/$items['last3month'][0]['bid'])-1)*100,2);
 					}
     
 				    ?>
@@ -161,9 +165,9 @@
 				    <?php 
 					if(empty($items['ytd'][0]['bid'])){
 					    $lastmonth=$items['lastdata'][0]['bid'];
-					    echo round(($lastmonth/$lastmonth)*100)-100;
+					     echo round(($lastmonth/$lastmonth)-1)*100;
 					}else{
-					    echo round(($items['lastdata'][0]['bid']/$items['ytd'][0]['bid'])-1,2)*100;
+					    echo round((($items['lastdata'][0]['bid']/$items['ytd'][0]['bid'])-1)*100,2);
 					}
 				    ?>
 				    %
@@ -172,9 +176,9 @@
 				   <?php 
 					if(empty($items['last1year'][0]['bid'])){
 					    $lastmonth=$items['lastdata'][0]['bid'];
-					    echo round(($lastmonth/$lastmonth)*100)-100;
+					     echo round(($lastmonth/$lastmonth)-1)*100;
 					}else{
-					    echo round(($items['lastdata'][0]['bid']/$items['last1year'][0]['bid'])-1,2)*100;
+					    echo round((($items['lastdata'][0]['bid']/$items['last1year'][0]['bid'])-1)*100,2);
 					}
 				    ?>
 				    %
