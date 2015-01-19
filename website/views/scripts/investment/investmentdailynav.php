@@ -140,7 +140,7 @@
 					    $lastmonth=$items['lastdata'][0]['bid'];
 					    echo round(($lastmonth/$lastmonth)*100)-100;
 					}else{
-					    echo round(($items['lastdata'][0]['bid']/$items['lastmonth'][0]['bid'])*100,2)-100;
+					    echo round(($items['lastdata'][0]['bid']/$items['lastmonth'][0]['bid'])-1,2)*100;
 					}
 				    ?>
 				    %
@@ -151,7 +151,7 @@
 					    $lastmonth=$items['lastdata'][0]['bid'];
 					    echo round(($lastmonth/$lastmonth)*100)-100;
 					}else{
-					    echo round(($items['lastdata'][0]['bid']/$items['last3month'][0]['bid'])*100,2)-100;
+					    echo round(($items['lastdata'][0]['bid']/$items['last3month'][0]['bid'])-1,2)*100;
 					}
     
 				    ?>
@@ -163,7 +163,7 @@
 					    $lastmonth=$items['lastdata'][0]['bid'];
 					    echo round(($lastmonth/$lastmonth)*100)-100;
 					}else{
-					    echo round(($items['lastdata'][0]['bid']/$items['ytd'][0]['bid'])*100,2)-100;
+					    echo round(($items['lastdata'][0]['bid']/$items['ytd'][0]['bid'])-1,2)*100;
 					}
 				    ?>
 				    %
@@ -174,7 +174,7 @@
 					    $lastmonth=$items['lastdata'][0]['bid'];
 					    echo round(($lastmonth/$lastmonth)*100)-100;
 					}else{
-					    echo round(($items['lastdata'][0]['bid']/$items['last1year'][0]['bid'])*100,2)-100;
+					    echo round(($items['lastdata'][0]['bid']/$items['last1year'][0]['bid'])-1,2)*100;
 					}
 				    ?>
 				    %
@@ -541,7 +541,7 @@
                                                 });
                                             });
                                             ///$('.myTable2_items').html(rows);
-					     $('.return-foot').html('<p class="return-foot">Return: '+formfundtype+' sejak '+arr_awal[0]+'/'+arr_awal[1]+'/'+arr_awal[2]+' hingga '+arr_akhir[0]+'/'+arr_akhir[1]+'/'+arr_akhir[2]+' adalah '+((((new_data.xml_data[0]['bid']/new_data.xml_data[new_data.xml_data.length-1]['bid'])*100)-100).toFixed(2))+'% '+'</p>')
+					     $('.return-foot').html('<p class="return-foot">Return: '+formfundtype+' sejak '+arr_awal[0]+'/'+arr_awal[1]+'/'+arr_awal[2]+' hingga '+arr_akhir[0]+'/'+arr_akhir[1]+'/'+arr_akhir[2]+' adalah '+((((new_data.xml_data[new_data.xml_data.length-1]['bid']/new_data.xml_data[0]['bid'])-1)*100).toFixed(2))+'% '+'</p>')
                                         }
                                         catch(err)
                                         {
