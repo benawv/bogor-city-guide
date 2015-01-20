@@ -56,7 +56,7 @@
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
-                <h4 style="background-color: #113388">KALKULATOR INVESTASI</h4>
+                <h4 style="background-color: #113388" class="titleKalkulator">KALKULATOR INVESTASI</h4>
            </div>
             
              <div class="calc-machine">
@@ -82,7 +82,7 @@
                         </div>
 		    </div>
 		    <div class="calc-box2"> 
-		    <p class="calc-result-description investment">Untuk mencapai <span id="investment2_biaya"></span> dengan asumsi imbal hasil sebesar <span id="investment2_asumsi_imbal_hasil"></span> dalam <span id="investment2_jangka_waktu"></span>, Anda membutuhkan investasi tahunan sebesar <span id="investment2_hasil_tahunan"></span> atau investasi bulanan sebesar <span id="investment2_hasil_bulanan"></span>.</p><p class="calc-result-description investment">Segera hubungi agen asuransi Allianz untuk mendapatkan solusi kebutuhan finansial Anda. <a href="http://investment.allianz.co.id/contact-us">Hubungi Kami</a></p>
+		    <p class="calc-result-description investment shareResult">Untuk mencapai <span id="investment2_biaya"></span> dengan asumsi imbal hasil sebesar <span id="investment2_asumsi_imbal_hasil"></span> dalam <span id="investment2_jangka_waktu"></span>, Anda membutuhkan investasi tahunan sebesar <span id="investment2_hasil_tahunan"></span> atau investasi bulanan sebesar <span id="investment2_hasil_bulanan"></span>.</p><p class="calc-result-description investment">Segera hubungi agen asuransi Allianz untuk mendapatkan solusi kebutuhan finansial Anda. <a href="http://investment.allianz.co.id/contact-us">Hubungi Kami</a></p>
                         <div class="share">
                             <!--span>Bagikan hasil tersebut dengan teman Anda:</span>
                             <div class="tag-center">
