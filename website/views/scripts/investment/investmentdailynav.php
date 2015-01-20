@@ -473,8 +473,8 @@
 						//console.log(databid[d]);
 					    }
 					     var date_awal=Date.UTC(new_data.resume_graph.bidyear[0],new_data.resume_graph.bidmonth[0],new_data.resume_graph.bidday[0]);
-						console.log(date_awal);
-					        console.log(databid.length);
+						//console.log(date_awal);
+					        //console.log(databid.length);
 					      
 					    $(function () {
                                                 $('#container').highcharts({
