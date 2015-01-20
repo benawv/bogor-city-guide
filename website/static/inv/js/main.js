@@ -135,12 +135,14 @@ $(document).ready(function(){
 					var url = window.location.origin+'/website/static/inv-fbshare/'+response;
 					var file = '/website/static/inv-fbshare/'+response;
 					var filename = response;
-					var popUp = window.open('http://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), 'sharer', 'width=626,height=436');
-					popUp.onbeforeunload(function(){
-					  $.post("/delete-file", {url : filename}, function(data, status){
-					    //  //console.log("Data: "+data + " Status: "+status);
-					    });
-					});
+					window.popup = window.open('http://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), 'sharer', 'width=626,height=436');
+					window.popup.onload = function(){
+					  window.popup.onbeforeunload = function(){
+					      $.post("/delete-file", {url : filename}, function(data, status){
+						console.log("Data: "+data + " Status: "+status);
+					      });
+					  }
+					};
 					//setTimeout(function(){
 					//  $.post("/delete-file", {url : filename}, function(data, status){
 					//  //  //console.log("Data: "+data + " Status: "+status);
