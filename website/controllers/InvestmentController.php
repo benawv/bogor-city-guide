@@ -490,7 +490,7 @@ class InvestmentController extends Website_Controller_Action
         foreach($xmldata2 as $items){
 	
 	//last unitdate fundtype	
-	$lastunitdate_="SELECT STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y') AS last_data
+	$lastunitdate_="SELECT DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS last_data
                         FROM $nameCommunity AS a 
                         WHERE a.fundname='".$items['fundname']."'
                         ORDER BY unitdate DESC
