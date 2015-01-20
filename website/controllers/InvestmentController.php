@@ -305,7 +305,7 @@ class InvestmentController extends Website_Controller_Action
 		
 		if($jangka_waktu < 3)
 		{
-			$deskripsi_jangka_waktu = "Jangka waktu investasi yang anda pilih termasuk jangka pendek. Untuk investasi jangka pendek sebaiknya menggunakan instrumen investasi yang memiliki risiko dan fluktuasi nilai yang rendah. Intrumen investasi yang dapat dijadikan pilihan antara lain Instrumen pasar uang seperti deposito, unit link atau reksa dana pasar uang, ataupun instrumen pendapatan tetap seperti ORI (obligasi ritel Indonesia), unit link atau reksa dana pendapatan tetap.";
+			$deskripsi_jangka_waktu = "Jangka waktu investasi yang anda pilih termasuk jangka pendek. Untuk investasi jangka pendek sebaiknya menggunakan instrumen investasi yang memiliki risiko dan fluktuasi nilai yang rendah. Intrumen investasi yang dapat dijadikan pilihan antara lain Instrumen pasar uang seperti deposito, unit link atau reksa dana pasar uang, ataupun instrumen pendapatan tetap seperti ORI (obligasi ritel Indonesia), unit link atau reksa dana pendapatan tetap. ";
 		}
 		else if($jangka_waktu > 3 && $jangka_waktu < 5)
 		{
@@ -491,7 +491,7 @@ class InvestmentController extends Website_Controller_Action
 	    //get last data perbandingan	
             $getlast="SELECT a.fundname,a.bid,a.offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS today
                         FROM $nameCommunity AS a
-                        WHERE fundname LIKE '".$items['fundname']."' AND 
+                        WHERE fundname = '".$items['fundname']."' AND 
                         STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y')<=NOW()
                         ORDER BY a.unitdate DESC
                         LIMIT 1";
@@ -501,7 +501,7 @@ class InvestmentController extends Website_Controller_Action
 	                
             $getToday="SELECT a.fundname,a.bid,a.offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS today
                        FROM $nameCommunity AS a
-                       WHERE fundname LIKE '".$items['fundname']."' AND 
+                       WHERE fundname = '".$items['fundname']."' AND 
                        DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)<= NOW()
                        ORDER BY a.unitdate DESC
                        LIMIT 1";
@@ -510,7 +510,7 @@ class InvestmentController extends Website_Controller_Action
             /*===========get 1 month=========*/
             $getfirst1m="SELECT a.fundname,a.bid,a.offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS last_one_month
                         FROM $nameCommunity AS a
-                        WHERE fundname LIKE '".$items['fundname']."' AND 
+                        WHERE fundname = '".$items['fundname']."' AND 
                         DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)<=DATE_ADD(NOW(), INTERVAL- 1 MONTH)
                         ORDER BY a.unitdate DESC
                         LIMIT 1";
@@ -519,7 +519,7 @@ class InvestmentController extends Website_Controller_Action
             
             $getLast3m="SELECT a.fundname,a.bid,a.offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS last_3_month
                         FROM $nameCommunity AS a
-                        WHERE fundname LIKE '".$items['fundname']."' AND 
+                        WHERE fundname = '".$items['fundname']."' AND 
                         DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)<=DATE_ADD(NOW(), INTERVAL- 3 MONTH)
                         ORDER BY a.unitdate DESC
                         LIMIT 1";
@@ -528,7 +528,7 @@ class InvestmentController extends Website_Controller_Action
 	    /*$getday= tanggal terakhir di ahir taun*/	 			
             $getYtd="SELECT DISTINCT a.fundname, a.bid, a.offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS today
                     FROM $nameCommunity as a
-                    WHERE fundname LIKE '".$items['fundname']."' AND 
+                    WHERE fundname = '".$items['fundname']."' AND 
                     DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) <= STR_TO_DATE('$getday','%d-%m-%Y')
                     GROUP BY fundname,a.bid,a.offer,a.unitdate
 		    ORDER BY a.unitdate desc
@@ -539,7 +539,7 @@ class InvestmentController extends Website_Controller_Action
             /*1 YAER*/
             $get1year="SELECT a.fundname,bid,offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS last_year
                     FROM $nameCommunity AS a
-                    WHERE fundname LIKE '".$items['fundname']."' AND
+                    WHERE fundname = '".$items['fundname']."' AND
                     DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) <=DATE_ADD(NOW(), INTERVAL- 1 YEAR)
                     ORDER BY unitdate DESC
                     LIMIT 1";                    
