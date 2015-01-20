@@ -355,7 +355,7 @@
 		    
 		    },
 		    "columnDefs": [
-			{ "width": "35%", "targets": 0 }
+			{ "width": "32%", "targets": 0 }
 		      ]
 		    
 		    
