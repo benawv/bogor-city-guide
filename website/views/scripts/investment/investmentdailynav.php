@@ -508,7 +508,7 @@
 							},
 							plotOptions: {
 							    spline: {
-								turboThreshold: 7000,
+								turboThreshold: databid.length+1,
 							    },
 							    area: {
 								fillColor: {
