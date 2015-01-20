@@ -784,9 +784,21 @@ class InvestmentController extends Website_Controller_Action
         
         return $xmldata;
         
-   } 
-    
-    
-    
-    
+   }
+   
+   public function deleteFileAction(){
+	$file = $this->_getParam('url');
+	$x = dirname(__DIR__)."/static/inv-fbshare/".$file;
+	
+	unlink($x);
+	/*
+	if(unlink($x)){
+		echo "Success";
+	}
+	else
+	{
+		echo "failed";
+	}
+	*/
+    }
 }

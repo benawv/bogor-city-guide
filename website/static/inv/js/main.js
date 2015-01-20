@@ -108,6 +108,40 @@ $(document).ready(function(){
 		if($(window).width() < 960)
 			$("nav.primary .menu-level1").toggleClass('active');
 	});
+	
+	$('.fbshareKalkulator').click(function(){
+		var reTanya = $(".titleKalkulator").text();
+		
+		var deskripsi = $(".shareResult").text();
+		var name = (reTanya.replace(/[^a-zA-Z()]/g,''))+"-kalkulator";
+		var filename = name.replace(/\s/g,'-');
+		var image = "/website/static/images/logo-Allz.png";
+		var desc = deskripsi;
+		loc = window.location.origin+'/website/static/inv-fbshare/sharedfbKalkulator.php';
+		
+		$.ajax({
+				type: 'POST',
+				url: loc,
+				data: {
+					filename: filename,
+					title_fb : reTanya,
+					description: desc,
+					url: window.location.host,
+					image: image,
+					link_in_fb : window.location.host+window.location.pathname
+				},
+				success: function(response)
+				{
+					var url = window.location.origin+'/website/static/inv-fbshare/'+response;
+					var file = '/website/static/inv-fbshare/'+response;
+					var filename = response;
+					window.open('http://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), 'sharer', 'width=626,height=436');
+					$.post("/delete-file", {url : filename}, function(data, status){
+					  //console.log("Data: "+data + " Status: "+status);
+					});
+				}
+			});
+	});
 
 	$('.inv-btn .twshare').on("click",function(){
 		var url = window.location.host+window.location.pathname;
@@ -177,6 +211,7 @@ $(document).ready(function(){
 				}
 			});
 	});
+	
 });
 
 //===== added by Bena 08 Jan 2015 =====//
