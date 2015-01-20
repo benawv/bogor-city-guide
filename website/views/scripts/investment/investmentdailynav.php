@@ -353,7 +353,10 @@
 			sSwfPath: '/website/static/inv/js/DataTables-1.10.4/extensions/TableTools/swf/copy_csv_xls_pdf.swf',
 			"aButtons": [ "copy", "pdf","xls","print" ]
 		    
-		    }
+		    },
+		    "columnDefs": [
+			{ "width": "32%", "targets": 0 }
+		      ]
 		    
 		    
            } );
