@@ -507,7 +507,7 @@
 							},
 							plotOptions: {
 							    spline: {
-								turboThreshold: databid.length,
+								turboThreshold: 5000,
 							    },
 							    area: {
 								fillColor: {
@@ -525,8 +525,7 @@
 								    hover: {
 									lineWidth: 1
 								    }
-								},
-								threshold: null
+								}
 							    }
 							},
 							series: [{
