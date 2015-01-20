@@ -474,7 +474,7 @@
 					    }
 					     var date_awal=Date.UTC(new_data.resume_graph.bidyear[0],new_data.resume_graph.bidmonth[0],new_data.resume_graph.bidday[0]);
 						console.log(date_awal);
-					        console.log(databid);
+					        console.log(databid.length);
 					      
 					    $(function () {
                                                 $('#container').highcharts({
@@ -504,8 +504,11 @@
 							    align: 'middle',
 							    verticalAlign: 'bottom',
 							    borderWidth: 0
-							},/*
+							},
 							plotOptions: {
+							    spline: {
+								turboThreshold: databid.length,
+							    },
 							    area: {
 								fillColor: {
 								    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
@@ -525,7 +528,7 @@
 								},
 								threshold: null
 							    }
-							},*/
+							},
 							series: [{
 							    //pointInterval: 1,
 							    //pointStart: Date.UTC(arr_awal[2], arr_awal[0], arr_awal[1]),
