@@ -315,16 +315,6 @@
                                     </div>
 				     <p class="return-foot"></p>  
                                     <tbody class="table-body-2 myTable2_items"> 
-                                    <?php                    
-                                   foreach($this->data['defult_data'] as $items){
-                                    ?>
-                                        <tr> 
-                                            <td><?php echo ucwords(strtolower($items["fundName"])); ?></td> 
-                                            <td><?php echo $items["unitdates"]; ?></td> 
-                                            <td><?php echo $items["bid"]; ?></td> 
-                                            <td><?php echo $items["offer"]; ?></td> 
-                                        </tr>    
-                                    <?php } ?>      
                                     
                                     </tbody>
                                    
