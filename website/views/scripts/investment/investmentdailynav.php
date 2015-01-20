@@ -127,9 +127,9 @@
                         <?php  
                             
                             foreach($this->data['ytd'] as $items){
-echo "<pre>";
-print_r($items);
-echo "</pre>";
+//echo "<pre>";
+//print_r($items);
+//echo "</pre>";
                         ?>
 			    <tr> 
 				<td><a href="#"><?php echo  ucwords(strtolower($items['today'][0]['fundname']))?></a></td> 
