@@ -453,11 +453,7 @@ class InvestmentController extends Website_Controller_Action
                 $unitdates[1]; //month
                 $unitdates[2]; //year   
                 $getday= $unitdates[2]."-".$unitdates[1]."-".$unitdates[0];       
-        
-	
-	
-		
-		
+        	
 	
         $getLast1MDay="SELECT LAST_DAY(STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y')) AS last_one_month 
                         FROM $nameCommunity 
@@ -494,7 +490,7 @@ class InvestmentController extends Website_Controller_Action
         foreach($xmldata2 as $items){
 	
 	//last unitdate fundtype	
-	$lastunitdate_=" SELECT LAST_DAY(STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y')) AS last_data
+	$lastunitdate_="SELECT STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y') AS last_data
                         FROM $nameCommunity AS a 
                         WHERE a.fundname='".$items['fundname']."'
                         ORDER BY unitdate DESC
@@ -537,10 +533,7 @@ class InvestmentController extends Website_Controller_Action
                         ORDER BY a.unitdate DESC
                         LIMIT 1";
             $last1mData=$db->fetchAll($getfirst1m);
-            
-            echo ($getfirst1m."<br>");
-	    
-	    
+                
             $getLast3m="SELECT a.fundname,a.bid,a.offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS last_3_month
                         FROM $nameCommunity AS a
                         WHERE fundname = '".$items['fundname']."' AND 
@@ -549,8 +542,6 @@ class InvestmentController extends Website_Controller_Action
                         LIMIT 1";
             $last3mData=$db->fetchAll($getLast3m);
 		
-		echo ($getLast3m."<br>");	
-  
 	    /*$getday= tanggal terakhir di ahir taun*/	 			
             $getYtd="SELECT DISTINCT a.fundname, a.bid, a.offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS today
                     FROM $nameCommunity as a
@@ -560,7 +551,6 @@ class InvestmentController extends Website_Controller_Action
 		    ORDER BY a.unitdate desc
 		    limit 1";                    
             $ytdData=$db->fetchAll($getYtd);
-            echo ($getYtd."<br>");
             
             /*1 YAER*/
             $get1year="SELECT a.fundname,bid,offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS last_year
@@ -571,9 +561,6 @@ class InvestmentController extends Website_Controller_Action
                     LIMIT 1";                    
             $last1year=$db->fetchAll($get1year);
             /*1 YAER*/
-            
-            echo ($get1year."<br>");
-	    die('die');
 	    
             $last_data['today']=$todayData;
             $last_data['lastdata']=$lastData;
