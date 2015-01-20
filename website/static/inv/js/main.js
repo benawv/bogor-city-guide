@@ -136,9 +136,11 @@ $(document).ready(function(){
 					var file = '/website/static/inv-fbshare/'+response;
 					var filename = response;
 					window.open('http://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), 'sharer', 'width=626,height=436');
-					$.post("/delete-file", {url : filename}, function(data, status){
-					  //console.log("Data: "+data + " Status: "+status);
-					});
+					setTimeout(function(){
+					  $.post("/delete-file", {url : filename}, function(data, status){
+					  //  //console.log("Data: "+data + " Status: "+status);
+					  });
+					},20000);
 				}
 			});
 	});
