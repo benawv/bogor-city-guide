@@ -791,7 +791,7 @@ class InvestmentController extends Website_Controller_Action
 	$x = dirname(__DIR__)."/static/inv-fbshare/".$file;
 	
 	unlink($x);
-	/*
+	
 	if(unlink($x)){
 		echo "Success";
 	}
@@ -799,6 +799,5 @@ class InvestmentController extends Website_Controller_Action
 	{
 		echo "failed";
 	}
-	*/
     }
 }
