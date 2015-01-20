@@ -504,7 +504,7 @@
 							    align: 'middle',
 							    verticalAlign: 'bottom',
 							    borderWidth: 0
-							},
+							},/*
 							plotOptions: {
 							    area: {
 								fillColor: {
@@ -525,7 +525,7 @@
 								},
 								threshold: null
 							    }
-							},
+							},*/
 							series: [{
 							    //pointInterval: 1,
 							    //pointStart: Date.UTC(arr_awal[2], arr_awal[0], arr_awal[1]),
