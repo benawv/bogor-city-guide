@@ -480,6 +480,7 @@
                                                 $('#container').highcharts({
 							chart: {
 							    zoomType: 'x',
+							    type: "spline",
 							    panning: true,
 							    panKey: 'shift',
 							    renderTo: 'container'
@@ -507,7 +508,7 @@
 							},
 							plotOptions: {
 							    spline: {
-								turboThreshold: 5000,
+								turboThreshold: 7000,
 							    },
 							    area: {
 								fillColor: {
