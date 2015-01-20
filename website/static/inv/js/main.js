@@ -117,7 +117,7 @@ $(document).ready(function(){
 		var filename = name.replace(/\s/g,'-');
 		var image = "/website/static/images/logo-Allz.png";
 		var desc = deskripsi;
-		loc = window.location.origin+'/website/static/inv-fbshare/sharedfbKalkulator.php';
+		loc = window.location.origin+'/website/static/inv-fbshare/kalkulator/sharedfbKalkulator.php';
 		
 		$.ajax({
 				type: 'POST',
@@ -132,8 +132,8 @@ $(document).ready(function(){
 				},
 				success: function(response)
 				{
-					var url = window.location.origin+'/website/static/inv-fbshare/'+response;
-					var file = '/website/static/inv-fbshare/'+response;
+					var url = window.location.origin+'/website/static/inv-fbshare/kalkulator/'+response;
+					var file = '/website/static/inv-fbshare/kalkulator/'+response;
 					var filename = response;
 					var win = window.open('http://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), 'sharer', 'width=626,height=436');
 					var interval = window.setInterval(function() {

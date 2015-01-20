@@ -803,7 +803,7 @@ class InvestmentController extends Website_Controller_Action
    
    public function deleteFileAction(){
 	$file = $this->_getParam('url');
-	$x = dirname(__DIR__)."/static/inv-fbshare/".$file;
+	$x = dirname(__DIR__)."/static/inv-fbshare/kalkulator/".$file;
 	//unlink($x);
 	
 	if(unlink($x)){
