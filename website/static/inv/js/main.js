@@ -137,7 +137,7 @@ $(document).ready(function(){
 					var filename = response;
 					window.open('http://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), 'sharer', 'width=626,height=436');
 					$.post("/delete-file", {url : filename}, function(data, status){
-					  console.log("Data: "+data + " Status: "+status);
+					  //console.log("Data: "+data + " Status: "+status);
 					});
 				}
 			});
