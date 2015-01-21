@@ -274,7 +274,8 @@
 					foreach($list_tipe  as $row)
 					{
 						$namaJenis = $row->filename;
-						echo '<option value="'.$namaJenis.'">'.strtoupper($namaJenis).'</option>';
+						$display = str_replace("-", " ", $namaJenis);
+						echo '<option value="'.$namaJenis.'">'.ucwords(strtolower($display)).'</option>';
 					}
 				?>
 			</select>
