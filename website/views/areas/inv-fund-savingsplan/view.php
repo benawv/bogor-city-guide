@@ -82,7 +82,7 @@
 		<div class="dropdownmobile">
 
 			<div class="dropshow">
-				<a href="javascript:void(0);" id="opendropdown">Pilih Info Fund :</a>
+				<a href="javascript:void(0);" id="opendropdown">Pilih Fund Fact Sheet :</a>
 			</div>
 			<div class="drophide">
 				<a href="/allianz-fund/allianz-fund/fund-fact-sheet/equity">Equity</a>
