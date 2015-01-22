@@ -22,6 +22,12 @@ margin: 0;
 margin-bottom: 15px;
 }
 
+.filter-box{
+position: relative;    
+}
+
+
+
 <!-------------Flaticon---------------->
 @font-face {
 	font-family: "Flaticon";
@@ -1130,38 +1136,119 @@ and (orientation : portrait) {
 
 /* iPads (portrait and landscape) ----------- */  
  @media only screen and (max-width : 768px) {  
-     
-.bg-blue {
-    width: 285px;
-}
-.wrap30 {
-    float: left;
-    margin-top: 20px;
-    width: 40%;
-}     
-.wrap60 {
-    float: right;
-    margin-top: 20px;
-    width: 50%;
-} 
-.wrap73 {
-    float: left;
-    width: 70%;
-}
-.wrap20 {
-    float: right;
-    width: 25%;
-}    
-.bg-dark-orange {
-    width: 100%;
-}     
-.title-box {
-    width: 100%;
-}     
-        
-}  
 
-@media only screen and (max-width : 480px) {  
+    .bg-blue {
+	width: 285px;
+    }
+    /*fitr*/
+    .filter_harga.btn{
+	width:100%;
+    }
+    .hidden-btn{
+    width:45%;
+    margin-top: 20px
+    }
+    
+    .fundtype{
+      width:100%;
+    }
+    .input-filter{
+      width: 100%;
+    }
+    
+    .wrap30 {
+	float: left;
+	margin-top: 20px;
+	width: 50%;
+    }
+    
+    .wrap30.r{
+	float: left;
+	margin-top: 20px;
+	width: 45%;
+	margin-left: 10%;
+    }
+     .wrap10.r{
+	float: left;
+	margin-top: 20px;
+	width: 45%;
+	margin-left: 10%;
+    }
+    
+    .wrap30.l{
+	float: left;
+	margin-top: 20px;
+	width: 45%;
+	
+    }
+    
+    .wrap60 {
+	float: right;
+	margin-top: 20px;
+	width: 50%;
+    } 
+    .wrap73 {
+	float: left;
+	width: 70%;
+    }
+    .wrap20 {
+	float: right;
+	width: 25%;
+    }    
+    .bg-dark-orange {
+	width: 100%;
+    }     
+    .title-box {
+	width: 100%;
+    }     
+        
+}
+
+@media screen and (max-width: 640px) {
+
+ .wrap30 {
+	margin-top: 20px;
+	width: 50%;
+    }
+    
+    .wrap30.r{
+	margin-top: 20px;
+	width: 100%;
+	margin-left: 0px;
+    }
+     .wrap10.r{
+	margin-top: 0px;
+	width: 100% !important;
+	margin-left: 0px;
+    }
+    
+    .wrap30.l{
+	float: left;
+	margin-top: 20px;
+	width: 100%;
+	
+    }
+    
+    .fundtype{
+      width:100% !important;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+
+
+/*fitr*/
+.hidden-btn{
+    width:100% !important;
+}
+
+/*fitr*/
+.filter_harga.btn{
+    top: 260px;
+    width: 100%;
+    left: 120px;
+}
+
 
 .wrap30 {
     float: left;

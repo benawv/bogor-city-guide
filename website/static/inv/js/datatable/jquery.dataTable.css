@@ -1,6 +1,20 @@
 /*
  * Table styles
  */
+
+/* improve style fitrazh*/
+.header-table-graph{
+   position: absolute;top: 12px;left: 12px;
+}
+.title-chart-graph{
+  top: -19px;
+  width: 106.6%;
+  position: relative;
+  right: 21px;
+}
+
+/* end improve style fitrazh*/
+
 table.dataTable {
   width: 100%;
   margin: 0 auto;
@@ -14,6 +28,7 @@ table.dataTable {
    * Body styles
    */
 }
+
 table.dataTable thead th,
 table.dataTable tfoot th {
   font-weight: bold;
@@ -476,7 +491,16 @@ table.dataTable td {
   height: 0;
 }
 
-@media screen and (max-width: 767px) {
+
+@media screen and (max-width: 768px) {
+
+    .header-table-graph{
+    position: absolute;top: 4px;left: 12px;
+  }
+  .title-chart-graph{
+  top: -19px;width: 108%;position: relative;right: 21px;
+  }
+
   .dataTables_wrapper .dataTables_info,
   .dataTables_wrapper .dataTables_paginate {
     float: none;
@@ -485,6 +509,7 @@ table.dataTable td {
   .dataTables_wrapper .dataTables_paginate {
     margin-top: 0.5em;
   }
+  
 }
 @media screen and (max-width: 640px) {
   .dataTables_wrapper .dataTables_length,
@@ -495,4 +520,21 @@ table.dataTable td {
   .dataTables_wrapper .dataTables_filter {
     margin-top: 0.5em;
   }
+  
+  .title-chart-graph{
+  top: -19px;width: 109.5%;position: relative;right: 21px;
+  }
 }
+
+/*fitrazh 22/1/15 */
+@media only screen and (max-width : 480px) {
+    .header-table-graph{
+    position: absolute;top: 4px;left: 12px;
+  }
+  .title-chart-graph{
+  top: -19px;width: 116%;position: relative;right: 21px;
+  }
+
+  
+}
+

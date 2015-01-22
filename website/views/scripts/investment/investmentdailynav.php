@@ -200,36 +200,37 @@
 	<!-- article end -->
         <div id="#" class="article-wrap bottom">
            <div class="form-wrap bottom">
-                
-               <h5>Tentukan jangka waktu dan jenis fund</h5>
-               
-               <div class="wrap30 left">
-                   <h5 class="top">Dari</h5>
-                   <input type="text" id="txtFromDate" />
-                </div>
-               
-               <div class="wrap30 left">
-                   <h5 class="top">Hingga</h5>
-                   <input type="text" id="txtToDate" />
-                </div>
-               
-               <div class="wrap30 left">
-                   <h5 class="top">Jenis Fund</h5>
-                    <select class="span2 blue-color fundtype">
-                        <option value="0" selected="selected">Jenis Fund</option>
-                    <?php  foreach($this->data['ytd'] as $items){ ?>
-                        <option value="<?php echo $items['today'][0]['fundname']; ?>"><?php echo  ucwords(strtolower($items['today'][0]['fundname'])); ?></option>
-                    <?php } ?>    
-                    </select>
-                   
-                </div>
-               
-               <div class="wrap10 left">
-                   <h5 class="top" style="visibility:hidden">Dari</h5>
-                    <input class="select-btn blue-color filter_harga" type="button" value="Lihat harga unit" />
-               
-                </div>
-               
+		<div class="filter-box">  
+		    <h5>Tentukan jangka waktu dan jenis fund</h5>
+		   
+		    <div class="wrap30 l left">
+		       <h5 class="top">Dari</h5>
+		       <input type="text" id="txtFromDate"  class="input-filter"/>
+		    </div>
+		   
+		    <div class="wrap30 r left">
+			<h5 class="top">Hingga</h5>
+		       <input type="text" id="txtToDate" class="input-filter" />
+		    </div>
+		   
+		   <div class="wrap30 l left">
+		       <h5 class="top">Jenis Fund</h5>
+			<select class="span2 blue-color fundtype">
+			    <option value="0" selected="selected">Jenis Fund</option>
+			<?php  foreach($this->data['ytd'] as $items){ ?>
+			    <option value="<?php echo $items['today'][0]['fundname']; ?>"><?php echo  ucwords(strtolower($items['today'][0]['fundname'])); ?></option>
+			<?php } ?>    
+			</select>
+		       
+		    </div>
+		   
+		   <div class="wrap10 r left hidden-btn">
+		       <h5 class="top" style="visibility:hidden">hidden</h5>
+			<input class="select-btn blue-color filter_harga btn" type="button" value="Lihat harga unit" />
+		    </div>
+		
+		</div>
+		
             </div>
             
         </div>
@@ -276,17 +277,12 @@
                                 <div id="graph-bars"></div>
 
                                 <!--------- Table nab daily----------------->
-                            <div id="container" style="min-width: 900px; height: 500px; margin: 0 auto; padding: 20px; display:none; position: relative"></div>
+                            <div id="container" style="width='100%' height: 500px; margin: 0 auto; padding: 20px; display:none; position: relative"></div>
     
                                <div id="tablex" style="width: 98%; display: block; position: relative">
-                               <div id="title" class="title-chart" style="
-                                    top: -19px;
-                                    width: 106.6%;
-                                    position: relative;
-                                    right: 21px;">
-                                                            
+                               <div id="title" class="title-chart title-chart-graph">                                                            
                                <span></span>
-                              <div class="table-range" style="position: absolute;top: 12px;left: 12px;"></div>
+                              <div class="table-range header-table-graph"></div>
                                </div>
                                 <table id="myTable2" class="display" cellspacing="0" width="100%">
                     
@@ -340,6 +336,7 @@
                  
             //datatable ##############################################
             $('#fundtype').DataTable({
+		    responsive: true,
                     "oLanguage": {
                       "sSearch": "Cari:",
                       "sLengthMenu": "Tampilkan _MENU_ baris",            
@@ -412,6 +409,7 @@
                                            
                                             if ( $.fn.dataTable.isDataTable( '#myTable2' ) ) {
                                                     $('#myTable2').dataTable({
+							responsive: true,
                                                         destroy: true,
 							"oLanguage": {
 							  "sSearch": "Cari:",
@@ -436,6 +434,7 @@
                                             }else {
                                             
                                                 $('#myTable2').dataTable( {
+						    responsive: true,
                                                     "oLanguage": {
                                                       "sSearch": "Cari:",
                                                       "sLengthMenu": "Tampilkan _MENU_ baris",            
