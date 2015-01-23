@@ -560,10 +560,12 @@
                         });//end ajax
 
                     }
-                    
-                        
-                });
 
+	     
+                });
+		//wrap div table agar overflow karena ukuran tabel tidak dapat di perkecil lagi    
+		$('#fundtype_wrapper').contents().wrapAll("<div style='overflow:hidden; overflow-x:auto;'>");
+ 
                 // Graph Toggle ############################################
                 $('#graph-lines').hide();
                 $('#title').hide();
