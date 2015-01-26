@@ -760,9 +760,9 @@ class InvestmentController extends Website_Controller_Action
         		    $navdata->setFundName("$nav_data->fund_name");
         			$navdata->setUnitDate($dates);
         			$navdata->setBid("$bid");
-        			$navdata->setOffer("$offer");                
-                    $navdata->setKey('nav_'.date('d_m_y')."_2_"."$i");
-    		        $navdata->setO_parentId('35793');//daily-nav //live 12106 local//1292
+        			$navdata->setOffer("$offer");
+			$navdata->setKey('nav_'.date('d_m_y')."_1_"."$i".rand());
+			$navdata->setO_parentId('35793');//daily-nav //live 12106 local//1292
     		        $navdata->setIndex(0);
     			    $navdata->setPublished(1);
                    // die(print_r($navdata));
