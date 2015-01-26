@@ -27,7 +27,11 @@ position: relative;
 }
 
 
-
+.title2{
+    position: relative;
+    top: -52px;
+    left: 18px;
+}
 <!-------------Flaticon---------------->
 @font-face {
 	font-family: "Flaticon";
@@ -1237,79 +1241,110 @@ and (orientation : portrait) {
 @media only screen and (max-width : 480px) {
 
 
-/*fitr*/
-.hidden-btn{
-    width:100% !important;
-}
+	/*fitr*/
+	.hidden-btn{
+	    width:100% !important;
+	}
 
-/*fitr*/
-.filter_harga.btn{
-    top: 260px;
-    width: 100%;
-    left: 120px;
-}
-
-
-.wrap30 {
-    float: left;
-    margin-top: 20px;
-    width: 100%;
-} 
-.wrap60 {
-    float: left;
-    margin-top: 20px;
-    width: 100%;
-}     
-.wrap73 {
-    float: left;
-    width: 100%;
-}
-.wrap20 {
-    float: left;
-    width: 100%;
-}    
-.tag-right {
-    float: left;
-    padding: 14px 0;
-    width: 100%;
-    text-align: left;
-}    
-.slider-wrap {
-    width: 90%;
-}    
-.bg-dark-orange {
-    width: 100%;
-}    
-.count-result {
-    font-size: 45px;
-}
-.title-box {
-    width: 70%;
-}    
-input[type="button"] {
-    padding: 10px 10px;
-}    
-.min {
-    margin: 29px 0 0 12px;
-}    
-.add {
-    margin: 29px 14px 0 0;
-}   
-.socmed {
-    width: 100%;
-}   
-   
-.fb-box, .twit-box {
-    width: 113px;
-}    
-.span2 {
-    width: 63%;
-}    
-    
-input[type="checkbox"] {
-    float: left;
-    margin-left: -20px;
-}    
+	.title2{
+	position: relative;
+	top: -87px;
+	left: 14px;
+	}
+	
+	/*fitr*/
+	.filter_harga.btn{
+	    top: 260px;
+	    width: 100%;
+	    left: 120px;
+	}
+	
+	
+	.wrap30 {
+	    float: left;
+	    margin-top: 20px;
+	    width: 100%;
+	} 
+	.wrap60 {
+	    float: left;
+	    margin-top: 20px;
+	    width: 100%;
+	}     
+	.wrap73 {
+	    float: left;
+	    width: 100%;
+	}
+	.wrap20 {
+	    float: left;
+	    width: 100%;
+	}    
+	.tag-right {
+	    float: left;
+	    padding: 14px 0;
+	    width: 100%;
+	    text-align: left;
+	}    
+	.slider-wrap {
+	    width: 90%;
+	}    
+	.bg-dark-orange {
+	    width: 100%;
+	}    
+	.count-result {
+	    font-size: 45px;
+	}
+	.title-box {
+	    width: 70%;
+	}    
+	input[type="button"] {
+	    padding: 10px 10px;
+	}    
+	.min {
+	    margin: 29px 0 0 12px;
+	}    
+	.add {
+	    margin: 29px 14px 0 0;
+	}   
+	.socmed {
+	    width: 100%;
+	}   
+	   
+	.fb-box, .twit-box {
+	    width: 113px;
+	}    
+	.span2 {
+	    width: 63%;
+	}    
+	    
+	input[type="checkbox"] {
+	    float: left;
+	    margin-left: -20px;
+	}
+	
+	  .header-table-graph{
+	    position: absolute;top: 4px;left: 12px;
+	  }
+	  .title-chart-graph{
+	    width: 112%;
+	    padding: 10px 15px !important;
+	  }
+	  
+	  .date-range {
+	  width: 57%;
+	  position: absolute;
+	  }
+	  
+	  .header-table-graph {
+	  position: relative;
+	  width: 64%;
+	  top: 4px;
+	  left: 0px;
+	  }
+	  
+	  .title-chart{
+	  height: 99px;
+	  
+	  }
     
 }
 

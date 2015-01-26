@@ -527,14 +527,15 @@ table.dataTable td {
 }
 
 /*fitrazh 22/1/15 */
-@media only screen and (max-width : 480px) {
+
+@media only screen and (max-width : 320px) {
     .header-table-graph{
     position: absolute;top: 4px;left: 12px;
   }
   .title-chart-graph{
-  top: -19px;width: 116%;position: relative;right: 21px;
-  }
-
-  
+  width: 118.4%;
+  } 
 }
+
+
 

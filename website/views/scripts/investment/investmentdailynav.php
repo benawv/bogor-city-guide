@@ -294,10 +294,7 @@
                                     </tr> 
                                     </thead> 
 
-                                    <div id="title2" style="
-                                            position: relative;
-                                            top: -52px;
-                                            left: 18px;">
+                                    <div id="title2" class="title2">
                                            <a href="#" id="bars" class="active" style="
                                                 position: relative;
                                                 top: 0px;
