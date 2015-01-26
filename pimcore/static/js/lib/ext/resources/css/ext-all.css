@@ -3616,8 +3616,13 @@ a.x-menu-item {
 .cus_css .x-form-element{
     padding-left:20px !important;
 }
-table.x-btn-text-icon {
+/*width di toolbar widget*/
+.x-window-bwrap table.x-btn-text-icon {
 	width: 100% !important;
+}
+/*tombol search object*/
+table.x-btn.x-btn-text-icon.x-box-item{
+    width: auto !important;
 }
 .x-panel-collapsed{
     overflow: auto !important;

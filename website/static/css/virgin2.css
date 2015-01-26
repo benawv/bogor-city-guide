@@ -1172,8 +1172,8 @@ iframe {
 }
 
 .art.art-sctn ol li:before, .art .art-sctn ol li:before {
-    content: counter(li);
-    counter-increment: li;
+    /*content: counter(li);
+    counter-increment: li;*/
     left: -18px;
     left: -1.8rem;
 }
