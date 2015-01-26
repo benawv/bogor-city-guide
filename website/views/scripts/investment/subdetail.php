@@ -16,8 +16,8 @@
 			
 			<h5>
                 <span><a href="/investment">Home</a></span> &rsaquo; 
-                <span><a href="/investment/resources/">Referensi</a></span> &rsaquo;
-                <span><a href="/investment/resources/resources/education">Pustaka</a></span> &rsaquo;
+                <span><a href="/resources/">Referensi</a></span> &rsaquo;
+                <span><a href="/resources/resources/education">Pustaka</a></span> &rsaquo;
                 <span><?php echo $this->data->judul ?></span>
             </h5>
 			
