@@ -267,7 +267,7 @@
 		
 		$('.community-btn .fbshare').on("click",function(){
 			var image = "<?php echo $this->data->imageBackgroundDetail->path."".$this->data->imageBackgroundDetail->filename;?>";
-			console.log(image);
+			//console.log(image);
 			var reTanya = $(".txt-wrp h1").text();
 			
 			var deskripsi = $(".h-b p").text();
@@ -305,6 +305,9 @@
 	        }
 	                
 	        loc = window.location.origin+'/website/static/fbshare/sharedfb.php';
+		if (image==undefined || image == "") {
+			image = "website/static/images/logo-Allz.png";
+		}
 	        /*console.log(image);
 	        console.log(name);
 	        console.log(filename);
