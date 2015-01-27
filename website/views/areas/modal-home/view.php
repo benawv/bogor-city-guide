@@ -5,7 +5,7 @@
             <div class="wishlist-content">
                 <h1><?php echo $this->input("headline-modal", array("width" => 240));?></h1>
                 <div class="logo">
-                    <img src="/website/static/images/wizard/allianz-assurance-pret-logo.png" />
+                    <img src="/website/static/images/wizard/allianz-assurance-pret-logo.jpg" />
                 </div>
                 
                 <div class="cart-wrap">
@@ -49,7 +49,7 @@
             <div class="wishlist-content">
                 <h1><?php echo $this->input("headline-modal", array("width" => 240));?></h1>
                 <div class="logo">
-                    <img src="/website/static/images/wizard/allianz-assurance-pret-logo.png" />
+                    <img src="/website/static/images/wizard/allianz-assurance-pret-logo.jpg" />
                 </div>
                 
                 <div class="cart-wrap">

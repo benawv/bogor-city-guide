@@ -2105,7 +2105,7 @@ footer.contentinfo .worldwide .badge-social a:before{
 
 .language {
     
-    background: transparent url('../images/Icon_Arrow_down.png') 66px 7px no-repeat;
+    /*background: transparent url('../images/Icon_Arrow_down.png') 66px 7px no-repeat;*/
     color:  #414141;
     line-height: 25px;
     font-size: 12px;

@@ -399,7 +399,7 @@ a .menutitle{font-weight:bold;padding:10px 0;clear:both;font-size:16px;height:50
 .badge-modal{width:100%;}
 footer.contentinfo .worldwide .badge-social a:before{content:none;}
 .badge-social{float:left;margin-top:-30px;}
-.language{background:transparent url('../images/Icon_Arrow_down.png') 66px 7px no-repeat;color:#414141;line-height:25px;font-size:12px;cursor:pointer;}
+/*.language{background:transparent url('../images/Icon_Arrow_down.png') 66px 7px no-repeat;color:#414141;line-height:25px;font-size:12px;cursor:pointer;}*/
 .list-header{float:right;background:;}
 .desc{color:#6b6b6b;}
 .desc a{color:#0092dd;}
