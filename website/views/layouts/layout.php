@@ -3,7 +3,6 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="Cache-control" content="public">
-	<meta http-equiv="Cache-Control" content="max-age=86400"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<?php echo $this->cusMetaTitle.$this->cusMetaDesc.$this->cusMetaImage;?>
