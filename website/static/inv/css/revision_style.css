@@ -905,8 +905,8 @@ label {
       padding: 20px;
       background: linear-gradient(to bottom, #345 0%, #234 100%);
 }
-.title-chart {
-     height: 47px;
+.title-chart, .title-chart2 {
+    height: 47px;
     padding: 13px 15px;
     font-size: 14px;
     color: #ffffff;
@@ -1204,7 +1204,16 @@ and (orientation : portrait) {
     }     
     .title-box {
 	width: 100%;
-    }     
+    }
+    
+    	.date-range {
+	  width: 67%;
+	  position: absolute;
+	  }
+    .title-chart, .title-chart2{
+	  height: 79px;
+	  
+    }
         
 }
 
@@ -1237,6 +1246,34 @@ and (orientation : portrait) {
       width:100% !important;
     }
 }
+
+@media only screen and (max-width : 550px) { /*asus zen phone*/
+
+	.header-table-graph{
+	    position: absolute;top: 4px;left: 12px;
+	  }
+	.title-chart-graph{
+	    width: 10%;
+	    padding: 10px 15px !important;
+	  }
+	  
+	.date-range {
+	  width: 57%;
+	  position: absolute;
+	  }
+	  
+	.header-table-graph {
+	  position: relative;
+	  width: 64%;
+	  top: 4px;
+	  left: 0px;
+	  }
+	  
+	.title-chart, .title-chart2{
+	  height: 99px;
+	  
+	  }
+}    
 
 @media only screen and (max-width : 480px) {
 
@@ -1341,7 +1378,7 @@ and (orientation : portrait) {
 	  left: 0px;
 	  }
 	  
-	  .title-chart{
+	  .title-chart, .title-chart2{
 	  height: 99px;
 	  
 	  }

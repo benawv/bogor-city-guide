@@ -245,6 +245,11 @@
                             <span class="date-range"></span>
                             <a href="#" id="bars"><span></span></a>
                             <a href="#" id="lines" class="active"><span></span></a>
+                    </div>
+		    <div id="title2" class="title-chart2" >
+                            <span class="date-range"></span>
+                            <a href="#" id="bars" class="active"><span></span></a>
+                            <a href="#" id="lines2"><span></span></a>
                     </div> 
                    
                    <?php 
@@ -280,11 +285,11 @@
                             <div id="container" style="width='100%' height: 500px; margin: 0 auto; padding: 20px; display:none; position: relative"></div>
     
                                <div id="tablex" style="width: 98%; display: block; position: relative">
-                               <div id="title" class="title-chart title-chart-graph">                                                            
+                               <!--div id="title" class="title-chart title-chart-graph">                                                            
                                <span></span>
                               <div class="table-range header-table-graph"></div>
-                               </div>
-                                <table id="myTable2" class="display" cellspacing="0" width="100%">
+                              </div-->
+                               <table id="myTable2" class="display" cellspacing="0" width="100%">
                     
                                     <thead class="title-data"> 
                                     <tr>  
@@ -294,7 +299,7 @@
                                     </tr> 
                                     </thead> 
 
-                                    <div id="title2" class="title2">
+                                    <!--div id="title2" class="title2">
                                            <a href="#" id="bars" class="active" style="
                                                 position: relative;
                                                 top: 0px;
@@ -305,7 +310,7 @@
                                             top: 0px;
                                             left: 0px;
                                             "><span></span></a>
-                                    </div>
+                                    </div-->
 				     <p class="return-foot"></p>  
                                     <tbody class="table-body-2 myTable2_items"> 
                                     
@@ -582,18 +587,20 @@
                     $('#graph-bars').hide();
                     $('#tablex').hide();
                     $('#title').fadeIn();
+		    $('#title2').hide();
                     $(this).addClass('active');
                     $('#graph-lines').fadeIn();
                     e.preventDefault();
                 });
 
                 $('#bars').on('click', function (e) {
-                     $('#container').hide();
+                    $('#container').hide();
                     $('#lines2').removeClass('active');
                     $('#graph-lines').hide();
                     $(this).addClass('active');
                     $('#tablex').fadeIn().removeClass('hidden');
                     $('#title').hide();
+		    $('#title2').fadeIn();
                     e.preventDefault();
                 });
 
