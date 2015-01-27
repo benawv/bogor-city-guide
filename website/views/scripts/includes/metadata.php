@@ -30,7 +30,7 @@
 
  <!-- javascript -->
 <script async src="/website/static/js/modernizr.js" type="text/javascript"></script>
-<script async src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <!--script src="/website/static/jquery.tools.min.js" type="text/javascript"></script-->
 <script src="/website/static/js/main.js" type="text/javascript"></script>
 
