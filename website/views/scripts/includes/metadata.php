@@ -29,19 +29,19 @@
 -->
 
  <!-- javascript -->
-<script src="/website/static/js/modernizr.js" type="text/javascript"></script>
-<script src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script async src="/website/static/js/modernizr.js" type="text/javascript"></script>
+<script async src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <!--script src="/website/static/jquery.tools.min.js" type="text/javascript"></script-->
-<script src="/website/static/js/main.js" type="text/javascript"></script>
+<script async src="/website/static/js/main.js" type="text/javascript"></script>
 
 
 <!-- plugins -->
-<script src="/website/static/plugins/jquery.flexslider.min.js" type="text/javascript"></script>
-<script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
-<script src="/website/static/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="/website/static/js/accordion-jquery.js" type="text/javascript"></script>
+<script async src="/website/static/plugins/jquery.flexslider.min.js" type="text/javascript"></script>
+<script async src="/website/static/js/masonry.min.js" type="text/javascript"></script>
+<script async src="/website/static/js/bootstrap.min.js" type="text/javascript"></script>
+<script async src="/website/static/js/accordion-jquery.js" type="text/javascript"></script>
 <!-- Community Tips -->
-<script type="text/javascript" src="/website/static/js/paging.js"></script>
+<script async type="text/javascript" src="/website/static/js/paging.js"></script>
 
 
 
@@ -51,8 +51,8 @@
 -->
 
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkjnwleWwVfhCyd45V9A2_XBeAOqMDhrU&sensor=true"></script>
-<script type="text/javascript" src="/website/static/plugins/gmaps-marker-label.js"></script>
+<script async type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkjnwleWwVfhCyd45V9A2_XBeAOqMDhrU&sensor=true"></script>
+<script async type="text/javascript" src="/website/static/plugins/gmaps-marker-label.js"></script>
 
 <meta name="google-site-verification" content="t5S9yqQc-NyyfANDoR4qXDmEbpy746PnIqxU5rp0aXM" />
 
@@ -100,4 +100,4 @@ ga('send', 'pageview');
 		}
 	?>
 </script>
-<script src="/website/static/js/share-product.js" type="text/javascript"></script>
+<script async src="/website/static/js/share-product.js" type="text/javascript"></script>

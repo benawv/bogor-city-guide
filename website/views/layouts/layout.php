@@ -2,8 +2,10 @@
 <html lang="<?php echo $this->language; ?>">
 <head>
 	<meta charset="utf-8">
+	<meta http-equiv="Cache-control" content="public">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
+	<?php if($this->cusMetaImage != $_SERVER['SERVER_NAME']){echo $this->cusMetaImage;} ?>
 	<?php
         // portal detection => portal needs an adapted version of the layout
         $isPortal = false;
