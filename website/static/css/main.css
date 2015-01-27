@@ -617,6 +617,9 @@ padding: 10px 15px;
     width: 100%;  
     height: auto;
 }
+.guide-btn .btn-width, .button-cart .btn-width{
+    width: 100% !important;
+  }
 }
 
 @media only screen and (max-width : 640px){
@@ -644,7 +647,10 @@ padding: 10px 15px;
 
 .description table {
     width: 100% !important;
-}    
+}
+  .wishlist-content h1{
+    width: 90%;
+  }
 
 }
 
