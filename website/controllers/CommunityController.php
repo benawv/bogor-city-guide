@@ -206,6 +206,7 @@ class CommunityController extends Website_Controller_Action {
 				ORDER BY tblcommunity.popular DESC limit 5"; //or whatever you need to do.
 		
 		$this->view->fetchPopular = $db->fetchAll($sql3);
+		$this->view->cusMetaImage = '<meta property="og:image" content="'.$_SERVER['SERVER_NAME'].$data->imageBackgroundDetail->path.$data->imageBackgroundDetail->filename.'" />';
 		
 		$this->render('template1');
 		$this->enableLayout();
