@@ -170,7 +170,7 @@
 									            <span class="judul"><a href="<?php echo $entries[0]->path."".$entries[0]->key;?>"><?php echo $entries[0]->title;?></a></span>
 									            <div class="isi_berita">
 									            	<div>
-									                    <span class="tgl_berita"><?php echo gmdate("d-m-Y",$this->fetchBerita[$i]['data']);?></span> | <span>Allianz SE</span><br />
+									                    <span class="tgl_berita"><?php echo date("d-m-Y",$this->fetchBerita[$i]['data']);?></span> | <span>Allianz SE</span><br />
 									                    <?php 
 										                    $a = array_keys($entries[0]->getElements());
 										                    $match = preg_grep('/^konten-berita(\w+)/i', $a);
