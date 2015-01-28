@@ -43,7 +43,7 @@
                     <option value="">All</option>
                     <?php 
 						$db = Pimcore_Resource_Mysql::get();
-						$sql = "SELECT doc_e.data, DATE_FORMAT(FROM_UNIXTIME(doc_e.data), '%Y') as tahun from documents as doc inner join documents_elements as doc_e on doc.id=doc_e.documentId where doc.path='/berita/berita/arsip-berita/' and doc.published=1 and doc_e.type='date' GROUP BY tahun ORDER BY tahun DESC";
+						$sql = "SELECT doc_e.data, DATE_FORMAT(FROM_UNIXTIME(doc_e.data), '%Y') as tahun from documents as doc inner join documents_elements as doc_e on doc.id=doc_e.documentId where doc.path LIKE '%/arsip-berita/' and doc.published=1 and doc_e.type='date' GROUP BY tahun ORDER BY tahun DESC";
 						$tahun = $db->fetchAll($sql);
 						for($i=0;$i<count($tahun);$i++)
 						{

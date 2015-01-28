@@ -5,12 +5,22 @@ class BeritaController extends Website_Controller_Action {
 	public function homeAction () {
 		$this->enableLayout();
 		$db = Pimcore_Resource_Mysql::get();
+		//$list = new Document_List();
+		//$list->setCondition("path LIKE '%/arsip-berita/'");
+		//$list->setOrderKey("tanggal-berita");
+		//$list->setOrder("desc");
 		$sql = "SELECT doc.id, doc_e.data from documents as doc inner join documents_elements as doc_e on doc.id=doc_e.documentId
-				where doc.path='/berita/berita/arsip-berita/' and doc.published=1 and doc_e.type='date'
+				where doc.path LIKE '%/arsip-berita/' and doc.published=1 and doc_e.type='date'
 				ORDER BY doc_e.data DESC limit 3"; //or whatever you need to do.
 		/* echo "<pre>";
 		print_r($db->fetchAll($sql));
 		die(); */
+		//echo "<pre>";
+		//foreach($list as $v)
+		//{
+		//	print_r($v);
+		//}
+		//die();
 		$this->view->fetchBerita = $db->fetchAll($sql);
 	}
 	
@@ -23,11 +33,11 @@ class BeritaController extends Website_Controller_Action {
 		$sql = "SELECT doc.id, doc_e.data from documents as doc inner join documents_elements as doc_e on doc.id=doc_e.documentId "; //or whatever you need to do.
 		if($create!='')
 		{
-			$sql .= "where doc.path='/berita/berita/arsip-berita/' and DATE_FORMAT(FROM_UNIXTIME(doc_e.data), '%Y') = ".$create." and doc.published=1 and doc_e.type='date' ORDER BY doc_e.data DESC limit 3 offset ".$offset;
+			$sql .= "where doc.path LIKE '%/arsip-berita/' and DATE_FORMAT(FROM_UNIXTIME(doc_e.data), '%Y') = ".$create." and doc.published=1 and doc_e.type='date' ORDER BY doc_e.data DESC limit 3 offset ".$offset;
 		}
 		else 
 		{
-			$sql .= "where doc.path='/berita/berita/arsip-berita/' and doc.published=1 and doc_e.type='date' ORDER BY doc_e.data DESC limit 3 offset ".$offset;
+			$sql .= "where doc.path LIKE '%/arsip-berita/' and doc.published=1 and doc_e.type='date' ORDER BY doc_e.data DESC limit 3 offset ".$offset;
 		}
 		
 		$id = $db->fetchAll($sql);
@@ -50,11 +60,11 @@ class BeritaController extends Website_Controller_Action {
 		$sql = "SELECT doc.id, doc_e.data from documents as doc inner join documents_elements as doc_e on doc.id=doc_e.documentId ";
 		if($create!='')
 		{
-			$sql .= "where doc.path='/berita/berita/arsip-berita/' and DATE_FORMAT(FROM_UNIXTIME(doc_e.data), '%Y') = ".$create." and doc.published=1 and doc_e.type='date' ORDER BY doc_e.data DESC limit 3";
+			$sql .= "where doc.path LIKE '%/arsip-berita/' and DATE_FORMAT(FROM_UNIXTIME(doc_e.data), '%Y') = ".$create." and doc.published=1 and doc_e.type='date' ORDER BY doc_e.data DESC limit 3";
 		}
 		else
 		{
-			$sql .= "where doc.path='/berita/berita/arsip-berita/' and doc.published=1 and doc_e.type='date' ORDER BY doc_e.data DESC limit 3";
+			$sql .= "where doc.path LIKE '%/arsip-berita/' and doc.published=1 and doc_e.type='date' ORDER BY doc_e.data DESC limit 3";
 		}
 		
 		
