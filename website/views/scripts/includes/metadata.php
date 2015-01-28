@@ -91,11 +91,11 @@ ga('send', 'pageview');
 	<?php
 		if(!$this->editmode) {
 	?>
-			$(document).ready(function(){
-				if(getCookie("showWizard") == "") {		
-					$('#modal-cart').modal("show");
-				}
-			});
+			//$(document).ready(function(){
+			//	if(getCookie("showWizard") == "") {		
+			//		$('#modal-cart').modal("show");
+			//	}
+			//});
 	<?php
 		}
 	?>
