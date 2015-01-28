@@ -1,3 +1,15 @@
+<?php if($this->editmode){?>
+	<style>
+		#pimcore_editable_linkblock-layanankamiquicklinks-wrapper_block-layanankamiquicklinks-wrapper11_1,
+		#pimcore_editable_linkblock-contactquicklinks-wrapper_block-contactquicklinks-wrapper11_1,
+		#pimcore_editable_linkblock-contactquicklinks-wrapper_block-contactquicklinks-wrapper11_2,
+		#pimcore_editable_linkblock-socialmediaquicklinks-wrapper_block-socialquicklinks-wrapper11_1,
+		#pimcore_editable_linkblock-downloadquicklinks-wrapper_block-downloadquicklinks-wrapper11_1
+		{
+			margin-left: 30px;
+		}
+	</style>
+<?php }?>
 <?php 
 	$style = 'overflow: scroll;';
 ?>
@@ -13,30 +25,36 @@
 <div class="tab-wrapper" style="<?php echo $this->editmode?$style:''?>">
 	<div id="tab-quicklinks" class="tab-content">
 		<h3 class="judul-quicklink"><?php echo $this->input("judul-quicklink-static", array("width" => 200));?></h3>
-		<ul class="nav">
-			<?php while ($this->block("linkblock-layanankami")->loop()) { ?>
-						    <li><?php echo $this->link("myLink-layanankami"); ?></li>
-			<?php } ?>
-			<!--
-			<li><a href="klaim.php">Prosedur Klaim</a></li>
-				<li><a href="customer-service.php#cs_premi" onclick="navigateMe('premi')">Info Cara Pembayaran Premi</a></li>
-				<li><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/" target="_blank">Customer Online Portal</a></li>
-				<li><a href="customer-service.php#cs_cara-membeli" onclick="navigateMe('cara-membeli')">Info Cara Membeli</a></li>
-				<li><a href="investasi.php">Harga Unit</a></li>
-				<li><a href="https://www.allianzlife.co.id/eBancassurance/" target="_blank">BancAssurance Portal</a></li>
-				<li><a href="https://www.allianzlife.co.id/ePension/" target="_blank">e-Pension</a></li>
-				<li><a href="allianz-platinum.php" >Allianz Platinum</a></li>
-				<li><a href="faq.php">FAQ</a></li>
-			-->
-		</ul>
+		<?php while ($this->block("block-layanankami")->loop()) { ?>
+			<h4><b><?php echo $this->input("layanan", array("width" => 240));?><br /></b></h4>
+			<ul class="nav">
+				<?php while ($this->block("linkblock-layanankami")->loop()) { ?>
+							    <li><?php echo $this->link("myLink-layanankami"); echo $this->input("myText-layanankami", array("width" => 240));?></li>
+				<?php } ?>
+				<!--
+				<li><a href="klaim.php">Prosedur Klaim</a></li>
+					<li><a href="customer-service.php#cs_premi" onclick="navigateMe('premi')">Info Cara Pembayaran Premi</a></li>
+					<li><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/" target="_blank">Customer Online Portal</a></li>
+					<li><a href="customer-service.php#cs_cara-membeli" onclick="navigateMe('cara-membeli')">Info Cara Membeli</a></li>
+					<li><a href="investasi.php">Harga Unit</a></li>
+					<li><a href="https://www.allianzlife.co.id/eBancassurance/" target="_blank">BancAssurance Portal</a></li>
+					<li><a href="https://www.allianzlife.co.id/ePension/" target="_blank">e-Pension</a></li>
+					<li><a href="allianz-platinum.php" >Allianz Platinum</a></li>
+					<li><a href="faq.php">FAQ</a></li>
+				-->
+			</ul>
+		<?php }?>
 	</div>
 	<div id="tab-contact" class="tab-content">
 		<h3 class="judul-quicklink"></h3>
-		<ul class="nav">
-			<?php while ($this->block("linkblock-contact")->loop()) { ?>
-						    <li><?php echo $this->link("myLink-contact"); ?></li>
-			<?php } ?>
-		</ul>
+		<?php while ($this->block("block-contact")->loop()) { ?>
+			<h4><b><?php echo $this->input("contact",array("width" => 240));?><br /></b></h4>
+			<ul class="list-links bold-list nav">
+				<?php while ($this->block("linkblock-contact")->loop()) { ?>
+							    <li><?php echo $this->link("myLink-contact"); echo $this->input("myText-contact", array("width" => 240));?></li>
+				<?php } ?>
+			</ul>
+		<?php }?>
 		<!--
 		<h3>Kontak</h3>
 		Asuransi Jiwa:
@@ -60,25 +78,27 @@
 	</div>
 	<div id="tab-socialmedia" class="tab-content">
 		<h3 class="judul-quicklink"></h3>
-		<p>
-		<ul class="nav">
-			<?php while ($this->block("linkblock-socialmedia")->loop()) { ?>
-						    <li><?php echo $this->link("myLink-socialmedia"); ?></li>
-			<?php } ?>
-			<!--
-			<li><a href="www.facebook.com/AllianzIndonesiaCommunity" style="color:white">Facebook:  AllianzIndonesiaCommunity </a></li>
-			<li><a href="www.twitter.com/AllianzID" style="color:white">Twitter: AllianzID </a></li>
-			<li><a href="http://instagram.com/allianzindonesia" style="color:white">Instagram: AllianzIndonesia</a></li>
-			-->
-		</ul>
-		</p>
+		<?php while ($this->block("block-social")->loop()) { ?>
+			<h4><b><?php echo $this->input("social",array("width" => 240));?><br /></b></h4>
+			<ul class="nav">
+				<?php while ($this->block("linkblock-socialmedia")->loop()) { ?>
+							    <li><?php echo $this->link("myLink-socialmedia"); echo $this->input("myText-social", array("width" => 240));?></li>
+				<?php } ?>
+				<!--
+				<li><a href="www.facebook.com/AllianzIndonesiaCommunity" style="color:white">Facebook:  AllianzIndonesiaCommunity </a></li>
+				<li><a href="www.twitter.com/AllianzID" style="color:white">Twitter: AllianzID </a></li>
+				<li><a href="http://instagram.com/allianzindonesia" style="color:white">Instagram: AllianzIndonesia</a></li>
+				-->
+			</ul>
+		<?php }?>
 	</div>
 	<div id="tab-download" class="tab-content">
 		<h3 class="judul-quicklink"></h3>
-		<p>
+		<?php while ($this->block("block-download")->loop()) { ?>
+			<h4><b><?php echo $this->input("download",array("width" => 240));?><br /></b></h4>
 			<ul class="nav">
 			<?php while ($this->block("linkblock-download")->loop()) { ?>
-						    <li><?php echo $this->link("myLink-download"); ?></li>
+						    <li><?php echo $this->link("myLink-download"); echo $this->input("myText-download", array("width" => 240));?></li>
 			<?php } ?>
 			<!--
 			<li><a href="finansial.php#fin-report" onclick="navigateMe('report')" style="color:white">Laporan Keuangan</a></li>
@@ -88,7 +108,7 @@
 				<li><a href="download.php#newsletter-allianz" onclick="navigateMe('newsletter-allianz')" style="color:white">Newsletter</a></li>
 			-->
 			</ul>
-		</p>
+		<?php }?>
 	</div>
 
 	<?php if(!$this->editmode) { ?>

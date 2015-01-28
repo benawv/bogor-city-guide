@@ -88,7 +88,7 @@
 		</div>
 		<div id="quicklinks">
 			<?php echo $this->areablock('layananKami', array(
-				'allowed' => array('layanankami-quicklinks')))?>
+				'allowed' => array('layanankami-quicklinks', 'blank-tile-quicklinks-static')))?>
 		</div>
 	</div>
 	<?php
