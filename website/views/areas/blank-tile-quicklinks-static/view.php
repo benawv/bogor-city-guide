@@ -1,18 +1,19 @@
-<?php if($this->editmode){?>
-	<style>
-		#pimcore_editable_linkblock-layanankamiquicklinks-wrapper_block-layanankamiquicklinks-wrapper11_1,
-		#pimcore_editable_linkblock-contactquicklinks-wrapper_block-contactquicklinks-wrapper11_1,
-		#pimcore_editable_linkblock-contactquicklinks-wrapper_block-contactquicklinks-wrapper11_2,
-		#pimcore_editable_linkblock-socialmediaquicklinks-wrapper_block-socialquicklinks-wrapper11_1,
-		#pimcore_editable_linkblock-downloadquicklinks-wrapper_block-downloadquicklinks-wrapper11_1
-		{
-			margin-left: 30px;
-		}
-	</style>
-<?php }?>
 <?php 
 	$style = 'overflow: scroll;';
 ?>
+<style>
+	.cusLi
+	{
+		list-style: none;
+		padding:0px;
+		margin:0px;
+		font-weight: bold;
+	}
+	.cusLi li a
+	{
+		padding: 4px 10px 2px 20px !important;
+	}
+</style>
 <script>
 	<?php if(!$this->editmode){?>
 		function changeHeader(object)
@@ -27,7 +28,7 @@
 		<h3 class="judul-quicklink"><?php echo $this->input("judul-quicklink-static", array("width" => 200));?></h3>
 		<?php while ($this->block("block-layanankami")->loop()) { ?>
 			<h4><b><?php echo $this->input("layanan", array("width" => 240));?><br /></b></h4>
-			<ul class="nav">
+			<ul class="nav cusLi">
 				<?php while ($this->block("linkblock-layanankami")->loop()) { ?>
 							    <li><?php echo $this->link("myLink-layanankami"); echo $this->input("myText-layanankami", array("width" => 240));?></li>
 				<?php } ?>
@@ -49,7 +50,7 @@
 		<h3 class="judul-quicklink"></h3>
 		<?php while ($this->block("block-contact")->loop()) { ?>
 			<h4><b><?php echo $this->input("contact",array("width" => 240));?><br /></b></h4>
-			<ul class="list-links bold-list nav">
+			<ul class="list-links bold-list nav cusLi">
 				<?php while ($this->block("linkblock-contact")->loop()) { ?>
 							    <li><?php echo $this->link("myLink-contact"); echo $this->input("myText-contact", array("width" => 240));?></li>
 				<?php } ?>
@@ -80,7 +81,7 @@
 		<h3 class="judul-quicklink"></h3>
 		<?php while ($this->block("block-social")->loop()) { ?>
 			<h4><b><?php echo $this->input("social",array("width" => 240));?><br /></b></h4>
-			<ul class="nav">
+			<ul class="nav cusLi">
 				<?php while ($this->block("linkblock-socialmedia")->loop()) { ?>
 							    <li><?php echo $this->link("myLink-socialmedia"); echo $this->input("myText-social", array("width" => 240));?></li>
 				<?php } ?>
@@ -96,7 +97,7 @@
 		<h3 class="judul-quicklink"></h3>
 		<?php while ($this->block("block-download")->loop()) { ?>
 			<h4><b><?php echo $this->input("download",array("width" => 240));?><br /></b></h4>
-			<ul class="nav">
+			<ul class="nav cusLi">
 			<?php while ($this->block("linkblock-download")->loop()) { ?>
 						    <li><?php echo $this->link("myLink-download"); echo $this->input("myText-download", array("width" => 240));?></li>
 			<?php } ?>
@@ -137,4 +138,15 @@
 			</div>
 		</div>
 <!--Tab gantung -->
+	
+	<style>
+		#pimcore_editable_linkblock-layanankamilayananKami_block-layanankamilayananKami11_1,
+		#pimcore_editable_linkblock-contactlayananKami_block-contactlayananKami11_1,
+		#pimcore_editable_linkblock-contactlayananKami_block-contactlayananKami11_2,
+		#pimcore_editable_linkblock-socialmedialayananKami_block-sociallayananKami11_1,
+		#pimcore_editable_linkblock-downloadlayananKami_block-downloadlayananKami11_1
+		{
+			margin-left: 30px;
+		}
+	</style>
 <?php } ?>

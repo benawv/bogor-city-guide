@@ -130,7 +130,7 @@ strong {
   list-style: none;
   padding-bottom: 1px;
 }
-.boxes-view #quicklinks .tab-content ul.nav li a {
+.boxes-view #quicklinks .tab-content ul.nav li a, #quicklinks .tab-content ul.cusLi li a {
   display: block;
   color: #fff;
   background: transparent url('../images/ic_buttons.png') -263px -206px no-repeat;
