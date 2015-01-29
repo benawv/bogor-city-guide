@@ -139,14 +139,9 @@
 		</div>
 <!--Tab gantung -->
 	
-	<style>
-		#pimcore_editable_linkblock-layanankamilayananKami_block-layanankamilayananKami11_1,
-		#pimcore_editable_linkblock-contactlayananKami_block-contactlayananKami11_1,
-		#pimcore_editable_linkblock-contactlayananKami_block-contactlayananKami11_2,
-		#pimcore_editable_linkblock-socialmedialayananKami_block-sociallayananKami11_1,
-		#pimcore_editable_linkblock-downloadlayananKami_block-downloadlayananKami11_1
-		{
-			margin-left: 30px;
-		}
-	</style>
+	<script>
+		$(document).ready(function(){
+			$(".cusLi div:first").css("margin-left", "30px");
+		});
+	</script>
 <?php } ?>
