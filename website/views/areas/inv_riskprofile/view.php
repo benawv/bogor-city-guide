@@ -12,7 +12,7 @@ jQuery(function($) {
             
             <div class="form_cont">
             
-                <h1 class="titleRisk">Profil Resiko</h1>
+                <h1 class="titleRisk">Profil Risiko</h1>
                 <!--div class="inv-btn">
 						<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
 						<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
@@ -115,14 +115,14 @@ jQuery(function($) {
                                     <div class="checkbox disabled">
                                         <label>
                                             <input type="radio" name="opt_3" value="2" class="quiz_next" setNext="step_4" >
-                                            Saya memiliki sedikit pengalaman mengenai saham, obligasi dan reksadana, dan saya menyadari resikonya
+                                            Saya memiliki sedikit pengalaman mengenai saham, obligasi dan reksadana, dan saya menyadari risikonya
                                         </label>
                                     </div><!--/ .checkbox -->
 
                                     <div class="checkbox disabled">
                                         <label>
                                             <input type="radio" name="opt_3" value="3" class="quiz_next" setNext="step_4" >
-                                            Saya memiliki pengalaman yang luas tentang investasi terutama di saham, obligasi dan reksadana dan saya paham tentang resiko investasi
+                                            Saya memiliki pengalaman yang luas tentang investasi terutama di saham, obligasi dan reksadana dan saya paham tentang risiko investasi
                                         </label>
                                     </div><!--/ .checkbox -->
                                 </td>
@@ -388,11 +388,11 @@ $(document).ready(function(){
             
             var ansTitle = '';
             var ansFinale = '';
-            var ansKonservatif = 'Anda memiliki toleransi yang <strong>rendah</strong> terhadap resiko dan berinvestasi dengan keamanan dana sebagai prioritas utama. Anda tumbuh secara memadai, yaitu lebih tinggi daripada inflasi.';
+            var ansKonservatif = 'Anda memiliki toleransi yang <strong>rendah</strong> terhadap risiko dan berinvestasi dengan keamanan dana sebagai prioritas utama. Anda tumbuh secara memadai, yaitu lebih tinggi daripada inflasi.';
             
-            var ansModerat = 'Anda memiliki toleransi yang <strong>sedang</strong> terhadap resiko dan berinvestasi secar moderat. Anda dapat menerima fluktuasi pergerakan nilai aset, sebagai imbalan untuk memperoleh peningkatan dalam jangka panjang.';
+            var ansModerat = 'Anda memiliki toleransi yang <strong>sedang</strong> terhadap risiko dan berinvestasi secar moderat. Anda dapat menerima fluktuasi pergerakan nilai aset, sebagai imbalan untuk memperoleh peningkatan dalam jangka panjang.';
             
-            var ansAgresif = 'Anda memiliki toleransi yang <strong>tinggi</strong> terhadap resiko. Anda dapat menerima fluktuasipergerakan nilai aset yang tajam dalam jangka pendek (dibandingkan dengan investor lain ), dengan tujuan untuk memperoleh keuntungan yang substansial.';
+            var ansAgresif = 'Anda memiliki toleransi yang <strong>tinggi</strong> terhadap risiko. Anda dapat menerima fluktuasipergerakan nilai aset yang tajam dalam jangka pendek (dibandingkan dengan investor lain ), dengan tujuan untuk memperoleh keuntungan yang substansial.';
             
             navButton.click(function(){
                 
