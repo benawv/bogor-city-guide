@@ -59,7 +59,7 @@
 													
 		<div class="white_image" style="margin-bottom: 3px; width: 25px; height: 25px; display: none; background-image: url(http://www.allianz.co.id/icon_anchor/icon-active/tentang-kami.png); "></div>
 													
-		<span class="cus_anchor_4">Saving Plan </span>
+		<span class="cus_anchor_4">Savings Plan </span>
 		</div>
 		</a>
 	</li>
@@ -97,7 +97,7 @@
 				<a href="/allianz-fund/allianz-fund/fund-fact-sheet/fund-moneymarket">Money Market</a>
 			</div>
 			<div class="drophide">
-				<a href="/allianz-fund/allianz-fund/fund-fact-sheet/savings-plan">Saving Plan</a>
+				<a href="/allianz-fund/allianz-fund/fund-fact-sheet/savings-plan">Savings Plan</a>
 			</div>
 			<div class="drophide">
 				<a href="/allianz-fund/allianz-fund/fund-fact-sheet/dplk">DPLK</a>
