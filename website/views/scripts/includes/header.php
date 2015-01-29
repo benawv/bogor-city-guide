@@ -87,11 +87,13 @@ $(function(){
 				</div>
 			</div>
 		</nav>
-		<div class="minibar clearfix">
+		<div class="minibar clearfix cusZindex">
 			
 			<nav class="toolbar">
 				<ul class="clearfix">
-					<li><a href="https://www.allianzlife.co.id/CustomerOnlinePortal" target="_blank" class="icon-user">Customer Login</a></li>
+					<li>
+						<a href="javascript:void(0);" class="icon-user cusLogin">Customer Login <img class="arrowDown" src='/website/static/images/arrow/bottom-arrow.png' /></a>
+					</li>
 					<li><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank" class="icon-mail hide-text">Registrasi</a></li>
 					<!--<li><a href="#" class="icon-fav hide-text">My Product</a></li>-->
 					<li>
@@ -108,6 +110,11 @@ $(function(){
 					<li>
 						<a href="javascript:void(0);" class="twshare-fullpage"><img src="/website/static/images/icon-share/twitter.png" /></a>
 					</li>
+				</ul>
+				<ul class="ulCustomerOnline deactive">
+					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank">Asuransi Jiwa dan Kesehatan (Individu)</a></li>
+					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Group/" target="_blank">Asuransi Kesehatan Kumpulan</a></li>
+					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/ePolicy/general/frmHomeGeneral.aspx" target="_blank">Portal Status Klaim Mobil</a></li>
 				</ul>
 				
 				<script type="text/javascript">
@@ -140,6 +147,18 @@ $(function(){
 							$(".dropdown img.flag").toggleClass("flagvisibility");
 						});
 						
+						$(".cusLogin").click(function() {
+							if ($(this).find("img").attr("src") == "/website/static/images/arrow/bottom-arrow.png") {
+								$(this).find("img").attr("src" , "");
+								$(this).find("img").attr("src" , "/website/static/images/arrow/top-arrow.png");
+							}
+							else {
+								$(this).find("img").attr("src" , "");
+								$(this).find("img").attr("src" , "/website/static/images/arrow/bottom-arrow.png");
+							}
+							$(this).find("img").remove("src");
+							$(".ulCustomerOnline").toggle("slow");
+						});
 					});
 						
 						function link(isi, extension, force)
