@@ -343,19 +343,11 @@ jQuery(function($) {
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="" class="form-nav quiz_next" setPrev="step_7">
-                                        <!-- <img class="left" src="/website/static/inv/images/prev.png"> -->
-                                        
-                                        <span style="border:1px solid #17549c; background: #17549c; color: #FFFFFF; font-size: 14px; font-weight: bold; padding: 5px 10px; ">
-                                        &#171; kembali
-                                        </span>
-                                    </a>
-				    &nbsp;
                                     <a href="" class="form-nav quiz_next" setPrev="step_1">
                                         <!-- <img class="left" src="/website/static/inv/images/prev.png"> -->
                                         
                                         <span style="border:1px solid #17549c; background: #17549c; color: #FFFFFF; font-size: 14px; font-weight: bold; padding: 5px 10px; ">
-                                        Ulangi
+                                        &#171; Ulangi
                                         </span>
                                     </a>
 				    <br />
