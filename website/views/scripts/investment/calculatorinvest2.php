@@ -321,8 +321,8 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 
         $(".orange-btn").click(function(){
             var biaya = clearFormat($("#sliderPosition").val());
-            var asumsi = 1;
-            var waktu = clearFormat($("#sliderPosition2").val());
+            var asumsi = clearFormat($("#sliderPosition2").val());
+            var waktu = investment1_jangka_waktu;
             var result = investment3(biaya,asumsi,waktu);
             
             setCookie('investment2_biaya',biaya,1);
