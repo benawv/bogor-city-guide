@@ -57,17 +57,7 @@
             
              <div class="calc-machine">
                <div id="demo">
-                   <div class="calc-box-title"> 
-                        <div class="title-box"><h4>INVESTASI BULANAN YANG DIPERLUKAN ADALAH</h4></div>
-                        <!--div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div-->
-                   </div>
-                   
-                    <div class="calc-box2">    
-                        <div class="count-result">
-                            <span id="result_month">Rp 0</span>
-                        </div>
-		    </div>
-		    <div class="calc-box-title"> 
+                    <div class="calc-box-title"> 
                         <div class="title-box"><h4>INVESTASI TAHUNAN YANG DIPERLUKAN ADALAH</h4></div>
                         <!--div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div-->
                    </div>
@@ -77,7 +67,19 @@
                             <span id="result_year">Rp 0</span>
                         </div>
 		    </div>
-                    <div class="calc-box2">
+                    
+		    <div class="calc-box-title"> 
+                        <div class="title-box"><h4>INVESTASI BULANAN YANG DIPERLUKAN ADALAH</h4></div>
+                        <!--div class="tooltips"><a class="tooltip-left" href="#" data-tooltip="Estimasi biaya pendidikan untuk KB/TK/SD/SMP/PT saat ini *reffer to appendix">?</a></div-->
+                   </div>
+                   
+                    <div class="calc-box2">    
+                        <div class="count-result">
+                            <span id="result_month">Rp 0</span>
+                        </div>
+		    </div>
+		    
+		    <div class="calc-box2">
 			<p class="calc-result-description education">Untuk mencapai biaya pendidikan <span id="edu2_biaya"></span> dengan asumsi imbal hasil sebesar <span id="edu2_asumsi_imbal_hasil"></span> dalam <span id="edu2_jangka_waktu"></span>, Anda membutuhkan investasi tahunan sebesar<span id="edu2_hasil_tahunan"></span> atau investasi bulanan sebesar <span id="edu2_hasil_bulanan"></span>.
 <p class="calc-result-description education">Segera hubungi agen asuransi Allianz untuk mendapatkan solusi kebutuhan biaya pendidikan  Anda. <a href="http://investment.allianz.co.id/contact-us">Hubungi Kami</a></p>
                         <div class="share">
