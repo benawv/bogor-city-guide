@@ -90,7 +90,9 @@
 
 /* Tablet 770 */
 @media screen and (max-width: 550px){
-
+.showme{
+	display: none;
+}
 
 .box_c{
   width: 100%;
