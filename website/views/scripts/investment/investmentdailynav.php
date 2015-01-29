@@ -132,7 +132,7 @@
 //echo "</pre>";
                         ?>
 			    <tr> 
-				<td><a href="#"><?php echo  ucwords(strtolower($items['today'][0]['fundname']))?></a></td> 
+				<td><?php echo  ucwords(strtolower($items['today'][0]['fundname']))?></td> 
 				<td>
 				    <?php echo $items['today'][0]['bid']; ?>
 				</td> 
@@ -542,7 +542,7 @@
                                                 });
                                             });
                                             ///$('.myTable2_items').html(rows);
-					     $('.return-foot').html('<p class="return-foot">Return: '+formfundtype+' sejak '+arr_awal[0]+'/'+arr_awal[1]+'/'+arr_awal[2]+' hingga '+arr_akhir[0]+'/'+arr_akhir[1]+'/'+arr_akhir[2]+' adalah '+((((new_data.xml_data[new_data.xml_data.length-1]['bid']/new_data.xml_data[0]['bid'])-1)*100).toFixed(2))+'% '+'</p>')
+					     $('.return-foot').html('<p class="return-foot" style="font-size: 14px;">Return: '+formfundtype+' sejak '+arr_awal[0]+'/'+arr_awal[1]+'/'+arr_awal[2]+' hingga '+arr_akhir[0]+'/'+arr_akhir[1]+'/'+arr_akhir[2]+' adalah '+((((new_data.xml_data[new_data.xml_data.length-1]['bid']/new_data.xml_data[0]['bid'])-1)*100).toFixed(2))+'% '+'</p>')
                                         }
                                         catch(err)
                                         {
