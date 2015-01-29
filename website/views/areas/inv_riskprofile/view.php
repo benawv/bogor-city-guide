@@ -350,7 +350,15 @@ jQuery(function($) {
                                         &#171; kembali
                                         </span>
                                     </a>
-                                    <br />
+				    &nbsp;
+                                    <a href="" class="form-nav quiz_next" setPrev="step_1">
+                                        <!-- <img class="left" src="/website/static/inv/images/prev.png"> -->
+                                        
+                                        <span style="border:1px solid #17549c; background: #17549c; color: #FFFFFF; font-size: 14px; font-weight: bold; padding: 5px 10px; ">
+                                        Ulangi
+                                        </span>
+                                    </a>
+				    <br />
                                     <div class="allianz-button" style="text-align: left;">
 					                    <a href="http://investment.allianz.co.id/financial-planning/financial-planning"><input id="keuangan" class="blue-btn" type="button" value="Perencanaan Keuangan"></a>
 					                    <a href="http://investment.allianz.co.id/kalkulator"><input id="kalkulator" class="blue-btn" type="button" value="Kalkulator"></a>
