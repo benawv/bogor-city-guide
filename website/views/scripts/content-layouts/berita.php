@@ -11,7 +11,15 @@
 		</div>
 	</div>
 	<?php echo $this->areablock('tanggal-berita', array('allowed' => array('tanggal')))?>
-	<div class="full-w bg-white cus-full">	
+	<div class="full-w bg-white cus-full">
+		
+		<?php
+			if($this->editmode){
+				echo '<button class="x-btn-text" type="button">Gambar dan Teks untuk Halaman Berita.</button>';
+				echo $this->image("imgBerita", array("title" => "Image Size 156x104", "width" => 156, "height" => 104));
+				echo $this->textarea("textareaBerita", array("width" => 500, "height" => 200, "maxlength" => 500));
+			}
+		?>
 		<?php echo $this->areablock('container', array('allowed' => array('video','summary-berita-abu','konten-beritaTeksGambar','konten-beritaGambarTeks','summary-berita', 'garis-pemisah', 'konten-berita'))); ?>
 	</div>
 		

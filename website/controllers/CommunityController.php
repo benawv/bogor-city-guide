@@ -208,7 +208,7 @@ class CommunityController extends Website_Controller_Action {
 		$this->view->fetchPopular = $db->fetchAll($sql3);
 		
 		$this->view->cusMetaTitle = '<meta property="og:title" content="'.$data->getTitle().'" />';
-		$this->view->cusMetaDesc = '<meta property="og:description" content="'.$data->getSummary().'" />';
+		$this->view->cusMetaDesc = '<meta property="og:description" content="'.strip_tags($data->getSummary()).'" />';
 		$this->view->cusMetaImage = '<meta property="og:image" content="http://'.$_SERVER['SERVER_NAME'].$data->imageBackgroundDetail->path.$data->imageBackgroundDetail->filename.'" />';
 		
 		$this->render('template1');
