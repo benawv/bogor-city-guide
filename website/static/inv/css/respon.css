@@ -54,7 +54,7 @@
 
 /* Tablet 770 */
 @media screen and (max-width: 768px){
-  .DTTT_button_print{
+  a.DTTT_button_print{
     display: none;  
   }
   .dropdownmobile{
@@ -96,7 +96,7 @@
 	display: none;
 }
 
-.DTTT_button_print{
+a.DTTT_button_print{
   display: none;  
 }
 
