@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <zend-config xmlns:zf="http://framework.zend.com/xml/zend-config-xml/1.0/">
     <id>investment-ref-lainnya</id>
-    <name>Investment Daily</name>
+    <name>Referensi Lainnya</name>
     <description></description>
     <author>Allianz ID</author>
     <version>1.0</version>
