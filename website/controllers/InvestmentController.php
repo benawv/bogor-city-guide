@@ -481,16 +481,14 @@ class InvestmentController extends Website_Controller_Action
                                          'smartlikn rupiah deposit fund') and
                          STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y') > STR_TO_DATE('$getday','%d-%m-%Y')
                          ORDER  BY 1 DESC";
-                      
-		echo "<pre>";
-	print_r($getAllFundName);
+                         
+        $xmldata2=$db->fetchAll($getAllFundName);
+        /*
+	echo "<pre>";
+	print_r($xmldata2);
 	echo "</pre>";
 	die('die');
-	
-        $xmldata2=$db->fetchAll($getAllFundName);
-        
-
-        
+        */
         foreach($xmldata2 as $items){
 	
 	//last unitdate fundtype	
