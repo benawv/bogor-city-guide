@@ -483,12 +483,12 @@ class InvestmentController extends Website_Controller_Action
                          ORDER  BY 1 DESC";
                          
         $xmldata2=$db->fetchAll($getAllFundName);
-        /*
+        
 	echo "<pre>";
 	print_r($xmldata2);
 	echo "</pre>";
 	die('die');
-        */
+        
         foreach($xmldata2 as $items){
 	
 	//last unitdate fundtype	
