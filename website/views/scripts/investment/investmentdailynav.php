@@ -113,7 +113,7 @@
 		    $datenow=$unitdates[0].$unitdates[1].$unitdates[2];
 	
 		?>
-                <h4>NAB Harian (<?php echo date("j F, Y", strtotime($datenow)); ?>)</h4>
+                <h4>NAB Harian (<?php echo date("j F Y", strtotime($datenow)); ?>)</h4>
                 <p></p>
                 <p>Lihat NAB harian terbaru atau pilih NAB berdasar jenis fund anda.</p>
                 
