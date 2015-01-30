@@ -104,7 +104,15 @@
                         </div>
             </div>	    
             <div class="desc_page">
-                <h4>NAB Harian</h4>
+		<?php
+		    $date_now=$this->data['ytd'][0]['today'][0]['today'];
+		    $unitdates = explode("-", $date_now);
+                    $unitdates[0]; //day
+                    $unitdates[1]; //month
+                    $unitdates[2]; //year
+		    $datenow=$unitdates[2]."-".$unitdates[1]."-".$unitdates[0];
+		?>
+                <h4>NAB Harian (<?php echo $datenow; ?>)</h4>
                 <p></p>
                 <p>Lihat NAB harian terbaru atau pilih NAB berdasar jenis fund anda.</p>
                 
@@ -125,10 +133,9 @@
                         </thead> 
                         <tbody class="table-body"> 
                         <?php  
-                            
                             foreach($this->data['ytd'] as $items){
 //echo "<pre>";
-//print_r($items);
+//print_r($items['today'][0]['today']);
 //echo "</pre>";
                         ?>
 			    <tr> 
