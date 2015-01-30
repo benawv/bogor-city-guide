@@ -565,3 +565,8 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 }
 /* ========================================== */
 
+
+@media screen and (max-width: 550px){
+.showme{
+	display: none;
+}

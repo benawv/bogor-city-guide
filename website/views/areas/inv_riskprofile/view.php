@@ -388,11 +388,11 @@ $(document).ready(function(){
             
             var ansTitle = '';
             var ansFinale = '';
-            var ansKonservatif = 'Anda memiliki toleransi yang <strong>rendah</strong> terhadap risiko dan berinvestasi dengan keamanan dana sebagai prioritas utama. Anda tumbuh secara memadai, yaitu lebih tinggi daripada inflasi.';
+            var ansKonservatif = 'Anda memiliki toleransi yang <strong>rendah</strong> terhadap risiko dan berinvestasi dengan keamanan dana sebagai prioritas utama. Anda tetap mengharapkan investasi Anda tumbuh secara memadai, yaitu lebih tinggi daripada inflasi.';
             
-            var ansModerat = 'Anda memiliki toleransi yang <strong>sedang</strong> terhadap risiko dan berinvestasi secar moderat. Anda dapat menerima fluktuasi pergerakan nilai aset, sebagai imbalan untuk memperoleh peningkatan dalam jangka panjang.';
+            var ansModerat = 'Anda memiliki toleransi yang <strong>sedang</strong> terhadap risiko dan berinvestasi secara moderat. Anda dapat menerima fluktuasi pergerakan nilai aset, sebagai imbalan untuk memperoleh peningkatan dalam jangka panjang.';
             
-            var ansAgresif = 'Anda memiliki toleransi yang <strong>tinggi</strong> terhadap risiko. Anda dapat menerima fluktuasipergerakan nilai aset yang tajam dalam jangka pendek (dibandingkan dengan investor lain ), dengan tujuan untuk memperoleh keuntungan yang substansial.';
+            var ansAgresif = 'Anda memiliki toleransi yang <strong>tinggi</strong> terhadap risiko. Anda dapat menerima fluktuasi pergerakan nilai aset yang tajam dalam jangka pendek (dibandingkan dengan investor lain), dengan tujuan untuk memperoleh keuntungan yang substansial.';
             
             navButton.click(function(){
                 

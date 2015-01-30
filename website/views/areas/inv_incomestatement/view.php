@@ -1140,7 +1140,7 @@ $(document).ready(function(){
 		if(hutang_aset > 50)
 		{
 			hutang_aset_teks = "<div style='color:red; font-size: 18px;'>" + hutang_aset + "%</div>";
-			hutang_aset_ket = "Perbandingan antara total hutang dan aset Anda melebihi angka ideal, yaitu di bawah 50%. Dengan kondisi ini apabila hutang Anda harus dilunasi secepatnya, maka diperlukan lebihdari 50% aset Anda untuk melunasinya. Semakin tinggi angka dari rasio ini, maka risiko terjadinya kebangkrutan akan semakin tinggi. Untuk menekan angka rasio ini, sebaiknya hutang konsumtif dikurangi. Apabila Anda masih memiliki porsi lebih dari pendapatan yang belum dialokasikan maka segerakan pelunasan cicilah hutang Anda.";
+			hutang_aset_ket = "Perbandingan antara total hutang dan aset Anda melebihi angka ideal, yaitu di bawah 50%. Dengan kondisi ini apabila hutang Anda harus dilunasi secepatnya, maka diperlukan lebih dari 50% aset Anda untuk melunasinya. Semakin tinggi angka dari rasio ini, maka risiko terjadinya kebangkrutan akan semakin tinggi. Untuk menekan angka rasio ini, sebaiknya hutang konsumtif dikurangi. Apabila Anda masih memiliki porsi lebih dari pendapatan yang belum dialokasikan maka segerakan pelunasan cicilah hutang Anda.";
 		}
 		else
 		{

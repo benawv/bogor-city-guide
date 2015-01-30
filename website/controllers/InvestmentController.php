@@ -233,6 +233,8 @@ class InvestmentController extends Website_Controller_Action
     public function fundinformationAction() {
 	    
 	    $entries = new Object_InvestmentFundInformation_List();
+	    $entries->setOrderKey("point");
+	    $entries->setOrder("asc");
 	    $this->view->data = $entries;
 	    
     }
