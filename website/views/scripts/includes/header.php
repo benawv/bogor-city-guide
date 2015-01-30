@@ -74,6 +74,21 @@ $(function(){
 				<?php
 				    echo $this->navigation()->menu()->render($navigation);
 				?>
+				<ul class="clearfix mobile deactive">
+					<li>
+						<a href="javascript:void(0);">Customer Login</a>
+						<div style="display: none;" class="menu-level2">
+							<ul class="noborder">
+								<li><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank">Asuransi Jiwa dan Kesehatan (Individu)</a></li>
+								<li><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Group/" target="_blank">Asuransi Kesehatan Kumpulan</a></li>
+								<li><a href="https://www.allianzlife.co.id/ePolicy/general/frmHomeGeneral.aspx" target="_blank">Portal Status Klaim Mobil</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank">Registrasi</a>
+					</li>
+				</ul>
 			</div>
 			<div class="search">
 				<div class="container clearfix">
@@ -150,14 +165,14 @@ $(function(){
 						$(".cusLogin").click(function() {
 							if ($(this).find("img").attr("src") == "/website/static/images/arrow/bottom-arrow.png") {
 								$(this).find("img").attr("src" , "");
+								$(".ulCustomerOnline").show();
 								$(this).find("img").attr("src" , "/website/static/images/arrow/top-arrow.png");
 							}
 							else {
 								$(this).find("img").attr("src" , "");
+								$(".ulCustomerOnline").hide();
 								$(this).find("img").attr("src" , "/website/static/images/arrow/bottom-arrow.png");
 							}
-							$(this).find("img").remove("src");
-							$(".ulCustomerOnline").toggle("slow");
 						});
 					});
 						
