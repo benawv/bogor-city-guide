@@ -74,7 +74,7 @@ $(function(){
 				<?php
 				    echo $this->navigation()->menu()->render($navigation);
 				?>
-				<ul class="clearfix mobile deactive">
+				<!--<ul class="clearfix mobile deactive">
 					<li>
 						<a href="javascript:void(0);">Customer Login</a>
 						<div style="display: none;" class="menu-level2">
@@ -82,13 +82,14 @@ $(function(){
 								<li><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank">Asuransi Jiwa dan Kesehatan (Individu)</a></li>
 								<li><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Group/" target="_blank">Asuransi Kesehatan Kumpulan</a></li>
 								<li><a href="https://www.allianzlife.co.id/ePolicy/general/frmHomeGeneral.aspx" target="_blank">Portal Status Klaim Mobil</a></li>
+								<li><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" class="deactive" target="_blank">Registrasi</a></li>
 							</ul>
 						</div>
 					</li>
 					<li>
 						<a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank">Registrasi</a>
 					</li>
-				</ul>
+				</ul>-->
 			</div>
 			<div class="search">
 				<div class="container clearfix">
@@ -109,9 +110,9 @@ $(function(){
 					<li>
 						<a href="javascript:void(0);" class="icon-user cusLogin">Customer Login <img class="arrowDown" src='/website/static/images/arrow/bottom-arrow.png' /></a>
 					</li>
-					<li><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank" class="icon-mail hide-text">Registrasi</a></li>
+					<li class="liMobileHide"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank" class="icon-mail hide-text">Registrasi</a></li>
 					<!--<li><a href="#" class="icon-fav hide-text">My Product</a></li>-->
-					<li>
+					<li class="liMobileHide">
 						<a href="javascript:void(0);" class="fbshare-fullpage"><img src="/website/static/images/icon-share/facebook.png" /></a>
                         <!--<div class="tag-center">
                         	<span class='st_sharethis' displayText='  '></span>
@@ -122,7 +123,7 @@ $(function(){
                             <span class='st_email' displayText=''></span> 
                         </div>-->
 					 </li>
-					<li>
+					<li class="liMobileHide">
 						<a href="javascript:void(0);" class="twshare-fullpage"><img src="/website/static/images/icon-share/twitter.png" /></a>
 					</li>
 				</ul>
@@ -130,6 +131,7 @@ $(function(){
 					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank">Asuransi Jiwa dan Kesehatan (Individu)</a></li>
 					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Group/" target="_blank">Asuransi Kesehatan Kumpulan</a></li>
 					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/ePolicy/general/frmHomeGeneral.aspx" target="_blank">Portal Status Klaim Mobil</a></li>
+					<li class="liCustomerOnline mobile deactive"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank" class="icon-mail hide-text">Registrasi</a></li>
 				</ul>
 				
 				<script type="text/javascript">
