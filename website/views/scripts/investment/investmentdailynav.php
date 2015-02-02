@@ -98,15 +98,32 @@
             </div>	    
             <div class="desc_page" style="padding-top: 35px;">
                 <?php
+		
+		function DateToIndo($date) { // fungsi atau method untuk mengubah tanggal ke format indonesia
+		    // variabel BulanIndo merupakan variabel array yang menyimpan nama-nama bulan
+				 $BulanIndo = array("Januari", "Februari", "Maret",
+								    "April", "Mei", "Juni",
+								    "Juli", "Agustus", "September",
+								    "Oktober", "November", "Desember");
+			 
+				 $tahun = substr($date, 0, 4); // memisahkan format tahun menggunakan substring
+				 $bulan = substr($date, 5, 2); // memisahkan format bulan menggunakan substring
+				 $tgl   = substr($date, 8, 2); // memisahkan format tanggal menggunakan substring
+				 
+				 $result = $tgl . " " . $BulanIndo[(int)$bulan-1] . " ". $tahun;
+				 return($result);
+		 }
+
+		
 		    $date_now=$this->data['ytd'][0]['today'][0]['today'];
 		    $unitdates = explode("-", $date_now);
                     $unitdates[0]; //day
                     $unitdates[1]; //month
                     $unitdates[2]; //year
-		    $datenow=$unitdates[0].$unitdates[1].$unitdates[2];
+		    $datenow=$unitdates[0]."-".$unitdates[1]."-".$unitdates[2];
 	
 		?>
-                <h4>NAB Harian (<?php echo date("j F Y", strtotime($datenow)); ?>)</h4>
+                <h4>NAB Harian (<?php echo DateToIndo($datenow); ?>)</h4>
                 <p></p>
                 <p>Lihat NAB harian terbaru atau pilih NAB berdasar jenis fund anda.</p>
                 
