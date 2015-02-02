@@ -96,7 +96,7 @@
                             <div class="edge_textbanner edge_<?php echo $this->select('color')->getData()?$this->select('color')->getData():'blue'; ?>"></div>
                         </div>
             </div>	    
-            <div class="desc_page">
+            <div class="desc_page" style="padding-top: 35px;">
                 <?php
 		    $date_now=$this->data['ytd'][0]['today'][0]['today'];
 		    $unitdates = explode("-", $date_now);
