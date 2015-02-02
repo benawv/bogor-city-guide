@@ -38,16 +38,47 @@
             //minDate: 0,
             maxDate:"+30D",
             numberOfMonths: 1,
-            onSelect: function(selected) {
-              $("#txtToDate").datepicker("option","minDate", selected);
+            onSelect: function(dateText, inst) {
+		//Get today's date at midnight
+		var today = new Date();
+		today = Date.parse(today.getMonth()+1+'/'+today.getDate()+'/'+today.getFullYear());
+		//Get the selected date (also at midnight)
+		var selDate = Date.parse(dateText);
+    
+		if(selDate > today) {
+		    alert('Tanggal tidak boleh melebihi tanggal hari ini.');
+		    //If the selected date was before today, continue to show the datepicker
+		    $('#txtFromDate').val('');
+		    return false;
+		    $(inst).datepicker('show');
+		    
+		}   
+		
+              $("#txtToDate").datepicker("option","minDate", dateText);
             }
         });
         $("#txtToDate").datepicker({ 
             minDate: 0,
             maxDate:"+30D",
             numberOfMonths: 1,
-            onSelect: function(selected) {
-               $("#txtFromDate").datepicker("option","maxDate", selected);
+            onSelect: function(dateText, inst) {
+		
+		//Get today's date at midnight
+		var today = new Date();
+		today = Date.parse(today.getMonth()+1+'/'+today.getDate()+'/'+today.getFullYear());
+		//Get the selected date (also at midnight)
+		var selDate = Date.parse(dateText);
+    
+		if(selDate > today) {
+		    alert('Tanggal tidak boleh melebihi tanggal hari ini.');
+		    //If the selected date was before today, continue to show the datepicker
+		    $('#txtToDate').val('');
+		    return false;
+		    $(inst).datepicker('show');
+		    
+		} 
+		
+               $("#txtFromDate").datepicker("option","maxDate", dateText);
             }
         });  
     });
