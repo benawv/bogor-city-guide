@@ -57,19 +57,12 @@
     
 <div role="main" class="main no-gutter">
     
-    <div class="bg100 blue-color">
-       <div class="container">
-           <h1 class="article-title">Daily Nav</h1> 
-        </div>   
-        
-    </div> 
-    
 	<div class="container boxes-view">
 		
-		<div id="#" class="article-wrap">
+		<div id="#" class="article-wrap container" style="margin-top: 23px;">
             
 		<div class="wrap30">
-                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Daily Nav</span></h5>
+                <h5 style="margin-bottom: 23px;"><span><a href="#">Home</a></span> &rsaquo; <span>Daily Nav</span></h5>
                         <div class="box_banner_big">
 			     			<div class="textbanner <?php echo $this->select('color')->getData()?$this->select('color')->getData():'blue'?> h200">
                 				<h1><?php echo $this->input('title-note')?></h1>
