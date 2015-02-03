@@ -33,7 +33,7 @@
 		<span class="title"><?php echo $this->document->getProperty('navigation_title');?></span>
 		<div id="quicklinks">
 			<?php echo $this->areablock('layananKami', array(
-					"allowed" => array("quicklinks")))?>
+					"allowed" => array("quicklinks",'product-quicklinks',"blank-tile-quicklinks-static", "tile-quicklinks", "layanankami-quicklinks", "blank-animation-quicklinks")))?>
 		</div>
 		<!--<div class="hotline"><img width="30px" src="_assets/images/hotline.png">&nbsp;&nbsp;<span style="font-size:20px"><strong>021-2926 9999</strong></span></div>-->
 	</div>
@@ -42,7 +42,7 @@
 					"allowed" => array("banner", "static-banner", "banner-without-note")))?>
 		<div id="quicklinks">
 			<?php echo $this->areablock('layananKami-wrapper', array(
-					"allowed" => array("tile-quicklinks", "layanankami-quicklinks", "quicklinks","blank-tile-quicklinks-static")))?>
+					"allowed" => array("tile-quicklinks", "layanankami-quicklinks", "quicklinks","blank-tile-quicklinks-static", 'product-quicklinks', "blank-animation-quicklinks")))?>
 		</div>
 	</div><!-- .wrapper-special -->
 	

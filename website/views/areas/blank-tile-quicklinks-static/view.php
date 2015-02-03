@@ -28,6 +28,14 @@
 		<h3 class="judul-quicklink"><?php echo $this->input("judul-quicklink-static", array("width" => 200));?></h3>
 		<?php while ($this->block("block-layanankami")->loop()) { ?>
 			<h4><b><?php echo $this->input("layanan", array("width" => 240));?><br /></b></h4>
+			<?php if($this->editmode){ ?>
+				<style>
+					ul.cusLi div:first-child
+					{
+						margin-left: 30px;
+					}
+				</style>
+			<?php } ?>
 			<ul class="nav cusLi">
 				<?php while ($this->block("linkblock-layanankami")->loop()) { ?>
 							    <li><?php echo $this->link("myLink-layanankami"); echo $this->input("myText-layanankami", array("width" => 240));?></li>
@@ -138,15 +146,4 @@
 			</div>
 		</div>
 <!--Tab gantung -->
-	
-	<style>
-		#pimcore_editable_linkblock-layanankamilayananKami_block-layanankamilayananKami11_1,
-		#pimcore_editable_linkblock-contactlayananKami_block-contactlayananKami11_1,
-		#pimcore_editable_linkblock-contactlayananKami_block-contactlayananKami11_2,
-		#pimcore_editable_linkblock-socialmedialayananKami_block-sociallayananKami11_1,
-		#pimcore_editable_linkblock-downloadlayananKami_block-downloadlayananKami11_1
-		{
-			margin-left: 30px;
-		}
-	</style>
 <?php } ?>
