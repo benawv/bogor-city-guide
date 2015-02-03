@@ -34,7 +34,10 @@ pimcore.document.tags.textarea = Class.create(pimcore.document.tag, {
 
         this.element = new Ext.form.TextArea(options);
         this.element.render(id);
-
+        //maxlength
+        if (options.maxlength != "") {
+            $("#"+id).find("textarea").attr("maxlength",options.maxlength);
+        }
         if(options["autoStyle"] !== false) {
             var styles = Ext.get(id).parent().getStyles("font-size","font-family","font-style","font-weight","font-stretch","font-variant","color","line-height","text-shadow","text-align","text-decoration","text-transform","direction");
             styles["background"] = "none";

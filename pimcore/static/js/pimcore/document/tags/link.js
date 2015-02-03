@@ -123,7 +123,7 @@ pimcore.document.tags.link = Class.create(pimcore.document.tag, {
                                             triggerAction: 'all',
                                             editable: true,
                                             mode: "local",
-                                            store: ["","_blank","_self","_top","_parent"],
+                                            store: ["","_blank(Open New Window)","_self(Same Window)","_top(Top Most Window)","_parent(Parent Window)"],
                                             value: this.data.target
                                         },
                                         {
@@ -282,6 +282,15 @@ pimcore.document.tags.link = Class.create(pimcore.document.tag, {
         this.window.hide();
 
         var values = this.form.getForm().getFieldValues();
+        
+        //Custom link
+        var target = values.target;
+        if (target != "") {
+            var splitTarget = target.split("(");
+            values.target = "";
+            values.target = splitTarget[0];
+            console.log(values.target);
+        }
         this.data = values;
 
         // set text
