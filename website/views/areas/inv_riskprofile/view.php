@@ -343,7 +343,7 @@ jQuery(function($) {
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="" class="form-nav quiz_next" setPrev="step_1">
+                                    <a href="" class="form-nav quiz_next" setPrev="step_1" refresh="refresh">
                                         <!-- <img class="left" src="/website/static/inv/images/prev.png"> -->
                                         
                                         <span style="border:1px solid #17549c; background: #17549c; color: #FFFFFF; font-size: 14px; font-weight: bold; padding: 5px 10px; ">
@@ -395,38 +395,48 @@ $(document).ready(function(){
             var ansAgresif = 'Anda memiliki toleransi yang <strong>tinggi</strong> terhadap risiko. Anda dapat menerima fluktuasi pergerakan nilai aset yang tajam dalam jangka pendek (dibandingkan dengan investor lain), dengan tujuan untuk memperoleh keuntungan yang substansial.';
             
             navButton.click(function(){
-                
-                var href = $( this ).attr( 'setNext' );
-                var setPrevs = $(this).attr( 'setPrev' );
-                
-                if(setPrevs !=undefined){
-                    href=setPrevs;
-                }
-                
-                var numeric = href.replace( 'step_', '' ) * 1 - 1;
-                
-                var currentSelected = $( 'input[name="opt_' + numeric + '"]:checked' ).val();
-
-                if( currentSelected != undefined || (setPrevs!=undefined) )
-                {
-                    rfValues[ numeric - 1 ] = currentSelected;
-                    console.log( rfValues );
-                    if( $( '.stepform#' + href ).length > 0 )
-                    {
-                        $( '.form_cont .showform' ).hide();
-                        $( '.stepform#' + href ).stop().fadeIn( 'fast', function(){
-                            $( this ).addClass( 'showform' );
-                        });
-                    }
-                }
-                else
-                {
-                    alert( 'Anda harus memilih salah satu jawaban untuk dapat melanjutkan.' );
-                }
+                if ($(this).attr('refresh') != undefined) {    
+		    rfValues = [];
+		    rfSum = 0;
+		    href = $(this).attr( 'setPrev' );
+		    $( '.form_cont .showform' ).hide();
+		    $( '.stepform#' + href ).stop().fadeIn( 'fast', function(){
+			$( this ).addClass( 'showform' );
+		    });
+		}
+		else{
+		    var href = $( this ).attr( 'setNext' );
+		    var setPrevs = $(this).attr( 'setPrev' );
+		    
+		    if(setPrevs !=undefined){
+			href=setPrevs;
+		    }
+		    
+		    var numeric = href.replace( 'step_', '' ) * 1 - 1;
+		    
+		    var currentSelected = $( 'input[name="opt_' + numeric + '"]:checked' ).val();
+    
+		    if( currentSelected != undefined || (setPrevs!=undefined) )
+		    {
+			rfValues[ numeric - 1 ] = currentSelected;
+			console.log( rfValues );
+			if( $( '.stepform#' + href ).length > 0 )
+			{
+			    $( '.form_cont .showform' ).hide();
+			    $( '.stepform#' + href ).stop().fadeIn( 'fast', function(){
+				$( this ).addClass( 'showform' );
+			    });
+			}
+		    }
+		    else
+		    {
+			alert( 'Anda harus memilih salah satu jawaban untuk dapat melanjutkan.' );
+		    }
+		}
                 return false;
             });
             
-            subButton.click(function(){
+            subButton.on('click', function(){
                 $('.inv-btn').show();
                 $( '.form_cont .showform' ).hide();
                 $( '.stepform#step_8' ).stop().fadeIn( 'fast', function(){
@@ -437,7 +447,7 @@ $(document).ready(function(){
                 {
                     rfSum += rfValues[ i ] * 1;
                 }
-                
+                console.log(rfSum);
                 if( rfSum < 11 )
                 {
                     ansTitle = 'Konservatif';
@@ -455,10 +465,10 @@ $(document).ready(function(){
                     ansFinale = ansAgresif;
                 }
                 
-                var title = $( '#step_8 .result' );
+		var title = $( '#step_8 .result' );
                 var desc = $( '#step_8 .description' );
                 
-                title.html( ansTitle );
+		title.html( ansTitle );
                 desc.html( ansFinale );
                 
                 return false;
