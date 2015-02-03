@@ -91,19 +91,23 @@
 <script type="text/javascript">
 		
 	$(".menutab_dekstop li").each(function(x){
+		$("#<?php echo $opentabid ?>_"+x+'_m').click(function(){
+			if ($("#<?php echo $tabcontentid?>_"+x).is(':hidden')) {
+				$(".<?php echo $showid?>").hide();
+				$("#<?php echo $tabcontentid?>_"+x).show();	
+			}
+			else{
+				$("#<?php echo $tabcontentid?>_"+x).toggle();	
+			}
+		}
 		
 		$("#<?php echo $opentabid ?>_"+x).click(function(){
 			
 			$(".<?php echo $menutab;?> li a").removeClass("active");
 	    	$("a#<?php echo $opentabid ?>_"+x).addClass("active");
 	    	
-		if ($("#<?php echo $tabcontentid?>_"+x).is(':hidden')) {
-			$(".<?php echo $showid?>").hide();
-			$("#<?php echo $tabcontentid?>_"+x).show();	
-		}
-		else{
-			$("#<?php echo $tabcontentid?>_"+x).toggle();	
-		}
+		$(".<?php echo $showid?>").hide();
+		$("#<?php echo $tabcontentid?>_"+x).show();	
 		
 		if($("#<?php echo $tabcontentid?>_"+x).find("ul").height() != null)
 	    	{
