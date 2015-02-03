@@ -97,7 +97,7 @@
 			$(".<?php echo $menutab;?> li a").removeClass("active");
 	    	$("a#<?php echo $opentabid ?>_"+x).addClass("active");
 	    	$(".<?php echo $showid?>").hide();
-	    	$("#<?php echo $tabcontentid?>_"+x).show();
+	    	$("#<?php echo $tabcontentid?>_"+x).toggle();
 	    	if($("#<?php echo $tabcontentid?>_"+x).find("ul").height() != null)
 	    	{
 		    	if($("#<?php echo $tabcontentid?>_"+x).find("ul").height() > 500)
