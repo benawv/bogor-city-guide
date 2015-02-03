@@ -38,16 +38,47 @@
             //minDate: 0,
             maxDate:"+30D",
             numberOfMonths: 1,
-            onSelect: function(selected) {
-              $("#txtToDate").datepicker("option","minDate", selected);
+            onSelect: function(dateText, inst) {
+		//Get today's date at midnight
+		var today = new Date();
+		today = Date.parse(today.getMonth()+1+'/'+today.getDate()+'/'+today.getFullYear());
+		//Get the selected date (also at midnight)
+		var selDate = Date.parse(dateText);
+    
+		if(selDate > today) {
+		    alert('Tanggal tidak boleh melebihi tanggal hari ini.');
+		    //If the selected date was before today, continue to show the datepicker
+		    $('#txtFromDate').val('');
+		    return false;
+		    $(inst).datepicker('show');
+		    
+		}   
+		
+              $("#txtToDate").datepicker("option","minDate", dateText);
             }
         });
         $("#txtToDate").datepicker({ 
             minDate: 0,
             maxDate:"+30D",
             numberOfMonths: 1,
-            onSelect: function(selected) {
-               $("#txtFromDate").datepicker("option","maxDate", selected);
+            onSelect: function(dateText, inst) {
+		
+		//Get today's date at midnight
+		var today = new Date();
+		today = Date.parse(today.getMonth()+1+'/'+today.getDate()+'/'+today.getFullYear());
+		//Get the selected date (also at midnight)
+		var selDate = Date.parse(dateText);
+    
+		if(selDate > today) {
+		    alert('Tanggal tidak boleh melebihi tanggal hari ini.');
+		    //If the selected date was before today, continue to show the datepicker
+		    $('#txtToDate').val('');
+		    return false;
+		    $(inst).datepicker('show');
+		    
+		} 
+		
+               $("#txtFromDate").datepicker("option","maxDate", dateText);
             }
         });  
     });
@@ -57,19 +88,12 @@
     
 <div role="main" class="main no-gutter">
     
-    <div class="bg100 blue-color">
-       <div class="container">
-           <h1 class="article-title">Daily Nav</h1> 
-        </div>   
-        
-    </div> 
-    
 	<div class="container boxes-view">
 		
-		<div id="#" class="article-wrap">
+		<div id="#" class="article-wrap container" style="margin-top: 23px;">
             
 		<div class="wrap30">
-                <h5><span><a href="#">Home</a></span> &rsaquo; <span>Daily Nav</span></h5>
+                <h5 style="margin-bottom: 23px;"><span><a href="#">Home</a></span> &rsaquo; <span>Daily Nav</span></h5>
                         <div class="box_banner_big">
 			     			<div class="textbanner <?php echo $this->select('color')->getData()?$this->select('color')->getData():'blue'?> h200">
                 				<h1><?php echo $this->input('title-note')?></h1>
@@ -103,17 +127,34 @@
                             <div class="edge_textbanner edge_<?php echo $this->select('color')->getData()?$this->select('color')->getData():'blue'; ?>"></div>
                         </div>
             </div>	    
-            <div class="desc_page">
+            <div class="desc_page" style="padding-top: 35px;">
                 <?php
+		
+		function DateToIndo($date) { // fungsi atau method untuk mengubah tanggal ke format indonesia
+		    // variabel BulanIndo merupakan variabel array yang menyimpan nama-nama bulan
+				 $BulanIndo = array("Januari", "Februari", "Maret",
+								    "April", "Mei", "Juni",
+								    "Juli", "Agustus", "September",
+								    "Oktober", "November", "Desember");
+			 
+				 $tahun = substr($date, 0, 4); // memisahkan format tahun menggunakan substring
+				 $bulan = substr($date, 5, 2); // memisahkan format bulan menggunakan substring
+				 $tgl   = substr($date, 8, 2); // memisahkan format tanggal menggunakan substring
+				 
+				 $result = $tgl . " " . $BulanIndo[(int)$bulan-1] . " ". $tahun;
+				 return($result);
+		 }
+
+		
 		    $date_now=$this->data['ytd'][0]['today'][0]['today'];
 		    $unitdates = explode("-", $date_now);
                     $unitdates[0]; //day
                     $unitdates[1]; //month
                     $unitdates[2]; //year
-		    $datenow=$unitdates[0].$unitdates[1].$unitdates[2];
+		    $datenow=$unitdates[0]."-".$unitdates[1]."-".$unitdates[2];
 	
 		?>
-                <h4>NAB Harian (<?php echo date("j F Y", strtotime($datenow)); ?>)</h4>
+                <h4>NAB Harian (<?php echo DateToIndo($datenow); ?>)</h4>
                 <p></p>
                 <p>Lihat NAB harian terbaru atau pilih NAB berdasar jenis fund anda.</p>
                 
