@@ -5,9 +5,9 @@
 	<div class="isi_kanan_berita">
 		<?php 
 			echo $this->image("image-berita-kanan", array(
-					"title" => "Drag your image here",
-					'width' 	=> 393,
-					'height'    => 360
+					"title" => "Image Size 300x275",
+					'width' 	=> 300,
+					'height'    => 275
 			));
 		?>
 	</div>

@@ -117,6 +117,7 @@
     </div>
   </div>
 </div>
+<?php if(!$this->editmode) { ?>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$(".thumb1").on("click",function(){
@@ -177,3 +178,4 @@
 		});
 	});
 </script>
+<?php }?>

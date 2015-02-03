@@ -65,8 +65,13 @@
 			                        <?php } ?>
 			                        <?php if($this->editmode || !$this->textarea("caption-text-" . $i)->isEmpty()) { ?>
 			                            <p>
-			                                <?php echo $this->textarea("caption-text-" . $i, ["width" => 251, "height" => 100]) ?>
+			                                <?php echo $this->textarea("caption-text-" . $i, ["width" => 251, "height" => 100, "maxlength" => 140]) ?>
 			                            </p>
+						    <script type="text/javascript">
+							//$(document).ready(function(){
+							//    console.log($("#pimcore_editable_caption-text-0bannerArea1").find("textarea").hide());
+							//});
+						    </script>
 			                        <?php } ?>
 			                        <?php if($this->editmode) { ?>
 			                        	<p>

@@ -1,5 +1,5 @@
 <script type="text/javascript">
-	$(function(){
+	/*$(function(){
 		$('.year-pick, .month-pick, .type-pick').change(function(){
 			var idFilterSection = $(this).closest('.full-w ').attr('id');
 			
@@ -32,14 +32,14 @@
 				$(this).parent().parent().siblings('.description').find('ul').fadeIn('slow');
 			}
 		});
-	});
+	});*/
 </script>
 
 <div id="<?php echo $this->input('anchor')->text?>" class="full-w bg-white cus_full-w">
 	<h2>
 		<?php if($this->editmode): ?>
 			Icon: <?php echo $this->image('icon', array(
-								'title' 	=> 'Drag your icon here',
+								'title' 	=> 'Image Size 31x31',
 								'width' 	=> 100,
 								'height' 	=> 100,
 								'thumbnail'	=> 'icon')) ?>
@@ -146,7 +146,9 @@
 			<?php echo "anchor name: ".$this->input('anchor', array("width" => 250))?>
 		<?php endif;?>
 		<?php echo $this->image('image', array(
-								'title' => 'Drag your image here',
+								'title' => 'Image Size 620x220',
+								'width' => 620,
+								'height' => 220,
 								'thumbnail' => 'fundfactsheet'))?>
 		<ul>
 			<?php

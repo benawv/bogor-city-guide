@@ -2,7 +2,7 @@
 	<div class="text_section cus_img">
 		<?php 
 			echo $this->image("image-berita-kiri", array(
-					"title" => "Drag your image here",
+					"title" => "Image Size 599x375",
 					'width' 	=> 599,
 					'height'    => 375
 			));

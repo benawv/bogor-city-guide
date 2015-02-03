@@ -48,11 +48,14 @@
 	<?php if($this->editmode) { ?>
 		<?php echo $this->image('image-'.$i, array(
 				'class'  	=> 'image_share',
-				'thumbnail'	=> 'product')
+        "title" => "Image Size 304x295",
+        "width" => 304,
+        "height" => 295
+				/*'thumbnail'	=> 'product'*/)
 		);?>
 	<?php } else { ?>
 		<a href="<?php echo $this->link('title-'.$i)->getHref()?>" class="thumbnail">
-			<?php echo $this->image('image-'.$i, array('class' => 'image_share'))?>
+			<?php echo $this->image('image-'.$i, array('class' => 'image_share', "width" => 304, "height" => 295))?>
 		</a>
 	<?php } ?>
 	<div class="description">

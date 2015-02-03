@@ -1,5 +1,5 @@
 <script type="text/javascript">
-	$(function(){
+	/*$(function(){
 		$('.year-pick, .month-pick, .type-pick').change(function(){
 			var idFilterSection = $(this).closest('.full-w ').attr('id');
 			
@@ -32,7 +32,7 @@
 				$(this).parent().parent().siblings('.description').find('ul').fadeIn('slow');
 			}
 		});
-	});
+	});*/
 </script>
 
 <div id="<?php echo $this->input('anchor')->text?>" class="full-w bg-white cus_full-w">
@@ -84,6 +84,7 @@
 						$data->setCondition("parentId = '".$idBulan."'");
 						foreach($data as $isi)
 						{
+							// <a href="#" data-year="" data-month="" data-type=""></a>
 							$item = $row4->filename."/".substr($row3->filename, 2)."/".$row2->filename;
 							$list[] = '<li><a item="'.$item.'" target="_blank" href="'.$isi->path."".$isi->filename.'">'.$isi->filename.'</a></li>';
 						}

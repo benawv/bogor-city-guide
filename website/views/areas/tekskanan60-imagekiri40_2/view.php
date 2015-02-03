@@ -24,9 +24,10 @@
 		<?php endif;?>
 		<div class="section-left-40">
 			<?php echo $this->image('image-kiri', array(
-									'title' => 'Drag your image here',
-									'width' => '100%',
-									'thumbnail' => 'product'))?>
+									'title' => 'Image Size 226x200',
+									'width' => 226,
+									'height' => 200
+									/*'thumbnail' => 'product'*/))?>
 		</div>
 		<div class="section-right-60">
 			<?php echo $this->wysiwyg('teks-kanan')?>
