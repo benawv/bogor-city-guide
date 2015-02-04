@@ -83,7 +83,7 @@
 	$.fn.MapLoad = function(){
 	    //console.log("test");
 		clearOverlays();
-		var valueData = $(this).val() == undefined ? "allianz-utama" :  $(this).val();
+		//var valueData = $(this).val() == undefined ? "allianz-utama" :  $(this).val();
 		var entries = '<?php echo $this->offices; ?>';
 		var listLoc = jQuery.parseJSON(entries);
 		var image = '/website/static/images/blue-with-shadow.png';
