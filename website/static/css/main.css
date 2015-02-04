@@ -130,11 +130,21 @@ strong {
   list-style: none;
   padding-bottom: 1px;
 }
-.boxes-view #quicklinks .tab-content ul.nav li a, #quicklinks .tab-content ul.cusLi li a {
+.boxes-view #quicklinks .tab-content ul.nav li a{
   display: block;
   color: #fff;
   background: transparent url('../images/ic_buttons.png') -263px -206px no-repeat;
   padding: 5px 10px 5px 30px;
+}
+#quicklinks .tab-content ul.cusLi li{
+  display: block;
+  color: #fff;
+  background: transparent url('../images/ic_buttons.png') -263px -206px no-repeat;
+  padding: 5px 10px 5px 30px;
+}
+#quicklinks .tab-content ul.cusLi li a{
+  background: none !important;
+  padding: 0px !important;
 }
 .boxes-view #quicklinks .tab-content ul.nav li a:hover {
   background-color: #004db4;

@@ -34,11 +34,30 @@
 	    }
 	?>
 	<ul class="slides">
-		<?php for($i=0;$i<$slides;$i++) { ?>
+		<?php for($i=0;$i<$slides;$i++) {
+			$color = $this->select('color_'.$i)->getData();
+		?>
 			<li>
-				<?php echo $this->wysiwyg("title-box-carousel-text-section-".$i)?>
+				<?php if($this->editmode) { ?>
+					<p>
+					<?php 
+						echo "Color: <br />";
+						echo $this->select("color_".$i,array(
+									    "store" => array(
+										array("square-red", "Red"),
+										array("square-green", "Green"),
+										array("square-orange", "Orange")
+									    ),
+									    "reload" => true
+									)); 
+								?>
+					</p>
+				<?php } ?>
+				<div class="question <?php echo $color;?>">
+					<?php echo $this->wysiwyg("title-box-carousel-text-section-".$i);?>
+				</div>
 				<div class="description">
-					<?php echo $this->wysiwyg("slide_description-box-carousel-text-section_".$i) ?>
+					<?php echo $this->wysiwyg("slide_description-box-carousel-text-section_".$i);?>
 				</div>
 			</li>
 		<?php } ?>

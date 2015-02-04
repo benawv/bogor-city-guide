@@ -68,7 +68,7 @@
     function initialize() {
         var mapOptions = {
           center: new google.maps.LatLng(-6.2297465, 106.829518),
-          zoom: 12
+          zoom: 11
         };
         map = new google.maps.Map(document.getElementById("maparea"),mapOptions);
 		infowindow = new google.maps.InfoWindow({
@@ -81,14 +81,17 @@
 		
     }
 	$.fn.MapLoad = function(){
+	    //console.log("test");
 		clearOverlays();
 		var valueData = $(this).val() == undefined ? "allianz-utama" :  $(this).val();
-		var entries = '<?php echo $this->offices ?>';
+		var entries = '<?php echo $this->offices; ?>';
 		var listLoc = jQuery.parseJSON(entries);
 		var image = '/website/static/images/blue-with-shadow.png';
 		var marker = [];
 		
-		$.each(listLoc.objects, function(i, item){
+		//console.log(listLoc);
+		
+		$.each(listLoc, function(i, item){
 		
 			var data_content = '<div class="content">'+
 										'<div id="siteNotice"></div>'+
@@ -101,8 +104,15 @@
 										'Fax :'+item.fax+''+
 										'</div>'+
 									'</div>';
-									
-			if(item.tipe == "kantor-pusat")
+			try {
+			    var jenis = item.tipe.jenis;
+			}
+			catch(e){
+			    var jenis = null;
+			}
+			
+			
+			if(item.o_key == "allianz-tower")
 			{
 				var marker = new google.maps.Marker({
 							position: new google.maps.LatLng(item.latitude, item.longitude),
@@ -176,12 +186,83 @@
 		
 	}
 	
+	function MapLoad2(k,w){
+		clearOverlays();
+		//console.log(k+"  "+w);
+		$.ajax({
+			"url" : "/load-map/",
+			"data" : {kantor : k, wilayah : w},
+			"type" : "POST",
+			"success" : function(responseData){
+			    var entries = responseData;
+			    var listLoc = jQuery.parseJSON(entries);
+			    var image = '/website/static/images/blue-with-shadow.png';
+			    var marker = [];
+			    
+			    $.each(listLoc.objects, function(i, item){
+			    
+				    var data_content = '<div class="content">'+
+											    '<div id="siteNotice"></div>'+
+											    '<img src="/website/static/images/allianz-eagle-3d.png" height="50" width="50" />'+
+											    '<h2 id="firstHeading" class="firstHeading">'+item.officeName+'</h2>'+
+											    '<div id="bodyContent">'+
+											    '<b>'+item.subName+'</b><br />'+
+											    'Alamat : '+item.alamat+'<br />'+
+											    'Telp :'+item.phone+'<br />'+
+											    'Fax :'+item.fax+''+
+											    '</div>'+
+										    '</div>';
+				    //console.log(item);
+				    try {
+					var jenis = item.tipe.jenis;
+				    }
+				    catch(e){
+					var jenis = null;
+				    }
+				    if(item.o_key == "allianz-tower")
+				    {
+					    var marker = new google.maps.Marker({
+								    position: new google.maps.LatLng(item.latitude, item.longitude),
+								    draggable: false,
+								    icon: image,
+								    map: map,
+								    html: data_content
+							    });
+				    }
+				    else {
+					    var marker = new google.maps.Marker({
+								    position: new google.maps.LatLng(item.latitude, item.longitude),
+								    draggable: false,
+								    map: map,
+								    html: data_content
+							    });
+				    }
+				    markers.push(marker);
+			    });
+			    
+			    for(x=0;x < markers.length;x++){
+				    var marker = markers[x];
+				    google.maps.event.addListener(marker, 'click', function () {
+					    infowindow.setContent(this.html);
+					    infowindow.open(map, this);
+				    });
+			    }
+			}
+		})
+		
+	}
+	
 	  $(function(){
 			google.maps.event.addDomListener(window, 'load', initialize);
 			$('#map-shortcut .kantor').change(function(e){
-				$(this).MapLoad();
+				var kantor = $('#map-shortcut .kantor').find(":selected").val();
+				var wilayah = $('#map-shortcut .wilayah').find(":selected").val();
+				MapLoad2(kantor,wilayah);
 			});
 			$('#map-shortcut .wilayah').change(function(e){
+				var kantor = $('#map-shortcut .kantor').find(":selected").val();
+				var wilayah = $('#map-shortcut .wilayah').find(":selected").val();
+				MapLoad2(kantor,wilayah);
 				var attr = $(this).val();
 				attr = attr.split(',');
 				var longLat = new google.maps.LatLng(attr[0], attr[1])
@@ -190,5 +271,52 @@
 			});
 	  });
       
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		<?php if(!$this->editmode) { ?>
+		$('li.aktif .nav_menu div').css('display', 'none');
+		$('li .nav_menu .white_image').css('display', 'none');
+		$('li.aktif .nav_menu .white_image').css('display', 'block');
+		
+		var hash = window.location.hash.substring(1);
+		if(hash!=''){
+			var target = '#modal-'+hash;
+			$(target).modal('show');
+		}
+		$(".pagenav .navi li").click(function(){
+			$(".pagenav .navi li").removeClass('aktif');
+			$(".pagenav .navi li .nav_menu div").css('display','block');
+			$(".pagenav .navi li .nav_menu .white_image").css('display','none');
+			$(this).addClass('aktif');
+			$('li.aktif .nav_menu div').css('display', 'none');
+			$('li.aktif .nav_menu .white_image').css('display', 'block');
+			
+			var data = $(this).attr('class');
+			var id = data.split(' ');
+			//alert($(".heading").offset().top);
+			if(Math.floor( $(".heading").offset().top)<=212)
+			{
+				$('html, body').animate({scrollTop:$("#"+id[0]).offset().top-190}, 500);
+			}
+			else
+			{
+				$('html, body').animate({scrollTop:$("#"+id[0]).offset().top-90}, 500);
+			}
+		});
+		$(".hideme").hide();
+		$(".v").click(function(){
+			$(this).siblings('.hideme').slideToggle();
+			if($(this).find('.xicon').hasClass('down')){
+				$(this).find('.xicon').removeClass('down')
+				$(this).find('.xicon').addClass('up')
+			}
+			else{
+				$(this).find('.xicon').removeClass('up')
+				$(this).find('.xicon').addClass('down')
+			}
+		});
+		<?php }?>
+	});
 </script>
 </html>
