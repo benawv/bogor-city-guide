@@ -13,11 +13,7 @@ class DefaultController extends Website_Controller_Action {
 			$array[$i++] = $entry;
 		}	
 				
-
-		$string_map = json_encode($array);
-		$string_map = str_replace("\'","\\'", $string_map);
-		
-		$this->view->offices = $string_map;
+		$this->view->offices = json_encode($array);
 		
 		$this->enableLayout();
 		
