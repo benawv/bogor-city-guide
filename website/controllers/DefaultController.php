@@ -23,10 +23,19 @@ class DefaultController extends Website_Controller_Action {
 	}
 	
 	public function mapAction() {
-		$kantor = $_POST["kantor"];
-		$wil = explode(",",$_POST["wilayah"]);
-		$wilayah = $wil[3];
+		$k = $_POST["kantor"];
+		$w = $_POST["wilayah"];
 		
+		if($k != "" && $w != "")
+		{
+			$kantor = $k;
+			$wil = explode(",",$w);
+			$wilayah = $wil[3];
+		}
+		else{
+			$kantor = "";
+			$wilayah = "";
+		}
 		// wilayah__id
 		if($kantor != "" && $wilayah != ""){
 			$kondisi = array("condition" => "(tipe2__id=".$kantor." AND wilayah2__id=".$wilayah.")  OR o_key='allianz-tower'");
