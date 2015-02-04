@@ -120,7 +120,7 @@ $(document).ready(function () {
             $("#modal-" + title).modal();
         }
     });
-    $("p a").on("click", function () {
+    $(".description a").on("click", function () {
         var href = $(this).attr("href");
         var subHref = href.substring(0, 6);
         if (subHref == "#modal") {
