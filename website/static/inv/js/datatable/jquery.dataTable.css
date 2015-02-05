@@ -493,6 +493,10 @@ table.dataTable td {
 
 
 @media screen and (max-width: 768px) {
+  
+  .DTTT_container{
+    display: none;    
+  } 
 
     .header-table-graph{
     position: absolute;top: 4px;left: 12px;
@@ -512,6 +516,9 @@ table.dataTable td {
   
 }
 @media screen and (max-width: 640px) {
+  .DTTT_container{
+    display: none;    
+  }
   .dataTables_wrapper .dataTables_length,
   .dataTables_wrapper .dataTables_filter {
     float: none;
@@ -529,6 +536,9 @@ table.dataTable td {
 /*fitrazh 22/1/15 */
 
 @media only screen and (max-width : 320px) {
+  .DTTT_container{
+    display: none;    
+  }
     .header-table-graph{
     position: absolute;top: 4px;left: 12px;
   }
