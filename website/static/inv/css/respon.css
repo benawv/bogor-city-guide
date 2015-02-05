@@ -96,8 +96,8 @@
 	display: none;
 }
 
-a.DTTT_button_print{
-  display: none;  
+div.DTTT_container a.DTTT_button_print{
+  display: none;
 }
 
 .box_c{
