@@ -98,7 +98,7 @@
 
             <div class="container">
                 <!-- <h1 class="weblogo">Allianz<span onclick="window.location.href = '<?php echo $this->url(array("document" => Document::getById(1)), "default", true)?>'"></span></h1> -->
-                <h1 class="weblogo">Allianz<span onclick="window.location.href = 'http://www.allianz.co.id/<?php //echo $this->url(array("document" => Document::getById(475)), "default", true)?>'"></span></h1>
+                <h1 class="weblogo">Allianz<span onclick="window.open('http://www.allianz.co.id/<?php //echo $this->url(array("document" => Document::getById(475)), "default", true)?>','_blank')"></span></h1>
 		<nav class="primary" role="primarynavigation">
 			<h3 class="toggle-menu"><span>Main Navigation</span></h3>
 			<div class="menu-level1">
