@@ -59,7 +59,7 @@ $(function(){
 
 <header role="banner" class="banner">
 	<div class="container">
-		<h1 class="weblogo">Allianz<span onclick="window.location.href = 'index.php'"></span></h1>
+		<h1 class="weblogo">Allianz<span onclick="window.location.href = 'http://www.allianz.co.id/'"></span></h1>
 		<nav class="primary" role="primarynavigation">
 			<h3 class="toggle-menu"><span>Main Navigation</span></h3>
 			<div class="menu-level1">
