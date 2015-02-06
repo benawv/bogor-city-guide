@@ -2504,6 +2504,10 @@ footer.contentinfo{
 	.banner .minibar{
 		display: none;
 	}
+	.minibar a img {
+	    width: 180px;
+	    margin-top: 15px
+	}
 	.box-orange {
 		height: 360px;
 	}
