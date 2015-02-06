@@ -41,7 +41,7 @@ background-size: cover;
 }
 
 .banner_portal{
-    background: url(../images/banner.jpg) no-repeat center top;
+    background: url(/allianz-investment/image/home-portal-background/banner.jpg) no-repeat center top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
