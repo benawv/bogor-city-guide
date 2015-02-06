@@ -21,6 +21,10 @@
 				<li><a href="/data-privasi/prinsip-privasi">Kebijakan Privasi</a></li>
 				<li><a href="/sitemap/sitemap" target="_blank">Sitemap</a></li>
 			</ul>
+			<ul class="static-links mobile deactive share">
+				<li><a href="javascript:void(0);" class="fbshare-fullpage"><img src="/website/static/images/icon-share/facebook-black.png" /></a></li>
+				<li><a href="javascript:void(0);" class="twshare-fullpage"><img src="/website/static/images/icon-share/twitter-black.png" /></a></li>
+			</ul>
 		</div>
 	</div>
 	<nav>
