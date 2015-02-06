@@ -2502,7 +2502,7 @@ footer.contentinfo{
 		font-size: 90%;
 	}
 	.banner .minibar{
-		display: none;
+		display: block;
 	}
 	.minibar a img {
 	    width: 180px;
