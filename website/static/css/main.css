@@ -590,8 +590,8 @@ padding: 10px 15px;
     float: right;
     width: 292px;
     height: 270px;
-/*    margin-top: 32px;*/
-    margin-top: 8px;  
+    margin-top: 32px;
+    /*margin-top: 8px;*/  
   }
    #map-shortcut li a {
     font-size: 13px;
@@ -631,7 +631,10 @@ padding: 10px 15px;
     width: 100% !important;
   }
 }
-
+@media only screen and (max-width : 480px){
+  /*SETTING LOGO 125*/
+  .fixbox .place-bg .notepadKiri{width: 65%;float: left;}
+}
 @media only screen and (max-width : 640px){
 
 	/* Sticky */
@@ -661,7 +664,8 @@ padding: 10px 15px;
   .wishlist-content h1{
     width: 90%;
   }
-
+  /*SETTING LOGO 125*/
+  .place-bg .notepadKiri{width: 70%;float: left;}
 }
 
 @media only screen and (max-width : 800px) and (min-width: 480px) {
@@ -707,3 +711,6 @@ a.fbshare, a.twshare{
 #brosur{
   display: none !important;
 }
+/*SETTING LOGO 125*/
+.notepadKiri{width: 150px;float: left;}
+.notepadKanan{width: 70px;float: right;margin-right: 20px;margin-top: 17px;}

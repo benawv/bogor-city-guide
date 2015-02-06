@@ -485,6 +485,15 @@ $(document).ready(function () {
             $(this).parent().parent().siblings('.description').find('ul').show();
         }
     });
+    
+    //Setting Logo 125
+    $(".slides").find("li").first().next().find("div.place-bg").find("div").first().addClass("notepadKiri");
+    $(".slides").find("li").first().next().find("div.place-bg").append("<div class='notepadKanan'><img src='/website/static/images/logo125/Allianz125_Standard_logo_White.png' /></div>");
+    $(".clone").addClass("temp");
+    $(".clone:first").removeClass("temp");
+    $("li.temp").find("div.place-bg").find("div").addClass("notepadKiri");
+    $(".temp").find("div.place-bg").append("<div class='notepadKanan'><img src='/website/static/images/logo125/Allianz125_Standard_logo_White.png' /></div>");
+    //END Logo 125
 });
 $(window).load(function () {
     var $container = $('.items-container');

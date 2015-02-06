@@ -60,6 +60,7 @@
 							?>
 							<div class="fixbox <?php echo $pos?>60">
 								<div class="place-bg bg-<?php echo $color?> place-bg-gallery">
+								    <div>
 									<?php if($this->editmode || !$this->input("caption-title-" . $i)->isEmpty()) { ?>
 			                            <h1><?php echo $this->input("caption-title-" . $i, ["width" => 251]) ?></h1>
 			                        <?php } ?>
@@ -67,11 +68,6 @@
 			                            <p>
 			                                <?php echo $this->textarea("caption-text-" . $i, ["width" => 251, "height" => 100, "maxlength" => 140]) ?>
 			                            </p>
-						    <script type="text/javascript">
-							//$(document).ready(function(){
-							//    console.log($("#pimcore_editable_caption-text-0bannerArea1").find("textarea").hide());
-							//});
-						    </script>
 			                        <?php } ?>
 			                        <?php if($this->editmode) { ?>
 			                        	<p>
@@ -111,6 +107,7 @@
 										?>
 			                        	</p>
 			                        <?php } ?>
+								    </div>
 								</div>
 								<div class="edge e-<?php echo $color?>">
 									<?php echo $this->link("boxlink_".$i); ?>
