@@ -275,9 +275,9 @@
 	  });
       
 </script>
+<?php if(!$this->editmode) { ?>
 <script type="text/javascript">
 	$(document).ready(function(){
-		<?php if(!$this->editmode) { ?>
 		$('li.aktif .nav_menu div').css('display', 'none');
 		$('li .nav_menu .white_image').css('display', 'none');
 		$('li.aktif .nav_menu .white_image').css('display', 'block');
@@ -319,7 +319,15 @@
 				$(this).find('.xicon').addClass('down')
 			}
 		});
-		<?php }?>
 	});
 </script>
+<?php }
+
+    else{
+?>
+    <!--SETTING LOGO 125-->
+    <style>
+	.notepadKanan{display: none !important;}
+    </style>
+<?php }?>
 </html>
