@@ -100,4 +100,4 @@ ga('send', 'pageview');
 		}
 	?>
 </script>
-<script async src="/website/static/js/share-product.js" type="text/javascript"></script>
+<!--<script async src="/website/static/js/share-product.js" type="text/javascript"></script>-->

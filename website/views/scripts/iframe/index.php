@@ -90,7 +90,7 @@ ga('send', 'pageview');
 	    return "";
 	}
 </script>
-<script src="/website/static/js/share-product.js" type="text/javascript"></script>
+<!--<script src="/website/static/js/share-product.js" type="text/javascript"></script>-->
 
 <div class="main" role="main">
 	<div class="container">
