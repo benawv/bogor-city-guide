@@ -714,3 +714,6 @@ a.fbshare, a.twshare{
 /*SETTING LOGO 125*/
 .notepadKiri{width: 150px;float: left;}
 .notepadKanan{width: 70px;float: right;margin-right: 20px;margin-top: 17px;}
+
+/*tabs-accordion.css*/
+.accordion-header{font-size:16px;font-weight:700;background:#003781;padding:5px 13px;border:1px solid #003781;cursor:pointer;color:#fff}.active-header{background:url(/website/static/images/menu_toggle_up.png) right 50% no-repeat #003781}.inactive-header{background:url(/website/static/images/menu_toggle_down.png) right 50% no-repeat #003781}.accordion-content{display:none}
