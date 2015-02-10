@@ -327,7 +327,7 @@ class Asset_Image_Thumbnail {
                     $html .= ' />' . "\n";
                 }
 
-                $html .= "\t" . '' . "\n\t\t" . $htmlImgTag . "\n\t" . '' . "\n";
+                $html .= "\t" . '<noscript>' . "\n\t\t" . $htmlImgTag . "\n\t" . '</noscript>' . "\n";
             $html .= '</picture>' . "\n";
 
             return $html;
