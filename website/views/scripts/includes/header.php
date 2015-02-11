@@ -34,7 +34,7 @@ function check_user_agent ( $type = NULL ) {
 <link href="/website/static/css/font-awesome/font-awesome.min.css" rel="stylesheet">
 <script type="text/javascript">var switchTo5x=true;</script>
 <!--script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script!-->
-<script type="text/javascript">stLight.options({publisher: "16852030-1a9b-4882-8731-4afd4c1cfd9c", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+<!--<script type="text/javascript">stLight.options({publisher: "16852030-1a9b-4882-8731-4afd4c1cfd9c", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>-->
 
 <script type="text/javascript">
 $(function(){
