@@ -194,11 +194,11 @@
 }
 
 
-
-.pimcore_iframe_mask {
+/*Menghalangi edit*/
+/*.pimcore_iframe_mask {
 	position: absolute;
 	z-index: 10000;
-}
+}*/
 
 .pimcore_tag_link {
 	position: relative;
