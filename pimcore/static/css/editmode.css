@@ -49,10 +49,11 @@
 }
 
 /* pimcore editables */
-
+/*Kalau di bawah ketutupan*/
 .pimcore_tag_image_alt {
 	position: absolute;
-	bottom: 0;
+	/*bottom: 0;*/
+	top: 0;
 	left: 0;
 	width: 100%;
 }
