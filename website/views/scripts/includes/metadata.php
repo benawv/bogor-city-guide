@@ -55,6 +55,7 @@
 <script  type="text/javascript" src="/website/static/plugins/gmaps-marker-label.js"></script>
 
 <meta name="google-site-verification" content="t5S9yqQc-NyyfANDoR4qXDmEbpy746PnIqxU5rp0aXM" />
+<link rel="alternate" href="http://www.allianz.co.id/" hreflang="id" />
 
 <!--Google Analytics-->
 <script>
