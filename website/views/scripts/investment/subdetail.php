@@ -50,7 +50,7 @@
                 
 		<div class="row">
 				<div class="main-desc">
-					<div style="text-align: end;padding-bottom: 10px; font-style: italic;"> Tanggal Pembuatan: <?php echo date("d M Y", $this->data->o_creationDate) ?></div>
+					<div style="text-align: end;padding-bottom: 10px; font-style: italic;"> Perubahan terakhir: <?php echo date("d M Y", $this->data->o_modificationDate) ?></div>
 					<?php if($this->data->image) { ?>
 						<p><img src="<?php echo $this->data->image ?>" /></p>
 					<?php } ?>
