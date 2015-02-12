@@ -30,7 +30,7 @@
 			<h4><b><?php echo $this->input("layanan", array("width" => 240));?><br /></b></h4>
 			<?php if($this->editmode){ ?>
 				<style>
-					ul.cusLi div:first-child
+					ul.cusLi > div
 					{
 						margin-left: 30px;
 					}
