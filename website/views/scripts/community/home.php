@@ -32,7 +32,11 @@
 														<!-- <i class="icon-video"></i>	 -->
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo $list[$y][path]."".$list[$y][filename];?>"alt="">
+																	<?php
+																		$idImage = $list[$y][image];
+																		$getAlt = Asset::getById($idImage);
+																	?>
+																	<img src="<?php echo $list[$y][path]."".$list[$y][filename];?>"alt="<?php echo $getAlt->getMetadata()[1][data];?>">
 																	<div class="tg tg-shr">
 																		<?php 
 																			echo $list[$y][titleCategory];
@@ -56,7 +60,11 @@
 															<a href="<?php echo $this->url(array($list[$y+1][o_key],$list[$y+1][oo_id],$list[$y+1][template]),"community-detail");?>">
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo $list[$y+1][path]."".$list[$y+1][filename];?>"alt="">
+																		<?php
+																			$idImage = $list[$y+1][image];
+																			$getAlt = Asset::getById($idImage);
+																		?>
+																		<img src="<?php echo $list[$y+1][path]."".$list[$y+1][filename];?>"alt="<?php echo $getAlt->getMetadata()[1][data];?>">
 																		<div class="tg tg-shr">
 																			<?php 
 																					echo $list[$y+1][titleCategory];
@@ -88,7 +96,11 @@
 													   <a href="<?php echo $this->url(array($list[$y+2][o_key],$list[$y+2][oo_id],$list[$y+2][template]),"community-detail");?>">
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo $list[$y+2][path]."".$list[$y+2][filename];?>"alt="">
+																<?php
+																	$idImage = $list[$y+2][image];
+																	$getAlt = Asset::getById($idImage);
+																?>
+																<img src="<?php echo $list[$y+2][path]."".$list[$y+2][filename];?>"alt="<?php echo $getAlt->getMetadata()[1][data];?>">
 																<div class="tg tg-shr">
 																	<?php 
 																			echo $list[$y+2][titleCategory];
@@ -113,7 +125,11 @@
 															<!-- <i class="icon-video"></i> -->
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo $list[$y+3][path]."".$list[$y+3][filename];?>"alt="">
+																	<?php
+																		$idImage = $list[$y+3][image];
+																		$getAlt = Asset::getById($idImage);
+																	?>
+																	<img src="<?php echo $list[$y+3][path]."".$list[$y+3][filename];?>"alt="<?php echo $getAlt->getMetadata()[1][data];?>">
 																	<div class="tg tg-shr">
 																		<?php 
 																				echo $list[$y+3][titleCategory];
@@ -144,7 +160,11 @@
 															<!-- <i class="icon-video"></i> -->
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo $list[$y+4][path]."".$list[$y+4][filename];?>"alt="">
+																	<?php
+																		$idImage = $list[$y+4][image];
+																		$getAlt = Asset::getById($idImage);
+																	?>
+																	<img src="<?php echo $list[$y+4][path]."".$list[$y+4][filename];?>"alt="<?php echo $getAlt->getMetadata()[1][data];?>">
 																	<div class="tg tg-shr">
 																		<?php 
 																				echo $list[$y+4][titleCategory];
@@ -168,7 +188,11 @@
 															<a href="<?php echo $this->url(array($list[$y+5][o_key],$list[$y+5][oo_id],$list[$y+5][template]),"community-detail");?>">
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo $list[$y+5][path]."".$list[$y+5][filename];?>"alt="">
+																		<?php
+																			$idImage = $list[$y+5][image];
+																			$getAlt = Asset::getById($idImage);
+																		?>
+																		<img src="<?php echo $list[$y+5][path]."".$list[$y+5][filename];?>"alt="<?php echo $getAlt->getMetadata()[1][data];?>">
 																		<div class="tg tg-shr">
 																			<?php 
 																					echo $list[$y+5][titleCategory];
@@ -194,7 +218,11 @@
 																<!-- <i class="icon-video"></i>  -->
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo $list[$y+6][path]."".$list[$y+6][filename];?>"alt="">
+																		<?php
+																			$idImage = $list[$y+6][image];
+																			$getAlt = Asset::getById($idImage);
+																		?>
+																		<img src="<?php echo $list[$y+6][path]."".$list[$y+6][filename];?>"alt="<?php echo $getAlt->getMetadata()[1][data];?>">
 																		<div class="tg tg-shr">
 																			<?php 
 																					echo $list[$y+6][titleCategory];
@@ -332,6 +360,8 @@
 										<?php
 											foreach($this->fetchRecommended as $result)
 											{
+												$idImage = $result[image];
+												$getAlt = Asset::getById($idImage);
 										?>
 											<article class="art-itm">
 												<div class="s-sbar-ct">
@@ -339,7 +369,7 @@
 													
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo $result[path]."".$result[filename];?>" alt="" />
+																<img src="<?php echo $result[path]."".$result[filename];?>" alt="<?php echo $getAlt->getMetadata()[1][data];?>" />
 																<div class="tg tg-shr">
 																	<?php
 																		echo $result[titleCategory];
@@ -379,6 +409,8 @@
 								<?php
 									foreach($this->fetchPopular as $result)
 									{
+										$idImage = $result[image];
+										$getAlt = Asset::getById($idImage);
 								?>
 									<article class="art-itm">
 												<div class="s-sbar-ct">
@@ -386,7 +418,7 @@
 													
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo $result[path]."".$result[filename];?>" alt="" />
+																<img src="<?php echo $result[path]."".$result[filename];?>" alt="<?php echo $getAlt->getMetadata()[1][data];?>" />
 																<div class="tg tg-shr">
 																	<?php
 																		echo $result[titleCategory];

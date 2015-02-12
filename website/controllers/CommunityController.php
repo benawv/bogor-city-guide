@@ -21,7 +21,7 @@ class CommunityController extends Website_Controller_Action {
 		//ALL
 		$db = Pimcore_Resource_Mysql::get();
 		
-		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path, image FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				left join assets as ass on tblcommunity.image=ass.id
 				where tblcommunity.o_published = 1
 				ORDER BY tblcommunity.date DESC, tblcommunity.o_creationDate DESC limit 14"; //or whatever you need to do.
@@ -41,7 +41,7 @@ class CommunityController extends Website_Controller_Action {
 		$this->view->fetchBackground = $image;
 		
 		//Recommended
-		$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql2 = "SELECT tblcommunity.oo_id, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path, image FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				left join assets as ass on tblcommunity.image=ass.id
 				where tblcommunity.recommended = 1 and tblcommunity.o_published = 1
 				ORDER BY tblcommunity.recommended, tblcommunity.popular DESC limit 3"; //or whatever you need to do.
@@ -56,7 +56,7 @@ class CommunityController extends Website_Controller_Action {
 			$nameCommunityCok = "object_".$table->getClassId();
 		}
 		
-		$sql3 = "SELECT tblcommunity.oo_id, tblcommunity.popular, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
+		$sql3 = "SELECT tblcommunity.oo_id, tblcommunity.popular, tblcommunity.o_key, tblcommunity.template, tblcommunity.title, tblcommunity.date, tblcategory.titleCategory, ass.filename, ass.path, image FROM ".$nameCommunity." as tblcommunity left join ".$nameCommunityCat." as tblcategory on tblcommunity.category__id=tblcategory.oo_id
 				left join assets as ass on tblcommunity.image=ass.id
 				where tblcommunity.o_published = 1
 				ORDER BY tblcommunity.popular DESC limit 3"; //or whatever you need to do.
