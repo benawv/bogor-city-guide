@@ -102,3 +102,14 @@ ga('send', 'pageview');
 	?>
 </script>
 <script async src="/website/static/js/share-product.js" type="text/javascript"></script>
+<?php
+	if($this->editmode) {
+?>
+		<style>
+			.fixbox{
+				top: 60px !important;
+			}
+		</style>
+<?php
+	}
+?>
