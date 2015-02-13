@@ -57,6 +57,9 @@
 	left: 0;
 	width: 100%;
 }
+.pimcore_tag_image_alt input{
+	width: 100% !important;
+}
 
 .pimcore_block_buttons {
 	padding: 10px 0 5px 0;
