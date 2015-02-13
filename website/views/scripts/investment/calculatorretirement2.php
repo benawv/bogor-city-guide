@@ -280,7 +280,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 	var pension1_waktu = getCookie('pension1_jangka_waktu');
 	pension1_hasil = accounting.formatMoney(pension1_hasil,'Rp ',0,'.',',');
 	$('#sliderPosition').val(pension1_hasil);
-        $('#sliderPosition2').val("1%");
+        $('#sliderPosition2').val("1,00%");
         $('#sliderPosition3').val(pension1_waktu + " tahun");
         
         function pension2(biaya, asumsi, asumsi_inflasi, waktu){
@@ -467,7 +467,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 		$("#sliderPosition2").focusout(function(event){			
 			val = this.value;
 			val = val.replace("%", "");
-			$("#slider2").slider( "value" , val);
+			//$("#slider2").slider( "value" , val);
 			
 		});
                 

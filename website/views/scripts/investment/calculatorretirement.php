@@ -266,7 +266,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 	}
         
         $('#sliderPosition').val("Rp 5.000.000");
-        $('#sliderPosition2').val("1%");
+        $('#sliderPosition2').val("1,00%");
         $('#sliderPosition3').val("1 tahun");
 
         $("#sliderPosition").bind('input',function(){
@@ -279,7 +279,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         });
         
         $("#sliderPosition2").keyup(function(event){
-            var text = clearFormat($(this).val());
+            var text = clearFormat2($(this).val());
             if (text == 0) {
                 text = 1;
             }
@@ -315,7 +315,8 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         
         $(".orange-btn").click(function(){
             var biaya = clearFormat($("#sliderPosition").val());
-            var asumsi = clearFormat($("#sliderPosition2").val());
+            var asumsi = clearFormat2($("#sliderPosition2").val());
+            asumsi = asumsi.replace(',','.');
             var waktu = clearFormat($("#sliderPosition3").val());
             var result = pension1(biaya,asumsi,waktu);
             
@@ -431,7 +432,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 			
 			val = this.value;
 			val = val.replace("%", "");
-			$("#slider2").slider( "value" , val);
+			//$("#slider2").slider( "value" , val);
 			
 		});
 

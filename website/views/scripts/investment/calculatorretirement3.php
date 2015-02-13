@@ -256,7 +256,7 @@ change: function(event, ui) {
 	var pension1_waktu = getCookie('pension1_jangka_waktu');
 	pension2_hasil = accounting.formatMoney(pension2_hasil,'Rp ',0,'.',',');
         $('#sliderPosition').val(pension2_hasil);
-        $('#sliderPosition2').val("1%");
+        $('#sliderPosition2').val("1,00%");
         $('#sliderPosition3').val(pension1_waktu + ' tahun');
 
         
@@ -285,7 +285,7 @@ change: function(event, ui) {
         });
         
         $("#sliderPosition2").keyup(function(event){
-            var text = clearFormat($(this).val());
+            var text = clearFormat2($(this).val());
             if (text == 0) {
                 text = 1;
             }
@@ -308,7 +308,8 @@ change: function(event, ui) {
                 
         $(".orange-btn").click(function(){
             var biaya = clearFormat($("#sliderPosition").val());
-            var asumsi = clearFormat($("#sliderPosition2").val());
+            var asumsi = clearFormat2($("#sliderPosition2").val());
+            asumsi = asumsi.replace(',','.');
             var waktu = clearFormat($("#sliderPosition3").val());
             var result = pension3(biaya,asumsi,waktu);
             
@@ -430,7 +431,7 @@ change: function(event, ui) {
 		$("#sliderPosition2").focusout(function(event){			
 			val = this.value;
 			val = val.replace("%", "");
-			$("#slider2").slider( "value" , val);
+			//$("#slider2").slider( "value" , val);
 			
 		});
                 

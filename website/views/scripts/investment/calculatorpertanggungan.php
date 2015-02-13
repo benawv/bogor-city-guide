@@ -344,8 +344,8 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
         }
         
         $('#sliderPosition').val("Rp 5.000.000");
-        $('#sliderPosition2').val("1%");
-        $('#sliderPosition3').val("1%");
+        $('#sliderPosition2').val("1,00%");
+        $('#sliderPosition3').val("1,00%");
         $('#sliderPosition4').val("1 tahun");
         
         $("#sliderPosition").bind('input',function(){
@@ -358,7 +358,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
         });
         
         $("#sliderPosition2").keyup(function(event){
-            var text = clearFormat($(this).val());
+            var text = clearFormat2($(this).val());
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
@@ -366,7 +366,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
         });
         
 	$("#sliderPosition3").keyup(function(event){
-            var text = clearFormat($(this).val());
+            var text = clearFormat2($(this).val());
             if (event.keyCode == '8') {
                 text = text.substr(0,text.length-1);
             }
@@ -383,8 +383,10 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
 
         $(".orange-btn").click(function(){
             var biaya = clearFormat($("#sliderPosition").val());
-            var asumsi_inflasi = clearFormat($("#sliderPosition2").val());
-            var asumsi_imbal = clearFormat($("#sliderPosition3").val());
+            var asumsi_inflasi = clearFormat2($("#sliderPosition2").val());
+            asumsi_inflasi = asumsi_inflasi.replace(',','.');
+            var asumsi_imbal = clearFormat2($("#sliderPosition3").val());
+            asumsi_imbal = asumsi_imbal.replace(',','.');
             var waktu = clearFormat($("#sliderPosition4").val());
             
             if (asumsi_inflasi != asumsi_imbal) {
@@ -507,7 +509,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
 			
 			val = this.value;
 			val = val.replace("%", "");
-			$("#slider2").slider( "value" , val);
+			//$("#slider2").slider( "value" , val);
 			
 		});
 
@@ -515,7 +517,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
 			
 			val = this.value;
 			val = val.replace("%", "");
-			$("#slider3").slider( "value" , val);
+			//$("#slider3").slider( "value" , val);
 			
 		});
  

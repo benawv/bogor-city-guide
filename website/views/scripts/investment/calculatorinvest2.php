@@ -271,7 +271,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 	var investment1_jangka_waktu = getCookie('investment1_jangka_waktu');
 
         $('#sliderPosition').val(investment1_hasil);
-        $('#sliderPosition2').val("1%");
+        $('#sliderPosition2').val("1,00%");
         $('#sliderPosition3').val(investment1_jangka_waktu + ' tahun');
 
         
@@ -298,7 +298,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
         });
         
         $("#sliderPosition2").keyup(function(event){
-            var text = clearFormat($(this).val());
+            var text = clearFormat2($(this).val());
             if (text == 0) {
                 text = 1;
             }
@@ -321,7 +321,8 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 
         $(".orange-btn").click(function(){
             var biaya = clearFormat($("#sliderPosition").val());
-            var asumsi = clearFormat($("#sliderPosition2").val());
+            var asumsi = clearFormat2($("#sliderPosition2").val());
+            asumsi = asumsi.replace(',','.');
             var waktu = investment1_jangka_waktu;
             var result = investment3(biaya,asumsi,waktu);
             
@@ -441,7 +442,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
 			
 			val = this.value;
 			val = val.replace("%", "");
-			$("#slider2").slider( "value" , val);
+			//$("#slider2").slider( "value" , val);
 			
 		});
 				

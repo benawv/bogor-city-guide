@@ -244,6 +244,25 @@ function clearFormat(value) {
     return value;
 }
 
+function clearFormat2(value) {
+    value = value.replace(/[^0-9\,]+/g,"");
+    var count = (value.match(/,/g) || []).length;
+    if (count > 1) {
+      value = value.substr(0,value.length-1);
+    }
+    if (count == 1){
+      if (countDecimals(value) > 2) {
+	value = value.substr(0,value.length-1);
+      }
+    }
+    return value;
+}
+
+function countDecimals(value){
+  if(Math.floor(value) === value) return 0;
+  return value.toString().split(",")[1].length || 0;
+}
+
 // ===== Added By Handri 13 Jan 2015 ==== //
 $(window).load(function() {
 	// --------- product page ----------
