@@ -69,9 +69,10 @@
                     
                         foreach($this->data as $entry)
 		                  {
+			
                     ?>
 					<li class="<?php echo $investmentcolor?$investmentcolor:'bg_fund'?>" style="background-color: <?php echo $bg_color?>" >
-                        <span style="font-size: 12px;"><?php echo date("d M Y", $entry->o_creationDate) ?></span>
+                        <span style="font-size: 12px;"><?php echo date("d M Y", $entry->o_modificationDate) ?></span>
                         <h3><?php echo $entry->title ?></h3>
 						<p><?php echo $entry->deskripsisingkat ?></p>
 
