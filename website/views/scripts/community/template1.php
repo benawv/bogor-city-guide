@@ -148,15 +148,15 @@
 							?>
 							<article class="art-itm">
 								<div class="s-sbar-ct">
-									<a href="<?php echo $this->url(array($result[o_key],$result[oo_id],$result[template]),"community-detail");?>">
+									<a href="<?php echo $this->url(array($result->getO_key(),$result->getO_id(),$result->getTemplate()),"community-detail");?>">
 
 										<div class="outr-wrp">
 											<div class="img-wrp">
-												<img src="<?php echo $result[path]."".$result[filename];?>" alt="">
+												<img src="<?php echo $result->getImage();?>" alt="<?php echo $result->image->metadata[1]["data"];?>" title="<?php echo $result->image->metadata[0]["data"];?>" />
 
 												<div class="tg tg-shr">
 													<?php
-														echo $result[titleCategory];
+														echo $result->getCategory()->titleCategory;
 													?>
 												</div>
 
@@ -166,8 +166,8 @@
 											</div>
 											
 											<div class="txt-wrp">
-												<time><?php echo gmdate("M d, Y", $result[date])?></time>
-												<p class="authr-ttl-virgin2"><?php echo $result[title];?></p>
+												<time><?php echo date("M d, Y", strtotime($result->getDate()))?></time>
+												<p class="authr-ttl-virgin2"><?php echo $result->getTitle();?></p>
 											</div>
 										</div>
 									</a>
@@ -196,14 +196,14 @@
 							?>
 							<article class="art-itm">
 								<div class="s-sbar-ct">
-									<a href="<?php echo $this->url(array($result[o_key],$result[oo_id],$result[template]),"community-detail");?>">
+									<a href="<?php echo $this->url(array($result->getO_key(),$result->getO_id(),$result->getTemplate()),"community-detail");?>">
 										<div class="outr-wrp">
 											<div class="img-wrp">
-												<img src="<?php echo $result[path]."".$result[filename];?>" alt="">
+												<img src="<?php echo $result->getImage();?>" alt="<?php echo $result->image->metadata[1]["data"];?>" title="<?php echo $result->image->metadata[0]["data"];?>">
 
 												<div class="tg tg-shr">
 													<?php
-														echo $result[titleCategory];
+														echo $result->getCategory()->titleCategory;
 													?>
 												</div>
 
@@ -213,8 +213,8 @@
 											</div>
 											
 											<div class="txt-wrp">
-												<time><?php echo gmdate("M d, Y", $result[date])?></time>
-												<p class="authr-ttl-virgin2"><?php echo $result[title];?></p>
+												<time><?php echo date("M d, Y", strtotime($result->getDate()))?></time>
+												<p class="authr-ttl-virgin2"><?php echo $result->getTitle();?></p>
 											</div>
 										</div>
 									</a>
