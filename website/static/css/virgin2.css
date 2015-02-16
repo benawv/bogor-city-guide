@@ -274,10 +274,10 @@ h2, h4, h5, h6 {
     font-size: 2rem;
     line-height: 3.4rem;
 }
-p{
+/*p{
     font-size: 1.6rem;
     line-height: 2.6rem;
-}
+}*/
 
 
 h1, h2, h3, h4, h5, h6, p, li, a, span, input, label, time {
@@ -1028,10 +1028,10 @@ iframe {
 .art {
     background-color: #fff;
 }
-.art h1 {
+/*.art h1 {
     font-size: 3.8rem;
     line-height: 4.2rem;
-    margin-bottom: 6.17284%}
+    margin-bottom: 6.17284%}*/
 .art h2.h-a {
     font-family: "Sanchez Regular", serif;
     font-size: 1.6rem;
@@ -1129,14 +1129,14 @@ iframe {
 }
 .art .s-img figcaption {
     margin-left: 5.20833%}
-.art p, .art ul {
-    margin-bottom: 6.17284%}
+/*.art p, .art ul {
+    margin-bottom: 6.17284%}*/
 .art .art-intr {
     font-family: "Sanchez Regular", serif;
     font-size: 2rem;
     line-height: 2.6rem;
 }
-.art blockquote {
+/*.art blockquote {
     margin: 6.17284%;
     padding: 4.62963% 0;
     border-top: 2px solid #ccc;
@@ -1156,7 +1156,7 @@ iframe {
 .art blockquote p:before {
     content: "\201C"}
 .art blockquote p:after {
-    content: "\201D"}
+    content: "\201D"}*/
 .art.art-sctn, .art .art-sctn {
     clear: both;
 }
@@ -1354,8 +1354,8 @@ iframe {
 .art-adv .art-inf time, .art-mid-adv .art-inf time {
     float: none;
 }
-.art-adv p, .art-adv ul, .art-mid-adv p, .art-mid-adv ul {
-    margin-bottom: 3.45423%}
+/*.art-adv p, .art-adv ul, .art-mid-adv p, .art-mid-adv ul {
+    margin-bottom: 3.45423%}*/
 .art-adv p:last-child, .art-adv ul:last-child, .art-mid-adv p:last-child, .art-mid-adv ul:last-child {
     margin-bottom: 0;
 }
@@ -4027,10 +4027,10 @@ h2, h4, h5, h6 {
     left: -73%}
 .ftr-ppp .arrow {
     left: 45%}
-.art h1 {
+/*.art h1 {
     font-size: 6.4rem;
     line-height: 6.8rem;
-}
+}*/
 .art h2 {
     font-size: 3.6rem;
     line-height: 4rem;
@@ -4051,7 +4051,7 @@ h2, h4, h5, h6 {
     margin-bottom: 10px;
     text-transform: none;
 }
-.art blockquote p {
+/*.art blockquote p {
     font-size: 3.6rem;
     line-height: 4.7rem;
 }
@@ -4059,7 +4059,7 @@ h2, h4, h5, h6 {
 .art blockquote p:after {
     font-size: 4.5rem;
     line-height: 4.5rem;
-}
+}*/
 .art .art-dsclmr p {
     max-width: 530px;
     padding: 0;
