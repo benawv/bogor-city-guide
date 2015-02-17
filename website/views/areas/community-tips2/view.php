@@ -24,7 +24,7 @@
 							</div>
 						</div>
 						<a href="<?php echo "community-detail/".$entry->getO_key()."_".$entry->getO_id()."_".$entry->getTemplate();?>" class="linkUrl">
-							<img class="image_share" src="<?php echo $entry->imageHomeAllianz->path."".$entry->imageHomeAllianz->filename;?>" alt="<?php echo $entry->image->metadata[1]["data"];?>" title="<?php echo $entry->image->metadata[0]["data"];?>" />
+							<img class="image_share" src="<?php echo $entry->getImageHomeAllianz();?>" alt="<?php echo $entry->imageHomeAllianz->metadata[1]["data"];?>" title="<?php echo $entry->imageHomeAllianz->metadata[0]["data"];?>" />
 							<div class="description">
 								<?php
 									if($entry->getSummaryHome()!='')

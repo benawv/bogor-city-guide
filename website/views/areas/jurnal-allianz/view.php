@@ -21,7 +21,7 @@
 							</div>
 						</div>
 						<a href="<?php echo "jurnal-allianz/".$entry->getO_key()."_".$entry->getO_id();?>" class="linkUrl">
-							<img class="image_share" src="<?php echo $entry->imageHome->path."".$entry->imageHome->filename;?>" />
+							<img class="image_share" src="<?php echo $entry->getImageHome();?>" alt="<?php echo $entry->imageHome->metadata[1]["data"];?>" title="<?php echo $entry->imageHome->metadata[0]["data"];?>" />
 							<div class="description">
 								<?php
 									if($entry->getSummaryHome()!='')
