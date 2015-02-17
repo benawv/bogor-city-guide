@@ -6,6 +6,9 @@ div.ui-slider-range{background-color:#a50034;}
 <link rel="stylesheet" href="/website/static/inv/js/rangeslider/jquery-ui.css" type="text/css" media="all" />
 <link rel="stylesheet" href="/website/static/inv/js/rangeslider/ui.theme.css" type="text/css" media="all" />
 
+<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/inv/css/revision_style.css" />
+
+<script src="/website/static/inv/js/main.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/rangeslider/masonry.min.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/rangeslider/jquery.tools.min.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/rangeslider/sticky-jquery.js" type="text/javascript"></script>
