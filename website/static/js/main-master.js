@@ -1,6 +1,9 @@
 $(document).ready(function () {
     $("#slideshow .slides").addClass("hide");
     $("#slideshow .slides").first().removeClass("hide");
+    
+    $("#best-products .slides").find(".product").removeClass("hide");
+    
     $('.tab-content').hide();
     $('.tab-content:first').show();
     $('.tab-button ul li:first').addClass('active');
