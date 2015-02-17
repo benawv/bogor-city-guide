@@ -12,9 +12,10 @@
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
+<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/inv/css/revision_style.css" />	
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/flexslider.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/main.css">
-<!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/tabs-accordion.css">-->
+<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/tabs-accordion.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/product.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/wishlist-cart.css">
 
@@ -29,19 +30,20 @@
 -->
 
  <!-- javascript -->
-<script async src="/website/static/js/modernizr.js" type="text/javascript"></script>
+<script src="/website/static/js/modernizr.js" type="text/javascript"></script>
 <script src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <!--script src="/website/static/jquery.tools.min.js" type="text/javascript"></script-->
 <script src="/website/static/js/main.js" type="text/javascript"></script>
+<script src="/website/static/inv/js/main.js" type="text/javascript"></script>
 
 
 <!-- plugins -->
-<script async src="/website/static/plugins/jquery.flexslider.min.js" type="text/javascript"></script>
-<script async src="/website/static/js/masonry.min.js" type="text/javascript"></script>
+<script src="/website/static/plugins/jquery.flexslider.min.js" type="text/javascript"></script>
+<script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
 <script src="/website/static/js/bootstrap.min.js" type="text/javascript"></script>
-<script async src="/website/static/js/accordion-jquery.js" type="text/javascript"></script>
+<script src="/website/static/js/accordion-jquery.js" type="text/javascript"></script>
 <!-- Community Tips -->
-<script async type="text/javascript" src="/website/static/js/paging.js"></script>
+<script type="text/javascript" src="/website/static/js/paging.js"></script>
 
 
 
