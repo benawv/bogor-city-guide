@@ -35,8 +35,13 @@
 		<?php for($i=0;$i<$slides;$i++) { ?>
 			<li>
 				<?php
-				    if($i!=0){
-					$hide = "hide";
+				    if(!$this->editmode){
+					if($i!=0){
+					    $hide = "hide";
+					}
+					else{
+					    $hide = "";
+					}
 				    }
 				    else{
 					$hide = "";

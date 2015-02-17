@@ -1,7 +1,5 @@
 $(document).ready(function () {
-    $("#slideshow .slides").addClass("hide");
-    $("#slideshow .slides").first().removeClass("hide");
-    
+    $("#slideshow .slides").find(".slide").removeClass("hide");
     $("#best-products .slides").find(".product").removeClass("hide");
     
     $('.tab-content').hide();
