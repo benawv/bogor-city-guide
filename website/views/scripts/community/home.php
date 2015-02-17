@@ -21,54 +21,56 @@
 										{
 											$y = 0;
 											$list = $this->fetchTips;
-											while($y<count($list))
+											$totalData = $this->totalData;
+											while($y < $totalData)
 											{
 										?>
-											<?php if($list[$y][title]!= ''){?>
+											<?php if($list->objects[$y]->getTitle()!= ''){?>
 											<div class="r">
 												<div class="c-2of3 cus_hide" id="div<?php echo $y;?>">
 													<article>
-														<a id="more" href="<?php echo $this->url(array($list[$y][o_key],$list[$y][oo_id],$list[$y][template]),"community-detail");?>">
+														<a id="more" href="<?php echo $this->url(array($list->objects[$y]->getO_key(),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
 														<!-- <i class="icon-video"></i>	 -->
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo $list[$y][path]."".$list[$y][filename];?>"alt="">
+																	<img src="<?php echo $list->objects[$y]->getImage();?>"alt="<?php echo $list->objects[$y]->image->metadata[1]["data"];?>" title="<?php echo $list->objects[$y]->image->metadata[0]["data"];?>">
 																	<div class="tg tg-shr">
 																		<?php 
-																			echo $list[$y][titleCategory];
+																			echo $list->objects[$y]->getCategory()->titleCategory;
 																		?>
 																	</div>
 																	<span class="art-hvr"></span>
 																</div>
 																<div class="txt-wrp">
 																	<time>
-																		<?php echo date("M d, Y", $list[$y][date]);?>
+																		<?php echo date("M d, Y", strtotime($list->objects[$y]->getDate()));?>
 																	</time>
-																	<p class="authr-ttl"><?php echo $list[$y][title];?></p>
+																	<p class="authr-ttl"><?php echo $list->objects[$y]->getTitle();?></p>
 																</div>
 															</div>
 														</a>
 													</article>
 												</div>
-												<?php if($list[$y+1][title] != ''){?>
-													<div class="c-1of3 cus_hide" id="div<?php echo $y+1;?>">
+												<?php $y = $y + 1;?>
+												<?php if($y < $totalData){?>
+													<div class="c-1of3 cus_hide" id="div<?php echo $y;?>">
 														<article>
-															<a href="<?php echo $this->url(array($list[$y+1][o_key],$list[$y+1][oo_id],$list[$y+1][template]),"community-detail");?>">
+															<a href="<?php echo $this->url(array($list->objects[$y]->getO_key(),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo $list[$y+1][path]."".$list[$y+1][filename];?>"alt="">
+																		<img src="<?php echo $list->objects[$y]->getImage();?>"alt="<?php echo $list->objects[$y]->image->metadata[1]["data"];?>" title="<?php echo $list->objects[$y]->image->metadata[0]["data"];?>">
 																		<div class="tg tg-shr">
 																			<?php 
-																					echo $list[$y+1][titleCategory];
+																					echo $list->objects[$y]->getCategory()->titleCategory;
 																			?>
 																		</div>
 																		<span class="art-hvr"></span>
 																	</div>
 																	<div class="txt-wrp">
 																		<time>
-																			<?php echo date("M d, Y", $list[$y+1][date]);?>
+																			<?php echo date("M d, Y", strtotime($list->objects[$y]->getDate()));?>
 																		</time>
-																		<p class="authr-ttl"><?php echo $list[$y+1][title];?></p>
+																		<p class="authr-ttl"><?php echo $list->objects[$y]->getTitle();?></p>
 																	</div>
 																</div>
 															</a>
@@ -80,52 +82,54 @@
 											</div>
 											<?php
 												}
-												if($list[$y+2][title] != ''){
+												$y = $y + 1;
+												if($y < $totalData){
 											?>
 											<div class="r">
-												<div class="c-1of2 cus_hide" id="div<?php echo $y+2;?>">
+												<div class="c-1of2 cus_hide" id="div<?php echo $y;?>">
 													<article>
-													   <a href="<?php echo $this->url(array($list[$y+2][o_key],$list[$y+2][oo_id],$list[$y+2][template]),"community-detail");?>">
+													   <a href="<?php echo $this->url(array($list->objects[$y]->getO_key(),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo $list[$y+2][path]."".$list[$y+2][filename];?>"alt="">
+																<img src="<?php echo $list->objects[$y]->getImage();?>"alt="<?php echo $list->objects[$y]->image->metadata[1]["data"];?>" title="<?php echo $list->objects[$y]->image->metadata[0]["data"];?>">
 																<div class="tg tg-shr">
 																	<?php 
-																			echo $list[$y+2][titleCategory];
+																			echo $list->objects[$y]->getCategory()->titleCategory;
 																	?>
 																</div>
 																<span class="art-hvr"></span>
 															</div>
 															<div class="txt-wrp">
 																<time>
-																	<?php echo date("M d, Y", $list[$y+2][date]);?>
+																	<?php echo date("M d, Y", strtotime($list->objects[$y]->getDate()));?>
 																</time>
-																<p class="authr-ttl"><?php echo $list[$y+2][title];?></p>
+																<p class="authr-ttl"><?php echo $list->objects[$y]->getTitle();?></p>
 															</div>
 														</div>
 														</a>
 													</article>
 												</div>
-												<?php if($list[$y+3][title] != ''){?>
-													<div class="c-1of2 cus_hide" id="div<?php echo $y+3;?>">
+												<?php $y = $y + 1;?>
+												<?php if($y < $totalData){?>
+													<div class="c-1of2 cus_hide" id="div<?php echo $y;?>">
 														<article>
-														   <a href="<?php echo $this->url(array($list[$y+3][o_key],$list[$y+3][oo_id],$list[$y+3][template]),"community-detail");?>">
+														   <a href="<?php echo $this->url(array($list->objects[$y]->getO_key(),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
 															<!-- <i class="icon-video"></i> -->
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo $list[$y+3][path]."".$list[$y+3][filename];?>"alt="">
+																	<img src="<?php echo $list->objects[$y]->getImage();?>"alt="<?php echo $list->objects[$y]->image->metadata[1]["data"];?>" title="<?php echo $list->objects[$y]->image->metadata[0]["data"];?>">
 																	<div class="tg tg-shr">
 																		<?php 
-																				echo $list[$y+3][titleCategory];
+																				echo $list->objects[$y]->getCategory()->titleCategory;
 																		?>
 																	</div>
 																	<span class="art-hvr"></span>
 																</div>
 																<div class="txt-wrp">
 																	<time>
-																		<?php echo date("M d, Y", $list[$y+3][date]);?>
+																		<?php echo date("M d, Y", strtotime($list->objects[$y]->getDate()));?>
 																	</time>
-																	<p class="authr-ttl"><?php echo $list[$y+3][title];?></p>
+																	<p class="authr-ttl"><?php echo $list->objects[$y]->getTitle();?></p>
 																</div>
 															</div>
 														   </a>
@@ -135,78 +139,82 @@
 											</div>
 											<?php
 												}
-												if($list[$y+4][title] != ''){
+												$y = $y + 1;
+												if($y < $totalData){
 											?>
 											<div class="r">
-												<div class="c-1of3 cus_hide" id="div<?php echo $y+4;?>">
+												<div class="c-1of3 cus_hide" id="div<?php echo $y;?>">
 													<article>
-														<a href="<?php echo $this->url(array($list[$y+4][o_key],$list[$y+4][oo_id],$list[$y+4][template]),"community-detail");?>">
+														<a href="<?php echo $this->url(array($list->objects[$y]->getO_key(),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
 															<!-- <i class="icon-video"></i> -->
 															<div class="outr-wrp">
 																<div class="img-wrp">
-																	<img src="<?php echo $list[$y+4][path]."".$list[$y+4][filename];?>"alt="">
+																	<img src="<?php echo $list->objects[$y]->getImage();?>"alt="<?php echo $list->objects[$y]->image->metadata[1]["data"];?>" title="<?php echo $list->objects[$y]->image->metadata[0]["data"];?>">
 																	<div class="tg tg-shr">
 																		<?php 
-																				echo $list[$y+4][titleCategory];
+																				echo $list->objects[$y]->getCategory()->titleCategory;
 																		?>
 																	</div>
 																	<span class="art-hvr"></span>
 																</div>
 																<div class="txt-wrp">
 																	<time>
-																		<?php echo date("M d, Y", $list[$y+4][date]);?>
+																		<?php echo date("M d, Y", strtotime($list->objects[$y]->getDate()));?>
 																	</time>
-																	<p class="authr-ttl"><?php echo $list[$y+4][title];?></p>
+																	<p class="authr-ttl"><?php echo $list->objects[$y]->getTitle();?></p>
 																</div>
 															</div>
 														</a>
 													</article>
 												</div>
-												<?php if($list[$y+5][title] != ''){?>
-													<div class="c-1of3 cus_hide" id="div<?php echo $y+5;?>">
+												<?php $y = $y + 1;?>
+												<?php if($y < $totalData){?>
+													<div class="c-1of3 cus_hide" id="div<?php echo $y;?>">
 														<article>
-															<a href="<?php echo $this->url(array($list[$y+5][o_key],$list[$y+5][oo_id],$list[$y+5][template]),"community-detail");?>">
+															<a href="<?php echo $this->url(array($list->objects[$y]->getO_key(),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo $list[$y+5][path]."".$list[$y+5][filename];?>"alt="">
+																		<img src="<?php echo $list->objects[$y]->getImage();?>"alt="<?php echo $list->objects[$y]->image->metadata[1]["data"];?>" title="<?php echo $list->objects[$y]->image->metadata[0]["data"];?>">
 																		<div class="tg tg-shr">
 																			<?php 
-																					echo $list[$y+5][titleCategory];
+																					echo $list->objects[$y]->getCategory()->titleCategory;
 																			?>
 																		</div>
 																		<span class="art-hvr"></span>
 																	</div>
 																	<div class="txt-wrp">
 																		<time>
-																			<?php echo date("M d, Y", $list[$y+5][date]);?>
+																			<?php echo date("M d, Y", strtotime($list->objects[$y]->getDate()));?>
 																		</time>
-																		<p class="authr-ttl"><?php echo $list[$y+5][title];?></p>
+																		<p class="authr-ttl"><?php echo $list->objects[$y]->getTitle();?></p>
 																	</div>
 																</div>
 															</a>
 														</article>
 													</div>
-												<?php }?>
-												<?php if($list[$y+6][title] != ''){?>
-													<div class="c-1of3 cus_hide" id="div<?php echo $y+6;?>">
+												<?php }
+													$y = $y + 1;
+													if($y < $totalData){
+												?>
+													<div class="c-1of3 cus_hide" id="div<?php echo $y;?>">
 														<article>
-															<a href="<?php echo $this->url(array($list[$y+6][o_key],$list[$y+6][oo_id],$list[$y+6][template]),"community-detail");?>">
+															<a href="<?php echo $this->url(array($list->objects[$y]->getO_key(),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
 																<!-- <i class="icon-video"></i>  -->
 																<div class="outr-wrp">
 																	<div class="img-wrp">
-																		<img src="<?php echo $list[$y+6][path]."".$list[$y+6][filename];?>"alt="">
+																		<img src="<?php echo $list->objects[$y]->getImage();?>"alt="<?php echo $list->objects[$y]->image->metadata[1]["data"];?>" title="<?php echo $list->objects[$y]->image->metadata[0]["data"];?>">
 																		<div class="tg tg-shr">
 																			<?php 
-																					echo $list[$y+6][titleCategory];
+																					echo $list->objects[$y]->getCategory()->titleCategory;
 																			?>
 																		</div>
 																		<span class="art-hvr"></span>
 																	</div>
 																	<div class="txt-wrp">
 																		<time>
-																			<?php echo date("M d, Y", $list[$y+6][date]);?>
+																			<?php echo date("M d, Y", strtotime($list->objects[$y]->getDate()));?>
 																		</time>
-																		<p class="authr-ttl"><?php echo $list[$y+6][title];?></p>
+																		<p class="authr-ttl"><?php echo $list->objects[$y]->getTitle();?></p>
 																	</div>
 																</div>
 															</a>
@@ -216,7 +224,7 @@
 											</div>
 											<?php
 												}
-												$y = $y + 7 ;
+												$y = $y + 1 ;
 											}
 										}
 										else {
@@ -284,7 +292,7 @@
 												}
 										?>
 												<li style="background-color: <?php echo $color;?>" class="crmb-sctn cus-li">
-													<a class="no-bold" href="<?php echo $this->url(array($category->getTitleCategory()),"list-category");?>"><?php echo $category->getTitleCategory();?></a>
+													<a class="no-bold" href="<?php echo $this->url(array($category->getTitleCategory(),$category->getId()),"list-category");?>"><?php echo $category->getTitleCategory();?></a>
 												</li>
 										<?php
 											}
@@ -335,14 +343,14 @@
 										?>
 											<article class="art-itm">
 												<div class="s-sbar-ct">
-													<a href="<?php echo $this->url(array($result[o_key],$result[oo_id],$result[template]),"community-detail");?>">
+													<a href="<?php echo $this->url(array($result->getO_key(),$result->getO_id(),$result->getTemplate()),"community-detail")?>">
 													
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo $result[path]."".$result[filename];?>" alt="" />
+																<img src="<?php echo $result->getImage();?>" alt="<?php echo $result->image->metadata[1]["data"];?>" title="<?php echo $result->image->metadata[0]["data"];?>" />
 																<div class="tg tg-shr">
 																	<?php
-																		echo $result[titleCategory];
+																		echo $result->getCategory()->titleCategory;
 																	?>
 																</div>
 																
@@ -352,9 +360,9 @@
 																<span class="art-hvr"></span>
 															</div>
 															<div class="txt-wrp">
-																<time><?php echo date("M d, Y", $result[date])?></time>
+																<time><?php echo date("M d, Y", strtotime($result->getDate()))?></time>
 																
-																<p class="authr-ttl"><?php echo $result[title];?></p>
+																<p class="authr-ttl"><?php echo $result->getTitle();?></p>
 															</div>
 														</div>
 													</a>
@@ -382,14 +390,14 @@
 								?>
 									<article class="art-itm">
 												<div class="s-sbar-ct">
-													<a href="<?php echo $this->url(array($result[o_key],$result[oo_id],$result[template]),"community-detail");?>">
+													<a href="<?php echo $this->url(array($result->getO_key(),$result->getO_id(),$result->getTemplate()),"community-detail")?>">
 													
 														<div class="outr-wrp">
 															<div class="img-wrp">
-																<img src="<?php echo $result[path]."".$result[filename];?>" alt="" />
+																<img src="<?php echo $result->getImage();?>" alt="<?php echo $result->image->metadata[1]["data"];?>" title="<?php echo $result->image->metadata[0]["data"];?>" />
 																<div class="tg tg-shr">
 																	<?php
-																		echo $result[titleCategory];
+																		echo $result->getCategory()->titleCategory;
 																	?>
 																</div>
 																
@@ -399,9 +407,9 @@
 																<span class="art-hvr"></span>
 															</div>
 															<div class="txt-wrp">
-																<time><?php echo date("M d, Y", $result[date])?></time>
+																<time><?php echo date("M d, Y", strtotime($result->getDate()))?></time>
 																
-																<p class="authr-ttl"><?php echo $result[title];?></p>
+																<p class="authr-ttl"><?php echo $result->getTitle();?></p>
 															</div>
 														</div>
 													</a>

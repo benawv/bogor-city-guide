@@ -6,7 +6,7 @@
 	</span></span></div>
 	<div class="wrapper-special clearfix margin-content">
 		<div class="banner_products" id="best-products">
-			<img alt="product1" src="<?php echo $this->data->banner->path."".$this->data->banner->filename;?>">
+			<img src="<?php echo $this->data->getBanner();?>" alt="<?php echo $this->data->banner->metadata[1]["data"];?>" title="<?php echo $this->data->banner->metadata[0]["data"];?>">
 		</div>
 		<div id="quicklinks">
 			<div class="tab-wrapper">
@@ -83,13 +83,12 @@
 				</div>
 			</div>
 	</div><!-- .wrapper-special -->
-		
 		<div class="wrapper clearfix">
 			<div id="agent-locator">
 				<h3><font color="#4169e1"><?php echo $this->data->title;?></font></h3>
 				<div id="article-content"> 
 					<div class="imgPopUp">
-						<p><img border="0" src="<?php echo $this->data->imageTitle->path."".$this->data->imageTitle->filename;?>" alt=""></p>
+						<p><img border="0" src="<?php echo $this->data->getImageTitle();?>" alt="<?php echo $this->data->imageTitle->metadata[1]["data"];?>" title="<?php echo $this->data->imageTitle->metadata[0]["data"];?>" ></p>
 		
 						<?php echo $this->data->content;?>
 					</div>

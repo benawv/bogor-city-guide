@@ -30,64 +30,51 @@ $(document).ready(function(){
 			success: function(data){
 				//var objJSON = eval("(function(){return " + data + ";})()");
 				var obj = JSON.parse(data);
-				
 				if(parseInt(obj.count_all) > 0){
 					$('html, body').animate({
-	                    scrollTop: $("#pagingTop").offset().top
-	                }, 1000);
+						scrollTop: $("#pagingTop").offset().top
+					    }, 1000);
 					for(var a=0;a < 14;a++)
-				    {
-						$("#div"+a).find("a").attr("href", "");
-				        $("#div"+a).find("img").attr("src", "");
-				        $("#div"+a).find(".tg-shr").empty();
-				        $("#div"+a).find("time").empty();
-				        $("#div"+a).find(".authr-ttl").empty();
-				    }
-					$(".cus_hide").fadeOut("slow", "linear",complete);
+					{
+					    $("#div"+a).find("a").attr("href", "");
+					    $("#div"+a).find("img").attr("src", "");
+					    $("#div"+a).find("img").attr("alt", "");
+					    $("#div"+a).find("img").attr("title", "");
+					    $("#div"+a).find(".tg-shr").empty();
+					    $("#div"+a).find("time").empty();
+					    $("#div"+a).find(".authr-ttl").empty();
+					}
+					$(".cus_hide").fadeOut("slow", "linear");
+					complete();
 				}
 				
 				function complete() {
-					var z = 0; 
-					$.each($.parseJSON(data), function(k, index){
-						var gmbr = index.path+""+index.filename;
-						var key = index.o_key;
-						var id = index.oo_id;
-						var tmplt = index.template;
+					
+					var z = 0;
+					$.each(obj.listData, function(k, index){
+						var gmbr = index.image;
+						var link = index.link;
 						var title = index.title;
-						var cat = index.titleCategory;
+						var cat = index.category;
+						var tgl = index.date;
+						var alt = index.altImage;
+						var titleImage = index.titleImage;
 						
-						var today	= new Date((index.date)*1000);
-				        var h		= today.getHours();
-				        var m		= today.getMinutes();
-				        var s		= today.getSeconds();
-
-				        var f		= today.getDay();
-				        var d		= today.getDate();
-				        var j		= today.getMonth();
-				        var y		= today.getFullYear();
-
-				        var mon_arr = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
-
-				        if( m < 10 ) m = "0" + m;
-				        if( s < 10 ) s = "0" + s;
-
-				        var dateStr	= mon_arr[ j ] + " " + d + ", " + y;
-				        
-				        var tgl   = dateStr;
-
-				        if(z < Object.keys(obj).length-2)
-					    {
-							$("#div"+z).find("a").attr("href", "community-detail/"+key+"_"+id+"_"+tmplt);
-					        $("#div"+z).find("img").attr("src", gmbr);
-					        $("#div"+z).find(".tg-shr").empty();
-					        $("#div"+z).find(".tg-shr").append(cat);
-					        $("#div"+z).find("time").empty();
-					        $("#div"+z).find("time").append(tgl);
-					        $("#div"+z).find(".authr-ttl").empty();
-					        $("#div"+z).find(".authr-ttl").append(title);
-					        $("#div"+z).fadeIn("slow");
-					    }
-					    z++;
+						if(z < obj.count_all)
+						{
+						    $("#div"+z).find("a").attr("href", "community-detail/"+link);
+						    $("#div"+z).find("img").attr("src", gmbr);
+						    $("#div"+z).find("img").attr("alt", alt);
+						    $("#div"+z).find("img").attr("title", titleImage);
+						    $("#div"+z).find(".tg-shr").empty();
+						    $("#div"+z).find(".tg-shr").append(cat);
+						    $("#div"+z).find("time").empty();
+						    $("#div"+z).find("time").append(tgl);
+						    $("#div"+z).find(".authr-ttl").empty();
+						    $("#div"+z).find(".authr-ttl").append(title);
+						    $("#div"+z).fadeIn("slow");
+						}
+						z++;
 					});
 					var total1 = parseInt(pageIndex_next)+parseInt((obj.count_all));
 					$(".indexPage_next").val(total1);
@@ -95,7 +82,7 @@ $(document).ready(function(){
 					var total2 = parseInt(pageIndex_prev)+parseInt(14);
 					$(".indexPage_prev").val(total2);
 					
-					if(obj.offset_next > 0){
+					if(obj.hasNext){
 						$(".prevPage2").show();
 						$(".prevPage1").hide();
 					}
@@ -123,64 +110,50 @@ $(document).ready(function(){
 			success: function(data){
 				//var objJSON = eval("(function(){return " + data + ";})()");
 				var obj = JSON.parse(data);
-				
 				if(parseInt(obj.count_all) > 0){
-					$(".cus_hide").fadeOut("slow", "linear",complete);
 					for(var a=0;a < 14;a++)
-				    {
+					{
 						$("#div"+a).find("a").attr("href", "");
-				        $("#div"+a).find("img").attr("src", "");
-				        $("#div"+a).find(".tg-shr").empty();
-				        $("#div"+a).find("time").empty();
-				        $("#div"+a).find(".authr-ttl").empty();
-				    }
+						$("#div"+a).find("img").attr("src", "");
+						$("#div"+a).find("img").attr("alt", "");
+						$("#div"+a).find("img").attr("title", "");
+						$("#div"+a).find(".tg-shr").empty();
+						$("#div"+a).find("time").empty();
+						$("#div"+a).find(".authr-ttl").empty();
+					}
 					$('html, body').animate({
-	                    scrollTop: $("#pagingTop").offset().top
-	                }, 1000);
+						scrollTop: $("#pagingTop").offset().top
+					    }, 1000);
+					$(".cus_hide").fadeOut("slow", "linear");
+					complete();
 				}
 				
 				function complete() {
 					var z = 0; 
-					$.each($.parseJSON(data), function(k, index){
-						var gmbr = index.path+""+index.filename;
-						var key = index.o_key;
-						var id = index.oo_id;
-						var tmplt = index.template;
+					$.each(obj.listData, function(k, index){
+						var gmbr = index.image;
+						var link = index.link;
 						var title = index.title;
-						var cat = index.titleCategory;
+						var cat = index.category;
+						var tgl = index.date;
+						var alt = index.altImage;
+						var titleImage = index.titleImage;
 						
-						var today	= new Date((index.date)*1000);
-				        var h		= today.getHours();
-				        var m		= today.getMinutes();
-				        var s		= today.getSeconds();
-
-				        var f		= today.getDay();
-				        var d		= today.getDate();
-				        var j		= today.getMonth();
-				        var y		= today.getFullYear();
-
-				        var mon_arr = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
-
-				        if( m < 10 ) m = "0" + m;
-				        if( s < 10 ) s = "0" + s;
-
-				        var dateStr	= mon_arr[ j ] + " " + d + ", " + y;
-				        
-				        var tgl   = dateStr;
-
-				        if(z < Object.keys(obj).length-2)
-					    {
-							$("#div"+z).find("a").attr("href", "community-detail/"+key+"_"+id+"_"+tmplt);
-					        $("#div"+z).find("img").attr("src", gmbr);
-					        $("#div"+z).find(".tg-shr").empty();
-					        $("#div"+z).find(".tg-shr").append(cat);
-					        $("#div"+z).find("time").empty();
-					        $("#div"+z).find("time").append(tgl);
-					        $("#div"+z).find(".authr-ttl").empty();
-					        $("#div"+z).find(".authr-ttl").append(title);
-					        $("#div"+z).fadeIn("slow");
-					    }
-					    z++;
+						if(z < obj.count_all)
+						{
+						    $("#div"+z).find("a").attr("href", "community-detail/"+link);
+						    $("#div"+z).find("img").attr("src", gmbr);
+						    $("#div"+z).find("img").attr("alt", alt);
+						    $("#div"+z).find("img").attr("title", titleImage);
+						    $("#div"+z).find(".tg-shr").empty();
+						    $("#div"+z).find(".tg-shr").append(cat);
+						    $("#div"+z).find("time").empty();
+						    $("#div"+z).find("time").append(tgl);
+						    $("#div"+z).find(".authr-ttl").empty();
+						    $("#div"+z).find(".authr-ttl").append(title);
+						    $("#div"+z).fadeIn("slow");
+						}
+						z++;
 					});
 					var hasil_next = parseInt(pageIndex_next)-parseInt(pageIndex_prev);
 					var total1 = parseInt(pageIndex_next) - hasil_next;
@@ -188,7 +161,7 @@ $(document).ready(function(){
 
 					var total2 = parseInt(pageIndex_prev)-parseInt(14);
 					$(".indexPage_prev").val(total2);
-					if(obj.offset_prev > 0){
+					if(obj.hasNext){
 						$(".prevPage2").show();
 						$(".prevPage1").hide();
 						$(".nextPage1").hide();
@@ -215,66 +188,51 @@ $(document).ready(function(){
 			url: "community-tips-page-category",
 			data: {indexPage: $(".indexPage_next").val(), category: $(".category").val()},
 			success: function(data){
-				//var objJSON = eval("(function(){return " + data + ";})()");
 				var obj = JSON.parse(data);
-				console.log(obj);
 				if(parseInt(obj.count_all) > 0){
 					$('html, body').animate({
-	                    scrollTop: $("#pagingTop").offset().top
-	                }, 1000);
-					$(".cus_hide").fadeOut("slow", "linear",complete);
+						scrollTop: $("#pagingTop").offset().top
+					    }, 1000);
 					for(var a=0;a < 14;a++)
-				    {
+					{
 						$("#div"+a).find("a").attr("href", "");
-				        $("#div"+a).find("img").attr("src", "");
-				        $("#div"+a).find(".tg-shr").empty();
-				        $("#div"+a).find("time").empty();
-				        $("#div"+a).find(".authr-ttl").empty();
-				    }
+						$("#div"+a).find("img").attr("src", "");
+						$("#div"+a).find("img").attr("alt", "");
+						$("#div"+a).find("img").attr("title", "");
+						$("#div"+a).find(".tg-shr").empty();
+						$("#div"+a).find("time").empty();
+						$("#div"+a).find(".authr-ttl").empty();
+					}
+					$(".cus_hide").fadeOut("slow", "linear");
+					complete();
 				}
 				
 				function complete() {
 					var z = 0; 
-					$.each($.parseJSON(data), function(k, index){
-						var gmbr = index.path+""+index.filename;
-						var key = index.o_key;
-						var id = index.oo_id;
-						var tmplt = index.template;
+					$.each(obj.listData, function(k, index){
+						var gmbr = index.image;
+						var link = index.link;
 						var title = index.title;
-						var cat = index.titleCategory;
+						var cat = index.category;
+						var tgl = index.date;
+						var alt = index.altImage;
+						var titleImage = index.titleImage;
 						
-						var today	= new Date((index.date)*1000);
-				        var h		= today.getHours();
-				        var m		= today.getMinutes();
-				        var s		= today.getSeconds();
-
-				        var f		= today.getDay();
-				        var d		= today.getDate();
-				        var j		= today.getMonth();
-				        var y		= today.getFullYear();
-
-				        var mon_arr = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
-
-				        if( m < 10 ) m = "0" + m;
-				        if( s < 10 ) s = "0" + s;
-
-				        var dateStr	= mon_arr[ j ] + " " + d + ", " + y;
-				        
-				        var tgl   = dateStr;
-
-				        if(z < Object.keys(obj).length-2)
-					    {
-							$("#div"+z).find("a").attr("href", "../community-detail/"+key+"_"+id+"_"+tmplt);
-					        $("#div"+z).find("img").attr("src", gmbr);
-					        $("#div"+z).find(".tg-shr").empty();
-					        $("#div"+z).find(".tg-shr").append(cat);
-					        $("#div"+z).find("time").empty();
-					        $("#div"+z).find("time").append(tgl);
-					        $("#div"+z).find(".authr-ttl").empty();
-					        $("#div"+z).find(".authr-ttl").append(title);
-					        $("#div"+z).fadeIn("slow");
-					    }
-					    z++;
+						if(z < obj.count_all)
+						{
+						    $("#div"+z).find("a").attr("href", "community-detail/"+link);
+						    $("#div"+z).find("img").attr("src", gmbr);
+						    $("#div"+z).find("img").attr("alt", alt);
+						    $("#div"+z).find("img").attr("title", titleImage);
+						    $("#div"+z).find(".tg-shr").empty();
+						    $("#div"+z).find(".tg-shr").append(cat);
+						    $("#div"+z).find("time").empty();
+						    $("#div"+z).find("time").append(tgl);
+						    $("#div"+z).find(".authr-ttl").empty();
+						    $("#div"+z).find(".authr-ttl").append(title);
+						    $("#div"+z).fadeIn("slow");
+						}
+						z++;
 					});
 					var total1 = parseInt(pageIndex_next)+parseInt((obj.count_all));
 					$(".indexPage_next").val(total1);
@@ -282,7 +240,7 @@ $(document).ready(function(){
 					var total2 = parseInt(pageIndex_prev)+parseInt(14);
 					$(".indexPage_prev").val(total2);
 					
-					if(obj.offset_next > 0){
+					if(obj.hasNext){
 						$(".prevPage4").show();
 						$(".prevPage3").hide();
 					}
@@ -308,66 +266,51 @@ $(document).ready(function(){
 			url: "community-tips-page-category2",
 			data: {indexPage: ($(".indexPage_prev").val()-parseInt(14)), category: $(".category").val()},
 			success: function(data){
-				//var objJSON = eval("(function(){return " + data + ";})()");
 				var obj = JSON.parse(data);
-				
 				if(parseInt(obj.count_all) > 0){
 					for(var a=0;a < 14;a++)
-				    {
+					{
 						$("#div"+a).find("a").attr("href", "");
-				        $("#div"+a).find("img").attr("src", "");
-				        $("#div"+a).find(".tg-shr").empty();
-				        $("#div"+a).find("time").empty();
-				        $("#div"+a).find(".authr-ttl").empty();
-				    }
-					$(".cus_hide").fadeOut("slow", "linear",complete);
+						$("#div"+a).find("img").attr("src", "");
+						$("#div"+a).find("img").attr("alt", "");
+						$("#div"+a).find("img").attr("title", "");
+						$("#div"+a).find(".tg-shr").empty();
+						$("#div"+a).find("time").empty();
+						$("#div"+a).find(".authr-ttl").empty();
+					}
 					$('html, body').animate({
-	                    scrollTop: $("#pagingTop").offset().top
-	                }, 1000);
+						scrollTop: $("#pagingTop").offset().top
+					    }, 1000);
+					$(".cus_hide").fadeOut("slow", "linear");
+					complete();
 				}
 				
 				function complete() {
 					var z = 0; 
-					$.each($.parseJSON(data), function(k, index){
-						var gmbr = index.path+""+index.filename;
-						var key = index.o_key;
-						var id = index.oo_id;
-						var tmplt = index.template;
+					$.each(obj.listData, function(k, index){
+						var gmbr = index.image;
+						var link = index.link;
 						var title = index.title;
-						var cat = index.titleCategory;
+						var cat = index.category;
+						var tgl = index.date;
+						var alt = index.altImage;
+						var titleImage = index.titleImage;
 						
-						var today	= new Date((index.date)*1000);
-				        var h		= today.getHours();
-				        var m		= today.getMinutes();
-				        var s		= today.getSeconds();
-
-				        var f		= today.getDay();
-				        var d		= today.getDate();
-				        var j		= today.getMonth();
-				        var y		= today.getFullYear();
-
-				        var mon_arr = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
-
-				        if( m < 10 ) m = "0" + m;
-				        if( s < 10 ) s = "0" + s;
-
-				        var dateStr	= mon_arr[ j ] + " " + d + ", " + y;
-				        
-				        var tgl   = dateStr;
-
-				        if(z < Object.keys(obj).length-2)
-					    {
-				        	$("#div"+z).fadeIn("slow");
-							$("#div"+z).find("a").attr("href", "../community-detail/"+key+"_"+id+"_"+tmplt);
-					        $("#div"+z).find("img").attr("src", gmbr);
-					        $("#div"+z).find(".tg-shr").empty();
-					        $("#div"+z).find(".tg-shr").append(cat);
-					        $("#div"+z).find("time").empty();
-					        $("#div"+z).find("time").append(tgl);
-					        $("#div"+z).find(".authr-ttl").empty();
-					        $("#div"+z).find(".authr-ttl").append(title);
-					    }
-					    z++;
+						if(z < obj.count_all)
+						{
+						    $("#div"+z).find("a").attr("href", "community-detail/"+link);
+						    $("#div"+z).find("img").attr("src", gmbr);
+						    $("#div"+z).find("img").attr("alt", alt);
+						    $("#div"+z).find("img").attr("title", titleImage);
+						    $("#div"+z).find(".tg-shr").empty();
+						    $("#div"+z).find(".tg-shr").append(cat);
+						    $("#div"+z).find("time").empty();
+						    $("#div"+z).find("time").append(tgl);
+						    $("#div"+z).find(".authr-ttl").empty();
+						    $("#div"+z).find(".authr-ttl").append(title);
+						    $("#div"+z).fadeIn("slow");
+						}
+						z++;
 					});
 					var hasil_next = parseInt(pageIndex_next)-parseInt(pageIndex_prev);
 					var total1 = parseInt(pageIndex_next) - hasil_next;
@@ -375,7 +318,7 @@ $(document).ready(function(){
 
 					var total2 = parseInt(pageIndex_prev)-parseInt(14);
 					$(".indexPage_prev").val(total2);
-					if(obj.offset_prev > 0){
+					if(obj.hasNext){
 						$(".prevPage4").show();
 						$(".prevPage3").hide();
 						$(".nextPage3").hide();
