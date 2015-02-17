@@ -12,7 +12,6 @@
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/inv/css/revision_style.css" />	
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/flexslider.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/main.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/tabs-accordion.css">
@@ -34,7 +33,7 @@
 <script src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <!--script src="/website/static/jquery.tools.min.js" type="text/javascript"></script-->
 <script src="/website/static/js/main.js" type="text/javascript"></script>
-<script src="/website/static/inv/js/main.js" type="text/javascript"></script>
+
 
 
 <!-- plugins -->
@@ -53,11 +52,10 @@
 -->
 
 
-<script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkjnwleWwVfhCyd45V9A2_XBeAOqMDhrU&sensor=true"></script>
-<script  type="text/javascript" src="/website/static/plugins/gmaps-marker-label.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkjnwleWwVfhCyd45V9A2_XBeAOqMDhrU&sensor=true"></script>
+<script type="text/javascript" src="/website/static/plugins/gmaps-marker-label.js"></script>
 
 <meta name="google-site-verification" content="t5S9yqQc-NyyfANDoR4qXDmEbpy746PnIqxU5rp0aXM" />
-<link rel="alternate" href="http://www.allianz.co.id/" hreflang="id" />
 
 <!--Google Analytics-->
 <script>
@@ -94,24 +92,13 @@ ga('send', 'pageview');
 	<?php
 		if(!$this->editmode) {
 	?>
-			//$(document).ready(function(){
-			//	if(getCookie("showWizard") == "") {		
-			//		$('#modal-cart').modal("show");
-			//	}
-			//});
+			$(document).ready(function(){
+				if(getCookie("showWizard") == "") {		
+					$('#modal-cart').modal("show");
+				}
+			});
 	<?php
 		}
 	?>
 </script>
-<!--<script async src="/website/static/js/share-product.js" type="text/javascript"></script>-->
-<?php
-	if($this->editmode) {
-?>
-		<style>
-			.fixbox{
-				top: 60px !important;
-			}
-		</style>
-<?php
-	}
-?>
+<script src="/website/static/js/share-product.js" type="text/javascript"></script>
