@@ -6,7 +6,20 @@
 ?>
 		<?php foreach($this->container as $page): ?>
 			<li>
+				<?php
+					$check = new Document_List();
+					$check->setLimit(1);
+					$check->setCondition('parentId = '.$page->getDocument()->getId());
+					if(count($check)!=0)
+					{
+				?>
 				<a href="#"><?php echo $page->getDocument()->getProperty('navigation_title');?></a>
+				<?php
+					}
+					else{
+				?>
+				<a href="<?php echo $page->getUri()?>"><?php echo $page->getDocument()->getProperty('navigation_title');?></a>
+				<?php	}?>
 				<div class="menu-level2">
 					<a href="#" class="back">Back</a>
 					<!--<ul class="noborder">
