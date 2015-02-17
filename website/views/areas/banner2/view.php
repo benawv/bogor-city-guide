@@ -34,9 +34,22 @@
 	<ul class="slides">
 		<?php for($i=0;$i<$slides;$i++) { ?>
 			<li>
-				<div class="product">
+				<?php
+				    if(!$this->editmode){
+					if($i!=0){
+					    $hide = "hide";
+					}
+					else{
+					    $hide = "";
+					}
+				    }
+				    else{
+					$hide = "";
+				    }
+				?>
+				<div class="product <?php echo $hide;?>">
 					<div class="photo">
-						<?php echo $this->image("banner_".$i, ["title" => "Image Size 635x310", "dropClass" => $id . "-" . $i])?>
+						<?php echo $this->image("banner_".$i, ["title" => "Image Size 635x310", "dropClass" => $id . "-" . $i, "title" => "Image Size 635x310"])?>
 					</div>
 					<?php
 						$extra = $this->image("banner_".$i)->getHotspots();

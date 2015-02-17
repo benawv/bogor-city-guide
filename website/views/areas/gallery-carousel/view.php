@@ -47,7 +47,20 @@
 				if($w == $v){
 ?>
 					<li>
-						<div class="slide">
+						<?php
+						    if(!$this->editmode){
+							if($i!=0){
+							    $hide = "hide";
+							}
+							else{
+							    $hide = "";
+							}
+						    }
+						    else{
+							$hide = "";
+						    }
+						?>
+						<div class="slide <?php echo $hide;?>">
 							<div class="photo">
 								<?php echo $this->image("image_".$i, ["thumbnail" => "galleryCarousel", "dropClass" => $id . "-" . $i, "title" => "Image Size 960x400"])?>
 							</div>
@@ -60,12 +73,13 @@
 							?>
 							<div class="fixbox <?php echo $pos?>60">
 								<div class="place-bg bg-<?php echo $color?> place-bg-gallery">
+								    <div>
 									<?php if($this->editmode || !$this->input("caption-title-" . $i)->isEmpty()) { ?>
 			                            <h1><?php echo $this->input("caption-title-" . $i, ["width" => 251]) ?></h1>
 			                        <?php } ?>
 			                        <?php if($this->editmode || !$this->textarea("caption-text-" . $i)->isEmpty()) { ?>
 			                            <p>
-			                                <?php echo $this->textarea("caption-text-" . $i, ["width" => 251, "height" => 100]) ?>
+			                                <?php echo $this->textarea("caption-text-" . $i, ["width" => 251, "height" => 100, "maxlength" => 140]) ?>
 			                            </p>
 			                        <?php } ?>
 			                        <?php if($this->editmode) { ?>
@@ -106,6 +120,7 @@
 										?>
 			                        	</p>
 			                        <?php } ?>
+								    </div>
 								</div>
 								<div class="edge e-<?php echo $color?>">
 									<?php echo $this->link("boxlink_".$i); ?>
