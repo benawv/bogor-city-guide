@@ -37,7 +37,7 @@
 						$color = $this->select('color_'.$i)->getData();
 					?>
 					<div class="fixbox <?php echo $pos?>60">
-						<div class="place-bg bg-<?php echo $color?>">
+						<div class="place-bg bg-<?php echo $color?>" style="height: auto !important;">
 								<?php if($this->editmode || !$this->input("caption-title-" . $i)->isEmpty()) { ?>
 		                            <h1><?php echo $this->input("caption-title-" . $i, ["width" => 251]) ?></h1>
 		                        <?php } ?>
