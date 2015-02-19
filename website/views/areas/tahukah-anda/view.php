@@ -89,12 +89,13 @@
 				<?php echo $this->wysiwyg('deskripsi3')?>
 			</div>
 		</div>
+			
 <?php
 	$id1 = $this->input('file_id1')->text;
 	$id2 = $this->input('file_id2')->text;
 	$id3 = $this->input('file_id3')->text;
 ?>
-			
+
 <!-- Modal Premi -->
 <?php if($id1!=""){?>
 <div class="modal fade" id="modalpdf1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -126,6 +127,7 @@
   </div>
 </div>
 <?php } ?>
+
 <?php if(!$this->editmode) { ?>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -152,6 +154,11 @@
 			else{
 		?>
 				$(".title_news.thumb1").find("a").removeAttr("data-target data-toggle");
+				$(".thumb1").on("click",function(){
+					var link = $(".title_news.thumb1").find("a").attr("href");
+					var target = $(".title_news.thumb1").find("a").attr("target");
+					window.open(link, target);
+				});
 		<?php
 			}
 		?>
@@ -179,6 +186,11 @@
 			else{
 		?>
 				$(".title_news.thumb2").find("a").removeAttr("data-target data-toggle");
+				$(".thumb2").on("click",function(){
+					var link = $(".title_news.thumb2").find("a").attr("href");
+					var target = $(".title_news.thumb2").find("a").attr("target");
+					window.open(link, target);
+				});
 		<?php
 			}
 		?>
@@ -206,6 +218,11 @@
 			else{
 		?>
 				$(".title_news.thumb3").find("a").removeAttr("data-target data-toggle");
+				$(".thumb3").on("click",function(){
+					var link = $(".title_news.thumb3").find("a").attr("href");
+					var target = $(".title_news.thumb3").find("a").attr("target");
+					window.open(link, target);
+				});
 		<?php
 			}
 		?>
