@@ -89,9 +89,14 @@
 				<?php echo $this->wysiwyg('deskripsi3')?>
 			</div>
 		</div>
+<?php
+	$id1 = $this->input('file_id1')->text;
+	$id2 = $this->input('file_id2')->text;
+	$id3 = $this->input('file_id3')->text;
+?>
 			
-
 <!-- Modal Premi -->
+<?php if($id1!=""){?>
 <div class="modal fade" id="modalpdf1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -99,8 +104,10 @@
     </div>
   </div>
 </div>
+<?php } ?>
 
 <!-- Modal Fakta Klaim -->
+<?php if($id2!=""){?>
 <div class="modal fade" id="modalpdf2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -108,8 +115,9 @@
     </div>
   </div>
 </div>
-
+<?php } ?>
 <!-- Modal Fakta Klaim -->
+<?php if($id3!=""){?>
 <div class="modal fade" id="modalpdf3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -117,9 +125,11 @@
     </div>
   </div>
 </div>
+<?php } ?>
 <?php if(!$this->editmode) { ?>
 <script type="text/javascript">
 	$(document).ready(function(){
+		<?php if($id1!=""){?>
 		$(".thumb1").on("click",function(){
 			html = '<div class="modal-header">'+
 				        '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>'+
@@ -138,7 +148,15 @@
 			$.getScript("http://www.flipgorilla.com/fg.js");
 			$("#modalpdf1").modal();
 		});
-
+		<?php }
+			else{
+		?>
+				$(".thumb1").find("a").removeAttr("data-target data-toggle");
+		<?php
+			}
+		?>
+		
+		<?php if($id2!=""){?>
 		$('.thumb2').on("click",function(){
 			html = '<div class="modal-header">'+
 				        '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>'+
@@ -157,7 +175,15 @@
 			$.getScript("http://www.flipgorilla.com/fg.js");
 			$("#modalpdf2").modal();
 		});
+		<?php }
+			else{
+		?>
+				$(".thumb2").find("a").removeAttr("data-target data-toggle");
+		<?php
+			}
+		?>
 
+		<?php if($id3!=""){?>
 		$('.thumb3').on("click",function(){
 			html = '<div class="modal-header">'+
 				        '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>'+
@@ -176,6 +202,13 @@
 			$.getScript("http://www.flipgorilla.com/fg.js");
 			$("#modalpdf3").modal();
 		});
+		<?php }
+			else{
+		?>
+				$(".thumb3").find("a").removeAttr("data-target data-toggle");
+		<?php
+			}
+		?>
 	});
 </script>
 <?php }?>
