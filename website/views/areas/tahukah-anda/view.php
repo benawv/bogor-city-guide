@@ -151,7 +151,7 @@
 		<?php }
 			else{
 		?>
-				$(".thumb1").find("a").removeAttr("data-target data-toggle");
+				$(".title_news.thumb1").find("a").removeAttr("data-target data-toggle");
 		<?php
 			}
 		?>
@@ -178,7 +178,7 @@
 		<?php }
 			else{
 		?>
-				$(".thumb2").find("a").removeAttr("data-target data-toggle");
+				$(".title_news.thumb2").find("a").removeAttr("data-target data-toggle");
 		<?php
 			}
 		?>
@@ -205,7 +205,7 @@
 		<?php }
 			else{
 		?>
-				$(".thumb3").find("a").removeAttr("data-target data-toggle");
+				$(".title_news.thumb3").find("a").removeAttr("data-target data-toggle");
 		<?php
 			}
 		?>
