@@ -4,12 +4,40 @@
 					height: 300px !important;
 				}
 			</style>
-		<?php }	?>
+		<?php }
+			else{
+				$id1 = $this->input('file_id1')->text;
+				$id2 = $this->input('file_id2')->text;
+				$id3 = $this->input('file_id3')->text;
+				
+				if($id1!="")
+				{
+					$class1 = "thumb1";
+				}
+				else{
+					$class1 = "";
+				}
+				if($id2!="")
+				{
+					$class2 = "thumb2";
+				}
+				else{
+					$class2 = "";
+				}
+				if($id3!="")
+				{
+					$class3 = "thumb3";
+				}
+				else{
+					$class3 = "";
+				}
+			}
+		?>
 		
 		<div class="item" id="item-left">
 			<div class="heading">
-				<h2 class="title_news thumb1 clickPage">
-					<?php echo $this->link("myLink-link1",array("class" => "thumbnail thumbnail-popup",
+				<h2 class="title_news <?php echo $class1;?> clickPage">
+					<?php echo $this->link("myLink-link1",array("class" => "thumbnail thumbnail-popup id1",
 														 "data-target" => "#modalpdf1",
 														 "data-toggle" => "modal"));?>
 				</h2>
@@ -36,8 +64,8 @@
 		
 		<div class="item" id="item-left">
 			<div class="heading">
-				<h2 class="title_news thumb2 clickPage">
-					<?php echo $this->link("myLink-link2",array("class" => "thumbnail thumbnail-popup",
+				<h2 class="title_news <?php echo $class2;?> clickPage">
+					<?php echo $this->link("myLink-link2",array("class" => "thumbnail thumbnail-popup id2",
 														 "data-target" => "#modalpdf2",
 														 "data-toggle" => "modal"));?>
 				</h2>
@@ -64,8 +92,8 @@
 		
 		<div class="item" id="item-left">
 			<div class="heading">
-				<h2 class="title_news thumb3 clickPage">
-					<?php echo $this->link("myLink-link3",array("class" => "thumbnail thumbnail-popup",
+				<h2 class="title_news <?php echo $class3;?> clickPage">
+					<?php echo $this->link("myLink-link3",array("class" => "thumbnail thumbnail-popup id3",
 														 "data-target" => "#modalpdf3",
 														 "data-toggle" => "modal"));?>
 				</h2>
@@ -89,9 +117,9 @@
 				<?php echo $this->wysiwyg('deskripsi3')?>
 			</div>
 		</div>
-			
 
 <!-- Modal Premi -->
+<?php if($id1!=""){?>
 <div class="modal fade" id="modalpdf1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -99,8 +127,10 @@
     </div>
   </div>
 </div>
+<?php } ?>
 
 <!-- Modal Fakta Klaim -->
+<?php if($id2!=""){?>
 <div class="modal fade" id="modalpdf2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -108,8 +138,9 @@
     </div>
   </div>
 </div>
-
+<?php } ?>
 <!-- Modal Fakta Klaim -->
+<?php if($id3!=""){?>
 <div class="modal fade" id="modalpdf3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -117,8 +148,12 @@
     </div>
   </div>
 </div>
+<?php } ?>
+
+<?php if(!$this->editmode) { ?>
 <script type="text/javascript">
 	$(document).ready(function(){
+		<?php if($id1!=""){?>
 		$(".thumb1").on("click",function(){
 			html = '<div class="modal-header">'+
 				        '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>'+
@@ -137,7 +172,20 @@
 			$.getScript("http://www.flipgorilla.com/fg.js");
 			$("#modalpdf1").modal();
 		});
-
+		<?php }
+			else{
+		?>
+				$(".title_news .id1").removeAttr("data-target data-toggle");
+				$(".thumb1").on("click",function(){
+					var link = $(".title_news .id1").attr("href");
+					var target = $(".title_news .id1").attr("target");
+					window.open(link, target);
+				});
+		<?php
+			}
+		?>
+		
+		<?php if($id2!=""){?>
 		$('.thumb2').on("click",function(){
 			html = '<div class="modal-header">'+
 				        '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>'+
@@ -156,7 +204,20 @@
 			$.getScript("http://www.flipgorilla.com/fg.js");
 			$("#modalpdf2").modal();
 		});
+		<?php }
+			else{
+		?>
+				$(".title_news .id2").removeAttr("data-target data-toggle");
+				$(".thumb2").on("click",function(){
+					var link = $(".title_news .id2").attr("href");
+					var target = $(".title_news .id2").attr("target");
+					window.open(link, target);
+				});
+		<?php
+			}
+		?>
 
+		<?php if($id3!=""){?>
 		$('.thumb3').on("click",function(){
 			html = '<div class="modal-header">'+
 				        '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>'+
@@ -175,5 +236,18 @@
 			$.getScript("http://www.flipgorilla.com/fg.js");
 			$("#modalpdf3").modal();
 		});
+		<?php }
+			else{
+		?>
+				$(".title_news .id3").removeAttr("data-target data-toggle");
+				$(".thumb3").on("click",function(){
+					var link = $(".title_news .id3").attr("href");
+					var target = $(".title_news .id3").attr("target");
+					window.open(link, target);
+				});
+		<?php
+			}
+		?>
 	});
 </script>
+<?php }?>
