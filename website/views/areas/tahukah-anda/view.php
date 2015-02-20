@@ -179,7 +179,10 @@
 				$(".thumb1").on("click",function(){
 					var link = $(".title_news .id1").attr("href");
 					var target = $(".title_news .id1").attr("target");
-					window.open(link, target);
+					var linkCheck = $(".thumb1 p").find("a").attr("href");
+					if (linkCheck == "#") {
+						window.open(link, target);
+					}
 				});
 		<?php
 			}
@@ -211,7 +214,10 @@
 				$(".thumb2").on("click",function(){
 					var link = $(".title_news .id2").attr("href");
 					var target = $(".title_news .id2").attr("target");
-					window.open(link, target);
+					var linkCheck = $(".thumb2 p").find("a").attr("href");
+					if (linkCheck == "#") {
+						window.open(link, target);
+					}					
 				});
 		<?php
 			}
@@ -243,7 +249,10 @@
 				$(".thumb3").on("click",function(){
 					var link = $(".title_news .id3").attr("href");
 					var target = $(".title_news .id3").attr("target");
-					window.open(link, target);
+					var linkCheck = $(".thumb3 p").find("a").attr("href");
+					if (linkCheck == "#") {
+						window.open(link, target);
+					}
 				});
 		<?php
 			}
