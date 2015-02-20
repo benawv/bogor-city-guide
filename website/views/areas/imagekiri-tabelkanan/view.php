@@ -2,7 +2,7 @@
 	<h2>
 		<?php if($this->editmode): ?>
 			Icon: <?php echo $this->image('icon', array(
-								'title' 	=> 'Drag your icon here',
+								'title' 	=> 'Image Size 31x31',
 								'width' 	=> 100,
 								'height' 	=> 100,
 								'thumbnail'	=> 'icon')) ?>
@@ -20,30 +20,32 @@
 		<?php endif;?>
 		<div class="section-left-40">
 			<?php echo $this->image('image-kiri', array(
-									'title' => 'Drag your image here',
-									'thumbnail' => 'product'))?>
+									'title' 	=> 'Image Size 295x200',
+									'width' 	=> 295,
+									'height' 	=> 200
+									/*'thumbnail' => 'product'*/))?>
 		</div>
 		<div class="section-right-60">
 			<div class="table_cv">
 				<div class="row">
 					<div class="left cell_left"><?php echo $this->input('text-row-1', array("width" => "auto"))?></div>
 					<div class="left cell_right">
-						<?php echo $this->wysiwyg('data-row-1')?>
+						<?php echo $this->wysiwyg("data-row-1");?>
 					</div>
 					<br clear="all"/>
 				</div>
 				<div class="hideme">
 					<div class="row">
-						<div class="left cell_left"><?php echo $this->input('text-row-2', array("width" => "auto"))?></div>
+						<div class="left cell_left"><?php echo $this->input('text-row-2',array("width" => "auto"))?></div>
 						<div class="left cell_right">
-							<?php echo $this->wysiwyg('data-row-2')?>
+							<?php echo $this->wysiwyg("data-row-2");?>
 						</div>
 						<br clear="all"/>
 					</div>
 					<div class="row">
 						<div class="left cell_left"><?php echo $this->input('text-row-3', array("width" => "auto"))?></div>
 						<div class="left cell_right">
-							<?php echo $this->wysiwyg('data-row-3')?>
+							<?php echo $this->wysiwyg("data-row-3");?>
 						</div>
 						<br clear="all"/>
 					</div>
@@ -51,7 +53,7 @@
 					<div class="row">
 						<div class="left cell_left"><?php echo $this->input('text-row-4', array("width" => "auto"))?></div>
 						<div class="left cell_right">
-							<?php echo $this->wysiwyg('data-row-4')?>
+							<?php echo $this->wysiwyg("data-row-4");?>
 						</div>
 						<br clear="all"/>
 					</div>
@@ -60,7 +62,7 @@
 							<div class="row">
 								<div class="left cell_left"><?php echo $this->input('text-row-4', array("width" => "auto"))?></div>
 								<div class="left cell_right">
-									<?php echo $this->wysiwyg('data-row-4')?>
+									<?php echo $this->wysiwyg("data-row-4");?>
 								</div>
 								<br clear="all"/>
 							</div>

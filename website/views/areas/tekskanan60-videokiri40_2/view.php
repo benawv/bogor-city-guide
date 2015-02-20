@@ -7,7 +7,7 @@
 	<h2>
 		<?php if($this->editmode): ?>
 			Icon: <?php echo $this->image('icon', array(
-								'title' 	=> 'Drag your icon here',
+								'title' 	=> 'Image Size 31x31',
 								'width' 	=> 100,
 								'height' 	=> 100,
 								'thumbnail'	=> 'icon')) ?>
@@ -30,8 +30,8 @@
 		<div class="section-left-40">
 			<?php 
 				echo $this->video("video", array(
-			    "width" => "100%",
-			    "height" => 200,
+			    "width" => 350,
+			    "height" => 230,
 			    "attributes" => ["frameborder" => 0]
 				)); 
 			?>

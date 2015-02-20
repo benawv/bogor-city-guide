@@ -2,7 +2,7 @@
 	<h2>
 		<?php if($this->editmode): ?>
 			Icon: <?php echo $this->image('icon', array(
-								'title' 	=> 'Drag your icon here',
+								'title' 	=> 'Image Size 31x31',
 								'width' 	=> 100,
 								'height' 	=> 100,
 								'thumbnail'	=> 'icon')) ?>
@@ -26,7 +26,9 @@
 		<div class="section-left-40">
 			<?php if($this->editmode): ?>
 				<?php echo $this->image('image-kiri', array(
-										'title' => 'Drag your image here',
+										'title' => 'Image Size 225x200',
+										'width' 	=> 225,
+										'height' 	=> 200,
 										'thumbnail' => 'product'))?>
 			<?php else: ?>
 				<a data-toggle="modal" href="javascript:void(0)" data-target="#modalBrosur" class="thumbnail thumbnail-popup">

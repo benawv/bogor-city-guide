@@ -36,7 +36,7 @@
 			<li>
 				<div class="product">
 					<div class="photo">
-						<?php echo $this->image("banner_".$i, ["thumbnail" => "banner", "dropClass" => $id . "-" . $i])?>
+						<?php echo $this->image("banner_".$i, ["thumbnail" => "banner", "dropClass" => $id . "-" . $i, "title" => "Image Size 635x310"])?>
 					</div>
 				</div>
 			</li>

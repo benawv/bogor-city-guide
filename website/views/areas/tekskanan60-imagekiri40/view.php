@@ -2,7 +2,7 @@
 	<h2>
 		<?php if($this->editmode): ?>
 			Icon: <?php echo $this->image('icon', array(
-								'title' 	=> 'Drag your icon here',
+								'title' 	=> 'Image Size 31x31',
 								'width' 	=> 100,
 								'height' 	=> 100,
 								'thumbnail'	=> 'icon')) ?>
@@ -24,8 +24,10 @@
 		<?php endif;?>
 		<div class="section-left-40">
 			<?php echo $this->image('image-kiri', array(
-									'title' => 'Drag your image here',
-									'thumbnail' => 'product'))?>
+									'title' => 'Image Size 226x200',
+									'width' => 226,
+									'height' => 200
+									/*'thumbnail' => 'product'*/))?>
 		</div>
 		<div class="section-right-60">
 			<?php echo $this->wysiwyg('teks-kanan')?>

@@ -15,7 +15,7 @@
 	<h2>
 		<?php if($this->editmode): ?>
 			Icon: <?php echo $this->image('icon', array(
-								'title' 	=> 'Drag your icon here',
+								'title' 	=> 'Image Size 31x31',
 								'width' 	=> 100,
 								'height' 	=> 100,
 								'thumbnail'	=> 'icon')) ?>
@@ -45,15 +45,18 @@
 						<?php while ($this->block("imageblock")->loop()) { ?>
 							<?php if($this->editmode) { ?>
 								<li>
+									<?php echo $this->image("myImage", array("title" => "Image Size 400x400","width" => 299,"height" => 299));?>
 									<?php echo $this->link('sectionImages')?>
 									<?php echo $this->input('download', array("width" => 250))?>
 								</li>
 							<?php } else { ?>
 								<li>
-									<a class="<?php echo $class?> gallery-box" rel="group" href="<?php echo $this->link('sectionImages')->getHref()?>">
-										<img style="margin-right: 10px; width: 273px;" src="<?php echo $this->link('sectionImages')->getHref()?>" />
-										<h3><?php echo $this->link('sectionImages')->getText() ?></h3>
-										<a class="dwn img" target="_blank" href="<?php echo $this->link('sectionImages')->getHref()?>"><?php echo $this->input('download')->text?></a>
+									<a class="<?php echo $class?> gallery-box" rel="group" href="<?php echo $this->image('myImage')->getThumbnail("sec_gallery");?>">
+										<img style="margin-right: 10px; width: 299px;" src="<?php echo $this->image('myImage')->getSrc();?>" />
+									</a>
+									<a href="<?php echo $this->link('sectionImages')->getHref();?>">
+										<h3><?php echo $this->link('sectionImages')->getText();?></h3>
+										<a class="dwn img" target="_blank" href="<?php echo $this->image('myImage')->getSrc();?>"><?php echo $this->input('download')->text?></a>
 									</a>
 								</li>
 							<?php } ?>

@@ -9,10 +9,6 @@
 		margin:0px;
 		font-weight: bold;
 	}
-	.cusLi li a
-	{
-		padding: 4px 10px 2px 20px !important;
-	}
 </style>
 <script>
 	<?php if(!$this->editmode){?>
@@ -38,7 +34,7 @@
 			<?php } ?>
 			<ul class="nav cusLi">
 				<?php while ($this->block("linkblock-layanankami")->loop()) { ?>
-							    <li><?php echo $this->link("myLink-layanankami"); echo $this->input("myText-layanankami", array("width" => 240));?></li>
+							    <li><?php echo $this->link("myLink-layanankami"); echo "<span>".$this->input("myText-layanankami", array("width" => 240))."</span>";?></li>
 				<?php } ?>
 				<!--
 				<li><a href="klaim.php">Prosedur Klaim</a></li>

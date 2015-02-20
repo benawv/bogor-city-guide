@@ -43,7 +43,7 @@
 			<li>
 				<div class="photo">
 					<?php if($this->editmode) { ?>
-						<?php echo $this->image("image_".$i, ["thumbnail" => "galleryCarousel", "dropClass" => $id . "-" . $i, "class" => "image_share"])?>
+						<?php echo $this->image("image_".$i, ["thumbnail" => "containerCarousel", "dropClass" => $id . "-" . $i, "class" => "image_share", "title" => "Image Size 304x182", "width" => 304, "height" => 182])?>
 					<?php } else { ?>
 						<img src="<?php echo $this->image("image_".$i)->getSrc()?>" class="image_share" />
 					<?php } ?>

@@ -35,7 +35,7 @@
 	    height: 100%;
 	}
 </style>
-<?php //if($this->editmode) { ?>
+
 	<style type="text/css">
 		.x-panel-body.pimcore_tag_image_empty{
 			height: 79px !important;
@@ -47,6 +47,18 @@
 		.x-panel-body{
 			height: auto !important;
 		}
+		<?php if($this->editmode) { ?>
+		.cus-slide.prev,.cus-slide.next{
+			height: 120px;
+			background-position: 0 5px;
+		}
+		.super_navi{
+			height: 120px;
+		}
+		.navi{
+			height: 120px;
+		}
+		<?php }else{?>
 		.cus-slide.prev,.cus-slide.next{
 			height: 84px;
 			background-position: 0 5px;
@@ -54,14 +66,14 @@
 		.super_navi{
 			height: 84px;
 		}
-		.navi{
+		.navi.multi-video{
 			height: 84px;
 		}
+		<?php } ?>
 		.pimcore_iframe_mask{
 			z-index: -1 !important;
 		}
 	</style>
-<?php //}?>
 <div class="full-w bg-white">
 	<div id="slideshow" class="clearfix">
 	<?php if($this->editmode) { ?>
@@ -117,7 +129,7 @@
 				<div id="membername" style="width: 580px;">
 					<div class="cus-slide prev"><span class="arrow"></span></div>
 					<div class="super_navi cus_super_navi">
-						<ul class="navi" style="width: 950px;float: left; position: absolute;">
+						<ul class="navi multi-video" style="width: 950px;float: left; position: absolute;">
 				<?php for($i=0;$i<$slides;$i++) {
 					if($i==0)
 					{
@@ -130,7 +142,8 @@
 						    <li class="<?php echo "klikVideo isiVideo".$videoId."_".$i." ".$aktif;?>">
 								<?php echo $this->image("videoImage".$i, array(
 										"width" => 84,
-										"height" => 84
+										"height" => 84,
+										"title" => "Image Size 84x84"
 								));
 								?>
 								<input type="hidden" value="" class="tmpVideo_isiVideo<?php echo $videoId."_".$i;?>" />
@@ -149,7 +162,7 @@
 <script type="text/javascript">
 	/* silde nav*/
 	
-	$(".hideme").hide();
+	/*$(".hideme").hide();
 	$(".v").click(function(){
 		$(this).siblings('.hideme').slideToggle();
 		if($(this).find('.xicon').hasClass('down')){
@@ -160,7 +173,7 @@
 			$(this).find('.xicon').removeClass('up')
 			$(this).find('.xicon').addClass('down')
 		}
-	});
+	});*/
 	
 	$('.next').on('click',function(){
 		var me_left = $('.super_navi').scrollLeft();
