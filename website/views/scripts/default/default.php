@@ -26,7 +26,7 @@
 					</div> -->
 					<div class="photo">
 						<?php $i = "static";$id = "idStatic";
-							  echo $this->image("image_".$i, ["dropClass" => $id . "-" . $i, 'title' 	=> 'Image Size 635x310']);
+							  echo $this->image("image_".$i, ["thumbnail" => "galleryCarouselStatic", "dropClass" => $id . "-" . $i, 'title' 	=> 'Image Size 635x310']);
 						?>
 					</div>
 					<?php
