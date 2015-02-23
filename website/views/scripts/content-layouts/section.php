@@ -42,7 +42,7 @@
 		<?php echo $this->areablock('container', array('allowed' => array(
 														'container-box2', 'community-tips2',
 														'sections', 'sections-tab', 'teks-tabs',
-														'sections-video', 'sections-gallery', 
+														'sections-video', 'sections-gallery', 'sections-box-full',
 														'sections-select', 'tekskanan60-imagekiri40_wizard', 
 														'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
 														'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
