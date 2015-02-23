@@ -201,7 +201,8 @@
 
 .pimcore_iframe_mask {
 	position: absolute;
-	z-index: 10000;
+	/*z-index: 10000;*/
+	z-index: -1;
 }
 
 .pimcore_tag_link {
