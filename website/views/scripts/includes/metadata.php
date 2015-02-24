@@ -36,9 +36,9 @@
 
 
 <!-- plugins -->
-<script async src="/website/static/plugins/jquery.flexslider.min.js" type="text/javascript"></script>
+<!--<script src="/website/static/plugins/jquery.flexslider.min.js" type="text/javascript"></script>-->
 <script async src="/website/static/js/masonry.min.js" type="text/javascript"></script>
-<script src="/website/static/js/bootstrap.min.js" type="text/javascript"></script>
+<!--<script src="/website/static/js/bootstrap.min.js" type="text/javascript"></script>-->
 <script async src="/website/static/js/accordion-jquery.js" type="text/javascript"></script>
 <!-- Community Tips -->
 <script async type="text/javascript" src="/website/static/js/paging.js"></script>
@@ -90,9 +90,21 @@ ga('send', 'pageview');
 	window.onload = loadScript;
 	
 	function downloadJSAtOnload() {
-		var element = document.createElement("script");
-		element.src = "/website/static/plugins/gmaps-marker-label.js";
-		document.body.appendChild(element);
+		var element1 = document.createElement("script");
+		element1.src = "/website/static/plugins/gmaps-marker-label.js";
+		document.body.appendChild(element1);
+		
+		var element2 = document.createElement("script");
+		element2.src = "/website/static/plugins/jquery.flexslider.min.js";
+		document.body.appendChild(element2);
+		
+		var element3 = document.createElement("script");
+		element3.src = "/website/static/js/bootstrap.min.js";
+		document.body.appendChild(element3);
+		
+		var element4 = document.createElement("script");
+		element4.src = "/website/static/js/bootstrap.min.js";
+		document.body.appendChild(element4);
 	}
 	if (window.addEventListener)
 		window.addEventListener("load", downloadJSAtOnload, false);
