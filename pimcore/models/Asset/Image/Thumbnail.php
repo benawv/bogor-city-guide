@@ -441,7 +441,7 @@ class Asset_Image_Thumbnail {
                 }
                 else
                 {
-                    $html .= "\t" . '' . "\n\t\t" . $htmlImgTag . "\n\t" . '' . "\n";
+                    $html .= "\t" . '' . "\n\t\t" . $htmlImgTag . "\n\t" . '' . "\n <span>Allianz Indonesia: Asuransi Indonesia Terbaik</span>";
                 }
             $html .= '</picture>' . "\n";
 
