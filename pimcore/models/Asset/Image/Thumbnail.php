@@ -434,14 +434,14 @@ class Asset_Image_Thumbnail {
                 $checkBrowser = $obj->showInfo("all")[2];
                 // get all information and it returns an array
                 //echo "<pre>".print_r($obj->showInfo("all")[2],true)."</pre>";
-
-                if ($checkBrowser == "Google Chrome")
+                
+                if ($checkBrowser == "Firefox" || $checkBrowser == "Internet Explorer" || $checkBrowser == "Opera")
                 {
-                    $html .= "\t" . '' . "\n\t\t" . $htmlImgTag . "\n\t" . '' . "\n";
+                    $html .= "\t" . '<noscript>' . "\n\t\t" . $htmlImgTag . "\n\t" . '</noscript>' . "\n";
                 }
                 else
                 {
-                    $html .= "\t" . '<noscript>' . "\n\t\t" . $htmlImgTag . "\n\t" . '</noscript>' . "\n";
+                    $html .= "\t" . '' . "\n\t\t" . $htmlImgTag . "\n\t" . '' . "\n";
                 }
             $html .= '</picture>' . "\n";
 
