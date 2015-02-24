@@ -36,7 +36,7 @@
 
 
 <!-- plugins -->
-<script async src="/website/static/plugins/jquery.flexslider.min.js" type="text/javascript"></script>
+<script src="/website/static/plugins/jquery.flexslider.min.js" type="text/javascript"></script>
 <script async src="/website/static/js/masonry.min.js" type="text/javascript"></script>
 <script src="/website/static/js/bootstrap.min.js" type="text/javascript"></script>
 <script async src="/website/static/js/accordion-jquery.js" type="text/javascript"></script>
@@ -49,10 +49,21 @@
 <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
 -->
+<!--<script type="text/javascript">
+function downloadJSAtOnload() {
+var element = document.createElement("script");
+element.src = "defer.js";
+document.body.appendChild(element);
+}
+if (window.addEventListener)
+window.addEventListener("load", downloadJSAtOnload, false);
+else if (window.attachEvent)
+window.attachEvent("onload", downloadJSAtOnload);
+else window.onload = downloadJSAtOnload;
+</script>-->
 
-
-<script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkjnwleWwVfhCyd45V9A2_XBeAOqMDhrU&sensor=true"></script>
-<script  type="text/javascript" src="/website/static/plugins/gmaps-marker-label.js"></script>
+<!--<script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkjnwleWwVfhCyd45V9A2_XBeAOqMDhrU&sensor=true"></script>-->
+<!--<script  type="text/javascript" src="/website/static/plugins/gmaps-marker-label.js"></script>-->
 
 <meta name="google-site-verification" content="t5S9yqQc-NyyfANDoR4qXDmEbpy746PnIqxU5rp0aXM" />
 <link rel="alternate" href="http://www.allianz.co.id/" hreflang="id" />
@@ -69,6 +80,26 @@ ga('send', 'pageview');
 <!--Google Analytics-->
 
 <script type="text/javascript">
+	function loadScript() {
+		var script = document.createElement('script');
+		script.type = 'text/javascript';
+		script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAkjnwleWwVfhCyd45V9A2_XBeAOqMDhrU&sensor=true' +
+		    '&callback=initialize';
+		document.body.appendChild(script);
+	      }
+	window.onload = loadScript;
+	
+	function downloadJSAtOnload() {
+		var element = document.createElement("script");
+		element.src = "/website/static/plugins/gmaps-marker-label.js";
+		document.body.appendChild(element);
+	}
+	if (window.addEventListener)
+		window.addEventListener("load", downloadJSAtOnload, false);
+	else if (window.attachEvent)
+		window.attachEvent("onload", downloadJSAtOnload);
+	else window.onload = downloadJSAtOnload;
+	
 	$(function(){
 		$('#slideshow').flexslider({
 			animation: "slide"
