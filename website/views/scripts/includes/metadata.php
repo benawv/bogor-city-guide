@@ -32,7 +32,7 @@
 <script async src="/website/static/js/modernizr.js" type="text/javascript"></script>
 <script src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <!--script src="/website/static/jquery.tools.min.js" type="text/javascript"></script-->
-<!--<script src="/website/static/js/main.js" type="text/javascript"></script>-->
+<script src="/website/static/js/main.js" type="text/javascript"></script>
 
 
 <!-- plugins -->
@@ -93,10 +93,6 @@ ga('send', 'pageview');
 		var element = document.createElement("script");
 		element.src = "/website/static/plugins/gmaps-marker-label.js";
 		document.body.appendChild(element);
-		
-		var element2 = document.createElement("script");
-		element2.src = "/website/static/js/main.js";
-		document.body.appendChild(element2);
 	}
 	if (window.addEventListener)
 		window.addEventListener("load", downloadJSAtOnload, false);
