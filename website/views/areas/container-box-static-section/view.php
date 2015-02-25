@@ -21,7 +21,7 @@
 				'thumbnail'	=> 'product')
 		);?>
 	<?php } else { ?>
-		<?php echo $this->image('image-box-section', array('class' => 'image_share'))?>
+		<?php echo $this->image('image-box-section', array('class' => 'image_share', 'width' => 304, 'height' => 295))?>
 	<?php } ?>
 	<div class="description">
 		<?php echo $this->wysiwyg('description-box-section')?>
