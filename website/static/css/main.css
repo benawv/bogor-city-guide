@@ -7,6 +7,9 @@
 .container h5{
   margin: -10px 0 -3px 0;
 }
+.container .nav-sticky h5{
+  margin: -15px 0 -3px 0;
+}
 .modal-title,
 .modal-body {
   text-align: left;
