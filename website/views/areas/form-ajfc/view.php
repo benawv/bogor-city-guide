@@ -28,7 +28,7 @@
        <div class="form-title">FORM PENDAFTARAN AJFC 2015</div>
 
       <div class="container-fluid">
-         <div class="row">
+         <div class="row ta-left">
 
 
           <form id="" action="" method="post">

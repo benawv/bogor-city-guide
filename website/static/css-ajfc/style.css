@@ -180,6 +180,9 @@ form button:active {
     color: #333333;
     border-bottom: 1px solid #e5e5e5;
 }
+.row.ta-left {
+    text-align: left;
+} 
 .padleft40 {
     padding-left: 40px;
 }
