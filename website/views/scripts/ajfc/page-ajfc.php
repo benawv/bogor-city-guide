@@ -14,7 +14,7 @@
 		<div class="items-container">
 		<!-- content -->
 			<?php echo $this->areablock('container', array(
-						"allowed" => array("container-box-static", "container-box", "container-box-video")));
+						"allowed" => array("container-box-static", "container-box-video", "image-full-page")));
 			?>
 		<!-- endcontent -->
 		</div>
