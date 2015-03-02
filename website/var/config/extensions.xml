@@ -6,7 +6,7 @@
     <quicklinks>1</quicklinks>
     <map-point>1</map-point>
     <layanankami-quicklinks>1</layanankami-quicklinks>
-    <banner-tile></banner-tile>
+    <banner-tile/>
     <static-banner>1</static-banner>
     <tile-quicklinks>1</tile-quicklinks>
     <container-box-6>1</container-box-6>
@@ -16,7 +16,7 @@
     <container-box>1</container-box>
     <sections>1</sections>
     <modal>1</modal>
-    <sections-sectionpage></sections-sectionpage>
+    <sections-sectionpage/>
     <sections-tab>1</sections-tab>
     <container-box-carousel>1</container-box-carousel>
     <container-box-static>1</container-box-static>
@@ -24,7 +24,7 @@
     <product-quicklinks>1</product-quicklinks>
     <sections-video>1</sections-video>
     <sections-gallery>1</sections-gallery>
-    <sections-select></sections-select>
+    <sections-select/>
     <tekskiri60-imagekanan40>1</tekskiri60-imagekanan40>
     <tekskiri40-imagekanan60>1</tekskiri40-imagekanan60>
     <tekskanan40-imagekiri60>1</tekskanan40-imagekiri60>
@@ -47,12 +47,12 @@
     <konten-berita>1</konten-berita>
     <smartwealth-factsheet>1</smartwealth-factsheet>
     <summary-berita-abu>1</summary-berita-abu>
-    <summary-berita-teks-gambar></summary-berita-teks-gambar>
-    <summary-berita-gambar-teks></summary-berita-gambar-teks>
+    <summary-berita-teks-gambar/>
+    <summary-berita-gambar-teks/>
     <jurnal-allianz>1</jurnal-allianz>
     <tahukah-anda>1</tahukah-anda>
-    <konten-berita-gambar-teks></konten-berita-gambar-teks>
-    <konten-berita-teks-gambar></konten-berita-teks-gambar>
+    <konten-berita-gambar-teks/>
+    <konten-berita-teks-gambar/>
     <konten-beritaGambarTeks>1</konten-beritaGambarTeks>
     <konten-beritaTeksGambar>1</konten-beritaTeksGambar>
     <tanggal>1</tanggal>
@@ -60,15 +60,15 @@
     <video>1</video>
     <multi-video>1</multi-video>
     <banner-without-note>1</banner-without-note>
-    <container-box-static-modal-iframe></container-box-static-modal-iframe>
-    <container-box-static-modal-text></container-box-static-modal-text>
+    <container-box-static-modal-iframe/>
+    <container-box-static-modal-text/>
     <education>1</education>
     <fp_pendidikan>1</fp_pendidikan>
     <fp_aruskas>1</fp_aruskas>
     <fp_asuransi>1</fp_asuransi>
     <fp_investasi>1</fp_investasi>
     <fp_pensiun>1</fp_pensiun>
-    <inv-box5></inv-box5>
+    <inv-box5/>
     <inv_box5>1</inv_box5>
     <inv_box4>1</inv_box4>
     <inv_box3>1</inv_box3>
@@ -90,9 +90,11 @@
     <tekskanan60-videokiri40_2>1</tekskanan60-videokiri40_2>
     <inv-fund-savingsplan>1</inv-fund-savingsplan>
     <inv-fund-dplk>1</inv-fund-dplk>
+    <mobilku>1</mobilku>
+    <form-ajfc>1</form-ajfc>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>
-    <DynamicDropdown></DynamicDropdown>
+    <DynamicDropdown/>
   </plugin>
 </zend-config>
