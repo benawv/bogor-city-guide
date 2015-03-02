@@ -44,7 +44,7 @@
 											'height' 	=> 100,
 											'thumbnail'	=> 'icon')) ?>
 						<?php } else { ?>
-							<div style="background-image: url('<?php echo $this->image('icon_'.$i)->getSrc()?>'); margin-bottom: 3px; width: 25px; height: 25px;"></div>
+							<div style="background-image: url('<?php echo $this->image('icon_'.$i)->getSrc()?>'); margin-bottom: 3px; min-width: 25px; min-height: 25px; background-repeat: no-repeat;"></div>
 						<?php } ?>
 						
 						<?php if($this->editmode) { ?>
@@ -54,7 +54,7 @@
 											'height' 	=> 100,
 											'thumbnail'	=> 'icon')) ?>
 						<?php } else { ?>
-							<div class="white_image" style="background-image: url('<?php echo $this->image('icon_'.$i.'_'.$i)->getSrc()?>'); margin-bottom: 3px; width: 25px; height: 25px;"></div>
+							<div class="white_image" style="background-image: url('<?php echo $this->image('icon_'.$i.'_'.$i)->getSrc()?>'); margin-bottom: 3px; min-width: 25px; min-height: 25px; background-repeat: no-repeat;"></div>
 						<?php } ?>
 						
 						<span class="cus_anchor_<?php echo $i;?>"><?php echo $this->editmode?'Title: ':'' ?><?php echo $this->input('anchor_title_'.$i, array("width" => '75'))?></span>
@@ -83,7 +83,7 @@
 													'height' 	=> 100,
 													'thumbnail'	=> 'icon')) ?>
 								<?php } else { ?>
-									<div style="background-image: url('<?php echo $this->image('icon_'.$i)->getSrc()?>'); margin-bottom: 3px; width: 25px; height: 25px;"></div>
+									<div style="background-image: url('<?php echo $this->image('icon_'.$i)->getSrc()?>'); margin-bottom: 3px; min-width: 25px; min-height: 25px; background-repeat: no-repeat;"></div>
 								<?php } ?>
 								
 								<?php if($this->editmode) { ?>
@@ -93,7 +93,7 @@
 													'height' 	=> 100,
 													'thumbnail'	=> 'icon')) ?>
 								<?php } else { ?>
-									<div class="white_image" style="background-image: url('<?php echo $this->image('icon_'.$i.'_'.$i)->getSrc()?>'); margin-bottom: 3px; width: 25px; height: 25px;"></div>
+									<div class="white_image" style="background-image: url('<?php echo $this->image('icon_'.$i.'_'.$i)->getSrc()?>'); margin-bottom: 3px; min-width: 25px; min-height: 25px; background-repeat: no-repeat;"></div>
 								<?php } ?>
 								
 								<?php echo $this->editmode?'Title: ':'' ?><?php echo $this->input('anchor_title_'.$i, array("width" => '75'))?>
@@ -131,7 +131,7 @@
 											'height' 	=> 100,
 											'thumbnail'	=> 'icon')) ?>
 						<?php } else { ?>
-							<div style="background-image: url('<?php echo $this->image('icon_'.$i)->getSrc()?>'); margin-bottom: 3px; width: 25px; height: 25px;"></div>
+							<div style="background-image: url('<?php echo $this->image('icon_'.$i)->getSrc()?>'); margin-bottom: 3px; min-width: 25px; min-height: 25px; background-repeat: no-repeat;"></div>
 						<?php } ?>
 						
 						<?php if($this->editmode) { ?>
@@ -141,7 +141,7 @@
 											'height' 	=> 100,
 											'thumbnail'	=> 'icon')) ?>
 						<?php } else { ?>
-							<div class="white_image" style="background-image: url('<?php echo $this->image('icon_'.$i.'_'.$i)->getSrc()?>'); margin-bottom: 3px; width: 25px; height: 25px;"></div>
+							<div class="white_image" style="background-image: url('<?php echo $this->image('icon_'.$i.'_'.$i)->getSrc()?>'); margin-bottom: 3px; min-width: 25px; min-height: 25px; background-repeat: no-repeat;"></div>
 						<?php } ?>
 						
 						<?php echo $this->editmode?'Title: ':'' ?><?php echo $this->input('anchor_title_'.$i, array("width" => '75'))?>
