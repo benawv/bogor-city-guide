@@ -22,7 +22,7 @@
         .gallery .item {
             min-height: 377px;
         }
-        .place-bg{
+        .place-bg-gallery{
         	height: 265px !important;
         }
     </style>
