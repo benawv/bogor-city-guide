@@ -94,6 +94,23 @@
     margin-top: 20px;
 }
 
+.input-group .choose {
+	height: 40px !important;
+	border-radius: 0px !important;
+}
+.btn-choose {
+	padding: 9px 20px !important;
+	background: #003781 !important;
+	opacity: 1 !important;
+}
+.fb-like img {
+	float: left;
+	width: 80px;
+}
+.fb-link  {
+	float: left;
+	padding: 8px 20px;
+}
 
 /* ----- Registration Form ----- */
 

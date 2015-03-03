@@ -11,12 +11,13 @@
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/tabs-accordion.css">-->
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/product.css">-->     
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css-mobil/data-table-1.10.4/media/css/jquery.dataTables.css" >
-  
+ 
+ 
 <script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
 <!--<script src="_assets/js/jquery.tools.min.js" type="text/javascript"></script>-->
 <!--<script src="_assets/js/sticky-jquery.js" type="text/javascript"></script>-->
-<script src="/website/static/css-mobil/jquery-1.10.2.js" type="text/javascript"></script>
-<script src="/website/static/css-mobil/bootstrap.min.js" type="text/javascript"></script>
+<!--<script src="/website/static/css-mobil/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="/website/static/css-mobil/bootstrap.min.js" type="text/javascript"></script>-->
   
     
 <!--   plugins   -->
@@ -25,13 +26,9 @@
 <script src="/website/static/css-mobil/wizard.js"></script>
 <script src="/website/static/css-mobil/data-table-1.10.4/media/js/jquery.dataTables.js" type="text/javascript"></script>
     
-<script src="/website/static/css-mobil/jquery.validate.min.js"></script>       
-
-<style>
+<script src="/website/static/css-mobil/jquery.validate.min.js"></script>  
 
 
-
-</style>
 <!-- End of Header -->
 
 
@@ -62,8 +59,6 @@
                                         <div class="container-fluid">
                                            <div class="row ta-left fc666">
 
-
-                                            <form id="" action="" method="post">
 
                                               <div class="col-md-6">
                                                 
@@ -225,11 +220,11 @@
                                                     </label>
                                                 </div>
                                                        
-                                                <button class="unggah" name="signup" type="submit">UNGGAH</button>
+                                                <!--<button class="unggah" name="signup" type="submit">UNGGAH</button>-->
 
                                               </div>
 
-                                            </form>  
+                                            
 
                                            </div>
                                         </div>
@@ -238,7 +233,46 @@
 
                                 <div class="tab-pane" id="tahap2">
                                     
-                                   
+                                   <div class="form-title">FORM PENDAFTARAN AJFC 2015</div>
+
+                                        <div class="container-fluid">
+                                           <div class="row ta-left fc666">
+
+                                              <div class="col-md-6">
+                                                
+                                                  <div class="form-group">
+                                                      <label for="1terpenting">Apa 1 hal terpenting bagi kamu dalam bermain bola?*</label>
+                                                      <textarea class="form-control" rows="3" style="height:100px !important"></textarea>
+                                                  </div>
+													
+												<div class="form-group">
+													<label for="pilih">Pilih Foto</label>
+													<div class="input-group">
+														<span class="input-group-btn">
+															<span class="btn btn-primary btn-file btn-choose">
+																Pilih <input type="file" multiple>
+															</span>
+														</span>
+														<input type="text" class="form-control choose" readonly>
+													</div>
+													
+												</div>
+												
+												<div class="form-group">
+													<label for="pilih">Like Facebook Fanpage</label>
+													<div class="fb-like">
+														<img src="/website/static/images/ajfc/fb-like.png" />
+													</div>
+													<div class="fb-link">
+														<a href="https://www.facebook.com/AJFCIndonesia">AJFC Indonesia</a>
+													</div>
+												</div>
+
+                                              </div>
+
+                                           </div>
+                                        </div>
+								   
                                 </div>
 
                                 <div class="tab-pane" id="tahap3">
@@ -804,7 +838,7 @@
                                     <div class="clearfix"></div>
                             </div>  
                     </div>
-                </form>
+                </form> <!--form ajfc-->
                 </div> <!-- wizard container -->
                 
       </div>
@@ -815,8 +849,8 @@
       
 </div>
 
+
   
- 
 <script>
 
   $(document).ready(function () {
@@ -863,4 +897,32 @@
     $('div.setup-panel div a.btn-primary').trigger('click');
 });
 
-</script>  
+</script> 
+
+<script>
+
+$(document).on('change', '.btn-file :file', function() {
+  var input = $(this),
+      numFiles = input.get(0).files ? input.get(0).files.length : 1,
+      label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+  input.trigger('fileselect', [numFiles, label]);
+});
+
+$(document).ready( function() {
+    $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
+        
+        var input = $(this).parents('.input-group').find(':text'),
+            log = numFiles > 1 ? numFiles + ' files selected' : label;
+        
+        if( input.length ) {
+            input.val(log);
+        } else {
+            if( log ) alert(log);
+        }
+        
+    });
+});
+
+</script> 
+
+

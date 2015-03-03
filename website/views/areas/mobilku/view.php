@@ -13,8 +13,8 @@
 <script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
 <!--<script src="_assets/js/jquery.tools.min.js" type="text/javascript"></script>-->
 <!--<script src="_assets/js/sticky-jquery.js" type="text/javascript"></script>-->
-<script src="/website/static/css-mobil/jquery-1.10.2.js" type="text/javascript"></script>
-<script src="/website/static/css-mobil/bootstrap.min.js" type="text/javascript"></script>
+<!--<script src="/website/static/css-mobil/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="/website/static/css-mobil/bootstrap.min.js" type="text/javascript"></script>-->
   
 		
 <!--   plugins 	 -->
