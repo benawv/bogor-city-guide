@@ -6,46 +6,46 @@ $(document).ready(function(){
     $('[rel="tooltip"]').tooltip();
     
     
-    var $validator = $("#myform").validate({
-        debug: true,
-		  rules: {
-		    tahun: {
-		      required: true,
-		    },
-		    harga: {
-		      required: true,
-		      
-		    },
-              merk: {
-		      required: true,
-		      
-		    },
-              model: {
-		      required: true,
-		      
-		    },
-		    tipe: {
-		      required: true,
-		      
-		    },
-              wilayah: {
-		      required: true,
-		      
-		    },
-               kapasitas: {
-		      required: true,
-		      
-		    },
-              periode: {
-		      required: true,
-		      
-		    },
-               email: {
-		      required: true,
-		      
-		    }
-		  }
-		});
+//    var $validator = $("#myform").validate({
+//        debug: true,
+//		  rules: {
+//		    tahun: {
+//		      required: true,
+//		    },
+//		    harga: {
+//		      required: true,
+//		      
+//		    },
+//              merk: {
+//		      required: true,
+//		      
+//		    },
+//              model: {
+//		      required: true,
+//		      
+//		    },
+//		    tipe: {
+//		      required: true,
+//		      
+//		    },
+//              wilayah: {
+//		      required: true,
+//		      
+//		    },
+//               kapasitas: {
+//		      required: true,
+//		      
+//		    },
+//              periode: {
+//		      required: true,
+//		      
+//		    },
+//               email: {
+//		      required: true,
+//		      
+//		    }
+//		  }
+//		});
     
     $('#wizard').bootstrapWizard({
         'tabClass': 'nav nav-pills',

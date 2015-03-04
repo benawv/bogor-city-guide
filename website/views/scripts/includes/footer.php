@@ -136,7 +136,7 @@
 	<div class="worldwide">
 		<div class="container">
 			<div class="badge-social">
-				<a data-target="#modalSoc" href="#" data-toggle="modal"><img title="We are Socially Devoted!" alt="Socially Devoted Badge" src="/website/static/images/badge.png" class="badge"></a>
+				<a data-target="#modalSoc" href="#" data-toggle="modal"><img title="We are Socially Devoted!" alt="Socially Devoted Badge" src="/website/static/images/badge.png" class="badge-logo"></a>
 			</div>
 			<div>
 				Allianz worldwide <a href="http://allianz.com">allianz.com</a>
