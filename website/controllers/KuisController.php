@@ -60,7 +60,7 @@ class KuisController extends Website_Controller_Action {
 		$db = Pimcore_Resource_Mysql::get();
 		
 		$peserta = new Object_DataPesertaAJFC_List();
-		$peserta->setCondition("(`idPeserta` = '' OR `idPeserta` IS NULL) AND (`statusEmail` <> 1 OR `statusEmail` IS NULL) ");
+		$peserta->setCondition("`idPeserta` = '' OR `idPeserta` IS NULL AND `statusEmail` <> 1 OR `statusEmail` IS NULL ");
 		$peserta->setLimit(10);
 		
 		//echo strtotime(date('Y-m-d')), "\n";
