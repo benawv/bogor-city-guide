@@ -26,7 +26,7 @@ class SeleksiController extends Website_Controller_Action {
 		}
 		else
 		{
-			$this->redirect("/");
+			$this->redirect("/ajfc/home-ajfc");
 		}
 	}
 	
