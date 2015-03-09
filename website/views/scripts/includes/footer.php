@@ -7,7 +7,7 @@
 	    <div class="modal-body">
 			<h2></h2>
 			<p style="text-align: center;">
-				<img class="imageModal" src="">
+				<img class="imageModal" src="" alt="image-modal">
 			</p>
 	    </div>
 	</div>
@@ -22,8 +22,8 @@
 				<li><a href="/sitemap/sitemap" target="_blank">Sitemap</a></li>
 			</ul>
 			<ul class="static-links mobile deactive share">
-				<li><a href="javascript:void(0);" class="fbshare-fullpage"><img src="/website/static/images/icon-share/facebook-black.png" /></a></li>
-				<li><a href="javascript:void(0);" class="twshare-fullpage"><img src="/website/static/images/icon-share/twitter-black.png" /></a></li>
+				<li><a href="javascript:void(0);" class="fbshare-fullpage"><img src="/website/static/images/icon-share/facebook-black.png" alt="facebook-black" /></a></li>
+				<li><a href="javascript:void(0);" class="twshare-fullpage"><img src="/website/static/images/icon-share/twitter-black.png" alt="twitter-black" /></a></li>
 			</ul>
 		</div>
 	</div>
@@ -62,6 +62,8 @@
 									$entries->setCondition('oo_id="'.$row2[o_id].'"');
 									foreach ($entries as $data)
 									{
+										echo "<pre>";
+										die(print_r($data));
 							?>
 										<li><?php echo $data->getLink();?></li>
 							<?php

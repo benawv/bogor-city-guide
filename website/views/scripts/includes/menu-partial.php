@@ -52,9 +52,9 @@
 										if($anchor->getProperty('navigation_title')!="")
 										{
 											if($anchor->getProperty('navigation_class'))
-												echo "<li><a href='".$subpage->getUri()."#".$anchor->getHref()."' onclick=('".$anchor->getHref()."')>".$anchor->getProperty('navigation_title')."</a></li>";
+												echo "<li><a href='".$subpage->getUri()."#".$anchor->getHref()."' onclick=(".$anchor->getHref().")>".$anchor->getProperty('navigation_title')."</a></li>";
 											else
-												echo "<li><a href='".$anchor->getHref()."' onclick=('".$anchor->getHref()."')>".$anchor->getProperty('navigation_title')."</a></li>";
+												echo "<li><a href='".$anchor->getHref()."' onclick=(".$anchor->getHref().")>".$anchor->getProperty('navigation_title')."</a></li>";
 										}
 									}
 								?>
@@ -107,9 +107,9 @@
 										if($anchor->getProperty('navigation_title')!="")
 										{
 											if($anchor->getProperty('navigation_class'))
-												echo "<li><a href='".$subpage->getUri()."#".$anchor->getHref()."' onclick=('".$anchor->getHref()."')>".$anchor->getProperty('navigation_title')."</a></li>";
+												echo "<li><a href='".$subpage->getUri()."#".$anchor->getHref()."' onclick=(".$anchor->getHref().")>".$anchor->getProperty('navigation_title')."</a></li>";
 											else
-												echo "<li><a href='".$anchor->getHref()."' onclick=('".$anchor->getHref()."')>".$anchor->getProperty('navigation_title')."</a></li>";
+												echo "<li><a href='".$anchor->getHref()."' onclick=(".$anchor->getHref().")>".$anchor->getProperty('navigation_title')."</a></li>";
 										}
 									}
 								?>
