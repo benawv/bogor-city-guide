@@ -23,7 +23,7 @@
             min-height: 377px;
         }
 	#best-products{
-	    min-height : 310px;
+	    height : auto !important;
 	}
     </style>
 <?php } ?>
