@@ -22,6 +22,9 @@
         .gallery .item {
             min-height: 377px;
         }
+	#best-products{
+	    min-height : 310px;
+	}
     </style>
 <?php } ?>
 <?php 
