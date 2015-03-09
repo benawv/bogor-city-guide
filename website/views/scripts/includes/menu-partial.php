@@ -109,13 +109,13 @@
 											if($anchor->getProperty('navigation_class'))
 											{
 								?>
-												<li><a href="<?php echo $subpage->getUri()."#".$anchor->getHref()?>" onclick="(<?php echo $anchor->getHref()?>)"><?php echo $anchor->getProperty('navigation_title') ?></a></li>
+												<li><a href="<?php echo $subpage->getUri()."#".$anchor->getHref()?>"><?php echo $anchor->getProperty('navigation_title') ?></a></li>
 								<?php
 											}
 											else
 											{
 								?>
-												<li><a href="<?php echo $anchor->getHref()?>" onclick="(<?php echo $anchor->getHref()?>)"><?php echo $anchor->getProperty('navigation_title') ?></a></li>
+												<li><a href="<?php echo $anchor->getHref()?>"><?php echo $anchor->getProperty('navigation_title') ?></a></li>
 								<?php
 											}
 										}
