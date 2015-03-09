@@ -20,7 +20,7 @@ class SeleksiController extends Website_Controller_Action {
 					$this->enableLayout();
 				}
 				else{
-					$this->redirect("/");
+					$this->redirect("/ajfc/home-ajfc");
 				}
 			}
 		}

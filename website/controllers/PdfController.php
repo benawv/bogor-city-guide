@@ -4,7 +4,7 @@ class PdfController extends Website_Controller_Action {
 	public function helloAction()
 	{
 		$pdf = new Zend_Pdf();
-		$page = $pdf->newPage(Zend_Pdf_Page::SIZE_A4); 
+		$page = $pdf->newPage(Zend_Pdf_Page::SIZE_A4_LANDSCAPE); 
 		$pdf->pages[] = $page;
 		$page->setFont(Zend_Pdf_Font::fontWithName(Zend_Pdf_Font::FONT_HELVETICA), 10);
 		$page->drawText('Hello world!', 100, 510);

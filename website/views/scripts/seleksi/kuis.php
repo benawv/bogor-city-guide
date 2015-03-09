@@ -41,7 +41,7 @@
                         <input type="text" name="alt" />
                         <input type="submit" value="kirim" />
                     </form>-->
-                  <form id="myform" method="post" action="/save-kuis">
+                  <form id="myform" method="post" action="/save-kuis" enctype="multipart/form-data">
                     
                     <div class="card wizard-card ct-wizard-blue" id="wizard">
 
@@ -66,6 +66,8 @@
 
 
                                               <div class="col-md-6">
+                                                <!--Select image to upload:
+                                                <input type="file" name="fileToUpload" id="fileToUpload">-->
                                                 <?php foreach($this->peserta as $row){?>
                                                   <input type="hidden" name="idPeserta" value="<?php echo $row->getO_id()."-".$row->getIdPeserta(); ?>" />
                                                   <div class="form-group">
@@ -230,10 +232,12 @@
                                               <div class="col-md-12 term">
 
                                                 <div class="form-group">  
-                                                    <label class="checkbox-inline">
-                                                        <input type="checkbox" id="checkbox-term" value="Term">
-                                                          Silahkan berikan tanda centang pada pernyataan dibawah ini
+                                                    <!--Silahkan berikan tanda centang pada pernyataan dibawah ini <br />-->
+                                                    <label class="checkbox-inline" style="padding-top: 0px;">
+                                                        <input type="checkbox" id="checkbox-term" name="term">
+                                                        Saya setuju dengan ketentuan yang berlaku.
                                                     </label>
+                                                    <span class="backClose" data-toggle="modal" data-target="#syarat">Baca syarat dan ketentuan.</span>
                                                 </div>
                                                        
                                                 <!--<button class="unggah" name="signup" type="submit">UNGGAH</button>-->
@@ -246,7 +250,34 @@
                                         </div>
 
                                 </div>
-
+<!-- Modal -->
+<div class="modal fade" id="syarat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Syarat dan Ketentuan</h4>
+      </div>
+      <div class="modal-body cus-body">
+	<ol>
+	    <li>Kamu berusia 14-16 tahun (tanggal lahir pada 25 Agustus 1999 s/d 1 September 2001, kamu harus sudah berusia 14 tahun atau masih berusia 16 tahun pada tanggal 25 Agustus 2015)</li>
+	    <li>Sehat jasmani (tidak mengidap penyakit pernapasan, penyakit atau cacat bawaan, penyakit menular dan segala kondisi yang mempengaruhi kondisi fisik untuk berolahraga)</li>
+	    <li>Memiliki akun email, facebook dan/atau twitter aktif</li>
+	    <li>Menyediakan informasi mengenai orangtua berupa nomor telepon dan email sebagai persetujuan dari orangtua untuk mengikuti program ini</li>
+	    <li>Bagi kamu yang menjadi pemenang Asia Camp dan Munich Camp, diwajibkan untuk membuat paspor sebelum Asia dan Munich Camp diselenggarakan</li>
+	    <li>Data yang dikirimkan sepenuhnya milik Allianz dan digunakan untuk kepentingan Allianz</li>
+	    <li>Data dan foto yang sudah kamu unggah akan diikutsertakan dalam lomba foto dan seleksi mengikuti Allianz Junior Football Camp 2015.</li>
+	    <li>Jika data yang diberikan tidak sesuai, maka pihak Allianz berhak mendiskualifikasi peserta tersebut. </li>
+	    <li>7 Remaja akan mengikuti Asia Camp, dan 3 Remaja diantaranya akan berkesempatan untuk mengunjungi Allianz Arena dan berlatih bersama pelatih remaja FC Bayern Munchen.</li>	    
+	    <li>Dan masih banyak hadiah menarik lainnya berupa souvenir FC Bayern Munchen yang dapat kamu menangkan.</li>
+	</ol>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-fill btn-warning btn-wd btn-sm" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
                                 <div class="tab-pane" id="tahap2">
                                     
                                    <div class="form-title">FORM PENDAFTARAN AJFC 2015</div>
@@ -266,7 +297,7 @@
 													<div class="input-group">
 														<span class="input-group-btn">
 															<span class="btn btn-primary btn-file btn-choose">
-																Pilih <input type="file" multiple>
+																Pilih <input type="file" name="uploadFoto" />
 															</span>
 														</span>
 														<input type="text" class="form-control choose" readonly>
