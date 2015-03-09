@@ -34,7 +34,7 @@
 			}
 		?>
 		
-		<div class="item" id="item-left">
+		<div class="item" id="item-left-1">
 			<div class="heading">
 				<h2 class="title_news <?php echo $class1;?> clickPage">
 					<?php echo $this->link("myLink-link1",array("class" => "thumbnail thumbnail-popup id1",
@@ -62,7 +62,7 @@
 			</div>
 		</div>
 		
-		<div class="item" id="item-left">
+		<div class="item" id="item-left-2">
 			<div class="heading">
 				<h2 class="title_news <?php echo $class2;?> clickPage">
 					<?php echo $this->link("myLink-link2",array("class" => "thumbnail thumbnail-popup id2",
@@ -90,7 +90,7 @@
 			</div>
 		</div>
 		
-		<div class="item" id="item-left">
+		<div class="item" id="item-left-3">
 			<div class="heading">
 				<h2 class="title_news <?php echo $class3;?> clickPage">
 					<?php echo $this->link("myLink-link3",array("class" => "thumbnail thumbnail-popup id3",
