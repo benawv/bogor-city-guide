@@ -256,7 +256,7 @@
 	}
 	
 	  $(function(){
-			google.maps.event.addDomListener(window, 'load', initialize);
+			//google.maps.event.addDomListener(window, 'load', initialize);
 			$('#map-shortcut .kantor').change(function(e){
 				var kantor = $('#map-shortcut .kantor').find(":selected").val();
 				var wilayah = $('#map-shortcut .wilayah').find(":selected").val();
