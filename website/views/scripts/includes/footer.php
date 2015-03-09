@@ -62,8 +62,6 @@
 									$entries->setCondition('oo_id="'.$row2[o_id].'"');
 									foreach ($entries as $data)
 									{
-										echo "<pre>";
-										die(print_r($data));
 							?>
 										<li><?php echo $data->getLink();?></li>
 							<?php
