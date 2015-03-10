@@ -721,6 +721,11 @@ a.fbshare, a.twshare{
 #brosur{
   display: none !important;
 }
+.cusTable table tr td.vertical{
+  vertical-align: top !important;
+  width: 20px;
+}
+
 /*SETTING LOGO 125*/
 .notepadKiri{width: 150px;float: left;}
 .notepadKanan{width: 70px;float: right;margin-right: 20px;margin-top: 17px;}
