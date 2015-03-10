@@ -10,13 +10,13 @@
 <!-- css -->
 
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
-<link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" media="screen" id="bootstrap-css" href="/website/static/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/flexslider.css">
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/main.css">
+<link rel="stylesheet" type="text/css" media="screen" id="flexslider-css" href="/website/static/css/flexslider.css">
+<link rel="stylesheet" type="text/css" media="screen" id="main-css" href="/website/static/css/main.css">
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/tabs-accordion.css">-->
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/product.css">
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/wishlist-cart.css">
+<link rel="stylesheet" type="text/css" media="screen" id="product-css" href="/website/static/css/product.css">
+<link rel="stylesheet" type="text/css" media="screen" id="wishlist-cart-css" href="/website/static/css/wishlist-cart.css">
 
 
 <!--
@@ -62,8 +62,8 @@ window.attachEvent("onload", downloadJSAtOnload);
 else window.onload = downloadJSAtOnload;
 </script>-->
 
-<script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkjnwleWwVfhCyd45V9A2_XBeAOqMDhrU&sensor=true"></script>
-<script  type="text/javascript" src="/website/static/plugins/gmaps-marker-label.js"></script>
+<!--<script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkjnwleWwVfhCyd45V9A2_XBeAOqMDhrU&sensor=true"></script>
+<script  type="text/javascript" src="/website/static/plugins/gmaps-marker-label.js"></script>-->
 
 <meta name="google-site-verification" content="t5S9yqQc-NyyfANDoR4qXDmEbpy746PnIqxU5rp0aXM" />
 <link rel="alternate" href="http://www.allianz.co.id/" hreflang="id" />
@@ -80,15 +80,15 @@ ga('send', 'pageview');
 <!--Google Analytics-->
 
 <script type="text/javascript">
-	//function loadScript() {
-	//	var script = document.createElement('script');
-	//	script.type = 'text/javascript';
-	//	script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAkjnwleWwVfhCyd45V9A2_XBeAOqMDhrU&sensor=true' +
-	//	    '&callback=initialize';
-	//	document.body.appendChild(script);
-	//      }
-	//window.onload = loadScript;
-	//
+	function loadScript() {
+		var script = document.createElement('script');
+		script.type = 'text/javascript';
+		script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAkjnwleWwVfhCyd45V9A2_XBeAOqMDhrU&sensor=true' +
+		    '&callback=initialize';
+		document.body.appendChild(script);
+	      }
+	window.onload = loadScript;
+	
 	//function downloadJSAtOnload() {
 	//	var element = document.createElement("script");
 	//	element.src = "/website/static/plugins/gmaps-marker-label.js";
