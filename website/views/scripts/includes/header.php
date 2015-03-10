@@ -31,10 +31,10 @@ function check_user_agent ( $type = NULL ) {
         return false;
 }
 ?>
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" media="screen" id="font-awesome-css" href="/website/static/css/font-awesome/font-awesome.min.css">
 <script type="text/javascript">var switchTo5x=true;</script>
 <!--script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script!-->
-<script type="text/javascript">stLight.options({publisher: "16852030-1a9b-4882-8731-4afd4c1cfd9c", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+<!--<script type="text/javascript">stLight.options({publisher: "16852030-1a9b-4882-8731-4afd4c1cfd9c", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>-->
 
 <script type="text/javascript">
 $(function(){
@@ -108,12 +108,12 @@ $(function(){
 			<nav class="toolbar">
 				<ul class="clearfix">
 					<li>
-						<a href="javascript:void(0);" class="icon-user cusLogin">Customer Login <img class="arrowDown" src='/website/static/images/arrow/bottom-arrow.png' /></a>
+						<a href="javascript:void(0);" class="icon-user cusLogin">Customer Login <img class="arrowDown" src='/website/static/images/arrow/bottom-arrow.png' alt="arrow" /></a>
 					</li>
 					<li class="liMobileHide"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank" class="icon-mail hide-text">Registrasi</a></li>
 					<!--<li><a href="#" class="icon-fav hide-text">My Product</a></li>-->
 					<li class="liMobileHide">
-						<a href="javascript:void(0);" class="fbshare-fullpage"><img src="/website/static/images/icon-share/facebook.png" /></a>
+						<a href="javascript:void(0);" class="fbshare-fullpage"><img src="/website/static/images/icon-share/facebook.png" alt="facebook" /></a>
                         <!--<div class="tag-center">
                         	<span class='st_sharethis' displayText='  '></span>
                              <span class='st_facebook' displayText=''></span>
@@ -124,7 +124,7 @@ $(function(){
                         </div>-->
 					 </li>
 					<li class="liMobileHide">
-						<a href="javascript:void(0);" class="twshare-fullpage"><img src="/website/static/images/icon-share/twitter.png" /></a>
+						<a href="javascript:void(0);" class="twshare-fullpage"><img src="/website/static/images/icon-share/twitter.png" alt="twitter" /></a>
 					</li>
 				</ul>
 				<ul class="ulCustomerOnline deactive">
