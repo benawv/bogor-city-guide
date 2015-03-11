@@ -725,6 +725,9 @@ a.fbshare, a.twshare{
   vertical-align: top !important;
   width: 20px;
 }
+.banner-ajfc{
+  margin-bottom: 15px;
+}
 
 /*SETTING LOGO 125*/
 .notepadKiri{width: 150px;float: left;}

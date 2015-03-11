@@ -50,6 +50,7 @@
                       <div class="wizard-header">
                                 
                         </div>
+                            <img src="/website/static/images/ajfc/banner-950.jpg" alt="banner-ajfc" class="banner-ajfc" />
                             <ul>
                                 <li class="first"><a href="#tahap1" data-toggle="tab">Tahap 1</a></li>
                                 <li class="second"><a href="#tahap2" data-toggle="tab">Tahap 2</a></li>
