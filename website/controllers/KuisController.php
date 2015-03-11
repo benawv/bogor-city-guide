@@ -4,7 +4,10 @@ class KuisController extends Website_Controller_Action {
 	
 	public function saveAction () {
 		//echo "<pre>";
+		//print_r($_FILES["uploadFoto"]);
+		//echo "<br />";
 		//print_r($_POST);
+		//die();
 		if($_POST["term"]=='on')
 		{
 			$term = 1;
@@ -17,13 +20,21 @@ class KuisController extends Website_Controller_Action {
 		$idPeserta = explode("-",$_POST["idPeserta"]);
 		
 		$alamat = $_POST["alamat"];
+		$pasport = $_POST["pasport"];
+		$propinsi = $_POST["propinsi"];
 		$namaOrtu = $_POST["namaOrtu"];
 		$noHp = $_POST["noHp"];
 		$emailOrtu = $_POST["emailOrtu"];
 		$alamatOrtu = $_POST["alamatOrtu"];
 		$pekerjaan = $_POST["pekerjaan"];
+		$pekerjaan_lain = $_POST["pekerjaan-lain"];
 		$info = implode(", ", $_POST["info"]);
 		$halTerpenting = $_POST["halTerpenting"];
+		if($pekerjaan_lain != "")
+		{
+			$pekerjaan = "";
+			$pekerjaan = $pekerjaan_lain;
+		}
 		
 		$soal = new Object_Quiz_List();
 		$x = 1;
@@ -43,7 +54,10 @@ class KuisController extends Website_Controller_Action {
 		$totalNilai = $total;
 		
 		$saveKuis = Object_DataPesertaAJFC::getById($idPeserta[0]);
+		//$saveKuis->setCondition("");
 		$saveKuis->setAlamat($alamat);
+		$saveKuis->setPasport($pasport);
+		$saveKuis->setPropinsi($propinsi);
 		$saveKuis->setNamaOrtu($namaOrtu);
 		$saveKuis->setNoHpOrtu($noHp);
 		$saveKuis->setEmailOrtu($emailOrtu);

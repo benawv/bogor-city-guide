@@ -109,16 +109,16 @@
 
                                                   <div class="form-group">
                                                       <label for="tgl-lahir">Apakah kamu memiliki Passport*</label>
-													  <div class="message-info">
-															<div class="form-group">
-																<label class="radio-inline">
-																  <input type="radio" name="pasport" id="ya" value="Ya"> Ya
-																</label>
-																<label class="radio-inline">
-																  <input type="radio" name="pasport" id="tidak" value="Tidak"> Tidak
-																</label> 
-															</div>
-															<div class="info-error"></div>
+                                                        <div class="message-info">
+                                                            <div class="form-group">
+                                                                    <label class="radio-inline">
+                                                                      <input type="radio" name="pasport" id="ya" value="Ya"> Ya
+                                                                    </label>
+                                                                    <label class="radio-inline">
+                                                                      <input type="radio" name="pasport" id="tidak" value="Tidak"> Tidak
+                                                                    </label> 
+                                                            </div>
+                                                            <div class="info-error"></div>
                                                         </div>  
                                                   </div>
 
@@ -130,6 +130,46 @@
                                                   <div class="form-group">
                                                       <label for="exampleInputName2">Nomer Telepon / HP*</label>
                                                       <input readonly="readonly" value="<?php echo $row->getNoHp();?>" type="text" class="form-control" name="no-telp" id="no-tlp" placeholder="">
+                                                  </div>
+                                                  
+                                                  <div class="form-group">
+                                                      <label for="exampleInputName2">Kota / Propinsi*</label><br />
+                                                        <select name="propinsi" class="form-control">
+                                                            <option value="Nangroe Aceh Darussalam">Nangroe Aceh Darussalam</option>
+                                                            <option value="Sumatera Utara">Sumatera Utara</option>
+                                                            <option value="Sumatera Barat">Sumatera Barat</option>
+                                                            <option value="Riau">Riau</option>
+                                                            <option value="Kepulauan Riau">Kepulauan Riau</option>
+                                                            <option value="Jambi">Jambi</option>
+                                                            <option value="Sumatera Selatan">Sumatera Selatan</option>
+                                                            <option value="Bangka Belitung">Bangka Belitung</option>
+                                                            <option value="Bengkulu">Bengkulu</option>
+                                                            <option value="Lampung">Lampung</option>
+                                                            <option value="DKI Jakarta">DKI Jakarta</option>
+                                                            <option value="Jawa Barat">Jawa Barat</option>
+                                                            <option value="Banten">Banten</option>
+                                                            <option value="Jawa Tengah">Jawa Tengah</option>
+                                                            <option value="DI Yogyakarta">DI Yogyakarta</option>
+                                                            <option value="Jawa Timur">Jawa Timur</option>
+                                                            <option value="Bali">Bali</option>
+                                                            <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+                                                            <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
+                                                            <option value="Kalimantan Barat">Kalimantan Barat</option>
+                                                            <option value="Kalimantan Tengah">Kalimantan Tengah</option>
+                                                            <option value="Kalimantan Selatan">Kalimantan Selatan</option>
+                                                            <option value="Kalimantan Timur">Kalimantan Timur</option>
+                                                            <option value="Kalimantan Utara">Kalimantan Utara</option>
+                                                            <option value="Sulawesi Utara">Sulawesi Utara</option>
+                                                            <option value="Sulawesi Barat">Sulawesi Barat</option>
+                                                            <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+                                                            <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
+                                                            <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+                                                            <option value="Gorontalo">Gorontalo</option>
+                                                            <option value="Maluku">Maluku</option>
+                                                            <option value="Maluku Utara">Maluku Utara</option>
+                                                            <option value="Papua Barat">Papua Barat</option>
+                                                            <option value="Papua">Papua</option>
+                                                        </select> 
                                                   </div>
 
                                                   <div class="form-group">
@@ -417,7 +457,9 @@
                             <div class="wizard-footer martop80">
                                     <div class="pull-right">
                                         <input type='button' class='btn btn-next btn-fill btn-warning btn-wd btn-sm' name='next' value='Lanjut' />
+                                        <?php //if(($number-1) == count($soal)){?>
                                         <input type='submit' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish' />
+                                        <?php //}?>
 
                                     </div>
                                     <div class="pull-left">
@@ -439,15 +481,26 @@
 
 
   
-<script>
+<script type="text/javascript">
 
-$(document).ready(function () {
+$(document).ready(function() {
 
     var navListItems = $('div.setup-panel div a'),
             allWells = $('.setup-content'),
             allNextBtn = $('.nextBtn');
 
     allWells.hide();
+    
+    $(".btn-previous").on( "click", function() {
+        $('html, body').animate({
+            scrollTop: $(".first").offset().top
+        }, 500);
+    });
+    $(".btn-next").on( "click", function() {
+        $('html, body').animate({
+            scrollTop: $(".first").offset().top
+        }, 500);
+    });
 
     navListItems.click(function (e) {
         e.preventDefault();

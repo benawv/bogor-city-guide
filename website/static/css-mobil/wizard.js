@@ -68,7 +68,7 @@ $(document).ready(function(){
 	  		
             if(!$valid) {
                 console.log( 'invalid' );
-                $validator.focusInvalid();
+                //$validator.focusInvalid();
                 return false;
             }
             else

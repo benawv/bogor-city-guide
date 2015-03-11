@@ -6,8 +6,6 @@ class SeleksiController extends Website_Controller_Action {
 		$id = $this->_getParam('id');
 		$data = new Object_DataPesertaAJFC_List();
 		$data->setCondition("`idPeserta`='".$id."' AND (`statusSubmitKuis` IS NULL OR `statusSubmitKuis` = 0)");
-		$data->setLimit(1);
-		$this->view->peserta = $data;
 		if(count($data) == 1)
 		{
 			foreach($data as $row)
@@ -18,6 +16,7 @@ class SeleksiController extends Website_Controller_Action {
 				if($tgl1 <= $tgl2)
 				{
 					$this->enableLayout();
+					$this->view->peserta = $data;
 				}
 				else{
 					$this->redirect("/ajfc/home-ajfc");
