@@ -72,15 +72,15 @@
                                                 <?php foreach($this->peserta as $row){?>
                                                   <input type="hidden" name="idPeserta" value="<?php echo $row->getO_id()."-".$row->getIdPeserta(); ?>" />
                                                   <div class="form-group">
-                                                      <label for="nama">Nama Lengkap* (Sesuai akte kelahiran/Passport)</label>
+                                                      <label for="nama" name="nama">Nama Lengkap* (Sesuai akte kelahiran/Passport)</label>
                                                       <input type="text" readonly="readonly" class="form-control" id="nama" value="<?php echo $row->getNamaLengkap();?>" name="nama" placeholder="">
                                                   </div>
 
                                                   <div class="form-group">
-                                                      <label for="exampleInputName2">Tempat/ Tanggal Lahir* (Kota, DD/MM/YYYY)</label>
+                                                      <label for="exampleInputName2" name="ttl">Tempat/ Tanggal Lahir* (Kota, DD/MM/YYYY)</label>
                                                       <div class="controls form-inline">
-                                                        <input type="text" readonly="readonly" value="<?php echo $row->getTempatLahir();?>" class="form-control ttl" id="tmp-lahir" placeholder="">
-                                                        <input type="text" readonly="readonly" value="<?php echo date("d / m / Y",strtotime($row->getTanggalLahir()));?>"class="form-control ttl" id="tgl-lahir" placeholder="DD/MM/YYYY">
+                                                        <input type="text" name="tmp" readonly="readonly" value="<?php echo $row->getTempatLahir();?>" class="form-control ttl" id="tmp-lahir" placeholder="">
+                                                        <input type="text" name="tgl" readonly="readonly" value="<?php echo date("d / m / Y",strtotime($row->getTanggalLahir()));?>"class="form-control ttl" id="tgl-lahir" placeholder="DD/MM/YYYY">
                                                       </div>  
                                                   </div>
 
@@ -109,29 +109,32 @@
 
                                                   <div class="form-group">
                                                       <label for="tgl-lahir">Apakah kamu memiliki Passport*</label>
-                                                        <div class="form-group">
-                                                            <label class="radio-inline">
-                                                              <input type="radio" name="pasport" id="ya" value="Ya"> Ya
-                                                            </label>
-                                                            <label class="radio-inline">
-                                                              <input type="radio" name="pasport" id="tidak" value="Tidak"> Tidak
-                                                            </label> 
+													  <div class="message-info">
+															<div class="form-group">
+																<label class="radio-inline">
+																  <input type="radio" name="pasport" id="ya" value="Ya"> Ya
+																</label>
+																<label class="radio-inline">
+																  <input type="radio" name="pasport" id="tidak" value="Tidak"> Tidak
+																</label> 
+															</div>
+															<div class="info-error"></div>
                                                         </div>  
                                                   </div>
 
                                                   <div class="form-group">
                                                       <label for="exampleInputName2">Email*</label>
-                                                      <input readonly="readonly" type="text" class="form-control" id="email" value="<?php echo $row->getEmail();?>" placeholder="">
+                                                      <input readonly="readonly" type="text" class="form-control" name="email" id="email" value="<?php echo $row->getEmail();?>" placeholder="">
                                                   </div>
 
                                                   <div class="form-group">
                                                       <label for="exampleInputName2">Nomer Telepon / HP*</label>
-                                                      <input readonly="readonly" value="<?php echo $row->getNoHp();?>" type="text" class="form-control" id="no-tlp" placeholder="">
+                                                      <input readonly="readonly" value="<?php echo $row->getNoHp();?>" type="text" class="form-control" name="no-telp" id="no-tlp" placeholder="">
                                                   </div>
 
                                                   <div class="form-group">
                                                       <label for="exampleInputName2">Alamat Tinggal</label>
-                                                      <textarea class="form-control" name="alamat" rows="3" style="height:70px !important"></textarea>
+                                                      <textarea class="form-control" name="alamat" id="alamat" rows="3" style="height:70px !important"></textarea>
                                                   </div>
 
                                                   <!--<div class="form-group">
@@ -167,80 +170,82 @@
 
                                                 <div class="form-group">
                                                       <label for="tgl-lahir">Pekerjaan Orang Tua</label>
+														<div class="message-info">
+															<div class="form-group">
+															  <div class="form-group nomargin">
+																<label class="radio-inline">
+																  <input type="radio" name="pekerjaan" id="kary-swasta" value="Karyawan Swasta"> Karyawan Swasta
+																</label>
+															  </div>  
+															  <div class="form-group nomargin">
+																<label class="radio-inline">
+																  <input type="radio" name="pekerjaan" id="pns" value="Pegawai Negeri"> Pegawai Negeri
+																</label> 
+															  </div>
+															  <div class="form-group nomargin">  
+																<label class="radio-inline">
+																  <input type="radio" name="pekerjaan" id="wirausaha" value="Wirausaha"> Wirausaha
+																</label> 
+															  </div>
+															  <div class="form-group nomargin">  
+																<label class="radio-inline">
+																  <input type="radio" name="pekerjaan" id="lainnya" value="Lainnya"> Lainnya
 
-                                                        <div class="form-group">
-                                                          <div class="form-group nomargin">
-                                                            <label class="radio-inline">
-                                                              <input type="radio" name="pekerjaan" id="kary-swasta" value="Karyawan Swasta"> Karyawan Swasta
-                                                            </label>
-                                                          </div>  
-                                                          <div class="form-group nomargin">
-                                                            <label class="radio-inline">
-                                                              <input type="radio" name="pekerjaan" id="pns" value="Pegawai Negeri"> Pegawai Negeri
-                                                            </label> 
-                                                          </div>
-                                                          <div class="form-group nomargin">  
-                                                            <label class="radio-inline">
-                                                              <input type="radio" name="pekerjaan" id="wirausaha" value="Wirausaha"> Wirausaha
-                                                            </label> 
-                                                          </div>
-                                                          <div class="form-group nomargin">  
-                                                            <label class="radio-inline">
-                                                              <input type="radio" name="pekerjaan" id="lainnya" value="Lainnya"> Lainnya
-
-                                                              <div class="form-group">
-                                                                <input type="text" class="form-control" id="txt-lainnya" placeholder="Pekerjaan Lain">
-                                                              </div>  
-                                                            </label> 
-                                                          </div>  
-                                                        </div>  
+																  <div class="form-group">
+																	<input type="text" class="form-control" name="pekerjaan-lain" id="txt-lainnya" placeholder="Pekerjaan Lain">
+																  </div>  
+																</label> 
+															  </div>  
+															</div> 
+														</div>	
                                                   </div>
 
                                                   <div class="form-group">
                                                       <label for="tgl-lahir">Dari mana kamu mendapatkan informasi mengenai kamp ini?</label>
-
-                                                        <div class="form-group">
-                                                          <div class="form-group nomargin">
-                                                            <label class="checkbox-inline">
-                                                              <input type="checkbox" name="info[]" id="reklame" value="Papan Reklame"> Papan Reklame
-                                                            </label>
-                                                          </div>  
-                                                          <div class="form-group nomargin">
-                                                            <label class="checkbox-inline">
-                                                              <input type="checkbox" name="info[]" id="medsos" value="Media Sosial"> Media Sosial (Facebook, Twitter, dll)
-                                                            </label>
-                                                          </div>
-                                                          <div class="form-group nomargin">  
-                                                            <label class="checkbox-inline">
-                                                              <input type="checkbox" name="info[]" id="web" value="Website Allianz"> Website Allianz
-                                                            </label>
-                                                          </div>
-                                                          <div class="form-group nomargin">  
-                                                           <label class="checkbox-inline">
-                                                              <input type="checkbox" name="info[]" id="kunjungan" value="Kunjungan Sekolah"> Kunjungan Sekolah/ SSB
-                                                            </label>
-                                                          </div>  
-                                                          <div class="form-group nomargin">  
-                                                           <label class="checkbox-inline">
-                                                              <input type="checkbox" name="info[]" id="ortu" value="Orang Tua"> Orang Tua/ Teman/ Saudara
-                                                            </label>
-                                                          </div> 
-                                                        </div>  
+														<div class="checkbox-info">
+															<div class="form-group">
+															  <div class="form-group nomargin">
+																<label class="checkbox-inline">
+																  <input type="checkbox" name="info[]" id="reklame" value="Papan Reklame"> Papan Reklame
+																</label>
+															  </div>  
+															  <div class="form-group nomargin">
+																<label class="checkbox-inline">
+																  <input type="checkbox" name="info[]" id="medsos" value="Media Sosial"> Media Sosial (Facebook, Twitter, dll)
+																</label>
+															  </div>
+															  <div class="form-group nomargin">  
+																<label class="checkbox-inline">
+																  <input type="checkbox" name="info[]" id="web" value="Website Allianz"> Website Allianz
+																</label>
+															  </div>
+															  <div class="form-group nomargin">  
+															   <label class="checkbox-inline">
+																  <input type="checkbox" name="info[]" id="kunjungan" value="Kunjungan Sekolah"> Kunjungan Sekolah/ SSB
+																</label>
+															  </div>  
+															  <div class="form-group nomargin">  
+															   <label class="checkbox-inline">
+																  <input type="checkbox" name="info[]" id="ortu" value="Orang Tua"> Orang Tua/ Teman/ Saudara
+																</label>
+															  </div> 
+															</div>
+														</div>	
                                                   </div>
 
                                               </div>
 
                                               <div class="col-md-12 term">
-
-                                                <div class="form-group">  
-                                                    <!--Silahkan berikan tanda centang pada pernyataan dibawah ini <br />-->
-                                                    <label class="checkbox-inline" style="padding-top: 0px;">
-                                                        <input type="checkbox" id="checkbox-term" name="term">
-                                                        Saya setuju dengan ketentuan yang berlaku.
-                                                    </label>
-                                                    <span class="backClose" data-toggle="modal" data-target="#syarat">Baca syarat dan ketentuan.</span>
-                                                </div>
-                                                       
+												<div class="checkbox-info">
+													<div class="form-group">  
+														<!--Silahkan berikan tanda centang pada pernyataan dibawah ini <br />-->
+														<label class="checkbox-inline" style="padding-top: 0px;">
+															<input type="checkbox" id="checkbox-term" name="term">
+															Saya setuju dengan ketentuan yang berlaku.
+														</label>
+														<span class="backClose" data-toggle="modal" data-target="#syarat">Baca syarat dan ketentuan.</span>
+													</div>
+                                                </div>       
                                                 <!--<button class="unggah" name="signup" type="submit">UNGGAH</button>-->
 
                                               </div>
@@ -290,20 +295,21 @@
                                                 
                                                   <div class="form-group">
                                                       <label for="1terpenting">Apa 1 hal terpenting bagi kamu dalam bermain bola?*</label>
-                                                      <textarea class="form-control" rows="3" name="halTerpenting" style="height:100px !important"></textarea>
+                                                      <textarea class="form-control" rows="3" name="halTerpenting" required="required" style="height:100px !important"></textarea>
                                                   </div>
 													
 												<div class="form-group">
 													<label for="pilih">Pilih Foto</label>
-													<div class="input-group">
-														<span class="input-group-btn">
-															<span class="btn btn-primary btn-file btn-choose">
-																Pilih <input type="file" name="uploadFoto" />
+													<div class="pilih">
+														<div class="input-group">
+															<span class="input-group-btn">
+																<span class="btn btn-primary btn-file btn-choose">
+																	Pilih <input type="file" name="uploadFoto" />
+																</span>
 															</span>
-														</span>
-														<input type="text" class="form-control choose" readonly>
+															<input type="text" class="form-control choose" readonly>
+														</div>
 													</div>
-													
 												</div>
 												
 												<div class="form-group">
@@ -385,7 +391,7 @@
                                                             <input  maxlength="100" type="text" required="required" class="form-control" placeholder="Enter First Name"  /> -->
                                                         </div>
                                                         <?php if($number != count($soal)){?>
-                                                            <button class="nextBtn next-question pull-right" type="button" >Selanjutnya</button>
+                                                            <button class="nextBtn next-question pull-left" type="button" >Selanjutnya</button>
                                                         <?php }?>
                                                     </div>
                                                 </div>
@@ -505,6 +511,130 @@ $(document).ready( function() {
     });
 });
 
+</script>
+
+<script>
+	$(function() {
+    $("#myform").validate(
+      {
+        rules: 
+        {
+		  pasport: 
+		  {
+			required: true
+		  },	
+          alamat: 
+          {
+            required: true
+          },
+          namaOrtu: 
+          {
+            required: true
+          },
+          noHp: 
+          {
+            required: true,
+			number: true
+          },
+		   emailOrtu: 
+          {
+            required: true,
+			email: true
+          },
+		   alamatOrtu: 
+          {
+            required: true
+          },
+			halTerpenting:
+		  {
+			required: true
+		  },
+			uploadFoto:
+		  {
+			required: true
+		  },
+			pekerjaan:
+		  {
+			required: true
+		  },
+			'info[]':
+		  { 
+			required:true
+		  },
+		  term:
+		  { 
+			required:true
+		  }
+		},	
+        messages: 
+        {
+		  pasport: 
+          {
+            required: "Mohon pilih jenis kelamin Anda"
+          },	
+          alamat: 
+          {
+            required: "Mohon masukan alamat Anda"
+          },
+          namaOrtu: 
+          {
+            required: "Mohon masukan nama Orangtua Anda"
+          },
+          noHp: 
+          {
+            required: "Mohon masukan nomor telepon Anda"
+          },
+		   emailOrtu: 
+          {
+            required: "Mohon masukan email Orangtua"
+          },
+		    alamatOrtu: 
+          {
+            required: "Mohon masukan alamat Orangtua"
+          },
+			halTerpenting: 
+		  {
+			required: "Mohon masukan hal yang terpenting dalam bermain bola"
+		  },
+			uploadFoto:
+		  {
+			required: "Mohon pilih foto"
+		  },
+			pekerjaan:
+		  {
+			required: "Mohon pilih pekerjaan"
+		  },
+		  'info[]':
+          {
+            required: "Mohon pilih informasi"
+          },
+			term:
+		  {
+			required: "Mohon centang persetujuan yang berlaku"		
+		  }
+        },
+		errorPlacement: function(error, element) 
+        {
+            if ( element.is(":radio") ) 
+            {
+                error.appendTo( element.parents('.message-info') );
+            }
+            else if ( element.is(":checkbox") )
+			{
+				error.appendTo ( element.parents('.checkbox-info') );
+			}
+			else if ( element.is(":file") )
+			{
+				error.appendTo ( element.parents('.pilih') );
+			}
+			else
+            { // This is the default behavior 
+                error.insertAfter( element );
+            }
+         }
+		 
+      });	
+});
 </script> 
 
 

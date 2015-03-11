@@ -26,7 +26,7 @@ input[type="radio"] {
 input[type="radio"] + label {
     
     font-family:Arial, sans-serif;
-    font-size:14px;
+    /*font-size:14px;*/
 }
 input[type="radio"] + label span {
     display: inline-block;

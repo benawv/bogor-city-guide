@@ -859,24 +859,36 @@ label {
 	padding-top: 10px;
 }
 label.error {
-    position: absolute;
-    top: 9px;
-    right: -160px;
-    color: #fff;
-    background: #F59F9C;
-    border: 1px solid #E51D2E;
+    /*position: absolute;*/
+    /*top: 9px;
+    right: -160px;*/
+    color: #D50E0E;
+	/* background: #F59F9C; */
+	/* border: 1px solid #E51D2E; */
     font-size: 12px;
-    padding: 4px 10px;
+    /*padding: 4px 10px;*/
+	padding: 4px 0;
+}
+.message-info label.error {
+	/* position: absolute; */
+	color: #D50E0E;
+	/* background: #F59F9C; */
+	/* border: 1px solid #E51D2E; */
+	font-size: 12px;
+	/* padding: 4px 10px; */
+	/* padding: 4px 0; */
+	/* margin-left: 13px; */
+	display: block;
 }
 label.error:before { 
-    border-left: 0px solid #E51D2E;
+    /*border-left: 0px solid #E51D2E;
     content: "";
     position: absolute;
     top: -1px;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
     border-right: 11px solid #F59F9C;
-    left: -8px;
+    left: -8px; */
 }
 input[type="search"] {
     -webkit-box-sizing:border-box;
