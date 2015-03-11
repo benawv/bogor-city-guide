@@ -306,7 +306,7 @@
 																	Pilih <input type="file" name="uploadFoto" />
 																</span>
 															</span>
-															<input type="text" name="pilih-foto" class="form-control choose" readonly>
+															<input type="text" class="form-control choose" readonly>
 														</div>
 													</div>
 												</div>
@@ -390,7 +390,7 @@
                                                             <input  maxlength="100" type="text" required="required" class="form-control" placeholder="Enter First Name"  /> -->
                                                         </div>
                                                         <?php if($number != count($soal)){?>
-                                                            <button class="nextBtn next-question pull-right" type="button" >Selanjutnya</button>
+                                                            <button class="nextBtn next-question pull-left" type="button" >Selanjutnya</button>
                                                         <?php }?>
                                                     </div>
                                                 </div>
@@ -621,6 +621,10 @@ $(document).ready( function() {
             else if ( element.is(":checkbox") )
 			{
 				error.appendTo ( element.parents('.checkbox-info') );
+			}
+			else if ( element.is(":file") )
+			{
+				error.appendTo ( element.parents('.pilih') );
 			}
 			else
             { // This is the default behavior 
