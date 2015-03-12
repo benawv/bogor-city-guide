@@ -108,7 +108,7 @@ $(function(){
 			<nav class="toolbar">
 				<ul class="clearfix">
 					<li>
-						<a href="javascript:void(0);" class="icon-user cusLogin">Customer Login <img class="arrowDown" src='/website/static/images/arrow/bottom-arrow.png' alt="arrow" /></a>
+						<a href="javascript:void(0);" class="icon-user cusLogin">Portal Login <img class="arrowDown" src='/website/static/images/arrow/bottom-arrow.png' alt="arrow" /></a>
 					</li>
 					<li class="liMobileHide"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank" class="icon-mail hide-text">Registrasi</a></li>
 					<!--<li><a href="#" class="icon-fav hide-text">My Product</a></li>-->
@@ -130,7 +130,7 @@ $(function(){
 				<ul class="ulCustomerOnline deactive">
 					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank">Asuransi Jiwa dan Kesehatan (Individu)</a></li>
 					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Group/" target="_blank">Asuransi Kesehatan Kumpulan</a></li>
-					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/ePolicy/general/frmHomeGeneral.aspx" target="_blank">Portal Status Klaim Mobil</a></li>
+					<li class="liCustomerOnline"><a style="border-color: #ccc !important;border-bottom: 1px solid;" href="https://www.allianzlife.co.id/ePolicy/general/frmHomeGeneral.aspx" target="_blank">Portal Status Klaim Mobil</a></li>
 					<li class="liCustomerOnline mobile deactive"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank" class="icon-mail hide-text">Registrasi</a></li>
 				</ul>
 				
