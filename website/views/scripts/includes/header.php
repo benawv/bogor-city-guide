@@ -126,6 +126,9 @@ $(function(){
 					<li class="liMobileHide">
 						<a href="javascript:void(0);" class="twshare-fullpage"><img src="/website/static/images/icon-share/twitter.png" alt="twitter" /></a>
 					</li>
+					<li class="liMobileHide">
+						<a href="https://plus.google.com/u/0/113109741631464434900/posts" target="_blank" class="gPlus-fullpage"><img src="/website/static/images/icon-share/g-plus.png" alt="google plus" /></a>
+					</li>
 				</ul>
 				<ul class="ulCustomerOnline deactive">
 					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank">Asuransi Jiwa dan Kesehatan (Individu)</a></li>
