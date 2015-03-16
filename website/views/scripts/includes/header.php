@@ -208,20 +208,22 @@ $(function(){
 </header>
 
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="z-index: 99999">
-  <div class="modal-dialog modal-sm">
-	<div class="modal-dialog modal-vertical-centered">
-		<div class="modal-content" style="padding: 20px">
-			<form class="form-signin" action="https://www.allianzstarnetwork.com/redirect.php" method="POST">
-				<h2 class="form-signin-heading"><b>ASN Sign In</b></h2>
-				<label for="inputEmail" class="sr-only">Email address</label>
-				<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus style="margin-bottom:10px">
-				<label for="inputPassword" class="sr-only">Password</label>
-				<input type="password" id="inputPassword" class="form-control" placeholder="Password" required style="margin-bottom:10px">
-				<input type="hidden" name="js_autodetect_results" value="0">
-				<input type="hidden" name="just_logged_in" value="1">	
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-			</form>
-		</div>
-	</div>	
-  </div>
+  <div class="popup-asn">
+	<div class="modal-dialog modal-sm">
+	      <div class="modal-dialog modal-vertical-centered">
+		      <div class="modal-content" style="padding: 20px">
+			      <form class="form-signin" action="https://www.allianzstarnetwork.com/redirect.php" method="POST">
+				      <h2 class="form-signin-heading"><b>ASN Sign In</b></h2>
+				      <label for="inputEmail" class="sr-only">Email address</label>
+				      <input type="input" id="inputEmail" class="form-control popup-asn-label" placeholder="Username" required autofocus style="margin-bottom:10px">
+				      <label for="inputPassword" class="sr-only">Password</label>
+				      <input type="password" id="inputPassword" class="form-control popup-asn-label" placeholder="Password" required style="margin-bottom:10px">
+				      <input type="hidden" name="js_autodetect_results" value="0">
+				      <input type="hidden" name="just_logged_in" value="1">	
+				      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+			      </form>
+		      </div>
+	      </div>	
+	</div>
+   </div>
 </div>
