@@ -128,6 +128,7 @@ $(function(){
 					</li>
 				</ul>
 				<ul class="ulCustomerOnline deactive">
+					<li class="liCustomerOnline"><a href="" data-toggle="modal" data-target=".bs-example-modal-sm" target="_blank">Login ASN</a></li>
 					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank">Asuransi Jiwa dan Kesehatan (Individu)</a></li>
 					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Group/" target="_blank">Asuransi Kesehatan Kumpulan</a></li>
 					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/ePolicy/general/frmHomeGeneral.aspx" target="_blank">Portal Status Klaim Mobil</a></li>
@@ -205,3 +206,21 @@ $(function(){
 	</div>
 	
 </header>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="z-index: 99999">
+  <div class="modal-dialog modal-sm">
+	<div class="modal-dialog modal-vertical-centered">
+		<div class="modal-content" style="padding: 20px">
+			<form class="form-signin">
+				<h2 class="form-signin-heading"><b>ASN Sign In</b></h2>
+				<label for="inputEmail" class="sr-only">Email address</label>
+					<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus style="margin-bottom:10px">
+				<label for="inputPassword" class="sr-only">Password</label>
+					<input type="password" id="inputPassword" class="form-control" placeholder="Password" required style="margin-bottom:10px">
+				
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+			</form>
+		</div>
+	</div>	
+  </div>
+</div>
