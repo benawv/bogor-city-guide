@@ -128,6 +128,7 @@ $(function(){
 					</li>
 				</ul>
 				<ul class="ulCustomerOnline deactive">
+					<li class="liCustomerOnline"><a href="" data-toggle="modal" data-target=".bs-example-modal-sm" target="_blank">Login ASN</a></li>
 					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank">Asuransi Jiwa dan Kesehatan (Individu)</a></li>
 					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Group/" target="_blank">Asuransi Kesehatan Kumpulan</a></li>
 					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/ePolicy/general/frmHomeGeneral.aspx" target="_blank">Portal Status Klaim Mobil</a></li>
@@ -205,3 +206,27 @@ $(function(){
 	</div>
 	
 </header>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="z-index: 99999">
+  <div class="popup-asn">
+	<div class="modal-dialog modal-sm">
+	      <div class="modal-dialog modal-vertical-centered">
+		      <div class="modal-content" style="padding: 20px">
+			      <form class="form-signin" action="https://www.allianzstarnetwork.com/redirect.php" method="POST">
+				      <h2 class="form-signin-heading"><b>ASN Sign In</b></h2>
+				      
+				      <label for="username" class="sr-only">Username</label>
+				      <input type="input" id="username" name="login_username" title="login_username" tabindex="4" class="input_login form-control popup-asn-label" placeholder="Username" required autofocus style="margin-bottom:10px">
+				      
+				      <label for="password" class="sr-only">Password</label>
+				      <input type="password" id="password" name="secretkey" title="password" tabindex="5" class="input_login form-control popup-asn-label" placeholder="Password" maxlength="15" required autofocus>
+				      
+				      <input type="hidden" name="js_autodetect_results" value="0">
+				      <input type="hidden" name="just_logged_in" value="1">	
+				      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+			      </form>
+		      </div>
+	      </div>	
+	</div>
+   </div>
+</div>
