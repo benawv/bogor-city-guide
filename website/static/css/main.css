@@ -189,6 +189,7 @@ strong {
 .boxes-view .square-orange {
   background-image: url(../images/square-orange.png);
 }
+
 .boxes-view .items-container {
   text-align: center;
   width: 320px;
@@ -726,7 +727,11 @@ a.fbshare, a.twshare{
   width: 20px;
 }
 .banner-ajfc{
-  margin-bottom: 15px;
+  display: block;
+  margin: 0 auto;
+}
+.spanRed{
+  color: red;
 }
 
 /*SETTING LOGO 125*/
