@@ -38,7 +38,7 @@
 	<?php
 		$items = new Asset_List();
 		$items->setOrderKey("RAND()", false);
-		$items->setCondition("path = '/ajfc/foto-peserta/'");
+		$items->setCondition("path = '/ajfc/galeri-home-960x640/'");
 		$items->setLimit($slides);
 		$i = 0;
 			foreach($items as $row) {
