@@ -11,6 +11,9 @@
 		}
 	?>
 	<div class="container boxes-view">
+		<?php echo $this->areablock('container2', array(
+					"allowed" => array("table-text")));
+		?>
 	<div class="items-container custom_item_home">
 	<!-- Community -->
 		<div class="items-container">
