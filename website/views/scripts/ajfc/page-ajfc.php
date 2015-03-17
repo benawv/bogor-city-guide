@@ -16,7 +16,7 @@
 		<div class="items-container">
 		<!-- content -->
 			<?php echo $this->areablock('container', array(
-						"allowed" => array("daftar-peserta","galeri-ajfc","table-text","form-ajfc", "container-box-static", "container-box-video", "image-full-page")));
+						"allowed" => array("daftar-peserta","galeri-ajfc","table-text","form-ajfc", "container-box-static", "container-box-video", "proses-seleksi")));
 			?>
 		<!-- endcontent -->
 		</div>
