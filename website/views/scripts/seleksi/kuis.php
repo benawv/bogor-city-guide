@@ -50,17 +50,17 @@
                       <div class="wizard-header">
                                 
                         </div>
-                            <img src="/website/static/images/ajfc/banner-950.jpg" alt="banner-ajfc" class="banner-ajfc" />
                             <ul>
                                 <li class="first"><a href="#tahap1" data-toggle="tab">Tahap 1</a></li>
                                 <li class="second"><a href="#tahap2" data-toggle="tab">Tahap 2</a></li>
                                 <li class="third"><a href="#tahap3" data-toggle="tab">Tahap 3</a></li>
-                            </ul>
+                            </ul><br />
+                            <img src="#" alt="banner-ajfc" class="banner-ajfc" />
                             <div class="tab-content">
                                 
                                 <div class="tab-pane" id="tahap1">
                                   
-                                  <div class="form-title">FORM PENDAFTARAN AJFC 2015</div>
+                                  <div class="form-title">FORM KELENGKAPAN DATA PESERTA AJFC 2015</div>
 
                                         <div class="container-fluid">
                                            <div class="row ta-left fc666">
@@ -72,20 +72,20 @@
                                                 <?php foreach($this->peserta as $row){?>
                                                   <input type="hidden" name="idPeserta" value="<?php echo $row->getO_id()."-".$row->getIdPeserta(); ?>" />
                                                   <div class="form-group">
-                                                      <label for="nama" name="nama">Nama Lengkap* (Sesuai akte kelahiran/Passport)</label>
+                                                      <label for="nama" name="nama">Nama Lengkap<span class="spanRed">*</span> (Sesuai akte kelahiran/Passport)</label>
                                                       <input type="text" readonly="readonly" class="form-control" id="nama" value="<?php echo $row->getNamaLengkap();?>" name="nama" placeholder="">
                                                   </div>
 
                                                   <div class="form-group">
-                                                      <label for="exampleInputName2" name="ttl">Tempat/ Tanggal Lahir* (Kota, DD/MM/YYYY)</label>
+                                                      <label for="exampleInputName2" name="ttl">Tempat/ Tanggal Lahir<span class="spanRed">*</span> (Kota, DD/MM/YYYY)</label>
                                                       <div class="controls form-inline">
-                                                        <input type="text" name="tmp" readonly="readonly" value="<?php echo $row->getTempatLahir();?>" class="form-control ttl" id="tmp-lahir" placeholder="">
+                                                        <input type="text" name="tmp" value="<?php echo $row->getTempatLahir();?>" class="form-control ttl" id="tmp-lahir" placeholder="">
                                                         <input type="text" name="tgl" readonly="readonly" value="<?php echo date("d / m / Y",strtotime($row->getTanggalLahir()));?>"class="form-control ttl" id="tgl-lahir" placeholder="DD/MM/YYYY">
                                                       </div>  
                                                   </div>
 
                                                   <div class="form-group">
-                                                      <label for="tgl-lahir">Jenis Kelamin</label>
+                                                      <label for="tgl-lahir">Jenis Kelamin<span class="spanRed">*</span></label>
                                                       <?php
                                                         if($row->getJenisKelamin() == "Laki-laki")
                                                         {
@@ -99,16 +99,16 @@
                                                       ?>
                                                         <div class="form-group">
                                                             <label class="radio-inline">
-                                                              <input <?php echo $checked1;?> type="radio" name="radio" id="laki-laki" value="Laki-laki" disabled> Laki-laki
+                                                              <input <?php echo $checked1;?> type="radio" name="radio" id="laki-laki" value="Laki-laki" /> Laki-laki
                                                             </label>
                                                             <label class="radio-inline">
-                                                              <input <?php echo $checked2;?> type="radio" name="radio" id="perempuan" value="Perempuan" disabled> Perempuan
+                                                              <input <?php echo $checked2;?> type="radio" name="radio" id="perempuan" value="Perempuan" /> Perempuan
                                                             </label> 
                                                         </div>  
                                                   </div>
 
                                                   <div class="form-group">
-                                                      <label for="tgl-lahir">Apakah kamu memiliki Passport*</label>
+                                                      <label for="tgl-lahir">Apakah kamu memiliki Passport<span class="spanRed">*</span></label>
                                                         <div class="message-info">
                                                             <div class="form-group">
                                                                     <label class="radio-inline">
@@ -123,18 +123,23 @@
                                                   </div>
 
                                                   <div class="form-group">
-                                                      <label for="exampleInputName2">Email*</label>
+                                                      <label for="exampleInputName2">Email<span class="spanRed">*</span></label>
                                                       <input readonly="readonly" type="text" class="form-control" name="email" id="email" value="<?php echo $row->getEmail();?>" placeholder="">
                                                   </div>
 
                                                   <div class="form-group">
-                                                      <label for="exampleInputName2">Nomer Telepon / HP*</label>
-                                                      <input readonly="readonly" value="<?php echo $row->getNoHp();?>" type="text" class="form-control" name="no-telp" id="no-tlp" placeholder="">
+                                                      <label for="exampleInputName2">Nomer Telepon / HP<span class="spanRed">*</span></label>
+                                                      <div class="message-info">
+                                                        <input value="<?php echo $row->getNoHp();?>" type="text" class="form-control" name="no-telp" id="no-tlp" placeholder="">
+                                                        <div class="info-error"></div>
+                                                      </div>
                                                   </div>
                                                   
                                                   <div class="form-group">
-                                                      <label for="exampleInputName2">Kota / Propinsi*</label><br />
+                                                      <label for="exampleInputName2">Kota / Propinsi<span class="spanRed">*</span></label><br />
+                                                      <div class="message-info">
                                                         <select name="propinsi" class="form-control">
+                                                            <option value="">Pilih Propinsi</option>
                                                             <option value="Nangroe Aceh Darussalam">Nangroe Aceh Darussalam</option>
                                                             <option value="Sumatera Utara">Sumatera Utara</option>
                                                             <option value="Sumatera Barat">Sumatera Barat</option>
@@ -169,11 +174,13 @@
                                                             <option value="Maluku Utara">Maluku Utara</option>
                                                             <option value="Papua Barat">Papua Barat</option>
                                                             <option value="Papua">Papua</option>
-                                                        </select> 
+                                                        </select>
+                                                        <div class="info-error"></div>
+                                                      </div>
                                                   </div>
 
                                                   <div class="form-group">
-                                                      <label for="exampleInputName2">Alamat Tinggal</label>
+                                                      <label for="exampleInputName2">Alamat Tinggal<span class="spanRed">*</span></label>
                                                       <textarea class="form-control" name="alamat" id="alamat" rows="3" style="height:70px !important"></textarea>
                                                   </div>
 
@@ -189,27 +196,27 @@
                                               <div class="col-md-6 padleft40">
                                               
                                                 <div class="form-group">
-                                                    <label for="exampleInputName2">Nama Orang Tua/ Wali*</label>
+                                                    <label for="exampleInputName2">Nama Orang Tua/ Wali<span class="spanRed">*</span></label>
                                                     <input type="text" class="form-control" name="namaOrtu" id="nama-ortu" placeholder="">
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="exampleInputName2">No. HP Orang Tua/ Wali*</label>
+                                                    <label for="exampleInputName2">No. Telepon Orang Tua/ Wali<span class="spanRed">*</span></label>
                                                     <input type="text" class="form-control" name="noHp" id="hp-ortu" placeholder="">
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="exampleInputName2">Email Orang Tua*</label>
+                                                    <label for="exampleInputName2">Email Orang Tua</label>
                                                     <input type="text" class="form-control" name="emailOrtu" id="email-ortu" placeholder="">
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="exampleInputName2">Alamat Orang Tua*</label>
+                                                    <label for="exampleInputName2">Alamat Orang Tua<span class="spanRed">*</span></label>
                                                     <textarea class="form-control" rows="3" name="alamatOrtu" style="height:70px !important"></textarea>
                                                 </div>
 
                                                 <div class="form-group">
-                                                      <label for="tgl-lahir">Pekerjaan Orang Tua</label>
+                                                      <label for="tgl-lahir">Pekerjaan Orang Tua<span class="spanRed">*</span></label>
 														<div class="message-info">
 															<div class="form-group">
 															  <div class="form-group nomargin">
@@ -241,7 +248,7 @@
                                                   </div>
 
                                                   <div class="form-group">
-                                                      <label for="tgl-lahir">Dari mana kamu mendapatkan informasi mengenai kamp ini?</label>
+                                                      <label for="tgl-lahir">Dari mana kamu mendapatkan informasi mengenai kamp ini?<span class="spanRed">*</span></label>
 														<div class="checkbox-info">
 															<div class="form-group">
 															  <div class="form-group nomargin">
@@ -326,7 +333,7 @@
 </div>
                                 <div class="tab-pane" id="tahap2">
                                     
-                                   <div class="form-title">FORM PENDAFTARAN AJFC 2015</div>
+                                   <div class="form-title">FORM KELENGKAPAN DATA PESERTA AJFC 2015</div>
 
                                         <div class="container-fluid">
                                            <div class="row ta-left fc666">
@@ -454,11 +461,11 @@
 
                             
                             </div>
-                            <div class="wizard-footer martop80">
+                            <div class="wizard-footer">
                                     <div class="pull-right">
                                         <input type='button' class='btn btn-next btn-fill btn-warning btn-wd btn-sm' name='next' value='Lanjut' />
                                         <?php //if(($number-1) == count($soal)){?>
-                                        <input type='submit' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish' />
+                                        <input type='submit' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm hide' name='finish' value='Finish' />
                                         <?php //}?>
 
                                     </div>
@@ -479,7 +486,6 @@
       
 </div>
 
-
   
 <script type="text/javascript">
 
@@ -491,6 +497,11 @@ $(document).ready(function() {
 
     allWells.hide();
     
+    //$.each(image, function(k, v) {
+    //    
+    //});
+    //console.log(image[2]);
+    
     $(".btn-previous").on( "click", function() {
         $('html, body').animate({
             scrollTop: $(".first").offset().top
@@ -500,6 +511,83 @@ $(document).ready(function() {
         $('html, body').animate({
             scrollTop: $(".first").offset().top
         }, 500);
+    });
+    //console.log(image[0]);
+    //console.log((shuffle(image))[0]);
+    //console.log(shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]));
+    function shuffle(o){ //v1.0
+        for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+        return o;
+    };
+    
+    $(".next-question").click(function(){
+        <?php
+            $items = new Asset_List();
+            $items->setOrderKey("RAND()", false);
+            $items->setCondition("path = '/ajfc/galeri-kuis-910x357/'");
+            //$items->setLimit(5);
+            
+            $x = 1;
+            foreach($items as $row)
+            {
+                $img[] = $row->getPath().$row->getFilename();
+                $x++;
+            }
+            $tmp = json_encode($img);
+            $jmlImage = rand(0,(count($items))-1);
+        ?>
+        var image = <?php echo $tmp;?>;
+        
+        var shuffleImage = shuffle(image);
+        var indexImage = <?php echo $jmlImage;?>;
+        //console.log(indexImage[0]);
+        //console.log(shuffleImage);
+        var no = parseInt($(".stepwizard-step").find(".btn-circle.btn-primary").text())+1;
+        if (no == <?php echo count($soal);?>) {
+            $(".btn-finish").removeClass("hide");
+        }
+        else{
+            $(".btn-finish").addClass("hide");
+        }
+        if((no%2) == 1){
+            $(".banner-ajfc").fadeOut("slow");
+            $(".banner-ajfc").attr("src",shuffleImage[indexImage]);
+            $(".banner-ajfc").fadeIn("slow");
+        }
+    });
+    
+    $(".btn-circle").click(function(){
+        var no = $(this).text();
+        if (no == <?php echo count($soal);?>) {
+            $(".btn-finish").removeClass("hide");
+        }
+        else{
+            $(".btn-finish").addClass("hide");
+        }
+        <?php
+            $items = new Asset_List();
+            $items->setOrderKey("RAND()", false);
+            $items->setCondition("path = '/ajfc/galeri-kuis-910x357/'");
+            //$items->setLimit(5);
+            
+            $x = 1;
+            foreach($items as $row)
+            {
+                $img[] = $row->getPath().$row->getFilename();
+                $x++;
+            }
+            $tmp = json_encode($img);
+            $jmlImage = rand(0,(count($items))-1);
+        ?>
+        var image = <?php echo $tmp;?>;
+        
+        var shuffleImage = shuffle(image);
+        var indexImage = <?php echo $jmlImage;?>;
+        if((no%2) == 1){
+            $(".banner-ajfc").fadeOut("slow");
+            $(".banner-ajfc").attr("src",shuffleImage[indexImage]);
+            $(".banner-ajfc").fadeIn("slow");
+        }
     });
 
     navListItems.click(function (e) {
@@ -572,15 +660,23 @@ $(document).ready( function() {
       {
         rules: 
         {
-		  pasport: 
-		  {
-			required: true
-		  },	
+            pasport: 
+            {
+                  required: true
+            },	
           alamat: 
           {
             required: true
           },
+          'no-telp': 
+          {
+            required: true
+          },
           namaOrtu: 
+          {
+            required: true
+          },
+          propinsi: 
           {
             required: true
           },
@@ -591,7 +687,7 @@ $(document).ready( function() {
           },
 		   emailOrtu: 
           {
-            required: true,
+                        //required: true,
 			email: true
           },
 		   alamatOrtu: 
@@ -623,23 +719,31 @@ $(document).ready( function() {
         {
 		  pasport: 
           {
-            required: "Mohon pilih jenis kelamin Anda"
+            required: "Mohon pilih apakah anda memiliki passport?"
           },	
           alamat: 
           {
             required: "Mohon masukan alamat Anda"
           },
+          'no-telp': 
+          {
+            required: "Mohon masukan no telepon Anda"
+          },
           namaOrtu: 
           {
-            required: "Mohon masukan nama Orangtua Anda"
+            required: "Mohon masukan nama Orang tua Anda"
           },
           noHp: 
           {
             required: "Mohon masukan nomor telepon Anda"
           },
+          propinsi: 
+          {
+            required: "Mohon pilih propinsi"
+          },
 		   emailOrtu: 
           {
-            required: "Mohon masukan email Orangtua"
+            email: "Mohon masukan email Orang tua yang benar"
           },
 		    alamatOrtu: 
           {

@@ -1,6 +1,8 @@
+<link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css-ajfc/hotspot/ajfc.hotspot.css">
+
 <div class="container">
 	<?php echo $this->areablock('bannerArea', array(
-				'allowed' => array('gallery-carousel')))?>
+				'allowed' => array('gallery-carousel-ajfc')))?>
 	<?php
 		function limit_words($string, $word_limit)
 		{
@@ -9,12 +11,15 @@
 		}
 	?>
 	<div class="container boxes-view">
+		<?php echo $this->areablock('container2', array(
+					"allowed" => array("table-text")));
+		?>
 	<div class="items-container custom_item_home">
 	<!-- Community -->
 		<div class="items-container">
 		<!-- content -->
 			<?php echo $this->areablock('container', array(
-						"allowed" => array("galeri-ajfc","table-text","form-ajfc", "container-box-static", "container-box-video", "image-full-page")));
+						"allowed" => array("daftar-peserta","galeri-ajfc","form-ajfc", "container-box-static", "container-box-video", "proses-seleksi")));
 			?>
 		<!-- endcontent -->
 		</div>

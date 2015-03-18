@@ -3,7 +3,6 @@
 $root =  "http://".$_SERVER['HTTP_HOST'];
 $uri_segment = explode("/",$_SERVER['SCRIPT_NAME']);
 $root .= "/".$uri_segment['1']."/";
-$uri = explode("/", $_SERVER[REQUEST_URI]);
 function check_user_agent ( $type = NULL ) {
         $user_agent = strtolower ( $_SERVER['HTTP_USER_AGENT'] );
         if ( $type == 'bot' ) {
@@ -38,20 +37,9 @@ function check_user_agent ( $type = NULL ) {
 <!--<script type="text/javascript">stLight.options({publisher: "16852030-1a9b-4882-8731-4afd4c1cfd9c", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>-->
 
 <script type="text/javascript">
-   
-	function changelanguage(param) {
-	    localStorage.languageValueOption = param.value;
-	    localStorage.languageCode = $(param).find(':selected').attr('class');
-	    
-	    $.post("/change-language", { languageId : localStorage.languageValueOption, languageCode : localStorage.languageCode}, function(data, status){
-    
-		window.location.assign("/" + localStorage.languageCode + "/home");			
-    
-	    });
-	}
-
-
-
+$(function(){
+	
+});
 </script>
 
 <header role="banner" class="banner">
@@ -67,12 +55,7 @@ function check_user_agent ( $type = NULL ) {
 		    // get the document which should be used to start in navigation | default home
 		    $navStartNode = $this->document->getProperty("navigationRoot");
 		    if(!$navStartNode instanceof Document_Page) {
-		        
-			if($uri[1]<>""){
-				$navStartNode = Document::getConcreteByPath('/'.$uri[1]);
-			}else{
-				$navStartNode = Document::getById(1);				
-			}
+		        $navStartNode = Document::getById(1);
 		    }
 		 
 		    //this is used as id prefix for the html menu element
@@ -120,32 +103,12 @@ function check_user_agent ( $type = NULL ) {
 				</div>
 			</div>
 		</nav>
-
 		<div class="minibar clearfix cusZindex">
 			
 			<nav class="toolbar">
 				<ul class="clearfix">
 					<li>
-						<a href="javascript:void(0);" class="icon-user cusLanguage">
-							
-						<?php 
-						$languages = new Object_Languages_List();
-						if($uri[1]<>""){
-							foreach($languages as $language)
-							{
-							    if( $language->country_id == $uri[1]){
-								echo $language->country_name;
-							    }
-	
-							}
-						}else{
-							echo "Indonesia";
-						}
-						?>
-							<img class="arrowDown" src='/website/static/images/arrow/bottom-arrow.png' alt="arrow" /></a>
-					</li>
-					<li>
-						<a href="javascript:void(0);" class="icon-user cusLogin">Customer Login <img class="arrowDown" src='/website/static/images/arrow/bottom-arrow.png' alt="arrow" /></a>
+						<a href="javascript:void(0);" class="icon-user cusLogin">Portal Login <img class="arrowDown" src='/website/static/images/arrow/bottom-arrow.png' alt="arrow" /></a>
 					</li>
 					<li class="liMobileHide"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank" class="icon-mail hide-text">Registrasi</a></li>
 					<!--<li><a href="#" class="icon-fav hide-text">My Product</a></li>-->
@@ -164,50 +127,16 @@ function check_user_agent ( $type = NULL ) {
 						<a href="javascript:void(0);" class="twshare-fullpage"><img src="/website/static/images/icon-share/twitter.png" alt="twitter" /></a>
 					</li>
 				</ul>
-				<ul class="ulLanguage deactive">
-				<?php
-					$languages = new Object_Languages_List();
-					$count = count($uri);
-					
-					$path = "";
-					if($uri[1]<>""){
-						foreach($languages as $language)
-						{
-							$path = "/". $language->country_id ."/";
-							for($x = 2; $x < $count; $x++){
-								if($x == $count-1)
-									$path .= $uri[$x];
-								else
-									$path .= $uri[$x]."/";
-							}
-							//echo '<a class="language" targetId="'.$language->o_id.'" targetCode="'.$language->country_id.'" href="'.$path.'">'. $language->country_name .'</a>';	
-							
-							echo "<li class='liLanguage'><a class='language' targetId='".$language->o_id."' targetCode='".$language->country_id."' href='".$path."' >".$language->country_name ."</a></li>";
-						}
-					}else{
-						echo "<li class='liLanguage'><a class='language' targetId='' targetCode='id' href='/en/home' >English</a></li>";
-					}
-				?>
-				</ul>
-				<?php
-					//require_once(realpath(__DIR__.'/../../pimcore/cli/startup.php'));
-					//$crawler = new Language();
-					//Language::getList();
-					// try to load customer
-					//$languageType = new lLanguage();//lLanguage::getLanguageType();
-					//print_r($languageType);				
-				?>
-								
 				<ul class="ulCustomerOnline deactive">
-					<li class="liCustomerOnline"><a href="/asn/asn-login/" target="_blank">Login ASN</a></li>
+					<li class="liCustomerOnline"><a href="/asn/asn-login" target="_blank">Login ASN</a></li>
 					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank">Asuransi Jiwa dan Kesehatan (Individu)</a></li>
 					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Group/" target="_blank">Asuransi Kesehatan Kumpulan</a></li>
-					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/ePolicy/general/frmHomeGeneral.aspx" target="_blank">Portal Status Klaim Mobil</a></li>
+					<li class="liCustomerOnline"><a style="border-color: #ccc !important;border-bottom: 1px solid;" href="https://www.allianzlife.co.id/ePolicy/general/frmHomeGeneral.aspx" target="_blank">Portal Status Klaim Mobil</a></li>
 					<li class="liCustomerOnline mobile deactive"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank" class="icon-mail hide-text">Registrasi</a></li>
 				</ul>
 				
 				<script type="text/javascript">
-					$(document).ready(function() {
+						$(document).ready(function() {
 						$(".dropdown img.flag").addClass("flagvisibility");
 
 						$(".dropdown dt a").click(function() {
@@ -248,19 +177,6 @@ function check_user_agent ( $type = NULL ) {
 								$(this).find("img").attr("src" , "/website/static/images/arrow/bottom-arrow.png");
 							}
 						});
-						
-						$(".cusLanguage").click(function() {
-							if ($(this).find("img").attr("src") == "/website/static/images/arrow/bottom-arrow.png") {
-								$(this).find("img").attr("src" , "");
-								$(".ulLanguage").show();
-								$(this).find("img").attr("src" , "/website/static/images/arrow/top-arrow.png");
-							}
-							else {
-								$(this).find("img").attr("src" , "");
-								$(".ulLanguage").hide();
-								$(this).find("img").attr("src" , "/website/static/images/arrow/bottom-arrow.png");
-							}
-						});
 					});
 						
 						function link(isi, extension, force)
@@ -291,15 +207,26 @@ function check_user_agent ( $type = NULL ) {
 	
 </header>
 
-<script>
-      	$(document).ready(function(){
-   		$(".language").click(function(){
-   			var country_id = $(this).attr("targetId");
-   			var country_code = $(this).attr("targetCode");
-			$.cookie("languageid",country_id);
-   			$.cookie("languagecode",country_code);
-			window.location.assign("/" + country_code + "/home");	
-   		});
-   	});
-
-</script>
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="z-index: 99999">
+  <div class="popup-asn">
+	<div class="modal-dialog modal-sm">
+	      <div class="modal-dialog modal-vertical-centered">
+		      <div class="modal-content" style="padding: 20px">
+			      <form class="form-signin" action="https://www.allianzstarnetwork.com/redirect.php" method="POST">
+				      <h2 class="form-signin-heading"><b>ASN Sign In</b></h2>
+				      
+				      <label for="username" class="sr-only">Username</label>
+				      <input type="input" id="username" name="login_username" title="login_username" tabindex="4" class="input_login form-control popup-asn-label" placeholder="Username" required autofocus style="margin-bottom:10px">
+				      
+				      <label for="password" class="sr-only">Password</label>
+				      <input type="password" id="password" name="secretkey" title="password" tabindex="5" class="input_login form-control popup-asn-label" placeholder="Password" maxlength="15" required autofocus>
+				      
+				      <input type="hidden" name="js_autodetect_results" value="0">
+				      <input type="hidden" name="just_logged_in" value="1">	
+				      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+			      </form>
+		      </div>
+	      </div>	
+	</div>
+   </div>
+</div>
