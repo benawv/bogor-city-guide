@@ -2,6 +2,37 @@
 
 class DefaultController extends Website_Controller_Action {
 	
+	public function init () {
+ 
+		parent::init();
+
+		$language_path =  explode("/", $this->document->getFullPath())[1];
+		if(empty($_COOKIE['languagecode']) || $language_path != empty($_COOKIE['languagecode'])){
+			$where = "country_id LIKE '".$language_path."'";
+			$language = new Object_Languages_List();
+			$language->setCondition($where);
+			$language->setLimit(1);
+			foreach ($language as $lang) {
+				$_COOKIE['languagecode'] =  $lang->country_id;
+				$_COOKIE['languageid'] =  $lang->o_id;
+			}
+			if( $language_path == "id"){
+				$locale = new Zend_Locale('id');
+				Zend_Registry::set('Zend_Locale', $locale);	
+			}else{
+				$locale = new Zend_Locale('en_US');
+				Zend_Registry::set('Zend_Locale', $locale);	
+			}
+
+		}elseif( $language_path == "id" && $_COOKIE['languagecode'] == "id" ){
+			$locale = new Zend_Locale('id');
+			Zend_Registry::set('Zend_Locale', $locale);	
+		}else{
+			$locale = new Zend_Locale('en_US');
+			Zend_Registry::set('Zend_Locale', $locale);	
+		}
+	}
+	
 	public function defaultAction () {
 	
 		$entries = Object_MarketingOffice::getList();

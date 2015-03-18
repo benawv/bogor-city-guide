@@ -3,6 +3,8 @@
 $root =  "http://".$_SERVER['HTTP_HOST'];
 $uri_segment = explode("/",$_SERVER['SCRIPT_NAME']);
 $root .= "/".$uri_segment['1']."/";
+$uri = explode("/", $_SERVER[REQUEST_URI]);
+
 function check_user_agent ( $type = NULL ) {
         $user_agent = strtolower ( $_SERVER['HTTP_USER_AGENT'] );
         if ( $type == 'bot' ) {
@@ -55,7 +57,11 @@ $(function(){
 		    // get the document which should be used to start in navigation | default home
 		    $navStartNode = $this->document->getProperty("navigationRoot");
 		    if(!$navStartNode instanceof Document_Page) {
-		        $navStartNode = Document::getById(1);
+		        if($uri[1]<>""){
+				$navStartNode = Document::getConcreteByPath('/'.$uri[1]);
+			}else{
+				$navStartNode = Document::getById(1);
+			}
 		    }
 		 
 		    //this is used as id prefix for the html menu element
@@ -108,6 +114,24 @@ $(function(){
 			<nav class="toolbar">
 				<ul class="clearfix">
 					<li>
+						<a href="javascript:void(0);" class="icon-user cusLanguage">
+						<?php 
+							$languages = new Object_Languages_List();
+							if($uri[1]<>""){
+								foreach($languages as $language)
+								{
+								    if( $language->country_id == $uri[1]){
+									echo $language->country_name;
+								    }
+		
+								}
+							}else{
+								echo "Indonesia";
+							}
+						?>
+						<img class="arrowDown" src='/website/static/images/arrow/bottom-arrow.png' alt="arrow" /></a>
+					</li>
+					<li>
 						<a href="javascript:void(0);" class="icon-user cusLogin">Portal Login <img class="arrowDown" src='/website/static/images/arrow/bottom-arrow.png' alt="arrow" /></a>
 					</li>
 					<li class="liMobileHide"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank" class="icon-mail hide-text">Registrasi</a></li>
@@ -126,6 +150,33 @@ $(function(){
 					<li class="liMobileHide">
 						<a href="javascript:void(0);" class="twshare-fullpage"><img src="/website/static/images/icon-share/twitter.png" alt="twitter" /></a>
 					</li>
+				</ul>
+
+				<ul class="ulLanguage deactive">
+					<?php
+						$languages = new Object_Languages_List();
+						$count = count($uri);
+						$path = "";
+						
+						if( ($uri[1]<>"") and ( (($uri[1])<>"id") or (($uri[1])<>"en") ) ){
+							foreach($languages as $language)
+							
+							{
+								$path = "/". $language->country_id ."/";
+								for($x = 2; $x < $count; $x++){
+									if($x == $count-1)
+										$path .= $uri[$x];
+									else
+										$path .= $uri[$x]."/";
+								}
+								echo '<li class="liLanguage"><a class="language" targetId="'.$language->o_id.'" targetCode="'.$language->country_id.'" href="'.$path.'">'. $language->country_name .'</a></li>';	
+	
+							}
+						}else{
+							echo '<li class="liLanguage"><a class="language" targetId="" targetCode="id" href="/en/home">English</a></li>';
+							echo '<li class="liLanguage"><a class="language" targetId="" targetCode="id" href="/in/home">Indonesia</a></li>';
+						}
+				    ?>
 				</ul>
 				<ul class="ulCustomerOnline deactive">
 					<li class="liCustomerOnline"><a href="/asn/asn-login" target="_blank">Login ASN</a></li>
@@ -166,6 +217,7 @@ $(function(){
 						});
 						
 						$(".cusLogin").click(function() {
+							$(".ulLanguage").hide();
 							if ($(this).find("img").attr("src") == "/website/static/images/arrow/bottom-arrow.png") {
 								$(this).find("img").attr("src" , "");
 								$(".ulCustomerOnline").show();
@@ -174,6 +226,20 @@ $(function(){
 							else {
 								$(this).find("img").attr("src" , "");
 								$(".ulCustomerOnline").hide();
+								$(this).find("img").attr("src" , "/website/static/images/arrow/bottom-arrow.png");
+							}
+						});
+						
+						$(".cusLanguage").click(function() {
+							$(".ulCustomerOnline").hide();
+							if ($(this).find("img").attr("src") == "/website/static/images/arrow/bottom-arrow.png") {
+								$(this).find("img").attr("src" , "");
+								$(".ulLanguage").show();
+								$(this).find("img").attr("src" , "/website/static/images/arrow/top-arrow.png");
+							}
+							else {
+								$(this).find("img").attr("src" , "");
+								$(".ulLanguage").hide();
 								$(this).find("img").attr("src" , "/website/static/images/arrow/bottom-arrow.png");
 							}
 						});
