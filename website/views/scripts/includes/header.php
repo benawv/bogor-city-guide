@@ -56,11 +56,14 @@ $(function(){
 		 
 		    // get the document which should be used to start in navigation | default home
 		    $navStartNode = $this->document->getProperty("navigationRoot");
+			//print_r($_SERVER[REQUEST_URI]);
 		    if(!$navStartNode instanceof Document_Page) {
-		        if($uri[1]<>""){
+		        if(($uri[1]<>"" and ((($uri[1])=="id") or (($uri[1])=="en"))) ){
 				$navStartNode = Document::getConcreteByPath('/'.$uri[1]);
+				
 			}else{
 				$navStartNode = Document::getById(1);
+				
 			}
 		    }
 		 
@@ -117,7 +120,7 @@ $(function(){
 						<a href="javascript:void(0);" class="icon-user cusLanguage">
 						<?php 
 							$languages = new Object_Languages_List();
-							if($uri[1]<>""){
+							if(($uri[1]<>"" and ((($uri[1])=="id") or (($uri[1])=="en"))) ){
 								foreach($languages as $language)
 								{
 								    if( $language->country_id == $uri[1]){
@@ -125,8 +128,10 @@ $(function(){
 								    }
 		
 								}
+								
 							}else{
 								echo "Indonesia";
+								
 							}
 						?>
 						<img class="arrowDown" src='/website/static/images/arrow/bottom-arrow.png' alt="arrow" /></a>
@@ -158,7 +163,8 @@ $(function(){
 						$count = count($uri);
 						$path = "";
 						
-						if( ($uri[1]<>"") and ( (($uri[1])<>"id") or (($uri[1])<>"en") ) ){
+						if(($uri[1]<>"" and ((($uri[1])=="id") or (($uri[1])=="en"))) ){
+
 							foreach($languages as $language)
 							
 							{
@@ -172,9 +178,29 @@ $(function(){
 								echo '<li class="liLanguage"><a class="language" targetId="'.$language->o_id.'" targetCode="'.$language->country_id.'" href="'.$path.'">'. $language->country_name .'</a></li>';	
 	
 							}
+
 						}else{
+							if(($uri[1]<>"")){
+								
+								foreach($languages as $language)
+								
+								{
+									$path = "/". $language->country_id ."/";
+									for($x = 1; $x < $count; $x++){
+										if($x == $count-1)
+											$path .= $uri[$x];
+										else
+											$path .= $uri[$x]."/";
+									}
+									echo '<li class="liLanguage"><a class="language" targetId="'.$language->o_id.'" targetCode="'.$language->country_id.'" href="'.$path.'">'. $language->country_name .'</a></li>';	
+		
+								}
+							}else{
 							echo '<li class="liLanguage"><a class="language" targetId="" targetCode="id" href="/en/home">English</a></li>';
 							echo '<li class="liLanguage"><a class="language" targetId="" targetCode="id" href="/in/home">Indonesia</a></li>';
+								
+							}
+							
 						}
 				    ?>
 				</ul>
