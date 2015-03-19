@@ -825,9 +825,8 @@ class InvestmentController extends Website_Controller_Action
 	echo json_encode(array(
                     'info' => "Success",
 		    'data_fund' => $last3mData_en
-                 ));	
-	die();
-    	
+                 ));
+
     }
     
    function pagination($query, $per_page = 10,$page = 1, $url = '?'){        
