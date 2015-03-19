@@ -307,7 +307,7 @@ class InvestmentController extends Website_Controller_Action
 		
 		if($jangka_waktu < 3)
 		{
-			$deskripsi_jangka_waktu = "Jangka waktu investasi yang anda pilih termasuk jangka pendek. Untuk investasi jangka pendek sebaiknya menggunakan instrumen investasi yang memiliki risiko dan fluktuasi nilai yang rendah. Intrumen investasi yang dapat dijadikan pilihan antara lain Instrumen pasar uang seperti deposito, unit link atau reksa dana pasar uang, ataupun instrumen pendapatan tetap seperti ORI (obligasi ritel Indonesia), unit link atau reksa dana pendapatan tetap. ";
+			$deskripsi_jangka_waktu = "Jangka waktu investasi yang anda pilih termasuk jangka pendek. Untuk investasi jangka pendek sebaiknya menggunakan instrumen investasi yang memiliki risiko dan fluktuasi nilai yang rendah. Intrumen investasi yang dapat dijadikan pilihan antara lain Instrumen pasar uang seperti deposito, unit link atau reksa dana pasar uang, ataupun instrumen pendapatan tetap seperti ORI (obligasi ritel Indonesia), unit link atau reksa dana pendapatan tetap.�";
 		}
 		else if($jangka_waktu > 3 && $jangka_waktu < 5)
 		{
@@ -826,7 +826,9 @@ class InvestmentController extends Website_Controller_Action
                     'info' => "Success",
 		    'data_fund' => $last3mData_en
                  ));	
-	}
+	die();
+    	
+    }
     
    function pagination($query, $per_page = 10,$page = 1, $url = '?'){        
    
