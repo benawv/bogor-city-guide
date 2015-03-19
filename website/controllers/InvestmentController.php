@@ -787,6 +787,47 @@ class InvestmentController extends Website_Controller_Action
         }      
     }
     
+    public function last3monthAction(){
+	
+	
+	$db = Pimcore_Resource_Mysql::get();
+	$nameCommunity = "object_query_30";
+	
+	$day=$_POST['day'];
+	$month=$_POST['month'];
+        $year=$_POST['year'];
+	$getlastunitdate= $year."-".$month."-".$day;	
+	
+	$fundtype=$_POST['fundtype'];
+	$getFund=explode(',',$fundtype);	
+	$fundname='';
+	
+	$i=0;
+	foreach($getFund as $items){
+		if($i==4){
+			$fundname.="fundname = '".$items."'";
+		}else{
+			$fundname.="fundname = '".$items."'"." or ";
+		}
+		$i++;
+	}
+
+
+	$getLast3m="SELECT a.fundname,a.bid,a.offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS last_3_month
+			FROM $nameCommunity AS a
+                        WHERE ".$fundname." AND 
+                        DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)<=DATE_ADD(STR_TO_DATE('$getlastunitdate','%d-%m-%Y'), INTERVAL- 3 MONTH)
+                        ORDER BY a.unitdate DESC";
+        
+	$last3mData=$db->fetchAll($getLast3m);
+	$last3mData_en= json_encode($last3mData);
+	
+	echo json_encode(array(
+                    'info' => "Success",
+		    'data_fund' => $last3mData_en
+                 ));	
+	}
+    
    function pagination($query, $per_page = 10,$page = 1, $url = '?'){        
    
         $db = Pimcore_Resource_Mysql::get(); 
