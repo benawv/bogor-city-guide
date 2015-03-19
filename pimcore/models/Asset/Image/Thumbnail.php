@@ -435,14 +435,14 @@ class Asset_Image_Thumbnail {
                 // get all information and it returns an array
                 //echo "<pre>".print_r($obj->showInfo("all")[2],true)."</pre>";
                 
-                //if ($checkBrowser == "Firefox" || $checkBrowser == "Internet Explorer" || $checkBrowser == "Opera")
-                //{
+                if ($checkBrowser == "Firefox" || $checkBrowser == "Internet Explorer" || $checkBrowser == "Opera")
+                {
                     $html .= "\t" . '<noscript>' . "\n\t\t" . $htmlImgTag . "\n\t" . '</noscript>' . "\n";
-                //}
-                //else
-                //{
-                   // $html .= "\t" . '' . "\n\t\t" . $htmlImgTag . "\n\t" . '' . "\n <span>Allianz Indonesia: Asuransi Indonesia Terbaik</span>";
-                //}
+                }
+                else
+                {
+                    $html .= "\t" . '' . "\n\t\t" . $htmlImgTag . "\n\t" . '' . "\n <span>Allianz Indonesia: Asuransi Indonesia Terbaik</span>";
+                }
             $html .= '</picture>' . "\n";
 
             return $html;
