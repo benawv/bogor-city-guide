@@ -1,3 +1,11 @@
+<?php if($this->editmode): ?>
+<style>
+	#brosur{
+		display: block !important;
+	      }
+</style>
+<?php endif;?>
+
 <div id="<?php echo $this->input('anchor')->text?>" class="full-w bg-white">
 	<h2>
 		<?php if($this->editmode): ?>
@@ -22,6 +30,7 @@
 		<?php if($this->editmode): ?>
 			<?php echo "anchor name: ".$this->input('anchor', array("width" => 250))?>
 			<?php echo "FlipGorilla ID: ".$this->input('file_id', array("width" => 250))?>
+			<?php echo "Input Local PDF : ".$this->link("myLink")."<br /><br />";?>
 		<?php endif;?>
 		<div class="section-left-40">
 			<?php if($this->editmode): ?>
@@ -31,7 +40,15 @@
 										'height' 	=> 200,
 										'thumbnail' => 'product'))?>
 			<?php else: ?>
+				<?php
+					if($this->input('file_id')->text != ""){
+				?>
 				<a data-toggle="modal" href="javascript:void(0)" data-target="#modalBrosur" class="thumbnail thumbnail-popup">
+				<?php
+					}else{
+				?>
+				<a href="<?php echo $this->link("myLink")->getHref();?>" target="<?php echo $this->link("myLink")->getTarget();?>" class="thumbnail thumbnail-popup">
+				<?php }?>
 					<img src="<?php echo $this->image('image-kiri')->getSrc()?>" />
 				</a>
 			<?php endif; ?>
