@@ -9,6 +9,7 @@
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/tabs-accordion.css">-->
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/product.css">-->     
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css-mobil/data-table-1.10.4/media/css/jquery.dataTables.css" >
+<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css-mobil/jquery-ui.css" >	
   
 <script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
 
@@ -20,7 +21,7 @@
 <script src="/website/static/css-mobil/data-table-1.10.4/media/js/jquery.dataTables.js" type="text/javascript"></script>
     
 <script src="/website/static/css-mobil/jquery.validate.min.js"></script>       
-
+<script src="/website/static/css-mobil/jquery-ui.js"></script>
 
 <!-- End of Header -->
 
@@ -577,7 +578,7 @@
                                     <div class="pull-right">
                                         <input type='button' class='btn btn-next btn-fill btn-warning btn-wd btn-sm' name='next' value='Lanjut' />
                                         
-                                        <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish' />
+                                        <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish' id='finish-btn'/>
 
                                     </div>
                                     <div class="pull-left">
@@ -614,6 +615,9 @@
                         "paging": false,
                         "info": false
                     } );
+		$(this).on('click','#finish-btn',function(){
+			//alert('test');
+		});
 	     $(this).on('change','#merk, #model',function(){
 			var a=$(this).attr('id');
 			if (a=="merk") {
@@ -690,6 +694,8 @@
 			});
 		
 		});
+		
+		$( "#periode" ).datepicker();
               $(".menutab_dekstop li a").width(100);
               $(".menutab_dekstop li a").css("width", "225px");
               $(".tabcontent").css("width", "72%");
@@ -726,7 +732,7 @@
 		value = value.replace(/,/g,'');
 		return value;
 		}
-
+	
 		$("#harga").bind('input',function(){
 			var text = clearFormat($(this).val());
 			if (text > 100000000000) {
