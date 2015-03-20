@@ -800,7 +800,7 @@ class InvestmentController extends Website_Controller_Action
 	
 	$fundtype=$_POST['fundtype'];
 	//$getFund=explode(',',$fundtype);	
-	$fundname=$fundtype;
+	$fundname="fundname = '".$fundtype."'";
 	
 	//$i=0;
 	//foreach($getFund as $items){
