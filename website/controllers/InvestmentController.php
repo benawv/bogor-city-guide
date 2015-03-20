@@ -820,7 +820,7 @@ class InvestmentController extends Website_Controller_Action
                         ORDER BY a.unitdate DESC";
         
 	$last3mData=$db->fetchAll($getLast3m);
-	$last3mData_en= json_encode($last3mData);
+	$last3mData_en= $last3mData;
 	
 	echo json_encode(array(
                     'info' => "Success",
