@@ -200,7 +200,7 @@
                                                         <div class="form-inline">
                                                           
                                                             <div class="radio-icon">
-                                                                <input type="radio" id="radio01" name="radio" checked="checked" value="komp" />
+                                                                <input type="radio" id="radio01" name="radio" checked="checked" value="comprehensive" />
                                                                 <label for="radio01">
                                                                     <span><p>Komprehensif</p>
                                                                     <img class="car-icon" src="/website/static/css-mobil/icon/car1.png" />
@@ -229,7 +229,7 @@
                                                         <label for="inputEmail">Email Anda</label>
                                                       </div> 
                                                       <div class="col-sm-4">
-                                                        <input type="text" name="email" class="form-control required" id="email" placeholder="">
+                                                        <input type="email" name="email" class="form-control required" id="email" placeholder="">
                                                       </div>
                                                   </div>
                                             </div>    
@@ -602,32 +602,61 @@
     <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
     <script>
         $(document).ready(function(){
-            $('#myTable').dataTable( {
+		$('#myTable').dataTable( {
                         "searching": false,
                         "bLengthChange": false,
                         "paging": false,
                         "info": false
                     } );
      
-            $('#myTable2').dataTable( {
+		$('#myTable2').dataTable( {
                         "searching": false,
                         "bLengthChange": false,
                         "paging": false,
                         "info": false
                     } );
+		
+		function clearFormat(value) {
+			value = value.replace(/[^0-9\.]+/g,"");
+			value = value.replace(/\./g,'');
+			value = value.replace(/,/g,'');
+			return value;
+		}
+	
+		$("#harga").bind('input',function(){
+			var text = clearFormat($(this).val());
+			if (text > 100000000000) {
+			    text = 100000000000;
+			}
+			
+			text = accounting.formatMoney(text,'Rp ',0,'.',',');
+			$(this).val(text);
+		});
+		
 		$(this).on('click','#finish-btn',function(){
+
+			var tahun_pembuatan=$('#tahun_pembuatan').val();
+			var harga=$('#harga').val();
+			var merk=$('#merk').val();
+			var model=$('#model').val();
+			var regno=$('#regno').val();
+			var periode=$('#periode').val();
+			var email=$('#email').val();
+			var redio1=$('#radio01').val();
+			var redio2=$('#radio02').val();
 			
+			//console.log(tahun_pembuatan+'-'+harga+'-'+model+'-'+regno+'-'+periode+'-'+email+'-'+redio1+'-'+redio2)
 			$.ajax({
-			       "url" : "/savemobilku/",
-			       "type" : "POST",
-			       "data" : "tahun_pembuatan=" + $(this).val()+"&harga="+a+"&harga="+a+"&harga="+a+"&harga="+a+"&harga="+a+"&harga="+a+"&harga="+a+"&harga="+a,
-			       
-			       "success" : function(response){
-				var getResult=JSON.parse(response);
-			       }
-			
+				"url" : "/savemobilku/",
+				"type" : "POST",
+				"data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&redio1="+redio1+"&redio2="+redio2,
+				"success" : function(response){
+					//var getResult=JSON.parse(response);
+					console.log(response);
+				}
 			});
 		});
+		
 		$(this).on('change','#merk, #model',function(){
 			var a=$(this).attr('id');
 			if (a=="merk") {
@@ -652,7 +681,7 @@
 					$('.model-form').html("<option value=''>Silahkan pilih</option>");
 					for(; i<getResult.bodytype.length; i++){
 					//console.log(getResult.model_name[i]);
-					//console.log(getResult);
+					console.log(getResult);
 					$('.model-form').append("<option value='"+getResult.model_o_id[i]+"'>"+getResult.model_name[i]+"</option>");
 					}
 				}else{
@@ -704,10 +733,10 @@
 		});
 		
 		$( "#periode" ).datepicker();
-              $(".menutab_dekstop li a").width(100);
-              $(".menutab_dekstop li a").css("width", "225px");
-              $(".tabcontent").css("width", "72%");
-              $(".content_show").css("padding", "0px");
+		$(".menutab_dekstop li a").width(100);
+		$(".menutab_dekstop li a").css("width", "225px");
+		$(".tabcontent").css("width", "72%");
+		$(".content_show").css("padding", "0px");
            });
     </script>
     
@@ -734,22 +763,6 @@
 	
 	$(document).ready(function(){
 		
-		function clearFormat(value) {
-		value = value.replace(/[^0-9\.]+/g,"");
-		value = value.replace(/\./g,'');
-		value = value.replace(/,/g,'');
-		return value;
-		}
-	
-		$("#harga").bind('input',function(){
-			var text = clearFormat($(this).val());
-			if (text > 100000000000) {
-			    text = 100000000000;
-			}
-			text = accounting.formatMoney(text,'Rp ',0,'.',',');
-			$(this).val(text);
-		    });
-			
 		$('li.aktif .nav_menu div').css('background-position', '0px 0px');
 		
 		$(".pagenav .navi li").click(function(){
