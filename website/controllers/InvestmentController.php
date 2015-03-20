@@ -799,18 +799,18 @@ class InvestmentController extends Website_Controller_Action
 	$getlastunitdate= $year."-".$month."-".$day;	
 	
 	$fundtype=$_POST['fundtype'];
-	$getFund=explode(',',$fundtype);	
-	$fundname='';
+	//$getFund=explode(',',$fundtype);	
+	$fundname=$fundtype;
 	
-	$i=0;
-	foreach($getFund as $items){
-		if($i==4){
-			$fundname.="fundname = '".$items."'";
-		}else{
-			$fundname.="fundname = '".$items."'"." or ";
-		}
-		$i++;
-	}
+	//$i=0;
+	//foreach($getFund as $items){
+	//	if($i==4){
+	//		$fundname.="fundname = '".$items."'";
+	//	}else{
+	//		$fundname.="fundname = '".$items."'"." or ";
+	//	}
+	//	$i++;
+	//}
 
 
 	$getLast3m="SELECT a.fundname,a.bid,a.offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS last_3_month
