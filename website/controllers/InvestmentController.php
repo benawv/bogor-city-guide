@@ -811,9 +811,8 @@ class InvestmentController extends Website_Controller_Action
                         WHERE ".$fundname." AND 
                         DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)<=DATE_ADD(STR_TO_DATE('$getlastunitdate','%d-%m-%Y'), INTERVAL- 3 MONTH)
                         ORDER BY a.unitdate DESC";
-
 	$last3mData=$db->fetchAll($getLast3m);
-	print_($last3mData);
+	print_r($last3mData);
 	die();
 	$last3mData_en= json_encode($last3mData);
 	
