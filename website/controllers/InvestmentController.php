@@ -811,16 +811,17 @@ class InvestmentController extends Website_Controller_Action
                         WHERE ".$fundname." AND 
                         DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)<=DATE_ADD(STR_TO_DATE('$getlastunitdate','%d-%m-%Y'), INTERVAL- 3 MONTH)
                         ORDER BY a.unitdate DESC";
-        print_r($getLast3m);
-	die();
+
 	$last3mData=$db->fetchAll($getLast3m);
+	print_($last3mData);
+	die();
 	$last3mData_en= json_encode($last3mData);
 	
 	echo json_encode(array(
                     'info' => "Success",
 		    'data_fund' => $last3mData_en
                  ));
-
+	
     }
     
    function pagination($query, $per_page = 10,$page = 1, $url = '?'){        
