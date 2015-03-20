@@ -793,27 +793,19 @@ class InvestmentController extends Website_Controller_Action
 	$db = Pimcore_Resource_Mysql::get();
 	$nameCommunity = "object_query_30";
 	
-//	$day=$_POST['day'];
-//	$month=$_POST['month'];
-//      $year=$_POST['year'];
-//	
-	$day=2;
-	$month=1;
-        $year=2015;
+	$day=$_POST['day'];
+	$month=$_POST['month'];
+        $year=$_POST['year'];
 	$getlastunitdate= $year."-".$month."-".$day;	
 	
-	$fundtype='AlliSya Rupiah Balanced Fund';
-	//$getFund=explode(',',$fundtype);	
-	$fundname="fundname like '%".$fundtype."%'";
-	
+	$fundtype=$_POST['fundtype'];
+
 	$getLast3m="SELECT a.fundname,a.bid,a.offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS last_3_month
                         FROM object_query_30 AS a
                         WHERE fundname LIKE '%$fundtype%' AND 
                         DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) >= DATE_ADD(STR_TO_DATE('$getlastunitdate','%Y-%m-%d'), INTERVAL- 1 DAY)
                         ORDER BY a.unitdate DESC";
 	$last3mData=$db->fetchAll($getLast3m);
-	print_r($last3mData);
-	die();
 	$last3mData_en= json_encode($last3mData);
 	
 	echo json_encode(array(
