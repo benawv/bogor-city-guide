@@ -793,34 +793,28 @@ class InvestmentController extends Website_Controller_Action
 	$db = Pimcore_Resource_Mysql::get();
 	$nameCommunity = "object_query_30";
 	
-	$day=$_POST['day'];
-	$month=$_POST['month'];
-        $year=$_POST['year'];
+//	$day=$_POST['day'];
+//	$month=$_POST['month'];
+//        $year=$_POST['year'];
+//	
+	$day=20;
+	$month=3;
+        $year=2015;
 	$getlastunitdate= $year."-".$month."-".$day;	
 	
-	$fundtype=$_POST['fundtype'];
+	$fundtype='AlliSya Rupiah Balanced Fund';
 	//$getFund=explode(',',$fundtype);	
 	$fundname="fundname = '".$fundtype."'";
 	
-	//$i=0;
-	//foreach($getFund as $items){
-	//	if($i==4){
-	//		$fundname.="fundname = '".$items."'";
-	//	}else{
-	//		$fundname.="fundname = '".$items."'"." or ";
-	//	}
-	//	$i++;
-	//}
-
-
 	$getLast3m="SELECT a.fundname,a.bid,a.offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS last_3_month
-			FROM $nameCommunity AS a
+                        FROM object_query_30 AS a
                         WHERE ".$fundname." AND 
-                        DATE_ADD(STR_TO_DATE(FROM_UNIXTIME('$getlastunitdate','%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)<=DATE_ADD(STR_TO_DATE('$getlastunitdate','%d-%m-%Y'), INTERVAL- 3 MONTH)
+                        DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)<=DATE_ADD(STR_TO_DATE('$getlastunitdate','%d-%m-%Y'), INTERVAL- 3 MONTH)
                         ORDER BY a.unitdate DESC";
-        
+        print_r($getLast3m);
+	die();
 	$last3mData=$db->fetchAll($getLast3m);
-	$last3mData_en= $last3mData;
+	$last3mData_en= json_encode($last3mData);
 	
 	echo json_encode(array(
                     'info' => "Success",
