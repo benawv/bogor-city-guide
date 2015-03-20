@@ -797,19 +797,19 @@ class InvestmentController extends Website_Controller_Action
 //	$month=$_POST['month'];
 //        $year=$_POST['year'];
 //	
-	$day=20;
+	$day=3;
 	$month=3;
         $year=2015;
 	$getlastunitdate= $year."-".$month."-".$day;	
 	
 	$fundtype='AlliSya Rupiah Balanced Fund';
 	//$getFund=explode(',',$fundtype);	
-	$fundname="fundname = '".$fundtype."'";
+	$fundname="fundname like '%".$fundtype."%'";
 	
 	$getLast3m="SELECT a.fundname,a.bid,a.offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS last_3_month
                         FROM object_query_30 AS a
-                        WHERE ".$fundname." AND 
-                        DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY)<=DATE_ADD(STR_TO_DATE('$getlastunitdate','%d-%m-%Y'), INTERVAL- 3 MONTH)
+                        WHERE fundname LIKE '%AlliSya  Rupiah Equity Fund%' AND 
+                        DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) >= DATE_ADD(STR_TO_DATE('2015-1-2','%Y-%m-%d'), INTERVAL- 1 DAY)
                         ORDER BY a.unitdate DESC";
 	$last3mData=$db->fetchAll($getLast3m);
 	print_r($last3mData);
