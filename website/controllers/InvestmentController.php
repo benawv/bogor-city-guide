@@ -806,7 +806,7 @@ class InvestmentController extends Website_Controller_Action
                         DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) >= DATE_ADD(STR_TO_DATE('$getlastunitdate','%Y-%m-%d'), INTERVAL- 1 DAY)
                         ORDER BY a.unitdate DESC";
 	$last3mData=$db->fetchAll($getLast3m);
-	$last3mData_en= json_encode($last3mData);
+	$last3mData_en= $last3mData;
 	
 	echo json_encode(array(
                     'info' => "Success",
