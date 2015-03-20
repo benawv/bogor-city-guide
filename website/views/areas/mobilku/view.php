@@ -57,7 +57,7 @@
                                                         <label for="input1">Tahun Pembuatan</label>
                                                       </div>
                                                       <div class="col-sm-4">
-                                                        <select id="model" class="form-control">
+                                                        <select id="tahun_pembuatan" class="form-control">
 								<?php
 								$year=date("Y",strtotime("-10 year"));								
 								for($i=date("Y"); $i>=$year; $i--){
@@ -200,7 +200,7 @@
                                                         <div class="form-inline">
                                                           
                                                             <div class="radio-icon">
-                                                                <input type="radio" id="radio01" name="radio" checked="checked" />
+                                                                <input type="radio" id="radio01" name="radio" checked="checked" value="komp" />
                                                                 <label for="radio01">
                                                                     <span><p>Komprehensif</p>
                                                                     <img class="car-icon" src="/website/static/css-mobil/icon/car1.png" />
@@ -210,7 +210,7 @@
                                                                 
                                                             </div>
                                                             <div class="radio-icon">
-                                                                <input type="radio" id="radio02" name="radio" />
+                                                                <input type="radio" id="radio02" name="radio" value="tlo"/>
                                                                 <label for="radio02">
                                                                     <span><p>Total Loss Only</p>
                                                                     <img class="car-icon" src="/website/static/css-mobil/icon/car31.png" />
@@ -616,9 +616,19 @@
                         "info": false
                     } );
 		$(this).on('click','#finish-btn',function(){
-			//alert('test');
+			
+			$.ajax({
+			       "url" : "/savemobilku/",
+			       "type" : "POST",
+			       "data" : "tahun_pembuatan=" + $(this).val()+"&harga="+a+"&harga="+a+"&harga="+a+"&harga="+a+"&harga="+a+"&harga="+a+"&harga="+a+"&harga="+a,
+			       
+			       "success" : function(response){
+				var getResult=JSON.parse(response);
+			       }
+			
+			});
 		});
-	     $(this).on('change','#merk, #model',function(){
+		$(this).on('change','#merk, #model',function(){
 			var a=$(this).attr('id');
 			if (a=="merk") {
 				//code
@@ -647,11 +657,9 @@
 					}
 				}else{
 					var i=0;
-					$('.model-form').html("");
-					$('.model-form').html("<option value=''>Silahkan pilih</option>");
+					//$('.model-form').html("");
+					//$('.model-form').html("<option value=''>Silahkan pilih</option>");
 					for(; i<getResult.bodytype.length; i++){
-					//console.log(getResult.model_name[i]);
-					//console.log(getResult);
 					$('#tipe').val(getResult.bodytype[i]);
 					$('#kapasitas').val(getResult.seatingcapacity[i]);
 					}
@@ -681,17 +689,17 @@
 				
 			}
 			$('#wilayah').val(wilayah);
-			$.ajax({
-			       "url" : "/getregno/",
-			       "type" : "POST",
-			       "data" : "regno=" + $(this).val()+"&attrs="+a,
-			       
-			       "success" : function(response){
-				var getResult=JSON.parse(response);
-					$('#wilayah').val(wilayah);
-			       }
-			
-			});
+			//$.ajax({
+			//       "url" : "/getregno/",
+			//       "type" : "POST",
+			//       "data" : "regno=" + $(this).val()+"&attrs="+a,
+			//       
+			//       "success" : function(response){
+			//	var getResult=JSON.parse(response);
+			//		$('#wilayah').val(wilayah);
+			//       }
+			//
+			//});
 		
 		});
 		
