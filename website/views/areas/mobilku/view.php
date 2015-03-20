@@ -11,11 +11,7 @@
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css-mobil/data-table-1.10.4/media/css/jquery.dataTables.css" >
   
 <script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
-<!--<script src="_assets/js/jquery.tools.min.js" type="text/javascript"></script>-->
-<!--<script src="_assets/js/sticky-jquery.js" type="text/javascript"></script>-->
-<!--<script src="/website/static/css-mobil/jquery-1.10.2.js" type="text/javascript"></script>
-<script src="/website/static/css-mobil/bootstrap.min.js" type="text/javascript"></script>-->
-  
+
 		
 <!--   plugins 	 -->
 
@@ -58,9 +54,16 @@
                                                   <div class="form-group">
                                                       <div class="col-sm-3">
                                                         <label for="input1">Tahun Pembuatan</label>
-                                                      </div> 
+                                                      </div>
                                                       <div class="col-sm-4">
-                                                        <input type="text" name="tahun" class="form-control required" id="tahun" placeholder="">
+                                                        <select id="model" class="form-control">
+								<?php
+								$year=date("Y",strtotime("-10 year"));								
+								for($i=date("Y"); $i>=$year; $i--){
+									echo "<option value='$i'>$i</option>";	
+								}?>
+                                                          
+                                                        </select>
                                                       </div>
                                                       
                                                   </div>
@@ -71,7 +74,7 @@
                                                         <label for="input2">Harga Mobil</label>
                                                       </div> 
                                                       <div class="col-sm-4">
-                                                        <input type="text" name="harga" class="form-control required" id="harga" placeholder="">
+                                                        <input type="text" name="harga" class="form-control required" id="harga" placeholder="" value="">
                                                       </div>
                                                       <div class="col-sm-4">
                                                         <span id="tooltips2" class="tooltips">*Mohon masukan harga pasar saat ini</span>
@@ -84,13 +87,18 @@
                                                         <label for="input3">Merk Mobil</label>
                                                       </div> 
                                                       <div class="col-sm-4">
+							
                                                         <select id="merk" class="form-control">
-                                                          <option value="">Silahkan pilih</option>    
-                                                          <option value="2">Honda</option>
-                                                          <option value="3">Hummer</option>
-                                                          <option value="4">Hyundai</option>
-                                                          <option value="5">Infinity</option>
-                                                          <option value="6">Isuzu</option>
+							
+                                                        <option value="">Silahkan pilih</option>
+							<?php
+							$merk = new Object_MobilBrandName_List();
+							foreach($merk as $items){
+								echo ucfirst($items->branname);
+								echo "<option value='".$items->o_id."'>".ucwords($items->branname)."</option>";
+							}	
+							?>
+                                                         
                                                         </select>
                                                       </div>
                                                   </div>
@@ -99,19 +107,28 @@
                                                   <div class="form-group">
                                                       <div class="col-sm-3">
                                                         <label for="input4">Model Mobil</label>
-                                                      </div> 
-                                                      <div class="col-sm-4">
-                                                        <select id="model" class="form-control">
-                                                          <option value="">Silahkan pilih</option>      
-                                                          <option value="1">Camry New</option>
-                                                          <option value="2">2</option>
-                                                          <option value="3">3</option>
-                                                          <option value="4">4</option>
-                                                          <option value="5">5</option>
+                                                      </div>
+						       
+                                                      <div class="col-sm-4" >
+                                                        <select id="model" class="form-control model-form">
+                                                          <option value="">Silahkan pilih</option>    
                                                         </select>
                                                       </div>
                                                   </div>
-                                              </div>  
+						</div>
+					        <div class="row">
+                                                  <div class="form-group">
+                                                      <div class="col-sm-3">
+                                                        <label for="input2">Registration No</label>
+                                                      </div> 
+                                                      <div class="col-sm-4">
+                                                        <input type="text" name="regno" class="form-control required" id="regno" placeholder="B123XXX">
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                        <span id="tooltips2" class="tooltips">*No kendaraan</span>
+                                                      </div>
+                                                  </div>
+                                              </div>
                                               <div class="row">
                                                   <div class="form-group">
                                                       <div class="col-sm-3">
@@ -120,7 +137,7 @@
                                                       <div class="col-sm-4">
                                                         <div class="left-inner-addon">
                                                             <i class="flaticon-black187"></i>
-                                                            <input type="text" name="tipe" class="form-control" id="tipe" placeholder="" />
+                                                            <input type="text" name="tipe" class="form-control" id="tipe" placeholder="" value="" disabled=disabled />
                                                         </div>
                                                       </div>
                                                   </div>
@@ -133,7 +150,7 @@
                                                       <div class="col-sm-4">
                                                         <div class="left-inner-addon">
                                                             <i class="flaticon-facebook30"></i>
-                                                            <input type="text" name="wilayah" class="form-control" id="wilayah" placeholder="" />
+                                                            <input type="text" name="wilayah" class="form-control" id="wilayah" placeholder="" value="" disabled=disabled/>
                                                         </div>
                                                       </div>
                                                   </div>
@@ -146,7 +163,7 @@
                                                       <div class="col-sm-4">
                                                         <div class="left-inner-addon">
                                                             <i class="flaticon-harddisc"></i>
-                                                            <input type="text" name="kapasitas" class="form-control" id="kapasitas" placeholder="" />
+                                                            <input type="text" name="kapasitas" class="form-control" id="kapasitas" placeholder="" value="" disabled=disabled  />
                                                         </div>
                                                       </div>
                                                   </div>
@@ -581,7 +598,7 @@
 </div>
 
 
-    
+    <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
     <script>
         $(document).ready(function(){
             $('#myTable').dataTable( {
@@ -590,24 +607,89 @@
                         "paging": false,
                         "info": false
                     } );
-        });
-
-    </script> 
-    
-    <script>
-        $(document).ready(function(){
+     
             $('#myTable2').dataTable( {
                         "searching": false,
                         "bLengthChange": false,
                         "paging": false,
                         "info": false
                     } );
-        });
-
-    </script> 
-    
-    <script>
-        $(document).ready(function() {
+	     $(this).on('change','#merk, #model',function(){
+			var a=$(this).attr('id');
+			if (a=="merk") {
+				//code
+				a=1;
+			}else{
+				a=2;
+			}
+			
+			$.ajax({
+			       "url" : "/getdatamobil/",
+			       "type" : "POST",
+			       "data" : "brand=" + $(this).val()+"&attrs="+a,
+			       
+			       "success" : function(response){
+				var getResult=JSON.parse(response);
+				console.log(response);
+				if (getResult.type==1) {
+					//code
+					var i=0;
+					$('.model-form').html("");
+					$('.model-form').html("<option value=''>Silahkan pilih</option>");
+					for(; i<getResult.bodytype.length; i++){
+					//console.log(getResult.model_name[i]);
+					//console.log(getResult);
+					$('.model-form').append("<option value='"+getResult.model_o_id[i]+"'>"+getResult.model_name[i]+"</option>");
+					}
+				}else{
+					var i=0;
+					$('.model-form').html("");
+					$('.model-form').html("<option value=''>Silahkan pilih</option>");
+					for(; i<getResult.bodytype.length; i++){
+					//console.log(getResult.model_name[i]);
+					//console.log(getResult);
+					$('#tipe').val(getResult.bodytype[i]);
+					$('#kapasitas').val(getResult.seatingcapacity[i]);
+					}
+				}
+					
+					
+				}
+			       
+			
+			});
+			
+		});	
+		$("#regno").bind('input',function(){
+			
+			var regno=$(this).val();
+			//alert(regno);
+			regno.charAt(0);
+			regnoChar=regno.charAt(0);
+			regnoChar2=regno+regno.charAt(1);
+			//alert(regno);
+			var wilayah;
+			if (regnoChar=='B' ||regnoChar=='CD' ||regnoChar=='D' ||regnoChar=='E' || regnoChar=='F' || regnoChar=='Z') {
+				//code
+				wilayah=2;
+			}else{
+				wilayah=3;
+				
+			}
+			$('#wilayah').val(wilayah);
+			$.ajax({
+			       "url" : "/getregno/",
+			       "type" : "POST",
+			       "data" : "regno=" + $(this).val()+"&attrs="+a,
+			       
+			       "success" : function(response){
+				var getResult=JSON.parse(response);
+					$('#wilayah').val(wilayah);
+			       }
+			
+			});
+		
+		});
               $(".menutab_dekstop li a").width(100);
               $(".menutab_dekstop li a").css("width", "225px");
               $(".tabcontent").css("width", "72%");
@@ -637,6 +719,23 @@
 	}
 	
 	$(document).ready(function(){
+		
+		function clearFormat(value) {
+		value = value.replace(/[^0-9\.]+/g,"");
+		value = value.replace(/\./g,'');
+		value = value.replace(/,/g,'');
+		return value;
+		}
+
+		$("#harga").bind('input',function(){
+			var text = clearFormat($(this).val());
+			if (text > 100000000000) {
+			    text = 100000000000;
+			}
+			text = accounting.formatMoney(text,'Rp ',0,'.',',');
+			$(this).val(text);
+		    });
+			
 		$('li.aktif .nav_menu div').css('background-position', '0px 0px');
 		
 		$(".pagenav .navi li").click(function(){
