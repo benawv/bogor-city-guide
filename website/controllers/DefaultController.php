@@ -34,7 +34,7 @@ class DefaultController extends Website_Controller_Action {
 	}
 	
 	public function defaultAction () {
-	
+		
 		$entries = Object_MarketingOffice::getList();
 		
 		$array;
@@ -51,6 +51,32 @@ class DefaultController extends Website_Controller_Action {
 	}
 	
 	public function indexAction() {
+	}
+	
+	public function datanabAction() {
+		
+		$postdata = http_build_query(
+			array(
+				'day' => 20,
+				'month' => 3,
+				'year' => 2015,
+				'fundtype' => "AlliSya Rupiah Balanced Fund"
+			)
+		);
+		    
+		$opts = array('http' =>
+		    array(
+			'method'  => 'POST',
+			'header'  => 'Content-type: application/x-www-form-urlencoded',
+			'content' => $postdata
+		    )
+		);
+		
+		$context  = stream_context_create($opts);
+		
+		$result = file_get_contents('http://investment.allianz.co.id/last3month', false, $context);
+		//$data = json_decode($result);
+		echo $result;
 	}
 	
 	public function mapAction() {
