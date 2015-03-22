@@ -123,7 +123,7 @@
 	?>
 	
 	<!-- Map -->
-	<div class="wrapper clearfix">
+	<!--<div class="wrapper clearfix">
 			<div class="wrap30 l left">
 			   <h1 class="top">Jenis Fund</h1>
 			    <select class="span2 blue-color fundtype">
@@ -161,7 +161,7 @@
 				
 			</div>-->
 		<?php //echo $this->area("mapArea", array("type" => "map-point")); ?>
-	</div>
+	<!--</div>-->
 	<!-- End Map -->
 
 	<?php echo $this->areablock('modal-box-home', array('allowed' => array('modal-home')));?>
