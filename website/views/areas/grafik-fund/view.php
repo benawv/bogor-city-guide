@@ -1,6 +1,7 @@
+<script src="/website/static/inv/js/highchart/highcharts.js"></script>
 <div class="wrapper clearfix">
 	<div class="wrap30 l left">
-		<h1 class="top">Jenis Fund</h1>
+		<h2 class="top">Jenis Fund</h2>
 		<select class="span2 blue-color fundtype">
 		    <option value="0" selected="selected">Pilih Jenis Fund</option>
 		    <option value="AlliSya  Rupiah Equity Fund">Allisya  Rupiah Equity Fund</option>
@@ -56,7 +57,7 @@
 						var data_bid;
 						var databid = new Array();
 						var z = 0;
-						console.log(new_data);
+						//console.log(new_data);
 						$.each(new_data.data_fund, function(key, index){
 							fund_name = index.fundname;
 							tgl = (index.last_3_month).split("-");
@@ -66,12 +67,12 @@
 							//}else{
 							//	data_bid = data_bid+","+parseInt(index.bid);
 							//}
-							console.log(tgl[0]+"-"+tgl[1]+"-"+tgl[2]);
-							databid[z]={x: Date.UTC(tgl[0], tgl[1], tgl[2]), y: parseInt(index.bid)};
-							console.log(databid[z]);
+							//console.log(tgl[0]+"-"+tgl[1]+"-"+tgl[2]);
+							databid[z]=[Date.UTC(parseInt(tgl[0]), parseInt(tgl[1])-1, parseInt(tgl[2])), parseFloat(index.bid)];
+							//console.log(databid[z]);
 							z++;
 						});
-						
+						var reverse = databid.reverse()
 						//var databid = "["+data_bid+"]";
 						//console.log(databid);
 					//var rows;
@@ -103,10 +104,9 @@
 					//    //console.log("y:"+new_data.resume_graph.bidyear[d]+","+new_data.resume_graph.bidmonth[d]+","+new_data.resume_graph.bidday[d]+",y:"+new_data.resume_graph.fundbid[d]);						
 					//    //console.log(databid[d]);
 					//}
-					var date_awal=Date.UTC(2015,1,20);
+					var date_awal=Date.UTC(2014,12,20);
 					//    //console.log(date_awal);
 					    //console.log(databid.length);
-						 
 						$(function () {
 						    $('#containerNav').highcharts({
 							    chart: {
@@ -165,9 +165,9 @@
 								//pointStart: Date.UTC(arr_awal[2], arr_awal[0], arr_awal[1]),
 								//pointInterval: 24 * 3600 * 1000,
 								pointInterval: 24 * 3600 * 1000,
-								pointStart: date_awal,
+								//pointStart: date_awal,
 								name: fund_name,
-								data: databid
+								data: reverse
 							    }]
 						    });
 						});
