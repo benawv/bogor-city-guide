@@ -33,7 +33,7 @@ function check_user_agent ( $type = NULL ) {
         return false;
 }
 ?>
-<script src="/website/static/inv/js/highchart/highcharts.js"></script>
+
 
 <link rel="stylesheet" type="text/css" media="screen" id="font-awesome-css" href="/website/static/css/font-awesome/font-awesome.min.css">
 <script type="text/javascript">var switchTo5x=true;</script>
@@ -156,6 +156,9 @@ $(function(){
 					 </li>
 					<li class="liMobileHide">
 						<a href="javascript:void(0);" class="twshare-fullpage"><img src="/website/static/images/icon-share/twitter.png" alt="twitter" /></a>
+					</li>
+					<li class="liMobileHide">
+						<a class="gPlus-fullpage" target="_blank" href="https://plus.google.com/u/0/113109741631464434900/posts"><img alt="google plus" src="/website/static/images/icon-share/g-plus.png"></a>
 					</li>
 				</ul>
 

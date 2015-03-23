@@ -24,6 +24,7 @@
 			<ul class="static-links mobile deactive share">
 				<li><a href="javascript:void(0);" class="fbshare-fullpage"><img src="/website/static/images/icon-share/facebook-black.png" alt="facebook-black" /></a></li>
 				<li><a href="javascript:void(0);" class="twshare-fullpage"><img src="/website/static/images/icon-share/twitter-black.png" alt="twitter-black" /></a></li>
+				<li><a class="gPlus-fullpage" target="_blank" href="https://plus.google.com/u/0/113109741631464434900/posts"><img alt="google plus" src="/website/static/images/icon-share/g-plus-black.png"></a></li>
 			</ul>
 		</div>
 	</div>
