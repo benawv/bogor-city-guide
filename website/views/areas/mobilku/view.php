@@ -276,93 +276,93 @@
                                                                             <tbody> 
                                                                             <tr> 
                                                                                 <td>Comprehensive</td> 
-                                                                                <td>475.000.000,00</td> 
-                                                                                <td>1,2200%</td> 
-                                                                                <td>5.795.000,00</td>
+                                                                                <td class='compre_val'>-</td> 
+                                                                                <td class='compre_persen'>-</td> 
+                                                                                <td class='compre_prem'>-</td>
                                                                                 
                                                                             </tr>     
                                                                             <tr> 
                                                                                 <td>TPL</td> 
-                                                                                <td>50.000.000,00</td> 
-                                                                                <td>0,7500%</td> 
-                                                                                <td>375.000,00</td> 
+                                                                                <td class='tpl_val'>-</td> 
+                                                                                <td class='tpl_persen'>-</td> 
+                                                                                <td class='tpl_prem'>-</td> 
                                                                                 
                                                                             </tr>  
                                                                             <tr> 
                                                                                 <td>Medical Expense</td> 
-                                                                                <td>5.000.000,00</td> 
-                                                                                <td>0,0300%</td> 
-                                                                                <td>1.500,00</td>
+                                                                                <td class='med_ex_val'>-</td> 
+                                                                                <td class='med_ex_persen'>-</td> 
+                                                                                <td class='med_ex_prem'>-</td>
                                                                                 
                                                                             </tr>  
                                                                             <tr> 
                                                                                 <td>PLL</td> 
-                                                                                <td>-</td> 
-                                                                                <td>0,5000%</td> 
-                                                                                <td>-</td> 
+                                                                                <td class='pll_val'>-</td> 
+                                                                                <td class='pll_persen'>-</td> 
+                                                                                <td class='pll_prem'>-</td> 
                                                                                 
                                                                             </tr>  
                                                                             <tr> 
                                                                                 <td>Personal Effect</td> 
-                                                                                <td>-</td> 
-                                                                                <td>1,0000%</td> 
-                                                                                <td>-</td> 
+                                                                                <td class='personal_ef_val'>-</td> 
+                                                                                <td class='personal_ef_persen'>-</td> 
+                                                                                <td class='personal_ef_prem'>-</td> 
                                                                                 
                                                                             </tr>  
                                                                             <tr> 
                                                                                 <td>Flood</td> 
-                                                                                <td>475.000.000,00</td> 
-                                                                                <td>0,1000%</td> 
-                                                                                <td>475.000,00</td> 
+                                                                                <td class='flood_val'>-</td> 
+                                                                                <td class='flood_persen'>-</td> 
+                                                                                <td class='flood_prem'>-</td> 
                                                                                 
                                                                             </tr>  
                                                                             <tr> 
                                                                                 <td>Earthquake</td> 
-                                                                                <td>475.000.000,00</td> 
-                                                                                <td>0,1000%</td> 
-                                                                                <td>475.000,00</td>  
+                                                                                <td class='earthquake_val'>-</td> 
+                                                                                <td class='earthquake_presen'>-</td> 
+                                                                                <td class='earthquake_prem'>-</td>  
                                                                                 
                                                                             </tr>  
                                                                             <tr> 
                                                                                 <td>Strike, Riot, and Civil Commotion</td> 
-                                                                                <td>475.000.000,00</td> 
-                                                                                <td>0,0500%</td> 
-                                                                                <td>237.500,00</td>
+                                                                                <td class='riot_val'>-</td> 
+                                                                                <td class='riot_persen'>-</td> 
+                                                                                <td class='earthquake_prem'>-</td>
                                                                                 
                                                                             </tr>  
                                                                             <tr> 
                                                                                 <td>Terrorist and Sabotage</td> 
-                                                                                <td>475.000.000,00</td> 
-                                                                                <td>0,0500%</td> 
-                                                                                <td>237.500,00</td>
+                                                                                <td class='terror_val'>-</td> 
+                                                                                <td class='terror_persen'>-</td> 
+                                                                                <td class='terror_prem'>-</td>
                                                                                 
                                                                             </tr>  
                                                                             <tr> 
                                                                                 <td>PA Passenger</td> 
-                                                                                <td>10.000.000,00</td> 
-                                                                                <td>0,1000%</td> 
-                                                                                <td>40.000,00</td>
+                                                                                <td class='passenger_val'>-</td> 
+                                                                                <td class='passenger_persen'>-</td> 
+                                                                                <td class='passenger_prem'>-</td>
                                                                                 
                                                                             </tr>  
                                                                             <tr> 
                                                                                 <td>PA Driver</td> 
-                                                                                <td>10.000.000,00</td> 
-                                                                                <td>0,5000%</td> 
-                                                                                <td>50.000,00</td>
+                                                                                <td class='pa_val'>-</td> 
+                                                                                <td class='pa_persen'>-</td> 
+                                                                                <td class='pa_prem'>-</td>
                                                                                 
                                                                             </tr>      
                                                                              <tr> 
                                                                                 <td>ERA</td> 
-                                                                                <td>475.000.000,00</td> 
-                                                                                <td>0,0005%</td> 
-                                                                                <td>2.375,00</td>
+                                                                                <td class='era_val'>-</td> 
+                                                                                <td class='pa_persen'>-</td> 
+                                                                                <td class='pa_prem'>-</td>
                                                                                 
                                                                             </tr> 
                                                                              <tr> 
                                                                                 <td>Authorized Workshop</td> 
-                                                                                <td>475.000.000,00</td>
-                                                                                <td>0,0610%</td> 
-                                                                                <td>289.750,00</td>
+                                                                                <td class='workshop_val'>-</td>
+                                                                                <td class='workshop_persen'>-</td> 
+                                                                                <td class='workshop_prem'>-</td>
                                                                                 
                                                                             </tr> 
                                                                              
@@ -370,7 +370,7 @@
 
                                                                         </table>
                                                                             
-                                                                        <div class="total">
+                                                                        <div class="total_premium_p_standar">
                                                                             
                                                                             <span>Total Premium (excl. Admin Cost)</span>  7.978.625,00
                                                                             
@@ -576,8 +576,7 @@
                             </div>
                             <div class="wizard-footer">
                                     <div class="pull-right">
-                                        <input type='button' class='btn btn-next btn-fill btn-warning btn-wd btn-sm' name='next' value='Lanjut' />
-                                        
+                                        <input type='button' class='btn btn-next btn-fill btn-warning btn-wd btn-sm' name='next' value='Lanjut' />                                        
                                         <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish' id='finish-btn'/>
 
                                     </div>
@@ -621,6 +620,50 @@
 			value = value.replace(/\./g,'');
 			value = value.replace(/,/g,'');
 			return value;
+		}
+		
+		function calc_result(paket) {
+		//code
+			
+			
+			var harga=clearFormat($('#harga').val());
+			var tahun_pembuatan;
+			var model;
+			var regno;
+			var periode;
+			var radio01;
+			var radio02;
+			
+			var val_tlo=harga*1; //harga dikali tahun pertama (1), tahun kedua dikali 2 dst.
+			var med_ex_val=5000000;
+			var pa_val=10000000;
+			var passenger_val=10000000;
+			var tpl_val=50000000;
+			
+			val_tlo=accounting.formatMoney(val_tlo,'',2,'.',',');
+			med_ex_val=accounting.formatMoney(med_ex_val,'',2,'.',',');
+			pa_val=accounting.formatMoney(pa_val,'',2,'.',',');
+			passenger_val=accounting.formatMoney(passenger_val,'',2,'.',',');
+			tpl_val=accounting.formatMoney(tpl_val,'',2,'.',',');
+		
+			var val_tlo=harga*1; //harga dikali tahun pertama (1), tahun kedua dikali 2 dst.
+			val_tlo=accounting.formatMoney(val_tlo,'',2,'.',',');
+			
+			$('.workshop_val, .compre_val, .earthquake_val, .era_val, .flood_val, .riot_val, .terror_val').html("");
+			$('.workshop_val, .compre_val, .earthquake_val, .era_val, .flood_val, .riot_val, .terror_val').append(val_tlo);
+			
+			$('.med_ex_val').html("");
+			$('.med_ex_val').append(med_ex_val);
+			
+			$('.pa_val').html("");
+			$('.pa_val').append(pa_val);
+			
+			$('.passenger_val').html("");
+			$('.passenger_val').append(passenger_val);
+			
+			$('.tpl_val').html("");
+			$('.tpl_val').append(tpl_val);		
+		
 		}
 	
 		$("#harga").bind('input',function(){
@@ -732,6 +775,15 @@
 		
 		});
 		
+		$(this).on('click','.btn-next',function(){
+			
+			var email=$('#email').val();
+			if (email != '') {
+				//code
+				calc_result();
+			}
+		});
+		
 		$( "#periode" ).datepicker();
 		$(".menutab_dekstop li a").width(100);
 		$(".menutab_dekstop li a").css("width", "225px");
@@ -743,6 +795,9 @@
         
     
     <script type="text/javascript">
+	
+	
+	
 	function navigateMe(anchor)
 	{
 	
@@ -829,13 +884,13 @@
 		$('.next').on('click',function(){
 			var me_left = $('.super_navi').scrollLeft();
 			$('.super_navi').scrollLeft(me_left + 100);
-			console.log($('.super_navi').position().left);
-		});
+			//console.log($('.super_navi').position().left);
+
 		
 		$('.prev').on('click',function(){
 			var me_left = $('.super_navi').scrollLeft();
 			$('.super_navi').scrollLeft(me_left - 100);
-			console.log($('.super_navi').position().left);
+			//console.log($('.super_navi').position().left);
 		});
 		/* silde nav*/
 		
