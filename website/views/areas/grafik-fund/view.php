@@ -2,7 +2,7 @@
 	<div class="wrap30 l left">
 		<h1 class="top">Jenis Fund</h1>
 		<select class="span2 blue-color fundtype">
-		    <option value="0" selected="selected">Jenis Fund</option>
+		    <option value="0" selected="selected">Pilih Jenis Fund</option>
 		    <option value="AlliSya  Rupiah Equity Fund">Allisya  Rupiah Equity Fund</option>
 		    <option value="AlliSya Rupiah Balanced Fund">Allisya Rupiah Balanced Fund</option>
 		    <option value="AlliSya Rupiah Fixed Income Fund">Allisya Rupiah Fixed Income Fund</option>
@@ -22,12 +22,11 @@
 		    <option value="Smartwealth Equity Infrastructure Fund">Smartwealth Equity Infrastructure Fund</option>
 		    <option value="Smartwealth Equity Small Medium Capital Fund">Smartwealth Equity Small Medium Capital Fund</option>
 		</select>
-	
+		<input class="select-btn blue-color filter_harga btn" type="button" value="Lihat harga unit" />
 	</div>
 	
 	<div class="wrap10 r left hidden-btn">
-	<h5 class="top" style="visibility:hidden">hidden</h5>
-	 <input class="select-btn blue-color filter_harga btn" type="button" value="Lihat harga unit" />
+		<h5 class="top" style="visibility:hidden">hidden</h5>
 	</div>
 	
 	<div id="containerNav" style="width:100%; height:400px;float: left;"></div>
@@ -40,10 +39,15 @@
 			//var akhir=$('#txtToDate').val();       
 			//var arr_awal = awal.split('/');            
 			//var arr_akhir = akhir.split('/');            
-			//var formfundtype=$('.fundtype').val();
+			var formfundtype=$('.fundtype').val();
+			if (formfundtype == 0) {
+				alert("Silahkan pilih jenis fund.");
+			}
+			else{
 			$.ajax({
 				"url" : "/dataNab",
-				//"data" : $(this).serialize() + "&filter=1&day1="+arr_awal[1]+"&month1="+arr_awal[0]+"&year1="+arr_awal[2]+"&day2="+arr_akhir[1]+"&month2="+arr_akhir[0]+"&year2="+arr_akhir[2]+"&fundtype='"+formfundtype+"'",
+				"data" : {fundName: formfundtype},
+				"type" : "POST",
 				"success" : function(response){
 						var new_data = JSON.parse(response);
 						
@@ -52,6 +56,7 @@
 						var data_bid;
 						var databid = new Array();
 						var z = 0;
+						console.log(new_data);
 						$.each(new_data.data_fund, function(key, index){
 							fund_name = index.fundname;
 							tgl = (index.last_3_month).split("-");
@@ -61,8 +66,9 @@
 							//}else{
 							//	data_bid = data_bid+","+parseInt(index.bid);
 							//}
-							
+							console.log(tgl[0]+"-"+tgl[1]+"-"+tgl[2]);
 							databid[z]={x: Date.UTC(tgl[0], tgl[1], tgl[2]), y: parseInt(index.bid)};
+							console.log(databid[z]);
 							z++;
 						});
 						
@@ -180,7 +186,7 @@
 		
 				}
 			    });//end ajax
-		
+			}
 		 
 		    });
 	});

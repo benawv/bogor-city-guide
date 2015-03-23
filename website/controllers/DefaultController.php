@@ -54,13 +54,14 @@ class DefaultController extends Website_Controller_Action {
 	}
 	
 	public function datanabAction() {
+		$fundtype = $_POST["fundName"];
 		
 		$postdata = http_build_query(
 			array(
 				'day' => 20,
-				'month' => 3,
-				'year' => 2015,
-				'fundtype' => "AlliSya Rupiah Balanced Fund"
+				'month' => 12,
+				'year' => 2014,
+				'fundtype' => $fundtype
 			)
 		);
 		    

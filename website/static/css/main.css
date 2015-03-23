@@ -733,6 +733,15 @@ a.fbshare, a.twshare{
 .spanRed{
   color: red;
 }
+.fundtype{
+  color: #FFF;
+}
+.select-btn.blue-color.filter_harga.btn{
+  height: 28px !important;
+  position: absolute;
+  margin-left: 10px;
+  padding: 5px 10px !important;
+}
 
 /*SETTING LOGO 125*/
 .notepadKiri{width: 150px;float: left;}
