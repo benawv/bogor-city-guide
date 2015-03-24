@@ -27,10 +27,14 @@
 	
 	<div class="heading clearfix pagenav">
 		<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor','title-wizard'))); ?>
+	</div>
+	<div class="wrapper-special clearfix">
+		<?php echo $this->areablock('banner', array(
+					"allowed" => array("banner2", "static-banner")))?>
 		<div id="quicklinks">
 		<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks', 'product-quicklinks',"blank-tile-quicklinks-static", "tile-quicklinks", "layanankami-quicklinks", "blank-animation-quicklinks")))?>
 		</div>
-	</div>
+	</div><!-- .wrapper-special -->
 	<div>
 		<?php
 			function limit_words($string, $word_limit)
