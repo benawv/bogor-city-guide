@@ -30,7 +30,7 @@
 		<h5 class="top" style="visibility:hidden">hidden</h5>
 	</div>
 	
-	<div id="containerNav" style="width:100%; height:400px;float: left;"></div>
+	<div id="containerNav" style="width:100%; height:auto;float: left;"></div>
 </div>
 
 <script type="text/javascript">
