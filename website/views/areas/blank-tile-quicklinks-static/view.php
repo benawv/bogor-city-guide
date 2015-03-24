@@ -1,7 +1,7 @@
 <?php 
 	$style = 'overflow: scroll;';
 ?>
-<style>
+<style type="text/css">
 	.cusLi
 	{
 		list-style: none;
@@ -25,7 +25,7 @@
 		<?php while ($this->block("block-layanankami")->loop()) { ?>
 			<h4><b><?php echo $this->input("layanan", array("width" => 240));?><br /></b></h4>
 			<?php if($this->editmode){ ?>
-				<style>
+				<style type="text/css">
 					ul.cusLi > div
 					{
 						margin-left: 30px;

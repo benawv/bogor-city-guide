@@ -1,5 +1,5 @@
 <?php if($this->editmode): ?>
-<style>
+<style type="text/css">
 	#brosur{
 		display: block !important;
 	      }

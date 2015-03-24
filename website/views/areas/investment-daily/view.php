@@ -1,4 +1,4 @@
-<style>
+<style type="text/css">
     .daily-deskripsi p{
 	font-size:11px;
     }

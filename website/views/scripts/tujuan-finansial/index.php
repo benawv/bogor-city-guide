@@ -1,6 +1,6 @@
 <script src="/website/static/js/tujuan-finansial.js" type="text/javascript"></script>
 
-<link href="/website/static/css/bootstrap1.css" rel="stylesheet" />
+<link href="/website/static/css/bootstrap1.css" rel="stylesheet" type="text/css" />
 
 <div class="container boxes-view">
 	<div class="heading clearfix">

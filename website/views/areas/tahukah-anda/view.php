@@ -1,5 +1,5 @@
 		<?php if($this->editmode) { ?>
-			<style>
+			<style type="text/css">
 				.tip.cus-tip{
 					height: 300px !important;
 				}

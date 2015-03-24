@@ -1,7 +1,7 @@
 <?php
 	if($this->editmode) {
 ?>
-		<style>
+		<style type="text/css">
 			.navi{
 				margin-bottom: 50px;
 			}
