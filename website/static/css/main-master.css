@@ -715,7 +715,7 @@ a.fbshare, a.twshare{
   background-image: url("/website/static/images/shareThis/16x16.png") !important;
 }
 #brosur{
-  display: none !important;
+  display: block !important;
 }
 /*SETTING LOGO 125*/
 .notepadKiri{width: 150px;float: left;}
