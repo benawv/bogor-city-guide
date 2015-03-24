@@ -8,6 +8,7 @@
     <thead>
         <tr>
             <th>No</th>
+	    <th>No Peserta Lari</th>
 	    <th>Nama</th>
 	    <th>Tanggal Lahir</th>
         </tr>
@@ -22,6 +23,7 @@
 	?>
 		<tr>
 		    <td><?php echo $x;?></td>
+		    <td><?php echo "";?></td>
 		    <td><?php echo $peserta->getNamaLengkap();?></td>
 		    <td><?php echo date("d - m - Y",strtotime($peserta->getTanggalLahir()));?></td>
 		</tr>

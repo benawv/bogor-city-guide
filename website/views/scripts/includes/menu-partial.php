@@ -76,7 +76,9 @@
 	else
 	{
 ?>
-		<?php foreach($this->container as $page): ?>
+		<?php foreach($this->container as $page):
+			if($page->getDocument()->getProperty('navigation_title')!=""){
+		?>
 			<li>
 				<a href="<?php echo $page->getUri()?>"><?php echo $page->getDocument()->getProperty('navigation_title');?></a>
 				<div class="menu-level2">
@@ -98,34 +100,34 @@
 						foreach($page->getPages() as $subpage)
 						{
 					?>
-							<ul class="<?php echo $i==0?'noborder':'' ?>">
-								<li class="menutitle"><span class="clickPage" onclick="link('<?php echo $subpage->getUri()?>','')"><?php echo $subpage->getDocument()->getProperty('navigation_title');?></span></li>
-								<?php 
-									$list = new Document_List();
-									$list->setLimit(7);
-									$list->setCondition('parentId = '.$subpage->getDocument()->getId());
-									$documents = $list->load();
-									//echo '<pre>'; die(print_r($documents));
-									foreach($documents as $anchor)
-									{
-										if($anchor->getProperty('navigation_title')!="")
+								<ul class="<?php echo $i==0?'noborder':'' ?>">
+									<li class="menutitle"><span class="clickPage" onclick="link('<?php echo $subpage->getUri()?>','')"><?php echo $subpage->getDocument()->getProperty('navigation_title');?></span></li>
+									<?php 
+										$list = new Document_List();
+										$list->setLimit(7);
+										$list->setCondition('parentId = '.$subpage->getDocument()->getId());
+										$documents = $list->load();
+										//echo '<pre>'; die(print_r($documents));
+										foreach($documents as $anchor)
 										{
-											if($anchor->getProperty('navigation_class'))
+											if($anchor->getProperty('navigation_title')!="")
 											{
-								?>
-												<li><a href="<?php echo $subpage->getUri()."#".$anchor->getHref()?>"><?php echo $anchor->getProperty('navigation_title') ?></a></li>
-								<?php
-											}
-											else
-											{
-								?>
-												<li><a href="<?php echo $anchor->getHref()?>"><?php echo $anchor->getProperty('navigation_title') ?></a></li>
-								<?php
+												if($anchor->getProperty('navigation_class'))
+												{
+									?>
+													<li><a href="<?php echo $subpage->getUri()."#".$anchor->getHref()?>"><?php echo $anchor->getProperty('navigation_title') ?></a></li>
+									<?php
+												}
+												else
+												{
+									?>
+													<li><a href="<?php echo $anchor->getHref()?>"><?php echo $anchor->getProperty('navigation_title') ?></a></li>
+									<?php
+												}
 											}
 										}
-									}
-								?>
-							</ul>
+									?>
+								</ul>
 					<?php
 							$i++;
 						}
@@ -133,6 +135,9 @@
 					
 				</div>
 			</li>
-		<?php endforeach;?>
+		<?php
+			}
+			endforeach;
+		?>
 <?php 	}?>
 </ul>
