@@ -130,15 +130,15 @@
 	?>
 	
 	<!-- Map -->
-	<div class="wrapper clearfix">
+	<!--<div class="wrapper clearfix">
 		<div id="agent-locator">
-			<h2><?php echo $this->input("judul_map", array("width" => 255));?></h2>
+			<h2><?php //echo $this->input("judul_map", array("width" => 255));?></h2>
 			<div id="maparea">
 				
 			</div>
 		</div>
-		<?php echo $this->area("mapArea", array("type" => "map-point")); ?>
-	</div>
+		<?php //echo $this->area("mapArea", array("type" => "map-point")); ?>
+	</div>-->
 	<!-- End Map -->
 
 	<?php echo $this->areablock('modal-box-home', array('allowed' => array('modal-home')));?>
