@@ -54,13 +54,17 @@ class DefaultController extends Website_Controller_Action {
 	}
 	
 	public function datanabAction() {
+		$fundtype = $_POST["fundName"];
+		$date1 = date("Y-n-d",strtotime(date("Y-n-d") . "+1 days"));
+		$month3 = date('Y-n-d',strtotime($date1 . "-3 months"));
+		$date = explode("-",$month3);
 		
 		$postdata = http_build_query(
 			array(
-				'day' => 20,
-				'month' => 3,
-				'year' => 2015,
-				'fundtype' => "AlliSya Rupiah Balanced Fund"
+				'day' => $date[2],
+				'month' => $date[1],
+				'year' => $date[0],
+				'fundtype' => $fundtype
 			)
 		);
 		    

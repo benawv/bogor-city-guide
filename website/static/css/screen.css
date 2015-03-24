@@ -561,6 +561,8 @@ footer.contentinfo .worldwide{height:180px;}
 #community.clearfix .tips .tip, #community.clearfix .tips .tip .photo{height:auto;}
 .full-w.bg-white .description .submit_whislist{width:95%;}
 .full-w.bg-white .description table{max-width:100%;}
+.fundtype{width: 100%;}
+.wrap30 .select-btn.blue-color.filter_harga.btn{position: relative;margin-left: 0px;margin-top: 10px;width: 100%;}
 }
 @media only screen and (max-width:360px){.visimisi{font-size:13px;}
 .boxes-view .items-container .item .description{font-size:13px !important;width:100% !important;}
