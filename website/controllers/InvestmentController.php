@@ -802,7 +802,7 @@ class InvestmentController extends Website_Controller_Action
 
 	$getLast3m="SELECT a.fundname,a.bid,a.offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS last_3_month
                         FROM object_query_30 AS a
-                        WHERE fundname = '$fundtype' AND 
+                        WHERE fundname LIKE '%$fundtype%' AND 
                         DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) >= DATE_ADD(STR_TO_DATE('$getlastunitdate','%Y-%m-%d'), INTERVAL- 3 MONTH)
                         ORDER BY a.unitdate DESC";
 	$last3mData=$db->fetchAll($getLast3m);
