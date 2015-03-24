@@ -275,7 +275,7 @@
                                                                             </thead> 
                                                                             <tbody> 
                                                                             <tr> 
-                                                                                <td>Comprehensive</td> 
+                                                                                <td id="jenisasuransi"></td> 
                                                                                 <td class='compre_val'>-</td> 
                                                                                 <td class='compre_persen'>-</td> 
                                                                                 <td class='compre_prem'>-</td>
@@ -327,7 +327,7 @@
                                                                                 <td>Strike, Riot, and Civil Commotion</td> 
                                                                                 <td class='riot_val'>-</td> 
                                                                                 <td class='riot_persen'>-</td> 
-                                                                                <td class='earthquake_prem'>-</td>
+                                                                                <td class='riot_persen'>-</td>
                                                                                 
                                                                             </tr>  
                                                                             <tr> 
@@ -622,18 +622,30 @@
 			return value;
 		}
 		
+		var jenisasuransi;
+		$("input:radio[name=radio]").click(function() {
+			 jenisasuransi = $(this).val();
+			 $("#jenisasuransi").html("");
+			 $("#jenisasuransi").append(jenisasuransi.toUpperCase());
+		});
+		
 		function calc_result(paket) {
 		//code
 			
-			
+			var getColom;
 			var harga=clearFormat($('#harga').val());
 			var tahun_pembuatan;
 			var model;
 			var regno;
 			var periode;
 			var radio01;
-			var radio02;
+
+
+			var tipe=$('#tipe').val().toLowerCase();
+			var wilayah=parseInt($('#wilayah').val());
+			var kapasitas=$('#kapsitas').val();
 			
+			//=========================perhitungan basic======================================//
 			var val_tlo=harga*1; //harga dikali tahun pertama (1), tahun kedua dikali 2 dst.
 			var med_ex_val=5000000;
 			var pa_val=10000000;
@@ -649,21 +661,164 @@
 			var val_tlo=harga*1; //harga dikali tahun pertama (1), tahun kedua dikali 2 dst.
 			val_tlo=accounting.formatMoney(val_tlo,'',2,'.',',');
 			
+			
+			//INSER INTO FORM
 			$('.workshop_val, .compre_val, .earthquake_val, .era_val, .flood_val, .riot_val, .terror_val').html("");
 			$('.workshop_val, .compre_val, .earthquake_val, .era_val, .flood_val, .riot_val, .terror_val').append(val_tlo);
-			
-			$('.med_ex_val').html("");
+			$('.med_ex_val, .pa_val, .passenger_val, .tpl_val').html("");
 			$('.med_ex_val').append(med_ex_val);
-			
-			$('.pa_val').html("");
 			$('.pa_val').append(pa_val);
-			
-			$('.passenger_val').html("");
 			$('.passenger_val').append(passenger_val);
+			$('.tpl_val').append(tpl_val);
+			//========================= END perhitungan basic======================================//
 			
-			$('.tpl_val').html("");
-			$('.tpl_val').append(tpl_val);		
-		
+			
+			
+			//=========================//perhitungan rate/persen======================================//
+			var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
+			workshop_persen=0;
+			compre_persen=0;
+			
+			// if (tlo= 5+wilayah) else (1+wilayah)
+			if (jenisasuransi=='tlo') {
+				//code
+				getColom=wilayah+5;
+			}else{
+				getColom=wilayah+1;
+			}
+			
+			if (getColom==2) {
+				earthquake_presen=0.1200;
+				flood_persen=0.0750;
+				riot_persen=0.0500;
+				terror_persen=0.0500;
+				pa_persen=0.5000;
+				passenger_persen=0.1000;
+			}else if (getColom==3) {
+				earthquake_presen=0.1000;
+				flood_persen=0.1000;
+				riot_persen=0.0500;
+				terror_persen=0.0500;
+				pa_persen=0.5000;
+				passenger_persen=0.1000;
+			}else if (getColom==4) {
+				earthquake_presen=0.0750;
+				flood_persen=0.0750;
+				riot_persen=0.0500;
+				terror_persen=0.0500;
+				pa_persen=0.500;
+				passenger_persen=0.1000;
+			}else if (getColom==5) {
+				earthquake_presen=0.0750;
+				flood_persen=0.0750;
+				riot_persen=0.0500;
+				terror_persen=0.0500;
+				pa_persen=0.5000;
+				passenger_persen=0.1000;
+			}else if (getColom==6) {
+				earthquake_presen=0.0850;
+				flood_persen=0.0500;
+				riot_persen=0.0350;
+				terror_persen=0.0350;
+				pa_persen=0.5000;
+				passenger_persen=0.1000;
+			}else if (getColom==7) {
+				earthquake_presen=0.0750;
+				flood_persen=0.0750;
+				riot_persen=0.0350;
+				terror_persen=0.0350;
+				pa_persen=0.5000;
+				passenger_persen=0.1000;
+			}else if (getColom==8) {
+				earthquake_presen=0.0500;
+				flood_persen=0.0500;
+				riot_persen=0.0350;
+				terror_persen=0.0350;
+				pa_persen=0.5000;
+				passenger_persen=0.1000;
+			}else if (getColom==9){
+				earthquake_presen=0.0500;
+				flood_persen=0.0500;
+				riot_persen=0.0350;
+				terror_persen=0.0350;
+				pa_persen=0.5000;
+				passenger_persen=0.1000;
+			}else{
+				earthquake_presen=0;
+				flood_persen=0;
+				riot_persen=0;
+				terror_persen=0;
+				pa_persen=0;
+				passenger_persen=0;
+			}
+			
+			//medical expanse	
+			if (tipe=='sedan' || tipe=='minibus' ) {
+				med_ex_val=0.03;
+			}else if(tipe=='motor'){
+				med_ex_val=0.125;
+			}else if(tipe=='truck'){
+				med_ex_val=0.2;
+			}else{
+				med_ex_val=0;
+			}
+			
+			era_persen=0.0005;
+			personal_ef_persen=0;
+			pll_persen=0;
+			tpl_persen=0;
+			
+			//INSERT INTO FORM
+			$('.workshop_persen, .compre_persen, .earthquake_presen, .era_persen, .flood_persen, .med_ex_persen, .pa_persen, .passenger_persen, .personal_ef_persen, .pll_persen, .riot_persen, .terror_persen, .tpl_persen').html("");
+			$('.workshop_persen').append(workshop_persen+"%");			
+			$('.compre_persen').append(compre_persen+"%");			
+			$('.earthquake_presen').append(earthquake_presen+"%");			
+			$('.era_persen').append(era_persen+"%");			
+			$('.flood_persen').append(flood_persen+"%");			
+			$('.med_ex_persen').append(med_ex_val+"%");			
+			$('.pa_persen').append(pa_persen+"%");			
+			$('.passenger_persen').append(passenger_persen+"%");			
+			$('.personal_ef_persen').append(personal_ef_persen+"%");			
+			$('.pll_persen').append(pll_persen+"%");			
+			$('.riot_persen').append(riot_persen+"%");			
+			$('.terror_persen').append(terror_persen+"%");			
+			$('.tpl_persen').append(tpl_persen+"%");
+			//=========================//END perhitungan rate/persen======================================//
+			
+			
+			
+			//=====================premium=================================================================
+			var workshop_prem, compre_prem, earthquake_presen, era_prem, flood_prem, med_ex_prem, pa_prem, passenger_prem, personal_ef_prem, pll_prem, riot_prem, terror_prem, tpl_prem;
+			workshop_prem=0;
+			compre_prem=0;
+			earthquake_presen=0;
+			era_prem=0;
+			flood_prem=0;
+			med_ex_prem=0;
+			pa_prem=0;
+			passenger_prem=0;
+			personal_ef_prem=0;
+			pll_prem=0;
+			riot_prem=0;
+			terror_prem=0;
+			tpl_prem=0;
+			
+			
+			$('.workshop_prem, .compre_prem, .earthquake_prem, .era_prem, .flood_prem, .med_ex_prem, .pa_prem, .passenger_prem, .personal_ef_prem, .pll_prem, .riot_prem, .terror_prem, .tpl_prem').html("");
+			$('.workshop_prem').append(med_ex_val);			
+			$('.compre_prem').append(pa_val);			
+			$('.earthquake_prem').append(passenger_val);			
+			$('.era_prem').append(tpl_val);			
+			$('.flood_prem').append(med_ex_val);			
+			$('.med_ex_prem').append(pa_val);			
+			$('.pa_prem').append(passenger_val);			
+			$('.passenger_prem').append(tpl_val);			
+			$('.personal_ef_prem').append(med_ex_val);			
+			$('.pll_prem').append(pa_val);			
+			$('.riot_prem').append(passenger_val);			
+			$('.terror_prem').append(tpl_val);			
+			$('.tpl_prem').append(tpl_val);
+			
 		}
 	
 		$("#harga").bind('input',function(){
@@ -695,7 +850,7 @@
 				"data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&redio1="+redio1+"&redio2="+redio2,
 				"success" : function(response){
 					//var getResult=JSON.parse(response);
-					console.log(response);
+					//console.log(response);
 				}
 			});
 		});
@@ -716,7 +871,6 @@
 			       
 			       "success" : function(response){
 				var getResult=JSON.parse(response);
-				console.log(response);
 				if (getResult.type==1) {
 					//code
 					var i=0;
@@ -724,7 +878,6 @@
 					$('.model-form').html("<option value=''>Silahkan pilih</option>");
 					for(; i<getResult.bodytype.length; i++){
 					//console.log(getResult.model_name[i]);
-					console.log(getResult);
 					$('.model-form').append("<option value='"+getResult.model_o_id[i]+"'>"+getResult.model_name[i]+"</option>");
 					}
 				}else{
@@ -969,7 +1122,7 @@
 				} 		
 			}	
 		?>
-
+		
 	});
 </script>
   
