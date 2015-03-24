@@ -51,7 +51,15 @@
 														'smartlink-factsheet', 'syariah-factsheet',
 														'pension-factsheet', 'saving-factsheet','multi-video',
 														'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap'))); ?>
-		
+		<div style="clear: both"></div>
+		<div class="items-container">
+			<?php echo $this->areablock('container2', array(
+						"allowed" => array("container-box-static-section", "container-box-carousel-section", "container-box-carousel-text-section", 'jurnal-allianz','tahukah-anda')))?>
+		</div>
+		<!-- Map Location -->
+			<?php echo $this->areablock('maparea', array(
+						"allowed" => array("related-product-3-section","map")))?>
+		<!-- End Map Location -->
 		<?php echo $this->areablock('container-modal', array('allowed' => array('modal')))?>
 	</div>
 </div>
