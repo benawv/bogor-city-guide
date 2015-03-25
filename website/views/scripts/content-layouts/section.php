@@ -52,6 +52,7 @@
 														'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
 														'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
 														'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
+														'tekskanan60-imagekiri40_2', 'tekskanan60-videokiri40_2',
 														'smartlink-factsheet', 'syariah-factsheet',
 														'pension-factsheet', 'saving-factsheet','multi-video',
 														'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap'))); ?>
