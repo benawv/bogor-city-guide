@@ -666,7 +666,7 @@
 
                                                         <div class="menutab_dekstop">
                                                             <ul>
-                                                                <li><a id="open_tab_2_1" class="active" href="javascript:void(0);">Customized Non-Truck</a></li>
+                                                                <li><a id="open_tab_2_1" class="active" href="javascript:void(0);">Customized</a></li>
                                                                 
                                                             </ul>
                                                         </div>
@@ -674,7 +674,7 @@
                                                         <div class="tabcontent" id="tabcontent_2">
                                                             <ul>
                                                                 <li>
-                                                                    <a id="open_tab_2_1_m" class="menumobile active" href="javascript:void(0);">Example</a>
+                                                                    <a id="open_tab_2_1_m" class="menumobile active" href="javascript:void(0);">Customized</a>
                                                                     <div id="tabcontent_2_1" class="content_show showme show_2">
                                                                     
                                                                         <div class="tabScroll">
@@ -772,41 +772,28 @@
                                                                             </tr>      
                                                                              <tr>
 										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
-                                                                                <td>ERA</td> 
-                                                                                <td class='no_era_val'>-</td> 
-                                                                                <td class='no_era_persen'>-</td> 
-                                                                                <td class='no_era_prem'>-</td>
-                                                                                
-                                                                            </tr> 
-                                                                             <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
                                                                                 <td>Authorized Workshop</td> 
                                                                                 <td class='no_workshop_val'>-</td>
                                                                                 <td class='no_workshop_persen'>-</td> 
                                                                                 <td class='no_workshop_prem'>-</td>
                                                                             </tr> 
-                                                                             
+                                                                                                                                                         <tfoot>
+                                                                            <tr> 
+                                                                                <td></td> 
+                                                                                <td></td>
+										<td></td>
+                                                                                <td style="background-color: darkgray;">Total Premium</td> 
+                                                                                <td style="background-color: darkgray;" class='no_totalPremium'></td>
+                                                                                
+                                                                            </tr>
+                                                                            </tfoot>   
                                                                             </tbody>
 
                                                                         </table>
-                                                                            
-                                                                        <div class="no_total_premium_p_standar">
-                                                                            
-                                                                            <span>Total Premium (excl. Admin Cost)</span>  7.978.625,00
-                                                                            
-                                                                        </div>     
-                                                                           
                                                                         </div>
 
                                                                     </div>
-                                                                </li>
-                                                                                <td class='no_riot_prem2'>-</td>
-                                                                                <td class='no_era_persen2'>-</td> 
-                                                                                <td class='no_era_prem2'>-</td>
-                                                                                <td class='no_riot_prem3'>-</td>
-                                                                                <td class='no_era_persen3'>-</td> 
-                                                                                <td class='no_era_prem3'>-</td>
-                                                                
+                                                                </li>                                                                
                                                             </ul>
                                                         </div>
 
