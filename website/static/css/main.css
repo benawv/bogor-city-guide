@@ -742,12 +742,16 @@ a.fbshare, a.twshare{
   width: 268px;
   padding: 5px;
   padding-right: 45px;
+  -webkit-padding-end: 55px;
   font-size: 16px;
   line-height: 1;
   border: 0;
   border-radius: 0;
   height: 40px;
   -webkit-appearance: none;
+}
+.cus_select select option{
+  background-color: #003781;
 }
 .cus_select{
   width: 240px;
