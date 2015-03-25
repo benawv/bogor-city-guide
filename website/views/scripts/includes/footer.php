@@ -165,9 +165,9 @@
 		
 			//alert($(".heading").offset().top);
 			if(Math.floor( $(".heading").offset().top)<=212)
-	      	{
-		      	$('html, body').animate({scrollTop:$("#"+anchor).offset().top-190}, 500);
-	      	}
+			{
+				$('html, body').animate({scrollTop:$("#"+anchor).offset().top-190}, 500);
+			}
 			else
 			{
 				$('html, body').animate({scrollTop:$("#"+anchor).offset().top-90}, 500);
@@ -187,9 +187,12 @@
 		}
 		$(".pagenav .navi li").removeClass('aktif');
 		$(".pagenav .navi li .nav_menu div").css('background-position','0px 0px');
-		var element = $("." + hash);
-		element.addClass('aktif');
-		$('li.aktif .nav_menu div').css('background-position', '0px 0px');
+		//var element = $("." + hash);
+		$("li."+hash).addClass('aktif');
+		$('li .nav_menu div').css('display', 'block');
+		$('li .nav_menu div.white_image').css('display', 'none');
+		$('li.aktif .nav_menu div').css('display', 'none');
+		$('li.aktif .nav_menu div.white_image').css('display', 'block');
 		
 	});
 	/*$(document).ready(function(){
