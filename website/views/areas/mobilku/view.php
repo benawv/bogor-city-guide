@@ -1,27 +1,27 @@
    
-<link rel="stylesheet" href="/website/static/css-mobil/wizard-step.css" type="text/css" media="all" /> 
+<link rel="stylesheet" href="/website/static/mobilku/wizard-step.css" type="text/css" media="all" /> 
 
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css-mobil/bootstrap.min.css"  />
+<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/bootstrap.min.css"  />
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/flexslider.css">-->
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/main.css">
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/tabs-accordion.css">-->
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/product.css">-->     
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css-mobil/data-table-1.10.4/media/css/jquery.dataTables.css" >
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css-mobil/jquery-ui.css" >	
+<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/data-table-1.10.4/media/css/jquery.dataTables.css" >
+<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/jquery-ui.css" >	
   
 <script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
 
 		
 <!--   plugins 	 -->
 
-<script src="/website/static/css-mobil/jquery.bootstrap.wizard.js" type="text/javascript"></script>
-<script src="/website/static/css-mobil/wizard.js"></script>
-<script src="/website/static/css-mobil/data-table-1.10.4/media/js/jquery.dataTables.js" type="text/javascript"></script>
+<script src="/website/static/mobilku/jquery.bootstrap.wizard.js" type="text/javascript"></script>
+<script src="/website/static/mobilku/wizard.js"></script>
+<script src="/website/static/mobilku/data-table-1.10.4/media/js/jquery.dataTables.js" type="text/javascript"></script>
     
-<script src="/website/static/css-mobil/jquery.validate.min.js"></script>       
-<script src="/website/static/css-mobil/jquery-ui.js"></script>
+<script src="/website/static/mobilku/jquery.validate.min.js"></script>       
+<script src="/website/static/mobilku/jquery-ui.js"></script>
 
 <!-- End of Header -->
 
@@ -203,7 +203,7 @@
                                                                 <input type="radio" id="radio01" name="radio" checked="checked" value="comprehensive" />
                                                                 <label for="radio01">
                                                                     <span><p>Komprehensif</p>
-                                                                    <img class="car-icon" src="/website/static/css-mobil/icon/car1.png" />
+                                                                    <img class="car-icon" src="/website/static/mobilku/icon/car1.png" />
                                                                     </span>
                                                                     
                                                                 </label>
@@ -213,7 +213,7 @@
                                                                 <input type="radio" id="radio02" name="radio" value="tlo"/>
                                                                 <label for="radio02">
                                                                     <span><p>Total Loss Only</p>
-                                                                    <img class="car-icon" src="/website/static/css-mobil/icon/car31.png" />
+                                                                    <img class="car-icon" src="/website/static/mobilku/icon/car31.png" />
                                                                     </span>
                                                                     
                                                                 </label>
@@ -1057,19 +1057,6 @@
     <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
     <script>
         $(document).ready(function(){
-		$('#myTable').dataTable( {
-                        "searching": false,
-                        "bLengthChange": false,
-                        "paging": false,
-                        "info": false
-                    } );
-     
-		$('#myTable2').dataTable( {
-                        "searching": false,
-                        "bLengthChange": false,
-                        "paging": false,
-                        "info": false
-                    } );
 		
 		function clearFormat(value) {
 			value = value.replace(/[^0-9\.]+/g,"");
@@ -1086,7 +1073,6 @@
 		});
 		
 		function calc_result(paket) {
-		//code
 			
 			var getColom;
 			var harga=clearFormat($('#harga').val());
@@ -1096,17 +1082,22 @@
 			var periode;
 			var radio01;
 
-
 			var tipe=$('#tipe').val().toLowerCase();
 			var wilayah=parseInt($('#wilayah').val());
-			var kapasitas=$('#kapsitas').val();
+			var kapasitas=parseInt($('#kapasitas').val());
+			
 			
 			//=========================perhitungan basic======================================//
 			var val_tlo=harga*1; //harga dikali tahun pertama (1), tahun kedua dikali 2 dst.
+			var cleanVarTlo=parseInt(val_tlo); //get clean tlo
 			var med_ex_val=5000000;
+			var cleanMed_ex_val=parseInt(med_ex_val); //get clean tlo
 			var pa_val=10000000;
+			var cleanPa_val=parseInt(pa_val); //get clean tlo
 			var passenger_val=10000000;
+			var cleanPassenger_val=parseInt(passenger_val); //get clean tlo
 			var tpl_val=50000000;
+			var cleanTpl_val=parseInt(tpl_val); //get clean tlo
 			
 			//get total day in a year
 			var now = new Date(2015,1,0);
@@ -1115,18 +1106,12 @@
 			var oneDay = 1000 * 60 * 60 * 24;
 			var day = Math.ceil(diff / oneDay);
 			
-			
 			val_tlo=accounting.formatMoney(val_tlo,'',2,'.',',');
 			med_ex_val=accounting.formatMoney(med_ex_val,'',2,'.',',');
 			pa_val=accounting.formatMoney(pa_val,'',2,'.',',');
 			passenger_val=accounting.formatMoney(passenger_val,'',2,'.',',');
 			tpl_val=accounting.formatMoney(tpl_val,'',2,'.',',');
-		
-			val_tlo=harga*1; //harga dikali tahun pertama (1), tahun kedua dikali 2 dst.
-			var cleanVarTlo=val_tlo;
-			val_tlo=accounting.formatMoney(val_tlo,'',2,'.',',');
-			
-			
+					
 			//INSER INTO FORM
 			$('.workshop_val, .compre_val, .earthquake_val, .era_val, .flood_val, .riot_val, .terror_val').html("");
 			$('.workshop_val, .compre_val, .earthquake_val, .era_val, .flood_val, .riot_val, .terror_val').append(val_tlo);
@@ -1138,7 +1123,6 @@
 			//========================= END perhitungan basic======================================//
 			
 			
-			
 			//=========================//perhitungan rate/persen======================================//
 			var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
 			workshop_persen=0;
@@ -1146,7 +1130,6 @@
 			
 			// if (tlo= 5+wilayah) else (1+wilayah)
 			if (jenisasuransi=='tlo') {
-				//code
 				getColom=wilayah+5;
 			}else{
 				getColom=wilayah+1;
@@ -1162,6 +1145,7 @@
 			}else if (getColom==3) {
 				earthquake_presen=parseFloat(0.1000);
 				flood_persen=parseFloat(0.1000);
+				riot_persen=parseFloat(0.0500);
 				terror_persen=parseFloat(0.0500);
 				pa_persen=parseFloat(0.5000);
 				passenger_persen=parseFloat(0.1000);
@@ -1228,7 +1212,6 @@
 				med_ex_pers=0;
 			}
 			
-			
 			era_persen=parseFloat(0.0005);
 			personal_ef_persen=parseFloat(0.1000);
 			pll_persen=0;
@@ -1255,22 +1238,20 @@
 			
 			//=====================premium=================================================================
 			var workshop_prem, compre_prem, earthquake_prem, era_prem, flood_prem, med_ex_prem, pa_prem, passenger_prem, personal_ef_prem, pll_prem, riot_prem, terror_prem, tpl_prem;
+		
 			workshop_prem=0;
-			compre_prem=0;
-			
-			
+			compre_prem=0;			
 			earthquake_prem=(((1*(cleanVarTlo*earthquake_presen)/100)*day)/day);
 			era_prem=(((1*(cleanVarTlo*era_persen)/100)*day)/day);
 			flood_prem=(((1*(cleanVarTlo*flood_persen)/100)*day)/day);
-			med_ex_prem=(((1*(parseFloat(med_ex_val)*med_ex_pers)/100)*day)/day);
-			pa_prem=(((1*(pa_val*pa_persen)/100)*day)/day);
-			passenger_prem=(((1*(passenger_val*passenger_persen)/100)*day)/day);
+			med_ex_prem=(((1*(cleanMed_ex_val*med_ex_pers)/100)*day)/day);
+			pa_prem=(((1*(cleanPa_val*pa_persen)/100)*day)/day);
+			passenger_prem=(((1*((parseInt(kapasitas)-1)*cleanPassenger_val*passenger_persen)/100)*day)/day);
 			personal_ef_prem=(((1*(0*personal_ef_persen)/100)*day)/day);
 			pll_prem=0;
 			riot_prem=(((1*(cleanVarTlo*riot_persen)/100)*day)/day);
 			terror_prem=(((1*(cleanVarTlo*terror_persen)/100)*day)/day);
 			tpl_prem=0;
-			
 			
 			$('.workshop_prem, .compre_prem, .earthquake_prem, .era_prem, .flood_prem, .med_ex_prem, .pa_prem, .passenger_prem, .personal_ef_prem, .pll_prem, .riot_prem, .terror_prem, .tpl_prem').html("");
 			$('.workshop_prem').append(accounting.formatMoney(workshop_prem,'',2,'.',','));			
@@ -1287,7 +1268,9 @@
 			$('.terror_prem').append(accounting.formatMoney(terror_prem,'',2,'.',','));			
 			$('.tpl_prem').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
 			
-		}
+		}//end of function calc_result
+	
+	
 	
 		$("#harga").bind('input',function(){
 			var text = clearFormat($(this).val());
@@ -1404,6 +1387,20 @@
 				calc_result();
 			}
 		});
+		
+		$('#myTable').dataTable( {
+                        "searching": false,
+                        "bLengthChange": false,
+                        "paging": false,
+                        "info": false
+                } );
+     
+		$('#myTable2').dataTable( {
+                        "searching": false,
+                        "bLengthChange": false,
+                        "paging": false,
+                        "info": false
+                    } );
 		
 		$( "#periode" ).datepicker();
 		$(".menutab_dekstop li a").width(100);
