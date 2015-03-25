@@ -28,7 +28,7 @@
 		}
 		$(".pagenav .navi li").click(function(){
 			$(".pagenav .navi li").removeClass('aktif');
-			$(".pagenav .navi li .nav_menu div").css('background-position','0px -26px');
+			$(".pagenav .navi li .nav_menu div").css('background-position','0px 0px');
 			$(this).addClass('aktif');
 			$('li.aktif .nav_menu div').css('background-position', '0px 0px');
 			

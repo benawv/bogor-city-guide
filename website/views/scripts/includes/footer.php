@@ -158,7 +158,7 @@
 	{
 	
 			$(".pagenav .navi li").removeClass('aktif');
-			$(".pagenav .navi li .nav_menu div").css('background-position','0px -26px');
+			$(".pagenav .navi li .nav_menu div").css('background-position','0px 0px');
 			var element = $("." + anchor);
 			element.addClass('aktif');
 			$('li.aktif .nav_menu div').css('background-position', '0px 0px');
@@ -186,7 +186,7 @@
 			$('html, body').animate({scrollTop:$("#"+hash).offset().top-90}, 500);
 		}
 		$(".pagenav .navi li").removeClass('aktif');
-		$(".pagenav .navi li .nav_menu div").css('background-position','0px -26px');
+		$(".pagenav .navi li .nav_menu div").css('background-position','0px 0px');
 		var element = $("." + hash);
 		element.addClass('aktif');
 		$('li.aktif .nav_menu div').css('background-position', '0px 0px');
