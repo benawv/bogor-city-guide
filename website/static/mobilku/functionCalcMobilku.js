@@ -327,7 +327,7 @@
                         "info": false
                 } );
      
-		$('#myTable2').dataTable( {
+		$('#myTable2,#myTable3,#myTable4,#myTable5,#myTable6,#myTable7').dataTable( {
                         "searching": false,
                         "bLengthChange": false,
                         "paging": false,

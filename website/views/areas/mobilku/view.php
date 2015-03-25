@@ -263,7 +263,7 @@
                                                                     <div id="tabcontent_1_1" class="content_show showme show_1">
                                                                     
                                                                         <div class="tabScroll">
-                                                                        <table id="myTable" class="display" cellspacing="0" width="100%">
+                                                                        <table id="myTable2" class="display" cellspacing="0" width="100%">
                                                                             <thead> 
                                                                             <tr>  
                                                                                 <th class="">Liputan</th> 
@@ -384,7 +384,7 @@
                                                                     <div id="tabcontent_1_2" class="content_show show_1">
                                                                         
                                                                         <div class="tabScroll">
-                                                                        <table id="myTable" class="display" cellspacing="0" width="100%">
+                                                                        <table id="myTable3" class="display" cellspacing="0" width="100%">
                                                                             <thead> 
                                                                             <tr>  
                                                                                 <th class="">Liputan</th> 
@@ -505,7 +505,7 @@
                                                                     <div id="tabcontent_1_3" class="content_show show_1">
                                                                         
                                                                         <div class="tabScroll">
-                                                                        <table id="myTable" class="display" cellspacing="0" width="100%">
+                                                                        <table id="myTable4" class="display" cellspacing="0" width="100%">
                                                                             <thead> 
                                                                             <tr>  
                                                                                 <th class="">Liputan</th> 
@@ -656,7 +656,7 @@
                                                                     <div id="tabcontent_2_1" class="content_show showme show_2">
                                                                     
                                                                         <div class="tabScroll">
-                                                                        <table id="myTable2" class="display" cellspacing="0" width="100%">
+                                                                        <table id="myTable5" class="display" cellspacing="0" width="100%">
                                                                             <thead> 
                                                                             <tr>  
                                                                                 <th class="">Liputan</th> 
@@ -778,7 +778,7 @@
                                                                     <div id="tabcontent_2_2" class="content_show show_2">
                                                                         
                                                                         <div class="tabScroll">
-                                                                        <table id="myTable2" class="display" cellspacing="0" width="100%">
+                                                                        <table id="myTable6" class="display" cellspacing="0" width="100%">
                                                                             <thead> 
                                                                             <tr>  
                                                                                 <th class="">Liputan</th> 
@@ -900,7 +900,7 @@
                                                                     <div id="tabcontent_2_3" class="content_show show_2">
                                                                         
                                                                         <div class="tabScroll">
-                                                                        <table id="myTable2" class="display" cellspacing="0" width="100%">
+                                                                        <table id="myTable7" class="display" cellspacing="0" width="100%">
                                                                             <thead> 
                                                                             <tr>  
                                                                                 <th class="">Liputan</th> 
@@ -1053,7 +1053,53 @@
 			
 </div>
 
+    <script type="text/javascript">
+	
+	<?php
+			$i = 1;
+			$j = 1;
 
+			for ($i=1; $i <=2 ; $i++) {
+				for ($j=1; $j <=6 ; $j++) { 
+		?>
+            
+        
+			$("#open_tab_<?php echo $i ?>_<?php echo $j ?>").click(function(){
+                
+				$(".menutab_dekstop li a").removeClass();
+				$("a#open_tab_<?php echo $i ?>_<?php echo $j ?>").addClass("active");
+				$(".show_<?php echo $i ?>").hide();
+				$("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").show();
+			});	
+					
+		<?php 
+				} 		
+			}	
+		?>
+
+		// for mobile
+		<?php
+			$i = 1;
+			$j = 1;
+
+			for ($i=1; $i <=2 ; $i++) {
+				for ($j=1; $j <=6 ; $j++) { 
+		?>
+
+			$("#open_tab_<?php echo $i ?>_<?php echo $j ?>_m").click(function(){
+
+				$("#tabcontent_<?php echo $i ?> li a").removeClass("active");
+				$(this).addClass("active");
+				$(".show_<?php echo $i ?>").hide();
+				$("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").show();
+			});	
+					
+		<?php 
+				} 		
+			}	
+		?>
+	
+    </script>	
     <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
     <script src="/website/static/mobilku/functionCalcMobilku.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -1156,81 +1202,7 @@
 		});
 		/* silde nav*/
 		
-		/*$('.kiri .tab').click(function(){
-			$('.kiri .tab').removeClass('aktif_tab');
-			$(this).addClass('aktif_tab');
-			$('.kiri .tab span').removeClass('row');
-			$('.kiri .tab span').addClass('icon');
-			$('.kiri .aktif_tab span').removeClass('icon');
-			$('.kiri .aktif_tab span').addClass('row');
-			var id = $(this).attr('id');
-			
-			$('.kanan div').removeClass('aktif_konten');
-			$('.kanan div').addClass('hidden');
-			$('.kanan .'+id).removeClass('hidden');
-			$('.kanan .'+id).addClass('aktif_konten');
-		});
-		
-		
-		$('.kiri2 .tab').click(function(){
-			$('.kiri2 .tab').removeClass('aktif_tab');
-			$(this).addClass('aktif_tab');
-			$('.kiri2 .tab span').removeClass('row');
-			$('.kiri2 .tab span').addClass('icon');
-			$('.kiri2 .aktif_tab span').removeClass('icon');
-			$('.kiri2 .aktif_tab span').addClass('row');
-			var id = $(this).attr('id');
-			
-			$('.kanan2 div').removeClass('aktif_konten');
-			$('.kanan2 div').addClass('hidden');
-			$('.kanan2 .'+id).removeClass('hidden');
-			$('.kanan2 .'+id).addClass('aktif_konten');
-		});*/
-
 // for desktop
-		<?php
-			$i = 1;
-			$j = 1;
-
-			for ($i=1; $i <=2 ; $i++) {
-				for ($j=1; $j <=6 ; $j++) { 
-		?>
-            
-        
-			$("#open_tab_<?php echo $i ?>_<?php echo $j ?>").click(function(){
-                
-				$(".menutab_dekstop li a").removeClass();
-				$("a#open_tab_<?php echo $i ?>_<?php echo $j ?>").addClass("active");
-				$(".show_<?php echo $i ?>").hide();
-				$("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").show();
-			});	
-					
-		<?php 
-				} 		
-			}	
-		?>
-
-		// for mobile
-		<?php
-			$i = 1;
-			$j = 1;
-
-			for ($i=1; $i <=2 ; $i++) {
-				for ($j=1; $j <=6 ; $j++) { 
-		?>
-
-			$("#open_tab_<?php echo $i ?>_<?php echo $j ?>_m").click(function(){
-
-				$("#tabcontent_<?php echo $i ?> li a").removeClass("active");
-				$(this).addClass("active");
-				$(".show_<?php echo $i ?>").hide();
-				$("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").show();
-			});	
-					
-		<?php 
-				} 		
-			}	
-		?>
 		
 	});
 </script>
