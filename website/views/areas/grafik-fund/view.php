@@ -2,27 +2,14 @@
 <div class="wrapper clearfix">
 	<div class="wrap30 l left">
 		<h2 class="top">Jenis Fund</h2>
-		<select class="span2 blue-color fundtype">
-		    <option value="0" selected="selected">Pilih Jenis Fund</option>
-		    <option value="AlliSya  Rupiah Equity Fund">Allisya  Rupiah Equity Fund</option>
-		    <option value="AlliSya Rupiah Balanced Fund">Allisya Rupiah Balanced Fund</option>
-		    <option value="AlliSya Rupiah Fixed Income Fund">Allisya Rupiah Fixed Income Fund</option>
-		    <option value="GUARDIA DANA PENDAPATAN TETAP">Guardia Dana Pendapatan Tetap</option>
-		    <option value="SMARTWEALTH BEST OF BEST INDONESIA FUND">Smartwealth Best Of Best Indonesia Fund</option>
-		    <option value="SMARTWEALTH EQUITY INDOASIA FUND">Smartwealth Equity Indoasia Fund</option>
-		    <option value="SMARTWEALTH EQUITY INDOASIA FUND (USD)">Smartwealth Equity Indoasia Fund (usd)</option>
-		    <option value="SMARTWEALTH LIQUIFLEX LQ45">Smartwealth Liquiflex Lq45</option>
-		    <option value="SmartWealth Equity IndoGlobal Fund">Smartwealth Equity Indoglobal Fund</option>
-		    <option value="Smartlink Dollar Managed Fund">Smartlink Dollar Managed Fund</option>
-		    <option value="Smartlink Rupiah Balanced Fund">Smartlink Rupiah Balanced Fund</option>
-		    <option value="Smartlink Rupiah Balanced Plus Fund">Smartlink Rupiah Balanced Plus Fund</option>
-		    <option value="Smartlink Rupiah Equity Fund">Smartlink Rupiah Equity Fund</option>
-		    <option value="Smartlink Rupiah Fixed Income Fund">Smartlink Rupiah Fixed Income Fund</option>
-		    <option value="Smartlink Rupiah Money Market Fund">Smartlink Rupiah Money Market Fund</option>
-		    <option value="Smartwealth Equity Indoconsumer Fund">Smartwealth Equity Indoconsumer Fund</option>
-		    <option value="Smartwealth Equity Infrastructure Fund">Smartwealth Equity Infrastructure Fund</option>
-		    <option value="Smartwealth Equity Small Medium Capital Fund">Smartwealth Equity Small Medium Capital Fund</option>
-		</select>
+		<div class="cus_select">
+			<select class="span2 blue-color fundtype">
+			    <option value="0" selected="selected">Pilih Jenis Fund</option>
+			    <option value="Smartlink Rupiah Equity Fund">Smartlink Rupiah Equity Fund</option>
+			    <option value="Smartlink Rupiah Balanced Fund">Smartlink Rupiah Balanced Fund</option>
+			    <option value="Smartlink Rupiah Fixed Income Fund">Smartlink Rupiah Fixed Income Fund</option>
+			</select>
+		</div>
 		<input class="select-btn blue-color filter_harga btn" type="button" value="Lihat harga unit" />
 	</div>
 	
@@ -192,7 +179,7 @@
 		
 		$.ajax({
 			"url" : "/dataNab",
-			"data" : {fundName: "AlliSya  Rupiah Equity Fund"},
+			"data" : {fundName: "Smartlink Rupiah Equity Fund"},
 			"type" : "POST",
 			"success" : function(response){
 					var new_data = JSON.parse(response);

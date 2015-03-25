@@ -735,12 +735,37 @@ a.fbshare, a.twshare{
 }
 .fundtype{
   color: #FFF;
+  height: 42px;
+}
+.cus_select select{
+  background: transparent;
+  width: 268px;
+  padding: 5px;
+  padding-right: 45px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  height: 40px;
+  -webkit-appearance: none;
+}
+.cus_select{
+  width: 240px;
+  height: 40px;
+  overflow: hidden;
+  background: url("/website/static/images/icon-arrow-down_2.png") no-repeat right #003781;
+  border: 1px solid #ccc;
+  float:left;
 }
 .select-btn.blue-color.filter_harga.btn{
-  height: 28px !important;
-  position: absolute;
+  float:left;
+  height: 40px !important;
   margin-left: 10px;
-  padding: 5px 10px !important;
+  padding: 0px 30px !important;
+  background: url("/website/static/images/ic_buttons.png") no-repeat scroll -357px -110px #003781;
+}
+.select-btn.blue-color.filter_harga.btn:hover,.select-btn.blue-color.filter_harga.btn:focus{
+  color: #FFF;
 }
 
 /*SETTING LOGO 125*/
