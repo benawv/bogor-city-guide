@@ -53,27 +53,15 @@ $(document).ready(function(){
         'previousSelector': '.btn-previous',
          onNext : function(tab, navigation,index){
             
-             console.log( tab );
-             console.log( navigation );
-             console.log( index );
-             
-            console.log( 'on next' );
-    
-             
-            console.log( 'abis validate' );
-             
             var $valid = $("#myform").valid();
-             
-            console.log( 'abis valid' );
-	  		
+             	  		
             if(!$valid) {
-                console.log( 'invalid' );
                 //$validator.focusInvalid();
                 return false;
             }
             else
             {
-                console.log( 'valid' );
+              //  console.log( 'valid' );
             }
              
 

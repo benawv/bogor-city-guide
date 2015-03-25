@@ -365,24 +365,16 @@
                                                                                 <td class='workshop_prem'>-</td>
                                                                                 
                                                                             </tr> 
-                                                                            <tfoot>
-                                                                            <tr> 
-                                                                                <td></td> 
-                                                                                <td></td>
-                                                                                <td style="background-color: darkgray;">Total Premium</td> 
-                                                                                <td style="background-color: darkgray;" class='totalPremium'></td>
-                                                                                
-                                                                            </tr>
-                                                                            </tfoot> 
+                                                                             
                                                                             </tbody>
 
                                                                         </table>
                                                                             
-                                                                        <!--<div class="total_premium_p_standar">
+                                                                        <div class="total_premium_p_standar">
                                                                             
                                                                             <span>Total Premium (excl. Admin Cost)</span>  7.978.625,00
                                                                             
-                                                                        </div> -->    
+                                                                        </div>     
                                                                            
                                                                         </div>
                                                                     </div>
@@ -404,7 +396,7 @@
                                                                             </thead> 
                                                                             <tbody> 
                                                                             <tr> 
-                                                                                <td id="jenisasuransi2"></td> 
+                                                                                <td>Comprehensive</td> 
                                                                                 <td class='compre_val2'>-</td> 
                                                                                 <td class='compre_persen2'>-</td> 
                                                                                 <td class='compre_prem2'>-</td>
@@ -456,7 +448,7 @@
                                                                                 <td>Strike, Riot, and Civil Commotion</td> 
                                                                                 <td class='riot_val2'>-</td> 
                                                                                 <td class='riot_persen2'>-</td> 
-                                                                                <td class='riot_prem2'>-</td>
+                                                                                <td class='earthquake_prem2'>-</td>
                                                                                 
                                                                             </tr>  
                                                                             <tr> 
@@ -483,8 +475,8 @@
                                                                              <tr> 
                                                                                 <td>ERA</td> 
                                                                                 <td class='era_val2'>-</td> 
-                                                                                <td class='era_persen2'>-</td> 
-                                                                                <td class='era_prem2'>-</td>
+                                                                                <td class='pa_persen2'>-</td> 
+                                                                                <td class='pa_prem2'>-</td>
                                                                                 
                                                                             </tr> 
                                                                              <tr> 
@@ -494,24 +486,16 @@
                                                                                 <td class='workshop_prem2'>-</td>
                                                                                 
                                                                             </tr> 
-                                                                            <tfoot>
-                                                                            <tr> 
-                                                                                <td></td> 
-                                                                                <td></td>
-                                                                                <td style="background-color: darkgray;">Total Premium</td> 
-                                                                                <td style="background-color: darkgray;" class='totalPremium2'></td>
-                                                                                
-                                                                            </tr>
-                                                                            </tfoot>  
+                                                                             
                                                                             </tbody>
 
                                                                         </table>
                                                                             
-                                                                        <!--<div class="total_premium_p_standar2">
+                                                                        <div class="total_premium_p_standar2">
                                                                             
                                                                             <span>Total Premium (excl. Admin Cost)</span>  7.978.625,00
                                                                             
-                                                                        </div>-->    
+                                                                        </div>     
                                                                         
                                                                         </div>
                                                                     </div>
@@ -533,12 +517,12 @@
                                                                             </thead> 
                                                                             <tbody> 
                                                                             <tr> 
-                                                                                <td id="jenisasuransi3"></td> 
-                                                                                <td class='compre_val'>-</td> 
-                                                                                <td class='compre_persen'>-</td> 
-                                                                                <td class='compre_prem'>-</td>
+                                                                                <td>Comprehensive</td> 
+                                                                                <td class='compre_val3'>-</td> 
+                                                                                <td class='compre_persen3'>-</td> 
+                                                                                <td class='compre_prem3'>-</td>
                                                                                 
-                                                                            </tr>
+                                                                            </tr>     
                                                                             <tr> 
                                                                                 <td>TPL</td> 
                                                                                 <td class='tpl_val3'>-</td> 
@@ -585,7 +569,7 @@
                                                                                 <td>Strike, Riot, and Civil Commotion</td> 
                                                                                 <td class='riot_val3'>-</td> 
                                                                                 <td class='riot_persen3'>-</td> 
-                                                                                <td class='riot_prem3'>-</td>
+                                                                                <td class='earthquake_prem3'>-</td>
                                                                                 
                                                                             </tr>  
                                                                             <tr> 
@@ -612,8 +596,8 @@
                                                                              <tr> 
                                                                                 <td>ERA</td> 
                                                                                 <td class='era_val3'>-</td> 
-                                                                                <td class='era_persen3'>-</td> 
-                                                                                <td class='era_prem3'>-</td>
+                                                                                <td class='pa_persen3'>-</td> 
+                                                                                <td class='pa_prem3'>-</td>
                                                                                 
                                                                             </tr> 
                                                                              <tr> 
@@ -622,25 +606,17 @@
                                                                                 <td class='workshop_persen3'>-</td> 
                                                                                 <td class='workshop_prem3'>-</td>
                                                                                 
-                                                                            </tr>
-                                                                            <tfoot>
-                                                                            <tr> 
-                                                                                <td></td> 
-                                                                                <td></td>
-                                                                                <td style="background-color: darkgray;">Total Premium</td> 
-                                                                                <td style="background-color: darkgray;" class='totalPremium3'></td>
-                                                                                
-                                                                            </tr>
-                                                                            </tfoot>   
+                                                                            </tr> 
+                                                                             
                                                                             </tbody>
 
                                                                         </table>
                                                                             
-                                                                          <!--<div class="total_premium_p_standar3">
-                                                                              
-                                                                              <span>Total Premium (excl. Admin Cost)</span>  7.978.625,00
-                                                                              
-                                                                          </div>-->
+                                                                        <div class="total_premium_p_standar3">
+                                                                            
+                                                                            <span>Total Premium (excl. Admin Cost)</span>  7.978.625,00
+                                                                            
+                                                                        </div>     
                                                                         </div>     
                                                                         
                                                                     </div>
@@ -666,7 +642,9 @@
 
                                                         <div class="menutab_dekstop">
                                                             <ul>
-                                                                <li><a id="open_tab_2_1" class="active" href="javascript:void(0);">Customized</a></li>
+                                                                <li><a id="open_tab_2_1" class="active" href="javascript:void(0);">Mobilku Basic</a></li>
+                                                                <li><a id="open_tab_2_2" href="javascript:void(0);">Mobilku Standar</a></li>
+                                                                <li><a id="open_tab_2_3" href="javascript:void(0);">Mobilku Premier</a></li>
                                                                 
                                                             </ul>
                                                         </div>
@@ -674,14 +652,13 @@
                                                         <div class="tabcontent" id="tabcontent_2">
                                                             <ul>
                                                                 <li>
-                                                                    <a id="open_tab_2_1_m" class="menumobile active" href="javascript:void(0);">Customized</a>
+                                                                    <a id="open_tab_2_1_m" class="menumobile active" href="javascript:void(0);">Example</a>
                                                                     <div id="tabcontent_2_1" class="content_show showme show_2">
                                                                     
                                                                         <div class="tabScroll">
                                                                         <table id="myTable5" class="display" cellspacing="0" width="100%">
                                                                             <thead> 
-                                                                            <tr>
-										<th class="">Checklist</th> 
+                                                                            <tr>  
                                                                                 <th class="">Liputan</th> 
                                                                                 <th class="">Insured Value</th> 
                                                                                 <th class="">Rate</th> 
@@ -690,110 +667,357 @@
                                                                             </tr> 
                                                                             </thead> 
                                                                             <tbody> 
-                                                                            <tr>
-										<td><input type="checkbox" name="no_compre_is_calc" value="Car" checked></td>  
+                                                                            <tr> 
                                                                                 <td>Comprehensive</td> 
                                                                                 <td class='no_compre_val'>-</td> 
                                                                                 <td class='no_compre_persen'>-</td> 
                                                                                 <td class='no_compre_prem'>-</td>
                                                                                 
                                                                             </tr>     
-                                                                            <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+                                                                            <tr> 
                                                                                 <td>TPL</td> 
                                                                                 <td class='no_tpl_val'>-</td> 
                                                                                 <td class='no_tpl_persen'>-</td> 
                                                                                 <td class='no_tpl_prem'>-</td> 
                                                                                 
                                                                             </tr>  
-                                                                            <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+                                                                            <tr> 
                                                                                 <td>Medical Expense</td> 
                                                                                 <td class='no_med_ex_val'>-</td> 
                                                                                 <td class='no_med_ex_persen'>-</td> 
                                                                                 <td class='no_med_ex_prem'>-</td>
                                                                                 
                                                                             </tr>  
-                                                                            <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+                                                                            <tr> 
                                                                                 <td>PLL</td> 
                                                                                 <td class='no_pll_val'>-</td> 
                                                                                 <td class='no_pll_persen'>-</td> 
                                                                                 <td class='no_pll_prem'>-</td> 
                                                                                 
                                                                             </tr>  
-                                                                            <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+                                                                            <tr> 
+                                                                                <td>Personal Effect</td> 
+                                                                                <td class='no_personal_ef_val'>-</td> 
+                                                                                <td class='no_personal_ef_persen'>-</td> 
+                                                                                <td class='no_personal_ef_prem'>-</td> 
+                                                                                
+                                                                            </tr>  
+                                                                            <tr> 
                                                                                 <td>Flood</td> 
                                                                                 <td class='no_flood_val'>-</td> 
                                                                                 <td class='no_flood_persen'>-</td> 
                                                                                 <td class='no_flood_prem'>-</td> 
                                                                                 
                                                                             </tr>  
-                                                                            <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+                                                                            <tr> 
                                                                                 <td>Earthquake</td> 
                                                                                 <td class='no_earthquake_val'>-</td> 
                                                                                 <td class='no_earthquake_presen'>-</td> 
                                                                                 <td class='no_earthquake_prem'>-</td>  
                                                                                 
                                                                             </tr>  
-                                                                            <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+                                                                            <tr> 
                                                                                 <td>Strike, Riot, and Civil Commotion</td> 
                                                                                 <td class='no_riot_val'>-</td> 
                                                                                 <td class='no_riot_persen'>-</td> 
-                                                                                <td class='no_riot_prem'>-</td>
+                                                                                <td class='no_earthquake_prem'>-</td>
                                                                                 
                                                                             </tr>  
-                                                                            <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+                                                                            <tr> 
                                                                                 <td>Terrorist and Sabotage</td> 
                                                                                 <td class='no_terror_val'>-</td> 
                                                                                 <td class='no_terror_persen'>-</td> 
                                                                                 <td class='no_terror_prem'>-</td>
                                                                                 
                                                                             </tr>  
-                                                                            <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+                                                                            <tr> 
                                                                                 <td>PA Passenger</td> 
                                                                                 <td class='no_passenger_val'>-</td> 
                                                                                 <td class='no_passenger_persen'>-</td> 
                                                                                 <td class='no_passenger_prem'>-</td>
                                                                                 
                                                                             </tr>  
-                                                                            <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+                                                                            <tr> 
                                                                                 <td>PA Driver</td> 
                                                                                 <td class='no_pa_val'>-</td> 
                                                                                 <td class='no_pa_persen'>-</td> 
                                                                                 <td class='no_pa_prem'>-</td>
                                                                                 
                                                                             </tr>      
-                                                                             <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+                                                                             <tr> 
+                                                                                <td>ERA</td> 
+                                                                                <td class='no_era_val'>-</td> 
+                                                                                <td class='no_pa_persen'>-</td> 
+                                                                                <td class='no_pa_prem'>-</td>
+                                                                                
+                                                                            </tr> 
+                                                                             <tr> 
                                                                                 <td>Authorized Workshop</td> 
                                                                                 <td class='no_workshop_val'>-</td>
                                                                                 <td class='no_workshop_persen'>-</td> 
                                                                                 <td class='no_workshop_prem'>-</td>
-                                                                            </tr> 
-                                                                                                                                                         <tfoot>
-                                                                            <tr> 
-                                                                                <td></td> 
-                                                                                <td></td>
-										<td></td>
-                                                                                <td style="background-color: darkgray;">Total Premium</td> 
-                                                                                <td style="background-color: darkgray;" class='no_totalPremium'></td>
                                                                                 
-                                                                            </tr>
-                                                                            </tfoot>   
+                                                                            </tr> 
+                                                                             
                                                                             </tbody>
 
                                                                         </table>
+                                                                            
+                                                                        <div class="no_total_premium_p_standar">
+                                                                            
+                                                                            <span>Total Premium (excl. Admin Cost)</span>  7.978.625,00
+                                                                            
+                                                                        </div>     
+                                                                           
                                                                         </div>
 
                                                                     </div>
-                                                                </li>                                                                
+                                                                </li>
+                                                                <li>
+                                                                    <a id="open_tab_2_2_m" class="menumobile" href="javascript:void(0);">Example</a>
+                                                                    <div id="tabcontent_2_2" class="content_show show_2">
+                                                                        
+                                                                        <div class="tabScroll">
+                                                                        <table id="myTable6" class="display" cellspacing="0" width="100%">
+                                                                            <thead> 
+                                                                            <tr>  
+                                                                                <th class="">Liputan</th> 
+                                                                                <th class="">Insured Value</th> 
+                                                                                <th class="">Rate</th> 
+                                                                                <th class="">Premium</th>
+                                                                                
+                                                                            </tr> 
+                                                                            </thead> 
+                                                                            <tbody> 
+                                                                            <tr> 
+                                                                                <td>Comprehensive</td> 
+                                                                                <td class='no_compre_val2'>-</td> 
+                                                                                <td class='no_compre_persen2'>-</td> 
+                                                                                <td class='no_compre_prem2'>-</td>
+                                                                                
+                                                                            </tr>     
+                                                                            <tr> 
+                                                                                <td>TPL</td> 
+                                                                                <td class='no_tpl_val2'>-</td> 
+                                                                                <td class='no_tpl_persen2'>-</td> 
+                                                                                <td class='no_tpl_prem2'>-</td> 
+                                                                                
+                                                                            </tr>  
+                                                                            <tr> 
+                                                                                <td>Medical Expense</td> 
+                                                                                <td class='no_med_ex_val2'>-</td> 
+                                                                                <td class='no_med_ex_persen2'>-</td> 
+                                                                                <td class='no_med_ex_prem2'>-</td>
+                                                                                
+                                                                            </tr>  
+                                                                            <tr> 
+                                                                                <td>PLL</td> 
+                                                                                <td class='no_pll_val2'>-</td> 
+                                                                                <td class='no_pll_persen2'>-</td> 
+                                                                                <td class='no_pll_prem2'>-</td> 
+                                                                                
+                                                                            </tr>  
+                                                                            <tr> 
+                                                                                <td>Personal Effect</td> 
+                                                                                <td class='no_personal_ef_val2'>-</td> 
+                                                                                <td class='no_personal_ef_persen2'>-</td> 
+                                                                                <td class='no_personal_ef_prem2'>-</td> 
+                                                                                
+                                                                            </tr>  
+                                                                            <tr> 
+                                                                                <td>Flood</td> 
+                                                                                <td class='no_flood_val2'>-</td> 
+                                                                                <td class='no_flood_persen2'>-</td> 
+                                                                                <td class='no_flood_prem2'>-</td> 
+                                                                                
+                                                                            </tr>  
+                                                                            <tr> 
+                                                                                <td>Earthquake</td> 
+                                                                                <td class='no_earthquake_val2'>-</td> 
+                                                                                <td class='no_earthquake_presen2'>-</td> 
+                                                                                <td class='no_earthquake_prem2'>-</td>  
+                                                                                
+                                                                            </tr>  
+                                                                            <tr> 
+                                                                                <td>Strike, Riot, and Civil Commotion</td> 
+                                                                                <td class='no_riot_val2'>-</td> 
+                                                                                <td class='no_riot_persen2'>-</td> 
+                                                                                <td class='no_earthquake_prem2'>-</td>
+                                                                                
+                                                                            </tr>  
+                                                                            <tr> 
+                                                                                <td>Terrorist and Sabotage</td> 
+                                                                                <td class='no_terror_val2'>-</td> 
+                                                                                <td class='no_terror_persen2'>-</td> 
+                                                                                <td class='no_terror_prem2'>-</td>
+                                                                                
+                                                                            </tr>  
+                                                                            <tr> 
+                                                                                <td>PA Passenger</td> 
+                                                                                <td class='no_passenger_val2'>-</td> 
+                                                                                <td class='no_passenger_persen2'>-</td> 
+                                                                                <td class='no_passenger_prem2'>-</td>
+                                                                                
+                                                                            </tr>  
+                                                                            <tr> 
+                                                                                <td>PA Driver</td> 
+                                                                                <td class='no_pa_val2'>-</td> 
+                                                                                <td class='no_pa_persen2'>-</td> 
+                                                                                <td class='no_pa_prem2'>-</td>
+                                                                                
+                                                                            </tr>      
+                                                                             <tr> 
+                                                                                <td>ERA</td> 
+                                                                                <td class='no_era_val2'>-</td> 
+                                                                                <td class='no_pa_persen2'>-</td> 
+                                                                                <td class='no_pa_prem2'>-</td>
+                                                                                
+                                                                            </tr> 
+                                                                             <tr> 
+                                                                                <td>Authorized Workshop</td> 
+                                                                                <td class='no_workshop_val2'>-</td>
+                                                                                <td class='no_workshop_persen2'>-</td> 
+                                                                                <td class='no_workshop_prem2'>-</td>
+                                                                                
+                                                                            </tr> 
+                                                                             
+                                                                            </tbody>
+
+                                                                        </table>
+                                                                            
+                                                                        <div class="no_total_premium_p_standar2">
+                                                                            
+                                                                            <span>Total Premium (excl. Admin Cost)</span>  7.978.625,00
+                                                                            
+                                                                        </div>     
+                                                                           
+                                                                        </div>
+                                                                        
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <a id="open_tab_2_3_m" class="menumobile" href="javascript:void(0);">Example</a>
+                                                                    <div id="tabcontent_2_3" class="content_show show_2">
+                                                                        
+                                                                        <div class="tabScroll">
+                                                                        <table id="myTable7" class="display" cellspacing="0" width="100%">
+                                                                            <thead> 
+                                                                            <tr>  
+                                                                                <th class="">Liputan</th> 
+                                                                                <th class="">Insured Value</th> 
+                                                                                <th class="">Rate</th> 
+                                                                                <th class="">Premium</th>
+                                                                                
+                                                                            </tr> 
+                                                                            </thead> 
+                                                                            <tbody> 
+                                                                            <tr> 
+                                                                                <td>Comprehensive</td> 
+                                                                                <td class='no_compre_val3'>-</td> 
+                                                                                <td class='no_compre_persen3'>-</td> 
+                                                                                <td class='no_compre_prem3'>-</td>
+                                                                                
+                                                                            </tr>     
+                                                                            <tr> 
+                                                                                <td>TPL</td> 
+                                                                                <td class='no_tpl_val3'>-</td> 
+                                                                                <td class='no_tpl_persen3'>-</td> 
+                                                                                <td class='no_tpl_prem3'>-</td> 
+                                                                                
+                                                                            </tr>  
+                                                                            <tr> 
+                                                                                <td>Medical Expense</td> 
+                                                                                <td class='no_med_ex_val3'>-</td> 
+                                                                                <td class='no_med_ex_persen3'>-</td> 
+                                                                                <td class='no_med_ex_prem3'>-</td>
+                                                                                
+                                                                            </tr>  
+                                                                            <tr> 
+                                                                                <td>PLL</td> 
+                                                                                <td class='no_pll_val3'>-</td> 
+                                                                                <td class='no_pll_persen3'>-</td> 
+                                                                                <td class='no_pll_prem3'>-</td> 
+                                                                                
+                                                                            </tr>  
+                                                                            <tr> 
+                                                                                <td>Personal Effect</td> 
+                                                                                <td class='no_personal_ef_val3'>-</td> 
+                                                                                <td class='no_personal_ef_persen3'>-</td> 
+                                                                                <td class='no_personal_ef_prem3'>-</td> 
+                                                                                
+                                                                            </tr>  
+                                                                            <tr> 
+                                                                                <td>Flood</td> 
+                                                                                <td class='no_flood_val3'>-</td> 
+                                                                                <td class='no_flood_persen3'>-</td> 
+                                                                                <td class='no_flood_prem3'>-</td> 
+                                                                                
+                                                                            </tr>  
+                                                                            <tr> 
+                                                                                <td>Earthquake</td> 
+                                                                                <td class='no_earthquake_val3'>-</td> 
+                                                                                <td class='no_earthquake_presen3'>-</td> 
+                                                                                <td class='no_earthquake_prem3'>-</td>  
+                                                                                
+                                                                            </tr>  
+                                                                            <tr> 
+                                                                                <td>Strike, Riot, and Civil Commotion</td> 
+                                                                                <td class='no_riot_val3'>-</td> 
+                                                                                <td class='no_riot_persen3'>-</td> 
+                                                                                <td class='no_earthquake_prem3'>-</td>
+                                                                                
+                                                                            </tr>  
+                                                                            <tr> 
+                                                                                <td>Terrorist and Sabotage</td> 
+                                                                                <td class='no_terror_val3'>-</td> 
+                                                                                <td class='no_terror_persen3'>-</td> 
+                                                                                <td class='no_terror_prem3'>-</td>
+                                                                                
+                                                                            </tr>  
+                                                                            <tr> 
+                                                                                <td>PA Passenger</td> 
+                                                                                <td class='no_passenger_val3'>-</td> 
+                                                                                <td class='no_passenger_persen3'>-</td> 
+                                                                                <td class='no_passenger_prem3'>-</td>
+                                                                                
+                                                                            </tr>  
+                                                                            <tr> 
+                                                                                <td>PA Driver</td> 
+                                                                                <td class='no_pa_val3'>-</td> 
+                                                                                <td class='no_pa_persen3'>-</td> 
+                                                                                <td class='no_pa_prem3'>-</td>
+                                                                                
+                                                                            </tr>      
+                                                                             <tr> 
+                                                                                <td>ERA</td> 
+                                                                                <td class='no_era_val3'>-</td> 
+                                                                                <td class='no_pa_persen3'>-</td> 
+                                                                                <td class='no_pa_prem3'>-</td>
+                                                                                
+                                                                            </tr> 
+                                                                             <tr> 
+                                                                                <td>Authorized Workshop</td> 
+                                                                                <td class='no_workshop_val3'>-</td>
+                                                                                <td class='no_workshop_persen3'>-</td> 
+                                                                                <td class='no_workshop_prem3'>-</td>
+                                                                                
+                                                                            </tr> 
+                                                                             
+                                                                            </tbody>
+
+                                                                        </table>
+                                                                            
+                                                                        <div class="no_total_premium_p_standar3">
+                                                                            
+                                                                            <span>Total Premium (excl. Admin Cost)</span>  7.978.625,00
+                                                                            
+                                                                        </div>     
+                                                                           
+                                                                        </div>
+                                                                        
+                                                                    </div>
+                                                                </li>
+                                                               
                                                             </ul>
                                                         </div>
 
