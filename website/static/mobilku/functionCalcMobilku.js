@@ -10,11 +10,12 @@
 		var jenisasuransi;
 		$("input:radio[name=radio]").click(function() {
 			 jenisasuransi = $(this).val();
-			 $("#jenisasuransi").html("");
-			 $("#jenisasuransi").append(jenisasuransi.toUpperCase());
+			 $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3").html("");
+			 $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3").append(jenisasuransi.toUpperCase());
 		});
+
 		
-		function calc_result(paket) { //SEBAGIAN ADA PERHUTUNGAN UNTUK NON PAKET (NON TRUCK), KARENA PERHITUNGAN SAMA.
+		function calc_result(paket) {
 			
 			var getColom;
 			var harga=clearFormat($('#harga').val());
@@ -40,6 +41,10 @@
 			var cleanPassenger_val=parseInt(passenger_val); //get clean tlo
 			var tpl_val=50000000;
 			var cleanTpl_val=parseInt(tpl_val); //get clean tlo
+			var personal_ef_val=0;
+			var cleanPersonal_ef_val=parseInt(personal_ef_val);
+			var pll_val=0;
+			var cleanPll_val=parseInt(pll_val);
 			
 			//get total day in a year
 			var now = new Date(2015,1,0);
@@ -53,18 +58,21 @@
 			pa_val=accounting.formatMoney(pa_val,'',2,'.',',');
 			passenger_val=accounting.formatMoney(passenger_val,'',2,'.',',');
 			tpl_val=accounting.formatMoney(tpl_val,'',2,'.',',');
+			personal_ef_val=accounting.formatMoney(personal_ef_val,'',2,'.',',');
+			pll_val=accounting.formatMoney(pll_val,'',2,'.',',');
 					
 			//INSER INTO FORM
-			$('.workshop_val, .compre_val, no_compre_val, .earthquake_val, .no_earthquake_val, .era_val, .no_era_val, .flood_val,.no_flood_val, .riot_val, .no_riot_val, .terror_val, .no_terror_val').html("");
-			$('.workshop_val, .compre_val, no_compre_val, .earthquake_val, .no_earthquake_val, .era_val, .no_era_val, .flood_val,.no_flood_val, .riot_val, .no_riot_val, .terror_val, .no_terror_val').append(val_tlo);
-			$('.med_ex_val, .pa_val, .passenger_val, .tpl_val').html("");
-                        //non-paket
-                        $('.no_med_ex_val, .no_pa_val, .no_passenger_val, .no_tpl_val').html("");
-                        
-			$('.med_ex_val, .no_med_ex_val').append(med_ex_val);
-			$('.pa_val, .no_pa_val').append(pa_val);
-			$('.passenger_val, .no_passenger_val').append(passenger_val);
-			$('.tpl_val, .no_tpl_val').append(tpl_val);
+			$('.workshop_val, .compre_val, .earthquake_val, .era_val, .flood_val, .riot_val, .terror_val').html("");
+			$('.workshop_val, .compre_val, .earthquake_val, .era_val, .flood_val, .riot_val, .terror_val').append(val_tlo);
+			$('.med_ex_val, .pa_val, .passenger_val, .tpl_val, .personal_ef_val, .pll_val').html("");
+			$('.med_ex_val').append(med_ex_val);
+			$('.pa_val').append(pa_val);
+			$('.passenger_val').append(passenger_val);
+			$('.tpl_val').append(tpl_val);
+			//$('.personal_ef_val').append(personal_ef_val);
+			//$('.pll_val').append(pll_val);
+			$('.personal_ef_val').append("-");
+			$('.pll_val').append("-");
 			//========================= END perhitungan basic======================================//
 			
 			
@@ -158,11 +166,22 @@
 			}
 			
 			era_persen=parseFloat(0.0005);
-			personal_ef_persen=parseFloat(0.1000);
-			pll_persen=0;
-			tpl_persen=0;
+			personal_ef_persen=parseFloat(1.0000);
+			pll_persen=parseFloat(0.5000);
+
+			if (cleanTpl_val >= parseInt(100000000000)){
+				tpl_persen=parseFloat(0.4000);
+			}else if (cleanTpl_val > parseInt(100000001) && cleanTpl_val < parseInt(100000000000)){
+				tpl_persen=parseFloat(0.4000);
+			}else if (cleanTpl_val > parseInt(50000001) && cleanTpl_val < parseInt(100000001)){
+				tpl_persen=parseFloat(0.5000);
+			}else if (cleanTpl_val > parseInt(25000001) && cleanTpl_val < parseInt(50000001)){
+				tpl_persen=parseFloat(0.7500);
+			}else{
+				tpl_persen=parseFloat(1.0000);
+			}
 			
-			//INSERT INTO FORM Paket
+			//INSERT INTO FORM
 			$('.workshop_persen, .compre_persen, .earthquake_presen, .era_persen, .flood_persen, .med_ex_persen, .pa_persen, .passenger_persen, .personal_ef_persen, .pll_persen, .riot_persen, .terror_persen, .tpl_persen').html("");
 			$('.workshop_persen').append(workshop_persen+"%");			
 			$('.compre_persen').append(compre_persen+"%");			
@@ -172,25 +191,13 @@
 			$('.med_ex_persen').append(med_ex_pers+"%");			
 			$('.pa_persen').append(pa_persen+"%");			
 			$('.passenger_persen').append(passenger_persen+"%");			
-			$('.personal_ef_persen').append(personal_ef_persen+"%");			
-			$('.pll_persen').append(pll_persen+"%");			
+			//$('.personal_ef_persen').append(personal_ef_persen+"%");			
+			//$('.pll_persen').append(pll_persen+"%");			
+			$('.personal_ef_persen').append("-");			
+			$('.pll_persen').append("-");			
 			$('.riot_persen').append(riot_persen+"%");			
 			$('.terror_persen').append(terror_persen+"%");			
 			$('.tpl_persen').append(tpl_persen+"%");
-                        
-                        //Non paket
-                        $('.no_workshop_persen, .no_compre_persen, .no_earthquake_presen, .no_flood_persen, .no_med_ex_persen, .no_pa_persen, .no_passenger_persen, .no_pll_persen, .no_riot_persen, .no_terror_persen, .no_tpl_persen').html("");
-			$('.no_workshop_persen').append(workshop_persen+"%");			
-			$('.no_compre_persen').append(compre_persen+"%");			
-			$('.no_earthquake_presen').append(earthquake_presen+"%");				
-			$('.no_flood_persen').append(flood_persen+"%");			
-			$('.no_med_ex_persen').append(med_ex_pers+"%");			
-			$('.no_pa_persen').append(pa_persen+"%");			
-			$('.no_passenger_persen').append(passenger_persen+"%");			
-			$('.no_pll_persen').append(pll_persen+"%");			
-			$('.no_riot_persen').append(riot_persen+"%");			
-			$('.no_terror_persen').append(terror_persen+"%");			
-			$('.no_tpl_persen').append(tpl_persen+"%");
 			//=========================//END perhitungan rate/persen======================================//
 			
 			
@@ -206,13 +213,13 @@
 			med_ex_prem=(((1*(cleanMed_ex_val*med_ex_pers)/100)*day)/day);
 			pa_prem=(((1*(cleanPa_val*pa_persen)/100)*day)/day);
 			passenger_prem=(((1*((parseInt(kapasitas)-1)*cleanPassenger_val*passenger_persen)/100)*day)/day);
-			personal_ef_prem=(((1*(0*personal_ef_persen)/100)*day)/day);
-			pll_prem=0;
+			personal_ef_prem=(((1*(cleanPersonal_ef_val*personal_ef_persen)/100)*day)/day);
+			pll_prem=(((1*(cleanPll_val*pll_persen)/100)*day)/day);
 			riot_prem=(((1*(cleanVarTlo*riot_persen)/100)*day)/day);
 			terror_prem=(((1*(cleanVarTlo*terror_persen)/100)*day)/day);
-			tpl_prem=0;
+			tpl_prem=(((1*(cleanTpl_val*tpl_persen)/100)*day)/day);
+			totalPremium= workshop_prem + compre_prem + earthquake_prem + era_prem + flood_prem + med_ex_prem + pa_prem + passenger_prem + personal_ef_prem + pll_prem + riot_prem + terror_prem + tpl_prem;
 			
-                        //PAKET
 			$('.workshop_prem, .compre_prem, .earthquake_prem, .era_prem, .flood_prem, .med_ex_prem, .pa_prem, .passenger_prem, .personal_ef_prem, .pll_prem, .riot_prem, .terror_prem, .tpl_prem').html("");
 			$('.workshop_prem').append(accounting.formatMoney(workshop_prem,'',2,'.',','));			
 			$('.compre_prem').append(accounting.formatMoney(compre_prem,'',2,'.',','));			
@@ -222,30 +229,463 @@
 			$('.med_ex_prem').append(accounting.formatMoney(med_ex_prem,'',2,'.',','));			
 			$('.pa_prem').append(accounting.formatMoney(pa_prem,'',2,'.',','));			
 			$('.passenger_prem').append(accounting.formatMoney(passenger_prem,'',2,'.',','));			
-			$('.personal_ef_prem').append(accounting.formatMoney(personal_ef_prem,'',2,'.',','));			
-			$('.pll_prem').append(accounting.formatMoney(pll_prem,'',2,'.',','));			
+			//$('.personal_ef_prem').append(accounting.formatMoney(personal_ef_prem,'',2,'.',','));			
+			//$('.pll_prem').append(accounting.formatMoney(pll_prem,'',2,'.',','));			
+			$('.personal_ef_prem').append("-");			
+			$('.pll_prem').append("-");			
 			$('.riot_prem').append(accounting.formatMoney(riot_prem,'',2,'.',','));			
 			$('.terror_prem').append(accounting.formatMoney(terror_prem,'',2,'.',','));			
 			$('.tpl_prem').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
+			$('.totalPremium').append(accounting.formatMoney(totalPremium,'',2,'.',','));
 			
-                        //NON PAKET
-                        $('.no_workshop_prem, .no_compre_prem, .no_earthquake_prem, .no_flood_prem, .no_med_ex_prem, .no_pa_prem, .no_passenger_prem, .no_pll_prem, .no_riot_prem, .no_terror_prem, .no_tpl_prem').html("");
-			$('.no_workshop_prem').append(accounting.formatMoney(workshop_prem,'',2,'.',','));			
-			$('.no_compre_prem').append(accounting.formatMoney(compre_prem,'',2,'.',','));			
-			$('.no_earthquake_prem').append(accounting.formatMoney(earthquake_prem,'',2,'.',','));			
-			$('.no_era_prem').append(accounting.formatMoney(era_prem,'',2,'.',','));			
-			$('.no_flood_prem').append(accounting.formatMoney(flood_prem,'',2,'.',','));			
-			$('.no_med_ex_prem').append(accounting.formatMoney(med_ex_prem,'',2,'.',','));			
-			$('.no_pa_prem').append(accounting.formatMoney(pa_prem,'',2,'.',','));			
-			$('.no_passenger_prem').append(accounting.formatMoney(passenger_prem,'',2,'.',','));			
-			$('.no_personal_ef_prem').append(accounting.formatMoney(personal_ef_prem,'',2,'.',','));			
-			$('.no_pll_prem').append(accounting.formatMoney(pll_prem,'',2,'.',','));			
-			$('.no_riot_prem').append(accounting.formatMoney(riot_prem,'',2,'.',','));			
-			$('.no_terror_prem').append(accounting.formatMoney(terror_prem,'',2,'.',','));			
-			$('.no_tpl_prem').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
-                        
 		}//end of function calc_result
+
+
+		function calc_resultstandard(paket) {
+			
+			var getColom;
+			var harga=clearFormat($('#harga').val());
+			var tahun_pembuatan;
+			var model;
+			var regno;
+			var periode;
+			var radio01;
+
+			var tipe=$('#tipe').val().toLowerCase();
+			var wilayah=parseInt($('#wilayah').val());
+			var kapasitas=parseInt($('#kapasitas').val());
+			
+			
+			//=========================perhitungan standar======================================//
+			var val_tlo=harga*1; //harga dikali tahun pertama (1), tahun kedua dikali 2 dst.
+			var cleanVarTlo=parseInt(val_tlo); //get clean tlo
+			var med_ex_val=7500000;
+			var cleanMed_ex_val=parseInt(med_ex_val); //get clean tlo
+			var pa_val=15000000;
+			var cleanPa_val=parseInt(pa_val); //get clean tlo
+			var passenger_val=15000000;
+			var cleanPassenger_val=parseInt(passenger_val); //get clean tlo
+			var tpl_val=75000000;
+			var cleanTpl_val=parseInt(tpl_val); //get clean tlo
+			var personal_ef_val=0;
+			var cleanPersonal_ef_val=parseInt(personal_ef_val);
+			var pll_val=0;
+			var cleanPll_val=parseInt(pll_val);
+			
+			//get total day in a year
+			var now = new Date(2015,1,0);
+			var start = new Date(now.getFullYear(),12, 31);
+			var diff = start-now;
+			var oneDay = 1000 * 60 * 60 * 24;
+			var day = Math.ceil(diff / oneDay);
+			
+			val_tlo=accounting.formatMoney(val_tlo,'',2,'.',',');
+			med_ex_val=accounting.formatMoney(med_ex_val,'',2,'.',',');
+			pa_val=accounting.formatMoney(pa_val,'',2,'.',',');
+			passenger_val=accounting.formatMoney(passenger_val,'',2,'.',',');
+			tpl_val=accounting.formatMoney(tpl_val,'',2,'.',',');
+			personal_ef_val=accounting.formatMoney(personal_ef_val,'',2,'.',',');
+			pll_val=accounting.formatMoney(pll_val,'',2,'.',',');
+					
+			//INSER INTO FORM
+			$('.workshop_val2, .compre_val2, .earthquake_val2, .era_val2, .flood_val2, .riot_val2, .terror_val2').html("");
+			$('.workshop_val2, .compre_val2, .earthquake_val2, .era_val2, .flood_val2, .riot_val2, .terror_val2').append(val_tlo);
+			$('.med_ex_val2, .pa_val2, .passenger_val2, .tpl_val2, .personal_ef_val2, .pll_val2').html("");
+			$('.med_ex_val2').append(med_ex_val);
+			$('.pa_val2').append(pa_val);
+			$('.passenger_val2').append(passenger_val);
+			$('.tpl_val2').append(tpl_val);
+			//$('.personal_ef_val2').append(personal_ef_val);
+			//$('.pll_val2').append(pll_val);
+			$('.personal_ef_val2').append("-");
+			$('.pll_val2').append("-");
+			//========================= END perhitungan standar======================================//
+			
+			
+			//=========================//perhitungan rate/persen======================================//
+			var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
+			workshop_persen=0;
+			compre_persen=0;
+			
+			// if (tlo= 5+wilayah) else (1+wilayah)
+			if (jenisasuransi=='tlo') {
+				getColom=wilayah+5;
+			}else{
+				getColom=wilayah+1;
+			}
+			
+			if (getColom==2) {
+				earthquake_presen=parseFloat(0.1200);
+				flood_persen=parseFloat(0.0750);
+				riot_persen=parseFloat(0.0500);
+				terror_persen=parseFloat(0.0500);
+				pa_persen=parseFloat(0.5000);
+				passenger_persen=parseFloat(0.1000);
+			}else if (getColom==3) {
+				earthquake_presen=parseFloat(0.1000);
+				flood_persen=parseFloat(0.1000);
+				riot_persen=parseFloat(0.0500);
+				terror_persen=parseFloat(0.0500);
+				pa_persen=parseFloat(0.5000);
+				passenger_persen=parseFloat(0.1000);
+			}else if (getColom==4) {
+				earthquake_presen=parseFloat(0.0750);
+				flood_persen=parseFloat(0.0750);
+				riot_persen=parseFloat(0.0500);
+				terror_persen=parseFloat(0.0500);
+				pa_persen=parseFloat(0.500);
+				passenger_persen=parseFloat(0.1000);
+			}else if (getColom==5) {
+				earthquake_presen=parseFloat(0.0750);
+				flood_persen=parseFloat(0.0750);
+				riot_persen=parseFloat(0.0500);
+				terror_persen=parseFloat(0.0500);
+				pa_persen=parseFloat(0.5000);
+				passenger_persen=parseFloat(0.1000);
+			}else if (getColom==6) {
+				earthquake_presen=parseFloat(0.0850);
+				flood_persen=parseFloat(0.0500);
+				riot_persen=parseFloat(0.0350);
+				terror_persen=parseFloat(0.0350);
+				pa_persen=parseFloat(0.5000);
+				passenger_persen=parseFloat(0.1000);
+			}else if (getColom==7) {
+				earthquake_presen=parseFloat(0.0750);
+				flood_persen=parseFloat(0.0750);
+				riot_persen=parseFloat(0.0350);
+				terror_persen=parseFloat(0.0350);
+				pa_persen=parseFloat(0.5000);
+				passenger_persen=parseFloat(0.1000);
+			}else if (getColom==8) {
+				earthquake_presen=parseFloat(0.0500);
+				flood_persen=parseFloat(0.0500);
+				riot_persen=parseFloat(0.0350);
+				terror_persen=parseFloat(0.0350);
+				pa_persen=parseFloat(0.5000);
+				passenger_persen=parseFloat(0.1000);
+			}else if (getColom==9){
+				earthquake_presen=parseFloat(0.0500);
+				flood_persen=parseFloat(0.0500);
+				riot_persen=parseFloat(0.0350);
+				terror_persen=parseFloat(0.0350);
+				pa_persen=parseFloat(0.5000);
+				passenger_persen=parseFloat(0.1000);
+			}else{
+				earthquake_presen=0;
+				flood_persen=0;
+				riot_persen=0;
+				terror_persen=0;
+				pa_persen=0;
+				passenger_persen=0;
+			}
+			
+			//medical expanse
+			var med_ex_pers;
+			if (tipe=='sedan' || tipe=='minibus' ) {
+				med_ex_pers=parseFloat(0.0250);
+			}else if(tipe=='motor'){
+				med_ex_pers=parseFloat(0.1250);
+			}else if(tipe=='truck'){
+				med_ex_pers=parseFloat(0.1750);
+			}else{
+				med_ex_pers=0;
+			}
+			
+			era_persen=parseFloat(0.0005);
+			personal_ef_persen=parseFloat(1.0000);
+			pll_persen=parseFloat(0.5000);
+
+			if (cleanTpl_val >= parseInt(100000000000)){
+				tpl_persen=parseFloat(0.4000);
+			}else if (cleanTpl_val > parseInt(100000001) && cleanTpl_val < parseInt(100000000000)){
+				tpl_persen=parseFloat(0.4000);
+			}else if (cleanTpl_val > parseInt(50000001) && cleanTpl_val < parseInt(100000001)){
+				tpl_persen=parseFloat(0.5000);
+			}else if (cleanTpl_val > parseInt(25000001) && cleanTpl_val < parseInt(50000001)){
+				tpl_persen=parseFloat(0.7500);
+			}else{
+				tpl_persen=parseFloat(1.0000);
+			}
+			
+			
+			//INSERT INTO FORM
+			$('.workshop_persen2, .compre_persen2, .earthquake_presen2, .era_persen2, .flood_persen2, .med_ex_persen2, .pa_persen2, .passenger_persen2, .personal_ef_persen2, .pll_persen2, .riot_persen2, .terror_persen2, .tpl_persen2').html("");
+			$('.workshop_persen2').append(workshop_persen+"%");			
+			$('.compre_persen2').append(compre_persen+"%");			
+			$('.earthquake_presen2').append(earthquake_presen+"%");			
+			$('.era_persen2').append(era_persen+"%");			
+			$('.flood_persen2').append(flood_persen+"%");			
+			$('.med_ex_persen2').append(med_ex_pers+"%");			
+			$('.pa_persen2').append(pa_persen+"%");			
+			$('.passenger_persen2').append(passenger_persen+"%");			
+			//$('.personal_ef_persen2').append(personal_ef_persen+"%");			
+			//$('.pll_persen2').append(pll_persen+"%");			
+			$('.personal_ef_persen2').append("-");			
+			$('.pll_persen2').append("-");			
+			$('.riot_persen2').append(riot_persen+"%");			
+			$('.terror_persen2').append(terror_persen+"%");			
+			$('.tpl_persen2').append(tpl_persen+"%");
+			//=========================//END perhitungan rate/persen======================================//
+			
+			
+			
+			//=====================premium=================================================================
+			var workshop_prem, compre_prem, earthquake_prem, era_prem, flood_prem, med_ex_prem, pa_prem, passenger_prem, personal_ef_prem, pll_prem, riot_prem, terror_prem, tpl_prem;
+		
+			workshop_prem=0;
+			compre_prem=0;			
+			earthquake_prem=(((1*(cleanVarTlo*earthquake_presen)/100)*day)/day);
+			era_prem=(((1*(cleanVarTlo*era_persen)/100)*day)/day);
+			flood_prem=(((1*(cleanVarTlo*flood_persen)/100)*day)/day);
+			med_ex_prem=(((1*(cleanMed_ex_val*med_ex_pers)/100)*day)/day);
+			pa_prem=(((1*(cleanPa_val*pa_persen)/100)*day)/day);
+			passenger_prem=(((1*((parseInt(kapasitas)-1)*cleanPassenger_val*passenger_persen)/100)*day)/day);
+			personal_ef_prem=(((1*(cleanPersonal_ef_val*personal_ef_persen)/100)*day)/day);
+			pll_prem=(((1*(cleanPll_val*pll_persen)/100)*day)/day);
+			riot_prem=(((1*(cleanVarTlo*riot_persen)/100)*day)/day);
+			terror_prem=(((1*(cleanVarTlo*terror_persen)/100)*day)/day);
+			tpl_prem=(((1*(cleanTpl_val*tpl_persen)/100)*day)/day);
+			totalPremium= workshop_prem + compre_prem + earthquake_prem + era_prem + flood_prem + med_ex_prem + pa_prem + passenger_prem + personal_ef_prem + pll_prem + riot_prem + terror_prem + tpl_prem;
+			
+			$('.workshop_prem2, .compre_prem2, .earthquake_prem2, .era_prem2, .flood_prem2, .med_ex_prem2, .pa_prem2, .passenger_prem2, .personal_ef_prem2, .pll_prem2, .riot_prem2, .terror_prem2, .tpl_prem2').html("");
+			$('.workshop_prem2').append(accounting.formatMoney(workshop_prem,'',2,'.',','));			
+			$('.compre_prem2').append(accounting.formatMoney(compre_prem,'',2,'.',','));			
+			$('.earthquake_prem2').append(accounting.formatMoney(earthquake_prem,'',2,'.',','));			
+			$('.era_prem2').append(accounting.formatMoney(era_prem,'',2,'.',','));			
+			$('.flood_prem2').append(accounting.formatMoney(flood_prem,'',2,'.',','));			
+			$('.med_ex_prem2').append(accounting.formatMoney(med_ex_prem,'',2,'.',','));			
+			$('.pa_prem2').append(accounting.formatMoney(pa_prem,'',2,'.',','));			
+			$('.passenger_prem2').append(accounting.formatMoney(passenger_prem,'',2,'.',','));			
+			//$('.personal_ef_prem2').append(accounting.formatMoney(personal_ef_prem,'',2,'.',','));			
+			//$('.pll_prem2').append(accounting.formatMoney(pll_prem,'',2,'.',','));			
+			$('.personal_ef_prem2').append("-");			
+			$('.pll_prem2').append("-");			
+			$('.riot_prem2').append(accounting.formatMoney(riot_prem,'',2,'.',','));			
+			$('.terror_prem2').append(accounting.formatMoney(terror_prem,'',2,'.',','));			
+			$('.tpl_prem2').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
+			$('.totalPremium2').append(accounting.formatMoney(totalPremium,'',2,'.',','));
+			
+		}//end of function calc_standard
 	
+		function calc_resultpremier(paket) {
+			
+			var getColom;
+			var harga=clearFormat($('#harga').val());
+			var tahun_pembuatan;
+			var model;
+			var regno;
+			var periode;
+			var radio01;
+
+			var tipe=$('#tipe').val().toLowerCase();
+			var wilayah=parseInt($('#wilayah').val());
+			var kapasitas=parseInt($('#kapasitas').val());
+			
+			
+			//=========================perhitungan premier======================================//
+			var val_tlo=harga*1; //harga dikali tahun pertama (1), tahun kedua dikali 2 dst.
+			var cleanVarTlo=parseInt(val_tlo); //get clean tlo
+			var med_ex_val=7500000;
+			var cleanMed_ex_val=parseInt(med_ex_val); //get clean tlo
+			var pa_val=15000000;
+			var cleanPa_val=parseInt(pa_val); //get clean tlo
+			var passenger_val=15000000;
+			var cleanPassenger_val=parseInt(passenger_val); //get clean tlo
+			var tpl_val=75000000;
+			var cleanTpl_val=parseInt(tpl_val); //get clean tlo
+			var personal_ef_val=2000000;
+			var cleanPersonal_ef_val=parseInt(personal_ef_val);
+			var pll_val=25000000;
+			var cleanPll_val=parseInt(pll_val);
+
+
+			//get total day in a year
+			var now = new Date(2015,1,0);
+			var start = new Date(now.getFullYear(),12, 31);
+			var diff = start-now;
+			var oneDay = 1000 * 60 * 60 * 24;
+			var day = Math.ceil(diff / oneDay);
+			
+			val_tlo=accounting.formatMoney(val_tlo,'',2,'.',',');
+			med_ex_val=accounting.formatMoney(med_ex_val,'',2,'.',',');
+			pa_val=accounting.formatMoney(pa_val,'',2,'.',',');
+			passenger_val=accounting.formatMoney(passenger_val,'',2,'.',',');
+			tpl_val=accounting.formatMoney(tpl_val,'',2,'.',',');
+			personal_ef_val=accounting.formatMoney(personal_ef_val,'',2,'.',',');
+			pll_val=accounting.formatMoney(pll_val,'',2,'.',',');
+					
+			//INSER INTO FORM
+			$('.workshop_val3, .compre_val3, .earthquake_val3, .era_val3, .flood_val3, .riot_val3, .terror_val3').html("");
+			$('.workshop_val3, .compre_val3, .earthquake_val3, .era_val3, .flood_val3, .riot_val3, .terror_val3').append(val_tlo);
+			$('.med_ex_val3, .pa_val3, .passenger_val3, .tpl_val3, .personal_ef_val3, .pll_val3').html("");
+			$('.med_ex_val3').append(med_ex_val);
+			$('.pa_val3').append(pa_val);
+			$('.passenger_val3').append(passenger_val);
+			$('.tpl_val3').append(tpl_val);
+			$('.personal_ef_val3').append(personal_ef_val);
+			$('.pll_val3').append(pll_val);
+			//========================= END perhitungan premier======================================//
+			
+			
+			//=========================//perhitungan rate/persen======================================//
+			var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
+			workshop_persen=0;
+			compre_persen=0;
+			
+			// if (tlo= 5+wilayah) else (1+wilayah)
+			if (jenisasuransi=='tlo') {
+				getColom=wilayah+5;
+			}else{
+				getColom=wilayah+1;
+			}
+			
+			if (getColom==2) {
+				earthquake_presen=parseFloat(0.1200);
+				flood_persen=parseFloat(0.0750);
+				riot_persen=parseFloat(0.0500);
+				terror_persen=parseFloat(0.0500);
+				pa_persen=parseFloat(0.5000);
+				passenger_persen=parseFloat(0.1000);
+			}else if (getColom==3) {
+				earthquake_presen=parseFloat(0.1000);
+				flood_persen=parseFloat(0.1000);
+				riot_persen=parseFloat(0.0500);
+				terror_persen=parseFloat(0.0500);
+				pa_persen=parseFloat(0.5000);
+				passenger_persen=parseFloat(0.1000);
+			}else if (getColom==4) {
+				earthquake_presen=parseFloat(0.0750);
+				flood_persen=parseFloat(0.0750);
+				riot_persen=parseFloat(0.0500);
+				terror_persen=parseFloat(0.0500);
+				pa_persen=parseFloat(0.500);
+				passenger_persen=parseFloat(0.1000);
+			}else if (getColom==5) {
+				earthquake_presen=parseFloat(0.0750);
+				flood_persen=parseFloat(0.0750);
+				riot_persen=parseFloat(0.0500);
+				terror_persen=parseFloat(0.0500);
+				pa_persen=parseFloat(0.5000);
+				passenger_persen=parseFloat(0.1000);
+			}else if (getColom==6) {
+				earthquake_presen=parseFloat(0.0850);
+				flood_persen=parseFloat(0.0500);
+				riot_persen=parseFloat(0.0350);
+				terror_persen=parseFloat(0.0350);
+				pa_persen=parseFloat(0.5000);
+				passenger_persen=parseFloat(0.1000);
+			}else if (getColom==7) {
+				earthquake_presen=parseFloat(0.0750);
+				flood_persen=parseFloat(0.0750);
+				riot_persen=parseFloat(0.0350);
+				terror_persen=parseFloat(0.0350);
+				pa_persen=parseFloat(0.5000);
+				passenger_persen=parseFloat(0.1000);
+			}else if (getColom==8) {
+				earthquake_presen=parseFloat(0.0500);
+				flood_persen=parseFloat(0.0500);
+				riot_persen=parseFloat(0.0350);
+				terror_persen=parseFloat(0.0350);
+				pa_persen=parseFloat(0.5000);
+				passenger_persen=parseFloat(0.1000);
+			}else if (getColom==9){
+				earthquake_presen=parseFloat(0.0500);
+				flood_persen=parseFloat(0.0500);
+				riot_persen=parseFloat(0.0350);
+				terror_persen=parseFloat(0.0350);
+				pa_persen=parseFloat(0.5000);
+				passenger_persen=parseFloat(0.1000);
+			}else{
+				earthquake_presen=0;
+				flood_persen=0;
+				riot_persen=0;
+				terror_persen=0;
+				pa_persen=0;
+				passenger_persen=0;
+			}
+			
+			//medical expanse
+			var med_ex_pers;
+			if (tipe=='sedan' || tipe=='minibus' ) {
+				med_ex_pers=parseFloat(0.0250);
+			}else if(tipe=='motor'){
+				med_ex_pers=parseFloat(0.1250);
+			}else if(tipe=='truck'){
+				med_ex_pers=parseFloat(0.1750);
+			}else{
+				med_ex_pers=0;
+			}
+			
+			era_persen=parseFloat(0.0005);
+			personal_ef_persen=parseFloat(1.0000);
+			pll_persen=parseFloat(0.5000);
+
+			if (cleanTpl_val >= parseInt(100000000000)){
+				tpl_persen=parseFloat(0.4000);
+			}else if (cleanTpl_val > parseInt(100000001) && cleanTpl_val < parseInt(100000000000)){
+				tpl_persen=parseFloat(0.4000);
+			}else if (cleanTpl_val > parseInt(50000001) && cleanTpl_val < parseInt(100000001)){
+				tpl_persen=parseFloat(0.5000);
+			}else if (cleanTpl_val > parseInt(25000001) && cleanTpl_val < parseInt(50000001)){
+				tpl_persen=parseFloat(0.7500);
+			}else{
+				tpl_persen=parseFloat(1.0000);
+			}
+			
+			//INSERT INTO FORM
+			$('.workshop_persen3, .compre_persen3, .earthquake_presen3, .era_persen3, .flood_persen3, .med_ex_persen3, .pa_persen3, .passenger_persen3, .personal_ef_persen3, .pll_persen3, .riot_persen3, .terror_persen3, .tpl_persen3').html("");
+			$('.workshop_persen3').append(workshop_persen+"%");			
+			$('.compre_persen3').append(compre_persen+"%");			
+			$('.earthquake_presen3').append(earthquake_presen+"%");			
+			$('.era_persen3').append(era_persen+"%");			
+			$('.flood_persen3').append(flood_persen+"%");			
+			$('.med_ex_persen3').append(med_ex_pers+"%");			
+			$('.pa_persen3').append(pa_persen+"%");			
+			$('.passenger_persen3').append(passenger_persen+"%");			
+			$('.personal_ef_persen3').append(personal_ef_persen+"%");			
+			$('.pll_persen3').append(pll_persen+"%");			
+			$('.riot_persen3').append(riot_persen+"%");			
+			$('.terror_persen3').append(terror_persen+"%");			
+			$('.tpl_persen3').append(tpl_persen+"%");
+			//=========================//END perhitungan rate/persen======================================//
+			
+			
+			
+			//=====================premium=================================================================
+			var workshop_prem, compre_prem, earthquake_prem, era_prem, flood_prem, med_ex_prem, pa_prem, passenger_prem, personal_ef_prem, pll_prem, riot_prem, terror_prem, tpl_prem;
+		
+			workshop_prem=0;
+			compre_prem=0;			
+			earthquake_prem=(((1*(cleanVarTlo*earthquake_presen)/100)*day)/day);
+			era_prem=(((1*(cleanVarTlo*era_persen)/100)*day)/day);
+			flood_prem=(((1*(cleanVarTlo*flood_persen)/100)*day)/day);
+			med_ex_prem=(((1*(cleanMed_ex_val*med_ex_pers)/100)*day)/day);
+			pa_prem=(((1*(cleanPa_val*pa_persen)/100)*day)/day);
+			passenger_prem=(((1*((parseInt(kapasitas)-1)*cleanPassenger_val*passenger_persen)/100)*day)/day);
+			personal_ef_prem=(((1*(cleanPersonal_ef_val*personal_ef_persen)/100)*day)/day);
+			pll_prem=(((1*(cleanPll_val*pll_persen)/100)*day)/day);
+			riot_prem=(((1*(cleanVarTlo*riot_persen)/100)*day)/day);
+			terror_prem=(((1*(cleanVarTlo*terror_persen)/100)*day)/day);
+			tpl_prem=(((1*(cleanTpl_val*tpl_persen)/100)*day)/day);
+			totalPremium= workshop_prem + compre_prem + earthquake_prem + era_prem + flood_prem + med_ex_prem + pa_prem + passenger_prem + personal_ef_prem + pll_prem + riot_prem + terror_prem + tpl_prem;
+			
+			$('.workshop_prem3, .compre_prem3, .earthquake_prem3, .era_prem3, .flood_prem3, .med_ex_prem3, .pa_prem3, .passenger_prem3, .personal_ef_prem3, .pll_prem3, .riot_prem3, .terror_prem3, .tpl_prem3').html("");
+			$('.workshop_prem3').append(accounting.formatMoney(workshop_prem,'',2,'.',','));			
+			$('.compre_prem3').append(accounting.formatMoney(compre_prem,'',2,'.',','));			
+			$('.earthquake_prem3').append(accounting.formatMoney(earthquake_prem,'',2,'.',','));			
+			$('.era_prem3').append(accounting.formatMoney(era_prem,'',2,'.',','));			
+			$('.flood_prem3').append(accounting.formatMoney(flood_prem,'',2,'.',','));			
+			$('.med_ex_prem3').append(accounting.formatMoney(med_ex_prem,'',2,'.',','));			
+			$('.pa_prem3').append(accounting.formatMoney(pa_prem,'',2,'.',','));			
+			$('.passenger_prem3').append(accounting.formatMoney(passenger_prem,'',2,'.',','));			
+			$('.personal_ef_prem3').append(accounting.formatMoney(personal_ef_prem,'',2,'.',','));			
+			$('.pll_prem3').append(accounting.formatMoney(pll_prem,'',2,'.',','));			
+			$('.riot_prem3').append(accounting.formatMoney(riot_prem,'',2,'.',','));			
+			$('.terror_prem3').append(accounting.formatMoney(terror_prem,'',2,'.',','));			
+			$('.tpl_prem3').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
+			$('.totalPremium3').append(accounting.formatMoney(totalPremium,'',2,'.',','));
+			
+		}//end of function calc_resultpremier
 	
 	
 		$("#harga").bind('input',function(){
@@ -334,7 +774,6 @@
 			regnoChar2=regno+regno.charAt(1);
 			//alert(regno);
 			var wilayah;
-                        regnoChar=regnoChar.toUpperCase();
 			if (regnoChar=='B' ||regnoChar=='CD' ||regnoChar=='D' ||regnoChar=='E' || regnoChar=='F' || regnoChar=='Z') {
 				//code
 				wilayah=2;
@@ -352,6 +791,8 @@
 			var email=$('#email').val();
 			if (email != '') {
 				calc_result();
+				calc_resultstandard();
+				calc_resultpremier();
 			}
 		});
 		
