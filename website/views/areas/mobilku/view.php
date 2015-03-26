@@ -187,8 +187,8 @@
                                                       <div class="col-sm-3">
                                                         <label for="input1">Periode Asuransi</label>
                                                       </div> 
-                                                      <div class="col-sm-4">
-                                                        <input type="text" name="periode" class="form-control" id="periode" placeholder="">
+                                                      <div class="col-sm-4">							
+                                                        <input type="text" name="periode" class="form-control" id="periode" placeholder="" value="<?php echo date("m/d/Y"); ?>">
                                                       </div>
                                                   </div>
                                                </div>
@@ -268,7 +268,7 @@
                                                                         <table id="myTable2" class="display" cellspacing="0" width="100%">
                                                                             <thead> 
                                                                             <tr>  
-                                                                                <th class="">Liputan</th> 
+                                                                                <th class="">Coverage</th> 
                                                                                 <th class="">Insured Value</th> 
                                                                                 <th class="">Rate</th> 
                                                                                 <th class="">Premium</th>
@@ -397,7 +397,7 @@
                                                                         <table id="myTable3" class="display" cellspacing="0" width="100%">
                                                                             <thead> 
                                                                             <tr>  
-                                                                                <th class="">Liputan</th> 
+                                                                                <th class="">Coverage</th> 
                                                                                 <th class="">Insured Value</th> 
                                                                                 <th class="">Rate</th> 
                                                                                 <th class="">Premium</th>
@@ -526,7 +526,7 @@
                                                                         <table id="myTable4" class="display" cellspacing="0" width="100%">
                                                                             <thead> 
                                                                             <tr>  
-                                                                                <th class="">Liputan</th> 
+                                                                                <th class="">Coverage</th> 
                                                                                 <th class="">Insured Value</th> 
                                                                                 <th class="">Rate</th> 
                                                                                 <th class="">Premium</th>
@@ -684,7 +684,7 @@
                                                                             <thead> 
                                                                             <tr>
 										<th class="">Checklist</th> 
-                                                                                <th class="">Liputan</th> 
+                                                                                <th class="">Coverage</th> 
                                                                                 <th class="">Insured Value</th> 
                                                                                 <th class="">Rate</th> 
                                                                                 <th class="">Premium</th>
