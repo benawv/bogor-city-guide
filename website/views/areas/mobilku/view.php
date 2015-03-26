@@ -703,7 +703,7 @@
                                                                             <tr>
 										<td><input type="checkbox" class='no_tpl_is_calc' name="no_tpl_is_calc" checked data-angka="0" data-target="no_tpl_prem"></td>  
                                                                                 <td>TPL</td> 
-                                                                                <td class='no_tpl_val'>-</td> 
+                                                                                <td class=''><input type="text" name="no_tpl_val" class="no_tpl_val" id="notplval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;"></td> 
                                                                                 <td class='no_tpl_persen'>-</td> 
                                                                                 <td class='no_tpl_prem'>-</td> 
                                                                                 
@@ -711,7 +711,7 @@
                                                                             <tr>
 										<td><input type="checkbox"  class="no_med_ex_is_calc" name="no_med_ex_prem_is_calc" checked data-angka="0" data-target="no_med_ex_prem"></td>  
                                                                                 <td>Medical Expense</td> 
-                                                                                <td class='no_med_ex_val'>-</td> 
+                                                                                <td class=''><input type="text" name="no_med_ex_val" class="no_med_ex_val" id="nomedexval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;"></td> 
                                                                                 <td class='no_med_ex_persen'>-</td> 
                                                                                 <td class='no_med_ex_prem'>-</td>
                                                                                 
@@ -719,7 +719,7 @@
                                                                             <tr>
 										<td><input type="checkbox" class="no_pll_is_calc" name="no_pll_prem_is_calc" checked data-angka="0" data-target="no_pll_prem"></td>  
                                                                                 <td>PLL</td> 
-                                                                                <td class='no_pll_val'>-</td> 
+                                                                                <td class=''><input type="text" name="no_pll_val" class="no_pll_val" id="nopllval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;"></td> 
                                                                                 <td class='no_pll_persen'>-</td> 
                                                                                 <td class='no_pll_prem'>-</td> 
                                                                                 
@@ -832,8 +832,17 @@
 			
 </div>
 
+  <script language="javascript">
+    function isNumberKey(evt){
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (charCode > 31 && (charCode < 48 || charCode > 57)){
+            return false;
+        }else{
+          return true;
+        }
+    }
+  </script>
     <script type="text/javascript">
-	
 	<?php
 			$i = 1;
 			$j = 1;
@@ -882,7 +891,7 @@
     <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
     <script src="/website/static/mobilku/functionCalcMobilku.js" type="text/javascript"></script>
     <script type="text/javascript">
-	
+
 	
 	
 	function navigateMe(anchor)
