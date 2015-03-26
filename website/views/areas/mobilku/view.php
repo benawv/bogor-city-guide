@@ -694,7 +694,7 @@
                                                                             <tbody> 
                                                                             <tr>
 										<td><input type="checkbox" class='no_compre_is_calc' name="no_compre_is_calc" checked data-angka="0" data-target="no_compre_prem"></td>  
-                                                                                <td>Comprehensive</td> 
+                                                                                <td id="nojenisasuransi"></td> 
                                                                                 <td class='no_compre_val'>-</td> 
                                                                                 <td class='no_compre_persen'>-</td> 
                                                                                 <td class='no_compre_prem'>-</td>
@@ -759,7 +759,7 @@
                                                                             <tr>
 										<td><input type="checkbox" class="no_passenger_is_calc" name="no_passenger_is_calc" checked data-angka="0" data-target="no_passenger_prem"></td>  
                                                                                 <td>PA Passenger</td> 
-                                                                                <td class='no_passenger_val'>-</td> 
+                                                                                <td class=''><input type="text" name="no_passenger_val" class="no_passenger_val" id="nopassengerval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;"></td> 
                                                                                 <td class='no_passenger_persen'>-</td> 
                                                                                 <td class='no_passenger_prem'>-</td>
                                                                                 
@@ -767,7 +767,7 @@
                                                                             <tr>
 										<td><input type="checkbox" class="no_pa_is_calc" name="no_pa_is_calc" checked data-angka="0" data-target="no_pa_prem"></td>  
                                                                                 <td>PA Driver</td> 
-                                                                                <td class='no_pa_val'>-</td> 
+                                                                                <td class=''><input type="text" name="no_pa_val" class="no_pa_val" id="nopaval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;"></td> 
                                                                                 <td class='no_pa_persen'>-</td> 
                                                                                 <td class='no_pa_prem'>-</td>
                                                                                 

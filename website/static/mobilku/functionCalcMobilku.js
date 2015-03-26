@@ -11,8 +11,8 @@ $(document).ready(function(){
 	var jenisasuransi;
 	$("input:radio[name=radio]").click(function() {
 		 jenisasuransi = $(this).val();
-		 $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3").html("");
-		 $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3").append(jenisasuransi.toUpperCase());
+		 $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3, #nojenisasuransi").html("");
+		 $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3, #nojenisasuransi").append(jenisasuransi.toUpperCase());
 	});
 	
 	function calc_result(paket) {
@@ -109,7 +109,7 @@ $(document).ready(function(){
 			flood_persen=parseFloat(0.0750);
 			riot_persen=parseFloat(0.0500);
 			terror_persen=parseFloat(0.0500);
-			pa_persen=parseFloat(0.500);
+			pa_persen=parseFloat(0.5000);
 			passenger_persen=parseFloat(0.1000);
 		}else if (getColom==5) {
 			earthquake_presen=parseFloat(0.0750);
@@ -242,7 +242,6 @@ $(document).ready(function(){
 		$('.tpl_prem').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
 		$('.totalPremium').append(accounting.formatMoney(totalPremium,'',2,'.',','));
                     
-		
 	}//end of function calc_result
 
 
@@ -338,7 +337,7 @@ $(document).ready(function(){
 			flood_persen=parseFloat(0.0750);
 			riot_persen=parseFloat(0.0500);
 			terror_persen=parseFloat(0.0500);
-			pa_persen=parseFloat(0.500);
+			pa_persen=parseFloat(0.5000);
 			passenger_persen=parseFloat(0.1000);
 		}else if (getColom==5) {
 			earthquake_presen=parseFloat(0.0750);
@@ -563,7 +562,7 @@ $(document).ready(function(){
 			flood_persen=parseFloat(0.0750);
 			riot_persen=parseFloat(0.0500);
 			terror_persen=parseFloat(0.0500);
-			pa_persen=parseFloat(0.500);
+			pa_persen=parseFloat(0.5000);
 			passenger_persen=parseFloat(0.1000);
 		}else if (getColom==5) {
 			earthquake_presen=parseFloat(0.0750);
@@ -740,26 +739,13 @@ $(document).ready(function(){
 		$('.no_workshop_val, .no_compre_val, .no_earthquake_val, .no_flood_val, .no_riot_val, .no_terror_val').html("");
 		$('.no_workshop_val, .no_compre_val, .no_earthquake_val, .no_flood_val, .no_riot_val, .no_terror_val').append(val_tlo);
         $('.no_med_ex_val, .no_pa_val, .no_passenger_val, .no_pll_val').html("");
-		$('.no_pa_val').append(pa_val);
-		$('.no_passenger_val').append(passenger_val);
-		//$('.no_tpl_val').append(tpl_val);
-		//$('.no_med_ex_val').append(med_ex_val);
-		//$('.no_pll_val').append(pll_val);
-
+		$('#nopaval').val(pa_val);
+		$('#nopassengerval').val(passenger_val);
 		$('#notplval').val(tpl_val);
-		var no_tpl_val= $("#notplval").val();
-		var rNotpl_val = no_tpl_val.replace(',00','');
-		var cleanNotpl_val = parseInt(clearFormat(rNotpl_val));
-		
 		$('#nomedexval').val(med_ex_val);
-		var no_med_ex_val= $("#nomedexval").val();
-		var rNomedex_val = no_med_ex_val.replace(',00','');
-		var cleanNomedex_val = parseInt(clearFormat(rNomedex_val));
-		
 		$('#nopllval').val(pll_val);
-		var no_pll_val= $("#nopllval").val();
-		var rNopll_val = no_pll_val.replace(',00','');
-		var cleanNopll_val = parseInt(clearFormat(rNopll_val));
+
+		
 		//========================= END perhitungan basic======================================//
 		
 		
@@ -794,7 +780,7 @@ $(document).ready(function(){
 			flood_persen=parseFloat(0.0750);
 			riot_persen=parseFloat(0.0500);
 			terror_persen=parseFloat(0.0500);
-			pa_persen=parseFloat(0.500);
+			pa_persen=parseFloat(0.5000);
 			passenger_persen=parseFloat(0.1000);
 		}else if (getColom==5) {
 			earthquake_presen=parseFloat(0.0750);
@@ -843,43 +829,11 @@ $(document).ready(function(){
 		//medical expanse
 		var med_ex_pers;
 		if (tipe=='sedan' || tipe=='minibus' ) {
-			if (cleanNomedex_val >= parseInt(100000000000)){
-				med_ex_pers=parseFloat(0.0300);
-			}else if (cleanNomedex_val > parseInt(100000001) && cleanNomedex_val < parseInt(100000000000)){
-				med_ex_pers=parseFloat(0.0250);
-			}else if (cleanNomedex_val > parseInt(50000001) && cleanNomedex_val < parseInt(100000001)){
-				med_ex_pers=parseFloat(0.0200);	
-			}else if (cleanNomedex_val > parseInt(25000001) && cleanNomedex_val < parseInt(50000001)){
-				med_ex_pers=parseFloat(0.0200);	
-			}else{
-				med_ex_pers=parseFloat(0,0350);
-			}
-
+			med_ex_pers=parseFloat(0.0300);
 		}else if(tipe=='motor'){
-			if (cleanNomedex_val >= parseInt(100000000000)){
-				med_ex_pers=parseFloat(0.1250);
-			}else if (cleanNomedex_val > parseInt(100000001) && cleanNomedex_val < parseInt(100000000000)){
-				med_ex_pers=parseFloat(0.1250);
-			}else if (cleanNomedex_val > parseInt(50000001) && cleanNomedex_val < parseInt(100000001)){
-				med_ex_pers=parseFloat(0.1210);	
-			}else if (cleanNomedex_val > parseInt(25000001) && cleanNomedex_val < parseInt(50000001)){
-				med_ex_pers=parseFloat(0.1210);	
-			}else{
-				med_ex_pers=parseFloat(0,1500);
-			}
-
+			med_ex_pers=parseFloat(0.1250);
 		}else if(tipe=='truck'){
-			if (cleanNomedex_val >= parseInt(100000000000)){
-				med_ex_pers=parseFloat(0.0200);
-			}else if (cleanNomedex_val > parseInt(100000001) && cleanNomedex_val < parseInt(100000000000)){
-				med_ex_pers=parseFloat(0.1750);
-			}else if (cleanNomedex_val > parseInt(50000001) && cleanNomedex_val < parseInt(100000001)){
-				med_ex_pers=parseFloat(0.1650);	
-			}else if (cleanNomedex_val > parseInt(25000001) && cleanNomedex_val < parseInt(50000001)){
-				med_ex_pers=parseFloat(0.1650);	
-			}else{
-				med_ex_pers=parseFloat(0,3000);
-			}
+			med_ex_pers=parseFloat(0.2000);
 		}else{
 			med_ex_pers=0;
 		}
@@ -887,21 +841,20 @@ $(document).ready(function(){
 		era_persen=parseFloat(0.0005);
 		personal_ef_persen=parseFloat(1.0000);
 		
-		if (cleanNopll_val >= parseInt(100000000000)){
+		if (cleanPll_val >= parseInt(100000000000)){
 			pll_persen=parseFloat(0.2300);
-		}else if (cleanNopll_val > parseInt(100000001) && cleanNopll_val < parseInt(100000000000)){
+		}else if (cleanPll_val > parseInt(100000001) && cleanPll_val < parseInt(100000000000)){
 			pll_persen=parseFloat(0.2300);
-		}else if (cleanNopll_val > parseInt(50000001) && cleanNopll_val < parseInt(100000001)){
+		}else if (cleanPll_val > parseInt(50000001) && cleanPll_val < parseInt(100000001)){
 			pll_persen=parseFloat(0.2500);
-		}else if (cleanNopll_val > parseInt(25000001) && cleanNopll_val < parseInt(50000001)){
+		}else if (cleanPll_val > parseInt(25000001) && cleanPll_val < parseInt(50000001)){
 			pll_persen=parseFloat(0.3750);
-		}else if (cleanNopll_val < parseInt(25000000)) {
+		}else if (cleanPll_val < parseInt(25000000)) {
 			pll_persen=parseFloat(0.5000);
 		}else{
 			pll_persen=0;
 		}
 		
-
 		if (cleanTpl_val >= parseInt(100000000000)){
 			tpl_persen=parseFloat(0.4000);
 		}else if (cleanTpl_val > parseInt(100000001) && cleanTpl_val < parseInt(100000000000)){
@@ -915,13 +868,13 @@ $(document).ready(function(){
 		}
 
 		var no_tpl_persen;
-		if (cleanNotpl_val >= parseInt(100000000000)){
+		if (cleanTpl_val >= parseInt(100000000000)){
 			no_tpl_persen=parseFloat(0.4000);
-		}else if (cleanNotpl_val > parseInt(100000001) && cleanNotpl_val < parseInt(100000000000)){
+		}else if (cleanTpl_val > parseInt(100000001) && cleanTpl_val < parseInt(100000000000)){
 			no_tpl_persen=parseFloat(0.4000);
-		}else if (cleanNotpl_val > parseInt(50000001) && cleanNotpl_val < parseInt(100000001)){
+		}else if (cleanTpl_val > parseInt(50000001) && cleanTpl_val < parseInt(100000001)){
 			no_tpl_persen=parseFloat(0.5000);
-		}else if (cleanNotpl_val > parseInt(25000001) && cleanNotpl_val < parseInt(50000001)){
+		}else if (cleanTpl_val > parseInt(25000001) && cleanTpl_val < parseInt(50000001)){
 			no_tpl_persen=parseFloat(0.7500);
 		}else{
 			no_tpl_persen=parseFloat(1.0000);
@@ -938,7 +891,7 @@ $(document).ready(function(){
 		$('.no_passenger_persen').append(passenger_persen+"%");			
 		//$('.no_personal_ef_persen').append(personal_ef_persen+"%");			
 		//$('.no_pll_persen').append("-");		
-		$('.no_pll_persen').append("-");
+		$('.no_pll_persen').append(pll_persen+"%");
 		$('.no_riot_persen').append(riot_persen+"%");			
 		$('.no_terror_persen').append(terror_persen+"%");			
 		$('.no_tpl_persen').append(no_tpl_persen+"%");
@@ -954,14 +907,14 @@ $(document).ready(function(){
 		earthquake_prem=(((1*(cleanVarTlo*earthquake_presen)/100)*day)/day);
 		era_prem=(((1*(cleanVarTlo*era_persen)/100)*day)/day);
 		flood_prem=(((1*(cleanVarTlo*flood_persen)/100)*day)/day);
-		med_ex_prem=(((1*(cleanNomedex_val*med_ex_pers)/100)*day)/day);
+		med_ex_prem=(((1*(cleanMed_ex_val*med_ex_pers)/100)*day)/day);
 		pa_prem=(((1*(cleanPa_val*pa_persen)/100)*day)/day);
 		passenger_prem=(((1*((parseInt(kapasitas)-1)*cleanPassenger_val*passenger_persen)/100)*day)/day);
-		pll_prem=(((1*(cleanNopll_val*pll_persen)/100)*day)/day);
+		pll_prem=(((1*(cleanPll_val*pll_persen)/100)*day)/day);
 		riot_prem=(((1*(cleanVarTlo*riot_persen)/100)*day)/day);
 		terror_prem=(((1*(cleanVarTlo*terror_persen)/100)*day)/day);
 		tpl_prem=(((1*(cleanTpl_val*tpl_persen)/100)*day)/day);
-		no_tpl_prem=(((1*(cleanNotpl_val*no_tpl_persen)/100)*day)/day);
+		no_tpl_prem=(((1*(cleanTpl_val*no_tpl_persen)/100)*day)/day);
 		//totalPremium= workshop_prem + compre_prem + earthquake_prem + era_prem + flood_prem + med_ex_prem + pa_prem + passenger_prem  + pll_prem + riot_prem + terror_prem + tpl_prem;
 		
         //form NON Paket
@@ -974,12 +927,7 @@ $(document).ready(function(){
 		$('.no_pa_prem').append(accounting.formatMoney(pa_prem,'',2,'.',','));			
 		$('.no_passenger_prem').append(accounting.formatMoney(passenger_prem,'',2,'.',','));			
 		//$('.no_personal_ef_prem').append(accounting.formatMoney(personal_ef_prem,'',2,'.',','));			
-		//$('.no_pll_prem').append(accounting.formatMoney(pll_prem,'',2,'.',','));
-		//if(pll_prem == '0'){
-		$('.no_pll_prem').append("-");			
-		//}else{
-		//	$('.no_pll_prem').append(accounting.formatMoney(pll_prem,'',2,'.',','));
-		//}
+		$('.no_pll_prem').append(accounting.formatMoney(pll_prem,'',2,'.',','));
 		$('.no_riot_prem').append(accounting.formatMoney(riot_prem,'',2,'.',','));			
 		$('.no_terror_prem').append(accounting.formatMoney(terror_prem,'',2,'.',','));			
 		$('.no_tpl_prem').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
@@ -1001,6 +949,26 @@ $(document).ready(function(){
 		                                        
     }
 	
+	function totalrecalc_custome(){
+
+    	var no_workshop_prem=(parseInt(clearFormat($('.no_workshop_prem').html().replace(',00',''))));
+        var no_compre_prem=(parseInt(clearFormat($('.no_compre_prem').html().replace(',00',''))));
+        var no_earthquake_prem=(parseInt(clearFormat($('.no_earthquake_prem').html().replace(',00',''))));
+        var no_flood_prem=(parseInt(clearFormat($('.no_flood_prem').html().replace(',00',''))));
+        var no_med_ex_prem=(parseInt(clearFormat($('.no_med_ex_prem').html().replace(',00',''))));
+        var no_pa_prem=(parseInt(clearFormat($('.no_pa_prem').html().replace(',00',''))));
+        var no_passenger_prem=(parseInt(clearFormat($('.no_passenger_prem').html().replace(',00',''))));
+        var no_pll_prem=(parseInt(clearFormat($('.no_pll_prem').html().replace(',00',''))));
+        var no_riot_prem=(parseInt(clearFormat($('.no_riot_prem').html().replace(',00',''))));
+        var no_terror_prem=(parseInt(clearFormat($('.no_terror_prem').html().replace(',00',''))));
+        var no_tpl_prem=(parseInt(clearFormat($('.no_tpl_prem').html().replace(',00',''))));
+        
+        var no_totalPremium=parseInt(no_workshop_prem+no_compre_prem+no_earthquake_prem+no_flood_prem+no_med_ex_prem+no_pa_prem+no_passenger_prem+no_riot_prem+no_terror_prem+no_tpl_prem+no_pll_prem);
+        $('.no_totalPremium').html('');
+        $('.no_totalPremium').append(accounting.formatMoney(no_totalPremium,'',0,'.',','));
+        
+    }
+
     function notpl(){
     	//get total day in a year
 		var now = new Date(2015,1,0);
@@ -1009,17 +977,9 @@ $(document).ready(function(){
 		var oneDay = 1000 * 60 * 60 * 24;
 		var day = Math.ceil(diff / oneDay);
 
-    	//var tpl_val=50000000;
-		//var cleanTpl_val=parseInt(tpl_val); //get clean tlo
-		//tpl_val=accounting.formatMoney(tpl_val,'',2,'.',',');
-		
-		
-		//$('#notplval').val();
 		var no_tpl_val= $("#notplval").val();
 		var rNotpl_val = no_tpl_val.replace(',00','');
 		var cleanNotpl_val = parseInt(clearFormat(rNotpl_val));
-		
-		console.log(cleanNotpl_val);
 		
 		var no_tpl_persen;
 		if (cleanNotpl_val >= parseInt(100000000000)){
@@ -1041,28 +1001,223 @@ $(document).ready(function(){
 		$('.no_tpl_prem').append(accounting.formatMoney(no_tpl_prem,'',2,'.',','));
 
 		totalrecalc_custome();
+    
     }
 
-    function totalrecalc_custome(){
+    function nomedex(){
 
-    	var no_workshop_prem=(parseInt(clearFormat($('.no_workshop_prem').html().replace(',00',''))));
-        var no_compre_prem=(parseInt(clearFormat($('.no_compre_prem').html().replace(',00',''))));
-        var no_earthquake_prem=(parseInt(clearFormat($('.no_earthquake_prem').html().replace(',00',''))));
-        var no_flood_prem=(parseInt(clearFormat($('.no_flood_prem').html().replace(',00',''))));
-        var no_med_ex_prem=(parseInt(clearFormat($('.no_med_ex_prem').html().replace(',00',''))));
-        var no_pa_prem=(parseInt(clearFormat($('.no_pa_prem').html().replace(',00',''))));
-        var no_passenger_prem=(parseInt(clearFormat($('.no_passenger_prem').html().replace(',00',''))));
-        //var no_pll_prem=parseInt(clearFormat($('.no_pll_prem').html()));
-        var no_riot_prem=(parseInt(clearFormat($('.no_riot_prem').html().replace(',00',''))));
-        var no_terror_prem=(parseInt(clearFormat($('.no_terror_prem').html().replace(',00',''))));
-        var no_tpl_prem=(parseInt(clearFormat($('.no_tpl_prem').html().replace(',00',''))));
-        
-        var no_totalPremium=parseInt(no_workshop_prem+no_compre_prem+no_earthquake_prem+no_flood_prem+no_med_ex_prem+no_pa_prem+no_passenger_prem+no_riot_prem+no_terror_prem+no_tpl_prem);
-        $('.no_totalPremium').html('');
-        $('.no_totalPremium').append(accounting.formatMoney(no_totalPremium,'',0,'.',','));
-        
+    	var tipe=$('#tipe').val().toLowerCase();
+		var wilayah=parseInt($('#wilayah').val());
+		var kapasitas=parseInt($('#kapasitas').val());
+
+    	//get total day in a year
+		var now = new Date(2015,1,0);
+		var start = new Date(now.getFullYear(),12, 31);
+		var diff = start-now;
+		var oneDay = 1000 * 60 * 60 * 24;
+		var day = Math.ceil(diff / oneDay);
+
+		var no_med_ex_val= $("#nomedexval").val();
+		var rNomedex_val = no_med_ex_val.replace(',00','');
+		var cleanNomedex_val = parseInt(clearFormat(rNomedex_val));
+		
+		//medical expanse
+		var med_ex_pers;
+		if (tipe=='sedan' || tipe=='minibus' ) {
+			if (cleanNomedex_val >= parseInt(100000000000)){
+				med_ex_pers=parseFloat(0.0200);
+			}else if (cleanNomedex_val > parseInt(10000001) && cleanNomedex_val < parseInt(100000000000)){
+				med_ex_pers=parseFloat(0.0200);
+			}else if (cleanNomedex_val > parseInt(5000001) && cleanNomedex_val < parseInt(10000001)){
+				med_ex_pers=parseFloat(0.0250);
+			}else if (cleanNomedex_val > parseInt(2500001) && cleanNomedex_val < parseInt(2500001)){
+				med_ex_pers=parseFloat(0.0300);
+			}else{
+				med_ex_pers=parseFloat(0.0350);
+			}
+		}else if(tipe=='motor'){
+			if (cleanNomedex_val >= parseInt(100000000000)){
+				med_ex_pers=parseFloat(0.1210);
+			}else if (cleanNomedex_val > parseInt(10000001) && cleanNomedex_val < parseInt(100000000000)){
+				med_ex_pers=parseFloat(0.1210);
+			}else if (cleanNomedex_val > parseInt(5000001) && cleanNomedex_val < parseInt(10000001)){
+				med_ex_pers=parseFloat(0.1250);
+			}else if (cleanNomedex_val > parseInt(2500001) && cleanNomedex_val < parseInt(2500001)){
+				med_ex_pers=parseFloat(0.1250);
+			}else{
+				med_ex_pers=parseFloat(0.1500);
+			}
+		}else if(tipe=='truck'){
+			if (cleanNomedex_val >= parseInt(100000000000)){
+				med_ex_pers=parseFloat(0.1650);
+			}else if (cleanNomedex_val > parseInt(10000001) && cleanNomedex_val < parseInt(100000000000)){
+				med_ex_pers=parseFloat(0.1650);
+			}else if (cleanNomedex_val > parseInt(5000001) && cleanNomedex_val < parseInt(10000001)){
+				med_ex_pers=parseFloat(0.1750);
+			}else if (cleanNomedex_val > parseInt(2500001) && cleanNomedex_val < parseInt(2500001)){
+				med_ex_pers=parseFloat(0.0200);
+			}else{
+				med_ex_pers=parseFloat(0.0300);
+			}
+		}else{
+			med_ex_pers=0;
+		}
+ 	
+		$('.no_med_ex_persen').html("");
+		$('.no_med_ex_persen').append(med_ex_pers+"%");
+		var no_med_ex_prem=(((1*(cleanNomedex_val*med_ex_pers)/100)*day)/day);
+		$('.no_med_ex_prem').html("");
+		$('.no_med_ex_prem').append(accounting.formatMoney(no_med_ex_prem,'',2,'.',','));
+
+		totalrecalc_custome();
+    
     }
 
+	function padriver(){
+		var getColom;
+    	//get total day in a year
+		var now = new Date(2015,1,0);
+		var start = new Date(now.getFullYear(),12, 31);
+		var diff = start-now;
+		var oneDay = 1000 * 60 * 60 * 24;
+		var day = Math.ceil(diff / oneDay);
+		var wilayah=parseInt($('#wilayah').val());
+
+		var no_pa_val= $("#nopaval").val();
+		var rNopa_val = no_pa_val.replace(',00','');
+		var cleanNopa_val = parseInt(clearFormat(rNopa_val));
+		
+		var workshop_persen, compre_persen, earthquake_presen, flood_persen, pa_persen, passenger_persen,  riot_persen, terror_persen;
+		workshop_persen=0;
+		compre_persen=0;
+		
+		// if (tlo= 5+wilayah) else (1+wilayah)
+		if (jenisasuransi=='tlo') {
+			getColom=wilayah+5;
+		}else{
+			getColom=wilayah+1;
+		}
+		
+		if (getColom==2) {
+			pa_persen=parseFloat(0.5000);
+		}else if (getColom==3) {
+			pa_persen=parseFloat(0.5000);
+		}else if (getColom==4) {
+			pa_persen=parseFloat(0.5000);
+		}else if (getColom==5) {
+			pa_persen=parseFloat(0.5000);
+		}else if (getColom==6) {
+			pa_persen=parseFloat(0.5000);
+		}else if (getColom==7) {
+			pa_persen=parseFloat(0.5000);
+		}else if (getColom==8) {
+			pa_persen=parseFloat(0.5000);
+		}else if (getColom==9){
+			pa_persen=parseFloat(0.5000);
+		}else{
+			pa_persen=0;
+		}
+
+		$('.no_pa_persen').html("");
+		$('.no_pa_persen').append(pa_persen+"%");
+		var pa_prem=(((1*(cleanNopa_val*pa_persen)/100)*day)/day);
+		$('.no_pa_prem').html("");	
+		$('.no_pa_prem').append(accounting.formatMoney(pa_prem,'',2,'.',','));	
+
+		totalrecalc_custome();
+    
+    }    
+
+    function papassenger(){
+		var getColom;
+    	//get total day in a year
+		var now = new Date(2015,1,0);
+		var start = new Date(now.getFullYear(),12, 31);
+		var diff = start-now;
+		var oneDay = 1000 * 60 * 60 * 24;
+		var day = Math.ceil(diff / oneDay);
+		var wilayah=parseInt($('#wilayah').val());
+
+		var no_passenger_val= $("#nopassengerval").val();
+		var rNopassenger_val = no_passenger_val.replace(',00','');
+		var cleanNopassenger_val = parseInt(clearFormat(rNopassenger_val));
+		
+		var workshop_persen, compre_persen, earthquake_presen, flood_persen, pa_persen, passenger_persen,  riot_persen, terror_persen;
+		workshop_persen=0;
+		compre_persen=0;
+		
+		// if (tlo= 5+wilayah) else (1+wilayah)
+		if (jenisasuransi=='tlo') {
+			getColom=wilayah+5;
+		}else{
+			getColom=wilayah+1;
+		}
+		
+		if (getColom==2) {
+			passenger_persen=parseFloat(0.1000);
+		}else if (getColom==3) {
+			passenger_persen=parseFloat(0.1000);
+		}else if (getColom==4) {
+			passenger_persen=parseFloat(0.1000);
+		}else if (getColom==5) {
+			passenger_persen=parseFloat(0.1000);
+		}else if (getColom==6) {
+			passenger_persen=parseFloat(0.1000);
+		}else if (getColom==7) {
+			passenger_persen=parseFloat(0.1000);
+		}else if (getColom==8) {
+			passenger_persen=parseFloat(0.1000);
+		}else if (getColom==9){
+			passenger_persen=parseFloat(0.1000);
+		}else{
+			passenger_persen=0;
+		}
+
+		$('.no_passenger_persen').html("");
+		$('.no_passenger_persen').append(passenger_persen+"%");
+		var no_passenger_prem=(((1*(cleanNopassenger_val*passenger_persen)/100)*day)/day);
+		$('.no_passenger_prem').html("");	
+		$('.no_passenger_prem').append(accounting.formatMoney(no_passenger_prem,'',2,'.',','));	
+
+		totalrecalc_custome();
+    
+    } 
+
+    function ppl(){
+    	var now = new Date(2015,1,0);
+		var start = new Date(now.getFullYear(),12, 31);
+		var diff = start-now;
+		var oneDay = 1000 * 60 * 60 * 24;
+		var day = Math.ceil(diff / oneDay);
+		var wilayah=parseInt($('#wilayah').val());
+
+    	$('#nopllval').val();
+		var no_pll_val= $("#nopllval").val();
+		var rNopll_val = no_pll_val.replace(',00','');
+		var cleanNopll_val = parseInt(clearFormat(rNopll_val));
+		
+		if (cleanNopll_val >= parseInt(100000000000)){
+			pll_persen=parseFloat(0.2300);
+		}else if (cleanNopll_val > parseInt(100000001) && cleanNopll_val < parseInt(100000000000)){
+			pll_persen=parseFloat(0.2300);
+		}else if (cleanNopll_val > parseInt(50000001) && cleanNopll_val < parseInt(100000001)){
+			pll_persen=parseFloat(0.2500);
+		}else if (cleanNopll_val > parseInt(25000001) && cleanNopll_val < parseInt(50000001)){
+			pll_persen=parseFloat(0.3750);
+		}else if (cleanNopll_val < parseInt(25000000)) {
+			pll_persen=parseFloat(0.5000);
+		}else{
+			pll_persen=0;
+		}
+		
+		$('.no_pll_persen').html("");
+		$('.no_pll_persen').append(pll_persen+"%");
+		var pll_prem=(((1*(cleanNopll_val*pll_persen)/100)*day)/day);
+		$('.no_pll_prem').html("");
+		$('.no_pll_prem').append(accounting.formatMoney(pll_prem,'',2,'.',','));
+
+		totalrecalc_custome();
+    }
 
 	$("#harga").bind('input',function(){
 		var text = clearFormat($(this).val());
@@ -1074,7 +1229,7 @@ $(document).ready(function(){
 		$(this).val(text);
 	});
 
-	$("#notplval").bind('input',function(){
+	$("#nopassengerval, #nopaval, #notplval, #nomedexval, #nopllval").bind('input',function(){
 		var text1 = clearFormat($(this).val());
 		if (text1 > 100000000000) {
 		    text1 = 100000000000;
@@ -1084,9 +1239,13 @@ $(document).ready(function(){
 		$(this).val(text1);
 
 		notpl();
+		nomedex();
+		padriver();
+		papassenger();
+		ppl();
 	});
 
-	$("#nomedexval").bind('input',function(){
+	/*$("#nomedexval").bind('input',function(){
 		var text2 = clearFormat($(this).val());
 		if (text2 > 100000000000) {
 		    text2 = 100000000000;
@@ -1094,6 +1253,8 @@ $(document).ready(function(){
 		
 		text2 = accounting.formatMoney(text2,'',0,'.',',');
 		$(this).val(text2);
+
+		nomedex();
 	});
 
 	$("#nopllval").bind('input',function(){
@@ -1101,12 +1262,10 @@ $(document).ready(function(){
 		if (text3 > 100000000000) {
 		    text3 = 100000000000;
 		}
-		if (text3 < 1) {
-			$(this).val('0,00');
-		}
+		
 		text3 = accounting.formatMoney(text3,'',0,'.',',');
 		$(this).val(text3);
-	});
+	});*/
 	
 	$(this).on('click','#finish-btn',function(){
 
