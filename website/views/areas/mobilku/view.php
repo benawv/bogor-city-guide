@@ -19,6 +19,8 @@
 <script src="/website/static/mobilku/jquery.bootstrap.wizard.js" type="text/javascript"></script>
 <script src="/website/static/mobilku/wizard.js"></script>
 <script src="/website/static/mobilku/data-table-1.10.4/media/js/jquery.dataTables.js" type="text/javascript"></script>
+<script src="/website/static/mobilku/data-table-1.10.4/media/js/dataTables.tableTools.min.js" type="text/javascript"></script>
+<script src="/website/static/mobilku/data-table-1.10.4/media/js/dataTables.editor.min.js" type="text/javascript"></script>
     
 <script src="/website/static/mobilku/jquery.validate.min.js"></script>       
 <script src="/website/static/mobilku/jquery-ui.js"></script>
@@ -678,7 +680,7 @@
                                                                     <div id="tabcontent_2_1" class="content_show showme show_2">
                                                                     
                                                                         <div class="tabScroll">
-                                                                        <table id="myTable5" class="display" cellspacing="0" width="100%">
+                                                                        <table id="myTable5" class="display tbl_ck" cellspacing="0" width="100%">
                                                                             <thead> 
                                                                             <tr>
 										<th class="">Checklist</th> 
@@ -691,7 +693,7 @@
                                                                             </thead> 
                                                                             <tbody> 
                                                                             <tr>
-										<td><input type="checkbox" name="no_compre_is_calc" value="Car" checked></td>  
+										<td><input type="checkbox" class='no_compre_is_calc' name="no_compre_is_calc" checked data-angka="0" data-target="no_compre_prem"></td>  
                                                                                 <td>Comprehensive</td> 
                                                                                 <td class='no_compre_val'>-</td> 
                                                                                 <td class='no_compre_persen'>-</td> 
@@ -699,7 +701,7 @@
                                                                                 
                                                                             </tr>     
                                                                             <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+										<td><input type="checkbox" class='no_tpl_is_calc' name="no_tpl_is_calc" checked data-angka="0" data-target="no_tpl_prem"></td>  
                                                                                 <td>TPL</td> 
                                                                                 <td class='no_tpl_val'>-</td> 
                                                                                 <td class='no_tpl_persen'>-</td> 
@@ -707,7 +709,7 @@
                                                                                 
                                                                             </tr>  
                                                                             <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+										<td><input type="checkbox"  class="no_med_ex_is_calc" name="no_med_ex_prem_is_calc" checked data-angka="0" data-target="no_med_ex_prem"></td>  
                                                                                 <td>Medical Expense</td> 
                                                                                 <td class='no_med_ex_val'>-</td> 
                                                                                 <td class='no_med_ex_persen'>-</td> 
@@ -715,7 +717,7 @@
                                                                                 
                                                                             </tr>  
                                                                             <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+										<td><input type="checkbox" class="no_pll_is_calc" name="no_pll_prem_is_calc" checked data-angka="0" data-target="no_pll_prem"></td>  
                                                                                 <td>PLL</td> 
                                                                                 <td class='no_pll_val'>-</td> 
                                                                                 <td class='no_pll_persen'>-</td> 
@@ -723,7 +725,7 @@
                                                                                 
                                                                             </tr>  
                                                                             <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+										<td><input type="checkbox"  class="no_flood_is_calc" name="no_flood_is_calc" checked data-angka="0" data-target="no_flood_prem"></td>  
                                                                                 <td>Flood</td> 
                                                                                 <td class='no_flood_val'>-</td> 
                                                                                 <td class='no_flood_persen'>-</td> 
@@ -731,7 +733,7 @@
                                                                                 
                                                                             </tr>  
                                                                             <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+										<td><input type="checkbox" class="no_earthquake_is_calc" name="no_earthquake_is_calc" checked data-angka="0" data-target="no_earthquake_prem"></td>  
                                                                                 <td>Earthquake</td> 
                                                                                 <td class='no_earthquake_val'>-</td> 
                                                                                 <td class='no_earthquake_presen'>-</td> 
@@ -739,7 +741,7 @@
                                                                                 
                                                                             </tr>  
                                                                             <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+										<td><input type="checkbox" class="no_riot_is_calc" name="no_tpl_is_calc" checked data-angka="0" data-target="no_riot_prem"></td>  
                                                                                 <td>Strike, Riot, and Civil Commotion</td> 
                                                                                 <td class='no_riot_val'>-</td> 
                                                                                 <td class='no_riot_persen'>-</td> 
@@ -747,7 +749,7 @@
                                                                                 
                                                                             </tr>  
                                                                             <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+										<td><input type="checkbox" class="no_terror_is_calc" name="no_terror_is_calc" checked data-angka="0" data-target="no_terror_prem"></td>  
                                                                                 <td>Terrorist and Sabotage</td> 
                                                                                 <td class='no_terror_val'>-</td> 
                                                                                 <td class='no_terror_persen'>-</td> 
@@ -755,7 +757,7 @@
                                                                                 
                                                                             </tr>  
                                                                             <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+										<td><input type="checkbox" class="no_passenger_is_calc" name="no_passenger_is_calc" checked data-angka="0" data-target="no_passenger_prem"></td>  
                                                                                 <td>PA Passenger</td> 
                                                                                 <td class='no_passenger_val'>-</td> 
                                                                                 <td class='no_passenger_persen'>-</td> 
@@ -763,7 +765,7 @@
                                                                                 
                                                                             </tr>  
                                                                             <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+										<td><input type="checkbox" class="no_pa_is_calc" name="no_pa_is_calc" checked data-angka="0" data-target="no_pa_prem"></td>  
                                                                                 <td>PA Driver</td> 
                                                                                 <td class='no_pa_val'>-</td> 
                                                                                 <td class='no_pa_persen'>-</td> 
@@ -771,13 +773,14 @@
                                                                                 
                                                                             </tr>      
                                                                              <tr>
-										<td><input type="checkbox" name="no_tpl_is_calc" value="Car" checked></td>  
+										<td><input type="checkbox" class="no_workshop_is_calc" name="no_workshop_is_calc" checked data-angka="0" data-target="no_workshop_prem"></td>  
                                                                                 <td>Authorized Workshop</td> 
                                                                                 <td class='no_workshop_val'>-</td>
                                                                                 <td class='no_workshop_persen'>-</td> 
                                                                                 <td class='no_workshop_prem'>-</td>
                                                                             </tr> 
-                                                                                                                                                         <tfoot>
+                                                                                                                                                         
+									<tfoot>
                                                                             <tr> 
                                                                                 <td></td> 
                                                                                 <td></td>

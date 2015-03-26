@@ -1,6 +1,7 @@
         $(document).ready(function(){
 		
 		function clearFormat(value) {
+   
 			value = value.replace(/[^0-9\.]+/g,"");
 			value = value.replace(/\./g,'');
 			value = value.replace(/,/g,'');
@@ -272,7 +273,7 @@
 			$('.tpl_prem').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
 			$('.totalPremium').append(accounting.formatMoney(totalPremium,'',2,'.',','));
                         
-                        //form paket
+                        //form NON Paket
 			$('.no_workshop_prem, .no_compre_prem, .no_earthquake_prem, .no_flood_prem, .no_med_ex_prem, .no_pa_prem, .no_passenger_prem, .no_pll_prem, .no_riot_prem, .no_terror_prem, .no_tpl_prem').html("");
 			$('.no_workshop_prem').append(accounting.formatMoney(workshop_prem,'',2,'.',','));			
 			$('.no_compre_prem').append(accounting.formatMoney(compre_prem,'',2,'.',','));			
@@ -287,7 +288,20 @@
 			$('.no_riot_prem').append(accounting.formatMoney(riot_prem,'',2,'.',','));			
 			$('.no_terror_prem').append(accounting.formatMoney(terror_prem,'',2,'.',','));			
 			$('.no_tpl_prem').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
-			$('.no_totalPremium').append(accounting.formatMoney(totalPremium,'',2,'.',','));
+			$('.no_totalPremium').append(accounting.formatMoney(parseInt(totalPremium-era_prem),'',2,'.',','));
+                        
+                        $('.no_compre_is_calc').attr('data-angka',accounting.formatMoney(compre_prem,'',2,'.',','));
+                        $('.no_earthquake_is_calc').attr('data-angka',accounting.formatMoney(earthquake_prem,'',2,'.',','));						
+			$('.no_flood_is_calc').attr('data-angka',accounting.formatMoney(flood_prem,'',2,'.',','));			
+			$('.no_med_ex_is_calc').attr('data-angka',accounting.formatMoney(med_ex_prem,'',2,'.',','));			
+			$('.no_pa_is_calc').attr('data-angka',accounting.formatMoney(pa_prem,'',2,'.',','));			
+			$('.no_passenger_is_calc').attr('data-angka',accounting.formatMoney(passenger_prem,'',2,'.',','));			
+			//$('.no_personal_ef_prem').append(accounting.formatMoney(personal_ef_prem,'',2,'.',','));			
+			//$('.no_pll_prem').append(accounting.formatMoney(pll_prem,'',2,'.',','));								
+			$('.no_riot_is_calc').attr('data-angka',accounting.formatMoney(riot_prem,'',2,'.',','));			
+			$('.no_terror_is_calc').attr('data-angka',accounting.formatMoney(terror_prem,'',2,'.',','));			
+			$('.no_tpl_is_calc').attr('data-angka',accounting.formatMoney(tpl_prem,'',2,'.',','));
+		
 			
 		}//end of function calc_result
 
@@ -847,21 +861,69 @@
 				calc_resultpremier();
 			}
 		});
-		
-		$('#myTable').dataTable( {
+		     
+		$('#myTable, #myTable2,#myTable3,#myTable4,#myTable5,#myTable6,#myTable7').dataTable( {
                         "searching": false,
                         "bLengthChange": false,
                         "paging": false,
                         "info": false
-                } );
-     
-		$('#myTable2,#myTable3,#myTable4,#myTable5,#myTable6,#myTable7').dataTable( {
-                        "searching": false,
-                        "bLengthChange": false,
-                        "paging": false,
-                        "info": false
-                    } );
-		
+                });
+                
+                function recalc_custome(){
+                        var no_workshop_prem=(parseInt(clearFormat($('.no_workshop_prem').html().replace(',00',''))));
+                        var no_compre_prem=(parseInt(clearFormat($('.no_compre_prem').html().replace(',00',''))));
+                        var no_earthquake_prem=(parseInt(clearFormat($('.no_earthquake_prem').html().replace(',00',''))));
+                        var no_flood_prem=(parseInt(clearFormat($('.no_flood_prem').html().replace(',00',''))));
+                        var no_med_ex_prem=(parseInt(clearFormat($('.no_med_ex_prem').html().replace(',00',''))));
+                        var no_pa_prem=(parseInt(clearFormat($('.no_pa_prem').html().replace(',00',''))));
+                        var no_passenger_prem=(parseInt(clearFormat($('.no_passenger_prem').html().replace(',00',''))));
+                        //var no_pll_prem=parseInt(clearFormat($('.no_pll_prem').html()));
+                        var no_riot_prem=(parseInt(clearFormat($('.no_riot_prem').html().replace(',00',''))));
+                        var no_terror_prem=(parseInt(clearFormat($('.no_terror_prem').html().replace(',00',''))));
+                        var no_tpl_prem=(parseInt(clearFormat($('.no_tpl_prem').html().replace(',00',''))));
+                        
+                        var no_totalPremium=parseInt(no_workshop_prem+no_compre_prem+no_earthquake_prem+no_flood_prem+no_med_ex_prem+no_pa_prem+no_passenger_prem+no_riot_prem+no_terror_prem+no_tpl_prem);
+                        $('.no_totalPremium').html('');
+                        $('.no_totalPremium').append(accounting.formatMoney(no_totalPremium,'',0,'.',','));
+                        
+                        //console.log(no_workshop_prem);
+                        //console.log(no_compre_prem);
+                        //console.log(no_earthquake_prem);
+                        //console.log(no_flood_prem);
+                        //console.log(no_med_ex_prem);
+                        //console.log(no_pa_prem);
+                        //console.log(no_passenger_prem);
+                        //console.log(no_pll_prem);
+                        //console.log(no_riot_prem);
+                        //console.log(no_terror_prem);
+                        //console.log(no_tpl_prem);
+                        //totalPremium= workshop_prem + compre_prem + earthquake_prem + era_prem + flood_prem + med_ex_prem + pa_prem + passenger_prem + personal_ef_prem + pll_prem + riot_prem + terror_prem + tpl_prem;
+                                            
+                }
+                
+                $( 'table.tbl_ck input[type="checkbox"]' ).each(function(index,value){
+                        $(this).click(function() {
+                                var datatarget=$(this).attr('data-target');
+                                var dataangka=$(this).attr('data-angka');
+                                $('.'+datatarget).html('');  
+                                $('.'+datatarget).append(dataangka);
+                                       
+                                if ( ! this.checked) {
+                                      $('.'+datatarget).html('');  
+                                      $('.'+datatarget).append('0,00');
+                                }else{
+                                      $('.'+datatarget).html('');  
+                                      $('.'+datatarget).append(dataangka);
+                                }
+                                recalc_custome();
+                                             
+                        });
+                        
+                        //cekboxnya on klik
+                        //nanti $( #data-target).html( $this.attr( data-angka ) )
+                });
+                
+                
 		$( "#periode" ).datepicker();
 		$(".menutab_dekstop li a").width(100);
 		$(".menutab_dekstop li a").css("width", "225px");
