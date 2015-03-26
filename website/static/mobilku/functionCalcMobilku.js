@@ -14,7 +14,115 @@ $(document).ready(function(){
 		 $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3, #nojenisasuransi").html("");
 		 $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3, #nojenisasuransi").append(jenisasuransi.toUpperCase());
 	});
-	
+	function getTlo(tipe,map) {
+                        //code
+                        var rate;
+                        console.log(tipe);
+                        console.log(map);
+                        if (tipe=='tlo') {
+                            if(map=='PK_R1_S1_Sedan'){
+                                      rate='0.0047';          
+                            }else if (map=='PK_R1_S2_Sedan') {
+                                      rate='0.0044';        
+                            }else if (map=='PK_R1_S3_Sedan') {
+                                      rate='0.0029';        
+                            }else if (map=='PK_R1_S4_Sedan') {
+                                      rate='0.0029';          
+                            }else if (map=='PK_R1_S5_Sedan') {
+                                      rate='0.0024';         
+                            }else if (map=='PK_R2_S1_Sedan') {
+                                      rate='0.0065';          
+                            }else if (map=='PK_R2_S2_Sedan') {
+                                      rate='0.0044';          
+                            }else if (map=='PK_R2_S3_Sedan') {
+                                      rate='0.0029';          
+                            }else if (map=='PK_R2_S4_Sedan') {
+                                      rate='0.0029';         
+                            }else if (map=='PK_R2_S5_Sedan') {
+                                      rate='0.0024';       
+                            }else if (map=='PK_R3_S1_Sedan') {
+                                      rate='0.0036';          
+                            }else if (map=='PK_R3_S2_Sedan') {
+                                      rate='0.0031';         
+                            }else if (map=='PK_R3_S3_Sedan') {
+                                      rate='0.0029';         
+                            }else if (map=='PK_R3_S4_Sedan') {
+                                      rate='0.0029';         
+                            }else if (map=='PK_R3_S5_Sedan') {
+                                      rate='0.0024';  
+                            }else{
+                                     rate='0';
+                            }
+                           
+                        }else{
+                            if(map=='PK_R1_S1_Sedan'){
+                                      rate='0.0382';          
+                            }else if (map=='PK_R1_S2_Sedan') {
+                                      rate='0.0267';        
+                            }else if (map=='PK_R1_S3_Sedan') {
+                                      rate='0.0171';        
+                            }else if (map=='PK_R1_S4_Sedan') {
+                                      rate='0.0123';          
+                            }else if (map=='PK_R1_S5_Sedan') {
+                                      rate='0.0108';         
+                            }else if (map=='PK_R2_S1_Sedan') {
+                                      rate='0.0344';          
+                            }else if (map=='PK_R2_S2_Sedan') {
+                                      rate='0.0247';          
+                            }else if (map=='PK_R2_S3_Sedan') {
+                                      rate='0.0171';          
+                            }else if (map=='PK_R2_S4_Sedan') {
+                                      rate='0.0122';         
+                            }else if (map=='PK_R2_S5_Sedan') {
+                                      rate='0.0107';       
+                            }else if (map=='PK_R3_S1_Sedan') {
+                                      rate='0.0253';          
+                            }else if (map=='PK_R3_S2_Sedan') {
+                                      rate='0.0207';         
+                            }else if (map=='PK_R3_S3_Sedan') {
+                                      rate='0.014';         
+                            }else if (map=='PK_R3_S4_Sedan') {
+                                      rate='0.0122';         
+                            }else if (map=='PK_R3_S5_Sedan') {
+                                      rate='0.0107';  
+                            }else{
+                                     rate='0';
+                            }                 
+                        }
+                        console.log(rate);
+                         return rate;
+                }
+        function getWorkshop(merk,calc_type) {
+                if (calc_type=='1') {
+                     if(merk.toLowerCase=='bmw'){
+                        workshop_rate='10'
+                     }else if(merk.toLowerCase=='mercedes benz'){
+                        workshop_rate='10'
+                     }else{
+                        workshop_rate='5'
+                    }
+                }else if (calc_type=='2') {
+                     if(merk.toLowerCase=='bmw'){
+                        workshop_rate='12.50'
+                     }else if(merk.toLowerCase=='mercedes benz'){
+                        workshop_rate='15.00'
+                     }else{
+                        workshop_rate='7.50'
+                    }
+                }else{
+                    if(merk.toLowerCase=='bmw'){
+                        workshop_rate='25'
+                    }else if(merk.toLowerCase=='mercedes benz'){
+                        workshop_rate='20'
+                    }else{
+                        workshop_rate='10'
+                    }
+                }
+                console.log("wrk:"+workshop_rate);
+                return workshop_rate;
+                      
+        }
+        
 	function calc_result(paket) {
 		
 		var getColom;
@@ -24,7 +132,7 @@ $(document).ready(function(){
 		var regno;
 		var periode;
 		var radio01;
-
+                var merk=$('#merk').val();
 		var tipe=$('#tipe').val().toLowerCase();
 		var wilayah=parseInt($('#wilayah').val());
 		var kapasitas=parseInt($('#kapasitas').val());
@@ -80,9 +188,10 @@ $(document).ready(function(){
 		
 		//=========================//perhitungan rate/persen======================================//
 		var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
-		workshop_persen=0;
-		compre_persen=0;
-		
+		compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan')*100;
+                workshop_persen=parseFloat(getWorkshop(merk,1))*parseFloat(compre_tlo_persen);
+		console.log("wrk per:"+workshop_persen);
+                console.log("compre "+compre_tlo_persen);
 		// if (tlo= 5+wilayah) else (1+wilayah)
 		if (jenisasuransi=='tlo') {
 			getColom=wilayah+5;
@@ -186,7 +295,7 @@ $(document).ready(function(){
 		//INSERT INTO FORM PAKET
 		$('.workshop_persen, .compre_persen, .earthquake_presen, .era_persen, .flood_persen, .med_ex_persen, .pa_persen, .passenger_persen, .personal_ef_persen, .pll_persen, .riot_persen, .terror_persen, .tpl_persen').html("");
 		$('.workshop_persen').append(workshop_persen+"%");			
-		$('.compre_persen').append(compre_persen+"%");			
+		$('.compre_persen').append(compre_tlo_persen+"%");			
 		$('.earthquake_presen').append(earthquake_presen+"%");			
 		$('.era_persen').append(era_persen+"%");			
 		$('.flood_persen').append(flood_persen+"%");			
@@ -201,15 +310,15 @@ $(document).ready(function(){
 		$('.terror_persen').append(terror_persen+"%");			
 		$('.tpl_persen').append(tpl_persen+"%");
                     
-        //=========================//END perhitungan rate/persen======================================//
+               //=========================//END perhitungan rate/persen======================================//
 		
 		
 		
 		//=====================premium=================================================================
 		var workshop_prem, compre_prem, earthquake_prem, era_prem, flood_prem, med_ex_prem, pa_prem, passenger_prem, personal_ef_prem, pll_prem, riot_prem, terror_prem, tpl_prem;
 	
-		workshop_prem=0;
-		compre_prem=0;			
+		workshop_prem=(((1*(cleanVarTlo*workshop_persen)/100)*day)/day);
+		compre_prem=(((1*(cleanVarTlo*compre_tlo_persen)/100)*day)/day);			
 		earthquake_prem=(((1*(cleanVarTlo*earthquake_presen)/100)*day)/day);
 		era_prem=(((1*(cleanVarTlo*era_persen)/100)*day)/day);
 		flood_prem=(((1*(cleanVarTlo*flood_persen)/100)*day)/day);
@@ -308,8 +417,8 @@ $(document).ready(function(){
 		
 		//=========================//perhitungan rate/persen======================================//
 		var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
-		workshop_persen=0;
-		compre_persen=0;
+		compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan')*100;
+                workshop_persen=getWorkshop(merk,2)*compre_tlo_persen;
 		
 		// if (tlo= 5+wilayah) else (1+wilayah)
 		if (jenisasuransi=='tlo') {
@@ -415,7 +524,7 @@ $(document).ready(function(){
 		//INSERT INTO FORM
 		$('.workshop_persen2, .compre_persen2, .earthquake_presen2, .era_persen2, .flood_persen2, .med_ex_persen2, .pa_persen2, .passenger_persen2, .personal_ef_persen2, .pll_persen2, .riot_persen2, .terror_persen2, .tpl_persen2').html("");
 		$('.workshop_persen2').append(workshop_persen+"%");			
-		$('.compre_persen2').append(compre_persen+"%");			
+		$('.compre_persen2').append(compre_tlo_persen+"%");			
 		$('.earthquake_presen2').append(earthquake_presen+"%");			
 		$('.era_persen2').append(era_persen+"%");			
 		$('.flood_persen2').append(flood_persen+"%");			
@@ -533,8 +642,8 @@ $(document).ready(function(){
 		
 		//=========================//perhitungan rate/persen======================================//
 		var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
-		workshop_persen=0;
-		compre_persen=0;
+		compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan')*100;
+                workshop_persen=getWorkshop(merk,3)*compre_tlo_persen;
 		
 		// if (tlo= 5+wilayah) else (1+wilayah)
 		if (jenisasuransi=='tlo') {
@@ -639,7 +748,7 @@ $(document).ready(function(){
 		//INSERT INTO FORM
 		$('.workshop_persen3, .compre_persen3, .earthquake_presen3, .era_persen3, .flood_persen3, .med_ex_persen3, .pa_persen3, .passenger_persen3, .personal_ef_persen3, .pll_persen3, .riot_persen3, .terror_persen3, .tpl_persen3').html("");
 		$('.workshop_persen3').append(workshop_persen+"%");			
-		$('.compre_persen3').append(compre_persen+"%");			
+		$('.compre_persen3').append(compre_tlo_persen+"%");			
 		$('.earthquake_presen3').append(earthquake_presen+"%");			
 		$('.era_persen3').append(era_persen+"%");			
 		$('.flood_persen3').append(flood_persen+"%");			
@@ -738,7 +847,7 @@ $(document).ready(function(){
 		//INSER INTO FORM NON-paket
 		$('.no_workshop_val, .no_compre_val, .no_earthquake_val, .no_flood_val, .no_riot_val, .no_terror_val').html("");
 		$('.no_workshop_val, .no_compre_val, .no_earthquake_val, .no_flood_val, .no_riot_val, .no_terror_val').append(val_tlo);
-        $('.no_med_ex_val, .no_pa_val, .no_passenger_val, .no_pll_val').html("");
+                $('.no_med_ex_val, .no_pa_val, .no_passenger_val, .no_pll_val').html("");
 		$('#nopaval').val(pa_val);
 		$('#nopassengerval').val(passenger_val);
 		$('#notplval').val(tpl_val);
@@ -1282,8 +1391,7 @@ $(document).ready(function(){
 		var regno=$('#regno').val();
 		var periode=$('#periode').val();
 		var email=$('#email').val();
-		var redio1=$('#radio01').val();
-		var redio2=$('#radio02').val();
+
 		
 		//console.log(tahun_pembuatan+'-'+harga+'-'+model+'-'+regno+'-'+periode+'-'+email+'-'+redio1+'-'+redio2)
 		$.ajax({
