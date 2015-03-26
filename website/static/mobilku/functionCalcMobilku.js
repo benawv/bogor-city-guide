@@ -1030,10 +1030,12 @@ $(document).ready(function(){
 				med_ex_pers=parseFloat(0.0200);
 			}else if (cleanNomedex_val > parseInt(5000001) && cleanNomedex_val < parseInt(10000001)){
 				med_ex_pers=parseFloat(0.0250);
-			}else if (cleanNomedex_val > parseInt(2500001) && cleanNomedex_val < parseInt(2500001)){
+			}else if (cleanNomedex_val > parseInt(2500001) && cleanNomedex_val < parseInt(5000001)){
 				med_ex_pers=parseFloat(0.0300);
-			}else{
+			}else if (cleanNomedex_val > parseInt(0) && cleanNomedex_val < parseInt(2500001)){
 				med_ex_pers=parseFloat(0.0350);
+			}else{
+				med_ex_pers=parseFloat(0);
 			}
 		}else if(tipe=='motor'){
 			if (cleanNomedex_val >= parseInt(100000000000)){
@@ -1042,10 +1044,12 @@ $(document).ready(function(){
 				med_ex_pers=parseFloat(0.1210);
 			}else if (cleanNomedex_val > parseInt(5000001) && cleanNomedex_val < parseInt(10000001)){
 				med_ex_pers=parseFloat(0.1250);
-			}else if (cleanNomedex_val > parseInt(2500001) && cleanNomedex_val < parseInt(2500001)){
+			}else if (cleanNomedex_val > parseInt(2500001) && cleanNomedex_val < parseInt(5000001)){
 				med_ex_pers=parseFloat(0.1250);
-			}else{
+			}else if (cleanNomedex_val > parseInt(0) && cleanNomedex_val < parseInt(2500001)){
 				med_ex_pers=parseFloat(0.1500);
+			}else{
+				med_ex_pers=parseFloat(0);
 			}
 		}else if(tipe=='truck'){
 			if (cleanNomedex_val >= parseInt(100000000000)){
@@ -1054,10 +1058,12 @@ $(document).ready(function(){
 				med_ex_pers=parseFloat(0.1650);
 			}else if (cleanNomedex_val > parseInt(5000001) && cleanNomedex_val < parseInt(10000001)){
 				med_ex_pers=parseFloat(0.1750);
-			}else if (cleanNomedex_val > parseInt(2500001) && cleanNomedex_val < parseInt(2500001)){
+			}else if (cleanNomedex_val > parseInt(2500001) && cleanNomedex_val < parseInt(5000001)){
 				med_ex_pers=parseFloat(0.0200);
-			}else{
+			}else if (cleanNomedex_val > parseInt(0) && cleanNomedex_val < parseInt(2500001)){
 				med_ex_pers=parseFloat(0.0300);
+			}else{
+				med_ex_pers=parseFloat(0);
 			}
 		}else{
 			med_ex_pers=0;
