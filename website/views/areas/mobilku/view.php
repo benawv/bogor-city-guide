@@ -187,8 +187,8 @@
                                                       <div class="col-sm-3">
                                                         <label for="input1">Periode Asuransi</label>
                                                       </div> 
-                                                      <div class="col-sm-4">
-                                                        <input type="text" name="periode" class="form-control" id="periode" placeholder="">
+                                                      <div class="col-sm-4">							
+                                                        <input type="text" name="periode" class="form-control" id="periode" placeholder="" value="<?php echo date("m/d/Y"); ?>">
                                                       </div>
                                                   </div>
                                                </div>
