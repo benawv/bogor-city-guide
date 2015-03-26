@@ -1,7 +1,7 @@
 <script src="/website/static/inv/js/highchart/highcharts.js"></script>
 <div class="wrapper clearfix">
 	<div class="wrap30 l left">
-		<h2 class="top">Jenis Fund</h2>
+		<h2 class="top">Harga Unit Link</h2>
 		<div class="cus_select">
 			<select class="span2 blue-color fundtype">
 			    <option value="0" selected="selected">Pilih Jenis Fund</option>
@@ -12,11 +12,10 @@
 		</div>
 		<input class="select-btn blue-color filter_harga btn" type="button" value="Lihat harga unit" />
 	</div>
-	
-	<div class="wrap10 r left hidden-btn">
-		<h5 class="top" style="visibility:hidden">hidden</h5>
+	<div class="clear"></div>
+	<div class="title-chart">
+		<div class="lines"></div>
 	</div>
-	
 	<div id="containerNav" style="width:100%; height:auto;float: left;"></div>
 </div>
 
