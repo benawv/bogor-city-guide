@@ -268,7 +268,7 @@
                                                                         <table id="myTable2" class="display" cellspacing="0" width="100%">
                                                                             <thead> 
                                                                             <tr>  
-                                                                                <th class="">Liputan</th> 
+                                                                                <th class="">Coverage</th> 
                                                                                 <th class="">Insured Value</th> 
                                                                                 <th class="">Rate</th> 
                                                                                 <th class="">Premium</th>
@@ -397,7 +397,7 @@
                                                                         <table id="myTable3" class="display" cellspacing="0" width="100%">
                                                                             <thead> 
                                                                             <tr>  
-                                                                                <th class="">Liputan</th> 
+                                                                                <th class="">Coverage</th> 
                                                                                 <th class="">Insured Value</th> 
                                                                                 <th class="">Rate</th> 
                                                                                 <th class="">Premium</th>
@@ -526,7 +526,7 @@
                                                                         <table id="myTable4" class="display" cellspacing="0" width="100%">
                                                                             <thead> 
                                                                             <tr>  
-                                                                                <th class="">Liputan</th> 
+                                                                                <th class="">Coverage</th> 
                                                                                 <th class="">Insured Value</th> 
                                                                                 <th class="">Rate</th> 
                                                                                 <th class="">Premium</th>
@@ -684,7 +684,7 @@
                                                                             <thead> 
                                                                             <tr>
 										<th class="">Checklist</th> 
-                                                                                <th class="">Liputan</th> 
+                                                                                <th class="">Coverage</th> 
                                                                                 <th class="">Insured Value</th> 
                                                                                 <th class="">Rate</th> 
                                                                                 <th class="">Premium</th>
