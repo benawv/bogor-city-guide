@@ -17,8 +17,8 @@ $(document).ready(function(){
 	function getTlo(tipe,map) {
                         //code
                         var rate;
-                        console.log(tipe);
-                        console.log(map);
+                        console.log("getTlo TYPE:"+tipe);
+                        console.log("getTlo MAP:"+map);
                         if (tipe=='tlo') {
                             if(map=='PK_R1_S1_Sedan'){
                                       rate='0.0047';          
@@ -39,7 +39,7 @@ $(document).ready(function(){
                             }else if (map=='PK_R2_S4_Sedan') {
                                       rate='0.0029';         
                             }else if (map=='PK_R2_S5_Sedan') {
-                                      rate='0.0024';       
+                                      rate='0.200';       
                             }else if (map=='PK_R3_S1_Sedan') {
                                       rate='0.0036';          
                             }else if (map=='PK_R3_S2_Sedan') {
@@ -89,7 +89,7 @@ $(document).ready(function(){
                                      rate='0';
                             }                 
                         }
-                        console.log(rate);
+                        console.log("getTlo RATE:"+rate);
                          return rate;
                 }
         function getWorkshop(merk,calc_type) {
@@ -118,7 +118,7 @@ $(document).ready(function(){
                         workshop_rate='10'
                     }
                 }
-                console.log("wrk:"+workshop_rate);
+                console.log("workshop_rate:"+workshop_rate);
                 return workshop_rate;
                       
         }
@@ -188,10 +188,12 @@ $(document).ready(function(){
 		
 		//=========================//perhitungan rate/persen======================================//
 		var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
-		compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan')*100;
+		compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100;
                 workshop_persen=parseFloat(getWorkshop(merk,1))*parseFloat(compre_tlo_persen);
-		console.log("wrk per:"+workshop_persen);
-                console.log("compre "+compre_tlo_persen);
+//                console.log("compre_tlo_persen parsefloat: "+parseFloat(compre_tlo_persen));
+//		console.log("getWorkshop parsefloat: "+parseFloat(getWorkshop(merk,1)));
+//                console.log("workshop_persen:"+workshop_persen);
+//                console.log("compre "+compre_tlo_persen);
 		// if (tlo= 5+wilayah) else (1+wilayah)
 		if (jenisasuransi=='tlo') {
 			getColom=wilayah+5;
@@ -417,8 +419,8 @@ $(document).ready(function(){
 		
 		//=========================//perhitungan rate/persen======================================//
 		var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
-		compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan')*100;
-                workshop_persen=getWorkshop(merk,2)*compre_tlo_persen;
+		compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100;
+                workshop_persen=parseFloat(getWorkshop(merk,2))*parseFloat(compre_tlo_persen);
 		
 		// if (tlo= 5+wilayah) else (1+wilayah)
 		if (jenisasuransi=='tlo') {
@@ -545,8 +547,8 @@ $(document).ready(function(){
 		//=====================premium=================================================================
 		var workshop_prem, compre_prem, earthquake_prem, era_prem, flood_prem, med_ex_prem, pa_prem, passenger_prem, personal_ef_prem, pll_prem, riot_prem, terror_prem, tpl_prem;
 	
-		workshop_prem=0;
-		compre_prem=0;			
+		workshop_prem=(((1*(cleanVarTlo*workshop_persen)/100)*day)/day);
+		compre_prem=(((1*(cleanVarTlo*compre_tlo_persen)/100)*day)/day);		
 		earthquake_prem=(((1*(cleanVarTlo*earthquake_presen)/100)*day)/day);
 		era_prem=(((1*(cleanVarTlo*era_persen)/100)*day)/day);
 		flood_prem=(((1*(cleanVarTlo*flood_persen)/100)*day)/day);
@@ -642,8 +644,8 @@ $(document).ready(function(){
 		
 		//=========================//perhitungan rate/persen======================================//
 		var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
-		compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan')*100;
-                workshop_persen=getWorkshop(merk,3)*compre_tlo_persen;
+		compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100;
+                workshop_persen=parseFloat(getWorkshop(merk,3))*parseFloat(compre_tlo_persen);
 		
 		// if (tlo= 5+wilayah) else (1+wilayah)
 		if (jenisasuransi=='tlo') {
@@ -767,8 +769,8 @@ $(document).ready(function(){
 		//=====================premium=================================================================
 		var workshop_prem, compre_prem, earthquake_prem, era_prem, flood_prem, med_ex_prem, pa_prem, passenger_prem, personal_ef_prem, pll_prem, riot_prem, terror_prem, tpl_prem;
 	
-		workshop_prem=0;
-		compre_prem=0;			
+		workshop_prem=(((1*(cleanVarTlo*workshop_persen)/100)*day)/day);
+		compre_prem=(((1*(cleanVarTlo*compre_tlo_persen)/100)*day)/day);	
 		earthquake_prem=(((1*(cleanVarTlo*earthquake_presen)/100)*day)/day);
 		era_prem=(((1*(cleanVarTlo*era_persen)/100)*day)/day);
 		flood_prem=(((1*(cleanVarTlo*flood_persen)/100)*day)/day);
@@ -992,7 +994,7 @@ $(document).ready(function(){
         //INSERT INTO FORM NON PAKT
 		$('.no_workshop_persen, .no_compre_persen, .no_earthquake_presen, .no_flood_persen, .no_med_ex_persen, .no_pa_persen, .no_passenger_persen, .no_pll_persen, .no_riot_persen, .no_terror_persen, .no_tpl_persen').html("");
 		$('.no_workshop_persen').append(workshop_persen+"%");			
-		$('.no_compre_persen').append(compre_persen+"%");			
+		$('.no_compre_persen').append(compre_tlo_persen+"%");			
 		$('.no_earthquake_presen').append(earthquake_presen+"%");						
 		$('.no_flood_persen').append(flood_persen+"%");			
 		$('.no_med_ex_persen').append(med_ex_pers+"%");			
@@ -1011,8 +1013,8 @@ $(document).ready(function(){
 		//=====================premium=================================================================
 		var workshop_prem, compre_prem, earthquake_prem, era_prem, flood_prem, med_ex_prem, pa_prem, passenger_prem, pll_prem, riot_prem, terror_prem, tpl_prem;
 	
-		workshop_prem=0;
-		compre_prem=0;			
+		workshop_prem=(((1*(cleanVarTlo*workshop_persen)/100)*day)/day);
+		compre_prem=(((1*(cleanVarTlo*compre_tlo_persen)/100)*day)/day);		
 		earthquake_prem=(((1*(cleanVarTlo*earthquake_presen)/100)*day)/day);
 		era_prem=(((1*(cleanVarTlo*era_persen)/100)*day)/day);
 		flood_prem=(((1*(cleanVarTlo*flood_persen)/100)*day)/day);
