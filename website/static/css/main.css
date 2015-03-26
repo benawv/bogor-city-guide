@@ -734,8 +734,26 @@ a.fbshare, a.twshare{
   color: red;
 }
 .fundtype{
-  color: #FFF;
+  color: #000;
   height: 42px;
+}
+.lines{
+    background: url("/website/static/images/lines_active.png") no-repeat;
+    height: 25px;
+    width: 25px;
+    background-position: 5px;
+    background-color: #003781;
+}
+.lines div{
+   /*background: url("/website/static/images/lines_active.png");*/
+}
+.title-chart{
+  margin-top: 10px;
+  background: none repeat scroll 0 0 #e6e6e6;
+  font-size: 14px;
+  height: 47px;
+  padding: 13px 15px;
+  border: 1px solid #000;
 }
 .cus_select select{
   background: transparent;
@@ -751,25 +769,28 @@ a.fbshare, a.twshare{
   -webkit-appearance: none;
 }
 .cus_select select option{
-  background-color: #003781;
+  background-color: #e6e6e6;
 }
 .cus_select{
   width: 240px;
   height: 40px;
   overflow: hidden;
-  background: url("/website/static/images/icon-arrow-down_2.png") no-repeat right #003781;
-  border: 1px solid #ccc;
+  background: url("/website/static/images/icon-arrow-down_2.png") no-repeat right #e6e6e6;
+  border: 1px solid #000;
   float:left;
+  color: #000;
 }
 .select-btn.blue-color.filter_harga.btn{
   float:left;
   height: 40px !important;
   margin-left: 10px;
   padding: 0px 30px !important;
-  background: url("/website/static/images/ic_buttons.png") no-repeat scroll -357px -110px #003781;
+  background: url("/website/static/images/ic_buttons.png") no-repeat scroll -475px 10px #e6e6e6;
+  color:#000;
+  border: 1px solid #000;
 }
 .select-btn.blue-color.filter_harga.btn:hover,.select-btn.blue-color.filter_harga.btn:focus{
-  color: #FFF;
+  color: #000;
 }
 
 /*SETTING LOGO 125*/
