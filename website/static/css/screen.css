@@ -539,6 +539,8 @@ div.search{width:100%;}
 .banner .minibar.cusZindex, .banner .minibar.cusZindex.cusLogin{display: block;}
 .banner .minibar.cusZindex .liMobileHide{display: none;}
 .ulCustomerOnline.deactive{position: absolute;right: 0;}
+.button-mobile .cus_select{margin-left: 0px;}
+.button-mobile{margin-top: 10px;margin-bottom: 10px;}
 }
 @media only screen and (max-width:800px){.ojk-desc{float:none !important;}
 .worldwide .ojk-img{float:left;margin-left:0;margin-top:0;}
@@ -562,7 +564,10 @@ footer.contentinfo .worldwide{height:180px;}
 .full-w.bg-white .description .submit_whislist{width:95%;}
 .full-w.bg-white .description table{max-width:100%;}
 .span2.fundtype,.cus_select{width: 100% !important;}
-.wrap30 .select-btn.blue-color.filter_harga.btn{position: relative !important;margin-left: 0px !important;margin-top: 10px !important;width: 100% !important;}
+.wrap30 .select-btn.blue-color.btn.gradien-grey{position: relative !important;margin-left: 40px !important;margin-top: 10px !important;width: 100% !important;}
+.button-mobile{width: 80%;}
+.linkInv{margin-bottom: 10px;width: 100%;}
+.button-mobile .cus_select{margin-left: 40px;}
 }
 @media only screen and (max-width:360px){.visimisi{font-size:13px;}
 .boxes-view .items-container .item .description{font-size:13px !important;width:100% !important;}

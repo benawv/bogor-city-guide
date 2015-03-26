@@ -1,21 +1,43 @@
 <script src="/website/static/inv/js/highchart/highcharts.js"></script>
 <div class="wrapper clearfix">
 	<div class="wrap30 l left">
-		<h2 class="top">Harga Unit Link</h2>
-		<div class="cus_select">
-			<select class="span2 blue-color fundtype">
-			    <option value="0" selected="selected">Pilih Jenis Fund</option>
-			    <option value="Smartlink Rupiah Equity Fund">Smartlink Rupiah Equity Fund</option>
-			    <option value="Smartlink Rupiah Balanced Fund">Smartlink Rupiah Balanced Fund</option>
-			    <option value="Smartlink Rupiah Fixed Income Fund">Smartlink Rupiah Fixed Income Fund</option>
-			</select>
+		<?php if($this->editmode): ?>
+			Icon: <?php echo $this->image('icon-graph', array(
+								'title' 	=> 'Image Size 31x31',
+								'width' 	=> 100,
+								'height' 	=> 100,
+								'thumbnail'	=> 'icon')) ?>
+			<?php echo $this->input('title-graph', ["width" => 250])?>
+		<?php else: ?>
+			<div style="background-image: url('<?php echo $this->image('icon-graph')->getSrc()?>'); height: 31px; width: 31px; float: left; margin-right: 10px; "></div>
+			<h2 class="top"><?php echo $this->input('title-graph')?></h2>
+		<?php endif; ?>
+		
+		<div class="button-mobile">
+			<div class="cus_select">
+				<select class="span2 blue-color fundtype">
+				    <option value="0" selected="selected">Pilih Jenis Fund</option>
+				    <option value="Smartlink Rupiah Equity Fund">Smartlink Rupiah Equity Fund</option>
+				    <option value="Smartlink Rupiah Balanced Fund">Smartlink Rupiah Balanced Fund</option>
+				    <option value="Smartlink Rupiah Fixed Income Fund">Smartlink Rupiah Fixed Income Fund</option>
+				</select>
+			</div>
+			
+			<button class="select-btn blue-color filter_harga btn gradien-grey">
+				<span class=icon-panah></span>&nbsp;<span>Lihat harga unit</span>
+			</button>
+			<a class="linkInv" href="http://investment.allianz.co.id/allianz-fund/allianz-fund/nab-navs" target="_blank">
+				<button class="select-btn blue-color btn gradien-grey">
+					<span class=icon-panah></span>&nbsp;<span>Selengkapnya</span>
+				</button>
+			</a>
+			<div class="clear"></div>
 		</div>
-		<input class="select-btn blue-color filter_harga btn" type="button" value="Lihat harga unit" />
 	</div>
-	<div class="clear"></div>
-	<div class="title-chart">
+	
+	<!--<div class="title-chart">
 		<div class="lines"></div>
-	</div>
+	</div>-->
 	<div id="containerNav" style="width:100%; height:auto;float: left;"></div>
 </div>
 
@@ -144,6 +166,17 @@
 									    lineWidth: 1
 									}
 								    }
+								}
+							    },
+							    subtitle: {
+								text: '*Data harga 2 hari sebelumnya.',
+								floating: true,
+								align: 'left',
+								x: 0,
+								verticalAlign: 'bottom',
+								y: 12,
+								style: {
+									fontStyle: 'italic'
 								}
 							    },
 							    series: [{
@@ -291,6 +324,17 @@
 							    }
 							}
 						    },
+						    subtitle: {
+							text: '*Data harga 2 hari sebelumnya.',
+							floating: true,
+							align: 'left',
+							x: 0,
+							verticalAlign: 'bottom',
+							y: 12,
+							style: {
+								fontStyle: 'italic'
+							}
+						    },
 						    series: [{
 							//pointInterval: 1,
 							//pointStart: Date.UTC(arr_awal[2], arr_awal[0], arr_awal[1]),
@@ -309,7 +353,6 @@
 									    
 				    //$('.date-range').html("Fund name: "+formfundtype+". Periode: "+awal+" s/d "+akhir);
 				    //$('.table-range').html("Fund name: "+formfundtype+". Periode: "+awal+" s/d "+akhir);
-				   
 			    
 	
 			},

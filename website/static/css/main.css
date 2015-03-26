@@ -769,27 +769,53 @@ a.fbshare, a.twshare{
   -webkit-appearance: none;
 }
 .cus_select select option{
-  background-color: #e6e6e6;
+  background-color: linear-gradient(to bottom, white 0%, gainsboro 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
 .cus_select{
   width: 240px;
   height: 40px;
   overflow: hidden;
-  background: url("/website/static/images/icon-arrow-down_2.png") no-repeat right #e6e6e6;
+  background: url("/website/static/images/icon-arrow-down_2.png") no-repeat right, linear-gradient(to bottom, white 0%, gainsboro 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
   border: 1px solid #000;
   float:left;
   color: #000;
+  margin-left: 40px;
 }
-.select-btn.blue-color.filter_harga.btn{
+.linkInv{
+  float: left;
+}
+.select-btn.blue-color.gradien-grey.btn{
   float:left;
   height: 40px !important;
+  line-height: 40px;
   margin-left: 10px;
-  padding: 0px 30px !important;
-  background: url("/website/static/images/ic_buttons.png") no-repeat scroll -475px 10px #e6e6e6;
+  padding: 0px 25px 0 0 !important;
+  /*
+   *background: url("/website/static/images/ic_buttons.png") no-repeat scroll -475px 10px #e6e6e6;
+  */
+  background: linear-gradient(to bottom, white 0%, gainsboro 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #cacaca;
+    color: #333333 !important;
   color:#000;
-  border: 1px solid #000;
+  display: inline-block;
+  vertical-align: middle;
 }
-.select-btn.blue-color.filter_harga.btn:hover,.select-btn.blue-color.filter_harga.btn:focus{
+
+.select-btn.blue-color.gradien-grey.btn .icon-panah{
+  background: url("/website/static/images/ic_buttons.png") no-repeat scroll -475px 10px;
+  min-width: 30px;
+  min-height: 40px;
+  display: inline-block;
+}
+
+.select-btn.blue-color.gradien-grey.btn > span:not(.icon-panah)
+{
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -32px;
+}
+
+.select-btn.blue-color.gradien-grey.btn:hover,.select-btn.blue-color.gradien-grey.btn:focus{
   color: #000;
 }
 
