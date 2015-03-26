@@ -25,7 +25,6 @@
 				
                <div class="header-calc">
                   <h1>KALKULATOR ASURANSI ALLIANZ TASBIH</h1>
-                  <span class="logo-calc"></span>
                </div>
 
                <div class="content-calc">

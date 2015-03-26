@@ -13,16 +13,15 @@
 
 .header-calc {
   	position: relative;
-  	padding: 1em 16em;
+  	padding: 1em;
   	background: #003781;
   	text-align: center;
 }
 .header-calc h1 {
-	font-size: 32px !important;
+	font-size: 20px !important;
   	color: #FFFFFF;
   	font-weight: 400;
   	margin-bottom: 0 !important;
-  	line-height: 50px !important;
 }
 span.logo-calc {
 	position: absolute;
@@ -84,7 +83,7 @@ span.logo-calc {
 @media (max-width: 768px) {
 
  	.header-calc {
-    	padding: 1em 11em;
+    	
     }
 
 }
@@ -93,12 +92,6 @@ span.logo-calc {
 
     .header-calc {
   		padding: 1em;
-	}
-	.header-calc h1 {
-		font-size: 28px !important;
-	}
-	.logo-calc {
-		display: none;
 	}
 	.description .content-calc {
 		  padding: 20px 10px;
@@ -110,9 +103,6 @@ span.logo-calc {
 	}
 	.logo-calc {
 		display: none;
-	}
-	.header-calc h1 {
-		text-align: center;
 	}
 	.content-calc span {
 		  font-size: 11px;
