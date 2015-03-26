@@ -1,5 +1,6 @@
    
 <link rel="stylesheet" href="/website/static/mobilku/tasbih/tasbih.css" type="text/css" media="all" /> 
+<link rel="stylesheet" href="/website/static/mobilku/wizard-step.css" type="text/css" media="all" /> 
 
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/bootstrap.min.css"  />
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
@@ -34,7 +35,7 @@
                           <div class="col-md-4">
                               <label><strong>Tanggal Pembuatan Perhitungan</strong></label>
                           </div>
-                          <div class="col-md-8">
+                          <div class="col-md-4">
                             <input type="text" class="form-control input-perhitungan" id="tgl-hitung" placeholder="">
                           </div>
                         </div>
@@ -45,7 +46,7 @@
                           <div class="col-md-4">
                               <label>Nama</label>
                           </div>
-                          <div class="col-md-8">
+                          <div class="col-md-4">
                             <input type="email" class="form-control" id="nama" placeholder="">
                           </div>
                         </div>
@@ -54,7 +55,7 @@
                           <div class="col-md-4">
                               <label>Tanggal Lahir</label>
                           </div>
-                          <div class="col-md-8">
+                          <div class="col-md-4">
                             <input type="email" class="form-control" id="tgl-lahir" placeholder="">
                           </div>
                         </div>
@@ -63,7 +64,7 @@
                           <div class="col-md-4">
                               <label>Jenis Kelamin</label>
                           </div>
-                          <div class="col-md-8">
+                          <div class="col-md-4">
                             <input type="email" class="form-control" id="jenis-kelamin" placeholder="">
                           </div>
                         </div>
@@ -72,7 +73,7 @@
                           <div class="col-md-4">
                               <label>Usia (Tahun)</label>
                           </div>
-                          <div class="col-md-8">
+                          <div class="col-md-4">
                             <input type="email" class="form-control" id="usia" placeholder="">
                           </div>
                         </div>
@@ -81,7 +82,7 @@
                           <div class="col-md-4">
                               <label>Frekuensi Pembayaran</label>
                           </div>
-                          <div class="col-md-8">
+                          <div class="col-md-4">
                             <input type="email" class="form-control mb10" id="frekuensi" placeholder="">
                             <span>1. Tahunan</span>
                             <span>2. Semesteran</span>
@@ -95,7 +96,7 @@
                           <div class="col-md-4">
                               <label>Asuransi Jiwa (Min. Rp.50.000.000)</label>
                           </div>
-                          <div class="col-md-8">
+                          <div class="col-md-4">
                             <input type="email" class="form-control" id="asuransi-jiwa" placeholder="">
                           </div>
                         </div>
@@ -104,7 +105,7 @@
                           <div class="col-md-4">
                               <label>Massa Pembayaran Kontribusi/ Premi</label>
                           </div>
-                          <div class="col-md-8">
+                          <div class="col-md-4">
                             <input type="email" class="form-control" id="masa-premi" placeholder="">
                           </div>
                         </div>
@@ -115,14 +116,14 @@
                           <div class="col-md-4">
                               <label>Kontribusi Berkala/ Premi pertahun</label>
                           </div>
-                          <div class="col-md-8">
+                          <div class="col-md-4">
                             <input type="email" class="form-control" id="kontribusi-berkala" placeholder="">
                           </div>
                         </div>
                         
                         <div class="form-group">
                           <div class="col-md-12">
-                            <button type="submit" class="btn btn-default pull-right">Kalkulasi</button>
+                            <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm pull-right" name="next" value="Kalkulasi">
                           </div>
                         </div>
                       </form> 
