@@ -14,12 +14,11 @@
 .header-calc {
   	position: relative;
   	padding: 1em 16em;
-  	background: #008DD7;
+  	background: #003781;
   	text-align: center;
 }
 .header-calc h1 {
-	font-size: 35px !important;
-  	font-family: 'Open Sans', sans-serif;
+	font-size: 32px !important;
   	color: #FFFFFF;
   	font-weight: 400;
   	margin-bottom: 0 !important;
@@ -36,14 +35,12 @@ span.logo-calc {
 }
 .description .content-calc {
 	width: 100%;
-	padding: 20px 50px;
+	padding: 20px;
 }
 .ta-left {
 	text-align: left !important;
 }
 .content-calc {
-	font-size: 14px;
-  	font-family: 'Open Sans', sans-serif;
   	color: #666666;
   	font-weight: 400;
   	line-height: 22px;
@@ -66,12 +63,13 @@ span.logo-calc {
 .content-calc span {
 	margin: 0 10px 0 0;
 	font-weight: bold;
+	font-size: 12px;
 }
 .content-calc label {
 	font-weight: normal !important;
 }
-.content-calc .btn-default {
-	  background-color: #eee !important;
+.content-calc .btn {
+	  height: 40px;
 }
 
 
@@ -94,15 +92,17 @@ span.logo-calc {
 @media (max-width: 640px) {
 
     .header-calc {
-  		padding: 1em 15em 1em 3em;
+  		padding: 1em;
 	}
 	.header-calc h1 {
-		text-align: left;
 		font-size: 28px !important;
+	}
+	.logo-calc {
+		display: none;
 	}
 	.description .content-calc {
 		  padding: 20px 10px;
-}
+	}
 
 @media (max-width: 480px) {
 	.header-calc {
