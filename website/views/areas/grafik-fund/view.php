@@ -168,15 +168,15 @@
 								    }
 								}
 							    },
-							    subtitle: {
-								text: '*Data harga 2 hari sebelumnya.',
-								floating: true,
-								align: 'left',
-								x: 0,
-								verticalAlign: 'bottom',
-								y: 12,
+							    credits: {
+								text: 'Data fund merupakan harga 2 hari sebelumnya.',
+								position: {
+								    align: 'left',
+								    x: 15 // position of credits
+								},
 								style: {
-									fontStyle: 'italic'
+									fontStyle: 'italic', // you can style it!
+									fontSize: '10px'
 								}
 							    },
 							    series: [{
@@ -324,15 +324,15 @@
 							    }
 							}
 						    },
-						    subtitle: {
-							text: '*Data harga 2 hari sebelumnya.',
-							floating: true,
-							align: 'left',
-							x: 0,
-							verticalAlign: 'bottom',
-							y: 12,
+						credits: {
+							text: 'Data fund merupakan harga 2 hari sebelumnya.',
+							position: {
+							    align: 'left',
+							    x: 15 // position of credits
+							},
 							style: {
-								fontStyle: 'italic'
+								fontStyle: 'italic', // you can style it!
+								fontSize: '10px'
 							}
 						    },
 						    series: [{
