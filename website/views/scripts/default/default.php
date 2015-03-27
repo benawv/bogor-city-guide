@@ -37,14 +37,7 @@
 						$color = $this->select('color_'.$i)->getData();
 					?>
 					<div class="fixbox <?php echo $pos?>60">
-					<?php
-						$style = "";
-						if($this->editmode)
-						{
-							$style = "height: auto !important;";
-						}
-					?>
-						<div class="place-bg bg-<?php echo $color?>" style="<?php echo $style?>">
+						<div class="place-bg bg-<?php echo $color?>">
 								<?php if($this->editmode || !$this->input("caption-title-" . $i)->isEmpty()) { ?>
 		                            <h1><?php echo $this->input("caption-title-" . $i, ["width" => 251]) ?></h1>
 		                        <?php } ?>
@@ -130,15 +123,13 @@
 	?>
 	
 	<!-- Map -->
-	<!--<div class="wrapper clearfix">
-		<div id="agent-locator">
-			<h2><?php //echo $this->input("judul_map", array("width" => 255));?></h2>
-			<div id="maparea">
+	
+			<!--<h2><?php //echo $this->input("judul_map", array("width" => 255));?></h2>-->
+			<!--<div id="maparea">
 				
-			</div>
-		</div>
-		<?php //echo $this->area("mapArea", array("type" => "map-point")); ?>
-	</div>-->
+			</div>-->
+		<?php echo $this->areablock("grafik", array('allowed' => array("grafik-fund"))); ?>
+	
 	<!-- End Map -->
 
 	<?php echo $this->areablock('modal-box-home', array('allowed' => array('modal-home')));?>

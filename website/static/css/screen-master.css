@@ -395,7 +395,7 @@ a .menutitle{font-weight:bold;padding:10px 0;clear:both;font-size:16px;height:50
 .list-investasi ul{left:-10px;}
 .list-investasi li{list-style:none;background:transparent url('../images/ic_download_service.png') -235px 5px no-repeat;left:0;}
 .list-investasi a{display:block;padding-left:20px;}
-.badge{width:80px;z-index:900;}
+.badge-logo{width:80px;z-index:900;}
 .badge-modal{width:100%;}
 footer.contentinfo .worldwide .badge-social a:before{content:none;}
 .badge-social{float:left;margin-top:-30px;}
@@ -539,6 +539,8 @@ div.search{width:100%;}
 .banner .minibar.cusZindex, .banner .minibar.cusZindex.cusLogin{display: block;}
 .banner .minibar.cusZindex .liMobileHide{display: none;}
 .ulCustomerOnline.deactive{position: absolute;right: 0;}
+.button-mobile .cus_select{margin-left: 0px;}
+.button-mobile{margin-top: 10px;margin-bottom: 10px;}
 }
 @media only screen and (max-width:800px){.ojk-desc{float:none !important;}
 .worldwide .ojk-img{float:left;margin-left:0;margin-top:0;}
@@ -561,6 +563,11 @@ footer.contentinfo .worldwide{height:180px;}
 #community.clearfix .tips .tip, #community.clearfix .tips .tip .photo{height:auto;}
 .full-w.bg-white .description .submit_whislist{width:95%;}
 .full-w.bg-white .description table{max-width:100%;}
+.span2.fundtype,.cus_select{width: 100% !important;}
+.wrap30 .select-btn.blue-color.btn.gradien-grey{position: relative !important;margin-left: 40px !important;margin-top: 10px !important;width: 100% !important;}
+.button-mobile{width: 80%;}
+.linkInv{margin-bottom: 10px;width: 100%;}
+.button-mobile .cus_select{margin-left: 40px;}
 }
 @media only screen and (max-width:360px){.visimisi{font-size:13px;}
 .boxes-view .items-container .item .description{font-size:13px !important;width:100% !important;}
@@ -750,9 +757,28 @@ ul.flex-direction-nav{display:none;}
 .upperText{text-transform:uppercase;}
 .art-adv .s-ct .art-box .custom-art.art-inf{text-align:right;clear:both;}
 .ulCustomerOnline{display: block;width: 190px;}
-.arrowDown{height: 12px;width: 12px;float: right;margin-left: 3px;margin-top: 2px;}
+.arrowDown{height: 12px;width: 12px;float: right;padding-left: 3px;}
 .deactive{display: none;}
 .cusZindex{z-index: 999;}
 ul.ulCustomerOnline li.liCustomerOnline a{color: #000;}
 ul.ulCustomerOnline li.liCustomerOnline a:hover{color: #FFF;background: #414141;}
-.liCustomerOnline{width: 100%;border-color: #CCC #CCC !important;border-width: 0px 1px !important;border-style: none solid !important;border-color: -moz-use-text-color #CCC float: none !important;background: #F5F6F6;/*background:#4A4A4A;-webkit-border-radius:0px;border-radius:0px;background:-webkit-gradient(linear,left top,left bottom,from(#676767),to(#414141));background:-moz-linear-gradient(top,#676767,#414141);background:-o-linear-gradient(top,#676767,#414141);background:-ms-linear-gradient(top,#676767,#414141);background:linear-gradient(top,#676767,#414141);*/}
+
+ul.ulLanguage li.liLanguage a{color: #000;}
+ul.ulLanguage li.liLanguage a:hover{color: #FFF;background: #414141;}
+
+.liCustomerOnline, .liLanguage{width: 100%;border-color: #CCC #CCC !important;border-width: 0px 1px !important;border-style: none solid !important;border-color: -moz-use-text-color #CCC float: none !important;background: #F5F6F6;/*background:#4A4A4A;-webkit-border-radius:0px;border-radius:0px;background:-webkit-gradient(linear,left top,left bottom,from(#676767),to(#414141));background:-moz-linear-gradient(top,#676767,#414141);background:-o-linear-gradient(top,#676767,#414141);background:-ms-linear-gradient(top,#676767,#414141);background:linear-gradient(top,#676767,#414141);*/}
+
+/* CSS login pop up Akbar */
+.popup-asn .modal-sm {
+    width: 100%;
+}
+.form-signin label.popup-asn-label {
+  float: left;
+}	
+.modal-vertical-centered {
+	  transform: translate(0, 50%) !important;
+	  -ms-transform: translate(0, 50%) !important; /* IE 9 */
+	  -webkit-transform: translate(0, 50%) !important; /* Safari and Chrome */
+	}
+	
+/* CSS login pop up Akbar */
