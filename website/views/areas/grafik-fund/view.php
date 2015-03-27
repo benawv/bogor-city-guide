@@ -39,6 +39,7 @@
 		<div class="lines"></div>
 	</div>-->
 	<div id="containerNav" style="width:100%; height:auto;float: left;"></div>
+	<div class="footnote hide">Data harga unit link merupakan harga 2 hari sebelumnya.</div>
 </div>
 
 <script type="text/javascript">
@@ -168,17 +169,17 @@
 								    }
 								}
 							    },
-							    credits: {
-								text: 'Data fund merupakan harga 2 hari sebelumnya.',
-								position: {
-								    align: 'left',
-								    x: 15 // position of credits
-								},
-								style: {
-									fontStyle: 'italic', // you can style it!
-									fontSize: '10px'
-								}
-							    },
+							//    credits: {
+							//	text: 'Data harga unit link merupakan harga 2 hari sebelumnya.',
+							//	position: {
+							//	    align: 'left',
+							//	    x: 15 // position of credits
+							//	},
+							//	style: {
+							//		fontStyle: 'italic', // you can style it!
+							//		fontSize: '10px'
+							//	}
+							//    },
 							    series: [{
 								//pointInterval: 1,
 								//pointStart: Date.UTC(arr_awal[2], arr_awal[0], arr_awal[1]),
@@ -194,7 +195,11 @@
 						//$('.return-foot').html('<p class="return-foot" style="font-size: 14px;">Return: '+formfundtype+' sejak '+arr_awal[0]+'/'+arr_awal[1]+'/'+arr_awal[2]+' hingga '+arr_akhir[0]+'/'+arr_akhir[1]+'/'+arr_akhir[2]+' adalah '+((((new_data.xml_data[new_data.xml_data.length-1]['bid']/new_data.xml_data[0]['bid'])-1)*100).toFixed(2))+'% '+'</p>')
 					     
 					    //response action
-										    
+					    $(".footnote").css("float","left");
+						$(".footnote").css("font-size","12px");
+						$(".footnote").css("font-style","italic");
+						$(".footnote").css("padding-left","16px");
+						$(".footnote").show();
 					    //$('.date-range').html("Fund name: "+formfundtype+". Periode: "+awal+" s/d "+akhir);
 					    //$('.table-range').html("Fund name: "+formfundtype+". Periode: "+awal+" s/d "+akhir);
 					   
@@ -324,17 +329,17 @@
 							    }
 							}
 						    },
-						credits: {
-							text: 'Data fund merupakan harga 2 hari sebelumnya.',
-							position: {
-							    align: 'left',
-							    x: 15 // position of credits
-							},
-							style: {
-								fontStyle: 'italic', // you can style it!
-								fontSize: '10px'
-							}
-						    },
+						//credits: {
+						//	text: 'Data harga unit link merupakan harga 2 hari sebelumnya.',
+						//	position: {
+						//	    align: 'left',
+						//	    x: 15 // position of credits
+						//	},
+						//	style: {
+						//		fontStyle: 'italic', // you can style it!
+						//		fontSize: '10px'
+						//	}
+						//    },
 						    series: [{
 							//pointInterval: 1,
 							//pointStart: Date.UTC(arr_awal[2], arr_awal[0], arr_awal[1]),
@@ -350,7 +355,11 @@
 					//$('.return-foot').html('<p class="return-foot" style="font-size: 14px;">Return: '+formfundtype+' sejak '+arr_awal[0]+'/'+arr_awal[1]+'/'+arr_awal[2]+' hingga '+arr_akhir[0]+'/'+arr_akhir[1]+'/'+arr_akhir[2]+' adalah '+((((new_data.xml_data[new_data.xml_data.length-1]['bid']/new_data.xml_data[0]['bid'])-1)*100).toFixed(2))+'% '+'</p>')
 				     
 				    //response action
-									    
+				    $(".footnote").css("float","left");
+				    $(".footnote").css("font-size","12px");
+				    $(".footnote").css("font-style","italic");
+				    $(".footnote").css("padding-left","16px");
+				    $(".footnote").show();
 				    //$('.date-range').html("Fund name: "+formfundtype+". Periode: "+awal+" s/d "+akhir);
 				    //$('.table-range').html("Fund name: "+formfundtype+". Periode: "+awal+" s/d "+akhir);
 			    
