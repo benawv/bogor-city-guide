@@ -862,8 +862,8 @@ $(document).ready(function(){
 		
 		//=========================//perhitungan rate/persen======================================//
 		var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
-		workshop_persen=0;
-		compre_persen=0;
+		compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100;
+                workshop_persen=parseFloat(getWorkshop(merk,1))*parseFloat(compre_tlo_persen);
 		
 		// if (tlo= 5+wilayah) else (1+wilayah)
 		if (jenisasuransi=='tlo') {
