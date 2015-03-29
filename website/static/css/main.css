@@ -819,6 +819,17 @@ a.fbshare, a.twshare{
   color: #000;
 }
 
+.mw960{
+  width: 960px !important;
+}
+.mw960 .primary{
+  font-size: 14px !important;
+}
+
+.main.noPaddingTop{
+  padding: 0px;
+}
+
 /*SETTING LOGO 125*/
 .notepadKiri{width: 150px;float: left;}
 .notepadKanan{width: 70px;float: right;margin-right: 20px;margin-top: 17px;}
