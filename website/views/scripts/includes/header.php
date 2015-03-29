@@ -131,6 +131,7 @@ $(function(){
 					</li>
 				</ul>
 				<ul class="ulCustomerOnline deactive">
+					<li class="liCustomerOnline"><a href="/asn/asn-login" target="_blank">Login ASN</a></li>
 					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank">Asuransi Jiwa dan Kesehatan (Individu)</a></li>
 					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Group/" target="_blank">Asuransi Kesehatan Kumpulan</a></li>
 					<li class="liCustomerOnline"><a style="border-color: #ccc !important;border-bottom: 1px solid;" href="https://www.allianzlife.co.id/ePolicy/general/frmHomeGeneral.aspx" target="_blank">Portal Status Klaim Mobil</a></li>
