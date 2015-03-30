@@ -1,5 +1,6 @@
 <div class="box-berita">
 	<h2 class="title-box-berita"><?php echo $this->input("title-box");?></h2>
+	
 	<?php
 		$db = Pimcore_Resource_Mysql::get();
 		$sql = "SELECT doc.id, doc_e.data from documents as doc inner join documents_elements as doc_e on doc.id=doc_e.documentId
@@ -18,17 +19,18 @@
 			//print_r($entries[0]->title);
 			//$srcImg = $entries[0]->elements["imgBerita"]->image->path.$entries[0]->elements["imgBerita"]->image->filename;
 ?>
-			<div>
-				<span class="text-bold"><a href="<?php echo $entries[0]->path."".$entries[0]->key;?>"><?php echo $entries[0]->title;?></a></span>
+			<div class="liBerita">
+				<div>
+					<span class="text-bold"><a href="<?php echo $entries[0]->path."".$entries[0]->key;?>"><?php echo limit_words($entries[0]->title,8);?></a></span>
+				</div>
+				<div>
+					<span class="text-bold"><?php echo date("M d, Y",$list[$i]['data']);?></span> - <span>
+					<?php
+						echo limit_words($entries[0]->elements["textareaBerita"]->text,9)."...";
+					?>
+					</span>
+				</div>
 			</div>
-			<div>
-				<span class="text-bold"><?php echo date("M d, Y",$list[$i]['data']);?></span> - <span>
-				<?php
-					echo limit_words($entries[0]->elements["textareaBerita"]->text,10)."...";
-				?>
-				</span>
-			</div>
-			<br />
 <?php
 		}
 		if($this->editmode) {
