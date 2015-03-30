@@ -830,6 +830,39 @@ a.fbshare, a.twshare{
   padding: 0px;
 }
 
+.title-box-berita{
+  color: #4b4b4b;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px auto;
+}
+
+.box-berita{
+  background-color: white;
+  width: 635px;
+  height: 310px;
+  max-width: 100%;
+  padding: 5px 15px;
+  font-size: 14px;
+}
+
+.text-bold{
+  font-weight: bold;
+}
+
+.box-berita .icon-panah{
+  background: url("/website/static/images/ic_buttons.png") no-repeat scroll -475px 10px;
+  min-width: 30px;
+  min-height: 40px;
+  display: inline-block;
+}
+.box-berita .selengkapnya
+{
+    display: inline-block;
+    margin-top: -32px;
+    vertical-align: middle;
+    margin-left: -10px;
+}
 /*SETTING LOGO 125*/
 .notepadKiri{width: 150px;float: left;}
 .notepadKanan{width: 70px;float: right;margin-right: 20px;margin-top: 17px;}
