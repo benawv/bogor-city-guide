@@ -212,6 +212,7 @@ padding: 10px 15px;
 }
 .boxes-view .items-container .item .description {
   padding: 10px 15px;
+  min-height: 154px;
   /*height: 55px;*/
 }
 .boxes-view .items-container .item .description {
