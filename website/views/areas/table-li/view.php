@@ -6,6 +6,8 @@
     
 </header>
 
+<div class="page-wrapper-outer">
+
 <section class="page-wrapper mt32 mb72">
     <div class="container">
         <div class="row">
@@ -60,3 +62,5 @@
         </div><!--/ .row -->
     </div><!--/ .container -->
 </section>
+
+</div><!--/ .page-wrapper-outer -->

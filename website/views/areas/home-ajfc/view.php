@@ -166,7 +166,7 @@
                         <div class="social-feeds--box facebook">
                             <div class="header">
                                 <i class="fa fa-facebook pull-left"></i>
-                                <a href="#" class="pull-right"><i class="fa fa-thumbs-o-up"></i></a>
+                                <!--<a href="#" class="pull-right"><i class="fa fa-thumbs-o-up"></i></a>-->
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
@@ -192,7 +192,7 @@
                         <div class="social-feeds--box twitter">
                             <div class="header">
                                 <i class="fa fa-twitter pull-left"></i>
-                                <a href="#" class="pull-right"><i class="fa fa-retweet"></i></a>
+                                <!--<a href="#" class="pull-right"><i class="fa fa-retweet"></i></a>-->
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
@@ -222,7 +222,7 @@
                         <div class="social-feeds--box twitter">
                             <div class="header">
                                 <i class="fa fa-twitter pull-left"></i>
-                                <a href="#" class="pull-right"><i class="fa fa-retweet"></i></a>
+                                <!--<a href="#" class="pull-right"><i class="fa fa-retweet"></i></a>-->
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
@@ -248,7 +248,7 @@
                         <div class="social-feeds--box facebook">
                             <div class="header">
                                 <i class="fa fa-facebook pull-left"></i>
-                                <a href="#" class="pull-right"><i class="fa fa-thumbs-o-up"></i></a>
+                                <!--<a href="#" class="pull-right"><i class="fa fa-thumbs-o-up"></i></a>-->
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
