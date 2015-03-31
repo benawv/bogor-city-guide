@@ -481,6 +481,8 @@ nav.main-navigation {
  */
 html, body {
   background: #f5f6f6; }
+  html a:hover, body a:hover {
+    text-decoration: none; }
 
 header {
   position: relative; }
@@ -561,7 +563,7 @@ header {
         header .caption .box-dent .box-dent--inner h1, header .caption .box-dent .box-dent--inner h2, header .caption .box-dent .box-dent--inner h3, header .caption .box-dent .box-dent--inner h4, header .caption .box-dent .box-dent--inner h5, header .caption .box-dent .box-dent--inner h6 {
           font-weight: bold; }
         header .caption .box-dent .box-dent--inner p {
-          padding: 16px 0 32px; }
+          padding: 16px 0 12px; }
         header .caption .box-dent .box-dent--inner a {
           display: inline-block;
           color: white;
@@ -705,6 +707,10 @@ section#calendar-wrapper .calendar-info .calendar-info--inner {
     section#calendar-wrapper .calendar-info .calendar-info--inner .body p {
       color: #666; }
 
+.page-wrapper-outer {
+  position: relative;
+  min-height: 600px; }
+
 .page-wrapper {
   overflow: hidden;
   position: absolute;
@@ -832,6 +838,62 @@ section#calendar-wrapper .calendar-info .calendar-info--inner {
       transform: rotate(-180deg); }
     .main-content .faq-wrapper .faq-item.active .faq-item--answer {
       display: block; }
+
+section.gallery-wrapper > .container > .row > div[class^="col-"], section.gallery-wrapper > .container-fluid > .row > div[class^="col-"] {
+  height: 100%; }
+section.gallery-wrapper .gallery-item {
+  background: #ee2037;
+  position: relative;
+  /* .galery-item--image */ }
+  section.gallery-wrapper .gallery-item > .row {
+    margin: 0;
+    display: table; }
+    section.gallery-wrapper .gallery-item > .row > div[class^="col-"] {
+      position: relative;
+      padding: 0;
+      display: table-cell;
+      float: none !important;
+      vertical-align: middle; }
+  section.gallery-wrapper .gallery-item .gallery-item--image {
+    display: block;
+    position: relative;
+    overflow: hidden; }
+    section.gallery-wrapper .gallery-item .gallery-item--image > img {
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+      height: auto; }
+  section.gallery-wrapper .gallery-item .gallery-item--text {
+    position: relative;
+    width: 100%;
+    height: 100%; }
+  section.gallery-wrapper .gallery-item .gallery-item--text-inner {
+    padding: 0 28px;
+    color: white; }
+    section.gallery-wrapper .gallery-item .gallery-item--text-inner h1, section.gallery-wrapper .gallery-item .gallery-item--text-inner h2, section.gallery-wrapper .gallery-item .gallery-item--text-inner h3, section.gallery-wrapper .gallery-item .gallery-item--text-inner h4, section.gallery-wrapper .gallery-item .gallery-item--text-inner h5, section.gallery-wrapper .gallery-item .gallery-item--text-inner h6, section.gallery-wrapper .gallery-item .gallery-item--text-inner p {
+      margin: 0;
+      padding: 0; }
+    section.gallery-wrapper .gallery-item .gallery-item--text-inner h1, section.gallery-wrapper .gallery-item .gallery-item--text-inner h2, section.gallery-wrapper .gallery-item .gallery-item--text-inner h3, section.gallery-wrapper .gallery-item .gallery-item--text-inner h4, section.gallery-wrapper .gallery-item .gallery-item--text-inner h5, section.gallery-wrapper .gallery-item .gallery-item--text-inner h6 {
+      font-size: x-large;
+      line-height: 1.2; }
+    section.gallery-wrapper .gallery-item .gallery-item--text-inner p {
+      margin: 16px 0; }
+
+nav.primary a:hover {
+  text-decoration: none; }
+
+header nav.toolbar ul.clearfix > li > a > .fa,
+header nav.toolbar ol.clearfix > li > a > .fa {
+  color: white;
+  font-size: larger; }
+
+footer.contentinfo .container {
+  width: 960px;
+  min-width: 960px;
+  max-width: 960px;
+  padding: 0; }
+footer.contentinfo .worldwide {
+  padding: 30px 0 0; }
 
 /**
  * Zabuto Calendar
