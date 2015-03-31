@@ -96,7 +96,7 @@
                                     <h3>Seleksi Tahap 3</h3>
                                     <p>
                                         <strong>Wawancara</strong><br />
-                                        Tahap terakhir dalam proses seleksi dimana peserta akan diwawancarai selama 7 hari 7 malam
+                                        Tahap terakhir dalam proses seleksi dimana peserta akan diwawancarai seputar kehidupan sehari-hari.
                                         <!-- seputar kehidupan sehari-hari -->
                                     </p>
                                 </div><!--/ .image-hotspot--content -->
