@@ -840,7 +840,8 @@ a.fbshare, a.twshare{
 .box-berita{
   background-color: white;
   width: 635px;
-  height: 310px;
+  min-height: 310px;
+  height: auto;
   max-width: 100%;
   padding: 5px 15px;
   font-size: 14px;

@@ -44,5 +44,6 @@
 				<span class="icon-panah"></span>&nbsp;
 				<span class="selengkapnya"><?php echo $this->link("linkBerita")->getText();?></span>	
 			</a>
+			<div class="clear"></div>
 		<?php }?>
 </div>
