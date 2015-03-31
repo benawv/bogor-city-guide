@@ -3,7 +3,7 @@
 <div class="container boxes-view">
 	<?php echo $this->template("includes/breadcrumb.php")?>
 	
-	<div class="heading clearfix pagenav">
+	<div class="heading clearfix pagenav pagenavBerita">
 		<span class="breadcrumb2"><?php echo $this->document->getTitle()?></span>
 		<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
 		<div id="quicklinks">

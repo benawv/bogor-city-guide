@@ -866,6 +866,9 @@ a.fbshare, a.twshare{
 .liBerita{
   margin-bottom: 10px;
 }
+
+.pagenavBerita #accordion-container{position: relative;}
+
 /*SETTING LOGO 125*/
 .notepadKiri{width: 150px;float: left;}
 .notepadKanan{width: 70px;float: right;margin-right: 20px;margin-top: 17px;}
