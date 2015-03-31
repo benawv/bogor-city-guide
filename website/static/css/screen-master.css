@@ -447,6 +447,10 @@ footer.contentinfo .worldwide a:before{content:'\203A\00a0';position:relative;to
 nav.primary .menu-level2s{display:none;}
 nav.primary .menu-level2{width:1030px;padding:0 20px;left:-30px;}
 }
+@media only screen and (max-width:320px){
+    .heading.pagenav.pagenavBerita{width: 290px;}
+    #quicklinks .tab-button ul li a{font-size: 10px;}
+}
 @media only screen and (max-width:959px){body{font-size:100%;}
 header.banner{background:none;}
 .weblogo{width:150px;height:60px;left:37px;top:32px;}
@@ -691,7 +695,9 @@ header.banner{background:url("../images/banner-header.png") repeat-x scroll 0 0 
 .hero-bnnr.hero-bnnr2 h1, .hero-bnnr.hero-bnnr2 h2{font-size:1.5rem !important;line-height:2rem !important;}
 .kata_kata .kata-kiri{width:0px;}
 .terimaKasih .kata_kata{width:100%;}
+.pagenav.pagenavBerita{width: 330px;}
 }
+.pagenav.pagenavBerita{height: auto;}
 .description .investasi-p{margin:11px auto;}
 .investasi-ul.mitra_ul ul{margin-bottom:0px !important;}
 .bc1-tanya{background:url("../images/q2.png") no-repeat;padding-left:44px;}
