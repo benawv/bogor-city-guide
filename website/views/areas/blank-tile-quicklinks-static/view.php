@@ -23,7 +23,7 @@
 	<div id="tab-quicklinks" class="tab-content">
 		<h3 class="judul-quicklink"><?php echo $this->input("judul-quicklink-static", array("width" => 200));?></h3>
 		<?php while ($this->block("block-layanankami")->loop()) { ?>
-			<h4><b><?php echo $this->input("layanan", array("width" => 240));?><br /></b></h4>
+			<h4><b><?php echo $this->input("layanan", array("width" => 240));?><br />&nbsp;</b></h4>
 			<?php if($this->editmode){ ?>
 				<style type="text/css">
 					ul.cusLi > div
@@ -51,9 +51,9 @@
 		<?php }?>
 	</div>
 	<div id="tab-contact" class="tab-content">
-		<h3 class="judul-quicklink"></h3>
+		<h3 class="judul-quicklink">&nbsp;</h3>
 		<?php while ($this->block("block-contact")->loop()) { ?>
-			<h4><b><?php echo $this->input("contact",array("width" => 240));?><br /></b></h4>
+			<h4><b><?php echo $this->input("contact",array("width" => 240));?><br />&nbsp;</b></h4>
 			<ul class="list-links bold-list nav cusLi">
 				<?php while ($this->block("linkblock-contact")->loop()) { ?>
 							    <li><?php echo $this->link("myLink-contact"); echo $this->input("myText-contact", array("width" => 240));?></li>
@@ -82,9 +82,9 @@
 		-->
 	</div>
 	<div id="tab-socialmedia" class="tab-content">
-		<h3 class="judul-quicklink"></h3>
+		<h3 class="judul-quicklink">&nbsp;</h3>
 		<?php while ($this->block("block-social")->loop()) { ?>
-			<h4><b><?php echo $this->input("social",array("width" => 240));?><br /></b></h4>
+			<h4><b><?php echo $this->input("social",array("width" => 240));?><br />&nbsp;</b></h4>
 			<ul class="nav cusLi">
 				<?php while ($this->block("linkblock-socialmedia")->loop()) { ?>
 							    <li><?php echo $this->link("myLink-socialmedia"); echo $this->input("myText-social", array("width" => 240));?></li>
@@ -98,9 +98,9 @@
 		<?php }?>
 	</div>
 	<div id="tab-download" class="tab-content">
-		<h3 class="judul-quicklink"></h3>
+		<h3 class="judul-quicklink">&nbsp;</h3>
 		<?php while ($this->block("block-download")->loop()) { ?>
-			<h4><b><?php echo $this->input("download",array("width" => 240));?><br /></b></h4>
+			<h4><b><?php echo $this->input("download",array("width" => 240));?><br />&nbsp;</b></h4>
 			<ul class="nav cusLi">
 			<?php while ($this->block("linkblock-download")->loop()) { ?>
 						    <li><?php echo $this->link("myLink-download"); echo $this->input("myText-download", array("width" => 240));?></li>
