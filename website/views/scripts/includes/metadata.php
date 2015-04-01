@@ -17,6 +17,7 @@
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/tabs-accordion.css">-->
 <!--<link rel="stylesheet" type="text/css" media="screen" id="product-css" href="/website/static/css/product.css">-->
 <!--<link rel="stylesheet" type="text/css" media="screen" id="wishlist-cart-css" href="/website/static/css/wishlist-cart.css">-->
+<link rel="stylesheet" type="text/css" media="screen" id="font-awesome-css" href="/website/static/css/font-awesome/font-awesome.min.css">
 
 
 <!--
