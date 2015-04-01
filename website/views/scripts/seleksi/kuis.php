@@ -1,31 +1,31 @@
 <link rel="stylesheet" href="/website/static/css-ajfc/style.css"> 
-<link rel="stylesheet" href="/website/static/css-mobil/wizard-step.css" type="text/css" media="all" /> 
+<link rel="stylesheet" href="/website/static/mobilku/wizard-step.css" type="text/css" media="all" /> 
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css-ajfc/bootstrap.css"  />
 
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css-mobil/bootstrap.min.css"  />
+<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/bootstrap.min.css"  />
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/flexslider.css">-->
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/main.css">
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/tabs-accordion.css">-->
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/product.css">-->     
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css-mobil/data-table-1.10.4/media/css/jquery.dataTables.css" >
+<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/data-table-1.10.4/media/css/jquery.dataTables.css" >
  
  
 <script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
 <!--<script src="_assets/js/jquery.tools.min.js" type="text/javascript"></script>-->
 <!--<script src="_assets/js/sticky-jquery.js" type="text/javascript"></script>-->
-<!--<script src="/website/static/css-mobil/jquery-1.10.2.js" type="text/javascript"></script>
-<script src="/website/static/css-mobil/bootstrap.min.js" type="text/javascript"></script>-->
+<!--<script src="/website/static/mobilku/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="/website/static/mobilku/bootstrap.min.js" type="text/javascript"></script>-->
   
     
 <!--   plugins   -->
 
-<script src="/website/static/css-mobil/jquery.bootstrap.wizard.js" type="text/javascript"></script>
-<script src="/website/static/css-mobil/wizard.js"></script>
-<script src="/website/static/css-mobil/data-table-1.10.4/media/js/jquery.dataTables.js" type="text/javascript"></script>
+<script src="/website/static/mobilku/jquery.bootstrap.wizard.js" type="text/javascript"></script>
+<script src="/website/static/mobilku/wizard.js"></script>
+<script src="/website/static/mobilku/data-table-1.10.4/media/js/jquery.dataTables.js" type="text/javascript"></script>
     
-<script src="/website/static/css-mobil/jquery.validate.min.js"></script>  
+<script src="/website/static/mobilku/jquery.validate.min.js"></script>  
 
 
 <!-- End of Header -->
@@ -550,7 +550,7 @@ $(document).ready(function() {
             $(".btn-finish").addClass("hide");
         }
         if((no%2) == 1){
-            $(".banner-ajfc").fadeOut("slow");
+            $(".banner-ajfc").hide();
             $(".banner-ajfc").attr("src",shuffleImage[indexImage]);
             $(".banner-ajfc").fadeIn("slow");
         }
@@ -584,7 +584,7 @@ $(document).ready(function() {
         var shuffleImage = shuffle(image);
         var indexImage = <?php echo $jmlImage;?>;
         if((no%2) == 1){
-            $(".banner-ajfc").fadeOut("slow");
+            $(".banner-ajfc").hide();
             $(".banner-ajfc").attr("src",shuffleImage[indexImage]);
             $(".banner-ajfc").fadeIn("slow");
         }
@@ -655,7 +655,7 @@ $(document).ready( function() {
 </script>
 
 <script>
-	$(function() {
+$(function() {
     $("#myform").validate(
       {
         rules: 

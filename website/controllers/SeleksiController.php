@@ -19,13 +19,13 @@ class SeleksiController extends Website_Controller_Action {
 					$this->view->peserta = $data;
 				}
 				else{
-					$this->redirect("/ajfc/home-ajfc");
+					$this->redirect("/ajfc");
 				}
 			}
 		}
 		else
 		{
-			$this->redirect("/ajfc/home-ajfc");
+			$this->redirect("/ajfc");
 		}
 	}
 	
