@@ -213,7 +213,7 @@
                                                         <label for="inputEmail">No. Telp</label>
                                                       </div> 
                                                       <div class="col-sm-4">
-                                                        <input type="tel" name="telp" class="form-control required" id="telp" placeholder="">
+                                                        <input type="tel" name="telp" class="form-control required" id="telp" placeholder="+62812345678">
                                                       </div>
                                                   </div>
 						</div> 
