@@ -17,8 +17,8 @@ $(document).ready(function(){
 	function getTlo(tipe,map) {
                         //code
                         var rate;
-                        console.log("getTlo TYPE:"+tipe);
-                        console.log("getTlo MAP:"+map);
+                        //console.log("getTlo TYPE:"+tipe);
+                        //console.log("getTlo MAP:"+map);
                         if (tipe=='tlo') {
                             if(map=='PK_R1_S1_Sedan'){
                                       rate='0.0047';          
@@ -89,11 +89,13 @@ $(document).ready(function(){
                                      rate='0';
                             }                 
                         }
-                        console.log("getTlo RATE:"+rate);
+                        //console.log("getTlo RATE:"+rate);
                          return rate;
                 }
-        function getWorkshop(merk,calc_type) {
-                if (calc_type=='1') {
+        function getWorkshop(merk,calc_type,ages) {
+                        
+                    
+                if (calc_type=='1') {//calc_type: Basic,  
                      if(merk.toLowerCase=='bmw'){
                         workshop_rate='10'
                      }else if(merk.toLowerCase=='mercedes benz'){
@@ -101,7 +103,7 @@ $(document).ready(function(){
                      }else{
                         workshop_rate='5'
                     }
-                }else if (calc_type=='2') {
+                }else if (calc_type=='2') {//calc_type: standar  
                      if(merk.toLowerCase=='bmw'){
                         workshop_rate='12.50'
                      }else if(merk.toLowerCase=='mercedes benz'){
@@ -110,7 +112,7 @@ $(document).ready(function(){
                         workshop_rate='7.50'
                     }
                 }else{
-                    if(merk.toLowerCase=='bmw'){
+                    if(merk.toLowerCase=='bmw'){//calc_type: premier  
                         workshop_rate='25'
                     }else if(merk.toLowerCase=='mercedes benz'){
                         workshop_rate='20'
@@ -118,7 +120,64 @@ $(document).ready(function(){
                         workshop_rate='10'
                     }
                 }
-                console.log("workshop_rate:"+workshop_rate);
+                //console.log("workshop_rate:"+workshop_rate);
+                return workshop_rate;
+                      
+        }
+        
+        function getWorkshopNonPack(merk,age) {
+                
+                if(age==0){
+                   if(merk.toLowerCase=='bmw'){//calc_type: premier  
+                        workshop_rate=15;
+                    }else if(merk.toLowerCase=='mercedes benz'){
+                        workshop_rate=15;
+                    }else{
+                        workshop_rate=7.5;
+                    }
+                }else if(age==1){
+                   if(merk.toLowerCase=='bmw'){//calc_type: premier  
+                        workshop_rate=15;
+                    }else if(merk.toLowerCase=='mercedes benz'){
+                        workshop_rate=15;
+                    }else{
+                        workshop_rate=7.5;
+                    }
+                }else if(age==2){
+                   if(merk.toLowerCase=='bmw'){//calc_type: premier  
+                        workshop_rate=15;
+                    }else if(merk.toLowerCase=='mercedes benz'){
+                        workshop_rate=15;
+                    }else{
+                        workshop_rate=7.5;
+                    }
+                }else if(age==3){
+                   if(merk.toLowerCase=='bmw'){//calc_type: premier  
+                        workshop_rate=15;
+                    }else if(merk.toLowerCase=='mercedes benz'){
+                        workshop_rate=15;
+                    }else{
+                        workshop_rate=7.5;
+                    }
+                }else if(age==4){
+                   if(merk.toLowerCase=='bmw'){//calc_type: premier  
+                        workshop_rate=20;
+                    }else if(merk.toLowerCase=='mercedes benz'){
+                        workshop_rate=20;
+                    }else{
+                        workshop_rate=10;
+                    }
+                }else if(age==5){
+                   if(merk.toLowerCase=='bmw'){//calc_type: premier  
+                        workshop_rate=30;
+                    }else if(merk.toLowerCase=='mercedes benz'){
+                        workshop_rate=25;
+                    }else{
+                        workshop_rate=15;
+                    }
+                }else{
+                       workshop_rate=0; 
+                }
                 return workshop_rate;
                       
         }
@@ -295,7 +354,7 @@ $(document).ready(function(){
 		}
 		
 		//INSERT INTO FORM PAKET
-		$('.workshop_persen, .compre_persen, .earthquake_presen, .era_persen, .flood_persen, .med_ex_persen, .pa_persen, .passenger_persen, .personal_ef_persen, .pll_persen, .riot_persen, .terror_persen, .tpl_persen').html("");
+		$('.workshop_persen, .compre_persen, .earthquake_presen, .era_persen, .flood_persen, .med_ex_persen, .pa_persen, .passenger_persen, .personal_ef_persen, .pll_persen, .riot_persen, .terror_persen, .tpl_persen, .totalPremium').html("");
 		$('.workshop_persen').append(workshop_persen+"%");			
 		$('.compre_persen').append(compre_tlo_persen+"%");			
 		$('.earthquake_presen').append(earthquake_presen+"%");			
@@ -524,7 +583,7 @@ $(document).ready(function(){
 		
 		
 		//INSERT INTO FORM
-		$('.workshop_persen2, .compre_persen2, .earthquake_presen2, .era_persen2, .flood_persen2, .med_ex_persen2, .pa_persen2, .passenger_persen2, .personal_ef_persen2, .pll_persen2, .riot_persen2, .terror_persen2, .tpl_persen2').html("");
+		$('.workshop_persen2, .compre_persen2, .earthquake_presen2, .era_persen2, .flood_persen2, .med_ex_persen2, .pa_persen2, .passenger_persen2, .personal_ef_persen2, .pll_persen2, .riot_persen2, .terror_persen2, .tpl_persen2, .totalPremium2').html("");
 		$('.workshop_persen2').append(workshop_persen+"%");			
 		$('.compre_persen2').append(compre_tlo_persen+"%");			
 		$('.earthquake_presen2').append(earthquake_presen+"%");			
@@ -748,7 +807,7 @@ $(document).ready(function(){
 		}
 		
 		//INSERT INTO FORM
-		$('.workshop_persen3, .compre_persen3, .earthquake_presen3, .era_persen3, .flood_persen3, .med_ex_persen3, .pa_persen3, .passenger_persen3, .personal_ef_persen3, .pll_persen3, .riot_persen3, .terror_persen3, .tpl_persen3').html("");
+		$('.workshop_persen3, .compre_persen3, .earthquake_presen3, .era_persen3, .flood_persen3, .med_ex_persen3, .pa_persen3, .passenger_persen3, .personal_ef_persen3, .pll_persen3, .riot_persen3, .terror_persen3, .tpl_persen3, .totalPremium3').html("");
 		$('.workshop_persen3').append(workshop_persen+"%");			
 		$('.compre_persen3').append(compre_tlo_persen+"%");			
 		$('.earthquake_presen3').append(earthquake_presen+"%");			
@@ -806,7 +865,10 @@ $(document).ready(function(){
 		
 		var getColom;
 		var harga=clearFormat($('#harga').val());
-		var tahun_pembuatan;
+		var tahun_pembuatan=($('#tahun_pembuatan').val());
+                var d = new Date();
+                var n = d.getFullYear();
+                var ages=n-parseInt(tahun_pembuatan);
 		var model;
 		var regno;
 		var periode;
@@ -863,7 +925,7 @@ $(document).ready(function(){
 		//=========================//perhitungan rate/persen======================================//
 		var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
 		compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan');
-                workshop_persen=parseFloat(getWorkshop(merk,1))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
+                workshop_persen=parseFloat(getWorkshopNonPack(merk,ages))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
 		
 		// if (tlo= 5+wilayah) else (1+wilayah)
 		if (jenisasuransi=='tlo') {
@@ -1044,8 +1106,8 @@ $(document).ready(function(){
 		$('.no_tpl_prem').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
 		//$('.no_totalPremium').append(accounting.formatMoney(parseInt(totalPremium-era_prem),'',2,'.',','));
                     
-        $('.no_compre_is_calc').attr('data-angka',accounting.formatMoney(compre_prem,'',2,'.',','));
-        $('.no_earthquake_is_calc').attr('data-angka',accounting.formatMoney(earthquake_prem,'',2,'.',','));						
+                $('.no_compre_is_calc').attr('data-angka',accounting.formatMoney(compre_prem,'',2,'.',','));
+                $('.no_earthquake_is_calc').attr('data-angka',accounting.formatMoney(earthquake_prem,'',2,'.',','));						
 		$('.no_flood_is_calc').attr('data-angka',accounting.formatMoney(flood_prem,'',2,'.',','));			
 		$('.no_med_ex_is_calc').attr('data-angka',accounting.formatMoney(med_ex_prem,'',2,'.',','));			
 		$('.no_pa_is_calc').attr('data-angka',accounting.formatMoney(pa_prem,'',2,'.',','));			
@@ -1055,6 +1117,7 @@ $(document).ready(function(){
 		$('.no_riot_is_calc').attr('data-angka',accounting.formatMoney(riot_prem,'',2,'.',','));			
 		$('.no_terror_is_calc').attr('data-angka',accounting.formatMoney(terror_prem,'',2,'.',','));			
 		$('.no_tpl_is_calc').attr('data-angka',accounting.formatMoney(tpl_prem,'',2,'.',','));
+                $('.no_workshop_is_calc').attr('data-angka',accounting.formatMoney(workshop_prem,'',2,'.',','));
 
 		totalrecalc_custome();
 		                                        
@@ -1393,16 +1456,18 @@ $(document).ready(function(){
 		var regno=$('#regno').val();
 		var periode=$('#periode').val();
 		var email=$('#email').val();
+                var nama=$('#nama').val();
+                var telp=$('#telp').val();
 
 		
-		//console.log(tahun_pembuatan+'-'+harga+'-'+model+'-'+regno+'-'+periode+'-'+email+'-'+redio1+'-'+redio2)
+		console.log(tahun_pembuatan+'-'+harga+'-'+model+'-'+regno+'-'+periode+'-'+email+'-'+nama+'-'+telp)
 		$.ajax({
 			"url" : "/savemobilku/",
 			"type" : "POST",
-			"data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&redio1="+redio1+"&redio2="+redio2,
+			"data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp,
 			"success" : function(response){
-				//var getResult=JSON.parse(response);
-				//console.log(response);
+				var getResult=JSON.parse(response);
+				console.log(response);
 			}
 		});
 	});
@@ -1503,7 +1568,7 @@ $(document).ready(function(){
                           $('.'+datatarget).html('');  
                           $('.'+datatarget).append(dataangka);
                     }
-                    //recalc_custome();
+                    totalrecalc_custome();
                                  
             });
             
@@ -1512,8 +1577,17 @@ $(document).ready(function(){
     });
             
             
-	$( "#periode" ).datepicker();
-	$(".menutab_dekstop li a").width(100);
+	$( "#periode" ).datepicker({
+              onSelect: function(date) {
+                    alert(date);
+              }
+        });
+        $(this).on('click','#periode',function(){
+             var periode=$(this).val();
+             alert(periode);
+             $( "#periode-last" ).val();  
+        });	
+        $(".menutab_dekstop li a").width(100);
 	$(".menutab_dekstop li a").css("width", "225px");
 	$(".tabcontent").css("width", "72%");
 	$(".content_show").css("padding", "0px");

@@ -16,6 +16,8 @@ class MobilkuController extends Website_Controller_Action {
 		$regno=$_POST['regno'];
 		$period=$_POST['periode'];
 		$email=$_POST['email'];
+		$nama=$_POST['nama'];
+		$telp=$_POST['telp'];
 		$radio1=$_POST['redio1'];
 		$radio2=$_POST['redio2'];
 		
@@ -45,6 +47,8 @@ class MobilkuController extends Website_Controller_Action {
 		$register->setregistrationno($regno);
 		$register->setstartperiode($period);
 		$register->setemail($email);
+		$register->setnama($nama);
+		$register->settelp($telp);
 		$register->setinsurancetype($radio1);
 		$register->setKey(strtolower($namakey));
 		$register->setO_parentId('1407');
