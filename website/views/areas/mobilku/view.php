@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/data-table-1.10.4/media/css/jquery.dataTables.css" >
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/jquery-ui.css" >	
   
-<script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
+<!--script src="/website/static/js/masonry.min.js" type="text/javascript"></script-->
 
 		
 <!--   plugins 	 -->
@@ -24,7 +24,23 @@
     
 <script src="/website/static/mobilku/jquery.validate.min.js"></script>       
 <script src="/website/static/mobilku/jquery-ui.js"></script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '727536864031162',
+      xfbml      : true,
+      version    : 'v2.3'
+    });
+  };
 
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 <!-- End of Header -->
 
 
@@ -50,7 +66,6 @@
                             <div class="tab-content">
                                 <div class="tab-pane" id="data-mobil">
                                   <div class="row">
-                                      
                                       <div class="col-sm-12">
                                           
                                               <div class="row">
@@ -185,6 +200,26 @@
                                                 <div class="row">
                                                   <div class="form-group">
                                                       <div class="col-sm-3">
+                                                        <label for="inputEmail">Nama</label>
+                                                      </div> 
+                                                      <div class="col-sm-4">
+                                                        <input type="text" name="nama" class="form-control required" id="name" placeholder="">
+                                                      </div>
+                                                  </div>
+						</div>
+						<div class="row">
+                                                  <div class="form-group">
+                                                      <div class="col-sm-3">
+                                                        <label for="inputEmail">No. Telp</label>
+                                                      </div> 
+                                                      <div class="col-sm-4">
+                                                        <input type="tel" name="telp" class="form-control required" id="telp" placeholder="">
+                                                      </div>
+                                                  </div>
+						</div> 
+						<div class="row">
+                                                  <div class="form-group">
+                                                      <div class="col-sm-3">
                                                         <label for="input1">Periode Asuransi</label>
                                                       </div> 
                                                       <div class="col-sm-4">							
@@ -192,8 +227,16 @@
                                                       </div>
                                                   </div>
                                                </div>
-                                              
-                                                <div class="row">
+						<div class="row">
+                                                  <div class="form-group">
+                                                      <div class="col-sm-3">
+                                                      </div> 
+                                                      <div class="col-sm-4">							
+                                                        <input type="text" name="periode-last" class="form-control" id="periode-last" placeholder="" value="" disabled=disabled >
+                                                      </div>
+                                                  </div>
+						</div>
+						<div class="row">
                                                   <div class="form-group">
                                                       <div class="col-sm-3">
                                                         <label for="input2">Jenis Asuransi</label>
@@ -234,7 +277,7 @@
                                                         <input type="email" name="email" class="form-control required" id="email" placeholder="">
                                                       </div>
                                                   </div>
-                                            </div>    
+						</div>    
                                                
                                       </div>
                                         
