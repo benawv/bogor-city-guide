@@ -175,7 +175,7 @@
 	var w = 0;
 	
 	$('.navi li').each(function(index){
-		width = $(this).width();
+		width = ($(this).width())+10;
 		w += width;
 	});
 	
