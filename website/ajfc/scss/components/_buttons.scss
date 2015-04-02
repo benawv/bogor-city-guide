@@ -1,0 +1,164 @@
+ .btn-edge
+{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    background: transparent;
+    text-align: center;
+    display: block;
+    border: solid 32px $color_primary;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    @include transition( ease, 0.3s );
+
+    &::before
+    {
+        @include fontAwesome();
+        content: "\f002";
+        position: absolute;
+        color: white;
+        text-align: right;
+        font-size: 16px;
+        padding: 4px 0 0 4px;
+    }
+
+    &:hover
+    {
+        border: solid 32px $color_orange;
+        border-left-color: transparent;
+        border-top-color: transparent;
+    }
+}
+
+
+
+nav.main-navigation
+{
+    padding: 32px 0;
+
+    &.floating
+    {
+        position: absolute;
+        width: 100%;
+        z-index: 999;
+        padding: 0;
+        bottom: 32px;
+        left: 0;
+
+        @media ( max-width: 991px )
+        {
+            position: relative;
+        }
+
+    }
+
+    a.nav-item
+    {
+        display: block;
+        position: relative;
+        height: 100px;
+
+        background: #d31f42; //$color_primary;
+
+        &:hover
+        {
+            &::before
+            {
+                width: 100%;
+            }
+        }
+
+        &::before
+        {
+            content: "";
+            background: #a31c3d;
+            color: transparent;
+            height: 100%;
+            width: 0;
+            display: block;
+            @include transition( ease, 0.3s );
+        }
+
+        &::after
+        {
+            content: "";
+            @include fontAwesome();
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            @include translateY(-50%);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 64px;
+            pointer-events: none;
+        }
+
+        &.green
+        {
+            background: $color_green;
+            &::before
+            {
+                background: #137f5f;
+            }
+        }
+
+        &.orange
+        {
+            background: $color_orange;
+            &::before
+            {
+                background: #ee5d24;
+            }
+        }
+
+        &.grey
+        {
+            background: $color_grey;
+            &::before
+            {
+                background: #6d7276;
+            }
+        }
+
+        &.trophy::after
+        {
+            content: "\f091";
+        }
+
+        &.question::after
+        {
+            content: "\f128";
+        }
+
+        &.users::after
+        {
+            content: "\f0c0";
+        }
+
+        &.sitemap::after
+        {
+            content: "\f0e8";
+        }
+
+        h1, h2, h3, h4, h5, h6
+        {
+            margin: 0;
+            padding: 0 16px;
+            position: absolute;
+            left: 0;
+            bottom: 16px;
+            width: 100%;
+            color: white;
+            font-size: 20px;
+
+            small, span
+            {
+                color: #dfdfdf;
+                display: block;
+            }
+
+        }
+
+    }
+
+}
