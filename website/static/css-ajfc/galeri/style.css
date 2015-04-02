@@ -71,4 +71,23 @@
               font-size: smaller;
               font-style: oblique; }
 
+  /* .galery-item--image */ }
+ 
+  section.gallery-wrapper .gallery-item.blue-light {
+	background: #003781; }
+  section.gallery-wrapper .gallery-item.blue {
+	background: #003781; }
+  section.gallery-wrapper .gallery-item.blue-light {
+    background: #1f77be; }
+  section.gallery-wrapper .gallery-item.green {
+    background: #12a95a; }
+  section.gallery-wrapper .gallery-item.orange {
+    background: #f5832d; }
+  section.gallery-wrapper .gallery-item.grey {
+    background: #666; }
+  section.gallery-wrapper .gallery-item.maroon {
+    background: #a31c3d; }
+  section.gallery-wrapper .gallery-item.purple {
+    background: #6d5ba7; }
+	
 /*# sourceMappingURL=style.css.map */
