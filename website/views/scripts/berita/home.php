@@ -162,20 +162,24 @@
 								$list = new Document_List();
 								$list->setCondition("id=".$id);
 								$entries = $list->load();
-								
+								$srcImg = $entries[0]->elements["imgBerita"]->image->path.$entries[0]->elements["imgBerita"]->image->filename;
 						?>
 								<div id="list">
 				                	<div class="ipNewsList">
 									     <div class="description">
 									            <span class="judul"><a href="<?php echo $entries[0]->path."".$entries[0]->key;?>"><?php echo $entries[0]->title;?></a></span>
 									            <div class="isi_berita">
-									            	<div>
-									                    <span class="tgl_berita"><?php echo date("d-m-Y",$this->fetchBerita[$i]['data']);?></span> | <span>Allianz SE</span><br />
-									                    <?php 
-										                    $a = array_keys($entries[0]->getElements());
-										                    $match = preg_grep('/^konten-berita(\w+)/i', $a);
-										                    $el = array_values($match);
-									                    	echo limit_words($entries[0]->elements[$el[0]]->text,70);
+											<?php if($srcImg != ""){?>
+									            	<img src="<?php echo $srcImg;?>" class="left" style="margin-right: 10px;"/>
+											<?php }?>
+											<div>
+									                    <span class="tgl_berita"><?php echo date("d-m-Y",$this->fetchBerita[$i]['data']);?></span> | <span>Allianz Indonesia</span><br />
+									                    <?php
+									//	                    $a = array_keys($entries[0]->getElements());
+									//	                    $match = preg_grep('/^konten-berita(\w+)/i', $a);
+									//	                    $el = array_values($match);
+									//                    	echo limit_words($entries[0]->elements[$el[0]]->text,70);
+												echo limit_words($entries[0]->elements["textareaBerita"]->text,70);
 									                    ?>
 									            	</div>
 									            </div>
@@ -219,7 +223,7 @@
 		}
 		$(".pagenav .navi li").click(function(){
 			$(".pagenav .navi li").removeClass('aktif');
-			$(".pagenav .navi li .nav_menu div").css('background-position','0px 0px');
+			$(".pagenav .navi li .nav_menu div").css('background-position','0px -26px');
 			$(this).addClass('aktif');
 			$('li.aktif .nav_menu div').css('background-position', '0px 0px');
 			
