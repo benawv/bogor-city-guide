@@ -62,6 +62,57 @@ $( document ).ready(function(){
         });
     }
 
+    /**
+     * Quiz
+     */
+
+    if( $( '.quiz-wrapper > .quiz-steps a' ).length > 0 )
+    {
+        $( '.quiz-wrapper > .quiz-steps a' ).each(function(index, value){
+            $( this ).click(function(e){
+                var href = $( this ).attr( 'href' );
+
+                $( '.quiz-wrapper > .quiz-steps a' ).removeClass( 'active' );
+                $( this ).addClass( 'active' );
+
+                if( $( '.quiz-page' + href ).length > 0 )
+                {
+                    $( '.quiz-page.active' ).stop().fadeOut( 'fast', function(){
+                        $( this ).removeClass( 'active' );
+                        $( '.quiz-page' + href ).stop().fadeIn( 'fast', function(){
+                            $( this ).addClass( 'active' );
+                            console.log( 'fuck' );
+                        });
+                    });
+                }
+                e.preventDefault();
+                return false;
+            });
+        });
+    }
+
+    if( $( '.quiz-page--nav > a' ).length > 0 )
+    {
+        $( '.quiz-page--nav > a' ).each(function(index, value){
+            $( this ).click(function(e){
+                var href = $( this ).attr( 'href' );
+                if( $( '.quiz-page' + href ).length > 0 )
+                {
+                    $( '.quiz-wrapper > .quiz-steps a' ).removeClass( 'active' );
+                    $( '.quiz-wrapper > .quiz-steps a[href="' + href + '"]' ).addClass( 'active' );
+                    $( '.quiz-page.active' ).stop().fadeOut( 'fast', function(){
+                        $( this ).removeClass( 'active' );
+                        $( '.quiz-page' + href ).stop().fadeIn( 'fast', function(){
+                            resizePageWrapper();
+                            $( this ).addClass( 'active' );
+                        });
+                    });
+                }
+                e.preventDefault();
+                return false;
+            });
+        });
+    }
 
 });
 

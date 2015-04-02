@@ -1053,6 +1053,164 @@ section.gallery-wrapper .gallery-item {
         line-height: 1.5; }
 
 /* .winner-list */
+.quiz-wrapper {
+  /* .quiz-steps */
+  /* .quiz-banner */ }
+  .quiz-wrapper .quiz-steps {
+    margin: 16px auto; }
+    .quiz-wrapper .quiz-steps > .row {
+      margin: 0;
+      padding: 0; }
+      .quiz-wrapper .quiz-steps > .row > div[class^="col-"] {
+        padding: 0; }
+        .quiz-wrapper .quiz-steps > .row > div[class^="col-"]:nth-child(2) a::after, .quiz-wrapper .quiz-steps > .row > div[class^="col-"]:last-child a::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          border: solid 32px transparent;
+          border-left-color: white; }
+        .quiz-wrapper .quiz-steps > .row > div[class^="col-"]:last-child a::before {
+          border-color: transparent; }
+    .quiz-wrapper .quiz-steps a {
+      -webkit-transition: ease 0.3s;
+      -moz-transition: ease 0.3s;
+      -ms-transition: ease 0.3s;
+      -o-transition: ease 0.3s;
+      transition: ease 0.3s;
+      display: block;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px;
+      background: #e8eaea;
+      color: #656565;
+      font-weight: normal;
+      text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+      position: relative;
+      min-height: 64px;
+      max-height: 64px;
+      height: 64px;
+      line-height: 64px;
+      overflow: hidden; }
+      .quiz-wrapper .quiz-steps a > span {
+        display: block;
+        width: auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        -moz-transform: translate3d(-50%, -50%, 0);
+        -ms-transform: translate3d(-50%, -50%, 0);
+        -o-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0); }
+      .quiz-wrapper .quiz-steps a::before {
+        content: "";
+        position: absolute;
+        right: -32px;
+        top: 0;
+        height: 100%;
+        border: solid 32px white;
+        border-left-color: transparent; }
+      .quiz-wrapper .quiz-steps a.active, .quiz-wrapper .quiz-steps a:hover {
+        background: #003781;
+        color: white;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+        text-decoration: none; }
+      .quiz-wrapper .quiz-steps a:focus {
+        text-decoration: none;
+        outline: none; }
+  .quiz-wrapper .quiz-banner {
+    position: relative; }
+    .quiz-wrapper .quiz-banner > img {
+      min-width: 100%;
+      max-width: 100%;
+      width: 100%;
+      height: auto; }
+
+/* .quiz-wrapper */
+.quiz-pages {
+  position: relative;
+  /* .quiz-page */ }
+  .quiz-pages .quiz-page {
+    display: none;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    /* .quiz-page--title */
+    /* .quiz-page--nav */ }
+    .quiz-pages .quiz-page.active {
+      display: block; }
+    .quiz-pages .quiz-page .quiz-page--title {
+      text-align: center;
+      border-bottom: solid 1px #e8eaea;
+      padding: 0 0 16px; }
+      .quiz-pages .quiz-page .quiz-page--title h1, .quiz-pages .quiz-page .quiz-page--title h2, .quiz-pages .quiz-page .quiz-page--title h3, .quiz-pages .quiz-page .quiz-page--title h4, .quiz-pages .quiz-page .quiz-page--title h5, .quiz-pages .quiz-page .quiz-page--title h6 {
+        padding: 0;
+        margin: 0;
+        line-height: 1.5;
+        font-weight: bold;
+        color: #858a90;
+        text-transform: uppercase; }
+    .quiz-pages .quiz-page .quiz-page--nav {
+      padding: 16px 0; }
+      .quiz-pages .quiz-page .quiz-page--nav a,
+      .quiz-pages .quiz-page .quiz-page--nav button,
+      .quiz-pages .quiz-page .quiz-page--nav input[type="submit"] {
+        -webkit-transition: ease 0.3s;
+        -moz-transition: ease 0.3s;
+        -ms-transition: ease 0.3s;
+        -o-transition: ease 0.3s;
+        transition: ease 0.3s;
+        display: inline-block;
+        color: #858a90;
+        background: #e8eaea;
+        border: none;
+        padding: 12px 32px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 14px; }
+        .quiz-pages .quiz-page .quiz-page--nav a.pull-right,
+        .quiz-pages .quiz-page .quiz-page--nav button.pull-right,
+        .quiz-pages .quiz-page .quiz-page--nav input[type="submit"].pull-right {
+          background: #003781;
+          color: white; }
+          .quiz-pages .quiz-page .quiz-page--nav a.pull-right:hover,
+          .quiz-pages .quiz-page .quiz-page--nav button.pull-right:hover,
+          .quiz-pages .quiz-page .quiz-page--nav input[type="submit"].pull-right:hover {
+            background: #00214e; }
+        .quiz-pages .quiz-page .quiz-page--nav a:hover,
+        .quiz-pages .quiz-page .quiz-page--nav button:hover,
+        .quiz-pages .quiz-page .quiz-page--nav input[type="submit"]:hover {
+          background: #003781;
+          color: white; }
+        .quiz-pages .quiz-page .quiz-page--nav a:hover, .quiz-pages .quiz-page .quiz-page--nav a:focus,
+        .quiz-pages .quiz-page .quiz-page--nav button:hover,
+        .quiz-pages .quiz-page .quiz-page--nav button:focus,
+        .quiz-pages .quiz-page .quiz-page--nav input[type="submit"]:hover,
+        .quiz-pages .quiz-page .quiz-page--nav input[type="submit"]:focus {
+          text-decoration: none;
+          outline: none; }
+    .quiz-pages .quiz-page .quiz-page--form {
+      font-size: 14px; }
+      .quiz-pages .quiz-page .quiz-page--form label {
+        display: block;
+        padding: 8px 0;
+        margin-bottom: 8px; }
+        .quiz-pages .quiz-page .quiz-page--form label > span {
+          color: #ee2037;
+          padding: 0 0 0 4px; }
+      .quiz-pages .quiz-page .quiz-page--form input[type="text"],
+      .quiz-pages .quiz-page .quiz-page--form input[type="password"],
+      .quiz-pages .quiz-page .quiz-page--form input[type="email"] {
+        padding: 8px 12px;
+        border: solid 1px #e8eaea;
+        width: 100%; }
+
+/* .quiz-pages */
 nav.primary a:hover {
   text-decoration: none; }
 
