@@ -52,10 +52,13 @@
 				foreach ($entries as $key) {
 
 					$img = $key->fotoPeserta;
-					$ptg = $key->satuTerpenting;
-					$nama = $key->namaLengkap;
-					$tgll = $key->tanggalLahir;
-					$asl = $key->tempatLahir;
+					$ptg = ucfirst($key->satuTerpenting);
+					$nama = ucwords($key->namaLengkap);
+					$tgll = date("Y", strtotime($key->tanggalLahir));
+					$nyear = date("Y",time());
+					$umur = $nyear-$tgll;
+					$asl = ucwords($key->tempatLahir);
+					$prop = ucwords($key->propinsi);
 
 					if($no == 1){
 						echo '<div class="row">';
@@ -73,7 +76,7 @@
 									                <div class="gallery-item--text">
 									                    <div class="gallery-item--text-inner">
 									                        <h3>"'.$ptg.'"</h3>
-									                        <p>'.$nama.', 19 Tahun<br />'.$asl.'</p>
+									                        <p>'.$nama.', '.$umur.' Tahun<br />'.$asl.', '.$prop.'</p>
 									                    </div><!--/ .gallery-item--text-inner -->
 									                </div><!--/ .galery-item--text -->
 									            </div><!--/ .col-xs-12 -->
@@ -90,7 +93,7 @@
 					                            <div class="gallery-item--text">
 					                                <div class="gallery-item--text-inner">
 					                                    <h3>"'.$ptg.'"</h3>
-								                        <p>'.$nama.', 19 Tahun<br />'.$asl.'</p>
+								                        <p>'.$nama.', '.$umur.' Tahun<br />'.$asl.'</p>
 					                                </div><!--/ .gallery-item--text-inner -->
 					                            </div><!--/ .galery-item--text -->
 					                        </div><!--/ .col-xs-12 -->
@@ -121,7 +124,7 @@
 									                <div class="gallery-item--text">
 									                    <div class="gallery-item--text-inner">
 									                        <h3>"'.$ptg.'"</h3>
-									                        <p>'.$nama.', 19 Tahun<br />'.$asl.'</p>
+									                        <p>'.$nama.', '.$umur.' Tahun<br />'.$asl.'</p>
 									                    </div><!--/ .gallery-item--text-inner -->
 									                </div><!--/ .galery-item--text -->
 									            </div><!--/ .col-xs-12 -->
@@ -138,7 +141,7 @@
 					                            <div class="gallery-item--text">
 					                                <div class="gallery-item--text-inner">
 					                                    <h3>"'.$ptg.'"</h3>
-								                        <p>'.$nama.', 19 Tahun<br />'.$asl.'</p>
+								                        <p>'.$nama.', '.$umur.' Tahun<br />'.$asl.'</p>
 					                                </div><!--/ .gallery-item--text-inner -->
 					                            </div><!--/ .galery-item--text -->
 					                        </div><!--/ .col-xs-12 -->
