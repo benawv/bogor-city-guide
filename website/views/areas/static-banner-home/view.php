@@ -1,3 +1,8 @@
+<?php if($this->editmode) { ?>
+	#best-products .slides .product{
+		height: 360px;
+	}
+<?php }?>
 <div style="overflow: hidden; position: relative;" class="flex-viewport">
 <ul style="width: 1600%; transition-duration: 0.6s; transform: translate3d(-2540px, 0px, 0px);" class="slides">
 
