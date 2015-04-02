@@ -213,7 +213,7 @@
                                                         <label for="inputEmail">No. Telp</label>
                                                       </div> 
                                                       <div class="col-sm-4">
-                                                        <input type="tel" name="telp" class="form-control required" id="telp" placeholder="">
+                                                        <input type="tel" name="telp" class="form-control required" id="telp" placeholder="+62812345678">
                                                       </div>
                                                   </div>
 						</div> 
@@ -320,7 +320,7 @@
                                                                             </thead> 
                                                                             <tbody> 
                                                                             <tr> 
-                                                                                <td id="jenisasuransi"></td> 
+                                                                                <td id="jenisasuransi">Comprehensive</td> 
                                                                                 <td class='compre_val'>-</td> 
                                                                                 <td class='compre_persen'>-</td> 
                                                                                 <td class='compre_prem'>-</td>
@@ -449,7 +449,7 @@
                                                                             </thead> 
                                                                             <tbody> 
                                                                             <tr> 
-                                                                                <td id="jenisasuransi2"></td> 
+                                                                                <td id="jenisasuransi2">Comprehensive</td> 
                                                                                 <td class='compre_val2'>-</td> 
                                                                                 <td class='compre_persen2'>-</td> 
                                                                                 <td class='compre_prem2'>-</td>
@@ -578,7 +578,7 @@
                                                                             </thead> 
                                                                             <tbody> 
                                                                             <tr> 
-                                                                                <td id="jenisasuransi3"></td> 
+                                                                                <td id="jenisasuransi3">Comprehensive</td> 
                                                                                 <td class='compre_val'>-</td> 
                                                                                 <td class='compre_persen'>-</td> 
                                                                                 <td class='compre_prem'>-</td>
@@ -737,7 +737,7 @@
                                                                             <tbody> 
                                                                             <tr>
 										<td><input type="checkbox" class='no_compre_is_calc' name="no_compre_is_calc" checked data-angka="0" data-target="no_compre_prem"></td>  
-                                                                                <td id="nojenisasuransi"></td> 
+                                                                                <td id="nojenisasuransi">Comprehensive</td> 
                                                                                 <td class='no_compre_val'>-</td> 
                                                                                 <td class='no_compre_persen'>-</td> 
                                                                                 <td class='no_compre_prem'>-</td>

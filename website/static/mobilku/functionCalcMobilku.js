@@ -1579,14 +1579,13 @@ $(document).ready(function(){
             
 	$( "#periode" ).datepicker({
               onSelect: function(date) {
-                    alert(date);
+                    var a=new Date(date);
+                    var year1=a.setFullYear(a.getFullYear() + 1);
+                    var newdate=new Date(year1);
+                    $( "#periode-last" ).val(newdate.getMonth()+'/'+newdate.getDate()+'/'+newdate.getFullYear());
               }
         });
-        $(this).on('click','#periode',function(){
-             var periode=$(this).val();
-             alert(periode);
-             $( "#periode-last" ).val();  
-        });	
+        
         $(".menutab_dekstop li a").width(100);
 	$(".menutab_dekstop li a").css("width", "225px");
 	$(".tabcontent").css("width", "72%");

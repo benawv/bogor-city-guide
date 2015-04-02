@@ -8,4 +8,4 @@
 <script src="/website/ajfc/js/zabuto_calendar.min.js"></script>
 <script src="/website/ajfc/js/javascripts.js"></script>
 
-<?php echo $this->areablock('halaman-ajfc', array('allowed' => array('home-ajfc','table-text','table-li','proses-seleksi')))?>
+<?php echo $this->areablock('halaman-ajfc', array('allowed' => array('home-ajfc','table-text','table-li','proses-seleksi','galeri-ajfc')))?>

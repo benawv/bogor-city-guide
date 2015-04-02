@@ -1,82 +1,171 @@
 <link rel="stylesheet" href="/website/static/css-ajfc/galeri/style.css" />
-<div class="full-w bg-white">
-	<div class="description">
-		<!--<div>
-			<ul style="list-style: none;width: 100%;margin: 0px;padding: 0px;">-->
-				<?php
-					//$assets = Asset::getByPath('/ajfc/foto-peserta');
-					//$assets->setOrderKey("id");
-					//$assets->setOrder("desc");
-					
-					//$assets = Asset::getList(array(
-					//	"condition" => "path = '/ajfc/foto-peserta/'",
-					//	"orderKey" => array("id"),
-					//	"order" => array("desc")
-					//    ));
-					//
-					//echo "<pre>";
-					//foreach($assets as $row)
-					//{
-					//	//print_r($row->getFilename()."<br />");
-					//}
-				?>
-				<!--<li style="display: inline-block;margin: 3px 1px;"><img src="/website/static/images/AllianzPeduli.jpg" style="width: 310px;height: 200px;" alt="" /></li>
-			</ul>
-		</div>-->
-		
-		<div class="ajfc-gallery-container">
-            
-		<?php //for( $i = 0; $i < 5; $i++ ): ?>
-		
-		<div class="ajfc-gallery-row">
-		    <?php
-			$assets = Asset::getList(array(
-				"condition" => "path = '/ajfc/foto-peserta/'",
-				"orderKey" => array("id"),
-				"order" => array("desc")
-			    ));
-			//echo "<pre>";
-			//foreach($assets as $row){
-			//	print_r($row);
-			//}
-			//die();
-			foreach($assets as $row){
-		    ?>
-		    <div class="ajfc-gallery-item">
-			<a href="#" data-toggle="modal" data-target="#image<?php echo $row->getId();?>">
-			    <img src="<?php echo $row->getPath().$row->getFilename();?>" alt="AJFC-2015-<?php echo $row->getFilename();?>" />
-			    <div class="ajfc-gallery-item--caption">
-				<p>
-				    Lorem Ipsum is simply dummy text<br />
-				    #1ygterpenting<br />
-				    <small>Nama Peserta</small>
-				</p>
-			    </div><!--/ .ajfc-gallery-item--caption -->
-			</a>
-		    </div>
-		    <!-- Modal -->
-			<div class="modal fade" id="image<?php echo $row->getId();?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			  <div class="modal-dialog">
-			    <div class="modal-content">
-			      <div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-			      </div>
-			      <div class="modal-body">
-				<img src="<?php echo $row->getPath().$row->getFilename();?>" alt="AJFC-2015-<?php echo $row->getFilename();?>" />
-			      </div>
-			      <div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<!--<button type="button" class="btn btn-primary">Save changes</button>-->
-			      </div>
-			    </div>
-			  </div>
-			</div>
-		    <?php } ?>
-		</div><!--/ .ajfc-gallery-row -->
-		
-		<?php //endfor; ?>
-		
-	    </div><!--/ .ajfc-gallery-container -->
-	</div>
-</div>
+<header>
+
+    <div class="background">
+    	<?php $asets=Asset::getByPath('/ajfc/bg-home.jpg');?>
+        <img src="<?php echo $asets; ?>" alt="Home" class="img-responsive" />
+    </div><!--/ .background -->
+    <div class="caption">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-9 col-md-6">
+                    <div class="box-dent mt32">
+                        <div class="box-dent--inner">
+                            <h2>Galeri</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut orci metus, interdum non ipsum nec, vulputate euismod metus. Morbi eget sem sed orci interdum lacinia quis ac orci.</p>
+                        </div><!--/ .box-dent--inner -->
+                    </div>
+                </div><!--/ .col-xs-6 -->
+            </div><!--/ .row -->
+        </div><!--/ .container-fluid -->
+    </div><!--/ .caption -->
+
+</header>
+
+<div class="page-wrapper-outer mb72">
+
+<section class="page-wrapper gallery-wrapper mt32 mb72">
+    <div class="container">
+    	<?php
+
+			$posistion = "odd";
+			$no = 1;
+			$num = 0; 
+    		$color = array('','blue','orange','blue-light','green','grey','maroon','purple');
+    		//$entries = new Object_DataPesertaAJFCDefault_List();
+    		$entries = new Object_DataPesertaAJFC_List();
+			$entries->setLimit(8);
+			$jml = count($entries);
+			$sisa = 8 - $jml;
+			//echo $jml.'sisa='.$sisa;
+			if($jml < 8){
+				$n = 2;
+			}else{
+				$n = 1;
+			}
+			while($n>0){
+				if($n==1){
+					$entries = new Object_DataPesertaAJFCDefault_List();
+					$entries->setLimit($sisa);
+				}
+
+				foreach ($entries as $key) {
+
+					$img = $key->fotoPeserta;
+					$ptg = $key->satuTerpenting;
+					$nama = $key->namaLengkap;
+					$tgll = $key->tanggalLahir;
+					$asl = $key->tempatLahir;
+
+					if($no == 1){
+						echo '<div class="row">';
+						if($posistion == "odd")
+							echo '
+									<div class="col-xs-12 col-md-6 nopadding">
+									    <div class="gallery-item '.$color[$num++].'">
+									        <div class="row">
+									            <div class="col-xs-12 col-md-6 nopadding">
+									                <a href="#" class="gallery-item--image">
+									                    <img src="'.$img.'" alt="">
+									                </a>
+									            </div><!--/ .col-xs-12 -->
+									            <div class="col-xs-12 col-md-6 nopadding">
+									                <div class="gallery-item--text">
+									                    <div class="gallery-item--text-inner">
+									                        <h3>"'.$ptg.'"</h3>
+									                        <p>'.$nama.', 19 Tahun<br />'.$asl.'</p>
+									                    </div><!--/ .gallery-item--text-inner -->
+									                </div><!--/ .galery-item--text -->
+									            </div><!--/ .col-xs-12 -->
+									        </div><!--/ .row -->
+									    </div><!--/ .gallery-item -->
+									</div><!--/ .col-xs-12 -->
+							';
+						else
+							echo '
+								<div class="col-xs-12 col-md-6 nopadding">
+					                <div class="gallery-item '.$color[$num++].'">
+					                    <div class="row">
+					                        <div class="col-xs-12 col-md-6 nopadding">
+					                            <div class="gallery-item--text">
+					                                <div class="gallery-item--text-inner">
+					                                    <h3>"'.$ptg.'"</h3>
+								                        <p>'.$nama.', 19 Tahun<br />'.$asl.'</p>
+					                                </div><!--/ .gallery-item--text-inner -->
+					                            </div><!--/ .galery-item--text -->
+					                        </div><!--/ .col-xs-12 -->
+					                        <div class="col-xs-12 col-md-6 nopadding">
+					                            <a href="#" class="gallery-item--image">
+					                                <img src="'.$img.'" alt="">
+					                            </a>
+					                        </div><!--/ .col-xs-12 -->
+					                    </div><!--/ .row -->
+					                </div><!--/ .gallery-item -->
+					            </div><!--/ .col-xs-12 -->
+							';
+						$no++;
+
+					}elseif($no == 2){
+						$no = 1;
+						if($posistion == "odd")
+							echo '
+									<div class="col-xs-12 col-md-6 nopadding">
+									    <div class="gallery-item '.$color[$num++].'">
+									        <div class="row">
+									            <div class="col-xs-12 col-md-6 nopadding">
+									                <a href="#" class="gallery-item--image">
+									                    <img src="'.$img.'" alt="">
+									                </a>
+									            </div><!--/ .col-xs-12 -->
+									            <div class="col-xs-12 col-md-6 nopadding">
+									                <div class="gallery-item--text">
+									                    <div class="gallery-item--text-inner">
+									                        <h3>"'.$ptg.'"</h3>
+									                        <p>'.$nama.', 19 Tahun<br />'.$asl.'</p>
+									                    </div><!--/ .gallery-item--text-inner -->
+									                </div><!--/ .galery-item--text -->
+									            </div><!--/ .col-xs-12 -->
+									        </div><!--/ .row -->
+									    </div><!--/ .gallery-item -->
+									</div><!--/ .col-xs-12 -->
+							';
+						else
+							echo '
+								<div class="col-xs-12 col-md-6 nopadding">
+					                <div class="gallery-item '.$color[$num++].'">
+					                    <div class="row">
+					                        <div class="col-xs-12 col-md-6 nopadding">
+					                            <div class="gallery-item--text">
+					                                <div class="gallery-item--text-inner">
+					                                    <h3>"'.$ptg.'"</h3>
+								                        <p>'.$nama.', 19 Tahun<br />'.$asl.'</p>
+					                                </div><!--/ .gallery-item--text-inner -->
+					                            </div><!--/ .galery-item--text -->
+					                        </div><!--/ .col-xs-12 -->
+					                        <div class="col-xs-12 col-md-6 nopadding">
+					                            <a href="#" class="gallery-item--image">
+					                                <img src="'.$img.'" alt="">
+					                            </a>
+					                        </div><!--/ .col-xs-12 -->
+					                    </div><!--/ .row -->
+					                </div><!--/ .gallery-item -->
+					            </div><!--/ .col-xs-12 -->
+							';
+						echo '</div>';
+
+						if($posistion=="odd")
+							$posistion = "even";
+						else
+							$posistion = "odd";
+
+					}
+				}
+
+				$n--;
+			}
+    	?>
+        
+    </div><!--/ .container -->
+</section><!--/ .page-wrapper -->
+
+</div><!--/ .page-wrapper-outer -->
