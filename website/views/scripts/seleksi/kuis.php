@@ -26,9 +26,11 @@
 <script src="/website/static/mobilku/data-table-1.10.4/media/js/jquery.dataTables.js" type="text/javascript"></script>
     
 <script src="/website/static/mobilku/jquery.validate.min.js"></script>  
-
-
 <!-- End of Header -->
+
+<!--LOADING-->
+<div class="loading-ajfc"><div class="loading-inner"><i class="fa fa-refresh fa-2x fa-spin"></i></div></div>
+<!--END LOADING-->
 
 <div class="container boxes-view">
     <div id="newsletter-allianz" class="full-w bg-white">
@@ -41,7 +43,7 @@
                         <input type="text" name="alt" />
                         <input type="submit" value="kirim" />
                     </form>-->
-                  <form id="myform" method="post" action="/save-kuis" enctype="multipart/form-data">
+                  <form id="myform" method="post" enctype="multipart/form-data">
                     
                     <div class="card wizard-card ct-wizard-blue" id="wizard">
 
@@ -351,12 +353,14 @@
 														<div class="input-group">
 															<span class="input-group-btn">
 																<span class="btn btn-primary btn-file btn-choose">
-																	Pilih <input type="file" name="uploadFoto" />
+																	Pilih <input type="file" name="uploadFoto" class="image_peserta" />
 																</span>
 															</span>
 															<input type="text" class="form-control choose" readonly>
 														</div>
 													</div>
+                                                                                                        <br />
+                                                                                                        <div class="image_peserta_preview"></div>
 												</div>
 												
 												<div class="form-group">
@@ -486,21 +490,75 @@
       
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   
 <script type="text/javascript">
 
 $(document).ready(function() {
-
+//$('#myModal').modal();
     var navListItems = $('div.setup-panel div a'),
             allWells = $('.setup-content'),
             allNextBtn = $('.nextBtn');
 
     allWells.hide();
     
-    //$.each(image, function(k, v) {
-    //    
-    //});
-    //console.log(image[2]);
+    function readImage(file) {
+
+        var reader = new FileReader();
+        var image  = new Image();
+    
+        reader.readAsDataURL(file);  
+        reader.onload = function(_file) {
+            image.src    = _file.target.result;              // url.createObjectURL(file);
+            image.onload = function() {
+                var w = this.width,
+                    h = this.height,
+                    t = file.type,                           // ext only: // file.type.split('/')[1],
+                    n = file.name,
+                    s = ~~(file.size/1024) +'KB';
+                $('.image_peserta_preview').append('<img src="'+ this.src +'" alt="'+n+'"> '+w+'x'+h+' '+s+' '+t+' '+n+'<br>');
+            };
+            image.onerror= function() {
+                alert('Invalid file type: '+ file.type);
+            };      
+        };
+    
+    }
+    $(".image_peserta").change(function (e) {
+        if(this.disabled) return alert('File upload not supported!');
+        var F = this.files;
+        if(F && F[0]) for(var i=0; i<F.length; i++) readImage( F[i] );
+    });
+    
+    $(".btn-next").on("click",function(){
+        $.ajax({
+            url: '/save-kuis',
+            type: 'post',
+            dataType: 'json',
+            data: $('form').serialize(),
+            success: function(data) {
+                alert("success");
+            }
+        });
+    });
     
     $(".btn-previous").on( "click", function() {
         $('html, body').animate({

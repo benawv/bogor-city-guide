@@ -3,6 +3,10 @@
 class KuisController extends Website_Controller_Action {
 	
 	public function saveAction () {
+		echo "<pre>";
+		print_r($_POST);
+		die();
+		
 		if($_POST["term"]=='on')
 		{
 			$term = 1;

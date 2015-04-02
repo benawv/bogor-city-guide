@@ -348,4 +348,24 @@ form button:active {
 
 }
 
-
+.loading-ajfc
+{
+    background: rgba(0,0,0,0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    z-index: 99999;
+    overflow: hidden;
+    display: none;
+}
+.loading-ajfc > .loading-inner
+{
+    position: absolute;
+    top: 50%;
+    @include translateY(-50%);
+    color: white;
+    text-align: center;
+    width: 100%;
+}
