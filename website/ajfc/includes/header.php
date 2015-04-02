@@ -48,6 +48,7 @@
 
     <body>
 
+        <!--
         <div class="loading"><div class="loading-inner"><i class="fa fa-refresh fa-2x fa-spin"></i></div></div><!--/ .loading -->
 
         <?php include( './includes/static-header-body.php' ); ?>
