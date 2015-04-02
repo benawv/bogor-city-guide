@@ -16,8 +16,11 @@
     $include_404    = $include_dir . 'page-404' . $include_ext;
     $page_title     = ucwords( str_replace( '-', ' ', $page ) ) . ' | ' . $project_name;
 
+    $root =  "http://".$_SERVER['HTTP_HOST'];
+    $root .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
+
     if( !file_exists( $include_file ) ) $include_file = $include_404;
-    
+
     include_once( $include_dir . 'header' . $include_ext );
 
     include_once( $include_file );

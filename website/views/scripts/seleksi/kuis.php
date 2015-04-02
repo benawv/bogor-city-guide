@@ -550,7 +550,7 @@ $(document).ready(function() {
             $(".btn-finish").addClass("hide");
         }
         if((no%2) == 1){
-            $(".banner-ajfc").hide();
+            $(".banner-ajfc").fadeOut("slow");
             $(".banner-ajfc").attr("src",shuffleImage[indexImage]);
             $(".banner-ajfc").fadeIn("slow");
         }
@@ -584,7 +584,7 @@ $(document).ready(function() {
         var shuffleImage = shuffle(image);
         var indexImage = <?php echo $jmlImage;?>;
         if((no%2) == 1){
-            $(".banner-ajfc").hide();
+            $(".banner-ajfc").fadeOut("slow");
             $(".banner-ajfc").attr("src",shuffleImage[indexImage]);
             $(".banner-ajfc").fadeIn("slow");
         }

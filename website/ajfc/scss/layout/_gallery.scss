@@ -1,0 +1,113 @@
+section.gallery-wrapper
+{
+    & > .container,
+    & > .container-fluid
+    {
+        & > .row
+        {
+            & > div[class^="col-"]
+            {
+                height: 100%;
+            }
+        }
+    }
+
+    .gallery-item
+    {
+        background: $color_red;
+        position: relative;
+
+        &.blue
+        {
+            background: $color_blue;
+        }
+
+        &.blue-light
+        {
+            background: $color_blue_light;
+        }
+
+        &.green
+        {
+            background: $color_green;
+        }
+
+        &.orange
+        {
+            background: $color_orange;
+        }
+
+        &.grey
+        {
+            background: $color_satan;
+        }
+
+        &.maroon
+        {
+            background: $color_maroon;
+        }
+
+        &.purple
+        {
+            background: $color_purple;
+        }
+
+        & > .row
+        {
+            margin: 0;
+            display: table;
+
+            & > div[class^="col-"]
+            {
+                position: relative;
+                padding: 0;
+                display: table-cell;
+                float: none !important;
+                vertical-align: middle;
+            }
+        }
+
+        .gallery-item--image
+        {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            & > img
+            {
+                width: 100%;
+                min-width: 100%;
+                max-width: 100%;
+                height: auto;
+            }
+        } /* .galery-item--image */
+
+        .gallery-item--text
+        {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .gallery-item--text-inner
+        {
+            padding: 0 28px;
+            color: white;
+            h1, h2, h3, h4, h5, h6, p
+            {
+                margin: 0;
+                padding: 0;
+            }
+            h1, h2, h3, h4, h5, h6
+            {
+                font-size: x-large;
+                line-height: 1.2;
+            }
+            p
+            {
+                margin: 16px 0;
+            }
+        }
+
+    }
+
+}
