@@ -32,7 +32,30 @@
 	</div>
 	
 </div>
+
+<div class="container boxes-view">
 	
+		<?php echo $this->areablock('container5', array('allowed' => array(
+														'sections', 'sections-tab', 'teks-tabs',
+														'sections-video', 'sections-gallery', 
+														'sections-select', 'gallery-carousel',
+														'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
+														'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
+														'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
+														'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
+														'smartlink-factsheet', 'syariah-factsheet',
+														'pension-factsheet', 'saving-factsheet',
+														'smartwealth-factsheet', 'imagekiri-tabelkanan'))); ?>
+		
+</div>
+
+<div class="container boxes-view">
+	<div class="items-container">
+		<?php echo $this->areablock('container0', array('allowed' => array(
+										'container-box-static-platinum'))); ?>
+	</div>
+</div>
+
 <div class="container boxes-view">
 	
 		<?php echo $this->areablock('container', array('allowed' => array(
@@ -45,9 +68,35 @@
 														'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
 														'smartlink-factsheet', 'syariah-factsheet',
 														'pension-factsheet', 'saving-factsheet',
-														'smartwealth-factsheet', 'imagekiri-tabelkanan','container-box-static-platinum'))); ?>
+														'smartwealth-factsheet', 'imagekiri-tabelkanan'))); ?>
 		
 		<?php echo $this->areablock('container-modal', array('allowed' => array('modal')))?>
+</div>
+<div class="container boxes-view">
+	<div class="items-container">
+		<?php echo $this->areablock('container2', array('allowed' => array(
+										'container-box-static-platinum'))); ?>
+	</div>
+</div>
+<div class="container boxes-view">
+	
+		<?php echo $this->areablock('container3', array('allowed' => array(
+														'sections', 'sections-tab', 'teks-tabs',
+														'sections-video', 'sections-gallery', 
+														'sections-select', 'gallery-carousel',
+														'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
+														'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
+														'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
+														'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
+														'smartlink-factsheet', 'syariah-factsheet',
+														'pension-factsheet', 'saving-factsheet',
+														'smartwealth-factsheet', 'imagekiri-tabelkanan'))); ?>
+</div>
+<div class="container boxes-view">
+	<div class="items-container">
+		<?php echo $this->areablock('container4', array('allowed' => array(
+										'container-box-static-platinum'))); ?>
+	</div>
 </div>
 <script type="text/javascript">
 	$(document).ready(function(){
