@@ -5,7 +5,7 @@
 	<meta http-equiv="Cache-control" content="public" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
-	<?php //echo $this->cusMetaTitle.$this->cusMetaDesc.$this->cusMetaImage;?>
+	<?php echo $this->cusMetaTitle.$this->cusMetaDesc.$this->cusMetaImage;?>
 	<?php
         // portal detection => portal needs an adapted version of the layout
         $isPortal = false;
@@ -39,23 +39,21 @@
 	<?php
 	    }
 	    else{
-		echo $this->cusMetaTitle.$this->cusMetaDesc.$this->cusMetaImage;
-	    }
-
-        if($this->document->getTitle()) {
-            // use the manually set title if available
-            $this->headTitle()->set($this->document->getTitle());
-        }
+		if($this->document->getTitle()) {
+		    // use the manually set title if available
+		    $this->headTitle()->set($this->document->getTitle());
+		}
+		
 	
-
-        if($this->document->getDescription()) {
-            // use the manually set description if available
-            $this->headMeta()->appendName('description', $this->document->getDescription());
-        }
-        
-        if($this->document->getKeywords()) {
-            $this->headMeta()->appendName('keywords', $this->document->getKeywords());
-        }
+		if($this->document->getDescription()) {
+		    // use the manually set description if available
+		    $this->headMeta()->appendName('description', $this->document->getDescription());
+		}
+		
+		if($this->document->getKeywords()) {
+		    $this->headMeta()->appendName('keywords', $this->document->getKeywords());
+		}
+	    }
 
         /* $this->headTitle()->append("Asuransi Indonesia Terbaik");
         $this->headTitle()->setSeparator(" : "); */
