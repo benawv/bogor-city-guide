@@ -18,11 +18,31 @@
             // use "home" document as default if no document is present
             $this->document = Document::getById(1);
         }
+	//echo "<pre>";
+	//print_r($this->request->action);
+	//die();
+	
+	    if($this->request->controller == 'community' && $this->request->action == 'detail')
+	    {
+		$id = $this->_getParam('id');
+		$entries = Object_Abstract::getById($id);
+		$data = $entries;
+		$metaCustom = $data->getProperties()
+		//echo "<pre>";
+		//print_r($data->getProperties());
+		//die();
+	?>
+		<title><?php echo $metaCustom['title']->data;?></title>
+		<meta name="description" content="<?php echo $metaCustom['description']->data;?>" >
+		<meta name="keywords" content="<?php echo $metaCustom['keywords']->data;?>" >
+	<?php
+	    }
 
         if($this->document->getTitle()) {
             // use the manually set title if available
             $this->headTitle()->set($this->document->getTitle());
         }
+	
 
         if($this->document->getDescription()) {
             // use the manually set description if available

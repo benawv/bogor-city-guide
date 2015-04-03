@@ -96,6 +96,11 @@ class CommunityController extends Website_Controller_Action {
 		$entries = Object_Abstract::getById($id);
 		$data = $entries;
 		
+		//echo "<pre>";
+		//print_r($data->getProperties());
+		//echo "test";
+		//die();
+		
 		if($entries->getVideo()){
 			$v = $entries->getVideo();
 			$videoData = $v->getData();
