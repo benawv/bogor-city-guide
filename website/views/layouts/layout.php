@@ -5,7 +5,7 @@
 	<meta http-equiv="Cache-control" content="public" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
-	<?php echo $this->cusMetaTitle.$this->cusMetaDesc.$this->cusMetaImage;?>
+	<?php //echo $this->cusMetaTitle.$this->cusMetaDesc.$this->cusMetaImage;?>
 	<?php
         // portal detection => portal needs an adapted version of the layout
         $isPortal = false;
@@ -27,15 +27,19 @@
 		$id = $this->_getParam('id');
 		$entries = Object_Abstract::getById($id);
 		$data = $entries;
-		$metaCustom = $data->getProperties()
+		
+		//$metaCustom = $data->getProperties()
 		//echo "<pre>";
 		//print_r($data->getProperties());
 		//die();
 	?>
-		<title><?php echo $metaCustom['title']->data;?></title>
-		<meta name="description" content="<?php echo $metaCustom['description']->data;?>" >
-		<meta name="keywords" content="<?php echo $metaCustom['keywords']->data;?>" >
+		<title><?php echo $data->getMetaTitle();?></title>
+		<meta name="description" content="<?php echo $data->getMetaDescription();?>" >
+		<meta name="keywords" content="<?php echo $data->getMetaKeywords();?>" >
 	<?php
+	    }
+	    else{
+		echo $this->cusMetaTitle.$this->cusMetaDesc.$this->cusMetaImage;
 	    }
 
         if($this->document->getTitle()) {
