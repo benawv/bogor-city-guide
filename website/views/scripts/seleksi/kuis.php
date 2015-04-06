@@ -43,7 +43,7 @@
                         <input type="text" name="alt" />
                         <input type="submit" value="kirim" />
                     </form>-->
-                  <form id="myform" method="post" enctype="multipart/form-data">
+                  <form id="myform" method="post" action="/save-kuis" enctype="multipart/form-data">
                     
                     <div class="card wizard-card ct-wizard-blue" id="wizard">
 
@@ -365,12 +365,15 @@
 												
 												<div class="form-group">
 													<label for="pilih">Like Facebook Fanpage</label>
-													<div class="fb-like">
-														<img src="/website/static/images/ajfc/fb-like.png" />
-													</div>
-													<div class="fb-link">
-														<a href="https://www.facebook.com/AJFCIndonesia">AJFC Indonesia</a>
-													</div>
+													<a href="https://www.facebook.com/AJFCIndonesia" target="_blank" class="fbAJFC">
+                                                                                                            <div class="fb-like">
+                                                                                                                    <img src="/website/static/images/ajfc/fb-like.png" />
+                                                                                                            </div>
+                                                                                                            <div class="fb-link">
+                                                                                                                    AJFC Indonesia
+                                                                                                            </div>
+                                                                                                            <input style="border: 0 solid #fff;box-shadow: inherit;pointer-events:none;" readonly="readonly" type="text" name="clickFB" class="form-control" id="clickFB" value="" />
+                                                                                                        </a>
 												</div>
 
                                               </div>
@@ -520,45 +523,49 @@ $(document).ready(function() {
 
     allWells.hide();
     
-    function readImage(file) {
-
-        var reader = new FileReader();
-        var image  = new Image();
+    //function readImage(file) {
+    //
+    //    var reader = new FileReader();
+    //    var image  = new Image();
+    //
+    //    reader.readAsDataURL(file);  
+    //    reader.onload = function(_file) {
+    //        image.src    = _file.target.result;              // url.createObjectURL(file);
+    //        image.onload = function() {
+    //            var w = this.width,
+    //                h = this.height,
+    //                t = file.type,                           // ext only: // file.type.split('/')[1],
+    //                n = file.name,
+    //                s = ~~(file.size/1024) +'KB';
+    //            $('.image_peserta_preview').append('<img src="'+ this.src +'" alt="'+n+'"> '+w+'x'+h+' '+s+' '+t+' '+n+'<br>');
+    //        };
+    //        image.onerror= function() {
+    //            alert('Invalid file type: '+ file.type);
+    //        };      
+    //    };
+    //
+    //}
+    //$(".image_peserta").change(function (e) {
+    //    if(this.disabled) return alert('File upload not supported!');
+    //    var F = this.files;
+    //    if(F && F[0]) for(var i=0; i<F.length; i++) readImage( F[i] );
+    //});
     
-        reader.readAsDataURL(file);  
-        reader.onload = function(_file) {
-            image.src    = _file.target.result;              // url.createObjectURL(file);
-            image.onload = function() {
-                var w = this.width,
-                    h = this.height,
-                    t = file.type,                           // ext only: // file.type.split('/')[1],
-                    n = file.name,
-                    s = ~~(file.size/1024) +'KB';
-                $('.image_peserta_preview').append('<img src="'+ this.src +'" alt="'+n+'"> '+w+'x'+h+' '+s+' '+t+' '+n+'<br>');
-            };
-            image.onerror= function() {
-                alert('Invalid file type: '+ file.type);
-            };      
-        };
-    
-    }
-    $(".image_peserta").change(function (e) {
-        if(this.disabled) return alert('File upload not supported!');
-        var F = this.files;
-        if(F && F[0]) for(var i=0; i<F.length; i++) readImage( F[i] );
+    //loading-ajfc
+    $(".btn-finish").on("click",function(){
+        $(".loading-ajfc").show();
     });
-    
-    $(".btn-next").on("click",function(){
-        $.ajax({
-            url: '/save-kuis',
-            type: 'post',
-            dataType: 'json',
-            data: $('form').serialize(),
-            success: function(data) {
-                alert("success");
-            }
-        });
-    });
+    //$(".btn-next").on("click",function(){
+    //    $.ajax({
+    //        url: '/save-kuis',
+    //        type: 'post',
+    //        dataType: 'json',
+    //        data: $('form').serialize(),
+    //        success: function(data) {
+    //            alert("success");
+    //        }
+    //    });
+    //});
     
     $(".btn-previous").on( "click", function() {
         $('html, body').animate({
@@ -696,6 +703,10 @@ $(document).on('change', '.btn-file :file', function() {
 });
 
 $(document).ready( function() {
+    $(".fbAJFC").on("click",function(){
+        $("#clickFB").remove();
+        $(".fbAJFC").find(".error").remove();
+    });
     $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
         
         var input = $(this).parents('.input-group').find(':text'),
@@ -738,6 +749,10 @@ $(function() {
           {
             required: true
           },
+          clickFB: 
+          {
+            required: true
+          },
           noHp: 
           {
             required: true,
@@ -752,27 +767,27 @@ $(function() {
           {
             required: true
           },
-			halTerpenting:
-		  {
-			required: true
-		  },
-			uploadFoto:
-		  {
-			required: true
-		  },
-			pekerjaan:
-		  {
-			required: true
-		  },
-			'info[]':
-		  { 
-			required:true
-		  },
-		  term:
-		  { 
-			required:true
-		  }
-		},	
+                halTerpenting:
+          {
+                required: true
+          },
+                uploadFoto:
+          {
+                required: true
+          },
+                pekerjaan:
+          {
+                required: true
+          },
+                'info[]':
+          { 
+                required:true
+          },
+          term:
+          { 
+                required:true
+          }
+        },	
         messages: 
         {
 		  pasport: 
@@ -798,6 +813,10 @@ $(function() {
           propinsi: 
           {
             required: "Mohon pilih propinsi"
+          },
+          clickFB: 
+          {
+            required: "Mohon untuk me-Like FB AJFC Indonesia"
           },
 		   emailOrtu: 
           {
