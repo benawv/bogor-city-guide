@@ -63,9 +63,15 @@ class KuisController extends Website_Controller_Action {
 		$getNomer->setOrderKey("noLari");
 		$getNomer->setOrder("desc");
 		$getNomer->setLimit(1);
+		$setLari = "";
 		foreach($getNomer as $lari)
 		{
 			$setLari = $lari->getNoLari()+1;
+		}
+		if($setLari == 0)
+		{
+			$setLari = "";
+			$setLari = 1;
 		}
 		
 		$saveKuis = Object_DataPesertaAJFC::getById($idPeserta[0]);

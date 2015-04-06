@@ -16,7 +16,7 @@
 <footer role="contentinfo" class="contentinfo">
 	<div class="meta clearfix">
 		<div class="container mw960">
-			<div class="statement">&copy; Allianz 2014. All Rights Reserved.</div>
+			<div class="statement">&copy; Allianz 2015. All Rights Reserved.</div>
 			<ul class="static-links">
 				<li><a href="/data-privasi/prinsip-privasi">Kebijakan Privasi</a></li>
 				<li><a href="/sitemap/sitemap" target="_blank">Sitemap</a></li>
@@ -32,44 +32,47 @@
 	<?php
 		$db = Pimcore_Resource_Mysql::get();
 		$sql = "SELECT o_id FROM objects
-				where o_key = 'footer'";
+				where o_key = 'footer-ajfc'";
 		$footer = $db->fetchAll($sql);
 		$idFooter = $footer[0][o_id];
 		
 		$sql2 = "SELECT * FROM objects
 				where o_parentId = '".$idFooter."'";
 		$footerList = $db->fetchAll($sql2);
+		
+		$footerAJFC = new Object_FooterAJFC_List();
 	?>
 		<div class="container clearfix mw960">
 			<ul class="footer-links level1">
-				<?php foreach ($footerList as $row){?>
+				<?php foreach ($footerAJFC as $row){?>
 					<li class="left wi200">
-						<a>
+						<!--<a>-->
 							<?php
-								$title = explode("-", $row[o_key]);
-								foreach ($title as $jdl)
-								{
-									echo strtoupper(substr($jdl, 0, 1))."".substr($jdl, 1)." ";
-								}
+								echo $row->getLink();
+								//$title = explode("-", $row[o_key]);
+								//foreach ($title as $jdl)
+								//{
+								//	echo strtoupper(substr($jdl, 0, 1))."".substr($jdl, 1)." ";
+								//}
 							?>
-						</a>
-						<ul class="level2">
+						<!--</a>-->
+						<!--<ul class="level2">-->
 							<?php
-								$sql3 = "SELECT o_id FROM objects
-										where o_parentId = '".$row[o_id]."'";
-								$list = $db->fetchAll($sql3);
-								foreach ($list as $row2){
-									$entries = new Object_Footer_List();
-									$entries->setCondition('oo_id="'.$row2[o_id].'"');
-									foreach ($entries as $data)
-									{
+								//$sql3 = "SELECT o_id FROM objects
+								//		where o_parentId = '".$row[o_id]."'";
+								//$list = $db->fetchAll($sql3);
+								//foreach ($list as $row2){
+								//	$entries = new Object_Footer_List();
+								//	$entries->setCondition('oo_id="'.$row2[o_id].'"');
+								//	foreach ($entries as $data)
+								//	{
 							?>
-										<li><?php echo $data->getLink();?></li>
+										<!--<li><?php //echo $data->getLink();?></li>-->
 							<?php
-									}
-								}
+								//	}
+								//}
 							?>
-						</ul>
+						<!--</ul>-->
 					</li>
 				<?php }?>
 				
@@ -140,7 +143,7 @@
 				<a data-target="#modalSoc" href="#" data-toggle="modal"><img title="We are Socially Devoted!" alt="Socially Devoted Badge" src="/website/static/images/badge.png" class="badge-logo"></a>
 			</div>
 			<div>
-				Allianz Indonesia <a href="http://www.allianz.co.id">www.allianz.co.id</a>
+				Allianz Indonesia <a href="http://www.allianz.co.id" target="_blank">www.allianz.co.id</a>
 			</div>
 			<div class="mobileAktif"></div>
 			<div class="ojk-img">

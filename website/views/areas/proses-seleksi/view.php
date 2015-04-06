@@ -5,35 +5,35 @@
     </div><!--/ .background -->
     
 </header>
-
+<div class="page-wrapper-outer" style="min-height: 646px;">
 <section class="page-wrapper mt32 mb72">
 
-    <nav class="main-navigation">
+    <!--<nav class="main-navigation">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-md-3">
                     <a href="?p=proses-seleksi" class="nav-item green sitemap">
                         <h4><small>01</small> Mekanisme.</h4>
                     </a>
-                </div><!--/ .col-xs-12 -->
+                </div>
                 <div class="col-xs-12 col-md-3">
                     <a href="#" class="nav-item orange trophy">
                         <h4><small>02</small> Hadiah.</h4>
                     </a>
-                </div><!--/ .col-xs-12 -->
+                </div>
                 <div class="col-xs-12 col-md-3">
                     <a href="?p=faq" class="nav-item grey question">
                         <h4><small>03</small> FAQ.</h4>
                     </a>
-                </div><!--/ .col-xs-12 -->
+                </div>
                 <div class="col-xs-12 col-md-3">
                     <a href="?p=privacy-policy" class="nav-item users">
                         <h4><small>04</small> Daftar Peserta.</h4>
                     </a>
-                </div><!--/ .col-xs-12 -->
-            </div><!--/ .row -->
-        </div><!--/ .container -->
-    </nav>
+                </div>
+            </div>
+        </div>
+    </nav>-->
     
     <div class="container">
         <div class="row">
@@ -114,3 +114,4 @@
         </div><!--/ .row -->
     </div><!--/ .container -->
 </section>
+</div>
