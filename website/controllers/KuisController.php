@@ -278,6 +278,7 @@ class KuisController extends Website_Controller_Action {
 	public function sendAction($nomer,$email){
 		$mail = new Pimcore_Mail();
 		$mail->setSubject("AJFC Indonesia No Lari");
+		$mail->setBodyText("This is just plain text");
 		$mail->setFrom("no-reply@ajfc.allianz.co.id","AJFC 2015");
 		$mail->addTo($email);
 
