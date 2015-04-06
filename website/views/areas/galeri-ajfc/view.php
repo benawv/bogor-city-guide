@@ -34,6 +34,7 @@
     		$color = array('','blue','orange','blue-light','green','grey','maroon','purple');
     		//$entries = new Object_DataPesertaAJFCDefault_List();
     		$entries = new Object_DataPesertaAJFC_List();
+		$entries->setCondition("`statusSubmitKuis` = 1");
 			$entries->setLimit(8);
 			$jml = count($entries);
 			$sisa = 8 - $jml;
