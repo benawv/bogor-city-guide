@@ -73,89 +73,158 @@
 
                                 <div class="row mb16">
                                     <div class="col-xs-12 col-md-6">
-                                        <label>Nama Lengkap<span>*</span> (Sesuai akte kelahiran/Passport)</label>
-                                        <input type="text" readonly="readonly" class="form-control" id="nama" value="" name="nama" placeholder="Nama Lengkap">
+
+                                        <div class="form-group mb16">
+                                            <label>Nama Lengkap<span>*</span> (Sesuai akte kelahiran/Passport)</label>
+                                            <input type="text" readonly="readonly" class="form-control" name="nama" id="nama" value="" placeholder="Nama Lengkap">
+                                        </div><!--/ .form-group -->
+
+                                        <div class="form-group mb16">
+                                            <label>Tempat/Tanggal Lahir<span>*</span> (Kota, DD/MM/YYY)</label>
+                                            <div class="">
+                                                <input type="text" class="form-control ttl" id="tmp-lahir" placeholder="Kota">
+                                                <input type="text" class="form-control ttl" id="tgl-lahir" placeholder="DD/MM/YYYY">
+                                            </div><!--/  -->
+                                        </div><!--/ .form-group -->
+
+                                        <div class="form-group mb16">
+                                            <label>Jenis Kelamin<span>*</span></label>
+                                            <div class="form-group">
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="radio" id="laki-laki" value="Laki-laki"> Laki-laki
+                                                </label><!--/ .radio-inline -->
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="radio" id="perempuan" value="Perempuan"> Perempuan
+                                                </label><!--/ .radio-inline -->
+                                            </div><!--/ .form-group -->
+                                        </div><!--/ .form-group -->
+
+                                        <div class="form-group mb16">
+                                            <label>Apakah kamu memiliki Passport?<span>*</span></label>
+                                            <div class="form-group">
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="radio-yt" id="ya" value="Ya"> Ya
+                                                </label><!--/ .radio-inline -->
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="radio-yt" id="tidak" value="Tidak"> Tidak
+                                                </label><!--/ .radio-inline -->
+                                            </div><!--/ .form-group -->
+                                        </div><!--/ .form-group -->
+
+                                        <div class="form-group mb16">
+                                            <label>Email<span>*</span></label>
+                                            <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                                        </div><!--/ .form-group -->
+
+                                        <div class="form-group mb16">
+                                            <label>Nomor Telepon/HP<span>*</span></label>
+                                            <input type="text" class="form-control" id="no-tlp" placeholder="Nomor Telepon/HP">
+                                        </div><!--/ .form-group -->
+
+                                        <div class="form-group mb16">
+                                            <label>Kota/Propinsi<span>*</span></label>
+                                            <input type="text" readonly="readonly" class="form-control" id="nama" value="" name="nama" placeholder="Nama Lengkap">
+                                        </div><!--/ .form-group -->
+
+                                        <div class="form-group mb16">
+                                            <label>Alamat Tinggal<span>*</span></label>
+                                            <textarea class="form-control" rows="3" style="height:70px !important" placeholder="Alamat Tinggal"></textarea>
+                                        </div><!--/ .form-group -->
+
                                     </div><!--/ .col-xs-12 -->
                                     <div class="col-xs-12 col-md-6">
-                                        <label>Nama Orang Tua/Wali<span>*</span></label>
-                                        <input type="text" readonly="readonly" class="form-control" id="nama" value="" name="nama" placeholder="Nama Lengkap">
+
+                                        <div class="form-group mb16">
+                                            <label>Nama Orang Tua/Wali<span>*</span></label>
+                                            <input type="text" class="form-control" id="nama-ortu" placeholder="Nama Orang Tua/Wali">
+                                        </div><!--/ .form-group -->
+
+                                        <div class="form-group mb16">
+                                            <label>No. HP Orang Tua/Wali<span>*</span></label>
+                                            <input type="text" class="form-control" id="hp-ortu" placeholder="No.HP Orang Tua/Wali">
+                                        </div><!--/ .form-group -->
+
+                                        <div class="form-group mb16">
+                                            <label>Email Orang Tua</label>
+                                            <input type="email" class="form-control" id="email-ortu" placeholder="Email Orang Tua">
+                                        </div><!--/ .form-group -->
+
+                                        <div class="form-group mb16">
+                                            <label>Alamat Orang Tua<span>*</span></label>
+                                            <textarea class="form-control" rows="3" style="height:70px !important" placeholder="Alamat Orang Tua"></textarea>
+                                        </div><!--/ .form-group -->
+
+                                        <div class="form-group mb16">
+                                            <label>Pekerjaan Orang Tua<span>*</span></label>
+                                            <div class="form-group">
+                                            <div class="form-group nomargin">
+                                            <label class="radio-inline">
+                                            <input type="radio" name="radio-job" id="kary-swasta" value="Ya"> Karyawan Swasta
+                                            </label>
+                                            </div>
+                                            <div class="form-group nomargin">
+                                            <label class="radio-inline">
+                                            <input type="radio" name="radio-job" id="pns" value="Ya"> Pegawai Negeri
+                                            </label>
+                                            </div>
+                                            <div class="form-group nomargin">
+                                            <label class="radio-inline">
+                                            <input type="radio" name="radio-job" id="wirausaha" value="Ya"> Wirausaha
+                                            </label>
+                                            </div>
+                                            <div class="form-group nomargin">
+                                            <label class="radio-inline">
+                                            <input type="radio" name="radio-job" id="lainnya" value="Ya"> Lainnya
+
+                                            <div class="form-group mt16">
+                                            <input type="text" class="form-control" id="txt-lainnya" placeholder="Pekerjaan Lain">
+                                            </div>
+                                            </label>
+                                            </div>
+                                            </div>
+                                        </div><!--/ .form-group -->
+
+                                        <div class="form-group mb16">
+                                            <label>Dari mana kamu mendapatkan informasi mengenai kamp ini?<span>*</span></label>
+                                            <div class="form-group">
+                                            <div class="form-group nomargin">
+                                            <label class="checkbox-inline">
+                                            <input type="checkbox" name="checkbox1" id="reklame" value="Papan Reklame"> Papan Reklame
+                                            </label>
+                                            </div>
+                                            <div class="form-group nomargin">
+                                            <label class="checkbox-inline">
+                                            <input type="checkbox" name="checkbox2" id="medsos" value="Media Sosial"> Media Sosial (Facebook, Twitter, dll)
+                                            </label>
+                                            </div>
+                                            <div class="form-group nomargin">
+                                            <label class="checkbox-inline">
+                                            <input type="checkbox" name="checkbox3" id="web" value="Website Allianz"> Website Allianz
+                                            </label>
+                                            </div>
+                                            <div class="form-group nomargin">
+                                            <label class="checkbox-inline">
+                                            <input type="checkbox" name="checkbox4" id="kunjungan" value="Kunjungan Sekolah"> Kunjungan Sekolah/ SSB
+                                            </label>
+                                            </div>
+                                            <div class="form-group nomargin">
+                                            <label class="checkbox-inline">
+                                            <input type="checkbox" name="checkbox5" id="ortu" value="Orang Tua"> Orang Tua/ Teman/ Saudara
+                                            </label>
+                                            </div>
+                                            </div>
+                                        </div><!--/ .form-group -->
                                     </div><!--/ .col-xs-12 -->
                                 </div><!--/ .row -->
 
                                 <div class="row mb16">
-                                    <div class="col-xs-12 col-md-6">
-                                        <label>Tempat/Tanggal Lahir<span>*</span> (Kota, DD/MM/YYY)</label>
-                                        <input type="text" readonly="readonly" class="form-control" id="nama" value="" name="nama" placeholder="Nama Lengkap">
-                                    </div><!--/ .col-xs-12 -->
-                                    <div class="col-xs-12 col-md-6">
-                                        <label>No. Telepon Orang Tua/Wali<span>*</span></label>
-                                        <input type="text" readonly="readonly" class="form-control" id="nama" value="" name="nama" placeholder="Nama Lengkap">
-                                    </div><!--/ .col-xs-12 -->
-                                </div><!--/ .row -->
-
-                                <div class="row mb16">
-                                    <div class="col-xs-12 col-md-6">
-                                        <label>Jenis Kelamin<span>*</span></label>
-                                        <input type="text" readonly="readonly" class="form-control" id="nama" value="" name="nama" placeholder="Nama Lengkap">
-                                    </div><!--/ .col-xs-12 -->
-                                    <div class="col-xs-12 col-md-6">
-                                        <label>Email Orang Tua</label>
-                                        <input type="text" readonly="readonly" class="form-control" id="nama" value="" name="nama" placeholder="Nama Lengkap">
-                                    </div><!--/ .col-xs-12 -->
-                                </div><!--/ .row -->
-
-                                <div class="row mb16">
-                                    <div class="col-xs-12 col-md-6">
-                                        <label>Apakah kamu memiliki Passport?<span>*</span></label>
-                                        <input type="text" readonly="readonly" class="form-control" id="nama" value="" name="nama" placeholder="Nama Lengkap">
-                                    </div><!--/ .col-xs-12 -->
-                                    <div class="col-xs-12 col-md-6">
-                                        <label>Alamat Orang Tua<span>*</span></label>
-                                        <input type="text" readonly="readonly" class="form-control" id="nama" value="" name="nama" placeholder="Nama Lengkap">
-                                    </div><!--/ .col-xs-12 -->
-                                </div><!--/ .row -->
-
-                                <div class="row mb16">
-                                    <div class="col-xs-12 col-md-6">
-                                        <label>Nama Lengkap<span>*</span> (Sesuai akte kelahiran/Passport)</label>
-                                        <input type="text" readonly="readonly" class="form-control" id="nama" value="" name="nama" placeholder="Nama Lengkap">
-                                    </div><!--/ .col-xs-12 -->
-                                    <div class="col-xs-12 col-md-6">
-                                        <label>Nama Orang Tua/Wali<span>*</span></label>
-                                        <input type="text" readonly="readonly" class="form-control" id="nama" value="" name="nama" placeholder="Nama Lengkap">
-                                    </div><!--/ .col-xs-12 -->
-                                </div><!--/ .row -->
-
-                                <div class="row mb16">
-                                    <div class="col-xs-12 col-md-6">
-                                        <label>Nama Lengkap<span>*</span> (Sesuai akte kelahiran/Passport)</label>
-                                        <input type="text" readonly="readonly" class="form-control" id="nama" value="" name="nama" placeholder="Nama Lengkap">
-                                    </div><!--/ .col-xs-12 -->
-                                    <div class="col-xs-12 col-md-6">
-                                        <label>Nama Orang Tua/Wali<span>*</span></label>
-                                        <input type="text" readonly="readonly" class="form-control" id="nama" value="" name="nama" placeholder="Nama Lengkap">
-                                    </div><!--/ .col-xs-12 -->
-                                </div><!--/ .row -->
-
-                                <div class="row mb16">
-                                    <div class="col-xs-12 col-md-6">
-                                        <label>Nama Lengkap<span>*</span> (Sesuai akte kelahiran/Passport)</label>
-                                        <input type="text" readonly="readonly" class="form-control" id="nama" value="" name="nama" placeholder="Nama Lengkap">
-                                    </div><!--/ .col-xs-12 -->
-                                    <div class="col-xs-12 col-md-6">
-                                        <label>Nama Orang Tua/Wali<span>*</span></label>
-                                        <input type="text" readonly="readonly" class="form-control" id="nama" value="" name="nama" placeholder="Nama Lengkap">
-                                    </div><!--/ .col-xs-12 -->
-                                </div><!--/ .row -->
-
-                                <div class="row mb16">
-                                    <div class="col-xs-12 col-md-6">
-                                        <label>Nama Lengkap<span>*</span> (Sesuai akte kelahiran/Passport)</label>
-                                        <input type="text" readonly="readonly" class="form-control" id="nama" value="" name="nama" placeholder="Nama Lengkap">
-                                    </div><!--/ .col-xs-12 -->
-                                    <div class="col-xs-12 col-md-6">
-                                        <label>Nama Orang Tua/Wali<span>*</span></label>
-                                        <input type="text" readonly="readonly" class="form-control" id="nama" value="" name="nama" placeholder="Nama Lengkap">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" id="checkbox-term" value="Term">
+                                                Saya setuju dengan ketentuan yang berlaku. Baca syarat dan ketentuan.
+                                            </label>
+                                        </div><!--/ .form-group -->
                                     </div><!--/ .col-xs-12 -->
                                 </div><!--/ .row -->
 

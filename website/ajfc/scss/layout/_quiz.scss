@@ -223,11 +223,18 @@
 
             input[type="text"],
             input[type="password"],
-            input[type="email"]
+            input[type="email"],
+            textarea
             {
                 padding: 8px 12px;
                 border: solid 1px $color_grey_light;
                 width: 100%;
+
+                &:focus
+                {
+                    border: solid 1px darken($color_grey_light, 10%);
+                }
+
             }
 
         }

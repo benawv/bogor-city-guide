@@ -1205,10 +1205,16 @@ section.gallery-wrapper .gallery-item {
           padding: 0 0 0 4px; }
       .quiz-pages .quiz-page .quiz-page--form input[type="text"],
       .quiz-pages .quiz-page .quiz-page--form input[type="password"],
-      .quiz-pages .quiz-page .quiz-page--form input[type="email"] {
+      .quiz-pages .quiz-page .quiz-page--form input[type="email"],
+      .quiz-pages .quiz-page .quiz-page--form textarea {
         padding: 8px 12px;
         border: solid 1px #e8eaea;
         width: 100%; }
+        .quiz-pages .quiz-page .quiz-page--form input[type="text"]:focus,
+        .quiz-pages .quiz-page .quiz-page--form input[type="password"]:focus,
+        .quiz-pages .quiz-page .quiz-page--form input[type="email"]:focus,
+        .quiz-pages .quiz-page .quiz-page--form textarea:focus {
+          border: solid 1px #cdd2d2; }
 
 /* .quiz-pages */
 nav.primary a:hover {
