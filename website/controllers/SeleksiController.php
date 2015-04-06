@@ -16,6 +16,7 @@ class SeleksiController extends Website_Controller_Action {
 				if($tgl1 <= $tgl2)
 				{
 					$this->enableLayout();
+					$this->setLayout('ajfc');
 					$this->view->peserta = $data;
 				}
 				else{

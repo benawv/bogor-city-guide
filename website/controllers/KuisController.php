@@ -250,6 +250,8 @@ class KuisController extends Website_Controller_Action {
 		//
 		//// Output PDF
 		//$pdf->save('website/static/pdf-no-lari/hello123.pdf');
+		
+		 return $pdf->render();
 
 	}
 	
@@ -275,16 +277,16 @@ class KuisController extends Website_Controller_Action {
 	
 	public function sendAction($nomer,$email){
 		$mail = new Pimcore_Mail();
-		$mail->setSubject("Test Email");
-		$mail->setBodyText("This is just plain text");
+		$mail->setSubject("AJFC Indonesia No Lari");
 		$mail->setFrom("no-reply@ajfc.allianz.co.id","AJFC 2015");
 		$mail->addTo($email);
 
 		$file = 'website/static/pdf-no-lari/'.$nomer.'.pdf';
 		$at = new Zend_Mime_Part(file_get_contents($file));
 		$at->filename = basename($file);
+		$at->type = 'application/pdf';
 		$at->disposition = Zend_Mime::DISPOSITION_ATTACHMENT;
-		$at->encoding = Zend_Mime::ENCODING_8BIT;
+		$at->encoding = Zend_Mime::ENCODING_BASE64;
 
 		$mail->addAttachment($at);
 
