@@ -56,18 +56,60 @@
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-6 calendar-info pl0">
                 <div class="calendar-info--inner">
+                    <?php 
+                        $bulanInd = array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
+                        $entries = new Object_CalenderAJFC_List();
+                        $entries->setLimit(1);
+                        foreach ($entries as $key) {
+                            $d = date("d",strtotime($key->date));
+                            $m = date("m",strtotime($key->date));
+                            $y = date("Y",strtotime($key->date));
+                            $title = $key->title;
+                            $event = $key->event;
+                        }
+                    ?>
+
+                <?php 
+                    $entries = new Object_CalenderAJFC_List();
+                    $count = count($entries);
+                    $no = 1;
+                    $temp = "";
+                    foreach ($entries as $key) {
+                        $date = date("Y-m-d",strtotime($key->date));
+                        $title = $key->title;
+                        $event = $key->event;
+                        if($no == 1)
+                            $a = array(array("date"=>$date,
+                                    "badge"=>true,
+                                    "title"=>$title,
+                                    "body"=>$event));
+                        else
+                            array_push($a,array("date"=>$date,
+                                    "badge"=>true,
+                                    "title"=>$title,
+                                    "body"=>$event)
+                                );
+                        //{"date",$date,"badge":true,"title":$title,"body":$event};
+                        /*'{
+                                    "date":"'.$date.'",
+                                    "badge":true,
+                                    "title":"'.$title.'",
+                                    "body":"'.$event.'"
+                                }';*/
+                        //if($no != $count)
+                          //  $temp .= ',';
+                        $no++;
+                    }
+                    $encode = json_encode($a);
+                ?>
                     <div class="header">
                         <h2>Kalender Event</h2>
                     </div>
                     <div class="body">
-                        <h2 id="calendar-title">Wawancara Tahap Pertama</h2>
-                        <p><small id="calendar-date">14 Maret 2015</small></p>
+                        <h2 id="calendar-title"><?php echo $title; ?></h2>
+                        <p><small id="calendar-date"><?php echo $d.' '.$bulanInd[$m-1].' '.$y; ?></small></p>
                         <p id="calendar-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut orci metus, 
-                            interdum non ipsum nec, vulputate euismod metus. Morbi eget sem sed orci interdum 
-                            lacinia quis ac orci. Mauris pretium lorem non leo faucibus, id semper nisl placerat. 
-                            Nulla maximus tempor metus, a pretium velit tempus et. Mauris convallis eros ligula, 
-                            vitae bibendum sem dapibus finibus.
+                            <?php echo $event; ?>
                         </p>
                     </div><!--/ .body -->
                     <a href="#" class="btn-edge"></a>
@@ -75,7 +117,7 @@
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
     </div><!--/ .container -->
-    
+
     <script>
     
         $(function(){
@@ -94,20 +136,7 @@
                  * Do not use Zabuto's native ajax data options 
                  */
                 
-                var eventData = [
-                    {
-                        "date":"2015-04-01",
-                        "badge":true,
-                        "title":"April Fools Day",
-                        "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut orci metus, interdum non ipsum nec, vulputate euismod metus. Morbi eget sem sed orci interdum lacinia quis ac orci. Mauris pretium lorem non leo faucibus, id semper nisl placerat. Nulla maximus tempor metus, a pretium velit tempus et"
-                    },
-                    {
-                        "date":"2015-04-14",
-                        "badge":true,
-                        "title":"Sample",
-                        "body":"Booom boom boom~ uye uye uye~"
-                    }
-                ];
+                var eventData = <?php echo $encode; ?>;
 
                 $( '#my-calendar' ).zabuto_calendar({
                     language: "en",
@@ -142,7 +171,7 @@
                 function convertDate( date )
                 {
                     var date_array = date.split( "-" );
-                    var months = [ "Januari", "Pebruari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "Nopember", "Desember" ];
+                    var months = [ "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "Nopember", "Desember" ];
                     var y = date_array[ 0 ];
                     var m = date_array[ 1 ];
                     var d = date_array[ 2 ];
@@ -274,42 +303,64 @@
                 
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-6 news-feeds">
-                
+                <?php 
+                    $entries = new Object_DataPesertaAJFC_List();
+                    $entries->setLimit(2);
+                    $jml = count($entries);
+                    if($jml < 1){
+                        $entries = new Object_DataPesertaAJFC_List();
+                        $entries->setLimit(2);
+                    }
+                    $no=1;
+                    foreach ($entries as $key) {
+                        $img = $key->fotoPeserta;
+                        $ptg = ucfirst($key->satuTerpenting);
+                        $nama = ucwords($key->namaLengkap);
+                        $tgll = date("Y", strtotime($key->tanggalLahir));
+                        $nyear = date("Y",time());
+                        $umur = $nyear-$tgll;
+                        $asl = ucwords($key->tempatLahir);
+                        $prop = ucwords($key->propinsi);
+                        if($no==1){
+                ?>
+
                 <div class="news-feeds--box">
                     <div class="row">
                         <div class="col-xs-12 col-md-6 hidden-xs hidden-sm image">
-                            <img src="/website/ajfc/img/dummy-wasit.jpg" alt="" class="" />
+                            <img src="<?php echo $img; ?>" alt="" class="" />
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-12 col-md-6 content">
                             <div class="news-feeds--box---content">
-                                <h3>Wasit, siapa mereka?</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut orci metus, 
-                                    non ipsum nec, vulputate euismod metus.
-                                </p>
+                                <h3><?php echo $ptg; ?></h3>
+                                <p><?php echo $nama.', '.$umur.' Tahun<br />'.$asl.', '.$prop; ?></p>
                             </div><!--/ .news-feeds-box--content -->
-                            <a href="#" class="btn-edge"></a>
+                            <a href="galeri-ajfc" class="btn-edge"></a>
                         </div><!--/ .col-xs-12 -->
                     </div><!--/ .row -->
                 </div><!--/ .news-feeds--box -->
                 
+                <?php 
+                        }else{
+                ?>
                 <div class="news-feeds--box">
                     <div class="row">
                         <div class="col-xs-12 col-md-6 content">
                             <div class="news-feeds--box---content">
-                                <h3>Berkunjung ke Allianz Arena di Munich</h3>
-                                <p>
-                                    Vestibulum accumsan, metus quis lacinia malesuada, lacus diam tincidunt magna, 
-                                    nec tincidunt velit sapien vitae ligula.
-                                </p>
+                                <h3><?php echo $ptg; ?></h3>
+                                <p><?php echo $nama.', '.$umur.' Tahun<br />'.$asl.', '.$prop; ?></p>
                             </div><!--/ .news-feeds-box--content -->
                             <a href="#" class="btn-edge"></a>
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-12 hidden-xs hidden-sm col-md-6 image">
-                            <img src="/website/ajfc/img/dummy-stadium.jpg" alt="" class="" />
+                            <img src="<?php echo $img; ?>" alt="" class="" />
                         </div><!--/ .col-xs-12 -->
                     </div><!--/ .row -->
                 </div><!--/ .news-feeds--box -->
+                <?php
+                        }
+                        $no++;
+                    }
+                ?>
                 
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
