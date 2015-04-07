@@ -31,6 +31,11 @@ html, body
     overflow: hidden;
     display: none;
 
+    &.active
+    {
+        display: block;
+    }
+
     & > .loading-inner
     {
         position: absolute;
