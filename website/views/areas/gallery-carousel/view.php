@@ -75,7 +75,7 @@
 								<div class="place-bg bg-<?php echo $color?> place-bg-gallery">
 								    <div>
 									<?php if($this->editmode || !$this->input("caption-title-" . $i)->isEmpty()) { ?>
-			                            <h1><?php echo $this->input("caption-title-" . $i, ["width" => 251]) ?></h1>
+			                            <h2><?php echo $this->input("caption-title-" . $i, ["width" => 251]) ?></h2>
 			                        <?php } ?>
 			                        <?php if($this->editmode || !$this->textarea("caption-text-" . $i)->isEmpty()) { ?>
 			                            <p>

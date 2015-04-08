@@ -64,7 +64,7 @@
 					<div class="fixbox <?php echo $pos?>60">
 						<div class="place-bg bg-<?php echo $color?>">
 							<?php if($this->editmode || !$this->input("banner-title-" . $i)->isEmpty()) { ?>
-	                            <h1><?php echo $this->input("banner-title-" . $i, ["width" => 251]) ?></h1>
+	                            <h2><?php echo $this->input("banner-title-" . $i, ["width" => 251]) ?></h2>
 	                        <?php } ?>
 	                        <?php if($this->editmode || !$this->textarea("banner-text-" . $i)->isEmpty()) { ?>
 	                            <p>
