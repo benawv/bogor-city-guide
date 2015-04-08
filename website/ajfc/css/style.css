@@ -899,7 +899,7 @@ section#calendar-wrapper .calendar-info .calendar-info--inner {
       color: white; }
       .main-content table.table > thead > tr > td, .main-content table.table > thead > tr > th {
         text-transform: uppercase;
-        text-align: center;
+        text-align: left;
         font-weight: normal;
         padding: 8px 16px; }
     .main-content table.table > tbody > tr > td {
@@ -1066,20 +1066,51 @@ section.gallery-wrapper .gallery-item {
   background: #ee2037;
   position: relative;
   /* .galery-item--image */ }
+  @media (max-width: 480px) {
+    section.gallery-wrapper .gallery-item div[class^="col-xs-6"] {
+      position: relative; } }
   section.gallery-wrapper .gallery-item.blue {
     background: #003781; }
+    section.gallery-wrapper .gallery-item.blue .row > div[class^="col-"]:first-child > .gallery-item--text::before {
+      border-left-color: #003781; }
+    section.gallery-wrapper .gallery-item.blue .row > div[class^="col-"]:last-child > .gallery-item--text::before {
+      border-right-color: #003781; }
   section.gallery-wrapper .gallery-item.blue-light {
     background: #1f77be; }
+    section.gallery-wrapper .gallery-item.blue-light .row > div[class^="col-"]:first-child > .gallery-item--text::before {
+      border-left-color: #1f77be; }
+    section.gallery-wrapper .gallery-item.blue-light .row > div[class^="col-"]:last-child > .gallery-item--text::before {
+      border-right-color: #1f77be; }
   section.gallery-wrapper .gallery-item.green {
     background: #12a95a; }
+    section.gallery-wrapper .gallery-item.green .row > div[class^="col-"]:first-child > .gallery-item--text::before {
+      border-left-color: #12a95a; }
+    section.gallery-wrapper .gallery-item.green .row > div[class^="col-"]:last-child > .gallery-item--text::before {
+      border-right-color: #12a95a; }
   section.gallery-wrapper .gallery-item.orange {
     background: #f5832d; }
+    section.gallery-wrapper .gallery-item.orange .row > div[class^="col-"]:first-child > .gallery-item--text::before {
+      border-left-color: #f5832d; }
+    section.gallery-wrapper .gallery-item.orange .row > div[class^="col-"]:last-child > .gallery-item--text::before {
+      border-right-color: #f5832d; }
   section.gallery-wrapper .gallery-item.grey {
     background: #666; }
+    section.gallery-wrapper .gallery-item.grey .row > div[class^="col-"]:first-child > .gallery-item--text::before {
+      border-left-color: #666; }
+    section.gallery-wrapper .gallery-item.grey .row > div[class^="col-"]:last-child > .gallery-item--text::before {
+      border-right-color: #666; }
   section.gallery-wrapper .gallery-item.maroon {
     background: #a31c3d; }
+    section.gallery-wrapper .gallery-item.maroon .row > div[class^="col-"]:first-child > .gallery-item--text::before {
+      border-left-color: #a31c3d; }
+    section.gallery-wrapper .gallery-item.maroon .row > div[class^="col-"]:last-child > .gallery-item--text::before {
+      border-right-color: #a31c3d; }
   section.gallery-wrapper .gallery-item.purple {
     background: #6d5ba7; }
+    section.gallery-wrapper .gallery-item.purple .row > div[class^="col-"]:first-child > .gallery-item--text::before {
+      border-left-color: #6d5ba7; }
+    section.gallery-wrapper .gallery-item.purple .row > div[class^="col-"]:last-child > .gallery-item--text::before {
+      border-right-color: #6d5ba7; }
   section.gallery-wrapper .gallery-item > .row {
     margin: 0;
     display: table; }
@@ -1089,6 +1120,34 @@ section.gallery-wrapper .gallery-item {
       display: table-cell;
       float: none !important;
       vertical-align: middle; }
+      @media (min-width: 767px) {
+        section.gallery-wrapper .gallery-item > .row > div[class^="col-"]:first-child .gallery-item--text::before {
+          content: "";
+          position: absolute;
+          right: -64px;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+          border: solid 32px transparent;
+          border-left-color: #ee2037;
+          z-index: 2; } }
+      @media (min-width: 767px) {
+        section.gallery-wrapper .gallery-item > .row > div[class^="col-"]:last-child .gallery-item--text::before {
+          content: "";
+          position: absolute;
+          left: -64px;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+          border: solid 32px transparent;
+          border-right-color: #ee2037;
+          z-index: 2; } }
   section.gallery-wrapper .gallery-item .gallery-item--image {
     display: block;
     position: relative;

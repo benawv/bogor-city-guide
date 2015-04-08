@@ -600,7 +600,7 @@ section#calendar-wrapper
                     & > th
                     {
                         text-transform: uppercase;
-                        text-align: center;
+                        text-align: left; // center;
                         font-weight: normal;
                         padding: 8px 16px;
                     }
