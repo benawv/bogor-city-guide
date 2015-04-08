@@ -49,7 +49,7 @@
                                 <a href="#" class="animated pulse">1</a>
                                 <div class="image-hotspot--content">
                                     <h3>Pendaftaran Peserta</h3>
-                                    <p>Online via <a href="#" target="_blank">http://www.allianz.co.id/juniorfootballcamp</a></p>
+                                    <p>Online via <a href="#" target="_blank">http://www.allianz.co.id/ajfc/pendaftaran</a></p>
                                 </div><!--/ .image-hotspot--content -->
                             </div><!--/ .image-hotspot--item -->
 
@@ -61,7 +61,7 @@
                                     <p>
                                         Kuis Online<br />
                                         Peserta diwajibkan menjawab <strong>10 pertanyaan</strong>
-                                        yang akan dikirmkan ke email peserta
+                                        yang akan dikirmkan ke email peserta yang telah di daftarkan pada saat registrasi.
                                     </p>
                                 </div><!--/ .image-hotspot--content -->
                             </div><!--/ .image-hotspot--item -->
@@ -72,8 +72,8 @@
                                 <div class="image-hotspot--content right">
                                     <h3>Pengumuman</h3>
                                     <p>
-                                        <strong>100 peserta</strong> yang lolos dari seleksi tahap 1 pada tanggal 
-                                        <strong>29 Mei 2015</strong> pada website Allianz dan FB AJFC Indonesia.
+                                        <strong>100 peserta</strong> yang lolos dari seleksi tahap 1 pada tanggal
+                                        <strong>29 Mei 2015</strong> pada website <a href="allianz.co.id/pengumuman">allianz.co.id</a> dan FB AJFC Indonesia.
                                     </p>
                                 </div><!--/ .image-hotspot--content -->
                             </div><!--/ .image-hotspot--item -->
@@ -85,7 +85,7 @@
                                     <h3>Seleksi Tahap 2</h3>
                                     <p>
                                         <strong>Tes Fisik</strong><br />
-                                        <strong>100 peserta</strong> akan melalui proses seleksi keterampilan bermain sepakbola.
+                                        <strong>100 peserta</strong> akan melalui proses seleksi keterampilan bermain sepakbola pada <strong>tanggal 6 Juni 2015</strong>.
                                     </p>
                                 </div><!--/ .image-hotspot--content -->
                             </div><!--/ .image-hotspot--item -->
@@ -96,8 +96,8 @@
                                     <h3>Seleksi Tahap 3</h3>
                                     <p>
                                         <strong>Wawancara</strong><br />
-                                        Tahap terakhir dalam proses seleksi dimana peserta akan diwawancarai seputar kehidupan sehari-hari.
-                                        <!-- seputar kehidupan sehari-hari -->
+                                        Tahap terakhir dalam proses seleksi dimana peserta akan diwawancarai seputar kehidupan sehari-hari untuk 30 peserta yang lolos
+                                        seleksi tahap ke-2, <strong>tanggal 6 Juni 2015</strong>.
                                     </p>
                                 </div><!--/ .image-hotspot--content -->
                             </div><!--/ .image-hotspot--item -->
