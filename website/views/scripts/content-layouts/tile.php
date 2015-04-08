@@ -30,7 +30,7 @@
 <div class="container boxes-view">
 	<div class="heading clearfix pagenav">
 		<?php echo $this->template("includes/breadcrumb.php")?>
-		<span class="title"><?php echo $this->document->getProperty('navigation_title');?></span>
+		<h1 class="title"><?php echo $this->document->getProperty('navigation_title');?></h1>
 		<div id="quicklinks">
 			<?php echo $this->areablock('layananKami', array(
 					"allowed" => array("quicklinks")))?>
