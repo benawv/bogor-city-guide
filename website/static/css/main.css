@@ -867,7 +867,9 @@ a.fbshare, a.twshare{
 .liBerita{
   margin-bottom: 10px;
 }
-
+.cusError .error{
+  float: left;
+}
 .pagenavBerita #accordion-container{position: relative;}
 
 /*SETTING LOGO 125*/

@@ -301,8 +301,10 @@ form button:active {
     float: left;
     margin-right: 10px;
 }
+.form-group label #usiaAyah, .form-group label #usiaIbu{
+    width: 10%;
+}
 .spanOrg{
-    float: left;
     margin: 5px 0;
 }
 #syarat .modal-body.cus-body ol > li{
