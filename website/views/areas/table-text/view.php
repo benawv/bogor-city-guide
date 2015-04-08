@@ -20,16 +20,25 @@
                     </div><!--/ .main-content--header -->
                     
                     <div class="faq-wrapper mt16 pt16">
-                        <?php while ($this->block("rowTable")->loop()) { ?>
+                        <?php
+			$l=0;
+			while ($this->block("rowTable")->loop()) {
+			$l++;
+			    ?>
                         <div class="faq-item">
-                            <div class="faq-item--question">
-                                <h4><?php echo $this->input('title_faq')?></h4>
+                            
+			    <div class="faq-item--question" style="padding-right: 20px;">
+                                <ol start="<?php echo $l; ?>">
+				    <li><h4><?php echo $this->input('title_faq')?></h4></li>
+				</0l>
                             </div><!--/ .faq-item--question -->
                             <div class="faq-item--answer">
                                 <?php echo $this->wysiwyg('description')?>
                             </div><!--/ .faq-item--answer -->
                         </div><!--/ .faq-item -->
-			<?php } ?>
+			<?php
+			
+			} ?>
                         
                     </div><!--/ .faq-wrapper -->
                     
