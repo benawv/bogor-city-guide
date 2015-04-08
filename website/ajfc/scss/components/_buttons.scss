@@ -144,17 +144,21 @@ nav.main-navigation
         {
             margin: 0;
             padding: 0 16px;
-            position: absolute;
-            left: 0;
-            bottom: 16px;
             width: 100%;
             color: white;
             font-size: 20px;
 
-            small, span
+            small
             {
                 color: #dfdfdf;
-                display: block;
+            }
+
+            span
+            {
+                font-size: smaller;
+                margin: 0;
+                padding: 0;
+                line-height: 1;
             }
 
         }

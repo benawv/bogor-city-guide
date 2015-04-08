@@ -347,15 +347,16 @@ nav.main-navigation {
     nav.main-navigation a.nav-item h1, nav.main-navigation a.nav-item h2, nav.main-navigation a.nav-item h3, nav.main-navigation a.nav-item h4, nav.main-navigation a.nav-item h5, nav.main-navigation a.nav-item h6 {
       margin: 0;
       padding: 0 16px;
-      position: absolute;
-      left: 0;
-      bottom: 16px;
       width: 100%;
       color: white;
       font-size: 20px; }
-      nav.main-navigation a.nav-item h1 small, nav.main-navigation a.nav-item h1 span, nav.main-navigation a.nav-item h2 small, nav.main-navigation a.nav-item h2 span, nav.main-navigation a.nav-item h3 small, nav.main-navigation a.nav-item h3 span, nav.main-navigation a.nav-item h4 small, nav.main-navigation a.nav-item h4 span, nav.main-navigation a.nav-item h5 small, nav.main-navigation a.nav-item h5 span, nav.main-navigation a.nav-item h6 small, nav.main-navigation a.nav-item h6 span {
-        color: #dfdfdf;
-        display: block; }
+      nav.main-navigation a.nav-item h1 small, nav.main-navigation a.nav-item h2 small, nav.main-navigation a.nav-item h3 small, nav.main-navigation a.nav-item h4 small, nav.main-navigation a.nav-item h5 small, nav.main-navigation a.nav-item h6 small {
+        color: #dfdfdf; }
+      nav.main-navigation a.nav-item h1 span, nav.main-navigation a.nav-item h2 span, nav.main-navigation a.nav-item h3 span, nav.main-navigation a.nav-item h4 span, nav.main-navigation a.nav-item h5 span, nav.main-navigation a.nav-item h6 span {
+        font-size: smaller;
+        margin: 0;
+        padding: 0;
+        line-height: 1; }
 
 .animated {
   -webkit-animation-duration: 0.9s;
