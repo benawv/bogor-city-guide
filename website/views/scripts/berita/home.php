@@ -34,7 +34,7 @@
 <?php endif; ?>
 <div class="container boxes-view">
 	<h5><a href="/"><span>Home</span></a> &rsaquo; <?php echo $text2;?></h5>
-	<span class="breadcrumb"><a href="#">Daftar <?php echo $this->document->getTitle()?></a></span>
+	<span class="breadcrumb"><h1 class="title">Daftar <?php echo $this->document->getTitle()?></h1></span>
 	
 	<div class="heading clearfix pagenav">
             <div class="combo_year">

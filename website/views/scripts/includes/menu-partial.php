@@ -13,15 +13,15 @@
 					if(count($check)!=0)
 					{
 				?>
-				<a href="#"><?php echo $page->getDocument()->getProperty('navigation_title');?></a>
+				<a href="#" hreflang="id"><?php echo $page->getDocument()->getProperty('navigation_title');?></a>
 				<?php
 					}
 					else{
 				?>
-				<a href="<?php echo $page->getUri()?>"><?php echo $page->getDocument()->getProperty('navigation_title');?></a>
+				<a href="<?php echo $page->getUri()?>" hreflang="id"><?php echo $page->getDocument()->getProperty('navigation_title');?></a>
 				<?php	}?>
 				<div class="menu-level2">
-					<a href="#" class="back">Back</a>
+					<a href="#" class="back" hreflang="id">Back</a>
 					<!--<ul class="noborder">
 						<li class="menutitle">Profil</li>
 						<li><a href="visimisi.php">Visi dan Misi</a></li>
@@ -52,9 +52,9 @@
 										if($anchor->getProperty('navigation_title')!="")
 										{
 											if($anchor->getProperty('navigation_class'))
-												echo "<li><a href='".$subpage->getUri()."#".$anchor->getHref()."' onclick=(".$anchor->getHref().")>".$anchor->getProperty('navigation_title')."</a></li>";
+												echo "<li><a href='".$subpage->getUri()."#".$anchor->getHref()."' hreflang='id' onclick=(".$anchor->getHref().")>".$anchor->getProperty('navigation_title')."</a></li>";
 											else
-												echo "<li><a href='".$anchor->getHref()."' onclick=(".$anchor->getHref().")>".$anchor->getProperty('navigation_title')."</a></li>";
+												echo "<li><a href='".$anchor->getHref()."' hreflang='id' onclick=(".$anchor->getHref().")>".$anchor->getProperty('navigation_title')."</a></li>";
 										}
 									}
 								?>
@@ -74,9 +74,9 @@
 ?>
 		<?php foreach($this->container as $page): ?>
 			<li>
-				<a href="<?php echo $page->getUri()?>"><?php echo $page->getDocument()->getProperty('navigation_title');?></a>
+				<a href="<?php echo $page->getUri()?>" hreflang="id"><?php echo $page->getDocument()->getProperty('navigation_title');?></a>
 				<div class="menu-level2">
-					<a href="#" class="back">Back</a>
+					<a href="#" class="back" hreflang="id">Back</a>
 					<!--<ul class="noborder">
 						<li class="menutitle">Profil</li>
 						<li><a href="visimisi.php">Visi dan Misi</a></li>
@@ -109,13 +109,13 @@
 											if($anchor->getProperty('navigation_class'))
 											{
 								?>
-												<li><a href="<?php echo $subpage->getUri()."#".$anchor->getHref()?>"><?php echo $anchor->getProperty('navigation_title') ?></a></li>
+												<li><a href="<?php echo $subpage->getUri()."#".$anchor->getHref()?>" hreflang="id"><?php echo $anchor->getProperty('navigation_title') ?></a></li>
 								<?php
 											}
 											else
 											{
 								?>
-												<li><a href="<?php echo $anchor->getHref()?>"><?php echo $anchor->getProperty('navigation_title') ?></a></li>
+												<li><a href="<?php echo $anchor->getHref()?>" hreflang="id"><?php echo $anchor->getProperty('navigation_title') ?></a></li>
 								<?php
 											}
 										}
