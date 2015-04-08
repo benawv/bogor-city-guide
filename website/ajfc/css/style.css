@@ -1027,7 +1027,7 @@ section#calendar-wrapper .calendar-info .calendar-info--inner {
       border: none;
       border-color: transparent; }
     .process-items > .process-item h1, .process-items > .process-item h2, .process-items > .process-item h3, .process-items > .process-item h4, .process-items > .process-item h5, .process-items > .process-item h6, .process-items > .process-item p {
-      margin: 0 0 0 68px;
+      margin: -8px 0 4px 68px;
       padding: 0; }
     .process-items > .process-item span.number {
       display: block;
@@ -1037,12 +1037,7 @@ section#calendar-wrapper .calendar-info .calendar-info--inner {
       font-size: x-large;
       position: absolute;
       height: 100%;
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-      -moz-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      -o-transform: translateY(-50%);
-      transform: translateY(-50%);
+      top: 24px !important;
       height: 48px;
       min-height: 48px;
       max-height: 48px;
