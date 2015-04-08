@@ -31,7 +31,7 @@
 
                         <div class="faq-item">
                             <div class="faq-item--question">
-                                <h4>Bagaimana cara mengikuti program Allianz Junior Football Camp?</h4>
+                                <h4>1. Bagaimana cara mengikuti program Allianz Junior Football Camp?</h4>
                             </div><!--/ .faq-item--question -->
                             <div class="faq-item--answer">
                                 <p>
@@ -43,11 +43,11 @@
                             </div><!--/ .faq-item--answer -->
                         </div><!--/ .faq-item -->
 
-                        <?php for( $i = 0; $i < 10; $i++ ): ?>
+                        <?php for( $i = 2; $i < 11; $i++ ): ?>
 
                         <div class="faq-item">
                             <div class="faq-item--question">
-                                <h4>Sample Question?</h4>
+                                <h4><?php echo $i; ?>. Sample Question?</h4>
                             </div><!--/ .faq-item--question -->
                             <div class="faq-item--answer">
                                 <p>

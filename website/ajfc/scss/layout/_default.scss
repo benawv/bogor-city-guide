@@ -775,6 +775,7 @@ section#calendar-wrapper
         position: relative;
         margin: 0 auto 32px;
         padding: 0 0 24px;
+        // border: solid 1px red;
         border-bottom: solid 1px $color_grey_light;
 
         &:last-child
@@ -785,7 +786,7 @@ section#calendar-wrapper
 
         h1, h2, h3, h4, h5, h6, p
         {
-            margin: 0 0 0 68px;
+            margin: -8px 0 4px 68px;
             padding: 0;
         }
 
@@ -798,8 +799,8 @@ section#calendar-wrapper
             font-size: x-large;
             position: absolute;
             height: 100%;
-            top: 50%;
-            @include translateY(-50%);
+            top: 24px !important;
+            //@include translateY(-50%);
             @include fixedSize(48px);
             @include transition( ease, 0.3s );
             background: $color_blue;
