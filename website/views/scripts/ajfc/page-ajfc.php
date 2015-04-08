@@ -4,6 +4,7 @@
 <!--<link rel="stylesheet" href="/website/ajfc/css/bootstrap.min.css">-->
 <link rel="stylesheet" href="/website/ajfc/css/bootstrap-custom-wcm/bootstrap.css">
 <link rel="stylesheet" href="/website/ajfc/css/style.css">
+	<link rel="stylesheet" href="/website/ajfc/css/main.css">
 
 <link rel="stylesheet" href="/website/ajfc/css/font-awesome.min.css">	
 <script src="/website/ajfc/js/zabuto_calendar.min.js"></script>
