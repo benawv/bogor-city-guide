@@ -21,25 +21,26 @@
 
     <nav class="main-navigation">
         <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-3">
+           <div class="row">
+                <div class="col-xs-12 col-md-4">
                     <a href="?p=proses-seleksi" class="nav-item green sitemap">
-                        <h4><small>01</small> Mekanisme.</h4>
+                        <h4><small>01</small> Proses Seleksi</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
+                <!--
                 <div class="col-xs-12 col-md-3">
                     <a href="#" class="nav-item orange trophy">
                         <h4><small>02</small> Hadiah.</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                <div class="col-xs-12 col-md-3">
-                    <a href="?p=faq" class="nav-item grey question">
-                        <h4><small>03</small> FAQ.</h4>
+                <div class="col-xs-12 col-md-4">
+                    <a href="?p=faq" class="nav-item orange question">
+                        <h4><small>02</small> Tanya Jawab</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                <div class="col-xs-12 col-md-3">
-                    <a href="?p=privacy-policy" class="nav-item users">
-                        <h4><small>04</small> Daftar Peserta.</h4>
+                <div class="col-xs-12 col-md-4">
+                    <a href="?p=daftar-peserta" class="nav-item users">
+                        <h4><small>03</small> Sudah Mendaftar? <span>Cek Disini</span></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
             </div><!--/ .row -->

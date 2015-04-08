@@ -33,7 +33,7 @@
                         
                     </div><!--/ .faq-wrapper -->
                     
-                    <p>Tidak menemukan jawaban untuk pertanyaan kamu? Silahkan tanyakan <a href="#">disini</a>!</p>
+                    <p>Tidak menemukan jawaban untuk pertanyaan kamu? Silahkan hubungi kami melalui <a href="https://www.facebook.com/pages/Allianz-Indonesia/137119663084291">facebook</a>!</p>
                     
                 </div><!--/ .main-content -->
                 
