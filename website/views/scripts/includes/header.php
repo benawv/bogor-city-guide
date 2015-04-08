@@ -47,7 +47,7 @@ $(function(){
 
 <header role="banner" class="banner">
 	<div class="container">
-		<h1 class="weblogo">Allianz<span onclick="window.location.href = '<?php echo $this->url(array("document" => Document::getById(1)), "default", true)?>'"></span></h1>
+		<span class="weblogo">Allianz<span onclick="window.location.href = '<?php echo $this->url(array("document" => Document::getById(1)), "default", true)?>'"></span></span>
 		<?php
     
 		    // get root node if there is no document defined (for pages which are routed directly through static route)
