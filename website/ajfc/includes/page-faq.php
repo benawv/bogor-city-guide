@@ -24,7 +24,7 @@
                 <div class="main-content">
 
                     <div class="main-content--header">
-                        <h1 class="mb12">FAQ/Frequently Asked Questions</h1>
+                        <h1 class="mb12">Tanya Jawab</h1>
                     </div><!--/ .main-content--header -->
 
                     <div class="faq-wrapper mt16 pt16">
@@ -60,7 +60,7 @@
 
                     </div><!--/ .faq-wrapper -->
 
-                    <p>Tidak menemukan jawaban untuk pertanyaan kamu? Silahkan tanyakan <a href="#">disini</a>!</p>
+                    <p>Tidak menemukan jawaban untuk pertanyaan kamu? Silahkan hubungi kami melalui <a href="#">facebook</a>!</p>
 
                 </div><!--/ .main-content -->
 
@@ -79,7 +79,7 @@
                                 <li><a href="?p=proses-seleksi">Proses Seleksi</a></li>
                                 <li><a href="?p=pengumuman">Pengumuman</a></li>
                                 <li><a href="?p=daftar-peserta">Daftar Peserta</a></li>
-                                <li class="active"><a href="?p=faq">FAQ</a></li>
+                                <li class="active"><a href="?p=faq">Tanya Jawab</a></li>
                                 <li><a href="?p=privacy-policy">Kebijakan Privasi</a></li>
                             </ul>
                         </div><!--/ .sidebar-item--content -->
