@@ -22,25 +22,26 @@
 
     <nav class="main-navigation">
         <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-3">
+           <div class="row">
+                <div class="col-xs-12 col-md-4">
                     <a href="?p=proses-seleksi" class="nav-item green sitemap">
-                        <h4><small>01</small> Mekanisme.</h4>
+                        <h4><small>01</small> Proses Seleksi</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
+                <!--
                 <div class="col-xs-12 col-md-3">
                     <a href="#" class="nav-item orange trophy">
                         <h4><small>02</small> Hadiah.</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                <div class="col-xs-12 col-md-3">
-                    <a href="?p=faq" class="nav-item grey question">
-                        <h4><small>03</small> FAQ.</h4>
+                <div class="col-xs-12 col-md-4">
+                    <a href="?p=faq" class="nav-item orange question">
+                        <h4><small>02</small> Tanya Jawab</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                <div class="col-xs-12 col-md-3">
-                    <a href="?p=privacy-policy" class="nav-item users">
-                        <h4><small>04</small> Daftar Peserta.</h4>
+                <div class="col-xs-12 col-md-4">
+                    <a href="?p=daftar-peserta" class="nav-item users">
+                        <h4><small>03</small> Sudah Mendaftar? <span>Cek Disini</span></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
             </div><!--/ .row -->
@@ -60,7 +61,9 @@
                     <?php 
                         $bulanInd = array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
                         $entries = new Object_CalenderAJFC_List();
-                        $entries->setLimit(1);
+                        $entries ->setOrderKey("date");
+                        $entries ->setOrder("asc");
+                        $entries ->setLimit(1);
                         foreach ($entries as $key) {
                             $d = date("d",strtotime($key->date));
                             $m = date("m",strtotime($key->date));
@@ -69,56 +72,47 @@
                             $event = $key->event;
                         }
                     ?>
-
-                <?php 
-                    $entries = new Object_CalenderAJFC_List();
-                    $count = count($entries);
-                    $no = 1;
-                    $temp = "";
-                    foreach ($entries as $key) {
-                        $date = date("Y-m-d",strtotime($key->date));
-                        $title = $key->title;
-                        $event = $key->event;
-                        if($no == 1)
-                            $a = array(array("date"=>$date,
-                                    "badge"=>true,
-                                    "title"=>$title,
-                                    "body"=>$event));
-                        else
-                            array_push($a,array("date"=>$date,
-                                    "badge"=>true,
-                                    "title"=>$title,
-                                    "body"=>$event)
-                                );
-                        //{"date",$date,"badge":true,"title":$title,"body":$event};
-                        /*'{
-                                    "date":"'.$date.'",
-                                    "badge":true,
-                                    "title":"'.$title.'",
-                                    "body":"'.$event.'"
-                                }';*/
-                        //if($no != $count)
-                          //  $temp .= ',';
-                        $no++;
-                    }
-                    $encode = json_encode($a);
-                ?>
                     <div class="header">
                         <h2>Kalender Event</h2>
                     </div>
                     <div class="body">
                         <h2 id="calendar-title"><?php echo $title; ?></h2>
                         <p><small id="calendar-date"><?php echo $d.' '.$bulanInd[$m-1].' '.$y; ?></small></p>
-                        <p id="calendar-body">
+                        <div id="calendar-body">
                             <?php echo $event; ?>
-                        </p>
+                        </div>
                     </div><!--/ .body -->
                     <!--<a href="#" class="btn-edge"></a>-->
                 </div><!--/.calendar-info-inner -->
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
     </div><!--/ .container -->
-
+<?php 
+    $entries = new Object_CalenderAJFC_List();
+    $entries ->setOrderKey("date");
+    $entries ->setOrder("desc");
+    $count = count($entries);
+    $no = 1;
+    $temp = "";
+    foreach ($entries as $key) {
+        $date = date("Y-m-d",strtotime($key->date));
+        $title = $key->title;
+        $event = $key->event;
+        if($no == 1)
+            $a = array(array("date"=>$date,
+                    "badge"=>true,
+                    "title"=>$title,
+                    "body"=>$event));
+        else
+            array_push($a,array("date"=>$date,
+                    "badge"=>true,
+                    "title"=>$title,
+                    "body"=>$event)
+                );
+        $no++;
+    }
+    $encode = json_encode($a);
+?>
     <script>
     
         $(function(){

@@ -46,9 +46,9 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th width="10%">Running Number</th>
+                                            <th width="10%">No</th>
+                                            <th width="60%">Nama</th>
                                             <th width="10%">No. Kepesertaan</th>
-                                            <th width="60%" class="text-left">Nama</th>
                                             <th width="20%">Tgl.Lahir</th>
                                         </tr>
                                     </thead>
@@ -56,8 +56,8 @@
                                         <?php foreach( $datas as $data ): ?>
                                         <tr>
                                             <td><?php echo $data[ 0 ]; ?></td>
-                                            <td><?php echo $data[ 1 ]; ?></td>
                                             <td class="text-left"><?php echo $data[ 2 ]; ?></td>
+                                            <td><?php echo $data[ 1 ]; ?></td>
                                             <td><?php echo $data[ 3 ]; ?></td>
                                         </tr>
                                         <?php endforeach; ?>
@@ -96,7 +96,7 @@
                                 <li><a href="?p=proses-seleksi">Proses Seleksi</a></li>
                                 <li><a href="?p=pengumuman">Pengumuman</a></li>
                                 <li class="active"><a href="?p=daftar-peserta">Daftar Peserta</a></li>
-                                <li><a href="?p=faq">FAQ</a></li>
+                                <li><a href="?p=faq">Tanya Jawab</a></li>
                                 <li><a href="?p=privacy-policy">Kebijakan Privasi</a></li>
                             </ul>
                         </div><!--/ .sidebar-item--content -->

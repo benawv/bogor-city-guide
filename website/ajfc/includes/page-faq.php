@@ -24,14 +24,14 @@
                 <div class="main-content">
 
                     <div class="main-content--header">
-                        <h1 class="mb12">FAQ/Frequently Asked Questions</h1>
+                        <h1 class="mb12">Tanya Jawab</h1>
                     </div><!--/ .main-content--header -->
 
                     <div class="faq-wrapper mt16 pt16">
 
                         <div class="faq-item">
                             <div class="faq-item--question">
-                                <h4>Bagaimana cara mengikuti program Allianz Junior Football Camp?</h4>
+                                <h4>1. Bagaimana cara mengikuti program Allianz Junior Football Camp?</h4>
                             </div><!--/ .faq-item--question -->
                             <div class="faq-item--answer">
                                 <p>
@@ -43,11 +43,11 @@
                             </div><!--/ .faq-item--answer -->
                         </div><!--/ .faq-item -->
 
-                        <?php for( $i = 0; $i < 10; $i++ ): ?>
+                        <?php for( $i = 2; $i < 11; $i++ ): ?>
 
                         <div class="faq-item">
                             <div class="faq-item--question">
-                                <h4>Sample Question?</h4>
+                                <h4><?php echo $i; ?>. Sample Question?</h4>
                             </div><!--/ .faq-item--question -->
                             <div class="faq-item--answer">
                                 <p>
@@ -60,7 +60,7 @@
 
                     </div><!--/ .faq-wrapper -->
 
-                    <p>Tidak menemukan jawaban untuk pertanyaan kamu? Silahkan tanyakan <a href="#">disini</a>!</p>
+                    <p>Tidak menemukan jawaban untuk pertanyaan kamu? Silahkan hubungi kami melalui <a href="#">facebook</a>!</p>
 
                 </div><!--/ .main-content -->
 
@@ -79,7 +79,7 @@
                                 <li><a href="?p=proses-seleksi">Proses Seleksi</a></li>
                                 <li><a href="?p=pengumuman">Pengumuman</a></li>
                                 <li><a href="?p=daftar-peserta">Daftar Peserta</a></li>
-                                <li class="active"><a href="?p=faq">FAQ</a></li>
+                                <li class="active"><a href="?p=faq">Tanya Jawab</a></li>
                                 <li><a href="?p=privacy-policy">Kebijakan Privasi</a></li>
                             </ul>
                         </div><!--/ .sidebar-item--content -->
