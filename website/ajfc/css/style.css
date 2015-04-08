@@ -349,14 +349,18 @@ nav.main-navigation {
       padding: 0 16px;
       width: 100%;
       color: white;
-      font-size: 20px; }
+      font-size: 20px;
+      position: absolute;
+      left: 0;
+      bottom: 12px; }
       nav.main-navigation a.nav-item h1 small, nav.main-navigation a.nav-item h2 small, nav.main-navigation a.nav-item h3 small, nav.main-navigation a.nav-item h4 small, nav.main-navigation a.nav-item h5 small, nav.main-navigation a.nav-item h6 small {
         color: #dfdfdf; }
       nav.main-navigation a.nav-item h1 span, nav.main-navigation a.nav-item h2 span, nav.main-navigation a.nav-item h3 span, nav.main-navigation a.nav-item h4 span, nav.main-navigation a.nav-item h5 span, nav.main-navigation a.nav-item h6 span {
         font-size: smaller;
         margin: 0;
         padding: 0;
-        line-height: 1; }
+        line-height: 1;
+        color: white; }
 
 .animated {
   -webkit-animation-duration: 0.9s;

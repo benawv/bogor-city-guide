@@ -302,7 +302,7 @@
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-6 news-feeds">
 
-                <div class="news-feeds--box">
+                <div class="news-feeds--box" id="newsFeedsBox1">
                     <div class="row">
                         <div class="col-xs-12 col-md-6 hidden-xs hidden-sm image">
                             <img src="./img/dummy-wasit.jpg" alt="" class="" />
@@ -322,7 +322,7 @@
                     </div><!--/ .row -->
                 </div><!--/ .news-feeds--box -->
 
-                <div class="news-feeds--box">
+                <div class="news-feeds--box" id="newsFeedsBox2">
                     <div class="row">
                         <div class="col-xs-12 col-md-6 content">
                             <div class="news-feeds--box---content">
@@ -341,6 +341,14 @@
                         </div><!--/ .col-xs-12 -->
                     </div><!--/ .row -->
                 </div><!--/ .news-feeds--box -->
+
+                <script>
+                    $(function(){
+                        var box_a = $( '#newsFeedsBox1' );
+                        var box_b = $( '#newsFeedsBox2' );
+
+                    });
+                </script>
 
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
