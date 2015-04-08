@@ -1,7 +1,7 @@
 <header>
     
     <div class="background">
-        <img src="/website/ajfc/img/bg-home.jpg" alt="Home" class="img-responsive" />
+        <img src="/website/static/images/ajfc/background/background.jpg" alt="Home" class="img-responsive" />
     </div><!--/ .background -->
     <div class="caption">
         <div class="container">
@@ -10,7 +10,8 @@
                     <div class="box-dent mt32">
                         <div class="box-dent--inner">
                             <h2>AJFC 2015</h2>
-                            <p>#1ygterpenting mewujudkan mimpi menjadi kenyataan</p>
+                            <p>#1ygterpenting mewujudkan mimpi menjadi kenyataan.</p>
+			    <p>Daftarkan anak/kerabat Anda yang berusia 14-16 tahun untuk dilatih oleh pelatih remaja FC Bayern Munchen di Jerman.</p>
                             <a href="#">Daftar Sekarang <i class="fa fa-angle-right"></i></a>
                         </div><!--/ .box-dent--inner -->
                     </div>

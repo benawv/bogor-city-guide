@@ -296,6 +296,21 @@ form button:active {
 .ttl {
     width: 40% !important;
 }
+.form-group label #jumSaudara{
+    width: 30%;
+    float: left;
+    margin-right: 10px;
+}
+.spanOrg{
+    float: left;
+    margin: 5px 0;
+}
+#syarat .modal-body.cus-body ol > li{
+    font-size: 13px;
+}
+/*.lblFloat{
+    float: left;
+}*/
 .term {
     margin-top: 20px;
 }

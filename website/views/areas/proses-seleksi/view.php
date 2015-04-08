@@ -104,7 +104,7 @@
 
                         </div><!--/ .image-hotspot--container -->
 
-                        <img src="/website/ajfc/img/proses-seleksi-no-text.jpg" alt="" />
+                        <img src="/website/static/images/ajfc/proses-seleksi/proses-seleksi-no-text.jpg" alt="" />
 
                     </div><!--/ image-hotspot -->
                     

@@ -94,9 +94,13 @@
                                                             $checked1 = "checked='checked'";
                                                             $checked2 = "";
                                                         }
-                                                        else{
+                                                        elseif($row->getJenisKelamin() == "Perempuan"){
                                                             $checked2 = "checked='checked'";
                                                             $checked1 = "";
+                                                        }
+                                                        else{
+                                                            $checked1 = "";
+                                                            $checked2 = "";
                                                         }
                                                       ?>
                                                         <div class="form-group">
@@ -107,6 +111,14 @@
                                                               <input <?php echo $checked2;?> type="radio" name="radio" id="perempuan" value="Perempuan" /> Perempuan
                                                             </label> 
                                                         </div>  
+                                                  </div>
+                                                  
+                                                  <div class="form-group">
+                                                      <label for="nama" name="nama">Jumlah Saudara Kandung Termasuk Kamu</label>
+                                                      <label>
+                                                        <input type="text" class="form-control" id="jumSaudara" name="jumSaudara" placeholder="">
+                                                        <span class="spanOrg">Orang</span>
+                                                      </label>
                                                   </div>
 
                                                   <div class="form-group">
@@ -182,7 +194,7 @@
                                                   </div>
 
                                                   <div class="form-group">
-                                                      <label for="exampleInputName2">Alamat Tinggal<span class="spanRed">*</span></label>
+                                                      <label for="exampleInputName2">Alamat Tempat Tinggal Saat Ini<span class="spanRed">*</span></label>
                                                       <textarea class="form-control" name="alamat" id="alamat" rows="3" style="height:70px !important"></textarea>
                                                   </div>
 
@@ -311,20 +323,20 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Syarat dan Ketentuan</h4>
+        <h4 class="modal-title" id="myModalLabel">Syarat dan Ketentuan AJFC 2015</h4>
       </div>
       <div class="modal-body cus-body">
 	<ol>
-	    <li>Kamu berusia 14-16 tahun (tanggal lahir pada 25 Agustus 1999 s/d 1 September 2001, kamu harus sudah berusia 14 tahun atau masih berusia 16 tahun pada tanggal 25 Agustus 2015)</li>
-	    <li>Sehat jasmani (tidak mengidap penyakit pernapasan, penyakit atau cacat bawaan, penyakit menular dan segala kondisi yang mempengaruhi kondisi fisik untuk berolahraga)</li>
-	    <li>Memiliki akun email, facebook dan/atau twitter aktif</li>
-	    <li>Menyediakan informasi mengenai orangtua berupa nomor telepon dan email sebagai persetujuan dari orangtua untuk mengikuti program ini</li>
-	    <li>Bagi kamu yang menjadi pemenang Asia Camp dan Munich Camp, diwajibkan untuk membuat paspor sebelum Asia dan Munich Camp diselenggarakan</li>
-	    <li>Data yang dikirimkan sepenuhnya milik Allianz dan digunakan untuk kepentingan Allianz</li>
-	    <li>Data dan foto yang sudah kamu unggah akan diikutsertakan dalam lomba foto dan seleksi mengikuti Allianz Junior Football Camp 2015.</li>
-	    <li>Jika data yang diberikan tidak sesuai, maka pihak Allianz berhak mendiskualifikasi peserta tersebut. </li>
-	    <li>7 Remaja akan mengikuti Asia Camp, dan 3 Remaja diantaranya akan berkesempatan untuk mengunjungi Allianz Arena dan berlatih bersama pelatih remaja FC Bayern Munchen.</li>	    
-	    <li>Dan masih banyak hadiah menarik lainnya berupa souvenir FC Bayern Munchen yang dapat kamu menangkan.</li>
+	    <li>Kamu berusia 14-16 tahun (Tanggal lahir pada 19 Agustus 1998 s/d 12 Agustus 2001, kamu harus sudah berusia 14 tahun atau masih berusia 16 tahun pada tanggal 13 Agustus 2015).</li>
+	    <li>Belum pernah menjadi pemenang di AJFC tahun sebelumnya.</li>
+	    <li>Sehat jasmani (tidak mengidap penyakit pernapasan, penyakit atau cacat bawaan lahir, penyakit menular dan segala kondisi yang dapat mempengaruhi kondisi fisik untuk berolahraga)</li>
+	    <li>Memberikan informasi mengenai orangtua berupa nomor telepon dan email secara benar dan dapat dipercaya sebagai persetujuan dari orangtua untuk mengikuti program ini.</li>
+	    <li>Memiliki akun email, facebook, dan/atau twitter aktif.</li>
+	    <li>Bagi kamu yang menjadi pemenang Munich Camp 2015, diwajibkan untuk memiliki/membuat paspor sebelum Munich Camp diselenggarakan.</li>
+	    <li>Data yang dikirmkan sepenuhnya milik Allianz dan dapat digunakan untuk kepentingan Allianz.</li>
+	    <li>Data dan foto yang sudah kamu unggah sepenuhnya menjadi milik Allianz dan dapat digunakan untuk kepentingan Allianz.</li>
+	    <li>Jika data yang diberikan tidak sesuai dengan syarat seharusnya, maka pihak Allianz berhak mendiskualifikasi peserta tersebut.</li>	    
+	    <li>Syarat dan ketentuan program Allianz Junior Football Camp 2015 dapat berubah sewaktu-waktu tanpa pemberitahuan sebelumnya.</li>
 	</ol>
       </div>
       <div class="modal-footer">
@@ -758,6 +770,11 @@ $(function() {
             required: true,
 			number: true
           },
+          jumSaudara: 
+          {
+            required: true,
+			number: true
+          },
 		   emailOrtu: 
           {
                         //required: true,
@@ -796,19 +813,23 @@ $(function() {
           },	
           alamat: 
           {
-            required: "Mohon masukan alamat Anda"
+            required: "Mohon masukkan alamat Anda"
           },
           'no-telp': 
           {
-            required: "Mohon masukan no telepon Anda"
+            required: "Mohon masukkan no telepon Anda"
           },
           namaOrtu: 
           {
-            required: "Mohon masukan nama Orang tua Anda"
+            required: "Mohon masukkan nama Orang tua Anda"
           },
           noHp: 
           {
-            required: "Mohon masukan nomor telepon Anda"
+            required: "Mohon masukkan nomor telepon Anda"
+          },
+          jumSaudara: 
+          {
+            required: "Mohon masukkan jumlah saudara kandung termasuk Anda"
           },
           propinsi: 
           {
@@ -820,15 +841,15 @@ $(function() {
           },
 		   emailOrtu: 
           {
-            email: "Mohon masukan email Orang tua yang benar"
+            email: "Mohon masukkan email Orang tua yang benar"
           },
 		    alamatOrtu: 
           {
-            required: "Mohon masukan alamat Orangtua"
+            required: "Mohon masukkan alamat Orangtua"
           },
 			halTerpenting: 
 		  {
-			required: "Mohon masukan hal yang terpenting dalam bermain bola"
+			required: "Mohon masukkan hal yang terpenting dalam bermain bola"
 		  },
 			uploadFoto:
 		  {
