@@ -22,6 +22,7 @@
 	
 	<div class="container boxes-view">
 		<?php echo $this->template("includes/breadcrumb.php")?>
+		<h1 class="title"><?php echo $this->document->getProperty('navigation_title');?></h1>
 		
 		<div class="heading clearfix pagenav platinum_nav">
 			<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
