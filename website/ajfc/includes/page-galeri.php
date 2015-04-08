@@ -40,7 +40,7 @@
                     <div class="row">
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
-                                <img src="http://placehold.it/256x256" alt="">
+                                <img src="./img/dummy/1.jpg" alt="">
                             </a>
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-6 nopadding">
@@ -60,7 +60,7 @@
                     <div class="row">
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
-                                <img src="http://placehold.it/256x256" alt="">
+                                <img src="./img/dummy/2.jpg" alt="">
                             </a>
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-6 nopadding">
@@ -91,7 +91,7 @@
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
-                                <img src="http://placehold.it/256x256" alt="">
+                                <img src="./img/dummy/3.jpg" alt="">
                             </a>
                         </div><!--/ .col-xs-12 -->
                     </div><!--/ .row -->
@@ -111,7 +111,7 @@
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
-                                <img src="http://placehold.it/256x256" alt="">
+                                <img src="./img/dummy/4.jpg" alt="">
                             </a>
                         </div><!--/ .col-xs-12 -->
                     </div><!--/ .row -->
@@ -126,7 +126,7 @@
                     <div class="row">
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
-                                <img src="http://placehold.it/256x256" alt="">
+                                <img src="./img/dummy/5.jpg" alt="">
                             </a>
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-6 nopadding">
@@ -146,7 +146,7 @@
                     <div class="row">
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
-                                <img src="http://placehold.it/256x256" alt="">
+                                <img src="./img/dummy/6.jpg" alt="">
                             </a>
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-6 nopadding">
@@ -177,7 +177,7 @@
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
-                                <img src="http://placehold.it/256x256" alt="">
+                                <img src="./img/dummy/7.jpg" alt="">
                             </a>
                         </div><!--/ .col-xs-12 -->
                     </div><!--/ .row -->
@@ -197,7 +197,7 @@
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
-                                <img src="http://placehold.it/256x256" alt="">
+                                <img src="./img/dummy/8.jpg" alt="">
                             </a>
                         </div><!--/ .col-xs-12 -->
                     </div><!--/ .row -->

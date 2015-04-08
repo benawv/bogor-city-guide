@@ -22,7 +22,7 @@
                     <li><a href="?p=galeri">Galeri</a></li>
                     <li><a href="?p=proses-seleksi">Proses Seleksi</a></li>
                     <li><a href="?p=pengumuman">Pengumuman</a></li>
-                    <li><a href="?p=faq">FAQ</a></li>
+                    <li><a href="?p=faq">Tanya Jawab</a></li>
                     <li><a href="?p=privacy-policy">Kebijakan Privasi</a></li>
                     <li><a href="?p=kuis">Kuis</a></li>
                 </ul><!--/ .clearfix-->

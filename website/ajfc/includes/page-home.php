@@ -32,24 +32,25 @@
     <nav class="main-navigation floating">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-md-3">
+                <div class="col-xs-12 col-md-4">
                     <a href="?p=proses-seleksi" class="nav-item green sitemap">
-                        <h4><small>01</small> Mekanisme.</h4>
+                        <h4><small>01</small> Proses Seleksi</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
+                <!--
                 <div class="col-xs-12 col-md-3">
                     <a href="#" class="nav-item orange trophy">
                         <h4><small>02</small> Hadiah.</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                <div class="col-xs-12 col-md-3">
-                    <a href="?p=faq" class="nav-item grey question">
-                        <h4><small>03</small> FAQ.</h4>
+                <div class="col-xs-12 col-md-4">
+                    <a href="?p=faq" class="nav-item orange question">
+                        <h4><small>02</small> Tanya Jawab</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                <div class="col-xs-12 col-md-3">
+                <div class="col-xs-12 col-md-4">
                     <a href="?p=daftar-peserta" class="nav-item users">
-                        <h4><small>04</small> Daftar Peserta.</h4>
+                        <h4><small>03</small> Sudah Mendaftar? <span>Cek Disini</span></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
             </div><!--/ .row -->
@@ -75,7 +76,7 @@
                     <div class="header">
                         <h2>Kalender Event</h2>
                     </div>
-                    <div class="body">
+                    <div class="body mt32">
                         <h2 id="calendar-title">Wawancara Tahap Pertama</h2>
                         <p><small id="calendar-date">14 Maret 2015</small></p>
                         <p id="calendar-body">
@@ -86,7 +87,9 @@
                             vitae bibendum sem dapibus finibus.
                         </p>
                     </div><!--/ .body -->
+                    <!--
                     <a href="#" class="btn-edge"></a>
+                    -->
                 </div><!--/.calendar-info-inner -->
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
@@ -312,7 +315,9 @@
                                     non ipsum nec, vulputate euismod metus.
                                 </p>
                             </div><!--/ .news-feeds-box--content -->
+                            <!--
                             <a href="#" class="btn-edge"></a>
+                            -->
                         </div><!--/ .col-xs-12 -->
                     </div><!--/ .row -->
                 </div><!--/ .news-feeds--box -->
@@ -327,7 +332,9 @@
                                     nec tincidunt velit sapien vitae ligula.
                                 </p>
                             </div><!--/ .news-feeds-box--content -->
+                            <!--
                             <a href="#" class="btn-edge"></a>
+                            -->
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-12 hidden-xs hidden-sm col-md-6 image">
                             <img src="./img/dummy-stadium.jpg" alt="" class="" />

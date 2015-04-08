@@ -112,7 +112,7 @@
                             <?php echo $event; ?>
                         </p>
                     </div><!--/ .body -->
-                    <a href="#" class="btn-edge"></a>
+                    <!--<a href="#" class="btn-edge"></a>-->
                 </div><!--/.calendar-info-inner -->
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
@@ -304,12 +304,40 @@
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-6 news-feeds">
                 <?php 
+                    $entries = new Object_DataPesertaAJFCDefault_List();
+                    $entries->setLimit(1);
+                    foreach ($entries as $key) {
+                        $img = $key->fotoPeserta;
+                        $ptg = ucfirst($key->satuTerpenting);
+                        $nama = ucwords($key->namaLengkap);
+                        $tgll = date("Y", strtotime($key->tanggalLahir));
+                        $nyear = date("Y",time());
+                        $umur = $nyear-$tgll;
+                        $asl = ucwords($key->tempatLahir);
+                        $prop = ucwords($key->propinsi);
+                ?>
+                <div class="news-feeds--box">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 hidden-xs hidden-sm image">
+                            <img src="<?php echo $img; ?>" alt="" class="" />
+                        </div><!--/ .col-xs-12 -->
+                        <div class="col-xs-12 col-md-6 content">
+                            <div class="news-feeds--box---content">
+                                <h3><?php echo $ptg; ?></h3>
+                                <p><?php echo $nama.', '.$umur.' Tahun<br />'.$asl.', '.$prop; ?></p>
+                            </div><!--/ .news-feeds-box--content -->
+                            <!--<a href="galeri-ajfc" class="btn-edge"></a>-->
+                        </div><!--/ .col-xs-12 -->
+                    </div><!--/ .row -->
+                </div><!--/ .news-feeds--box -->
+                <?php
+                    }
                     $entries = new Object_DataPesertaAJFC_List();
-                    $entries->setLimit(2);
+                    $entries->setLimit(1);
                     $jml = count($entries);
                     if($jml < 1){
-                        $entries = new Object_DataPesertaAJFC_List();
-                        $entries->setLimit(2);
+                        $entries = new Object_DataPesertaAJFCDefault_List();
+                        $entries->setLimit(1);
                     }
                     $no=1;
                     foreach ($entries as $key) {
@@ -321,26 +349,7 @@
                         $umur = $nyear-$tgll;
                         $asl = ucwords($key->tempatLahir);
                         $prop = ucwords($key->propinsi);
-                        if($no==1){
-                ?>
-
-                <div class="news-feeds--box">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6 hidden-xs hidden-sm image">
-                            <img src="<?php echo $img; ?>" alt="" class="" />
-                        </div><!--/ .col-xs-12 -->
-                        <div class="col-xs-12 col-md-6 content">
-                            <div class="news-feeds--box---content">
-                                <h3><?php echo $ptg; ?></h3>
-                                <p><?php echo $nama.', '.$umur.' Tahun<br />'.$asl.', '.$prop; ?></p>
-                            </div><!--/ .news-feeds-box--content -->
-                            <a href="galeri-ajfc" class="btn-edge"></a>
-                        </div><!--/ .col-xs-12 -->
-                    </div><!--/ .row -->
-                </div><!--/ .news-feeds--box -->
-                
-                <?php 
-                        }else{
+                  
                 ?>
                 <div class="news-feeds--box">
                     <div class="row">
@@ -349,7 +358,7 @@
                                 <h3><?php echo $ptg; ?></h3>
                                 <p><?php echo $nama.', '.$umur.' Tahun<br />'.$asl.', '.$prop; ?></p>
                             </div><!--/ .news-feeds-box--content -->
-                            <a href="#" class="btn-edge"></a>
+                            <!--<a href="#" class="btn-edge"></a>-->
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-12 hidden-xs hidden-sm col-md-6 image">
                             <img src="<?php echo $img; ?>" alt="" class="" />
@@ -357,8 +366,6 @@
                     </div><!--/ .row -->
                 </div><!--/ .news-feeds--box -->
                 <?php
-                        }
-                        $no++;
                     }
                 ?>
                 
