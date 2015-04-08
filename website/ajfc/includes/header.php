@@ -26,8 +26,10 @@
         <script src="./js/jquery-1.11.1.min.js"></script>
 
         <?php include_once( './includes/static-header.php' );?>
-
+        <!--
         <link rel="stylesheet" href="./css/bootstrap-custom/bootstrap.css">
+        -->
+        <link rel="stylesheet" href="./css/bootstrap-custom-wcm/bootstrap.css">
         <link rel="stylesheet" href="./css/font-awesome.min.css">
         <link rel="stylesheet" href="./css/style.css">
 
@@ -40,15 +42,15 @@
         <style type="text/css">.gradient { filter: none; }</style>
         <![endif]-->
 
+        <!--
         <script src="./js/bootstrap.min.js"></script>
+        -->
+        <script src="./js/bootstrap-custom-wcm/bootstrap.min.js"></script>
         <script src="./js/zabuto_calendar.min.js"></script>
         <script src="./js/javascripts.js"></script>
 
     </head>
 
     <body>
-
-        <!--
-        <div class="loading"><div class="loading-inner"><i class="fa fa-refresh fa-2x fa-spin"></i></div></div><!--/ .loading -->
 
         <?php include( './includes/static-header-body.php' ); ?>
