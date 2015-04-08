@@ -5,7 +5,10 @@
 <?php endif;?>
 <div class="container boxes-view">
 	<?php echo $this->template("includes/breadcrumb.php")?>
-	<span class="breadcrumb"><a href="#"><?php //echo $this->document->getTitle()?></a></span>
+	<span class="breadcrumb">
+		<h1 class="title"><?php echo $this->document->getProperty('navigation_title');?></h1>
+		<a href="#"><?php //echo $this->document->getTitle()?></a>
+	</span>
 	
 	<div class="heading clearfix pagenav">
 		<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>

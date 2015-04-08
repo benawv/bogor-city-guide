@@ -12,8 +12,10 @@
 </style>
 <div class="container boxes-view">
 	<div class="heading clearfix pagenav">
+		
 		<?php echo $this->template("includes/breadcrumb.php")?>
-			
+		<span class="breadcrumb">
+			<h1 class="title"><?php echo $this->document->getProperty('navigation_title');?></h1>	
 		</span>
 		<!--<div class="hotline"><img width="30px" src="_assets/images/hotline.png">&nbsp;&nbsp;<span style="font-size:20px"><strong>021-2926 9999</strong></span></div>-->
 		<div id="quicklinks">

@@ -1,7 +1,7 @@
 <?php
 	if($this->editmode) {
 ?>
-		<style type="text/css">
+		<style>
 			.navi{
 				margin-bottom: 50px;
 			}
@@ -26,15 +26,21 @@
 	<span class="breadcrumb"><h1 class="title"><?php echo $this->document->getProperty('navigation_title');?></h1></span>
 	
 	<div class="heading clearfix pagenav">
-		<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor','title-wizard'))); ?>
+		<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
+		<div id="quicklinks">
+			<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks', 'product-quicklinks', "blank-animation-quicklinks")))?>
+		</div>
 	</div>
+	
 	<div class="wrapper-special clearfix">
 		<?php echo $this->areablock('banner', array(
-					"allowed" => array("banner2", "static-banner")))?>
+					"allowed" => array("banner", "static-banner", "banner-without-note")))?>
 		<div id="quicklinks">
-		<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks', 'product-quicklinks',"blank-tile-quicklinks-static", "tile-quicklinks", "layanankami-quicklinks", "blank-animation-quicklinks")))?>
+			<?php echo $this->areablock('quicklinks-wrapper', array(
+					"allowed" => array("tile-quicklinks", "layanankami-quicklinks", "quicklinks","blank-tile-quicklinks-static", "product-quicklinks", "blank-animation-quicklinks")))?>
 		</div>
 	</div><!-- .wrapper-special -->
+	
 	<div>
 		<?php
 			function limit_words($string, $word_limit)
@@ -44,18 +50,17 @@
 			}
 		?>
 		<?php echo $this->areablock('container', array('allowed' => array(
-														'container-box2', 'community-tips2',
-														'sections', 'sections-tab', 'teks-tabs',
-														'sections-video', 'sections-gallery', 'sections-box-full',
-														'sections-select', 'tekskanan60-imagekiri40_wizard', 
-														'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
-														'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
-														'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
-														'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
-														'tekskanan60-imagekiri40_2', 'tekskanan60-videokiri40_2',
-														'smartlink-factsheet', 'syariah-factsheet',
-														'pension-factsheet', 'saving-factsheet','multi-video',
-														'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap'))); ?>
+			'mobilku','tasbih','container-box2', 'community-tips2',
+			'sections', 'sections-box-full', 'sections-tab', 'teks-tabs',
+			'sections-video', 'sections-gallery', 
+			'sections-select', 'tekskanan60-imagekiri40_wizard', 
+			'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
+			'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
+			'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
+			'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
+			'smartlink-factsheet', 'syariah-factsheet',
+			'pension-factsheet', 'saving-factsheet','multi-video',
+			'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi'))); ?>
 		<div style="clear: both"></div>
 		<div class="items-container">
 			<?php echo $this->areablock('container2', array(
