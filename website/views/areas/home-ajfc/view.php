@@ -201,7 +201,7 @@
                 
                         <?php
                         
-                            $fb_feed1 = new Object_socialMediaFeed_List();
+                            $fb_feed1 = new Object_SocialMediaFeed_List();
                             $fb_feed1->setLimit(1);
                             $fb_feed1->setOrder("asc");
                             $x = 1;
@@ -216,7 +216,7 @@
                                 $fb_link_aset1=$items1->link_asset;
                             }
                             
-                            $fb_feed2 = new Object_socialMediaFeed_List();
+                            $fb_feed2 = new Object_SocialMediaFeed_List();
                             $fb_feed2->setLimit(2);
                             $fb_feed2->setOrder("asc");
                             $fb2 = 1;
@@ -233,7 +233,7 @@
                                 $fb2++;
                             }
                             
-                            $tw_feed1 = new Object_socialMediaFeed_List();
+                            $tw_feed1 = new Object_SocialMediaFeed_List();
                             $tw_feed1->setLimit(1);
                             $tw_feed1->setOrder("asc");
                             $tw1 = 1;
@@ -249,7 +249,7 @@
                             }
                             
                             
-                            $tw_feed2 = new Object_socialMediaFeed_List();
+                            $tw_feed2 = new Object_SocialMediaFeed_List();
                             $tw_feed2->setLimit(1);
                             $tw_feed2->setOrder("asc");
                             $tw2 = 1;
