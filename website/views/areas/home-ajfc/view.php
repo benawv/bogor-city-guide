@@ -361,7 +361,7 @@
                                 <div class="media">
                                     <div class="media-left">
                                         <a href="<?php echo $fb_link2; ?>" target="_blank">
-                                            <img class="media-object img-responsive" src="<?php echo $fb_link_aset1;?>" alt="Profile Picture">
+                                            <img class="media-object img-responsive" src="<?php echo $fb_link_aset2;?>" alt="Profile Picture">
                                         </a>
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
