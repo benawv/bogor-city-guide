@@ -996,9 +996,11 @@ section#calendar-wrapper .calendar-info .calendar-info--inner {
           -moz-osx-font-smoothing: grayscale;
           font-size: 20px;
           line-height: 32px;
-          text-align: center; }
+          text-align: center;
+          top: 50%;
+          margin-top: -16px; }
         .main-content .faq-wrapper .faq-item .faq-item--question h1, .main-content .faq-wrapper .faq-item .faq-item--question h2, .main-content .faq-wrapper .faq-item .faq-item--question h3, .main-content .faq-wrapper .faq-item .faq-item--question h4, .main-content .faq-wrapper .faq-item .faq-item--question h5, .main-content .faq-wrapper .faq-item .faq-item--question h6 {
-          margin: 0;
+          margin: 0 32px 0 0;
           padding: 0;
           line-height: 1.5;
           max-width: 90%; }
