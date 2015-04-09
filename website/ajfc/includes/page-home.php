@@ -401,12 +401,12 @@
                         var news_length = news.length;
                         var interval    = 8000;
 
+                        /*
                         var box_a_pos   = 1;
                         var box_a       = $( '#newsFeedsBox1' );
                         var box_a_image = box_a.find( '.image' ).find( 'img' );
                         var box_a_title = box_a.find( '.news-feed--box---content-title' );
                         var box_a_body  = box_a.find( 'p' );
-
                         var loop_a      = setInterval(function(){
 
                             if( news[ box_a_pos ] != undefined )
@@ -442,8 +442,8 @@
                             }
                             //console.table( news[ box_a_pos ] );
                         }, interval);
-
-                        var box_b_pos   = ( news_length / 2 ) + 1;
+                        */
+                        var box_b_pos   = 0; //( news_length / 2 ) + 1;
                         var box_b       = $( '#newsFeedsBox2' );
                         var box_b_image = box_b.find( '.image' ).find( 'img' );
                         var box_b_title = box_b.find( '.news-feed--box---content-title' );
@@ -480,7 +480,7 @@
                                 }
                                 else
                                 {
-                                    box_b_pos = ( news_length / 2 );
+                                    box_b_pos = 0; // ( news_length / 2 );
                                 }
                                 //console.table( news[ box_a_pos ] );
                             }
