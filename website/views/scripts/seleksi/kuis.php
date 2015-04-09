@@ -103,19 +103,22 @@
                                                             $checked2 = "";
                                                         }
                                                       ?>
+                                                      <div class="message-info">
                                                         <div class="form-group">
                                                             <label class="radio-inline">
-                                                              <input <?php echo $checked1;?> type="radio" name="radio" id="laki-laki" value="Laki-laki" /> Laki-laki
+                                                              <input <?php echo $checked1;?> type="radio" name="radioJK" id="laki-laki" value="Laki-laki" /> Laki-laki
                                                             </label>
                                                             <label class="radio-inline">
-                                                              <input <?php echo $checked2;?> type="radio" name="radio" id="perempuan" value="Perempuan" /> Perempuan
+                                                              <input <?php echo $checked2;?> type="radio" name="radioJK" id="perempuan" value="Perempuan" /> Perempuan
                                                             </label> 
-                                                        </div>  
+                                                        </div>
+                                                        <div class="info-error"></div>
+                                                      </div>
                                                   </div>
                                                   
                                                   <div class="form-group">
                                                       <label for="nama" name="nama">Jumlah Saudara Kandung Termasuk Kamu</label>
-                                                      <label>
+                                                      <label class="cusError">
                                                         <input type="text" class="form-control" id="jumSaudara" name="jumSaudara" placeholder="">
                                                         <span class="spanOrg">Orang</span>
                                                       </label>
@@ -260,6 +263,94 @@
 															</div> 
 														</div>	
                                                   </div>
+                                                
+                                                    <div class="form-group">
+                                                        <label for="exampleInputName2">Usia Orang Tua<span class="spanRed">*</span></label>
+                                                        <div class="controls form-inline">
+                                                            <table>
+                                                            <tr>
+                                                                <td>Ayah</td>
+                                                                <td>: &nbsp;<input type="text" name="usiaAyah" class="form-control ttl" id="usiaAyah" /> Tahun</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Ibu</td>
+                                                                <td>: &nbsp;<input type="text" name="usiaIbu" class="form-control ttl" id="usiaIbu" /> Tahun</td>
+                                                            </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="form-group">
+                                                        <label for="exampleInputName2">Pendidikan Terakhir Orang Tua<span class="spanRed">*</span></label>
+                                                        <div class="message-info">
+                                                        <div class="controls form-inline">
+                                                            <table>
+                                                            <tr>
+                                                                <td>Ayah</td>
+                                                                <td>: </td>
+                                                                <td>
+                                                                    <label>
+                                                                      <input type="radio" name="pendidikanAyah" value="SD"> SD
+                                                                    </label>
+                                                                    <label>
+                                                                      <input type="radio" name="pendidikanAyah" value="SMP"> SMP
+                                                                    </label>
+                                                                    <label>
+                                                                      <input type="radio" name="pendidikanAyah" value="SMA"> SMA
+                                                                    </label>
+                                                                    <label>
+                                                                      <input type="radio" name="pendidikanAyah" value="D3"> D3
+                                                                    </label>
+                                                                    <label>
+                                                                      <input type="radio" name="pendidikanAyah" value="S1"> S1
+                                                                    </label>
+                                                                    <label>
+                                                                      <input type="radio" name="pendidikanAyah" value="S2"> S2
+                                                                    </label>
+                                                                    <label>
+                                                                      <input type="radio" name="pendidikanAyah" value="S3"> S3
+                                                                    </label>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Ibu</td>
+                                                                <td>: </td>
+                                                                <td>
+                                                                    <label>
+                                                                      <input type="radio" name="pendidikanIbu" value="SD"> SD
+                                                                    </label>
+                                                                    <label>
+                                                                      <input type="radio" name="pendidikanIbu" value="SMP"> SMP
+                                                                    </label>
+                                                                    <label>
+                                                                      <input type="radio" name="pendidikanIbu" value="SMA"> SMA
+                                                                    </label>
+                                                                    <label>
+                                                                      <input type="radio" name="pendidikanIbu" value="D3"> D3
+                                                                    </label>
+                                                                    <label>
+                                                                      <input type="radio" name="pendidikanIbu" value="S1"> S1
+                                                                    </label>
+                                                                    <label>
+                                                                      <input type="radio" name="pendidikanIbu" value="S2"> S2
+                                                                    </label>
+                                                                    <label>
+                                                                      <input type="radio" name="pendidikanIbu" value="S3"> S3
+                                                                    </label>
+                                                                </td>
+                                                            </tr>
+                                                            </table>
+                                                        </div>
+                                                        </div>
+                                                        <div class="info-error"></div>
+                                                    </div>
+                                                    
+                                                    <div class="form-group">
+                                                        <label for="exampleInputName2">Pengeluaran Orang Tua<span class="spanRed">*</span></label>
+                                                        <div class="controls form-inline">
+                                                            Rp.<input type="text" name="pengeluaran" class="form-control ttl" id="pengeluaran" /> / bulan
+                                                        </div>
+                                                    </div>
 
                                                   <div class="form-group">
                                                       <label for="tgl-lahir">Dari mana kamu mendapatkan informasi mengenai kamp ini?<span class="spanRed">*</span></label>
@@ -355,7 +446,7 @@
                                               <div class="col-md-6">
                                                 
                                                   <div class="form-group">
-                                                      <label for="1terpenting">Apa 1 hal terpenting bagi kamu dalam bermain bola?*</label>
+                                                      <label for="1terpenting">Ceritakan #1ygterpenting untuk memotivasi diri kamu dan tim dalam menghadapi pertandingan?</label>
                                                       <textarea class="form-control" rows="3" name="halTerpenting" required="required" style="height:100px !important"></textarea>
                                                   </div>
 													
@@ -528,6 +619,52 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
+    
+    $("#hp-ortu").keypress(function (e) {
+        //if the letter is not digit then display error and don't type anything
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+           //display error message
+           //$("#errmsg").html("Digits Only").show().fadeOut("slow");
+                  return false;
+       }
+      });
+    
+    $("#jumSaudara").keypress(function (e) {
+        //if the letter is not digit then display error and don't type anything
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+           //display error message
+           //$("#errmsg").html("Digits Only").show().fadeOut("slow");
+                  return false;
+       }
+      });
+    
+    $("#no-tlp").keypress(function (e) {
+        //if the letter is not digit then display error and don't type anything
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+           //display error message
+           //$("#errmsg").html("Digits Only").show().fadeOut("slow");
+                  return false;
+       }
+      });
+    
+    $("#usiaAyah").keypress(function (e) {
+        //if the letter is not digit then display error and don't type anything
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+           //display error message
+           //$("#errmsg").html("Digits Only").show().fadeOut("slow");
+                  return false;
+       }
+      });
+    
+    $("#usiaIbu").keypress(function (e) {
+        //if the letter is not digit then display error and don't type anything
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+           //display error message
+           //$("#errmsg").html("Digits Only").show().fadeOut("slow");
+                  return false;
+       }
+      });
+    
 //$('#myModal').modal();
     var navListItems = $('div.setup-panel div a'),
             allWells = $('.setup-content'),
@@ -744,12 +881,20 @@ $(function() {
             pasport: 
             {
                   required: true
-            },	
+            },
+            radioJK: 
+            {
+                  required: true
+            },
           alamat: 
           {
             required: true
           },
           'no-telp': 
+          {
+            required: true
+          },
+          tmp:
           {
             required: true
           },
@@ -762,6 +907,26 @@ $(function() {
             required: true
           },
           clickFB: 
+          {
+            required: true
+          },
+          usiaAyah:
+          {
+            required: true
+          },
+          usiaIbu:
+          {
+            required: true
+          },
+          pendidikanAyah:
+          {
+            required: true
+          },
+          pendidikanIbu:
+          {
+            required: true
+          },
+          pengeluaran:
           {
             required: true
           },
@@ -810,14 +975,42 @@ $(function() {
 		  pasport: 
           {
             required: "Mohon pilih apakah anda memiliki passport?"
-          },	
+          },
+          radioJK: 
+          {
+            required: "Mohon pilih jenis kelamin"
+          },
           alamat: 
           {
             required: "Mohon masukkan alamat Anda"
           },
+          tmp: 
+          {
+            required: "Mohon masukkan tempat lahir Anda"
+          },
           'no-telp': 
           {
             required: "Mohon masukkan no telepon Anda"
+          },
+          usiaAyah:
+          {
+            required: "Mohon masukkan usia Ayah"
+          },
+          usiaIbu:
+          {
+            required: "Mohon masukkan usia Ibu"
+          },
+          pendidikanAyah:
+          {
+            required: "Mohon pilih pendidikan terakhir Ayah"
+          },
+          pendidikanIbu:
+          {
+            required: "Mohon pilih pendidikan terakhir Ibu"
+          },
+          pengeluaran:
+          {
+            required: "Mohon isi pengeluaran orang tua per bulan"
           },
           namaOrtu: 
           {
@@ -825,11 +1018,13 @@ $(function() {
           },
           noHp: 
           {
-            required: "Mohon masukkan nomor telepon Anda"
+            required: "Mohon masukkan nomor telepon Anda",
+            number: "Mohon masukkan angka"
           },
           jumSaudara: 
           {
-            required: "Mohon masukkan jumlah saudara kandung termasuk Anda"
+            required: "Mohon masukkan jumlah saudara kandung termasuk Anda",
+            number: "Mohon masukkan angka"
           },
           propinsi: 
           {

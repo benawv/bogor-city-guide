@@ -20,7 +20,7 @@ class SeleksiController extends Website_Controller_Action {
 					$this->view->peserta = $data;
 				}
 				else{
-					$this->redirect("/ajfc");
+					$this->redirect("/ajfc/expire/expire-page");
 				}
 			}
 		}

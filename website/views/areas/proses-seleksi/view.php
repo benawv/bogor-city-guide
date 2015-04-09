@@ -67,7 +67,7 @@
                             <h3>Pengumuman</h3>
                             <p>
                                 <strong>100 peserta</strong> yang lolos dari seleksi tahap 1 pada tanggal
-                                <strong>29 Mei 2015</strong> pada website <a href="allianz.co.id/pengumuman">allianz.co.id</a> dan FB AJFC Indonesia.
+                                <strong>29 Mei 2015</strong> pada website <a href="http://allianz.co.id/pengumuman" target="_blank">allianz.co.id</a> dan <a href="https://www.facebook.com/AJFCIndonesia" target="_blank">FB AJFC Indonesia</a>.
                             </p>
                         </div><!--/ .process-item -->
 
@@ -127,7 +127,7 @@
                                     <h3>Pengumuman</h3>
                                     <p>
                                         <strong>100 peserta</strong> yang lolos dari seleksi tahap 1 pada tanggal
-                                        <strong>29 Mei 2015</strong> pada website <a href="allianz.co.id/pengumuman">allianz.co.id</a> dan FB AJFC Indonesia.
+                                        <strong>29 Mei 2015</strong> pada website <a href="http://allianz.co.id/pengumuman" target="_blank">allianz.co.id</a> dan <a href="https://www.facebook.com/AJFCIndonesia" target="_blank">FB AJFC Indonesia</a>.
                                     </p>
                                 </div><!--/ .image-hotspot--content -->
                             </div><!--/ .image-hotspot--item -->

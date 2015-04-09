@@ -6,7 +6,7 @@ class KuisController extends Website_Controller_Action {
 		//echo "<pre>";
 		//print_r($_POST);
 		//print_r($_FILES);
-		//
+		//die();
 		//$namaPeserta = "MUHAMMAD ROBBI NUGRAHA";
 		//$saveNoDada = "0099";
 		//$this->createPdfAction($namaPeserta,$saveNoDada);
@@ -25,6 +25,7 @@ class KuisController extends Website_Controller_Action {
 		$namaPeserta = $_POST["nama"];
 		$emailPeserta = $_POST["email"];
 		$alamat = $_POST["alamat"];
+		$jk = $_POST["radioJK"];
 		$pasport = $_POST["pasport"];
 		$propinsi = $_POST["propinsi"];
 		$namaOrtu = $_POST["namaOrtu"];
@@ -35,6 +36,15 @@ class KuisController extends Website_Controller_Action {
 		$pekerjaan_lain = $_POST["pekerjaan-lain"];
 		$info = implode(", ", $_POST["info"]);
 		$halTerpenting = $_POST["halTerpenting"];
+		
+		//Orang Tua
+		$saudara = $_POST["jumSaudara"];
+		$usiaAyah = $_POST["usiaAyah"];
+		$usiaIbu = $_POST["usiaIbu"];
+		$pendidikanAyah = $_POST["pendidikanAyah"];
+		$pendidikanIbu = $_POST["pendidikanIbu"];
+		$pengeluaran = $_POST["pengeluaran"];
+		
 		if($pekerjaan_lain != "")
 		{
 			$pekerjaan = "";
@@ -91,6 +101,16 @@ class KuisController extends Website_Controller_Action {
 		$saveKuis->setStatusSubmitKuis(1);
 		$saveKuis->setTerm($term);
 		$saveKuis->setNoLari($setLari);
+		$saveKuis->setJenisKelamin($jk);
+		
+		//Orang Tua
+		$saveKuis->setJumSaudara($saudara);
+		$saveKuis->setUsiaAyah($usiaAyah);
+		$saveKuis->setUsiaIbu($usiaIbu);
+		$saveKuis->setPendidikanAyah($pendidikanAyah);
+		$saveKuis->setPendidikanIbu($pendidikanIbu);
+		$saveKuis->setPengeluaranOrtu($pengeluaran);
+
 		
 		$digit = 4-(int)(strlen($setLari));
 		$noDada = "";
@@ -149,7 +169,7 @@ class KuisController extends Website_Controller_Action {
 			$this->createPdfAction($namaPeserta,$saveNoDada);
 			$this->sendAction($saveNoDada,$emailPeserta);
 			
-			$this->redirect("/ajfc");
+			$this->redirect("/ajfc/thanks/terima-kasih");
 		}
 		catch(Exception $e){
 			echo 'ERROR: ',  $e->getMessage(), "\n";
