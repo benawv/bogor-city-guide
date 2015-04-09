@@ -2,7 +2,7 @@ $( document ).ready(function(){
 
     // console.log( 'Document is ready, my lord.' );
 
-    responsiveNewsFeedBox();
+    //responsiveNewsFeedBox();
     resizePageWrapper();
 
     if( $( '.faq-item' ).length > 0 )
@@ -117,12 +117,12 @@ $( document ).ready(function(){
 });
 
 $( window ).resize(function(){
-    responsiveNewsFeedBox();
+    //responsiveNewsFeedBox();
     resizePageWrapper();
 });
 
 $( window ).load(function(){
-    responsiveNewsFeedBox();
+    // responsiveNewsFeedBox();
     resizePageWrapper();
 });
 

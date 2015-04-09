@@ -705,7 +705,35 @@ header {
   min-height: 280px;
   padding: 24px;
   border: solid 1px #ddd;
-  background: white; }
+  background: white;
+  overflow: hidden; }
+  .social-feeds .social-feeds--box:hover .bg-image {
+    min-width: 110%;
+    min-height: 110%; }
+  .social-feeds .social-feeds--box .bg-image {
+    -webkit-transition: ease 0.3s;
+    -moz-transition: ease 0.3s;
+    -ms-transition: ease 0.3s;
+    -o-transition: ease 0.3s;
+    transition: ease 0.3s;
+    display: block;
+    width: auto;
+    min-width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 100%;
+    max-height: none;
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    -ms-transform: translate3d(-50%, -50%, 0);
+    -o-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    opacity: 0.2;
+    pointer-events: none; }
   .social-feeds .social-feeds--box.facebook .header > i,
   .social-feeds .social-feeds--box.facebook .body a {
     color: #3b5998; }

@@ -212,6 +212,7 @@
 
                     <div class="col-xs-12 col-md-6 nopadding br bt">
                         <div class="social-feeds--box facebook">
+                            <img src="./img/dummy-stadium.jpg" alt="" class="bg-image" />
                             <div class="header">
                                 <i class="fa fa-facebook pull-left"></i>
                                 <!--
@@ -244,6 +245,7 @@
 
                     <div class="col-xs-12 col-md-6 nopadding br bt">
                         <div class="social-feeds--box facebook">
+                            <img src="./img/dummy-wasit.jpg" alt="" class="bg-image" />
                             <div class="header">
                                 <i class="fa fa-facebook pull-left"></i>
                                 <!--
@@ -306,11 +308,11 @@
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
                         <a href="#" class="news-feeds--image">
-                            <img src="./img/dummy/1.jpg" alt="" />
+                            <img src="./img/yangterpenting.jpg" alt="" />
                         </a>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bt">
-                        <a href="#" class="news-feeds--image">
+                        <a href="#" class="news-feeds--image" id="imageBoxA">
                             <img src="./img/dummy-wasit.jpg" alt="" />
                         </a>
                     </div><!--/ .col-xs-12 -->
@@ -318,21 +320,119 @@
 
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bb">
-                        <a href="#" class="news-feeds--image">
+                        <a href="#" class="news-feeds--image" id="imageBoxB">
                             <img src="./img/dummy-stadium.jpg" alt="" />
                         </a>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bb">
-                        <div class="text">
-                            <h3><a href="#">Judul Berita</a></h3>
-                            <p class="text-muted"><small>Rabu, 14 Mei 2015</small></p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut orci metus, interdum non ipsum nec, vulputate euismod metus. Morbi eget sem sed orci interdum lacinia quis ac orci.</p>
+                        <div class="text" id="textBoxC">
+                            <h3 class="tbc-title"><a href="#">Judul Berita</a></h3>
+                            <p class="text-muted"><small class="tbc-date">Rabu, 14 Mei 2015</small></p>
+                            <p class="tbc-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut orci metus, interdum non ipsum nec, vulputate euismod metus. Morbi eget sem sed orci interdum lacinia quis ac orci.</p>
                         </div><!--/ .text -->
                     </div><!--/ .col-xs-12 -->
                 </div><!--/ .row -->
 
                 <script>
                     $(function(){
+
+                        var images = [
+                            [ '#', './img/dummy-wasit.jpg' ],
+                            [ '#', './img/dummy-stadium.jpg' ],
+                            [ '#', './img/dummy/1.jpg' ],
+                            [ '#', './img/dummy/2.jpg' ],
+                            [ '#', './img/dummy/3.jpg' ],
+                            [ '#', './img/dummy/4.jpg' ],
+                            [ '#', './img/dummy/5.jpg' ],
+                            [ '#', './img/dummy/6.jpg' ],
+                            [ '#', './img/dummy/7.jpg' ],
+                            [ '#', './img/dummy/8.jpg' ]
+                        ];
+
+                        var imagesLength = images.length;
+
+                        var news = [
+                            [ '#', 'Berita ke 1', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
+                            [ '#', 'Berita ke 2', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
+                            [ '#', 'Berita ke 3', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
+                            [ '#', 'Berita ke 4', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
+                            [ '#', 'Berita ke 5', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
+                        ];
+                        var newsLength  = news.length;
+
+                        var imageBoxA   = $( '#imageBoxA' );
+                        var iba_current = 0;
+                        var iba_interval= 4000;
+                        var iba_loop    = setInterval(function(){
+                            imageBoxA.stop().fadeOut( 'fast', function(){
+                                $( this ).parent().attr( 'href', images[ iba_current ][ 0 ] );
+                                $( this ).find( 'img' ).attr( 'src', images[ iba_current ][ 1 ] );
+                                $( this ).stop().fadeIn( 'fast', function(){
+                                    // do nothing
+                                });
+                            });
+                            //console.log( iba_current + ' ' + imagesLength );
+                            if( iba_current < ( imagesLength - 1 ) )
+                            {
+                                iba_current++;
+                            }
+                            else
+                            {
+                                iba_current = 0;
+                            }
+                        }, iba_interval);
+
+                        var imageBoxB   = $( '#imageBoxB' );
+                        var ibb_current = 0;
+                        var ibb_interval= 16000;
+                        var ibb_loop    = setInterval(function(){
+                            imageBoxB.stop().fadeOut( 'fast', function(){
+                                $( this ).parent().attr( 'href', images[ ibb_current ][ 0 ] );
+                                $( this ).find( 'img' ).attr( 'src', images[ ibb_current ][ 1 ] );
+                                $( this ).stop().fadeIn( 'fast', function(){
+                                    // do nothing
+                                });
+                            });
+                            //console.log( iba_current + ' ' + imagesLength );
+                            if( ibb_current < ( imagesLength - 1 ) )
+                            {
+                                ibb_current++;
+                            }
+                            else
+                            {
+                                ibb_current = 0;
+                            }
+                        }, iba_interval);
+
+                        var textBoxC    = $( '#textBoxC' );
+                        var tbc_title   = textBoxC.find( '.tbc-title' );
+                        var tbc_date    = textBoxC.find( '.tbc-date' );
+                        var tbc_body    = textBoxC.find( '.tbc-body' );
+                        var tbc_interval= 5000;
+                        var tbc_current = 0;
+                        var tbc_loop    = setInterval(function(){
+                            tbc_title.stop().fadeOut( 'fast', function(){
+                                $( this ).html( '<a href="' + news[ tbc_current ][ 0 ] + '">' + news[ tbc_current ][ 1 ] + '</a>' );
+                                $( this ).stop().fadeIn( 'fast' );
+                            });
+                            tbc_date.stop().fadeOut( 'fast', function(){
+                                $( this ).html( news[ tbc_current ][ 3 ] );
+                                $( this ).stop().fadeIn( 'fast' );
+                            });
+                            tbc_body.stop().fadeOut( 'fast', function(){
+                                $( this ).html( news[ tbc_current ][ 2 ] );
+                                $( this ).stop().fadeIn( 'fast' );
+                            });
+                            if( tbc_current < newsLength-1 )
+                            {
+                                tbc_current++;
+                            }
+                            else
+                            {
+                                tbc_current = 0;
+                            }
+                        }, tbc_interval);
+
 
                     });
                 </script>
