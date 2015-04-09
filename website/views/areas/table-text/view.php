@@ -60,6 +60,7 @@
                                 <li><a href="#">Galeri</a></li>
                                 <li><a href="?p=proses-seleksi">Proses Seleksi</a></li>
                                 <li><a href="#">Pengumuman</a></li>
+				<li><a href="?p=faq">Daftar Peserta</a></li>
                                 <li class="active"><a href="?p=faq">FAQ</a></li>
                                 <li><a href="?p=privacy-policy">Kebijakan Privasi</a></li>
                             </ul>

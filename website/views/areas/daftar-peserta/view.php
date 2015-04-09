@@ -46,7 +46,7 @@
 										    <tr>
 											<td><?php echo $x;?></td>
 											<td><?php echo $peserta->getNamaLengkap();?></td>
-											<td><?php echo $peserta->getIdPeserta();?></td>
+											<td><?php echo $peserta->getnoLari();?></td>
 											<td><?php echo date("d - m - Y",strtotime($peserta->getTanggalLahir()));?></td>
 										    </tr>
 									    <?php
@@ -57,12 +57,14 @@
 								</table>
 							</div>
 						</div>
+						
 					</div>
 					<script>
 						$(document).ready(function() {
 							$('#example').DataTable();
 						} );
-					</script> 
+					</script>
+					<p><?php echo $this->input('text-1')?></p>
                     </div><!--/ .faq-wrapper -->
                     
                                   
