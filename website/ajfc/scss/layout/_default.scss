@@ -713,11 +713,13 @@ section#calendar-wrapper
                     line-height: 32px;
                     text-align: center;
                     // border: solid 1px red;
+                    top: 50%;
+                    margin-top: -16px;
                 }
 
                 h1, h2, h3, h4, h5, h6
                 {
-                    margin: 0;
+                    margin: 0 32px 0 0;
                     padding: 0;
                     line-height: 1.5;
                     max-width: 90%;
