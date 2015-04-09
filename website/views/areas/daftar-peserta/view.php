@@ -80,13 +80,13 @@
                         </div><!--/ .sidebar-item--header -->
                         <div class="sidebar-item--content">
                             <ul class="sidebar-nav">
-                                <li><a href="?p=home">Beranda</a></li>
-                                <li><a href="#">Galeri</a></li>
-                                <li><a href="?p=proses-seleksi">Proses Seleksi</a></li>
+                                <li><a href="http://beta.allianz.co.id/ajfc">Beranda</a></li>
+                                <li><a href="/ajfc/galeri-ajfc">Galeri</a></li>
+                                <li><a href="/ajfc/proses-seleksi">Proses Seleksi</a></li>
                                 <li><a href="#">Pengumuman</a></li>
-				<li class="active"><a href="?p=faq">Daftar Peserta</a></li>
-                                <li><a href="?p=faq">FAQ</a></li>
-                                <li><a href="?p=privacy-policy">Kebijakan Privasi</a></li>
+				<li class="active"><a href="/ajfc/daftar-perserta">Daftar Peserta</a></li>
+                                <li><a href="/ajfc/tanya-jawab">Tanya Jawab</a></li>
+                                <li><a href="/ajfc/kebijakan-privasi">Kebijakan Privasi</a></li>
                             </ul>
                         </div><!--/ .sidebar-item--content -->
                     </div><!--/ .sidebar-item -->
