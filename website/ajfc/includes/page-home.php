@@ -309,7 +309,7 @@
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-12 col-md-6 content">
                             <div class="news-feeds--box---content">
-                                <h3>Wasit, siapa mereka?</h3>
+                                <h3 class="news-feed--box---content-title">Wasit, siapa mereka?</h3>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut orci metus,
                                     non ipsum nec, vulputate euismod metus.
@@ -326,7 +326,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-md-6 content">
                             <div class="news-feeds--box---content">
-                                <h3>Berkunjung ke Allianz Arena di Munich</h3>
+                                <h3 class="news-feed--box---content-title">Berkunjung ke Allianz Arena di Munich</h3>
                                 <p>
                                     Vestibulum accumsan, metus quis lacinia malesuada, lacus diam tincidunt magna,
                                     nec tincidunt velit sapien vitae ligula.
@@ -344,9 +344,147 @@
 
                 <script>
                     $(function(){
-                        var box_a = $( '#newsFeedsBox1' );
-                        var box_b = $( '#newsFeedsBox2' );
 
+                        var news =[
+                            [
+                                'Berkunjung ke Allianz Arena di Munich',
+                                'Vestibulum accumsan, metus quis lacinia malesuada, lacus diam',
+                                './img/dummy-stadium.jpg'
+                            ],
+                            [
+                                'Wasit, siapa mereka?',
+                                'Vestibulum accumsan, metus quis lacinia malesuada, lacus diam',
+                                './img/dummy-wasit.jpg'
+                            ],
+                            [
+                                'Hukum bermain bola ketika maghrib',
+                                'Haram jika shalat maghrib-nya dilewat.',
+                                './img/dummy-stadium.jpg'
+                            ],
+                            [
+                                'Mengapa bola berbentuk bundar?',
+                                'Ahli fisika mengatakan jika bola berbentuk kotak sudut tajamnya dapat melukai kaki pemain...',
+                                './img/dummy-wasit.jpg'
+                            ],
+                            [
+                                'Kebiasaan buruk rakyat Indonesia, nyampah',
+                                'Menonton pertandingan bola memang menyenangkan, tapi kesenangan itu hanya milik...',
+                                './img/dummy-stadium.jpg'
+                            ],
+                            [
+                                'Berkunjung ke Allianz Arena di Munich',
+                                'Vestibulum accumsan, metus quis lacinia malesuada, lacus diam...',
+                                './img/dummy-stadium.jpg'
+                            ],
+                            [
+                                'Berita nomor tujuh',
+                                'Vestibulum accumsan, metus quis lacinia malesuada, lacus diam...',
+                                './img/dummy-stadium.jpg'
+                            ],
+                            [
+                                'Berita nomor delapan',
+                                'Vestibulum accumsan, metus quis lacinia malesuada, lacus diam...',
+                                './img/dummy-wasit.jpg'
+                            ],
+                            [
+                                'Berita nomor sembilan',
+                                'Vestibulum accumsan, metus quis lacinia malesuada, lacus diam...',
+                                './img/dummy-stadium.jpg'
+                            ],
+                            [
+                                'Berita nomor sepuluh',
+                                'Vestibulum accumsan, metus quis lacinia malesuada, lacus diam...',
+                                './img/dummy-wasit.jpg'
+                            ]
+                        ];
+
+                        var news_length = news.length;
+                        var interval    = 8000;
+
+                        var box_a_pos   = 1;
+                        var box_a       = $( '#newsFeedsBox1' );
+                        var box_a_image = box_a.find( '.image' ).find( 'img' );
+                        var box_a_title = box_a.find( '.news-feed--box---content-title' );
+                        var box_a_body  = box_a.find( 'p' );
+
+                        var loop_a      = setInterval(function(){
+
+                            if( news[ box_a_pos ] != undefined )
+                            {
+                                var item = news[ box_a_pos ];
+                                box_a_image.stop().fadeOut( 'medium', function(){
+                                    $( this ).attr( 'src', news[ box_a_pos ][ 2 ] );
+                                    $( this ).stop().fadeIn( 'medium', function(){
+                                        // do nothing
+                                        box_a_title.stop().fadeOut( 'fast', function(){
+                                            $( this ).html( news[ box_a_pos ][ 0 ] );
+                                            $( this ).stop().fadeIn( 'fast', function(){
+                                                // do nothing
+                                                box_a_body.stop().fadeOut( 'fast', function(){
+                                                    $( this ).html( news[ box_a_pos ][ 1 ] );
+                                                    $( this ).stop().fadeIn( 'fast', function(){
+                                                        // do nothing
+                                                    });
+                                                });
+                                            });
+                                        });
+                                    });
+                                });
+                                // console.log( box_a_pos + ' < ' + ( news_length / 2 ) );
+                                if( box_a_pos < ( news_length / 2 ) -1 )
+                                {
+                                    box_a_pos++;
+                                }
+                                else
+                                {
+                                    box_a_pos = 0;
+                                }
+                            }
+                            //console.table( news[ box_a_pos ] );
+                        }, interval);
+
+                        var box_b_pos   = ( news_length / 2 ) + 1;
+                        var box_b       = $( '#newsFeedsBox2' );
+                        var box_b_image = box_b.find( '.image' ).find( 'img' );
+                        var box_b_title = box_b.find( '.news-feed--box---content-title' );
+                        var box_b_body  = box_b.find( 'p' );
+
+                        var loop_b      = setInterval(function(){
+
+                            if( news[ box_b_pos ] != undefined )
+                            {
+                                var item = news[ box_b_pos ];
+                                box_b_image.stop().fadeOut( 'medium', function(){
+                                    $( this ).attr( 'src', news[ box_b_pos ][ 2 ] );
+                                    $( this ).stop().fadeIn( 'medium', function(){
+                                        // do nothing
+                                        box_b_title.stop().fadeOut( 'fast', function(){
+                                            $( this ).html( news[ box_b_pos ][ 0 ] );
+                                            $( this ).stop().fadeIn( 'fast', function(){
+                                                // do nothing
+                                                box_b_body.stop().fadeOut( 'fast', function(){
+                                                    // console.log( '' );
+                                                    $( this ).html( news[ box_b_pos ][ 1 ] );
+                                                    $( this ).stop().fadeIn( 'fast', function(){
+                                                        // do nothing
+                                                    });
+                                                });
+                                            });
+                                        });
+                                    });
+                                });
+                                // console.log( box_b_pos + ' < ' + news_length-1 );
+                                if( box_b_pos < news_length-1 )
+                                {
+                                    box_b_pos++;
+                                }
+                                else
+                                {
+                                    box_b_pos = ( news_length / 2 );
+                                }
+                                //console.table( news[ box_a_pos ] );
+                            }
+                        }, interval);
                     });
                 </script>
 
