@@ -61,7 +61,9 @@
 					</div>
 					<script>
 						$(document).ready(function() {
-							$('#example').DataTable();
+							$('#example').DataTable({
+								"iDisplayLength": 25
+							});
 						} );
 					</script>
 					<p><?php echo $this->input('text-1')?></p>
