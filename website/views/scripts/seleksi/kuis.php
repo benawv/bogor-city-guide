@@ -420,9 +420,10 @@
 	<ol>
 	    <li>Kamu berusia 14-16 tahun (Tanggal lahir pada 19 Agustus 1998 s/d 12 Agustus 2001, kamu harus sudah berusia 14 tahun atau masih berusia 16 tahun pada tanggal 13 Agustus 2015).</li>
 	    <li>Belum pernah menjadi pemenang di AJFC tahun sebelumnya.</li>
-	    <li>Sehat jasmani (tidak mengidap penyakit pernapasan, penyakit atau cacat bawaan lahir, penyakit menular dan segala kondisi yang dapat mempengaruhi kondisi fisik untuk berolahraga)</li>
+	    <li>Sehat jasmani (tidak mengidap penyakit pernapasan, penyakit atau cacat bawaan lahir, penyakit menular dan segala kondisi yang dapat mempengaruhi kondisi fisik untuk berolahraga).</li>
 	    <li>Memberikan informasi mengenai orangtua berupa nomor telepon dan email secara benar dan dapat dipercaya sebagai persetujuan dari orangtua untuk mengikuti program ini.</li>
 	    <li>Memiliki akun email, facebook, dan/atau twitter aktif.</li>
+            <li>Bagi kamu yang lolos tahap ke-1 dan harus mengikuti tahap ke-2 di Jakarta, maka biaya transportasi dan akomodasi menjadi tanggungan peserta masing-masing.</li>
 	    <li>Bagi kamu yang menjadi pemenang Munich Camp 2015, diwajibkan untuk memiliki/membuat paspor sebelum Munich Camp diselenggarakan.</li>
 	    <li>Data yang dikirmkan sepenuhnya milik Allianz dan dapat digunakan untuk kepentingan Allianz.</li>
 	    <li>Data dan foto yang sudah kamu unggah sepenuhnya menjadi milik Allianz dan dapat digunakan untuk kepentingan Allianz.</li>
