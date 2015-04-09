@@ -43,8 +43,9 @@
 										    $NoDada = "";
 										    foreach($data as $peserta)
 										    {
-											$setLari = $peserta->getnoLari();
-											if($setLari!=""){
+											$setLari = "";
+											$setLari = $peserta->getNoLari();
+											if($setLari!=" " || $setLari!=""){
 												$digit = 4-(int)(strlen($setLari));
 												$noDada = "";
 												for($i=1;$i<=$digit;$i++)
@@ -52,6 +53,10 @@
 													$noDada = $noDada."0";
 												}
 												$NoDada = $noDada.$setLari;
+												if($NoDada=="0000")
+												{
+													$NoDada="";
+												}
 											}
 									    ?>
 										    <tr>
