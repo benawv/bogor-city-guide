@@ -22,7 +22,16 @@ class KuisController extends Website_Controller_Action {
 		}
 		
 		$idPeserta = explode("-",$_POST["idPeserta"]);
+		//echo $idPeserta[0];
+		//$saveKuis = new Object_DataPesertaAJFC_List($idPeserta[0]);
+		//$saveKuis->setCondition("statusSubmitKuis = 1");
+		//
+		//echo "<pre>";
+		//print_r($saveKuis);
+		//
+		//die();
 		$namaPeserta = $_POST["nama"];
+		$tempatLahir = $_POST["tmp"];
 		$emailPeserta = $_POST["email"];
 		$alamat = $_POST["alamat"];
 		$jk = $_POST["radioJK"];
@@ -87,6 +96,7 @@ class KuisController extends Website_Controller_Action {
 		$saveKuis = Object_DataPesertaAJFC::getById($idPeserta[0]);
 		//$saveKuis->setCondition("");
 		$saveKuis->setAlamat($alamat);
+		$saveKuis->setTempatLahir($tempatLahir);
 		$saveKuis->setPasport($pasport);
 		$saveKuis->setPropinsi($propinsi);
 		$saveKuis->setNamaOrtu($namaOrtu);
@@ -232,8 +242,9 @@ class KuisController extends Website_Controller_Action {
 		}
 	}
 	
-	public function createPdfAction($nama,$nomer)
+	public function createPdfAction($namaP,$nomer)
 	{
+		$nama = substr($namaP,0,28);
 		$pdf = new Zend_Pdf();
 		$page = $pdf->newPage(Zend_Pdf_Page::SIZE_A4_LANDSCAPE); 
 		$pdf->pages[] = $page;

@@ -78,12 +78,15 @@
                                                       <input type="text" readonly="readonly" class="form-control" id="nama" value="<?php echo $row->getNamaLengkap();?>" name="nama" placeholder="">
                                                   </div>
 
-                                                  <div class="form-group">
-                                                      <label for="exampleInputName2" name="ttl">Tempat/ Tanggal Lahir<span class="spanRed">*</span> (Kota, DD/MM/YYYY)</label>
-                                                      <div class="controls form-inline">
-                                                        <input type="text" name="tmp" value="<?php echo $row->getTempatLahir();?>" class="form-control ttl" id="tmp-lahir" placeholder="">
-                                                        <input type="text" name="tgl" readonly="readonly" value="<?php echo date("d / m / Y",strtotime($row->getTanggalLahir()));?>"class="form-control ttl" id="tgl-lahir" placeholder="DD/MM/YYYY">
-                                                      </div>  
+                                                  <div class="message-info">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputName2" name="ttl">Tempat/ Tanggal Lahir<span class="spanRed">*</span> (Kota, DD/MM/YYYY)</label>
+                                                        <div class="controls form-inline">
+                                                          <input type="text" name="tmp" value="<?php echo $row->getTempatLahir();?>" class="form-control ttl" id="tmp-lahir" placeholder="">
+                                                          <input type="text" name="tgl" readonly="readonly" value="<?php echo date("d / m / Y",strtotime($row->getTanggalLahir()));?>"class="form-control ttl" id="tgl-lahir" placeholder="DD/MM/YYYY">
+                                                        </div>  
+                                                    </div>
+                                                    <div class="info-error"></div>
                                                   </div>
 
                                                   <div class="form-group">
@@ -119,7 +122,13 @@
                                                   <div class="form-group">
                                                       <label for="nama" name="nama">Jumlah Saudara Kandung Termasuk Kamu</label>
                                                       <label class="cusError">
-                                                        <input type="text" class="form-control" id="jumSaudara" name="jumSaudara" placeholder="">
+                                                        <!--<input type="text" class="form-control" id="jumSaudara" name="jumSaudara" placeholder="">-->
+                                                        <select name="jumSaudara" class="form-control" id="jumSaudara">
+                                                            <option value="">Jumlah Saudara</option>
+                                                            <?php for($x=1;$x<=10;$x++){?>
+                                                                <option value="<?php echo $x;?>"><?php echo $x;?></option>
+                                                            <?php }?>
+                                                        </select>
                                                         <span class="spanOrg">Orang</span>
                                                       </label>
                                                   </div>
@@ -268,16 +277,19 @@
                                                         <label for="exampleInputName2">Usia Orang Tua<span class="spanRed">*</span></label>
                                                         <div class="controls form-inline">
                                                             <table>
-                                                            <tr>
-                                                                <td>Ayah</td>
-                                                                <td>: &nbsp;<input type="text" name="usiaAyah" class="form-control ttl" id="usiaAyah" /> Tahun</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Ibu</td>
-                                                                <td>: &nbsp;<input type="text" name="usiaIbu" class="form-control ttl" id="usiaIbu" /> Tahun</td>
-                                                            </tr>
+                                                                <tr>
+                                                                    <td>Ayah</td>
+                                                                    <td>: &nbsp;<input type="text" name="usiaAyah" class="form-control ttl" id="usiaAyah" placeholder="Tahun" />
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Ibu</td>
+                                                                    <td>: &nbsp;<input type="text" name="usiaIbu" class="form-control ttl" id="usiaIbu" placeholder="Tahun" />
+                                                                    </td>
+                                                                </tr>
                                                             </table>
                                                         </div>
+                                                        
                                                     </div>
                                                     
                                                     <div class="form-group">
@@ -287,56 +299,38 @@
                                                             <table>
                                                             <tr>
                                                                 <td>Ayah</td>
-                                                                <td>: </td>
+                                                                <td>:&nbsp;</td>
                                                                 <td>
-                                                                    <label>
-                                                                      <input type="radio" name="pendidikanAyah" value="SD"> SD
-                                                                    </label>
-                                                                    <label>
-                                                                      <input type="radio" name="pendidikanAyah" value="SMP"> SMP
-                                                                    </label>
-                                                                    <label>
-                                                                      <input type="radio" name="pendidikanAyah" value="SMA"> SMA
-                                                                    </label>
-                                                                    <label>
-                                                                      <input type="radio" name="pendidikanAyah" value="D3"> D3
-                                                                    </label>
-                                                                    <label>
-                                                                      <input type="radio" name="pendidikanAyah" value="S1"> S1
-                                                                    </label>
-                                                                    <label>
-                                                                      <input type="radio" name="pendidikanAyah" value="S2"> S2
-                                                                    </label>
-                                                                    <label>
-                                                                      <input type="radio" name="pendidikanAyah" value="S3"> S3
-                                                                    </label>
+                                                                    <select name="pendidikanAyah" class="form-control">
+                                                                        <option value="">Pendidikan Ayah</option>
+                                                                        <option value="SD">SD</option>
+                                                                        <option value="SMP">SMP</option>
+                                                                        <option value="SMA">SMA</option>
+                                                                        <option value="D1">D1</option>
+                                                                        <option value="D2">D2</option>
+                                                                        <option value="D3">D3</option>
+                                                                        <option value="S1">S1</option>
+                                                                        <option value="S2">S2</option>
+                                                                        <option value="S3">S3</option>
+                                                                    </select>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Ibu</td>
-                                                                <td>: </td>
+                                                                <td>:&nbsp;</td>
                                                                 <td>
-                                                                    <label>
-                                                                      <input type="radio" name="pendidikanIbu" value="SD"> SD
-                                                                    </label>
-                                                                    <label>
-                                                                      <input type="radio" name="pendidikanIbu" value="SMP"> SMP
-                                                                    </label>
-                                                                    <label>
-                                                                      <input type="radio" name="pendidikanIbu" value="SMA"> SMA
-                                                                    </label>
-                                                                    <label>
-                                                                      <input type="radio" name="pendidikanIbu" value="D3"> D3
-                                                                    </label>
-                                                                    <label>
-                                                                      <input type="radio" name="pendidikanIbu" value="S1"> S1
-                                                                    </label>
-                                                                    <label>
-                                                                      <input type="radio" name="pendidikanIbu" value="S2"> S2
-                                                                    </label>
-                                                                    <label>
-                                                                      <input type="radio" name="pendidikanIbu" value="S3"> S3
-                                                                    </label>
+                                                                    <select name="pendidikanIbu" class="form-control">
+                                                                        <option value="">Pendidikan Ibu</option>
+                                                                        <option value="SD">SD</option>
+                                                                        <option value="SMP">SMP</option>
+                                                                        <option value="SMA">SMA</option>
+                                                                        <option value="D1">D1</option>
+                                                                        <option value="D2">D2</option>
+                                                                        <option value="D3">D3</option>
+                                                                        <option value="S1">S1</option>
+                                                                        <option value="S2">S2</option>
+                                                                        <option value="S3">S3</option>
+                                                                    </select>
                                                                 </td>
                                                             </tr>
                                                             </table>
@@ -346,7 +340,7 @@
                                                     </div>
                                                     
                                                     <div class="form-group">
-                                                        <label for="exampleInputName2">Pengeluaran Orang Tua<span class="spanRed">*</span></label>
+                                                        <label for="exampleInputName2">Pengeluaran Orang Tua</label>
                                                         <div class="controls form-inline">
                                                             Rp.<input type="text" name="pengeluaran" class="form-control ttl" id="pengeluaran" /> / bulan
                                                         </div>
@@ -927,10 +921,10 @@ $(function() {
           {
             required: true
           },
-          pengeluaran:
-          {
-            required: true
-          },
+          //pengeluaran:
+          //{
+          //  required: true
+          //},
           noHp: 
           {
             required: true,
@@ -938,8 +932,7 @@ $(function() {
           },
           jumSaudara: 
           {
-            required: true,
-			number: true
+            required: true
           },
 		   emailOrtu: 
           {
@@ -1009,10 +1002,10 @@ $(function() {
           {
             required: "Mohon pilih pendidikan terakhir Ibu"
           },
-          pengeluaran:
-          {
-            required: "Mohon isi pengeluaran orang tua per bulan"
-          },
+          //pengeluaran:
+          //{
+          //  required: "Mohon isi pengeluaran orang tua per bulan"
+          //},
           namaOrtu: 
           {
             required: "Mohon masukkan nama Orang tua Anda"
@@ -1024,8 +1017,7 @@ $(function() {
           },
           jumSaudara: 
           {
-            required: "Mohon masukkan jumlah saudara kandung termasuk Anda",
-            number: "Mohon masukkan angka"
+            required: "Mohon masukkan jumlah saudara kandung termasuk Anda"
           },
           propinsi: 
           {

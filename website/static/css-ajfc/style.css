@@ -297,7 +297,7 @@ form button:active {
     width: 40% !important;
 }
 .form-group label #jumSaudara{
-    width: 30%;
+    width: 150px;
     float: left;
     margin-right: 10px;
 }
