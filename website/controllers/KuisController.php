@@ -169,7 +169,7 @@ class KuisController extends Website_Controller_Action {
 			$this->createPdfAction($namaPeserta,$saveNoDada);
 			$this->sendAction($saveNoDada,$emailPeserta);
 			
-			$this->redirect("/ajfc");
+			$this->redirect("/ajfc/thanks/terima-kasih");
 		}
 		catch(Exception $e){
 			echo 'ERROR: ',  $e->getMessage(), "\n";
