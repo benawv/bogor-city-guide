@@ -40,15 +40,19 @@
 									    <?php
 										    $data = new Object_DataPesertaAJFC_List();
 										    $x = 1;
+										    $NoDada = "";
 										    foreach($data as $peserta)
 										    {
-											$digit = 4-(int)(strlen($peserta->getnoLari()));
-											$noDada = "";
-											for($i=1;$i<=$digit;$i++)
-											{
-												$noDada = $noDada."0";
+											$setLari = $peserta->getnoLari();
+											if($setLari!=""){
+												$digit = 4-(int)(strlen($setLari));
+												$noDada = "";
+												for($i=1;$i<=$digit;$i++)
+												{
+													$noDada = $noDada."0";
+												}
+												$NoDada = $noDada.$setLari;
 											}
-											$NoDada = $noDada.$setLari;
 									    ?>
 										    <tr>
 											<td><?php echo $x;?></td>
