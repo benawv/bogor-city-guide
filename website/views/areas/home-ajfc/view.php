@@ -19,7 +19,7 @@
 				}
 				else{
 			    ?>
-				<a href="<?php echo $this->link("linkDaftar")->getHref();?>"><?php echo $this->link("linkDaftar")->getText();?></a>
+				<a href="<?php echo $this->link("linkDaftar")->getHref();?>"><?php echo $this->link("linkDaftar")->getText();?> <i class="fa fa-angle-right"></i></a>
 			    <?php
 				}
 			    ?>
