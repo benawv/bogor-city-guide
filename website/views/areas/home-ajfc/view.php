@@ -34,7 +34,7 @@
         <div class="container">
            <div class="row">
                 <div class="col-xs-12 col-md-4">
-                    <a href="?p=proses-seleksi" class="nav-item green sitemap">
+                    <a href="/ajfc/proses-seleksi" class="nav-item green sitemap">
                         <h4><small>01</small> Proses Seleksi</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
@@ -45,12 +45,12 @@
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-4">
-                    <a href="?p=faq" class="nav-item orange question">
+                    <a href="/ajfc/tanya-jawab" class="nav-item orange question">
                         <h4><small>02</small> Tanya Jawab</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-4">
-                    <a href="?p=daftar-peserta" class="nav-item users">
+                    <a href="/ajfc/daftar-perserta" class="nav-item users">
                         <h4><small>03</small> Sudah Mendaftar? <span>Cek Disini</span></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
