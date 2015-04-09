@@ -42,11 +42,18 @@
 										    $x = 1;
 										    foreach($data as $peserta)
 										    {
+											$digit = 4-(int)(strlen($peserta->getnoLari()));
+											$noDada = "";
+											for($i=1;$i<=$digit;$i++)
+											{
+												$noDada = $noDada."0";
+											}
+											$NoDada = $noDada.$setLari;
 									    ?>
 										    <tr>
 											<td><?php echo $x;?></td>
 											<td><?php echo $peserta->getNamaLengkap();?></td>
-											<td><?php echo $peserta->getnoLari();?></td>
+											<td><?php echo $NoDada;?></td>
 											<td><?php echo date("d - m - Y",strtotime($peserta->getTanggalLahir()));?></td>
 										    </tr>
 									    <?php
