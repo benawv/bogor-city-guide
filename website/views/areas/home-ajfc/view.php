@@ -198,6 +198,74 @@
                 
                 <div class="row social-feeds">
                     <div class="col-xs-12 col-sm-6 col-md-6 pr0">
+                
+                        <?php
+                        
+                            $fb_feed1 = new Object_socialMediaFeed_List();
+                            $fb_feed1->setLimit(1);
+                            $fb_feed1->setOrder("asc");
+                            $x = 1;
+                            
+                            $NoDada = "";
+                            foreach($fb_feed1 as $items1)
+                            {
+                                $fb_stream_id1=$items1->stream_id;
+                                $fb_username1=$items1->from;
+                                $fb_messages1=$items1->messages;
+                                $fb_link1=$items1->link_feed;
+                                $fb_link_aset1=$items1->link_asset;
+                            }
+                            
+                            $fb_feed2 = new Object_socialMediaFeed_List();
+                            $fb_feed2->setLimit(2);
+                            $fb_feed2->setOrder("asc");
+                            $fb2 = 1;
+                            $NoDada = "";
+                            foreach($fb_feed2 as $items2)
+                            {
+                                if($fb2==2){
+                                $fb_stream_id2=$items2->stream_id;
+                                $fb_username2=$items2->from;
+                                $fb_messages2=$items2->messages;
+                                $fb_link2=$items2->link_feed;
+                                $fb_link_aset2=$items1->link_asset;
+                                }
+                                $fb2++;
+                            }
+                            
+                            $tw_feed1 = new Object_socialMediaFeed_List();
+                            $tw_feed1->setLimit(1);
+                            $tw_feed1->setOrder("asc");
+                            $tw1 = 1;
+                            $NoDada = "";
+                            foreach($tw_feed1 as $items3)
+                            {
+                               
+                                    $tw_stream_id3=$items3->stream_id;
+                                    $tw_username3=$items3->from;
+                                    $tw_messages3=$items3->messages;
+                                    $tw_link3=$items3->link_feed;
+                              
+                            }
+                            
+                            
+                            $tw_feed2 = new Object_socialMediaFeed_List();
+                            $tw_feed2->setLimit(1);
+                            $tw_feed2->setOrder("asc");
+                            $tw2 = 1;
+                            $NoDada = "";                          
+                            foreach($tw_feed2 as $items4)
+                            {
+                                if($tw2==2){
+                                    $tw_stream_id4=$items4->stream_id;
+                                    $tw_username4=$items4->from;
+                                    $tw_messages4=$items4->messages;
+                                    $tw_link4=$items4->link_feed;
+                                }                              
+                            }
+                          
+                        
+                        ?>
                         <div class="social-feeds--box facebook">
                             <div class="header">
                                 <i class="fa fa-facebook pull-left"></i>
@@ -205,17 +273,17 @@
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
-                                Jangan lupa shalat 5 waktu <a href="#">#1ygterpenting</a>
+                                <?php echo $fb_messages1; ?>
                             </div><!--/ .body -->
                             <div class="footer">
                                 <div class="media">
                                     <div class="media-left">
-                                        <a href="#">
-                                            <img class="media-object img-responsive" src="http://placehold.it/48x48" alt="Profile Picture">
+                                        <a href="<?php echo $fb_link1; ?>">
+                                            <img class="media-object img-responsive" src="<?php echo $fb_link_aset1;?>" alt="Profile Picture">
                                         </a>
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
-                                        <p>Falmesino Abdul Hamid</p>
+                                        <p><?php echo $fb_username1;?></p>
                                         <p><small>Rabu, 1 Mar 2015</small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
@@ -231,7 +299,7 @@
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
-                                Jangan lupa shalat 5 waktu <a href="#">#1ygterpenting</a>
+                                <?php echo $tw_messages3; ?>
                             </div><!--/ .body -->
                             <div class="footer">
                                 <div class="media">
@@ -241,7 +309,7 @@
                                         </a>
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
-                                        <p>Falmesino Abdul Hamid</p>
+                                        <p><?php echo $tw_username3;?></p>
                                         <p><small>Rabu, 1 Mar 2015</small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
@@ -261,7 +329,7 @@
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
-                                Jangan lupa shalat 5 waktu <a href="#">#1ygterpenting</a>
+                                <?php echo $tw_messages4; ?>
                             </div><!--/ .body -->
                             <div class="footer">
                                 <div class="media">
@@ -271,7 +339,7 @@
                                         </a>
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
-                                        <p>Falmesino Abdul Hamid</p>
+                                        <p><?php echo $tw_username4;?></p>
                                         <p><small>Rabu, 1 Mar 2015</small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
@@ -287,17 +355,17 @@
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
-                                Jangan lupa shalat 5 waktu <a href="#">#1ygterpenting</a>
+                                <?php echo $fb_messages2; ?>
                             </div><!--/ .body -->
                             <div class="footer">
                                 <div class="media">
                                     <div class="media-left">
-                                        <a href="#">
-                                            <img class="media-object img-responsive" src="http://placehold.it/48x48" alt="Profile Picture">
+                                        <a href="<?php echo $fb_link2; ?>">
+                                            <img class="media-object img-responsive" src="<?php echo $fb_link_aset1;?>" alt="Profile Picture">
                                         </a>
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
-                                        <p>Falmesino Abdul Hamid</p>
+                                        <p><?php echo $fb_username2;?></p>
                                         <p><small>Rabu, 1 Mar 2015</small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->

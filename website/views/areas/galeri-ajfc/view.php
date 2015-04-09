@@ -1,4 +1,29 @@
 <link rel="stylesheet" href="/website/static/css-ajfc/galeri/style.css" />
+<style type="text/css">
+	#container .group{
+		display: none;
+	}
+	#container .group.active{
+		display: inherit;
+	}
+	#load-more{
+		text-align: center;
+		margin-top: 20px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	#load-more:hover{
+		background: rgba(198, 200, 199, 0.49);
+	}
+	#load-more a{
+		margin-top:10px;
+		padding:10px;
+		color: white;
+	}
+	.click{
+		cursor: pointer;
+	}
+</style>
 <header>
 
     <div class="background">
@@ -25,17 +50,21 @@
 <div class="page-wrapper-outer mb72">
 
 <section class="page-wrapper gallery-wrapper mt32 mb72">
-    <div class="container">
+    <div class="container" id="container">
     	<?php
 
 			$posistion = "odd";
 			$no = 1;
-			$num = 0; 
+			$num = 0;
+			$nomer = 1;
+			$nurut = 1; 
     		$color = array('','blue','orange','blue-light','green','grey','maroon','purple');
-    		$entries = new Object_DataPesertaAJFCDefault_List();
-    		//$entries = new Object_DataPesertaAJFC_List();
+    		//$entries = new Object_DataPesertaAJFCDefault_List();
+    		$entries = new Object_DataPesertaAJFC_List();
+			$entries->setLimit(30);
+            $entries->setOrderKey("o_creationDate");
+            $entries->setOrder("desc");
 			$entries->setCondition("'statusSubmitKuis' = 1 AND 'approve' = 1");
-			$entries->setLimit(8);
 			$jml = count($entries);
 			$sisa = 8 - $jml;
 			//echo $jml.'sisa='.$sisa;
@@ -60,9 +89,16 @@
 					$umur = $nyear-$tgll;
 					$asl = ucwords($key->tempatLahir);
 					$prop = ucwords($key->propinsi);
-
+					$nclass = "group".$nurut;
+					if($nomer <=4){
+						$active = "active";
+					}else{
+						$active = "";
+						$num = 0;
+					}
+						
 					if($no == 1){
-						echo '<div class="row">';
+						echo '<div class="row group '.$active.'" id="'.$nclass.'">';
 						if($posistion == "odd")
 							echo '
 									<div class="col-xs-12 col-md-6 nopadding">
@@ -161,15 +197,40 @@
 							$posistion = "even";
 						else
 							$posistion = "odd";
-
+						$nomer++;
 					}
+					$nurut++;
 				}
 
 				$n--;
 			}
-    	?>
-        
+    	if($jml>8){ ?>
+    		<a class="click"><div id="load-more"><img width="24px" src="/btn-plus.gif"></div></a>
+    	<?php } ?>
     </div><!--/ .container -->
 </section><!--/ .page-wrapper -->
 
 </div><!--/ .page-wrapper-outer -->
+<script>
+	$(document).ready(function(){
+		size_li = $("#container .img").size();
+		console.log(size_li);
+		x=3;
+
+		var $group = $('.group');
+		
+		$(".click").click(function() {
+			if ($(this).hasClass('disable')) return false;
+
+			var $hidden = $group.filter(':hidden:first').addClass('active');
+			if (!$hidden.next('.group').length) {
+			    $(this).addClass('disable');
+			    $(".click").hide();
+			}
+			//console.log('xx='+$hidden.next('.group').length);
+		    //setInterval(image, 3000);
+		});
+ 
+
+	});
+</script>
