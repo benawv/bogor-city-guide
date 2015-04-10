@@ -103,7 +103,7 @@
 							echo '
 									<div class="col-xs-12 col-md-6 nopadding">
 									    <div class="gallery-item '.$color[$num++].'">
-									        <div class="row">
+									        <div class="row row-eq-height">
 									            <div class="col-xs-12 col-md-6 nopadding">
 									                <a href="#" class="gallery-item--image">
 									                    <img src="'.$img.'" alt="">
