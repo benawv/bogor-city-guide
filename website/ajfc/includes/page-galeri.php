@@ -40,7 +40,7 @@
                     <div class="row row-eq-height">
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
-                                <img src="./img/dummy/1.jpg" alt="">
+                                <img src="./img/gallery/potrait.jpg" alt="">
                             </a>
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-6 nopadding">
@@ -60,7 +60,7 @@
                     <div class="row row-eq-height">
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
-                                <img src="./img/dummy/2.jpg" alt="">
+                                <img src="./img/gallery/landscape.jpg" alt="">
                             </a>
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-6 nopadding">
@@ -91,7 +91,7 @@
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
-                                <img src="./img/dummy/3.jpg" alt="">
+                                <img src="./img/gallery/3.jpg" alt="">
                             </a>
                         </div><!--/ .col-xs-12 -->
                     </div><!--/ .row -->
@@ -111,7 +111,7 @@
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
-                                <img src="./img/dummy/4.jpg" alt="">
+                                <img src="./img/gallery/4.jpg" alt="">
                             </a>
                         </div><!--/ .col-xs-12 -->
                     </div><!--/ .row -->
@@ -126,7 +126,7 @@
                     <div class="row row-eq-height">
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
-                                <img src="./img/dummy/5.jpg" alt="">
+                                <img src="./img/gallery/5.jpg" alt="">
                             </a>
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-6 nopadding">
@@ -146,7 +146,7 @@
                     <div class="row row-eq-height">
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
-                                <img src="./img/dummy/6.jpg" alt="">
+                                <img src="./img/gallery/6.jpg" alt="">
                             </a>
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-6 nopadding">
@@ -177,7 +177,7 @@
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
-                                <img src="./img/dummy/7.jpg" alt="">
+                                <img src="./img/gallery/7.jpg" alt="">
                             </a>
                         </div><!--/ .col-xs-12 -->
                     </div><!--/ .row -->
@@ -197,7 +197,7 @@
                         </div><!--/ .col-xs-12 -->
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
-                                <img src="./img/dummy/8.jpg" alt="">
+                                <img src="./img/gallery/8.jpg" alt="">
                             </a>
                         </div><!--/ .col-xs-12 -->
                     </div><!--/ .row -->

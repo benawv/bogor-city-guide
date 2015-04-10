@@ -215,7 +215,7 @@ section.gallery-wrapper
             {
                 width: auto;
                 min-width: 100%;
-                max-width: none; //100%;
+                max-width: 120%; //none; //100%;
                 height: auto;
                 min-height: 100%;
                 max-height: none;
@@ -232,7 +232,7 @@ section.gallery-wrapper
                 & > img
                 {
                     min-width: 105%;
-                    min-height: 105%;
+                    // min-height: 105%;
                 }
             }
 
