@@ -144,6 +144,7 @@ function resizePageWrapper( additionalHeight )
         $( '.page-wrapper-outer' ).stop().animate({
             'min-height': newHeight + 'px'
         }, 300);
+        // console.log( 'newHeight: ' + newHeight );
     }
 }
 
