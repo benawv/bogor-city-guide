@@ -292,6 +292,12 @@ header
                 {
                     display: inline-block;
                     vertical-align: middle;
+
+                    img.media-object
+                    {
+                        max-width: 48px !important;
+                    }
+
                 }
                 .media-left
                 {
