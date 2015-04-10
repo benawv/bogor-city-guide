@@ -256,9 +256,11 @@
 				<div class="tips-item-kanan" id="item-right">
 					<div class="s-sbar sctn-spcfc">
 						<div class="social-ss ss-cnnct">
+							<h1>
 							<a href="#" title="Twitter" class="cnnct-twttr" target="_blank" data-track="connect|click|twitter-at">
 							Allianz Indonesia Community
 						    </a>
+							</h1>
 						    <ul class="clrd">
 						    	<?php 
 									foreach($this->icon as $icon)
