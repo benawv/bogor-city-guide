@@ -1,0 +1,29 @@
+.modal-quiz
+{
+    .modal-content
+    {
+        border-radius: 0;
+
+        .modal-body
+        {
+            padding: 24px;
+
+            ul, ol
+            {
+                & > li
+                {
+                    line-height: 1.8;
+                    margin-bottom: 4px;
+                }
+            }
+
+        }
+
+        .modal-footer,
+        .modal-header
+        {
+            padding: 16px 24px;
+        }
+
+    }
+}

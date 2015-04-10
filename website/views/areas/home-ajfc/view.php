@@ -202,66 +202,87 @@
                         <?php
                         
                             $fb_feed1 = new Object_SocialMediaFeed_List();
-                            $fb_feed1->setLimit(1);
+                            $fb_feed1->setLimit(4);
                             $fb_feed1->setOrder("asc");
-                            $x = 1;
+                            $fb1 = 1;
                             
                             $NoDada = "";
                             foreach($fb_feed1 as $items1)
                             {
+                                if($items1->socialMediaType[0]->socialMediaType=='facebook'){
+                                if($fb1==1){
+                                
                                 $fb_stream_id1=$items1->stream_id;
                                 $fb_username1=$items1->from;
                                 $fb_messages1=$items1->messages;
                                 $fb_link1=$items1->link_feed;
                                 $fb_link_aset1=$items1->link_asset;
+                                }
+                                $fb1++;
+                                }
                             }
                             
                             $fb_feed2 = new Object_SocialMediaFeed_List();
-                            $fb_feed2->setLimit(2);
+                            $fb_feed2->setLimit(4);
                             $fb_feed2->setOrder("asc");
                             $fb2 = 1;
                             $NoDada = "";
                             foreach($fb_feed2 as $items2)
                             {
-                                if($fb2==2){
-                                $fb_stream_id2=$items2->stream_id;
-                                $fb_username2=$items2->from;
-                                $fb_messages2=$items2->messages;
-                                $fb_link2=$items2->link_feed;
-                                $fb_link_aset2=$items2->link_asset;
-                                }
+                                if($items2->socialMediaType[0]->socialMediaType=='facebook'){
+                                    if($fb2==2){
+                                     
+                                    $fb_stream_id2=$items2->stream_id;
+                                    $fb_username2=$items2->from;
+                                    $fb_messages2=$items2->messages;
+                                    $fb_link2=$items2->link_feed;
+                                    $fb_link_aset2=$items2->link_asset;
+                                    }
                                 $fb2++;
+                                }
+                                
                             }
                             
                             $tw_feed1 = new Object_SocialMediaFeed_List();
-                            $tw_feed1->setLimit(1);
+                            $tw_feed1->setLimit(4);
                             $tw_feed1->setOrder("asc");
                             $tw1 = 1;
                             $NoDada = "";
                             foreach($tw_feed1 as $items3)
                             {
-                               
-                                    $tw_stream_id3=$items3->stream_id;
-                                    $tw_username3=$items3->from;
-                                    $tw_messages3=$items3->messages;
-                                    $tw_link3=$items3->link_feed;
-                              
+                                if($items3->socialMediaType[0]->socialMediaType=='twitter'){
+                                   if($tw1==1){
+                                   
+                                    $tw_stream_id1=$items3->stream_id;
+                                    $tw_username1=$items3->from;
+                                    $tw_messages1=$items3->messages;
+                                    $tw_link1=$items3->link_feed;
+                                    $tw_link_aset1=$items3->link_asset;
+                                   }
+                                   $tw1++;
+                                }
                             }
                             
                             
                             $tw_feed2 = new Object_SocialMediaFeed_List();
-                            $tw_feed2->setLimit(1);
+                            $tw_feed2->setLimit(4);
                             $tw_feed2->setOrder("asc");
                             $tw2 = 1;
                             $NoDada = "";                          
                             foreach($tw_feed2 as $items4)
                             {
-                                if($tw2==2){
-                                    $tw_stream_id4=$items4->stream_id;
-                                    $tw_username4=$items4->from;
-                                    $tw_messages4=$items4->messages;
-                                    $tw_link4=$items4->link_feed;
-                                }                              
+                                 if($items4->socialMediaType[0]->socialMediaType=='twitter'){
+                                   if($tw2==2){
+                                    
+                                    $tw_stream_id2=$items4->stream_id;
+                                    $tw_username2=$items4->from;
+                                    $tw_messages2=$items4->messages;
+                                    $tw_link2=$items4->link_feed;
+                                    $tw_link_aset2=$items4->link_asset;
+                                    }
+                                 $tw2++;
+                                }
+                               
                             }
                           
                         
@@ -299,18 +320,18 @@
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
-                                <?php echo $tw_messages3; ?>
+                                <?php echo $tw_messages1; ?>
                             </div><!--/ .body -->
                             <div class="footer">
                                 <div class="media">
                                     <div class="media-left">
                                         <a href="#" target="_blank">
-                                            <img class="media-object img-responsive" src="http://placehold.it/48x48" alt="Profile Picture">
+                                            <img class="media-object img-responsive"  src="<?php echo $tw_link_aset1;?>" alt="Profile Picture">
                                         </a>
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
-                                        <p><?php echo $tw_username3;?></p>
-                                        <p><small>Rabu, 1 Mar 2015</small></p>
+                                        <p><?php echo $tw_username1;?></p>
+                                        <p><small>18 Feb 2015</small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
                             </div><!--/ .footer -->
@@ -329,18 +350,18 @@
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
-                                <?php echo $tw_messages4; ?>
+                                <?php echo $tw_messages2; ?>
                             </div><!--/ .body -->
                             <div class="footer">
                                 <div class="media">
                                     <div class="media-left">
                                         <a href="#">
-                                            <img class="media-object img-responsive" src="http://placehold.it/48x48" alt="Profile Picture">
+                                            <img class="media-object img-responsive"  src="<?php echo $tw_link_aset2;?>" alt="Profile Picture">
                                         </a>
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
-                                        <p><?php echo $tw_username4;?></p>
-                                        <p><small>Rabu, 1 Mar 2015</small></p>
+                                        <p><?php echo $tw_username2;?></p>
+                                        <p><small>Rabu, 2 Mar 2015</small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
                             </div><!--/ .footer -->
@@ -366,7 +387,7 @@
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
                                         <p><?php echo $fb_username2;?></p>
-                                        <p><small>Rabu, 1 Mar 2015</small></p>
+                                        <p><small>Rabu,  Mar 2015</small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
                             </div><!--/ .footer -->
