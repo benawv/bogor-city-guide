@@ -37,7 +37,7 @@
 
             <div class="col-xs-12 col-md-6 nopadding">
                 <div class="gallery-item">
-                    <div class="row">
+                    <div class="row row-eq-height">
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
                                 <img src="./img/dummy/1.jpg" alt="">
@@ -57,7 +57,7 @@
 
             <div class="col-xs-12 col-md-6 nopadding">
                 <div class="gallery-item blue">
-                    <div class="row">
+                    <div class="row row-eq-height">
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
                                 <img src="./img/dummy/2.jpg" alt="">
@@ -80,7 +80,7 @@
 
             <div class="col-xs-12 col-md-6 nopadding">
                 <div class="gallery-item orange">
-                    <div class="row">
+                    <div class="row row-eq-height">
                         <div class="col-xs-6 nopadding">
                             <div class="gallery-item--text">
                                 <div class="gallery-item--text-inner">
@@ -100,7 +100,7 @@
 
             <div class="col-xs-12 col-md-6 nopadding">
                 <div class="gallery-item blue-light">
-                    <div class="row">
+                    <div class="row row-eq-height">
                         <div class="col-xs-6 nopadding">
                             <div class="gallery-item--text">
                                 <div class="gallery-item--text-inner">
@@ -123,7 +123,7 @@
 
             <div class="col-xs-12 col-md-6 nopadding">
                 <div class="gallery-item green">
-                    <div class="row">
+                    <div class="row row-eq-height">
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
                                 <img src="./img/dummy/5.jpg" alt="">
@@ -143,7 +143,7 @@
 
             <div class="col-xs-12 col-md-6 nopadding">
                 <div class="gallery-item grey">
-                    <div class="row">
+                    <div class="row row-eq-height">
                         <div class="col-xs-6 nopadding">
                             <a href="#" class="gallery-item--image">
                                 <img src="./img/dummy/6.jpg" alt="">
@@ -166,7 +166,7 @@
 
             <div class="col-xs-12 col-md-6 nopadding">
                 <div class="gallery-item maroon">
-                    <div class="row">
+                    <div class="row row-eq-height">
                         <div class="col-xs-6 nopadding">
                             <div class="gallery-item--text">
                                 <div class="gallery-item--text-inner">
@@ -186,7 +186,7 @@
 
             <div class="col-xs-12 col-md-6 nopadding">
                 <div class="gallery-item purple">
-                    <div class="row">
+                    <div class="row row-eq-height">
                         <div class="col-xs-6 nopadding">
                             <div class="gallery-item--text">
                                 <div class="gallery-item--text-inner">
