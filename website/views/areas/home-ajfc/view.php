@@ -326,12 +326,12 @@
                                 <div class="media">
                                     <div class="media-left">
                                         <a href="#" target="_blank">
-                                            <img class="media-object img-responsive"  src="<?php echo $fb_link_aset1;?>" alt="Profile Picture">
+                                            <img class="media-object img-responsive"  src="<?php echo $tw_link_aset1;?>" alt="Profile Picture">
                                         </a>
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
                                         <p><?php echo $tw_username1;?></p>
-                                        <p><small><?php echo $tw2;?>18 Feb 2015</small></p>
+                                        <p><small>18 Feb 2015</small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
                             </div><!--/ .footer -->
@@ -356,7 +356,7 @@
                                 <div class="media">
                                     <div class="media-left">
                                         <a href="#">
-                                            <img class="media-object img-responsive"  src="<?php echo $fw_link_aset2;?>" alt="Profile Picture">
+                                            <img class="media-object img-responsive"  src="<?php echo $tw_link_aset2;?>" alt="Profile Picture">
                                         </a>
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
