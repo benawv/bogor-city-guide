@@ -1218,7 +1218,9 @@ section.gallery-wrapper .gallery-item {
       border-right-color: #6d5ba7; }
   section.gallery-wrapper .gallery-item > .row {
     margin: 0;
-    display: table; }
+    width: 100%;
+    height: 100%;
+    position: relative; }
     @media (max-width: 480px) {
       section.gallery-wrapper .gallery-item > .row > div[class^="col-"] {
         position: relative;
@@ -1293,8 +1295,6 @@ section.gallery-wrapper .gallery-item {
       -o-transition: ease 0.3s;
       transition: ease 0.3s;
       z-index: 2; }
-    section.gallery-wrapper .gallery-item .gallery-item--image:hover > img {
-      min-width: 105%; }
   section.gallery-wrapper .gallery-item .gallery-item--text {
     position: relative;
     width: 100%;
