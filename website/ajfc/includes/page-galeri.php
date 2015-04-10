@@ -84,7 +84,7 @@
                         <div class="col-xs-6 nopadding">
                             <div class="gallery-item--text">
                                 <div class="gallery-item--text-inner">
-                                    <h3>"Saya akan membanggakan orang tua dan kampung saya"</h3>
+                                    <h3>"Lari pagi, setiap hari"</h3>
                                     <p>Ali Hermanto, 19 Tahun<br />Cianjur, Jawa Barat</p>
                                 </div><!--/ .gallery-item--text-inner -->
                             </div><!--/ .galery-item--text -->
@@ -104,7 +104,7 @@
                         <div class="col-xs-6 nopadding">
                             <div class="gallery-item--text">
                                 <div class="gallery-item--text-inner">
-                                    <h3>"Mamah doain abang terus ya dari rumah"</h3>
+                                    <h3>"Hai gan~"</h3>
                                     <p>Maman Ruhiyan, 12 Tahun<br />Bogor, Jawa Barat</p>
                                 </div><!--/ .gallery-item--text-inner -->
                             </div><!--/ .galery-item--text -->
