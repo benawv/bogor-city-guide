@@ -411,14 +411,14 @@
                         var images = [
                             [ '#', '/website/static/images/dummy-wasit.jpg' ],
                             [ '#', '/website/static/images/dummy-stadium.jpg' ],
-                            [ '#', '/website/static/imagesdummy/1.jpg' ],
-                            [ '#', '/website/static/imagesdummy/2.jpg' ],
-                            [ '#', '/website/static/imagesdummy/3.jpg' ],
-                            [ '#', '/website/static/imagesdummy/4.jpg' ],
-                            [ '#', '/website/static/imagesdummy/5.jpg' ],
-                            [ '#', '/website/static/imagesdummy/6.jpg' ],
+                            [ '#', '/website/static/images/dummy/1.jpg' ],
+                            [ '#', '/website/static/images/dummy/2.jpg' ],
+                            [ '#', '/website/static/images/dummy/3.jpg' ],
+                            [ '#', '/website/static/images/dummy/4.jpg' ],
+                            [ '#', '/website/static/images/dummy/5.jpg' ],
+                            [ '#', '/website/static/images/dummy/6.jpg' ],
                             [ '#', '/website/static/images/dummy/7.jpg' ],
-                            [ '#', '/website/static/imagesdummy/8.jpg' ]
+                            [ '#', '/website/static/images/dummy/8.jpg' ]
                         ];
 
                         var imagesLength = images.length;
