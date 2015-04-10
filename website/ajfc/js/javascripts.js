@@ -143,7 +143,7 @@ function resizePageWrapper( additionalHeight )
         var windowWidth = $( window ).outerWidth();
         console.log( windowWidth );
         var refHeight = $( '.page-wrapper-outer > .page-wrapper' ).outerHeight();
-        if( $( '.page-wrapper-outer > .page-wrapper .main-content' ).length > 0 )
+        if( $( '.page-wrapper-outer > .page-wrapper .main-content' ).length == 1 )
         {
             var refHeight = $( '.page-wrapper-outer > .page-wrapper .main-content' ).outerHeight();
             if( windowWidth < 992 )
