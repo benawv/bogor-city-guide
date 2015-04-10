@@ -104,7 +104,7 @@
                         <div class="col-xs-6 nopadding">
                             <div class="gallery-item--text">
                                 <div class="gallery-item--text-inner">
-                                    <h3>"Hai"</h3>
+                                    <h3>"Hai gan~"</h3>
                                     <p>Maman Ruhiyan, 12 Tahun<br />Bogor, Jawa Barat</p>
                                 </div><!--/ .gallery-item--text-inner -->
                             </div><!--/ .galery-item--text -->
