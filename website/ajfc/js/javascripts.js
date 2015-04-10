@@ -140,10 +140,21 @@ function resizePageWrapper( additionalHeight )
 
     if( $( '.page-wrapper-outer > .page-wrapper' ).length > 0 )
     {
+        var windowWidth = $( window ).outerWidth();
+        console.log( windowWidth );
         var refHeight = $( '.page-wrapper-outer > .page-wrapper' ).outerHeight();
         if( $( '.page-wrapper-outer > .page-wrapper .main-content' ).length > 0 )
         {
             var refHeight = $( '.page-wrapper-outer > .page-wrapper .main-content' ).outerHeight();
+            if( windowWidth < 992 )
+            {
+                if( $( '.page-wrapper-outer > .page-wrapper .sidebar' ).length > 0 )
+                {
+                    var sidebarHeight = $( '.page-wrapper-outer > .page-wrapper .sidebar' ).outerHeight();
+                    console.log( 'Ada sidebarnya, tingginya ' + sidebarHeight );
+                    refHeight = refHeight + ( 1 * sidebarHeight );
+                }
+            }
         }
         var newHeight = refHeight - 160 + additionalHeight;
         $( '.page-wrapper-outer' ).stop().animate({

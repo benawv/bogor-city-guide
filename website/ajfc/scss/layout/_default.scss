@@ -585,6 +585,12 @@ section#calendar-wrapper
     padding-bottom: 99999px;
     margin-bottom: -99999px;
 
+    @media (max-width: 991px)
+    {
+        padding-bottom: 48px;
+        margin-bottom: 0;
+    }
+
     .sidebar-item
     {
         .sidebar-item--header
