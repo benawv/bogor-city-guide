@@ -194,10 +194,10 @@
 <section class="mt32 mb72">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-6">
+            <div class="col-xs-12 col-md-6 pl30 pr30">
                 
-                <div class="row social-feeds">
-                    <div class="col-xs-12 col-sm-6 col-md-6 pr0">
+                <div class="row social-feeds row-eq-height">
+                    <div class="col-xs-12 col-md-6 nopadding bl bt">
                 
                         <?php
                         
@@ -291,7 +291,7 @@
                         </div><!--/ .social-feeds--box -->
                     </div><!--/ .col-xs-12 -->
                     
-                    <div class="col-xs-12 col-sm-6 col-md-6 pl0">
+                    <div class="col-xs-12 col-md-6 nopadding br bt">
                         <div class="social-feeds--box twitter">
                             <div class="header">
                                 <i class="fa fa-twitter pull-left"></i>
@@ -319,9 +319,9 @@
                     
                 </div><!--/ .social-feeds -->
                 
-                <div class="row social-feeds">
+                <div class="row social-feeds row-eq-height">
                     
-                    <div class="col-xs-12 col-sm-6 col-md-6 pr0">
+                    <div class="col-xs-12 col-md-6 nopadding br bt">
                         <div class="social-feeds--box twitter">
                             <div class="header">
                                 <i class="fa fa-twitter pull-left"></i>
@@ -347,7 +347,7 @@
                         </div><!--/ .social-feeds--box -->
                     </div><!--/ .col-xs-12 -->
                     
-                    <div class="col-xs-12 col-sm-6 col-md-6 pl0">
+                    <div class="col-xs-12 col-md-6 nopadding bl bt">
                         <div class="social-feeds--box facebook">
                             <div class="header">
                                 <i class="fa fa-facebook pull-left"></i>
@@ -377,72 +377,139 @@
                 
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-6 news-feeds">
-                <?php 
-                    $entries = new Object_DataPesertaAJFCDefault_List();
-                    $entries->setLimit(1);
-                    foreach ($entries as $key) {
-                        $img = $key->fotoPeserta;
-                        $ptg = ucfirst($key->satuTerpenting);
-                        $nama = ucwords($key->namaLengkap);
-                        $tgll = date("Y", strtotime($key->tanggalLahir));
-                        $nyear = date("Y",time());
-                        $umur = $nyear-$tgll;
-                        $asl = ucwords($key->tempatLahir);
-                        $prop = ucwords($key->propinsi);
-                ?>
-                <div class="news-feeds--box">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6 hidden-xs hidden-sm image">
-                            <img src="<?php echo $img; ?>" alt="" class="" />
-                        </div><!--/ .col-xs-12 -->
-                        <div class="col-xs-12 col-md-6 content">
-                            <div class="news-feeds--box---content">
-                                <h3><?php echo $ptg; ?></h3>
-                                <p><?php echo $nama.', '.$umur.' Tahun<br />'.$asl.', '.$prop; ?></p>
-                            </div><!--/ .news-feeds-box--content -->
-                            <!--<a href="galeri-ajfc" class="btn-edge"></a>-->
-                        </div><!--/ .col-xs-12 -->
-                    </div><!--/ .row -->
-                </div><!--/ .news-feeds--box -->
-                <?php
-                    }
-                    $entries = new Object_DataPesertaAJFC_List();
-                    $entries->setLimit(1);
-                    $jml = count($entries);
-                    if($jml < 1){
-                        $entries = new Object_DataPesertaAJFCDefault_List();
-                        $entries->setLimit(1);
-                    }
-                    $no=1;
-                    foreach ($entries as $key) {
-                        $img = $key->fotoPeserta;
-                        $ptg = ucfirst($key->satuTerpenting);
-                        $nama = ucwords($key->namaLengkap);
-                        $tgll = date("Y", strtotime($key->tanggalLahir));
-                        $nyear = date("Y",time());
-                        $umur = $nyear-$tgll;
-                        $asl = ucwords($key->tempatLahir);
-                        $prop = ucwords($key->propinsi);
-                  
-                ?>
-                <div class="news-feeds--box">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6 content">
-                            <div class="news-feeds--box---content">
-                                <h3><?php echo $ptg; ?></h3>
-                                <p><?php echo $nama.', '.$umur.' Tahun<br />'.$asl.', '.$prop; ?></p>
-                            </div><!--/ .news-feeds-box--content -->
-                            <!--<a href="#" class="btn-edge"></a>-->
-                        </div><!--/ .col-xs-12 -->
-                        <div class="col-xs-12 hidden-xs hidden-sm col-md-6 image">
-                            <img src="<?php echo $img; ?>" alt="" class="" />
-                        </div><!--/ .col-xs-12 -->
-                    </div><!--/ .row -->
-                </div><!--/ .news-feeds--box -->
-                <?php
-                    }
-                ?>
-                
+		<div class="row row-eq-height">
+                    <div class="col-xs-12 col-md-6 nopadding bl bt">
+                        <a href="#" class="news-feeds--image">
+                            <img src="/website/static/images/dummy/yangterpenting.jpg" alt="" />
+                        </a>
+                    </div><!--/ .col-xs-12 -->
+                    <div class="col-xs-12 col-md-6 nopadding br bt">
+                        <a href="#" class="news-feeds--image" id="imageBoxA">
+                            <img src="/website/static/images/dummy/dummy-wasit.jpg" alt="" />
+                        </a>
+                    </div><!--/ .col-xs-12 -->
+                </div><!--/ .row -->
+
+                <div class="row row-eq-height">
+                    <div class="col-xs-12 col-md-6 nopadding bl bb">
+                        <a href="#" class="news-feeds--image" id="imageBoxB">
+                            <img src="/website/static/images/dummy/dummy-stadium.jpg" alt="" />
+                        </a>
+                    </div><!--/ .col-xs-12 -->
+                    <div class="col-xs-12 col-md-6 nopadding br bb">
+                        <div class="text" id="textBoxC">
+                            <h3 class="tbc-title"><a href="#">Judul Berita</a></h3>
+                            <p class="text-muted"><small class="tbc-date">Rabu, 14 Mei 2015</small></p>
+                            <p class="tbc-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut orci metus, interdum non ipsum nec, vulputate euismod metus. Morbi eget sem sed orci interdum lacinia quis ac orci.</p>
+                        </div><!--/ .text -->
+                    </div><!--/ .col-xs-12 -->
+                </div><!--/ .row -->
+
+                <script>
+                    $(function(){
+
+                        var images = [
+                            [ '#', '/website/static/images/dummy-wasit.jpg' ],
+                            [ '#', '/website/static/images/dummy-stadium.jpg' ],
+                            [ '#', '/website/static/imagesdummy/1.jpg' ],
+                            [ '#', '/website/static/imagesdummy/2.jpg' ],
+                            [ '#', '/website/static/imagesdummy/3.jpg' ],
+                            [ '#', '/website/static/imagesdummy/4.jpg' ],
+                            [ '#', '/website/static/imagesdummy/5.jpg' ],
+                            [ '#', '/website/static/imagesdummy/6.jpg' ],
+                            [ '#', '/website/static/images/dummy/7.jpg' ],
+                            [ '#', '/website/static/imagesdummy/8.jpg' ]
+                        ];
+
+                        var imagesLength = images.length;
+
+                        var news = [
+                            [ '#', 'Berita ke 1', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
+                            [ '#', 'Berita ke 2', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
+                            [ '#', 'Berita ke 3', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
+                            [ '#', 'Berita ke 4', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
+                            [ '#', 'Berita ke 5', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
+                        ];
+                        var newsLength  = news.length;
+
+                        var imageBoxA   = $( '#imageBoxA' );
+                        var iba_current = 0;
+                        var iba_interval= 4000;
+                        var iba_loop    = setInterval(function(){
+                            imageBoxA.stop().fadeOut( 'fast', function(){
+                                $( this ).parent().attr( 'href', images[ iba_current ][ 0 ] );
+                                $( this ).find( 'img' ).attr( 'src', images[ iba_current ][ 1 ] );
+                                $( this ).stop().fadeIn( 'fast', function(){
+                                    // do nothing
+                                });
+                            });
+                            //console.log( iba_current + ' ' + imagesLength );
+                            if( iba_current < ( imagesLength - 1 ) )
+                            {
+                                iba_current++;
+                            }
+                            else
+                            {
+                                iba_current = 0;
+                            }
+                        }, iba_interval);
+
+                        var imageBoxB   = $( '#imageBoxB' );
+                        var ibb_current = 0;
+                        var ibb_interval= 16000;
+                        var ibb_loop    = setInterval(function(){
+                            imageBoxB.stop().fadeOut( 'fast', function(){
+                                $( this ).parent().attr( 'href', images[ ibb_current ][ 0 ] );
+                                $( this ).find( 'img' ).attr( 'src', images[ ibb_current ][ 1 ] );
+                                $( this ).stop().fadeIn( 'fast', function(){
+                                    // do nothing
+                                });
+                            });
+                            //console.log( iba_current + ' ' + imagesLength );
+                            if( ibb_current < ( imagesLength - 1 ) )
+                            {
+                                ibb_current++;
+                            }
+                            else
+                            {
+                                ibb_current = 0;
+                            }
+                        }, iba_interval);
+
+                        var textBoxC    = $( '#textBoxC' );
+                        var tbc_title   = textBoxC.find( '.tbc-title' );
+                        var tbc_date    = textBoxC.find( '.tbc-date' );
+                        var tbc_body    = textBoxC.find( '.tbc-body' );
+                        var tbc_interval= 5000;
+                        var tbc_current = 0;
+                        var tbc_loop    = setInterval(function(){
+                            tbc_title.stop().fadeOut( 'fast', function(){
+                                $( this ).html( '<a href="' + news[ tbc_current ][ 0 ] + '">' + news[ tbc_current ][ 1 ] + '</a>' );
+                                $( this ).stop().fadeIn( 'fast' );
+                            });
+                            tbc_date.stop().fadeOut( 'fast', function(){
+                                $( this ).html( news[ tbc_current ][ 3 ] );
+                                $( this ).stop().fadeIn( 'fast' );
+                            });
+                            tbc_body.stop().fadeOut( 'fast', function(){
+                                $( this ).html( news[ tbc_current ][ 2 ] );
+                                $( this ).stop().fadeIn( 'fast' );
+                            });
+                            if( tbc_current < newsLength-1 )
+                            {
+                                tbc_current++;
+                            }
+                            else
+                            {
+                                tbc_current = 0;
+                            }
+                        }, tbc_interval);
+
+
+                    });
+                </script>
+
+            
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
     </div><!--/ .container -->
