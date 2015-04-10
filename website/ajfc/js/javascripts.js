@@ -140,11 +140,17 @@ function resizePageWrapper( additionalHeight )
 
     if( $( '.page-wrapper-outer > .page-wrapper' ).length > 0 )
     {
-        var newHeight = $( '.page-wrapper-outer > .page-wrapper' ).outerHeight() - 160 + additionalHeight;
+        var refHeight = $( '.page-wrapper-outer > .page-wrapper' ).outerHeight();
+        if( $( '.page-wrapper-outer > .page-wrapper .main-content' ).length > 0 )
+        {
+            var refHeight = $( '.page-wrapper-outer > .page-wrapper .main-content' ).outerHeight();
+        }
+        var newHeight = refHeight - 160 + additionalHeight;
         $( '.page-wrapper-outer' ).stop().animate({
             'min-height': newHeight + 'px'
         }, 300);
-        // console.log( 'newHeight: ' + newHeight );
+        console.log( 'refHeight: ' + refHeight + 'px' );
+        console.log( 'newHeight: ' + newHeight + 'px' );
     }
 }
 

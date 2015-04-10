@@ -910,6 +910,7 @@ $(document).ready(function() {
                 if( log ) alert(log);
             }
         });
+        setTimeout(function(){ resizePageWrapper(); }, 1000);
     });
 
 </script>
