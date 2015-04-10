@@ -149,11 +149,13 @@
                                                         <option value="">Jumlah Saudara</option>
                                                         <?php
                                                             for( $x = 1; $x <= 10; $x++ ):
+                                                                /*
                                                                 if( $x == 1 ):
                                                                     echo '<option value="' . $x . '" selected="selected">';
                                                                 else:
+                                                                */
                                                                     echo '<option value="' . $x . '">';
-                                                                endif;
+                                                                //endif;
                                                                 echo $x . '</option>';
                                                             endfor;
                                                         ?>
@@ -617,17 +619,25 @@
             </div><!--/ .modal-header -->
             <div class="modal-body cus-body">
                 <ol>
-                    <li>Kamu berusia 14-16 tahun (Tanggal lahir pada 19 Agustus 1998 s/d 12 Agustus 2001, kamu harus sudah berusia 14 tahun atau masih berusia 16 tahun pada tanggal 13 Agustus 2015).</li>
+                    <li>Kamu berusia 14-16 tahun (Tanggal lahir pada 19 Agustus 1998 s/d 12 Agustus 2001,
+                        kamu harus sudah berusia 14 tahun atau masih berusia 16 tahun pada tanggal 13 Agustus 2015).</li>
                     <li>Belum pernah menjadi pemenang di AJFC tahun sebelumnya.</li>
-                    <li>Sehat jasmani (tidak mengidap penyakit pernapasan, penyakit atau cacat bawaan lahir, penyakit menular dan segala kondisi yang dapat mempengaruhi kondisi fisik untuk berolahraga).</li>
-                    <li>Memberikan informasi mengenai orangtua berupa nomor telepon dan email secara benar dan dapat dipercaya sebagai persetujuan dari orangtua untuk mengikuti program ini.</li>
+                    <li>Sehat jasmani (tidak mengidap penyakit pernapasan, penyakit atau cacat bawaan lahir,
+                        penyakit menular dan segala kondisi yang dapat mempengaruhi kondisi fisik untuk berolahraga).</li>
+                    <li>Memberikan informasi mengenai orangtua berupa nomor telepon dan email secara benar dan
+                        dapat dipercaya sebagai persetujuan dari orangtua untuk mengikuti program ini.</li>
                     <li>Memiliki akun email, facebook, dan/atau twitter aktif.</li>
-                    <li>Bagi kamu yang lolos tahap ke-1 dan harus mengikuti tahap ke-2 di Jakarta, maka biaya transportasi dan akomodasi menjadi tanggungan peserta masing-masing.</li>
-                    <li>Bagi kamu yang menjadi pemenang Munich Camp 2015, diwajibkan untuk memiliki/membuat paspor sebelum Munich Camp diselenggarakan.</li>
+                    <li>Bagi kamu yang lolos tahap ke-1 dan harus mengikuti tahap ke-2 di Jakarta, maka biaya
+                        transportasi dan akomodasi menjadi tanggungan peserta masing-masing.</li>
+                    <li>Bagi kamu yang menjadi pemenang Munich Camp 2015, diwajibkan untuk memiliki/membuat paspor
+                        sebelum Munich Camp diselenggarakan.</li>
                     <li>Data yang dikirmkan sepenuhnya milik Allianz dan dapat digunakan untuk kepentingan Allianz.</li>
-                    <li>Data dan foto yang sudah kamu unggah sepenuhnya menjadi milik Allianz dan dapat digunakan untuk kepentingan Allianz.</li>
-                    <li>Jika data yang diberikan tidak sesuai dengan syarat seharusnya, maka pihak Allianz berhak mendiskualifikasi peserta tersebut.</li>
-                    <li>Syarat dan ketentuan program Allianz Junior Football Camp 2015 dapat berubah sewaktu-waktu tanpa pemberitahuan sebelumnya.</li>
+                    <li>Data dan foto yang sudah kamu unggah sepenuhnya menjadi milik Allianz dan dapat digunakan
+                        untuk kepentingan Allianz.</li>
+                    <li>Jika data yang diberikan tidak sesuai dengan syarat seharusnya, maka pihak Allianz
+                        berhak mendiskualifikasi peserta tersebut.</li>
+                    <li>Syarat dan ketentuan program Allianz Junior Football Camp 2015 dapat berubah
+                        sewaktu-waktu tanpa pemberitahuan sebelumnya.</li>
                 </ol>
             </div><!--/ .modal-body -->
             <div class="modal-footer">
@@ -739,15 +749,21 @@ $(document).ready(function() {
     //});
 
     $(".btn-previous").on( "click", function() {
+        console.log( 'prev' );
         $('html, body').animate({
             scrollTop: $(".first").offset().top
-        }, 500);
+        }, 500, function(){
+            resizePageWrapper();
+        });
     });
 
     $(".btn-next").on( "click", function() {
+        console.log( 'next' );
         $('html, body').animate({
             scrollTop: $(".first").offset().top
-        }, 500);
+        }, 500, function(){
+            resizePageWrapper();
+        });
     });
 
     //console.log(image[0]);
