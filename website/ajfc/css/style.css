@@ -1502,6 +1502,17 @@ section.gallery-wrapper .gallery-item {
           border: solid 1px #cdd2d2; }
 
 /* .quiz-pages */
+.modal-quiz .modal-content {
+  border-radius: 0; }
+  .modal-quiz .modal-content .modal-body {
+    padding: 24px; }
+    .modal-quiz .modal-content .modal-body ul > li, .modal-quiz .modal-content .modal-body ol > li {
+      line-height: 1.8;
+      margin-bottom: 4px; }
+  .modal-quiz .modal-content .modal-footer,
+  .modal-quiz .modal-content .modal-header {
+    padding: 16px 24px; }
+
 nav.primary a:hover {
   text-decoration: none; }
 
