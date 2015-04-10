@@ -18,20 +18,42 @@
             // use "home" document as default if no document is present
             $this->document = Document::getById(1);
         }
-
-        if($this->document->getTitle()) {
-            // use the manually set title if available
-            $this->headTitle()->set($this->document->getTitle());
-        }
-
-        if($this->document->getDescription()) {
-            // use the manually set description if available
-            $this->headMeta()->appendName('description', $this->document->getDescription());
-        }
-        
-        if($this->document->getKeywords()) {
-            $this->headMeta()->appendName('keywords', $this->document->getKeywords());
-        }
+	//echo "<pre>";
+	//print_r($this->request->action);
+	//die();
+	
+	    if($this->request->controller == 'community' && $this->request->action == 'detail')
+	    {
+		$id = $this->_getParam('id');
+		$entries = Object_Abstract::getById($id);
+		$data = $entries;
+		
+		//$metaCustom = $data->getProperties()
+		//echo "<pre>";
+		//print_r($data->getProperties());
+		//die();
+	?>
+		<title><?php echo $data->getMetaTitle();?></title>
+		<meta name="description" content="<?php echo $data->getMetaDescription();?>" >
+		<meta name="keywords" content="<?php echo $data->getMetaKeywords();?>" >
+	<?php
+	    }
+	    else{
+		if($this->document->getTitle()) {
+		    // use the manually set title if available
+		    $this->headTitle()->set($this->document->getTitle());
+		}
+		
+	
+		if($this->document->getDescription()) {
+		    // use the manually set description if available
+		    $this->headMeta()->appendName('description', $this->document->getDescription());
+		}
+		
+		if($this->document->getKeywords()) {
+		    $this->headMeta()->appendName('keywords', $this->document->getKeywords());
+		}
+	    }
 
         /* $this->headTitle()->append("Asuransi Indonesia Terbaik");
         $this->headTitle()->setSeparator(" : "); */
