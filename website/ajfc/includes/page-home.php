@@ -178,15 +178,16 @@
 <section class="mt32 mb72">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-6">
+            <div class="col-xs-12 col-md-6 pl30 pr30">
 
-                <div class="row social-feeds">
-                    <div class="col-xs-12 col-sm-6 col-md-6 pr0">
-                        <div class="social-feeds--box facebook">
+                <div class="row social-feeds row-eq-height">
+
+                    <div class="col-xs-12 col-md-6 nopadding bl bt">
+                        <div class="social-feeds--box twitter">
                             <div class="header">
-                                <i class="fa fa-facebook pull-left"></i>
+                                <i class="fa fa-twitter pull-left"></i>
                                 <!--
-                                <a href="#" class="pull-right"><i class="fa fa-thumbs-o-up"></i></a>
+                                <a href="#" class="pull-right"><i class="fa fa-retweet"></i></a>
                                 -->
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
@@ -201,7 +202,7 @@
                                         </a>
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
-                                        <p>Falmesino Abdul Hamid</p>
+                                        <p>@falmesino</p>
                                         <p><small>Rabu, 1 Mar 2015</small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
@@ -209,10 +210,11 @@
                         </div><!--/ .social-feeds--box -->
                     </div><!--/ .col-xs-12 -->
 
-                    <div class="col-xs-12 col-sm-6 col-md-6 pl0">
-                        <div class="social-feeds--box twitter">
+                    <div class="col-xs-12 col-md-6 nopadding br bt">
+                        <div class="social-feeds--box facebook">
+                            <img src="./img/dummy-stadium.jpg" alt="" class="bg-image" />
                             <div class="header">
-                                <i class="fa fa-twitter pull-left"></i>
+                                <i class="fa fa-facebook pull-left"></i>
                                 <!--
                                 <a href="#" class="pull-right"><i class="fa fa-retweet"></i></a>
                                 -->
@@ -239,12 +241,13 @@
 
                 </div><!--/ .social-feeds -->
 
-                <div class="row social-feeds">
+                <div class="row social-feeds row-eq-height">
 
-                    <div class="col-xs-12 col-sm-6 col-md-6 pr0">
-                        <div class="social-feeds--box twitter">
+                    <div class="col-xs-12 col-md-6 nopadding br bt">
+                        <div class="social-feeds--box facebook">
+                            <img src="./img/dummy-wasit.jpg" alt="" class="bg-image" />
                             <div class="header">
-                                <i class="fa fa-twitter pull-left"></i>
+                                <i class="fa fa-facebook pull-left"></i>
                                 <!--
                                 <a href="#" class="pull-right"><i class="fa fa-retweet"></i></a>
                                 -->
@@ -269,12 +272,12 @@
                         </div><!--/ .social-feeds--box -->
                     </div><!--/ .col-xs-12 -->
 
-                    <div class="col-xs-12 col-sm-6 col-md-6 pl0">
-                        <div class="social-feeds--box facebook">
+                    <div class="col-xs-12 col-md-6 nopadding bl bt">
+                        <div class="social-feeds--box twitter">
                             <div class="header">
-                                <i class="fa fa-facebook pull-left"></i>
+                                <i class="fa fa-twitter pull-left"></i>
                                 <!--
-                                <a href="#" class="pull-right"><i class="fa fa-thumbs-o-up"></i></a>
+                                <a href="#" class="pull-right"><i class="fa fa-retweet"></i></a>
                                 -->
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
@@ -289,7 +292,7 @@
                                         </a>
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
-                                        <p>Falmesino Abdul Hamid</p>
+                                        <p>@falmesino</p>
                                         <p><small>Rabu, 1 Mar 2015</small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
@@ -302,189 +305,135 @@
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-6 news-feeds">
 
-                <div class="news-feeds--box" id="newsFeedsBox1">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6 hidden-xs hidden-sm image">
-                            <img src="./img/dummy-wasit.jpg" alt="" class="" />
-                        </div><!--/ .col-xs-12 -->
-                        <div class="col-xs-12 col-md-6 content">
-                            <div class="news-feeds--box---content">
-                                <h3 class="news-feed--box---content-title">Wasit, siapa mereka?</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut orci metus,
-                                    non ipsum nec, vulputate euismod metus.
-                                </p>
-                            </div><!--/ .news-feeds-box--content -->
-                            <!--
-                            <a href="#" class="btn-edge"></a>
-                            -->
-                        </div><!--/ .col-xs-12 -->
-                    </div><!--/ .row -->
-                </div><!--/ .news-feeds--box -->
+                <div class="row row-eq-height">
+                    <div class="col-xs-12 col-md-6 nopadding bl bt">
+                        <a href="#" class="news-feeds--image">
+                            <img src="./img/yangterpenting.jpg" alt="" />
+                        </a>
+                    </div><!--/ .col-xs-12 -->
+                    <div class="col-xs-12 col-md-6 nopadding br bt">
+                        <a href="#" class="news-feeds--image" id="imageBoxA">
+                            <img src="./img/dummy-wasit.jpg" alt="" />
+                        </a>
+                    </div><!--/ .col-xs-12 -->
+                </div><!--/ .row -->
 
-                <div class="news-feeds--box" id="newsFeedsBox2">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6 content">
-                            <div class="news-feeds--box---content">
-                                <h3 class="news-feed--box---content-title">Berkunjung ke Allianz Arena di Munich</h3>
-                                <p>
-                                    Vestibulum accumsan, metus quis lacinia malesuada, lacus diam tincidunt magna,
-                                    nec tincidunt velit sapien vitae ligula.
-                                </p>
-                            </div><!--/ .news-feeds-box--content -->
-                            <!--
-                            <a href="#" class="btn-edge"></a>
-                            -->
-                        </div><!--/ .col-xs-12 -->
-                        <div class="col-xs-12 hidden-xs hidden-sm col-md-6 image">
-                            <img src="./img/dummy-stadium.jpg" alt="" class="" />
-                        </div><!--/ .col-xs-12 -->
-                    </div><!--/ .row -->
-                </div><!--/ .news-feeds--box -->
+                <div class="row row-eq-height">
+                    <div class="col-xs-12 col-md-6 nopadding bl bb">
+                        <a href="#" class="news-feeds--image" id="imageBoxB">
+                            <img src="./img/dummy-stadium.jpg" alt="" />
+                        </a>
+                    </div><!--/ .col-xs-12 -->
+                    <div class="col-xs-12 col-md-6 nopadding br bb">
+                        <div class="text" id="textBoxC">
+                            <h3 class="tbc-title"><a href="#">Judul Berita</a></h3>
+                            <p class="text-muted"><small class="tbc-date">Rabu, 14 Mei 2015</small></p>
+                            <p class="tbc-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut orci metus, interdum non ipsum nec, vulputate euismod metus. Morbi eget sem sed orci interdum lacinia quis ac orci.</p>
+                        </div><!--/ .text -->
+                    </div><!--/ .col-xs-12 -->
+                </div><!--/ .row -->
 
                 <script>
                     $(function(){
 
-                        var news =[
-                            [
-                                'Berkunjung ke Allianz Arena di Munich',
-                                'Vestibulum accumsan, metus quis lacinia malesuada, lacus diam',
-                                './img/dummy-stadium.jpg'
-                            ],
-                            [
-                                'Wasit, siapa mereka?',
-                                'Vestibulum accumsan, metus quis lacinia malesuada, lacus diam',
-                                './img/dummy-wasit.jpg'
-                            ],
-                            [
-                                'Hukum bermain bola ketika maghrib',
-                                'Haram jika shalat maghrib-nya dilewat.',
-                                './img/dummy-stadium.jpg'
-                            ],
-                            [
-                                'Mengapa bola berbentuk bundar?',
-                                'Ahli fisika mengatakan jika bola berbentuk kotak sudut tajamnya dapat melukai kaki pemain...',
-                                './img/dummy-wasit.jpg'
-                            ],
-                            [
-                                'Kebiasaan buruk rakyat Indonesia, nyampah',
-                                'Menonton pertandingan bola memang menyenangkan, tapi kesenangan itu hanya milik...',
-                                './img/dummy-stadium.jpg'
-                            ],
-                            [
-                                'Berkunjung ke Allianz Arena di Munich',
-                                'Vestibulum accumsan, metus quis lacinia malesuada, lacus diam...',
-                                './img/dummy-stadium.jpg'
-                            ],
-                            [
-                                'Berita nomor tujuh',
-                                'Vestibulum accumsan, metus quis lacinia malesuada, lacus diam...',
-                                './img/dummy-stadium.jpg'
-                            ],
-                            [
-                                'Berita nomor delapan',
-                                'Vestibulum accumsan, metus quis lacinia malesuada, lacus diam...',
-                                './img/dummy-wasit.jpg'
-                            ],
-                            [
-                                'Berita nomor sembilan',
-                                'Vestibulum accumsan, metus quis lacinia malesuada, lacus diam...',
-                                './img/dummy-stadium.jpg'
-                            ],
-                            [
-                                'Berita nomor sepuluh',
-                                'Vestibulum accumsan, metus quis lacinia malesuada, lacus diam...',
-                                './img/dummy-wasit.jpg'
-                            ]
+                        var images = [
+                            [ '#', './img/dummy-wasit.jpg' ],
+                            [ '#', './img/dummy-stadium.jpg' ],
+                            [ '#', './img/dummy/1.jpg' ],
+                            [ '#', './img/dummy/2.jpg' ],
+                            [ '#', './img/dummy/3.jpg' ],
+                            [ '#', './img/dummy/4.jpg' ],
+                            [ '#', './img/dummy/5.jpg' ],
+                            [ '#', './img/dummy/6.jpg' ],
+                            [ '#', './img/dummy/7.jpg' ],
+                            [ '#', './img/dummy/8.jpg' ]
                         ];
 
-                        var news_length = news.length;
-                        var interval    = 8000;
+                        var imagesLength = images.length;
 
-                        /*
-                        var box_a_pos   = 1;
-                        var box_a       = $( '#newsFeedsBox1' );
-                        var box_a_image = box_a.find( '.image' ).find( 'img' );
-                        var box_a_title = box_a.find( '.news-feed--box---content-title' );
-                        var box_a_body  = box_a.find( 'p' );
-                        var loop_a      = setInterval(function(){
+                        var news = [
+                            [ '#', 'Berita ke 1', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
+                            [ '#', 'Berita ke 2', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
+                            [ '#', 'Berita ke 3', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
+                            [ '#', 'Berita ke 4', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
+                            [ '#', 'Berita ke 5', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
+                        ];
+                        var newsLength  = news.length;
 
-                            if( news[ box_a_pos ] != undefined )
-                            {
-                                var item = news[ box_a_pos ];
-                                box_a_image.stop().fadeOut( 'medium', function(){
-                                    $( this ).attr( 'src', news[ box_a_pos ][ 2 ] );
-                                    $( this ).stop().fadeIn( 'medium', function(){
-                                        // do nothing
-                                        box_a_title.stop().fadeOut( 'fast', function(){
-                                            $( this ).html( news[ box_a_pos ][ 0 ] );
-                                            $( this ).stop().fadeIn( 'fast', function(){
-                                                // do nothing
-                                                box_a_body.stop().fadeOut( 'fast', function(){
-                                                    $( this ).html( news[ box_a_pos ][ 1 ] );
-                                                    $( this ).stop().fadeIn( 'fast', function(){
-                                                        // do nothing
-                                                    });
-                                                });
-                                            });
-                                        });
-                                    });
+                        var imageBoxA   = $( '#imageBoxA' );
+                        var iba_current = 0;
+                        var iba_interval= 4000;
+                        var iba_loop    = setInterval(function(){
+                            imageBoxA.stop().fadeOut( 'fast', function(){
+                                $( this ).parent().attr( 'href', images[ iba_current ][ 0 ] );
+                                $( this ).find( 'img' ).attr( 'src', images[ iba_current ][ 1 ] );
+                                $( this ).stop().fadeIn( 'fast', function(){
+                                    // do nothing
                                 });
-                                // console.log( box_a_pos + ' < ' + ( news_length / 2 ) );
-                                if( box_a_pos < ( news_length / 2 ) -1 )
-                                {
-                                    box_a_pos++;
-                                }
-                                else
-                                {
-                                    box_a_pos = 0;
-                                }
-                            }
-                            //console.table( news[ box_a_pos ] );
-                        }, interval);
-                        */
-                        var box_b_pos   = 0; //( news_length / 2 ) + 1;
-                        var box_b       = $( '#newsFeedsBox2' );
-                        var box_b_image = box_b.find( '.image' ).find( 'img' );
-                        var box_b_title = box_b.find( '.news-feed--box---content-title' );
-                        var box_b_body  = box_b.find( 'p' );
-
-                        var loop_b      = setInterval(function(){
-
-                            if( news[ box_b_pos ] != undefined )
+                            });
+                            //console.log( iba_current + ' ' + imagesLength );
+                            if( iba_current < ( imagesLength - 1 ) )
                             {
-                                var item = news[ box_b_pos ];
-                                box_b_image.stop().fadeOut( 'medium', function(){
-                                    $( this ).attr( 'src', news[ box_b_pos ][ 2 ] );
-                                    $( this ).stop().fadeIn( 'medium', function(){
-                                        // do nothing
-                                        box_b_title.stop().fadeOut( 'fast', function(){
-                                            $( this ).html( news[ box_b_pos ][ 0 ] );
-                                            $( this ).stop().fadeIn( 'fast', function(){
-                                                // do nothing
-                                                box_b_body.stop().fadeOut( 'fast', function(){
-                                                    // console.log( '' );
-                                                    $( this ).html( news[ box_b_pos ][ 1 ] );
-                                                    $( this ).stop().fadeIn( 'fast', function(){
-                                                        // do nothing
-                                                    });
-                                                });
-                                            });
-                                        });
-                                    });
-                                });
-                                // console.log( box_b_pos + ' < ' + news_length-1 );
-                                if( box_b_pos < news_length-1 )
-                                {
-                                    box_b_pos++;
-                                }
-                                else
-                                {
-                                    box_b_pos = 0; // ( news_length / 2 );
-                                }
-                                //console.table( news[ box_a_pos ] );
+                                iba_current++;
                             }
-                        }, interval);
+                            else
+                            {
+                                iba_current = 0;
+                            }
+                        }, iba_interval);
+
+                        var imageBoxB   = $( '#imageBoxB' );
+                        var ibb_current = 0;
+                        var ibb_interval= 16000;
+                        var ibb_loop    = setInterval(function(){
+                            imageBoxB.stop().fadeOut( 'fast', function(){
+                                $( this ).parent().attr( 'href', images[ ibb_current ][ 0 ] );
+                                $( this ).find( 'img' ).attr( 'src', images[ ibb_current ][ 1 ] );
+                                $( this ).stop().fadeIn( 'fast', function(){
+                                    // do nothing
+                                });
+                            });
+                            //console.log( iba_current + ' ' + imagesLength );
+                            if( ibb_current < ( imagesLength - 1 ) )
+                            {
+                                ibb_current++;
+                            }
+                            else
+                            {
+                                ibb_current = 0;
+                            }
+                        }, iba_interval);
+
+                        var textBoxC    = $( '#textBoxC' );
+                        var tbc_title   = textBoxC.find( '.tbc-title' );
+                        var tbc_date    = textBoxC.find( '.tbc-date' );
+                        var tbc_body    = textBoxC.find( '.tbc-body' );
+                        var tbc_interval= 5000;
+                        var tbc_current = 0;
+                        var tbc_loop    = setInterval(function(){
+                            tbc_title.stop().fadeOut( 'fast', function(){
+                                $( this ).html( '<a href="' + news[ tbc_current ][ 0 ] + '">' + news[ tbc_current ][ 1 ] + '</a>' );
+                                $( this ).stop().fadeIn( 'fast' );
+                            });
+                            tbc_date.stop().fadeOut( 'fast', function(){
+                                $( this ).html( news[ tbc_current ][ 3 ] );
+                                $( this ).stop().fadeIn( 'fast' );
+                            });
+                            tbc_body.stop().fadeOut( 'fast', function(){
+                                $( this ).html( news[ tbc_current ][ 2 ] );
+                                $( this ).stop().fadeIn( 'fast' );
+                            });
+                            if( tbc_current < newsLength-1 )
+                            {
+                                tbc_current++;
+                            }
+                            else
+                            {
+                                tbc_current = 0;
+                            }
+                        }, tbc_interval);
+
+
                     });
                 </script>
 
