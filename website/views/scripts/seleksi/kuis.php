@@ -749,7 +749,6 @@ $(document).ready(function() {
     //});
 
     $(".btn-previous").on( "click", function() {
-        console.log( 'prev' );
         $('html, body').animate({
             scrollTop: $(".first").offset().top
         }, 500, function(){
@@ -758,7 +757,6 @@ $(document).ready(function() {
     });
 
     $(".btn-next").on( "click", function() {
-        console.log( 'next' );
         $('html, body').animate({
             scrollTop: $(".first").offset().top
         }, 500, function(){
@@ -804,9 +802,10 @@ $(document).ready(function() {
             $(".btn-finish").addClass("hide");
         }
         if((no%2) == 1){
-            $(".banner-ajfc").fadeOut("slow");
-            $(".banner-ajfc").attr("src",shuffleImage[indexImage]);
-            $(".banner-ajfc").fadeIn("slow");
+            $( '.banner-ajfc' ).stop().fadeOut( 'slow', function(){
+                $( this ).attr( 'src', shuffleImage[ indexImage ] );
+                $( this ).stop().fadeIn( 'slow' );
+            });
         }
     });
 
@@ -840,9 +839,10 @@ $(document).ready(function() {
         var shuffleImage = shuffle(image);
         var indexImage = <?php echo $jmlImage;?>;
         if((no%2) == 1){
-            $(".banner-ajfc").fadeOut("slow");
-            $(".banner-ajfc").attr("src",shuffleImage[indexImage]);
-            $(".banner-ajfc").fadeIn("slow");
+            $( '.banner-ajfc' ).fadeOut( 'slow', function(){
+                $( this ).attr( 'src', shuffleImage[ indexImage ] );
+                $( this ).stop().fadeIn( 'slow' );
+            });
         }
     });
 
@@ -886,31 +886,31 @@ $(document).ready(function() {
 
 <script>
 
-$(document).on('change', '.btn-file :file', function() {
-  var input = $(this),
-      numFiles = input.get(0).files ? input.get(0).files.length : 1,
-      label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-  input.trigger('fileselect', [numFiles, label]);
-});
+    $(document).on('change', '.btn-file :file', function() {
+        var input = $(this),
+            numFiles = input.get(0).files ? input.get(0).files.length : 1,
+            label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+        input.trigger('fileselect', [numFiles, label]);
+    });
 
-$(document).ready( function() {
-    $(".fbAJFC").on("click",function(){
-        $("#clickFB").remove();
-        $(".fbAJFC").find(".error").remove();
+    $(document).ready( function() {
+        $(".fbAJFC").on("click",function(){
+            $("#clickFB").remove();
+            $(".fbAJFC").find(".error").remove();
+        });
+        $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
+            var input = $(this).parents('.input-group').find(':text'),
+                log = numFiles > 1 ? numFiles + ' files selected' : label;
+            if( input.length )
+            {
+                input.val(log);
+            }
+            else
+            {
+                if( log ) alert(log);
+            }
+        });
     });
-    $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
-        var input = $(this).parents('.input-group').find(':text'),
-            log = numFiles > 1 ? numFiles + ' files selected' : label;
-        if( input.length )
-        {
-            input.val(log);
-        }
-        else
-        {
-            if( log ) alert(log);
-        }
-    });
-});
 
 </script>
 
