@@ -646,6 +646,13 @@ padding: 10px 15px;
   /*SETTING LOGO 125*/
   .fixbox .place-bg .notepadKiri{width: 65%;float: left;}
 }
+@media only screen and (max-width : 1024px){
+  .mw960, footer.contentinfo .container.mw960,.container.mw960{
+    width: auto !important;
+    max-width: auto !important;
+    min-width: auto !important;
+  }
+}
 @media only screen and (max-width : 640px){
 
 	/* Sticky */
