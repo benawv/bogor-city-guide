@@ -177,7 +177,7 @@ class KuisController extends Website_Controller_Action {
 			
 			//Create PDF
 			$this->createPdfAction($namaPeserta,$saveNoDada);
-			$this->sendAction($saveNoDada,$emailPeserta);
+			$this->sendAction($saveNoDada,$emailPeserta,$namaPeserta);
 			
 			$this->redirect("/ajfc/thanks/terima-kasih");
 		}
@@ -223,10 +223,10 @@ class KuisController extends Website_Controller_Action {
 			$link = "http://".$host."/seleksi/".$idPeserta;
 			
 			$document = '/email/email-ajfc';
-			$params = array('name' => $row->getNamaLengkap(),
+			$params = array('name' => ucwords($row->getNamaLengkap()),
 					'link' => $link);
 			$mail = new Pimcore_Mail();
-			$mail->setSubject("AJFC 2015");
+			$mail->setSubject("Seleksi AJFC 2015");
 			$mail->setFrom("no-reply@ajfc.allianz.co.id","AJFC Allianz Indonesia");
 			$mail->setDocument($document);
 			$mail->setParams($params);
@@ -312,11 +312,18 @@ class KuisController extends Website_Controller_Action {
 	    return $text_width;
 	}
 	
-	public function sendAction($nomer,$email){
+	public function sendAction($nomer,$email,$nama){
+		
 		$mail = new Pimcore_Mail();
-		$mail->setSubject("AJFC Indonesia No Lari");
-		$mail->setBodyText("This is just plain text");
+		
+		$document = '/email/email-pdf';
+		$params = array('name' => ucwords($nama));
+		
+		$mail->setSubject("AJFC 2015 Nomor Lari");
+		//$mail->setBodyText("This is just plain text");
 		$mail->setFrom("no-reply@ajfc.allianz.co.id","AJFC 2015");
+		$mail->setDocument($document);
+		$mail->setParams($params);
 		$mail->addTo($email);
 
 		$file = 'website/static/pdf-no-lari/'.$nomer.'.pdf';
