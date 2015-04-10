@@ -1301,7 +1301,15 @@ section.gallery-wrapper .gallery-item {
     height: 100%; }
   section.gallery-wrapper .gallery-item .gallery-item--text-inner {
     padding: 0 28px;
-    color: white; }
+    color: white;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%); }
     section.gallery-wrapper .gallery-item .gallery-item--text-inner h1, section.gallery-wrapper .gallery-item .gallery-item--text-inner h2, section.gallery-wrapper .gallery-item .gallery-item--text-inner h3, section.gallery-wrapper .gallery-item .gallery-item--text-inner h4, section.gallery-wrapper .gallery-item .gallery-item--text-inner h5, section.gallery-wrapper .gallery-item .gallery-item--text-inner h6, section.gallery-wrapper .gallery-item .gallery-item--text-inner p {
       margin: 0;
       padding: 0; }
