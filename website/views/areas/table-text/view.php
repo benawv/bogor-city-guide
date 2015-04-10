@@ -56,7 +56,7 @@
                         </div><!--/ .sidebar-item--header -->
                         <div class="sidebar-item--content">
                             <ul class="sidebar-nav">
-                                 <li><a href="http://beta.allianz.co.id/ajfc">Beranda</a></li>
+                                <li><a href="/ajfc">Beranda</a></li>
                                 <li><a href="/ajfc/galeri-ajfc">Galeri</a></li>
                                 <li><a href="/ajfc/proses-seleksi">Proses Seleksi</a></li>
                                 <li><a href="#">Pengumuman</a></li>
