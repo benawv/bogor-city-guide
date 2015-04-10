@@ -201,7 +201,7 @@
                 
                         <?php
                         
-                            $fb_feed1 = new Object_socialMediaFeed_List();
+                            $fb_feed1 = new Object_SocialMediaFeed_List();
                             $fb_feed1->setLimit(1);
                             $fb_feed1->setOrder("asc");
                             $x = 1;
@@ -216,7 +216,7 @@
                                 $fb_link_aset1=$items1->link_asset;
                             }
                             
-                            $fb_feed2 = new Object_socialMediaFeed_List();
+                            $fb_feed2 = new Object_SocialMediaFeed_List();
                             $fb_feed2->setLimit(2);
                             $fb_feed2->setOrder("asc");
                             $fb2 = 1;
@@ -228,12 +228,12 @@
                                 $fb_username2=$items2->from;
                                 $fb_messages2=$items2->messages;
                                 $fb_link2=$items2->link_feed;
-                                $fb_link_aset2=$items1->link_asset;
+                                $fb_link_aset2=$items2->link_asset;
                                 }
                                 $fb2++;
                             }
                             
-                            $tw_feed1 = new Object_socialMediaFeed_List();
+                            $tw_feed1 = new Object_SocialMediaFeed_List();
                             $tw_feed1->setLimit(1);
                             $tw_feed1->setOrder("asc");
                             $tw1 = 1;
@@ -249,7 +249,7 @@
                             }
                             
                             
-                            $tw_feed2 = new Object_socialMediaFeed_List();
+                            $tw_feed2 = new Object_SocialMediaFeed_List();
                             $tw_feed2->setLimit(1);
                             $tw_feed2->setOrder("asc");
                             $tw2 = 1;
@@ -278,7 +278,7 @@
                             <div class="footer">
                                 <div class="media">
                                     <div class="media-left">
-                                        <a href="<?php echo $fb_link1; ?>">
+                                        <a href="<?php echo $fb_link1; ?>" target="_blank">
                                             <img class="media-object img-responsive" src="<?php echo $fb_link_aset1;?>" alt="Profile Picture">
                                         </a>
                                     </div><!--/ .media-left -->
@@ -304,7 +304,7 @@
                             <div class="footer">
                                 <div class="media">
                                     <div class="media-left">
-                                        <a href="#">
+                                        <a href="#" target="_blank">
                                             <img class="media-object img-responsive" src="http://placehold.it/48x48" alt="Profile Picture">
                                         </a>
                                     </div><!--/ .media-left -->
@@ -360,8 +360,8 @@
                             <div class="footer">
                                 <div class="media">
                                     <div class="media-left">
-                                        <a href="<?php echo $fb_link2; ?>">
-                                            <img class="media-object img-responsive" src="<?php echo $fb_link_aset1;?>" alt="Profile Picture">
+                                        <a href="<?php echo $fb_link2; ?>" target="_blank">
+                                            <img class="media-object img-responsive" src="<?php echo $fb_link_aset2;?>" alt="Profile Picture">
                                         </a>
                                     </div><!--/ .media-left -->
                                     <div class="media-body">

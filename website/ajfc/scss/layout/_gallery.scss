@@ -168,7 +168,7 @@ section.gallery-wrapper
                                 @include translateY(-50%);
                                 border: solid 32px transparent;
                                 border-left-color: $color_red;
-                                z-index: 2;
+                                z-index: 999;
                             }
                         }
                     }
@@ -189,7 +189,7 @@ section.gallery-wrapper
                                 @include translateY(-50%);
                                 border: solid 32px transparent;
                                 border-right-color: $color_red;
-                                z-index: 2;
+                                z-index: 999;
                             }
                         }
                     }
@@ -203,13 +203,39 @@ section.gallery-wrapper
             display: block;
             position: relative;
             overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0;
+            line-height: 1;
+            cursor: default;
+            min-height: 256px;
+            min-width: 256px;
             & > img
             {
-                width: 100%;
+                width: auto;
                 min-width: 100%;
-                max-width: 100%;
+                max-width: none; //100%;
                 height: auto;
+                min-height: 100%;
+                max-height: none;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                @include translate3d(-50%, -50%, 0);
+                @include transition( ease, 0.3s );
+                z-index: 2;
             }
+
+            &:hover
+            {
+                & > img
+                {
+                    min-width: 105%;
+                    min-height: 105%;
+                }
+            }
+
         } /* .galery-item--image */
 
         .gallery-item--text
