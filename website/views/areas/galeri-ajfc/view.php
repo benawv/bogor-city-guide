@@ -113,6 +113,7 @@
 									                <div class="gallery-item--text">
 									                    <div class="gallery-item--text-inner">
 									                        <h3>"'.$ptg.'"</h3>
+									                        <p>'.$nama.', '.$umur.' Tahun<br />'.$asl.', '.$prop.'</p>
 									                    </div><!--/ .gallery-item--text-inner -->
 									                </div><!--/ .galery-item--text -->
 									            </div><!--/ .col-xs-12 -->
