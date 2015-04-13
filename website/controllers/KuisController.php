@@ -22,167 +22,180 @@ class KuisController extends Website_Controller_Action {
 		}
 		
 		$idPeserta = explode("-",$_POST["idPeserta"]);
+		//print_r($idPeserta);
 		//echo $idPeserta[0];
-		//$saveKuis = new Object_DataPesertaAJFC_List($idPeserta[0]);
-		//$saveKuis->setCondition("statusSubmitKuis = 1");
+		$checkSubmit = new Object_DataPesertaAJFC_List();
+		$checkSubmit->setCondition("statusSubmitKuis != 1 AND idPeserta = '".$idPeserta[1]."'");
 		//
 		//echo "<pre>";
-		//print_r($saveKuis);
-		//
-		//die();
-		$namaPeserta = $_POST["nama"];
-		$tempatLahir = $_POST["tmp"];
-		$emailPeserta = $_POST["email"];
-		$alamat = $_POST["alamat"];
-		$jk = $_POST["radioJK"];
-		$pasport = $_POST["pasport"];
-		$propinsi = $_POST["propinsi"];
-		$namaOrtu = $_POST["namaOrtu"];
-		$noHp = $_POST["noHp"];
-		$emailOrtu = $_POST["emailOrtu"];
-		$alamatOrtu = $_POST["alamatOrtu"];
-		$pekerjaan = $_POST["pekerjaan"];
-		$pekerjaan_lain = $_POST["pekerjaan-lain"];
-		$info = implode(", ", $_POST["info"]);
-		$halTerpenting = $_POST["halTerpenting"];
-		
-		//Orang Tua
-		$saudara = $_POST["jumSaudara"];
-		$usiaAyah = $_POST["usiaAyah"];
-		$usiaIbu = $_POST["usiaIbu"];
-		$pendidikanAyah = $_POST["pendidikanAyah"];
-		$pendidikanIbu = $_POST["pendidikanIbu"];
-		$pengeluaran = $_POST["pengeluaran"];
-		
-		if($pekerjaan_lain != "")
+		$no = "";
+		foreach($checkSubmit as $row)
 		{
-			$pekerjaan = "";
-			$pekerjaan = $pekerjaan_lain;
+			$no = count($row);
 		}
 		
-		$soal = new Object_Quiz_List();
-		$x = 1;
-		$nilai = array();
-		foreach($soal as $row)
-		{
-			$nilai[] = $row->answer->items[$_POST['soal'.$x]]->nilai_jawaban;
-			$x++;
-		}
-		//echo "<pre>";
-		//print_r($nilai);
-		$total = 0;
-		foreach ($nilai as $k => $v) {
-			$total = $total + $v;
-		}
-		
-		$totalNilai = $total;
-		
-		$getNomer = new Object_DataPesertaAJFC_List();
-		$getNomer->setCondition("statusSubmitKuis = 1");
-		$getNomer->setOrderKey("noLari");
-		$getNomer->setOrder("desc");
-		$getNomer->setLimit(1);
-		$setLari = "";
-		foreach($getNomer as $lari)
-		{
-			$setLari = $lari->getNoLari()+1;
-		}
-		if($setLari == 0)
-		{
+		if((int)$no == 1){
+			//echo "if";
+			//die();
+			
+			$namaPeserta = $_POST["nama"];
+			$tempatLahir = $_POST["tmp"];
+			$emailPeserta = $_POST["email"];
+			$alamat = $_POST["alamat"];
+			$jk = $_POST["radioJK"];
+			$pasport = $_POST["pasport"];
+			$propinsi = $_POST["propinsi"];
+			$namaOrtu = $_POST["namaOrtu"];
+			$noHp = $_POST["noHp"];
+			$emailOrtu = $_POST["emailOrtu"];
+			$alamatOrtu = $_POST["alamatOrtu"];
+			$pekerjaan = $_POST["pekerjaan"];
+			$pekerjaan_lain = $_POST["pekerjaan-lain"];
+			$info = implode(", ", $_POST["info"]);
+			$halTerpenting = $_POST["halTerpenting"];
+			
+			//Orang Tua
+			$saudara = $_POST["jumSaudara"];
+			$usiaAyah = $_POST["usiaAyah"];
+			$usiaIbu = $_POST["usiaIbu"];
+			$pendidikanAyah = $_POST["pendidikanAyah"];
+			$pendidikanIbu = $_POST["pendidikanIbu"];
+			$pengeluaran = $_POST["pengeluaran"];
+			
+			if($pekerjaan_lain != "")
+			{
+				$pekerjaan = "";
+				$pekerjaan = $pekerjaan_lain;
+			}
+			
+			$soal = new Object_Quiz_List();
+			$x = 1;
+			$nilai = array();
+			foreach($soal as $row)
+			{
+				$nilai[] = $row->answer->items[$_POST['soal'.$x]]->nilai_jawaban;
+				$x++;
+			}
+			//echo "<pre>";
+			//print_r($nilai);
+			$total = 0;
+			foreach ($nilai as $k => $v) {
+				$total = $total + $v;
+			}
+			
+			$totalNilai = $total;
+			
+			$getNomer = new Object_DataPesertaAJFC_List();
+			$getNomer->setCondition("statusSubmitKuis = 1");
+			$getNomer->setOrderKey("noLari");
+			$getNomer->setOrder("desc");
+			$getNomer->setLimit(1);
 			$setLari = "";
-			$setLari = 1;
-		}
-		
-		$saveKuis = Object_DataPesertaAJFC::getById($idPeserta[0]);
-		//$saveKuis->setCondition("");
-		$saveKuis->setAlamat($alamat);
-		$saveKuis->setTempatLahir($tempatLahir);
-		$saveKuis->setPasport($pasport);
-		$saveKuis->setPropinsi($propinsi);
-		$saveKuis->setNamaOrtu($namaOrtu);
-		$saveKuis->setNoHpOrtu($noHp);
-		$saveKuis->setEmailOrtu($emailOrtu);
-		$saveKuis->setAlamatOrtu($alamatOrtu);
-		$saveKuis->setPekerjaanOrtu($pekerjaan);
-		$saveKuis->setInformasi($info);
-		$saveKuis->setSatuTerpenting($halTerpenting);
-		$saveKuis->setNilaiSoal(implode(", ", $nilai));
-		$saveKuis->setTotalNilai($totalNilai);
-		$saveKuis->setStatusSubmitKuis(1);
-		$saveKuis->setTerm($term);
-		$saveKuis->setNoLari($setLari);
-		$saveKuis->setJenisKelamin($jk);
-		
-		//Orang Tua
-		$saveKuis->setJumSaudara($saudara);
-		$saveKuis->setUsiaAyah($usiaAyah);
-		$saveKuis->setUsiaIbu($usiaIbu);
-		$saveKuis->setPendidikanAyah($pendidikanAyah);
-		$saveKuis->setPendidikanIbu($pendidikanIbu);
-		$saveKuis->setPengeluaranOrtu($pengeluaran);
-
-		
-		$digit = 4-(int)(strlen($setLari));
-		$noDada = "";
-		for($i=1;$i<=$digit;$i++)
-		{
-			$noDada = $noDada."0";
-		}
-		$saveNoDada = $noDada.$setLari;
-		
-		
-		$dateNow = strtotime(date('Y-m-d H:i:s'));
-		
-		// Asset folder for the uploaded images
-		$assetFolder = "/ajfc/foto-peserta";
-		
-		// The key is the unique name of an asset that is also used in the asset tree
-		$key = Pimcore_File::getValidFilename($_FILES["uploadFoto"]["name"]);
-		
-		// Check if there is alraedy an image with the same key
-		if(!$asset = Asset::getByPath($assetFolder . "/" . $key)) {
-		   $asset = new Asset_Image();
+			foreach($getNomer as $lari)
+			{
+				$setLari = $lari->getNoLari()+1;
+			}
+			if($setLari == 0)
+			{
+				$setLari = "";
+				$setLari = 1;
+			}
+			
+			$saveKuis = Object_DataPesertaAJFC::getById($idPeserta[0]);
+			//$saveKuis->setCondition("");
+			$saveKuis->setAlamat($alamat);
+			$saveKuis->setTempatLahir($tempatLahir);
+			$saveKuis->setPasport($pasport);
+			$saveKuis->setPropinsi($propinsi);
+			$saveKuis->setNamaOrtu($namaOrtu);
+			$saveKuis->setNoHpOrtu($noHp);
+			$saveKuis->setEmailOrtu($emailOrtu);
+			$saveKuis->setAlamatOrtu($alamatOrtu);
+			$saveKuis->setPekerjaanOrtu($pekerjaan);
+			$saveKuis->setInformasi($info);
+			$saveKuis->setSatuTerpenting($halTerpenting);
+			$saveKuis->setNilaiSoal(implode(", ", $nilai));
+			$saveKuis->setTotalNilai($totalNilai);
+			$saveKuis->setStatusSubmitKuis(1);
+			$saveKuis->setTerm($term);
+			$saveKuis->setNoLari($setLari);
+			$saveKuis->setJenisKelamin($jk);
+			
+			//Orang Tua
+			$saveKuis->setJumSaudara($saudara);
+			$saveKuis->setUsiaAyah($usiaAyah);
+			$saveKuis->setUsiaIbu($usiaIbu);
+			$saveKuis->setPendidikanAyah($pendidikanAyah);
+			$saveKuis->setPendidikanIbu($pendidikanIbu);
+			$saveKuis->setPengeluaranOrtu($pengeluaran);
+	
+			
+			$digit = 4-(int)(strlen($setLari));
+			$noDada = "";
+			for($i=1;$i<=$digit;$i++)
+			{
+				$noDada = $noDada."0";
+			}
+			$saveNoDada = $noDada.$setLari;
+			
+			
+			$dateNow = strtotime(date('Y-m-d H:i:s'));
+			
+			// Asset folder for the uploaded images
+			$assetFolder = "/ajfc/foto-peserta";
+			
+			// The key is the unique name of an asset that is also used in the asset tree
+			$key = Pimcore_File::getValidFilename($_FILES["uploadFoto"]["name"]);
+			
+			// Check if there is alraedy an image with the same key
+			if(!$asset = Asset::getByPath($assetFolder . "/" . $key)) {
+			   $asset = new Asset_Image();
+			}
+			else{
+				$asset = new Asset_Image();
+			}
+			
+			// Optionally set the creation date
+			$asset->setCreationDate ( time() );
+			
+			// Optionally set the user
+			$asset->setUserOwner (1);
+			$asset->setUserModification (1);
+			
+			// Set the asset's parent id, which is the asset folder for the uploaded images
+			$asset->setParentId(Asset_Folder::getByPath($assetFolder)->getId());
+			
+			// That's the key
+			$asset->setFilename($dateNow."_".$key);
+			$asset->setData(IMAGE_SOURCE);
+			
+			
+			
+			try{
+				$asset->save();
+				
+				$saveKuis->setFotoPeserta(Asset_Image::getById($asset->id));
+				
+				//CUSTOM
+				$target_dir = "./website/var/assets/ajfc/foto-peserta/";
+				$target_file = $target_dir.$dateNow."_".basename($_FILES["uploadFoto"]["name"]);
+				
+				move_uploaded_file($_FILES["uploadFoto"]["tmp_name"], $target_file);
+				$saveKuis->save();
+				
+				//Create PDF
+				$this->createPdfAction($namaPeserta,$saveNoDada);
+				$this->sendAction($saveNoDada,$emailPeserta,$namaPeserta);
+				
+				$this->redirect("/ajfc/thanks/terima-kasih");
+			}
+			catch(Exception $e){
+				echo 'ERROR: ',  $e->getMessage(), "\n";
+			}
 		}
 		else{
-			$asset = new Asset_Image();
-		}
-		
-		// Optionally set the creation date
-		$asset->setCreationDate ( time() );
-		
-		// Optionally set the user
-		$asset->setUserOwner (1);
-		$asset->setUserModification (1);
-		
-		// Set the asset's parent id, which is the asset folder for the uploaded images
-		$asset->setParentId(Asset_Folder::getByPath($assetFolder)->getId());
-		
-		// That's the key
-		$asset->setFilename($dateNow."_".$key);
-		$asset->setData(IMAGE_SOURCE);
-		
-		
-		
-		try{
-			$asset->save();
-			
-			$saveKuis->setFotoPeserta(Asset_Image::getById($asset->id));
-			
-			//CUSTOM
-			$target_dir = "./website/var/assets/ajfc/foto-peserta/";
-			$target_file = $target_dir.$dateNow."_".basename($_FILES["uploadFoto"]["name"]);
-			
-			move_uploaded_file($_FILES["uploadFoto"]["tmp_name"], $target_file);
-			$saveKuis->save();
-			
-			//Create PDF
-			$this->createPdfAction($namaPeserta,$saveNoDada);
-			$this->sendAction($saveNoDada,$emailPeserta,$namaPeserta);
-			
-			$this->redirect("/ajfc/thanks/terima-kasih");
-		}
-		catch(Exception $e){
-			echo 'ERROR: ',  $e->getMessage(), "\n";
+			echo "Maaf, sebelumnya kamu sudah submit kuis.";
+			die();
 		}
 		
 	}
