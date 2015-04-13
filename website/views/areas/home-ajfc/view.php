@@ -50,7 +50,7 @@
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-4">
-                    <a href="/ajfc/daftar-perserta" class="nav-item users">
+                    <a href="/ajfc/daftar-peserta" class="nav-item users">
                         <h4><small>03</small> Sudah Mendaftar? <span>Cek Disini</span></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->

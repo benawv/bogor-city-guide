@@ -24,7 +24,9 @@ class AjfcController extends Website_Controller_Action {
 		);
 		$Facebook=new Facebook($config);
 		$BaseFacebook=new FacebookApiException($config);
+		$twitteroauth=new TwitterOAuth();
 		
+		$this->tw_connection = $twitteroauth->create('iCin1AqYPO3AOpwGySuxEcCV5','lel0lh8FVV6xsXRpWXaAxHkbL87srnVJvm8aX626vMvDua1v0a','52367165-VqEH02VOy3qN8wBDhpV7IDAMFgVz2KTLbkNlndsXK','GbagBCzfdGy1Rxy6eJlNIBhqx6pqprczmZhrhoXKsO6CW');
 		
 	
 	}
@@ -153,13 +155,43 @@ class AjfcController extends Website_Controller_Action {
 		//$url="'https://graph.facebook.com/me/')";
 		$appId='727536864031162';
 		$secret = 'ddccc4384fd244f82a7a3fb4b346f064';
-		$result = $Facebook->api('/me/posts');
-		print_r($result);
+		//$result = $Facebook->api('/me/posts');
+		//print_r($result);
 		//$getAuth=$this->open_api_template($url,$appId,$apiKey);
 		//$post = $this->facebook_model->RetrievePost($channel->social_id, $channel->oauth_token);
 		//echo "<pre>";
 		//print_r($getAuth);
 		//echo "</pre>";
+		
+		$result_tw = $this->tw_connection->get('search/tweets',
+                                         array("q"=>'%231ygterpenting',"count" => 10));
+       		$i=0;
+		if(isset($result_tw)){
+		    foreach($result_tw as $tweet){
+			foreach($tweet as $tweets){
+				
+				
+				$namakey ='twitter'."_".strtotime(date("YmdHis"));				
+				//cron data twitter
+				$feedTwitter = new Object_SocialMediaFeed();
+				$feedTwitter->setstream_id($tweets->id_str);
+				$feedTwitter->setfrom($tweets->name);
+				$feedTwitter->setdate($tweets->created_at);
+				$feedTwitter->setfrom_id($tweets->name);
+				$feedTwitter->setlink_asset($tweets->screen_name);
+				$feedTwitter->settype_asset();
+				$feedTwitter->setlink_feed($tweets->entities->media[0]->media_url);
+				$feedTwitter->setmessages($tweets->text);
+				$feedTwitter->setKey(strtolower($namakey));
+				$feedTwitter->setO_parentId('9');
+				$feedTwitter->setIndex(0);
+				$feedTwitter->setPublished(1);
+				$feedTwitter->save();
+				
+			}
+			$i++;
+		    }
+		}
 	}
 	
 

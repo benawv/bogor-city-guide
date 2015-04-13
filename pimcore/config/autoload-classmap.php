@@ -258,6 +258,7 @@ return array (
   'FacebookApiException' => $pdr . '/pimcore/lib/Hybrid/thirdparty/Facebook/base_facebook.php',
   'BaseFacebook' => $pdr . '/pimcore/lib/Hybrid/thirdparty/Facebook/base_facebook.php',
   'Facebook' => $pdr . '/pimcore/lib/Hybrid/thirdparty/Facebook/facebook.php',
+  'TwitterOAuth' => $pdr . '/pimcore/lib/Hybrid/thirdparty/Twitter/Twitteroauth.php',
   'Hybrid_Logger' => $pdr . '/pimcore/lib/Hybrid/Logger.php',
   'Hybrid_Storage' => $pdr . '/pimcore/lib/Hybrid/Storage.php',
   'Hybrid_Provider_Model_OpenID' => $pdr . '/pimcore/lib/Hybrid/Provider_Model_OpenID.php',
