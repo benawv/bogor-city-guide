@@ -456,12 +456,12 @@
             <div class="col-xs-12 col-md-6 news-feeds">
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
-                        <a href="#" class="news-feeds--image">
+                        <a href="/ajfc/galeri-ajfc" class="news-feeds--image">
                             <img src="/website/static/images/dummy/yangterpenting.jpg" alt="" />
                         </a>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bt">
-                        <a href="#" class="news-feeds--image" id="imageBoxA">
+                        <a href="/ajfc/galeri-ajfc" class="news-feeds--image" id="imageBoxA">
                             <img src="<?php echo $b[0][1]; ?>" alt="" />
                         </a>
                     </div><!--/ .col-xs-12 -->
@@ -469,13 +469,13 @@
 
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bb">
-                        <a href="#" class="news-feeds--image" id="imageBoxB">
+                        <a href="/ajfc/galeri-ajfc" class="news-feeds--image" id="imageBoxB">
                             <img src="<?php echo $b[1][1]; ?>" alt="" />
                         </a>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bb">
                         <div class="text" id="textBoxC">
-                            <h3 class="tbc-title"><a href="#"><?php echo $c[0][1]; ?></a></h3>
+                            <h3 class="tbc-title"><a href="/ajfc/galeri-ajfc"><?php echo $c[0][1]; ?></a></h3>
                             <p class="text-muted"><small class="tbc-date"><?php echo $b[0][2]; ?></small></p>
                             <p class="tbc-body"><?php echo $b[0][3]; ?></p>
                         </div><!--/ .text -->
@@ -493,7 +493,7 @@
                         var newsLength  = news.length;
 
                         var imageBoxA   = $( '#imageBoxA' );
-                        var iba_current = 0;
+                        var iba_current = 2;
                         var iba_interval= 4000;
                         var iba_loop    = setInterval(function(){
                             imageBoxA.stop().fadeOut( 'fast', function(){
@@ -516,7 +516,7 @@
                         }, iba_interval);
 
                         var imageBoxB   = $( '#imageBoxB' );
-                        var ibb_currentb = 1;
+                        var ibb_currentb = 3;
                         var ibb_interval= 16000;
                         var ibb_loop    = setInterval(function(){
                             imageBoxB.stop().fadeOut( 'fast', function(){
