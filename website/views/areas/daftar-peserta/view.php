@@ -96,10 +96,10 @@
                                 <li><a href="/ajfc">Beranda</a></li>
                                 <li><a href="/ajfc/galeri-ajfc">Galeri</a></li>
                                 <li><a href="/ajfc/proses-seleksi">Proses Seleksi</a></li>
-                                <li><a href="#">Pengumuman</a></li>
-                <li class="active"><a href="/ajfc/daftar-perserta">Daftar Peserta</a></li>
-                                <li><a href="/ajfc/tanya-jawab">Tanya Jawab</a></li>
-                                <li><a href="/ajfc/kebijakan-privasi">Kebijakan Privasi</a></li>
+				<li><a href="/ajfc/tanya-jawab">Tanya Jawab</a></li>
+				<li><a href="/ajfc/kebijakan-privasi">Kebijakan Privasi</a></li>
+                                <li><a href="/ajfc/pendaftaran">Pendaftaran</a></li>
+				<li class="active"><a href="/ajfc/daftar-perserta">Daftar Peserta</a></li>                
                             </ul>
                         </div><!--/ .sidebar-item--content -->
                     </div><!--/ .sidebar-item -->
