@@ -177,6 +177,18 @@ header
 
 }
 
+.social-feeds,
+.news-feeds
+{
+    @media ( max-width: 767px )
+    {
+        .row-eq-height
+        {
+            display: block !important;
+        }
+    }
+}
+
 .social-feeds
 {
 

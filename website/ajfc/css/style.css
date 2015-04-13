@@ -696,6 +696,11 @@ header {
             text-align: center; }
 
 @media (max-width: 767px) {
+  .social-feeds .row-eq-height,
+  .news-feeds .row-eq-height {
+    display: block !important; } }
+
+@media (max-width: 767px) {
   .social-feeds .pr0 {
     padding-right: 15px !important; }
   .social-feeds .pl0 {
@@ -1900,5 +1905,8 @@ div.zabuto_calendar div.legend span.badge {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
+  @media (max-width: 767px) {
+    .row-eq-height {
+      display: block !important; } }
 
 /*# sourceMappingURL=style.css.map */
