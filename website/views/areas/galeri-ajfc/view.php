@@ -64,8 +64,9 @@
 			$entries->setLimit(30);
             $entries->setOrderKey("o_creationDate");
             $entries->setOrder("desc");
-			$entries->setCondition("'statusSubmitKuis' = 1 AND 'approve' = 1");
+			//$entries->setCondition("statusSubmitKuis LIKE 1 AND approve LIKE 1");
 			$jml = count($entries);
+			//echo $jml;
 			$sisa = 8 - $jml;
 			//echo $jml.'sisa='.$sisa;
 			if($jml < 8){
@@ -73,8 +74,8 @@
 			}else{
 				$n = 1;
 			}
-			while($n>0){
-				if($n==1){
+			while($n<=2){
+				if($n==2){
 					$entries = new Object_DataPesertaAJFCDefault_List();
 					$entries->setLimit($sisa);
 				}
@@ -202,11 +203,12 @@
 					$nurut++;
 				}
 
-				$n--;
+				$n++;
 			}
     	if($jml>8){ ?>
     		<a class="click"><div id="load-more"><img width="24px" src="/btn-plus.gif"></div></a>
     	<?php } ?>
+    	<div style="clear: both;"></div>
     </div><!--/ .container -->
 </section><!--/ .page-wrapper -->
 
