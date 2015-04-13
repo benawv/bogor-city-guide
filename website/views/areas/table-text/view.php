@@ -1,7 +1,8 @@
 <header>
     
     <div class="background">
-        <img src="/website/ajfc/img/bg-faq.jpg" alt="Home" class="img-responsive" />
+        <?php $asets=Asset::getByPath('/ajfc/background/bgtanya-jawab.jpg');?>
+        <img src="<?php echo $asets; ?>" alt="background tanya jawab" class="img-responsive" />
     </div><!--/ .background -->
     
 </header>
