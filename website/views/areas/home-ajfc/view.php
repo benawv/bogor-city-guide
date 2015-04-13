@@ -168,7 +168,7 @@
             }else{
                 array_push($b,array(0=>"#",1=>$img));
                 if($no<=5)
-                    array_push($c,array(0=>"#",1=>$nama,2=>$ptg,3=>$content));
+                    array_push($c,array(0=>"/ajfc/galeri-ajfc",1=>$nama,2=>$ptg,3=>$content));
             }
             if($no >= 10)
                 break;
