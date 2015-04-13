@@ -494,7 +494,7 @@
 
                         var imageBoxA   = $( '#imageBoxA' );
                         var iba_current = 2;
-                        var iba_interval= 4000;
+                        var iba_interval= 15000;
                         var iba_loop    = setInterval(function(){
                             imageBoxA.stop().fadeOut( 'fast', function(){
                                 $( this ).parent().attr( 'href', images[ iba_current ][ 0 ] );
@@ -517,7 +517,7 @@
 
                         var imageBoxB   = $( '#imageBoxB' );
                         var ibb_currentb = 3;
-                        var ibb_interval= 16000;
+                        var ibb_interval= 21000;
                         var ibb_loop    = setInterval(function(){
                             imageBoxB.stop().fadeOut( 'fast', function(){
                                 $( this ).parent().attr( 'href', images[ ibb_currentb ][ 0 ] );
@@ -536,13 +536,13 @@
                                 ibb_currentb = 1;
                             }
                             console.log('b'+ibb_currentb+'->'+imagesLength);
-                        }, iba_interval);
+                        }, ibb_interval);
 
                         var textBoxC    = $( '#textBoxC' );
                         var tbc_title   = textBoxC.find( '.tbc-title' );
                         var tbc_date    = textBoxC.find( '.tbc-date' );
                         var tbc_body    = textBoxC.find( '.tbc-body' );
-                        var tbc_interval= 4000;
+                        var tbc_interval= 8000;
                         var tbc_current = 0;
                         var tbc_loop    = setInterval(function(){
                             tbc_title.stop().fadeOut( 'fast', function(){
