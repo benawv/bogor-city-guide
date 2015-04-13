@@ -177,6 +177,18 @@ header
 
 }
 
+.social-feeds,
+.news-feeds
+{
+    @media ( max-width: 767px )
+    {
+        .row-eq-height
+        {
+            display: block !important;
+        }
+    }
+}
+
 .social-feeds
 {
 
@@ -292,6 +304,13 @@ header
                 {
                     display: inline-block;
                     vertical-align: middle;
+
+                    img.media-object
+                    {
+                        max-width: 48px !important;
+                        min-width: 48px !important;
+                    }
+
                 }
                 .media-left
                 {
@@ -578,6 +597,15 @@ section#calendar-wrapper
 
     padding-bottom: 99999px;
     margin-bottom: -99999px;
+
+    @media (max-width: 991px)
+    {
+        &
+        {
+            padding-bottom: 48px !important;
+            margin-bottom: 0 !important;
+        }
+    }
 
     .sidebar-item
     {

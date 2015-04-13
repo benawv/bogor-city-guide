@@ -84,7 +84,6 @@
                             </ul>
                         </div><!--/ .sidebar-item--content -->
                     </div><!--/ .sidebar-item -->
-
                 </div><!--/ .sidebar -->
 
             </div><!--/ .col-xs-12 -->

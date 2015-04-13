@@ -1,8 +1,13 @@
 // http://getbootstrap.com.vn/examples/equal-height-columns/
 .row-eq-height
 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    @media ( max-width: 767px )
+    {
+        display: block !important;
+    }
 }

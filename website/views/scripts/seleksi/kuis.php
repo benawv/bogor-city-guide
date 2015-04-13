@@ -187,7 +187,7 @@
                                             <div class="form-group">
                                                 <label for="exampleInputName2">Nomer Telepon / HP<span class="spanRed">*</span></label>
                                                 <div class="message-info">
-                                                    <input value="<?php echo $row->getNoHp();?>" type="text" class="form-control" name="no-telp" id="no-tlp" placeholder=">Nomer Telepon / HP*">
+                                                    <input value="<?php echo $row->getNoHp();?>" type="text" class="form-control" name="no-telp" id="no-tlp" placeholder="Nomer Telepon / HP*">
                                                     <div class="info-error"></div>
                                                 </div><!--/ .message-info -->
                                             </div><!--/ .form-group -->
@@ -271,8 +271,8 @@
                                             </div><!--/ .form-group -->
 
                                             <div class="form-group">
-                                                <label for="exampleInputName2">Alamat Orang Tua<span class="spanRed">*</span></label>
-                                                <textarea class="form-control" rows="3" name="alamatOrtu" style="height:70px !important" placeholder="Alamat Orang Tua"></textarea>
+                                                <label for="exampleInputName2">Alamat Lengkap Orang Tua<span class="spanRed">*</span></label>
+                                                <textarea class="form-control" rows="3" name="alamatOrtu" style="height:70px !important" placeholder="Alamat Lengkap Orang Tua"></textarea>
                                             </div><!--/ .form-group -->
 
                                             <div class="form-group">
@@ -382,7 +382,7 @@
 
                                             <div class="form-group">
                                                 <label for="tgl-lahir">
-                                                    Dari mana kamu mendapatkan informasi mengenai kamp ini?
+                                                    Dari mana kamu dapat informasi tentang kamp ini?
                                                     <span class="spanRed">*</span>
                                                 </label>
                                                 <div class="checkbox-info">
@@ -650,6 +650,16 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
+    
+    $('.radio-inline input[type=text]').hide();
+    $('input[type=radio][name=pekerjaan]').change(function() {
+        if (this.value == 'Lainnya') {
+            $('.radio-inline input[type=text]').show();
+        }
+        else{
+            $('.radio-inline input[type=text]').hide();
+        }
+    });
 
     $("#hp-ortu").keypress(function (e) {
         //if the letter is not digit then display error and don't type anything
@@ -910,6 +920,7 @@ $(document).ready(function() {
                 if( log ) alert(log);
             }
         });
+        setTimeout(function(){ resizePageWrapper(); }, 1000);
     });
 
 </script>
@@ -999,6 +1010,10 @@ $(function() {
                 required: true
           },
                 pekerjaan:
+          {
+                required: true
+          },
+            'pekerjaan-lain':
           {
                 required: true
           },
@@ -1093,6 +1108,10 @@ $(function() {
             pekerjaan:
           {
             required: "Mohon pilih pekerjaan"
+          },
+          'pekerjaan-lain':
+          {
+                required: "Mohon isi pekerjaan orang tua"
           },
           'info[]':
           {

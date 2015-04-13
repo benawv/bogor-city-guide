@@ -25,11 +25,19 @@ section.gallery-wrapper
             .row > div[class^="col-"]:first-child > .gallery-item--text::before
             {
                 border-left-color: $color_blue;
+                @media ( max-width: 480px )
+                {
+                    border-top-color: $color_blue;
+                }
             }
 
             .row > div[class^="col-"]:last-child > .gallery-item--text::before
             {
                 border-right-color: $color_blue;
+                @media ( max-width: 480px )
+                {
+                    border-bottom-color: $color_blue;
+                }
             }
 
         }
@@ -41,11 +49,19 @@ section.gallery-wrapper
             .row > div[class^="col-"]:first-child > .gallery-item--text::before
             {
                 border-left-color: $color_blue_light;
+                @media ( max-width: 480px )
+                {
+                    border-top-color: $color_blue_light;
+                }
             }
 
             .row > div[class^="col-"]:last-child > .gallery-item--text::before
             {
                 border-right-color: $color_blue_light;
+                @media ( max-width: 480px )
+                {
+                    border-bottom-color: $color_blue_light;
+                }
             }
         }
 
@@ -56,11 +72,19 @@ section.gallery-wrapper
             .row > div[class^="col-"]:first-child > .gallery-item--text::before
             {
                 border-left-color: $color_green;
+                @media ( max-width: 480px )
+                {
+                    border-top-color: $color_green;
+                }
             }
 
             .row > div[class^="col-"]:last-child > .gallery-item--text::before
             {
                 border-right-color: $color_green;
+                @media ( max-width: 480px )
+                {
+                    border-bottom-color: $color_green;
+                }
             }
         }
 
@@ -71,11 +95,19 @@ section.gallery-wrapper
             .row > div[class^="col-"]:first-child > .gallery-item--text::before
             {
                 border-left-color: $color_orange;
+                @media ( max-width: 480px )
+                {
+                    border-top-color: $color_orange;
+                }
             }
 
             .row > div[class^="col-"]:last-child > .gallery-item--text::before
             {
                 border-right-color: $color_orange;
+                @media ( max-width: 480px )
+                {
+                    border-bottom-color: $color_orange;
+                }
             }
         }
 
@@ -86,11 +118,19 @@ section.gallery-wrapper
             .row > div[class^="col-"]:first-child > .gallery-item--text::before
             {
                 border-left-color: $color_satan;
+                @media ( max-width: 480px )
+                {
+                    border-top-color: $color_satan;
+                }
             }
 
             .row > div[class^="col-"]:last-child > .gallery-item--text::before
             {
                 border-right-color: $color_satan;
+                @media ( max-width: 480px )
+                {
+                    border-bottom-color: $color_satan;
+                }
             }
         }
 
@@ -101,11 +141,19 @@ section.gallery-wrapper
             .row > div[class^="col-"]:first-child > .gallery-item--text::before
             {
                 border-left-color: $color_maroon;
+                @media ( max-width: 480px )
+                {
+                    border-top-color: $color_maroon;
+                }
             }
 
             .row > div[class^="col-"]:last-child > .gallery-item--text::before
             {
                 border-right-color: $color_maroon;
+                @media ( max-width: 480px )
+                {
+                    border-bottom-color: $color_maroon;
+                }
             }
         }
 
@@ -116,11 +164,19 @@ section.gallery-wrapper
             .row > div[class^="col-"]:first-child > .gallery-item--text::before
             {
                 border-left-color: $color_purple;
+                @media ( max-width: 480px )
+                {
+                    border-top-color: $color_purple;
+                }
             }
 
             .row > div[class^="col-"]:last-child > .gallery-item--text::before
             {
                 border-right-color: $color_purple;
+                @media ( max-width: 480px )
+                {
+                    border-bottom-color: $color_purple;
+                }
             }
         }
 
@@ -143,6 +199,7 @@ section.gallery-wrapper
                     .gallery-item--text
                     {
                         padding: 32px 0;
+                        min-height: 256px !important;
                     }
 
                 }
@@ -162,7 +219,7 @@ section.gallery-wrapper
                     {
                         &::before
                         {
-                            @media (min-width:480px)
+                            @media (min-width:481px)
                             {
                                 content: "";
                                 position: absolute;
@@ -171,6 +228,19 @@ section.gallery-wrapper
                                 @include translateY(-50%);
                                 border: solid 32px transparent;
                                 border-left-color: $color_red;
+                                z-index: 999;
+                            }
+
+                            @media ( max-width: 480px )
+                            {
+                                content: "";
+                                position: absolute;
+                                left: 50%;
+                                bottom: -64px;
+                                @include translateX(-50%);
+                                border: solid 32px transparent;
+                                border-left-color: transparent !important;
+                                border-top-color: $color_red;
                                 z-index: 999;
                             }
                         }
@@ -183,7 +253,7 @@ section.gallery-wrapper
                     {
                         &::before
                         {
-                            @media (min-width:480px)
+                            @media (min-width:481px)
                             {
                                 content: "";
                                 position: absolute;
@@ -192,6 +262,19 @@ section.gallery-wrapper
                                 @include translateY(-50%);
                                 border: solid 32px transparent;
                                 border-right-color: $color_red;
+                                z-index: 999;
+                            }
+
+                            @media ( max-width: 480px )
+                            {
+                                content: "";
+                                position: absolute;
+                                left: 50%;
+                                top: -64px;
+                                @include translateX(-50%);
+                                border: solid 32px transparent;
+                                border-right-color: transparent !important;
+                                border-bottom-color: $color_red;
                                 z-index: 999;
                             }
                         }
@@ -252,6 +335,11 @@ section.gallery-wrapper
         {
             padding: 0 28px;
             color: white;
+            // border: solid 1px red !important;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            @include translateY(-50%);
             h1, h2, h3, h4, h5, h6, p
             {
                 margin: 0;
