@@ -777,7 +777,8 @@ header {
       vertical-align: middle; }
       .social-feeds .social-feeds--box .footer .media .media-left img.media-object,
       .social-feeds .social-feeds--box .footer .media .media-body img.media-object {
-        max-width: 48px !important; }
+        max-width: 48px !important;
+        min-width: 48px !important; }
     .social-feeds .social-feeds--box .footer .media .media-body {
       max-width: 80%;
       display: inline-block;
