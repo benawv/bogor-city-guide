@@ -64,7 +64,7 @@
 			$entries->setLimit(30);
             $entries->setOrderKey("o_creationDate");
             $entries->setOrder("desc");
-			//$entries->setCondition("statusSubmitKuis LIKE 1 AND approve LIKE 1");
+			$entries->setCondition("statusSubmitKuis LIKE 1 AND approve LIKE 1");
 			$jml = count($entries);
 			$sisa = 8 - $jml;
 			//echo $jml.'sisa='.$sisa;

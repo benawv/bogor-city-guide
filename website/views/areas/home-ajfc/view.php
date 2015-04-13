@@ -129,6 +129,7 @@
     $entries ->setLimit(10);
     $entries->setOrderKey("o_creationDate");
     $entries->setOrder("desc");
+    $entries->setCondition("statusSubmitKuis LIKE 1 AND approve LIKE 1");
     $count = count($entries);
     if($count <=0){
         $entries = new Object_DataPesertaAJFCDefault_List();
