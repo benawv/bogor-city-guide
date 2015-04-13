@@ -134,6 +134,7 @@
     $sisa = 8 - $count;
     $no = 1;
     $temp = "";
+    echo $count;
     if($count < 8){
                 $n = 1;
             }else{
