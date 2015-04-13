@@ -587,8 +587,11 @@ section#calendar-wrapper
 
     @media (max-width: 991px)
     {
-        padding-bottom: 48px;
-        margin-bottom: 0;
+        &
+        {
+            padding-bottom: 48px !important;
+            margin-bottom: 0 !important;
+        }
     }
 
     .sidebar-item

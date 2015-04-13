@@ -947,8 +947,8 @@ section#calendar-wrapper .calendar-info .calendar-info--inner {
   margin-bottom: -99999px; }
   @media (max-width: 991px) {
     .sidebar {
-      padding-bottom: 48px;
-      margin-bottom: 0; } }
+      padding-bottom: 48px !important;
+      margin-bottom: 0 !important; } }
   .sidebar .sidebar-item .sidebar-item--header h1, .sidebar .sidebar-item .sidebar-item--header h2, .sidebar .sidebar-item .sidebar-item--header h3, .sidebar .sidebar-item .sidebar-item--header h4, .sidebar .sidebar-item .sidebar-item--header h5, .sidebar .sidebar-item .sidebar-item--header h6, .sidebar .sidebar-item .sidebar-item--header p {
     margin: 0;
     padding: 0;
