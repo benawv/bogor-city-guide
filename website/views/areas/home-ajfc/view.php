@@ -542,7 +542,7 @@
                         var tbc_title   = textBoxC.find( '.tbc-title' );
                         var tbc_date    = textBoxC.find( '.tbc-date' );
                         var tbc_body    = textBoxC.find( '.tbc-body' );
-                        var tbc_interval= 5000;
+                        var tbc_interval= 4000;
                         var tbc_current = 0;
                         var tbc_loop    = setInterval(function(){
                             tbc_title.stop().fadeOut( 'fast', function(){
