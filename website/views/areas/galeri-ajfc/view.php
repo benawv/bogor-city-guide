@@ -66,16 +66,15 @@
             $entries->setOrder("desc");
 			//$entries->setCondition("statusSubmitKuis LIKE 1 AND approve LIKE 1");
 			$jml = count($entries);
-			//echo $jml;
 			$sisa = 8 - $jml;
 			//echo $jml.'sisa='.$sisa;
 			if($jml < 8){
-				$n = 2;
-			}else{
 				$n = 1;
+			}else{
+				$n = 2;
 			}
 			while($n<=2){
-				if($n==2){
+				if($n==1){
 					$entries = new Object_DataPesertaAJFCDefault_List();
 					$entries->setLimit($sisa);
 				}
@@ -95,8 +94,10 @@
 						$active = "active";
 					}else{
 						$active = "";
-						$num = 0;
 					}
+					if($nomer == 4 && $no == 1)
+						$num = 0;
+
 						
 					if($no == 1){
 						echo '<div class="row group '.$active.'" id="'.$nclass.'">';
