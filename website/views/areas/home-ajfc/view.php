@@ -98,6 +98,7 @@
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
     </div><!--/ .container -->
+
 <?php 
     $entries = new Object_CalenderAJFC_List();
     $entries ->setOrderKey("date");
@@ -123,6 +124,61 @@
         $no++;
     }
     $encode = json_encode($a);
+
+    $default = 0;
+    $no = 1;
+    $temp = "";
+    $entries = new Object_DataPesertaAJFC_List();
+    $entries ->setLimit(10);
+    $entries->setOrderKey("o_creationDate");
+    $entries->setOrder("desc");
+    $entries->setCondition("statusSubmitKuis LIKE 1 AND approve LIKE 1");
+    $count = count($entries);
+    $sisa = 8 - $count;
+    //echo $count;
+    if($count < 8){
+        $n = 1;
+    }else{
+        $n = 2;
+    }
+    while($n<=2){
+        if($n==2){
+            $entries = new Object_DataPesertaAJFCDefault_List();
+            $entries->setLimit($sisa);
+            $default = 1;
+        }
+        foreach ($entries as $key) {
+            $img = (string)$key->fotoPeserta;
+            $ptg = ucfirst($key->satuTerpenting);
+            $nama = ucwords($key->namaLengkap);
+            $tgll = date("Y", strtotime($key->tanggalLahir));
+            $nyear = date("Y",time());
+            $umur = $nyear-$tgll;
+            $asl = ucwords($key->tempatLahir);
+            $prop = ucwords($key->propinsi);
+            $content = $umur.' Tahun - '.$asl.', '.$prop;
+            if($default==1){
+                $content = "";
+                $nama = $ptg;
+                $ptg = "";
+            }
+            if($no == 1){
+                $b = array(array(0=>"#",1=>$img));
+                $c = array(array(0=>"#",1=>$nama,2=>$ptg,3=>$content));
+            }else{
+                array_push($b,array(0=>"#",1=>$img));
+                if($no<=5)
+                    array_push($c,array(0=>"/ajfc/galeri-ajfc",1=>$nama,2=>$ptg,3=>$content));
+            }
+            if($no >= 10)
+                break;
+            $no++;
+        }
+        $n++;
+    }
+
+    $edaftar = json_encode($b);
+    $eisi = json_encode($c);
 ?>
     <script>
     
@@ -398,30 +454,30 @@
                 
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-6 news-feeds">
-		<div class="row row-eq-height">
+                <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
-                        <a href="#" class="news-feeds--image">
+                        <a href="/ajfc/galeri-ajfc" class="news-feeds--image">
                             <img src="/website/static/images/dummy/yangterpenting.jpg" alt="" />
                         </a>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bt">
-                        <a href="#" class="news-feeds--image" id="imageBoxA">
-                            <img src="/website/static/images/dummy/dummy-wasit.jpg" alt="" />
+                        <a href="/ajfc/galeri-ajfc" class="news-feeds--image" id="imageBoxA">
+                            <img src="<?php echo $b[0][1]; ?>" alt="" />
                         </a>
                     </div><!--/ .col-xs-12 -->
                 </div><!--/ .row -->
 
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bb">
-                        <a href="#" class="news-feeds--image" id="imageBoxB">
-                            <img src="/website/static/images/dummy/dummy-stadium.jpg" alt="" />
+                        <a href="/ajfc/galeri-ajfc" class="news-feeds--image" id="imageBoxB">
+                            <img src="<?php echo $b[1][1]; ?>" alt="" />
                         </a>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bb">
                         <div class="text" id="textBoxC">
-                            <h3 class="tbc-title"><a href="#">Judul Berita</a></h3>
-                            <p class="text-muted"><small class="tbc-date">Rabu, 14 Mei 2015</small></p>
-                            <p class="tbc-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut orci metus, interdum non ipsum nec, vulputate euismod metus. Morbi eget sem sed orci interdum lacinia quis ac orci.</p>
+                            <h3 class="tbc-title"><a href="/ajfc/galeri-ajfc"><?php echo $c[0][1]; ?></a></h3>
+                            <p class="text-muted"><small class="tbc-date"><?php echo $b[0][2]; ?></small></p>
+                            <p class="tbc-body"><?php echo $b[0][3]; ?></p>
                         </div><!--/ .text -->
                     </div><!--/ .col-xs-12 -->
                 </div><!--/ .row -->
@@ -429,32 +485,15 @@
                 <script>
                     $(function(){
 
-                        var images = [
-                            [ '#', '/website/static/images/dummy-wasit.jpg' ],
-                            [ '#', '/website/static/images/dummy-stadium.jpg' ],
-                            [ '#', '/website/static/images/dummy/1.jpg' ],
-                            [ '#', '/website/static/images/dummy/2.jpg' ],
-                            [ '#', '/website/static/images/dummy/3.jpg' ],
-                            [ '#', '/website/static/images/dummy/4.jpg' ],
-                            [ '#', '/website/static/images/dummy/5.jpg' ],
-                            [ '#', '/website/static/images/dummy/6.jpg' ],
-                            [ '#', '/website/static/images/dummy/7.jpg' ],
-                            [ '#', '/website/static/images/dummy/8.jpg' ]
-                        ];
+                        var images = <?php echo $edaftar; ?>;
 
                         var imagesLength = images.length;
 
-                        var news = [
-                            [ '#', 'Berita ke 1', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
-                            [ '#', 'Berita ke 2', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
-                            [ '#', 'Berita ke 3', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
-                            [ '#', 'Berita ke 4', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
-                            [ '#', 'Berita ke 5', 'Lorem ipsum dolor sit amet, consectetur adip...', '<?php echo date( 'D, d F Y' ); ?>' ],
-                        ];
+                        var news = <?php echo $eisi; ?>;
                         var newsLength  = news.length;
 
                         var imageBoxA   = $( '#imageBoxA' );
-                        var iba_current = 0;
+                        var iba_current = 2;
                         var iba_interval= 4000;
                         var iba_loop    = setInterval(function(){
                             imageBoxA.stop().fadeOut( 'fast', function(){
@@ -465,36 +504,38 @@
                                 });
                             });
                             //console.log( iba_current + ' ' + imagesLength );
-                            if( iba_current < ( imagesLength - 1 ) )
+                            if( iba_current < ( imagesLength - 2 ) )
                             {
-                                iba_current++;
+                                iba_current +=2;
                             }
                             else
                             {
                                 iba_current = 0;
                             }
+                            console.log('a'+iba_current+'->'+images[ ibb_currentb ][ 1 ]);
                         }, iba_interval);
 
                         var imageBoxB   = $( '#imageBoxB' );
-                        var ibb_current = 0;
+                        var ibb_currentb = 3;
                         var ibb_interval= 16000;
                         var ibb_loop    = setInterval(function(){
                             imageBoxB.stop().fadeOut( 'fast', function(){
-                                $( this ).parent().attr( 'href', images[ ibb_current ][ 0 ] );
-                                $( this ).find( 'img' ).attr( 'src', images[ ibb_current ][ 1 ] );
+                                $( this ).parent().attr( 'href', images[ ibb_currentb ][ 0 ] );
+                                $( this ).find( 'img' ).attr( 'src', images[ ibb_currentb ][ 1 ] );
                                 $( this ).stop().fadeIn( 'fast', function(){
                                     // do nothing
                                 });
                             });
                             //console.log( iba_current + ' ' + imagesLength );
-                            if( ibb_current < ( imagesLength - 1 ) )
+                            if( ibb_currentb < ( imagesLength - 2 ) )
                             {
-                                ibb_current++;
+                                ibb_currentb += 2;
                             }
                             else
                             {
-                                ibb_current = 0;
+                                ibb_currentb = 1;
                             }
+                            console.log('b'+ibb_currentb+'->'+imagesLength);
                         }, iba_interval);
 
                         var textBoxC    = $( '#textBoxC' );

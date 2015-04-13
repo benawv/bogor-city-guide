@@ -55,16 +55,15 @@
 
 			$posistion = "odd";
 			$no = 1;
-			$num = 0;
-			$nomer = 1;
-			$nurut = 1; 
+			$num = $default = 0;
+			$nomer = $nurut = 1;
     		$color = array('','blue','orange','blue-light','green','grey','maroon','purple');
     		//$entries = new Object_DataPesertaAJFCDefault_List();
     		$entries = new Object_DataPesertaAJFC_List();
 			$entries->setLimit(30);
             $entries->setOrderKey("o_creationDate");
             $entries->setOrder("desc");
-			//$entries->setCondition("statusSubmitKuis LIKE 1 AND approve LIKE 1");
+			$entries->setCondition("statusSubmitKuis LIKE 1 AND approve LIKE 1");
 			$jml = count($entries);
 			$sisa = 8 - $jml;
 			//echo $jml.'sisa='.$sisa;
@@ -74,13 +73,13 @@
 				$n = 2;
 			}
 			while($n<=2){
-				if($n==1){
+				if($n==2){
 					$entries = new Object_DataPesertaAJFCDefault_List();
 					$entries->setLimit($sisa);
+					$default = 1;
 				}
 
 				foreach ($entries as $key) {
-
 					$img = $key->fotoPeserta;
 					$ptg = ucfirst($key->satuTerpenting);
 					$nama = ucwords($key->namaLengkap);
@@ -89,7 +88,12 @@
 					$umur = $nyear-$tgll;
 					$asl = ucwords($key->tempatLahir);
 					$prop = ucwords($key->propinsi);
+					$content = $nama.', '.$umur.' Tahun<br />'.$asl.', '.$prop;
 					$nclass = "group".$nurut;
+
+					if($default==1){
+						$content = "";
+					}
 					if($nomer <=4){
 						$active = "active";
 					}else{
@@ -115,7 +119,7 @@
 									                <div class="gallery-item--text">
 									                    <div class="gallery-item--text-inner">
 									                        <h3>"'.$ptg.'"</h3>
-									                        <p>'.$nama.', '.$umur.' Tahun<br />'.$asl.', '.$prop.'</p>
+									                        <p>'.$content.'</p>
 									                    </div><!--/ .gallery-item--text-inner -->
 									                </div><!--/ .galery-item--text -->
 									            </div><!--/ .col-xs-12 -->
@@ -132,7 +136,7 @@
 					                            <div class="gallery-item--text">
 					                                <div class="gallery-item--text-inner">
 					                                    <h3>"'.$ptg.'"</h3>
-								                        <p>'.$nama.', '.$umur.' Tahun<br />'.$asl.'</p>
+								                        <p>'.$content.'</p>
 					                                </div><!--/ .gallery-item--text-inner -->
 					                            </div><!--/ .galery-item--text -->
 					                        </div><!--/ .col-xs-12 -->
@@ -163,7 +167,7 @@
 									                <div class="gallery-item--text">
 									                    <div class="gallery-item--text-inner">
 									                        <h3>"'.$ptg.'"</h3>
-									                        <p>'.$nama.', '.$umur.' Tahun<br />'.$asl.'</p>
+									                        <p>'.$content.'</p>
 									                    </div><!--/ .gallery-item--text-inner -->
 									                </div><!--/ .galery-item--text -->
 									            </div><!--/ .col-xs-12 -->
@@ -180,7 +184,7 @@
 					                            <div class="gallery-item--text">
 					                                <div class="gallery-item--text-inner">
 					                                    <h3>"'.$ptg.'"</h3>
-								                        <p>'.$nama.', '.$umur.' Tahun<br />'.$asl.'</p>
+								                        <p>'.$content.'</p>
 					                                </div><!--/ .gallery-item--text-inner -->
 					                            </div><!--/ .galery-item--text -->
 					                        </div><!--/ .col-xs-12 -->
