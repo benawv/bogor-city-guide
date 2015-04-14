@@ -47,13 +47,13 @@
                         </div><!--/ .sidebar-item--header -->
                         <div class="sidebar-item--content">
                             <ul class="sidebar-nav">
-                                <li><a href="/ajfc">Beranda</a></li>
-                                <li><a href="/ajfc/galeri-ajfc">Galeri</a></li>
-                                <li><a href="/ajfc/proses-seleksi">Proses Seleksi</a></li>
-				<li><a href="/ajfc/tanya-jawab">Tanya Jawab</a></li>
-				<li class="active"><a href="/ajfc/kebijakan-privasi">Kebijakan Privasi</a></li>
-                                <li><a href="/ajfc/pendaftaran">Pendaftaran</a></li>
-				<li><a href="/ajfc/daftar-perserta">Daftar Peserta</a></li>
+                                <li><a href="/">Beranda</a></li>
+                                <li><a href="/galeri-ajfc">Galeri</a></li>
+                                <li><a href="/proses-seleksi">Proses Seleksi</a></li>
+				<li><a href="/tanya-jawab">Tanya Jawab</a></li>
+				<li class="active"><a href="/kebijakan-privasi">Kebijakan Privasi</a></li>
+                                <li><a href="/pendaftaran">Pendaftaran</a></li>
+				<li><a href="/daftar-perserta">Daftar Peserta</a></li>
                                 
                                 
                             </ul>
