@@ -102,4 +102,7 @@ class EmailController extends Website_Controller_Action {
 	public function emailrasioAction(){
 		
 	}
+	public function emailajfcAction(){
+		
+	}
 }

@@ -1,8 +1,7 @@
 <header>
     
     <div class="background">
-        <?php $asets=Asset::getByPath('/ajfc/background/bgpendaftaran.jpg');?>
-        <img src="<?php echo $asets; ?>" alt="background pendaftaran" class="img-responsive" />
+        <img src="/website/ajfc/img/bg-faq.jpg" alt="Home" class="img-responsive" />
     </div><!--/ .background -->
     
 </header>
@@ -17,9 +16,9 @@
                 <div class="main-content">
                     
                     <div class="main-content--header">
-                        <h1 class="mb12"><?php echo $this->input('title_page_pendaftaran')?></h1>
+                        <h1 class="mb12"><?php echo $this->input('title_page_sudah_submit')?></h1>
                     </div><!--/ .main-content--header -->
-                    <?php echo $this->wysiwyg('description-pendaftaran');?>
+                    <?php echo $this->wysiwyg('description-sudah_submit');?>
                 
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
@@ -27,3 +26,11 @@
 </section>
 
 </div><!--/ .page-wrapper-outer -->
+<script type="text/javascript">
+    $(document).ready(function(){
+	setTimeout(toHome, 10000);
+	function toHome() {
+	    window.location.href = "http://ajfc.allianz.co.id";
+	}
+    });
+</script>

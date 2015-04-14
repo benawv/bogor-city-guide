@@ -39,7 +39,8 @@
 
 <header>
     <div class="background">
-        <img src="/website/ajfc/img/bg-home.jpg" alt="Home" class="img-responsive" />
+        <?php $asets=Asset::getByPath('/ajfc/background/bgkuis.jpg');?>
+        <img src="<?php echo $asets; ?>" alt="background kuis" class="img-responsive" />
     </div><!--/ .background -->
 </header>
 

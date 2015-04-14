@@ -24,7 +24,7 @@ $( document ).ready(function(){
     {
         $( '.image-hotspot--item' ).each(function(index, value){
 
-            $( this ).find( 'a' ).click(function(e){
+            $( this ).find( 'a[href="#"]' ).click(function(e){
                 e.preventDefault();
                 // $( this ).toggleClass( 'active' );
                 // $( this ).next().fadeToggle( 'fast', function(){});
@@ -32,12 +32,10 @@ $( document ).ready(function(){
             });
 
             $( this ).hover(function(){
-                console.log( 'shit' );
                 $( this ).find( 'a' ).toggleClass( 'active' );
                 $( this ).find( 'a' ).next().stop().fadeIn( 'fast', function(){});
                 return false;
             },function(){
-                console.log( 'ass' );
                 $( this ).find( 'a' ).toggleClass( 'active' );
                 $( this ).find( 'a' ).next().stop().fadeOut( 'fast', function(){});
                 return false;
@@ -151,7 +149,7 @@ function resizePageWrapper( additionalHeight )
                 if( $( '.page-wrapper-outer > .page-wrapper .sidebar' ).length > 0 )
                 {
                     var sidebarHeight = $( '.page-wrapper-outer > .page-wrapper .sidebar' ).outerHeight();
-                    console.log( 'Ada sidebarnya, tingginya ' + sidebarHeight );
+                    // console.log( 'Ada sidebarnya, tingginya ' + sidebarHeight );
                     refHeight = refHeight + ( 1 * sidebarHeight );
                 }
             }
@@ -160,8 +158,8 @@ function resizePageWrapper( additionalHeight )
         $( '.page-wrapper-outer' ).stop().animate({
             'min-height': newHeight + 'px'
         }, 300);
-        console.log( 'refHeight: ' + refHeight + 'px' );
-        console.log( 'newHeight: ' + newHeight + 'px' );
+        // console.log( 'refHeight: ' + refHeight + 'px' );
+        // console.log( 'newHeight: ' + newHeight + 'px' );
     }
 }
 

@@ -27,8 +27,8 @@
 <header>
 
     <div class="background">
-    	<?php $asets=Asset::getByPath('/ajfc/bg-home.jpg');?>
-        <img src="<?php echo $asets; ?>" alt="Home" class="img-responsive" />
+    	<?php $asets=Asset::getByPath('/ajfc/background/bggaleri.jpg');?>
+        <img src="<?php echo $asets; ?>" alt="background-galeri" class="img-responsive" />
     </div><!--/ .background -->
     <div class="caption">
         <div class="container">
@@ -36,8 +36,8 @@
                 <div class="col-xs-9 col-md-6">
                     <div class="box-dent mt32">
                         <div class="box-dent--inner">
-                            <h2>Galeri</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut orci metus, interdum non ipsum nec, vulputate euismod metus. Morbi eget sem sed orci interdum lacinia quis ac orci.</p>
+                            <h2>Galeri Foto</h2>
+                            <p></p>
                         </div><!--/ .box-dent--inner -->
                     </div>
                 </div><!--/ .col-xs-6 -->
