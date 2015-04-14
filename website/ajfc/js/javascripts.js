@@ -24,7 +24,7 @@ $( document ).ready(function(){
     {
         $( '.image-hotspot--item' ).each(function(index, value){
 
-            $( this ).find( 'a' ).click(function(e){
+            $( this ).find( 'a[href="#"]' ).click(function(e){
                 e.preventDefault();
                 // $( this ).toggleClass( 'active' );
                 // $( this ).next().fadeToggle( 'fast', function(){});
@@ -32,12 +32,10 @@ $( document ).ready(function(){
             });
 
             $( this ).hover(function(){
-                console.log( 'shit' );
                 $( this ).find( 'a' ).toggleClass( 'active' );
                 $( this ).find( 'a' ).next().stop().fadeIn( 'fast', function(){});
                 return false;
             },function(){
-                console.log( 'ass' );
                 $( this ).find( 'a' ).toggleClass( 'active' );
                 $( this ).find( 'a' ).next().stop().fadeOut( 'fast', function(){});
                 return false;
