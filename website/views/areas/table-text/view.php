@@ -60,7 +60,7 @@
                                 <li><a href="/ajfc/galeri-ajfc">Galeri</a></li>
                                 <li><a href="/ajfc/proses-seleksi">Proses Seleksi</a></li>
                                 <li><a href="#">Pengumuman</a></li>
-				<li><a href="/ajfc/daftar-perserta">Daftar Peserta</a></li>
+				                <li><a href="/ajfc/daftar-peserta">Daftar Peserta</a></li>
                                 <li class="active"><a href="/ajfc/tanya-jawab">Tanya Jawab</a></li>
                                 <li><a href="/ajfc/kebijakan-privasi">Kebijakan Privasi</a></li>
                             </ul>
