@@ -52,10 +52,25 @@ footer
                 padding: 0 15px;
             }
 
-            ul.static-links,
-            ol.static-links
+            .static-links
             {
                 padding: 0 15px;
+
+                & > li
+                {
+                    &:first-child
+                    {
+                        padding-left: 15px;
+                    }
+                }
+
+                a
+                {
+                    &::before
+                    {
+                        content: "" !important;
+                    }
+                }
 
                 &.mobile.deactive.share
                 {
@@ -76,4 +91,3 @@ footer
 
     }
 }
-
