@@ -43,7 +43,8 @@
                         
                     </div><!--/ .faq-wrapper -->
                     
-                    <p>Tidak menemukan jawaban untuk pertanyaan kamu? Silahkan hubungi kami melalui <a href="https://www.facebook.com/AJFCIndonesia">facebook</a>!</p>
+		    <?php echo $this->wysiwyg('description-bottom')?>
+                    <!--<p>Tidak menemukan jawaban untuk pertanyaan kamu? Silahkan hubungi kami melalui <a href="https://www.facebook.com/AJFCIndonesia">facebook</a>!</p>-->
                     
                 </div><!--/ .main-content -->
                 
