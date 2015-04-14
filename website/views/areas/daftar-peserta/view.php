@@ -99,7 +99,7 @@
 				<li><a href="/tanya-jawab">Tanya Jawab</a></li>
 				<li><a href="/kebijakan-privasi">Kebijakan Privasi</a></li>
                                 <li><a href="/pendaftaran">Pendaftaran</a></li>
-				<li class="active"><a href="/daftar-perserta">Daftar Peserta</a></li>                
+				<li class="active"><a href="/daftar-peserta">Daftar Peserta</a></li>                
                             </ul>
                         </div><!--/ .sidebar-item--content -->
                     </div><!--/ .sidebar-item -->
