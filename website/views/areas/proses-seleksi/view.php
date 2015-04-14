@@ -50,7 +50,7 @@
                         <div class="process-item">
                             <span class="number">1</span>
                             <h3>Pendaftaran Peserta</h3>
-                            <p>Online via <a href="#" target="_blank">http://ajfc.allianz.co.id/pendaftaran</a></p>
+                            <p>Online via <a href="http://ajfc.allianz.co.id/pendaftaran" target="_blank">http://ajfc.allianz.co.id/pendaftaran</a></p>
                         </div><!--/ .process-item -->
 
                         <div class="process-item">
