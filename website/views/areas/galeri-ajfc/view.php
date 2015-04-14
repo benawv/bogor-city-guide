@@ -1,4 +1,6 @@
+<!--
 <link rel="stylesheet" href="/website/static/css-ajfc/galeri/style.css" />
+-->
 <style type="text/css">
     #container .group{
         display: none;
@@ -102,7 +104,7 @@
                     if($nomer == 4 && $no == 1)
                         $num = 0;
 
-                        
+
                     if($no == 1){
                         echo '<div class="row group '.$active.'" id="'.$nclass.'">';
                         if($posistion == "odd")
@@ -225,7 +227,7 @@
         x=3;
 
         var $group = $('.group');
-        
+
         $(".click").click(function() {
             if ($(this).hasClass('disable')) return false;
 
