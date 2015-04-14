@@ -103,7 +103,6 @@ class EmailController extends Website_Controller_Action {
 		
 	}
 	public function emailajfcAction(){
-		$this->enableLayout();
-		$this->setLayout('ajfc');
+		
 	}
 }
