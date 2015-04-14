@@ -304,6 +304,8 @@ section.gallery-wrapper
                 min-height: 480px;
                 & > img
                 {
+                    width: auto !important;
+                    min-width: 0 !important;
                     max-width: none !important;
                 }
             }

@@ -1375,6 +1375,8 @@ section.gallery-wrapper .gallery-item {
       section.gallery-wrapper .gallery-item .gallery-item--image {
         min-height: 480px; }
         section.gallery-wrapper .gallery-item .gallery-item--image > img {
+          width: auto !important;
+          min-width: 0 !important;
           max-width: none !important; } }
     section.gallery-wrapper .gallery-item .gallery-item--image > img {
       width: auto;
