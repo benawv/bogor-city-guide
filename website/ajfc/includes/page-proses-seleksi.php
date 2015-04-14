@@ -89,7 +89,7 @@
                                 <a href="#" class="animated pulse">1</a>
                                 <div class="image-hotspot--content">
                                     <h3>Pendaftaran Peserta</h3>
-                                    <p>Online via <a href="#" target="_blank">http://www.allianz.co.id/juniorfootballcamp</a></p>
+                                    <p>Online via <a href="http://www.allianz.co.id/juniorfootballcamp" target="_blank">http://www.allianz.co.id/juniorfootballcamp</a></p>
                                 </div><!--/ .image-hotspot--content -->
                             </div><!--/ .image-hotspot--item -->
 
