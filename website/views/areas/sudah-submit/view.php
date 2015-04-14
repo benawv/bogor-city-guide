@@ -26,11 +26,13 @@
 </section>
 
 </div><!--/ .page-wrapper-outer -->
-<script type="text/javascript">
-    $(document).ready(function(){
-	setTimeout(toHome, 10000);
-	function toHome() {
-	    window.location.href = "http://ajfc.allianz.co.id";
-	}
-    });
-</script>
+<?php if(!$this->editmode){?>
+    <script type="text/javascript">
+	$(document).ready(function(){
+	    setTimeout(toHome, 13000);
+	    function toHome() {
+		window.location.href = "http://ajfc.allianz.co.id";
+	    }
+	});
+    </script>
+<?php }?>

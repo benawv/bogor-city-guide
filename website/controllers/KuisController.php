@@ -194,8 +194,7 @@ class KuisController extends Website_Controller_Action {
 			}
 		}
 		else{
-			echo "Maaf, sebelumnya kamu sudah submit kuis.";
-			die();
+			$this->redirect("/ajfc/thanks/sudah-submit");
 		}
 		
 	}
