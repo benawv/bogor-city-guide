@@ -168,7 +168,7 @@
             }else{
                 array_push($b,array(0=>"#",1=>$img));
                 if($no<=5)
-                    array_push($c,array(0=>"/ajfc/galeri-ajfc",1=>$nama,2=>$ptg,3=>$content));
+                    array_push($c,array(0=>"/galeri-ajfc",1=>$nama,2=>$ptg,3=>$content));
             }
             if($no >= 10)
                 break;
@@ -456,12 +456,12 @@
             <div class="col-xs-12 col-md-6 news-feeds">
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
-                        <a href="/ajfc/galeri-ajfc" class="news-feeds--image">
+                        <a href="/galeri-ajfc" class="news-feeds--image">
                             <img src="/website/static/images/dummy/yangterpenting.jpg" alt="" />
                         </a>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bt">
-                        <a href="/ajfc/galeri-ajfc" class="news-feeds--image" id="imageBoxA">
+                        <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxA">
                             <img src="<?php echo $b[0][1]; ?>" alt="" />
                         </a>
                     </div><!--/ .col-xs-12 -->
@@ -469,13 +469,13 @@
 
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bb">
-                        <a href="/ajfc/galeri-ajfc" class="news-feeds--image" id="imageBoxB">
+                        <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxB">
                             <img src="<?php echo $b[1][1]; ?>" alt="" />
                         </a>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bb">
                         <div class="text" id="textBoxC">
-                            <h3 class="tbc-title"><a href="/ajfc/galeri-ajfc"><?php echo $c[0][1]; ?></a></h3>
+                            <h3 class="tbc-title"><a href="/galeri-ajfc"><?php echo $c[0][1]; ?></a></h3>
                             <p class="text-muted"><small class="tbc-date"><?php echo $b[0][2]; ?></small></p>
                             <p class="tbc-body"><?php echo $b[0][3]; ?></p>
                         </div><!--/ .text -->
