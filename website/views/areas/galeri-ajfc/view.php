@@ -133,7 +133,7 @@
                             echo '
                                 <div class="col-xs-12 col-md-6 nopadding">
                                     <div class="gallery-item '.$color[$num++].'">
-                                        <div class="row">
+                                        <div class="row row-eq-height">
                                             <div class="col-xs-6 nopadding">
                                                 <div class="gallery-item--text">
                                                     <div class="gallery-item--text-inner">
@@ -159,7 +159,7 @@
                             echo '
                                     <div class="col-xs-12 col-md-6 nopadding">
                                         <div class="gallery-item '.$color[$num++].'">
-                                            <div class="row">
+                                            <div class="row row-eq-height">
                                                 <div class="col-xs-6 nopadding">
                                                     <a href="#" class="gallery-item--image">
                                                         <img src="'.$img.'" alt="">
@@ -181,7 +181,7 @@
                             echo '
                                 <div class="col-xs-12 col-md-6 nopadding">
                                     <div class="gallery-item '.$color[$num++].'">
-                                        <div class="row">
+                                        <div class="row row-eq-height">
                                             <div class="col-xs-6 nopadding">
                                                 <div class="gallery-item--text">
                                                     <div class="gallery-item--text-inner">
