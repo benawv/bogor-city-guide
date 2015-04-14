@@ -112,12 +112,12 @@
                                     <div class="col-xs-12 col-md-6 nopadding">
                                         <div class="gallery-item '.$color[$num++].'">
                                             <div class="row row-eq-height">
-                                                <div class="col-xs-12 col-md-6 nopadding">
+                                                <div class="col-xs-6 nopadding">
                                                     <a href="#" class="gallery-item--image">
                                                         <img src="'.$img.'" alt="">
                                                     </a>
                                                 </div><!--/ .col-xs-12 -->
-                                                <div class="col-xs-12 col-md-6 nopadding">
+                                                <div class="col-xs-6 nopadding">
                                                     <div class="gallery-item--text">
                                                         <div class="gallery-item--text-inner">
                                                             <h3>"'.$ptg.'"</h3>
@@ -134,7 +134,7 @@
                                 <div class="col-xs-12 col-md-6 nopadding">
                                     <div class="gallery-item '.$color[$num++].'">
                                         <div class="row">
-                                            <div class="col-xs-12 col-md-6 nopadding">
+                                            <div class="col-xs-6 nopadding">
                                                 <div class="gallery-item--text">
                                                     <div class="gallery-item--text-inner">
                                                         <h3>"'.$ptg.'"</h3>
@@ -142,7 +142,7 @@
                                                     </div><!--/ .gallery-item--text-inner -->
                                                 </div><!--/ .galery-item--text -->
                                             </div><!--/ .col-xs-12 -->
-                                            <div class="col-xs-12 col-md-6 nopadding">
+                                            <div class="col-xs-6 nopadding">
                                                 <a href="#" class="gallery-item--image">
                                                     <img src="'.$img.'" alt="">
                                                 </a>
@@ -160,12 +160,12 @@
                                     <div class="col-xs-12 col-md-6 nopadding">
                                         <div class="gallery-item '.$color[$num++].'">
                                             <div class="row">
-                                                <div class="col-xs-12 col-md-6 nopadding">
+                                                <div class="col-xs-6 nopadding">
                                                     <a href="#" class="gallery-item--image">
                                                         <img src="'.$img.'" alt="">
                                                     </a>
                                                 </div><!--/ .col-xs-12 -->
-                                                <div class="col-xs-12 col-md-6 nopadding">
+                                                <div class="col-xs-6 nopadding">
                                                     <div class="gallery-item--text">
                                                         <div class="gallery-item--text-inner">
                                                             <h3>"'.$ptg.'"</h3>
@@ -182,7 +182,7 @@
                                 <div class="col-xs-12 col-md-6 nopadding">
                                     <div class="gallery-item '.$color[$num++].'">
                                         <div class="row">
-                                            <div class="col-xs-12 col-md-6 nopadding">
+                                            <div class="col-xs-6 nopadding">
                                                 <div class="gallery-item--text">
                                                     <div class="gallery-item--text-inner">
                                                         <h3>"'.$ptg.'"</h3>
@@ -190,7 +190,7 @@
                                                     </div><!--/ .gallery-item--text-inner -->
                                                 </div><!--/ .galery-item--text -->
                                             </div><!--/ .col-xs-12 -->
-                                            <div class="col-xs-12 col-md-6 nopadding">
+                                            <div class="col-xs-6 nopadding">
                                                 <a href="#" class="gallery-item--image">
                                                     <img src="'.$img.'" alt="">
                                                 </a>
