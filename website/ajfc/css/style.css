@@ -953,7 +953,8 @@ section#calendar-wrapper .calendar-info .calendar-info--inner {
 .main-content,
 .sidebar {
   padding: 48px 36px;
-  background: white; }
+  background: white;
+  min-height: 480px; }
 
 .sidebar {
   background: #003781;
