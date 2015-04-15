@@ -4,7 +4,7 @@
 	<?php echo $this->template("includes/breadcrumb.php")?>
 	
 	<div class="heading clearfix pagenav pagenavBerita">
-		<span class="breadcrumb2"><?php echo $this->document->getTitle()?></span>
+		<h1 class="title"><?php echo $this->document->getTitle()?></h1>
 		<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
 		<div id="quicklinks">
 		<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks', 'product-quicklinks', 'layanankami-quicklinks')))?>
