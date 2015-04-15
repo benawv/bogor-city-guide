@@ -1,10 +1,10 @@
 <header>
-    
+
     <div class="background">
         <?php $asets=Asset::getByPath('/ajfc/background/bgproses-seleksi.jpg');?>
         <img src="<?php echo $asets; ?>" alt="background proses seleksi" class="img-responsive" />
     </div><!--/ .background -->
-    
+
 </header>
 <div class="page-wrapper-outer" style="min-height: 646px;">
 <section class="page-wrapper mt32 mb72">
@@ -35,7 +35,7 @@
             </div>
         </div>
     </nav>-->
-    
+
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
@@ -93,9 +93,9 @@
 
                     </div>
                 </div><!--/ .main-content -->
-		
+        
                 <div class="main-content nopadding hidden-xs hidden-sm">
-                    
+
                     <div class="image-hotspot">
 
                         <div class="image-hotspot--container">
@@ -104,7 +104,7 @@
                                 <a href="#" class="animated pulse">1</a>
                                 <div class="image-hotspot--content">
                                     <h3>Pendaftaran Peserta</h3>
-                                    <p>Online via <a href="#" target="_blank">http://ajfc.allianz.co.id/pendaftaran</a></p>
+                                    <p>Online via <a href="http://ajfc.allianz.co.id/pendaftaran" target="_blank">http://ajfc.allianz.co.id/pendaftaran</a></p>
                                 </div><!--/ .image-hotspot--content -->
                             </div><!--/ .image-hotspot--item -->
 
@@ -162,9 +162,9 @@
                         <img src="/website/static/images/ajfc/proses-seleksi/proses-seleksi-no-text.jpg" alt="proses seleksi" />
 
                     </div><!--/ image-hotspot -->
-                    
+
                 </div><!--/ .main-content -->
-                
+
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
     </div><!--/ .container -->

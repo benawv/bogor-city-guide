@@ -106,6 +106,13 @@ header
         height: 100%;
         pointer-events: none;
 
+        @media ( max-width: 767px )
+        {
+            position: relative !important;
+            margin-bottom: 96px;
+            // border: solid 1px red;
+        }
+
         .box-dent
         {
             background: $color_primary;
@@ -185,8 +192,22 @@ header
         .row-eq-height
         {
             display: block !important;
+            // border: solid 1px red;
         }
     }
+
+    @media ( max-width: 320px )
+    {
+        .row-eq-height
+        {
+            div[class^="col-"]
+            {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+
 }
 
 .social-feeds
@@ -208,7 +229,7 @@ header
     .social-feeds--box
     {
         position: relative;
-        min-height: 280px;
+        min-height: 260px;
         padding: 24px;
         border: solid 1px #ddd;
         background: white;
@@ -357,7 +378,7 @@ header
             .text
             {
                 padding: 32px;
-                min-height: 280px;
+                min-height: 260px;
 
                 h1, h2, h3, h4, h5, h6, p
                 {
@@ -385,8 +406,7 @@ header
                 position: relative;
                 outline: none;
                 text-decoration: none;
-                min-height: 280px;
-                // border: solid 1px red;
+                min-height: 260px;
                 overflow: hidden;
 
                 &:hover
@@ -587,7 +607,7 @@ section#calendar-wrapper
 {
     padding: 48px 36px;
     background: white;
-
+    min-height: 480px;
 }
 
 .sidebar

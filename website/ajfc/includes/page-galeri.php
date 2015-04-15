@@ -12,10 +12,11 @@
     <div class="background">
         <img src="./img/bg-home.jpg" alt="Home" class="img-responsive" />
     </div><!--/ .background -->
+
     <div class="caption">
         <div class="container">
             <div class="row">
-                <div class="col-xs-9 col-md-6">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-4 col-md-3 col-md-offset-9">
                     <div class="box-dent mt32">
                         <div class="box-dent--inner">
                             <h2>Galeri</h2>
