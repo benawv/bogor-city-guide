@@ -71,10 +71,17 @@
                     <?php 
                         $bulanInd = array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
                         $entries = new Object_CalenderAJFC_List();
-                        $entries->setCondition("date > ?", array(time()));
+                        $entries->setCondition("date >= ?", array(time()));
                         $entries->setLimit(1);
                         $entries->setOrderKey("date");
                         $entries->setOrder("asc");
+                        if(count($entries)<0){
+                            $entries = new Object_CalenderAJFC_List();
+                            $entries->setCondition("date <= ?", array(time()));
+                            $entries->setLimit(1);
+                            $entries->setOrderKey("date");
+                            $entries->setOrder("asc");
+                        }
                         foreach ($entries as $key) {
                             $d = date("d",strtotime($key->date));
                             $m = date("m",strtotime($key->date));
