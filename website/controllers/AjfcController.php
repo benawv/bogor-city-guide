@@ -164,34 +164,41 @@ class AjfcController extends Website_Controller_Action {
 		//echo "</pre>";
 		
 		$result_tw = $this->tw_connection->get('search/tweets',
-                                         array("q"=>'%231ygterpenting',"count" => 10));
-       		$i=0;
+                                         array("q"=>'%231ygterpenting',"count" => 5));
+       		$j=0;
+		
 		if(isset($result_tw)){
+		    $namakey ='twitter'."_".strtotime(date("YmdHis"));
 		    foreach($result_tw as $tweet){
 			foreach($tweet as $tweets){
+				$exsistFeedTwitter = new Object_SocialMediaFeed();
 				
-				
-				$namakey ='twitter'."_".strtotime(date("YmdHis"));				
+				if(isset($tweets->id_str)!=''){
 				//cron data twitter
-				$feedTwitter = new Object_SocialMediaFeed();
-				$feedTwitter->setstream_id($tweets->id_str);
-				$feedTwitter->setfrom($tweets->name);
-				$feedTwitter->setdate($tweets->created_at);
-				$feedTwitter->setfrom_id($tweets->name);
-				$feedTwitter->setlink_asset($tweets->screen_name);
-				$feedTwitter->settype_asset();
-				$feedTwitter->setlink_feed($tweets->entities->media[0]->media_url);
-				$feedTwitter->setmessages($tweets->text);
-				$feedTwitter->setKey(strtolower($namakey));
-				$feedTwitter->setO_parentId('9');
-				$feedTwitter->setIndex(0);
-				$feedTwitter->setPublished(1);
-				$feedTwitter->save();
-				
+					$entries=Object_Abstract::getById(1423);
+					$feedTwitter = new Object_SocialMediaFeed();
+					$feedTwitter->setsocialMediaType($entries);
+					$feedTwitter->setStreamId($tweets->id_str);
+					$feedTwitter->setFrom($tweets->user->name);
+					$feedTwitter->setUserImages($tweets->user->profile_image_url);
+					$feedTwitter->setCreateDate($tweets->created_at);
+					$feedTwitter->setFromId($tweets->user->id);
+					$feedTwitter->setLinkAsset($tweets->screen_name);
+					$feedTwitter->setTypeAsset('images');
+					$feedTwitter->setLinkFeed($tweets->entities->media[0]->media_url);
+					$feedTwitter->setMessages($tweets->text);
+					$feedTwitter->setKey(strtolower($namakey.$j.rand()));
+					$feedTwitter->setO_parentId('1452');
+					$feedTwitter->setIndex(0);
+					$feedTwitter->setPublished(0);
+					$feedTwitter->save();
+				}
 			}
-			$i++;
+		    $j++;
 		    }
+		   
 		}
+	echo 'cron twitter sukses sebanyak:'.$j;
 	}
 	
 

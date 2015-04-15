@@ -79,7 +79,7 @@
                         } );
                     </script>
 
-                    <p><?php echo $this->input('text-1')?>.</p>
+                    <p><?php echo $this->input('text-1')?></p>
 
                 </div><!--/ .main-content -->
 
