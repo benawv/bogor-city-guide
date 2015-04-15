@@ -540,7 +540,7 @@ div.search{width:100%;}
 .button-cart .btn-width{width:140px;}
 .mobile.deactive{display: block;}
 .static-links.mobile.deactive.share{position: absolute;right: 0;}
-.banner .minibar.cusZindex, .banner .minibar.cusZindex.cusLogin{display: block;}
+.banner .minibar.cusZindex, .banner .minibar.cusZindex.cusLogin{display: block;position: absolute;right:0;}
 .banner .minibar.cusZindex .liMobileHide{display: none;}
 .ulCustomerOnline.deactive{position: absolute;right: 0;}
 .button-mobile .cus_select{margin-left: 0px;}
