@@ -1,4 +1,11 @@
 <link rel="stylesheet" type="text/css" href="/website/static/css/virgin.css">
+	<?php
+		function limit_words($string, $word_limit)
+		{
+			$words = explode("-",$string);
+			return implode("-",array_splice($words,0,$word_limit));
+		}
+	?>
 
 <div role="main" class="tips-main main" style="background: url(<?php echo $this->fetchBackground;?>);background-size: 1500px auto;background-repeat: no-repeat;background-position: top;">
 
@@ -71,7 +78,7 @@
 											<div class="r">
 												<div class="c-2of3 cus_hide" id="div<?php echo $y;?>">
 													<article>
-														<a href="<?php echo $this->url(array($list->objects[$y]->getO_key(),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
+														<a href="<?php echo $this->url(array(limit_words($list->objects[$y]->getO_key(),5),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
 														<!-- <i class="icon-video"></i>	 -->	
 															<div class="outr-wrp">
 																<div class="img-wrp">
@@ -97,7 +104,7 @@
 												<?php if($y < $totalData){?>
 													<div class="c-1of3 cus_hide" id="div<?php echo $y;?>">
 														<article>
-															<a href="<?php echo $this->url(array($list->objects[$y]->getO_key(),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
+															<a href="<?php echo $this->url(array(limit_words($list->objects[$y]->getO_key(),5),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
 																<div class="outr-wrp">
 																	<div class="img-wrp">
 																		<img src="<?php echo $list->objects[$y]->getImage();?>"alt="<?php echo $list->objects[$y]->image->metadata[1]["data"];?>" title="<?php echo $list->objects[$y]->image->metadata[0]["data"];?>">
@@ -130,7 +137,7 @@
 											<div class="r">
 												<div class="c-1of2 cus_hide" id="div<?php echo $y;?>">
 													<article>
-													   <a href="<?php echo $this->url(array($list->objects[$y]->getO_key(),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
+													   <a href="<?php echo $this->url(array(limit_words($list->objects[$y]->getO_key(),5),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
 														<div class="outr-wrp">
 															<div class="img-wrp">
 																<img src="<?php echo $list->objects[$y]->getImage();?>"alt="<?php echo $list->objects[$y]->image->metadata[1]["data"];?>" title="<?php echo $list->objects[$y]->image->metadata[0]["data"];?>">
@@ -155,7 +162,7 @@
 												<?php if($y < $totalData){?>
 													<div class="c-1of2 cus_hide" id="div<?php echo $y;?>">
 														<article>
-														   <a href="<?php echo $this->url(array($list->objects[$y]->getO_key(),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
+														   <a href="<?php echo $this->url(array(limit_words($list->objects[$y]->getO_key(),5),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
 															<!-- <i class="icon-video"></i> -->
 															<div class="outr-wrp">
 																<div class="img-wrp">
@@ -187,7 +194,7 @@
 											<div class="r">
 												<div class="c-1of3 cus_hide" id="div<?php echo $y;?>">
 													<article>
-														<a href="<?php echo $this->url(array($list->objects[$y]->getO_key(),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
+														<a href="<?php echo $this->url(array(limit_words($list->objects[$y]->getO_key(),5),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
 															<!-- <i class="icon-video"></i> -->
 															<div class="outr-wrp">
 																<div class="img-wrp">
@@ -213,7 +220,7 @@
 												<?php if($y < $totalData){?>
 													<div class="c-1of3 cus_hide" id="div<?php echo $y;?>">
 														<article>
-															<a href="<?php echo $this->url(array($list->objects[$y]->getO_key(),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
+															<a href="<?php echo $this->url(array(limit_words($list->objects[$y]->getO_key(),5),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
 																<div class="outr-wrp">
 																	<div class="img-wrp">
 																		<img src="<?php echo $list->objects[$y]->getImage();?>"alt="<?php echo $list->objects[$y]->image->metadata[1]["data"];?>" title="<?php echo $list->objects[$y]->image->metadata[0]["data"];?>">
@@ -240,7 +247,7 @@
 												?>
 													<div class="c-1of3 cus_hide" id="div<?php echo $y;?>">
 														<article>
-															<a href="<?php echo $this->url(array($list->objects[$y]->getO_key(),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
+															<a href="<?php echo $this->url(array(limit_words($list->objects[$y]->getO_key(),5),$list->objects[$y]->getO_id(),$list->objects[$y]->getTemplate()),"community-detail");?>">
 																<!-- <i class="icon-video"></i>  -->
 																<div class="outr-wrp">
 																	<div class="img-wrp">
@@ -380,7 +387,7 @@
 										?>
 											<article class="art-itm">
 												<div class="s-sbar-ct">
-													<a href="<?php echo $this->url(array($result->getO_key(),$result->getO_id(),$result->getTemplate()),"community-detail")?>">
+													<a href="<?php echo $this->url(array(limit_words($result->getO_key(),5),$result->getO_id(),$result->getTemplate()),"community-detail")?>">
 													
 														<div class="outr-wrp">
 															<div class="img-wrp">
@@ -427,7 +434,7 @@
 								?>
 									<article class="art-itm">
 												<div class="s-sbar-ct">
-													<a href="<?php echo $this->url(array($result->getO_key(),$result->getO_id(),$result->getTemplate()),"community-detail")?>">
+													<a href="<?php echo $this->url(array(limit_words($result->getO_key(),5),$result->getO_id(),$result->getTemplate()),"community-detail")?>">
 													
 														<div class="outr-wrp">
 															<div class="img-wrp">

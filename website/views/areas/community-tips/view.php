@@ -13,7 +13,8 @@
 			?>
 					<div class="item" id="item-left">
 						<div class="heading">
-							<a href="<?php echo "community-detail/".$entry->getO_key()."_".$entry->getO_id()."_".$entry->getTemplate();?>">
+							<!--<a href="<?php //echo "community-detail/".$entry->getO_key()."_".$entry->getO_id()."_".$entry->getTemplate();?>">-->
+							<a href="<?php echo $this->url(array(limit_words($entry->getO_key(),5),$entry->getO_id(),$entry->getTemplate()),"community-detail");?>">
 								<h2 class="title_news"><?php echo $entry->getTitle();?></h2>
 							</a>
 							<div class="btn-group">
@@ -21,7 +22,8 @@
 								<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
 							</div>
 						</div>
-						<a href="<?php echo "community-detail/".$entry->getO_key()."_".$entry->getO_id()."_".$entry->getTemplate();?>" class="linkUrl">
+						<!--<a href="<?php //echo "community-detail/".$entry->getO_key()."_".$entry->getO_id()."_".$entry->getTemplate();?>" class="linkUrl">-->
+						<a href="<?php echo $this->url(array(limit_words($entry->getO_key(),5),$entry->getO_id(),$entry->getTemplate()),"community-detail");?>" class="linkUrl">
 							<img class="image_share" src="<?php echo $entry->getImageHomeAllianz();?>" alt="<?php echo $entry->imageHomeAllianz->metadata[1]["data"];?>" title="<?php echo $entry->imageHomeAllianz->metadata[0]["data"];?>" />
 							<div class="description">
 								<?php
