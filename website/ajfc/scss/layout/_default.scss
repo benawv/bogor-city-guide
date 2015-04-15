@@ -266,19 +266,27 @@ header
 
         &.facebook
         {
+            background: $color_facebook;
+            color: white;
+
             .header > i,
             .body a
             {
-                color: $color_facebook;
+                color: white; //$color_facebook;
             }
+
+
+
         }
 
         &.twitter
         {
+            background: $color_twitter;
+            color: white;
             .header > i,
             .body a
             {
-                color: $color_twitter;
+                color: white; //$color_twitter;
             }
         }
 
