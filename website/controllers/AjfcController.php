@@ -136,9 +136,58 @@ class AjfcController extends Website_Controller_Action {
 		}
 	}
 	
-	public function cronAjfcAction () {
-
+	public function cronAjfcTwAction () {		
+					
+		$result_tw = $this->tw_connection->get('search/tweets',
+                                         array("q"=>'%23ajfc2015	',"count" => 5));
+       		$j=0;
+		
+		if(isset($result_tw)){
+		    $namakey ='twitter'."_".strtotime(date("YmdHis"));
+		    foreach($result_tw as $tweet){
+			foreach($tweet as $tweets){
+				
+				if(isset($tweets->id_str)!=''){
+					
+					$exsistFeedTwitter = new Object_SocialMediaFeed_List();
+					$exsistFeedTwitter->setCondition("streamId = '".$tweets->id_str."'");					
+					$exsistFeedTwitter->setUnpublished('true');
+					
+					foreach($exsistFeedTwitter as $extId){
+						$extistStreamId=$extId->StreamId;
+					}
+					
+					if(isset($extistStreamId) != isset($tweets->id_str)){
+						$entries=Object_Abstract::getById(1423);
+						$feedTwitter = new Object_SocialMediaFeed();
+						$feedTwitter->setsocialMediaType($entries);
+						$feedTwitter->setStreamId($tweets->id_str);
+						$feedTwitter->setFrom($tweets->user->name);
+						$feedTwitter->setUserImages($tweets->user->profile_image_url);
+						$feedTwitter->setCreateDate($tweets->created_at);
+						$feedTwitter->setFromId($tweets->user->id);
+						$feedTwitter->setLinkAsset($tweets->screen_name);
+						$feedTwitter->setTypeAsset('images');
+						$feedTwitter->setLinkFeed($tweets->entities->media[0]->media_url);
+						$feedTwitter->setMessages($tweets->text);
+						$feedTwitter->setKey(strtolower($namakey.$j.rand()));
+						$feedTwitter->setO_parentId('1452');
+						$feedTwitter->setIndex(0);
+						$feedTwitter->setPublished(0);
+						$feedTwitter->save();
+					}
+				}
+			$j++;
+			}
+		    
+		    }
+		 
+		}
+		echo 'cron twitter sukses sebanyak:'.$j;
+	}
 	
+	public function cronAjfcFbAction () {
+		
 		$getConfig=json_decode($this->getSocialMediaConf('facebook')); //GET Config Facebook API
 		$apiKey=$getConfig->apiKey;
 		$appId=$getConfig->appId;
@@ -155,6 +204,10 @@ class AjfcController extends Website_Controller_Action {
 		//$url="'https://graph.facebook.com/me/')";
 		$appId='727536864031162';
 		$secret = 'ddccc4384fd244f82a7a3fb4b346f064';
+		
+		echo strtotime("Sun Apr 12 10:00:06 +0000 2015"), "\n";
+		echo date(1428832806);
+		
 		//$result = $Facebook->api('/me/posts');
 		//print_r($result);
 		//$getAuth=$this->open_api_template($url,$appId,$apiKey);
@@ -162,43 +215,7 @@ class AjfcController extends Website_Controller_Action {
 		//echo "<pre>";
 		//print_r($getAuth);
 		//echo "</pre>";
-		
-		$result_tw = $this->tw_connection->get('search/tweets',
-                                         array("q"=>'%231ygterpenting',"count" => 5));
-       		$j=0;
-		
-		if(isset($result_tw)){
-		    $namakey ='twitter'."_".strtotime(date("YmdHis"));
-		    foreach($result_tw as $tweet){
-			foreach($tweet as $tweets){
-				$exsistFeedTwitter = new Object_SocialMediaFeed();
-				
-				if(isset($tweets->id_str)!=''){
-				//cron data twitter
-					$entries=Object_Abstract::getById(1423);
-					$feedTwitter = new Object_SocialMediaFeed();
-					$feedTwitter->setsocialMediaType($entries);
-					$feedTwitter->setStreamId($tweets->id_str);
-					$feedTwitter->setFrom($tweets->user->name);
-					$feedTwitter->setUserImages($tweets->user->profile_image_url);
-					$feedTwitter->setCreateDate($tweets->created_at);
-					$feedTwitter->setFromId($tweets->user->id);
-					$feedTwitter->setLinkAsset($tweets->screen_name);
-					$feedTwitter->setTypeAsset('images');
-					$feedTwitter->setLinkFeed($tweets->entities->media[0]->media_url);
-					$feedTwitter->setMessages($tweets->text);
-					$feedTwitter->setKey(strtolower($namakey.$j.rand()));
-					$feedTwitter->setO_parentId('1452');
-					$feedTwitter->setIndex(0);
-					$feedTwitter->setPublished(0);
-					$feedTwitter->save();
-				}
-			}
-		    $j++;
-		    }
-		   
-		}
-	echo 'cron twitter sukses sebanyak:'.$j;
+
 	}
 	
 
