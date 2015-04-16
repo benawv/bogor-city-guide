@@ -878,6 +878,10 @@ a.fbshare, a.twshare{
   float: left;
 }
 .pagenavBerita #accordion-container{position: relative;}
+.row.cusSoal{
+  padding: 0 25px;
+  margin: 0;
+}
 
 /*SETTING LOGO 125*/
 .notepadKiri{width: 150px;float: left;}
