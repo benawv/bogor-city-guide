@@ -1,29 +1,29 @@
 <header>
-    
+
     <div class="background">
         <img src="/website/static/images/ajfc/background/background.jpg" alt="Home" class="img-responsive" />
     </div><!--/ .background -->
     <div class="caption">
         <div class="container">
             <div class="row">
-                <div class="col-xs-8 col-xs-offset-4 col-md-3 col-md-offset-9">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-4 col-md-3 col-md-offset-9">
                     <div class="box-dent mt32">
                         <div class="box-dent--inner">
                             <h2>AJFC 2015</h2>
                             <p>#1ygterpenting mewujudkan mimpi menjadi kenyataan.</p>
-			    <p>Daftarkan anak/kerabat Anda yang berusia 14-16 tahun untuk dilatih oleh pelatih remaja FC Bayern Munchen di Jerman.</p>
+                <p>Daftarkan anak/kerabat Anda yang berusia 14-16 tahun untuk dilatih oleh pelatih remaja FC Bayern Munchen di Jerman.</p>
                             <?php
-				if($this->editmode)
-				{
-					echo $this->link("linkDaftar");
-				}
-				else{
-			    ?>
-				<a href="<?php echo $this->link("linkDaftar")->getHref();?>"><?php echo $this->link("linkDaftar")->getText();?> <i class="fa fa-angle-right"></i></a>
-			    <?php
-				}
-			    ?>
-			</div><!--/ .box-dent--inner -->
+                if($this->editmode)
+                {
+                    echo $this->link("linkDaftar");
+                }
+                else{
+                ?>
+                <a href="<?php echo $this->link("linkDaftar")->getHref();?>"><?php echo $this->link("linkDaftar")->getText();?> <i class="fa fa-angle-right"></i></a>
+                <?php
+                }
+                ?>
+            </div><!--/ .box-dent--inner -->
                     </div>
                 </div><!--/ .col-xs-6 -->
             </div><!--/ .row -->
@@ -57,7 +57,7 @@
             </div><!--/ .row -->
         </div><!--/ .container -->
     </nav>
-    
+
 </header>
 
 <section id="calendar-wrapper">
@@ -68,13 +68,20 @@
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-6 calendar-info pl0">
                 <div class="calendar-info--inner">
-                    <?php 
+                    <?php
                         $bulanInd = array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
                         $entries = new Object_CalenderAJFC_List();
-                        $entries->setCondition("date > ?", array(time()));
+                        $entries->setCondition("date >= ?", array(time()));
                         $entries->setLimit(1);
                         $entries->setOrderKey("date");
                         $entries->setOrder("asc");
+                        if(count($entries)<0){
+                            $entries = new Object_CalenderAJFC_List();
+                            $entries->setCondition("date <= ?", array(time()));
+                            $entries->setLimit(1);
+                            $entries->setOrderKey("date");
+                            $entries->setOrder("asc");
+                        }
                         foreach ($entries as $key) {
                             $d = date("d",strtotime($key->date));
                             $m = date("m",strtotime($key->date));
@@ -99,7 +106,7 @@
         </div><!--/ .row -->
     </div><!--/ .container -->
 
-<?php 
+<?php
     $entries = new Object_CalenderAJFC_List();
     $entries ->setOrderKey("date");
     $entries ->setOrder("desc");
@@ -168,7 +175,7 @@
             }else{
                 array_push($b,array(0=>"#",1=>$img));
                 if($no<=5)
-                    array_push($c,array(0=>"/ajfc/galeri-ajfc",1=>$nama,2=>$ptg,3=>$content));
+                    array_push($c,array(0=>"/galeri-ajfc",1=>$nama,2=>$ptg,3=>$content));
             }
             if($no >= 10)
                 break;
@@ -181,9 +188,9 @@
     $eisi = json_encode($c);
 ?>
     <script>
-    
+
         $(function(){
-            
+
             /**
              * Zabuto Calendar
              * https://github.com/zabuto/calendar
@@ -193,11 +200,11 @@
             if( $( '#my-calendar' ).length > 0 )
             {
                 /**
-                 * Use PHP to populate json variable below or load the JSON 
-                 * using separate AJAX method 
-                 * Do not use Zabuto's native ajax data options 
+                 * Use PHP to populate json variable below or load the JSON
+                 * using separate AJAX method
+                 * Do not use Zabuto's native ajax data options
                  */
-                
+
                 var eventData = <?php echo $encode; ?>;
 
                 $( '#my-calendar' ).zabuto_calendar({
@@ -229,7 +236,7 @@
                         });
                     }
                 }
-                
+
                 function convertDate( date )
                 {
                     var date_array = date.split( "-" );
@@ -240,28 +247,28 @@
                     var output = ( d * 1 ) + ' ' + months[ ( m - 1 ) ] + ' ' + y;
                     return output;
                 }
-                
+
             }
         });
     </script>
-    
+
 </section><!--/ #calendar -->
 
 <section class="mt32 mb72">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-6 pl30 pr30">
-                
+
                 <div class="row social-feeds row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
-                
+
                         <?php
-                        
+
                             $fb_feed1 = new Object_SocialMediaFeed_List();
                             $fb_feed1->setLimit(4);
                             $fb_feed1->setOrder("asc");
                             $fb1 = 1;
-                            
+
                             $NoDada = "";
                             foreach($fb_feed1 as $items1)
                             {
@@ -280,7 +287,7 @@
                                 $fb1++;
                                 }
                             }
-                            
+
                             $fb_feed2 = new Object_SocialMediaFeed_List();
                             $fb_feed2->setLimit(4);
                             $fb_feed2->setOrder("asc");
@@ -304,9 +311,9 @@
                                     }
                                 $fb2++;
                                 }
-                                
+
                             }
-                            
+
                             $tw_feed1 = new Object_SocialMediaFeed_List();
                             $tw_feed1->setLimit(4);
                             $tw_feed1->setOrder("asc");
@@ -330,8 +337,8 @@
                                    $tw1++;
                                 }
                             }
-                            
-                            
+
+
                             $tw_feed2 = new Object_SocialMediaFeed_List();
                             $tw_feed2->setLimit(4);
                             $tw_feed2->setOrder("asc");
@@ -354,6 +361,7 @@
                                     }
                                    $tw2++;
                                 }
+                               
                             }
                             
                         ?>
@@ -381,7 +389,7 @@
                             </div><!--/ .footer -->
                         </div><!--/ .social-feeds--box -->
                     </div><!--/ .col-xs-12 -->
-                    
+
                     <div class="col-xs-12 col-md-6 nopadding br bt">
                         <div class="social-feeds--box twitter">
                             <div class="header">
@@ -407,11 +415,11 @@
                             </div><!--/ .footer -->
                         </div><!--/ .social-feeds--box -->
                     </div><!--/ .col-xs-12 -->
-                    
+
                 </div><!--/ .social-feeds -->
-                
+
                 <div class="row social-feeds row-eq-height">
-                    
+
                     <div class="col-xs-12 col-md-6 nopadding br bt">
                         <div class="social-feeds--box twitter">
                             <div class="header">
@@ -437,7 +445,7 @@
                             </div><!--/ .footer -->
                         </div><!--/ .social-feeds--box -->
                     </div><!--/ .col-xs-12 -->
-                    
+
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
                         <div class="social-feeds--box facebook">
                             <div class="header">
@@ -463,19 +471,19 @@
                             </div><!--/ .footer -->
                         </div><!--/ .social-feeds--box -->
                     </div><!--/ .col-xs-12 -->
-                    
+
                 </div><!--/ .social-feeds -->
-                
+
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-6 news-feeds">
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
-                        <a href="/ajfc/galeri-ajfc" class="news-feeds--image">
+                        <a href="/galeri-ajfc" class="news-feeds--image">
                             <img src="/website/static/images/dummy/yangterpenting.jpg" alt="" />
                         </a>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bt">
-                        <a href="/ajfc/galeri-ajfc" class="news-feeds--image" id="imageBoxA">
+                        <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxA">
                             <img src="<?php echo $b[0][1]; ?>" alt="" />
                         </a>
                     </div><!--/ .col-xs-12 -->
@@ -483,13 +491,13 @@
 
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bb">
-                        <a href="/ajfc/galeri-ajfc" class="news-feeds--image" id="imageBoxB">
+                        <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxB">
                             <img src="<?php echo $b[1][1]; ?>" alt="" />
                         </a>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bb">
                         <div class="text" id="textBoxC">
-                            <h3 class="tbc-title"><a href="/ajfc/galeri-ajfc"><?php echo $c[0][1]; ?></a></h3>
+                            <h3 class="tbc-title"><a href="/galeri-ajfc"><?php echo $c[0][1]; ?></a></h3>
                             <p class="text-muted"><small class="tbc-date"><?php echo $b[0][2]; ?></small></p>
                             <p class="tbc-body"><?php echo $b[0][3]; ?></p>
                         </div><!--/ .text -->
@@ -585,7 +593,7 @@
                     });
                 </script>
 
-            
+
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
     </div><!--/ .container -->

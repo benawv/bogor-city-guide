@@ -16,11 +16,15 @@
     <div class="caption">
         <div class="container">
             <div class="row">
-                <div class="col-xs-8 col-xs-offset-4 col-md-3 col-md-offset-9">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-4 col-md-3 col-md-offset-9">
                     <div class="box-dent mt32">
                         <div class="box-dent--inner">
                             <h2>AJFC 2015</h2>
-                            <p>#1ygterpenting mewujudkan mimpi menjadi kenyataan</p>
+                            <p>#1ygterpenting mewujudkan mimpi menjadi kenyataan.</p>
+                            <p>
+                                Daftarkan anak/kerabat Anda yang berusia 14-16 tahun untuk dilatih oleh pelatih remaja
+                                FC Bayern Munchen di Jerman.
+                            </p>
                             <a href="#">Daftar Sekarang <i class="fa fa-angle-right"></i></a>
                         </div><!--/ .box-dent--inner -->
                     </div>
@@ -306,12 +310,12 @@
             <div class="col-xs-12 col-md-6 news-feeds">
 
                 <div class="row row-eq-height">
-                    <div class="col-xs-12 col-md-6 nopadding bl bt">
+                    <div class="col-xs-6 nopadding bl bt">
                         <a href="#" class="news-feeds--image">
                             <img src="./img/yangterpenting.jpg" alt="" />
                         </a>
                     </div><!--/ .col-xs-12 -->
-                    <div class="col-xs-12 col-md-6 nopadding br bt">
+                    <div class="col-xs-6 nopadding br bt">
                         <a href="#" class="news-feeds--image" id="imageBoxA">
                             <img src="./img/dummy-wasit.jpg" alt="" />
                         </a>
@@ -319,12 +323,12 @@
                 </div><!--/ .row -->
 
                 <div class="row row-eq-height">
-                    <div class="col-xs-12 col-md-6 nopadding bl bb">
+                    <div class="col-xs-6 nopadding bl bb">
                         <a href="#" class="news-feeds--image" id="imageBoxB">
                             <img src="./img/dummy-stadium.jpg" alt="" />
                         </a>
                     </div><!--/ .col-xs-12 -->
-                    <div class="col-xs-12 col-md-6 nopadding br bb">
+                    <div class="col-xs-6 nopadding br bb">
                         <div class="text" id="textBoxC">
                             <h3 class="tbc-title"><a href="#">Judul Berita</a></h3>
                             <p class="text-muted"><small class="tbc-date">Rabu, 14 Mei 2015</small></p>
@@ -362,7 +366,7 @@
 
                         var imageBoxA   = $( '#imageBoxA' );
                         var iba_current = 0;
-                        var iba_interval= 4000;
+                        var iba_interval= 8000;
                         var iba_loop    = setInterval(function(){
                             imageBoxA.stop().fadeOut( 'fast', function(){
                                 $( this ).parent().attr( 'href', images[ iba_current ][ 0 ] );
@@ -384,7 +388,7 @@
 
                         var imageBoxB   = $( '#imageBoxB' );
                         var ibb_current = 0;
-                        var ibb_interval= 16000;
+                        var ibb_interval= 18000;
                         var ibb_loop    = setInterval(function(){
                             imageBoxB.stop().fadeOut( 'fast', function(){
                                 $( this ).parent().attr( 'href', images[ ibb_current ][ 0 ] );
@@ -402,7 +406,7 @@
                             {
                                 ibb_current = 0;
                             }
-                        }, iba_interval);
+                        }, ibb_interval);
 
                         var textBoxC    = $( '#textBoxC' );
                         var tbc_title   = textBoxC.find( '.tbc-title' );
