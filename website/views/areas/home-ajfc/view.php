@@ -265,8 +265,6 @@
                         <?php
 
                             $fb_feed1 = new Object_SocialMediaFeed_List();
-                            $fb_feed1->setLimit(4);
-                            $fb_feed1->setOrder("asc");
                             $fb1 = 1;
 
                             $NoDada = "";
@@ -283,14 +281,14 @@
                                     $fb_TypeAsset1  =$items1->TypeAsset;
                                     $fb_LinkFeed1   =$items1->LinkFeed;
                                     $fb_Messages1   =$items1->Messages;                                    
+                                    $getStrId=explode('_',$fb_StreamId1);
+                                    $strId1=$getStrId[1];
                                 }
                                 $fb1++;
                                 }
                             }
 
                             $fb_feed2 = new Object_SocialMediaFeed_List();
-                            $fb_feed2->setLimit(4);
-                            $fb_feed2->setOrder("asc");
                             $fb2 = 1;
                             $NoDada = "";
                             foreach($fb_feed2 as $items2)
@@ -307,6 +305,8 @@
                                     $fb_TypeAsset2  =$items2->TypeAsset;
                                     $fb_LinkFeed2   =$items2->LinkFeed;
                                     $fb_Messages2   =$items2->Messages;
+                                    $getStrId=explode($fb_StreamId2,'_');
+                                    $strId2=$getStrId[1];
                                     
                                     }
                                 $fb2++;
@@ -315,8 +315,6 @@
                             }
 
                             $tw_feed1 = new Object_SocialMediaFeed_List();
-                            $tw_feed1->setLimit(4);
-                            $tw_feed1->setOrder("asc");
                             $tw1 = 1;
                             $NoDada = "";
                             foreach($tw_feed1 as $items3)
@@ -340,14 +338,12 @@
 
 
                             $tw_feed2 = new Object_SocialMediaFeed_List();
-                            $tw_feed2->setLimit(4);
-                            $tw_feed2->setOrder("asc");
                             $tw2 = 1;
                             $NoDada = "";
                             foreach($tw_feed2 as $items4)
                             {
                                 if($items4->socialMediaType->socialMediaType=='twitter'){
-                                   if($tw2==1){
+                                   if($tw2==2){
                                    
                                     $tw_StreamId2   =$items4->StreamId;
                                     $tw_CreateDate2 =$items4->CreateDate;
@@ -377,7 +373,7 @@
                             <div class="footer">
                                 <div class="media">
                                     <div class="media-left">
-                                        <a href="<?php echo $fb_LinkFeed1; ?>" target="_blank">
+                                        <a href="https://www.facebook.com/164934653709133/posts/<?php echo $strId1; ?>" target="_blank">
                                             <img class="media-object img-responsive" src="<?php echo $fb_UserImages;?>" alt="Profile Picture">
                                         </a>
                                     </div><!--/ .media-left -->
@@ -459,7 +455,7 @@
                             <div class="footer">
                                 <div class="media">
                                     <div class="media-left">
-                                        <a href="<?php echo $fb_LinkFeed2; ?>" target="_blank">
+                                        <a href="https://www.facebook.com/164934653709133/posts/<?php echo $strId2; ?>" target="_blank">
                                             <img class="media-object img-responsive" src="<?php echo $fb_UserImages2;?>" alt="Profile Picture">
                                         </a>
                                     </div><!--/ .media-left -->
