@@ -106,87 +106,6 @@
         </div><!--/ .row -->
     </div><!--/ .container -->
 
-<?php
-    $entries = new Object_CalenderAJFC_List();
-    $entries ->setOrderKey("date");
-    $entries ->setOrder("desc");
-    $count = count($entries);
-    $no = 1;
-    $temp = "";
-    foreach ($entries as $key) {
-        $date = date("Y-m-d",strtotime($key->date));
-        $title = $key->title;
-        $event = $key->event;
-        if($no == 1)
-            $a = array(array("date"=>$date,
-                    "badge"=>true,
-                    "title"=>$title,
-                    "body"=>$event));
-        else
-            array_push($a,array("date"=>$date,
-                    "badge"=>true,
-                    "title"=>$title,
-                    "body"=>$event)
-                );
-        $no++;
-    }
-    $encode = json_encode($a);
-
-    $default = 0;
-    $no = 1;
-    $temp = "";
-    $entries = new Object_DataPesertaAJFC_List();
-    $entries ->setLimit(10);
-    $entries->setOrderKey("o_creationDate");
-    $entries->setOrder("desc");
-    $entries->setCondition("statusSubmitKuis LIKE 1 AND approve LIKE 1");
-    $count = count($entries);
-    $sisa = 8 - $count;
-    //echo $count;
-    if($count < 8){
-        $n = 1;
-    }else{
-        $n = 2;
-    }
-    while($n<=2){
-        if($n==2){
-            $entries = new Object_DataPesertaAJFCDefault_List();
-            $entries->setLimit($sisa);
-            $default = 1;
-        }
-        foreach ($entries as $key) {
-            $img = (string)$key->fotoPeserta;
-            $ptg = ucfirst($key->satuTerpenting);
-            $nama = ucwords($key->namaLengkap);
-            $tgll = date("Y", strtotime($key->tanggalLahir));
-            $nyear = date("Y",time());
-            $umur = $nyear-$tgll;
-            $asl = ucwords($key->tempatLahir);
-            $prop = ucwords($key->propinsi);
-            $content = $umur.' Tahun - '.$asl.', '.$prop;
-            if($default==1){
-                $content = "";
-                $nama = $ptg;
-                $ptg = "";
-            }
-            if($no == 1){
-                $b = array(array(0=>"#",1=>$img));
-                $c = array(array(0=>"#",1=>$nama,2=>$ptg,3=>$content));
-            }else{
-                array_push($b,array(0=>"#",1=>$img));
-                if($no<=5)
-                    array_push($c,array(0=>"/galeri-ajfc",1=>$nama,2=>$ptg,3=>$content));
-            }
-            if($no >= 10)
-                break;
-            $no++;
-        }
-        $n++;
-    }
-
-    $edaftar = json_encode($b);
-    $eisi = json_encode($c);
-?>
     <script>
 
         $(function(){
@@ -281,6 +200,8 @@
                                     $fb_TypeAsset1  =$items1->TypeAsset;
                                     $fb_LinkFeed1   =$items1->LinkFeed;
                                     $fb_Messages1   =$items1->Messages;                                    
+                                    $getStrId=explode('_',$fb_StreamId1);
+                                    $strId1=$getStrId[1];
                                 }
                                 $fb1++;
                                 }
@@ -303,6 +224,8 @@
                                     $fb_TypeAsset2  =$items2->TypeAsset;
                                     $fb_LinkFeed2   =$items2->LinkFeed;
                                     $fb_Messages2   =$items2->Messages;
+                                    $getStrId=explode($fb_StreamId2,'_');
+                                    $strId2=$getStrId[1];
                                     
                                     }
                                 $fb2++;
@@ -369,7 +292,7 @@
                             <div class="footer">
                                 <div class="media">
                                     <div class="media-left">
-                                        <a href="<?php echo $fb_LinkFeed1; ?>" target="_blank">
+                                        <a href="https://www.facebook.com/164934653709133/posts/<?php echo $strId1; ?>" target="_blank">
                                             <img class="media-object img-responsive" src="<?php echo $fb_UserImages;?>" alt="Profile Picture">
                                         </a>
                                     </div><!--/ .media-left -->
@@ -451,7 +374,7 @@
                             <div class="footer">
                                 <div class="media">
                                     <div class="media-left">
-                                        <a href="<?php echo $fb_LinkFeed2; ?>" target="_blank">
+                                        <a href="https://www.facebook.com/164934653709133/posts/<?php echo $strId2; ?>" target="_blank">
                                             <img class="media-object img-responsive" src="<?php echo $fb_UserImages2;?>" alt="Profile Picture">
                                         </a>
                                     </div><!--/ .media-left -->
