@@ -20,13 +20,21 @@ class SeleksiController extends Website_Controller_Action {
 					$this->view->peserta = $data;
 				}
 				else{
-					$this->redirect("/ajfc/expire/expire-page");
+					$this->redirect("/expire/expire-page");
 				}
 			}
 		}
 		else
 		{
-			$this->redirect("/ajfc");
+			$data2 = new Object_DataPesertaAJFC_List();
+			$data2->setCondition("`idPeserta`='".$id."' AND `statusSubmitKuis` = 1");
+			if(count($data2) == 1)
+			{
+				$this->redirect("/thanks/sudah-submit");
+			}
+			else{
+				$this->redirect("/");
+			}
 		}
 	}
 	
