@@ -139,9 +139,12 @@ class AjfcController extends Website_Controller_Action {
 	public function cronAjfcTwAction () {		
 					
 		$result_tw = $this->tw_connection->get('search/tweets',
-                                         array("q"=>'%23ajfc2015	',"count" => 5));
+                                         array("q"=>'%23ajfc2015',"count" => 5));
        		$j=0;
 		
+		
+		$getId=Object_Abstract::getByPath('/social-feed/');
+
 		if(isset($result_tw)){
 		    $namakey ='twitter'."_".strtotime(date("YmdHis"));
 		    foreach($result_tw as $tweet){
@@ -158,7 +161,7 @@ class AjfcController extends Website_Controller_Action {
 					}
 					
 					if(isset($extistStreamId) != isset($tweets->id_str)){
-						$entries=Object_Abstract::getById(1423);
+						$entries=Object_Abstract::getByPath('/social-media-config/twitter');
 						$feedTwitter = new Object_SocialMediaFeed();
 						$feedTwitter->setsocialMediaType($entries);
 						$feedTwitter->setStreamId($tweets->id_str);
@@ -171,7 +174,7 @@ class AjfcController extends Website_Controller_Action {
 						$feedTwitter->setLinkFeed($tweets->entities->media[0]->media_url);
 						$feedTwitter->setMessages($tweets->text);
 						$feedTwitter->setKey(strtolower($namakey.$j.rand()));
-						$feedTwitter->setO_parentId('1452');
+						$feedTwitter->setO_parentId($getId->o_id);
 						$feedTwitter->setIndex(0);
 						$feedTwitter->setPublished(0);
 						$feedTwitter->save();
