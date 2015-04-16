@@ -170,10 +170,10 @@
                                                 <div class="message-info">
                                                     <div class="form-group">
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="pasport" id="ya" value="Ya" checked="checked"> Ya
+                                                            <input type="radio" name="pasport" id="ya" value="Ya" /> Ya
                                                         </label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="pasport" id="tidak" value="Tidak"> Tidak
+                                                            <input type="radio" name="pasport" id="tidak" value="Tidak" /> Tidak
                                                         </label>
                                                     </div><!--/ .form-group -->
                                                     <div class="info-error"></div>
