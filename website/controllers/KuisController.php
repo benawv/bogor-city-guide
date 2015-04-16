@@ -172,22 +172,25 @@ class KuisController extends Website_Controller_Action {
 			
 			
 			try{
-				$asset->save();
+				if($asset->save())
+				{
+					$saveKuis->setFotoPeserta(Asset_Image::getById($asset->id));
 				
-				$saveKuis->setFotoPeserta(Asset_Image::getById($asset->id));
-				
-				//CUSTOM
-				$target_dir = "./website/var/assets/ajfc/foto-peserta/";
-				$target_file = $target_dir.$dateNow."_".basename($_FILES["uploadFoto"]["name"]);
-				
-				move_uploaded_file($_FILES["uploadFoto"]["tmp_name"], $target_file);
-				$saveKuis->save();
-				
-				//Create PDF
-				$this->createPdfAction($namaPeserta,$saveNoDada);
-				$this->sendAction($saveNoDada,$emailPeserta,$namaPeserta);
-				
-				$this->redirect("/thanks/terima-kasih");
+					//CUSTOM
+					$target_dir = "./website/var/assets/ajfc/foto-peserta/";
+					$target_file = $target_dir.$dateNow."_".basename($_FILES["uploadFoto"]["name"]);
+					
+					if(move_uploaded_file($_FILES["uploadFoto"]["tmp_name"], $target_file))
+					{
+						$saveKuis->save();
+					
+						//Create PDF
+						$this->createPdfAction($namaPeserta,$saveNoDada);
+						$this->sendAction($saveNoDada,$emailPeserta,$namaPeserta);
+						
+						$this->redirect("/thanks/terima-kasih");
+					}
+				}
 			}
 			catch(Exception $e){
 				echo 'ERROR: ',  $e->getMessage(), "\n";
