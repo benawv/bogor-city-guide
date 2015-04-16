@@ -230,8 +230,7 @@ class AjfcController extends Website_Controller_Action {
 					
 					foreach($exsistFeedFb as $extId){
 						$extistStreamId=$extId->StreamId;
-					}
-										
+					}									
 
 					if($extistStreamId != $items[id]){
 						$entries=Object_Abstract::getByPath('/social-media-config/facebook');
@@ -251,6 +250,9 @@ class AjfcController extends Website_Controller_Action {
 						$feedFb->setIndex(0);
 						$feedFb->setPublished(0);
 						$feedFb->save();
+						echo "<pre>";
+						print_r($items);
+						echo "</pre>";
 					}
 				}
 				
