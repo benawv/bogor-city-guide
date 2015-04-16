@@ -139,7 +139,7 @@ class AjfcController extends Website_Controller_Action {
 	public function cronAjfcTwAction () {		
 					
 		$result_tw = $this->tw_connection->get('search/tweets',
-                                         array("q"=>'%23ajfc2015',"count" => 5));
+                                         array("q"=>'%23ajfc2015',"count" => 10));
        		$j=0;
 		
 		
@@ -196,13 +196,9 @@ class AjfcController extends Website_Controller_Action {
 		$appId=$getConfig->appId;
 		$callbackurl=$getConfig->callbackurl;
 		
-		$accounts = json_decode($this->open_api_template('https://graph.facebook.com/me/accounts?access_token=CAAKVsOBXcboBABO4cgR4nCpGyZC0SHkhenNp4HLvmhfR1wemU03RmZC0ZAeZBrXKYR5kB0eRRjbboIL7apcjnM9Ik7BblYjsF9rXHUtP6XQioiYNRPUyjGahZC6nrTfZAxSv7XTZBPzsTBfrE3ECobak1fujrh3PMMAZAzzPZBa2oIqZBPkpRH8nOSlEk62hbegDhZBZA3E2cXgfDn7DouI4bxLvc7UkD2vGuLsZD',$appId,$apiKey));
-		echo "<pre>";
-		print_r($accounts->data[1]->id);
-		echo "</pre>";
-		$acesstoken=$this->SetAccessToken($accounts->data[1]->access_token,$accounts->data[1]->id);
-		
-		
+			
+		$this->SetAccessToken($access_token, $page_id);
+		$result = $Facebook->api('/me/feed');
 		
 		//$url="'https://graph.facebook.com/me/')";
 		$appId='727536864031162';
@@ -210,14 +206,6 @@ class AjfcController extends Website_Controller_Action {
 		
 		echo strtotime("Sun Apr 12 10:00:06 +0000 2015"), "\n";
 		echo date(1428832806);
-		
-		//$result = $Facebook->api('/me/posts');
-		//print_r($result);
-		//$getAuth=$this->open_api_template($url,$appId,$apiKey);
-		//$post = $this->facebook_model->RetrievePost($channel->social_id, $channel->oauth_token);
-		//echo "<pre>";
-		//print_r($getAuth);
-		//echo "</pre>";
 
 	}
 	
