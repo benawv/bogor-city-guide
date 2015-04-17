@@ -167,7 +167,7 @@ class KuisController extends Website_Controller_Action {
 			
 			// That's the key
 			$asset->setFilename($dateNow."_".$key);
-			$asset->setData(IMAGE_SOURCE);
+			//$asset->setData(IMAGE_SOURCE);
 			
 			$uploadOk = 0;
 			
