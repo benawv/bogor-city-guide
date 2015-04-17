@@ -139,20 +139,13 @@ class KuisController extends Website_Controller_Action {
 			$saveNoDada = $noDada.$setLari;
 			
 			
-			$file = $_FILES['uploadFoto'];
-			$file_n = $_FILES['uploadFoto']['name'];
-			$tmp_name = $_FILES['uploadFoto']['tmp_name'];
-			
-			$file_name = str_replace(' ', '_', $file_n);
-			
 			$dateNow = strtotime(date('Y-m-d H:i:s'));
 			
 			// Asset folder for the uploaded images
 			$assetFolder = "/ajfc/foto-peserta";
 			
-			$tmp_key = $dateNow."_".$file_name;
 			// The key is the unique name of an asset that is also used in the asset tree
-			$key = Pimcore_File::getValidFilename($tmp_key);
+			$key = Pimcore_File::getValidFilename(strtolower($_FILES["uploadFoto"]["name"]));
 			
 			// Check if there is alraedy an image with the same key
 			if(!$asset = Asset::getByPath($assetFolder . "/" . $key)) {
@@ -164,7 +157,7 @@ class KuisController extends Website_Controller_Action {
 			
 			// Optionally set the creation date
 			$asset->setCreationDate ( time() );
-			$asset->setType('image');
+			
 			// Optionally set the user
 			$asset->setUserOwner (1);
 			$asset->setUserModification (1);
@@ -173,11 +166,8 @@ class KuisController extends Website_Controller_Action {
 			$asset->setParentId(Asset_Folder::getByPath($assetFolder)->getId());
 			
 			// That's the key
-			$asset->setFilename($tmp_key);
-			$target_dir = "./website/var/assets/ajfc/foto-peserta/";
-			$target_file = $target_dir.$dateNow."_".basename($_FILES["uploadFoto"]["name"]);
-			$data = file_get_contents($target_file);
-			$asset->setData($data);
+			$asset->setFilename($dateNow."_".$key);
+			$asset->setData(IMAGE_SOURCE);
 			
 			$uploadOk = 0;
 			
@@ -186,6 +176,10 @@ class KuisController extends Website_Controller_Action {
 				{
 					$saveKuis->setFotoPeserta(Asset_Image::getById($asset->id));
 				
+					//CUSTOM
+					$target_dir = "./website/var/assets/ajfc/foto-peserta/";
+					$target_file = $target_dir.$dateNow."_".basename(strtolower($_FILES["uploadFoto"]["name"]));
+					
 					if(move_uploaded_file($_FILES["uploadFoto"]["tmp_name"], $target_file))
 					{
 						$uploadOk = 1;
