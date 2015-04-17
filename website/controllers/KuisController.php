@@ -138,50 +138,57 @@ class KuisController extends Website_Controller_Action {
 			}
 			$saveNoDada = $noDada.$setLari;
 			
-			
-			$dateNow = strtotime(date('Y-m-d H:i:s'));
-			
-			// Asset folder for the uploaded images
-			$assetFolder = "/ajfc/foto-peserta";
-			
-			// The key is the unique name of an asset that is also used in the asset tree
-			$key = Pimcore_File::getValidFilename($_FILES["uploadFoto"]["name"]);
-			
-			// Check if there is alraedy an image with the same key
-			if(!$asset = Asset::getByPath($assetFolder . "/" . $key)) {
-			   $asset = new Asset_Image();
-			}
-			else{
-				$asset = new Asset_Image();
-			}
-			
-			// Optionally set the creation date
-			$asset->setCreationDate ( time() );
-			$asset->setType('image');
-			// Optionally set the user
-			$asset->setUserOwner (1);
-			$asset->setUserModification (1);
-			
-			// Set the asset's parent id, which is the asset folder for the uploaded images
-			$asset->setParentId(Asset_Folder::getByPath($assetFolder)->getId());
-			
-			// That's the key
-			$asset->setFilename(strtolower($dateNow."_".$key));
-			//$asset->setData(IMAGE_SOURCE);
-			
 			$uploadOk = 0;
 			
+			$file = $_FILES['uploadFoto'];
+			$file_n = $_FILES['uploadFoto']['name'];
+			$tmp_name = $_FILES['uploadFoto']['tmp_name'];
+			
+			$file_name = str_replace(' ', '_', $files_n);
+			$file_name = str_replace('.', "_".strtotime(date("YmdHis"))."." , $file_name);
+			
 			try{
-				if($asset->save())
-				{
-					$saveKuis->setFotoPeserta(Asset_Image::getById($asset->id));
+				//CUSTOM
+				$dateNow = strtotime(date('Y-m-d H:i:s'));
+				$target_dir = "./website/var/assets/ajfc/foto-peserta/";
+				$target_file = $target_dir.$dateNow."_".basename($file_n);
 				
-					//CUSTOM
-					$target_dir = "./website/var/assets/ajfc/foto-peserta/";
-					$target_file = $target_dir.$dateNow."_".basename(strtolower($_FILES["uploadFoto"]["name"]));
+				
+				if(move_uploaded_file($tmp_name, $target_file))
+				{
+					$data = file_get_contents($target_file);
 					
-					if(move_uploaded_file($_FILES["uploadFoto"]["tmp_name"], $target_file))
+					// Asset folder for the uploaded images
+					$assetFolder = "/ajfc/foto-peserta";
+					
+					// The key is the unique name of an asset that is also used in the asset tree
+					$key = Pimcore_File::getValidFilename($files_n);
+					
+					// Check if there is alraedy an image with the same key
+					if(!$asset = Asset::getByPath($assetFolder . "/" . $key)) {
+					   $asset = new Asset_Image();
+					}
+					else{
+						$asset = new Asset_Image();
+					}
+					
+					// Optionally set the creation date
+					$asset->setCreationDate ( time() );
+					$asset->setType('image');
+					// Optionally set the user
+					$asset->setUserOwner (1);
+					$asset->setUserModification (1);
+					
+					// Set the asset's parent id, which is the asset folder for the uploaded images
+					$asset->setParentId(Asset_Folder::getByPath($assetFolder)->getId());
+					
+					// That's the key
+					$asset->setFilename($dateNow."_".$key);
+					$asset->setData($data);
+					
+					if($asset->save())
 					{
+						$saveKuis->setFotoPeserta(Asset_Image::getById($asset->id));
 						$uploadOk = 1;
 						$saveKuis->save();
 					
