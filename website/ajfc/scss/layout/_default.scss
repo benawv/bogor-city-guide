@@ -272,8 +272,8 @@ header
 
         &.facebook
         {
-            background: $color_facebook;
-            color: white;
+            background: $color_facebook !important;
+            color: white !important;
             .header > i,
             .body a
             {
@@ -286,8 +286,8 @@ header
 
         &.twitter
         {
-            background: $color_twitter;
-            color: white;
+            background: $color_twitter !important;
+            color: white !important;
             .header > i,
             .body a
             {

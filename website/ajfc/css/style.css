@@ -752,14 +752,14 @@ header {
     opacity: 0.2;
     pointer-events: none; }
   .social-feeds .social-feeds--box.facebook {
-    background: #3b5998;
-    color: white; }
+    background: #3b5998 !important;
+    color: white !important; }
     .social-feeds .social-feeds--box.facebook .header > i,
     .social-feeds .social-feeds--box.facebook .body a {
       color: white; }
   .social-feeds .social-feeds--box.twitter {
-    background: #55acee;
-    color: white; }
+    background: #55acee !important;
+    color: white !important; }
     .social-feeds .social-feeds--box.twitter .header > i,
     .social-feeds .social-feeds--box.twitter .body a {
       color: white; }
