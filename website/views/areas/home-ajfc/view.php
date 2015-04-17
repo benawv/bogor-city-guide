@@ -283,6 +283,8 @@
                                     $fb_Messages1   =$items1->Messages;                                    
                                     $getStrId=explode('_',$fb_StreamId1);
                                     $strId1=$getStrId[1];
+                                    $feedDateFb1=date('dS, F Y h:i:s A', strtotime($fb_CreateDate1));
+	
                                 }
                                 $fb1++;
                                 }
@@ -307,6 +309,7 @@
                                     $fb_Messages2   =$items2->Messages;
                                     $getStrId=explode($fb_StreamId2,'_');
                                     $strId2=$getStrId[1];
+                                    $feedDateFb2=date('dS, F Y h:i:s A', strtotime($fb_CreateDate2));
                                     
                                     }
                                 $fb2++;
@@ -331,6 +334,7 @@
                                     $tw_TypeAsset1  =$items3->TypeAsset;
                                     $tw_LinkFeed1   =$items3->LinkFeed;
                                     $tw_Messages1   =$items3->Messages;
+                                    $feedDateTw1=date('dS, F Y h:i:s A', strtotime($fb_CreateDate1));
                                     }
                                    $tw1++;
                                 }
@@ -354,6 +358,7 @@
                                     $tw_TypeAsset2  =$items4->TypeAsset;
                                     $tw_LinkFeed2   =$items4->LinkFeed;
                                     $tw_Messages2   =$items4->Messages;
+                                    $feedDateTw2=date('dS, F Y h:i:s A', strtotime($fb_CreateDate2));
                                     }
                                    $tw2++;
                                 }
@@ -379,7 +384,7 @@
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
                                         <p><?php echo $fb_From1;?></p>
-                                        <p><small><?php echo $fb_CreateDate1; ?></small></p>
+                                        <p><small><?php echo $feedDateFb1; ?></small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
                             </div><!--/ .footer -->
@@ -405,7 +410,7 @@
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
                                         <p><?php echo $tw_From1;?></p>
-                                        <p><small><?php echo $tw_CreateDate1; ?></small></p>
+                                        <p><small><?php echo $feedDateFb2; ?></small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
                             </div><!--/ .footer -->
@@ -435,7 +440,7 @@
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
                                         <p><?php echo $tw_From2;?></p>
-                                        <p><small><?php echo $tw_CreateDate2; ?></small></p>
+                                        <p><small><?php echo $feedDateTw1; ?></small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
                             </div><!--/ .footer -->
@@ -461,7 +466,7 @@
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
                                         <p><?php echo $fb_From2;?></p>
-                                        <p><small><?php echo $fb_CreateDate2;?></small></p>
+                                        <p><small><?php echo $feedDateTw2;?></small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
                             </div><!--/ .footer -->
