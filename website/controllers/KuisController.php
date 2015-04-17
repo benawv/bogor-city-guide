@@ -169,7 +169,7 @@ class KuisController extends Website_Controller_Action {
 			$asset->setFilename($dateNow."_".$key);
 			$asset->setData(IMAGE_SOURCE);
 			
-			
+			$uploadOk = 0;
 			
 			try{
 				if($asset->save())
@@ -182,18 +182,27 @@ class KuisController extends Website_Controller_Action {
 					
 					if(move_uploaded_file($_FILES["uploadFoto"]["tmp_name"], $target_file))
 					{
+						$uploadOk = 1;
 						$saveKuis->save();
 					
 						//Create PDF
 						$this->createPdfAction($namaPeserta,$saveNoDada);
 						$this->sendAction($saveNoDada,$emailPeserta,$namaPeserta);
-						
-						$this->redirect("/thanks/terima-kasih");
+					}
+					else{
+						$uploadOk = 0;
 					}
 				}
 			}
 			catch(Exception $e){
 				echo 'ERROR: ',  $e->getMessage(), "\n";
+			}
+			if($uploadOk == 1)
+			{
+				$this->redirect("/thanks/terima-kasih");
+			}
+			else{
+				$this->redirect("/");
 			}
 		}
 		else{
