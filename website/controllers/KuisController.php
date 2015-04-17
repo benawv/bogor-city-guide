@@ -166,7 +166,7 @@ class KuisController extends Website_Controller_Action {
 			$asset->setParentId(Asset_Folder::getByPath($assetFolder)->getId());
 			
 			// That's the key
-			$asset->setFilename($dateNow."_".$key);
+			$asset->setFilename(strtolower($dateNow."_".$key));
 			//$asset->setData(IMAGE_SOURCE);
 			
 			$uploadOk = 0;
@@ -178,7 +178,7 @@ class KuisController extends Website_Controller_Action {
 				
 					//CUSTOM
 					$target_dir = "./website/var/assets/ajfc/foto-peserta/";
-					$target_file = $target_dir.$dateNow."_".basename($_FILES["uploadFoto"]["name"]);
+					$target_file = $target_dir.$dateNow."_".basename(strtolower($_FILES["uploadFoto"]["name"]));
 					
 					if(move_uploaded_file($_FILES["uploadFoto"]["tmp_name"], $target_file))
 					{
