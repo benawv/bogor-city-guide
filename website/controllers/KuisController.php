@@ -143,7 +143,7 @@ class KuisController extends Website_Controller_Action {
 			$file_n = $_FILES['uploadFoto']['name'];
 			$tmp_name = $_FILES['uploadFoto']['tmp_name'];
 			
-			$file_name = str_replace(' ', '_', $files_n);
+			$file_name = str_replace(' ', '_', $file_n);
 			
 			$dateNow = strtotime(date('Y-m-d H:i:s'));
 			
