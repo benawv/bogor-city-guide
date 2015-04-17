@@ -157,7 +157,7 @@ class KuisController extends Website_Controller_Action {
 			
 			// Optionally set the creation date
 			$asset->setCreationDate ( time() );
-			
+			$asset->setType('image');
 			// Optionally set the user
 			$asset->setUserOwner (1);
 			$asset->setUserModification (1);
