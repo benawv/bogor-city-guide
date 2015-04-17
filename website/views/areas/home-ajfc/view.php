@@ -334,7 +334,7 @@
                                     $tw_TypeAsset1  =$items3->TypeAsset;
                                     $tw_LinkFeed1   =$items3->LinkFeed;
                                     $tw_Messages1   =$items3->Messages;
-                                    $feedDateTw1=date('dS, F Y h:i:s A', strtotime($fb_CreateDate1));
+                                    $feedDateTw1=date('dS, F Y h:i:s A', strtotime($tw_CreateDate1));
                                     }
                                    $tw1++;
                                 }
@@ -358,7 +358,7 @@
                                     $tw_TypeAsset2  =$items4->TypeAsset;
                                     $tw_LinkFeed2   =$items4->LinkFeed;
                                     $tw_Messages2   =$items4->Messages;
-                                    $feedDateTw2=date('dS, F Y h:i:s A', strtotime($fb_CreateDate2));
+                                    $feedDateTw2=date('dS, F Y h:i:s A', strtotime($tw_CreateDate2));
                                     }
                                    $tw2++;
                                 }
