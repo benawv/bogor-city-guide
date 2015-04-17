@@ -139,8 +139,16 @@ function resizePageWrapper( additionalHeight )
     if( $( '.page-wrapper-outer > .page-wrapper' ).length > 0 )
     {
         var windowWidth = $( window ).outerWidth();
-        console.log( windowWidth );
         var refHeight = $( '.page-wrapper-outer > .page-wrapper' ).outerHeight();
+
+        if( $( '.page-wrapper-outer > .page-wrapper' ).hasClass( 'gallery-wrapper' ) )
+        {
+            if( additionalHeight == 0 )
+            {
+                additionalHeight = 160;
+            }
+        }
+
         if( $( '.page-wrapper-outer > .page-wrapper .main-content' ).length == 1 )
         {
             var refHeight = $( '.page-wrapper-outer > .page-wrapper .main-content' ).outerHeight();
@@ -149,7 +157,6 @@ function resizePageWrapper( additionalHeight )
                 if( $( '.page-wrapper-outer > .page-wrapper .sidebar' ).length > 0 )
                 {
                     var sidebarHeight = $( '.page-wrapper-outer > .page-wrapper .sidebar' ).outerHeight();
-                    // console.log( 'Ada sidebarnya, tingginya ' + sidebarHeight );
                     refHeight = refHeight + ( 1 * sidebarHeight );
                 }
             }
@@ -158,8 +165,6 @@ function resizePageWrapper( additionalHeight )
         $( '.page-wrapper-outer' ).stop().animate({
             'min-height': newHeight + 'px'
         }, 300);
-        // console.log( 'refHeight: ' + refHeight + 'px' );
-        // console.log( 'newHeight: ' + newHeight + 'px' );
     }
 }
 

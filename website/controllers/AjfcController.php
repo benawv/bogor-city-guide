@@ -22,10 +22,29 @@ class AjfcController extends Website_Controller_Action {
 			'appId' => $appId,
 			'secret' => $secret,
 		);
-		$Facebook=new Facebook($config);
-		$BaseFacebook=new FacebookApiException($config);
-		$twitteroauth=new TwitterOAuth();
+		$facebook=new Facebook($config);
 		
+		
+		$appId='727536864031162';
+		$secret = 'ddccc4384fd244f82a7a3fb4b346f064';
+		$access_token='CAAKVsOBXcboBAIjGJtRtdYsWY4qDpO4daXZCFEYF3rNh3p00ikIqqMB47qfUb2DZCSVe39Tcvcso9H7cGTZC2D0PbLkIzZC28gVj6mXo0Es7IhD5z2AOcuPlmfg1yMNnjZBpRUBgYZBQ7ZBR48hQ9iTxQ1sBkg5YnNBSbzHrZBtiBzXlFE9T1NCIF3c6pNJVlZBWmpeIFXn6CJ6GVTawuJ9gSEEqJnFiPCZBkZD';
+		$accounts = json_decode($this->open_api_template('https://graph.facebook.com/me/accounts?access_token='.$access_token,$appId,$secret));
+
+		if(isset($accounts->data)){
+		    foreach($accounts->data as $account){
+			if($account->id == $page_id)
+			    $facebook->setAccessToken($access_token);
+			   
+		    }
+		}
+		
+		 $this->feeds=$facebook->api('164934653709133/feed');
+		 //$this->feeds=$facebook->api('1587275824864190/picture');
+		
+		
+		
+		
+		$twitteroauth=new TwitterOAuth();	
 		$this->tw_connection = $twitteroauth->create('iCin1AqYPO3AOpwGySuxEcCV5','lel0lh8FVV6xsXRpWXaAxHkbL87srnVJvm8aX626vMvDua1v0a','52367165-VqEH02VOy3qN8wBDhpV7IDAMFgVz2KTLbkNlndsXK','GbagBCzfdGy1Rxy6eJlNIBhqx6pqprczmZhrhoXKsO6CW');
 		
 	
@@ -127,78 +146,126 @@ class AjfcController extends Website_Controller_Action {
 	function SetAccessToken($access_token, $page_id){
 		$appId='727536864031162';
 		$secret = 'ddccc4384fd244f82a7a3fb4b346f064';
-		$accounts = json_decode($this->open_api_template('https://graph.facebook.com/me/accounts?access_token='.$access_token,$appId,$apiKey));
+		$access_token='CAAKVsOBXcboBAIjGJtRtdYsWY4qDpO4daXZCFEYF3rNh3p00ikIqqMB47qfUb2DZCSVe39Tcvcso9H7cGTZC2D0PbLkIzZC28gVj6mXo0Es7IhD5z2AOcuPlmfg1yMNnjZBpRUBgYZBQ7ZBR48hQ9iTxQ1sBkg5YnNBSbzHrZBtiBzXlFE9T1NCIF3c6pNJVlZBWmpeIFXn6CJ6GVTawuJ9gSEEqJnFiPCZBkZD';
+		$accounts = json_decode($this->open_api_template('https://graph.facebook.com/me/accounts?access_token='.$access_token,$appId,$secret));
+
 		if(isset($accounts->data)){
 		    foreach($accounts->data as $account){
 			if($account->id == $page_id)
-			    $Facebook->setAccessToken($account->access_token);
+			    $facebook->setAccessToken($access_token);
 		    }
 		}
 	}
 	
-	public function cronAjfcAction () {
+	public function cronAjfcTwAction () {		
+					
+		$result_tw = $this->tw_connection->get('search/tweets',
+                                         array("q"=>'%23ajfc2015',"count" => 10));
+       		$j=0;
+		
+		
+		$getId=Object_Abstract::getByPath('/social-feed/');
 
+		if(isset($result_tw)){
+		    $namakey ='facebook'."_".strtotime(date("YmdHis"));
+		    foreach($result_tw as $tweet){
+			foreach($tweet as $tweets){
+				
+				if(isset($tweets->id_str)!=''){
+					
+					$exsistFeedTwitter = new Object_SocialMediaFeed_List();
+					$exsistFeedTwitter->setCondition("streamId = '".$tweets->id_str."'");					
+					$exsistFeedTwitter->setUnpublished('true');
+					
+					foreach($exsistFeedTwitter as $extId){
+						$extistStreamId=$extId->StreamId;
+					}
+					
+					if(isset($extistStreamId) != isset($tweets->id_str)){
+						$entries=Object_Abstract::getByPath('/social-media-config/twitter');
+						$feedFb = new Object_SocialMediaFeed();
+						$feedFb->setsocialMediaType($entries);
+						$feedFb->setStreamId($tweets->id_str);
+						$feedTwitter->setFrom($tweets->user->name);
+						$feedTwitter->setUserImages($tweets->user->profile_image_url);
+						$feedTwitter->setCreateDate($tweets->created_at);
+						$feedTwitter->setFromId($tweets->user->id);
+						$feedTwitter->setLinkAsset($tweets->screen_name);
+						$feedTwitter->setTypeAsset('images');
+						$feedTwitter->setLinkFeed($tweets->entities->media[0]->media_url);
+						$feedTwitter->setMessages($tweets->text);
+						$feedTwitter->setKey(strtolower($namakey.$j.rand()));
+						$feedTwitter->setO_parentId($getId->o_id);
+						$feedTwitter->setIndex(0);
+						$feedTwitter->setPublished(0);
+						$feedTwitter->save();
+					}
+				}
+			$j++;
+			}
+		    
+		    }
+		 
+		}
+		echo 'cron twitter sukses sebanyak:'.$j;
+	}
 	
+	public function cronAjfcFbAction () {
+		
+		$getId=Object_Abstract::getByPath('/social-feed/');
 		$getConfig=json_decode($this->getSocialMediaConf('facebook')); //GET Config Facebook API
 		$apiKey=$getConfig->apiKey;
 		$appId=$getConfig->appId;
 		$callbackurl=$getConfig->callbackurl;
-		
-		$accounts = json_decode($this->open_api_template('https://graph.facebook.com/me/accounts?access_token=CAAKVsOBXcboBABO4cgR4nCpGyZC0SHkhenNp4HLvmhfR1wemU03RmZC0ZAeZBrXKYR5kB0eRRjbboIL7apcjnM9Ik7BblYjsF9rXHUtP6XQioiYNRPUyjGahZC6nrTfZAxSv7XTZBPzsTBfrE3ECobak1fujrh3PMMAZAzzPZBa2oIqZBPkpRH8nOSlEk62hbegDhZBZA3E2cXgfDn7DouI4bxLvc7UkD2vGuLsZD',$appId,$apiKey));
-		echo "<pre>";
-		print_r($accounts->data[1]->id);
-		echo "</pre>";
-		$acesstoken=$this->SetAccessToken($accounts->data[1]->access_token,$accounts->data[1]->id);
-		
-		
-		
-		//$url="'https://graph.facebook.com/me/')";
-		$appId='727536864031162';
-		$secret = 'ddccc4384fd244f82a7a3fb4b346f064';
-		//$result = $Facebook->api('/me/posts');
-		//print_r($result);
-		//$getAuth=$this->open_api_template($url,$appId,$apiKey);
-		//$post = $this->facebook_model->RetrievePost($channel->social_id, $channel->oauth_token);
-		//echo "<pre>";
-		//print_r($getAuth);
-		//echo "</pre>";
-		
-		$result_tw = $this->tw_connection->get('search/tweets',
-                                         array("q"=>'%231ygterpenting',"count" => 5));
-       		$j=0;
-		
-		if(isset($result_tw)){
-		    $namakey ='twitter'."_".strtotime(date("YmdHis"));
-		    foreach($result_tw as $tweet){
-			foreach($tweet as $tweets){
-				$exsistFeedTwitter = new Object_SocialMediaFeed();
-				
-				if(isset($tweets->id_str)!=''){
-				//cron data twitter
-					$entries=Object_Abstract::getById(1423);
-					$feedTwitter = new Object_SocialMediaFeed();
-					$feedTwitter->setsocialMediaType($entries);
-					$feedTwitter->setStreamId($tweets->id_str);
-					$feedTwitter->setFrom($tweets->user->name);
-					$feedTwitter->setUserImages($tweets->user->profile_image_url);
-					$feedTwitter->setCreateDate($tweets->created_at);
-					$feedTwitter->setFromId($tweets->user->id);
-					$feedTwitter->setLinkAsset($tweets->screen_name);
-					$feedTwitter->setTypeAsset('images');
-					$feedTwitter->setLinkFeed($tweets->entities->media[0]->media_url);
-					$feedTwitter->setMessages($tweets->text);
-					$feedTwitter->setKey(strtolower($namakey.$j.rand()));
-					$feedTwitter->setO_parentId('1452');
-					$feedTwitter->setIndex(0);
-					$feedTwitter->setPublished(0);
-					$feedTwitter->save();
+		$extistStreamId=0;
+		$i=0;
+		$namakey ='facebook'."_".strtotime(date("YmdHis"));
+		foreach($this->feeds as $feeds){
+			foreach($feeds as $items){
+				if(isset($items[id])!=''){
+					
+					$exsistFeedFb = new Object_SocialMediaFeed_List();
+					$exsistFeedFb->setCondition("streamId = '".$items[id]."'");					
+					$exsistFeedFb->setUnpublished('true');
+					
+					foreach($exsistFeedFb as $extId){
+						$extistStreamId=$extId->StreamId;
+					}									
+
+					if($extistStreamId != $items[id]){
+						$entries=Object_Abstract::getByPath('/social-media-config/facebook');
+						$feedFb = new Object_SocialMediaFeed();
+						$feedFb->setsocialMediaType($entries);
+						$feedFb->setStreamId($items[id]);
+						$feedFb->setFrom($items[from][name]);
+						//$feedFb->setUserImages($items->user->profile_image_url);
+						$feedFb->setCreateDate($items[created_time]);
+						$feedFb->setFromId($items[from][id]);
+						$feedFb->setLinkAsset($items[from][name]);
+						$feedFb->setTypeAsset('images');
+						$feedFb->setLinkFeed($items[id]);
+						$feedFb->setMessages($items[message]);
+						$feedFb->setKey(strtolower($namakey.$j.rand()));
+						$feedFb->setO_parentId($getId->o_id);
+						$feedFb->setIndex(0);
+						$feedFb->setPublished(0);
+						$feedFb->save();
+						echo "<pre>";
+						print_r($items);
+						echo "</pre>";
+					}
 				}
+				
 			}
-		    $j++;
-		    }
-		   
 		}
-	echo 'cron twitter sukses sebanyak:'.$j;
+		
+		//$this->SetAccessToken($access_token, $page_id);
+		//$result = $Facebook->api('/me/feed');
+		
+		//$this->facebook->api('/me/feed');
+		//$url="'https://graph.facebook.com/me/')";
+			
+
 	}
 	
 

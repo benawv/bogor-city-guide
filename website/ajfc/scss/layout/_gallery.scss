@@ -13,6 +13,11 @@ section.gallery-wrapper
         }
     }
 
+    &.page-wrapper
+    {
+        margin-top: -32px !important;
+    }
+
     .gallery-item
     {
         background: $color_red;
@@ -25,7 +30,7 @@ section.gallery-wrapper
             .row > div[class^="col-"]:first-child > .gallery-item--text::before
             {
                 border-left-color: $color_blue;
-                @media ( max-width: 480px )
+                @media ( max-width: 767px )
                 {
                     border-top-color: $color_blue;
                 }
@@ -34,7 +39,7 @@ section.gallery-wrapper
             .row > div[class^="col-"]:last-child > .gallery-item--text::before
             {
                 border-right-color: $color_blue;
-                @media ( max-width: 480px )
+                @media ( max-width: 767px )
                 {
                     border-bottom-color: $color_blue;
                 }
@@ -49,7 +54,7 @@ section.gallery-wrapper
             .row > div[class^="col-"]:first-child > .gallery-item--text::before
             {
                 border-left-color: $color_blue_light;
-                @media ( max-width: 480px )
+                @media ( max-width: 767px )
                 {
                     border-top-color: $color_blue_light;
                 }
@@ -58,7 +63,7 @@ section.gallery-wrapper
             .row > div[class^="col-"]:last-child > .gallery-item--text::before
             {
                 border-right-color: $color_blue_light;
-                @media ( max-width: 480px )
+                @media ( max-width: 767px )
                 {
                     border-bottom-color: $color_blue_light;
                 }
@@ -72,7 +77,7 @@ section.gallery-wrapper
             .row > div[class^="col-"]:first-child > .gallery-item--text::before
             {
                 border-left-color: $color_green;
-                @media ( max-width: 480px )
+                @media ( max-width: 767px )
                 {
                     border-top-color: $color_green;
                 }
@@ -81,7 +86,7 @@ section.gallery-wrapper
             .row > div[class^="col-"]:last-child > .gallery-item--text::before
             {
                 border-right-color: $color_green;
-                @media ( max-width: 480px )
+                @media ( max-width: 767px )
                 {
                     border-bottom-color: $color_green;
                 }
@@ -95,7 +100,7 @@ section.gallery-wrapper
             .row > div[class^="col-"]:first-child > .gallery-item--text::before
             {
                 border-left-color: $color_orange;
-                @media ( max-width: 480px )
+                @media ( max-width: 767px )
                 {
                     border-top-color: $color_orange;
                 }
@@ -104,7 +109,7 @@ section.gallery-wrapper
             .row > div[class^="col-"]:last-child > .gallery-item--text::before
             {
                 border-right-color: $color_orange;
-                @media ( max-width: 480px )
+                @media ( max-width: 767px )
                 {
                     border-bottom-color: $color_orange;
                 }
@@ -118,7 +123,7 @@ section.gallery-wrapper
             .row > div[class^="col-"]:first-child > .gallery-item--text::before
             {
                 border-left-color: $color_satan;
-                @media ( max-width: 480px )
+                @media ( max-width: 767px )
                 {
                     border-top-color: $color_satan;
                 }
@@ -127,7 +132,7 @@ section.gallery-wrapper
             .row > div[class^="col-"]:last-child > .gallery-item--text::before
             {
                 border-right-color: $color_satan;
-                @media ( max-width: 480px )
+                @media ( max-width: 767px )
                 {
                     border-bottom-color: $color_satan;
                 }
@@ -141,7 +146,7 @@ section.gallery-wrapper
             .row > div[class^="col-"]:first-child > .gallery-item--text::before
             {
                 border-left-color: $color_maroon;
-                @media ( max-width: 480px )
+                @media ( max-width: 767px )
                 {
                     border-top-color: $color_maroon;
                 }
@@ -150,7 +155,7 @@ section.gallery-wrapper
             .row > div[class^="col-"]:last-child > .gallery-item--text::before
             {
                 border-right-color: $color_maroon;
-                @media ( max-width: 480px )
+                @media ( max-width: 767px )
                 {
                     border-bottom-color: $color_maroon;
                 }
@@ -164,7 +169,7 @@ section.gallery-wrapper
             .row > div[class^="col-"]:first-child > .gallery-item--text::before
             {
                 border-left-color: $color_purple;
-                @media ( max-width: 480px )
+                @media ( max-width: 767px )
                 {
                     border-top-color: $color_purple;
                 }
@@ -173,7 +178,7 @@ section.gallery-wrapper
             .row > div[class^="col-"]:last-child > .gallery-item--text::before
             {
                 border-right-color: $color_purple;
-                @media ( max-width: 480px )
+                @media ( max-width: 767px )
                 {
                     border-bottom-color: $color_purple;
                 }
@@ -188,9 +193,15 @@ section.gallery-wrapper
             position: relative;
             // display: table;
 
-            @media ( max-width: 480px )
+            & > div[class^="col-"]
             {
-                & > div[class^="col-"]
+                position: relative;
+                padding: 0;
+                display: table-cell;
+                float: none !important;
+                vertical-align: middle;
+
+                @media ( max-width: 767px )
                 {
                     position: relative;
                     width: 100%;
@@ -201,17 +212,7 @@ section.gallery-wrapper
                         padding: 32px 0;
                         min-height: 256px !important;
                     }
-
                 }
-            }
-
-            & > div[class^="col-"]
-            {
-                position: relative;
-                padding: 0;
-                display: table-cell;
-                float: none !important;
-                vertical-align: middle;
 
                 &:first-child
                 {
@@ -219,7 +220,7 @@ section.gallery-wrapper
                     {
                         &::before
                         {
-                            @media (min-width:481px)
+                            @media (min-width: 768px)
                             {
                                 content: "";
                                 position: absolute;
@@ -231,7 +232,7 @@ section.gallery-wrapper
                                 z-index: 999;
                             }
 
-                            @media ( max-width: 480px )
+                            @media ( max-width: 767px )
                             {
                                 content: "";
                                 position: absolute;
@@ -253,7 +254,7 @@ section.gallery-wrapper
                     {
                         &::before
                         {
-                            @media (min-width:481px)
+                            @media (min-width:768px)
                             {
                                 content: "";
                                 position: absolute;
@@ -265,7 +266,7 @@ section.gallery-wrapper
                                 z-index: 999;
                             }
 
-                            @media ( max-width: 480px )
+                            @media ( max-width: 767px )
                             {
                                 content: "";
                                 position: absolute;
@@ -297,6 +298,18 @@ section.gallery-wrapper
             cursor: default;
             min-height: 256px;
             min-width: 256px;
+
+            @media ( max-width: 767px )
+            {
+                min-height: 480px;
+                & > img
+                {
+                    width: auto !important;
+                    min-width: 0 !important;
+                    max-width: none !important;
+                }
+            }
+
             & > img
             {
                 width: auto;

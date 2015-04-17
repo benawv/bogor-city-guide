@@ -170,10 +170,10 @@
                                                 <div class="message-info">
                                                     <div class="form-group">
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="pasport" id="ya" value="Ya" checked="checked"> Ya
+                                                            <input type="radio" name="pasport" id="ya" value="Ya" /> Ya
                                                         </label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="pasport" id="tidak" value="Tidak"> Tidak
+                                                            <input type="radio" name="pasport" id="tidak" value="Tidak" /> Tidak
                                                         </label>
                                                     </div><!--/ .form-group -->
                                                     <div class="info-error"></div>
@@ -298,10 +298,15 @@
                                                         <div class="form-group nomargin">
                                                             <label class="radio-inline">
                                                                 <input type="radio" name="pekerjaan" id="lainnya" value="Lainnya"> Lainnya
+                                                                <!--<div class="form-group">
+                                                                    <input type="text" class="form-control" name="pekerjaan-lain" id="txt-lainnya" placeholder="Pekerjaan Lain">
+                                                                </div>--><!--/ .form-group -->
+                                                            </label>
+                                                            <div class="radio-inline kerja-lain" style="padding: 0;position: absolute;">
                                                                 <div class="form-group">
                                                                     <input type="text" class="form-control" name="pekerjaan-lain" id="txt-lainnya" placeholder="Pekerjaan Lain">
-                                                                </div><!--/ .form-group -->
-                                                            </label>
+                                                                </div>
+                                                            </div>
                                                         </div><!--/ .form-group -->
                                                     </div><!--/ .form-group -->
                                                 </div><!--/ .message-info -->
@@ -311,18 +316,22 @@
                                                 <label for="exampleInputName2">
                                                     Usia Orang Tua<span class="spanRed">*</span>
                                                 </label>
-                                                <div class="controls form-inline">
-                                                    <table>
-                                                        <tr>
-                                                            <td>Ayah</td>
-                                                            <td>: &nbsp;<input type="text" name="usiaAyah" class="form-control ttl" id="usiaAyah" placeholder="Tahun" maxlength="2" /></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Ibu</td>
-                                                            <td>: &nbsp;<input type="text" name="usiaIbu" class="form-control ttl" id="usiaIbu" placeholder="Tahun" maxlength="2" /></td>
-                                                        </tr>
-                                                    </table>
-                                                </div><!--/ .controls -->
+                                                <div class="message-info">
+                                                    <div class="controls form-inline">
+                                                        <table>
+                                                            <tr>
+                                                                <td>Ayah</td>
+                                                                <td>: &nbsp;</td>
+                                                                <td><input type="text" name="usiaAyah" class="form-control ttl" id="usiaAyah" placeholder="Tahun" maxlength="2" /></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Ibu</td>
+                                                                <td>: &nbsp;</td>
+                                                                <td><input type="text" name="usiaIbu" class="form-control ttl" id="usiaIbu" placeholder="Tahun" maxlength="2" /></td>
+                                                            </tr>
+                                                        </table>
+                                                    </div><!--/ .controls -->
+                                                </div>
                                             </div><!--/ .form-group -->
 
                                             <div class="form-group">
@@ -425,7 +434,7 @@
                                                     <!--Silahkan berikan tanda centang pada pernyataan dibawah ini <br />-->
                                                     <label class="checkbox-inline" style="padding-top: 0px;">
                                                         <input type="checkbox" id="checkbox-term" name="term">
-                                                        Saya setuju dengan ketentuan yang berlaku.
+                                                        Saya setuju dengan syarat dan ketentuan yang berlaku.
                                                     </label>
                                                     <span class="backClose" data-toggle="modal" data-target="#syarat">
                                                         Baca syarat dan ketentuan.
@@ -454,12 +463,12 @@
                                             </div><!--/ .form-group -->
 
                                             <div class="form-group">
-                                                <label for="pilih">Pilih Foto</label>
+                                                <label for="pilih">Pilih Foto (ukuran file foto maksimal 1 MB)</label>
                                                 <div class="pilih">
                                                     <div class="input-group">
                                                         <span class="input-group-btn">
                                                             <span class="btn btn-primary btn-file btn-choose">
-                                                                Pilih <input type="file" name="uploadFoto" class="image_peserta" />
+                                                                Pilih <input type="file" name="uploadFoto" class="image_peserta" accept="image/x-png, image/jpeg" />
                                                             </span>
                                                         </span>
                                                         <input type="text" class="form-control choose" readonly>
@@ -526,7 +535,7 @@
                                         <div class="col-xs-12">
 
                                             <div class="form-group">
-                                                <div class="row">
+                                                <div class="row cusSoal">
                                                     <div class="form-group gap ta-left">
                                                         <label for="tgl-lahir"><?php echo $number.". ".$row->getQuestion();?></label>
 
@@ -659,8 +668,22 @@ $(document).ready(function() {
         }
         else{
             $('.radio-inline input[type=text]').hide();
+            $(".kerja-lain .error").css("display","none");
         }
     });
+    
+    //$(".choose").change(function() {
+    //
+    //    var val = $(this).val();
+    //
+    //    switch(val.substring(val.lastIndexOf('.') + 1).toLowerCase()){
+    //        case 'gif': case 'jpg': case 'png': case 'jpeg':
+    //            break;
+    //        default:
+    //            $(this).val('');
+    //            break;
+    //    }
+    //});
 
     $("#hp-ortu").keypress(function (e) {
         //if the letter is not digit then display error and don't type anything
@@ -728,7 +751,10 @@ $(document).ready(function() {
     //                t = file.type,                           // ext only: // file.type.split('/')[1],
     //                n = file.name,
     //                s = ~~(file.size/1024) +'KB';
-    //            $('.image_peserta_preview').append('<img src="'+ this.src +'" alt="'+n+'"> '+w+'x'+h+' '+s+' '+t+' '+n+'<br>');
+    //                //$('.image_peserta_preview').append('<img src="'+ this.src +'" alt="'+n+'"> '+w+'x'+h+' '+s+' '+t+' '+n+'<br>');
+    //                if (s > 1024) {
+    //                    $('.image_peserta_preview').append('<label class="error">Ukuran file foto maksimal 1 MB.</label>');
+    //                }
     //        };
     //        image.onerror= function() {
     //            alert('Invalid file type: '+ file.type);
@@ -901,7 +927,47 @@ $(document).ready(function() {
         var input = $(this),
             numFiles = input.get(0).files ? input.get(0).files.length : 1,
             label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-        input.trigger('fileselect', [numFiles, label]);
+            input.trigger('fileselect', [numFiles, label]);
+    });
+    
+    function readImage(file) {
+    
+        var reader = new FileReader();
+        var image  = new Image();
+    
+        reader.readAsDataURL(file);
+        reader.onload = function(_file) {
+            image.src    = _file.target.result;              // url.createObjectURL(file);
+            image.onload = function() {
+                var w = this.width,
+                    h = this.height,
+                    t = file.type,                           // ext only: // file.type.split('/')[1],
+                    n = file.name,
+                    s = ~~(file.size/1024);
+                    //$('.image_peserta_preview').append('<img src="'+ this.src +'" alt="'+n+'"> '+w+'x'+h+' '+s+' '+t+' '+n+'<br>');
+                    if (s > 1024) {
+                        $('.image_peserta_preview .error').remove();
+                        $('.image_peserta_preview').append('<label class="error">Ukuran file foto maksimal 1 MB.</label>');
+                        $(".image_peserta").val("");
+                        $(".choose").val("");
+                    }
+                    else
+                    {
+                        $('.image_peserta_preview .error').remove();
+                    }
+            };
+            image.onerror= function() {
+                alert('Invalid file type: '+ file.type);
+                $(".image_peserta").val("");
+                $(".choose").val("");
+            };
+        };
+    
+    }
+    $(".image_peserta").change(function (e) {
+        if(this.disabled) return alert('File upload not supported!');
+        var F = this.files;
+        if(F && F[0]) for(var i=0; i<F.length; i++) readImage( F[i] );
     });
 
     $(document).ready( function() {
@@ -1008,6 +1074,14 @@ $(function() {
           },
                 uploadFoto:
           {
+                //validators: {
+                //    file: {
+                //        extension: 'jpeg,png',
+                //        type: 'image/jpeg,image/png',
+                //        maxSize: 1024,   // 2048 * 1024
+                //        message: 'The selected file is not valid'
+                //    }
+                //},
                 required: true
           },
                 pekerjaan:
@@ -1031,39 +1105,39 @@ $(function() {
         {
           pasport:
           {
-            required: "Mohon pilih apakah anda memiliki passport?"
+            required: "Mohon pilih apakah kamu memiliki passport?"
           },
           radioJK:
           {
-            required: "Mohon pilih jenis kelamin"
+            required: "Mohon pilih jenis kelamin."
           },
           alamat:
           {
-            required: "Mohon masukkan alamat Anda"
+            required: "Mohon masukkan alamat tinggal saat ini."
           },
           tmp:
           {
-            required: "Mohon masukkan tempat lahir Anda"
+            required: "Mohon masukkan tempat lahir kamu."
           },
           'no-telp':
           {
-            required: "Mohon masukkan no telepon Anda"
+            required: "Mohon masukkan no telepon kamu."
           },
           usiaAyah:
           {
-            required: "Mohon masukkan usia Ayah"
+            required: "Mohon masukkan usia Ayah kamu."
           },
           usiaIbu:
           {
-            required: "Mohon masukkan usia Ibu"
+            required: "Mohon masukkan usia Ibu kamu."
           },
           pendidikanAyah:
           {
-            required: "Mohon pilih pendidikan terakhir Ayah"
+            required: "Mohon pilih pendidikan terakhir Ayah kamu."
           },
           pendidikanIbu:
           {
-            required: "Mohon pilih pendidikan terakhir Ibu"
+            required: "Mohon pilih pendidikan terakhir Ibu kamu."
           },
           //pengeluaran:
           //{
@@ -1071,20 +1145,20 @@ $(function() {
           //},
           namaOrtu:
           {
-            required: "Mohon masukkan nama Orang tua Anda"
+            required: "Mohon masukkan nama orang tua kamu."
           },
           noHp:
           {
-            required: "Mohon masukkan nomor telepon Anda",
-            number: "Mohon masukkan angka"
+            required: "Mohon masukkan nomor telepon kamu.",
+            number: "Mohon masukkan angka."
           },
           jumSaudara:
           {
-            required: "Mohon masukkan jumlah saudara kandung termasuk Anda"
+            required: "Mohon masukkan jumlah saudara kandung termasuk kamu."
           },
           propinsi:
           {
-            required: "Mohon pilih propinsi"
+            required: "Mohon pilih kota/propinsi."
           },
           clickFB:
           {
@@ -1092,35 +1166,35 @@ $(function() {
           },
            emailOrtu:
           {
-            email: "Mohon masukkan email Orang tua yang benar"
+            email: "Mohon masukkan email orang tua kamu."
           },
             alamatOrtu:
           {
-            required: "Mohon masukkan alamat Orangtua"
+            required: "Mohon masukkan alamat lengkap orang tua"
           },
             halTerpenting:
           {
-            required: "Mohon masukkan hal yang terpenting dalam bermain bola"
+            required: "Ceritakan #1ygterpenting untuk memotivasi diri kamu dan tim."
           },
             uploadFoto:
           {
-            required: "Mohon pilih foto"
+            required: "Mohon upload foto kamu."
           },
             pekerjaan:
           {
-            required: "Mohon pilih pekerjaan"
+            required: "Mohon pilih pekerjaan orang tua."
           },
           'pekerjaan-lain':
           {
-                required: "Mohon isi pekerjaan orang tua"
+                required: "Mohon isi pekerjaan orang tua."
           },
           'info[]':
           {
-            required: "Mohon pilih informasi"
+            required: "Mohon pilih kamu dapat informasi tentang kamp."
           },
             term:
           {
-            required: "Mohon centang persetujuan yang berlaku"
+            required: "Mohon centang kamu setuju dengan syarat dan ketentuan yang berlaku."
           }
         },
         errorPlacement: function(error, element)
