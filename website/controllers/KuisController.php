@@ -144,15 +144,15 @@ class KuisController extends Website_Controller_Action {
 			$tmp_name = $_FILES['uploadFoto']['tmp_name'];
 			
 			$file_name = str_replace(' ', '_', $files_n);
-			$file_name = str_replace('.', "_".strtotime(date("YmdHis"))."." , $file_name);
 			
 			$dateNow = strtotime(date('Y-m-d H:i:s'));
 			
 			// Asset folder for the uploaded images
 			$assetFolder = "/ajfc/foto-peserta";
 			
+			$tmp_key = $dateNow."_".$file_name;
 			// The key is the unique name of an asset that is also used in the asset tree
-			$key = Pimcore_File::getValidFilename($dateNow."_".$file_name);
+			$key = Pimcore_File::getValidFilename($tmp_key);
 			
 			// Check if there is alraedy an image with the same key
 			if(!$asset = Asset::getByPath($assetFolder . "/" . $key)) {
@@ -173,7 +173,7 @@ class KuisController extends Website_Controller_Action {
 			$asset->setParentId(Asset_Folder::getByPath($assetFolder)->getId());
 			
 			// That's the key
-			$asset->setFilename($dateNow."_".$file_name);
+			$asset->setFilename($tmp_key);
 			$target_dir = "./website/var/assets/ajfc/foto-peserta/";
 			$target_file = $target_dir.$dateNow."_".basename($_FILES["uploadFoto"]["name"]);
 			$data = file_get_contents($target_file);
