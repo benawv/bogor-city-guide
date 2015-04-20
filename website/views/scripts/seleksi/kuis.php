@@ -7,22 +7,58 @@
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/main.css" />
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/data-table-1.10.4/media/css/jquery.dataTables.css" />
 
-<!--
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/flexslider.css">
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/tabs-accordion.css">
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/product.css">
--->
-
-<!--
-<script src="_assets/js/jquery.tools.min.js" type="text/javascript"></script>
-<script src="_assets/js/sticky-jquery.js" type="text/javascript"></script>
-<script src="/website/static/mobilku/jquery-1.10.2.js" type="text/javascript"></script>
-<script src="/website/static/mobilku/bootstrap.min.js" type="text/javascript"></script>
--->
-
 <!-- AJFC -->
 <link rel="stylesheet" type="text/css" href="/website/ajfc/css/style.css" />
 <script src="/website/ajfc/js/javascripts.js"></script>
+<style type="text/css">
+    .stepwizard
+    {
+        text-align: center;
+        position: relative;
+        display: block;
+    }
+
+    .stepwizard::before
+    {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        margin-top: -2px;
+        background: #ccc;
+    }
+
+    .stepwizard > .stepwizard-row
+    {
+        display: block;
+    }
+
+    .stepwizard > .stepwizard-row::before
+    {
+        content: none;
+    }
+
+    .stepwizard > .stepwizard-row > .stepwizard-step
+    {
+        display: inline-block;
+        margin: 0 16px;
+    }
+
+    @media ( max-width: 767px )
+    {
+        .container.boxes-view
+        {
+            padding: 0 !important;
+        }
+        .cusSoal
+        {
+            padding: 0 !important;
+        }
+    }
+
+</style>
 
 <!-- Plugins -->
 <script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
@@ -52,16 +88,9 @@
                     <div class="main-content nopadding">
 
 <div class="container boxes-view">
-
     <div id="newsletter-allianz" class="full-w bg-white">
-
         <div class="description">
-
             <div class="wizard-container">
-                <!-- <form method="post" action="/save-kuis">
-                <input type="text" name="alt" />
-                <input type="submit" value="kirim" />
-                </form>-->
                 <form id="myform" method="post" action="/save-kuis" enctype="multipart/form-data">
 
                     <div class="card wizard-card ct-wizard-blue" id="wizard">
@@ -76,7 +105,7 @@
                         <ul>
                             <li class="first"><a href="#tahap1" data-toggle="tab">Tahap 1</a></li>
                             <li class="second"><a href="#tahap2" data-toggle="tab">Tahap 2</a></li>
-                            <li class="third"><a href="#tahap3" data-toggle="tab">Tahap 3</a></li>
+                            <li class="third active"><a href="#tahap3" data-toggle="tab">Tahap 3</a></li>
                         </ul>
 
                         <br />
@@ -89,8 +118,6 @@
                                 <div class="container-fluid">
                                     <div class="row ta-left fc666">
                                         <div class="col-md-6">
-                                            <!--Select image to upload:
-                                            <input type="file" name="fileToUpload" id="fileToUpload">-->
                                             <?php foreach( $this->peserta as $row ){ ?>
                                             <input type="hidden" name="idPeserta" value="<?php echo $row->getO_id()."-".$row->getIdPeserta(); ?>" />
 
@@ -243,13 +270,6 @@
                                                 </label>
                                                 <textarea class="form-control" name="alamat" id="alamat" rows="3" style="height:70px !important" placeholder="Alamat Tempat Tinggal Saat Ini*"></textarea>
                                             </div><!--/ .form-group -->
-
-                                            <!--
-                                            <div class="form-group">
-                                                <label for="exampleInputName2">Apa 1 hal terpenting bagi kamu dalam bermain bola?*</label>
-                                                <textarea class="form-control" rows="3" style="height:70px !important"></textarea>
-                                            </div>
-                                            -->
 
                                             <?php } ?>
 
@@ -441,8 +461,6 @@
                                                     </span>
                                                 </div><!--/ .form-group -->
                                             </div><!--/ .checkbox-info -->
-                                            <!--<button class="unggah" name="signup" type="submit">UNGGAH</button>-->
-
                                         </div><!--/ .col-md-12 -->
 
                                     </div><!--/ .row -->
@@ -492,92 +510,76 @@
                                 </div><!--/ .container-fluid -->
                             </div><!--/ .tab-pane#tahap2 -->
 
-                            <div class="tab-pane" id="tahap3">
-
-                                <div class="stepwizard">
-
+                            <div class="tab-pane active" id="tahap3">
+                                <div class="stepwizard hidden-xs">
                                     <div class="stepwizard-row setup-panel">
                                         <?php
-                                            $soal = new Object_Quiz_List();
+                                            $soal   = new Object_Quiz_List();
                                             $number = 1;
-                                            foreach( $soal as $row )
-                                            {
-                                                if($number == 1)
-                                                {
+                                            foreach( $soal as $row ):
+                                                if($number == 1):
                                                     $disable = '';
                                                     $class = 'class="btn btn-primary btn-circle"';
-                                                }
-                                                else
-                                                {
+                                                else:
                                                     $disable = 'disabled="disabled"';
                                                     $class = 'class="btn btn-default btn-circle"';
-                                                }
+                                                endif;
+                                                $attribute = $class . ' ' . $disable;
                                         ?>
                                         <div class="stepwizard-step">
-                                            <a href="#step-<?php echo $number;?>" type="button" <?php echo $class."  ".$disable;?> ><?php echo $number;?></a>
+                                            <a href="#step-<?php echo $number; ?>" type="button" <?php echo $attribute; ?>>
+                                                <?php echo $number; ?>
+                                            </a>
                                         </div><!--/ .stepwizard-step -->
                                         <?php
                                             $number++;
-                                        }
+                                        endforeach;
                                         ?>
                                     </div><!--/ .stepwizard-row -->
                                 </div><!--/ .stepwizard -->
 
                                 <form role="form">
                                     <?php
-                                    $soal = new Object_Quiz_List();
+                                    $soal   = new Object_Quiz_List();
                                     $number = 1;
-                                    foreach( $soal as $row )
-                                    {
-                                        $sum_choice = count($row->answer->items);
+                                    foreach( $soal as $row ):
+                                        $sum_choice = count( $row->answer->items );
                                     ?>
                                     <div class="row setup-content" id="step-<?php echo $number;?>">
                                         <div class="col-xs-12">
-
                                             <div class="form-group">
                                                 <div class="row cusSoal">
                                                     <div class="form-group gap ta-left">
-                                                        <label for="tgl-lahir"><?php echo $number.". ".$row->getQuestion();?></label>
-
-                                                          <div class="form-group">
-                                                                <?php for($x = 0; $x < $sum_choice; $x++){?>
-                                                                    <div class="radio">
-                                                                        <label>
-                                                                          <input type="radio" id="no1a" name="soal<?php echo $number;?>" value="<?php echo $row->answer->items[$x]->index; ?>">
-                                                                              <?php echo $row->answer->items[$x]->getIsi_jawaban();?>
-                                                                        </label>
-                                                                    </div>
-                                                                <?php }?>
-
-                                                          </div><!--/ .form-group -->
+                                                        <label><?php echo $number.". ".$row->getQuestion();?></label>
+                                                        <div class="form-group">
+                                                            <?php for( $x = 0; $x < $sum_choice; $x++ ): ?>
+                                                            <div class="radio">
+                                                                <label>
+                                                                    <input type="radio" id="no1a" name="soal<?php echo $number;?>" value="<?php echo $row->answer->items[$x]->index; ?>">
+                                                                    <?php echo $row->answer->items[$x]->getIsi_jawaban();?>
+                                                                </label>
+                                                            </div>
+                                                            <?php endfor; ?>
+                                                        </div><!--/ .form-group -->
                                                     </div><!--/ .form-group -->
                                                 </div><!--/ .row -->
-
-                                                <!-- <label class="control-label">1</label>
-                                                <input  maxlength="100" type="text" required="required" class="form-control" placeholder="Enter First Name"  /> -->
                                             </div><!--/ .form-group -->
 
-                                            <?php if($number != count($soal)){?>
-                                                <button class="nextBtn next-question pull-left" type="button" >Selanjutnya</button>
-                                            <?php }?>
+                                            <?php if( $number > 1 ): ?>
+                                            <button class="prevBtn next-question pull-left" type="button" style="margin-right: 8px !important;">Sebelumnya</button>
+                                            <?php endif; ?>
 
-                                            </div><!--/ .col-xs-12 -->
-                                        </div><!--/ .row -->
+                                            <?php if( $number != count( $soal ) ): ?>
+                                                <button class="nextBtn next-question pull-left" type="button" >Selanjutnya</button>
+                                            <?php endif; ?>
+
+                                        </div><!--/ .col-xs-12 -->
+                                    </div><!--/ .row -->
 
                                     <?php
                                         $number++;
-                                    }
+                                    endforeach;
                                     ?>
-
-                                    <!--
-                                    <div class="row setup-content" id="step-4">
-                                    <div class="col-xs-12">
-                                    <div class="col-md-12">
-                                    <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
-                                    </div>
-                                    </div>
-                                    </div>
-                                    -->
 
                                 </form>
 
@@ -585,15 +587,13 @@
                         </div><!--/ .tab-content -->
 
                         <div class="wizard-footer">
-                            <div class="pull-right">
-                                <input type='button' class='btn btn-next btn-fill btn-warning btn-wd btn-sm' name='next' value='Lanjut' />
-                                <?php //if(($number-1) == count($soal)){?>
-                                <input type='submit' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm hide' name='finish' value='Finish' />
-                                <?php //}?>
-                            </div><!--/ .pull-right -->
                             <div class="pull-left">
-                                <input type='button' class='btn btn-previous btn-fill btn-warning btn-wd btn-sm' name='previous' value='Kembali' />
+                                <input type="button" class="btn btn-previous btn-fill btn-warning btn-wd btn-sm" name="previous" value="Tahap Sebelumnya" />
                             </div><!--/ .pull-left -->
+                            <div class="pull-right">
+                                <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm" name="next" value="Tahap Selanjutnya" />
+                                <input type="submit" class="btn btn-finish btn-fill btn-warning btn-wd btn-sm hide" name="finish" value="Selesai" />
+                            </div><!--/ .pull-right -->
                             <div class="clearfix"></div>
                         </div><!--/ .wizard-footer -->
 
@@ -659,186 +659,116 @@
 
 <script type="text/javascript">
 
-$(document).ready(function() {
-    
-    $('.radio-inline input[type=text]').hide();
-    $('input[type=radio][name=pekerjaan]').change(function() {
-        if (this.value == 'Lainnya') {
-            $('.radio-inline input[type=text]').show();
-        }
-        else{
-            $('.radio-inline input[type=text]').hide();
-            $(".kerja-lain .error").css("display","none");
-        }
-    });
-    
-    //$(".choose").change(function() {
-    //
-    //    var val = $(this).val();
-    //
-    //    switch(val.substring(val.lastIndexOf('.') + 1).toLowerCase()){
-    //        case 'gif': case 'jpg': case 'png': case 'jpeg':
-    //            break;
-    //        default:
-    //            $(this).val('');
-    //            break;
-    //    }
-    //});
+$( document ).ready(function(){
 
-    $("#hp-ortu").keypress(function (e) {
-        //if the letter is not digit then display error and don't type anything
-        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-            //display error message
-            //$("#errmsg").html("Digits Only").show().fadeOut("slow");
-            return false;
+    $( '.radio-inline input[type=text]' ).hide();
+
+    $( 'input[type="radio"][name="pekerjaan"]' ).change(function(){
+        if (this.value == 'Lainnya')
+        {
+            $('.radio-inline input[type="text"]').show();
+        }
+        else
+        {
+            $('.radio-inline input[type="text"]').hide();
+            $('.kerja-lain .error').css( 'display', 'none' );
         }
     });
 
-    $("#jumSaudara").keypress(function (e) {
-        //if the letter is not digit then display error and don't type anything
-        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-            //display error message
-            //$("#errmsg").html("Digits Only").show().fadeOut("slow");
-            return false;
-        }
-    });
-
-    $("#no-tlp").keypress(function (e) {
-        //if the letter is not digit then display error and don't type anything
-        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-            //display error message
-            //$("#errmsg").html("Digits Only").show().fadeOut("slow");
-            return false;
-        }
-    });
-
-    $("#usiaAyah").keypress(function (e) {
-        //if the letter is not digit then display error and don't type anything
-        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-            //display error message
-            //$("#errmsg").html("Digits Only").show().fadeOut("slow");
-            return false;
-        }
-    });
-
-    $("#usiaIbu").keypress(function (e) {
-        //if the letter is not digit then display error and don't type anything
-        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-            //display error message
-            //$("#errmsg").html("Digits Only").show().fadeOut("slow");
-            return false;
-        }
-    });
-
-    //$('#myModal').modal();
-    var navListItems = $('div.setup-panel div a'),
-        allWells = $('.setup-content'),
-        allNextBtn = $('.nextBtn');
-
-    allWells.hide();
-
-    //function readImage(file) {
-    //
-    //    var reader = new FileReader();
-    //    var image  = new Image();
-    //
-    //    reader.readAsDataURL(file);
-    //    reader.onload = function(_file) {
-    //        image.src    = _file.target.result;              // url.createObjectURL(file);
-    //        image.onload = function() {
-    //            var w = this.width,
-    //                h = this.height,
-    //                t = file.type,                           // ext only: // file.type.split('/')[1],
-    //                n = file.name,
-    //                s = ~~(file.size/1024) +'KB';
-    //                //$('.image_peserta_preview').append('<img src="'+ this.src +'" alt="'+n+'"> '+w+'x'+h+' '+s+' '+t+' '+n+'<br>');
-    //                if (s > 1024) {
-    //                    $('.image_peserta_preview').append('<label class="error">Ukuran file foto maksimal 1 MB.</label>');
-    //                }
-    //        };
-    //        image.onerror= function() {
-    //            alert('Invalid file type: '+ file.type);
-    //        };
-    //    };
-    //
-    //}
-    //$(".image_peserta").change(function (e) {
-    //    if(this.disabled) return alert('File upload not supported!');
-    //    var F = this.files;
-    //    if(F && F[0]) for(var i=0; i<F.length; i++) readImage( F[i] );
-    //});
-
-    //loading-ajfc
-    $(".btn-finish").on("click",function(){
-        $(".loading-ajfc").show();
-    });
-
-    //$(".btn-next").on("click",function(){
-    //    $.ajax({
-    //        url: '/save-kuis',
-    //        type: 'post',
-    //        dataType: 'json',
-    //        data: $('form').serialize(),
-    //        success: function(data) {
-    //            alert("success");
-    //        }
-    //    });
-    //});
-
-    $(".btn-previous").on( "click", function() {
-        $('html, body').animate({
-            scrollTop: $(".first").offset().top
-        }, 500, function(){
-            resizePageWrapper();
-        });
-    });
-
-    $(".btn-next").on( "click", function() {
-        $('html, body').animate({
-            scrollTop: $(".first").offset().top
-        }, 500, function(){
-            resizePageWrapper();
-        });
-    });
-
-    //console.log(image[0]);
-    //console.log((shuffle(image))[0]);
-    //console.log(shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]));
-    function shuffle(o){ //v1.0
+    function shuffle(o)
+    {
         for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
         return o;
     };
 
-    $(".next-question").click(function(){
+    function validateNumeral( e )
+    {
+        //if the letter is not digit then display error and don't type anything
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            return false;
+        }
+    }
+
+    $("#hp-ortu").keypress(function(e){
+        return validateNumeral(e);
+    });
+
+    $("#jumSaudara").keypress(function(e){
+        return validateNumeral(e);
+    });
+
+    $("#no-tlp").keypress(function(e){
+        return validateNumeral(e);
+    });
+
+    $("#usiaAyah").keypress(function(e){
+        return validateNumeral(e);
+    });
+
+    $("#usiaIbu").keypress(function(e){
+        return validateNumeral(e);
+    });
+
+    var navListItems    = $( 'div.setup-panel div a' );
+    var allWells        = $( '.setup-content' );
+    var allNextBtn      = $( '.nextBtn' );
+    var allPrevBtn      = $( '.prevBtn' );
+
+    allWells.hide();
+
+    $( '.btn-finish' ).on( 'click', function(e){
+        e.preventDefault();
+        $( '.loading-ajfc' ).show();
+        return false;
+    });
+
+    $( '.btn-previous' ).on( 'click', function(e){
+        e.preventDefault();
+        $( 'html, body' ).stop().animate({
+            scrollTop: $( '.first' ).offset().top
+        }, 500, function(){
+            resizePageWrapper();
+        });
+        return false;
+    });
+
+    $( '.btn-next' ).on( 'click', function(e){
+        e.preventDefault();
+        $( 'html, body' ).stop().animate({
+            scrollTop: $( '.first' ).offset().top
+        }, 500, function(){
+            resizePageWrapper();
+        });
+        return false;
+    });
+
+    $( '.next-question' ).click(function(e){
         <?php
             $items = new Asset_List();
             $items->setOrderKey("RAND()", false);
             $items->setCondition("path = '/ajfc/galeri-kuis-910x357/'");
-            //$items->setLimit(5);
-
             $x = 1;
-            foreach($items as $row)
-            {
+            foreach($items as $row):
                 $img[] = $row->getPath().$row->getFilename();
                 $x++;
-            }
-            $tmp = json_encode($img);
-            $jmlImage = rand(0,(count($items))-1);
+            endforeach;
+            $tmp        = json_encode( $img );
+            $jmlImage   = rand( 0, ( count( $items ) ) - 1 );
         ?>
-        var image = <?php echo $tmp;?>;
-
-        var shuffleImage = shuffle(image);
-        var indexImage = <?php echo $jmlImage;?>;
-        //console.log(indexImage[0]);
-        //console.log(shuffleImage);
-        var no = parseInt($(".stepwizard-step").find(".btn-circle.btn-primary").text())+1;
-        if (no == <?php echo count($soal);?>) {
-            $(".btn-finish").removeClass("hide");
+        var image           = <?php echo $tmp; ?>;
+        var shuffleImage    = shuffle(image);
+        var indexImage      = <?php echo $jmlImage; ?>;
+        var no              = parseInt( $( ".stepwizard-step" ).find( ".btn-circle.btn-primary" ).text() ) + 1;
+        if ( no == <?php echo count( $soal ); ?> )
+        {
+            $( '.btn-finish' ).removeClass( 'hide' );
         }
-        else{
-            $(".btn-finish").addClass("hide");
+        else
+        {
+            $( '.btn-finish' ).addClass( 'hide' );
         }
-        if((no%2) == 1){
+        if( ( no % 2 ) == 1 )
+        {
             $( '.banner-ajfc' ).stop().fadeOut( 'slow', function(){
                 $( this ).attr( 'src', shuffleImage[ indexImage ] );
                 $( this ).stop().fadeIn( 'slow' );
@@ -846,36 +776,34 @@ $(document).ready(function() {
         }
     });
 
-    $(".btn-circle").click(function(){
-        var no = $(this).text();
-        if (no == <?php echo count($soal);?>)
+    $( '.btn-circle' ).click(function(){
+        var no = $ (this ).text();
+        if( no == <?php echo count( $soal ); ?> )
         {
-            $(".btn-finish").removeClass("hide");
+            $( '.btn-finish' ).removeClass( 'hide' );
         }
         else
-                           {
-            $(".btn-finish").addClass("hide");
+        {
+            $( '.btn-finish' ).addClass( 'hide' );
         }
         <?php
             $items = new Asset_List();
             $items->setOrderKey("RAND()", false);
             $items->setCondition("path = '/ajfc/galeri-kuis-910x357/'");
-            //$items->setLimit(5);
-
             $x = 1;
             foreach($items as $row)
             {
                 $img[] = $row->getPath().$row->getFilename();
                 $x++;
             }
-            $tmp = json_encode($img);
-            $jmlImage = rand(0,(count($items))-1);
+            $tmp        = json_encode($img);
+            $jmlImage   = rand(0,(count($items))-1);
         ?>
-        var image = <?php echo $tmp;?>;
-
-        var shuffleImage = shuffle(image);
-        var indexImage = <?php echo $jmlImage;?>;
-        if((no%2) == 1){
+        var image           = <?php echo $tmp; ?>;
+        var shuffleImage    = shuffle( image );
+        var indexImage      = <?php echo $jmlImage; ?>;
+        if( ( no % 2 ) == 1 )
+        {
             $( '.banner-ajfc' ).fadeOut( 'slow', function(){
                 $( this ).attr( 'src', shuffleImage[ indexImage ] );
                 $( this ).stop().fadeIn( 'slow' );
@@ -897,23 +825,36 @@ $(document).ready(function() {
         }
     });
 
-    allNextBtn.click(function(){
-        var curStep = $(this).closest(".setup-content"),
-            curStepBtn = curStep.attr("id"),
-            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-            curInputs = curStep.find("input[type='text'],input[type='url'],input[type='radio']"),
-            isValid = true;
+    allPrevBtn.click(function(e){
+        e.preventDefault();
+        var curStep         = $( this ).closest( '.setup-content' );
+        var curStepBtn      = curStep.attr( 'id' );
+        var prevStepNum     = curStepBtn.replace( 'step-', '' );
+        var prevStepEl      = $( '#step-' + ( ( 1 * prevStepNum ) - 1 ) );
+        if( $( prevStepEl ).length > 0 )
+        {
+            $( 'div.setup-panel div a[href="#' + prevStepEl.attr( 'id' ) + '"]' ).trigger( 'click' );
+        }
+        return false;
+    });
 
-        $(".form-group").removeClass("has-error");
+    allNextBtn.click(function(){
+        var curStep         = $( this ).closest( '.setup-content' );
+        var curStepBtn      = curStep.attr( 'id' );
+        var nextStepWizard  = $( 'div.setup-panel div a[href="#' + curStepBtn + '"]') .parent().next().children( 'a' );
+        var curInputs       = curStep.find("input[type='text'],input[type='url'],input[type='radio']");
+        var isValid         = true;
+        $( ".form-group" ).removeClass( "has-error" );
         for(var i=0; i<curInputs.length; i++){
             if (!curInputs[i].validity.valid){
                 isValid = false;
                 $(curInputs[i]).closest(".form-group").addClass("has-error");
             }
         }
-
         if (isValid)
+        {
             nextStepWizard.removeAttr('disabled').trigger('click');
+        }
     });
 
     $('div.setup-panel div a.btn-primary').trigger('click');
@@ -929,22 +870,21 @@ $(document).ready(function() {
             label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
             input.trigger('fileselect', [numFiles, label]);
     });
-    
+
     function readImage(file) {
-    
+
         var reader = new FileReader();
         var image  = new Image();
-    
+
         reader.readAsDataURL(file);
         reader.onload = function(_file) {
-            image.src    = _file.target.result;              // url.createObjectURL(file);
+            image.src    = _file.target.result; // url.createObjectURL(file);
             image.onload = function() {
                 var w = this.width,
                     h = this.height,
-                    t = file.type,                           // ext only: // file.type.split('/')[1],
+                    t = file.type, // ext only: file.type.split('/')[1],
                     n = file.name,
                     s = ~~(file.size/1024);
-                    //$('.image_peserta_preview').append('<img src="'+ this.src +'" alt="'+n+'"> '+w+'x'+h+' '+s+' '+t+' '+n+'<br>');
                     if (s > 1024) {
                         $('.image_peserta_preview .error').remove();
                         $('.image_peserta_preview').append('<label class="error">Ukuran file foto maksimal 1 MB.</label>');
@@ -962,7 +902,7 @@ $(document).ready(function() {
                 $(".choose").val("");
             };
         };
-    
+
     }
     $(".image_peserta").change(function (e) {
         if(this.disabled) return alert('File upload not supported!');
