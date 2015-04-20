@@ -105,7 +105,7 @@
                         <ul>
                             <li class="first"><a href="#tahap1" data-toggle="tab">Tahap 1</a></li>
                             <li class="second"><a href="#tahap2" data-toggle="tab">Tahap 2</a></li>
-                            <li class="third active"><a href="#tahap3" data-toggle="tab">Tahap 3</a></li>
+                            <li class="third"><a href="#tahap3" data-toggle="tab">Tahap 3</a></li>
                         </ul>
 
                         <br />
