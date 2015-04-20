@@ -145,7 +145,8 @@ class KuisController extends Website_Controller_Action {
 			$assetFolder = "/ajfc/foto-peserta";
 			
 			// The key is the unique name of an asset that is also used in the asset tree
-			$key = Pimcore_File::getValidFilename(strtolower($_FILES["uploadFoto"]["name"]));
+			$nameFoto = str_replace(" ","-",strtolower($_FILES["uploadFoto"]["name"]));
+			$key = Pimcore_File::getValidFilename($nameFoto);
 			
 			// Check if there is alraedy an image with the same key
 			if(!$asset = Asset::getByPath($assetFolder . "/" . $key)) {
@@ -178,7 +179,7 @@ class KuisController extends Website_Controller_Action {
 				
 					//CUSTOM
 					$target_dir = "./website/var/assets/ajfc/foto-peserta/";
-					$target_file = $target_dir.$dateNow."_".basename(strtolower($_FILES["uploadFoto"]["name"]));
+					$target_file = $target_dir.$dateNow."_".basename($nameFoto);
 					
 					if(move_uploaded_file($_FILES["uploadFoto"]["tmp_name"], $target_file))
 					{
