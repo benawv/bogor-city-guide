@@ -720,7 +720,7 @@ a.fbshare, a.twshare{
   background-image: url("/website/static/images/shareThis/16x16.png") !important;
 }
 #brosur{
-  display: none !important;
+  /*display: none !important;*/
 }
 .cusTable table tr td.vertical{
   vertical-align: top !important;
