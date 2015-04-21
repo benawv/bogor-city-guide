@@ -44,10 +44,11 @@
 			    if($this->editmode)
 			    {
 				echo "Hide :";
-				echo $this->checkbox("checkShop");
+				echo $this->checkbox("checkShop-".$i);
 			    }
 			    else{
-				if( $this->checkbox("checkShop")->isChecked() ) {
+				$displayShop = "";
+				if( $this->checkbox("checkShop-".$i)->isChecked() ) {
 				    $displayShop = "none;";
 				}
 				else{
