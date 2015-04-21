@@ -8,13 +8,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-<meta name="author" content="Allianz">
-<meta name="description" content="Asuransi Allianz Indonesia adalah perusahaan asuransi terbaik dan terpercaya di dunia.">
-<meta name="keywords" content="Asuransi Indonesia, Allianz Indonesia, Asuransi Terbaik, Asuransi Terpercaya">
+<!--meta name="author" content="Allianz">
+<!--meta name="description" content="Asuransi Allianz Indonesia adalah perusahaan asuransi terbaik dan terpercaya di dunia.">
+<!--meta name="keywords" content="Asuransi Indonesia, Allianz Indonesia, Asuransi Terbaik, Asuransi Terpercaya">
 <!--[if IE 8 ]><html class="ie8"> 
 	<link rel="stylesheet" type="text/css" media="screen" id="screen-ie8-css" href="http://allianz.co.id/_assets/css/css-ie8/screen-ie8.css">
 	<link rel="stylesheet" type="text/css" media="screen" id="main-ie8-css" href="http://allianz.co.id/_assets/css/css-ie8/main-ie8.css">
 <![endif]-->
+
+
+	<?php
+        // portal detection => portal needs an adapted version of the layout
+        $isPortal = false;
+        if($this->getParam("controller") == "content" && $this->getParam("action") == "portal") {
+            $isPortal = true;
+        }
+
+        // output the collected meta-data
+        if(!$this->document) {
+            // use "home" document as default if no document is present
+            $this->document = Document::getById(1);
+        }
+
+        if($this->document->getTitle()) {
+            // use the manually set title if available
+            $this->headTitle()->set($this->document->getTitle());
+        }
+	if($this->document->getDescription()) {
+            // use the manually set description if available
+            $this->headMeta()->appendName('description', $this->document->getDescription());
+        }
+        if($this->document->getKeywords()) {
+            $this->headMeta()->appendName('keywords', $this->document->getKeywords());
+        }
+
+        /* $this->headTitle()->append("Asuransi Indonesia Terbaik");
+        $this->headTitle()->setSeparator(" : "); */
+
+        echo $this->headTitle();
+        echo $this->headMeta();
+        
+    ?>
+
 
 <!-- icons & favicon -->
 <link rel="shortcut icon" href="/website/static/inv/images/favicon.ico" type="image/x-icon">
