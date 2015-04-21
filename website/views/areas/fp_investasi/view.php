@@ -74,7 +74,7 @@
 					var messageEl = theForm.querySelector( '.final-message' );
 					var result = fp_investment(biaya);
 					result = accounting.formatMoney(result,'Rp ',2,'.',',');
-					messageEl.innerHTML = '<h2>FAKTA</h2><h3>30% dari jumlah yang sama setiap bulannya sudah dapat memberikan Anda </h3><h1 style="margin:0px;">'+result+'</h1><h3> Melalui instrumen investasi dengan rata-rata imbal hasil tahunan sebesar 12% selama 5 tahun <br><br> <a href= "/kalkulator/financial-calculators/calculator-invest"> Mari mulai perencanaan investasi Anda ></a></h3><div class="fp_separator"></div><h3 style="margin-top:0px;"><a href="#" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';
+					messageEl.innerHTML = '<h2>FAKTA</h2><h3>30% dari jumlah yang sama setiap bulannya sudah dapat memberikan Anda </h3><h2 style="margin:0px;">'+result+'</h2><h3> Melalui instrumen investasi dengan rata-rata imbal hasil tahunan sebesar 12% selama 5 tahun <br><br> <a href= "/kalkulator/financial-calculators/calculator-invest"> Mari mulai perencanaan investasi Anda ></a></h3><div class="fp_separator"></div><h3 style="margin-top:0px;"><a href="#" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';
 					classie.addClass( messageEl, 'show' );
 				}
 			} );

@@ -37,7 +37,7 @@
 		</div>
 
 		<div class="desc_page">
-			<h1><?php echo $this->input('global_article_title')?></h1>
+			<h2><?php echo $this->input('global_article_title')?></h2>
 			<p><?php echo $this->wysiwyg("global_article_text") ?></p>
 		</div>
 

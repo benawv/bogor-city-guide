@@ -93,7 +93,7 @@
 					var messageEl = theForm.querySelector( '.final-message' );
 					var result = fp_retirement(pendapatan,waktu);
 					result = accounting.formatMoney(result,'Rp ',2,'.',',');
-					messageEl.innerHTML = '<h2>FAKTA</h2><h3>Anda membutuhkan </h3><h1 style="margin:0px">'+result+'</h1><h3> Untuk menikmati gaya hidup Anda saat ini di masa pensiun setiap bulannya <br> <br><a href= "/kalkulator/financial-calculators/pensiun"> Mari mulai perencanaan pensiun anda ></a></h3><div class="fp_separator"></div><h3 style="margin-top:0px;"><a href="#" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';
+					messageEl.innerHTML = '<h2>FAKTA</h2><h3>Anda membutuhkan </h3><h2 style="margin:0px">'+result+'</h2><h3> Untuk menikmati gaya hidup Anda saat ini di masa pensiun setiap bulannya <br> <br><a href= "/kalkulator/financial-calculators/pensiun"> Mari mulai perencanaan pensiun anda ></a></h3><div class="fp_separator"></div><h3 style="margin-top:0px;"><a href="#" onclick="window.location.href=window.location.href">Ulangi lagi ></a></h3>';
 					classie.addClass( messageEl, 'show' );
 				}
 			} );
