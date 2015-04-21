@@ -21,6 +21,9 @@
         .gallery .item {
             min-height: 377px;
         }
+	.boxes-view .items-container .pimcore_editable .item .heading .btn-group{
+	    position: absolute;
+	}
     </style>
 <?php } ?>
 <?php
