@@ -127,7 +127,7 @@ change: function(event, ui) {
 		</div>
 
 		<div class="desc_page">
-			<h1><?php echo $this->input('title-box')?></h1>
+			<h2><?php echo $this->input('title-box')?></h2>
             <?php echo $this->wysiwyg('description')?>
 		</div>
 

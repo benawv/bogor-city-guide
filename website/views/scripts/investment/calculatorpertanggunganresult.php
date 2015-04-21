@@ -40,7 +40,7 @@
 		</div>
 
 		<div class="desc_page">
-			<h1><?php echo $this->input('title-calc')?></h1>
+			<h2><?php echo $this->input('title-calc')?></h2>
 			<?php echo $this->wysiwyg('desc-calc')?>
 		</div>
 

@@ -174,7 +174,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
 		</div>
 
 		<div class="desc_page">
-			<h1><?php echo $this->input('title-calc2')?></h1>
+			<h2><?php echo $this->input('title-calc2')?></h2>
 			<?php echo $this->wysiwyg('desc-calc')?>
 		</div>
 
