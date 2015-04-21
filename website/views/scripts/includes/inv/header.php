@@ -12,8 +12,8 @@
 <meta name="description" content="Asuransi Allianz Indonesia adalah perusahaan asuransi terbaik dan terpercaya di dunia.">
 <meta name="keywords" content="Asuransi Indonesia, Allianz Indonesia, Asuransi Terbaik, Asuransi Terpercaya">
 <!--[if IE 8 ]><html class="ie8"> 
-	<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="http://allianz.co.id/_assets/css/css-ie8/screen-ie8.css">
-	<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="http://allianz.co.id/_assets/css/css-ie8/main-ie8.css">
+	<link rel="stylesheet" type="text/css" media="screen" id="screen-ie8-css" href="http://allianz.co.id/_assets/css/css-ie8/screen-ie8.css">
+	<link rel="stylesheet" type="text/css" media="screen" id="main-ie8-css" href="http://allianz.co.id/_assets/css/css-ie8/main-ie8.css">
 <![endif]-->
 
 <!-- icons & favicon -->
@@ -25,11 +25,11 @@
 <!-- css -->
 
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/inv/css/normalize.css" />
-<link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/inv/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" media="screen" id="bootstrap-css" href="/website/static/inv/css/bootstrap.css" />
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/inv/css/screen.css" />
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/inv/css/revision_style.css" />
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/inv/css/main.css" />
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/inv/css/respon.css" />
+<link rel="stylesheet" type="text/css" media="screen" id="revision_style-css" href="/website/static/inv/css/revision_style.css" />
+<link rel="stylesheet" type="text/css" media="screen" id="main-css" href="/website/static/inv/css/main.css" />
+<link rel="stylesheet" type="text/css" media="screen" id="respon-css" href="/website/static/inv/css/respon.css" />
 
 <!-- fonts -->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
