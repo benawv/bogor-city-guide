@@ -40,7 +40,22 @@
 	<div class="heading">
 		<h2 class="title_news"><?php echo $this->link('title-'.$i)?></h2>
 		<div class="btn-group">
-			<a href="javascript:void(0);" class="shop"><i class="fa fa-shopping-cart"></i></a>
+			<?php
+			    if($this->editmode)
+			    {
+				echo "Hide :";
+				echo $this->checkbox("checkShop");
+			    }
+			    else{
+				if( $this->checkbox("checkShop")->isChecked() ) {
+				    $displayShop = "none;";
+				}
+				else{
+				    $displayShop = "block;";
+				}
+			    }
+			?>
+			<a href="javascript:void(0);" class="shop" style="display: <?php echo $displayShop;?>"><i class="fa fa-shopping-cart"></i></a>
 			<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
 			<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
 		</div>
