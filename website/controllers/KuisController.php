@@ -145,7 +145,8 @@ class KuisController extends Website_Controller_Action {
 			$assetFolder = "/ajfc/foto-peserta";
 			
 			// The key is the unique name of an asset that is also used in the asset tree
-			$key = Pimcore_File::getValidFilename($_FILES["uploadFoto"]["name"]);
+			$nameFoto = str_replace(" ","-",strtolower($_FILES["uploadFoto"]["name"]));
+			$key = Pimcore_File::getValidFilename($nameFoto);
 			
 			// Check if there is alraedy an image with the same key
 			if(!$asset = Asset::getByPath($assetFolder . "/" . $key)) {
@@ -169,28 +170,40 @@ class KuisController extends Website_Controller_Action {
 			$asset->setFilename($dateNow."_".$key);
 			$asset->setData(IMAGE_SOURCE);
 			
-			
+			$uploadOk = 0;
 			
 			try{
-				$asset->save();
+				if($asset->save())
+				{
+					$saveKuis->setFotoPeserta(Asset_Image::getById($asset->id));
 				
-				$saveKuis->setFotoPeserta(Asset_Image::getById($asset->id));
-				
-				//CUSTOM
-				$target_dir = "./website/var/assets/ajfc/foto-peserta/";
-				$target_file = $target_dir.$dateNow."_".basename($_FILES["uploadFoto"]["name"]);
-				
-				move_uploaded_file($_FILES["uploadFoto"]["tmp_name"], $target_file);
-				$saveKuis->save();
-				
-				//Create PDF
-				$this->createPdfAction($namaPeserta,$saveNoDada);
-				$this->sendAction($saveNoDada,$emailPeserta,$namaPeserta);
-				
-				$this->redirect("/thanks/terima-kasih");
+					//CUSTOM
+					$target_dir = "./website/var/assets/ajfc/foto-peserta/";
+					$target_file = $target_dir.$dateNow."_".basename($nameFoto);
+					
+					if(move_uploaded_file($_FILES["uploadFoto"]["tmp_name"], $target_file))
+					{
+						$uploadOk = 1;
+						$saveKuis->save();
+					
+						//Create PDF
+						$this->createPdfAction($namaPeserta,$saveNoDada);
+						$this->sendAction($saveNoDada,$emailPeserta,$namaPeserta);
+					}
+					else{
+						$uploadOk = 0;
+					}
+				}
 			}
 			catch(Exception $e){
 				echo 'ERROR: ',  $e->getMessage(), "\n";
+			}
+			if($uploadOk == 1)
+			{
+				$this->redirect("/thanks/terima-kasih");
+			}
+			else{
+				$this->redirect("/");
 			}
 		}
 		else{
@@ -203,53 +216,66 @@ class KuisController extends Website_Controller_Action {
 		$db = Pimcore_Resource_Mysql::get();
 		
 		$peserta = new Object_DataPesertaAJFC_List();
-		$peserta->setCondition("`idPeserta` = '' OR `idPeserta` IS NULL AND `statusEmail` <> 1 OR `statusEmail` IS NULL ");
+		$peserta->setCondition("`idPeserta` = '' OR `idPeserta` IS NULL AND `statusEmail` <> 1 OR `statusEmail` IS NULL");
 		$peserta->setLimit(10);
 		
-		//echo strtotime(date('Y-m-d')), "\n";
-		//echo date('Y-m-d 22:00',strtotime("+3 days"))."<br />";
-		//echo strtotime(date('Y-m-d 22:00',strtotime("+3 days")))."<br />";
-		//echo mktime(22,0,0,3,6,2015);
-		$host = $_SERVER['SERVER_NAME'];
+		
 		foreach($peserta as $row)
 		{
-			$id = $row->getO_id();
-			$idPeserta = md5(uniqid().time().rand().$id);
-			
-			$today = strtotime(date('Y-m-d H:i'));
-			$threeDay = strtotime(date('Y-m-d 22:00',strtotime("+3 days")));
-			//$today = date('Y-m-d');
-			//$threeDay = date('Y-m-d 22:00',strtotime("+3 days"));
-			
-			//$now = Zend_Date::now();
-			$date = new Pimcore_Date($today);
-			$date3 = new Pimcore_Date($threeDay);
-			//$date2 = new Pimcore_Date($now3->getTimestamp());
-			
-			$data = Object_DataPesertaAJFC::getById($id);
-			$data->setIdPeserta($idPeserta);
-			$data->setTglKirimEmail($date);
-			$data->setStatusEmail(1);
-			$data->setTglExpireKuis($date3);
-			
-			$link = "http://".$host."/seleksi/".$idPeserta;
-			
-			$document = '/email/email-ajfc';
-			$params = array('name' => ucwords($row->getNamaLengkap()),
-					'link' => $link);
-			$mail = new Pimcore_Mail();
-			$mail->setSubject("Seleksi AJFC 2015");
-			$mail->setFrom("no-reply@ajfc.allianz.co.id","AJFC Allianz Indonesia");
-			$mail->setDocument($document);
-			$mail->setParams($params);
-			$mail->addTo($row->getEmail());
-			
-			try{
-				$mail->send();
-				$data->save();
+			$emailP = $row->getEmail();
+			$checkEmail = new Object_DataPesertaAJFC_List();
+			$checkEmail->setCondition("`email` = '".$emailP."' AND `statusEmail` = 1 ");
+			$jumUser = count($checkEmail);
+			if($jumUser>=1){
+				$idDouble = $row->getId();
+				$dataDouble = Object_DataPesertaAJFC::getById($idDouble);
+				$dataDouble->setStatusEmail(1);
+				$dataDouble->save();
 			}
-			catch(Exception $e){
-				echo 'ERROR: ',  $e->getMessage(), "\n";
+			else{
+				//echo strtotime(date('Y-m-d')), "\n";
+				//echo date('Y-m-d 22:00',strtotime("+3 days"))."<br />";
+				//echo strtotime(date('Y-m-d 22:00',strtotime("+3 days")))."<br />";
+				//echo mktime(22,0,0,3,6,2015);
+				$host = $_SERVER['SERVER_NAME'];
+				$id = $row->getId();
+				$idPeserta = md5(uniqid().time().rand().$id);
+				
+				$today = strtotime(date('Y-m-d H:i'));
+				$threeDay = strtotime(date('Y-m-d 22:00',strtotime("+3 days")));
+				//$today = date('Y-m-d');
+				//$threeDay = date('Y-m-d 22:00',strtotime("+3 days"));
+				
+				//$now = Zend_Date::now();
+				$date = new Pimcore_Date($today);
+				$date3 = new Pimcore_Date($threeDay);
+				//$date2 = new Pimcore_Date($now3->getTimestamp());
+				
+				$data = Object_DataPesertaAJFC::getById($id);
+				$data->setIdPeserta($idPeserta);
+				$data->setTglKirimEmail($date);
+				$data->setStatusEmail(1);
+				$data->setTglExpireKuis($date3);
+				
+				$link = "http://".$host."/seleksi/".$idPeserta;
+				
+				$document = '/email/email-ajfc';
+				$params = array('name' => ucwords($row->getNamaLengkap()),
+						'link' => $link);
+				$mail = new Pimcore_Mail();
+				$mail->setSubject("Seleksi AJFC 2015");
+				$mail->setFrom("no-reply@ajfc.allianz.co.id","AJFC Allianz Indonesia");
+				$mail->setDocument($document);
+				$mail->setParams($params);
+				$mail->addTo($row->getEmail());
+				
+				try{
+					$mail->send();
+					$data->save();
+				}
+				catch(Exception $e){
+					echo 'ERROR: ',  $e->getMessage(), "\n";
+				}
 			}
 		}
 	}
