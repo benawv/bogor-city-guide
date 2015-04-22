@@ -73,6 +73,12 @@
         .nextBtn.next-question{
             margin: 3px 0px;
         }
+        .fb-like .fb-link{
+            padding: 8px 0px;
+        }
+        .form-group .radio-inline{
+            padding-left: 15px;
+        }
     }
 
 </style>
