@@ -479,7 +479,7 @@ $(document).ready(function(){
 		//=========================//perhitungan rate/persen======================================//
 		var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
 		compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan');
-                workshop_persen=parseFloat(getWorkshop(merk,1))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
+                workshop_persen=parseFloat(getWorkshop(merk,2))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
 		
 		// if (tlo= 5+wilayah) else (1+wilayah)
 		if (jenisasuransi=='tlo') {
@@ -704,7 +704,7 @@ $(document).ready(function(){
 		//=========================//perhitungan rate/persen======================================//
 		var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
 		compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan');
-                workshop_persen=parseFloat(getWorkshop(merk,1))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
+                workshop_persen=parseFloat(getWorkshop(merk,2))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
 		
 		// if (tlo= 5+wilayah) else (1+wilayah)
 		if (jenisasuransi=='tlo') {
