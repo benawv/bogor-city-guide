@@ -35,7 +35,7 @@
                               <label><strong>Tanggal Pembuatan Perhitungan</strong></label>
                           </div>
                           <div class="col-md-4">
-                            <input type="text" class="form-control input-perhitungan" id="tgl-hitung" placeholder="">
+                            <input type="text"  class="form-control input-perhitungan" id="tgl-hitung" placeholder=""				required>
                           </div>
                         </div>
 
@@ -46,7 +46,16 @@
                               <label>Nama</label>
                           </div>
                           <div class="col-md-4">
-                            <input type="email" class="form-control" id="nama" placeholder="">
+                            <input type="text" class="form-control" id="nama" placeholder="" required>
+                          </div>
+                        </div>
+                        
+                          <div class="form-group">
+                          <div class="col-md-4">
+                              <label>Email</label>
+                          </div>
+                          <div class="col-md-4">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="" autofocus required>
                           </div>
                         </div>
 
@@ -55,7 +64,7 @@
                               <label>Tanggal Lahir</label>
                           </div>
                           <div class="col-md-4">
-                            <input type="email" class="form-control" id="tgl-lahir" placeholder="">
+                            <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="" autofocus required>
                           </div>
                         </div>
 
@@ -64,7 +73,10 @@
                               <label>Jenis Kelamin</label>
                           </div>
                           <div class="col-md-4">
-                            <input type="email" class="form-control" id="jenis-kelamin" placeholder="">
+                                <select class="form-control" name="JenisKelamin" id="JenisKelamin">
+                                <option value="Pria">Pria</option>
+                                <option value="Wanita">Wanita</option>
+                                </select>
                           </div>
                         </div>
 
@@ -73,7 +85,7 @@
                               <label>Usia (Tahun)</label>
                           </div>
                           <div class="col-md-4">
-                            <input type="email" class="form-control" id="usia" placeholder="">
+                            <input type="text" class="form-control" id="usia" placeholder="" readonly>
                           </div>
                         </div>
 
@@ -82,10 +94,13 @@
                               <label>Frekuensi Pembayaran</label>
                           </div>
                           <div class="col-md-4">
-                            <input type="email" class="form-control mb10" id="frekuensi" placeholder="">
-                            <span>1. Tahunan</span>
-                            <span>2. Semesteran</span>
-                            <span>3. Triwulanan</span>
+                          	<form>
+                                    <select  class="form-control" name="Frekuensi" id="Frekuensi">
+                                    <option value="Triwulan">Triwulan</option>
+                                    <option value="Semesteran">Semesteran</option>
+                                    <option value="Tahunan">Tahunan</option>
+                                    </select>
+                             <form/>
                           </div>
                         </div>
 
@@ -96,7 +111,7 @@
                               <label>Asuransi Jiwa (Min. Rp.50.000.000)</label>
                           </div>
                           <div class="col-md-4">
-                            <input type="email" class="form-control" id="asuransi-jiwa" placeholder="">
+                            <input type="email" class="form-control" id="asuransi-jiwa" value=""  placeholder="">
                           </div>
                         </div>
 
@@ -105,7 +120,7 @@
                               <label>Massa Pembayaran Kontribusi/ Premi</label>
                           </div>
                           <div class="col-md-4">
-                            <input type="email" class="form-control" id="masa-premi" placeholder="">
+                            <input type="text" class="form-control" name="coverage" id="masa-premi" placeholder="">
                           </div>
                         </div>
 
@@ -116,13 +131,13 @@
                               <label>Kontribusi Berkala/ Premi pertahun</label>
                           </div>
                           <div class="col-md-4">
-                            <input type="email" class="form-control" id="kontribusi-berkala" placeholder="">
+                            <input type="email" class="form-control" id="kontribusi-berkala" placeholder="" readonly>
                           </div>
                         </div>
                         
                         <div class="form-group">
                           <div class="col-md-12">
-                            <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm pull-right" name="next" value="Kalkulasi">
+                            <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm pull-right" id="Kalkulasi" name="next" value="Kalkulasi">
                           </div>
                         </div>
                       </form> 
@@ -145,9 +160,79 @@
 			</div>
 			
 		</div>
-		<!-- newsletter-allianz end -->
-			
-			
+	
+
+		
+				<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+				<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+				<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+				<script>
+                    $(document).ready(function(){
+                         $('#Kalkulasi').click(function() {
+                            var tanggalpembuatan = $('#tgl-hitung').val();
+                            var nama = $('#nama').val();
+                            var email = $('#email').val();
+                            var tanggallahir = $('#tgl-lahir').val();
+                            var sex = $('#JenisKelamin').val();
+                            var usia = $('#usia').val();
+                            var frekuensi = $('#Frekuensi option:Selected').val();
+                            var asuransijiwa = $('#asuransi-jiwa').val();
+                            var kontribusi = $('#masa-premi').val();                           
+                             
+			                //console.log('test');  
+                            $.ajax({
+                                
+                                
+                                url      : '/KalkulatorTasbih/',
+                                type     : 'POST',
+                                data     : {
+                                            'tgl' : tanggalpembuatan,
+                                            'nama' : nama,
+                                            'email' : email,
+                                            'tanggallahir' : tanggallahir,
+                                            'sex' : sex,
+                                            'usia' : usia,
+                                            'frekuensi' : frekuensi,
+                                            'asuransijiwa' : asuransijiwa,
+                                            'kontribusi' : kontribusi        
+                                            },
+                                success  : function(data){
+                                    console.log(data);
+                                    $('#kontribusi-berkala').val(data);
+                                }
+                            });
+
+                        });
+                    });                                                     
+                                                                           
+                    $(function() {
+
+						$( "#tgl-lahir" ).datepicker();
+					});
+					
+					$(function() {
+						$( "#tgl-hitung" ).datepicker();
+					});
+			 
+  
+					window.onload=function(){
+     
+						$('#tgl-lahir').on('change', function() {
+							var dob = new Date(this.value);
+							var today = new Date();
+							var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+							$('#usia').val(age);
+
+						});
+					}
+			 
+				</script>
+                <script type="text/javascript">
+                            //$(function(){alert('test');}); 
+                </script>
+                
+
+
 </div>
 
     
