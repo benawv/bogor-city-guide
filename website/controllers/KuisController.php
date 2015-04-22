@@ -184,6 +184,7 @@ class KuisController extends Website_Controller_Action {
 					if(move_uploaded_file($_FILES["uploadFoto"]["tmp_name"], $target_file))
 					{
 						$uploadOk = 1;
+						$saveKuis->setStatusEmailNoLari(1);
 						$saveKuis->save();
 					
 						//Create PDF

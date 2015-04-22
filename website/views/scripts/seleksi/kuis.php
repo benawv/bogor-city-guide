@@ -63,6 +63,12 @@
             padding: 0 !important;
         }
     }
+    @media ( max-width: 480px )
+    {
+        .pull-left input[type="button"], .pull-right input[type="button"]{
+            padding: 10px !important;
+        }
+    }
 
 </style>
 
@@ -724,7 +730,6 @@ $( document ).ready(function(){
 
     $( '.btn-finish' ).on( 'click', function(){
         $( '.loading-ajfc' ).show();
-        return false;
     });
 
     $( '.btn-previous' ).on( 'click', function(e){
