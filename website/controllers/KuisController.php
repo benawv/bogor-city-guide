@@ -188,8 +188,8 @@ class KuisController extends Website_Controller_Action {
 						$saveKuis->save();
 					
 						//Create PDF
-						$this->createPdfAction($namaPeserta,$saveNoDada);
-						$this->sendAction($saveNoDada,$emailPeserta,$namaPeserta);
+						$this->createPdfAction(ucwords($namaPeserta),$saveNoDada);
+						$this->sendAction($saveNoDada,$emailPeserta,ucwords($namaPeserta));
 					}
 					else{
 						$uploadOk = 0;
@@ -264,8 +264,8 @@ class KuisController extends Website_Controller_Action {
 				$params = array('name' => ucwords($row->getNamaLengkap()),
 						'link' => $link);
 				$mail = new Pimcore_Mail();
-				$mail->setSubject("Seleksi AJFC 2015");
-				$mail->setFrom("no-reply@ajfc.allianz.co.id","AJFC Allianz Indonesia");
+				$mail->setSubject("Link Seleksi AJFC 2015");
+				$mail->setFrom("no-reply@ajfc.allianz.co.id","Allianz Junior Football Camp 2015");
 				$mail->setDocument($document);
 				$mail->setParams($params);
 				$mail->addTo($row->getEmail());
@@ -358,9 +358,9 @@ class KuisController extends Website_Controller_Action {
 		$document = '/email/email-pdf';
 		$params = array('name' => ucwords($nama));
 		
-		$mail->setSubject("AJFC 2015 Nomor Lari");
+		$mail->setSubject("Nomor Lari AJFC 2015");
 		//$mail->setBodyText("This is just plain text");
-		$mail->setFrom("no-reply@ajfc.allianz.co.id","AJFC 2015");
+		$mail->setFrom("no-reply@ajfc.allianz.co.id","Allianz Junior Football Camp 2015");
 		$mail->setDocument($document);
 		$mail->setParams($params);
 		$mail->addTo($email);
