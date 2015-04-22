@@ -2,7 +2,7 @@
 
 <div class="header_page bg_future">
 	<div class="container">
-		<?php echo $this->input('title-funds')?>
+		<h1 class="title"><?php echo $this->input('title-funds')?></h1>
 	</div>
 </div>
 
