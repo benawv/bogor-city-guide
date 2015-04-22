@@ -724,7 +724,6 @@ $( document ).ready(function(){
 
     $( '.btn-finish' ).on( 'click', function(){
         $( '.loading-ajfc' ).show();
-        return false;
     });
 
     $( '.btn-previous' ).on( 'click', function(e){
