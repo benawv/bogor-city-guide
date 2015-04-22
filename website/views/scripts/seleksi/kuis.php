@@ -691,6 +691,10 @@ $( document ).ready(function(){
         }
     }
 
+    $( '#pengeluaran' ).keypress(function(e){
+        return validateNumeral(e);
+    });
+
     $("#hp-ortu").keypress(function(e){
         return validateNumeral(e);
     });
@@ -718,8 +722,7 @@ $( document ).ready(function(){
 
     allWells.hide();
 
-    $( '.btn-finish' ).on( 'click', function(e){
-        e.preventDefault();
+    $( '.btn-finish' ).on( 'click', function(){
         $( '.loading-ajfc' ).show();
         return false;
     });
