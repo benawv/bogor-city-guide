@@ -46,6 +46,12 @@
         margin: 0 16px;
     }
 
+    .btn-froze
+    {
+        pointer-events: none;
+        opacity: 0.4;
+    }
+
     @media ( max-width: 767px )
     {
         .container.boxes-view
@@ -510,7 +516,7 @@
                                 </div><!--/ .container-fluid -->
                             </div><!--/ .tab-pane#tahap2 -->
 
-                            <div class="tab-pane active" id="tahap3">
+                            <div class="tab-pane" id="tahap3">
                                 <div class="stepwizard hidden-xs">
                                     <div class="stepwizard-row setup-panel">
                                         <?php
@@ -565,13 +571,9 @@
                                                 </div><!--/ .row -->
                                             </div><!--/ .form-group -->
 
-                                            <?php if( $number > 1 ): ?>
-                                            <button class="prevBtn next-question pull-left" type="button" style="margin-right: 8px !important;">Sebelumnya</button>
-                                            <?php endif; ?>
+                                            <button class="prevBtn next-question pull-left <?php if( ! ( $number > 1 ) ): echo ' btn-froze '; endif; ?>" type="button" style="margin-right: 8px !important;">Sebelumnya</button>
 
-                                            <?php if( $number != count( $soal ) ): ?>
-                                                <button class="nextBtn next-question pull-left" type="button" >Selanjutnya</button>
-                                            <?php endif; ?>
+                                                <button class="nextBtn next-question pull-left <?php if( !( $number != count( $soal ) ) ): echo ' btn-froze'; endif; ?>" type="button" >Selanjutnya</button>
 
                                         </div><!--/ .col-xs-12 -->
                                     </div><!--/ .row -->
@@ -689,6 +691,10 @@ $( document ).ready(function(){
         }
     }
 
+    $( '#pengeluaran' ).keypress(function(e){
+        return validateNumeral(e);
+    });
+
     $("#hp-ortu").keypress(function(e){
         return validateNumeral(e);
     });
@@ -716,8 +722,7 @@ $( document ).ready(function(){
 
     allWells.hide();
 
-    $( '.btn-finish' ).on( 'click', function(e){
-        e.preventDefault();
+    $( '.btn-finish' ).on( 'click', function(){
         $( '.loading-ajfc' ).show();
         return false;
     });
