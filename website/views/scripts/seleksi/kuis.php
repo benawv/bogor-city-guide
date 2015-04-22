@@ -65,8 +65,13 @@
     }
     @media ( max-width: 480px )
     {
-        .wizard-footer .pull-left, .wizard-footer .pull-right, .wizard-footer .pull-left input[type="button"], .wizard-footer .pull-right input[type="button"]{
+        .wizard-footer .pull-left, .wizard-footer .pull-right, .wizard-footer .pull-left input[type="button"], .wizard-footer .pull-right input[type="button"], wizard-footer .pull-right .btn-finish
+        {
             width: 100% !important;
+            margin: 3px 0;
+        }
+        .nextBtn.next-question{
+            margin: 3px 0px;
         }
     }
 
