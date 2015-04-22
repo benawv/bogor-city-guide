@@ -65,14 +65,8 @@
     }
     @media ( max-width: 480px )
     {
-        .pull-left input[type="button"], .pull-right input[type="button"]{
-            padding: 10px !important;
-        }
-    }
-    @media ( max-width: 320px )
-    {
-        .pull-left input[type="button"], .pull-right input[type="button"]{
-            padding: 5px !important;
+        .wizard-footer .pull-left, .wizard-footer .pull-right, .wizard-footer .pull-left input[type="button"], .wizard-footer .pull-right input[type="button"]{
+            width: 100% !important;
         }
     }
 
