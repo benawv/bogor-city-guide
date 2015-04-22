@@ -63,6 +63,12 @@
             padding: 0 !important;
         }
     }
+    @media ( max-width: 480px )
+    {
+        .pull-left input[type="button"], .pull-right input[type="button"]{
+            padding: 10px !important;
+        }
+    }
 
 </style>
 
