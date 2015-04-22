@@ -155,6 +155,7 @@
 	font-weight: bold;
 	margin-bottom: 15px;
 }
+
 .full-w p{
 	font-size: 14px;
 	line-height: 20px;
@@ -562,6 +563,11 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 
 .full-w h2 {
 	padding-bottom: 10px;
+	/*add H1 stye Into H2*/
+	width: 100%;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 15px;
 }
 /* ========================================== */
 
