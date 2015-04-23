@@ -55,7 +55,7 @@
                               <label>Email</label>
                           </div>
                           <div class="col-md-4">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="" autofocus required>
+                            <input type="email" class="form-control" id="email" name="email" placeholder=""  autofocus required onfocusout="this.value=validateEMAIL(this.value)">
                           </div>
                         </div>
 
@@ -111,7 +111,7 @@
                               <label>Asuransi Jiwa (Min. Rp.50.000.000)</label>
                           </div>
                           <div class="col-md-4">
-                            <input type="email" class="form-control" id="asuransi-jiwa" value=""  placeholder="">
+                            <input type="email" class="form-control" id="asuransi-jiwa" value=""  placeholder=""  onfocusout="this.value = minmax(this.value,50000000,10000000000)">
                           </div>
                         </div>
 
@@ -120,7 +120,7 @@
                               <label>Massa Pembayaran Kontribusi/ Premi</label>
                           </div>
                           <div class="col-md-4">
-                            <input type="text" class="form-control" name="coverage" id="masa-premi" placeholder="">
+                            <input type="text" class="form-control" name="coverage" id="masa-premi" placeholder="" onkeyup="angka(this);" >
                           </div>
                         </div>
 
@@ -131,7 +131,7 @@
                               <label>Kontribusi Berkala/ Premi pertahun</label>
                           </div>
                           <div class="col-md-4">
-                            <input type="email" class="form-control" id="kontribusi-berkala" placeholder="" readonly>
+                            <input type="email" class="form-control" id="kontribusi-berkala" placeholder=""  readonly>
                           </div>
                         </div>
                         
@@ -166,6 +166,7 @@
 				<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 				<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 				<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+                <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 				<script>
                     $(document).ready(function(){
                          $('#Kalkulasi').click(function() {
@@ -177,6 +178,7 @@
                             var usia = $('#usia').val();
                             var frekuensi = $('#Frekuensi option:Selected').val();
                             var asuransijiwa = $('#asuransi-jiwa').val();
+                            var subsAJ = asuransijiwa.substring(4,10);
                             var kontribusi = $('#masa-premi').val();                           
                              
 			                //console.log('test');  
@@ -193,18 +195,20 @@
                                             'sex' : sex,
                                             'usia' : usia,
                                             'frekuensi' : frekuensi,
-                                            'asuransijiwa' : asuransijiwa,
+                                            'asuransijiwa' : subsAJ,
                                             'kontribusi' : kontribusi        
                                             },
                                 success  : function(data){
                                     console.log(data);
                                     $('#kontribusi-berkala').val(data);
+                                    alert(subsAJ);
                                 }
                             });
 
                         });
                     });                                                     
-                                                                           
+                    
+                    //Validate DatePicker
                     $(function() {
 
 						$( "#tgl-lahir" ).datepicker();
@@ -224,7 +228,38 @@
 							$('#usia').val(age);
 
 						});
-					}
+					};
+                    
+                    //Validate Number
+                    function angka(e) {
+                       if (!/^[0-9]+$/.test(e.value)) {
+                          e.value = e.value.substring(0,e.value.length-1);
+                       }
+                        
+                    };
+
+                    //Validate Email
+                   function validateEMAIL(value) {
+                        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+                        if(!re.test(value)){
+                            alert('Email is not valid');
+
+                        }else return value;
+                    };
+                    
+                    //Validate Min Max
+                    function minmax(value, min) 
+                    {
+                        if(parseInt(value) < 50000000 || isNaN(value)) 
+                            return accounting.formatMoney(50000000, "Rp ", 0,".");
+                        else if(parseInt(value) > 10000000000) 
+                            return accounting.formatMoney(parseInt(value), "Rp ", 0,"."); 
+                        else return accounting.formatMoney(value, "Rp ", 0,".");
+                    };
+
+
+                    
+
 			 
 				</script>
                 <script type="text/javascript">

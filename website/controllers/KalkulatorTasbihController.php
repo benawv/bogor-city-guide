@@ -33,10 +33,15 @@
             }
 
 
+                //------Calculate from user's input
             
-               $Calculation = (int)$Usia+(int)$Kontribusi+(int)$AsuransiJiwa;
+               $Calculation = (int)$Usia+(int)$Kontribusi+(int)$AsuransiJiwa; //The Pattern of ALLIANZ
 
                 print_r($Calculation);
+            
+                //-------Validated
+                
+                
             
                 
 
