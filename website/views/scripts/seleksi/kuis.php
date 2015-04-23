@@ -65,8 +65,19 @@
     }
     @media ( max-width: 480px )
     {
-        .pull-left input[type="button"], .pull-right input[type="button"]{
-            padding: 10px !important;
+        .wizard-footer .pull-left, .wizard-footer .pull-right, .wizard-footer .pull-left input[type="button"], .wizard-footer .pull-right input[type="button"], wizard-footer .pull-right .btn-finish
+        {
+            width: 100% !important;
+            margin: 3px 0;
+        }
+        .nextBtn.next-question{
+            margin: 3px 0px;
+        }
+        .fbAJFC .fb-link{
+            padding: 8px 0px;
+        }
+        .form-group .radio-inline{
+            padding-left: 15px;
         }
     }
 
