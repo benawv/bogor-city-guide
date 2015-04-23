@@ -304,6 +304,12 @@ class CommunityController extends Website_Controller_Action {
 		return $string;
 	}
 	
+	public function limit_wordsAction($string, $word_limit)
+	{
+		$words = explode("-",$string);
+		return implode("-",array_splice($words,0,$word_limit));
+	}
+	
 	public function pagingAction()
 	{
 		$db = Pimcore_Resource_Mysql::get();
@@ -336,7 +342,7 @@ class CommunityController extends Website_Controller_Action {
 		$arr = array();
 		foreach($community as $row){
 			$arr[$x]['title'] = $row->getTitle();
-			$arr[$x]['link'] = $row->getO_key()."_".$row->getO_id()."_".$row->getTemplate();
+			$arr[$x]['link'] = $this->limit_wordsAction($row->getO_key(),5)."-".$row->getO_id()."-".$row->getTemplate();
 			$arr[$x]['image'] = $row->image->path.$row->image->filename;
 			$arr[$x]['altImage'] = $row->image->metadata[1]["data"];
 			$arr[$x]['titleImage'] = $row->image->metadata[0]["data"];
@@ -394,7 +400,7 @@ class CommunityController extends Website_Controller_Action {
 		$arr = array();
 		foreach($community as $row){
 			$arr[$x]['title'] = $row->getTitle();
-			$arr[$x]['link'] = $row->getO_key()."_".$row->getO_id()."_".$row->getTemplate();
+			$arr[$x]['link'] = $this->limit_wordsAction($row->getO_key(),5)."-".$row->getO_id()."-".$row->getTemplate();
 			$arr[$x]['image'] = $row->image->path.$row->image->filename;
 			$arr[$x]['altImage'] = $row->image->metadata[1]["data"];
 			$arr[$x]['titleImage'] = $row->image->metadata[0]["data"];
@@ -468,7 +474,7 @@ class CommunityController extends Website_Controller_Action {
 		$arr = array();
 		foreach($community as $row){
 			$arr[$x]['title'] = $row->getTitle();
-			$arr[$x]['link'] = $row->getO_key()."_".$row->getO_id()."_".$row->getTemplate();
+			$arr[$x]['link'] = $this->limit_wordsAction($row->getO_key(),5)."-".$row->getO_id()."-".$row->getTemplate();
 			$arr[$x]['image'] = $row->image->path.$row->image->filename;
 			$arr[$x]['altImage'] = $row->image->metadata[1]["data"];
 			$arr[$x]['titleImage'] = $row->image->metadata[0]["data"];
@@ -535,7 +541,7 @@ class CommunityController extends Website_Controller_Action {
 		$arr = array();
 		foreach($community as $row){
 			$arr[$x]['title'] = $row->getTitle();
-			$arr[$x]['link'] = $row->getO_key()."_".$row->getO_id()."_".$row->getTemplate();
+			$arr[$x]['link'] = $this->limit_wordsAction($row->getO_key(),5)."-".$row->getO_id()."-".$row->getTemplate();
 			$arr[$x]['image'] = $row->image->path.$row->image->filename;
 			$arr[$x]['altImage'] = $row->image->metadata[1]["data"];
 			$arr[$x]['titleImage'] = $row->image->metadata[0]["data"];
