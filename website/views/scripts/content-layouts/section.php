@@ -23,7 +23,7 @@
 <?php endif; ?>
 <div class="container boxes-view">
 	<?php echo $this->template("includes/breadcrumb.php")?>
-	<span class="breadcrumb"><h1 class="title"><?php echo $this->document->getProperty('navigation_title');?></h1></span>
+	<span class="breadcrumb"><h2 class="title"><?php echo $this->document->getProperty('navigation_title');?></h2></span>
 	
 	<div class="heading clearfix pagenav">
 		<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>

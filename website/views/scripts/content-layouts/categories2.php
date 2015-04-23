@@ -8,7 +8,7 @@
 <div class="container boxes-view">
 	<div class="heading clearfix">
 		<?php echo $this->template("includes/breadcrumb.php")?>
-		<h1 class="title"><?php echo $this->document->getProperty('navigation_title');?></h1>
+		<h2 class="title"><?php echo $this->document->getProperty('navigation_title');?></h2>
 		<!--<div class="hotline"><img width="30px" src="_assets/images/hotline.png">&nbsp;&nbsp;<span style="font-size:20px"><strong>021-2926 9999</strong></span></div>-->
 	</div>
 	<div class="wrapper-special clearfix">
