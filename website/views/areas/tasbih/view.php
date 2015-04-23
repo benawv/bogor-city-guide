@@ -1,31 +1,23 @@
-   
-<link rel="stylesheet" href="/website/static/mobilku/tasbih/tasbih.css" type="text/css" media="all" /> 
-<link rel="stylesheet" href="/website/static/mobilku/wizard-step.css" type="text/css" media="all" /> 
-
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/bootstrap.min.css"  />
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
-<!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/flexslider.css">-->
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/main.css">
+
+<link rel="stylesheet" type="text/css" media="all" href="/website/static/mobilku/tasbih/tasbih.css" />
+<link rel="stylesheet" type="text/css" media="all" href="/website/static/mobilku/wizard-step.css" />
+
+<!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/flexslider.css">-->
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/tabs-accordion.css">-->
-<!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/product.css">-->     	
-  
+<!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/product.css">-->
+
 <script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
 
-		
-<!--   plugins 	 -->
+<div id="newsletter-allianz" class="full-w bg-white nopadding">
+    <div class="description">
 
-
-<!-- End of Header -->
-
-
-		<div id="newsletter-allianz" class="full-w bg-white nopadding">
-			
-			<div class="description">
-				
-               <div class="header-calc">
-                  <h1>KALKULATOR ASURANSI ALLIANZ TASBIH</h1>
-               </div>
+        <div class="header-calc">
+            <h1>KALKULATOR ASURANSI ALLIANZ TASBIH</h1>
+        </div><!--/ .header-calc -->
 
                <div class="content-calc">
                   <div class="col-md-12">
@@ -39,7 +31,7 @@
                           </div>
                         </div>
 
-                        <label><strong>Data Diri</strong></label>
+                    <label><strong>Data Diri</strong></label>
 
                         <div class="form-group">
                           <div class="col-md-4">
@@ -108,7 +100,7 @@
                           </div>
                         </div>
 
-                        <label><strong>Santunan Meninggal Dunia</strong></label>
+                    <label><strong>Santunan Meninggal Dunia</strong></label>
 
                         <div class="form-group">
                           <div class="col-md-4">
@@ -132,7 +124,7 @@
                           </div>
                         </div>
 
-                        <label><strong>Setoran Tahunan</strong></label>
+                    <label><strong>Setoran Tahunan</strong></label>
 
                         <div class="form-group">
                           <div class="col-md-4">
