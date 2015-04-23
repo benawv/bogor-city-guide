@@ -265,41 +265,52 @@
                         <?php
 
                             $fb_feed1 = new Object_SocialMediaFeed_List();
-                            $fb_feed1->setLimit(4);
-                            $fb_feed1->setOrder("asc");
                             $fb1 = 1;
 
                             $NoDada = "";
                             foreach($fb_feed1 as $items1)
                             {
-                                if($items1->socialMediaType[0]->socialMediaType=='facebook'){
-                                if($fb1==1){
-
-                                $fb_stream_id1=$items1->stream_id;
-                                $fb_username1=$items1->from;
-                                $fb_messages1=$items1->messages;
-                                $fb_link1=$items1->link_feed;
-                                $fb_link_aset1=$items1->link_asset;
+                                if($items1->socialMediaType->socialMediaType=='facebook'){
+                                if($fb1==1){                                
+                                    $fb_StreamId1   =$items1->StreamId;
+                                    $fb_CreateDate1 =$items1->CreateDate;
+                                    $fb_From1       =$items1->From;
+                                    $fb_UserImages  =$items1->UserImages;
+                                    $fb_FromId1     =$items1->FromId;
+                                    $fb_LinkAsset1  =$items1->LinkAsset;
+                                    $fb_TypeAsset1  =$items1->TypeAsset;
+                                    $fb_LinkFeed1   =$items1->LinkFeed;
+                                    $fb_Messages1   =$items1->Messages;                                    
+                                    $getStrId=explode('_',$fb_StreamId1);
+                                    $strId1=$getStrId[1];
+                                    $feedDateFb1=date('dS, F Y h:i:s A', strtotime($fb_CreateDate1));
+	
                                 }
                                 $fb1++;
                                 }
                             }
 
                             $fb_feed2 = new Object_SocialMediaFeed_List();
-                            $fb_feed2->setLimit(4);
-                            $fb_feed2->setOrder("asc");
                             $fb2 = 1;
                             $NoDada = "";
                             foreach($fb_feed2 as $items2)
                             {
-                                if($items2->socialMediaType[0]->socialMediaType=='facebook'){
+                                if($items2->socialMediaType->socialMediaType=='facebook'){
                                     if($fb2==2){
-
-                                    $fb_stream_id2=$items2->stream_id;
-                                    $fb_username2=$items2->from;
-                                    $fb_messages2=$items2->messages;
-                                    $fb_link2=$items2->link_feed;
-                                    $fb_link_aset2=$items2->link_asset;
+                                     
+                                    $fb_StreamId2   =$items2->StreamId;
+                                    $fb_CreateDate2 =$items2->CreateDate;
+                                    $fb_From2       =$items2->From;
+                                    $fb_UserImages2 =$items2->UserImages;
+                                    $fb_FromId2     =$items2->FromId;
+                                    $fb_LinkAsset2  =$items2->LinkAsset;
+                                    $fb_TypeAsset2  =$items2->TypeAsset;
+                                    $fb_LinkFeed2   =$items2->LinkFeed;
+                                    $fb_Messages2   =$items2->Messages;
+                                    $getStrId=explode($fb_StreamId2,'_');
+                                    $strId2=$getStrId[1];
+                                    $feedDateFb2=date('dS, F Y h:i:s A', strtotime($fb_CreateDate2));
+                                    
                                     }
                                 $fb2++;
                                 }
@@ -307,48 +318,53 @@
                             }
 
                             $tw_feed1 = new Object_SocialMediaFeed_List();
-                            $tw_feed1->setLimit(4);
-                            $tw_feed1->setOrder("asc");
                             $tw1 = 1;
                             $NoDada = "";
                             foreach($tw_feed1 as $items3)
                             {
-                                if($items3->socialMediaType[0]->socialMediaType=='twitter'){
+                                if($items3->socialMediaType->socialMediaType=='twitter'){
                                    if($tw1==1){
-
-                                    $tw_stream_id1=$items3->stream_id;
-                                    $tw_username1=$items3->from;
-                                    $tw_messages1=$items3->messages;
-                                    $tw_link1=$items3->link_feed;
-                                    $tw_link_aset1=$items3->link_asset;
-                                   }
+                                    
+                                    $tw_StreamId1   =$items3->StreamId;
+                                    $tw_CreateDate1 =$items3->CreateDate;
+                                    $tw_From1       =$items3->From;
+                                    $tw_UserImages1 =$items3->UserImages;
+                                    $tw_FromId1     =$items3->FromId;
+                                    $tw_LinkAsset1  =$items3->LinkAsset;
+                                    $tw_TypeAsset1  =$items3->TypeAsset;
+                                    $tw_LinkFeed1   =$items3->LinkFeed;
+                                    $tw_Messages1   =$items3->Messages;
+                                    $feedDateTw1=date('dS, F Y h:i:s A', strtotime($tw_CreateDate1));
+                                    }
                                    $tw1++;
                                 }
                             }
 
 
                             $tw_feed2 = new Object_SocialMediaFeed_List();
-                            $tw_feed2->setLimit(4);
-                            $tw_feed2->setOrder("asc");
                             $tw2 = 1;
                             $NoDada = "";
                             foreach($tw_feed2 as $items4)
                             {
-                                 if($items4->socialMediaType[0]->socialMediaType=='twitter'){
+                                if($items4->socialMediaType->socialMediaType=='twitter'){
                                    if($tw2==2){
-
-                                    $tw_stream_id2=$items4->stream_id;
-                                    $tw_username2=$items4->from;
-                                    $tw_messages2=$items4->messages;
-                                    $tw_link2=$items4->link_feed;
-                                    $tw_link_aset2=$items4->link_asset;
+                                   
+                                    $tw_StreamId2   =$items4->StreamId;
+                                    $tw_CreateDate2 =$items4->CreateDate;
+                                    $tw_From2       =$items4->From;
+                                    $tw_UserImages2  =$items4->UserImages;
+                                    $tw_FromId2     =$items4->FromId;
+                                    $tw_LinkAsset2  =$items4->LinkAsset;
+                                    $tw_TypeAsset2  =$items4->TypeAsset;
+                                    $tw_LinkFeed2   =$items4->LinkFeed;
+                                    $tw_Messages2   =$items4->Messages;
+                                    $feedDateTw2=date('dS, F Y h:i:s A', strtotime($tw_CreateDate2));
                                     }
-                                 $tw2++;
+                                   $tw2++;
                                 }
-
+                               
                             }
-
-
+                            
                         ?>
                         <div class="social-feeds--box facebook">
                             <div class="header">
@@ -357,18 +373,18 @@
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
-                                <?php echo $fb_messages1; ?>
+                                <?php echo $fb_Messages1; ?>
                             </div><!--/ .body -->
                             <div class="footer">
                                 <div class="media">
                                     <div class="media-left">
-                                        <a href="<?php echo $fb_link1; ?>" target="_blank">
-                                            <img class="media-object img-responsive" src="<?php echo $fb_link_aset1;?>" alt="Profile Picture">
+                                        <a href="https://www.facebook.com/164934653709133/posts/<?php echo $strId1; ?>" target="_blank">
+                                            <img class="media-object img-responsive" src="<?php echo $fb_UserImages;?>" alt="Profile Picture">
                                         </a>
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
-                                        <p><?php echo $fb_username1;?></p>
-                                        <p><small>Rabu, 1 Mar 2015</small></p>
+                                        <p><?php echo $fb_From1;?></p>
+                                        <p><small><?php echo $feedDateFb1; ?></small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
                             </div><!--/ .footer -->
@@ -383,18 +399,18 @@
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
-                                <?php echo $tw_messages1; ?>
+                                <?php echo $tw_Messages1; ?>
                             </div><!--/ .body -->
                             <div class="footer">
                                 <div class="media">
                                     <div class="media-left">
-                                        <a href="#" target="_blank">
-                                            <img class="media-object img-responsive"  src="<?php echo $tw_link_aset1;?>" alt="Profile Picture">
+                                        <a href="<?php echo "https://twitter.com/user/status/".$tw_StreamId1; ?>" target="_blank">
+                                            <img class="media-object img-responsive"  src="<?php echo $tw_UserImages1;?>" alt="Profile Picture">
                                         </a>
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
-                                        <p><?php echo $tw_username1;?></p>
-                                        <p><small>18 Feb 2015</small></p>
+                                        <p><?php echo $tw_From1;?></p>
+                                        <p><small><?php echo $feedDateFb2; ?></small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
                             </div><!--/ .footer -->
@@ -413,18 +429,18 @@
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
-                                <?php echo $tw_messages2; ?>
+                                <?php echo $tw_Messages2; ?>
                             </div><!--/ .body -->
                             <div class="footer">
                                 <div class="media">
                                     <div class="media-left">
-                                        <a href="#">
-                                            <img class="media-object img-responsive"  src="<?php echo $tw_link_aset2;?>" alt="Profile Picture">
+                                        <a href="<?php echo "https://twitter.com/user/status/".$tw_StreamId2; ?>">
+                                            <img class="media-object img-responsive"  src="<?php echo $tw_UserImages2;?>" alt="Profile Picture">
                                         </a>
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
-                                        <p><?php echo $tw_username2;?></p>
-                                        <p><small>Rabu, 2 Mar 2015</small></p>
+                                        <p><?php echo $tw_From2;?></p>
+                                        <p><small><?php echo $feedDateTw1; ?></small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
                             </div><!--/ .footer -->
@@ -439,18 +455,18 @@
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
-                                <?php echo $fb_messages2; ?>
+                                <?php echo $fb_Messages2; ?>
                             </div><!--/ .body -->
                             <div class="footer">
                                 <div class="media">
                                     <div class="media-left">
-                                        <a href="<?php echo $fb_link2; ?>" target="_blank">
-                                            <img class="media-object img-responsive" src="<?php echo $fb_link_aset2;?>" alt="Profile Picture">
+                                        <a href="https://www.facebook.com/164934653709133/posts/<?php echo $strId2; ?>" target="_blank">
+                                            <img class="media-object img-responsive" src="<?php echo $fb_UserImages2;?>" alt="Profile Picture">
                                         </a>
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
-                                        <p><?php echo $fb_username2;?></p>
-                                        <p><small>Rabu,  Mar 2015</small></p>
+                                        <p><?php echo $fb_From2;?></p>
+                                        <p><small><?php echo $feedDateTw2;?></small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
                             </div><!--/ .footer -->
