@@ -704,7 +704,7 @@ $(document).ready(function(){
 		//=========================//perhitungan rate/persen======================================//
 		var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
 		compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan');
-                workshop_persen=parseFloat(getWorkshop(merk,2))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
+                workshop_persen=parseFloat(getWorkshop(merk,3))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
 		
 		// if (tlo= 5+wilayah) else (1+wilayah)
 		if (jenisasuransi=='tlo') {
@@ -925,6 +925,8 @@ $(document).ready(function(){
 		//=========================//perhitungan rate/persen======================================//
 		var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
 		compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan');
+                console.log(parseFloat(getWorkshopNonPack(merk,ages)));
+                console.log(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
                 workshop_persen=parseFloat(getWorkshopNonPack(merk,ages))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
 		
 		// if (tlo= 5+wilayah) else (1+wilayah)
@@ -1123,7 +1125,7 @@ $(document).ready(function(){
 		                                        
     }
 	
-	function totalrecalc_custome(){
+      function totalrecalc_custome(){
 
     	var no_workshop_prem=(parseInt(clearFormat($('.no_workshop_prem').html().replace(',00',''))));
         var no_compre_prem=(parseInt(clearFormat($('.no_compre_prem').html().replace(',00',''))));
@@ -1460,7 +1462,7 @@ $(document).ready(function(){
                 var telp=$('#telp').val();
 
 		
-		console.log(tahun_pembuatan+'-'+harga+'-'+model+'-'+regno+'-'+periode+'-'+email+'-'+nama+'-'+telp)
+		//console.log(tahun_pembuatan+'-'+harga+'-'+model+'-'+regno+'-'+periode+'-'+email+'-'+nama+'-'+telp)
 		$.ajax({
 			"url" : "/savemobilku/",
 			"type" : "POST",
@@ -1545,11 +1547,14 @@ $(document).ready(function(){
 		}
 	});
 	     
-	$('#myTable, #myTable2,#myTable3,#myTable4,#myTable5,#myTable6,#myTable7').dataTable( {
+	$('#myTable2,#myTable3,#myTable4,#myTable5').dataTable( {
                     "searching": false,
                     "bLengthChange": false,
                     "paging": false,
-                    "info": false
+                    "info": false,
+                    "responsive": true
+                    
+                    
             });
             
     
