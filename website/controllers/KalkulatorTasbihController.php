@@ -13,7 +13,7 @@
             $AsuransiJiwa = $_POST["asuransijiwa"];
             $Kontribusi = $_POST["kontribusi"];
 
-            //$entries = new Object_Tasbih_List();
+
             //$entries->setCondition("idKalkulasi = '"."); "Must open  database"
             
             //$this->KalkulasiAction($Usia,$Frekuensi,$AsuransiJiwa);
@@ -39,7 +39,7 @@
 
                 print_r($Calculation);
             
-                //-------Validated
+                //-------
                 
                 
             
@@ -53,7 +53,7 @@
             
         }*/
         
-        /*public function SendEmailAction($Email){
+        public function SendEmailAction($Email){
         
             //$document = 'Path Document';
             $params = array('firstName' => 'Bastian',
@@ -69,6 +69,6 @@
             $mail->send();
             
             
-        }*/
+        }
     }
 ?>

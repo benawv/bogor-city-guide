@@ -35,7 +35,7 @@
                               <label><strong>Tanggal Pembuatan Perhitungan</strong></label>
                           </div>
                           <div class="col-md-4">
-                            <input type="text"  class="form-control input-perhitungan" id="tgl-hitung" placeholder=""				required>
+                            <input type="text"  class="form-control" id="tgl-hitung" placeholder=""				required>
                           </div>
                         </div>
 
@@ -55,7 +55,11 @@
                               <label>Email</label>
                           </div>
                           <div class="col-md-4">
-                            <input type="email" class="form-control" id="email" name="email" placeholder=""  autofocus required onfocusout="this.value=validateEMAIL(this.value)">
+                            <input type="email" class="form-control" id="email" name="email" placeholder=""   required onfocusout="this.value=validateEMAIL(this.value)">
+                              <label id="notifemail" style="display:none"><font color=red>
+                                  Mohon maaf email yang Anda masukkan belum benar
+                                  </font>
+                              </label>
                           </div>
                         </div>
 
@@ -117,10 +121,14 @@
 
                         <div class="form-group">
                           <div class="col-md-4">
-                              <label>Massa Pembayaran Kontribusi/ Premi</label>
+                              <label>Massa Pembayaran Kontribusi/ Premi (Tahun)</label>
                           </div>
                           <div class="col-md-4">
-                            <input type="text" class="form-control" name="coverage" id="masa-premi" placeholder="" onkeyup="angka(this);" >
+                                    <select  class="form-control" name="masa-premi" id="masa-premi">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    </select>
                           </div>
                         </div>
 
@@ -174,12 +182,12 @@
                             var nama = $('#nama').val();
                             var email = $('#email').val();
                             var tanggallahir = $('#tgl-lahir').val();
-                            var sex = $('#JenisKelamin').val();
+                            var sex = $('#JenisKelamin option:Selected').val();
                             var usia = $('#usia').val();
                             var frekuensi = $('#Frekuensi option:Selected').val();
                             var asuransijiwa = $('#asuransi-jiwa').val();
                             var unfnum = accounting.unformat(asuransijiwa,0,","); 
-                            var kontribusi = $('#masa-premi').val();                           
+                            var kontribusi = $('#masa-premi option:Selected').val();                           
                              
 			                //console.log('test');  
                             $.ajax({
@@ -200,8 +208,9 @@
                                             },
                                 success  : function(data){
                                     console.log(data);
-                                    $('#kontribusi-berkala').val(data);
-                                    alert(unfnum);
+                                    $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
+                                    
+                                    //alert(unfnum);
                                 }
                             });
 
@@ -225,7 +234,8 @@
 							var dob = new Date(this.value);
 							var today = new Date();
 							var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
-							$('#usia').val(age);
+							if(age >= 0) $('#usia').val(age);
+                            else $('#usia').val(0);
 
 						});
 					};
@@ -239,12 +249,15 @@
                     };
 
                     //Validate Email
-                   function validateEMAIL(value) {
+                   function validateEMAIL(surat) {
                         var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-                        if(!re.test(value)){
-                            //alert('Email is not valid');
-
-                        }else return value;
+                        if(!re.test(surat)){
+                            document.getElementById('notifemail').style.display= 'block';
+                            return surat;
+                        }else{
+                            document.getElementById('notifemail').style.display= 'none';
+                            return surat;
+                        }
                     };
                     
                     //Validate Min Max
