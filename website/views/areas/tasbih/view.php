@@ -178,7 +178,7 @@
                             var usia = $('#usia').val();
                             var frekuensi = $('#Frekuensi option:Selected').val();
                             var asuransijiwa = $('#asuransi-jiwa').val();
-                            var subsAJ = asuransijiwa.substring(4,10);
+                            var unfnum = accounting.unformat(asuransijiwa,0,","); 
                             var kontribusi = $('#masa-premi').val();                           
                              
 			                //console.log('test');  
@@ -195,13 +195,13 @@
                                             'sex' : sex,
                                             'usia' : usia,
                                             'frekuensi' : frekuensi,
-                                            'asuransijiwa' : subsAJ,
+                                            'asuransijiwa' : unfnum,
                                             'kontribusi' : kontribusi        
                                             },
                                 success  : function(data){
                                     console.log(data);
                                     $('#kontribusi-berkala').val(data);
-                                    alert(subsAJ);
+                                    alert(unfnum);
                                 }
                             });
 
@@ -242,7 +242,7 @@
                    function validateEMAIL(value) {
                         var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
                         if(!re.test(value)){
-                            alert('Email is not valid');
+                            //alert('Email is not valid');
 
                         }else return value;
                     };
@@ -251,10 +251,10 @@
                     function minmax(value, min) 
                     {
                         if(parseInt(value) < 50000000 || isNaN(value)) 
-                            return accounting.formatMoney(50000000, "Rp ", 0,".");
+                            return accounting.formatMoney(50000000, "Rp ", 0,",");
                         else if(parseInt(value) > 10000000000) 
-                            return accounting.formatMoney(parseInt(value), "Rp ", 0,"."); 
-                        else return accounting.formatMoney(value, "Rp ", 0,".");
+                            return accounting.formatMoney(parseInt(value), "Rp ", 0,","); 
+                        else return accounting.formatMoney(value, "Rp ", 0,",");
                     };
 
 

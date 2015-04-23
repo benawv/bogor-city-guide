@@ -10,7 +10,7 @@
             $JenisKelamin = $_POST["sex"];
             $Usia = $_POST["usia"];
             $Frekuensi = $_POST["frekuensi"];
-            $AsuransiJiwa = $_POST["asuransi-jiwa"];
+            $AsuransiJiwa = $_POST["asuransijiwa"];
             $Kontribusi = $_POST["kontribusi"];
 
             //$entries = new Object_Tasbih_List();
