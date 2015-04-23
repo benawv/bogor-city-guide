@@ -68,6 +68,7 @@
 </head>
 
 <body>
+	<h1 class="title-hide"><?php echo $this->document->getProperty('navigation_title');?></h1>
 	<?php echo $this->template("includes/header.php")?>
 	<div role="main" class="main">
 		<?php echo $this->layout()->content; ?>
