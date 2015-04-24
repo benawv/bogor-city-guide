@@ -31,10 +31,9 @@
                 
                 //$entries = new Object_tasbih_list();
                 
+			  /* try{
 
-                $cookie = new Object_tasbih(); //Create New List Object
-                
-                //*
+                //----SetData
                 $cookie->setTanggalPembuatan($TanggalPembuatan);
                 $cookie->setNama($Nama);
                 $cookie->setEmail($Email);
@@ -49,7 +48,7 @@
 
 
                 
-			try{
+
                 $register->setKey('Tasbih_'.strtolower($nama));
                 $register->setO_parentId('1568');
                 $register->setIndex(0);
@@ -58,7 +57,7 @@
 			}
 			catch(Exception $e){
 				echo 'ERROR: ',  $e->getMessage(), "\n";
-			}
+			}*/
 		}
                 
                 
