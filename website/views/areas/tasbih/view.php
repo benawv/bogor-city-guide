@@ -16,6 +16,8 @@
     /* Override AJFC's feature box color */
     .box-dent--inner{ background: #009a44; }
     .box-dent::before{ border-top: 28px solid #009a44 !important;}
+    .btn-tasbih{ background: #009a44 !important; }
+    .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
 </style>
 
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
@@ -151,8 +153,8 @@
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
-                        <div class="col-md-12">
-                            <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm pull-right" id="Kalkulasi" name="next" value="Kalkulasi">
+                        <div class="col-md-8 col-md-offset-4">
+                            <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" value="Kalkulasi">
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
 
