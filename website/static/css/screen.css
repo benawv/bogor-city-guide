@@ -466,7 +466,7 @@ nav.primary .menu-level1 > ul > li > a{padding:10px 15px;color:#fff;border-botto
 nav.primary .menu-level1 > ul > li > a:hover{color:#199dd7;}
 nav.primary .menu-level2{position:relative;background:#414141;padding:0;}
 nav.primary .menu-level2 > ul{margin:0;float:none;width:100%;}
-nav.primary .menu-level2 > ul > li{padding:0;}
+nav.primary .menu-level2 > ul > li{padding:0;margin: 10px 0;}
 nav.primary .menu-level2 > ul > li > a{padding:10px 15px;border-bottom:1px solid #fff;}
 nav.primary .menu-level2 > ul > li > a:hover{color:#199dd7;}
 .banner .search form{padding-left:120px;}
