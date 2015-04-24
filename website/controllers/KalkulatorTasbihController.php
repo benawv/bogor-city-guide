@@ -43,6 +43,7 @@
 
             }
 
+			  /* try{
 
                 //------Calculate from user's input
             
