@@ -37,6 +37,9 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="tgl-hitung" placeholder="<?php echo date( 'd/m/Y' ); ?>" required>
+                             <label id="notif-tglhitung" style="display:none; color: #f00;">
+                                Mohon maaf Anda belum memasukkan tanggal pembuatan
+                            </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -47,7 +50,10 @@
                             <label>Nama</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="nama" placeholder="Nama" required>
+                            <input type="text" class="form-control" id="nama" placeholder="Nama" required onfocusout="this.value=validateNama(this.value)"> 
+                            <label id="notif-nama" style="display:none; color: #f00;">
+                                Mohon maaf Anda belum atau salah memasukkan nama
+                            </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -65,10 +71,13 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Tanggal Lahir</label>
+                            <label>Tanggal Lahir (Min.  18 tahun)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir" autofocus required>
+                            <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
+                            <label id="notif-tgllahir" style="display:none; color: #f00;">
+                                Mohon maaf inputan Anda belum benar
+                            </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -178,10 +187,11 @@
         /*
          * jQueryUI DatePicker
          */
-        $( '#tgl-lahir' ).datepicker();
-        $( '#tgl-hitung' ).datepicker();
 
         $('#Kalkulasi').click(function() {
+            
+            
+            
             var tanggalpembuatan = $('#tgl-hitung').val();
             var nama = $('#nama').val();
             var email = $('#email').val();
@@ -214,16 +224,25 @@
             });
 
         });
+        
 
     });
 
+    $(function() {
+        $('#tgl-hitung').datepicker();
+        $('#tgl-lahir').datepicker();
+    });
+    
     $( window ).load(function(){
         $('#tgl-lahir').on('change', function() {
             var dob = new Date(this.value);
             var today = new Date();
             var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
-            if(age >= 0) $('#usia').val(age);
-            else $('#usia').val(0);
+            if(age >= 18) $('#usia').val(age);
+            else{
+                document.getElementById('notif-tgllahir').style.display= 'block';
+                $('#usia').val('Umur Anda dibawah 18 tahun');
+            }
         });
     });
 
@@ -251,6 +270,35 @@
             return surat;
         }
     };
+    
+    function validateNama(nama){
+        var re = /^[^\\\/&]*$/;
+        if(!re.test(nama)){
+            document.getElementById('notif-nama').style.display= 'block';
+            return nama;
+        }else{
+            document.getElementById('notif-nama').style.display= 'none';
+            return nama;
+        }    
+    };
+    
+    /*function validateHitung(tanggal){
+        var re = /^[a-zA-Z0-9]*$/;
+        if(!re.test(tanggal)){
+            document.getElementById('notif-tanggalhitung').style.display= 'block';
+            return nama;
+        }else{
+            document.getElementById('notif-tanggalhitung').style.display= 'none';
+            return nama;
+        }  
+    };
+    
+    function validateLahir(lahir){
+        if($('#tgl-lahir').val() != ''){
+            document.getElementById('notif-tgllahir').style.display= 'none';
+            return lahir;
+        }
+    };*/
 
     //Validate Min Max
     function minmax(value, min)
