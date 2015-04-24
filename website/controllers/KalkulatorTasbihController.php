@@ -19,6 +19,11 @@
 	    $rates= new Object_tasbihRate_List();
 	    $rates->setCondition("kelamin='".$JenisKelamin."' and frekuensi=".$Kontribusi." and usia=".$Usia);
 	    
+	    echo "$JenisKelamin<br>";
+	    echo "$Kontribusi<br>";
+	    echo "$Usia<br>";
+	    print_r($rates);
+	    die();
 	    $rate='';
 	    foreach($rates as $items){
 		$rate=$items->rate;
