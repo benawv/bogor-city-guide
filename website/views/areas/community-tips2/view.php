@@ -16,7 +16,7 @@
 					<div class="item" id="item-left">
 						<div class="heading">
 							<a href="<?php echo "community-detail/".$entry->getO_key()."_".$entry->getO_id()."_".$entry->getTemplate();?>">
-								<h2 class="title_news"><?php echo $entry->getTitle();?></h2>
+								<span class="title_news"><?php echo $entry->getTitle();?></span>
 							</a>
 							<div class="btn-group">
 								<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
