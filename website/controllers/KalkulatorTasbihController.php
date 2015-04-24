@@ -30,52 +30,32 @@
             //$this->KalkulasiAction($Usia,$Frekuensi,$AsuransiJiwa);
             //$this->KalkulasiAction($Email);
             
-            
+            if(count($entries) == 0){
+
+                //Waiting Bos's Command
+
+            }else{
+
+                //$entri = new Object_Tasbih_List();
+                //$entri->setCondition(); "Must Open Database"
+
+                //Waiting Bos's Command
+
+            }
+
 
                 //------Calculate from user's input
             
-               $Calculation = ($rate*$Kontribusi)/1000; //The Pattern of ALLIANZ
-               print_r($Kontribusi);
+               $Calculation = ($rate*$AsuransiJiwa)/1000; //The Pattern of ALLIANZ
+               print_r($Calculation);
             
-                //-------Saving Data
-                
-                //$entries = new Object_tasbih_list();
-                
-
-                $cookie = new Object_tasbih(); //Create New List Object
-                
-                //*
-                $cookie->setTanggalPembuatan($TanggalPembuatan);
-                $cookie->setNama($Nama);
-                $cookie->setEmail($Email);
-                $cookie->setTanggalLahir($TanggalLahir);
-                $cookie->setJenisKelamin($JenisKelamin);
-                $cookie->setUsia($Usia);
-                $cookie->setFrekuensiPembayaran($Frekuensi);
-                $cookie->setDetailAsuransiJiwa($AsuransiJiwa);
-                $cookie->setMassaPembayaranKontribusi($Kontribusi);
-                $cookie->setKontribusiBerkala($Calculation);
-                    
-
-
-                
-			try{
-                $register->setKey('Tasbih_'.strtolower($nama));
-                $register->setO_parentId('1568');
-                $register->setIndex(0);
-                $register->setPublished(1);
-                $register->save();
-			}
-			catch(Exception $e){
-				echo 'ERROR: ',  $e->getMessage(), "\n";
-			}
-		}
+                //-------
                 
                 
             
                 
 
-
+        }
         
         /*public function KalkulasiAction($Usia,$Frekuensi,$AsuransiJiwa){
         
@@ -83,7 +63,7 @@
             
         }*/
         
-        /*public function SendEmailAction($Email){
+        public function SendEmailAction($Email){
         
             //$document = 'Path Document';
             $params = array('firstName' => 'Bastian',
@@ -99,6 +79,6 @@
             $mail->send();
             
             
-        }*/
+        }
     }
 ?>
