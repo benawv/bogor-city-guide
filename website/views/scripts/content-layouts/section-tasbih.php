@@ -36,11 +36,10 @@
                 <div class="col-xs-12 col-sm-8 col-sm-offset-4 col-md-4 col-md-offset-8">
                     <div class="box-dent mt32">
                         <div class="box-dent--inner">
-                            <h2>AJFC 2015</h2>
-                            <p>#1ygterpenting mewujudkan mimpi menjadi kenyataan.</p>
+                            <h2>Kalkulor Tasbih</h2>
+                            <p>#1ygterpenting mewujudkan mimpi menjalani ibadah.</p>
                             <p>
-                                Daftarkan anak/kerabat Anda yang berusia 14-16 tahun untuk dilatih oleh pelatih remaja
-                                FC Bayern Munchen di Jerman.
+                                Coba sekarang.
                             </p>
                             <a href="#">Daftar Sekarang <i class="fa fa-angle-right"></i></a>
                         </div><!--/ .box-dent--inner -->
