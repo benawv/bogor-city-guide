@@ -16,6 +16,8 @@
     /* Override AJFC's feature box color */
     .box-dent--inner{ background: #009a44; }
     .box-dent::before{ border-top: 28px solid #009a44 !important;}
+    .btn-tasbih{ background: #009a44 !important; }
+    .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
 </style>
 
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
@@ -37,6 +39,9 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="tgl-hitung" placeholder="<?php echo date( 'd/m/Y' ); ?>" required>
+                             <label id="notif-tglhitung" style="display:none; color: #f00;">
+                                Mohon maaf Anda belum memasukkan tanggal pembuatan
+                            </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -47,7 +52,10 @@
                             <label>Nama</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="nama" placeholder="Nama" required>
+                            <input type="text" class="form-control" id="nama" placeholder="Nama" required onfocusout="this.value=validateNama(this.value)"> 
+                            <label id="notif-nama" style="display:none; color: #f00;">
+                                Mohon maaf Anda belum atau salah memasukkan nama
+                            </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -65,10 +73,13 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Tanggal Lahir</label>
+                            <label>Tanggal Lahir (Min.  18 tahun)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir" autofocus required>
+                            <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
+                            <label id="notif-tgllahir" style="display:none; color: #f00;">
+                                Mohon maaf inputan Anda belum benar
+                            </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -114,6 +125,9 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Asuransi Jiwa(Min. Rp.50.000.000)"  onfocusout="this.value = minmax(this.value,50000000,10000000000)">
+                            <label id="notif-asuransijiwa" style="display:none; color: #f00;">
+                                Mohon maaf inputan yang Anda masukkan belum benar
+                            </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -142,8 +156,8 @@
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
-                        <div class="col-md-12">
-                            <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm pull-right" id="Kalkulasi" name="next" value="Kalkulasi">
+                        <div class="col-md-8 col-md-offset-4">
+                            <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" value="Kalkulasi">
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
 
@@ -178,10 +192,20 @@
         /*
          * jQueryUI DatePicker
          */
-        $( '#tgl-lahir' ).datepicker();
-        $( '#tgl-hitung' ).datepicker();
 
         $('#Kalkulasi').click(function() {
+            
+            if( isNaN($('#nama')) || isNaN($('#asuransi-jiwa')) || isNaN($('#email')) ){
+
+                    if( isNaN($('#nama'))  )
+                        document.getElementById('notif-nama').style.display= 'block';
+                    if( isNaN($('#asuransi-jiwa')) )
+                        document.getElementById('notif-asuransijiwa').style.display= 'block';
+                    if( isNaN($('#email')) )
+                        document.getElementById('notifemail').style.display= 'block';
+
+            }else{
+            
             var tanggalpembuatan = $('#tgl-hitung').val();
             var nama = $('#nama').val();
             var email = $('#email').val();
@@ -212,18 +236,28 @@
                     $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
                 }
             });
+            }
 
         });
+    
 
     });
 
+    $(function() {
+        $('#tgl-hitung').datepicker();
+        $('#tgl-lahir').datepicker();
+    });
+    
     $( window ).load(function(){
         $('#tgl-lahir').on('change', function() {
             var dob = new Date(this.value);
             var today = new Date();
             var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
-            if(age >= 0) $('#usia').val(age);
-            else $('#usia').val(0);
+            if(age >= 18) $('#usia').val(age);
+            else{
+                document.getElementById('notif-tgllahir').style.display= 'block';
+                $('#usia').val('Umur Anda dibawah 18 tahun');
+            }
         });
     });
 
@@ -251,15 +285,49 @@
             return surat;
         }
     };
+    
+    function validateNama(nama){
+        var re = /^[^\\\/&]*$/;
+        if(!re.test(nama)){
+            document.getElementById('notif-nama').style.display= 'block';
+            return nama;
+        }else{
+            document.getElementById('notif-nama').style.display= 'none';
+            return nama;
+        }    
+    };
+    
+    /*function validateHitung(tanggal){
+        var re = /^[a-zA-Z0-9]*$/;
+        if(!re.test(tanggal)){
+            document.getElementById('notif-tanggalhitung').style.display= 'block';
+            return nama;
+        }else{
+            document.getElementById('notif-tanggalhitung').style.display= 'none';
+            return nama;
+        }  
+    };
+    
+    function validateLahir(lahir){
+        if($('#tgl-lahir').val() != ''){
+            document.getElementById('notif-tgllahir').style.display= 'none';
+            return lahir;
+        }
+    };*/
 
     //Validate Min Max
     function minmax(value, min)
     {
-        if(parseInt(value) < 50000000 || isNaN(value))
-            return accounting.formatMoney(50000000, "Rp ", 0,",");
-        else if(parseInt(value) > 10000000000)
-            return accounting.formatMoney(parseInt(value), "Rp ", 0,",");
-        else return accounting.formatMoney(value, "Rp ", 0,",");
+        if(parseInt(value) < 50000000 || isNaN(value)){
+            document.getElementById('notif-asuransijiwa').style.display= 'block';
+            return accounting.formatMoney(50000000, "Rp ", 0,",");}
+        else if(parseInt(value) > 10000000000){
+            document.getElementById('notif-asuransijiwa').style.display= 'none';
+            return accounting.formatMoney(parseInt(value), "Rp ", 0,",");}
+        else{
+            document.getElementById('notif-asuransijiwa').style.display= 'none';
+            return accounting.formatMoney(value, "Rp ", 0,",");
+        }
     };
 
 </script>

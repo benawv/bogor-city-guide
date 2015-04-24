@@ -541,7 +541,7 @@ div.search{width:100%;}
 .button-cart .btn-width{width:140px;}
 .mobile.deactive{display: block;}
 .static-links.mobile.deactive.share{position: absolute;right: 0;}
-.banner .minibar.cusZindex, .banner .minibar.cusZindex.cusLogin{display: block;}
+.banner .minibar.cusZindex, .banner .minibar.cusZindex.cusLogin{display: block;position: absolute;right:0;}
 .banner .minibar.cusZindex .liMobileHide{display: none;}
 .ulCustomerOnline.deactive{position: absolute;right: 0;}
 .button-mobile .cus_select{margin-left: 0px;}
@@ -570,7 +570,9 @@ footer.contentinfo .worldwide{height:180px;}
 .full-w.bg-white .description .submit_whislist{width:95%;}
 .full-w.bg-white .description table{max-width:100%;}
 .span2.fundtype,.cus_select{width: 100% !important;}
-.wrap30 .select-btn.blue-color.btn.gradien-grey{position: relative !important;margin-left: 40px !important;margin-top: 10px !important;width: 100% !important;}
+.wrap30 a.linkInv, .wrap30 .select-btn.blue-color.filter_harga.gradien-grey{margin-left: 40px !important;margin-top: 20px !important;}
+.wrap30 .select-btn.blue-color.btn.gradien-grey, .wrap30 .select-btn.blue-color.filter_harga.gradien-grey{position: relative !important;width: 100% !important;}
+.wrap30 .linkInv .select-btn.blue-color.btn.gradien-grey{margin-left: 0px !important;}
 .button-mobile{width: 80%;}
 .linkInv{margin-bottom: 10px;width: 100%;}
 .button-mobile .cus_select{margin-left: 40px;}
