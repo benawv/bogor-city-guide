@@ -205,17 +205,17 @@
             var asuransijiwa = $('#asuransi-jiwa').val();
             var kontribusi = $('#masa-premi option:Selected').val();
             
-            if( nama == null || asuransijiwa == null ||email == null || tanggalpembuatan == null || tanggallahir == null){
+            if( nama == '' || asuransijiwa == '' ||email == '' || tanggalpembuatan == '' || tanggallahir == ''){
 
-                    if( nama == null  )
+                    if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
-                    if( asuransijiwa == null  )
+                    if( asuransijiwa == ''  )
                         document.getElementById('notif-asuransijiwa').style.display= 'block';
-                    if( email == null )
+                    if( email == '' )
                         document.getElementById('notifemail').style.display= 'block';
-                    if( tanggalpembuatan == null)
+                    if( tanggalpembuatan == '')
                         document.getElementById('notif-tglhitung').style.display= 'block';
-                    if( tanggallahir == null )
+                    if( tanggallahir == '' )
                         document.getElementById('notif-tgllahir').style.display= 'block';
 
 
