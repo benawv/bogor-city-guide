@@ -17,6 +17,8 @@
 $JenisKelamin='l';
 $Kontribusi=5;
 $Usia=18;
+echo "Test";
+die();
 	    $rates= new Object_tasbihRate_List();
 	    print_r($rates);
 	    die();
