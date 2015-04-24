@@ -13,8 +13,8 @@
 			?>
 					<div class="item" id="item-left">
 						<div class="heading">
-							<a href="<?php echo "community-detail/".$entry->getO_key()."_".$entry->getO_id()."_".$entry->getTemplate();?>">
-								<span class="title_news"><?php echo $entry->getTitle();?></span>
+							<a href="<?php echo "community-detail/".$entry->getO_key()."_".$entry->getO_id()."_".$entry->getTemplate();?>" class="title_news">
+								<?php echo $entry->getTitle();?>
 							</a>
 							<div class="btn-group">
 								<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
