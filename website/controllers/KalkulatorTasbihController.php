@@ -14,12 +14,9 @@
             $Frekuensi = $_POST["frekuensi"];
             $AsuransiJiwa = $_POST["asuransijiwa"];
             $Kontribusi = $_POST["kontribusi"];
-$JenisKelamin='l';
-$Kontribusi=5;
-$Usia=18;
 
 	    $rates= new Object_TasbihRate();
-	    //$rates->setCondition("kelamin='p' and frekuensi='5' and usia=18");
+	    $rates->setCondition("kelamin='p' and frekuensi='5' and usia=18");
 	    print_r($rates);
 	    die();
 	    $rate='';
