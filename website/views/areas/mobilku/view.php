@@ -10,15 +10,170 @@
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/data-table-1.10.4/media/css/jquery.dataTables.css" >
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/jquery-ui.css" >
 
+<style type="text/css">
+
+    /**
+     * Responsive improvements
+     */
+
+    @media( max-width: 320px )
+    {
+        #newsletter-allianz
+        {
+            padding: 25px 16px;
+        }
+
+        .tabScroll > table > thead > tr > th:first-child,
+        .tabScroll > table > tbody > tr > td:first-child,
+        .tabScroll > table > tfoot > tr > td:first-child
+        {
+            width: 120px !important;
+        }
+
+        .tabScroll > table
+        {
+            margin-left: 120px !important;
+        }
+
+        /*
+         * Table with checklists height fix
+         */
+
+        .tabScroll > table.tbl_ck > thead > tr > th:first-child
+        {
+            min-height: 73px !important;
+            line-height: 73px !important;
+            padding: 0 16px !important;
+        }
+    }
+
+    /**
+     * jQuery DataTable Replacement
+     * http://jsfiddle.net/emn13/YMvk9/
+     */
+
+    .tabcontent > ul > li
+    {
+        position: relative;
+    }
+
+    .tabScroll
+    {
+        width: 100%; /*600px;*/
+        overflow-x: scroll;
+        overflow-y: auto;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .tabScroll > table
+    {
+        border-collapse: separate;
+        margin-left: 240px;
+    }
+
+    .tabScroll > table.tbl_ck
+    {
+        margin-left: 100px;
+    }
+
+    .tabScroll > table.tbl_ck > thead > tr > th:first-child,
+    .tabScroll > table.tbl_ck > tbody > tr > td:first-child,
+    .tabScroll > table.tbl_ck > tfoot > tr > td:first-child
+    {
+        width: 100px;
+    }
+
+    .tabScroll > table td,
+    .tabScroll > table th,
+    {
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    .tabScroll > table > thead > tr > th
+    {
+        background: #f5f6f6;
+        font-weight: bold;
+        border-bottom: solid 1px #ddd;
+        padding: 16px;
+    }
+
+    .tabScroll > table > tbody > tr > td,
+    .tabScroll > table > tfoot > tr > td
+    {
+        background: #f9f9f9;
+        border-bottom: solid 1px #ddd;
+        padding: 8px 16px;
+        background: #f5f6f6 !important;
+    }
+
+    .tabScroll > table > tbody > tr:nth-child(even) > td,
+    .tabScroll > table > tfoot > tr:nth-child(even) > td
+    {
+        background: #cdedf8 !important;
+    }
+
+    .tabScroll > table > tfoot > tr > td:nth-child(3),
+    .tabScroll > table > tfoot > tr > td:nth-child(4)
+    {
+        background: #e2e3e3 !important;
+    }
+
+    .tabScroll > table > thead > tr > th:first-child,
+    .tabScroll > table > tbody > tr > td:first-child,
+    .tabScroll > table > tfoot > tr > td:first-child
+    {
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        width: 240px;
+        top: auto;
+        /* border: solid 1px red; */
+    }
+
+    .tabScroll > table > tfoot > tr > td:first-child
+    {
+        /* display: none; */
+        visibility: hidden;
+        border-top: solid 1px #ddd;
+        border-bottom: none !important;
+    }
+
+    .tabScroll > table > thead > tr > th:nth-child(2),
+    .tabScroll > table > tbody > tr > td:nth-child(2),
+    .tabScroll > table > tfoot > tr > td:nth-child(2)
+    {
+        min-width: 280px;
+    }
+
+</style>
+
+<script>
+    function adjustTable()
+    {
+        $( '.tabScroll > table' ).each(function(index, value){
+            $( this ).find( 'td:first-child' ).each( function( index, value ){
+                var fixedColHeight = $( this ).outerHeight();
+                $( this ).parent().find( 'td:not(:first-child)' ).css( 'height', fixedColHeight + 'px' );
+            });
+        });
+    }
+</script>
+
 <!--script src="/website/static/js/masonry.min.js" type="text/javascript"></script-->
 
 <!--   plugins 	 -->
 
 <script src="/website/static/mobilku/jquery.bootstrap.wizard.js" type="text/javascript"></script>
 <script src="/website/static/mobilku/wizard.js"></script>
+
+<!--
 <script src="/website/static/mobilku/data-table-1.10.4/media/js/jquery.dataTables.js" type="text/javascript"></script>
 <script src="/website/static/mobilku/data-table-1.10.4/media/js/dataTables.tableTools.min.js" type="text/javascript"></script>
 <script src="/website/static/mobilku/data-table-1.10.4/media/js/dataTables.editor.min.js" type="text/javascript"></script>
+-->
 
 <script src="/website/static/mobilku/jquery.validate.min.js"></script>
 <script src="/website/static/mobilku/jquery-ui.js"></script>
@@ -78,7 +233,7 @@
                                             <label for="input1">Tahun Pembuatan</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <select id="tahun_pembuatan" class="form-control">
+                                            <select id="tahun_pembuatan" class="form-control" tabindex="1">
                                             <?php
                                                 $year = date("Y",strtotime("-10 year"));
                                                 for( $i = date("Y"); $i >= $year; $i-- ){
@@ -96,7 +251,7 @@
                                             <label for="input2">Harga Mobil</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="harga" class="form-control required" id="harga" placeholder="" value="">
+                                            <input type="text" name="harga" class="form-control required" id="harga" placeholder="" value="" tabindex="2">
                                         </div><!--/ .col-sm-4 -->
                                         <div class="col-sm-4">
                                             <span id="tooltips2" class="tooltips">*Mohon masukan harga pasar saat ini</span>
@@ -110,7 +265,7 @@
                                             <label for="input3">Merk Mobil</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <select id="merk" class="form-control">
+                                            <select id="merk" class="form-control" tabindex="3">
                                                 <option value="">Silahkan pilih</option>
                                                 <?php
                                                     $merk = new Object_MobilBrandName_List();
@@ -130,7 +285,7 @@
                                             <label for="input4">Model Mobil</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4" >
-                                            <select id="model" class="form-control model-form">
+                                            <select id="model" class="form-control model-form" tabindex="4">
                                                 <option value="">Silahkan pilih</option>
                                             </select>
                                         </div><!--/ .col-sm-4 -->
@@ -143,7 +298,7 @@
                                             <label for="input2">Registration No</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="regno" class="form-control required" id="regno" placeholder="B123XXX">
+                                            <input type="text" name="regno" class="form-control required" id="regno" placeholder="B123XXX" tabindex="5">
                                         </div><!--/ .col-sm-4 -->
                                         <div class="col-sm-4">
                                             <span id="tooltips2" class="tooltips">*No kendaraan</span>
@@ -159,7 +314,7 @@
                                         <div class="col-sm-4">
                                             <div class="left-inner-addon">
                                                 <i class="flaticon-black187"></i>
-                                                <input type="text" name="tipe" class="form-control" id="tipe" placeholder="" value="" disabled=disabled />
+                                                <input type="text" name="tipe" class="form-control" id="tipe" placeholder="" value="" disabled=disabled tabindex="6" />
                                             </div><!--/ .left-inner-addon -->
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
@@ -173,7 +328,7 @@
                                         <div class="col-sm-4">
                                             <div class="left-inner-addon">
                                                 <i class="flaticon-facebook30"></i>
-                                                <input type="text" name="wilayah" class="form-control" id="wilayah" placeholder="" value="" disabled=disabled/>
+                                                <input type="text" name="wilayah" class="form-control" id="wilayah" placeholder="" value="" disabled=disabled tabindex="7"/>
                                             </div><!--/ .left-inner-addon -->
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
@@ -187,7 +342,7 @@
                                         <div class="col-sm-4">
                                             <div class="left-inner-addon">
                                                 <i class="flaticon-harddisc"></i>
-                                                <input type="text" name="kapasitas" class="form-control" id="kapasitas" placeholder="" value="" disabled=disabled  />
+                                                <input type="text" name="kapasitas" class="form-control" id="kapasitas" placeholder="" value="" disabled=disabled tabindex="8"  />
                                             </div><!--/ .left-inner-addon -->
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
@@ -207,7 +362,7 @@
                                             <label for="inputEmail">Nama</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="nama" class="form-control required" id="name" placeholder="">
+                                            <input type="text" name="nama" class="form-control required" id="name" placeholder="" tabindex="9">
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
                                 </div><!--/ .row -->
@@ -218,7 +373,7 @@
                                             <label for="inputEmail">No. Telp</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="tel" name="telp" class="form-control required" id="telp" placeholder="+62812345678">
+                                            <input type="tel" name="telp" class="form-control required" id="telp" placeholder="+62812345678" tabindex="10">
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
                                 </div><!--/ .row -->
@@ -229,7 +384,7 @@
                                             <label for="input1">Periode Asuransi</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="periode" class="form-control" id="periode" placeholder="" value="<?php echo date("m/d/Y"); ?>">
+                                            <input type="text" name="periode" class="form-control" id="periode" placeholder="" value="<?php echo date("m/d/Y"); ?>" tabindex="11">
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
                                 </div><!--/ .row -->
@@ -238,7 +393,7 @@
                                     <div class="form-group">
                                         <div class="col-sm-3"></div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="periode-last" class="form-control" id="periode-last" placeholder="" value="" disabled=disabled >
+                                            <input type="text" name="periode-last" class="form-control" id="periode-last" placeholder="" value="" disabled=disabled tabindex="12" >
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
                                 </div><!--/ .row -->
@@ -252,7 +407,7 @@
                                             <div class="form-inline">
 
                                                 <div class="radio-icon">
-                                                    <input type="radio" id="radio01" name="radio" checked="checked" value="comprehensive" />
+                                                    <input type="radio" id="radio01" name="radio" checked="checked" value="comprehensive" tabindex="13" />
                                                     <label for="radio01">
                                                         <span>
                                                             <p>Komprehensif</p>
@@ -262,7 +417,7 @@
                                                 </div><!--/ .radio-icon -->
 
                                                 <div class="radio-icon">
-                                                    <input type="radio" id="radio02" name="radio" value="tlo"/>
+                                                    <input type="radio" id="radio02" name="radio" value="tlo" tabindex="14" />
                                                     <label for="radio02">
                                                         <span>
                                                             <p>Total Loss Only</p>
@@ -282,7 +437,7 @@
                                             <label for="inputEmail">Email Anda</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="email" name="email" class="form-control required" id="email" placeholder="">
+                                            <input type="email" name="email" class="form-control required" id="email" placeholder="" tabindex="15">
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
                                 </div><!--/ .row -->
@@ -834,31 +989,39 @@
 <script language="javascript">
     function isNumberKey(evt){
         var charCode = (evt.which) ? evt.which : event.keyCode
-        if (charCode > 31 && (charCode < 48 || charCode > 57)){
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+        {
             return false;
-        }else{
+        }
+        else
+        {
             return true;
         }
     }
+
+    $( window ).resize(function(){
+        adjustTable();
+    });
+
 </script>
 
 <script type="text/javascript">
-<?php
-        $i = 1;
-        $j = 1;
 
-        for ($i=1; $i <=2 ; $i++) {
-            for ($j=1; $j <=6 ; $j++) {
+    <?php
+    $i = 1;
+    $j = 1;
+
+    for ( $i=1; $i <= 2 ; $i++ ){
+        for ( $j=1; $j <= 6 ; $j++ ){
     ?>
 
-
-        $("#open_tab_<?php echo $i ?>_<?php echo $j ?>").click(function(){
-
-            $(".menutab_dekstop li a").removeClass();
-            $("a#open_tab_<?php echo $i ?>_<?php echo $j ?>").addClass("active");
-            $(".show_<?php echo $i ?>").hide();
-            $("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").show();
-        });
+    $("#open_tab_<?php echo $i ?>_<?php echo $j ?>").click(function(){
+        $(".menutab_dekstop li a").removeClass();
+        $("a#open_tab_<?php echo $i ?>_<?php echo $j ?>").addClass("active");
+        $(".show_<?php echo $i ?>").hide();
+        $("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").show();
+        adjustTable();
+    });
 
     <?php
             }
@@ -870,17 +1033,17 @@
         $i = 1;
         $j = 1;
 
-        for ($i=1; $i <=2 ; $i++) {
-            for ($j=1; $j <=6 ; $j++) {
+        for ( $i=1; $i <=2 ; $i++ ){
+            for ( $j=1; $j <=6 ; $j++ ){
     ?>
 
-        $("#open_tab_<?php echo $i ?>_<?php echo $j ?>_m").click(function(){
-
-            $("#tabcontent_<?php echo $i ?> li a").removeClass("active");
-            $(this).addClass("active");
-            $(".show_<?php echo $i ?>").hide();
-            $("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").show();
-        });
+    $("#open_tab_<?php echo $i ?>_<?php echo $j ?>_m").click(function(){
+        $("#tabcontent_<?php echo $i ?> li a").removeClass("active");
+        $(this).addClass("active");
+        $(".show_<?php echo $i ?>").hide();
+        $("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").show();
+        adjustTable();
+    });
 
     <?php
             }
@@ -912,6 +1075,8 @@
     }
 
     $(document).ready(function(){
+
+        adjustTable();
 
         $('li.aktif .nav_menu div').css('background-position', '0px 0px');
 
@@ -964,32 +1129,33 @@
         /* silde nav*/
 
         $(".hideme").hide();
+
         $(".v").click(function(){
             $(this).siblings('.hideme').slideToggle();
-            if($(this).find('.xicon').hasClass('down')){
-                    $(this).find('.xicon').removeClass('down')
-                    $(this).find('.xicon').addClass('up')
-                }
-                else{
-                    $(this).find('.xicon').removeClass('up')
-                    $(this).find('.xicon').addClass('down')
-                }
-            });
+            if($(this).find('.xicon').hasClass('down'))
+            {
+                $(this).find('.xicon').removeClass('down')
+                $(this).find('.xicon').addClass('up')
+            }
+            else
+            {
+                $(this).find('.xicon').removeClass('up')
+                $(this).find('.xicon').addClass('down')
+            }
+        });
 
-            $('.next').on('click',function(){
-                var me_left = $('.super_navi').scrollLeft();
-                $('.super_navi').scrollLeft(me_left + 100);
-                //console.log($('.super_navi').position().left);
+        $('.next').on('click',function(){
+            var me_left = $('.super_navi').scrollLeft();
+            $('.super_navi').scrollLeft(me_left + 100);
+            //console.log($('.super_navi').position().left);
+        });
 
+        $('.prev').on('click',function(){
+            var me_left = $('.super_navi').scrollLeft();
+            $('.super_navi').scrollLeft(me_left - 100);
+            //console.log($('.super_navi').position().left);
+        });
 
-            $('.prev').on('click',function(){
-                var me_left = $('.super_navi').scrollLeft();
-                $('.super_navi').scrollLeft(me_left - 100);
-                //console.log($('.super_navi').position().left);
-            });
-            /* silde nav*/
-
-            // for desktop
     });
 
 </script>
