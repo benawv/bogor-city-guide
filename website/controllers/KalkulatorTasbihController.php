@@ -53,8 +53,8 @@
                 */
             	
 		$Calculation = ($rate*$AsuransiJiwa)/1000; //The Pattern of ALLIANZ
-                print_r("jk:$JenisKelamin,Kontribusi:$Kontribusi, Usia:$Usia".$Calculation);
-                
+                //print_r("jk:$JenisKelamin,Kontribusi:$Kontribusi, Usia:$Usia".$Calculation);
+                print_r($Calculation);
 
         }
         
