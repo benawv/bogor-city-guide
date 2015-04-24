@@ -14,6 +14,27 @@ $(document).ready(function(){
 		 $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3, #nojenisasuransi").html("");
 		 $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3, #nojenisasuransi").append(jenisasuransi.toUpperCase());
 	});
+        
+        function getBand(price) {
+                 var si_band;
+                 if ((price=='')) {
+                     si_band='S1';
+                 }else if ((price>125000001)&&(price<200000001)) {
+                     si_band='S2';       
+                 }else if ((price>125000001)&&(price<200000001)) {
+                     si_band='S3'; 
+                 }else if ((price>200000001)&&(price<400000001)) {
+                     si_band='S4';
+                 }else if ((price>400000001)&&(price<800000001)) {
+                     si_band='S5'; 
+                 }else if((price>800000001)&&(price<1000000000000)) {
+                     si_band='S6';   
+                 }else{
+                      si_band='S6';
+                 }
+
+        }
+        
 	function getTlo(tipe,map) {
                         //code
                         var rate;
@@ -247,7 +268,8 @@ $(document).ready(function(){
 		
 		//=========================//perhitungan rate/persen======================================//
 		var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
-		compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan');
+		console.log(getBand(harga));
+                compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan');
                 workshop_persen=parseFloat(getWorkshop(merk,1))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
 //                console.log("compre_tlo_persen parsefloat: "+parseFloat(compre_tlo_persen));
 //		console.log("getWorkshop parsefloat: "+parseFloat(getWorkshop(merk,1)));
