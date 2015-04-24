@@ -194,7 +194,7 @@
             var kontribusi = $('#masa-premi option:Selected').val();
 
             $.ajax({
-                url      : '/KalkulatorTasbih/',
+                url      : '/kalkulator-tasbih/',
                 type     : 'POST',
                 data     : {
                             'tgl' : tanggalpembuatan,
