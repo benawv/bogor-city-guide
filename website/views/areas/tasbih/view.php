@@ -239,7 +239,7 @@
                             'kontribusi' : kontribusi
                             },
                 success  : function(data){
-                    console.log(data);
+                    //console.log(data);
                     $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
                 }
             });
