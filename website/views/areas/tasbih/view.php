@@ -194,7 +194,6 @@
          */
 
         $('#Kalkulasi').click(function() {
-            alert('test');
             var tanggalpembuatan = $('#tgl-hitung').val();
             var nama = $('#nama').val();
             var email = $('#email').val();
@@ -217,9 +216,6 @@
                         document.getElementById('notif-tglhitung').style.display= 'block';
                     if( tanggallahir == '' )
                         document.getElementById('notif-tgllahir').style.display= 'block';
-
-
-
             }else{
             
             var unfnum = accounting.unformat(asuransijiwa,0,",");
