@@ -18,7 +18,7 @@ $JenisKelamin='l';
 $Kontribusi=5;
 $Usia=18;
 
-	    $rates= new Object_tasbihRate_List();
+	    $rates= new Object_tasbihRate();
 	    $rates->setCondition("kelamin='p' and frekuensi='5' and usia=18");
 	    print_r($rates);
 	    die();
