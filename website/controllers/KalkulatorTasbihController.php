@@ -12,18 +12,15 @@
             $Frekuensi = $_POST["frekuensi"];
             $AsuransiJiwa = $_POST["asuransijiwa"];
             $Kontribusi = $_POST["kontribusi"];
-
-	     $JenisKelamin='l';
-	     $Frekuensi=5;
-	     $Usia=12;
 	    
-	     $rates= new Object_tasbihRate_List();
-	     $rates->setCondition("kelamin='".$JenisKelamin."' and frekuensi=".$Frekuensi." and usia=".$Usia);
+	    $rates= new Object_tasbihRate_List();
+	    $rates->setCondition("kelamin='".$JenisKelamin."' and frekuensi=".$Kontribusi." and usia=".$Usia);
 	     
-	     $rate='';
-	     foreach($rates as $items){
+	     
+	    $rate='';
+	    foreach($rates as $items){
 		$rate=$items->rate;
-	     }
+	    }
 
             //$entries->setCondition("idKalkulasi = '"."); "Must open  database"
             
@@ -43,17 +40,20 @@
 
             }
 
+
+	       
 			  /* try{
 
                 //------Calculate from user's input
             
-               $Calculation = ($rate*$AsuransiJiwa)/1000; //The Pattern of ALLIANZ
-               print_r($Calculation);
+               
             
                 //-------
                 
-                
-            
+                */
+            	
+		$Calculation = ($rate*$AsuransiJiwa)/1000; //The Pattern of ALLIANZ
+                print_r("jk:$JenisKelamin,Kontribusi:$Kontribusi, Usia:$Usia".$Calculation);
                 
 
         }
