@@ -3,8 +3,7 @@
 	class KalkulatorTasbihController extends Website_Controller_Action{
 		
         public function savingAction() {
-		echo "test";
-	    die();
+		
 
             $TanggalPembuatan = $_POST["tgl"];
             $Nama = $_POST["nama"];
@@ -19,7 +18,8 @@
 
 	    $rates= new Object_tasbihRate_List();
 	    $rates->setCondition("kelamin='".$JenisKelamin."' and frekuensi=".$Kontribusi." and usia=".$Usia);
-	     
+	     echo "test";
+	    die();
 	     
 	    $rate='';
 	    foreach($rates as $items){
