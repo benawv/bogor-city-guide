@@ -16,7 +16,7 @@
             $Kontribusi = $_POST["kontribusi"];
 
 	    $rates= new Object_TasbihRate_List();
-	    $rates->setCondition("kelamin='p' and frekuensi=5 and usia=18");
+	    $rates->setCondition("kelamin='".$JenisKelamin."' and frekuensi=$Kontribusi and usia=$Usia");
 	    $rate='';
 	    foreach($rates as $items){
 		$rate=$items->rate;
