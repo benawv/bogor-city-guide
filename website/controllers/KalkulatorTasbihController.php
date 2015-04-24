@@ -12,69 +12,53 @@
             $Frekuensi = $_POST["frekuensi"];
             $AsuransiJiwa = $_POST["asuransijiwa"];
             $Kontribusi = $_POST["kontribusi"];
-
-	     $JenisKelamin='l';
-	     $Frekuensi=5;
-	     $Usia=12;
 	    
-	     $rates= new Object_tasbihRate_List();
-	     $rates->setCondition("kelamin='".$JenisKelamin."' and frekuensi=".$Frekuensi." and usia=".$Usia);
+	
+	    die("test:".$Kontribusi);
+	    $rates= new Object_tasbihRate_List();
+	    $rates->setCondition("kelamin='".$JenisKelamin."' and frekuensi=".$Kontribusi." and usia=".$Usia);
 	     
-	     $rate='';
-	     foreach($rates as $items){
+	     
+	    $rate='';
+	    foreach($rates as $items){
 		$rate=$items->rate;
-	     }
+	    }
 
             //$entries->setCondition("idKalkulasi = '"."); "Must open  database"
             
             //$this->KalkulasiAction($Usia,$Frekuensi,$AsuransiJiwa);
             //$this->KalkulasiAction($Email);
             
-            
+            if(count($entries) == 0){
+
+                //Waiting Bos's Command
+
+            }else{
+
+                //$entri = new Object_Tasbih_List();
+                //$entri->setCondition(); "Must Open Database"
+
+                //Waiting Bos's Command
+
+            }
+
+
+	       
+			  /* try{
 
                 //------Calculate from user's input
             
-               $Calculation = ($rate*$Kontribusi)/1000; //The Pattern of ALLIANZ
-               print_r($Kontribusi);
+               
             
-                //-------Saving Data
+                //-------
                 
-                //$entries = new Object_tasbih_list();
-                
-			  /* try{
+                */
+            	
+		$Calculation = ($rate*$AsuransiJiwa)/1000; //The Pattern of ALLIANZ
+                //print_r("jk:$JenisKelamin,Kontribusi:$Kontribusi, Usia:$Usia".$Calculation);
+                print_r($Calculation);
 
-                //----SetData
-                $cookie->setTanggalPembuatan($TanggalPembuatan);
-                $cookie->setNama($Nama);
-                $cookie->setEmail($Email);
-                $cookie->setTanggalLahir($TanggalLahir);
-                $cookie->setJenisKelamin($JenisKelamin);
-                $cookie->setUsia($Usia);
-                $cookie->setFrekuensiPembayaran($Frekuensi);
-                $cookie->setDetailAsuransiJiwa($AsuransiJiwa);
-                $cookie->setMassaPembayaranKontribusi($Kontribusi);
-                $cookie->setKontribusiBerkala($Calculation);
-                    
-
-
-                
-
-                $register->setKey('Tasbih_'.strtolower($nama));
-                $register->setO_parentId('1568');
-                $register->setIndex(0);
-                $register->setPublished(1);
-                $register->save();
-			}
-			catch(Exception $e){
-				echo 'ERROR: ',  $e->getMessage(), "\n";
-			}*/
-		}
-                
-                
-            
-                
-
-
+        }
         
         /*public function KalkulasiAction($Usia,$Frekuensi,$AsuransiJiwa){
         
@@ -82,7 +66,7 @@
             
         }*/
         
-        /*public function SendEmailAction($Email){
+        public function SendEmailAction($Email){
         
             //$document = 'Path Document';
             $params = array('firstName' => 'Bastian',
@@ -98,6 +82,6 @@
             $mail->send();
             
             
-        }*/
+        }
     }
 ?>

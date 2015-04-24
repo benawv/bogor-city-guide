@@ -89,8 +89,8 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" name="JenisKelamin" id="JenisKelamin">
-                                <option value="Pria">Pria</option>
-                                <option value="Wanita">Wanita</option>
+                                <option value="l">Pria</option>
+                                <option value="p">Wanita</option>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -110,9 +110,9 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" name="Frekuensi" id="Frekuensi">
-                                <option value="Triwulan">Triwulan</option>
-                                <option value="Semesteran">Semesteran</option>
-                                <option value="Tahunan">Tahunan</option>
+                                <option value="3">Triwulan</option>
+                                <option value="2">Semesteran</option>
+                                <option value="1">Tahunan</option>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -194,7 +194,6 @@
          */
 
         $('#Kalkulasi').click(function() {
-            
             var tanggalpembuatan = $('#tgl-hitung').val();
             var nama = $('#nama').val();
             var email = $('#email').val();
@@ -217,9 +216,6 @@
                         document.getElementById('notif-tglhitung').style.display= 'block';
                     if( tanggallahir == '' )
                         document.getElementById('notif-tgllahir').style.display= 'block';
-
-
-
             }else{
             
             var unfnum = accounting.unformat(asuransijiwa,0,",");
@@ -239,7 +235,7 @@
                             'kontribusi' : kontribusi
                             },
                 success  : function(data){
-                    console.log(data);
+                    //console.log(data);
                     $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
                 }
             });
