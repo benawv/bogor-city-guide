@@ -125,6 +125,9 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Asuransi Jiwa(Min. Rp.50.000.000)"  onfocusout="this.value = minmax(this.value,50000000,10000000000)">
+                            <label id="notif-asuransijiwa" style="display:none; color: #f00;">
+                                Mohon maaf inputan yang Anda masukkan belum benar
+                            </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -192,7 +195,16 @@
 
         $('#Kalkulasi').click(function() {
             
-            
+            if( isNaN($('#nama')) || isNaN($('#asuransi-jiwa')) || isNaN($('#email')) ){
+
+                    if( isNaN($('#nama'))  )
+                        document.getElementById('notif-nama').style.display= 'block';
+                    if( isNaN($('#asuransi-jiwa')) )
+                        document.getElementById('notif-asuransijiwa').style.display= 'block';
+                    if( isNaN($('#email')) )
+                        document.getElementById('notifemail').style.display= 'block';
+
+            }else{
             
             var tanggalpembuatan = $('#tgl-hitung').val();
             var nama = $('#nama').val();
@@ -224,9 +236,10 @@
                     $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
                 }
             });
+            }
 
         });
-        
+    
 
     });
 
@@ -305,11 +318,16 @@
     //Validate Min Max
     function minmax(value, min)
     {
-        if(parseInt(value) < 50000000 || isNaN(value))
-            return accounting.formatMoney(50000000, "Rp ", 0,",");
-        else if(parseInt(value) > 10000000000)
-            return accounting.formatMoney(parseInt(value), "Rp ", 0,",");
-        else return accounting.formatMoney(value, "Rp ", 0,",");
+        if(parseInt(value) < 50000000 || isNaN(value)){
+            document.getElementById('notif-asuransijiwa').style.display= 'block';
+            return accounting.formatMoney(50000000, "Rp ", 0,",");}
+        else if(parseInt(value) > 10000000000){
+            document.getElementById('notif-asuransijiwa').style.display= 'none';
+            return accounting.formatMoney(parseInt(value), "Rp ", 0,",");}
+        else{
+            document.getElementById('notif-asuransijiwa').style.display= 'none';
+            return accounting.formatMoney(value, "Rp ", 0,",");
+        }
     };
 
 </script>
