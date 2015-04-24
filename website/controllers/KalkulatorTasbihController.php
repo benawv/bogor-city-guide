@@ -13,6 +13,8 @@
             $AsuransiJiwa = $_POST["asuransijiwa"];
             $Kontribusi = $_POST["kontribusi"];
 	    
+	
+	    die("test:".$Kontribusi);
 	    $rates= new Object_tasbihRate_List();
 	    $rates->setCondition("kelamin='".$JenisKelamin."' and frekuensi=".$Kontribusi." and usia=".$Usia);
 	     
