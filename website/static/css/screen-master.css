@@ -509,7 +509,7 @@ footer.contentinfo .meta .static-links li{border:none;padding:0;margin-right:10p
 footer.contentinfo .footer-links{display:block;font-size:1em;}
 footer.contentinfo .footer-links > li{border-left:none;border-bottom:1px solid #5a5a5a;padding-bottom:10px;}
 footer.contentinfo .footer-links > li:last-child{border:none;}
-footer.contentinfo .footer-links ul a{font-size:1em;}
+footer.contentinfo .footer-links ul a{font-size:1em;margin: 10px 0px;}
 #social-media-activity{width:100%;}
 #social-media-activity .tintup{width:100% !important;overflow:scroll !important;}
 .banner .search form .input-text{width:100px}
