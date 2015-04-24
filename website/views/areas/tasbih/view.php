@@ -195,17 +195,6 @@
 
         $('#Kalkulasi').click(function() {
             
-            if( isNaN($('#nama')) || isNaN($('#asuransi-jiwa')) || isNaN($('#email')) ){
-
-                    if( isNaN($('#nama'))  )
-                        document.getElementById('notif-nama').style.display= 'block';
-                    if( isNaN($('#asuransi-jiwa')) )
-                        document.getElementById('notif-asuransijiwa').style.display= 'block';
-                    if( isNaN($('#email')) )
-                        document.getElementById('notifemail').style.display= 'block';
-
-            }else{
-            
             var tanggalpembuatan = $('#tgl-hitung').val();
             var nama = $('#nama').val();
             var email = $('#email').val();
@@ -214,11 +203,29 @@
             var usia = $('#usia').val();
             var frekuensi = $('#Frekuensi option:Selected').val();
             var asuransijiwa = $('#asuransi-jiwa').val();
-            var unfnum = accounting.unformat(asuransijiwa,0,",");
             var kontribusi = $('#masa-premi option:Selected').val();
+            
+            if( nama == '' || asuransijiwa == '' ||email == '' || tanggalpembuatan == '' || tanggallahir == ''){
+
+                    if( nama == ''  )
+                        document.getElementById('notif-nama').style.display= 'block';
+                    if( asuransijiwa == ''  )
+                        document.getElementById('notif-asuransijiwa').style.display= 'block';
+                    if( email == '' )
+                        document.getElementById('notifemail').style.display= 'block';
+                    if( tanggalpembuatan == '')
+                        document.getElementById('notif-tglhitung').style.display= 'block';
+                    if( tanggallahir == '' )
+                        document.getElementById('notif-tgllahir').style.display= 'block';
+
+
+
+            }else{
+            
+            var unfnum = accounting.unformat(asuransijiwa,0,",");
 
             $.ajax({
-                url      : '/KalkulatorTasbih/',
+                url      : '/kalkulator-tasbih/',
                 type     : 'POST',
                 data     : {
                             'tgl' : tanggalpembuatan,
@@ -253,8 +260,10 @@
             var dob = new Date(this.value);
             var today = new Date();
             var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
-            if(age >= 18) $('#usia').val(age);
-            else{
+            if(age >= 18) {
+                $('#usia').val(age);
+                document.getElementById('notif-tgllahir').style.display= 'none';
+            }else{
                 document.getElementById('notif-tgllahir').style.display= 'block';
                 $('#usia').val('Umur Anda dibawah 18 tahun');
             }
@@ -277,7 +286,7 @@
         if(!re.test(surat))
         {
             document.getElementById('notifemail').style.display= 'block';
-            return surat;
+            return null;
         }
         else
         {
@@ -290,7 +299,7 @@
         var re = /^[^\\\/&]*$/;
         if(!re.test(nama)){
             document.getElementById('notif-nama').style.display= 'block';
-            return nama;
+            return null;
         }else{
             document.getElementById('notif-nama').style.display= 'none';
             return nama;
@@ -320,7 +329,7 @@
     {
         if(parseInt(value) < 50000000 || isNaN(value)){
             document.getElementById('notif-asuransijiwa').style.display= 'block';
-            return accounting.formatMoney(50000000, "Rp ", 0,",");}
+            return null;}
         else if(parseInt(value) > 10000000000){
             document.getElementById('notif-asuransijiwa').style.display= 'none';
             return accounting.formatMoney(parseInt(value), "Rp ", 0,",");}

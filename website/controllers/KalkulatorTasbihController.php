@@ -13,6 +13,17 @@
             $AsuransiJiwa = $_POST["asuransijiwa"];
             $Kontribusi = $_POST["kontribusi"];
 
+	     $JenisKelamin='l';
+	     $Frekuensi=5;
+	     $Usia=12;
+	    
+	     $rates= new Object_tasbihRate_List();
+	     $rates->setCondition("kelamin='".$JenisKelamin."' and frekuensi=".$Frekuensi." and usia=".$Usia);
+	     
+	     $rate='';
+	     foreach($rates as $items){
+		$rate=$items->rate;
+	     }
 
             //$entries->setCondition("idKalkulasi = '"."); "Must open  database"
             
@@ -23,18 +34,16 @@
 
                 //------Calculate from user's input
             
-               $Calculation = (int)$Usia+(int)$Kontribusi+(int)$AsuransiJiwa; //The Pattern of ALLIANZ
-
-                print_r($Calculation);
+               $Calculation = ($rate*$Kontribusi)/1000; //The Pattern of ALLIANZ
+               print_r($Kontribusi);
             
                 //-------Saving Data
                 
                 //$entries = new Object_tasbih_list();
                 
+			  /* try{
 
-                $cookie = new Object_tasbih(); //Create New List Object
-                
-                //*
+                //----SetData
                 $cookie->setTanggalPembuatan($TanggalPembuatan);
                 $cookie->setNama($Nama);
                 $cookie->setEmail($Email);
@@ -49,7 +58,7 @@
 
 
                 
-			try{
+
                 $register->setKey('Tasbih_'.strtolower($nama));
                 $register->setO_parentId('1568');
                 $register->setIndex(0);
@@ -58,7 +67,7 @@
 			}
 			catch(Exception $e){
 				echo 'ERROR: ',  $e->getMessage(), "\n";
-			}
+			}*/
 		}
                 
                 
