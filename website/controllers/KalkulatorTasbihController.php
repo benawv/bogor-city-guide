@@ -37,14 +37,11 @@
                $Calculation = ($rate*$Kontribusi)/1000; //The Pattern of ALLIANZ
                print_r($Kontribusi);
             
-                //-------Saving Data
-                
-                //$entries = new Object_tasbih_list();
-                
-			  /* try{
+            try{
 
                 //----SetData
-                $cookie->setTanggalPembuatan($TanggalPembuatan);
+                $cookie = new Object_tasbih();
+                $cookie->settanggalpembuatan($TanggalPembuatan);
                 $cookie->setNama($Nama);
                 $cookie->setEmail($Email);
                 $cookie->setTanggalLahir($TanggalLahir);
@@ -57,17 +54,17 @@
                     
 
 
-                
-
-                $register->setKey('Tasbih_'.strtolower($nama));
-                $register->setO_parentId('1568');
-                $register->setIndex(0);
-                $register->setPublished(1);
-                $register->save();
+                $cookie->setO_key('tasbih_'.$cookies.strtotime(date("YmdHis")));
+                $cookie->setO_parentId('1568');
+                $cookie->setO_Index(0);
+                $cookie->setO_Published(1);
+                $cookie->save();
 			}
 			catch(Exception $e){
 				echo 'ERROR: ',  $e->getMessage(), "\n";
-			}*/
+			}
+            
+
 		}
                 
                 
@@ -76,11 +73,15 @@
 
 
         
-        /*public function KalkulasiAction($Usia,$Frekuensi,$AsuransiJiwa){
+        public function KalkulasiAction($Usia,$Frekuensi,$AsuransiJiwa){
         
+                //-------Saving Data
+                
+              
+                
 
             
-        }*/
+        }
         
         /*public function SendEmailAction($Email){
         
