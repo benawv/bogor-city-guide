@@ -247,8 +247,11 @@
     });
 
     $(function() {
-        $('#tgl-hitung').datepicker();
-        $('#tgl-lahir').datepicker();
+       $('#tgl-hitung, #tgl-lahir').datepicker({
+		changeMonth: true,
+		changeYear: true,
+		yearRange: "-100:+0"
+	    });
     });
     
     $( window ).load(function(){
