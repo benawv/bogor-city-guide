@@ -31,7 +31,7 @@
 	        $getId=Object_Abstract::getByPath('/tasbih/');//get folder id
 		
                 $cookie = new Object_tasbih();
-                $cookie->settanggalpembuatan($date_tglBuat);
+                $cookie->setTanggalPembuatan($date_tglBuat);
                 $cookie->setNama($Nama);
                 $cookie->setEmail($Email);
                 $cookie->setTanggalLahir($date_tglLahir);
