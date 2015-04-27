@@ -47,10 +47,59 @@
         }
     }
 
+    @media ( max-width: 480px )
+    {
+        .tabScroll > table > thead > tr > th:first-child,
+        .tabScroll > table > tbody > tr > td:first-child,
+        .tabScroll > table > tfoot > tr > td:first-child
+        {
+            width: 120px !important;
+        }
+
+        .tabScroll > table
+        {
+            margin-left: 100px !important; /* 120px !important; */
+        }
+    }
+
+    @media ( max-width: 991px )
+    {
+        .tabcontent
+        {
+            width: 100% !important;
+        }
+
+        .menutab_dekstop
+        {
+            float: left;
+            margin-right: 20px;
+            width: 100% !important;
+            margin-bottom: 20px !important;
+        }
+
+        .menutab_dekstop > ul > li > a
+        {
+            width: 100% !important;
+        }
+    }
+
+    @media ( min-width: 992px )
+    {
+        .tabcontent
+        {
+             width: 58% !important;
+        }
+    }
+
     /**
      * jQuery DataTable Replacement
      * http://jsfiddle.net/emn13/YMvk9/
      */
+
+    .tabcontent
+    {
+        width: 58%;
+    }
 
     .tabcontent > ul > li
     {
@@ -70,7 +119,7 @@
     .tabScroll > table
     {
         border-collapse: separate;
-        margin-left: 240px;
+        margin-left: 220px; /*240px;*/
     }
 
     .tabScroll > table.tbl_ck
