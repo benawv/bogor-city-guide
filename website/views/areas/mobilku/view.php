@@ -69,6 +69,11 @@
             width: 100% !important;
         }
 
+        .tabScroll > table.tbl_ck
+        {
+            margin-left: 100px;
+        }
+
         .menutab_dekstop
         {
             float: left;
@@ -160,11 +165,6 @@
         margin: 0;
         padding: 0;
 
-    }
-
-    .tabScroll > table.tbl_ck
-    {
-        margin-left: 100px;
     }
 
     .tabScroll > table.tbl_ck > thead > tr > th:first-child,
@@ -1133,7 +1133,7 @@
 <script src="/website/static/mobilku/functionCalcMobilku.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-    
+
 
     function navigateMe(anchor)
     {
@@ -1153,7 +1153,7 @@
     }
 
     $(document).ready(function(){
-        
+
         $( "#periode" ).datepicker({
             changeMonth: true,
             changeYear: true,
@@ -1165,7 +1165,7 @@
             $( "#periode-last" ).val(newdate.getMonth()+'/'+newdate.getDate()+'/'+newdate.getFullYear());
           }
         });
-        
+
         adjustTable();
 
         $('li.aktif .nav_menu div').css('background-position', '0px 0px');
