@@ -275,7 +275,7 @@ $(document).ready(function(){
         var band_id=getBand(cleanVarTlo);
         compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html);
         console.log(getWorkshop(merk_html,1));
-        workshop_persen=parseFloat(getWorkshop(merk_html,1))*(getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html)/100);
+        workshop_persen=Math.round(parseFloat(getWorkshop(merk_html,1))*(getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html)/100),4);
         // console.log("compre_tlo_persen parsefloat: "+parseFloat(compre_tlo_persen));
         //console.log("getWorkshop parsefloat: "+parseFloat(getWorkshop(merk,1)));
         //console.log("workshop_persen:"+workshop_persen);
