@@ -187,9 +187,8 @@
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 
 <script>
+    $(document).ready(function(){
 
-<<<<<<< HEAD
-=======
         /*
          * jQueryUI DatePicker
          */
@@ -249,14 +248,13 @@
 
     });
 
->>>>>>> 6991ca2992ede4ee3e7e83d4e065d8edb5fe52db
     $(function() {
-        alert('test');
-       $('#tgl-lahir').datepicker();
-       $('#tgl-hitung').datepicker();
+       $('#tgl-hitung, #tgl-lahir').datepicker({
+		changeMonth: true,
+		changeYear: true,
+		yearRange: "-100:+0"
+	    });
     });
-<<<<<<< HEAD
-=======
 
     
     $( window ).load(function(){
@@ -330,7 +328,6 @@
             });
         
 
->>>>>>> 6991ca2992ede4ee3e7e83d4e065d8edb5fe52db
 
 </script>
 
