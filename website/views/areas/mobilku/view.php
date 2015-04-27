@@ -47,10 +47,77 @@
         }
     }
 
+    @media ( max-width: 480px )
+    {
+        .tabScroll > table > thead > tr > th:first-child,
+        .tabScroll > table > tbody > tr > td:first-child,
+        .tabScroll > table > tfoot > tr > td:first-child
+        {
+            width: 120px !important;
+        }
+
+        .tabScroll > table
+        {
+            margin-left: 100px !important; /* 120px !important; */
+        }
+    }
+
+    @media ( max-width: 991px )
+    {
+        .tabcontent
+        {
+            width: 100% !important;
+        }
+
+        .menutab_dekstop
+        {
+            float: left;
+            margin-right: 20px;
+            width: 100% !important;
+            margin-bottom: 20px !important;
+        }
+
+        .menutab_dekstop > ul > li > a
+        {
+            width: 100% !important;
+        }
+
+        .tabScroll > table
+        {
+            border-collapse: separate;
+            margin-left: 220px; /*240px;*/
+        }
+
+        .tabScroll > table > thead > tr > th:first-child,
+        .tabScroll > table > tbody > tr > td:first-child,
+        .tabScroll > table > tfoot > tr > td:first-child
+        {
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            width: 240px;
+            top: auto;
+            /* border: solid 1px red; */
+        }
+    }
+
+    @media ( min-width: 992px )
+    {
+        .tabcontent
+        {
+             width: 58% !important;
+        }
+    }
+
     /**
      * jQuery DataTable Replacement
      * http://jsfiddle.net/emn13/YMvk9/
      */
+
+    .tabcontent
+    {
+        width: 58%;
+    }
 
     .tabcontent > ul > li
     {
@@ -65,12 +132,6 @@
         margin: 0;
         padding: 0;
 
-    }
-
-    .tabScroll > table
-    {
-        border-collapse: separate;
-        margin-left: 240px;
     }
 
     .tabScroll > table.tbl_ck
@@ -119,18 +180,6 @@
     .tabScroll > table > tfoot > tr > td:nth-child(4)
     {
         background: #e2e3e3 !important;
-    }
-
-    .tabScroll > table > thead > tr > th:first-child,
-    .tabScroll > table > tbody > tr > td:first-child,
-    .tabScroll > table > tfoot > tr > td:first-child
-    {
-        position: absolute;
-        z-index: 2;
-        left: 0;
-        width: 240px;
-        top: auto;
-        /* border: solid 1px red; */
     }
 
     .tabScroll > table > tfoot > tr > td:first-child
@@ -1056,6 +1105,7 @@
 <script src="/website/static/mobilku/functionCalcMobilku.js" type="text/javascript"></script>
 
 <script type="text/javascript">
+    
 
     function navigateMe(anchor)
     {
@@ -1075,7 +1125,19 @@
     }
 
     $(document).ready(function(){
-
+        
+        $( "#periode" ).datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-100:+0",
+            onSelect: function(date) {
+            var a=new Date(date);
+            var year1=a.setFullYear(a.getFullYear() + 1);
+            var newdate=new Date(year1);
+            $( "#periode-last" ).val(newdate.getMonth()+'/'+newdate.getDate()+'/'+newdate.getFullYear());
+          }
+        });
+        
         adjustTable();
 
         $('li.aktif .nav_menu div').css('background-position', '0px 0px');
