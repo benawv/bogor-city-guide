@@ -81,6 +81,24 @@
         {
             width: 100% !important;
         }
+
+        .tabScroll > table
+        {
+            border-collapse: separate;
+            margin-left: 220px; /*240px;*/
+        }
+
+        .tabScroll > table > thead > tr > th:first-child,
+        .tabScroll > table > tbody > tr > td:first-child,
+        .tabScroll > table > tfoot > tr > td:first-child
+        {
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            width: 240px;
+            top: auto;
+            /* border: solid 1px red; */
+        }
     }
 
     @media ( min-width: 992px )
@@ -114,12 +132,6 @@
         margin: 0;
         padding: 0;
 
-    }
-
-    .tabScroll > table
-    {
-        border-collapse: separate;
-        margin-left: 220px; /*240px;*/
     }
 
     .tabScroll > table.tbl_ck
@@ -168,18 +180,6 @@
     .tabScroll > table > tfoot > tr > td:nth-child(4)
     {
         background: #e2e3e3 !important;
-    }
-
-    .tabScroll > table > thead > tr > th:first-child,
-    .tabScroll > table > tbody > tr > td:first-child,
-    .tabScroll > table > tfoot > tr > td:first-child
-    {
-        position: absolute;
-        z-index: 2;
-        left: 0;
-        width: 240px;
-        top: auto;
-        /* border: solid 1px red; */
     }
 
     .tabScroll > table > tfoot > tr > td:first-child
