@@ -105,7 +105,35 @@
     {
         .tabcontent
         {
-             width: 58% !important;
+             /*(width: 58% !important;*/
+            width: 77% !important;
+            overflow-x: hidden !important;
+        }
+
+        .menutab_dekstop
+        {
+            /*margin-right: 12%;
+            width: 30%;*/
+            position: relative;
+            width: 20%;
+        }
+
+        .menutab_dekstop > ul
+        {
+            position: relative;
+        }
+
+        .menutab_dekstop > ul > li
+        {
+            list-style: none;
+            display: block;
+            position: relative;
+        }
+
+        .menutab_dekstop > ul > li > a
+        {
+            display: block;
+            width: 100%;
         }
     }
 
@@ -116,7 +144,7 @@
 
     .tabcontent
     {
-        width: 58%;
+        width: 77%;
     }
 
     .tabcontent > ul > li
