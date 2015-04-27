@@ -188,11 +188,149 @@
 
 <script>
 
+<<<<<<< HEAD
+=======
+        /*
+         * jQueryUI DatePicker
+         */
+
+        $('#Kalkulasi').click(function() {
+            var tanggalpembuatan = $('#tgl-hitung').val();
+            var nama = $('#nama').val();
+            var email = $('#email').val();
+            var tanggallahir = $('#tgl-lahir').val();
+            var sex = $('#JenisKelamin option:Selected').val();
+            var usia = $('#usia').val();
+            var frekuensi = $('#Frekuensi option:Selected').val();
+            var asuransijiwa = $('#asuransi-jiwa').val();
+            var kontribusi = $('#masa-premi option:Selected').val();
+            var unfnum = accounting.unformat(asuransijiwa,0,",");
+            
+            if( nama == '' || asuransijiwa == '' || asuransijiwa >= 49000000 ||email == '' || tanggalpembuatan == '' || tanggallahir == ''){
+
+                    if( nama == ''  )
+                        document.getElementById('notif-nama').style.display= 'block';
+                    if( asuransijiwa == '' || asuransijiwa < 50000000 )
+                        document.getElementById('notif-asuransijiwa').style.display= 'block';
+                    if( email == '' )
+                        document.getElementById('notifemail').style.display= 'block';
+                    if( tanggalpembuatan == '')
+                        document.getElementById('notif-tglhitung').style.display= 'block';
+                    if( tanggallahir == '' )
+                        document.getElementById('notif-tgllahir').style.display= 'block';
+                    //alert("MOHON PERIKSA INPUTAN ANDA");
+            }else{
+            
+            
+
+            $.ajax({
+                url      : '/kalkulator-tasbih/',
+                type     : 'POST',
+                data     : {
+                            'tgl' : tanggalpembuatan,
+                            'nama' : nama,
+                            'email' : email,
+                            'tanggallahir' : tanggallahir,
+                            'sex' : sex,
+                            'usia' : usia,
+                            'frekuensi' : frekuensi,
+                            'asuransijiwa' : unfnum,
+                            'kontribusi' : kontribusi
+                            },
+                success  : function(data){
+                    //console.log(data);
+                    $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
+                }
+            });
+            }
+
+        });
+    
+
+    });
+
+>>>>>>> 6991ca2992ede4ee3e7e83d4e065d8edb5fe52db
     $(function() {
         alert('test');
        $('#tgl-lahir').datepicker();
        $('#tgl-hitung').datepicker();
     });
+<<<<<<< HEAD
+=======
+
+    
+    $( window ).load(function(){
+        $('#tgl-lahir').on('change', function() {
+            var dob = new Date(this.value);
+            var today = new Date();
+            var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+            if(age >= 18) {
+                $('#usia').val(age);
+                document.getElementById('notif-tgllahir').style.display= 'none';
+            }else{
+                document.getElementById('notif-tgllahir').style.display= 'block';
+                $('#usia').val('Umur Anda dibawah 18 tahun');
+            }
+        });
+    });
+
+    //Validate Number
+
+
+    //Validate Email
+    function validateEMAIL(surat)
+    {
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        if(!re.test(surat))
+        {
+            document.getElementById('notifemail').style.display= 'block';
+            return null;
+        }
+        else
+        {
+            document.getElementById('notifemail').style.display= 'none';
+            return surat;
+        }
+    };
+    
+    function validateNama(nama){
+        var re = /^[^\\\/&]*$/;
+        if(!re.test(nama)){
+            document.getElementById('notif-nama').style.display= 'block';
+            return null;
+        }else{
+            document.getElementById('notif-nama').style.display= 'none';
+            return nama;
+        }    
+    };
+    
+
+           
+            $( "#asuransi-jiwa" ).bind( "input", function() {
+              var value = $("#asuransi-jiwa").val();
+              var unconv = accounting.unformat(value,0,",");
+                //alert(unconv);
+                var conv = accounting.formatMoney(unconv, "Rp ", 0,",");
+                $(this).val(conv);
+                var text = accounting.unformat(conv,0,",");
+                var retext = accounting.formatMoney(text, "Rp ", 0,",");
+                //alert(conv);
+                if(text >= 50000000){
+              
+                    
+                    document.getElementById('notif-asuransijiwa').style.display= 'none';
+                    //$(this).val(retext);
+                    //$(this).val(conv);
+                }
+                else{
+
+                    document.getElementById('notif-asuransijiwa').style.display= 'block';
+                                       // $(this).val('');
+                }
+            });
+        
+
+>>>>>>> 6991ca2992ede4ee3e7e83d4e065d8edb5fe52db
 
 </script>
 

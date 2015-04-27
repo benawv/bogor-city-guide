@@ -98,7 +98,7 @@ $(document).ready(function(){
             }else if (map=='PK_R2_S4_Sedan') {
                       rate='0.0122';
             }else if (map=='PK_R2_S5_Sedan') {
-                      rate='0.0107';
+                      rate='1.0700';
             }else if (map=='PK_R3_S1_Sedan') {
                       rate='0.0253';
             }else if (map=='PK_R3_S2_Sedan') {
