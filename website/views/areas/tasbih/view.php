@@ -181,18 +181,18 @@
     </div><!--/ .description -->
 </div><!--/ #newsletter-allianz -->
 
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
+<script src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/website/static/mobilku/jquery-ui.js" type="text/javascript"></script>
+
+
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 
 <script>
     $(document).ready(function(){
-
         /*
          * jQueryUI DatePicker
          */
-
         $('#Kalkulasi').click(function() {
             var tanggalpembuatan = $('#tgl-hitung').val();
             var nama = $('#nama').val();
@@ -206,7 +206,6 @@
             var unfnum = accounting.unformat(asuransijiwa,0,",");
             
             if( nama == '' || asuransijiwa == '' || asuransijiwa >= 49000000 ||email == '' || tanggalpembuatan == '' || tanggallahir == ''){
-
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
                     if( asuransijiwa == '' || asuransijiwa < 50000000 )
@@ -221,7 +220,6 @@
             }else{
             
             
-
             $.ajax({
                 url      : '/kalkulator-tasbih/',
                 type     : 'POST',
@@ -236,18 +234,15 @@
                             'asuransijiwa' : unfnum,
                             'kontribusi' : kontribusi
                             },
-                success  : function(data){
+                    success  : function(data){
                     //console.log(data);
                     $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
                 }
             });
             }
-
         });
     
-
     });
-
     $(function() {
        $('#tgl-hitung, #tgl-lahir').datepicker({
 		changeMonth: true,
@@ -255,26 +250,25 @@
 		yearRange: "-100:+0"
 	    });
     });
-
     
-    $( window ).load(function(){
+    $(document).ready(function(){
+         
+        
         $('#tgl-lahir').on('change', function() {
+           
             var dob = new Date(this.value);
             var today = new Date();
             var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
             if(age >= 18) {
                 $('#usia').val(age);
-                document.getElementById('notif-tgllahir').style.display= 'none';
+               document.getElementById('notif-tgllahir').style.display= 'none';
             }else{
                 document.getElementById('notif-tgllahir').style.display= 'block';
                 $('#usia').val('Umur Anda dibawah 18 tahun');
             }
         });
     });
-
     //Validate Number
-
-
     //Validate Email
     function validateEMAIL(surat)
     {
@@ -302,7 +296,6 @@
         }    
     };
     
-
            
             $( "#asuransi-jiwa" ).bind( "input", function() {
               var value = $("#asuransi-jiwa").val();
@@ -321,14 +314,11 @@
                     //$(this).val(conv);
                 }
                 else{
-
                     document.getElementById('notif-asuransijiwa').style.display= 'block';
                                        // $(this).val('');
                 }
             });
         
-
-
 </script>
 
 <!--
