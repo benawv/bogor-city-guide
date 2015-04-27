@@ -124,7 +124,7 @@
                             <label>Asuransi Jiwa(Min. Rp.50.000.000)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Asuransi Jiwa(Min. Rp.50.000.000)"  onfocusout="this.value = minmax(this.value,50000000,10000000000)">
+                            <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Asuransi Jiwa(Min. Rp.50.000.000)">
                             <label id="notif-asuransijiwa" style="display:none; color: #f00;">
                                 Mohon maaf inputan yang Anda masukkan belum benar
                             </label>
@@ -203,12 +203,13 @@
             var frekuensi = $('#Frekuensi option:Selected').val();
             var asuransijiwa = $('#asuransi-jiwa').val();
             var kontribusi = $('#masa-premi option:Selected').val();
+            var unfnum = accounting.unformat(asuransijiwa,0,",");
             
-            if( nama == '' || asuransijiwa == '' ||email == '' || tanggalpembuatan == '' || tanggallahir == ''){
+            if( nama == '' || asuransijiwa == '' || asuransijiwa >= 49000000 ||email == '' || tanggalpembuatan == '' || tanggallahir == ''){
 
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
-                    if( asuransijiwa == ''  )
+                    if( asuransijiwa == '' || asuransijiwa < 50000000 )
                         document.getElementById('notif-asuransijiwa').style.display= 'block';
                     if( email == '' )
                         document.getElementById('notifemail').style.display= 'block';
@@ -216,9 +217,10 @@
                         document.getElementById('notif-tglhitung').style.display= 'block';
                     if( tanggallahir == '' )
                         document.getElementById('notif-tgllahir').style.display= 'block';
+                    //alert("MOHON PERIKSA INPUTAN ANDA");
             }else{
             
-            var unfnum = accounting.unformat(asuransijiwa,0,",");
+            
 
             $.ajax({
                 url      : '/kalkulator-tasbih/',
@@ -246,6 +248,9 @@
 
     });
 
+<<<<<<< HEAD
+
+=======
     $(function() {
        $('#tgl-hitung, #tgl-lahir').datepicker({
 		changeMonth: true,
@@ -253,6 +258,7 @@
 		yearRange: "-100:+0"
 	    });
     });
+>>>>>>> 828489135f63f97872fdf8ac7cdb9a89dac7d05f
     
     $( window ).load(function(){
         $('#tgl-lahir').on('change', function() {
@@ -270,13 +276,7 @@
     });
 
     //Validate Number
-    function angka(e)
-    {
-       if (!/^[0-9]+$/.test(e.value))
-       {
-          e.value = e.value.substring(0,e.value.length-1);
-       }
-    };
+
 
     //Validate Email
     function validateEMAIL(surat)
@@ -305,38 +305,32 @@
         }    
     };
     
-    /*function validateHitung(tanggal){
-        var re = /^[a-zA-Z0-9]*$/;
-        if(!re.test(tanggal)){
-            document.getElementById('notif-tanggalhitung').style.display= 'block';
-            return nama;
-        }else{
-            document.getElementById('notif-tanggalhitung').style.display= 'none';
-            return nama;
-        }  
-    };
-    
-    function validateLahir(lahir){
-        if($('#tgl-lahir').val() != ''){
-            document.getElementById('notif-tgllahir').style.display= 'none';
-            return lahir;
-        }
-    };*/
 
-    //Validate Min Max
-    function minmax(value, min)
-    {
-        if(parseInt(value) < 50000000 || isNaN(value)){
-            document.getElementById('notif-asuransijiwa').style.display= 'block';
-            return null;}
-        else if(parseInt(value) > 10000000000){
-            document.getElementById('notif-asuransijiwa').style.display= 'none';
-            return accounting.formatMoney(parseInt(value), "Rp ", 0,",");}
-        else{
-            document.getElementById('notif-asuransijiwa').style.display= 'none';
-            return accounting.formatMoney(value, "Rp ", 0,",");
-        }
-    };
+           
+            $( "#asuransi-jiwa" ).bind( "input", function() {
+              var value = $("#asuransi-jiwa").val();
+              var unconv = accounting.unformat(value,0,",");
+                //alert(unconv);
+                var conv = accounting.formatMoney(unconv, "Rp ", 0,",");
+                $(this).val(conv);
+                var text = accounting.unformat(conv,0,",");
+                var retext = accounting.formatMoney(text, "Rp ", 0,",");
+                //alert(conv);
+                if(text >= 50000000){
+              
+                    
+                    document.getElementById('notif-asuransijiwa').style.display= 'none';
+                    //$(this).val(retext);
+                    //$(this).val(conv);
+                }
+                else{
+
+                    document.getElementById('notif-asuransijiwa').style.display= 'block';
+                                       // $(this).val('');
+                }
+            });
+        
+
 
 </script>
 

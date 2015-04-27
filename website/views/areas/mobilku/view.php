@@ -1133,6 +1133,7 @@
 <script src="/website/static/mobilku/functionCalcMobilku.js" type="text/javascript"></script>
 
 <script type="text/javascript">
+    
 
     function navigateMe(anchor)
     {
@@ -1152,7 +1153,19 @@
     }
 
     $(document).ready(function(){
-
+        
+        $( "#periode" ).datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-100:+0",
+            onSelect: function(date) {
+            var a=new Date(date);
+            var year1=a.setFullYear(a.getFullYear() + 1);
+            var newdate=new Date(year1);
+            $( "#periode-last" ).val(newdate.getMonth()+'/'+newdate.getDate()+'/'+newdate.getFullYear());
+          }
+        });
+        
         adjustTable();
 
         $('li.aktif .nav_menu div').css('background-position', '0px 0px');

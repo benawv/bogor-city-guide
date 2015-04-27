@@ -52,9 +52,28 @@
                 
                 */
             	
-		$Calculation = ($rate*$AsuransiJiwa)/1000; //The Pattern of ALLIANZ
+		        $Calculation = ($rate*$AsuransiJiwa)/1000; //The Pattern of ALLIANZ
                 //print_r("jk:$JenisKelamin,Kontribusi:$Kontribusi, Usia:$Usia".$Calculation);
-                print_r($Calculation);
+                
+             ----SetData
+                $cookie = new Object_tasbih();
+                $cookie->settanggalpembuatan($TanggalPembuatan);
+                $cookie->setNama($Nama);
+                $cookie->setEmail($Email);
+                $cookie->setTanggalLahir($TanggalLahir);
+                $cookie->setJenisKelamin($JenisKelamin);
+                $cookie->setUsia($Usia);
+                $cookie->setFrekuensiPembayaran($Frekuensi);
+                $cookie->setDetailAsuransiJiwa($AsuransiJiwa);
+                $cookie->setMassaPembayaranKontribusi($Kontribusi);
+                $cookie->setKontribusiBerkala($Calculation);
+                
+                $cookie->setO_key('tasbih'.$cookies.strtotime(date("YmdHis")));
+                $cookie->setO_parentId('1568');
+                $cookie->setO_index(0);
+                $cookie->setO_published(1);
+                $cookie->save();
+                //print_r($Calculation);
 
         }
         
