@@ -1,4 +1,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: http://www.allianz.co.id/sitemap.xml
+Sitemap: http://ajfc.allianz.co.id/sitemap.xml
