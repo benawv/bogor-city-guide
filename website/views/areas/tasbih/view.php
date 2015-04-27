@@ -248,9 +248,6 @@
 
     });
 
-<<<<<<< HEAD
-
-=======
     $(function() {
        $('#tgl-hitung, #tgl-lahir').datepicker({
 		changeMonth: true,
@@ -258,7 +255,7 @@
 		yearRange: "-100:+0"
 	    });
     });
->>>>>>> 828489135f63f97872fdf8ac7cdb9a89dac7d05f
+
     
     $( window ).load(function(){
         $('#tgl-lahir').on('change', function() {
