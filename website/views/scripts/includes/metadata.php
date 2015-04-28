@@ -83,11 +83,9 @@ ga('send', 'pageview');
 
 <!-- Google Code for Remarketing Tag -->
 
-<!--------------------------------------------------
-
+<!--
 Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
-
---------------------------------------------------->
+-->
 
 <script type="text/javascript">
 
