@@ -30,7 +30,7 @@
 	        $date_tglLahir= new Pimcore_Date($tglLahir);//set date into pimcore formats		
 	        $getId=Object_Abstract::getByPath('/tasbih/');//get folder id
 		
-                $cookie = new Object_tasbih();
+                $cookie = new Object_Tasbih();
                 $cookie->setTanggalPembuatan($date_tglBuat);
                 $cookie->setNama($Nama);
                 $cookie->setEmail($Email);
