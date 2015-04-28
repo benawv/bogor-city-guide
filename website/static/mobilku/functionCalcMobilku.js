@@ -41,19 +41,19 @@ $(document).ready(function(){
 
         if (tipe=='tlo') {
             if(map=='PK_R1_S1_Sedan'){
-                      rate='0.0047';
+                      rate='0.4700';
             }else if (map=='PK_R1_S2_Sedan') {
-                      rate='0.0044';
+                      rate='0.4400';
             }else if (map=='PK_R1_S3_Sedan') {
-                      rate='0.0029';
+                      rate='0.2900';
             }else if (map=='PK_R1_S4_Sedan') {
-                      rate='0.0029';
+                      rate='0.2900';
             }else if (map=='PK_R1_S5_Sedan') {
-                      rate='0.0024';
+                      rate='0.2400';
             }else if (map=='PK_R2_S1_Sedan') {
                       rate='0.6500';
             }else if (map=='PK_R2_S2_Sedan') {
-                      rate='0.0044';
+                      rate='0.4400';
             }else if (map=='PK_R2_S3_Sedan') {
                       rate='0.2900';
             }else if (map=='PK_R2_S4_Sedan') {
@@ -65,7 +65,7 @@ $(document).ready(function(){
                         rate='0.200';
                       }
             }else if (map=='PK_R3_S1_Sedan') {
-                      rate='0.0036';
+                      rate='0.3600';
             }else if (map=='PK_R3_S2_Sedan') {
                       rate='0.3100';
             }else if (map=='PK_R3_S3_Sedan') {
@@ -80,35 +80,35 @@ $(document).ready(function(){
 
         }else{
             if(map=='PK_R1_S1_Sedan'){
-                      rate='0.0382';
+                      rate='0.3820';
             }else if (map=='PK_R1_S2_Sedan') {
-                      rate='0.0267';
+                      rate='0.2670';
             }else if (map=='PK_R1_S3_Sedan') {
-                      rate='0.0171';
+                      rate='0.1710';
             }else if (map=='PK_R1_S4_Sedan') {
-                      rate='0.0123';
+                      rate='0.1230';
             }else if (map=='PK_R1_S5_Sedan') {
-                      rate='0.0108';
+                      rate='0.1080';
             }else if (map=='PK_R2_S1_Sedan') {
-                      rate='0.0344';
+                      rate='0.3440';
             }else if (map=='PK_R2_S2_Sedan') {
-                      rate='0.0247';
+                      rate='0.2470';
             }else if (map=='PK_R2_S3_Sedan') {
-                      rate='0.0171';
+                      rate='0.1710';
             }else if (map=='PK_R2_S4_Sedan') {
-                      rate='0.0122';
+                      rate='0.1220';
             }else if (map=='PK_R2_S5_Sedan') {
-                      rate='1.0700';
+                      rate='1.7000';
             }else if (map=='PK_R3_S1_Sedan') {
-                      rate='0.0253';
+                      rate='0.2530';
             }else if (map=='PK_R3_S2_Sedan') {
-                      rate='0.0207';
+                      rate='0.2070';
             }else if (map=='PK_R3_S3_Sedan') {
-                      rate='0.014';
+                      rate='0.1400';
             }else if (map=='PK_R3_S4_Sedan') {
-                      rate='0.0122';
+                      rate='0.1220';
             }else if (map=='PK_R3_S5_Sedan') {
-                      rate='0.0107';
+                      rate='0.1070';
             }else{
                      rate='0';
             }
