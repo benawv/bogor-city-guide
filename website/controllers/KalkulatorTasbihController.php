@@ -12,7 +12,9 @@
             $Usia = $_POST["usia"];
             $Frekuensi = $_POST["frekuensi"];
             $AsuransiJiwa = $_POST["asuransijiwa"];
+            $AJ= $_POST["AJ"];
             $Kontribusi = $_POST["kontribusi"];
+            $nohp = $_POST["nohp"];
 		
 	    $rates= new Object_TasbihRate_List();
 	    $rates->setCondition("kelamin='".$JenisKelamin."' and frekuensi=$Kontribusi and usia=$Usia");
@@ -48,6 +50,36 @@
                 $cookie->save();
                 
                 print_r($Calculation);
+            
+                if(JenisKelamin == 'p') $JK = 'Wanita';
+                else $JK = 'Pria';
+            
+                if(Frekuensi == 1) $frek = 'Tahunan';
+                else if(Frekuensi == 2) $frek = 'Semesteran';
+                else $frek = 'Triwulan';
+            
+                $hasil = number_format($Calculation,0,",",".");
+                $document = '/email-tasbih';
+                $params = array('tglhitung' => $TanggalPembuatan,
+                                'nama' => $Nama,
+                                'email' => $Email,
+                                'tgllahir' => $TanggalLahir,
+                                'usia'=> $Usia,
+                                'kontribusi' => $Kontribusi,
+                                'AJ' => $AJ,
+                                'pembayaran' => $hasil,
+                                'frek' => $frek,
+                                'JK' => $JK,
+                                'nohp' => $nohp
+                                );
+
+                $mail = new Pimcore_Mail();
+                $mail->setSubject("Konfirmasi Perhitungan");
+                $mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+                $mail->setDocument($document);
+                $mail->setParams($params);
+                $mail->addTo($Email);
+                $mail->send();
 
         }
         
@@ -57,20 +89,9 @@
             
         }*/
         
-        public function SendEmailAction($Email){
+        public function sendemailAction(){
         
-            //$document = 'Path Document';
-            $params = array('firstName' => 'Bastian',
-                            'lastName' => 'Ramadhan',
-                            'ID' => 73613);
-            $mail = new Pimcore_Mail();
-            $mail->setSubject("Konfirmasi Perhitungan");
-            $mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
-            $mail->setDocument($document);
-            $mail->setParams($params);
-            $mail->addTo($Email);
 
-            $mail->send();
             
             
         }
