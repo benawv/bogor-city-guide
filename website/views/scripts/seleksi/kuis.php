@@ -141,7 +141,13 @@
                                 <div class="container-fluid">
                                     <div class="row ta-left fc666">
                                         <div class="col-md-6">
-                                            <?php foreach( $this->peserta as $row ){ ?>
+                                            <?php foreach( $this->peserta as $row ){
+                                                    $propinsi = ucwords(strtolower($row->getPropinsi()));
+                                                    $val_pekerjaan = ucwords(strtolower($row->getPekerjaanOrtu()));
+                                                    $pendidikanAyah = strtoupper($row->getPendidikanAyah());
+                                                    $pendidikanIbu = strtoupper($row->getPendidikanIbu());
+                                                    $informasi = explode(",",ucwords(strtolower($row->getInformasi())));
+                                            ?>
                                             <input type="hidden" name="idPeserta" value="<?php echo $row->getO_id()."-".$row->getIdPeserta(); ?>" />
 
                                             <div class="form-group">
@@ -196,19 +202,21 @@
                                                 <label for="nama" name="nama">Jumlah Saudara Kandung Termasuk Kamu</label>
                                                 <label class="cusError">
                                                     <!--<input type="text" class="form-control" id="jumSaudara" name="jumSaudara" placeholder="">-->
+                                                    <?php
+                                                        $jumSaudara = $row->getJumSaudara();
+                                                    ?>
                                                     <select name="jumSaudara" class="form-control" id="jumSaudara">
                                                         <option value="">Jumlah Saudara</option>
                                                         <?php
-                                                            for( $x = 1; $x <= 10; $x++ ):
-                                                                /*
-                                                                if( $x == 1 ):
+                                                            for( $x = 1; $x <= 10; $x++ ){
+                                                                if($x == $jumSaudara ){
                                                                     echo '<option value="' . $x . '" selected="selected">';
-                                                                else:
-                                                                */
+                                                                }
+                                                                else{
                                                                     echo '<option value="' . $x . '">';
-                                                                //endif;
+                                                                }
                                                                 echo $x . '</option>';
-                                                            endfor;
+                                                            }
                                                         ?>
                                                     </select>
                                                     <span class="spanOrg">Orang</span>
@@ -217,13 +225,31 @@
 
                                             <div class="form-group">
                                                 <label for="tgl-lahir">Apakah kamu memiliki Passport<span class="spanRed">*</span></label>
+                                                <?php
+                                                    $passport = $row->getPasport();
+                                                    if($passport == "Ya")
+                                                    {
+                                                        $checked1 = "checked='checked'";
+                                                        $checked2 = "";
+                                                    }
+                                                    elseif($passport == "Tidak")
+                                                    {
+                                                        $checked2 = "checked='checked'";
+                                                        $checked1 = "";
+                                                    }
+                                                    else
+                                                    {
+                                                        $checked1 = "";
+                                                        $checked2 = "";
+                                                    }
+                                                ?>
                                                 <div class="message-info">
                                                     <div class="form-group">
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="pasport" id="ya" value="Ya" /> Ya
+                                                            <input type="radio" name="pasport" id="ya" value="Ya" <?php echo $checked1;?> /> Ya
                                                         </label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="pasport" id="tidak" value="Tidak" /> Tidak
+                                                            <input type="radio" name="pasport" id="tidak" value="Tidak" <?php echo $checked2;?> /> Tidak
                                                         </label>
                                                     </div><!--/ .form-group -->
                                                     <div class="info-error"></div>
@@ -246,7 +272,7 @@
                                             <div class="form-group">
                                                 <label for="exampleInputName2">Kota / Propinsi<span class="spanRed">*</span></label><br />
                                                 <div class="message-info">
-                                                    <select name="propinsi" class="form-control">
+                                                    <select name="propinsi" class="form-control" id="propinsi">
                                                         <option value="">Pilih Propinsi</option>
                                                         <option value="Nangroe Aceh Darussalam">Nangroe Aceh Darussalam</option>
                                                         <option value="Sumatera Utara">Sumatera Utara</option>
@@ -291,7 +317,7 @@
                                                 <label for="exampleInputName2">
                                                     Alamat Tempat Tinggal Saat Ini<span class="spanRed">*</span>
                                                 </label>
-                                                <textarea class="form-control" name="alamat" id="alamat" rows="3" style="height:70px !important" placeholder="Alamat Tempat Tinggal Saat Ini*"></textarea>
+                                                <textarea class="form-control" name="alamat" id="alamat" rows="3" style="height:70px !important" placeholder="Alamat Tempat Tinggal Saat Ini*"><?php echo $row->getAlamat();?></textarea>
                                             </div><!--/ .form-group -->
 
                                             <?php } ?>
@@ -301,28 +327,28 @@
 
                                             <div class="form-group">
                                                 <label for="exampleInputName2">Nama Orang Tua/ Wali<span class="spanRed">*</span></label>
-                                                <input type="text" class="form-control" name="namaOrtu" id="nama-ortu" placeholder="Nama Orang Tua/ Wali*">
+                                                <input type="text" class="form-control" name="namaOrtu" id="nama-ortu" placeholder="Nama Orang Tua/ Wali*" value="<?php echo $row->getNamaOrtu();?>" />
                                             </div><!--/ .form-group -->
 
                                             <div class="form-group">
                                                 <label for="exampleInputName2">No. Telepon Orang Tua/ Wali<span class="spanRed">*</span></label>
-                                                <input type="text" class="form-control" name="noHp" id="hp-ortu" placeholder="No. Telepon Orang Tua/ Wali*">
+                                                <input type="text" class="form-control" name="noHp" id="hp-ortu" placeholder="No. Telepon Orang Tua/ Wali*" value="<?php echo $row->getNoHpOrtu();?>" />
                                             </div><!--/ .form-group -->
 
                                             <div class="form-group">
                                                 <label for="exampleInputName2">Email Orang Tua</label>
-                                                <input type="text" class="form-control" name="emailOrtu" id="email-ortu" placeholder="Email Orang Tua">
+                                                <input type="text" class="form-control" name="emailOrtu" id="email-ortu" placeholder="Email Orang Tua" value="<?php echo $row->getEmailOrtu();?>" />
                                             </div><!--/ .form-group -->
 
                                             <div class="form-group">
                                                 <label for="exampleInputName2">Alamat Lengkap Orang Tua<span class="spanRed">*</span></label>
-                                                <textarea class="form-control" rows="3" name="alamatOrtu" style="height:70px !important" placeholder="Alamat Lengkap Orang Tua"></textarea>
+                                                <textarea class="form-control" rows="3" name="alamatOrtu" style="height:70px !important" placeholder="Alamat Lengkap Orang Tua"><?php echo $row->getAlamatOrtu();?></textarea>
                                             </div><!--/ .form-group -->
 
                                             <div class="form-group">
                                                 <label for="tgl-lahir">Pekerjaan Orang Tua<span class="spanRed">*</span></label>
                                                 <div class="message-info">
-                                                    <div class="form-group">
+                                                    <div class="form-group" id="pekerjaan_ortu">
                                                         <div class="form-group nomargin">
                                                             <label class="radio-inline">
                                                                 <input type="radio" name="pekerjaan" id="kary-swasta" value="Karyawan Swasta"> Karyawan Swasta
@@ -365,12 +391,12 @@
                                                             <tr>
                                                                 <td>Ayah</td>
                                                                 <td>: &nbsp;</td>
-                                                                <td><input type="text" name="usiaAyah" class="form-control ttl" id="usiaAyah" placeholder="Tahun" maxlength="2" /></td>
+                                                                <td><input type="text" name="usiaAyah" class="form-control ttl" id="usiaAyah" placeholder="Tahun" maxlength="2" value="<?php echo $row->getUsiaAyah();?>" /></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Ibu</td>
                                                                 <td>: &nbsp;</td>
-                                                                <td><input type="text" name="usiaIbu" class="form-control ttl" id="usiaIbu" placeholder="Tahun" maxlength="2" /></td>
+                                                                <td><input type="text" name="usiaIbu" class="form-control ttl" id="usiaIbu" placeholder="Tahun" maxlength="2" value="<?php echo $row->getUsiaIbu();?>" /></td>
                                                             </tr>
                                                         </table>
                                                     </div><!--/ .controls -->
@@ -388,7 +414,7 @@
                                                                 <td>Ayah</td>
                                                                 <td>:&nbsp;</td>
                                                                 <td>
-                                                                    <select name="pendidikanAyah" class="form-control">
+                                                                    <select name="pendidikanAyah" class="form-control" id="pendidikanAyah">
                                                                         <option value="">Pendidikan Ayah</option>
                                                                         <option value="SD">SD</option>
                                                                         <option value="SMP">SMP</option>
@@ -406,7 +432,7 @@
                                                                 <td>Ibu</td>
                                                                 <td>:&nbsp;</td>
                                                                 <td>
-                                                                    <select name="pendidikanIbu" class="form-control">
+                                                                    <select name="pendidikanIbu" class="form-control" id="pendidikanIbu">
                                                                         <option value="">Pendidikan Ibu</option>
                                                                         <option value="SD">SD</option>
                                                                         <option value="SMP">SMP</option>
@@ -429,7 +455,7 @@
                                             <div class="form-group">
                                                 <label for="exampleInputName2">Pengeluaran Orang Tua</label>
                                                 <div class="controls form-inline">
-                                                    Rp.<input type="text" name="pengeluaran" class="form-control ttl" id="pengeluaran" /> / bulan
+                                                    Rp.<input type="text" name="pengeluaran" class="form-control ttl" id="pengeluaran" value="<?php echo number_format($row->getPengeluaranOrtu(),0,",",".");?>" /> / bulan
                                                 </div><!--/ .controls -->
                                             </div><!--/ .form-group -->
 
@@ -438,7 +464,7 @@
                                                     Dari mana kamu dapat informasi tentang kamp ini?
                                                     <span class="spanRed">*</span>
                                                 </label>
-                                                <div class="checkbox-info">
+                                                <div class="checkbox-info" id="informasi_kamp">
                                                     <div class="form-group">
                                                         <div class="form-group nomargin">
                                                             <label class="checkbox-inline">
@@ -679,7 +705,15 @@
 <script type="text/javascript">
 
 $( document ).ready(function(){
-
+    var option_propinsi = $("#propinsi").find("[value='<?php echo $propinsi;?>']");
+    option_propinsi.attr('selected', 'selected');
+    
+    var pendidikanAyah = $("#pendidikanAyah").find("[value='<?php echo $pendidikanAyah;?>']");
+    pendidikanAyah.attr('selected', 'selected');
+    
+    var pendidikanIbu = $("#pendidikanIbu").find("[value='<?php echo $pendidikanIbu;?>']");
+    pendidikanIbu.attr('selected', 'selected');
+    
     $( '.radio-inline input[type=text]' ).hide();
 
     $( 'input[type="radio"][name="pekerjaan"]' ).change(function(){
@@ -693,6 +727,24 @@ $( document ).ready(function(){
             $('.kerja-lain .error').css( 'display', 'none' );
         }
     });
+    
+    var val_pekerjaan = "<?php echo $val_pekerjaan;?>";
+    var radio_pekerjaan = $("#pekerjaan_ortu").find("[value='<?php echo $val_pekerjaan;?>']");
+    if(radio_pekerjaan.val() != undefined && val_pekerjaan != ""){ //undefined
+        radio_pekerjaan.attr('checked', true);
+    }
+    else if (radio_pekerjaan.val() == undefined && val_pekerjaan != "") {
+        $("#pekerjaan_ortu").find("[value='Lainnya']").attr('checked', true);
+        $("#txt-lainnya").show();
+        $("#txt-lainnya").val(val_pekerjaan);
+    }
+            //var infomasi_kamp = $("#informasi_kamp").find("[value='<?php echo $informasi[1];?>']");
+            //infomasi_kamp.attr('checked', 'checked');
+    
+    <?php for($x=0;$x<count($informasi);$x++){?>
+            var infomasi_kamp = $("#informasi_kamp").find("[value='<?php echo ltrim($informasi[$x]);?>']");
+            infomasi_kamp.attr('checked', 'checked');
+    <?php }?>
 
     function shuffle(o)
     {
