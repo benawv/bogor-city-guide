@@ -21,7 +21,8 @@
 		</div> <!--Community-->
 		
 		<div id="community" class="clearfix padding no-margin" style="background: none repeat scroll 0 0 #fff;clear: both;margin-bottom: 20px;padding: 15px;padding: 15px 34px !important;margin: 0 !important;">
-			<?php if(!$this->editmode){?><b>Dear %Text(name);,</b><?php }?>
+			<?php if(!$this->editmode){?><b>Kepada %Text(nama);,</b><?php }?>
+            
             <?php echo $this->wysiwyg('description')?>
             
 		</div> <!--Community-->

@@ -58,6 +58,18 @@
                             </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
+                    
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>No Handphone (Min. 8 digit)</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="nohp" name="nohp" placeholder="No Handphone" required onfocusout="this.value=validateNumber(this.value)">
+                            <label id="notifNoHP" style="display:none; color: #f00;">
+                                Mohon maaf No HP yang Anda masukkan belum benar
+                            </label>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
 
                     <div class="form-group">
                         <div class="col-md-4">
@@ -70,6 +82,8 @@
                             </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
+                    
+
 
                     <div class="form-group">
                         <div class="col-md-4">
@@ -194,6 +208,7 @@
          * jQueryUI DatePicker
          */
         $('#Kalkulasi').click(function() {
+            //alert('test');
             var tanggalpembuatan = $('#tgl-hitung').val();
             var nama = $('#nama').val();
             var email = $('#email').val();
@@ -204,8 +219,11 @@
             var asuransijiwa = $('#asuransi-jiwa').val();
             var kontribusi = $('#masa-premi option:Selected').val();
             var unfnum = accounting.unformat(asuransijiwa,0,",");
+            var nohp = $('#nohp').val();
             
-            if( nama == '' || asuransijiwa == '' || asuransijiwa >= 49000000 ||email == '' || tanggalpembuatan == '' || tanggallahir == ''){
+
+            
+            if( nama == '' || asuransijiwa == '' || asuransijiwa >= 49000000 ||email == '' || tanggalpembuatan == '' || tanggallahir == '' || nohp == '' || nohp.length <= 8){
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
                     if( asuransijiwa == '' || asuransijiwa < 50000000 )
@@ -216,7 +234,9 @@
                         document.getElementById('notif-tglhitung').style.display= 'block';
                     if( tanggallahir == '' )
                         document.getElementById('notif-tgllahir').style.display= 'block';
-                    //alert("MOHON PERIKSA INPUTAN ANDA");
+                    if( nohp.length <= 8 || no.hp == '')
+                        document.getElementById('notifNoHP').style.display='block';
+                    alert("Mohon Periksa Inputan Anda");
             }else{
             
             
@@ -232,13 +252,19 @@
                             'usia' : usia,
                             'frekuensi' : frekuensi,
                             'asuransijiwa' : unfnum,
-                            'kontribusi' : kontribusi
+                            'AJ' : asuransijiwa,
+                            'kontribusi' : kontribusi,
+                            'nohp' : nohp
                             },
                     success  : function(data){
                     //console.log(data);
                     $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
                 }
+                
+                
             });
+                
+            
             }
         });
     
@@ -269,6 +295,30 @@
         });
     });
     //Validate Number
+    $('#nohp').bind("input", function(){
+       var re = /^[0-9]*$/; 
+        
+        var value = $('#nohp').val();
+        $(this).val(value);
+        if(!re.test(value)){
+            document.getElementById('notifNoHP').style.display= 'block';
+            $('#nohp').val('');
+        }else{
+            document.getElementById('notifNoHP').style.display= 'none';
+        }
+        
+    });
+    
+    function validateNumber(value){
+        if(value.length <= 8 ){
+            document.getElementById('notifNoHP').style.display= 'block';
+            return null;
+        }else{ 
+            document.getElementById('notifNoHP').style.display= 'none';
+            return value;
+        }
+    };
+
     //Validate Email
     function validateEMAIL(surat)
     {
