@@ -51,13 +51,13 @@ $(document).ready(function(){
             }else if (map=='PK_R1_S5_Sedan') {
                       rate='0.0024';
             }else if (map=='PK_R2_S1_Sedan') {
-                      rate='0.0065';
+                      rate='0.6500';
             }else if (map=='PK_R2_S2_Sedan') {
                       rate='0.0044';
             }else if (map=='PK_R2_S3_Sedan') {
-                      rate='0.0029';
+                      rate='0.2900';
             }else if (map=='PK_R2_S4_Sedan') {
-                      rate='0.0029';
+                      rate='0.2500';
             }else if (map=='PK_R2_S5_Sedan') {
                       if(type_mobil=='bmw'){
                         rate='0.0047';
@@ -67,9 +67,9 @@ $(document).ready(function(){
             }else if (map=='PK_R3_S1_Sedan') {
                       rate='0.0036';
             }else if (map=='PK_R3_S2_Sedan') {
-                      rate='0.0031';
+                      rate='0.3100';
             }else if (map=='PK_R3_S3_Sedan') {
-                      rate='0.0029';
+                      rate='0.2900';
             }else if (map=='PK_R3_S4_Sedan') {
                       rate='0.0029';
             }else if (map=='PK_R3_S5_Sedan') {
@@ -220,7 +220,7 @@ $(document).ready(function(){
         var tipe=$('#tipe').val().toLowerCase();
         var wilayah=parseInt($('#wilayah').val());
         var kapasitas=parseInt($('#kapasitas').val());
-        console.log(merk_html);
+        //console.log(merk_html);
         
         //=========================perhitungan basic======================================//
         var val_tlo=harga*1; //harga dikali tahun pertama (1), tahun kedua dikali 2 dst.
@@ -274,10 +274,11 @@ $(document).ready(function(){
     
         var band_id=getBand(cleanVarTlo);
         compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html);
-        console.log(getWorkshop(merk_html,1));
-        workshop_persen=Math.round(parseFloat(getWorkshop(merk_html,1))*(getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html)/100),4);
-        // console.log("compre_tlo_persen parsefloat: "+parseFloat(compre_tlo_persen));
+        workshop_persen=parseFloat(getWorkshop(merk_html,1))*(getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html)/100);
+        
+        //console.log("compre_tlo_persen : "+(compre_tlo_persen));
         //console.log("getWorkshop parsefloat: "+parseFloat(getWorkshop(merk,1)));
+        //console.log("Workshop %:"+compre_tlo_persen*(parseFloat(getWorkshop(merk,1))/100));
         //console.log("workshop_persen:"+workshop_persen);
         //console.log("compre "+compre_tlo_persen);
         // if (tlo= 5+wilayah) else (1+wilayah)
