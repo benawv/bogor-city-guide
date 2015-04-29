@@ -41,8 +41,8 @@ class MobilkuController extends Website_Controller_Action {
 		
         if($radio == 'tlo') $radiof = 'Total Loss Only';
         else $radiof = 'Komprehensif';
-		
-		$entries = Object_Abstract::getById(1409);
+		$getId=Object_Abstract::getByPath('/kalkulator/personal-lines');//get folder id
+		//$entries = Object_Abstract::getById($model);
 		$register = new Object_MobilPersonalLines();
 		$register->setyear($th);
 		$register->setprice($hargaKonv);
@@ -54,33 +54,33 @@ class MobilkuController extends Website_Controller_Action {
 		$register->settelp($telp);
 		$register->setinsurancetype($radio);
 		$register->setKey(strtolower($namakey));
-		$register->setO_parentId('1407');
+		$register->setO_parentId($getId->o_id);
 		$register->setIndex(0);
 		$register->setPublished(1);
 		$register->save();
-		
-//		$emailDocument = '/email/register';
-//		$params = array('name' => $name,
-//				'hometown' => $home,
-//				'birth' => $birth,
-//				'address' => $address,
-//				'city' => $city,
-//				'email' => $email,
-//				'category' => $category,
-//				'attach' => $assetFolder.'/'.$files_
-//                );
-		die();
+		/*die();
+		$emailDocument = '/email/register';
+		$params = array('year' => $th,
+                        'price' => $harga,
+                        'model' => $entries,
+                        'registrationnp' => $regno,
+                        'periode' => $date_tglPeriod,
+                        'email' => $email,
+                        'nama' => $nama,
+                        'telp' => $telp,
+                        'insurancetype' => $radiof
+                );
 		$mail = new Pimcore_Mail();
 		$mail->setSubject("test");
 		$mail->setFrom('noreply@allianz.co.id','Fitrazh');
 		$mail->addTo($email);
 		$mail->setBodyText("This is just plain text");
-		//$mail->setDocument($emailDocument);
-		//$mail->setParams($params);
+		$mail->setDocument($emailDocument);
+		$mail->setParams($params);
 		$mail->send();
 		print_r($mail);
 		
-		die();
+		die();*/
 	}
 	
 	public function dataMobileAction(){
