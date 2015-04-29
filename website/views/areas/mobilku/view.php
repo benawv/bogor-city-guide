@@ -439,7 +439,7 @@
                                             <label for="inputEmail">Nama</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="nama" class="form-control required" id="name" placeholder="" tabindex="9">
+                                            <input type="text" name="nama" class="form-control required" id="nama" placeholder="" tabindex="9">
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
                                 </div><!--/ .row -->

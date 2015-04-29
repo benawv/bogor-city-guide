@@ -1691,15 +1691,23 @@ $(document).ready(function(){
         var regno=$('#regno').val();
         var periode=$('#periode').val();
         var email=$('#email').val();
-                var nama=$('#nama').val();
-                var telp=$('#telp').val();
-
+        var nama=$('#nama').val();
+        var telp=$('#telp').val();
+        var hargaKonv=clearFormat($('#harga').val());
+        //var radio1=$('#radio01').val();
+        //var radio2=$('#radio02').val();
+        
+        if($('#radio01').checked == true){
+            var radio = $('#radio01').val();
+        }else{
+            var radio = $('#radio02').val();
+        }
         
         //console.log(tahun_pembuatan+'-'+harga+'-'+model+'-'+regno+'-'+periode+'-'+email+'-'+nama+'-'+telp)
         $.ajax({
             "url" : "/savemobilku/",
             "type" : "POST",
-            "data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp,
+            "data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp+"&radio="+radio+"&hargaKonv="+hargaKonv,
             "success" : function(response){
                 var getResult=JSON.parse(response);
                 console.log(response);
