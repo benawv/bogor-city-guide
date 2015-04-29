@@ -15,7 +15,7 @@
             $AJ= $_POST["AJ"];
             $Kontribusi = $_POST["kontribusi"];
             $nohp = $_POST["nohp"];
-		
+		//print_r($_POST[]);
 	    $rates= new Object_TasbihRate_List();
 	    $rates->setCondition("kelamin='".$JenisKelamin."' and frekuensi=$Kontribusi and usia=$Usia");
 	    $rate='';
@@ -51,12 +51,22 @@
                 
                 print_r($Calculation);
             
-                if(JenisKelamin == 'p') $JK = 'Wanita';
-                else $JK = 'Pria';
+                if($JenisKelamin == 'l') {
+                    $JK = 'Pria';
+                }
+                else{
+                    $JK = 'Wanita';
+                }
             
-                if(Frekuensi == 1) $frek = 'Tahunan';
-                else if(Frekuensi == 2) $frek = 'Semesteran';
-                else $frek = 'Triwulan';
+                if($Frekuensi == 1){
+                    $frek = 'Tahunan';
+                }
+                else if($Frekuensi == 2){
+                    $frek = 'Semesteran';
+                }
+                else{
+                    $frek = 'Triwulan';
+                }
             
                 $hasil = number_format($Calculation,0,",",".");
                 $document = '/email-tasbih';
