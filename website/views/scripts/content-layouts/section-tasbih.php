@@ -1,4 +1,4 @@
-<?php if( $this->editmode ): ?>
+<?php if( $this->editmode ): ?> 
 <style>
     .navi{
         margin-bottom: 50px;
