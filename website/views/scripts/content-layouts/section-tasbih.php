@@ -38,10 +38,9 @@
                         <div class="box-dent--inner">
                             <h2><?php echo $this->input("titleTasbih");?></h2>
                             <?php echo $this->wysiwyg("descTasbih");?>
-                            <?php if($this->editmode()){
+                            <?php if($this->editmode){
                                 echo $this->link("linkTasbih");
-                            }?>
-                            <?php else{
+                            }else{
                                 $linkT = $this->link("linkTasbih")->getHref();
                                 $target = $this->link("linkTasbih")->getTarget();
                                 $textT = $this->link("linkTasbih")->getText();
