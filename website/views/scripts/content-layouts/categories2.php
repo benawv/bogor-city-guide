@@ -25,7 +25,7 @@
 	<div style="clear: both"></div>
 	<div class="items-container">
 		<?php echo $this->areablock('container', array(
-					'allowed' => array('container-box', 'container-box-static', "container-box-carousel", "container-box-carousel-modal")))?>
+					'allowed' => array('container-box', 'container-box-static', "container-box-carousel-304x295", "container-box-carousel-link")))?>
 	</div>
 	<!-- endcontent -->
 	

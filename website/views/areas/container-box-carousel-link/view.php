@@ -42,10 +42,14 @@
 		<?php for($i=0;$i<$slides;$i++) { ?>
 			<li>
 				<div class="photo">
-					<?php if($this->editmode) { ?>
-						<?php echo $this->image("image_".$i, ["thumbnail" => "containerCarousel", "dropClass" => $id . "-" . $i, "class" => "image_share", "title" => "Image Size 304x182", "width" => 304, "height" => 182])?>
+					<?php if($this->editmode) {
+						echo $this->link('linkPageImage_'.$i);
+					?>
+						<?php echo $this->image("image_".$i, ["thumbnail" => "containerCarousel", "dropClass" => $id . "-" . $i, "class" => "image_share", "title" => "Image Size 304x295", "width" => 304, "height" => 295])?>
 					<?php } else { ?>
+					<a href="<?php echo $this->link('linkPageImage_'.$i)->getHref();?>">
 						<img data-toggle="modal" data-target="#modalImage<?php echo $i;?>" src="<?php echo $this->image("image_".$i)->getSrc()?>" class="image_share" />
+					</a>
 					<?php } ?>
 				</div>
 				<div class="description">
@@ -54,22 +58,4 @@
 			</li>
 		<?php } ?>
 	</ul>
-		<?php for($i=0;$i<$slides;$i++) { ?>
-			<div class="modal fade" id="modalImage<?php echo $i;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-				  <div class="modal-content">
-				    <div class="modal-header">
-				      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				      <h4 class="modal-title" id="myModalLabel">News & Upcoming Events</h4>
-				    </div>
-				    <div class="modal-body">
-					<img src="<?php echo $this->image("image_".$i)->getSrc()?>" />
-				    </div>
-				    <!--<div class="modal-footer">
-				      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				    </div>-->
-				  </div>
-				</div>
-			</div>
-		<?php } ?>
 </div>
