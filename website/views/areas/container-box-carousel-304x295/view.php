@@ -1,4 +1,8 @@
-<div class="item" id="item-unggul">
+<?php if($this->editmode) { ?>
+	<div class="item" id="item-unggul" style="height: 580px;">
+<?php }else{?>
+	<div class="item" id="item-unggul">
+<?php }?>
 	<div class="heading">
 		<h2 class="title_news"><?php echo $this->link('title')?></h2>
 		<div class="btn-group">
