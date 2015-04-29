@@ -58,7 +58,7 @@ class MobilkuController extends Website_Controller_Action {
 		$register->setIndex(0);
 		$register->setPublished(1);
 		$register->save();
-		die();
+		/*die();
 		$emailDocument = '/email/register';
 		$params = array('year' => $th,
                         'price' => $harga,
@@ -80,7 +80,7 @@ class MobilkuController extends Website_Controller_Action {
 		$mail->send();
 		print_r($mail);
 		
-		die();
+		die();*/
 	}
 	
 	public function dataMobileAction(){
