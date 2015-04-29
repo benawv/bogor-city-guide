@@ -41,74 +41,271 @@ $(document).ready(function(){
 
         if (tipe=='tlo') {
             if(map=='PK_R1_S1_Sedan'){
-                      rate='0.4700';
+                      if(type_mobil=='bmw'){
+                        rate='0.2900';
+                      }else if(type_mobil=='mercedes benz'){
+                        rate='0.2900';
+                      }else{
+                        rate='0.4700';
+                      } 
+                      
             }else if (map=='PK_R1_S2_Sedan') {
-                      rate='0.4400';
+                      if(type_mobil=='bmw'){
+                        rate='0.2900';
+                      }else if(type_mobil=='mercedes benz'){
+                        rate='0.2900';
+                      }else{
+                        rate='0.4400';
+                      } 
+                     
             }else if (map=='PK_R1_S3_Sedan') {
+                      if(type_mobil=='bmw'){
+                        rate='0.2900';
+                      }else if(type_mobil=='mercedes benz'){
+                        rate='0.2900';
+                      }else{
+                        rate='0.2500';
+                      } 
                       rate='0.2900';
             }else if (map=='PK_R1_S4_Sedan') {
-                      rate='0.2900';
+                      if(type_mobil=='bmw'){
+                        rate='0.2900';
+                      }else if(type_mobil=='mercedes benz'){
+                        rate='0.2900';
+                      }else{
+                        rate='0.2900';
+                      } 
+                     
             }else if (map=='PK_R1_S5_Sedan') {
-                      rate='0.2400';
+                      if(type_mobil=='bmw'){
+                        rate='0.2900';
+                      }else if(type_mobil=='mercedes benz'){
+                        rate='0.2900';
+                      }else{
+                        rate='0.2400';
+                      } 
+                      
             }else if (map=='PK_R2_S1_Sedan') {
-                      rate='0.6500';
+                      if(type_mobil=='bmw'){
+                        rate='0.2900';
+                      }else if(type_mobil=='mercedes benz'){
+                        rate='0.2900';
+                      }else{
+                        rate='0.6500';
+                      } 
+                      
             }else if (map=='PK_R2_S2_Sedan') {
-                      rate='0.4400';
+                      if(type_mobil=='bmw'){
+                        rate='0.2900';
+                      }else if(type_mobil=='mercedes benz'){
+                        rate='0.2900';
+                      }else{
+                         rate='0.4400';
+                      } 
+                     
             }else if (map=='PK_R2_S3_Sedan') {
-                      rate='0.2900';
+                      if(type_mobil=='bmw'){
+                        rate='2.400';
+                      }else{
+                        rate='0.2900';
+                      }
+                      
             }else if (map=='PK_R2_S4_Sedan') {
-                      rate='0.2500';
+                      if(type_mobil=='bmw'){
+                        rate='0.2900';
+                      }else if(type_mobil=='mercedes benz'){
+                        rate='0.2900';
+                      }else{
+                        rate='0.2500';
+                      }                      
             }else if (map=='PK_R2_S5_Sedan') {
                       if(type_mobil=='bmw'){
-                        rate='0.0047';
+                         rate='2.400';
                       }else{
                         rate='0.200';
                       }
             }else if (map=='PK_R3_S1_Sedan') {
-                      rate='0.3600';
+                      if(type_mobil=='bmw'){
+                        rate='0.2900';
+                      }else if(type_mobil=='mercedes benz'){
+                        rate='0.2900';
+                      }else{
+                        rate='0.3600';
+                      } 
+                      
             }else if (map=='PK_R3_S2_Sedan') {
-                      rate='0.3100';
+                      if(type_mobil=='bmw'){
+                        rate='0.2900';
+                      }else if(type_mobil=='mercedes benz'){
+                        rate='0.2900';
+                      }else{
+                        rate='0.3100';
+                      } 
+                      
             }else if (map=='PK_R3_S3_Sedan') {
-                      rate='0.2900';
+                      if(type_mobil=='bmw'){
+                        rate='0.2900';
+                      }else if(type_mobil=='mercedes benz'){
+                        rate='0.2900';
+                      }else{
+                        rate='0.2900';
+                      } 
+                      
             }else if (map=='PK_R3_S4_Sedan') {
-                      rate='0.0029';
+                      if(type_mobil=='bmw'){
+                        rate='0.2900';
+                      }else if(type_mobil=='mercedes benz'){
+                        rate='0.2900';
+                      }else{
+                        rate='0.0029';
+                      } 
+                      
             }else if (map=='PK_R3_S5_Sedan') {
-                      rate='0.0024';
+                      if(type_mobil=='bmw'){
+                        rate='0.2900';
+                      }else if(type_mobil=='mercedes benz'){
+                        rate='0.2900';
+                      }else{
+                        rate='0.0024';
+                      } 
+                     
             }else{
                      rate='0';
             }
 
         }else{
             if(map=='PK_R1_S1_Sedan'){
-                      rate='0.3820';
+                        if(type_mobil=='bmw'){
+                          rate='0.2900';
+                        }else if(type_mobil=='mercedes benz'){
+                          rate='0.2900';
+                        }else{
+                          rate='0.3820';
+                        }                         
             }else if (map=='PK_R1_S2_Sedan') {
-                      rate='0.2670';
+                        if(type_mobil=='bmw'){
+                          rate='0.2900';
+                        }else if(type_mobil=='mercedes benz'){
+                          rate='0.2900';
+                        }else{
+                          rate='0.2670';
+                        }
+                     
             }else if (map=='PK_R1_S3_Sedan') {
-                      rate='0.1710';
+                        if(type_mobil=='bmw'){
+                          rate='0.2900';
+                        }else if(type_mobil=='mercedes benz'){
+                          rate='0.2900';
+                        }else{
+                          rate='0.1710';
+                        }                      
             }else if (map=='PK_R1_S4_Sedan') {
-                      rate='0.1230';
+                        if(type_mobil=='bmw'){
+                          rate='0.2900';
+                        }else if(type_mobil=='mercedes benz'){
+                          rate='0.2900';
+                        }else{
+                           rate='0.1230';
+                        }                     
             }else if (map=='PK_R1_S5_Sedan') {
-                      rate='0.1080';
+                        if(type_mobil=='bmw'){
+                          rate='0.2900';
+                        }else if(type_mobil=='mercedes benz'){
+                          rate='0.2900';
+                        }else{
+                           rate='0.1080';
+                        } 
+                      
             }else if (map=='PK_R2_S1_Sedan') {
-                      rate='3.4400';
+                         if(type_mobil=='bmw'){
+                          rate='0.2900';
+                        }else if(type_mobil=='mercedes benz'){
+                          rate='0.2900';
+                        }else{
+                            rate='3.4400';
+                        } 
+                     
             }else if (map=='PK_R2_S2_Sedan') {
-                      rate='2.4700';
+                         if(type_mobil=='bmw'){
+                          rate='0.2900';
+                        }else if(type_mobil=='mercedes benz'){
+                          rate='0.2900';
+                        }else{
+                           rate='2.4700';
+                        } 
+                      
             }else if (map=='PK_R2_S3_Sedan') {
-                      rate='1.7200';
+                         if(type_mobil=='bmw'){
+                          rate='0.2900';
+                        }else if(type_mobil=='mercedes benz'){
+                          rate='0.2900';
+                        }else{
+                            rate='1.7200';
+                        } 
+                     
             }else if (map=='PK_R2_S4_Sedan') {
-                      rate='1.2200';
+                         if(type_mobil=='bmw'){
+                          rate='0.2900';
+                        }else if(type_mobil=='mercedes benz'){
+                          rate='0.2900';
+                        }else{
+                           rate='1.2200';
+                        } 
+                      
             }else if (map=='PK_R2_S5_Sedan') {
-                      rate='1.7000';
+                         if(type_mobil=='bmw'){
+                          rate='0.2900';
+                        }else if(type_mobil=='mercedes benz'){
+                          rate='0.2900';
+                        }else{
+                            rate='1.7000';
+                        } 
+                     
             }else if (map=='PK_R3_S1_Sedan') {
-                      rate='0.2530';
+                         if(type_mobil=='bmw'){
+                          rate='0.2900';
+                        }else if(type_mobil=='mercedes benz'){
+                          rate='0.2900';
+                        }else{
+                           rate='0.2530';
+                        } 
+                      
             }else if (map=='PK_R3_S2_Sedan') {
-                      rate='0.2070';
+                         if(type_mobil=='bmw'){
+                          rate='0.2900';
+                        }else if(type_mobil=='mercedes benz'){
+                          rate='0.2900';
+                        }else{
+                            rate='0.2070';
+                        } 
+                     
             }else if (map=='PK_R3_S3_Sedan') {
-                      rate='0.1400';
+                         if(type_mobil=='bmw'){
+                          rate='0.2900';
+                        }else if(type_mobil=='mercedes benz'){
+                          rate='0.2900';
+                        }else{
+                           rate='0.1400';
+                        } 
+                      
             }else if (map=='PK_R3_S4_Sedan') {
-                      rate='0.1220';
+                         if(type_mobil=='bmw'){
+                          rate='0.2900';
+                        }else if(type_mobil=='mercedes benz'){
+                          rate='0.2900';
+                        }else{
+                           rate='0.1220';
+                        } 
+                      
             }else if (map=='PK_R3_S5_Sedan') {
-                      rate='0.1070';
+                         if(type_mobil=='bmw'){
+                          rate='0.2900';
+                        }else if(type_mobil=='mercedes benz'){
+                          rate='0.2900';
+                        }else{
+                           rate='0.1070';
+                        } 
+                      
             }else{
                      rate='0';
             }
