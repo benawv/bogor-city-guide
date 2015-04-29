@@ -42,7 +42,7 @@ class MobilkuController extends Website_Controller_Action {
         if($radio == 'tlo') $radiof = 'Total Loss Only';
         else $radiof = 'Komprehensif';
 		$getId=Object_Abstract::getByPath('/kalkulator/personal-lines');//get folder id
-		$entries = Object_Abstract::getById(1409);
+		//$entries = Object_Abstract::getById($model);
 		$register = new Object_MobilPersonalLines();
 		$register->setyear($th);
 		$register->setprice($hargaKonv);
