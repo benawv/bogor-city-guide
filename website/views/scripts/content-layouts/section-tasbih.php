@@ -38,10 +38,9 @@
                         <div class="box-dent--inner">
                             <h2>Kalkulor Tasbih</h2>
                             <p>#1ygterpenting mewujudkan mimpi menjalani ibadah.</p>
-                            <p>
+                            <?php if($this->editmode){
                                 Coba sekarang.
-                            </p>
-                            <a href="#">Daftar Sekarang <i class="fa fa-angle-right"></i></a>
+                            }else{
                         </div><!--/ .box-dent--inner -->
                     </div>
                 </div><!--/ .col-xs-6 -->
