@@ -51,8 +51,8 @@
                 
                 print_r($Calculation);
             
-                if(JenisKelamin == 'p') $JK = 'Wanita';
-                else $JK = 'Pria';
+                if(JenisKelamin == l) $JK = 'Pria';
+                else $JK = 'Wanita';
             
                 if(Frekuensi == 1) $frek = 'Tahunan';
                 else if(Frekuensi == 2) $frek = 'Semesteran';
