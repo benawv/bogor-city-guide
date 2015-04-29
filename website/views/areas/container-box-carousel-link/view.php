@@ -51,7 +51,7 @@
 					?>
 						<?php echo $this->image("image_".$i, ["thumbnail" => "containerCarousel", "dropClass" => $id . "-" . $i, "class" => "image_share", "title" => "Image Size 304x295", "width" => 304, "height" => 295])?>
 					<?php } else { ?>
-					<a href="<?php echo $this->link('linkPageImage_'.$i)->getHref();?>">
+					<a href="<?php if($this->link('linkPageImage_'.$i)->getHref() != ""){echo $this->link('linkPageImage_'.$i)->getHref();}else{echo "#";}?>" target="<?php echo $this->link('linkPageImage_'.$i)->getTarget();?>">
 						<img data-toggle="modal" data-target="#modalImage<?php echo $i;?>" src="<?php echo $this->image("image_".$i)->getSrc()?>" class="image_share" />
 					</a>
 					<?php } ?>
