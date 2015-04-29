@@ -10,7 +10,7 @@ class MobilkuController extends Website_Controller_Action {
 	public function saveInsuraceAction(){
 		
 		$th=$_POST['tahun_pembuatan'];
-		//$harga=$_POST['harga'];
+		$harga=$_POST['unfnum'];
 		$merk=$_POST['merk'];
 		$model=$_POST['model'];
 		$regno=$_POST['regno'];
@@ -18,8 +18,9 @@ class MobilkuController extends Website_Controller_Action {
 		$email=$_POST['email'];
 		$nama=$_POST['nama'];
 		$telp=$_POST['telp'];
-		$radio1=$_POST['redio1'];
-		$radio2=$_POST['redio2'];
+		$radio=$_POST['radio'];
+        $hargaKonv=$_POST['hargaKonv'];
+        $date_tglPeriod= new Pimcore_Date($period);
 		
 		
 		//$th=$_GET['tahun_pembuatan'];
@@ -34,22 +35,24 @@ class MobilkuController extends Website_Controller_Action {
 		//echo $th.'-'.$harga.'-'.$merk.'-'.$model.'-'.$regno.'-'.$period.'-'.$email.'-'.$radio1.'-'.$radio2;
 		
 		$namakey = str_replace(' ', '_', $merk)."_".strtotime(date("YmdHis"));
-		$radio1='comprehensive';
-		$period='1425315600';
-		$harga='1000600';
+		//$radio1='comprehensive';
+		//$period='1425315600';
+		//$harga='1000600';
 		
+        if($radio == 'tlo') $radiof = 'Total Loss Only';
+        else $radiof = 'Komprehensif';
 		
 		$entries = Object_Abstract::getById(1409);
 		$register = new Object_MobilPersonalLines();
 		$register->setyear($th);
-		$register->setprice($harga);
+		$register->setprice($hargaKonv);
 		$register->setmodel($entries);		
 		$register->setregistrationno($regno);
-		$register->setstartperiode($period);
+		$register->setstartperiode($date_tglPeriod);
 		$register->setemail($email);
 		$register->setnama($nama);
 		$register->settelp($telp);
-		$register->setinsurancetype($radio1);
+		$register->setinsurancetype($radio);
 		$register->setKey(strtolower($namakey));
 		$register->setO_parentId('1407');
 		$register->setIndex(0);
@@ -66,7 +69,7 @@ class MobilkuController extends Website_Controller_Action {
 //				'category' => $category,
 //				'attach' => $assetFolder.'/'.$files_
 //                );
-		
+		die();
 		$mail = new Pimcore_Mail();
 		$mail->setSubject("test");
 		$mail->setFrom('noreply@allianz.co.id','Fitrazh');
