@@ -90,13 +90,13 @@ $(document).ready(function(){
             }else if (map=='PK_R1_S5_Sedan') {
                       rate='0.1080';
             }else if (map=='PK_R2_S1_Sedan') {
-                      rate='0.3440';
+                      rate='3.4400';
             }else if (map=='PK_R2_S2_Sedan') {
-                      rate='0.2470';
+                      rate='2.4700';
             }else if (map=='PK_R2_S3_Sedan') {
-                      rate='0.1710';
+                      rate='1.7200';
             }else if (map=='PK_R2_S4_Sedan') {
-                      rate='0.1220';
+                      rate='1.2200';
             }else if (map=='PK_R2_S5_Sedan') {
                       rate='1.7000';
             }else if (map=='PK_R3_S1_Sedan') {
