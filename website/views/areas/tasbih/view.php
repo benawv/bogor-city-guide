@@ -38,7 +38,7 @@
                             <label><strong>Tanggal Pembuatan Perhitungan</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="tgl-hitung" placeholder="<?php echo date( 'd/m/Y' ); ?>" required>
+                            <input type="text" class="form-control" id="tgl-hitung" value="<?php echo date( 'd/m/Y' ); ?>" required>
                              <label id="notif-tglhitung" style="display:none; color: #f00;">
                                 Mohon maaf Anda belum memasukkan tanggal pembuatan
                             </label>
@@ -203,10 +203,12 @@
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 
 <script>
+    // document.getElementById('tgl-hitung').value = (new Date()).format("m/dd/yy");
     $(document).ready(function(){
         /*
          * jQueryUI DatePicker
          */
+       
         $('#Kalkulasi').click(function() {
             //alert('test');
             var tanggalpembuatan = $('#tgl-hitung').val();
