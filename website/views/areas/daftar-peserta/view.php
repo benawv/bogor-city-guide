@@ -38,6 +38,7 @@
                         <tbody>
                             <?php
                                 $data = new Object_DataPesertaAJFC_List();
+				$data->setOrderKey("namaLengkap");
                                 $x = 1;
                                 $NoDada = "";
                                 foreach($data as $peserta)
