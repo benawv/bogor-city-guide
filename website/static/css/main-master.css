@@ -646,6 +646,13 @@ padding: 10px 15px;
   /*SETTING LOGO 125*/
   .fixbox .place-bg .notepadKiri{width: 65%;float: left;}
 }
+@media only screen and (max-width : 1024px){
+  .mw960, footer.contentinfo .container.mw960,.container.mw960{
+    width: auto !important;
+    max-width: inherit !important;
+    min-width: inherit !important;
+  }
+}
 @media only screen and (max-width : 640px){
 
 	/* Sticky */
@@ -720,7 +727,7 @@ a.fbshare, a.twshare{
   background-image: url("/website/static/images/shareThis/16x16.png") !important;
 }
 #brosur{
-  /*display: none !important;*/
+  display: none !important;
 }
 .cusTable table tr td.vertical{
   vertical-align: top !important;
@@ -867,8 +874,14 @@ a.fbshare, a.twshare{
 .liBerita{
   margin-bottom: 10px;
 }
-
+.cusError .error{
+  float: left;
+}
 .pagenavBerita #accordion-container{position: relative;}
+.row.cusSoal{
+  padding: 0 25px;
+  margin: 0;
+}
 
 /*SETTING LOGO 125*/
 .notepadKiri{width: 150px;float: left;}

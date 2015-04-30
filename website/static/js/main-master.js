@@ -115,17 +115,6 @@ $(document).ready(function () {
         }
         $("#modalPopUpImage").modal("show");
     });
-    $(".hideme").hide();
-    $(".v").click(function () {
-        $(this).siblings('.hideme').slideToggle();
-        if ($(this).find('.xicon').hasClass('down')) {
-            $(this).find('.xicon').removeClass('down')
-            $(this).find('.xicon').addClass('up')
-        } else {
-            $(this).find('.xicon').removeClass('up')
-            $(this).find('.xicon').addClass('down')
-        }
-    });
     $(".PopUpModal").on("click", function () {
         if ($(this).attr("href") == "#") {
             var text = $(this).text();
@@ -134,7 +123,7 @@ $(document).ready(function () {
             $("#modal-" + title).modal();
         }
     });
-    $("p a").on("click", function () {
+    $(".description a").on("click", function () {
         var href = $(this).attr("href");
         var subHref = href.substring(0, 6);
         if (subHref == "#modal") {
@@ -407,6 +396,16 @@ $(document).ready(function () {
         if (reTanya == "") {
             reTanya = $("span.title").text();
         }
+        if (image == undefined) {
+            var exp = $(".tips-main").attr('style');
+            var tmp = exp.split(";");
+            var url = tmp[0].split("/");
+            img = "";
+            for (x = 0; x < url.length; x++) {
+                img = img + "/" + url[x];
+            }
+            image = img.replace(")", "");
+        }
         var deskripsi = $('meta[name=description]').attr('content');
         var link = $(this).parent().siblings('a').attr('href') != undefined ? window.location.host + '/' + $(this).parent().siblings('a').attr('href') : window.location.host + window.location.pathname;
         var name = reTanya.replace(/[^a-zA-Z()]/g, '');
@@ -452,7 +451,45 @@ $(document).ready(function () {
             }
         });
     });
+    $('.year-pick, .month-pick, .type-pick').change(function () {
+        var idFilterSection = $(this).closest('.full-w ').attr('id');
+        var year = $('#' + idFilterSection + " .year-pick").val();
+        year = year.substr(2);
+        var month = $('#' + idFilterSection + " .month-pick").val();
+        var typeData = $('#' + idFilterSection + " .type-pick").val();
+        var x = 0;
+        $('#' + idFilterSection + " .description li").hide();
+        $('#' + idFilterSection + " .description li").each(function () {
+            var itemAttr = $(this).find('a').attr('item');
+            splitedItem = itemAttr.split('/');
+            var visible = true;
+            visible = visible && (month == '' || month == splitedItem[0]);
+            visible = visible && (year == '' || year == splitedItem[1]);
+            visible = visible && (typeData == '' || typeData == splitedItem[2]);
+            if (visible) {
+                $(this).show();
+                x++;
+            } else {
+                $(this).hide();
+            }
+        });
+        if (x != 0) {
+            $(this).parent().parent().siblings('.description').find('ul').show();
+        }
+    });
+    if (window.location.pathname == "/") {
+	$(".slides").find("li").first().next().find("div.place-bg").find("div").first().addClass("notepadKiri");
+	$(".slides").find("li").first().next().find("div.place-bg").append("<div class='notepadKanan'><img src='/website/static/images/logo125/Allianz125_Standard_logo_White.png' /></div>");
+	$(".clone").addClass("temp");
+	$(".clone:first").removeClass("temp");
+	$("li.temp").find("div.place-bg").find("div").addClass("notepadKiri");
+	$(".temp").find("div.place-bg").append("<div class='notepadKanan'><img src='/website/static/images/logo125/Allianz125_Standard_logo_White.png' /></div>");
+    }
 });
+//$(window).bind("load", function() {
+//    $("#slideshow .slides").addClass("hide");
+//    $("#slideshow .slides").first().removeClass("hide");
+//});
 $(window).load(function () {
     var $container = $('.items-container');
     if ($container != undefined) {
