@@ -23,6 +23,7 @@ strong{font-weight:normal;}
 em{font-style:italic;}
 input, textarea, select{font:1.1em Arial, Helvetica, sans-serif;}
 .title{font-size:24px;font-weight:normal;margin:10px 0;padding:0;display:block;font-weight:bold;}
+.title-hide{display: none;}
 img{max-width:100%;}
 nav ul{margin:0;padding:0;list-style-type:none;}
 body{background:#F5F6F6;}
@@ -465,7 +466,7 @@ nav.primary .menu-level1 > ul > li > a{padding:10px 15px;color:#fff;border-botto
 nav.primary .menu-level1 > ul > li > a:hover{color:#199dd7;}
 nav.primary .menu-level2{position:relative;background:#414141;padding:0;}
 nav.primary .menu-level2 > ul{margin:0;float:none;width:100%;}
-nav.primary .menu-level2 > ul > li{padding:0;}
+nav.primary .menu-level2 > ul > li{padding:0;margin: 10px 0;}
 nav.primary .menu-level2 > ul > li > a{padding:10px 15px;border-bottom:1px solid #fff;}
 nav.primary .menu-level2 > ul > li > a:hover{color:#199dd7;}
 .banner .search form{padding-left:120px;}
@@ -509,7 +510,7 @@ footer.contentinfo .meta .static-links li{border:none;padding:0;margin-right:10p
 footer.contentinfo .footer-links{display:block;font-size:1em;}
 footer.contentinfo .footer-links > li{border-left:none;border-bottom:1px solid #5a5a5a;padding-bottom:10px;}
 footer.contentinfo .footer-links > li:last-child{border:none;}
-footer.contentinfo .footer-links ul a{font-size:1em;margin: 10px 0px;}
+footer.contentinfo .footer-links ul a{font-size:1em;}
 #social-media-activity{width:100%;}
 #social-media-activity .tintup{width:100% !important;overflow:scroll !important;}
 .banner .search form .input-text{width:100px}
@@ -545,6 +546,7 @@ div.search{width:100%;}
 .ulCustomerOnline.deactive{position: absolute;right: 0;}
 .button-mobile .cus_select{margin-left: 0px;}
 .button-mobile{margin-top: 10px;margin-bottom: 10px;}
+.ttl{width: 100% !important;}
 }
 @media only screen and (max-width:800px){.ojk-desc{float:none !important;}
 .worldwide .ojk-img{float:left;margin-left:0;margin-top:0;}
@@ -699,7 +701,7 @@ header.banner{background:url("../images/banner-header.png") repeat-x scroll 0 0 
 .terimaKasih .kata_kata{width:100%;}
 .pagenav.pagenavBerita{width: 330px;}
 }
-.pagenav.pagenavBerita{height: auto;}
+.pagenav.pagenavBerita{height: auto;};
 .description .investasi-p{margin:11px auto;}
 .investasi-ul.mitra_ul ul{margin-bottom:0px !important;}
 .bc1-tanya{background:url("../images/q2.png") no-repeat;padding-left:44px;}

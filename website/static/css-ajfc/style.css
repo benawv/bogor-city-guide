@@ -1,0 +1,388 @@
+/*
+ *
+ * Template Name: Fullscreen Responsive Register Template
+ * Template URI: http://azmind.com
+ * Author: Anli Zaimi
+ * Author URI: http://azmind.com
+ *
+ */
+
+
+.stepwizard-step p {
+    margin-top: 10px;
+}
+
+.stepwizard-row {
+    display: table-row;
+}
+
+.stepwizard {
+    display: table;
+    width: 100%;
+    margin: 20px 0;
+    position: relative;
+}
+
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+
+.stepwizard-row:before {
+    top: 23px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 5px;
+    background-color: #ccc;
+    z-order: 0;
+
+}
+
+.stepwizard-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+
+.btn-default {
+  color: #ccc !important;
+  background-color: #EFEFEF !important;
+  border-color: #CCCCCC !important;
+}
+
+.btn-primary {
+  color: #fff !important;
+  background-color: #003781 !important;
+  border-color: #003781 !important;
+}
+
+.btn-inactive {
+  color: #CCC !important;
+  background-color: #fff !important;
+  border-color: #ccc !important;
+}
+
+.btn-circle {
+  width: 50px !important;
+  height: 50px !important;
+  text-align: center !important;
+  padding: 13px !important;
+  font-size: 18px !important;
+  color: #989898;
+  line-height: 1.428571429;
+  border-radius: 35px !important;
+  background-color: #003781;
+  opacity: 1 !important;
+}
+
+.next-question {
+    padding: 10px 20px;
+    background: #eee;
+    border: none;
+    color: #666;
+}
+.btn-default.disabled, .btn-default[disabled], fieldset[disabled] .btn-default, .btn-default.disabled:hover, .btn-default[disabled]:hover, fieldset[disabled] .btn-default:hover, .btn-default.disabled:focus, .btn-default[disabled]:focus, fieldset[disabled] .btn-default:focus, .btn-default.disabled:active, .btn-default[disabled]:active, fieldset[disabled] .btn-default:active, .btn-default.disabled.active, .btn-default[disabled].active, fieldset[disabled] .btn-default.active {
+  background-color: #EFEFEF;
+}
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+  opacity: 1;
+}
+
+.register-container {
+    margin-top: 20px;
+}
+
+.input-group .choose {
+	height: 40px !important;
+	border-radius: 0px !important;
+}
+.btn-choose {
+	padding: 9px 20px !important;
+	background: #003781 !important;
+	opacity: 1 !important;
+}
+.fb-like img {
+	float: left;
+	width: 80px;
+}
+.fb-link  {
+	float: left;
+	padding: 8px 20px;
+}
+
+/* ----- Registration Form ----- */
+
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+   width: 13px; 
+   height: 13px; 
+}
+.btn-file {
+  /*position: relative;
+  overflow: hidden;*/
+  position: absolute;
+  overflow: hidden;
+  height: 45px;
+  padding: 12px 61px;
+
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: red;
+  cursor: inherit;
+  display: block;
+}
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
+
+input, textarea, select {
+  font: 1.1em Arial, Helvetica, sans-serif;
+  padding: 0 15px;
+}
+
+.nopadding {
+    padding: 0 !important;
+}
+.gap {
+  margin-bottom: 30px !important;
+}
+
+.register form {
+  padding: 0 90px 40px 90px;
+  /* background: #f8f8f8 url(../img/pattern.jpg) left top repeat; */
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  /* border-radius: 8px; */
+  -moz-box-shadow: 0 1px 5px 0 rgba(0,0,0,.3);
+  /* -webkit-box-shadow: 0 1px 5px 0 rgba(0,0,0,.3); */
+  /* box-shadow: 0 1px 5px 0 rgba(0,0,0,.3); */
+  /* text-align: center; */
+}
+
+.register form h2 {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    /* border-bottom: 2px dotted #bbb; */
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.register form input {
+    /*width: 100%;*/
+    height: 45px;
+    padding: 0 25px;
+    background: #fcfcfc;
+    border: 1px solid #ddd;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0 1px 3px 0 rgba(0,0,0,.1) inset;
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.1) inset;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1) inset;
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    color: #888;
+    font-size: 16px;
+}
+
+.wizard-container form input:focus,
+.wizard-container form textarea:focus {
+    border: 1px solid #ccc;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.register form label {
+    margin: 7px 0 10px 5px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.register form label span {
+    font-style: normal;
+}
+
+.wizard-container form input:-moz-placeholder { color: #aaa; font-style: normal !important;}
+.wizard-container form input:-ms-input-placeholder { color: #aaa; font-style: normal !important;}
+.wizard-container form input::-webkit-input-placeholder { color: #aaa; font-style: normal !important;}
+
+.upload-btn {
+    padding: 0 10em !important;
+}
+.martop80 {
+    margin-top: 80px;
+}
+
+button.unggah {
+    cursor: pointer;
+    width: 15%;
+    height: 42px;
+    margin-top: 25px;
+    padding: 0;
+    /* background: #eb4141; */
+    background: #00397d;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: 0;
+    -moz-box-shadow: 0 15px 30px 0 rgba(255,255,255,.1) inset;
+    -webkit-box-shadow: 0 15px 30px 0 rgba(255,255,255,.1) inset;
+    box-shadow: 0 15px 30px 0 rgba(255,255,255,.1) inset;
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,.1);
+    -o-transition: all .2s;
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -ms-transition: all .2s;
+}
+
+form button:hover {
+    -moz-box-shadow: 0 -15px 30px 0 rgba(255,255,255,.05) inset;
+    -webkit-box-shadow: 0 -15px 30px 0 rgba(255,255,255,.05) inset;
+    box-shadow: 0 -15px 30px 0 rgba(255,255,255,.05) inset;
+}
+
+form button:active {
+    -moz-box-shadow:
+        0 -15px 30px 0 rgba(255,255,255,.05) inset,       
+        0 5px 8px 0 rgba(0,0,0,.1) inset;
+    -webkit-box-shadow:
+        0 -15px 30px 0 rgba(255,255,255,.05) inset,       
+        0 5px 8px 0 rgba(0,0,0,.1) inset;
+    box-shadow:
+        0 -15px 30px 0 rgba(255,255,255,.05) inset,       
+        0 5px 8px 0 rgba(0,0,0,.1) inset;
+}
+
+.form-title {
+    width: 100%;
+    padding-bottom: 10px;
+    margin: 15px 10px 50px 10px;
+    font-weight: bold;
+    font-size: 21px;
+    text-align: center;
+    line-height: 40px;
+    color: #666;
+    border-bottom: 1px solid #e5e5e5;
+}
+.nomargin {
+    margin: 0 !important;
+}
+.fc666 label {
+    color: #666;
+    font-weight: normal !important;
+}
+.ta-left {
+    text-align: left !important;
+} 
+.padleft40 {
+    padding-left: 40px !important;
+}
+.ttl {
+    width: 40% !important;
+}
+.form-group label #jumSaudara{
+    width: 150px;
+    float: left;
+    margin-right: 10px;
+}
+.form-group label #usiaAyah, .form-group label #usiaIbu{
+    width: 10%;
+}
+.spanOrg{
+    margin: 5px 0;
+}
+#syarat .modal-body.cus-body ol > li{
+    font-size: 13px;
+}
+/*.lblFloat{
+    float: left;
+}*/
+.term {
+    margin-top: 20px;
+}
+
+
+/* ----- Media queries ----- */
+
+@media (max-width: 1200px) {
+
+    .register form h2 { background: url(../img/pencil.png) 20px 6px no-repeat; }
+
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+    .register form h2 { background: none; }
+
+}
+
+@media (max-width: 767px) {
+
+    .register-container { /*padding-left: 20px; padding-right: 20px;*/ }
+
+    .register form h2 { background: none; }
+
+    .register form {
+      padding: 0 20px 40px 20px;
+      
+}
+
+}
+
+@media (max-width: 640px) {
+
+    .padleft40 {
+        padding-left: 15px !important;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    form button { width: 100%; }
+    .register form {
+       padding: 0; 
+    }
+    .upload-btn {
+        padding: 0 !important;
+  } 
+
+}
+
+.loading-ajfc
+{
+    background: rgba(0,0,0,0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    z-index: 99999;
+    overflow: hidden;
+    display: none;
+}
+.loading-ajfc > .loading-inner
+{
+    position: absolute;
+    top: 50%;
+    @include translateY(-50%);
+    color: white;
+    text-align: center;
+    width: 100%;
+}
