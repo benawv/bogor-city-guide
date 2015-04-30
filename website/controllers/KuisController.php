@@ -60,7 +60,7 @@ class KuisController extends Website_Controller_Action {
 			$usiaIbu = $_POST["usiaIbu"];
 			$pendidikanAyah = $_POST["pendidikanAyah"];
 			$pendidikanIbu = $_POST["pendidikanIbu"];
-			$pengeluaran = $_POST["pengeluaran"];
+			$pengeluaran = str_replace(".","",$_POST["pengeluaran"]);
 			
 			if($pekerjaan_lain != "")
 			{
