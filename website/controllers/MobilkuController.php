@@ -20,9 +20,10 @@ class MobilkuController extends Website_Controller_Action {
 		$telp=$_POST['telp'];
 		$radio=$_POST['radio'];
         $hargaKonv=$_POST['hargaKonv'];
+        $merk=$_POST['merk_html'];
+        $modelfe=$_POST['model_html'];
         $date_tglPeriod= new Pimcore_Date($period);
-		
-		
+
 		//$th=$_GET['tahun_pembuatan'];
 		//$harga=$_GET['harga'];
 		//$merk=$_GET['merk'];
@@ -75,9 +76,9 @@ class MobilkuController extends Website_Controller_Action {
                 $document = '/email/email-mobilku';
                 $params = array('year' => $th,
                                 'price' => $harga,
-                                'model' => $entries,
+                                'model' => $modelfe,
                                 'registrationnp' => $regno,
-                                'periode' => $date_tglPeriod,
+                                'periode' => $period,
                                 'email' => $email,
                                 'nama' => $nama,
                                 'telp' => $telp,

@@ -1694,6 +1694,7 @@ $(document).ready(function(){
         var nama=$('#nama').val();
         var telp=$('#telp').val();
         var hargaKonv=clearFormat($('#harga').val());
+        var model_html=$('#model option:selected').html().toLowerCase();
         //var radio1=$('#radio01').val();
         //var radio2=$('#radio02').val();
         
@@ -1707,10 +1708,10 @@ $(document).ready(function(){
         $.ajax({
             "url" : "/savemobilku/",
             "type" : "POST",
-            "data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp+"&radio="+radio+"&hargaKonv="+hargaKonv,
-            "success" : function(response){
-                var getResult=JSON.parse(response);
-                console.log(response);
+            "data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp+"&radio="+radio+"&hargaKonv="+hargaKonv+"&merk_html="+merk_html+"&model_html="+model_html,
+            "success" : function(){
+                //var getResult=JSON.parse(response);
+                //console.log(response);
             }
         });
     });
