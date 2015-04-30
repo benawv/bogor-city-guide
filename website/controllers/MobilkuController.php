@@ -47,11 +47,12 @@ class MobilkuController extends Website_Controller_Action {
         }
         
 		$getId=Object_Abstract::getByPath('/kalkulator/personal-lines');//get folder id
-		$entries = Object_Abstract::getById($model);
+		$entries = Object_Abstract::getByID($model);
+       //echo $entries;
 		$register = new Object_MobilPersonalLines();
 		$register->setyear($th);
 		$register->setprice($hargaKonv);
-		$register->setmodel($entries);		
+		$register->setmodel($entries->o_id);		
 		$register->setregistrationno($regno);
 		$register->setstartperiode($date_tglPeriod);
 		$register->setemail($email);
@@ -63,7 +64,7 @@ class MobilkuController extends Website_Controller_Action {
 		$register->setIndex(0);
 		$register->setPublished(1);
 		$register->save();
-		/*die();
+		
 		$emailDocument = '/email/register';
 		$params = array('year' => $th,
                         'price' => $harga,
@@ -85,7 +86,7 @@ class MobilkuController extends Website_Controller_Action {
 		$mail->send();
 		print_r($mail);
 		
-		die();*/
+
 	}
 	
 	public function dataMobileAction(){
