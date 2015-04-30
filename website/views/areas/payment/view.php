@@ -395,7 +395,7 @@
         <div class="content-calc custom-tab-item" id="third">
             <div class="col-xs-12">
                 <div class="custom-iframe-wrapper">
-                    <iframe src="http://www.9gag.com/" width="100%" height="480"></iframe>
+                    <iframe src="http://www.klikbca.com/KlikPay/klikpay.html" width="100%" height="480"></iframe>
                 </div><!--/ .custom-iframe-wrapper -->
             </div><!--/ .col-xs-12 -->
         </div><!--/ .content-calc#third -->
