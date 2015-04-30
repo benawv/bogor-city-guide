@@ -36,11 +36,24 @@
                 <div class="col-xs-12 col-sm-8 col-sm-offset-4 col-md-4 col-md-offset-8">
                     <div class="box-dent mt32">
                         <div class="box-dent--inner">
-                            <h2>Kalkulor Tasbih</h2>
-                            <p>#1ygterpenting mewujudkan mimpi menjalani ibadah.</p>
+                            <h2><?php echo $this->input("titleTasbih");?></h2>
+                            <?php echo $this->wysiwyg("descTasbih");?>
                             <?php if($this->editmode){
-                                Coba sekarang.
+                                echo $this->link("linkTasbih");
                             }else{
+                                $linkT = $this->link("linkTasbih")->getHref();
+                                $target = $this->link("linkTasbih")->getTarget();
+                                $textT = $this->link("linkTasbih")->getText();
+                                if($linkT != "")
+                                {
+                                    $href = $linkT;
+                                }
+                                else{
+                                    $href = "#";
+                                }
+                            ?>
+                                <a href="<?php echo $href;?>" target="<?php echo $target;?>"><?php echo $textT;?> <i class="fa fa-angle-right"></i></a>
+                            <?php }?>
                         </div><!--/ .box-dent--inner -->
                     </div>
                 </div><!--/ .col-xs-6 -->
