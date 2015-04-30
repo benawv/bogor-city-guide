@@ -46,8 +46,12 @@ class MobilkuController extends Website_Controller_Action {
             $radiof = 'Komprehensif';
         }
         
+        //throw new Exception("Please re-check your entries");
+        
+        //try{
 		$getId=Object_Abstract::getByPath('/kalkulator/personal-lines');//get folder id
 		$entries = Object_Abstract::getById($model);
+        print_r($entries);
 		$register = new Object_MobilPersonalLines();
 		$register->setyear($th);
 		$register->setprice($hargaKonv);
@@ -63,30 +67,41 @@ class MobilkuController extends Website_Controller_Action {
 		$register->setIndex(0);
 		$register->setPublished(1);
 		$register->save();
-		/*die();
-		$emailDocument = '/email/register';
-		$params = array('year' => $th,
-                        'price' => $harga,
-                        'model' => $entries,
-                        'registrationnp' => $regno,
-                        'periode' => $date_tglPeriod,
-                        'email' => $email,
-                        'nama' => $nama,
-                        'telp' => $telp,
-                        'insurancetype' => $radiof
-                );
-		$mail = new Pimcore_Mail();
-		$mail->setSubject("test");
-		$mail->setFrom('noreply@allianz.co.id','Fitrazh');
-		$mail->addTo($email);
-		$mail->setBodyText("This is just plain text");
-		$mail->setDocument($emailDocument);
-		$mail->setParams($params);
-		$mail->send();
-		print_r($mail);
-		
-		die();*/
+       // }
+       // catch(Exception $e){
+        //    echo 'Message: ' .$e->getMessage();
+        //}
+                try{
+                $document = '/email/email-mobilku';
+                $params = array('year' => $th,
+                                'price' => $harga,
+                                'model' => $entries,
+                                'registrationnp' => $regno,
+                                'periode' => $date_tglPeriod,
+                                'email' => $email,
+                                'nama' => $nama,
+                                'telp' => $telp,
+                                'insurancetype' => $radiof
+                                );
+
+                $mail = new Pimcore_Mail();
+                $mail->setSubject("Konfirmasi Asuransi Mobil");
+                $mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+                $mail->setDocument($document);
+                $mail->setParams($params);
+                $mail->addTo($email);
+                $mail->send();}
+         catch(Exception $e){
+          echo 'Message: ' .$e->getMessage();
+        }
 	}
+    
+    public function sendemailAction(){
+        
+            //Empty Fucntion
+            
+            
+    }
 	
 	public function dataMobileAction(){
 		
