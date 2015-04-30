@@ -98,7 +98,7 @@ class MobilkuController extends Website_Controller_Action {
     
     public function sendemailAction(){
         
-
+            //Empty Fucntion
             
             
     }
