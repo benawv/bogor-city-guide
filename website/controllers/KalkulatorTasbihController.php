@@ -69,7 +69,7 @@
                 }
             
                 $hasil = number_format($Calculation,0,",",".");
-                $document = '/email-tasbih';
+                $document = '/email/email-tasbih';
                 $params = array('tglhitung' => $TanggalPembuatan,
                                 'nama' => $Nama,
                                 'email' => $Email,
