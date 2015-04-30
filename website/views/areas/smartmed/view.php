@@ -12,7 +12,7 @@
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/tabs-accordion.css">-->
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/product.css">-->
 
-<script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/website/static/mobilku/wizard-step.css" type="text/css" media="all" />
 
 <style>
     /* Override AJFC's feature box color */
@@ -24,7 +24,7 @@
     .table-responsive
     {
         overflow: auto;
-        margin: 0 15px;
+        margin: 0 35px;
         background: #f5f6f6;
     }
 
@@ -110,7 +110,7 @@
         list-style: none;
         display: inline-block;
         position: relative;
-        width: 25%;
+        width: 50%;
         margin: 0 auto;
         overflow: hidden;
         opacity: 0.5;
@@ -136,7 +136,7 @@
     {
         content: "";
         position: absolute;
-        right: 0;
+        right: -24px;
         z-index: 2;
         height: 100%;
         top: 50%;
@@ -166,7 +166,7 @@
     {
         content: "";
         position: absolute;
-        right: 0;
+        right: -24px;
         z-index: 2;
         height: 100%;
         top: 50%;
@@ -201,6 +201,7 @@
     .content-table
     {
         display: none;
+        background: white;
     }
 
     .content-calc.active,
@@ -213,6 +214,45 @@
     {
         padding: 0 20px;
     }
+
+    /**
+     * Responsive
+     */
+
+    @media ( max-width: 767px )
+    {
+        .custom-tab-nav ul > li
+        {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .custom-tab-nav ul > li > a
+        {
+            padding: 20px !important;
+        }
+
+        .custom-tab-nav ul > li::before,
+        .custom-tab-nav ul > li::after
+        {
+            content: "";
+            border: none;
+            display: none;
+        }
+
+        .content-calc
+        {
+            padding: 0 20px !important;
+        }
+
+        .table-responsive
+        {
+            margin: 0 auto;
+        }
+
+    }
+
 
 </style>
 
@@ -505,14 +545,14 @@
 
                     if( ( index != 1 ) || ( ( index == 1 ) && second_tab_enabled ) )
                     {
-                        if( $( href ).length > 0 )
+                        if( $( '.custom-tab-item' + href ).length > 0 )
                         {
                             $( '.custom-tab-nav li' ).removeClass( 'active' );
                             $( this ).parent().addClass( 'active' );
                             $( '.custom-tab-item.active' ).stop().fadeOut( 'fast', function(){
                                 $( this ).removeClass( 'active' );
-                                $( href ).stop().fadeIn( 'fast', function(){
-                                    $( href ).addClass( 'active' );
+                                $( '.custom-tab-item' + href ).stop().fadeIn( 'fast', function(){
+                                    $( '.custom-tab-item' + href ).addClass( 'active' );
                                 });
                             });
                         }
