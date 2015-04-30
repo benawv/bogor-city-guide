@@ -76,6 +76,7 @@
                                 "iDisplayLength": 25,
                                 'responsive': true
                             });
+			    $("#example_length.dataTables_length").remove();
                         } );
                     </script>
 
