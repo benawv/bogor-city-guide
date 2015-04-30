@@ -1,0 +1,42 @@
+.winner-list
+{
+    position: relative;
+    & > .winner-list--item
+    {
+        position: relative;
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+        border-bottom: solid 1px #ddd;
+
+        & > .row
+        {
+            overflow: hidden;
+        }
+
+        & > .row > div[class^="col-"]
+        {
+            /*
+            padding: 0;
+            border: solid 1px red;
+            padding-bottom: 9999px;
+            margin-bottom: -9999px;
+            */
+        }
+
+        .text
+        {
+            height: 100%;
+            padding: 16px 32px;
+
+            h1, h2, h3, h4, h5, h6, p
+            {
+                padding: 0;
+                margin: 0 0 12px;
+                line-height: 1.5;
+            }
+
+        }
+
+    }
+
+} /* .winner-list */

@@ -1,0 +1,93 @@
+nav.primary
+{
+    a
+    {
+        &:hover
+        {
+            text-decoration: none;
+        }
+    }
+}
+
+header
+{
+    nav.toolbar
+    {
+        ul.clearfix,
+        ol.clearfix
+        {
+            & > li > a
+            {
+                & > .fa
+                {
+                    color: white;
+                    font-size: larger;
+                }
+            }
+        }
+    }
+}
+
+footer
+{
+    &.contentinfo
+    {
+        .container
+        {
+            width: 960px;
+            min-width: 960px;
+            max-width: 960px;
+            padding: 0;
+        }
+
+        .worldwide
+        {
+            padding: 30px 0 0;
+        }
+
+        @media ( max-width: 640px )
+        {
+            .statement
+            {
+                padding: 0 15px;
+            }
+
+            .static-links
+            {
+                padding: 0 15px;
+
+                & > li
+                {
+                    &:first-child
+                    {
+                        padding-left: 15px;
+                    }
+                }
+
+                a
+                {
+                    &::before
+                    {
+                        content: "" !important;
+                    }
+                }
+
+                &.mobile.deactive.share
+                {
+                    right: 15px !important;
+
+                    a
+                    {
+                        &::before
+                        {
+                            content: "";
+                        }
+                    }
+
+                }
+
+            }
+        }
+
+    }
+}
