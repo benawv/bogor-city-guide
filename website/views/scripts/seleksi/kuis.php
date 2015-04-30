@@ -526,7 +526,7 @@
 
                                             <div class="form-group">
                                                 <label for="1terpenting">Ceritakan #1ygterpenting untuk memotivasi diri kamu dan tim dalam menghadapi pertandingan?</label>
-                                                <textarea class="form-control" rows="3" name="halTerpenting" required="required" style="height:100px !important"></textarea>
+                                                <textarea class="form-control" rows="3" name="halTerpenting" required="required" style="height:100px !important"><?php echo $row->getSatuTerpenting();?></textarea>
                                             </div><!--/ .form-group -->
 
                                             <div class="form-group">
