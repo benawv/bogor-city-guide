@@ -374,8 +374,8 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" tabindex="3" required>
-                                <option value="KLIKBCA">Bank</option>
-                                <option value="MANDIRI">Credit Card</option>
+                                <option value="KLIKBCA">KlikBCA</option>
+                                <option value="MANDIRI">Mandiri</option>
                                 <option value="VISA">Visa Master</option>
                             </select>
                         </div><!--/ .col-md-4 -->
