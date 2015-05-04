@@ -132,13 +132,26 @@
                     }
                 ];
 
+                <?php
+
+                    /**
+                     * Zabuto Calendar Show Previous and Next Hacks
+                     */
+
+                    $month          = date( 'm' );
+                    $months         = array( '04', '05', '06', '07', '08' );
+                    $months_key     = array_search( $month, $months );
+                    $months_diff    = count( $months ) - ( 1 * $months_key );
+
+                ?>
+
                 $( '#my-calendar' ).zabuto_calendar({
                     language: "en",
                     today: true,
-                    year: 2015,
-                    month: 4,
-                    show_previous: false,
-                    show_next: 4,
+                    year: <?php echo date( 'Y' ); ?>,
+                    month: <?php echo date( 'm' ); ?>,
+                    show_previous: <?php echo $months_key; ?>,
+                    show_next:  <?php echo $months_diff-1; ?>,
                     data: eventData,
                     // ajax: { url: "" }, You shall not use this feature
                     action: function(){ return myDateFunction(this.id); }
