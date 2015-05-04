@@ -13,13 +13,7 @@ class SeleksiController extends Website_Controller_Action {
 				$today = strtotime(date('Y-m-d H:i'));
 				$tgl1 = new Pimcore_Date($today);
 				$tgl2 = $row->getTglExpireKuis();
-				
-				$date2 = strtotime(date('Y-m-d 23:59'));
-				$today2 = new Pimcore_Date($date2);
-				//echo $today;
-				//die();
-				//if($tgl1 <= $tgl2)
-				if($tgl1 <= $today2)
+				if($tgl1 <= $tgl2)
 				{
 					$this->enableLayout();
 					$this->setLayout('ajfc');
