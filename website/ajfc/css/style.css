@@ -864,13 +864,13 @@ header {
         max-height: none;
         border: none;
         position: absolute;
-        top: 50%;
+        top: 0;
         left: 50%;
-        -webkit-transform: translate3d(-50%, -50%, 0);
-        -moz-transform: translate3d(-50%, -50%, 0);
-        -ms-transform: translate3d(-50%, -50%, 0);
-        -o-transform: translate3d(-50%, -50%, 0);
-        transform: translate3d(-50%, -50%, 0); }
+        -webkit-transform: translate3d(-50%, 0, 0);
+        -moz-transform: translate3d(-50%, 0, 0);
+        -ms-transform: translate3d(-50%, 0, 0);
+        -o-transform: translate3d(-50%, 0, 0);
+        transform: translate3d(-50%, 0, 0); }
   .news-feeds .news-feeds--box > .row {
     overflow: hidden; }
     .news-feeds .news-feeds--box > .row > div[class^="col-"] {
@@ -1386,23 +1386,23 @@ section.gallery-wrapper .gallery-item {
         min-height: 480px; }
         section.gallery-wrapper .gallery-item .gallery-item--image > img {
           width: auto !important;
-          min-width: 0 !important;
+          min-width: 105% !important;
           max-width: none !important; } }
     section.gallery-wrapper .gallery-item .gallery-item--image > img {
       width: auto;
-      min-width: 100%;
+      min-width: 105%;
       max-width: 120%;
       height: auto;
       min-height: 100%;
       max-height: none;
       position: absolute;
-      top: 50%;
+      top: 0;
       left: 50%;
-      -webkit-transform: translate3d(-50%, -50%, 0);
-      -moz-transform: translate3d(-50%, -50%, 0);
-      -ms-transform: translate3d(-50%, -50%, 0);
-      -o-transform: translate3d(-50%, -50%, 0);
-      transform: translate3d(-50%, -50%, 0);
+      -webkit-transform: translate3d(-50%, 0, 0);
+      -moz-transform: translate3d(-50%, 0, 0);
+      -ms-transform: translate3d(-50%, 0, 0);
+      -o-transform: translate3d(-50%, 0, 0);
+      transform: translate3d(-50%, 0, 0);
       -webkit-transition: ease 0.3s;
       -moz-transition: ease 0.3s;
       -ms-transition: ease 0.3s;
