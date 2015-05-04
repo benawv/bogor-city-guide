@@ -59,10 +59,10 @@
 
 <!-- css -->
 
-<link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/inv/css/normalize.css" />
+<!--<link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/inv/css/normalize.css" />-->
 <link rel="stylesheet" type="text/css" media="screen" id="bootstrap-css" href="/website/static/inv/css/bootstrap.css" />
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/inv/css/screen.css" />
-<link rel="stylesheet" type="text/css" media="screen" id="revision_style-css" href="/website/static/inv/css/revision_style.css" />
+<!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/inv/css/screen.css" />-->
+<!--<link rel="stylesheet" type="text/css" media="screen" id="revision_style-css" href="/website/static/inv/css/revision_style.css" />-->
 <link rel="stylesheet" type="text/css" media="screen" id="main-css" href="/website/static/inv/css/main.css" />
 <link rel="stylesheet" type="text/css" media="screen" id="respon-css" href="/website/static/inv/css/respon.css" />
 
