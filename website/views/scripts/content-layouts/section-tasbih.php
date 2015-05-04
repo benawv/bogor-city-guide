@@ -24,10 +24,11 @@
 <script src="/website/static/js/sticky-jquery.js" type="text/javascript"></script>
 <?php endif; ?>
 
-<header style="margin-top:-20px;">
+<div class="header" style="margin-top:-20px;">
 
-    <div class="background">
-        <img src="/website/ajfc/img/bg-home.jpg" alt="Home" class="img-responsive" />
+    <div class="background" style="pointer-events:visible;">
+        <!--<img src="/website/ajfc/img/bg-home.jpg" alt="Home" class="img-responsive" />-->
+        <?php echo $this->image("Banner-Tasbih"); ?>
     </div><!--/ .background -->
 
     <div class="caption">
@@ -61,7 +62,7 @@
         </div><!--/ .container-fluid -->
     </div><!--/ .caption -->
 
-</header>
+</div>
 
 <div class="container boxes-view">
 
