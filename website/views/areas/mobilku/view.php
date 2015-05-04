@@ -439,7 +439,8 @@
                                             <label for="inputEmail">Nama</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="nama" class="form-control required" id="nama" placeholder="" tabindex="9">
+                                            <input type="text" name="nama" class="form-control required" id="nama" placeholder="" tabindex="9" >
+
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
                                 </div><!--/ .row -->
@@ -450,7 +451,10 @@
                                             <label for="inputEmail">No. Telp</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="tel" name="telp" class="form-control required" id="telp" placeholder="+62812345678" tabindex="10">
+                                            <input type="tel" name="telp" class="form-control required" id="telp" placeholder="+62812345678" tabindex="10" onfocusout="this.value=validateNumber(this.value)">
+                                        <label id="notifNoHP" style="display:none; color: #f00;">
+                                Mohon maaf No HP yang Anda masukkan belum benar
+                            </label>
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
                                 </div><!--/ .row -->
@@ -514,7 +518,9 @@
                                             <label for="inputEmail">Email Anda</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="email" name="email" class="form-control required" id="email" placeholder="" tabindex="15">
+                                            <input type="email" name="email" class="form-control required" id="email" placeholder="" tabindex="15" >
+                                
+                            </label>
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
                                 </div><!--/ .row -->
@@ -1133,6 +1139,45 @@
 <script src="/website/static/mobilku/functionCalcMobilku.js" type="text/javascript"></script>
 
 <script type="text/javascript">
+    
+        $('#telp').bind("input", function(){
+       var re = /^[0-9]*$/; 
+        
+        var value = $('#telp').val();
+        $(this).val(value);
+        if(!re.test(value)){
+            document.getElementById('notifNoHP').style.display= 'block';
+            $('#telp').val('');
+        }else{
+            document.getElementById('notifNoHP').style.display= 'none';
+        }
+        
+    });
+    
+    function validateNumber(value){
+        if(value.length <= 8 ){
+            document.getElementById('notifNoHP').style.display= 'block';
+            return null;
+        }else{ 
+            document.getElementById('notifNoHP').style.display= 'none';
+            return value;
+        }
+    };
+    
+        function validateEMAIL(surat)
+    {
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        if(!re.test(surat))
+        {
+            document.getElementById('notifemail').style.display= 'block';
+            return null;
+        }
+        else
+        {
+            document.getElementById('notifemail').style.display= 'none';
+            return surat;
+        }
+    };
 
 
     function navigateMe(anchor)
@@ -1151,6 +1196,30 @@
             $('html, body').animate({scrollTop:$("#"+anchor).offset().top-90}, 500);
         }
     }
+    
+        $('#telp').bind("telp", function(){
+       var re = /^[0-9]*$/; 
+        
+        var value = $('#telp').val();
+        $(this).val(value);
+        if(!re.test(value)){
+            document.getElementById('notifNoHP').style.display= 'block';
+            $('#telp').val('');
+        }else{
+            document.getElementById('notifNoHP').style.display= 'none';
+        }
+        
+    });
+    
+    function validateNumber(value){
+        if(value.length <= 8 ){
+            document.getElementById('notifNoHP').style.display= 'block';
+            return null;
+        }else{ 
+            document.getElementById('notifNoHP').style.display= 'none';
+            return value;
+        }
+    };
 
     $(document).ready(function(){
 
