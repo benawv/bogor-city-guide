@@ -27,13 +27,7 @@
 <header style="margin-top:-20px;">
 
     <div class="background">
-        <!--<img src="/website/ajfc/img/bg-home.jpg" alt="Home" class="img-responsive" />-->
-        <?php echo $this->image("myImage", array(
-            "title" => "Drag your image here"
-            //"width" => 200,
-            //"height" => 200
-            //"thumbnail" => "contentimages"
-)); ?>
+        <img src="/website/ajfc/img/bg-home.jpg" alt="Home" class="img-responsive" />
     </div><!--/ .background -->
 
     <div class="caption">
