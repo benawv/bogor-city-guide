@@ -359,7 +359,7 @@
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-sm-3">
-                                            <label for="input4">Model Mobil</label>
+                                            <label for="input4">    Model Mobil</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4" >
                                             <select id="model" class="form-control model-form" tabindex="4">
@@ -451,7 +451,7 @@
                                             <label for="inputEmail">No. Telp</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="tel" name="telp" class="form-control required" id="telp" placeholder="+62812345678" tabindex="10" onfocusout="this.value=validateNumber(this.value)">
+                                            <input type="tel" name="telp" class="form-control required" id="telp" placeholder="0812345678" tabindex="10" onfocusout="this.value=validateNumber(this.value)">
                                         <label id="notifNoHP" style="display:none; color: #f00;">
                                 Mohon maaf No HP yang Anda masukkan belum benar
                             </label>
@@ -1231,7 +1231,7 @@
             var a=new Date(date);
             var year1=a.setFullYear(a.getFullYear() + 1);
             var newdate=new Date(year1);
-            $( "#periode-last" ).val(newdate.getMonth()+'/'+newdate.getDate()+'/'+newdate.getFullYear());
+            $( "#periode-last" ).val((newdate.getMonth() + 1)+'/'+newdate.getDate()+'/'+newdate.getFullYear());
           }
         });
 

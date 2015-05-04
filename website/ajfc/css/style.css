@@ -592,17 +592,20 @@ html, body {
     width: 100%; }
 
 /* .loading */
-header {
+header,
+div.header {
   position: relative;
   /* .caption */ }
-  header .background {
+  header .background,
+  div.header .background {
     z-index: 1;
     position: relative;
     min-height: 480px;
     max-height: 600px;
     overflow: hidden;
     pointer-events: none; }
-    header .background::before {
+    header .background::before,
+    div.header .background::before {
       content: "";
       position: absolute;
       z-index: 1;
@@ -626,7 +629,8 @@ header {
       /* W3C */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f5f6f6', endColorstr='#f5f6f6',GradientType=0 );
       /* IE6-8 */ }
-    header .background > img {
+    header .background > img,
+    div.header .background > img {
       padding: 0;
       margin: 0;
       min-width: 110%;
@@ -640,7 +644,8 @@ header {
       -ms-transform: translate3d(-50%, -50%, 0);
       -o-transform: translate3d(-50%, -50%, 0);
       transform: translate3d(-50%, -50%, 0); }
-  header .caption {
+  header .caption,
+  div.header .caption {
     position: absolute;
     z-index: 3;
     top: 0;
@@ -650,15 +655,18 @@ header {
     pointer-events: none;
     /* .box-dent */ }
     @media (max-width: 767px) {
-      header .caption {
+      header .caption,
+      div.header .caption {
         position: relative !important;
         margin-bottom: 96px; } }
-    header .caption .box-dent {
+    header .caption .box-dent,
+    div.header .caption .box-dent {
       background: #003781;
       color: white;
       position: relative;
       pointer-events: auto; }
-      header .caption .box-dent::before {
+      header .caption .box-dent::before,
+      div.header .caption .box-dent::before {
         content: "";
         display: block;
         position: absolute;
@@ -669,22 +677,39 @@ header {
         border-right: 28px solid transparent;
         height: 0;
         width: 100%; }
-      header .caption .box-dent .box-dent--inner {
+      header .caption .box-dent .box-dent--inner,
+      div.header .caption .box-dent .box-dent--inner {
         padding: 32px 32px 0; }
-        header .caption .box-dent .box-dent--inner h1, header .caption .box-dent .box-dent--inner h2, header .caption .box-dent .box-dent--inner h3, header .caption .box-dent .box-dent--inner h4, header .caption .box-dent .box-dent--inner h5, header .caption .box-dent .box-dent--inner h6, header .caption .box-dent .box-dent--inner p {
+        header .caption .box-dent .box-dent--inner h1, header .caption .box-dent .box-dent--inner h2, header .caption .box-dent .box-dent--inner h3, header .caption .box-dent .box-dent--inner h4, header .caption .box-dent .box-dent--inner h5, header .caption .box-dent .box-dent--inner h6, header .caption .box-dent .box-dent--inner p,
+        div.header .caption .box-dent .box-dent--inner h1,
+        div.header .caption .box-dent .box-dent--inner h2,
+        div.header .caption .box-dent .box-dent--inner h3,
+        div.header .caption .box-dent .box-dent--inner h4,
+        div.header .caption .box-dent .box-dent--inner h5,
+        div.header .caption .box-dent .box-dent--inner h6,
+        div.header .caption .box-dent .box-dent--inner p {
           margin: 0 auto;
           padding: 0; }
-        header .caption .box-dent .box-dent--inner h1, header .caption .box-dent .box-dent--inner h2, header .caption .box-dent .box-dent--inner h3, header .caption .box-dent .box-dent--inner h4, header .caption .box-dent .box-dent--inner h5, header .caption .box-dent .box-dent--inner h6 {
+        header .caption .box-dent .box-dent--inner h1, header .caption .box-dent .box-dent--inner h2, header .caption .box-dent .box-dent--inner h3, header .caption .box-dent .box-dent--inner h4, header .caption .box-dent .box-dent--inner h5, header .caption .box-dent .box-dent--inner h6,
+        div.header .caption .box-dent .box-dent--inner h1,
+        div.header .caption .box-dent .box-dent--inner h2,
+        div.header .caption .box-dent .box-dent--inner h3,
+        div.header .caption .box-dent .box-dent--inner h4,
+        div.header .caption .box-dent .box-dent--inner h5,
+        div.header .caption .box-dent .box-dent--inner h6 {
           font-weight: bold; }
-        header .caption .box-dent .box-dent--inner p {
+        header .caption .box-dent .box-dent--inner p,
+        div.header .caption .box-dent .box-dent--inner p {
           padding: 16px 0 12px; }
-        header .caption .box-dent .box-dent--inner a {
+        header .caption .box-dent .box-dent--inner a,
+        div.header .caption .box-dent .box-dent--inner a {
           display: inline-block;
           color: white;
           text-decoration: none;
           font-size: 16px;
           font-weight: bold; }
-          header .caption .box-dent .box-dent--inner a > .fa {
+          header .caption .box-dent .box-dent--inner a > .fa,
+          div.header .caption .box-dent .box-dent--inner a > .fa {
             border-radius: 9999px;
             background: white;
             color: #003781;
@@ -864,13 +889,13 @@ header {
         max-height: none;
         border: none;
         position: absolute;
-        top: 50%;
+        top: 0;
         left: 50%;
-        -webkit-transform: translate3d(-50%, -50%, 0);
-        -moz-transform: translate3d(-50%, -50%, 0);
-        -ms-transform: translate3d(-50%, -50%, 0);
-        -o-transform: translate3d(-50%, -50%, 0);
-        transform: translate3d(-50%, -50%, 0); }
+        -webkit-transform: translate3d(-50%, 0, 0);
+        -moz-transform: translate3d(-50%, 0, 0);
+        -ms-transform: translate3d(-50%, 0, 0);
+        -o-transform: translate3d(-50%, 0, 0);
+        transform: translate3d(-50%, 0, 0); }
   .news-feeds .news-feeds--box > .row {
     overflow: hidden; }
     .news-feeds .news-feeds--box > .row > div[class^="col-"] {
@@ -1386,23 +1411,23 @@ section.gallery-wrapper .gallery-item {
         min-height: 480px; }
         section.gallery-wrapper .gallery-item .gallery-item--image > img {
           width: auto !important;
-          min-width: 0 !important;
+          min-width: 105% !important;
           max-width: none !important; } }
     section.gallery-wrapper .gallery-item .gallery-item--image > img {
       width: auto;
-      min-width: 100%;
+      min-width: 105%;
       max-width: 120%;
       height: auto;
       min-height: 100%;
       max-height: none;
       position: absolute;
-      top: 50%;
+      top: 0;
       left: 50%;
-      -webkit-transform: translate3d(-50%, -50%, 0);
-      -moz-transform: translate3d(-50%, -50%, 0);
-      -ms-transform: translate3d(-50%, -50%, 0);
-      -o-transform: translate3d(-50%, -50%, 0);
-      transform: translate3d(-50%, -50%, 0);
+      -webkit-transform: translate3d(-50%, 0, 0);
+      -moz-transform: translate3d(-50%, 0, 0);
+      -ms-transform: translate3d(-50%, 0, 0);
+      -o-transform: translate3d(-50%, 0, 0);
+      transform: translate3d(-50%, 0, 0);
       -webkit-transition: ease 0.3s;
       -moz-transition: ease 0.3s;
       -ms-transition: ease 0.3s;

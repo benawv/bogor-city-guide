@@ -48,7 +48,8 @@ html, body
 
 } /* .loading */
 
-header
+header,
+div.header
 {
     position: relative;
     .background
@@ -443,9 +444,9 @@ header
                     max-height: none;
                     border: none;
                     position: absolute;
-                    top: 50%;
+                    top: 0;
                     left: 50%;
-                    @include translate3d(-50%, -50%, 0);
+                    @include translate3d(-50%, 0, 0);
                 }
 
             }
