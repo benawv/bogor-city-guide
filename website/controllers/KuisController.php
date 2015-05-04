@@ -243,7 +243,7 @@ class KuisController extends Website_Controller_Action {
 				$idPeserta = md5(uniqid().time().rand().$id);
 				
 				$today = strtotime(date('Y-m-d H:i'));
-				$threeDay = strtotime(date('Y-m-d 22:00',strtotime("+3 days")));
+				$threeDay = strtotime(date('Y-m-d 23:59',strtotime("+3 days")));
 				//$today = date('Y-m-d');
 				//$threeDay = date('Y-m-d 22:00',strtotime("+3 days"));
 				
