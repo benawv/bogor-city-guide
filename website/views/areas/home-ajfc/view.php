@@ -207,6 +207,32 @@
 
                 var eventData = <?php echo $encode; ?>;
 
+                <?php
+
+                    /**
+                     * Zabuto Calendar Show Previous and Next Hacks
+                     */
+
+                    $month          = date( 'm' );
+                    $months         = array( '04', '05', '06', '07', '08' );
+                    $months_key     = array_search( $month, $months );
+                    $months_diff    = count( $months ) - ( 1 * $months_key );
+
+                ?>
+
+                $( '#my-calendar' ).zabuto_calendar({
+                    language: "en",
+                    today: true,
+                    year: <?php echo date( 'Y' ); ?>,
+                    month: <?php echo date( 'm' ); ?>,
+                    show_previous: <?php echo $months_key; ?>,
+                    show_next:  <?php echo $months_diff-1; ?>,
+                    data: eventData,
+                    // ajax: { url: "" }, You shall not use this feature
+                    action: function(){ return myDateFunction(this.id); }
+                });
+
+                /*
                 $( '#my-calendar' ).zabuto_calendar({
                     language: "en",
                     today: true,
@@ -218,6 +244,7 @@
                     // ajax: { url: "" }, You shall not use this feature
                     action: function(){ return myDateFunction(this.id); }
                 });
+                */
 
                 function myDateFunction( id )
                 {
@@ -271,7 +298,7 @@
                             foreach($fb_feed1 as $items1)
                             {
                                 if($items1->socialMediaType->socialMediaType=='facebook'){
-                                if($fb1==1){                                
+                                if($fb1==1){
                                     $fb_StreamId1   =$items1->StreamId;
                                     $fb_CreateDate1 =$items1->CreateDate;
                                     $fb_From1       =$items1->From;
@@ -280,11 +307,11 @@
                                     $fb_LinkAsset1  =$items1->LinkAsset;
                                     $fb_TypeAsset1  =$items1->TypeAsset;
                                     $fb_LinkFeed1   =$items1->LinkFeed;
-                                    $fb_Messages1   =$items1->Messages;                                    
+                                    $fb_Messages1   =$items1->Messages;
                                     $getStrId=explode('_',$fb_StreamId1);
                                     $strId1=$getStrId[1];
                                     $feedDateFb1=date('dS, F Y h:i:s A', strtotime($fb_CreateDate1));
-	
+
                                 }
                                 $fb1++;
                                 }
@@ -297,7 +324,7 @@
                             {
                                 if($items2->socialMediaType->socialMediaType=='facebook'){
                                     if($fb2==2){
-                                     
+
                                     $fb_StreamId2   =$items2->StreamId;
                                     $fb_CreateDate2 =$items2->CreateDate;
                                     $fb_From2       =$items2->From;
@@ -310,7 +337,7 @@
                                     $getStrId=explode($fb_StreamId2,'_');
                                     $strId2=$getStrId[1];
                                     $feedDateFb2=date('dS, F Y h:i:s A', strtotime($fb_CreateDate2));
-                                    
+
                                     }
                                 $fb2++;
                                 }
@@ -324,7 +351,7 @@
                             {
                                 if($items3->socialMediaType->socialMediaType=='twitter'){
                                    if($tw1==1){
-                                    
+
                                     $tw_StreamId1   =$items3->StreamId;
                                     $tw_CreateDate1 =$items3->CreateDate;
                                     $tw_From1       =$items3->From;
@@ -348,7 +375,7 @@
                             {
                                 if($items4->socialMediaType->socialMediaType=='twitter'){
                                    if($tw2==2){
-                                   
+
                                     $tw_StreamId2   =$items4->StreamId;
                                     $tw_CreateDate2 =$items4->CreateDate;
                                     $tw_From2       =$items4->From;
@@ -362,9 +389,9 @@
                                     }
                                    $tw2++;
                                 }
-                               
+
                             }
-                            
+
                         ?>
                         <div class="social-feeds--box facebook">
                             <div class="header">
