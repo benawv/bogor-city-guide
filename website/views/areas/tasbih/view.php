@@ -25,7 +25,7 @@
     <div class="description">
 
         <div class="header-calc">
-            <h1>KALKULATOR ASURANSI ALLIANZ TASBIH</h1>
+            <h1>KALKULATOR ALLIANZ TASBIH</h1>
         </div><!--/ .header-calc -->
 
         <div class="content-calc">
