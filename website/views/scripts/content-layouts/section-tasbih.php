@@ -52,9 +52,12 @@
                                 else{
                                     $href = "#";
                                 }
+                                if($href!="#"){
                             ?>
                                 <a href="<?php echo $href;?>" target="<?php echo $target;?>"><?php echo $textT;?> <i class="fa fa-angle-right"></i></a>
-                            <?php }?>
+                            <?php
+                                }
+                            }?>
                         </div><!--/ .box-dent--inner -->
                     </div>
                 </div><!--/ .col-xs-6 -->
