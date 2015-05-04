@@ -83,12 +83,12 @@
 
                 foreach ($entries as $key) {
                     $img = $key->fotoPeserta;
-                    $ptg = ucfirst($key->satuTerpenting);
-                    $nama = ucwords($key->namaLengkap);
+                    $ptg = ucfirst(strtolower($key->satuTerpenting));
+                    $nama = ucwords(strtolower($key->namaLengkap));
                     $tgll = date("Y", strtotime($key->tanggalLahir));
                     $nyear = date("Y",time());
                     $umur = $nyear-$tgll;
-                    $asl = ucwords($key->tempatLahir);
+                    $asl = ucwords(strtolower($key->tempatLahir));
                     $prop = ucwords($key->propinsi);
                     $content = $nama.', '.$umur.' Tahun<br />'.$asl.', '.$prop;
                     $nclass = "group".$nurut;
