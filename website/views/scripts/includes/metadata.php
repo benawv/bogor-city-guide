@@ -10,14 +10,14 @@
 <!-- css -->
 
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
-<link rel="stylesheet" type="text/css" media="screen" id="bootstrap-css" href="/website/static/css/bootstrap.css">
+<!--<link rel="stylesheet" type="text/css" media="screen" id="bootstrap-css" href="/website/static/css/bootstrap.css">-->
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
-<link rel="stylesheet" type="text/css" media="screen" id="flexslider-css" href="/website/static/css/flexslider.css">
+<!--<link rel="stylesheet" type="text/css" media="screen" id="flexslider-css" href="/website/static/css/flexslider.css">-->
 <link rel="stylesheet" type="text/css" media="screen" id="main-css" href="/website/static/css/main.css">
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/tabs-accordion.css">-->
-<link rel="stylesheet" type="text/css" media="screen" id="product-css" href="/website/static/css/product.css">
-<link rel="stylesheet" type="text/css" media="screen" id="wishlist-cart-css" href="/website/static/css/wishlist-cart.css">
-	<link rel="stylesheet" type="text/css" media="screen" id="font-awesome-css" href="/website/static/css/font-awesome/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" media="screen" id="product-css" href="/website/static/css/product.css">-->
+<!--<link rel="stylesheet" type="text/css" media="screen" id="wishlist-cart-css" href="/website/static/css/wishlist-cart.css">-->
+<link rel="stylesheet" type="text/css" media="screen" id="font-awesome-css" href="/website/static/css/font-awesome/font-awesome.min.css">
 
 
 <!--
@@ -70,29 +70,32 @@ else window.onload = downloadJSAtOnload;
 <link rel="alternate" href="http://www.allianz.co.id/" hreflang="id" />
 
 <!--Google Analytics-->
-<!--<script>
+<!--
+<script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 ga('create', 'UA-44171460-1', 'auto');
 ga('send', 'pageview');
-</script>-->
-
+</script>
+-->
 <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44171460-1']);
+_gaq.push(['_setDomainName', '.allianz.co.id']);
+_gaq.push(['_setAllowLinker', true]);
+_gaq.push(['_setAllowHash', false]);
+_gaq.push(['_trackPageview']);
+_gaq.push(['_trackPageLoadTime']);
 
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-44171460-7']);
-	_gaq.push(['_setAllowLinker', true]);
-	_gaq.push(['_setAllowHash', false]);
-	_gaq.push(['_trackPageview']);
-	_gaq.push(['_trackPageLoadTime']);
-	
-	(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
 </script>
 
 <!--Google Analytics-->
@@ -154,7 +157,7 @@ ga('send', 'pageview');
 <?php
 	if($this->editmode) {
 ?>
-		<style>
+		<style type="text/css">
 			.fixbox{
 				top: 60px !important;
 			}
