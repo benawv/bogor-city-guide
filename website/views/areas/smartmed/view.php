@@ -34,6 +34,19 @@
         -moz-box-sizing: border-box;
     }
 
+    .table-respsonsive > table > tbody > tr > td > a
+    {
+        color: #666 !important;
+        text-decoration: none;
+    }
+
+    .table-respsonsive > table > tbody > tr > td > a:hover,
+    .table-respsonsive > table > tbody > tr > td > a:focus
+    {
+        color: #666 !important;
+        text-decoration: underline;
+    }
+
     .table-responsive > table > tbody > tr > td > input,
     .table-responsive > table > tbody > tr > td > select
     {
@@ -377,13 +390,59 @@
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
 
-        <div class="content-table custom-tab-item" id="second">
-            <div class="row">
+        <div class="content-calc custom-tab-item" id="second">
+
+            <div class="col-md-12">
+
+                <form class="form-horizontal" role="form">
+
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label><strong>Name</strong></label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="name" placeholder="Name" tabindex="1" required>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label><strong>Sex</strong></label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <select class="form-control" required tabindex="2" id="sex">
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                            </select>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label><strong>Date of Birth</strong></label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <input type="text" class="form-control datepicker" id="dob" placeholder="Date of Birth" tabindex="3" required>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+
+                    <div class="form-group">
+                        <div class="col-md-8 col-md-offset-4">
+                            <input type="submit" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Add" name="next" value="Add">
+                        </div><!--/ .col-md-12 -->
+                    </div><!--/ .form-group -->
+
+                </form>
+
+            </div><!--/ .col-md-12 -->
+
+            <div class="row" style="margin: 20px auto 0; padding: 0;">
                 <div class="col-xs-12">
-                    <div class="table-responsive">
+                    <div class="table-responsive" style="margin: 0 auto;">
                     <table class="table table-bordered" cellspacing="0" cellpadding="0" border="0">
                         <thead>
                             <tr>
+                                <th rowspan="2">Actions</th>
                                 <th rowspan="2" width="">No.</th>
                                 <th rowspan="2" width="">Name</th>
                                 <th rowspan="2" width="">Sex</th>
@@ -406,6 +465,7 @@
                         </thead>
                         <tbody>
                             <tr>
+                                <td></td>
                                 <td>1</td>
                                 <td><input type="text" placeholder="Name"></td>
                                 <td>
@@ -457,6 +517,7 @@
                             </tr>
                             <?php for( $i = 1; $i < 5; $i++ ): ?>
                             <tr>
+                                <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
                                 <td><?php echo $i; ?></td>
                                 <td>Mohammed Ali</td>
                                 <td>M</td>
@@ -477,22 +538,22 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="15" class="text-right">0</td>
+                                <td colspan="16" class="text-right">0</td>
                             </tr>
                             <tr>
-                                <td colspan="14" class="text-right">Stamp duty</td>
+                                <td colspan="15" class="text-right">Stamp duty</td>
                                 <td class="text-right">Rp000.000.000,0</td>
                             </tr>
                             <tr>
-                                <td colspan="14" class="text-right">Policy fee</td>
+                                <td colspan="15" class="text-right">Policy fee</td>
                                 <td class="text-right">Rp000.000.000,0</td>
                             </tr>
                             <tr>
-                                <td colspan="14" class="text-right">Family Discount</td>
+                                <td colspan="15" class="text-right">Family Discount</td>
                                 <td class="text-right">Rp000.000.000,0</td>
                             </tr>
                             <tr>
-                                <td colspan="14" class="text-right">Total Amount to Pay</td>
+                                <td colspan="15" class="text-right">Total Amount to Pay</td>
                                 <td class="text-right">Rp000.000.000,0</td>
                             </tr>
                         </tfoot>
