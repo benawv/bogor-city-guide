@@ -4,7 +4,7 @@
 	<div class="item" id="item-unggul">
 <?php }?>
 	<div class="heading">
-		<h2 class="title_news"><?php echo $this->link('title')?></h2>
+		<h2 class="title_news"><?php echo $this->link('title-link');?></h2>
 		<div class="btn-group">
 			<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
 			<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
@@ -50,9 +50,17 @@
 						echo $this->link('linkPageImage_'.$i);
 					?>
 						<?php echo $this->image("image_".$i, ["thumbnail" => "containerCarousel", "dropClass" => $id . "-" . $i, "class" => "image_share", "title" => "Image Size 304x295", "width" => 304, "height" => 295])?>
-					<?php } else { ?>
-					<a href="<?php if($this->link('linkPageImage_'.$i)->getHref() != ""){echo $this->link('linkPageImage_'.$i)->getHref();}else{echo "#";}?>" target="<?php echo $this->link('linkPageImage_'.$i)->getTarget();?>">
-						<img data-toggle="modal" data-target="#modalImage<?php echo $i;?>" src="<?php echo $this->image("image_".$i)->getSrc()?>" class="image_share" />
+					<?php } else {
+						$dataHref = "#";
+						if($this->link('linkPageImage_'.$i)->getHref() != ""){
+								$dataHref = $this->link('linkPageImage_'.$i)->getHref();
+						}
+						else{
+								$dataHref = "#";
+						}
+				    ?>
+					<a href="<?php echo $dataHref;?>" target="<?php echo $this->link('linkPageImage_'.$i)->getTarget();?>">
+						<img src="<?php echo $this->image("image_".$i)->getSrc()?>" class="image_share" />
 					</a>
 					<?php } ?>
 				</div>
