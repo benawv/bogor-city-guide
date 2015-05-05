@@ -538,22 +538,22 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="15" class="text-right">0</td>
+                                <td colspan="16" class="text-right">0</td>
                             </tr>
                             <tr>
-                                <td colspan="14" class="text-right">Stamp duty</td>
+                                <td colspan="15" class="text-right">Stamp duty</td>
                                 <td class="text-right">Rp000.000.000,0</td>
                             </tr>
                             <tr>
-                                <td colspan="14" class="text-right">Policy fee</td>
+                                <td colspan="15" class="text-right">Policy fee</td>
                                 <td class="text-right">Rp000.000.000,0</td>
                             </tr>
                             <tr>
-                                <td colspan="14" class="text-right">Family Discount</td>
+                                <td colspan="15" class="text-right">Family Discount</td>
                                 <td class="text-right">Rp000.000.000,0</td>
                             </tr>
                             <tr>
-                                <td colspan="14" class="text-right">Total Amount to Pay</td>
+                                <td colspan="15" class="text-right">Total Amount to Pay</td>
                                 <td class="text-right">Rp000.000.000,0</td>
                             </tr>
                         </tfoot>

@@ -11,6 +11,7 @@ website/var/recyclebin/*
 website/var/search/*
 website/var/system/*
 website/var/config/system.xml
+website/var/config/extensions.xml
 website/var/tmp/*
 website/var/versions/*
 website/var/webdav/*
