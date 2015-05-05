@@ -61,7 +61,7 @@
                             ?>
                                 <tr>
                                 <td><?php echo $x;?></td>
-                                <td><?php echo ucwords($peserta->getNamaLengkap());?></td>
+                                <td><?php echo ucwords(strtolower($peserta->getNamaLengkap()));?></td>
                                 <td><?php echo $NoDada;?></td>
                                 <td><?php if($peserta->getTanggalLahir()!="" || $peserta->getTanggalLahir()!= NULL){echo date("d - m - Y",strtotime($peserta->getTanggalLahir()));}?></td>
                                 </tr>
