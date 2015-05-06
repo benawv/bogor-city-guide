@@ -6,6 +6,10 @@ class KuisController extends Website_Controller_Action {
 		//echo "<pre>";
 		//print_r($_POST);
 		//print_r($_FILES);
+		//$tgl = str_replace(" ","",$_POST["tgl"]);
+		//$tgl2 = date("Y-m-d",strtotime($tgl));
+		//$tgl3 = new Pimcore_Date($tgl2);
+		//echo $tgl3;
 		//die();
 		//$namaPeserta = "MUHAMMAD ROBBI NUGRAHA";
 		//$saveNoDada = "0099";
@@ -53,6 +57,11 @@ class KuisController extends Website_Controller_Action {
 			$pekerjaan_lain = $_POST["pekerjaan-lain"];
 			$info = implode(", ", $_POST["info"]);
 			$halTerpenting = $_POST["halTerpenting"];
+			
+			//Tanggal Lahir
+			$tgl = str_replace(" ","",$_POST["tgl"]);
+			$tgl2 = date("Y-m-d",strtotime($tgl));
+			$tgl3 = new Pimcore_Date($tgl2);
 			
 			//Orang Tua
 			$saudara = $_POST["jumSaudara"];
@@ -105,6 +114,7 @@ class KuisController extends Website_Controller_Action {
 			//$saveKuis->setCondition("");
 			$saveKuis->setAlamat($alamat);
 			$saveKuis->setTempatLahir($tempatLahir);
+			$saveKuis->setTanggalLahir($tgl3);
 			$saveKuis->setPasport($pasport);
 			$saveKuis->setPropinsi($propinsi);
 			$saveKuis->setNamaOrtu($namaOrtu);
@@ -188,8 +198,9 @@ class KuisController extends Website_Controller_Action {
 						$saveKuis->save();
 					
 						//Create PDF
-						$this->createPdfAction(ucwords($namaPeserta),$saveNoDada);
-						$this->sendAction($saveNoDada,$emailPeserta,ucwords($namaPeserta));
+						$namaPrint = strtoupper($namaPeserta);
+						$this->createPdfAction($namaPrint,$saveNoDada);
+						$this->sendAction($saveNoDada,$emailPeserta,$namaPrint);
 					}
 					else{
 						$uploadOk = 0;

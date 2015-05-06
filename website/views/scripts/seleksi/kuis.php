@@ -6,6 +6,19 @@
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css" />
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/main.css" />
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/data-table-1.10.4/media/css/jquery.dataTables.css" />
+<link rel="stylesheet" href="/website/static/jquery-ui/jquery-ui.css">
+<script src="/website/static/jquery-ui/jquery-ui.js"></script>
+<script>
+  $(function() {
+    $( ".tgl-lahir" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      yearRange: '1999:2001',
+      dateFormat: "dd / mm / yy",
+      defaultDate: '01 / 01 / 1999'
+    });
+  });
+</script>
 
 <!-- AJFC -->
 <link rel="stylesheet" type="text/css" href="/website/ajfc/css/style.css" />
@@ -160,7 +173,18 @@
                                                     <label for="exampleInputName2" name="ttl">Tempat/ Tanggal Lahir<span class="spanRed">*</span> (Kota, DD/MM/YYYY)</label>
                                                     <div class="controls form-inline">
                                                         <input type="text" name="tmp" value="<?php echo $row->getTempatLahir();?>" class="form-control ttl" id="tmp-lahir" placeholder="">
-                                                        <input type="text" name="tgl" readonly="readonly" value="<?php echo date("d / m / Y",strtotime($row->getTanggalLahir()));?>"class="form-control ttl" id="tgl-lahir" placeholder="DD/MM/YYYY">
+                                                        <?php
+                                                            $checkTgl = $row->getTanggalLahir();
+                                                            if($checkTgl !="" || $checkTgl != NULL)
+                                                            {
+                                                                $fixTgl = date("d / m / Y",strtotime($row->getTanggalLahir()));
+                                                            }
+                                                            else
+                                                            {
+                                                                $fixTgl = "";
+                                                            }
+                                                        ?>
+                                                        <input type="text" name="tgl" readonly="readonly" value="<?php echo $fixTgl;?>"class="form-control ttl tgl-lahir" id="tgl-lahir" placeholder="DD/MM/YYYY">
                                                     </div>
                                                 </div><!--/ .form-group -->
                                                 <div class="info-error"></div>
@@ -1059,6 +1083,10 @@ $(function() {
           {
             required: true
           },
+          tgl:
+          {
+            required: true
+          },
           //pengeluaran:
           //{
           //  required: true
@@ -1131,6 +1159,10 @@ $(function() {
           tmp:
           {
             required: "Mohon masukkan tempat lahir kamu."
+          },
+          tgl:
+          {
+            required: "Mohon masukkan tanggal lahir kamu."
           },
           'no-telp':
           {
