@@ -19,7 +19,7 @@
 			<div class="statement">&copy; Allianz 2015. All Rights Reserved.</div>
 			<ul class="static-links">
 				<li><a href="/data-privasi/prinsip-privasi">Kebijakan Privasi</a></li>
-				<li><a href="/sitemap/sitemap" target="_blank">Sitemap</a></li>
+				<li><a href="/sitemap" target="_blank">Sitemap</a></li>
 			</ul>
 			<ul class="static-links mobile deactive share">
 				<li><a href="javascript:void(0);" class="fbshare-fullpage"><img src="/website/static/images/icon-share/facebook-black.png" alt="facebook-black" /></a></li>
