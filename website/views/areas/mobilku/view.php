@@ -375,7 +375,10 @@
                                             <label for="input2">Registration No</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="regno" class="form-control required" id="regno" placeholder="B123XXX" tabindex="5">
+                                            <input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="5" onfocusout="this.value=validateVehicle(this.value)">
+                                            <label id="notifRegno" style="display:none; color: #f00;">
+                                Mohon maaf Registrasi Nomor yang Anda masukkan belum benar
+                            </label>
                                         </div><!--/ .col-sm-4 -->
                                         <div class="col-sm-4">
                                             <span id="tooltips2" class="tooltips">*No kendaraan</span>
@@ -1210,6 +1213,19 @@
         }
         
     });
+    
+    function validateVehicle(value){
+       var re = /^[A-Z]{1,2}[0-9]{1,4}[A-Z]{1,3}$/;
+
+            if(!re.test(value)){
+                document.getElementById('notifRegno').style.display= 'block';
+                return value;
+            }else{
+                document.getElementById('notifRegno').style.display= 'none';
+                return value;
+        }
+
+    };
     
     function validateNumber(value){
         if(value.length <= 8 ){
