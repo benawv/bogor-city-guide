@@ -155,7 +155,7 @@
                                     <div class="row ta-left fc666">
                                         <div class="col-md-6">
                                             <?php foreach( $this->peserta as $row ){
-                                                    $propinsi = ucwords(strtolower($row->getPropinsi()));
+                                                    $propinsi = $row->getPropinsi();
                                                     $val_pekerjaan = ucwords(strtolower($row->getPekerjaanOrtu()));
                                                     $pendidikanAyah = strtoupper($row->getPendidikanAyah());
                                                     $pendidikanIbu = strtoupper($row->getPendidikanIbu());

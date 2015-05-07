@@ -59,9 +59,11 @@ class KuisController extends Website_Controller_Action {
 			$halTerpenting = $_POST["halTerpenting"];
 			
 			//Tanggal Lahir
-			$tgl = str_replace(" ","",$_POST["tgl"]);
-			$tgl2 = date("Y-m-d",strtotime($tgl));
+			$str = str_replace(" ","",$_POST["tgl"]);
+			$tgl = DateTime::createFromFormat('d/m/Y', $str);
+			$tgl2 = strtotime($tgl->format('Y-m-d'));
 			$tgl3 = new Pimcore_Date($tgl2);
+			//echo $tgl->format('Y-m-d')."<br />";
 			
 			//Orang Tua
 			$saudara = $_POST["jumSaudara"];
