@@ -1215,15 +1215,22 @@
     });
     
     function validateVehicle(value){
-       var re = /^[A-Z]{1,2}[0-9]{1,4}[A-Z]{1,3}$/;
+       var re1 = /^[A-Za-z]{1}$/;
+       var re2 = /^[A-Za-z]{2}$/;
 
-            if(!re.test(value)){
-                document.getElementById('notifRegno').style.display= 'block';
+            if(re1.test(value)){
+                document.getElementById('notifRegno').style.display= 'none';
+                alert("Tipe 1");
+                return value;
+            }else if(re2.test(value)){
+                document.getElementById('notifRegno').style.display= 'none';
+                alert("Tipe 2");
                 return value;
             }else{
-                document.getElementById('notifRegno').style.display= 'none';
+                document.getElementById('notifRegno').style.display= 'block';
+                alert("There is no type");
                 return value;
-        }
+            }
 
     };
     
