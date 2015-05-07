@@ -1758,25 +1758,9 @@ $(document).ready(function(){
         });
     });
     
-    $("#regno").bind('input',function(){
-        
-        var regno=$(this).val();
-        //alert(regno);
-        regno.charAt(0);
-        regnoChar=regno.charAt(0);
-        regnoChar2=regno+regno.charAt(1);
-        //alert(regno);
-                    regnoChar=regnoChar.toUpperCase();
-        var wilayah;
-        if (regnoChar=='B' ||regnoChar=='CD' ||regnoChar=='D' ||regnoChar=='E' || regnoChar=='F' || regnoChar=='Z') {
-            //code
-            wilayah=2;
-        }else{
-            wilayah=3;
-            
-        }
-        $('#wilayah').val(wilayah);
-    });
+    //pindah ke sini
+   
+
     
     $(this).on('click','.btn-next',function(){
         
