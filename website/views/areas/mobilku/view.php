@@ -1215,8 +1215,9 @@
     });
     
     function validateVehicle(value){
-       var re1 = /^[A-Za-z]{1}$/;
-       var re2 = /^[A-Za-z]{2}$/;
+       var re1 = /^[A-Za-z]{1}[0-9]{1,4}[A-Za-z]{0,3}$/;
+
+       var re2 = /^[A-Za-z]{2}[0-9]{1,4}[A-Za-z]{0,3}$/;
 
             if(re1.test(value)){
                 document.getElementById('notifRegno').style.display= 'none';
