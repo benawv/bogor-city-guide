@@ -286,6 +286,7 @@ class KuisController extends Website_Controller_Action {
 				try{
 					$mail->send();
 					$data->save();
+					echo $row->getNamaLengkap()." email terkirim.<br />";
 				}
 				catch(Exception $e){
 					echo 'ERROR: ',  $e->getMessage(), "\n";
