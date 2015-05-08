@@ -1718,6 +1718,7 @@ $(document).ready(function(){
     
     $(this).on('change','#merk, #model',function(){
         var a=$(this).attr('id');
+        
         if (a=="merk") {
             //code
             a=1;
@@ -1782,6 +1783,36 @@ $(document).ready(function(){
         
         var email=$('#email').val();
         if (email != '') {
+                        
+             var tahun_pembuatan=$('#tahun_pembuatan').val();
+             var harga=$('#harga').val();
+             var merk=$('#merk').val();
+             var merk_html=$('#merk option:selected').html().toLowerCase();
+             var model=$('#model').val();
+             var regno=$('#regno').val();
+             var periode=$('#periode').val();
+             var nama=$('#nama').val();
+             var telp=$('#telp').val();
+             var hargaKonv=clearFormat($('#harga').val());
+             var model_html=$('#model option:selected').html().toLowerCase();
+                        
+             if($('#radio01').checked == true){
+                   var radio = $('#radio01').val();
+             }else{
+                   var radio = $('#radio02').val();
+             }
+                        
+             $.ajax({
+                 "url" : "/mobilkucalc/",
+                 "type" : "POST",
+                 "data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp+"&radio="+radio+"&hargaKonv="+hargaKonv+"&merk_html="+merk_html+"&model_html="+model_html,
+                 "success" : function(response){
+                        //var getResult=JSON.parse(response);
+                        console.log(response);
+                 }
+             });           
+                        
+                        
             calc_result();
             calc_resultstandard();
             calc_resultpremier();
