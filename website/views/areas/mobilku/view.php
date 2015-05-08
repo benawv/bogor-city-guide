@@ -1243,12 +1243,20 @@
                             },
                     success  : function(data){
                     //console.log(data);
+                    //alert(data);
+                    if(data == ''){
+                        document.getElementById('notifRegno').style.display= 'block';
+                    }else{
+                        document.getElementById('notifRegno').style.display= 'none';
+                    }
                     $('#wilayah').val(data);
+                    
                 }
                 
-                
             });
+            
             return value;
+
     };
     
     function validateNumber(value){
