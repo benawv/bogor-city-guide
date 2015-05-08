@@ -1715,6 +1715,7 @@ $(document).ready(function(){
                 //console.log(response);
             }
         });
+        window.history.go('/kalkulator/tasbih');
     });
     
     $(this).on('change','#merk, #model',function(){
