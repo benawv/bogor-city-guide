@@ -144,11 +144,13 @@ class MobilkuController extends Website_Controller_Action {
 			{
                 $entries = $row->getregioncode();
                 foreach($entries as $data){
-                    echo json_encode($region=$data->getregionid());
+                    print_r($region=$data->getregionid());
                 }
 			}
-        //die();
-       //echo json_encode($region);
+        
+        
+        die();
+       
         
     }
 	
