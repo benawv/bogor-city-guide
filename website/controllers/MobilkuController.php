@@ -137,20 +137,17 @@ class MobilkuController extends Website_Controller_Action {
     
     public function getRegistrationNumberAction(){
         $res=$_POST['res'];
+	$noreg;
         $entri = new Object_MobilRegion_List();
-			$entri->setCondition("registrationletter = '".$res."'");
+	$entri->setCondition("registrationletter = '".$res."'");
 
-			foreach ($entri as $row)
-			{
-                $entries = $row->getregioncode();
-                foreach($entries as $data){
-                    print_r($region=$data->getregionid());
-                }
-			}
-        
-        
-        die();
-       
+		foreach ($entri as $row){
+			$noreg=$row->regioncode[0]->regionid;		
+			
+		
+		}
+	echo $noreg;		
+	die();
         
     }
 	
