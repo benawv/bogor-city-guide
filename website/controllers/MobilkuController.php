@@ -188,8 +188,7 @@ class MobilkuController extends Website_Controller_Action {
 
 		$paket=1;
 		$getTloRate=new Object_MobilRate_List();
-		$getTloRate->setCondition("pakettypeS=$paket AND prices=$hargaKonv AND retetype=$pakettype AND age=$age and makemodel__id=$modelmap_id");
-		
+		$getTloRate->setCondition("pakettype=$paket AND prices=$hargaKonv AND retetype=$pakettype AND age=$age and makemodel__id=$modelmap_id");
 		foreach($getTloRate as $items){
 			$rates= $items->rate;
 		}
