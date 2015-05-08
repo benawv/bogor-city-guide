@@ -147,7 +147,7 @@ class MobilkuController extends Website_Controller_Action {
                     echo json_encode($region=$data->getregionid());
                 }
 			}
-        die();
+        //die();
        //echo json_encode($region);
         
     }
