@@ -1214,16 +1214,48 @@
         
     });
     
-    function validateVehicle(value){
-       var re = /^[A-Z]{1,2}[0-9]{1,4}[A-Z]{1,3}$/;
-
-            if(!re.test(value)){
-                document.getElementById('notifRegno').style.display= 'block';
-                return value;
-            }else{
+    
+     function validateVehicle(value){
+    //alert('test');
+       var re1 = /^[A-Za-z]{1}[0-9]{1,4}[A-Za-z]{0,3}$/;
+       var re2 = /^[A-Za-z]{2}[0-9]{1,4}[A-Za-z]{0,3}$/;
+       var res;
+       
+       //var res2 = str.substring(0,2);
+            
+            if(re1.test(value)){
                 document.getElementById('notifRegno').style.display= 'none';
-                return value;
-        }
+                res = value.substring(0,1);
+            }else if(re2.test(value)){
+                document.getElementById('notifRegno').style.display= 'none';
+                res = value.substring(0,2);
+            }else{
+                document.getElementById('notifRegno').style.display= 'block';
+            }
+            //console.log(res);
+            
+         //alert(res);
+            $.ajax({
+                url      : '/getregistrationnum/',
+                type     : 'POST',
+                data     : {
+                            'res' : res
+                            },
+                    success  : function(data){
+                    //console.log(data);
+                    //alert(data);
+                    if(data == ''){
+                        document.getElementById('notifRegno').style.display= 'block';
+                    }else{
+                        document.getElementById('notifRegno').style.display= 'none';
+                    }
+                    $('#wilayah').val(data);
+                    
+                }
+                
+            });
+            
+            return value;
 
     };
     
