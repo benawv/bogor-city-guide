@@ -1243,18 +1243,20 @@
                             },
                     success  : function(data){
                     //console.log(data);
+                    //alert(data);
+                    if(data == ''){
+                        document.getElementById('notifRegno').style.display= 'block';
+                    }else{
+                        document.getElementById('notifRegno').style.display= 'none';
+                    }
                     $('#wilayah').val(data);
+                    
                 }
                 
-                
             });
-            var wilayah = $('#wilayah').val();
-            if(wilayah == ''){
-                document.getElementById('notifRegno').style.display= 'none';
-            }else{
-                document.getElementById('notifRegno').style.display= 'block';
-            }
+            
             return value;
+
     };
     
     function validateNumber(value){
