@@ -1246,10 +1246,12 @@
                     //alert(data);
                     if(data == ''){
                         document.getElementById('notifRegno').style.display= 'block';
+                         $('#wilayah').val('');
                     }else{
                         document.getElementById('notifRegno').style.display= 'none';
+                        $('#wilayah').val(data);
                     }
-                    $('#wilayah').val(data);
+                    
                     
                 }
                 
