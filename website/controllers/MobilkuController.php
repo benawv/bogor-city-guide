@@ -10,7 +10,7 @@ class MobilkuController extends Website_Controller_Action {
 	public function saveInsuraceAction(){
 		
 		$th=$_POST['tahun_pembuatan'];
-		$harga=$_POST['unfnum'];
+		$harga=$_POST['harga'];
 		$merk=$_POST['merk'];
 		$model=$_POST['model'];
 		$regno=$_POST['regno'];

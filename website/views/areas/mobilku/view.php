@@ -477,7 +477,7 @@
                                     <div class="form-group">
                                         <div class="col-sm-3"></div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="periode-last" class="form-control" id="periode-last" placeholder="" value="" disabled=disabled tabindex="12" >
+                                            <input type="text" name="periode-last" class="form-control" id="periode-last" placeholder="" value="<?php echo date("m/d/Y",strtotime("+ 1 year")); ?>" disabled=disabled tabindex="12">
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
                                 </div><!--/ .row -->

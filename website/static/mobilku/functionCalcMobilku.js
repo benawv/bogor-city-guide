@@ -1695,6 +1695,7 @@ $(document).ready(function(){
         var telp=$('#telp').val();
         var hargaKonv=clearFormat($('#harga').val());
         var model_html=$('#model option:selected').html().toLowerCase();
+        
         //var radio1=$('#radio01').val();
         //var radio2=$('#radio02').val();
         
