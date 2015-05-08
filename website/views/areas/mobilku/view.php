@@ -375,7 +375,10 @@
                                             <label for="input2">Registration No</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="regno" class="form-control required" id="regno" placeholder="B123XXX" tabindex="5">
+                                            <input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="5" onfocusout="this.value=validateVehicle(this.value)">
+                                            <label id="notifRegno" style="display:none; color: #f00;">
+                                Mohon maaf Registrasi Nomor yang Anda masukkan belum benar
+                            </label>
                                         </div><!--/ .col-sm-4 -->
                                         <div class="col-sm-4">
                                             <span id="tooltips2" class="tooltips">*No kendaraan</span>
@@ -1210,6 +1213,43 @@
         }
         
     });
+    
+    
+     function validateVehicle(value){
+    //alert('test');
+       var re1 = /^[A-Za-z]{1}[0-9]{1,4}[A-Za-z]{0,3}$/;
+       var re2 = /^[A-Za-z]{2}[0-9]{1,4}[A-Za-z]{0,3}$/;
+       var res;
+       
+       //var res2 = str.substring(0,2);
+            
+            if(re1.test(value)){
+                document.getElementById('notifRegno').style.display= 'none';
+                res = value.substring(0,1);
+            }else if(re2.test(value)){
+                document.getElementById('notifRegno').style.display= 'none';
+                res = value.substring(0,2);
+            }else{
+                document.getElementById('notifRegno').style.display= 'block';
+            }
+            //console.log(res);
+            
+         //alert(res);
+            $.ajax({
+                url      : '/getregistrationnum/',
+                type     : 'POST',
+                data     : {
+                            'res' : res
+                            },
+                    success  : function(data){
+                    //console.log(data);
+                    $('#wilayah').val(data);
+                }
+                
+                
+            });
+            return value;
+    };
     
     function validateNumber(value){
         if(value.length <= 8 ){

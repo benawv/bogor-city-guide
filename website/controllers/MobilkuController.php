@@ -132,8 +132,25 @@ class MobilkuController extends Website_Controller_Action {
 		$i++;
 		}
 		echo json_encode($data_mobil);
-		die();
+		//die();
 	}
+    
+    public function getRegistrationNumberAction(){
+        $res=$_POST['res'];
+        $entri = new Object_MobilRegion_List();
+			$entri->setCondition("registrationletter = '".$res."'");
+
+			foreach ($entri as $row)
+			{
+                $entries = $row->getregioncode();
+                foreach($entries as $data){
+                    echo json_encode($region=$data->getregionid());
+                }
+			}
+        die();
+       //echo json_encode($region);
+        
+    }
 	
 	public function mobilkucalcAction(){
 		
