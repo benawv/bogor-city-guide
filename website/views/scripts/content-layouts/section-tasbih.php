@@ -1,4 +1,4 @@
-<?php if( $this->editmode ): ?> 
+<?php if( $this->editmode ): ?>
 <style>
     .navi{
         margin-bottom: 50px;
@@ -76,7 +76,7 @@
         ?>
 
         <?php echo $this->areablock('container', array('allowed' => array(
-            'mobilku','tasbih','smartmed','container-box2', 'community-tips2',
+            'mobilku','tasbih','smartmed','liveinsurance','container-box2', 'community-tips2',
             'sections', 'sections-box-full', 'sections-tab', 'teks-tabs',
             'sections-video', 'sections-gallery',
             'sections-select', 'tekskanan60-imagekiri40_wizard',
