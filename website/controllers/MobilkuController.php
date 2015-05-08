@@ -132,7 +132,7 @@ class MobilkuController extends Website_Controller_Action {
 		$i++;
 		}
 		echo json_encode($data_mobil);
-		//die();
+		die();
 	}
     
     public function getRegistrationNumberAction(){
