@@ -132,7 +132,8 @@ class MobilkuController extends Website_Controller_Action {
 		$i++;
 		}
 		echo json_encode($data_mobil);
-		die();
+		
+        die();
 	}
     
     public function getRegistrationNumberAction(){
@@ -174,20 +175,22 @@ class MobilkuController extends Website_Controller_Action {
 		$pakettype;
 		
 		$age=(date("Y") - $th);
+ 
 		
 		if($radio=='comprehensive'){
 			$pakettype=1;
 		}else{
 			$pakettype=2;
 		}
-		
+        echo $age;
+		die();
 		$getModelMap = new Object_MobilModel_List(); 
 		$getModelMap->setCondition("oo_id =".$model);
 		
 		foreach($getModelMap as $items){
 			$modelmap_id=$items->modelmaps->o_id;
 		}
-
+    
 		$paket=1;
 		$getTloRate=new Object_MobilRate_List();
 		$getTloRate->setCondition("pakettype=$paket AND prices=$hargaKonv AND retetype=$pakettype AND age=$age and makemodel__id=$modelmap_id");
@@ -195,8 +198,7 @@ class MobilkuController extends Website_Controller_Action {
 			$rates= $items->rate;
 		}
 		print_r($rates);
-		echo "test";
-		die();
+		//echo "test";
 		
 	}
 	
