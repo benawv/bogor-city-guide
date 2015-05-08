@@ -1248,6 +1248,12 @@
                 
                 
             });
+            var wilayah = $('#wilayah').val();
+            if(wilayah == ''){
+                document.getElementById('notifRegno').style.display= 'none';
+            }else{
+                document.getElementById('notifRegno').style.display= 'block';
+            }
             return value;
     };
     
