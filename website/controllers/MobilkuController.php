@@ -167,6 +167,7 @@ class MobilkuController extends Website_Controller_Action {
 		$hargaKonv=$_POST['hargaKonv'];
 		$merk=$_POST['merk_html'];
 		$modelfe=$_POST['model_html'];
+		$wilayah=$_POST['wilayah'];
 		$ratetype=$_POST['ratetype'];
 		$date_tglPeriod= new Pimcore_Date($period);
 		$pakettype;
@@ -179,24 +180,26 @@ class MobilkuController extends Website_Controller_Action {
 		}else{
 			$pakettype=2;
 		}
-        echo $age;
-		die();
+
 		$getModelMap = new Object_MobilModel_List(); 
-		$getModelMap->setCondition("oo_id =".$model);
-		
+		$getModelMap->setCondition("oo_id =".$model);		
 		foreach($getModelMap as $items){
 			$modelmap_id=$items->modelmaps->o_id;
 		}
-    
+		
+		$getRegId=new Object_MobilRegionCode_List();
+		$getRegId->setCondition("regionid =".$wilayah);
+		foreach($getRegId as $item){
+			$getRegId_id=$item->o_id;
+		}
+
 		$paket=1;
 		$getTloRate=new Object_MobilRate_List();
-		$getTloRate->setCondition("pakettype=$paket AND prices=$hargaKonv AND retetype=$pakettype AND age=$age and makemodel__id=$modelmap_id");
+		$getTloRate->setCondition("pakettype=$paket AND prices=$hargaKonv AND retetype=$paket AND region__id=$getRegId_id AND age=$age and makemodel__id=$modelmap_id");
 		foreach($getTloRate as $items){
 			$rates= $items->rate;
 		}
-		print_r($rates);
-		//echo "test";
-		
+		print_r($rates);		
 	}
 	
 }
