@@ -44,6 +44,7 @@ $(document).ready(function(){
              var merk_html=$('#merk option:selected').html().toLowerCase();
              var model=$('#model').val();
              var regno=$('#regno').val();
+             var wilayah=$('#wilayah').val();
              var periode=$('#periode').val();
              var nama=$('#nama').val();
              var telp=$('#telp').val();
@@ -193,15 +194,13 @@ $(document).ready(function(){
             }
 
         }else{
-           rate=3.89;
            $.ajax({
                  "url" : "/mobilkucalc/",
                  "type" : "POST",
-                 "data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp+"&radio="+radio+"&hargaKonv="+hargaKonv+"&merk_html="+merk_html+"&model_html="+model_html,
+                 "data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp+"&wilayah="+wilayah+"&radio="+radio+"&hargaKonv="+hargaKonv+"&merk_html="+merk_html+"&model_html="+model_html,
                  "success" : function(response){
-                        console.log(response);
+                        localStorage.setItem("gettlo", response);
                         rate=response;
-                        rate=3.89;
                  }
              }); 
         }
@@ -211,25 +210,25 @@ $(document).ready(function(){
     function getWorkshop(merk,calc_type) {
 
         if (calc_type=='1') {//calc_type: Basic,
-             if(merk.toLowerCase=='bmw'){
+             if(merk.toLowerCase()=='bmw'){
                 workshop_rate='10'
-             }else if(merk.toLowerCase=='mercedes benz'){
+             }else if(merk.toLowerCase()=='mercedes benz'){
                 workshop_rate='10'
              }else{
                 workshop_rate='5'
             }
         }else if (calc_type=='2') {//calc_type: standar
-             if(merk.toLowerCase=='bmw'){
+             if(merk.toLowerCase()=='bmw'){
                 workshop_rate='12.50'
-             }else if(merk.toLowerCase=='mercedes benz'){
+             }else if(merk.toLowerCase()=='mercedes benz'){
                 workshop_rate='15.00'
              }else{
                 workshop_rate='7.50'
             }
         }else{
-            if(merk.toLowerCase=='bmw'){//calc_type: premier
+            if(merk.toLowerCase()=='bmw'){//calc_type: premier
                 workshop_rate='25'
-            }else if(merk.toLowerCase=='mercedes benz'){
+            }else if(merk.toLowerCase()=='mercedes benz'){
                 workshop_rate='20'
             }else{
                 workshop_rate='10'
@@ -362,16 +361,16 @@ $(document).ready(function(){
         
         //=========================//perhitungan rate/persen======================================//
         var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
-    
         var band_id=getBand(cleanVarTlo);
-        compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html);
+
+        var tlo=getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html);
+        compre_tlo_persen=localStorage.getItem("gettlo");;
         workshop_persen=parseFloat(getWorkshop(merk_html,1))*(compre_tlo_persen/100);
-        
-        
+        console.log(merk_html);
         console.log("compre_tlo_persen : "+(compre_tlo_persen));
-        //console.log("getWorkshop parsefloat: "+parseFloat(getWorkshop(merk,1)));
+        console.log("getWorkshop parsefloat: "+parseFloat(getWorkshop(merk_html,1)));
         //console.log("Workshop %:"+compre_tlo_persen*(parseFloat(getWorkshop(merk,1))/100));
-        //console.log("workshop_persen:"+workshop_persen);
+        console.log("workshop_persen:"+workshop_persen);
         //console.log("compre "+compre_tlo_persen);
         // if (tlo= 5+wilayah) else (1+wilayah)
         if (jenisasuransi=='tlo') {
