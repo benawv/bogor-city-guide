@@ -365,7 +365,7 @@ $(document).ready(function(){
     
         var band_id=getBand(cleanVarTlo);
         compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html);
-        workshop_persen=parseFloat(getWorkshop(merk_html,1))*(getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html)/100);
+        workshop_persen=parseFloat(getWorkshop(merk_html,1))*(compre_tlo_persen/100);
         
         
         console.log("compre_tlo_persen : "+(compre_tlo_persen));
