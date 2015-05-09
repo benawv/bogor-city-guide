@@ -37,7 +37,26 @@ $(document).ready(function(){
 
     function getTlo(tipe,map,type_mobil) {
         //code
-        var rate;
+             var rate;
+             var tahun_pembuatan=$('#tahun_pembuatan').val();
+             var harga=$('#harga').val();
+             var merk=$('#merk').val();
+             var merk_html=$('#merk option:selected').html().toLowerCase();
+             var model=$('#model').val();
+             var regno=$('#regno').val();
+             var periode=$('#periode').val();
+             var nama=$('#nama').val();
+             var telp=$('#telp').val();
+             var hargaKonv=clearFormat($('#harga').val());
+             var model_html=$('#model option:selected').html().toLowerCase();
+                        
+             if($('#radio01').checked == true){
+                   var radio = $('#radio01').val();
+             }else{
+                   var radio = $('#radio02').val();
+             }
+                        
+                       
 
         if (tipe=='tlo') {
             if(map=='PK_R1_S1_Sedan'){
@@ -174,143 +193,18 @@ $(document).ready(function(){
             }
 
         }else{
-            if(map=='PK_R1_S1_Sedan'){
-                        if(type_mobil=='bmw'){
-                          rate='0.2900';
-                        }else if(type_mobil=='mercedes benz'){
-                          rate='0.2900';
-                        }else{
-                          rate='0.3820';
-                        }                         
-            }else if (map=='PK_R1_S2_Sedan') {
-                        if(type_mobil=='bmw'){
-                          rate='0.2900';
-                        }else if(type_mobil=='mercedes benz'){
-                          rate='0.2900';
-                        }else{
-                          rate='0.2670';
-                        }
-                     
-            }else if (map=='PK_R1_S3_Sedan') {
-                        if(type_mobil=='bmw'){
-                          rate='0.2900';
-                        }else if(type_mobil=='mercedes benz'){
-                          rate='0.2900';
-                        }else{
-                          rate='0.1710';
-                        }                      
-            }else if (map=='PK_R1_S4_Sedan') {
-                        if(type_mobil=='bmw'){
-                          rate='0.2900';
-                        }else if(type_mobil=='mercedes benz'){
-                          rate='0.2900';
-                        }else{
-                           rate='0.1230';
-                        }                     
-            }else if (map=='PK_R1_S5_Sedan') {
-                        if(type_mobil=='bmw'){
-                          rate='0.2900';
-                        }else if(type_mobil=='mercedes benz'){
-                          rate='0.2900';
-                        }else{
-                           rate='0.1080';
-                        } 
-                      
-            }else if (map=='PK_R2_S1_Sedan') {
-                         if(type_mobil=='bmw'){
-                          rate='0.2900';
-                        }else if(type_mobil=='mercedes benz'){
-                          rate='0.2900';
-                        }else{
-                            rate='3.4400';
-                        } 
-                     
-            }else if (map=='PK_R2_S2_Sedan') {
-                         if(type_mobil=='bmw'){
-                          rate='0.2900';
-                        }else if(type_mobil=='mercedes benz'){
-                          rate='0.2900';
-                        }else{
-                           rate='2.4700';
-                        } 
-                      
-            }else if (map=='PK_R2_S3_Sedan') {
-                         if(type_mobil=='bmw'){
-                          rate='0.2900';
-                        }else if(type_mobil=='mercedes benz'){
-                          rate='0.2900';
-                        }else{
-                            rate='1.7200';
-                        } 
-                     
-            }else if (map=='PK_R2_S4_Sedan') {
-                         if(type_mobil=='bmw'){
-                          rate='0.2900';
-                        }else if(type_mobil=='mercedes benz'){
-                          rate='0.2900';
-                        }else{
-                           rate='1.2200';
-                        } 
-                      
-            }else if (map=='PK_R2_S5_Sedan') {
-                         if(type_mobil=='bmw'){
-                          rate='0.2900';
-                        }else if(type_mobil=='mercedes benz'){
-                          rate='0.2900';
-                        }else{
-                            rate='1.7000';
-                        } 
-                     
-            }else if (map=='PK_R3_S1_Sedan') {
-                         if(type_mobil=='bmw'){
-                          rate='0.2900';
-                        }else if(type_mobil=='mercedes benz'){
-                          rate='0.2900';
-                        }else{
-                           rate='0.2530';
-                        } 
-                      
-            }else if (map=='PK_R3_S2_Sedan') {
-                         if(type_mobil=='bmw'){
-                          rate='0.2900';
-                        }else if(type_mobil=='mercedes benz'){
-                          rate='0.2900';
-                        }else{
-                            rate='0.2070';
-                        } 
-                     
-            }else if (map=='PK_R3_S3_Sedan') {
-                         if(type_mobil=='bmw'){
-                          rate='0.2900';
-                        }else if(type_mobil=='mercedes benz'){
-                          rate='0.2900';
-                        }else{
-                           rate='0.1400';
-                        } 
-                      
-            }else if (map=='PK_R3_S4_Sedan') {
-                         if(type_mobil=='bmw'){
-                          rate='0.2900';
-                        }else if(type_mobil=='mercedes benz'){
-                          rate='0.2900';
-                        }else{
-                           rate='0.1220';
-                        } 
-                      
-            }else if (map=='PK_R3_S5_Sedan') {
-                         if(type_mobil=='bmw'){
-                          rate='0.2900';
-                        }else if(type_mobil=='mercedes benz'){
-                          rate='0.2900';
-                        }else{
-                           rate='0.1070';
-                        } 
-                      
-            }else{
-                     rate='0';
-            }
+           rate=3.89;
+           $.ajax({
+                 "url" : "/mobilkucalc/",
+                 "type" : "POST",
+                 "data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp+"&radio="+radio+"&hargaKonv="+hargaKonv+"&merk_html="+merk_html+"&model_html="+model_html,
+                 "success" : function(response){
+                        console.log(response);
+                        rate=response;
+                        rate=3.89;
+                 }
+             }); 
         }
-        //console.log("getTlo RATE:"+rate);
         return rate;
     }
 
@@ -473,7 +367,8 @@ $(document).ready(function(){
         compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html);
         workshop_persen=parseFloat(getWorkshop(merk_html,1))*(getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html)/100);
         
-        //console.log("compre_tlo_persen : "+(compre_tlo_persen));
+        
+        console.log("compre_tlo_persen : "+(compre_tlo_persen));
         //console.log("getWorkshop parsefloat: "+parseFloat(getWorkshop(merk,1)));
         //console.log("Workshop %:"+compre_tlo_persen*(parseFloat(getWorkshop(merk,1))/100));
         //console.log("workshop_persen:"+workshop_persen);
@@ -1769,36 +1664,6 @@ $(document).ready(function(){
         
         var email=$('#email').val();
         if (email != '') {
-                        
-             var tahun_pembuatan=$('#tahun_pembuatan').val();
-             var harga=$('#harga').val();
-             var merk=$('#merk').val();
-             var merk_html=$('#merk option:selected').html().toLowerCase();
-             var model=$('#model').val();
-             var regno=$('#regno').val();
-             var periode=$('#periode').val();
-             var nama=$('#nama').val();
-             var telp=$('#telp').val();
-             var hargaKonv=clearFormat($('#harga').val());
-             var model_html=$('#model option:selected').html().toLowerCase();
-                        
-             if($('#radio01').checked == true){
-                   var radio = $('#radio01').val();
-             }else{
-                   var radio = $('#radio02').val();
-             }
-                        
-             $.ajax({
-                 "url" : "/mobilkucalc/",
-                 "type" : "POST",
-                 "data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp+"&radio="+radio+"&hargaKonv="+hargaKonv+"&merk_html="+merk_html+"&model_html="+model_html,
-                 "success" : function(response){
-                        //var getResult=JSON.parse(response);
-                        console.log(response);
-                 }
-             });           
-                        
-                        
             calc_result();
             calc_resultstandard();
             calc_resultpremier();

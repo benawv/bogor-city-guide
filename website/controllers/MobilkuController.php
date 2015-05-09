@@ -179,8 +179,7 @@ class MobilkuController extends Website_Controller_Action {
 		}else{
 			$pakettype=2;
 		}
-        echo $age;
-		die();
+
 		$getModelMap = new Object_MobilModel_List(); 
 		$getModelMap->setCondition("oo_id =".$model);
 		
@@ -190,13 +189,11 @@ class MobilkuController extends Website_Controller_Action {
     
 		$paket=1;
 		$getTloRate=new Object_MobilRate_List();
-		$getTloRate->setCondition("pakettype=$paket AND prices=$hargaKonv AND retetype=$pakettype AND age=$age and makemodel__id=$modelmap_id");
+		$getTloRate->setCondition("pakettype=$paket AND prices=$hargaKonv AND retetype=$paket AND age=$age and makemodel__id=$modelmap_id");
 		foreach($getTloRate as $items){
 			$rates= $items->rate;
 		}
-		print_r($rates);
-		//echo "test";
-		
+		print_r($rates);		
 	}
 	
 }
