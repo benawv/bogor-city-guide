@@ -24,11 +24,10 @@
 <script src="/website/static/js/sticky-jquery.js" type="text/javascript"></script>
 <?php endif; ?>
 
-<div class="header" style="margin-top:-20px;">
+<header style="margin-top:-20px;">
 
-    <div class="background" style="pointer-events:visible;">
-        <!--<img src="/website/ajfc/img/bg-home.jpg" alt="Home" class="img-responsive" />-->
-        <?php echo $this->image("Banner-Tasbih"); ?>
+    <div class="background">
+        <img src="/website/ajfc/img/bg-home.jpg" alt="Home" class="img-responsive" />
     </div><!--/ .background -->
 
     <div class="caption">
@@ -52,12 +51,9 @@
                                 else{
                                     $href = "#";
                                 }
-                                if($href!="#"){
                             ?>
                                 <a href="<?php echo $href;?>" target="<?php echo $target;?>"><?php echo $textT;?> <i class="fa fa-angle-right"></i></a>
-                            <?php
-                                }
-                            }?>
+                            <?php }?>
                         </div><!--/ .box-dent--inner -->
                     </div>
                 </div><!--/ .col-xs-6 -->
@@ -65,7 +61,7 @@
         </div><!--/ .container-fluid -->
     </div><!--/ .caption -->
 
-</div>
+</header>
 
 <div class="container boxes-view">
 
@@ -80,7 +76,7 @@
         ?>
 
         <?php echo $this->areablock('container', array('allowed' => array(
-            'mobilku','tasbih','smartmed', 'payment', 'container-box2', 'community-tips2',
+            'mobilku','tasbih','smartmed','liveinsurance','container-box2', 'community-tips2',
             'sections', 'sections-box-full', 'sections-tab', 'teks-tabs',
             'sections-video', 'sections-gallery',
             'sections-select', 'tekskanan60-imagekiri40_wizard',
