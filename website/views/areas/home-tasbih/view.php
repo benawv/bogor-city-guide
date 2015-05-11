@@ -40,7 +40,7 @@
         <div class="container">
            <div class="row">
                 <div class="col-xs-12 col-md-4">
-                    <a href="/ilustrasi" class="nav-item green sitemap">
+                    <a href="/tasbih/ilustrasi" class="nav-item green sitemap">
                         <h4><small>01</small>Ilustrasi</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
@@ -51,12 +51,12 @@
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-4">
-                    <a href="/tanya-jawab" class="nav-item orange question">
+                    <a href="/tasbih/tanya-jawab" class="nav-item orange question">
                         <h4><small>02</small>Tanya Jawab Produk</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-4">
-                    <a href="/cari-agen-syariah" class="nav-item users">
+                    <a href="/tasbih/cari-agen-syariah" class="nav-item users">
                         <h4><small>03</small> Cari Agen Syariah <span>Cek Disini</span></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
