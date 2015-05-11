@@ -1,6 +1,6 @@
 <header>
 
-    <div class="background" style="pointer-events:visible;">
+     <div class="background" style="pointer-events:visible;">
         <!--<img src="/website/ajfc/img/bg-home.jpg" alt="Home" class="img-responsive" />-->
         <?php echo $this->image("Banner-Tasbih"); ?>
     </div><!--/ .background -->
@@ -40,8 +40,8 @@
         <div class="container">
            <div class="row">
                 <div class="col-xs-12 col-md-4">
-                    <a href="/proses-seleksi" class="nav-item green sitemap">
-                        <h4><small>01</small> Proses Seleksi</h4>
+                    <a href="/ilustrasi" class="nav-item green sitemap">
+                        <h4><small>01</small>Ilustrasi</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <!--
@@ -52,12 +52,12 @@
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-4">
                     <a href="/tanya-jawab" class="nav-item orange question">
-                        <h4><small>02</small> Tanya Jawab</h4>
+                        <h4><small>02</small>Tanya Jawab Produk</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-4">
-                    <a href="/daftar-peserta" class="nav-item users">
-                        <h4><small>03</small> Sudah Mendaftar? <span>Cek Disini</span></h4>
+                    <a href="/cari-agen-syariah" class="nav-item users">
+                        <h4><small>03</small> Cari Agen Syariah <span>Cek Disini</span></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
             </div><!--/ .row -->
@@ -97,7 +97,7 @@
                         }
                     ?>
                     <div class="header">
-                        <h2>Kalender Event</h2>
+                        <h2>Kalender Hijriah</h2>
                     </div>
                     <div class="body">
                         <h2 id="calendar-title"><?php echo $title; ?></h2>
@@ -512,123 +512,31 @@
             <div class="col-xs-12 col-md-6 news-feeds">
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
-                        <a href="/galeri-ajfc" class="news-feeds--image">
-                            <img src="/website/static/images/dummy/yangterpenting.jpg" alt="" />
+                        <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxA" style="display: block;">
+                            <img src="/tasbih/background/yangterpenting1.jpg" alt="">
                         </a>
                     </div><!--/ .col-xs-12 -->
-                    <div class="col-xs-12 col-md-6 nopadding br bt">
-                        <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxA">
-                            <img src="<?php echo $b[0][1]; ?>" alt="" />
+                    <div class="col-xs-12 col-md-6 nopadding br bt" href="#">
+                        <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxA" style="display: block;">
+                            <img src="/tasbih/background/informasiseputarmekah.png" alt="">
                         </a>
                     </div><!--/ .col-xs-12 -->
                 </div><!--/ .row -->
 
                 <div class="row row-eq-height">
-                    <div class="col-xs-12 col-md-6 nopadding bl bb">
-                        <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxB">
-                            <img src="<?php echo $b[1][1]; ?>" alt="" />
+                    <div class="col-xs-12 col-md-6 nopadding bl bb" href="#">
+                        <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxB" style="display: block;">
+                            <img src="/tasbih/background/jadwalkeberangkatan.png" alt="">
                         </a>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bb">
-                        <div class="text" id="textBoxC">
-                            <h3 class="tbc-title"><a href="/galeri-ajfc"><?php echo $c[0][1]; ?></a></h3>
-                            <p class="text-muted"><small class="tbc-date"><?php echo $b[0][2]; ?></small></p>
-                            <p class="tbc-body"><?php echo $b[0][3]; ?></p>
-                        </div><!--/ .text -->
+                        <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxB" style="display: block;">
+                            <img src="/tasbih/background/yangterpenting.jpg" alt="">
+                        </a>
                     </div><!--/ .col-xs-12 -->
                 </div><!--/ .row -->
 
-                <script>
-                    $(function(){
-
-                        var images = <?php echo $edaftar; ?>;
-
-                        var imagesLength = images.length;
-
-                        var news = <?php echo $eisi; ?>;
-                        var newsLength  = news.length;
-
-                        var imageBoxA   = $( '#imageBoxA' );
-                        var iba_current = 2;
-                        var iba_interval= 15000;
-                        var iba_loop    = setInterval(function(){
-                            imageBoxA.stop().fadeOut( 'fast', function(){
-                                $( this ).parent().attr( 'href', images[ iba_current ][ 0 ] );
-                                $( this ).find( 'img' ).attr( 'src', images[ iba_current ][ 1 ] );
-                                $( this ).stop().fadeIn( 'fast', function(){
-                                    // do nothing
-                                });
-                            });
-                            //console.log( iba_current + ' ' + imagesLength );
-                            if( iba_current < ( imagesLength - 2 ) )
-                            {
-                                iba_current +=2;
-                            }
-                            else
-                            {
-                                iba_current = 0;
-                            }
-                            console.log('a'+iba_current+'->'+images[ ibb_currentb ][ 1 ]);
-                        }, iba_interval);
-
-                        var imageBoxB   = $( '#imageBoxB' );
-                        var ibb_currentb = 3;
-                        var ibb_interval= 21000;
-                        var ibb_loop    = setInterval(function(){
-                            imageBoxB.stop().fadeOut( 'fast', function(){
-                                $( this ).parent().attr( 'href', images[ ibb_currentb ][ 0 ] );
-                                $( this ).find( 'img' ).attr( 'src', images[ ibb_currentb ][ 1 ] );
-                                $( this ).stop().fadeIn( 'fast', function(){
-                                    // do nothing
-                                });
-                            });
-                            //console.log( iba_current + ' ' + imagesLength );
-                            if( ibb_currentb < ( imagesLength - 2 ) )
-                            {
-                                ibb_currentb += 2;
-                            }
-                            else
-                            {
-                                ibb_currentb = 1;
-                            }
-                            console.log('b'+ibb_currentb+'->'+imagesLength);
-                        }, ibb_interval);
-
-                        var textBoxC    = $( '#textBoxC' );
-                        var tbc_title   = textBoxC.find( '.tbc-title' );
-                        var tbc_date    = textBoxC.find( '.tbc-date' );
-                        var tbc_body    = textBoxC.find( '.tbc-body' );
-                        var tbc_interval= 8000;
-                        var tbc_current = 0;
-                        var tbc_loop    = setInterval(function(){
-                            tbc_title.stop().fadeOut( 'fast', function(){
-                                $( this ).html( '<a href="' + news[ tbc_current ][ 0 ] + '">' + news[ tbc_current ][ 1 ] + '</a>' );
-                                $( this ).stop().fadeIn( 'fast' );
-                            });
-                            tbc_date.stop().fadeOut( 'fast', function(){
-                                $( this ).html( news[ tbc_current ][ 3 ] );
-                                $( this ).stop().fadeIn( 'fast' );
-                            });
-                            tbc_body.stop().fadeOut( 'fast', function(){
-                                $( this ).html( news[ tbc_current ][ 2 ] );
-                                $( this ).stop().fadeIn( 'fast' );
-                            });
-                            if( tbc_current < newsLength-1 )
-                            {
-                                tbc_current++;
-                            }
-                            else
-                            {
-                                tbc_current = 0;
-                            }
-                        }, tbc_interval);
-
-
-                    });
-                </script>
-
-
-            </div><!--/ .col-xs-12 -->
+            </div>
         </div><!--/ .row -->
     </div><!--/ .container -->
 </section>
