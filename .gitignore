@@ -15,7 +15,6 @@ website/var/config/extensions.xml
 website/var/tmp/*
 website/var/versions/*
 website/var/webdav/*
-website/var/config/extensions.xml
 website/static/fbshare/*
 website/static/config/*
 website/static/inv-fbshare/*
