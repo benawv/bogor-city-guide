@@ -1,5 +1,9 @@
 <header>
-
+    <style>
+        /* Override AJFC's feature box color */
+        .box-dent--inner{ background: #009a44; }
+        .box-dent::before{ border-top: 28px solid #009a44 !important;}
+    </style>
      <div class="background" style="pointer-events:visible;">
         <!--<img src="/website/ajfc/img/bg-home.jpg" alt="Home" class="img-responsive" />-->
         <?php echo $this->image("Banner-Tasbih"); ?>

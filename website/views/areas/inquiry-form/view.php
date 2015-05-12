@@ -107,9 +107,7 @@
                     </div><!--/ .form-group -->
 
 
-                    
-                    
-                                        <div class="form-group">
+                    <div class="form-group">
                         <div class="col-md-4">
                             <label>DOB</label>
                         </div><!--/ .col-md-4 -->
@@ -121,32 +119,7 @@
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
-<div class="form-group">
-                        <div class="col-md-4">
-                            <label>Email</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="" onfocusout="this.value=validateEMAIL(this.value)">
-                            <label id="notifemail" style="display:none; color: #f00;">
-                                Mohon maaf email yang Anda masukkan belum benar
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-                    
-
-
-            
-
                     <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Kontribusi Berkala/ Premi pertahun</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly="">
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-                    
-                     <div class="form-group">
                         <div class="col-md-4">
                             <label>No Handphone (Min. 8 digit)</label>
                         </div><!--/ .col-md-4 -->
@@ -157,10 +130,36 @@
                             </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
+                    
+                    
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>Email</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="" onfocusout="this.value=validateEMAIL(this.value)">
+                            <label id="notifemail" style="display:none; color: #f00;">
+                                Mohon maaf email yang Anda masukkan belum benar
+                            </label>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>Provinsi</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <select class="form-control" name="provinsi" id="JenisKelamin required">
+                                <option value="l">Pria</option>
+                                <option value="p">Wanita</option>
+                            </select>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+
 
                     <div class="form-group">
                         <div class="col-md-2 col-md-offset-4">
-                            <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="Submit" value="SUbmit">
+                            <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih inquiry-send" id="Submit" name="Submit" value="Submit">
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
 
@@ -205,6 +204,10 @@
             var target = '#modal-' + hash;
             $( target ).modal( 'show' );
         }
+        
+        $(this).on('submit', '.inquiry-send', function(e){
+            alert('test');
+        });
 
         $( ".pagenav .navi li" ).click(function(){
             $(".pagenav .navi li").removeClass('aktif');
