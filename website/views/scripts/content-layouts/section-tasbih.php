@@ -12,13 +12,6 @@
     .navi li{
         float: none;
     }
-    
-    header .background > img, div.header .background > img
-    {
-        min-width: 100% !important;
-        max-width: 100% !important;
-    }
-    
 </style>
 <?php endif; ?>
 
@@ -84,7 +77,7 @@
         ?>
 
         <?php echo $this->areablock('container', array('allowed' => array(
-            'mobilku','tasbih','payment','smartmed','liveinsurance','container-box2', 'community-tips2',
+            'mobilku','tasbih', 'tasbih-news', 'payment','smartmed','liveinsurance','container-box2', 'community-tips2',
             'sections', 'sections-box-full', 'sections-tab', 'teks-tabs',
             'sections-video', 'sections-gallery',
             'sections-select', 'tekskanan60-imagekiri40_wizard',
