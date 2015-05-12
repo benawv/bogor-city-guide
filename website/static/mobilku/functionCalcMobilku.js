@@ -35,7 +35,7 @@ $(document).ready(function(){
         return si_band;
     }
 
-    function getTlo(tipe,map,type_mobil) {
+    function getTlo(tipe,map,type_mobil,paket) {
         //code
              var rate;
              var tahun_pembuatan=$('#tahun_pembuatan').val();
@@ -197,7 +197,10 @@ $(document).ready(function(){
            $.ajax({
                  "url" : "/mobilkucalc/",
                  "type" : "POST",
-                 "data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp+"&wilayah="+wilayah+"&radio="+radio+"&hargaKonv="+hargaKonv+"&merk_html="+merk_html+"&model_html="+model_html,
+                 "data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+
+                          "&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp+
+                          "&wilayah="+wilayah+"&radio="+radio+"&hargaKonv="+hargaKonv+"&merk_html="+merk_html+
+                          "&model_html="+model_html+"&pakettype="+paket,
                  "success" : function(response){
                         localStorage.setItem("gettlo", response);
                         rate=response;
@@ -363,8 +366,8 @@ $(document).ready(function(){
         var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
         var band_id=getBand(cleanVarTlo);
 
-        var tlo=getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html);
-        compre_tlo_persen=localStorage.getItem("gettlo");;
+        var tlo=getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html,1);
+        compre_tlo_persen=localStorage.getItem("gettlo");
         workshop_persen=parseFloat(getWorkshop(merk_html,1))*(compre_tlo_persen/100);
         console.log(merk_html);
         console.log("compre_tlo_persen : "+(compre_tlo_persen));
@@ -599,8 +602,8 @@ $(document).ready(function(){
         //=========================//perhitungan rate/persen======================================//
         var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
         var band_id=getBand(cleanVarTlo);
-        compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html);
-        workshop_persen=parseFloat(getWorkshop(merk_html,2))*(getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html)/100);
+        compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html,1);
+        workshop_persen=parseFloat(getWorkshop(merk_html,2))*(getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html,1)/100);
 
         // if (tlo= 5+wilayah) else (1+wilayah)
         if (jenisasuransi=='tlo') {
@@ -827,8 +830,8 @@ $(document).ready(function(){
         //=========================//perhitungan rate/persen======================================//
         var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
         var band_id=getBand(cleanVarTlo);
-        compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html);
-        workshop_persen=parseFloat(getWorkshop(merk_html,3))*(getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html)/100);
+        compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html,1);
+        workshop_persen=parseFloat(getWorkshop(merk_html,3))*(getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html,1)/100);
 
         
         // if (tlo= 5+wilayah) else (1+wilayah)
@@ -1050,10 +1053,10 @@ $(document).ready(function(){
         
         //=========================//perhitungan rate/persen======================================//
         var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
-        compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html);
+        compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2);//jenisasuransi, type *ga perlu,merk_html,jenis paket)
         //console.log(parseFloat(getWorkshopNonPack(merk,ages)));
         //console.log(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
-        workshop_persen=parseFloat(getWorkshopNonPack(merk_html,ages))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html)/100);
+        workshop_persen=parseFloat(getWorkshopNonPack(merk_html,ages))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2)/100);
         
         // if (tlo= 5+wilayah) else (1+wilayah)
         if (jenisasuransi=='tlo') {
@@ -1628,25 +1631,25 @@ $(document).ready(function(){
                "data" : "brand=" + $(this).val()+"&attrs="+a,
                
                "success" : function(response){
-            var getResult=JSON.parse(response);
-            if (getResult.type==1) {
-                //code
-                var i=0;
-                $('.model-form').html("");
-                $('.model-form').html("<option value=''>Silahkan pilih</option>");
-                for(; i<getResult.bodytype.length; i++){
-                //console.log(getResult.model_name[i]);
-                $('.model-form').append("<option value='"+getResult.model_o_id[i]+"'>"+getResult.model_name[i]+"</option>");
-                }
-            }else{
-                var i=0;
-                //$('.model-form').html("");
-                //$('.model-form').html("<option value=''>Silahkan pilih</option>");
-                for(; i<getResult.bodytype.length; i++){
-                $('#tipe').val(getResult.bodytype[i]);
-                $('#kapasitas').val(getResult.seatingcapacity[i]);
-                }
-            }
+                        var getResult=JSON.parse(response);
+                        if (getResult.type==1) {
+                            //code
+                            var i=0;
+                            $('.model-form').html("");
+                            $('.model-form').html("<option value=''>Silahkan pilih</option>");
+                            for(; i<getResult.bodytype.length; i++){
+                            //console.log(getResult.model_name[i]);
+                            $('.model-form').append("<option value='"+getResult.model_o_id[i]+"'>"+getResult.model_name[i]+"</option>");
+                            }
+                        }else{
+                            var i=0;
+                            //$('.model-form').html("");
+                            //$('.model-form').html("<option value=''>Silahkan pilih</option>");
+                            for(; i<getResult.bodytype.length; i++){
+                            $('#tipe').val(getResult.bodytype[i]);
+                            $('#kapasitas').val(getResult.seatingcapacity[i]);
+                            }
+                        }
                 
                 
             }
