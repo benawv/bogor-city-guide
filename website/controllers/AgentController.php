@@ -10,7 +10,27 @@ class AgentController extends Website_Controller_Action {
 		$kondisi = array("condition" => "(titikKordinat__latitude >".$kordinat[0]." AND titikKordinat__latitude <".$kordinat[2].")  AND (titikKordinat__longitude >".$kordinat[1]." AND titikKordinat__longitude <".$kordinat[3].")");
 		$entries = Object_AgentLocatorKantor::getList($kondisi);
 		
-		echo json_encode($entries);
+		$return = array();
+		foreach($entries as $entry)
+		{
+			$temp = array(
+						  "titikKordinat" => array("latitude" => $entry->titikKordinat->latitude, "longitude" => $entry->titikKordinat->longitude ),
+						  "namaLokasi" => $entry->namaLokasi,
+						  "kodeLokasi" => $entry->kodeLokasi,
+						  "alamat1" => $entry->alamat1,
+						  "alamat2" => $entry->alamat2,
+						  "alamat3" => $entry->alamat3,
+						  "kodeAreaTelepon" => $entry->kodeAreaTelepon,
+						  "nomorTelepon" => $entry->nomorTelepon,
+						  "kodeAreaFax" => $entry->kodeAreaFax,
+						  "o_key" => $entry->o_key,
+						  "o_id" => $entry->o_id
+				);
+
+			array_push($return, $temp);			
+		}
+		
+		echo json_encode($return);
 	}
 	public function detailKantorAction(){
 		$this->enableLayout();

@@ -157,14 +157,13 @@
 			"data" : {kordinat : titik},
 			"type" : "POST",
 			"success" : function(responseData){
-				console.log(responseData);
-			    var entries = responseData;
+				var entries = responseData;
 				var listLoc = jQuery.parseJSON(entries);
-			    var image = '/website/static/images/allianz-map-marker-shadow-105.png';
+				var image = '/website/static/images/allianz-map-marker-shadow-105.png';
 				var image2 = '/website/static/images/allianz-map-marker-shadow_2.png';
 			    var marker = [];
 			    
-			    $.each(listLoc.objects, function(i, item){
+			    $.each(listLoc, function(i, item){
 					
 				    var data_content = '<div class="content">'+
 											'<div id="siteNotice"></div>'+
