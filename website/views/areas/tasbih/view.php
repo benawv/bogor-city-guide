@@ -163,6 +163,8 @@
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
+                    </div><!--/ .form-box -->
+
                     <label><strong>Setoran Tahunan</strong></label>
 
                     <div class="form-group">
@@ -179,8 +181,6 @@
                             <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" value="Kalkulasi">
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
-
-                    </div><!--/ .form-box -->
 
                 </form>
 
