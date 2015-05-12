@@ -95,6 +95,11 @@
     <home-tasbih>1</home-tasbih>
     <tasbih>1</tasbih>
     <home-ajfc>1</home-ajfc>
+    <inquiry-form>1</inquiry-form>
+    <tasbih-news>1</tasbih-news>
+    <payment>1</payment>
+    <smartmed>1</smartmed>
+    <tasbih-news-detail>1</tasbih-news-detail>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>
