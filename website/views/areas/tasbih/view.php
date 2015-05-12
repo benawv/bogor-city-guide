@@ -165,25 +165,24 @@
 
                     </div><!--/ .form-box -->
 
-		<div class="form-box">    
-                    <div class="form-box text-center">
+                    <div class="form-box text-center waiting-calc" style="display: none;">
                         <i class="fa fa-refresh fa-3x fa-spin"></i>
                     </div><!--/ .form-box -->
 
-                    <div class="form-box">
-
-                    <label><strong>Setoran Tahunan</strong></label>
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Kontribusi Berkala/ Premi pertahun</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-		</div>	
-                    </div><!--/ .form-box -->
+                    <div class="form-box result-calc" style="display:none; ">
+			<label><strong>Setoran Tahunan</strong></label>
+    
+			<div class="form-group">
+			    <div class="col-md-4">
+				<label>Kontribusi Berkala/ Premi pertahun</label>
+			    </div><!--/ .col-md-4 -->
+			    <div class="col-md-4">
+				<input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly>
+			    </div><!--/ .col-md-4 -->
+			</div><!--/ .form-group -->
+			
+		    </div>
+		    
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
                             <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" value="Kalkulasi">
@@ -225,7 +224,8 @@
          */
 
         $('#Kalkulasi').click(function() {
-            //alert('test');
+            
+	    
             var tanggalpembuatan = $('#tgl-hitung').val();
             var nama = $('#nama').val();
             var email = $('#email').val();
@@ -238,6 +238,7 @@
             var unfnum = accounting.unformat(asuransijiwa,0,",");
             var nohp = $('#nohp').val();
 
+			
 
 
             if( nama == '' || asuransijiwa == '' || asuransijiwa >= 49000000 ||email == '' || tanggalpembuatan == '' || tanggallahir == '' || nohp == '' || nohp.length <= 8){
@@ -256,8 +257,9 @@
                     alert("Mohon Periksa Inputan Anda");
             }else{
 
-
-            $.ajax({
+	    $('.waiting-calc').show();
+            
+	    $.ajax({
                 url      : '/kalkulator-tasbih/',
                 type     : 'POST',
                 data     : {
@@ -275,6 +277,8 @@
                             },
                     success  : function(data){
                     //console.log(data);
+		    $('.waiting-calc').hide();
+		    $('.result-calc').show();
                     $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
                 }
 
