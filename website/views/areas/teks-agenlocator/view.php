@@ -30,7 +30,9 @@
 									/*'thumbnail' => 'product'*/))?>
 		</div>
 		<div class="section-right-60">
-			<?php echo $this->wysiwyg('teks-kanan')?>
+			<textarea rows="10" cols="50">
+               
+            </textarea>
 		</div>
 	</div>
 </div>
