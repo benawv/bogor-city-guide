@@ -16,8 +16,10 @@
     /* Override AJFC's feature box color */
     .box-dent--inner{ background: #009a44; }
     .box-dent::before{ border-top: 28px solid #009a44 !important;}
-    .btn-tasbih{ background: #009a44 !important; }
+    .btn-tasbih{ background: #009a44 !important; border: none !important; border-radius: 0; }
     .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
+    .form-box{ border: solid 1px #ddd; padding: 16px 20px; margin-bottom: 32px; }
+    .form-control{ border-radius: 0; }
 </style>
 
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
@@ -33,9 +35,11 @@
 
                 <form class="form-horizontal" role="form">
 
+                    <div class="form-box">
+
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label><strong>Tanggal Pembuatan Perhitungan</strong></label>
+                            <label>Tanggal Pembuatan Perhitungan</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="tgl-hitung" value="<?php echo date( 'd/m/Y' ); ?>" required>
@@ -52,13 +56,13 @@
                             <label>Nama</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="nama" placeholder="Nama" required onfocusout="this.value=validateNama(this.value)"> 
+                            <input type="text" class="form-control" id="nama" placeholder="Nama" required onfocusout="this.value=validateNama(this.value)">
                             <label id="notif-nama" style="display:none; color: #f00;">
                                 Mohon maaf Anda belum atau salah memasukkan nama
                             </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
-                    
+
                     <div class="form-group">
                         <div class="col-md-4">
                             <label>No Handphone (Min. 8 digit)</label>
@@ -82,8 +86,6 @@
                             </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
-                    
-
 
                     <div class="form-group">
                         <div class="col-md-4">
@@ -131,6 +133,9 @@
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
+                    </div><!--/ .form-box -->
+                    <div class="form-box">
+
                     <label><strong>Santunan Meninggal Dunia</strong></label>
 
                     <div class="form-group">
@@ -158,6 +163,15 @@
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
+                    </div><!--/ .form-box -->
+
+		<div class="form-box">    
+                    <div class="form-box text-center">
+                        <i class="fa fa-refresh fa-3x fa-spin"></i>
+                    </div><!--/ .form-box -->
+
+                    <div class="form-box">
+
                     <label><strong>Setoran Tahunan</strong></label>
 
                     <div class="form-group">
@@ -168,7 +182,8 @@
                             <input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
-
+		</div>	
+                    </div><!--/ .form-box -->
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
                             <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" value="Kalkulasi">
@@ -208,7 +223,7 @@
         /*
          * jQueryUI DatePicker
          */
-       
+
         $('#Kalkulasi').click(function() {
             //alert('test');
             var tanggalpembuatan = $('#tgl-hitung').val();
@@ -222,9 +237,9 @@
             var kontribusi = $('#masa-premi option:Selected').val();
             var unfnum = accounting.unformat(asuransijiwa,0,",");
             var nohp = $('#nohp').val();
-            
 
-            
+
+
             if( nama == '' || asuransijiwa == '' || asuransijiwa >= 49000000 ||email == '' || tanggalpembuatan == '' || tanggallahir == '' || nohp == '' || nohp.length <= 8){
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
@@ -240,8 +255,8 @@
                         document.getElementById('notifNoHP').style.display='block';
                     alert("Mohon Periksa Inputan Anda");
             }else{
-            
-            
+
+
             $.ajax({
                 url      : '/kalkulator-tasbih/',
                 type     : 'POST',
@@ -262,28 +277,28 @@
                     //console.log(data);
                     $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
                 }
-                
-                
+
+
             });
-                
-            
+
+
             }
         });
-    
+
     });
     $(function() {
        $('#tgl-hitung, #tgl-lahir').datepicker({
-		changeMonth: true,
-		changeYear: true,
-		yearRange: "-100:+0"
-	    });
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "-100:+0"
+        });
     });
-    
+
     $(document).ready(function(){
-         
-        
+
+
         $('#tgl-lahir').on('change', function() {
-           
+
             var dob = new Date(this.value);
             var today = new Date();
             var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
@@ -298,8 +313,8 @@
     });
     //Validate Number
     $('#nohp').bind("input", function(){
-       var re = /^[0-9]*$/; 
-        
+       var re = /^[0-9]*$/;
+
         var value = $('#nohp').val();
         $(this).val(value);
         if(!re.test(value)){
@@ -308,14 +323,14 @@
         }else{
             document.getElementById('notifNoHP').style.display= 'none';
         }
-        
+
     });
-    
+
     function validateNumber(value){
         if(value.length <= 8 ){
             document.getElementById('notifNoHP').style.display= 'block';
             return null;
-        }else{ 
+        }else{
             document.getElementById('notifNoHP').style.display= 'none';
             return value;
         }
@@ -336,7 +351,7 @@
             return surat;
         }
     };
-    
+
     function validateNama(nama){
         var re = /^[^\\\/&]*$/;
         if(!re.test(nama)){
@@ -345,10 +360,10 @@
         }else{
             document.getElementById('notif-nama').style.display= 'none';
             return nama;
-        }    
+        }
     };
-    
-           
+
+
             $( "#asuransi-jiwa" ).bind( "input", function() {
               var value = $("#asuransi-jiwa").val();
               var unconv = accounting.unformat(value,0,",");
@@ -359,8 +374,8 @@
                 var retext = accounting.formatMoney(text, "Rp ", 0,",");
                 //alert(conv);
                 if(text >= 50000000){
-              
-                    
+
+
                     document.getElementById('notif-asuransijiwa').style.display= 'none';
                     //$(this).val(retext);
                     //$(this).val(conv);
@@ -370,7 +385,7 @@
                                        // $(this).val('');
                 }
             });
-        
+
 </script>
 
 <!--

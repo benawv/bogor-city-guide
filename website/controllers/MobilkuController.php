@@ -111,14 +111,16 @@ class MobilkuController extends Website_Controller_Action {
 		$attrs=$_POST['attrs'];
 		
 		if($attrs==1){
-			$setcondition="brandname LIKE '%".$brand."%'";
+			$setcondition="brandname = ',".$brand.",'";
 		}else{
-			$setcondition="oo_id =".$brand;
+			$setcondition="oo_id = ".$brand;
 			//die($setcondition);
 		}
 				
 		$merk = new Object_MobilModel_List();
 		$merk->setCondition($setcondition);
+		
+		
 		
 		$i=0;
 		$data_mobil['type']=$attrs;
@@ -156,29 +158,20 @@ class MobilkuController extends Website_Controller_Action {
 		
 		$th=$_POST['tahun_pembuatan'];
 		$harga=$_POST['hargaKonv'];
-		$merk=$_POST['merk'];
 		$model=$_POST['model'];
-		$regno=$_POST['regno'];
 		$period=$_POST['periode'];
-		$email=$_POST['email'];
-		$nama=$_POST['nama'];
-		$telp=$_POST['telp'];
 		$radio=$_POST['radio'];
 		$hargaKonv=$_POST['hargaKonv'];
-		$merk=$_POST['merk_html'];
-		$modelfe=$_POST['model_html'];
 		$wilayah=$_POST['wilayah'];
 		$ratetype=$_POST['ratetype'];
 		$date_tglPeriod= new Pimcore_Date($period);
-		$pakettype;
+		$pakettype=$_POST['pakettype'];
 		
 		$age=(date("Y") - $th);
- 
-		
 		if($radio=='comprehensive'){
-			$pakettype=1;
+			$paket=1;
 		}else{
-			$pakettype=2;
+			$paket=2;
 		}
 
 		$getModelMap = new Object_MobilModel_List(); 
@@ -192,24 +185,25 @@ class MobilkuController extends Website_Controller_Action {
 		foreach($getRegId as $item){
 			$getRegId_id=$item->o_id;
 		}
-		
+	
 		if($harga<=125000000){
 			$condition_price="prices<=125000000";
 		}elseif($harga>=125000001 and $harga <=200000000){
-			$condition="(prices>=125000001 and prices<=200000000)";
+			$condition_price="(prices>=125000001 and prices<=200000000)";
 		}elseif($harga>=200000001 and $harga <=400000000){
-			$condition="(prices>=125000001 and prices<=200000000)";
+			$condition_price="(prices>=125000001 and prices<=200000000)";
 		}elseif($harga>=400000001 and $harga <=800000000){
-			$condition="(prices>=400000001 and prices<=800000000)";
+			$condition_price="(prices>=400000001 and prices<=800000000)";
 		}else{
-			$condition="prices>800000000";
+			$condition_price="prices>800000000";
 		}
 		
-		$condition="pakettype=$paket AND $condition AND retetype=$paket AND region__id=$getRegId_id AND age=$age and makemodel__id=$modelmap_id";
+		$paket=1;		
+		$condition="pakettype=$pakettype AND $condition_price AND retetype=$paket AND region__id=$getRegId_id AND age=$age and makemodel__id=$modelmap_id";
 		
-		$paket=1;
+		
 		$getTloRate=new Object_MobilRate_List();
-		$getTloRate->setCondition();
+		$getTloRate->setCondition($condition);
 		foreach($getTloRate as $items){
 			$rates= $items->rate;
 		}

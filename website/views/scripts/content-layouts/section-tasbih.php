@@ -12,6 +12,13 @@
     .navi li{
         float: none;
     }
+    
+    header .background > img, div.header .background > img
+    {
+        min-width: 100% !important;
+        max-width: 100% !important;
+    }
+    
 </style>
 <?php endif; ?>
 
