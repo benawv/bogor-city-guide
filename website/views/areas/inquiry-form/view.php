@@ -1,24 +1,3 @@
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/bootstrap.min.css"  />
-<link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/main.css">
-
-<link rel="stylesheet" type="text/css" media="all" href="/website/static/mobilku/tasbih/tasbih.css" />
-<link rel="stylesheet" type="text/css" media="all" href="/website/static/mobilku/wizard-step.css" />
-
-<!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/flexslider.css">-->
-<!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/tabs-accordion.css">-->
-<!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/product.css">-->
-
-<script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
-
-<style>
-    /* Override AJFC's feature box color */
-    .box-dent--inner{ background: #009a44; }
-    .box-dent::before{ border-top: 28px solid #009a44 !important;}
-    .btn-tasbih{ background: #009a44 !important; }
-    .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
-</style>
 <?php if( $this->editmode ): ?>
 <style>
     .navi{
@@ -44,6 +23,46 @@
 <?php if( !$this->editmode ): ?>
 <script src="/website/static/js/sticky-jquery.js" type="text/javascript"></script>
 <?php endif; ?>
+
+<div class="header" style="margin-top:-20px;">
+
+    <div class="background" style="pointer-events:visible;">
+        <!--<img src="/website/ajfc/img/bg-home.jpg" alt="Home" class="img-responsive" />-->
+        <?php echo $this->image("Banner-Tasbih"); ?>
+    </div><!--/ .background -->
+
+    <div class="caption">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-4 col-md-4 col-md-offset-8">
+                    <div class="box-dent mt32">
+                        <div class="box-dent--inner">
+                            <h2><?php echo $this->input("titleTasbih");?></h2>
+                            <?php echo $this->wysiwyg("descTasbih");?>
+                            <?php if($this->editmode){
+                                echo $this->link("linkTasbih");
+                            }else{
+                                $linkT = $this->link("linkTasbih")->getHref();
+                                $target = $this->link("linkTasbih")->getTarget();
+                                $textT = $this->link("linkTasbih")->getText();
+                                if($linkT != "")
+                                {
+                                    $href = $linkT;
+                                }
+                                else{
+                                    $href = "#";
+                                }
+                            ?>
+                                <a href="<?php echo $href;?>" target="<?php echo $target;?>"><?php echo $textT;?> <i class="fa fa-angle-right"></i></a>
+                            <?php }?>
+                        </div><!--/ .box-dent--inner -->
+                    </div>
+                </div><!--/ .col-xs-6 -->
+            </div><!--/ .row -->
+        </div><!--/ .container-fluid -->
+    </div><!--/ .caption -->
+
+</header>
 
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
 
