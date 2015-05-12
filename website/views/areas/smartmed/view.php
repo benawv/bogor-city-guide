@@ -688,14 +688,50 @@
     });
 
     
-    function kalk(age,pip,pmat,popden,uwl){
+    function kalk(age,sex,code,coshare){
         var payment = $("#payment_methods").val();
         var fd = $("#family_discount").val();
         var ncd = $("#no_claim_discount").val();
-        var ip = $("#ip").val();
-        var mat = $("#mat").val();
-        var outden = $("#out_den").val();
-        console.log(payment);
+        var uwl = $("#uwl").val();
+        var value = 0;
+        var form_data = {
+                payment: payment,
+                fd: fd,
+                ncd: ncd,
+                age: age,
+                sex: sex,
+                code: code,
+                coshare: coshare,
+                uwl: uwl,
+                ajax:1
+        };
+        $.ajax({
+                url : "calc_smartmed/"+payment+"_"+fd+"_"+ncd+"_"+age+"_"+sex+"_"+code+"_"+coshare+"_"+uwl,
+                type : 'POST',
+                data : form_data,
+                beforeSend: function () {
+                },
+                success: function(msg){
+                    value = msg;
+                    console.log(msg);
+                    return msg;
+                },error: function (xhr, ajaxOptions, thrownError){
+                    //alert('eror');
+                    //alert(xhr.status);
+                    //alert(thrownError);
+                }
+        }); 
+        console.log(value);
+        return 0;
+    }
+
+    function addrow(){
+        var rowCount = $('table.table tbody tr').length;
+        var total = 0;
+        for(var i = 1; i<=rowCount; i++){
+            total += $("table.table tbody").children()[i].children[15].innerHTML;
+        }
+        $("table.table tfoot").children()[1].children[1].innerHTML = total;
         return 0;
     }
     
@@ -710,6 +746,8 @@
     }
 
     $("#Add").click(function(){
+        var payment = $("#payment_methods").val();
+
         var total = "total";
         var opdenp = "-";
         var matp = "matpremium";
@@ -720,11 +758,9 @@
         var pip = "A";
         var sts_allowed = "NEW BUSINESS ";
         var name = $("#name").val();
-        var sex = $("#sex").val();
         var dob = $("#dob").val();
         var cd = $("#cd").val();
 
-        var rowCount = $('table.table tbody tr').length;
         var date = dob.split('/');
         var y1 = date[2];
         var d1 = date[1];
@@ -736,8 +772,17 @@
         var m2 = date2[0];
 
         var age = parseInt(y2+m2+d2) - parseInt(y1+m1+d1);
+        var sex = $("#sex").val();
+        var ip = $("#ip").val();
+        var mat = $("#mat").val();
+        var outden = $("#out_den").val();
 
+        ipp = kalk(age,sex,"ip",ip);
+        matp = kalk(age,sex,"ma",mat);
+        opdenp = kalk(age,sex,"od",outden);
+        total = ipp+matp+opdenp;
         //console.log(rowCount);
+        var rowCount = $('table.table tbody tr').length;
         var no = rowCount;
         $("table.table tbody").append("<tr>"+
                 "<td><a data-id='"+no+"' onclick='edit(this)'>Edit</a> | <a data-id='"+no+"' onclick='delrow(this)'>Delete</a></td>"+
@@ -787,7 +832,7 @@
         var dob = $("table.table tbody").children()[id].children[4].children[0].value;
         var cd = $("table.table tbody").children()[id].children[5].children[0].value;
 
-        ipp = kalk(15,pip,pmat,'a',uwl);
+        ipp = kalk(15,pip,pmat,'a',uwl,sex);
         //ipp
         $("table.table tbody").children()[id].children[12].innerHTML = ipp;
         //matp
