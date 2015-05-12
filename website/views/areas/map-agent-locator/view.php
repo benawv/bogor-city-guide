@@ -71,3 +71,278 @@
     </div>
 </div>
 -->
+<script type="text/javascript">
+	var map = new Object();
+	var markers = [];
+	var infowindow = null;
+	var BASEURL = "<?php echo $root; ?>";
+	function clearOverlays() {
+	  for (var i = 0; i < markers.length; i++ ) {
+		markers[i].setMap(null);
+		
+	  }
+	  markers.length = 0;
+	}
+
+    function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(-6.2297465, 106.829518),
+          zoom: 11
+        };
+		
+		map = new google.maps.Map(document.getElementById("maparea"),mapOptions);
+		infowindow = new google.maps.InfoWindow({
+			content: "holding...",
+			maxWidth: 200
+		});
+		var titik = radius(-6.2297465, 106.829518);
+		$('#map-shortcut .kantor').MapLoad(titik);
+		
+		// Try HTML5 geolocation
+		if(navigator.geolocation) {
+		  navigator.geolocation.getCurrentPosition(function(position) {
+			var pos = new google.maps.LatLng(position.coords.latitude,
+											 position.coords.longitude);
+            var titik = radius(pos.A, pos.F);
+			$('#map-shortcut .kantor').MapLoad(titik);
+			var infowindow = new google.maps.InfoWindow({
+			  zoom: 11,
+			  position: pos,
+			  content: 'Location found using HTML5.'
+			});
+	  
+			map.setCenter(pos);
+		  }, function() {
+			handleNoGeolocation(true);
+		  });
+		} else {
+		  // Browser doesn't support Geolocation
+		  handleNoGeolocation(false);
+		}
+		function handleNoGeolocation(errorFlag) {
+			if (errorFlag) {
+			  var content = 'Error: The Geolocation service failed.';
+			} else {
+			  var content = 'Error: Your browser doesn\'t support geolocation.';
+			}
+		  
+			var options = {
+			  //map: map,
+			  //zoom: 11,
+			  position: new google.maps.LatLng(-6.2297465, 106.829518)/*,
+			  content: content*/
+			};
+		  
+			var infowindow = new google.maps.InfoWindow(options);
+			map.setCenter(options.position);
+		  }
+		//END Try HTML5 geolocationz
+		
+		map = new google.maps.Map(document.getElementById("maparea"),mapOptions);
+		infowindow = new google.maps.InfoWindow({
+			content: "holding...",
+			maxWidth: 200
+		});
+    }
+	function radius(lat, lng){
+		var degreeRadius = 5/111.32;
+		var kordinat = (lat - degreeRadius) +"#"+ (lng - degreeRadius) +"#"+ (lat + degreeRadius) +"#"+ (lng + degreeRadius);
+		return kordinat;
+	}
+	$.fn.MapLoad = function(titik){
+	    clearOverlays();
+		//console.log(k+"  "+w);
+		$.ajax({
+			"url" : "/load-map-agent/",
+			"data" : {kordinat : titik},
+			"type" : "POST",
+			"success" : function(responseData){
+				var entries = responseData;
+				var listLoc = jQuery.parseJSON(entries);
+				var image = '/website/static/images/allianz-map-marker-shadow-105.png';
+				var image2 = '/website/static/images/allianz-map-marker-shadow_2.png';
+			    var marker = [];
+			    
+			    $.each(listLoc, function(i, item){
+					
+				    var data_content = '<div class="content">'+
+											'<div id="siteNotice"></div>'+
+											'<img src="/website/static/images/allianz-eagle-3d.png" height="50" width="50" />'+
+											'<h2 id="firstHeading" class="firstHeading">'+item.namaLokasi+'</h2>'+
+											'<div id="bodyContent">'+
+											'<b>'+item.kodeLokasi+'</b><br />'+
+											'Alamat : '+item.alamat1+" "+item.alamat2+" "+item.alamat3+'<br />'+
+											'Telp :'+item.kodeAreaTelepon+" "+item.nomorTelepon+'<br />'+
+											'Fax :'+item.kodeAreaFax+" "+item.nomorFax+''+
+											'<br /><a href="/detail-kantor/'+item.o_key+"-"+item.o_id+'" style="margin-top=5px;"><strong>&gt; Homepage Kantor</strong></a>'+
+											'</div>'+
+										'</div>';
+				    
+					if(item.o_key == "allianz-tower")
+				    {
+					    var marker = new google.maps.Marker({
+								    position: new google.maps.LatLng(item.titikKordinat.latitude, item.titikKordinat.longitude),
+								    draggable: false,
+								    icon: image,
+								    map: map,
+								    html: data_content
+							    });
+				    }
+				    else {
+					    var marker = new google.maps.Marker({
+								    position: new google.maps.LatLng(item.titikKordinat.latitude, item.titikKordinat.longitude),
+								    draggable: false,
+									icon: image2,
+								    map: map,
+								    html: data_content
+							    });
+				    }
+				    markers.push(marker);
+			    });
+			    
+			    for(x=0;x < markers.length;x++){
+				    var marker = markers[x];
+				    google.maps.event.addListener(marker, 'click', function () {
+					    infowindow.setContent(this.html);
+					    infowindow.open(map, this);
+				    });
+			    }
+			}
+		})
+	}
+	
+	function MapLoad2(k,w){
+		clearOverlays();
+		//console.log(k+"  "+w);
+		$.ajax({
+			"url" : "/load-map/",
+			"data" : {kantor : k, wilayah : w},
+			"type" : "POST",
+			"success" : function(responseData){
+			    var entries = responseData;
+			    var listLoc = jQuery.parseJSON(entries);
+			    var image = '/website/static/images/blue-with-shadow.png';
+			    var marker = [];
+			    
+			    $.each(listLoc.objects, function(i, item){
+			    
+				    var data_content = '<div class="content">'+
+											    '<div id="siteNotice"></div>'+
+											    '<img src="/website/static/images/allianz-eagle-3d.png" height="50" width="50" />'+
+											    '<h2 id="firstHeading" class="firstHeading">'+item.officeName+'</h2>'+
+											    '<div id="bodyContent">'+
+											    '<b>'+item.subName+'</b><br />'+
+											    'Alamat : '+item.alamat+'<br />'+
+											    'Telp :'+item.phone+'<br />'+
+											    'Fax :'+item.fax+''+
+											    '</div>'+
+										    '</div>';
+				    //console.log(item);
+				    try {
+					var jenis = item.tipe.jenis;
+				    }
+				    catch(e){
+					var jenis = null;
+				    }
+				    if(item.o_key == "allianz-tower")
+				    {
+					    var marker = new google.maps.Marker({
+								    position: new google.maps.LatLng(item.latitude, item.longitude),
+								    draggable: false,
+								    icon: image,
+								    map: map,
+								    html: data_content
+							    });
+				    }
+				    else {
+					    var marker = new google.maps.Marker({
+								    position: new google.maps.LatLng(item.latitude, item.longitude),
+								    draggable: false,
+								    map: map,
+								    html: data_content
+							    });
+				    }
+				    markers.push(marker);
+			    });
+			    
+			    for(x=0;x < markers.length;x++){
+				    var marker = markers[x];
+				    google.maps.event.addListener(marker, 'click', function () {
+					    infowindow.setContent(this.html);
+					    infowindow.open(map, this);
+				    });
+			    }
+			}
+		})
+		
+	}
+	
+	  $(function(){
+			//google.maps.event.addDomListener(window, 'load', initialize);
+			$('#map-shortcut .kantor').change(function(e){
+				var kantor = $('#map-shortcut .kantor').find(":selected").val();
+				var wilayah = $('#map-shortcut .wilayah').find(":selected").val();
+				MapLoad2(kantor,wilayah);
+			});
+			$('#map-shortcut .wilayah').change(function(e){
+				var kantor = $('#map-shortcut .kantor').find(":selected").val();
+				var wilayah = $('#map-shortcut .wilayah').find(":selected").val();
+				MapLoad2(kantor,wilayah);
+				var attr = $(this).val();
+				attr = attr.split(',');
+				var longLat = new google.maps.LatLng(attr[0], attr[1])
+				map.setCenter(longLat);
+				map.setZoom(parseInt(attr[2]));
+			});
+	  });
+		//// Create the search box and link it to the UI element.
+		//var input = /** @type {HTMLInputElement} */(
+		//	document.getElementById('search'));
+		//map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+		// 
+		//var searchBox = new google.maps.places.SearchBox(
+		//  /** @type {HTMLInputElement} */(input));
+		// 
+		//// [START region_getplaces]
+		//// Listen for the event fired when the user selects an item from the
+		//// pick list. Retrieve the matching places for that item.
+		//google.maps.event.addListener(searchBox, 'places_changed', function() {
+		//	var places = searchBox.getPlaces();
+		//
+		//	if (places.length == 0) {
+		//	  return;
+		//	}
+		//	for (var i = 0, marker; marker = markers[i]; i++) {
+		//	  marker.setMap(null);
+		//	}
+		//
+		//	// For each place, get the icon, place name, and location.
+		//	markers = [];
+		//	var bounds = new google.maps.LatLngBounds();
+		//	for (var i = 0, place; place = places[i]; i++) {
+		//	  var image = {
+		//		url: place.icon,
+		//		size: new google.maps.Size(71, 71),
+		//		origin: new google.maps.Point(0, 0),
+		//		anchor: new google.maps.Point(17, 34),
+		//		scaledSize: new google.maps.Size(25, 25)
+		//	  };
+		//
+		//	  // Create a marker for each place.
+		//	  var marker = new google.maps.Marker({
+		//		map: map,
+		//		zoom: 11,
+		//		radius: 5000,
+		//		//icon: image,
+		//		title: place.name,
+		//		position: place.geometry.location,
+		//	  });
+		//
+		//	  markers.push(marker);
+		//
+		//	  bounds.extend(place.geometry.location);
+		//	}
+		//
+		//	map.fitBounds(bounds);
+		//});
+</script>
