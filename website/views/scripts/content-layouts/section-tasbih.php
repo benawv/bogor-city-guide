@@ -15,8 +15,8 @@
     
     header .background > img, div.header .background > img
     {
-        min-width: 100%;
-        max-width: 100%;
+        min-width: 100% !important;
+        max-width: 100% !important;
     }
     
 </style>
