@@ -54,7 +54,7 @@ class TasbihController extends Website_Controller_Action {
 	
 	public function pageTasbihAction () {
 		$this->enableLayout();
-		$this->setLayout('ajfc');
+		$this->setLayout('tasbih');
 	}
 	
 	function facebook_page_manage($access_token){

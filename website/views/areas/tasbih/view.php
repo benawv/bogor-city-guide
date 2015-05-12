@@ -165,6 +165,13 @@
 
                     </div><!--/ .form-box -->
 
+		<div class="form-box">    
+                    <div class="form-box text-center">
+                        <i class="fa fa-refresh fa-3x fa-spin"></i>
+                    </div><!--/ .form-box -->
+
+                    <div class="form-box">
+
                     <label><strong>Setoran Tahunan</strong></label>
 
                     <div class="form-group">
@@ -175,7 +182,8 @@
                             <input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
-
+		</div>	
+                    </div><!--/ .form-box -->
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
                             <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" value="Kalkulasi">
