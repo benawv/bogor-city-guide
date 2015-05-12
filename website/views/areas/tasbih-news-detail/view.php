@@ -1,5 +1,4 @@
 <style>
-
     .page-wrapper-outer .sidebar
     {
         background: white;
@@ -21,95 +20,6 @@
         color: #999;
     }
 
-    .sidebar .sidebar-item .sidebar-item--content ul > li > a:hover,
-    .sidebar .sidebar-item .sidebar-item--content ul > li > a:focus
-    {
-        color: #003781;
-        text-decoration: none;
-        outline: none;
-    }
-
-    .sidebar .sidebar-item .sidebar-item--content ul > li > a:hover > small,
-    .sidebar .sidebar-item .sidebar-item--content ul > li > a:focus > small
-    {
-        color: #999;
-    }
-
-    .main-content > .news-item:not(:last-child)
-    {
-        padding-bottom: 32px;
-        border-bottom: solid 1px #eee;
-    }
-
-    .main-content--nav a
-    {
-        color: inherit;
-        text-decoration: none;
-    }
-
-    .main-content--nav a:hover,
-    .main-content--nav a:focus
-    {
-        color: #003781;
-        text-decoration: none;
-        outline: none;
-    }
-
-    .news-item
-    {
-        position: relative;
-    }
-
-    .news-item > .image
-    {
-        display: block;
-    }
-
-    .news-item > .image > img
-    {
-        min-width: 100%;
-        max-width: 100%;
-        width: 100%;
-        height: auto;
-        border: none;
-    }
-
-    .news-item > .title
-    {
-        font-size: x-large;
-        font-weight: normal;
-        color: #000;
-    }
-
-    .news-item > .title:hover,
-    .news-item > .title:focus
-    {
-        color: #003781;
-        text-decoration: none;
-        outline: none;
-    }
-
-    .news-item > .title,
-    .news-item > p
-    {
-        margin: 0 0 4px;
-        padding: 0;
-        line-height: 1.8;
-        color: #000;
-    }
-
-    .news-item > p.meta > a
-    {
-        color: inherit;
-    }
-
-    .news-item > p.meta > a:hover,
-    .news-item > p.meta > a:focus
-    {
-        color: #003781;
-        outline: none;
-    }
-
 </style>
 
 <header style="margin-top: -20px;">
@@ -127,30 +37,23 @@
 
                 <div class="main-content">
 
-                    <!--
                     <div class="main-content--header">
-                        <h1 class="mb12">Tasbih News</h1>
+                        <h1 class="mb12">Tiada Tuhan Selain Allah SWT</h1>
+                        <p class="meta">Posted by <a href="#">Administrator</a> on Fri, 15 May 2015 19:30</p>
                     </div><!--/ .main-content--header -->
 
-                    <?php for( $i = 0; $i < 5; $i++ ): ?>
+                    <p><small>This is a small sized text.</small></p>
 
-                    <div class="news-item mb32">
-                        <a href="/tasbih-news-detail" class="image mb12">
-                            <img src="/website/ajfc/img/bg-home2.jpg" alt="Sample Image" class="img-responsive">
-                        </a>
-                        <a href="/tasbih-news-detail" class="title">Judul Beritanya</a>
-                        <p class="meta">Posted by <a href="#">Administrator</a> on Fri, 15 May 2015 19:30</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut orci metus, interdum non ipsum nec, vulputate euismod metus. Morbi eget sem sed orci interdum lacinia quis ac orci. Mauris pretium lorem non leo faucibus, id semper nisl placerat. Nulla maximus tempor metus, a pretium velit tempus et. Mauris convallis eros ligula, vitae bibendum sem dapibus finibus. Nullam vel tellus mollis, iaculis sapien et, convallis dui. Vestibulum ullamcorper vitae quam at ultricies. Cras ultricies tincidunt gravida. Nulla placerat egestas lorem, non tincidunt ipsum tempus et. Vivamus vel dolor velit. Nullam enim neque, efficitur ultricies purus nec, bibendum semper tellus. Aliquam dapibus vestibulum est a volutpat.
-                        </p>
-                    </div><!--/ .news-item -->
+                    <p><em>This is an emphasized text.</em></p>
 
-                    <?php endfor; ?>
+                    <blockquote>Fusce vitae tristique elit. Curabitur scelerisque interdum lacus, at consectetur urna elementum quis. Sed a lacinia mi, id tempor augue. Quisque fermentum mauris et placerat iaculis. Nam porttitor mauris ac lacus accumsan, faucibus sollicitudin dui mollis.</blockquote>
 
-                    <div class="main-content--nav">
-                        <a href="#" class="pull-left">&laquo; Sebelumnya</a>
-                        <a href="#" class="pull-right">Selanjutnya &raquo;</a>
-                        <div class="clearfix"></div>
-                    </div><!--/ .main-content--nav -->
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut orci metus, interdum non ipsum nec, vulputate euismod metus. Morbi eget sem sed orci interdum lacinia quis ac orci. Mauris pretium lorem non leo faucibus, id semper nisl placerat. Nulla maximus tempor metus, a pretium velit tempus et. Mauris convallis eros ligula, vitae bibendum sem dapibus finibus. Nullam vel tellus mollis, iaculis sapien et, convallis dui. Vestibulum ullamcorper vitae quam at ultricies. Cras ultricies tincidunt gravida. Nulla placerat egestas lorem, non tincidunt ipsum tempus et. Vivamus vel dolor velit. Nullam enim neque, efficitur ultricies purus nec, bibendum semper tellus. Aliquam dapibus vestibulum est a volutpat.
+                    </p>
+
+                    <p>Fusce vitae tristique elit. Curabitur scelerisque interdum lacus, at consectetur urna elementum quis. Sed a lacinia mi, id tempor augue. Quisque fermentum mauris et placerat iaculis. Nam porttitor mauris ac lacus accumsan, faucibus sollicitudin dui mollis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum a odio nulla. In posuere justo a massa convallis, convallis sagittis purus rhoncus. Proin a pellentesque purus. Aliquam congue sem quis mauris faucibus, eu dapibus quam commodo. Morbi ornare pulvinar tincidunt. Integer ullamcorper turpis sed arcu posuere facilisis. Phasellus sagittis dapibus ante, in posuere neque dignissim sit amet. Donec dolor diam, facilisis sed suscipit in, sagittis ac est.</p>
+
+                    <p>Vestibulum accumsan, metus quis lacinia malesuada, lacus diam tincidunt magna, nec tincidunt velit sapien vitae ligula. Praesent cursus cursus diam ut vestibulum. Nunc fringilla odio diam, vel fermentum quam tristique imperdiet. Duis efficitur orci quis laoreet commodo. Vivamus dignissim faucibus ante, a blandit nibh mattis eget. Cras sit amet dui congue, placerat est id, porta urna. Duis id imperdiet lectus, quis ultricies diam. Vestibulum volutpat pretium erat, in sodales tortor finibus eu. Aliquam eu viverra sem. Aliquam vitae feugiat nulla, sed sollicitudin libero. Praesent efficitur justo ac velit finibus, in varius mi ultricies. Ut sit amet tristique nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
 
                 </div><!--/ .main-content -->
 

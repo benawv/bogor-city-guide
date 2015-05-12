@@ -25,7 +25,8 @@
             'galeri-ajfc',
             'cari-agen-syariah',
             'inquiry-form',
-            'tasbih-news'
+            'tasbih-news',
+            'tasbih-news-detail'
         )
     )
 );
