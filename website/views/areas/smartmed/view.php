@@ -706,23 +706,18 @@
                 ajax:1
         };
         $.ajax({
+                async: false,
                 url : "calc_smartmed/"+payment+"_"+fd+"_"+ncd+"_"+age+"_"+sex+"_"+code+"_"+coshare+"_"+uwl,
                 type : 'POST',
-                data : form_data,
+                //data : form_data,
                 beforeSend: function () {
                 },
                 success: function(msg){
                     value = msg;
-                    console.log(msg);
-                    return msg;
                 },error: function (xhr, ajaxOptions, thrownError){
-                    //alert('eror');
-                    //alert(xhr.status);
-                    //alert(thrownError);
                 }
         }); 
-        console.log(value);
-        return 0;
+        return value;
     }
 
     function addrow(){
@@ -780,7 +775,7 @@
         ipp = kalk(age,sex,"ip",ip);
         matp = kalk(age,sex,"ma",mat);
         opdenp = kalk(age,sex,"od",outden);
-        total = ipp+matp+opdenp;
+        total = parseInt(ipp)+parseInt(matp)+parseInt(opdenp);
         //console.log(rowCount);
         var rowCount = $('table.table tbody tr').length;
         var no = rowCount;
