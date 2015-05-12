@@ -23,6 +23,7 @@ class AgentController extends Website_Controller_Action {
 						  "kodeAreaTelepon" => $entry->kodeAreaTelepon,
 						  "nomorTelepon" => $entry->nomorTelepon,
 						  "kodeAreaFax" => $entry->kodeAreaFax,
+						  "nomorFax" => $entry->nomorFax,
 						  "o_key" => $entry->o_key,
 						  "o_id" => $entry->o_id
 				);
