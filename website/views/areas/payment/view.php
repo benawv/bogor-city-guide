@@ -16,6 +16,7 @@
 
 <style>
     /* Override AJFC's feature box color */
+    .header-calc{background: #0077c8;}
     .box-dent--inner{ background: #0077c8; }
     .box-dent::before{ border-top: 28px solid #0077c8 !important;}
     .btn-tasbih{ background: #0077c8 !important; border: none; border-radius:0; }
