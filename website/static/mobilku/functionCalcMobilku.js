@@ -197,10 +197,14 @@ $(document).ready(function(){
            $.ajax({
                  "url" : "/mobilkucalc/",
                  "type" : "POST",
-                 "data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+
-                          "&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp+
-                          "&wilayah="+wilayah+"&radio="+radio+"&hargaKonv="+hargaKonv+"&merk_html="+merk_html+
-                          "&model_html="+model_html+"&pakettype="+paket,
+                 "data" : "tahun_pembuatan=" + tahun_pembuatan +
+                          "&harga="+harga+
+                          "&model="+model+
+                          "&periode="+periode+
+                          "&wilayah="+wilayah+
+                          "&radio="+radio+
+                          "&hargaKonv="+hargaKonv+
+                          "&pakettype="+paket,
                  "success" : function(response){
                         localStorage.setItem("gettlo", response);
                         rate=response;

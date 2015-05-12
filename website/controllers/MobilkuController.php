@@ -158,25 +158,16 @@ class MobilkuController extends Website_Controller_Action {
 		
 		$th=$_POST['tahun_pembuatan'];
 		$harga=$_POST['hargaKonv'];
-		$merk=$_POST['merk'];
 		$model=$_POST['model'];
-		$regno=$_POST['regno'];
 		$period=$_POST['periode'];
-		$email=$_POST['email'];
-		$nama=$_POST['nama'];
-		$telp=$_POST['telp'];
 		$radio=$_POST['radio'];
 		$hargaKonv=$_POST['hargaKonv'];
-		$merk=$_POST['merk_html'];
-		$modelfe=$_POST['model_html'];
 		$wilayah=$_POST['wilayah'];
 		$ratetype=$_POST['ratetype'];
 		$date_tglPeriod= new Pimcore_Date($period);
-		$pakettype=$_POST['pakettype'];;
+		$pakettype=$_POST['pakettype'];
 		
 		$age=(date("Y") - $th);
- 
-		
 		if($radio=='comprehensive'){
 			$paket=1;
 		}else{
