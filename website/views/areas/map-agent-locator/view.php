@@ -312,14 +312,15 @@
 				  
 				map = new google.maps.Map(document.getElementById("maparea"),mapOptions);
 			    $.each(listLoc, function(i, item){
-					
+					var tmpAlamat = item.alamat1+" "+item.alamat2+" "+item.alamat3;
+					var alamat = tmpAlamat.toLowerCase();
 				    var data_content = '<div class="content">'+
 											'<div id="siteNotice"></div>'+
 											'<img src="/website/static/images/allianz-eagle-3d.png" height="50" width="50" />'+
 											'<h2 id="firstHeading" class="firstHeading">'+item.namaLokasi+'</h2>'+
 											'<div id="bodyContent">'+
-											'<b>'+item.kodeLokasi+'</b><br />'+
-											'Alamat : '+item.alamat1+" "+item.alamat2+" "+item.alamat3+'<br />'+
+											//'<b>'+item.kodeLokasi+'</b><br />'+
+											'Alamat : '+ucwords(alamat)+'<br />'+
 											'Telp :'+item.kodeAreaTelepon+" "+item.nomorTelepon+'<br />'+
 											'Fax :'+item.kodeAreaFax+" "+item.nomorFax+''+
 											'<br /><a href="/detail-kantor/'+item.o_key+"-"+item.o_id+'" style="margin-top=5px;"><strong>&gt; Homepage Kantor</strong></a>'+
@@ -358,6 +359,13 @@
 			}
 		})
 	}
+	
+	function ucwords(str) {
+		return (str + '')
+		  .replace(/^([a-z\u00E0-\u00FC])|\s+([a-z\u00E0-\u00FC])/g, function($1) {
+			return $1.toUpperCase();
+		  });
+	  }
 	
 	function MapLoad2(k,w){
 		clearOverlays();

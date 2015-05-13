@@ -14,10 +14,11 @@
                     foreach($kantor as $row){
 						$fotoProf = $row->getFotoKantor()->path.$row->getFotoKantor()->filename;
 						$namaLokasi = $row->getNamaLokasi();
-						$alamat = $row->getAlamat1()." ".$row->getAlamat2()." ".$row->getAlamat3();
+						$alamat = ucwords(strtolower($row->getAlamat1()." ".$row->getAlamat2()." ".$row->getAlamat3()));
 						$telp = $row->getKodeAreaTelepon()." ".$row->getNomorTelepon();
 						$fax = $row->getKodeAreaFax()." ".$row->getNomorFax();
 						$x = count($row->getFotoGaleriKantor()->items);
+						$email = $row->getEmailKantor();
 						for($z;$z<$x;$z++){
                 ?>
 							<li>
@@ -74,7 +75,7 @@
 							echo $fax;
 						?>
 					</p>
-					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Send Mail</a>
+					<a href="mailto:<?php echo $email;?>?Subject=Hello%20again" target="_top">Send Mail</a>
                 </div>
             </div>
         </div>
@@ -91,7 +92,7 @@
                 </div>
                 <img src="<?php echo $ag->getFotoAgent();?>" width="304" />
                 <div class="description">
-                    <a href="#">&gt; Selengkapnya</a>
+                    <a href="/detail-agen/<?php echo $ag->getO_key()."-".$ag->getO_id();?>">&gt; Selengkapnya</a>
                 </div>
             </div>
         <?php }?>
