@@ -298,7 +298,7 @@
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="1" name="payment_methods" id="payment_methods">
                             <?php
-                                $cat = new Object_smartmedPaymentType_List();
+                                $cat = new Object_SmartmedPaymentType_List();
                                 foreach($cat as $payment)
                                 {
                                     echo "<option value='".$payment->getPaymenttype()."'>".$payment->getPaymenttype()."</option>";
