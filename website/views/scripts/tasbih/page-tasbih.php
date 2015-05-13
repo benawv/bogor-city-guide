@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css-ajfc/hotspot/ajfc.hotspot.css">
+<link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/websit  e/static/css-ajfc/hotspot/ajfc.hotspot.css">
 
 <!--<link rel="stylesheet" href="/website/ajfc/css/bootstrap.min.css">-->
 <link rel="stylesheet" href="/website/ajfc/css/bootstrap-custom-wcm/bootstrap.css">

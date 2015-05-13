@@ -52,7 +52,6 @@ class MobilkuController extends Website_Controller_Action {
         //try{
 		$getId=Object_Abstract::getByPath('/kalkulator/personal-lines');//get folder id
 		$entries = Object_Abstract::getById($model);
-		print_r($entries);
 		$register = new Object_MobilPersonalLines();
 		$register->setyear($th);
 		$register->setprice($hargaKonv);

@@ -85,7 +85,7 @@
                             <label>Nama</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="nama" placeholder="Nama" required="" onfocusout="this.value=validateNama(this.value)"> 
+                            <input type="name" class="form-control" id="nama" placeholder="Nama" required /> 
                             <label id="notif-nama" style="display:none; color: #f00;">
                                 Mohon maaf Anda belum atau salah memasukkan nama
                             </label>
@@ -100,8 +100,8 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" name="JenisKelamin" id="JenisKelamin">
-                                <option value="l">Pria</option>
-                                <option value="p">Wanita</option>
+                                <option value="p">Pria</option>
+                                <option value="w">Wanita</option>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -112,7 +112,7 @@
                             <label>DOB</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="DOB" value="" placeholder="DOB">
+                            <input type="text" class="form-control" id="DOB" value="" placeholder="DOB" />
                             <label id="notif-asuransijiwa" style="display:none; color: #f00;">
                                 Mohon maaf inputan yang Anda masukkan belum benar
                             </label>
@@ -124,7 +124,7 @@
                             <label>No Handphone (Min. 8 digit)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="nohp" name="nohp" placeholder="No Handphone" required="" onfocusout="this.value=validateNumber(this.value)">
+                            <input type="phone" class="form-control" id="nohp" name="nohp" placeholder="0812345678" required />
                             <label id="notifNoHP" style="display:none; color: #f00;">
                                 Mohon maaf No HP yang Anda masukkan belum benar
                             </label>
@@ -137,7 +137,7 @@
                             <label>Email</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="" onfocusout="this.value=validateEMAIL(this.value)">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required />
                             <label id="notifemail" style="display:none; color: #f00;">
                                 Mohon maaf email yang Anda masukkan belum benar
                             </label>
@@ -149,9 +149,19 @@
                             <label>Provinsi</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" name="provinsi" id="JenisKelamin required">
-                                <option value="l">Pria</option>
-                                <option value="p">Wanita</option>
+                            <select class="form-control" name="provinsi" id="provinsi_id" required>
+                                <?php
+                                    
+                                    $getProv=new Object_MarketingOfficeWilayah_List();                                    
+                                    foreach($getProv as $items){
+                                        ?>
+                                            <option value= "<?php echo $items->o_id; ?> "><?php echo $items->namaWilayah; ?></option>
+                                        <?php
+                                    }
+                                
+                                ?>
+                                
+                            
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -205,8 +215,31 @@
             $( target ).modal( 'show' );
         }
         
-        $(this).on('submit', '.inquiry-send', function(e){
-            alert('test');
+        $(this).on('click', '.inquiry-send', function(e){
+            
+            var nama=$('#nama').val();
+            var kelamin=$('#JenisKelamin').val();
+            var bod=$('#DOB').val();
+            var email=$('#email').val();
+            var nohp=$('#nohp').val();
+            var prov=$('#provinsi_id').val();
+            
+            e.preventDefault();
+            $.ajax({
+                 "url" : "/inquriy-tasbih/",
+                 "type" : "POST",
+                 "data" : "nama="+ nama +
+                          "&kelamin="+kelamin+
+                          "&bod="+bod+
+                          "&email="+email+
+                          "&nohp="+nohp+
+                          "&prov="+prov,
+                 "success" : function(response){
+                    alert("Inquiry Send");
+                    console.log(response);
+                 }
+             });
+            e.preventDefault();
         });
 
         $( ".pagenav .navi li" ).click(function(){
