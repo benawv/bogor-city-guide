@@ -96,7 +96,7 @@
 			maxWidth: 200
 		});
 		var titik = radius(-6.2297465, 106.829518);
-		$('#map-shortcut .kantor').MapLoad(titik);
+		MapLoad(titik, -6.2297465, 106.829518);
 		
 		// Try HTML5 geolocation
 		if(navigator.geolocation) {
@@ -104,14 +104,14 @@
 			var pos = new google.maps.LatLng(position.coords.latitude,
 											 position.coords.longitude);
             var titik = radius(pos.A, pos.F);
-			$('#map-shortcut .kantor').MapLoad(titik);
-			var infowindow = new google.maps.InfoWindow({
-			  zoom: 11,
-			  position: pos,
-			  content: 'Location found using HTML5.'
-			});
+			MapLoad(titik, pos.A, pos.F);
+			//var infowindow = new google.maps.InfoWindow({
+			//  zoom: 11,
+			//  position: pos,
+			//  content: 'Location found using HTML5.'
+			//});
 	  
-			map.setCenter(pos);
+			//map.setCenter(pos);
 		  }, function() {
 			handleNoGeolocation(true);
 		  });
@@ -135,7 +135,7 @@
 		  
 			var infowindow = new google.maps.InfoWindow(options);
 			map.setCenter(options.position);
-		  }
+		}
 		//END Try HTML5 geolocationz
 		
 		map = new google.maps.Map(document.getElementById("maparea"),mapOptions);
@@ -143,13 +143,156 @@
 			content: "holding...",
 			maxWidth: 200
 		});
+		
+		// Create the search box and link it to the UI element.
+		var input = /** @type {HTMLInputElement} */(
+			document.getElementById('search'));
+		//map.controls.push(input);
+		 
+		var searchBox = new google.maps.places.SearchBox(
+		  /** @type {HTMLInputElement} */(input));
+		
+		google.maps.event.addListener(searchBox, 'places_changed', function() {
+			mapSearch();
+		});
+		 
+		//// [START region_getplaces]
+		//// Listen for the event fired when the user selects an item from the
+		//// pick list. Retrieve the matching places for that item.
+		//google.maps.event.addListener(searchBox, 'places_changed', function() {
+		//	var places = searchBox.getPlaces();
+		//	var lat, long;
+		//	$.each(places, function(i, item){
+		//		lat = item.geometry.location.A;
+		//		long = item.geometry.location.F;
+		//	});
+		////var titik = radius(lat, long);
+		////$('#map-shortcut .kantor').MapLoad(titik);
+		//	if (places.length == 0) {
+		//	  return;
+		//	}
+		//	for (var i = 0, marker; marker = markers[i]; i++) {
+		//	  marker.setMap(null);
+		//	}
+		//
+		//	// For each place, get the icon, place name, and location.
+		//	markers = [];
+		//	var bounds = new google.maps.LatLngBounds();
+		//	for (var i = 0, place; place = places[i]; i++) {
+		//	  var image = {
+		//		url: place.icon,
+		//		size: new google.maps.Size(71, 71),
+		//		origin: new google.maps.Point(0, 0),
+		//		anchor: new google.maps.Point(17, 34),
+		//		scaledSize: new google.maps.Size(25, 25)
+		//	  };
+		//
+		//	  // Create a marker for each place.
+		//	  var marker = new google.maps.Marker({
+		//		map: map,
+		//		//icon: image,
+		//		title: place.name,
+		//		position: place.geometry.location,
+		//	  });
+		//
+		//	  markers.push(marker);
+		//
+		//	  bounds.extend(place.geometry.location);
+		//	}
+		//
+		//	map.fitBounds(bounds);
+		//	var titik2 = radius(lat, long);
+		//	$('#map-shortcut .kantor').MapLoad(titik2);
+		//});
+		
+		var mapSearch = function() {
+
+			var searchLatitude = null;
+			var searchLongitude = null;
+			var mySearchLatlng = null;
+			
+			var places = searchBox.getPlaces();
+			$.each(places, function(i, item){
+				lat = item.geometry.location.A;
+				long = item.geometry.location.F;
+			});
+			var titik = radius(lat, long);
+			MapLoad(titik, lat, long);
+			//
+			//var marker, i;
+			//
+			//for (i = 0; i < locations.length; i++) {  
+			//	marker = new google.maps.Marker({
+			//		position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+			//		map: map,
+			//		icon: 'http://agen.allianz.co.id/css/img/map-pointer-green.png',
+			//		title: locations[i][3] + ' - ' + locations[i][4]
+			//	});
+			//
+			//	setMarkerListener(marker, locations[i][0], locations[i][5], locations[i][4]);
+			//}
+			//
+			//searchMarker = new google.maps.Marker({
+			//			  position: mySearchLatlng, 
+			//			  map: map,
+			//			  icon: 'http://agen.allianz.co.id/css/img/pointer-blue.png'
+			//			});
+			//			
+			//if ( google.maps.geometry.poly.containsLocation(mySearchLatlng, jakartaPoly ) ) {
+			//	$("#error-cntnr-id").css("display", "none");
+			//} else {
+			//	$("#error-cntnr-id").removeAttr("style");
+			//}
+			//
+			//if (places.length == 0) {
+			//	return;
+			//}
+			//for (var i = 0, marker; marker = markers[i]; i++) {
+			//	marker.setMap(null);
+			//}
+			//
+			//// For each place, get the icon, place name, and location.
+			//var bounds = new google.maps.LatLngBounds();
+			//for (var i = 0, place; place = places[i]; i++) {
+			//	var image = {
+			//		url: place.icon,
+			//		size: new google.maps.Size(71, 71),
+			//		origin: new google.maps.Point(0, 0),
+			//		anchor: new google.maps.Point(17, 34),
+			//		scaledSize: new google.maps.Size(25, 25)
+			//	};
+			//
+			//	bounds.extend(place.geometry.location);
+			//}
+			//
+			//map.fitBounds(bounds);
+			//
+			//var zoomValue = 22;
+			//map.setZoom(zoomValue);
+			//
+			//for (j = 0; j < 22; j++) {
+			//	var outerLoop = false;
+			//	for (i = 0; i < locations.length; i++) {
+			//		if(map.getBounds().contains( new google.maps.LatLng(locations[i][1],locations[i][2]))){
+			//			outerLoop = true;
+			//		}
+			//	}
+			//	if(outerLoop){
+			//		break;
+			//	}
+			//	zoomValue = zoomValue - 1;
+			//	map.setZoom(zoomValue);
+			//	
+			//}
+		}
     }
+	
 	function radius(lat, lng){
 		var degreeRadius = 5/111.32;
 		var kordinat = (lat - degreeRadius) +"#"+ (lng - degreeRadius) +"#"+ (lat + degreeRadius) +"#"+ (lng + degreeRadius);
 		return kordinat;
 	}
-	$.fn.MapLoad = function(titik){
+	var MapLoad = function(titik, lat, long){
 	    clearOverlays();
 		//console.log(k+"  "+w);
 		$.ajax({
@@ -162,7 +305,12 @@
 				var image = '/website/static/images/allianz-map-marker-shadow-105.png';
 				var image2 = '/website/static/images/allianz-map-marker-shadow_2.png';
 			    var marker = [];
-			    
+			    var mapOptions = {
+					center: new google.maps.LatLng(lat, long),
+					zoom: 11
+				};
+				  
+				map = new google.maps.Map(document.getElementById("maparea"),mapOptions);
 			    $.each(listLoc, function(i, item){
 					
 				    var data_content = '<div class="content">'+
@@ -295,54 +443,4 @@
 				map.setZoom(parseInt(attr[2]));
 			});
 	  });
-		//// Create the search box and link it to the UI element.
-		//var input = /** @type {HTMLInputElement} */(
-		//	document.getElementById('search'));
-		//map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-		// 
-		//var searchBox = new google.maps.places.SearchBox(
-		//  /** @type {HTMLInputElement} */(input));
-		// 
-		//// [START region_getplaces]
-		//// Listen for the event fired when the user selects an item from the
-		//// pick list. Retrieve the matching places for that item.
-		//google.maps.event.addListener(searchBox, 'places_changed', function() {
-		//	var places = searchBox.getPlaces();
-		//
-		//	if (places.length == 0) {
-		//	  return;
-		//	}
-		//	for (var i = 0, marker; marker = markers[i]; i++) {
-		//	  marker.setMap(null);
-		//	}
-		//
-		//	// For each place, get the icon, place name, and location.
-		//	markers = [];
-		//	var bounds = new google.maps.LatLngBounds();
-		//	for (var i = 0, place; place = places[i]; i++) {
-		//	  var image = {
-		//		url: place.icon,
-		//		size: new google.maps.Size(71, 71),
-		//		origin: new google.maps.Point(0, 0),
-		//		anchor: new google.maps.Point(17, 34),
-		//		scaledSize: new google.maps.Size(25, 25)
-		//	  };
-		//
-		//	  // Create a marker for each place.
-		//	  var marker = new google.maps.Marker({
-		//		map: map,
-		//		zoom: 11,
-		//		radius: 5000,
-		//		//icon: image,
-		//		title: place.name,
-		//		position: place.geometry.location,
-		//	  });
-		//
-		//	  markers.push(marker);
-		//
-		//	  bounds.extend(place.geometry.location);
-		//	}
-		//
-		//	map.fitBounds(bounds);
-		//});
 </script>

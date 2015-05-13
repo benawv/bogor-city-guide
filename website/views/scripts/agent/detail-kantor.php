@@ -10,32 +10,40 @@
 		<div id="slideshow" class="clearfix">
             <ul class="slides">
                 <?php
-                    $x = count($kantor->fotoGaleriKantor->items);
-                    for($z=0;$z<$x;$z++){
+					$z = 0;
+                    foreach($kantor as $row){
+						$fotoProf = $row->getFotoKantor()->path.$row->getFotoKantor()->filename;
+						$namaLokasi = $row->getNamaLokasi();
+						$alamat = $row->getAlamat1()." ".$row->getAlamat2()." ".$row->getAlamat3();
+						$telp = $row->getKodeAreaTelepon()." ".$row->getNomorTelepon();
+						$fax = $row->getKodeAreaFax()." ".$row->getNomorFax();
+						$x = count($row->getFotoGaleriKantor()->items);
+						for($z;$z<$x;$z++){
                 ?>
-                        <li>
-                            <div class="slide">
-                                <div class="photo">
-                                    <img src="<?php echo $kantor->fotoGaleriKantor->items[$z]->fotoFotoKantor->path.$kantor->fotoGaleriKantor->items[$z]->fotoFotoKantor->filename;?>" />
-                                </div>
-                                
-                                <div class="fixbox right60">
-                                    <div class="place-bg bg-blue place-bg-gallery">
-                                        <div>
-                                            <h2>Lorem Ipsum</h2>
-                                            <p>
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="edge e-blue">
-                                        <!--Link-->
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+							<li>
+								<div class="slide">
+									<div class="photo">
+										<img src="<?php echo $row->getFotoGaleriKantor()->items[$z]->fotoFotoKantor->path.$row->getFotoGaleriKantor()->items[$z]->fotoFotoKantor->filename;?>" />
+									</div>
+									
+									<div class="fixbox <?php echo $row->getFotoGaleriKantor()->items[$z]->posisiNotepad;?>60">
+										<div class="place-bg bg-<?php echo $row->getFotoGaleriKantor()->items[$z]->warnaNotepad;?> place-bg-gallery">
+											<div>
+												<h2><?php echo $row->getFotoGaleriKantor()->items[$z]->judulNotepad;?></h2>
+												<p>
+													<?php echo $row->getFotoGaleriKantor()->items[$z]->deskripsiNotepad;?>
+												</p>
+											</div>
+										</div>
+										<div class="edge e-<?php echo $row->getFotoGaleriKantor()->items[$z]->warnaNotepad;?>">
+											
+										</div>
+									</div>
+								</div>
+							</li>
                 <?php
-                    }
+						}
+					}
                 ?>
             </ul>
             </div>
@@ -55,10 +63,18 @@
             </h2>
             <div class="description width-66">
                 <div class="section-left-40">
-                    <img src="<?php echo $kantor->fotoKantor->path.$kantor->fotoKantor->filename?>" width="226" />
+                    <img src="<?php echo $fotoProf;?>" width="226" />
                 </div>
                 <div class="section-right-60">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                    <p>
+						<?php
+							echo $namaLokasi."<br />";
+							echo $alamat."<br />";
+							echo $telp."<br />";
+							echo $fax;
+						?>
+					</p>
+					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Send Mail</a>
                 </div>
             </div>
         </div>
@@ -75,7 +91,7 @@
                 </div>
                 <img src="<?php echo $ag->getFotoAgent();?>" width="304" />
                 <div class="description">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                    <a href="#">&gt; Selengkapnya</a>
                 </div>
             </div>
         <?php }?>
