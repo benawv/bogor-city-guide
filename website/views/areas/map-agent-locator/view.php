@@ -107,7 +107,7 @@
     function initialize() {
         var mapOptions = {
           center: new google.maps.LatLng(-6.2297465, 106.829518),
-          zoom: 11
+          zoom: 15
         };
 
         map = new google.maps.Map(document.getElementById("maparea"),mapOptions);
@@ -305,6 +305,26 @@
             //
             //}
         }
+		$("#search-btn").click(function(){
+			searchSubmit();
+		});
+		function searchSubmit() {
+			var latitude = null;
+			var longitude = null;
+			var addresscity=document.getElementById("search").value;
+			var geocoder = new google.maps.Geocoder();
+		 
+			geocoder.geocode({ 'address': addresscity }, function (results, status) {
+				 
+				if (status == google.maps.GeocoderStatus.OK)
+				{
+					lat = results[0].geometry.location.lat();
+					long = results[0].geometry.location.lng();
+					var titik = radius(lat, long);
+					MapLoad(titik, lat, long);
+				 }
+			});
+		}
     }
 	
 	function radius(lat, lng){
@@ -327,22 +347,84 @@
 			    var marker = [];
 			    var mapOptions = {
 					center: new google.maps.LatLng(lat, long),
-					zoom: 11
+					zoom: 13
 				};
 				  
 				map = new google.maps.Map(document.getElementById("maparea"),mapOptions);
 			    $.each(listLoc, function(i, item){
-					var tmpAlamat = item.alamat1+" "+item.alamat2+" "+item.alamat3;
+					if (item.alamat1 != null) {
+						alamat1 = item.alamat1;
+					}
+					else{
+						alamat1 = "-";
+					}
+					if (item.alamat2 != null) {
+						alamat2 = item.alamat2;
+					}
+					else{
+						alamat2 = "-";
+					}
+					if (item.alamat3 != null) {
+						alamat3 = item.alamat3;
+					}
+					else{
+						alamat3 = "-";
+					}
+					
+					var tmpAlamat = alamat1+" "+alamat2+" "+alamat3;
 					var alamat = tmpAlamat.toLowerCase();
+					
+					if (item.namaLokasi != null) {
+						NamaLokasi = item.namaLokasi;
+					}
+					else{
+						NamaLokasi = "-";
+					}
+					
+					if (alamat != null) {
+						Alamat = ucwords(alamat);
+					}
+					else{
+						Alamat = "-";
+					}
+					
+					if (item.kodeAreaTelepon != null) {
+						kodeTelepon = item.kodeAreaTelepon;
+					}
+					else{
+						kodeTelepon = "-";
+					}
+					
+					if (item.nomorTelepon != null) {
+						nomorTelepon = item.nomorTelepon;
+					}
+					else{
+						nomorTelepon = "-";
+					}
+					
+					if (item.kodeAreaFax != null) {
+						kodeFax = item.kodeAreaFax;
+					}
+					else{
+						kodeFax = "-";
+					}
+					
+					if (item.nomorFax != null) {
+						nomorFax = item.nomorFax;
+					}
+					else{
+						nomorFax = "-";
+					}
+					
 				    var data_content = '<div class="content">'+
 											'<div id="siteNotice"></div>'+
 											'<img src="/website/static/images/allianz-eagle-3d.png" height="50" width="50" />'+
-											'<h2 id="firstHeading" class="firstHeading">'+item.namaLokasi+'</h2>'+
+											'<h2 id="firstHeading" class="firstHeading">'+NamaLokasi+'</h2>'+
 											'<div id="bodyContent">'+
 											//'<b>'+item.kodeLokasi+'</b><br />'+
-											'Alamat : '+ucwords(alamat)+'<br />'+
-											'Telp :'+item.kodeAreaTelepon+" "+item.nomorTelepon+'<br />'+
-											'Fax :'+item.kodeAreaFax+" "+item.nomorFax+''+
+											'Alamat : '+Alamat+'<br />'+
+											'Telp :'+kodeTelepon+" "+nomorTelepon+'<br />'+
+											'Fax :'+kodeFax+" "+nomorFax+''+
 											'<br /><a href="/detail-kantor/'+item.o_key+"-"+item.o_id+'" style="margin-top=5px;"><strong>&gt; Homepage Kantor</strong></a>'+
 											'</div>'+
 										'</div>';
