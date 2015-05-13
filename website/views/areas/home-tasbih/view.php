@@ -3,6 +3,8 @@
         /* Override AJFC's feature box color */
         .box-dent--inner{ background: #009a44; }
         .box-dent::before{ border-top: 28px solid #009a44 !important;}
+        .social-feeds .social-feeds--box.twitter{ background: #009a44 !important;}
+        .social-feeds .social-feeds--box.facebook{background: #73c898!important;}
     </style>
      <div class="background" style="pointer-events:visible;">
         <!--<img src="/website/ajfc/img/bg-home.jpg" alt="Home" class="img-responsive" />-->
@@ -290,138 +292,54 @@
     </script>
 
 </section><!--/ #calendar -->
+<?php 
 
+                    $listnews = new Object_TasbihNews_List();
+                    $listnews->setLimit(4);
+                    $listnews->setOrder('desc');
+                    
+                    $i++;
+                    foreach($listnews as $items){
+                      
+                        $news_stack[$i]=array("date"=>$items->newsdate,
+                                "teaser"=>$items->deskripsisingkat,
+                                "link"=>"/tasbih/tasbih-news/".$items->o_id,
+                                "title"=> $items->title);
+                        array_push($news_stack[$i]);
+                        $i++;
+                    }
+                    //echo "<pre>";
+                    //print_r($news_stack);
+                    //echo "</pre>";
+                
+                
+                    ?>
 <section class="mt32 mb72">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-6 pl30 pr30">
-
+                
                 <div class="row social-feeds row-eq-height">
+                    
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
-
-                        <?php
-
-                            $fb_feed1 = new Object_SocialMediaFeed_List();
-                            $fb1 = 1;
-
-                            $NoDada = "";
-                            foreach($fb_feed1 as $items1)
-                            {
-                                if($items1->socialMediaType->socialMediaType=='facebook'){
-                                if($fb1==1){
-                                    $fb_StreamId1   =$items1->StreamId;
-                                    $fb_CreateDate1 =$items1->CreateDate;
-                                    $fb_From1       =$items1->From;
-                                    $fb_UserImages  =$items1->UserImages;
-                                    $fb_FromId1     =$items1->FromId;
-                                    $fb_LinkAsset1  =$items1->LinkAsset;
-                                    $fb_TypeAsset1  =$items1->TypeAsset;
-                                    $fb_LinkFeed1   =$items1->LinkFeed;
-                                    $fb_Messages1   =$items1->Messages;
-                                    $getStrId=explode('_',$fb_StreamId1);
-                                    $strId1=$getStrId[1];
-                                    $feedDateFb1=date('dS, F Y h:i:s A', strtotime($fb_CreateDate1));
-
-                                }
-                                $fb1++;
-                                }
-                            }
-
-                            $fb_feed2 = new Object_SocialMediaFeed_List();
-                            $fb2 = 1;
-                            $NoDada = "";
-                            foreach($fb_feed2 as $items2)
-                            {
-                                if($items2->socialMediaType->socialMediaType=='facebook'){
-                                    if($fb2==2){
-
-                                    $fb_StreamId2   =$items2->StreamId;
-                                    $fb_CreateDate2 =$items2->CreateDate;
-                                    $fb_From2       =$items2->From;
-                                    $fb_UserImages2 =$items2->UserImages;
-                                    $fb_FromId2     =$items2->FromId;
-                                    $fb_LinkAsset2  =$items2->LinkAsset;
-                                    $fb_TypeAsset2  =$items2->TypeAsset;
-                                    $fb_LinkFeed2   =$items2->LinkFeed;
-                                    $fb_Messages2   =$items2->Messages;
-                                    $getStrId=explode($fb_StreamId2,'_');
-                                    $strId2=$getStrId[1];
-                                    $feedDateFb2=date('dS, F Y h:i:s A', strtotime($fb_CreateDate2));
-
-                                    }
-                                $fb2++;
-                                }
-
-                            }
-
-                            $tw_feed1 = new Object_SocialMediaFeed_List();
-                            $tw1 = 1;
-                            $NoDada = "";
-                            foreach($tw_feed1 as $items3)
-                            {
-                                if($items3->socialMediaType->socialMediaType=='twitter'){
-                                   if($tw1==1){
-
-                                    $tw_StreamId1   =$items3->StreamId;
-                                    $tw_CreateDate1 =$items3->CreateDate;
-                                    $tw_From1       =$items3->From;
-                                    $tw_UserImages1 =$items3->UserImages;
-                                    $tw_FromId1     =$items3->FromId;
-                                    $tw_LinkAsset1  =$items3->LinkAsset;
-                                    $tw_TypeAsset1  =$items3->TypeAsset;
-                                    $tw_LinkFeed1   =$items3->LinkFeed;
-                                    $tw_Messages1   =$items3->Messages;
-                                    $feedDateTw1=date('dS, F Y h:i:s A', strtotime($tw_CreateDate1));
-                                    }
-                                   $tw1++;
-                                }
-                            }
-
-
-                            $tw_feed2 = new Object_SocialMediaFeed_List();
-                            $tw2 = 1;
-                            $NoDada = "";
-                            foreach($tw_feed2 as $items4)
-                            {
-                                if($items4->socialMediaType->socialMediaType=='twitter'){
-                                   if($tw2==2){
-
-                                    $tw_StreamId2   =$items4->StreamId;
-                                    $tw_CreateDate2 =$items4->CreateDate;
-                                    $tw_From2       =$items4->From;
-                                    $tw_UserImages2  =$items4->UserImages;
-                                    $tw_FromId2     =$items4->FromId;
-                                    $tw_LinkAsset2  =$items4->LinkAsset;
-                                    $tw_TypeAsset2  =$items4->TypeAsset;
-                                    $tw_LinkFeed2   =$items4->LinkFeed;
-                                    $tw_Messages2   =$items4->Messages;
-                                    $feedDateTw2=date('dS, F Y h:i:s A', strtotime($tw_CreateDate2));
-                                    }
-                                   $tw2++;
-                                }
-
-                            }
-
-                        ?>
                         <div class="social-feeds--box facebook">
                             <div class="header">
-                                <i class="fa fa-facebook pull-left"></i>
+                                <i class="fa fa-leanpub pull-left"></i>
                                 <!--<a href="#" class="pull-right"><i class="fa fa-thumbs-o-up"></i></a>-->
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
-                                <?php echo $fb_Messages1; ?>
+                                <a href="<?php echo $news_stack[1][link]; ?>" >
+                                <h2><?php echo $news_stack[1][title]; ?></h2>
+                                <p><?php echo $news_stack[1][teaser]; ?></p>
+                                </a>
                             </div><!--/ .body -->
                             <div class="footer">
                                 <div class="media">
-                                    <div class="media-left">
-                                        <a href="https://www.facebook.com/164934653709133/posts/<?php echo $strId1; ?>" target="_blank">
-                                            <img class="media-object img-responsive" src="<?php echo $fb_UserImages;?>" alt="Profile Picture">
-                                        </a>
+                                    <div class="media-left">     
                                     </div><!--/ .media-left -->
-                                    <div class="media-body">
-                                        <p><?php echo $fb_From1;?></p>
-                                        <p><small><?php echo $feedDateFb1; ?></small></p>
+                                    <div class="media-body">                                        
+                                        <p><small><?php echo $news_stack[1][date]; ?></small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
                             </div><!--/ .footer -->
@@ -431,23 +349,22 @@
                     <div class="col-xs-12 col-md-6 nopadding br bt">
                         <div class="social-feeds--box twitter">
                             <div class="header">
-                                <i class="fa fa-twitter pull-left"></i>
+                                <i class="fa fa-leanpub pull-left"></i>
                                 <!--<a href="#" class="pull-right"><i class="fa fa-retweet"></i></a>-->
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
-                                <?php echo $tw_Messages1; ?>
+                                <a href="<?php echo $news_stack[2][link]; ?>" >
+                                <h2><?php echo $news_stack[2][title]; ?></h2>
+                                <p><?php echo $news_stack[2][teaser]; ?></p>
+                                </a>
                             </div><!--/ .body -->
                             <div class="footer">
                                 <div class="media">
-                                    <div class="media-left">
-                                        <a href="<?php echo "https://twitter.com/user/status/".$tw_StreamId1; ?>" target="_blank">
-                                            <img class="media-object img-responsive"  src="<?php echo $tw_UserImages1;?>" alt="Profile Picture">
-                                        </a>
+                                    <div class="media-left">   
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
-                                        <p><?php echo $tw_From1;?></p>
-                                        <p><small><?php echo $feedDateFb2; ?></small></p>
+                                        <p><small><?php echo $news_stack[2][date]; ?></small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
                             </div><!--/ .footer -->
@@ -461,23 +378,22 @@
                     <div class="col-xs-12 col-md-6 nopadding br bt">
                         <div class="social-feeds--box twitter">
                             <div class="header">
-                                <i class="fa fa-twitter pull-left"></i>
+                                <i class="fa fa-leanpub pull-left"></i>
                                 <!--<a href="#" class="pull-right"><i class="fa fa-retweet"></i></a>-->
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
-                                <?php echo $tw_Messages2; ?>
+                                <a href="<?php echo $news_stack[3][link]; ?>" > 
+                                <h2><?php echo $news_stack[3][title]; ?></h2>
+                                <p><?php echo $news_stack[3][teaser]; ?></p>
+                                </a>
                             </div><!--/ .body -->
                             <div class="footer">
                                 <div class="media">
-                                    <div class="media-left">
-                                        <a href="<?php echo "https://twitter.com/user/status/".$tw_StreamId2; ?>">
-                                            <img class="media-object img-responsive"  src="<?php echo $tw_UserImages2;?>" alt="Profile Picture">
-                                        </a>
+                                    <div class="media-left">                                        
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
-                                        <p><?php echo $tw_From2;?></p>
-                                        <p><small><?php echo $feedDateTw1; ?></small></p>
+                                        <p><small> <?php echo $news_stack[3][date]; ?></small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
                             </div><!--/ .footer -->
@@ -487,23 +403,22 @@
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
                         <div class="social-feeds--box facebook">
                             <div class="header">
-                                <i class="fa fa-facebook pull-left"></i>
+                                <i class="fa fa-leanpub pull-left"></i>
                                 <!--<a href="#" class="pull-right"><i class="fa fa-thumbs-o-up"></i></a>-->
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
-                                <?php echo $fb_Messages2; ?>
+                                <a href="<?php echo $news_stack[3][link]; ?>" > 
+                                    <h2><?php echo $news_stack[4][title]; ?></h2>
+                                    <p><?php echo $news_stack[4][teaser]; ?></p>
+                                </a>
                             </div><!--/ .body -->
                             <div class="footer">
                                 <div class="media">
                                     <div class="media-left">
-                                        <a href="https://www.facebook.com/164934653709133/posts/<?php echo $strId2; ?>" target="_blank">
-                                            <img class="media-object img-responsive" src="<?php echo $fb_UserImages2;?>" alt="Profile Picture">
-                                        </a>
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
-                                        <p><?php echo $fb_From2;?></p>
-                                        <p><small><?php echo $feedDateTw2;?></small></p>
+                                        <p><small><?php echo $news_stack[4][date]; ?></small></p>
                                     </div><!--/ .media-body -->
                                 </div><!--/ .media -->
                             </div><!--/ .footer -->
