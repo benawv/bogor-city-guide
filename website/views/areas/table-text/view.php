@@ -57,7 +57,7 @@
                             <h3><?php echo $this->input('title_page_tanyajawab')?></h3>
                         </div><!--/ .sidebar-item--header -->
                         <div class="sidebar-item--content">
-			    <?php echo $this->wysiwyg('description-bottom')?>
+			    <?php echo $this->wysiwyg('sidebar')?>
                         </div><!--/ .sidebar-item--content -->
                     </div><!--/ .sidebar-item -->
                     
