@@ -1,36 +1,94 @@
 <style type="text/css">     
-    #halaman { width:980px; margin:0 auto; }     #header { height:100px; padding:10px;background-color:#CCCCCC; }     #kiri { height:100px; padding:10px;background-color:#CCCCCC;float:left;width:250px; margin-top:10px; }     #kanan { height:100px; padding:10px;background-color:#CCCCCC;float:right;width:250px; margin-top:10px; }     #tengah { height:100px; padding:10px;background-color:#CCCCCC;margin:10px 290px 0 290px; }     #footer { clear:both; height:50px;padding:10px; background-color:#CCCCCC; margin-top:10px;} </style>
-<div class="item">
-	<div class="heading">
-		<h2 class="title_news"><?php echo $this->link('title',array("data-target" => "","data-toggle" => "modal", "class" => "PopUpModal"))?></h2>
-		<div class="btn-group">
-			<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
-			<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
-			z
-			<?php if($this->editmode) { ?>
-			<?php echo $this->link('more')?>
-		<?php } else { ?>
-			<?php echo htmlspecialchars_decode($this->link('more'))?>
-		<?php } ?>
-		</div>
-	</div>
-    <div id="halaman">
-    <div id="kiri">
-        
-    </div>
-    <div id="tengah">
-        <h2><strong>NEWS FEED</strong></h2>
-	<?php
-<iframe src="http://www.facebook.com/plugins/likbox.php?href==http%3A%2F
-%2Fwww.facebook.com%2Fbastian.dwiputra&width=600&colorscheme=light&
-show_faces=true&border_color&stream=true&header=true&height=435" 
-style="border:none; overflow:hidden; width:600px; height:430px; background:
-white; float:left; "allowtransparency="true" frameborder="0" scrolling="yes"></iframe>
-        ?>
+    #header {
+		border:1px solid #bbb;
+		height:80px;
+		padding:10px;
+	}
+	#content {
+		margin-top:10px;
+		padding-bottom:10px;
+	}
+	#content div {
+		padding:10px;
+		border:1px solid #bbb;
+		float:left;
+	}
+	#content-left {
+		width:30%;
+	}
+	#content-main {
+		margin-left:10px;
+		width:30%;
+	}
+	#content-right {
+		margin-left:10px;
+		width:30%;
+	}
+	#footer {
+		float:left;
+		margin-top:10px;
+		margin-bottom:10px;
+		padding:10px;
+		border:1px solid #bbb;
+		width:878px;
+	}
+	#bottom {
+		clear:both;
+		text-align:right;
+	}
+</style>
+<div id="wrapper">
 
-    </div>
-    <div id="kanan">
-        
-    </div>
-    </div>
+	<div id="content">
+		<div id="content-left">
+            <?php echo $this->image('image-kiri', array(
+									'title' => 'Image Size 226x200',
+									'width' => 230,
+									'height' => 200
+									/*'thumbnail' => 'product'*/))?>
+        </div>
+		<div id="content-main">2</div>
+		<div id="content-right">
+    <h2><center>NEWS FEED</center></h2>        
+    <?php
+
+  $showStatus = 1;
+
+  $xml = simplexml_load_file("http://fbrss.com/feed/2badcab68f4b1c9f18445c287ae098198d94ab75.xml");
+
+  $counter = 1;
+
+  foreach($xml->channel->item as $data)
+
+  {
+
+  echo "<p>";
+
+  echo substr($data->pubDate,0,9)."<br>";
+
+  echo $data->title."<br>";
+
+  echo $data->description;
+
+  echo "</p>";
+
+  if ($counter == $showStatus) break;
+
+  else $counter++;
+
+  }
+
+?>
 </div>
+	</div>
+
+</div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.3&appId=463659440451126";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
