@@ -298,7 +298,7 @@
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="1" name="payment_methods" id="payment_methods">
                             <?php
-                                $cat = new Object_SmartmedPaymentType_List();
+                                $cat = new Object_smartmedPaymentType_List();
                                 foreach($cat as $payment)
                                 {
                                     echo "<option value='".$payment->getPaymenttype()."'>".$payment->getPaymenttype()."</option>";
@@ -689,7 +689,7 @@
     });
 
     
-    function kalk(age,sex,code,coshare,withval){
+    function kalk(age,sex,code,coshare,with){
         var payment = $("#payment_methods").val();
         var fd = $("#family_discount").val();
         var ncd = $("#no_claim_discount").val();
@@ -718,7 +718,7 @@
                 },error: function (xhr, ajaxOptions, thrownError){
                 }
         });
-        if(withval == 1){
+        if(with == 1){
             var disc = value * (25/100);
             value += disc ;
         }
@@ -727,7 +727,7 @@
 
     function jumlah(){
         var rowCount = $('table.table tbody tr').length;
-        var total = stamp = totfd = jml = totalwithoutuwl = 0;
+        var total = stamp = totfd = jumlah = totalwithoutuwl = 0;
         var fd = $("#family_discount").val();
         for(var i = 0; i < rowCount; i++){
             total += parseInt($('table.table tbody').children()[0].children[15].innerHTML);
@@ -743,8 +743,8 @@
         else totfd = 0;
         $('table.table tfoot').children()[3].children[1].innerHTML = totfd;
 
-        jml = stamp + total + 30000 - totfd;
-        $('table.table tfoot').children()[4].children[1].innerHTML = 'Rp. ' + jml + ',0';
+        jumlah = stamp + total + 30000 - totfd;
+        $('table.table tfoot').children()[4].children[1].innerHTML = 'Rp. ' + jumlah + ',0';
         return total;
     }
     
@@ -784,11 +784,7 @@
         var d2 = date2[1];
         var m2 = date2[0];
 
-        var start = new Date(y1,m1,d1);
-        var end = new Date(y2,m2,d2);
-        var selisih = Date.parse(end.toGMTString()) - Date.parse(start.toGMTString());
-        
-        var age = Math.round(selisih/(1000*60*60*24*365));
+        var age = parseInt(y2+m2+d2) - parseInt(y1+m1+d1);
         var sex = $("#sex").val();
         var ip = $("#ip").val();
         var mat = $("#mat").val();
@@ -816,7 +812,7 @@
                 "<td><input type='text' placeholder='Date of Birth' name='dob2' id='dob2' class='datepicker' value='"+m1+"/"+d1+"/"+y1+"'></td>"+
                 "<td><input type='text' placeholder='Calculation Date' name='cd2' id='cd2' class='datepicker' value='"+m2+"/"+d2+"/"+y2+"'></td>"+
                 "<td>"+age+"</td>"+
-                "<td>NEW BUSINESS</td>"+
+                "<td><select><option value='NEW BUSINESS'>NEW BUSINESS</option><option value='OLD BUSINESS'>OLD BUSINESS</option></select></td>"+
                 "<td><select><option value='A'>A</option><option value='B'>B</option><option value='C'>C</option></select></td>"+
                 "<td><select><option value='A'>A</option><option value='B'>B</option><option value='C'>C</option></select></td>"+
                 "<td><select><option value='-'>-</option></select></td>"+
@@ -871,10 +867,8 @@
     }
     
     function delrow(){
-        alert($(event.target).attr("data-id"));
-        var id = parseInt($(event.target).attr("data-id"))-1;
-        $("table.table tbody").children()[id].innerHTML = "";
-        jumlah();
+        var id = $(event.target).attr("data-id");
+        $("table.table tbody").children()[id].innerHTML = "";        
         return 0;
     }
 </script>
