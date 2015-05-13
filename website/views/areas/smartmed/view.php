@@ -689,7 +689,7 @@
     });
 
     
-    function kalk(age,sex,code,coshare,with){
+    function kalk(age,sex,code,coshare,withval){
         var payment = $("#payment_methods").val();
         var fd = $("#family_discount").val();
         var ncd = $("#no_claim_discount").val();
@@ -718,7 +718,7 @@
                 },error: function (xhr, ajaxOptions, thrownError){
                 }
         });
-        if(with == 1){
+        if(withval == 1){
             var disc = value * (25/100);
             value += disc ;
         }
@@ -727,7 +727,7 @@
 
     function jumlah(){
         var rowCount = $('table.table tbody tr').length;
-        var total = stamp = totfd = jumlah = totalwithoutuwl = 0;
+        var total = stamp = totfd = jml = totalwithoutuwl = 0;
         var fd = $("#family_discount").val();
         for(var i = 0; i < rowCount; i++){
             total += parseInt($('table.table tbody').children()[0].children[15].innerHTML);
@@ -743,8 +743,8 @@
         else totfd = 0;
         $('table.table tfoot').children()[3].children[1].innerHTML = totfd;
 
-        jumlah = stamp + total + 30000 - totfd;
-        $('table.table tfoot').children()[4].children[1].innerHTML = 'Rp. ' + jumlah + ',0';
+        jml = stamp + total + 30000 - totfd;
+        $('table.table tfoot').children()[4].children[1].innerHTML = 'Rp. ' + jml + ',0';
         return total;
     }
     
@@ -812,7 +812,7 @@
                 "<td><input type='text' placeholder='Date of Birth' name='dob2' id='dob2' class='datepicker' value='"+m1+"/"+d1+"/"+y1+"'></td>"+
                 "<td><input type='text' placeholder='Calculation Date' name='cd2' id='cd2' class='datepicker' value='"+m2+"/"+d2+"/"+y2+"'></td>"+
                 "<td>"+age+"</td>"+
-                "<td><select><option value='NEW BUSINESS'>NEW BUSINESS</option><option value='OLD BUSINESS'>OLD BUSINESS</option></select></td>"+
+                "<td>NEW BUSINESS</td>"+
                 "<td><select><option value='A'>A</option><option value='B'>B</option><option value='C'>C</option></select></td>"+
                 "<td><select><option value='A'>A</option><option value='B'>B</option><option value='C'>C</option></select></td>"+
                 "<td><select><option value='-'>-</option></select></td>"+
@@ -867,8 +867,10 @@
     }
     
     function delrow(){
-        var id = $(event.target).attr("data-id");
-        $("table.table tbody").children()[id].innerHTML = "";        
+        alert($(event.target).attr("data-id"));
+        var id = parseInt($(event.target).attr("data-id"))-1;
+        $("table.table tbody").children()[id].innerHTML = "";
+        jumlah();
         return 0;
     }
 </script>
