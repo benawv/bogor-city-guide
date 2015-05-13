@@ -784,7 +784,11 @@
         var d2 = date2[1];
         var m2 = date2[0];
 
-        var age = parseInt(y2+m2+d2) - parseInt(y1+m1+d1);
+        var start = new Date(y1,m1,d1);
+        var end = new Date(y2,m2,d2);
+        var selisih = Date.parse(end.toGMTString()) - Date.parse(start.toGMTString());
+        
+        var age = Math.round(selisih/(1000*60*60*24*365));
         var sex = $("#sex").val();
         var ip = $("#ip").val();
         var mat = $("#mat").val();
