@@ -64,7 +64,6 @@
                 $cookie->setO_published(1);
                 $cookie->save();
                 
-            die('send');
                 if($JenisKelamin == 'l') {
                     $JK = 'Pria';
                 }
