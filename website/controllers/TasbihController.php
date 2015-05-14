@@ -48,7 +48,7 @@ class TasbihController extends Website_Controller_Action {
             $mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
             $mail->setDocument($document);
             $mail->setParams($params);
-            $mail->addTo($Email);
+            $mail->addTo($email);
             $mail->send();
 		
             echo "success";    
