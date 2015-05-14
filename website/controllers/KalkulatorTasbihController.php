@@ -5,10 +5,22 @@
         public function savingAction() {
 	
             $TanggalPembuatan = $_POST["tgl"];
-            $Nama = $_POST["nama"];
-            $Email = $_POST["email"];
+	    $tglBuat_ = explode("/", $TanggalPembuatan);
+            $tglBuat_[0]; //day
+            $tglBuat_[1]; //month
+            $tglBuat_[2]; //year 
+            $TanggalPembuatan=$tglBuat_[1]."/".$tglBuat_[0]."/".$tglBuat_[2];
+	    	    
             $TanggalLahir = $_POST["tanggallahir"];
-            $JenisKelamin = $_POST["sex"];
+	    $tglLahir_ = explode("/", $TanggalPembuatan);
+            $tglLahir_[0]; //day
+            $tglLahir_[1]; //month
+            $tglLahir_[2]; //year 
+            $TanggalLahir=$tglLahir_[1]."/".$tglLahir_[0]."/".$tglLahir_[2];
+
+	    $Nama = $_POST["nama"];
+            $Email = $_POST["email"];
+	    $JenisKelamin = $_POST["sex"];
             $Usia = $_POST["usia"];
             $Frekuensi = $_POST["frekuensi"];
             $AsuransiJiwa = $_POST["asuransijiwa"];
@@ -28,22 +40,12 @@
                
                 //SetData
 	        $tglBuat = strtotime($TanggalPembuatan);
-		
-	        echo '$TanggalPembuatan :'.$TanggalPembuatan ;
-		echo '$tglBuat :'.$tglBuat ;
-		die($tglBuat);
-		
 		$date_tglBuat = new Pimcore_Date($tglBuat);//set date into pimcore format		
 		
 		$tglLahir = strtotime($TanggalLahir);
 	        $date_tglLahir= new Pimcore_Date($tglLahir);//set date into pimcore formats		
 
-		echo $date_tglBuat;
-		echo $date_tglLahir;
-		die($Calculation);
-
 	        $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
-		
 		
                 $cookie = new Object_Tasbih();
                 $cookie->setTanggalPembuatan($date_tglBuat);
@@ -62,7 +64,6 @@
                 $cookie->setO_published(1);
                 $cookie->save();
                 
-            die('send');
                 if($JenisKelamin == 'l') {
                     $JK = 'Pria';
                 }
