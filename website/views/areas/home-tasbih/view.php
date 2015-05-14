@@ -300,11 +300,12 @@
                     
                     $i++;
                     foreach($listnews as $items){
-                      
                         $news_stack[$i]=array("date"=>$items->newsdate,
                                 "teaser"=>$items->deskripsisingkat,
                                 "link"=>"/tasbih/tasbih-news/".$items->o_id,
-                                "title"=> $items->title);
+                                "title"=> $items->title,
+                                "images"=>$items->images->path.$items->images->filename                                
+                                );
                         array_push($news_stack[$i]);
                         $i++;
                     }
@@ -323,6 +324,7 @@
                     
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
                         <div class="social-feeds--box facebook">
+                            <img src="<?php echo $news_stack[1][images]; ?>" alt="" class="bg-image">
                             <div class="header">
                                 <i class="fa fa-book pull-left"></i>
                                 <!--<a href="#" class="pull-right"><i class="fa fa-thumbs-o-up"></i></a>-->
@@ -348,6 +350,7 @@
 
                     <div class="col-xs-12 col-md-6 nopadding br bt">
                         <div class="social-feeds--box twitter">
+                            <img src="<?php echo $news_stack[2][images]; ?>" alt="" class="bg-image">
                             <div class="header">
                                 <i class="fa fa-book pull-left"></i>
                                 <!--<a href="#" class="pull-right"><i class="fa fa-retweet"></i></a>-->
@@ -377,6 +380,7 @@
 
                     <div class="col-xs-12 col-md-6 nopadding br bt">
                         <div class="social-feeds--box twitter">
+                            <img src="<?php echo $news_stack[3][images]; ?>" alt="" class="bg-image">
                             <div class="header">
                                 <i class="fa fa-book pull-left"></i>
                                 <!--<a href="#" class="pull-right"><i class="fa fa-retweet"></i></a>-->
@@ -402,13 +406,14 @@
 
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
                         <div class="social-feeds--box facebook">
+                            <img src="<?php echo $news_stack[4][images]; ?>" alt="" class="bg-image">
                             <div class="header">
                                 <i class="fa fa-book pull-left"></i>
                                 <!--<a href="#" class="pull-right"><i class="fa fa-thumbs-o-up"></i></a>-->
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
-                                <a href="<?php echo $news_stack[3][link]; ?>" > 
+                                <a href="<?php echo $news_stack[4][link]; ?>" > 
                                     <h2><?php echo $news_stack[4][title]; ?></h2>
                                     <p><?php echo $news_stack[4][teaser]; ?></p>
                                 </a>
