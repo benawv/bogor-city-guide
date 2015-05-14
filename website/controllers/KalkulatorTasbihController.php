@@ -23,7 +23,7 @@
 	    foreach($rates as $items){
 		$rate=$items->rate;
 	    }
-	die($rate);
+	
 		$Calculation = ($rate*$AsuransiJiwa)/1000; //The Pattern of ALLIANZ
                
                 //SetData
@@ -33,6 +33,9 @@
 	        $date_tglLahir= new Pimcore_Date($tglLahir);//set date into pimcore formats		
 	        $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
 		
+		echo $date_tglBuat;
+		echo $date_tglLahir;
+		die($Calculation);
                 $cookie = new Object_Tasbih();
                 $cookie->setTanggalPembuatan($date_tglBuat);
                 $cookie->setNama($Nama);
