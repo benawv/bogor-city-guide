@@ -46,7 +46,7 @@
         <div class="container">
            <div class="row">
                 <div class="col-xs-12 col-md-4">
-                    <a href="/tasbih/ilustrasi" class="nav-item green sitemap">
+                    <a href="/kalkulator/tasbih" class="nav-item green sitemap">
                         <h4><small>01</small>Ilustrasi</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
@@ -82,13 +82,13 @@
                 <div class="calendar-info--inner">
                     <?php
                         $bulanInd = array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
-                        $entries = new Object_CalenderAJFC_List();
+                        $entries = new Object_TasbihCalender_List();
                         $entries->setCondition("date >= ?", array(time()));
                         $entries->setLimit(1);
                         $entries->setOrderKey("date");
                         $entries->setOrder("asc");
                         if(count($entries)<0){
-                            $entries = new Object_CalenderAJFC_List();
+                            $entries = new Object_TasbihCalender_List();
                             $entries->setCondition("date <= ?", array(time()));
                             $entries->setLimit(1);
                             $entries->setOrderKey("date");
@@ -119,7 +119,7 @@
     </div><!--/ .container -->
 
 <?php
-    $entries = new Object_CalenderAJFC_List();
+    $entries = new Object_TasbihCalender_List();
     $entries ->setOrderKey("date");
     $entries ->setOrder("desc");
     $count = count($entries);
