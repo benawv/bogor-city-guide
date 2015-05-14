@@ -9,14 +9,14 @@
             $tglBuat_[0]; //day
             $tglBuat_[1]; //month
             $tglBuat_[2]; //year 
-            $TanggalPembuatan=$tglBuat_[1]."/".$tglBuat_[0]."/".$tglBuat_[2];
+            $TanggalPembuatan=$tglBuat_[2]."-".$tglBuat_[1]."/".$tglBuat_[0];
 	    	    
             $TanggalLahir = $_POST["tanggallahir"];
 	    $tglLahir_ = explode("/", $TanggalPembuatan);
             $tglLahir_[0]; //day
             $tglLahir_[1]; //month
             $tglLahir_[2]; //year 
-            $TanggalLahir=$tglLahir_[1]."/".$tglLahir_[0]."/".$tglLahir_[2];
+            $TanggalLahir=$tglLahir_[2]."-".$tglLahir_[1]."/".$tglLahir_[0];
 
 	    $Nama = $_POST["nama"];
             $Email = $_POST["email"];
