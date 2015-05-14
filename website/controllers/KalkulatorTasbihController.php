@@ -18,6 +18,10 @@
             $tglLahir_[2]; //year 
             $TanggalLahir=$tglLahir_[2]."-".$tglLahir_[1]."-".$tglLahir_[0];
 
+			echo $TanggalPembuatan."<br>";
+			echo $TanggalLahir."<br>";
+
+			die('test');
 			$Nama = $_POST["nama"];
             $Email = $_POST["email"];
 			$JenisKelamin = $_POST["sex"];
