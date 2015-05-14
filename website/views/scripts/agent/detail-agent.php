@@ -105,9 +105,7 @@
                     <h3><strong><?php echo "NAMA  :<br/>"; ?></strong></h3>
                         <label><?php echo $namaAgent."<br/><br/>";?></label>
                         <h3><strong><?php echo "PROFIL :<br/>"; ?></strong></h3>
-                        <textarea id="profil" class="form-control" rows=10 cols=50 readonly>
-                            <?php echo $profilAgent ?>
-                        </textarea>
+                        <textarea id="profil" class="form-control" rows=10 cols=50 readonly><?php echo $profilAgent ?></textarea>
                         <br/>
 						
 					</p>
@@ -121,29 +119,36 @@
         <div class="items-container">
             <div class="item">
                 <div class="heading">
-                    <h2 class="title_news">CALCULATOR LIVE INSURANCE</h2>
+                    <!--<h2 class="title_news">CALCULATOR LIVE INSURANCE</h2>-->
+					<h2 class="title_news">Artikel</h2>
                     <div class="btn-group">
                         <!--Link-->
                     </div>
                 </div>
-                <center><a href="#"><img src="/website/static/images/agent_locator/Calc-Live-Insurance.jpg" width="150" height="130" /></a></center>
+                <!--<center><a href="#"><img src="/website/static/images/agent_locator/Calc-Live-Insurance.jpg" width="150" height="130" /></a></center>-->
+				<center><a href="#"><img src="/website/static/images/agent_locator/Agent_Profile_Picture_article.png" /></a></center>
+				<div class="description">
+                    <a href="#">&gt; Selengkapnya</a>
+                </div>
             </div>
             
              <div class="item">
                 <div class="heading">
-                    <h2 class="title_news">NEWS</h2>
+                    <!--<h2 class="title_news">NEWS</h2>-->
+					<h2 class="title_news">Produk Asuransi Jiwa</h2>
                     <div class="btn-group">
                         <!--Link-->
                     </div>
                 </div>
-                <p>
+                <!--<p>
                      <?php
-                        if(strlen($Artikel) < 115) echo $Artikel;
-                        else echo substr($Artikel,0,115);
-
-                        echo ". . .<br/>";
+                        //if(strlen($Artikel) < 115) echo $Artikel;
+                        //else echo substr($Artikel,0,115);
+                        //
+                        //echo ". . .<br/>";
                     ?>
-                </p>
+                </p>-->
+				<center><a href="#"><img src="/website/static/images/agent_locator/asuransi-jiwa-allianz-flexi-account-plus.jpg" /></a></center>
                 <div class="description">
                     <a href="#">&gt; Selengkapnya</a>
                 </div>
@@ -151,15 +156,19 @@
             
             <div class="item">
                 <div class="heading">
-                    <h2 class="title_news">FACEBOOK</h2>
+                    <!--<h2 class="title_news">FACEBOOK</h2>-->
+					<h2 class="title_news">Agent Facebook Fan Page</h2>
                     <div class="btn-group">
                         <!--Link-->
                     </div>
                 </div>
-                
+                <center><a href="#"><img src="/website/static/images/agent_locator/Agent_Profile_Picture_SocialMedia.png" /></a></center>
+                <div class="description">
+                    <a href="#">&gt; Selengkapnya</a>
+                </div>
 
                 
-                <div class="fb-page" data-href="<?php echo $Facebook; ?>" data-width="304" data-height="130" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/FacebookIndonesia?brand_redir=20531316728"><a href="https://www.facebook.com/FacebookIndonesia?brand_redir=20531316728">Facebook</a></blockquote></div></div>
+                <!--<div class="fb-page" data-href="<?php echo $Facebook; ?>" data-width="304" data-height="130" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/FacebookIndonesia?brand_redir=20531316728"><a href="https://www.facebook.com/FacebookIndonesia?brand_redir=20531316728">Facebook</a></blockquote></div></div>-->
             </div>
 		</div>
         
