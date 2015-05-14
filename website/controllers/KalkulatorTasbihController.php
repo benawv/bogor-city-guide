@@ -104,6 +104,8 @@
 			$mail->setParams($params);
 			$mail->addTo($Email);
 			$mail->send();
+			echo $Calculation;
+
 
         }
         
