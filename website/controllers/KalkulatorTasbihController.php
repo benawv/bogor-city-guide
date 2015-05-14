@@ -25,10 +25,12 @@
 	    }
 	
 		$Calculation = ($rate*$AsuransiJiwa)/1000; //The Pattern of ALLIANZ
-               die($Calculation);
+               
                 //SetData
 	        $tglBuat = strtotime($TanggalPembuatan);
-	        $date_tglBuat = new Pimcore_Date($tglBuat);//set date into pimcore format		
+	        die($tglBuat);
+		$date_tglBuat = new Pimcore_Date($tglBuat);//set date into pimcore format		
+		
 		$tglLahir = strtotime($TanggalLahir);
 	        $date_tglLahir= new Pimcore_Date($tglLahir);//set date into pimcore formats		
 
