@@ -40,24 +40,10 @@
                
                 //SetData
 	        $tglBuat = strtotime($TanggalPembuatan);
-		echo '$TanggalPembuatan'.$TanggalPembuatan."<br>";
-		echo '$tglBuat'.$tglBuat."<br>";
-die();
 		$date_tglBuat = new Pimcore_Date($tglBuat);//set date into pimcore format		
-
-
-		
 		$tglLahir = strtotime($TanggalLahir);
 	        $date_tglLahir= new Pimcore_Date($tglLahir);//set date into pimcore formats		
 
-		
-		echo '$tglLahir'.$tglLahir."<br>";
-		echo '$TanggalLahir'.$TanggalLahir."<br>";
-		
-		echo '$date_tglBuat'.$date_tglBuat."<br>";
-		
-		die();
-		
 	        $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
 		
                 $cookie = new Object_Tasbih();
