@@ -23,7 +23,7 @@
 	    foreach($rates as $items){
 		$rate=$items->rate;
 	    }
-
+	die($rate);
 		$Calculation = ($rate*$AsuransiJiwa)/1000; //The Pattern of ALLIANZ
                
                 //SetData
