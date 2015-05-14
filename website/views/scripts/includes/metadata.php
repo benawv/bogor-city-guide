@@ -10,7 +10,7 @@
 <!-- css -->
 
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
-<!--<link rel="stylesheet" type="text/css" media="screen" id="bootstrap-css" href="/website/static/css/bootstrap.css">-->
+<link rel="stylesheet" type="text/css" media="screen" id="bootstrap-css" href="/website/static/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
 <!--<link rel="stylesheet" type="text/css" media="screen" id="flexslider-css" href="/website/static/css/flexslider.css">-->
 <link rel="stylesheet" type="text/css" media="screen" id="main-css" href="/website/static/css/main.css">
