@@ -16,6 +16,7 @@
             $Kontribusi = $_POST["kontribusi"];
             $nohp = $_POST["nohp"];
 		//print_r($_POST[]);
+		
 	    $rates= new Object_TasbihRate_List();
 	    $rates->setCondition("kelamin='".$JenisKelamin."' and frekuensi=$Kontribusi and usia=$Usia");
 	    $rate='';
@@ -30,7 +31,7 @@
 	        $date_tglBuat = new Pimcore_Date($tglBuat);//set date into pimcore format		
 		$tglLahir = strtotime($TanggalLahir);
 	        $date_tglLahir= new Pimcore_Date($tglLahir);//set date into pimcore formats		
-	        $getId=Object_Abstract::getByPath('/tasbih/');//get folder id
+	        $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
 		
                 $cookie = new Object_Tasbih();
                 $cookie->setTanggalPembuatan($date_tglBuat);
@@ -49,8 +50,7 @@
                 $cookie->setO_published(1);
                 $cookie->save();
                 
-                print_r($Calculation);
-            
+            die('send');
                 if($JenisKelamin == 'l') {
                     $JK = 'Pria';
                 }
