@@ -105,9 +105,7 @@
                     <h3><strong><?php echo "NAMA  :<br/>"; ?></strong></h3>
                         <label><?php echo $namaAgent."<br/><br/>";?></label>
                         <h3><strong><?php echo "PROFIL :<br/>"; ?></strong></h3>
-                        <textarea id="profil" class="form-control" rows=10 cols=50 readonly>
-                            <?php echo $profilAgent ?>
-                        </textarea>
+                        <textarea id="profil" class="form-control" rows=10 cols=50 readonly><?php echo $profilAgent ?></textarea>
                         <br/>
 						
 					</p>
