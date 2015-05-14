@@ -31,7 +31,7 @@
         color: #999;
     }
     .sidebar-font-green-h1{
-	color: #009a44;
+	color: #009a44 !important;
 	font-weight: bold;	
     }
 
