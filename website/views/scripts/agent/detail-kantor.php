@@ -1,12 +1,6 @@
 <?php
     $kantor = $this->kantor;
     $agent  = $this->agent;
-
-    function limit_words($string, $word_limit)
-    {
-        $words = explode(" ",$string);
-        return implode(" ",array_splice($words,0,$word_limit));
-    }
 ?>
 
 <style>
@@ -46,7 +40,7 @@
 					$z = 0;
                     foreach($kantor as $row){
 						$fotoProf = $row->getFotoKantor()->path.$row->getFotoKantor()->filename;
-						$namaLokasi = $row->getNamaLokasi();
+						$namaLokasi = ucwords(strtolower($row->getNamaLokasi()));
 						$alamat = ucwords(strtolower($row->getAlamat1()." ".$row->getAlamat2()." ".$row->getAlamat3()));
 						$telp = $row->getKodeAreaTelepon()." ".$row->getNomorTelepon();
 						$fax = $row->getKodeAreaFax()." ".$row->getNomorFax();
@@ -79,13 +73,6 @@
 	</div><!-- .wrapper-special -->
 	
 	<div>
-		<?php
-			function limit_words($string, $word_limit)
-			{
-				$words = explode(" ",$string);
-				return implode(" ",array_splice($words,0,$word_limit));
-			}
-		?>
 		<div class="full-w bg-white">
             <h2>
                 <span class="judul_section">Profil Kantor</span>
@@ -99,11 +86,11 @@
                         <?php
                             echo $namaLokasi."<br />";
                             echo $alamat."<br />";
-                            echo $telp."<br />";
-                            echo $fax;
+                            echo "Telp. ".$telp."<br />";
+                            echo "Fax. ".$fax;
                         ?>
                     </p>
-                    <a href="mailto:<?php echo $email;?>?Subject=Hello%20again" target="_top" class="btn btn-sendmail">Send Mail</a>
+                    <a href="mailto:<?php echo $email;?>?Subject=Call%20Kantor" target="_top" class="btn btn-sendmail">Send Mail</a>
                 </div><!--/ .section-right-60 -->
             </div><!--/ .description-width-66 -->
         </div><!--/ .full-w -->
@@ -121,7 +108,7 @@
                 </div><!--/ .heading -->
                 <img src="<?php echo $ag->getFotoAgent();?>" width="304" />
                 <div class="description">
-                    <a href="/detail-agen/<?php echo $ag->getO_key()."-".$ag->getO_id();?>">&gt; Selengkapnya</a>
+                    <a href="/detail-agent/<?php echo $ag->getO_key()."-".$ag->getO_id();?>">&gt; Selengkapnya</a>
                 </div>
             </div>
         <?php }?>

@@ -4,6 +4,27 @@
         width:100%;
         
     }
+	.btn-sendmail
+    {
+        margin: 0 auto;
+        padding: 5px 10px;
+        display: inline-block;
+        text-transform: uppercase;
+        background-color: #003781;
+        border: solid 1px #003781;
+        border-radius: 0;
+        color: white;
+        line-height: 1.5;
+    }
+
+    .btn-sendmail:hover,
+    .btn-sendmail:focus
+    {
+        color: white;
+        text-decoration: none;
+        background: #003da5;
+        border: solid 1px #003da5;
+    }
     
 </style>
 <?php
@@ -69,13 +90,7 @@
 	
 	
 	<div>
-		<?php
-			function limit_words($string, $word_limit)
-			{
-				$words = explode(" ",$string);
-				return implode(" ",array_splice($words,0,$word_limit));
-			}
-		?>
+		
 		<div class="full-w bg-white">
 
             <h2>
@@ -96,7 +111,7 @@
                         <br/>
 						
 					</p>
-					<a href="mailto:<?php echo $emailAgent; ?>?Subject=Hello%20again" target="_top">Send Mail</a>
+					<a href="mailto:<?php echo $emailAgent; ?>?Subject=Hello%20again" target="_top" class="btn btn-sendmail">Call Agent</a>
                 </div>
             </div>
         </div>
