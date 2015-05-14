@@ -12,16 +12,12 @@
             $TanggalPembuatan=$tglBuat_[2]."-".$tglBuat_[1]."-".$tglBuat_[0];
 	    	    
             $TanggalLahir = $_POST["tanggallahir"];
-			$tglLahir_ = explode("/", $TanggalPembuatan);
+			$tglLahir_ = explode("/", $TanggalLahir);
             $tglLahir_[0]; //day
             $tglLahir_[1]; //month
             $tglLahir_[2]; //year 
             $TanggalLahir=$tglLahir_[2]."-".$tglLahir_[1]."-".$tglLahir_[0];
 
-			echo $TanggalPembuatan."<br>";
-			echo $TanggalLahir."<br>";
-
-			die('test');
 			$Nama = $_POST["nama"];
             $Email = $_POST["email"];
 			$JenisKelamin = $_POST["sex"];
@@ -41,12 +37,13 @@
 			}
 	
 			$Calculation = ($rate*$AsuransiJiwa)/1000; //The Pattern of ALLIANZ
-               
-                //SetData
-	        $tglBuat = strtotime($TanggalPembuatan);
-			$date_tglBuat = new Pimcore_Date($tglBuat);//set date into pimcore format		
+            //SetData
+	        
+			$tglBuat = strtotime($TanggalPembuatan);
+			$date_tglBuat = new Pimcore_Date($TanggalPembuatan);//set date into pimcore format		
+
 			$tglLahir = strtotime($TanggalLahir);
-	        $date_tglLahir= new Pimcore_Date($tglLahir);//set date into pimcore formats		
+	        $date_tglLahir= new Pimcore_Date($TanggalLahir);//set date into pimcore formats		
 
 	        $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
 		
@@ -86,7 +83,8 @@
 		
 			$hasil = number_format($Calculation,0,",",".");
 			$document = '/email/email-tasbih';
-			$params = array('tglhitung' => $TanggalPembuatan,
+			$params = array(
+							'tglhitung' => $TanggalPembuatan,
 							'nama' => $Nama,
 							'email' => $Email,
 							'tgllahir' => $TanggalLahir,
