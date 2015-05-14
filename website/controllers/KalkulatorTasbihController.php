@@ -31,11 +31,14 @@
 	        $date_tglBuat = new Pimcore_Date($tglBuat);//set date into pimcore format		
 		$tglLahir = strtotime($TanggalLahir);
 	        $date_tglLahir= new Pimcore_Date($tglLahir);//set date into pimcore formats		
-	        $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
-		
+
 		echo $date_tglBuat;
 		echo $date_tglLahir;
 		die($Calculation);
+
+	        $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
+		
+		
                 $cookie = new Object_Tasbih();
                 $cookie->setTanggalPembuatan($date_tglBuat);
                 $cookie->setNama($Nama);
