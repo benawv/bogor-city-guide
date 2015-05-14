@@ -30,6 +30,10 @@
     {
         color: #999;
     }
+    .sidebar-font-green-h1{
+	color: #009a44;
+	font-weight: bold;	
+    }
 
 </style>
 <?php
@@ -70,7 +74,7 @@
 				<div class="sidebar">
 				    <div class="sidebar-item">
 					<div class="sidebar-item--header mb16">
-					    <h3>Baca Juga</h3>
+					    <h3 class="sidebar-font-green-h1">Baca Juga</h3>
 					</div><!--/ .sidebar-item--header -->
 					<div class="sidebar-item--content">
 					    <ul class="sidebar-nav">
