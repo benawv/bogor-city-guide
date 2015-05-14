@@ -59,9 +59,8 @@ class AgentController extends Website_Controller_Action {
     public function detailAgentAction(){
 		$this->enableLayout();
 		//$key = $this->_getParam('text');
-		//$id = $this->_getParam('id');
+		$id = $this->_getParam('id');
 		
-        $id= 1939;
 		//$kantor = Object_Abstract::getById($id);
 		$kondisi1 = array("condition" => "o_id = '".$id."'",
 						 "limit" => 1);
