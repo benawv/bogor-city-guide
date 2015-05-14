@@ -40,6 +40,9 @@
                
                 //SetData
 	        $tglBuat = strtotime($TanggalPembuatan);
+		echo $TanggalPembuatan;
+		echo $tglBuat;
+		die();
 		$date_tglBuat = new Pimcore_Date($tglBuat);//set date into pimcore format		
 		
 		$tglLahir = strtotime($TanggalLahir);
