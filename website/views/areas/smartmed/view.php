@@ -296,9 +296,14 @@
                             <label><strong>Payment Methods</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="1" id="payment_methods">
-                                <option value="Annualy">Annualy</option>
-                                <option value="Monthly">Monthly</option>
+                            <select class="form-control" required tabindex="1" name="payment_methods" id="payment_methods">
+                            <?php
+                                $cat = new Object_SmartmedPaymentType_List();
+                                foreach($cat as $payment)
+                                {
+                                    echo "<option value='".$payment->getPaymenttype()."'>".$payment->getPaymenttype()."</option>";
+                                }
+                            ?>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -335,6 +340,7 @@
                             <select class="form-control" required tabindex="4" id="ip">
                                 <option value="0">0%</option>
                                 <option value="10">10%</option>
+                                <option value="20">20%</option>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -347,6 +353,7 @@
                             <select class="form-control" required tabindex="5" id="mat">
                                 <option value="0">0%</option>
                                 <option value="10">10%</option>
+                                <option value="20">20%</option>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -359,6 +366,19 @@
                             <select class="form-control" required tabindex="6" id="out_den">
                                 <option value="0">0%</option>
                                 <option value="10">10%</option>
+                                <option value="20">20%</option>
+                            </select>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>UW Loading</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <select class="form-control" required tabindex="7" id="uwl">
+                                <option value="0">0%</option>
+                                <option value="25">25%</option>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -411,8 +431,8 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="2" id="sex">
-                                <option value="M">Male</option>
-                                <option value="F">Female</option>
+                                <option value="m">Male</option>
+                                <option value="f">Female</option>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -423,6 +443,15 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control datepicker" id="dob" placeholder="Date of Birth" tabindex="3" required>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label><strong>Calculation Date</strong></label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <input type="text" class="form-control datepicker" id="cd" placeholder="Calculation Date" tabindex="4" required>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -464,6 +493,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <!--
                             <tr>
                                 <td></td>
                                 <td>1</td>
@@ -475,7 +505,7 @@
                                     </select>
                                 </td>
                                 <td><input type="text" placeholder="Date of Birth" class="datepicker"></td>
-                                <td><input type="text" placeholder="Calculation Date" value="<?php echo date( 'd F Y' ); ?>"></td>
+                                <td><input type="text" placeholder="Calculation Date" class="datepicker" value="<?php echo date( 'd F Y' ); ?>"></td>
                                 <td>25</td>
                                 <td>
                                     <select>
@@ -514,10 +544,10 @@
                                 <td>1.234.567</td>
                                 <td>-</td>
                                 <td>1.2345.567</td>
-                            </tr>
-                            <?php for( $i = 1; $i < 5; $i++ ): ?>
+                            </tr>-->
+                            <?php /*for( $i = 1; $i < 5; $i++ ): ?>
                             <tr>
-                                <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                                <td><a href="#" class="edit">Edit</a> | <a href="#" class="add">Delete</a></td>
                                 <td><?php echo $i; ?></td>
                                 <td>Mohammed Ali</td>
                                 <td>M</td>
@@ -534,11 +564,11 @@
                                 <td>-</td>
                                 <td>1.2345.567</td>
                             </tr>
-                            <?php endfor; ?>
+                            <?php endfor; */?>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="16" class="text-right">0</td>
+                                <td colspan="16" id="j_premium" class="text-right">0</td>
                             </tr>
                             <tr>
                                 <td colspan="15" class="text-right">Stamp duty</td>
@@ -546,7 +576,7 @@
                             </tr>
                             <tr>
                                 <td colspan="15" class="text-right">Policy fee</td>
-                                <td class="text-right">Rp000.000.000,0</td>
+                                <td class="text-right">Rp 30.000,0</td>
                             </tr>
                             <tr>
                                 <td colspan="15" class="text-right">Family Discount</td>
@@ -657,7 +687,217 @@
         }
 
     });
+
+    
+    function kalk(age,sex,code,coshare,withval){
+        var payment = $("#payment_methods").val();
+        var fd = $("#family_discount").val();
+        var ncd = $("#no_claim_discount").val();
+        var uwl = $("#uwl").val();
+        var value = 0;
+        var form_data = {
+                payment: payment,
+                fd: fd,
+                ncd: ncd,
+                age: age,
+                sex: sex,
+                code: code,
+                coshare: coshare,
+                uwl: uwl,
+                ajax:1
+        };
+        $.ajax({
+                async: false,
+                url : "calc_smartmed/"+payment+"_"+fd+"_"+ncd+"_"+age+"_"+sex+"_"+code+"_"+coshare+"_"+uwl,
+                type : 'POST',
+                //data : form_data,
+                beforeSend: function () {
+                },
+                success: function(msg){
+                    value = parseInt(msg);
+                },error: function (xhr, ajaxOptions, thrownError){
+                }
+        });
+        if(withval == 1){
+            var disc = value * (25/100);
+            value += disc ;
+        }
+        return value;
+    }
+
+    function jumlah(){
+        var rowCount = $('table.table tbody tr').length;
+        var total = stamp = totfd = jml = totalwithoutuwl = 0;
+        var fd = $("#family_discount").val();
+        for(var i = 0; i < rowCount; i++){
+            total += parseInt($('table.table tbody').children()[0].children[15].innerHTML);
+            totalwithoutuwl += parseInt($('table.table tbody').children()[0].children[16].innerHTML);
+        }
+        console.log(total);
+        $('table.table tfoot tr:first').children()[0].innerHTML = total;
+        if(total>=250000 && total<1000000) stamp = 3000;
+        else if(total>=1000000) stamp = 6000;
+        $('table.table tfoot').children()[1].children[1].innerHTML = stamp;
+
+        if(fd == "Y" && rowCount>1) totfd = 0,05 * totalwithoutuwl;
+        else totfd = 0;
+        $('table.table tfoot').children()[3].children[1].innerHTML = totfd;
+
+        jml = stamp + total + 30000 - totfd;
+        $('table.table tfoot').children()[4].children[1].innerHTML = 'Rp. ' + jml + ',0';
+        return total;
+    }
+    
+    function update(){
+        var rowCount = $('table.table tbody tr').length;
+        var total = 0;
+        for(var i = 1; i<=rowCount; i++){
+            total += $("table.table tbody").children()[i].children[15].innerHTML;
+        }
+        $("table.table tfoot").children()[0].children[1].innerHTML = total;
+        return 0;
+    }
+
+    $("#Add").click(function(){
+        var payment = $("#payment_methods").val();
+
+        var total = "total";
+        var opdenp = "-";
+        var matp = "matpremium";
+        var ipp = "ip premium";
+        var uwl = "25%";
+        var pop = "-";
+        var pmat = "A";
+        var pip = "A";
+        var sts_allowed = "NEW BUSINESS ";
+        var name = $("#name").val();
+        var dob = $("#dob").val();
+        var cd = $("#cd").val();
+
+        var date = dob.split('/');
+        var y1 = date[2];
+        var d1 = date[1];
+        var m1 = date[0];
+
+        var date2 = cd.split('/');
+        var y2 = date2[2];
+        var d2 = date2[1];
+        var m2 = date2[0];
+
+        var start = new Date(y1,m1,d1);
+        var end = new Date(y2,m2,d2);
+        var selisih = Date.parse(end.toGMTString()) - Date.parse(start.toGMTString());
+        
+        var age = Math.round(selisih/(1000*60*60*24*365));
+        var sex = $("#sex").val();
+        var ip = $("#ip").val();
+        var mat = $("#mat").val();
+        var outden = $("#out_den").val();
+
+        ipp = kalk(age,sex,"ip",ip,1);
+        matp = kalk(age,sex,"ma",mat,1);
+        opdenp = kalk(age,sex,"od",outden,1);
+        total = parseInt(ipp)+parseInt(matp)+parseInt(opdenp);
+        ipp = kalk(age,sex,"ip",ip,0);
+        matp = kalk(age,sex,"ma",mat,0);
+        opdenp = kalk(age,sex,"od",outden,0);
+        totalwithout = parseInt(ipp)+parseInt(matp)+parseInt(opdenp);
+        //console.log(rowCount);
+        var rowCount = $('table.table tbody tr').length;
+        var no = parseInt(rowCount)+1;
+        $("table.table tbody").append("<tr>"+
+                "<td><a data-id='"+no+"' onclick='edit(this)'>Edit</a> | <a data-id='"+no+"' onclick='delrow(this)'>Delete</a></td>"+
+                "<td>"+no+"</td>"+
+                "<td><input type='text' placeholder='Name' value='"+name+"' class='display'></td>"+
+                "<td><select value='"+sex+"'>"+
+                        "<option value='M'>M</option>"+
+                        "<option value='F'>F</option>"+
+                    "</select></td>"+
+                "<td><input type='text' placeholder='Date of Birth' name='dob2' id='dob2' class='datepicker' value='"+m1+"/"+d1+"/"+y1+"'></td>"+
+                "<td><input type='text' placeholder='Calculation Date' name='cd2' id='cd2' class='datepicker' value='"+m2+"/"+d2+"/"+y2+"'></td>"+
+                "<td>"+age+"</td>"+
+                "<td>NEW BUSINESS</td>"+
+                "<td><select><option value='A'>A</option><option value='B'>B</option><option value='C'>C</option></select></td>"+
+                "<td><select><option value='A'>A</option><option value='B'>B</option><option value='C'>C</option></select></td>"+
+                "<td><select><option value='-'>-</option></select></td>"+
+                "<td><select><option value='0'>0%</option><option value='25'>25%</option><option value='50'>50%</option><option value='75'>75%</option></select></td>"+
+                "<td>"+ipp+"</td>"+
+                "<td>"+matp+"</td>"+
+                "<td>"+opdenp+"</td>"+
+                "<td>"+total+"</td>"+
+                "<td style='display:none;'>"+totalwithout+"</td>"+
+            "</tr>");
+        jumlah();
+    });
+    
+    $(document).on('focus',".datepicker", function(){ //bind to all instances of class "date". 
+       $(this).datepicker({
+                changeMonth: true,
+                changeYear: true,
+                maxDate: '0'
+            });
+    });
+    
+    function edit(){
+        var id = $(event.target).attr("data-id");
+
+        var total = "total";
+        var opdenp = "-";
+        var matp = "matpremium";
+        var ipp = "ip premium";
+        var uwl = "25%";
+        var pop = "-";
+        var pmat = "A";
+        var pip = "A";
+        var sts_allowed = $("table.table tbody").children()[id].children[2].children[0].value;
+        var name = $("table.table tbody").children()[id].children[2].children[0].value;
+        var sex = $("table.table tbody").children()[id].children[3].children[0].value;
+        var dob = $("table.table tbody").children()[id].children[4].children[0].value;
+        var cd = $("table.table tbody").children()[id].children[5].children[0].value;
+
+        ipp = kalk(15,pip,pmat,'a',uwl,sex);
+        //ipp
+        $("table.table tbody").children()[id].children[12].innerHTML = ipp;
+        //matp
+        $("table.table tbody").children()[id].children[13].innerHTML = 12;
+        //opden
+        $("table.table tbody").children()[id].children[14].innerHTML = 123;
+        //total
+        $("table.table tbody").children()[id].children[15].innerHTML = 1234;
+
+        update();
+
+        return 0;
+    }
+    
+    function delrow(){
+        alert($(event.target).attr("data-id"));
+        var id = parseInt($(event.target).attr("data-id"))-1;
+        $("table.table tbody").children()[id].innerHTML = "";
+        jumlah();
+        return 0;
+    }
 </script>
+
+<style type="text/css">
+    /*table.table tbody tr td span.display
+    {
+        display: inherit;
+    }
+    table.table tbody tr td span.edit
+    {
+        display: none;
+    }
+
+    table.table tbody tr td input.display
+    {
+        display: none;
+    }
+    table.table tbody tr td input.edit
+    {
+        display: inherit;
+    }*/
+</style>
 
 <!--
 </div>

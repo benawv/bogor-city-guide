@@ -1,46 +1,57 @@
-<div class="wrapper clearfix">
-	<div id="agent-locator">
-		<h2><?php echo $this->input("lokasi_pemasaran", array("width" => 255));?></h2>
-		<div id="maparea">
+<!DOCTYPE html>
+<html lang="<?php echo $this->language; ?>">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Cache-control" content="public" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<?php echo $this->cusMetaTitle.$this->cusMetaDesc.$this->cusMetaImage;?>
+	<?php
+        // portal detection => portal needs an adapted version of the layout
+        $isPortal = false;
+        if($this->getParam("controller") == "content" && $this->getParam("action") == "portal") {
+            $isPortal = true;
+        }
 
-		</div>
+        // output the collected meta-data
+        if(!$this->document) {
+            // use "home" document as default if no document is present
+            $this->document = Document::getConcreteByPath('/');
+        }
+
+        if($this->document->getTitle()) {
+            // use the manually set title if available
+            $this->headTitle()->set($this->document->getTitle());
+        }
+
+        if($this->document->getDescription()) {
+            // use the manually set description if available
+            $this->headMeta()->appendName('description', $this->document->getDescription());
+        }
+        
+        if($this->document->getKeywords()) {
+            $this->headMeta()->appendName('keywords', $this->document->getKeywords());
+        }
+
+        /* $this->headTitle()->append("Asuransi Indonesia Terbaik");
+        $this->headTitle()->setSeparator(" : "); */
+
+        echo $this->headTitle();
+        echo $this->headMeta();
+        
+    ?>
+	
+	<?php echo $this->template("includes/metadata.php")?>
+	
+</head>
+
+<body>
+	<?php echo $this->template("includes/tasbih/header.php")?>
+	<div role="main" class="main noPaddingTop">
+		<?php echo $this->layout()->content; ?>
 	</div>
-	<?php //echo $this->area("mapArea", array("type" => "map-point")); ?>
-	<div id="map-shortcut">
-		<h3>Pilih Jenis Kantor:</h3>
-			<select class="combo kantor">
-				<option value="">Pilih Semua</option>
-			<?php	$jenis = Object_MarketingOfficeJenis::getList(array("orderKey" => array("jenis"), "order" => array("asc")));
-				foreach($jenis as $row)
-				{
-			?>
-					<option value="<?php echo $row->getId();?>"><?php echo $row->getJenis();?></option>
-			<?php 	} ?>
-			</select>
-			
-		<h3>Pilih wilayah:</h3>
-			
-			<select class="combo wilayah">
-			  <option value="-2.6806246,115.8034375,5,">Pilih Semua</option>
-			  <!--<option item="jakarta" value="-6.185772, 106.810804, 11">Jakarta</option>
-			  <option value="-2.991103, 104.756701, 12">Sumatera Selatan</option>
-			  <option value="0.535365, 101.431576, 12">Riau</option>
-			  <option value="-0.494187, 117.156903, 12"">Samarinda</option>
-			  <option value="-1.277198, 116.840546, 12">Balikpapan</option>
-			  <option value="1.482009, 124.835022, 15">Manado</option>
-			  <option value="-6.925385, 107.630928, 8">Jawa Barat</option>
-			  <option value="-6.9667, 110.4167, 8">Jawa Tengah</option>
-			  <option value="-7.755218, 113.218231, 8">Jawa Timur</option>
-			  <option value="-8.683207, 115.527269, 9">Bali dan Nusa Tenggara</option>-->
-			  <?php	$wilayah = Object_MarketingOfficeWilayah::getList(array("orderKey" => array("namaWilayah"), "order" => array("asc")));
-				foreach($wilayah as $row)
-				{
-			?>
-					<option value="<?php echo $row->getLatitude().",".$row->getLongitude().",".$row->getRuangLingkup().",".$row->getId();?>"><?php echo $row->getNamaWilayah();?></option>
-			<?php 	} ?>
-			</select>
-	</div>
-</div>
+	<?php echo $this->template("includes/footer.php"); ?>
+</body>
 <script type="text/javascript">
 	var map = new Object();
 	var markers = [];
@@ -131,7 +142,51 @@
 				    });
 			    }
 			}
-		})		
+		})
+		/*
+		$.ajax({
+			"url" : BASEURL + "data/" + valueData + ".php",
+			"data" : "",
+			"type" : "GET",
+			"success" : function(responseData){
+				var listPlace = responseData;
+				var image = '_assets/images/blue-with-shadow.png';
+				var marker = [];
+				
+				for(i=0; i<listPlace.length; i++){
+					 if ((valueData=="allianz-life") && (i==listPlace.length-1))
+					 {
+						 var marker = new google.maps.Marker({
+							position: new google.maps.LatLng(listPlace[i].latitude, listPlace[i].longitude),
+							draggable: false,
+							icon: image,
+							map: map,
+							html: listPlace[i].data_content
+						});
+					}
+					else
+					{
+						var marker = new google.maps.Marker({
+							position: new google.maps.LatLng(listPlace[i].latitude, listPlace[i].longitude),
+							draggable: false,
+							map: map,
+							html: listPlace[i].data_content
+						});
+					}
+					markers.push(marker);
+				}
+				
+				for(x=0;x < markers.length;x++){
+					var marker = markers[x];
+					google.maps.event.addListener(marker, 'click', function () {
+						infowindow.setContent(this.html);
+						infowindow.open(map, this);
+					});
+				}
+			}
+		})
+		*/
+		
 	}
 	
 	function MapLoad2(k,w){
@@ -220,3 +275,59 @@
 	  });
       
 </script>
+<?php if(!$this->editmode) { ?>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('li.aktif .nav_menu div').css('display', 'none');
+		$('li .nav_menu .white_image').css('display', 'none');
+		$('li.aktif .nav_menu .white_image').css('display', 'block');
+		
+		var hash = window.location.hash.substring(1);
+		if(hash!=''){
+			var target = '#modal-'+hash;
+			$(target).modal('show');
+		}
+		$(".pagenav .navi li").click(function(){
+			$(".pagenav .navi li").removeClass('aktif');
+			$(".pagenav .navi li .nav_menu div").css('display','block');
+			$(".pagenav .navi li .nav_menu .white_image").css('display','none');
+			$(this).addClass('aktif');
+			$('li.aktif .nav_menu div').css('display', 'none');
+			$('li.aktif .nav_menu .white_image').css('display', 'block');
+			
+			var data = $(this).attr('class');
+			var id = data.split(' ');
+			//alert($(".heading").offset().top);
+			if(Math.floor( $(".heading").offset().top)<=212)
+			{
+				$('html, body').animate({scrollTop:$("#"+id[0]).offset().top-190}, 500);
+			}
+			else
+			{
+				$('html, body').animate({scrollTop:$("#"+id[0]).offset().top-90}, 500);
+			}
+		});
+		$(".hideme").hide();
+		$(".v").click(function(){
+			$(this).siblings('.hideme').slideToggle();
+			if($(this).find('.xicon').hasClass('down')){
+				$(this).find('.xicon').removeClass('down')
+				$(this).find('.xicon').addClass('up')
+			}
+			else{
+				$(this).find('.xicon').removeClass('up')
+				$(this).find('.xicon').addClass('down')
+			}
+		});
+	});
+</script>
+<?php }
+
+    else{
+?>
+    <!--SETTING LOGO 125-->
+    <style type="text/css">
+	.notepadKanan{display: none !important;}
+    </style>
+<?php }?>
+</html>

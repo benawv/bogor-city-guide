@@ -30,10 +30,9 @@
 									/*'thumbnail' => 'product'*/))?>
 		</div>
 		<div class="section-right-60">
-			<textarea rows="20" cols="30">
-                
+			<textarea rows="10" cols="50">
+               
             </textarea>
-            
 		</div>
 	</div>
 </div>

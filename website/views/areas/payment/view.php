@@ -16,10 +16,11 @@
 
 <style>
     /* Override AJFC's feature box color */
-    .box-dent--inner{ background: #009a44; }
-    .box-dent::before{ border-top: 28px solid #009a44 !important;}
-    .btn-tasbih{ background: #009a44 !important; border: none; border-radius:0; }
-    .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
+    .header-calc{background: #0077c8;}
+    .box-dent--inner{ background: #0077c8; }
+    .box-dent::before{ border-top: 28px solid #0077c8 !important;}
+    .btn-tasbih{ background: #0077c8 !important; border: none; border-radius:0; }
+    .btn-tasbih:hover, .btn-tasbih:focus{ background: #0077c8 !important;  }
 
     .table-responsive
     {
@@ -188,7 +189,7 @@
         padding: 12px 24px;
         margin: 0 auto;
         position: relative;
-        background: #009a44;
+        background: #0077c8;
         color: white;
         text-align: center;
         text-decoration: none;

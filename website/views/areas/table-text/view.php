@@ -1,8 +1,8 @@
 <header>
     
-    <div class="background">
-        <?php $asets=Asset::getByPath('/ajfc/background/bgtanya-jawab.jpg');?>
-        <img src="<?php echo $asets; ?>" alt="background tanya jawab" class="img-responsive" />
+    <div class="background" style="pointer-events:visible;">
+        <!--<img src="/website/ajfc/img/bg-home.jpg" alt="Home" class="img-responsive" />-->
+        <?php echo $this->image("Banner-Tasbih"); ?>
     </div><!--/ .background -->
     
 </header>
@@ -54,18 +54,10 @@
                 <div class="sidebar">
                     <div class="sidebar-item">
                         <div class="sidebar-item--header mb16">
-                            <h3>AJFC 2015</h3>
+                            <h3><?php echo $this->input('title_page_tanyajawab')?></h3>
                         </div><!--/ .sidebar-item--header -->
                         <div class="sidebar-item--content">
-                            <ul class="sidebar-nav">
-                                <li><a href="/">Beranda</a></li>
-                                <li><a href="/galeri-ajfc">Galeri</a></li>
-                                <li><a href="/proses-seleksi">Proses Seleksi</a></li>
-                		<li class="active"><a href="/tanya-jawab">Tanya Jawab</a></li>
-                		<li><a href="/kebijakan-privasi">Kebijakan Privasi</a></li>
-                                <li><a href="/pendaftaran">Pendaftaran</a></li>
-				<li><a href="/daftar-peserta">Daftar Peserta</a></li>                                
-                            </ul>
+			    <?php echo $this->wysiwyg('sidebar')?>
                         </div><!--/ .sidebar-item--content -->
                     </div><!--/ .sidebar-item -->
                     

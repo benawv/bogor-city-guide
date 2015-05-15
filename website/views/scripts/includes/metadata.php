@@ -10,7 +10,7 @@
 <!-- css -->
 
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
-<!--<link rel="stylesheet" type="text/css" media="screen" id="bootstrap-css" href="/website/static/css/bootstrap.css">-->
+<link rel="stylesheet" type="text/css" media="screen" id="bootstrap-css" href="/website/static/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
 <!--<link rel="stylesheet" type="text/css" media="screen" id="flexslider-css" href="/website/static/css/flexslider.css">-->
 <link rel="stylesheet" type="text/css" media="screen" id="main-css" href="/website/static/css/main.css">
@@ -104,7 +104,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	function loadScript() {
 		var script = document.createElement('script');
 		script.type = 'text/javascript';
-		script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAkjnwleWwVfhCyd45V9A2_XBeAOqMDhrU&sensor=true' +
+		script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAkjnwleWwVfhCyd45V9A2_XBeAOqMDhrU&sensor=true&libraries=places' +
 		    '&callback=initialize';
 		document.body.appendChild(script);
 	      }
