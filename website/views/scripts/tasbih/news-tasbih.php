@@ -61,6 +61,10 @@
 		
 				    <div class="main-content--header">
 					<h1 class="mb12"><?php echo $items->title; ?></h1>
+					<h5>
+						<span><a href="/">Home </a></span>
+						<?php echo $this->navigation()->breadcrumbs()->setPartial(array('includes/tasbih/breadcrumb-partial.php', 'website'));?>
+					</h5>
 					<p class="meta">Posted on <?php echo $items->newsdate; ?></p>
 				    </div><!--/ .main-content--header -->
 				

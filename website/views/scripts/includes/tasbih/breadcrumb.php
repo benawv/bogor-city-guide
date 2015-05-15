@@ -5,13 +5,13 @@
 	$key = $this->document->getKey();
 	// get root node if there is no document defined (for pages which are routed directly through static route)
     if(!$this->document instanceof Document_Page) {
-        $this->document = Document::getById(1);
+        $this->document = Document::getById(1350);
     }
  
     // get the document which should be used to start in navigation | default home
     $navStartNode = $this->document->getProperty("navigationRoot");
     if(!$navStartNode instanceof Document_Page) {
-        $navStartNode = Document::getById(1);
+        $navStartNode = Document::getById(1350);
     }
  
     //this is used as id prefix for the html menu element
@@ -23,7 +23,7 @@
     $this->navigation()->breadcrumbs()->setMinDepth(0);
     
 ?>
-		<h5>
+		<!--<h5>
 			<span><a href="/">Home </a></span>
-			<?php echo $this->navigation()->breadcrumbs()->setPartial(array('includes/breadcrumb-partial.php', 'website'));?>
-		</h5>
+			<?php //echo $this->navigation()->breadcrumbs()->setPartial(array('includes/tasbih/breadcrumb-partial.php', 'website'));?>
+		</h5>-->
