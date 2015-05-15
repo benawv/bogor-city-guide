@@ -120,7 +120,7 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="DOB" value="" placeholder="Tanggal Lahir" />
-                            <label id="notif-asuransijiwa" style="display:none; color: #f00;">
+                            <label id="notif-DOB" style="display:none; color: #f00;">
                                 Mohon maaf inputan yang Anda masukkan belum benar
                             </label>
                         </div><!--/ .col-md-4 -->
@@ -131,7 +131,7 @@
                             <label>No Handphone (Min. 8 digit)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="phone" class="form-control" id="nohp" name="nohp" placeholder="0812345678" required />
+                            <input type="phone" class="form-control" id="nohp" name="nohp" placeholder="0812345678" required onfocusout="this.value=validateNumber(this.value)" />
                             <label id="notifNoHP" style="display:none; color: #f00;">
                                 Mohon maaf No HP yang Anda masukkan belum benar
                             </label>
@@ -144,7 +144,7 @@
                             <label>Email</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required />
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required onfocusout="this.value=validateEMAIL(this.value)" />
                             <label id="notifemail" style="display:none; color: #f00;">
                                 Mohon maaf email yang Anda masukkan belum benar
                             </label>
@@ -170,6 +170,9 @@
                                 
                             
                             </select>
+                            <label id="notifProvinsi" style="display:none; color: #f00;">
+                                Mohon maaf inputan yang Anda masukkan belum benar
+                            </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -229,6 +232,21 @@
             var nohp=$('#nohp').val();
             var prov=$('#provinsi_id').val();
             
+            //alert(bod);
+            
+            if( nama == '' || email == '' || nohp == '' || bod == '' ||  nohp.length <= 8 || prov == ''){
+                    if( nama == ''  )
+                        document.getElementById('notif-nama').style.display= 'block';
+                    if( email == '' )
+                        document.getElementById('notifemail').style.display= 'block';
+                    if( bod == '')
+                        document.getElementById('notif-DOB').style.display= 'block';
+                    if( prov == '' )
+                        document.getElementById('notif-tgllahir').style.display= 'block';
+                    if( nohp.length <= 8 || nohp == '')
+                        document.getElementById('notifNoHP').style.display='block';
+                    alert("Mohon Periksa Inputan Anda");
+            }else{
             e.preventDefault();
             $.ajax({
                  "url" : "/inquriy-tasbih/",
@@ -243,6 +261,7 @@
                     alert("Inquiry Send");
                  }
              });
+            }
             e.preventDefault();
         });
 
@@ -273,6 +292,45 @@
         });
         
     });
+    
+    function validateEMAIL(surat)
+    {
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        if(!re.test(surat))
+        {
+            document.getElementById('notifemail').style.display= 'block';
+            return surat;
+        }
+        else
+        {
+            document.getElementById('notifemail').style.display= 'none';
+            return surat;
+        }
+    };
+    
+    $('#nohp').bind("input", function(){
+       var re = /^[0-9]*$/;
+
+        var value = $('#nohp').val();
+        $(this).val(value);
+        if(!re.test(value)){
+            document.getElementById('notifNoHP').style.display= 'block';
+            $('#nohp').val('');
+        }else{
+            document.getElementById('notifNoHP').style.display= 'none';
+        }
+
+    });
+    
+    function validateNumber(value){
+        if(value.length <= 8 ){
+            document.getElementById('notifNoHP').style.display= 'block';
+            return value;
+        }else{
+            document.getElementById('notifNoHP').style.display= 'none';
+            return value;
+        }
+    };
 </script>
 
 	</div>
