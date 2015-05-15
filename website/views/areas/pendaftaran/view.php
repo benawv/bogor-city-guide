@@ -4,13 +4,6 @@
         <?php $asets=Asset::getByPath('/ajfc/background/bgpendaftaran.jpg');?>
         <img src="<?php echo $asets; ?>" alt="background pendaftaran" class="img-responsive" />
     </div><!--/ .background -->
-	<style>
-		@media only screen and (max-width:1023px){
-			.main-content--header p iframe{
-				height: 2700px;
-			}
-		}
-	</style>
     
 </header>
 
@@ -34,3 +27,11 @@
 </section>
 
 </div><!--/ .page-wrapper-outer -->
+<script>
+	$(document).ready(function(){
+		var wid = $(window).width();
+		if (wid < 1024) {
+			$(".main-content p iframe").attr("height", "2700");
+		}
+	});
+</script>
