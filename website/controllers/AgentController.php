@@ -1,6 +1,7 @@
 <?php
 
 class AgentController extends Website_Controller_Action {
+        
 	
 	public function mapAgentAction() {
 		$k = $_POST["kordinat"];
@@ -23,6 +24,7 @@ class AgentController extends Website_Controller_Action {
 						  "kodeAreaTelepon" => $entry->kodeAreaTelepon,
 						  "nomorTelepon" => $entry->nomorTelepon,
 						  "kodeAreaFax" => $entry->kodeAreaFax,
+						  "nomorFax" => $entry->nomorFax,
 						  "o_key" => $entry->o_key,
 						  "o_id" => $entry->o_id
 				);
@@ -53,4 +55,28 @@ class AgentController extends Website_Controller_Action {
 		$this->view->kantor = $kantor;
 		$this->view->agent = $agent;
 	}
+    
+    public function detailAgentAction(){
+		$this->enableLayout();
+		//$key = $this->_getParam('text');
+		$id = $this->_getParam('id');
+		
+		//$kantor = Object_Abstract::getById($id);
+		$kondisi1 = array("condition" => "o_id = '".$id."'",
+						 "limit" => 1);
+		$data = Object_AgentLocatorData::getList($kondisi1);
+
+		/*$kondisi2 = array("condition" => "kantor = ',".$id.",'",
+						 "limit" => 6);
+		$agent = Object_AgentLocatorData::getList($kondisi2);
+		if(count($kantor) == 0)
+		{
+			$this->redirect("/");
+		}
+		*/
+		//$this->view->kantor = $kantor;
+		$this->view->agent = $data;
+
+	}
+
 }

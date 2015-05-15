@@ -1,12 +1,6 @@
 <?php
     $kantor = $this->kantor;
     $agent  = $this->agent;
-
-    function limit_words($string, $word_limit)
-    {
-        $words = explode(" ",$string);
-        return implode(" ",array_splice($words,0,$word_limit));
-    }
 ?>
 
 <style>
@@ -43,17 +37,16 @@
         <div id="slideshow" class="clearfix">
             <ul class="slides">
                 <?php
-                    $z = 0;
-                    foreach( $kantor as $row )
-                    {
-                        $fotoProf   = $row->getFotoKantor()->path.$row->getFotoKantor()->filename;
-                        $namaLokasi = $row->getNamaLokasi();
-                        $alamat     = $row->getAlamat1()." ".$row->getAlamat2()." ".$row->getAlamat3();
-                        $telp       = $row->getKodeAreaTelepon()." ".$row->getNomorTelepon();
-                        $fax        = $row->getKodeAreaFax()." ".$row->getNomorFax();
-                        $x          = count($row->getFotoGaleriKantor()->items);
-                        for( $z; $z < $x; $z++ )
-                        {
+					$z = 0;
+                    foreach($kantor as $row){
+						$fotoProf = $row->getFotoKantor()->path.$row->getFotoKantor()->filename;
+						$namaLokasi = ucwords(strtolower($row->getNamaLokasi()));
+						$alamat = ucwords(strtolower($row->getAlamat1()." ".$row->getAlamat2()." ".$row->getAlamat3()));
+						$telp = $row->getKodeAreaTelepon()." ".$row->getNomorTelepon();
+						$fax = $row->getKodeAreaFax()." ".$row->getNomorFax();
+						$x = count($row->getFotoGaleriKantor()->items);
+						$email = $row->getEmailKantor();
+						for($z;$z<$x;$z++){
                 ?>
                             <li>
                                 <div class="slide">
@@ -76,13 +69,14 @@
                     }
                 ?>
             </ul>
-        </div><!--/ #slideshow -->
-    </div><!--/ .wrapper-special -->
-
-    <div>
-
-        <div class="full-w bg-white">
-            <h2><span class="judul_section">Profil Kantor</span></h2>
+            </div>
+	</div><!-- .wrapper-special -->
+	
+	<div>
+		<div class="full-w bg-white">
+            <h2>
+                <span class="judul_section">Profil Kantor</span>
+            </h2>
             <div class="description width-66">
                 <div class="section-left-40">
                     <img src="<?php echo $fotoProf;?>" width="226" />
@@ -92,11 +86,11 @@
                         <?php
                             echo $namaLokasi."<br />";
                             echo $alamat."<br />";
-                            echo $telp."<br />";
-                            echo $fax;
+                            echo "Telp. ".$telp."<br />";
+                            echo "Fax. ".$fax;
                         ?>
                     </p>
-                    <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top" class="btn btn-sendmail">Send Mail</a>
+                    <a href="mailto:<?php echo $email;?>?Subject=Call%20Kantor" target="_top" class="btn btn-sendmail">Send Mail</a>
                 </div><!--/ .section-right-60 -->
             </div><!--/ .description-width-66 -->
         </div><!--/ .full-w -->
@@ -114,11 +108,10 @@
                 </div><!--/ .heading -->
                 <img src="<?php echo $ag->getFotoAgent();?>" width="304" />
                 <div class="description">
-                    <a href="#">&gt; Selengkapnya</a>
-                </div><!--/ .description -->
-            </div><!--/ .item -->
-        <?php } ?>
-        </div><!--/ .items-container -->
-    </div>
-
-</div><!--/ .container -->
+                    <a href="/detail-agent/<?php echo $ag->getO_key()."-".$ag->getO_id();?>">&gt; Selengkapnya</a>
+                </div>
+            </div>
+        <?php }?>
+		</div>
+	</div>
+</div>
