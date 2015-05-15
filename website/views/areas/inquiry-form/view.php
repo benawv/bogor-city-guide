@@ -112,7 +112,7 @@
                             <label>DOB</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="DOB" value="" placeholder="DOB" />
+                            <input type="text" class="form-control" id="DOB" value="" placeholder="Tanggal Lahir" />
                             <label id="notif-asuransijiwa" style="display:none; color: #f00;">
                                 Mohon maaf inputan yang Anda masukkan belum benar
                             </label>
@@ -183,8 +183,6 @@
 <link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
 <script src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="/website/static/mobilku/jquery-ui.js" type="text/javascript"></script>
-
-
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 
 
@@ -236,7 +234,6 @@
                           "&prov="+prov,
                  "success" : function(response){
                     alert("Inquiry Send");
-                    console.log(response);
                  }
              });
             e.preventDefault();
@@ -261,6 +258,13 @@
                 $('html, body').animate({scrollTop:$("#"+id[0]).offset().top-90}, 500);
             }
         });
+        
+        $('#DOB').datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-100:+0"
+        });
+        
     });
 </script>
 
