@@ -63,6 +63,13 @@
     .box-dent::before{ border-top: 28px solid #009a44 !important;}
     .btn-tasbih{ background: #009a44 !important; }
     .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
+    
+    @media only screen and (min-width: 960px){
+        body {
+          font-size: initial !important;
+        }
+    }
+
 </style>
 
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
