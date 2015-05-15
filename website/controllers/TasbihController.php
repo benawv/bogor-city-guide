@@ -20,7 +20,7 @@ class TasbihController extends Website_Controller_Action {
 	    $tlp= $_POST["nohp"];
 	    $prov = $_POST["prov"];
             
-            $o_key=str_replace(' ', '_', $nama);		
+            $o_key=str_replace(' ', '_', strtolower($nama));		
 	    $getId=Object_Abstract::getByPath('/tasbih-inquiry/');//get folder id
 	    $objProv = Object_Abstract::getById($prov);
             $inquiry = new Object_TasbihInquiry();
