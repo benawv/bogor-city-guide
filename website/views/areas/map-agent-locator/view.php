@@ -25,7 +25,7 @@
     #agent-locator .searchbox > input[type="search"],
     #agent-locator .searchbox > input[type="text"]
     {
-        width: 80%;
+        width: 78%;
         border: solid 1px #ddd;
         font-size: larger;
         padding: 12px 24px;
@@ -35,7 +35,7 @@
 
     #agent-locator .searchbox > button.search-btn
     {
-        width: 19%;
+        width: 20%;
         margin: 0 auto;
         font-size: larger;
         padding: 12px 24px;
@@ -46,6 +46,26 @@
         border-radius: 0;
         color: white;
         line-height: 1.5;
+        float: right;
+    }
+
+    /* Respsonsive */
+
+    @media ( max-width: 767px )
+    {
+        #agent-locator .searchbox > input[type="search"],
+        #agent-locator .searchbox > input[type="text"]
+        {
+            width: 100%;
+            display: block;
+        }
+
+        #agent-locator .searchbox > button.search-btn
+        {
+            width: 100%;
+            display: block;
+            margin-top: 16px;
+        }
     }
 
 </style>
@@ -59,6 +79,7 @@
             <button type="button" name="search-btn" id="search-btn" class="search-btn">
                 Cari Agen <i class="fa fa-search"></i>
             </button>
+            <div class="clearfix"></div>
         </div><!--/ .searchbox -->
         <div id="maparea"></div>
     </div><!--/ #agent-locator -->
