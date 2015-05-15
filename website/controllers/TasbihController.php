@@ -16,7 +16,8 @@ class TasbihController extends Website_Controller_Action {
             $nama = $_POST["nama"];
 	    $kelamin = $_POST["kelamin"];
 	    $bod = $_POST["bod"];
-	    $email = $_POST["email"];
+	    $date_tglLahir= new Pimcore_Date($bod);//set date into pimcore formats	
+            $email = $_POST["email"];
 	    $tlp= $_POST["nohp"];
 	    $prov = $_POST["prov"];
             
@@ -26,7 +27,7 @@ class TasbihController extends Website_Controller_Action {
             $inquiry = new Object_TasbihInquiry();
             $inquiry->setNama($nama);
             $inquiry->setKelamin($kelamin);
-            $inquiry->setBod($bod);
+            $inquiry->setBod($date_tglLahir);
             $inquiry->setEmail($email);
             $inquiry->setTlp($tlp);
             $inquiry->setProvinsi($objProv);
