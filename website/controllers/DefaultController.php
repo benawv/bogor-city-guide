@@ -90,15 +90,18 @@ class DefaultController extends Website_Controller_Action {
 	}
 	
 	public function loginAsnCenterAction(){
-		session_start();
+		
+		$session = new Zend_Session_Namespace();
+		//session_start();
 		$pass = $_POST["password"];
 		if($pass == "asnlayananprima")
 		{
-				$_SESSION["loginCenter"] = "Yes";
+				$session->verified = true;
+				//$_SESSION["loginCenter"] = "Yes";
 				$this->_redirect("/asn/asn-digital-download-center");
 		}
 		else{
-				$_SESSION["loginCenter"] = "No";
+				//$_SESSION["loginCenter"] = "No";
 				$this->_redirect("/asn/login-asn-center");
 		}
 		
