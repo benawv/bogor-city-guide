@@ -99,6 +99,7 @@
 						$i = 0;
 						foreach($page->getPages() as $subpage)
 						{
+						if($subpage->getDocument()->getProperty('navigation_title') != ""){
 					?>
 								<ul class="<?php echo $i==0?'noborder':'' ?>">
 									<li class="menutitle"><span class="clickPage" onclick="link('<?php echo $subpage->getUri()?>','')"><?php echo $subpage->getDocument()->getProperty('navigation_title');?></span></li>
@@ -129,6 +130,7 @@
 									?>
 								</ul>
 					<?php
+						}
 							$i++;
 						}
 					?>
