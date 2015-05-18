@@ -348,6 +348,11 @@ nav.main-navigation {
       background: #858a90; }
       nav.main-navigation a.nav-item.grey::before {
         background: #6d7276; }
+    nav.main-navigation a.nav-item.red {
+      background: #5c338e; }
+      nav.main-navigation a.nav-item.red::before {
+        background: #330072; }
+        
     nav.main-navigation a.nav-item.trophy::after {
       content: "\f091"; }
     nav.main-navigation a.nav-item.question::after {

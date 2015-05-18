@@ -182,25 +182,27 @@
     <nav class="main-navigation">
         <div class="container">
            <div class="row">
-                <div class="col-xs-12 col-md-4">
+                <div class="col-xs-12 col-md-3">
                     <a href="/kalkulator/tasbih" class="nav-item green sitemap">
                         <h4><small>01</small>Ilustrasi</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                <!--
+                
                 <div class="col-xs-12 col-md-3">
-                    <a href="#" class="nav-item orange trophy">
-                        <h4><small>02</small> Hadiah.</h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                <div class="col-xs-12 col-md-4">
                     <a href="/tasbih/tanya-jawab" class="nav-item orange question">
                         <h4><small>02</small>Tanya Jawab Produk</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                <div class="col-xs-12 col-md-4">
+                
+                <div class="col-xs-12 col-md-3">
                     <a href="/tasbih/cari-agen-syariah" class="nav-item users">
-                        <h4><small>03</small> Cari Agen Syariah <span>Cek Disini</span></h4>
+                        <h4><small>03</small> Cari Agen Syariah </h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-3">
+                    <a href="/tasbih/inqury-form" class="nav-item red users">
+                        <h4><small>04</small> Inquiry Form</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
             </div><!--/ .row -->
