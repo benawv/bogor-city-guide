@@ -98,12 +98,13 @@ class DefaultController extends Website_Controller_Action {
 		if($pass == "asnlayananprima")
 		{
 				$session->verified = 'true';
-				echo $session->verified;
+				//echo $session->verified;
 				//$_SESSION["loginCenter"] = "Yes";
 				$this->_redirect("/asn/asn-digital-download-center");
 		}
 		else{
 				//$_SESSION["loginCenter"] = "No";
+				Zend_Session::namespaceUnset('loginasn');
 				$this->_redirect("/asn/login-asn-center");
 		}
 		
