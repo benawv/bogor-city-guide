@@ -3160,6 +3160,9 @@ strong {
       width: auto !important;
       min-width: auto !important;
     }
+    .content-widget .col-xs-12 ul{
+      padding-left: 0px;
+    }
 }
 @media only screen and (max-width : 800px) and (min-width: 480px) {
     /* Sticky */
