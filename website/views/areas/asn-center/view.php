@@ -5,6 +5,6 @@
 		$this->_redirect("/asn/asn-digital-download-center");
 	}
 	else{
-		$this->_redirect("/login-asn-center");
+		$this->_redirect("/asn/login-asn-center");
 	}
 ?>

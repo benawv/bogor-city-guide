@@ -99,7 +99,7 @@ class DefaultController extends Website_Controller_Action {
 		}
 		else{
 				$_SESSION["loginCenter"] = "No";
-				$this->_redirect("/login-asn-center");
+				$this->_redirect("/asn/login-asn-center");
 		}
 		
 		//echo $_SESSION["loginCenter"];
