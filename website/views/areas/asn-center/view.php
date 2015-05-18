@@ -7,6 +7,8 @@
 	}
 	else
 	{
+		//Zend_Controller_Action::redirect()->gotoUrl('/asn/login-asn-center');
 		header('Location: http://www.allianz.co.id/asn/login-asn-center');
+		exit();
 	}
 ?>
