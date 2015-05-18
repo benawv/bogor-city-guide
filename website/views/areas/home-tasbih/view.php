@@ -121,6 +121,7 @@
 											    "store" => array(
 											        array("red", "Red"),
 											        array("lightgreen", "Light Green"),
+                                                                                                array("green", "Green"),
 											        array("purple", "Purple"),
 											        array("blue", "Blue"),
 											        array("orange", "Orange")
@@ -147,7 +148,6 @@
 </ul>
 </div>
     </div><!--/ .background -->
-
     <nav class="main-navigation">
         <div class="container">
            <div class="row">
