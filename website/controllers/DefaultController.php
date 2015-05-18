@@ -88,4 +88,21 @@ class DefaultController extends Website_Controller_Action {
 		
 		echo json_encode($entries);
 	}
+	
+	public function loginAsnCenterAction(){
+		session_start();
+		$pass = $_POST["password"];
+		if($pass == "asnlayananprima")
+		{
+				$_SESSION["loginCenter"] = "Yes";
+				$this->_redirect("/asn/asn-digital-download-center");
+		}
+		else{
+				$_SESSION["loginCenter"] = "No";
+				$this->_redirect("/login-asn-center");
+		}
+		
+		//echo $_SESSION["loginCenter"];
+		//die();
+	}
 }
