@@ -1,5 +1,7 @@
 <?php
-	if($session->accept === true)
+	$session = new Zend_Session_Namespace('loginasn');
+	
+	if($session->verified === 'true')
 	{
 		//die('session true');
 	}
@@ -7,14 +9,4 @@
 	{
 		$this->_redirect("/asn/login-asn-center");
 	}
-	/*
-	if($_SESSION["loginCenter"] == "Yes")
-	{
-		//$this->_redirect("/asn/asn-digital-download-center");
-	}
-	else
-	{
-		$this->_redirect("/asn/login-asn-center");
-	}
-	*/
 ?>

@@ -8,7 +8,7 @@
                                     <!--<input type="input" id="username" name="login_username" title="login_username" tabindex="4" class="input_login form-control popup-asn-label" placeholder="Username" required autofocus style="margin-bottom:10px">-->
                                     
                                     <!--label for="password" class="sr-only">Password</label-->
-                                    <input type="password" id="password" name="password" class="input_login form-control popup-asn-label" placeholder="Password" maxlength="15" autofocus>
+                                    <input type="password" id="password" name="password" class="input_login form-control popup-asn-label" placeholder="Password" autofocus>
                                     <br />
                                     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
                             </form>
