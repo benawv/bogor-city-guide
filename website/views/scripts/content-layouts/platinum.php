@@ -50,6 +50,12 @@
 		
 		<?php echo $this->areablock('container-modal', array('allowed' => array('modal')))?>
 </div>
+<div class="container boxes-view">
+	<div class="items-container">
+		<?php echo $this->areablock('container2', array('allowed' => array(
+										'container-box-static'))); ?>
+	</div>
+</div>
 <script type="text/javascript">
 	$(document).ready(function(){
 		<?php if(!$this->editmode) { ?>
