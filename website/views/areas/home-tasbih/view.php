@@ -458,15 +458,15 @@
                         </div>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bt" href="#">
-                         <div class="news-feeds--image" id="imageBoxA" style="display: block;">
+                         <a href="#" class="news-feeds--image" id="imageBoxA" style="display: block;">
                             <img src="<?php echo $news_stack[0]['thumb']; ?>" alt="">
-                        </div>
+                        </a>
                     </div><!--/ .col-xs-12 -->
                 </div><!--/ .row -->
 
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bb" href="#">
-                        <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxB" style="display: block;">
+                        <a href="#" class="news-feeds--image" id="imageBoxB" style="display: block;">
                             <img src="<?php echo $news_stack[1]['thumb']; ?>" alt="">
                         </a>
                     </div><!--/ .col-xs-12 -->
@@ -523,7 +523,7 @@
                         </div>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bt" href="#">
-                        <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxA" style="display: block;">
+                        <a href="#" class="news-feeds--image" id="imageBoxA" style="display: block;">
                             <img src="<?php echo $news_stack[2]['thumb']; ?>" alt="">
                         </a>
                     </div><!--/ .col-xs-12 -->
@@ -531,7 +531,7 @@
 
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bb" href="#">
-                        <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxB" style="display: block;">
+                        <a href="#" class="news-feeds--image" id="imageBoxB" style="display: block;">
                             <img src="<?php echo $news_stack[3]['thumb']; ?>" alt="">
                         </a>
                     </div><!--/ .col-xs-12 -->
