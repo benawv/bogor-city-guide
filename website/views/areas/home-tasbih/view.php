@@ -5,9 +5,10 @@
         .box-dent::before{ border-top: 28px solid #009a44 !important;}
         .social-feeds .social-feeds--box.twitter{ background: #009a44 !important;}
         .social-feeds .social-feeds--box.facebook{background: #73c898!important;}
-        .backg{max-width:1090px; position:relative; margin:auto;}
+        .backg{max-width:1145px; position:relative; margin:auto;}
         .foto{width:100%; height:auto;}
     </style>
+<div class="row">
      <div class="backg">
         <!--<img src="/website/ajfc/img/bg-home.jpg" alt="Home" class="img-responsive" />-->
         <div id="slideshow" class="clearfix">
@@ -150,6 +151,7 @@
 </ul>
 </div>
     </div><!--/ .background -->
+    </div>
     <nav class="main-navigation">
         <div class="container">
            <div class="row">
@@ -166,13 +168,13 @@
                 </div><!--/ .col-xs-12 -->
                 
                 <div class="col-xs-12 col-md-3">
-                    <a href="/tasbih/cari-agen-syariah" class="nav-item users">
+                    <a href=agen.imkepo.com class="nav-item users">
                         <h4><small>03</small> Cari Agen Syariah </h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 
                 <div class="col-xs-12 col-md-3">
-                    <a href="/tasbih/inqury-form" class="nav-item red users">
+                    <a href=""http://agen.imkepo.com"" class="nav-item red users">
                         <h4><small>04</small> Inquiry Form</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
