@@ -6,10 +6,13 @@
         .social-feeds .social-feeds--box.twitter{ background: #009a44 !important;}
         .social-feeds .social-feeds--box.facebook{background: #73c898!important;}
         .news-feed{ background: none repeat scroll 0 0 white;
+            
     border: 1px solid #ddd;
     min-height: 260px;
     padding: 24px;
     position: relative;}
+                .backg{max-width:1150px; position:relative; margin:auto;}
+        .foto{width:100%; height:auto;}
     </style>
 <div class="row">
      <div class="backg">
@@ -171,13 +174,13 @@
                 </div><!--/ .col-xs-12 -->
                 
                 <div class="col-xs-12 col-md-3">
-                    <a href=agen.imkepo.com class="nav-item users">
+                    <a href="http://agen.imkepo.com" class="nav-item users">
                         <h4><small>03</small> Cari Agen Syariah </h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 
                 <div class="col-xs-12 col-md-3">
-                    <a href=""http://agen.imkepo.com"" class="nav-item red users">
+                    <a href="/tasbih/inquiry-form" class="nav-item red users">
                         <h4><small>04</small> Inquiry Form</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
@@ -414,21 +417,22 @@
                     $listnews->setOrder('desc');
                     $i=0;
                     foreach($listnews as $items){
-                        
+                     
                         $news_stack[$i]=array(
                                 "date"=>$items->newsdate,
                                 "teaser"=>$items->deskripsisingkat,
                                 "link"=>"/tasbih/tasbih-news/".$items->o_id,
                                 "title"=> $items->title,
-                                "images"=>$items->images->path.$items->images->filename                                
+                                "images"=>$items->images->path.$items->images->filename,
+                                "thumb"=>$items->thumbnail->path.$items->thumbnail->filename
                                 );
                         array_push($news_stack[$i]);
                         $i++;
-                    }
-                    /*echo "<pre>";
+                    }/*
+                    echo "<pre>";
                     print_r($news_stack);
-                    echo "</pre>";*/
-                    ?>
+                    echo "</pre>";  
+                   */ ?>
 <section class="mt32 mb72">
     <div class="container">
         <div class="row">
@@ -438,13 +442,13 @@
                         <div class="news-feed">
                             <div class="header">
                                 <i class="fa fa-book"></i>
-                                <a href="#" class="pull-left"><i class="fa fa-book"></i></a>
+                                <a href="javascript:void(0)" class="pull-left"><i class="fa fa-book"></i></a>
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
                                 <a href="<?php echo $news_stack[0]['link'];?>"> 
                                 <h2><?php echo $news_stack[0]['title'];?></h2>
-                                <p></p>
+                                <p><small><?php echo $news_stack[0]['teaser'];?></small></p>
                                 </a>
                             </div><!--/ .body -->
                             <div class="footer">
@@ -459,16 +463,16 @@
                         </div>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bt" href="#">
-                         <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxA" style="display: block;">
-                            <img src="<?php echo $news_stack[0]['images']; ?>" alt="">
+                         <a href="javascript:void(0)" class="news-feeds--image" id="imageBoxA" style="display: block;">
+                            <img src="<?php echo $news_stack[0]['thumb']; ?>" alt="">
                         </a>
                     </div><!--/ .col-xs-12 -->
                 </div><!--/ .row -->
 
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bb" href="#">
-                        <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxB" style="display: block;">
-                            <img src="<?php echo $news_stack[1]['images']; ?>" alt="">
+                        <a href="javascript:void(0)" class="news-feeds--image" id="imageBoxB" style="display: block;">
+                            <img src="<?php echo $news_stack[1]['thumb']; ?>" alt="">
                         </a>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bb">
@@ -481,7 +485,7 @@
                             <div class="body">
                                 <a href="<?php echo $news_stack[1]['link'];?>"> 
                                 <h2><?php echo $news_stack[1]['title'];?></h2>
-                                <p></p>
+                                <p><small><?php echo $news_stack[1]['teaser'];?></small></p>
                                 </a>
                             </div><!--/ .body -->
                             <div class="footer">
@@ -503,13 +507,13 @@
                         <div class="news-feed">
                             <div class="header">
                                 <i class="fa fa-book"></i>
-                                <a href="#" class="pull-left"><i class="fa fa-book"></i></a>
+                                <a href="javascript:void(0)" class="pull-left"><i class="fa fa-book"></i></a>
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
                                 <a href="<?php echo $news_stack[2]['link'];?>"> 
                                 <h2><?php echo $news_stack[2]['title'];?></h2>
-                                <p></p>
+                                <p><small><?php echo $news_stack[2]['teaser'];?></small></p>
                                 </a>
                             </div><!--/ .body -->
                             <div class="footer">
@@ -524,29 +528,29 @@
                         </div>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bt" href="#">
-                        <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxA" style="display: block;">
-                            <img src="<?php echo $news_stack[2]['images']; ?>" alt="">
+                        <a href="javascript:void(0)" class="news-feeds--image" id="imageBoxA" style="display: block;">
+                            <img src="<?php echo $news_stack[2]['thumb']; ?>" alt="">
                         </a>
                     </div><!--/ .col-xs-12 -->
                 </div><!--/ .row -->
 
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bb" href="#">
-                        <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxB" style="display: block;">
-                            <img src="<?php echo $news_stack[3]['images']; ?>" alt="">
+                        <a href="javascript:void(0)" class="news-feeds--image" id="imageBoxB" style="display: block;">
+                            <img src="<?php echo $news_stack[3]['thumb']; ?>" alt="">
                         </a>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bb">
                         <div class="news-feed">
                             <div class="header">
                                 <i class="fa fa-book"></i>
-                                <a href="#" class="pull-right"><i class="fa fa-book"></i></a>
+                                <a href="javascript:void(0)" class="pull-right"><i class="fa fa-book"></i></a>
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
                                 <a href="<?php echo $news_stack[3]['link'];?>"> 
                                 <h2><?php echo $news_stack[3]['title'];?></h2>
-                                <p></p>
+                                <p><small><?php echo $news_stack[3]['teaser'];?></small></p>
                                 </a>
                             </div><!--/ .body -->
                             <div class="footer">
