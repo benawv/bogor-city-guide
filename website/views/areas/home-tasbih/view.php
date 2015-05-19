@@ -412,21 +412,22 @@
                     $listnews->setOrder('desc');
                     $i=0;
                     foreach($listnews as $items){
-                        
+                     
                         $news_stack[$i]=array(
                                 "date"=>$items->newsdate,
                                 "teaser"=>$items->deskripsisingkat,
                                 "link"=>"/tasbih/tasbih-news/".$items->o_id,
                                 "title"=> $items->title,
-                                "images"=>$items->images->path.$items->images->filename                                
+                                "images"=>$items->images->path.$items->images->filename,
+                                "thumb"=>$items->thumbnail->path.$items->thumbnail->filename
                                 );
                         array_push($news_stack[$i]);
                         $i++;
-                    }
-                    /*echo "<pre>";
+                    }/*
+                    echo "<pre>";
                     print_r($news_stack);
-                    echo "</pre>";*/
-                    ?>
+                    echo "</pre>";  
+                   */ ?>
 <section class="mt32 mb72">
     <div class="container">
         <div class="row">
@@ -442,7 +443,7 @@
                             <div class="body">
                                 <a href="<?php echo $news_stack[0]['link'];?>"> 
                                 <h2><?php echo $news_stack[0]['title'];?></h2>
-                                <p></p>
+                                <p><small><?php echo $news_stack[0]['teaser'];?></small></p>
                                 </a>
                             </div><!--/ .body -->
                             <div class="footer">
@@ -457,16 +458,16 @@
                         </div>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bt" href="#">
-                         <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxA" style="display: block;">
-                            <img src="<?php echo $news_stack[0]['images']; ?>" alt="">
-                        </a>
+                         <div class="news-feeds--image" id="imageBoxA" style="display: block;">
+                            <img src="<?php echo $news_stack[0]['thumb']; ?>" alt="">
+                        </div>
                     </div><!--/ .col-xs-12 -->
                 </div><!--/ .row -->
 
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bb" href="#">
                         <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxB" style="display: block;">
-                            <img src="<?php echo $news_stack[1]['images']; ?>" alt="">
+                            <img src="<?php echo $news_stack[1]['thumb']; ?>" alt="">
                         </a>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bb">
@@ -479,7 +480,7 @@
                             <div class="body">
                                 <a href="<?php echo $news_stack[1]['link'];?>"> 
                                 <h2><?php echo $news_stack[1]['title'];?></h2>
-                                <p></p>
+                                <p><small><?php echo $news_stack[1]['teaser'];?></small></p>
                                 </a>
                             </div><!--/ .body -->
                             <div class="footer">
@@ -507,7 +508,7 @@
                             <div class="body">
                                 <a href="<?php echo $news_stack[2]['link'];?>"> 
                                 <h2><?php echo $news_stack[2]['title'];?></h2>
-                                <p></p>
+                                <p><small><?php echo $news_stack[2]['teaser'];?></small></p>
                                 </a>
                             </div><!--/ .body -->
                             <div class="footer">
@@ -523,7 +524,7 @@
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bt" href="#">
                         <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxA" style="display: block;">
-                            <img src="<?php echo $news_stack[2]['images']; ?>" alt="">
+                            <img src="<?php echo $news_stack[2]['thumb']; ?>" alt="">
                         </a>
                     </div><!--/ .col-xs-12 -->
                 </div><!--/ .row -->
@@ -531,7 +532,7 @@
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bb" href="#">
                         <a href="/galeri-ajfc" class="news-feeds--image" id="imageBoxB" style="display: block;">
-                            <img src="<?php echo $news_stack[3]['images']; ?>" alt="">
+                            <img src="<?php echo $news_stack[3]['thumb']; ?>" alt="">
                         </a>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bb">
@@ -544,7 +545,7 @@
                             <div class="body">
                                 <a href="<?php echo $news_stack[3]['link'];?>"> 
                                 <h2><?php echo $news_stack[3]['title'];?></h2>
-                                <p></p>
+                                <p><small><?php echo $news_stack[3]['teaser'];?></small></p>
                                 </a>
                             </div><!--/ .body -->
                             <div class="footer">
