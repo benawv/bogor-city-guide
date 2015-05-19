@@ -23,7 +23,7 @@
 </style>
 
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
-
+    
     <div class="description">
 
         <div class="header-calc">
