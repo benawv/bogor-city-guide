@@ -12,7 +12,7 @@ class CalcSmartmedController extends Website_Controller_Action {
 		$code = $this->_getParam('code');//ip,ma,od
 		$coshare = $this->_getParam('coshare');
 		$uwl = $this->_getParam('uwl');
-
+		$plan = $this->_getParam('plan');//ip,ma,od
 		if($uwl < 25) $nbc = "2";
 		else $nbc = "1";
 		
@@ -21,9 +21,7 @@ class CalcSmartmedController extends Website_Controller_Action {
 		//ALL
 		$entries = new Object_smartmedPremium_List();
 		$entries->setLimit(1);
-		$entries->setCondition("nbc LIKE '".$nbc."' AND sex LIKE '".$sex."' AND age LIKE '".$age."' AND coshare LIKE '".$coshare."' AND kode LIKE '".$code."'");
-		
-		echo count($entries);
+		$entries->setCondition("nbc LIKE '".$nbc."' AND sex LIKE '".$sex."' AND age LIKE '".$age."' AND coshare LIKE '".$coshare."' AND kode LIKE '".$code."' AND plantype__id='".$plan."'");
 		
 		foreach ($entries as $row){
 			echo $row->getPremium();

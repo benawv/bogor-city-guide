@@ -456,6 +456,57 @@
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
+                        <div class="col-md-4">
+                            <label>PLAN IP</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <select class="form-control" required tabindex="6" id="planip">
+                                <?php
+                                    $cat = new Object_smartmedPlanType_List();
+                                    foreach($cat as $payment)
+                                    {
+                                        echo "<option value='".$payment->getO_id()."'>".$payment->getPlanname()."</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>PLAN MAT</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <select class="form-control" required tabindex="6" id="planmat">
+                                <?php
+                                    $cat = new Object_smartmedPlanType_List();
+                                    foreach($cat as $payment)
+                                    {
+                                        echo "<option value='".$payment->getO_id()."'>".$payment->getPlanname()."</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>PLAN OP+DEN</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <select class="form-control" required tabindex="6" id="planop_den">
+                                <?php
+                                    $cat = new Object_smartmedPlanType_List();
+                                    foreach($cat as $payment)
+                                    {
+                                        echo "<option value='".$payment->getO_id()."'>".$payment->getPlanname()."</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+
+                    <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
                             <input type="submit" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Add" name="next" value="Add">
                         </div><!--/ .col-md-12 -->
@@ -689,7 +740,7 @@
     });
 
     
-    function kalk(age,sex,code,coshare,withval){
+    function kalk(age,sex,code,coshare,withval,plan){
         var payment = $("#payment_methods").val();
         var fd = $("#family_discount").val();
         var ncd = $("#no_claim_discount").val();
@@ -704,16 +755,18 @@
                 code: code,
                 coshare: coshare,
                 uwl: uwl,
+                plan: plan,
                 ajax:1
         };
         $.ajax({
                 async: false,
-                url : "calc_smartmed/"+payment+"_"+fd+"_"+ncd+"_"+age+"_"+sex+"_"+code+"_"+coshare+"_"+uwl,
+                url : "calc_smartmed/"+payment+"_"+fd+"_"+ncd+"_"+age+"_"+sex+"_"+code+"_"+coshare+"_"+uwl+"_"+plan,
                 type : 'POST',
                 //data : form_data,
                 beforeSend: function () {
                 },
                 success: function(msg){
+                    console.log(msg);
                     value = parseInt(msg);
                 },error: function (xhr, ajaxOptions, thrownError){
                 }
@@ -794,15 +847,20 @@
         var mat = $("#mat").val();
         var outden = $("#out_den").val();
 
-        ipp = kalk(age,sex,"ip",ip,1);
-        matp = kalk(age,sex,"ma",mat,1);
-        opdenp = kalk(age,sex,"od",outden,1);
+        var planip = $("#planip").val();
+        var planmat = $("#planmat").val();
+        var planop_den = $("#planop_den").val();
+
+        ipp = kalk(age,sex,"ip",ip,1,planip);
+        matp = kalk(age,sex,"ma",mat,1,planmat);
+        opdenp = kalk(age,sex,"od",outden,1,planop_den);
         total = parseInt(ipp)+parseInt(matp)+parseInt(opdenp);
-        ipp = kalk(age,sex,"ip",ip,0);
-        matp = kalk(age,sex,"ma",mat,0);
-        opdenp = kalk(age,sex,"od",outden,0);
+
+        ipp = kalk(age,sex,"ip",ip,0,planip);
+        matp = kalk(age,sex,"ma",mat,0,planmat);
+        opdenp = kalk(age,sex,"od",outden,0,planop_den);
         totalwithout = parseInt(ipp)+parseInt(matp)+parseInt(opdenp);
-        //console.log(rowCount);
+        //console.log(matp);
         var rowCount = $('table.table tbody tr').length;
         var no = parseInt(rowCount)+1;
         $("table.table tbody").append("<tr>"+
