@@ -114,7 +114,9 @@
 -->
 <script type="text/javascript">
     var map = new Object();
+    var imageCurrentMarker = '/website/static/images/allianz-map-marker-shadow-60.png';
     var markers = [];
+    var titikMarker = "";
     var infowindow = null;
     var BASEURL = "<?php echo $root; ?>";
     function clearOverlays() {
@@ -136,8 +138,9 @@
             content: "holding...",
             maxWidth: 200
         });
+        titikMarker = "null";
         var titik = radius(-6.2297465, 106.829518);
-        MapLoad(titik, -6.2297465, 106.829518);
+        MapLoad(titik, -6.2297465, 106.829518, titikMarker);
 
         // Try HTML5 geolocation
         if(navigator.geolocation) {
@@ -145,7 +148,8 @@
             var pos = new google.maps.LatLng(position.coords.latitude,
                                              position.coords.longitude);
             var titik = radius(pos.A, pos.F);
-            MapLoad(titik, pos.A, pos.F);
+            titikMarker = "marker";
+            MapLoad(titik, pos.A, pos.F, titikMarker);
             //var infowindow = new google.maps.InfoWindow({
             //  zoom: 11,
             //  position: pos,
@@ -257,8 +261,9 @@
                 lat = item.geometry.location.A;
                 long = item.geometry.location.F;
             });
+            titikMarker = "marker";
             var titik = radius(lat, long);
-            MapLoad(titik, lat, long);
+            MapLoad(titik, lat, long, titikMarker);
             //
             //var marker, i;
             //
@@ -342,7 +347,8 @@
 					lat = results[0].geometry.location.lat();
 					long = results[0].geometry.location.lng();
 					var titik = radius(lat, long);
-					MapLoad(titik, lat, long);
+                    titikMarker = "marker";
+					MapLoad(titik, lat, long, titikMarker);
 				 }
 			});
 		}
@@ -353,7 +359,7 @@
 		var kordinat = (lat - degreeRadius) +"#"+ (lng - degreeRadius) +"#"+ (lat + degreeRadius) +"#"+ (lng + degreeRadius);
 		return kordinat;
 	}
-	var MapLoad = function(titik, lat, long){
+	var MapLoad = function(titik, lat, long, titikMarker){
 	    clearOverlays();
 		//console.log(k+"  "+w);
 		$.ajax({
@@ -479,6 +485,21 @@
 					    infowindow.open(map, this);
 				    });
 			    }
+                
+                if (titikMarker != "null") {
+                    var marker2 = new google.maps.Marker({
+                        position: new google.maps.LatLng(lat, long),
+                        draggable: false,
+                        icon: imageCurrentMarker,
+                        map: map,
+                        html: "Lokasi Anda saat ini."
+                    });
+                }
+                google.maps.event.addListener(marker2, 'click', function () {
+                    infowindow.setContent(this.html);
+                    infowindow.open(map, this);
+                });
+                
 			}
 		})
 	}
