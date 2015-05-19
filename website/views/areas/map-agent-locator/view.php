@@ -494,6 +494,10 @@
                         map: map,
                         html: "Lokasi Anda saat ini."
                     });
+                    google.maps.event.addListener(marker2, 'click', function () {
+                        infowindow.setContent(this.html);
+                        infowindow.open(map, this);
+                    });
                 }
                 
                 if (titikMarker == "search") {
@@ -503,11 +507,10 @@
                         icon: imageCurrentMarker,
                         map: map
                     });
+                    google.maps.event.addListener(marker2, 'click', function () {
+                        
+                    });
                 }
-                google.maps.event.addListener(marker2, 'click', function () {
-                    infowindow.setContent(this.html);
-                    infowindow.open(map, this);
-                });
                 
 			}
 		})
