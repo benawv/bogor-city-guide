@@ -261,7 +261,7 @@
                 lat = item.geometry.location.A;
                 long = item.geometry.location.F;
             });
-            titikMarker = "marker";
+            titikMarker = "search";
             var titik = radius(lat, long);
             MapLoad(titik, lat, long, titikMarker);
             //
@@ -347,7 +347,7 @@
 					lat = results[0].geometry.location.lat();
 					long = results[0].geometry.location.lng();
 					var titik = radius(lat, long);
-                    titikMarker = "marker";
+                    titikMarker = "search";
 					MapLoad(titik, lat, long, titikMarker);
 				 }
 			});
@@ -486,13 +486,22 @@
 				    });
 			    }
                 
-                if (titikMarker != "null") {
+                if (titikMarker == "marker") {
                     var marker2 = new google.maps.Marker({
                         position: new google.maps.LatLng(lat, long),
                         draggable: false,
                         icon: imageCurrentMarker,
                         map: map,
                         html: "Lokasi Anda saat ini."
+                    });
+                }
+                
+                if (titikMarker == "search") {
+                    var marker2 = new google.maps.Marker({
+                        position: new google.maps.LatLng(lat, long),
+                        draggable: false,
+                        icon: imageCurrentMarker,
+                        map: map
                     });
                 }
                 google.maps.event.addListener(marker2, 'click', function () {
