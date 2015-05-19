@@ -5,8 +5,10 @@
         .box-dent::before{ border-top: 28px solid #009a44 !important;}
         .social-feeds .social-feeds--box.twitter{ background: #009a44 !important;}
         .social-feeds .social-feeds--box.facebook{background: #73c898!important;}
+        .backg{max-width:1090px; position:relative; margin:auto;}
+        .foto{width:100%; height:auto;}
     </style>
-     <div class="background" style="pointer-events:visible;">
+     <div class="backg">
         <!--<img src="/website/ajfc/img/bg-home.jpg" alt="Home" class="img-responsive" />-->
         <div id="slideshow" class="clearfix">
 <?php if($this->editmode) { ?>
@@ -71,8 +73,8 @@
 						    }
 						?>
 						<div class="slide <?php echo $hide;?>">
-							<div class="photo">
-								<?php echo $this->image("image_".$i, ["thumbnail" => "galleryCarousel", "dropClass" => $id . "-" . $i, "title" => "Image Size 960x400"])?>
+							<div class="foto">
+								<?php echo $this->image("image_".$i, ["thumbnail" => "galleryCarousel", "dropClass" => $id . "-" . $i, "title" => "Image Size 1020x400", "width" => "100%", "height" => "auto"])?>
 							</div>
 							<?php
 								$extra = $this->image("image_".$i)->getHotspots();
