@@ -114,7 +114,7 @@
 -->
 <script type="text/javascript">
     var map = new Object();
-    var imageCurrentMarker = '/website/static/images/allianz-map-marker-shadow-60.png';
+    var imageCurrentMarker = '/website/static/images/map-pointer-green.png';
     var markers = [];
     var titikMarker = "";
     var infowindow = null;
