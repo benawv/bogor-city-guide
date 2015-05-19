@@ -178,7 +178,7 @@
                 </div><!--/ .col-xs-12 -->
                 
                 <div class="col-xs-12 col-md-3">
-                    <a href="/tasbih/inqury-form" class="nav-item red users">
+                    <a href="/tasbih/inquiry-form" class="nav-item red users">
                         <h4><small>04</small> Inquiry Form</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
