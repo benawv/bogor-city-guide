@@ -1,3 +1,11 @@
+<div class="sticky-object">
+    <div class="sticky-object-inner">
+        <a href="#" class="sticky-object-toggle"><i class="fa fa-angle-right"></i></a>
+        <p>Pendaftaran tinggal 3 hari lagi lho!</p>
+        <a href="<?php echo $this->link("linkDaftar")->getHref();?>" class="sticky-object-cta">Daftar Sekarang!!</a>
+    </div><!--/ .sticky-object-inner -->
+</div><!--/ .sticky-object -->
+
 <header>
 
     <div class="background">
