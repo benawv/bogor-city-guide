@@ -442,7 +442,7 @@
                         <div class="news-feed">
                             <div class="header">
                                 <i class="fa fa-book"></i>
-                                <a href="#" class="pull-left"><i class="fa fa-book"></i></a>
+                                <a href="javascript:void(0)" class="pull-left"><i class="fa fa-book"></i></a>
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
@@ -463,7 +463,7 @@
                         </div>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bt" href="#">
-                         <a href="#" class="news-feeds--image" id="imageBoxA" style="display: block;">
+                         <a href="javascript:void(0)" class="news-feeds--image" id="imageBoxA" style="display: block;">
                             <img src="<?php echo $news_stack[0]['thumb']; ?>" alt="">
                         </a>
                     </div><!--/ .col-xs-12 -->
@@ -471,7 +471,7 @@
 
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bb" href="#">
-                        <a href="#" class="news-feeds--image" id="imageBoxB" style="display: block;">
+                        <a href="javascript:void(0)" class="news-feeds--image" id="imageBoxB" style="display: block;">
                             <img src="<?php echo $news_stack[1]['thumb']; ?>" alt="">
                         </a>
                     </div><!--/ .col-xs-12 -->
@@ -507,7 +507,7 @@
                         <div class="news-feed">
                             <div class="header">
                                 <i class="fa fa-book"></i>
-                                <a href="#" class="pull-left"><i class="fa fa-book"></i></a>
+                                <a href="javascript:void(0)" class="pull-left"><i class="fa fa-book"></i></a>
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
@@ -528,7 +528,7 @@
                         </div>
                     </div><!--/ .col-xs-12 -->
                     <div class="col-xs-12 col-md-6 nopadding br bt" href="#">
-                        <a href="#" class="news-feeds--image" id="imageBoxA" style="display: block;">
+                        <a href="javascript:void(0)" class="news-feeds--image" id="imageBoxA" style="display: block;">
                             <img src="<?php echo $news_stack[2]['thumb']; ?>" alt="">
                         </a>
                     </div><!--/ .col-xs-12 -->
@@ -536,7 +536,7 @@
 
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bb" href="#">
-                        <a href="#" class="news-feeds--image" id="imageBoxB" style="display: block;">
+                        <a href="javascript:void(0)" class="news-feeds--image" id="imageBoxB" style="display: block;">
                             <img src="<?php echo $news_stack[3]['thumb']; ?>" alt="">
                         </a>
                     </div><!--/ .col-xs-12 -->
@@ -544,7 +544,7 @@
                         <div class="news-feed">
                             <div class="header">
                                 <i class="fa fa-book"></i>
-                                <a href="#" class="pull-right"><i class="fa fa-book"></i></a>
+                                <a href="javascript:void(0)" class="pull-right"><i class="fa fa-book"></i></a>
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
