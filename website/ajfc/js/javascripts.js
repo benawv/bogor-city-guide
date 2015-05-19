@@ -5,6 +5,15 @@ $( document ).ready(function(){
     //responsiveNewsFeedBox();
     resizePageWrapper();
 
+    if( $( '.sticky-object' ).length > 0 )
+    {
+        $( '.sticky-object .sticky-object-toggle' ).click(function(e){
+            e.preventDefault();
+            $( this ).parent().parent().toggleClass( 'active' );
+            return false;
+        });
+    }
+
     if( $( '.faq-item' ).length > 0 )
     {
         $( '.faq-item' ).each(function(index, value){
