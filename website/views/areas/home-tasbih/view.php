@@ -11,7 +11,8 @@
     padding: 24px;
     position: relative;}
     </style>
-     <div class="background" style="pointer-events:visible;">
+<div class="row">
+     <div class="backg">
         <!--<img src="/website/ajfc/img/bg-home.jpg" alt="Home" class="img-responsive" />-->
         <div id="slideshow" class="clearfix">
 <?php if($this->editmode) { ?>
@@ -76,8 +77,8 @@
 						    }
 						?>
 						<div class="slide <?php echo $hide;?>">
-							<div class="photo">
-								<?php echo $this->image("image_".$i, ["thumbnail" => "galleryCarousel", "dropClass" => $id . "-" . $i, "title" => "Image Size 960x400"])?>
+							<div class="foto">
+								<?php echo $this->image("image_".$i, ["thumbnail" => "galleryCarousel", "dropClass" => $id . "-" . $i, "title" => "Image Size 1020x400", "width" => "100%", "height" => "auto"])?>
 							</div>
 							<?php
 								$extra = $this->image("image_".$i)->getHotspots();
@@ -153,6 +154,7 @@
 </ul>
 </div>
     </div><!--/ .background -->
+    </div>
     <nav class="main-navigation">
         <div class="container">
            <div class="row">
@@ -169,13 +171,13 @@
                 </div><!--/ .col-xs-12 -->
                 
                 <div class="col-xs-12 col-md-3">
-                    <a href="/tasbih/cari-agen-syariah" class="nav-item users">
+                    <a href=agen.imkepo.com class="nav-item users">
                         <h4><small>03</small> Cari Agen Syariah </h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 
                 <div class="col-xs-12 col-md-3">
-                    <a href="/tasbih/inqury-form" class="nav-item red users">
+                    <a href=""http://agen.imkepo.com"" class="nav-item red users">
                         <h4><small>04</small> Inquiry Form</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
