@@ -12,22 +12,23 @@
 
 <script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
 
-<style>
-    /* Override AJFC's feature box color */
-    .box-dent--inner{ background: #009a44; }
-    .box-dent::before{ border-top: 28px solid #009a44 !important;}
-    .btn-tasbih{ background: #009a44 !important; border: none !important; border-radius: 0; }
-    .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
-    .form-box{ border: solid 1px #ddd; padding: 16px 20px; margin-bottom: 32px; }
-    .form-control{ border-radius: 0; }
-    nav.main-navigation a.nav-item {
+<header>
+    <style>
+        /* Override AJFC's feature box color */
+        .box-dent--inner{ background: #009a44; }
+        .box-dent::before{ border-top: 28px solid #009a44 !important;}
+        .social-feeds .social-feeds--box.twitter{ background: #009a44 !important;}
+        .social-feeds .social-feeds--box.facebook{background: #73c898!important;}
+        .backg{max-width:1140px; position:relative; margin:auto;}
+        #backg{max-width:1140px; position:relative; margin:auto;}
+        .foto{width:100%; height:auto;}
+        #but-size{width:292.5px;}
+        nav.main-navigation a.nav-item {
   display: block;
   position: relative;
   height: 50px;
   background: #d31f42;
 }
-        nav.main-navigation a.nav-item.blueA{
-      background: #003781;}
         nav.main-navigation a.nav-item::after {
   content: "";
   display: inline-block;
@@ -48,7 +49,48 @@
   font-size: 45px;
   pointer-events: none;
 }
-</style>
+        
+    </style>
+
+
+<nav class="main-navigation" style="max-width:1140px; margin:auto; !important">
+            <div class="row">
+
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
+                    <a href="/tasbih" class="nav-item blueA sitemap">
+                        <h4><small>Beranda</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="/kalkulator/tasbih" class="nav-item green sitemap">
+                        <h4><small>Ilustrasi</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="/tasbih/tanya-jawab" class="nav-item orange question">
+                        <h4><small>Tanya Jawab Produk</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item users">
+                        <h4><small>Cari Agen</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="/tasbih/inquiry-form" class="nav-item red users">
+                        <h4><small>Inquiry Form</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+            </div>
+            <div class="row">
+                
+            </div>
+    </nav>
+</header>
 
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
     
@@ -204,43 +246,7 @@
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
     </div><!--/ .description -->
-        <nav class="main-navigation">
-            <div class="row">
-
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
-                    <a href="/tasbih" class="nav-item blueA sitemap">
-                        <h4><small>Beranda</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/kalkulator/tasbih" class="nav-item green sitemap">
-                        <h4><small>Ilustrasi</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-2">
-                    <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4><small>Tanya Jawab Produk</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-2">
-                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item users">
-                        <h4><small>Cari Agen</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-2">
-                    <a href="/tasbih/inquiry-form" class="nav-item red users">
-                        <h4><small>Inquiry Form</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-            </div>
-            <div class="row">
-                
-            </div>
-    </nav>
+        
 </div><!--/ #newsletter-allianz -->
 
 <link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">

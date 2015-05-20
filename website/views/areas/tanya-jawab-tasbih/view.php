@@ -48,7 +48,7 @@
 <div class="row addPadding15">
     <div class="container boxes-view">
 	    <div class="wrapper-special clearfix">
-			<div id="best-products" class="banner_products" style="min-height: 100px; max-width:825px; margin:auto;">
+			<div id="best-products" class="banner_products" style="min-height: 100px; width:825px; margin:auto;">
 			<?php 
 				echo $this->image("staticBanner", array(
 						"thumbnail" => "staticBanner",
@@ -179,7 +179,7 @@
                 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4><small>Tanya Jawab Produk</small></h4>
+                        <h4><small>Tanya Jawab</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 
