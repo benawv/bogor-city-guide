@@ -1,13 +1,11 @@
-<header>
-        <style>
+<style>
         /* Override AJFC's feature box color */
         .box-dent--inner{ background: #009a44; }
         .box-dent::before{ border-top: 28px solid #009a44 !important;}
         .social-feeds .social-feeds--box.twitter{ background: #009a44 !important;}
         .social-feeds .social-feeds--box.facebook{background: #73c898!important;}
-        .backg{max-width:1140px; position:relative; margin:auto;}
+        .backg{max-width:960px; position:relative; margin:auto;}
         .foto{width:100%; height:auto;}
-        .jarak{height:50px;}
     </style>
 <div class="row">
      <div class="backg">
@@ -153,72 +151,32 @@
 </div>
     </div><!--/ .background -->
     </div>
-
-    
-</header>
-
-<div class="jarak">
-</div>
-
-<div class="page-wrapper-outer">
-	
-<section class="page-wrapper mt32 mb72">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-8 pr0">
+        <nav class="main-navigation">
+        <div class="container">
+           <div class="row">
+                <div class="col-xs-12 col-md-3">
+                    <a href="/kalkulator/tasbih" class="nav-item green sitemap">
+                        <h4><small>01</small>Ilustrasi</h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
                 
-                <div class="main-content">
-                    
-                    <div class="main-content--header">
-                        <h1 class="mb12"><?php echo $this->input('title_page_faq')?></h1>
-                    </div><!--/ .main-content--header -->
-                    
-                    <div class="faq-wrapper mt16 pt16">
-                        <?php
-			$l=0;
-			while ($this->block("rowTable")->loop()) {
-			$l++;
-			    ?>
-                        <div class="faq-item">
-                            
-			    <div class="faq-item--question" style="padding-right: 20px;">
-                                <ol start="<?php echo $l; ?>">
-				    <li><h4><?php echo $this->input('title_faq')?></h4></li>
-				</0l>
-                            </div><!--/ .faq-item--question -->
-                            <div class="faq-item--answer">
-                                <?php echo $this->wysiwyg('description')?>
-                            </div><!--/ .faq-item--answer -->
-                        </div><!--/ .faq-item -->
-			<?php
-			
-			} ?>
-                        
-                    </div><!--/ .faq-wrapper -->
-                    
-		    <?php echo $this->wysiwyg('description-bottom')?>
-                    <!--<p>Tidak menemukan jawaban untuk pertanyaan kamu? Silahkan hubungi kami melalui <a href="https://www.facebook.com/AJFCIndonesia">facebook</a>!</p>-->
-                    
-                </div><!--/ .main-content -->
+                <div class="col-xs-12 col-md-3">
+                    <a href="/tasbih/tanya-jawab" class="nav-item orange question">
+                        <h4><small>02</small>Tanya Jawab Produk</h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
                 
-            </div><!--/ .col-xs-12 -->
-            <div class="col-xs-12 col-md-4 pl0">
+                <div class="col-xs-12 col-md-3">
+                    <a href="http://agen.imkepo.com" class="nav-item users">
+                        <h4><small>03</small> Cari Agen Syariah </h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
                 
-                <div class="sidebar">
-                    <div class="sidebar-item">
-                        <div class="sidebar-item--header mb16">
-                            <h3><?php echo $this->input('title_page_tanyajawab')?></h3>
-                        </div><!--/ .sidebar-item--header -->
-                        <div class="sidebar-item--content">
-			    <?php echo $this->wysiwyg('sidebar')?>
-                        </div><!--/ .sidebar-item--content -->
-                    </div><!--/ .sidebar-item -->
-                    
-                </div><!--/ .sidebar -->
-                
-            </div><!--/ .col-xs-12 -->
-        </div><!--/ .row -->
-    </div><!--/ .container -->
-</section>
-
-</div><!--/ .page-wrapper-outer -->
+                <div class="col-xs-12 col-md-3">
+                    <a href="/tasbih/inquiry-form" class="nav-item red users">
+                        <h4><small>04</small> Inquiry Form</h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+            </div><!--/ .row -->
+        </div><!--/ .container -->
+    </nav>
