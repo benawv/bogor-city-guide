@@ -26,7 +26,8 @@
             'cari-agen-syariah',
             'inquiry-form',
             'tasbih-news',
-            'tasbih-news-detail'
+            'tasbih-news-detail',
+            'tanya-jawab-tasbih'
         )
     )
 );
