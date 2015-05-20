@@ -48,7 +48,7 @@
 <div class="row addPadding15">
     <div class="container boxes-view">
 	    <div class="wrapper-special clearfix">
-			<div id="best-products" class="banner_products" style="min-height: 100px; max-width:825px; margin:auto;">
+			<div id="best-products" class="banner_products" style="min-height: 100px; width:825px; margin:auto;">
 			<?php 
 				echo $this->image("staticBanner", array(
 						"thumbnail" => "staticBanner",
