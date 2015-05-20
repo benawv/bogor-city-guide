@@ -2,86 +2,7 @@
 <script src="/website/static/mobilku/jquery-ui.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 
-<header>
-    <style>
-        /* Override AJFC's feature box color */
-        .box-dent--inner{ background: #009a44; }
-        .box-dent::before{ border-top: 28px solid #009a44 !important;}
-        .social-feeds .social-feeds--box.twitter{ background: #009a44 !important;}
-        .social-feeds .social-feeds--box.facebook{background: #73c898!important;}
-        .backg{max-width:1140px; position:relative; margin:auto;}
-        #backg{max-width:1140px; position:relative; margin:auto;}
-        .foto{width:100%; height:auto;}
-        #but-size{width:292.5px;}
-        nav.main-navigation a.nav-item {
-  display: block;
-  position: relative;
-  height: 50px;
-  background: #d31f42;
-}
-        nav.main-navigation a.nav-item::after {
-  content: "";
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 45px;
-  pointer-events: none;
-}
- nav.main-navigation a.nav-item.blueA{
-      background: #003781;}       
-    </style>
 
-
-<nav class="main-navigation" style="max-width:1140px; margin:auto;">
-            <div class="row">
-
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
-                    <a href="/tasbih" class="nav-item blueA sitemap">
-                        <h4><small>Beranda</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/kalkulator/tasbih" class="nav-item green sitemap">
-                        <h4><small>Ilustrasi</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4><small>Tanya Jawab Produk</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item users">
-                        <h4><small>Cari Agen</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/inquiry-form" class="nav-item red users">
-                        <h4><small>Inquiry Form</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-            </div>
-            <div class="row">
-                
-            </div>
-    </nav>
-</header>
 
 <div class="header" style="margin-top:-20px;">
 
@@ -119,9 +40,76 @@
           font-size: initial !important;
         }
     }
+            nav.main-navigation a.nav-item {
+  display: block;
+  position: relative;
+  height: 50px;
+  background: #d31f42;
+}
+        nav.main-navigation a.nav-item::after {
+  content: "";
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 45px;
+  pointer-events: none;
+}
+ nav.main-navigation a.nav-item.blueA{
+      background: #003781;} 
 
 </style>
+<header>
+    <nav class="main-navigation" style="max-width:1140px; margin:auto;">
+            <div class="row">
 
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
+                    <a href="/tasbih" class="nav-item blueA sitemap">
+                        <h4><small>Beranda</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="/kalkulator/tasbih" class="nav-item green sitemap">
+                        <h4><small>Ilustrasi</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="/tasbih/tanya-jawab" class="nav-item orange question">
+                        <h4><small>Tanya Jawab Produk</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item users">
+                        <h4><small>Cari Agen</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="/tasbih/inquiry-form" class="nav-item red users">
+                        <h4><small>Inquiry Form</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+            </div>
+            <div class="row">
+                
+            </div>
+    </nav>
+    
+</header>
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
 
     <div class="description">
@@ -133,120 +121,10 @@
         <div class="content-calc">
             <div class="col-md-12">
 
-                <form class="form-horizontal" role="form">
-
-                    
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Nama</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="name" class="form-control" id="nama" placeholder="Nama" required /> 
-                            <label id="notif-nama" style="display:none; color: #f00;">
-                                Mohon maaf Anda belum atau salah memasukkan nama
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-                    
-                   
-                    
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Jenis Kelamin</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <select class="form-control" name="JenisKelamin" id="JenisKelamin">
-                                <option value="p">Pria</option>
-                                <option value="w">Wanita</option>
-                            </select>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>DOB</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" id="DOB" value="" placeholder="Tanggal Lahir" />
-                            <label id="notif-DOB" style="display:none; color: #f00;">
-                                Mohon maaf inputan yang Anda masukkan belum benar
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>No Handphone (Min. 8 digit)</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="phone" class="form-control" id="nohp" name="nohp" placeholder="0812345678" required onfocusout="this.value=validateNumber(this.value)" />
-                            <label id="notifNoHP" style="display:none; color: #f00;">
-                                Mohon maaf No HP yang Anda masukkan belum benar
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-                    
-                    
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Email</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required onfocusout="this.value=validateEMAIL(this.value)" />
-                            <label id="notifemail" style="display:none; color: #f00;">
-                                Mohon maaf email yang Anda masukkan belum benar
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Provinsi</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <select class="form-control" name="provinsi" id="provinsi_id" required>
-                                <?php
-                                    
-                                    $getProv=new Object_MarketingOfficeWilayah_List();                                    
-                                    foreach($getProv as $items){
-                                        ?>
-                                            <option value= "<?php echo $items->o_id; ?> "><?php echo $items->namaWilayah; ?></option>
-                                        <?php
-                                    }
-                                
-                                ?>
-                                
-                            
-                            </select>
-                            <label id="notifProvinsi" style="display:none; color: #f00;">
-                                Mohon maaf inputan yang Anda masukkan belum benar
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-                    
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Pesan</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <textarea cols="35" rows="10" placeholder="Tuliskan Pesan Anda disini Maksimal 250 Kata" id="pesan" ></textarea>
-                            <label id="notifemail" style="display:block; font-size:10px; color: #f00;">
-                                Sisa karakter yang Anda tulis : <span id="counterString">250</span>  Kata
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-                    <div class="form-group">
-                        <div class="col-md-2 col-md-offset-4">
-                            <a href="/tasbih/thankyou-inquiry">
-                            <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih inquiry-send" id="Submit" name="Submit" value="Submit">
-                        </div><!--/ .col-md-12 -->
-                    </div><!--/ .form-group -->
-
-                </form>
-                
+                <div class="form-box" id="notif-confirm">
+    <h1>TERIMA KASIH</h1>
+    <h3  style=" color:black;"><strong>Terima kasih Anda telah mengirimkan permintaan Anda. Anda akan segera dihubungi oleh agen Allianz Star Network.Jika Anda belum menerima kabar lebih dari 5 hari kerja silahkan langsung menghubungi csallianzina@gmail.com </strong></h3>
+                        </div>
 
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
