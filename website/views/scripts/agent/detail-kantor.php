@@ -150,7 +150,7 @@
         <?php foreach( $agent as $ag ){ ?>
             <div class="item">
                 <div class="heading">
-                    <h2 class="title_news"><?php echo ucwords(strtolower($ag->getNamaAgent()));?></h2>
+                    <h2 class="title_news"><a href="/detail-agent/<?php echo $ag->getO_key()."-".$ag->getO_id();?>"><?php echo ucwords(strtolower($ag->getNamaAgent()));?></a></h2>
                     <div class="btn-group">
                         <!--Link-->
                     </div>
