@@ -3,6 +3,19 @@
     .addPadding15{
 	padding-top: 15px;
     }
+    
+    
+        /* Override AJFC's feature box color */
+        .box-dent--inner{ background: #009a44; }
+        .box-dent::before{ border-top: 28px solid #009a44 !important;}
+        .social-feeds .social-feeds--box.twitter{ background: #009a44 !important;}
+        .social-feeds .social-feeds--box.facebook{background: #73c898!important;}
+        .news-feed{ background: none repeat scroll 0 0 white;
+    border: 1px solid #ddd;
+    min-height: 260px;
+    padding: 24px;
+    position: relative;}
+    
 
 </style>
 
@@ -123,6 +136,42 @@
 	    </div><!-- .wrapper-special -->	
     </div>
 
+<nav class="main-navigation">
+        <div class="container">
+           <div class="row">
+                <div class="col-xs-12 col-md-2">
+                    <a href="/" class="nav-item green sitemap">
+                        <h4>Beranda</h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+
+		
+                <div class="col-xs-12 col-md-2">
+                    <a href="/kalkulator/tasbih" class="nav-item green sitemap">
+                        <h4>Ilustrasi</h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-2">
+                    <a href="/tasbih/tanya-jawab" class="nav-item orange question">
+                        <h4>Tanya Jawab Produk</h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-2">
+                    <a href="agen.imkepo.com" class="nav-item users">
+                        <h4>Cari Agen Syariah </h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-2">
+                    <a href="" http:="" agen.imkepo.com""="" class="nav-item blue users">
+                        <h4>Inquiry Form</h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+            </div><!--/ .row -->
+        </div><!--/ .container -->
+    </nav>
     
 <div class="page-wrapper-outer">
     <div class="container">
