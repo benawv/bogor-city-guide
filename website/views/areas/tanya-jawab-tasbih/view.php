@@ -15,7 +15,32 @@
     min-height: 260px;
     padding: 24px;
     position: relative;}
-    
+            nav.main-navigation a.nav-item {
+  display: block;
+  position: relative;
+  height: 50px;
+  background: #d31f42;
+}
+        nav.main-navigation a.nav-item::after {
+  content: "";
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 45px;
+  pointer-events: none;
+}
 
 </style>
 
@@ -136,41 +161,42 @@
 	    </div><!-- .wrapper-special -->	
     </div>
 
-<nav class="main-navigation">
-        <div class="container">
-           <div class="row">
-                <div class="col-xs-12 col-md-2">
-                    <a href="/" class="nav-item green sitemap">
-                        <h4>Beranda</h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
+<nav class="main-navigation" style="max-width:1140px; margin:auto;">
+            <div class="row">
 
-		
-                <div class="col-xs-12 col-md-2">
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
+                    <a href="/tasbih" class="nav-item blueA sitemap">
+                        <h4><small>Beranda</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/kalkulator/tasbih" class="nav-item green sitemap">
-                        <h4>Ilustrasi</h4>
+                        <h4><small>Ilustrasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 
-                <div class="col-xs-12 col-md-2">
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4>Tanya Jawab Produk</h4>
+                        <h4><small>Tanya Jawab Produk</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 
-                <div class="col-xs-12 col-md-2">
-                    <a href="agen.imkepo.com" class="nav-item users">
-                        <h4>Cari Agen Syariah </h4>
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item users">
+                        <h4><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 
-                <div class="col-xs-12 col-md-2">
-                    <a href="" http:="" agen.imkepo.com""="" class="nav-item blue users">
-                        <h4>Inquiry Form</h4>
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="/tasbih/inquiry-form" class="nav-item red users">
+                        <h4><small>Inquiry Form</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-            </div><!--/ .row -->
-        </div><!--/ .container -->
+            </div>
+            <div class="row">
+                
+            </div>
     </nav>
     
 <div class="page-wrapper-outer">
