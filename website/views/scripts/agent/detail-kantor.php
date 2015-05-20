@@ -99,6 +99,7 @@
                                     <div class="photo">
                                         <img src="<?php echo $row->getFotoGaleriKantor()->items[$z]->fotoFotoKantor->path.$row->getFotoGaleriKantor()->items[$z]->fotoFotoKantor->filename;?>" />
                                     </div><!--/ .photo -->
+                                    <?php if($row->getFotoGaleriKantor()->items[$z]->posisiNotepad != ""){?>
                                     <div class="fixbox <?php echo $row->getFotoGaleriKantor()->items[$z]->posisiNotepad;?>60">
                                         <div class="place-bg bg-<?php echo $row->getFotoGaleriKantor()->items[$z]->warnaNotepad;?> place-bg-gallery">
                                             <div>
@@ -108,6 +109,15 @@
                                         </div><!--/ .place-bg -->
                                         <div class="edge e-<?php echo $row->getFotoGaleriKantor()->items[$z]->warnaNotepad;?>"></div>
                                     </div><!--/ .fixbox -->
+                                    <?php }else{?>
+                                    <style>
+                                        @media (max-width: 600px) {
+                                            #slideshow .flex-direction-nav .flex-next,#slideshow .flex-direction-nav .flex-prev{
+                                                top:20px !important;
+                                            }
+                                          }
+                                    </style>
+                                    <?php }?>
                                 </div><!--/ .slide -->
                             </li>
                 <?php
