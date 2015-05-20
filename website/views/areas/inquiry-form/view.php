@@ -331,7 +331,18 @@
                             </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
-
+                    
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>Pesan</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <textarea cols="35" rows="10" placeholder="Tuliskan Pesan Anda disini Maksimal 250 Kata" id="pesan" ></textarea>
+                            <label id="notifemail" style="display:block; font-size:10px; color: #f00;">
+                                Sisa karakter yang Anda tulis : <span id="counterString">250</span>  Kata
+                            </label>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
 
                     <div class="form-group">
                         <div class="col-md-2 col-md-offset-4">
@@ -510,7 +521,43 @@
             document.getElementById('notifNoHP').style.display= 'none';
         }
 
+    });   
+    $('#pesan').bind("input", function(){
+        var n = $('#pesan').val().length;
+        var max = 250;
+        
+        if(n > max){
+               $('#pesan').attr('readonly','readonly');        
+        }
+        
+        $('#counterString').html(250-n);
+        
+//        var CountStr = parseInt($('#counterString').html());
+//        var re = /^[a-zA-Z0-9]*$/; 
+//        var del = /^[\b]*$/;
+//        var value= $(this).html();
+//        
+//        if(del.value){
+//            alert('test');
+//            document.getElementById('notif-nama').style.disbled= 'false';
+//            ++CountStr;
+//            document.getElementById("counterString").textContent=CountStr;
+//        }
+//        else if(re.test(value)){
+//            if(CountStr <= 0){
+//                document.getElementById('notif-nama').style.readonly= true;
+//                $('#counterString').val('0');
+//            }
+//                else if(CountStr >= 0  && CountStr <= 250){
+//                document.getElementById('notif-nama').style.disbled= 'false';
+//                --CountStr;
+//                document.getElementById("counterString").textContent=CountStr;
+//            }
+//        }
+
     });
+    
+
     
     function validateNumber(value){
         if(value.length <= 8 ){
