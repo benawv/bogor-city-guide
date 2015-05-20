@@ -49,7 +49,46 @@
         nav.main-navigation a.nav-item.blueA{
       background: #003781;}
 </style>
+<header>
+    <nav class="main-navigation" style="max-width:1140px; margin:auto;">
+            <div class="row">
 
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
+                    <a href="/tasbih" class="nav-item blueA sitemap">
+                        <h4 style="font-size:18px"><small>Beranda</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="/kalkulator/tasbih" class="nav-item green sitemap">
+                        <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="/tasbih/tanya-jawab" class="nav-item orange question">
+                        <h4 style="font-size:18px"><small>Tanya Jawab Produk</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item users">
+                        <h4 style="font-size:18px"><small>Cari Agen</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="/tasbih/inquiry-form" class="nav-item red users">
+                        <h4 style="font-size:18px"><small>Inquiry Form</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+            </div>
+            <div class="row">
+                
+            </div>
+    </nav>
+    
+</header>
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
     
     <div class="description">
@@ -124,43 +163,7 @@
     </div><!--/ .description -->
                 
 </div><!--/ #newsletter-allianz -->
-<nav class="main-navigation">
-            <div class="row">
 
-                <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px;margin:auto; !important">
-                    <a href="/tasbih" class="nav-item blueA sitemap">
-                        <h4><small>Beranda</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/kalkulator/tasbih" class="nav-item green sitemap">
-                        <h4><small>Ilustrasi</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4><small>Tanya Jawab Produk</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item users">
-                        <h4><small>Cari Agen</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/inquiry-form" class="nav-item red users">
-                        <h4><small>Inquiry Form</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-            </div>
-            <div class="row">
-                
-            </div>
-    </nav>
 <link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
 <script src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="/website/static/mobilku/jquery-ui.js" type="text/javascript"></script>
