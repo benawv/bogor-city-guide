@@ -26,6 +26,52 @@
         border: solid 1px #003da5;
     }
 
+    .custom-section
+    {
+        padding: 0 !important;
+    }
+
+    .custom-section > h2
+    {
+        margin: 0 auto !important;
+        padding: 12px 25px !important;
+        background: #003781;
+        color: white;
+    }
+
+    .custom-section > h2 > custom-section
+    {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .custom-section .description
+    {
+        padding: 0;
+    }
+
+    .custom-section .description .section-left-40
+    {
+        padding: 0;
+        background: #111;
+    }
+
+    .custom-section .description .section-left-40 img
+    {
+        min-width: 100%;
+    }
+
+    .custom-section .description .section-right-60
+    {
+        padding: 25px 25px !important;
+    }
+
+    .custom-section .description .section-right-60 p
+    {
+        color: #666;
+        line-height: 1.8;
+    }
+
 </style>
 
 <div class="container boxes-view">
@@ -37,16 +83,16 @@
         <div id="slideshow" class="clearfix">
             <ul class="slides">
                 <?php
-					$z = 0;
+                    $z = 0;
                     foreach($kantor as $row){
-						$fotoProf = $row->getFotoKantor()->path.$row->getFotoKantor()->filename;
-						$namaLokasi = ucwords(strtolower($row->getNamaLokasi()));
-						$alamat = ucwords(strtolower($row->getAlamat1()." ".$row->getAlamat2()." ".$row->getAlamat3()));
-						$telp = $row->getKodeAreaTelepon()." ".$row->getNomorTelepon();
-						$fax = $row->getKodeAreaFax()." ".$row->getNomorFax();
-						$x = count($row->getFotoGaleriKantor()->items);
-						$email = $row->getEmailKantor();
-						for($z;$z<$x;$z++){
+                        $fotoProf = $row->getFotoKantor()->path.$row->getFotoKantor()->filename;
+                        $namaLokasi = ucwords(strtolower($row->getNamaLokasi()));
+                        $alamat = ucwords(strtolower($row->getAlamat1()." ".$row->getAlamat2()." ".$row->getAlamat3()));
+                        $telp = $row->getKodeAreaTelepon()." ".$row->getNomorTelepon();
+                        $fax = $row->getKodeAreaFax()." ".$row->getNomorFax();
+                        $x = count($row->getFotoGaleriKantor()->items);
+                        $email = $row->getEmailKantor();
+                        for($z;$z<$x;$z++){
                 ?>
                             <li>
                                 <div class="slide">
@@ -70,21 +116,24 @@
                 ?>
             </ul>
             </div>
-	</div><!-- .wrapper-special -->
-	
-	<div>
-		<div class="full-w bg-white">
+    </div><!-- .wrapper-special -->
+
+    <div>
+        <div class="full-w bg-white custom-section">
             <h2>
                 <span class="judul_section">Profil Kantor</span>
             </h2>
             <div class="description width-66">
                 <div class="section-left-40">
-                    <img src="<?php echo $fotoProf;?>" width="226" />
+                    <img src="<?php echo $fotoProf;?>" alt="<?php echo $namaLokasi; ?>"/>
+                    <!--
+                    <img src="http://placekitten.com/g/256/256" alt="Gambar" />
+                    -->
                 </div><!--/ .section-left-40 -->
                 <div class="section-right-60">
+                    <h2><?php echo $namaLokasi; ?></h2>
                     <p>
                         <?php
-                            echo $namaLokasi."<br />";
                             echo $alamat."<br />";
                             echo "Telp. ".$telp."<br />";
                             echo "Fax. ".$fax;
@@ -101,7 +150,7 @@
         <?php foreach( $agent as $ag ){ ?>
             <div class="item">
                 <div class="heading">
-                    <h2 class="title_news"><?php echo ucwords(strtolower($ag->getNamaAgent()));?></h2>
+                    <h2 class="title_news"><a href="/detail-agent/<?php echo $ag->getO_key()."-".$ag->getO_id();?>"><?php echo ucwords(strtolower($ag->getNamaAgent()));?></a></h2>
                     <div class="btn-group">
                         <!--Link-->
                     </div>
@@ -112,6 +161,6 @@
                 </div>
             </div>
         <?php }?>
-		</div>
-	</div>
+        </div>
+    </div>
 </div>

@@ -2,9 +2,9 @@
 
     #profil{
         width:100%;
-        
+
     }
-	.btn-sendmail
+    .btn-sendmail
     {
         margin: 0 auto;
         padding: 5px 10px;
@@ -25,7 +25,53 @@
         background: #003da5;
         border: solid 1px #003da5;
     }
-    
+
+    .custom-section
+    {
+        padding: 0 !important;
+    }
+
+    .custom-section > h2
+    {
+        margin: 0 auto !important;
+        padding: 12px 25px !important;
+        background: #003781;
+        color: white;
+    }
+
+    .custom-section > h2 > custom-section
+    {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .custom-section .description
+    {
+        padding: 0;
+    }
+
+    .custom-section .description .section-left-40
+    {
+        padding: 0;
+        background: #111;
+    }
+
+    .custom-section .description .section-left-40 img
+    {
+        min-width: 100%;
+    }
+
+    .custom-section .description .section-right-60
+    {
+        padding: 25px 25px !important;
+    }
+
+    .custom-section .description .section-right-60 p
+    {
+        color: #666;
+        line-height: 1.8;
+    }
+
 </style>
 <?php
 
@@ -36,18 +82,18 @@
     //echo "<pre>";
     //print_r($agent);
     //die();
-    
+
 ?>
 <div class="container boxes-view">
-	<?php //echo $this->template("includes/breadcrumb.php")?>
-	<!--<span class="breadcrumb"><h1 class="title"><?php /*echo $this->document->getProperty('navigation_title');*/?></h1></span>-->
+    <?php //echo $this->template("includes/breadcrumb.php")?>
+    <!--<span class="breadcrumb"><h1 class="title"><?php /*echo $this->document->getProperty('navigation_title');*/?></h1></span>-->
                          <div class="wrapper-special clearfix">
-		<div id="slideshow" class="clearfix">
+        <div id="slideshow" class="clearfix">
             <ul class="slides">
                 <?php
-					$z = 0;
+                    $z = 0;
                     foreach($agent as $row){
-						        $kodeAgent = $row->getkodeAgent();
+                                $kodeAgent = $row->getkodeAgent();
                                 $namaAgent = $row->getnamaAgent();
                                 $emailAgent = $row->getemail();
                                 $kantor = $row->getkantor();
@@ -55,87 +101,85 @@
                                 $fotoAgent = $row->getfotoAgent()->path.$row->getfotoAgent()->filename;
                                 $Facebook = $row->getURLFacebook();
                                 $Artikel = $row->getArtikel();
-						$x = count($row->getfotoGaleriAgent()->items);
-						for($z;$z<$x;$z++){
+                                $telepon = $row->kantor[0]->nomorTelepon;
+                        $x = count($row->getfotoGaleriAgent()->items);
+                        for($z;$z<$x;$z++){
                 ?>
-							<li>
-								<div class="slide">
-									<div class="photo">
-										<img src="<?php echo $row->getfotoGaleriAgent()->items[$z]->fotoFotoAgent->path.$row->getfotoGaleriAgent()->items[$z]->fotoFotoAgent->filename;?>" />
-									</div>
-									
-									<div class="fixbox <?php echo $row->getfotoGaleriAgent()->items[$z]->posisiNotepad;?>60">
-										<div class="place-bg bg-<?php echo $row->getfotoGaleriAgent()->items[$z]->warnaNotepad;?> place-bg-gallery">
-											<div>
-												<h2><?php echo $row->getfotoGaleriAgent()->items[$z]->judulNotepad;?></h2>
-												<p>
-													<?php echo $row->getfotoGaleriAgent()->items[$z]->deskripsiNotepad;?>
-												</p>
-											</div>
-										</div>
-										<div class="edge e-<?php echo $row->getfotoGaleriAgent()->items[$z]->warnaNotepad;?>">
-											
-										</div>
-									</div>
-								</div>
-							</li>
+                            <li>
+                                <div class="slide">
+                                    <div class="photo">
+                                        <img src="<?php echo $row->getfotoGaleriAgent()->items[$z]->fotoFotoAgent->path.$row->getfotoGaleriAgent()->items[$z]->fotoFotoAgent->filename;?>" />
+                                    </div>
+
+                                    <div class="fixbox <?php echo $row->getfotoGaleriAgent()->items[$z]->posisiNotepad;?>60">
+                                        <div class="place-bg bg-<?php echo $row->getfotoGaleriAgent()->items[$z]->warnaNotepad;?> place-bg-gallery">
+                                            <div>
+                                                <h2><?php echo $row->getfotoGaleriAgent()->items[$z]->judulNotepad;?></h2>
+                                                <p>
+                                                    <?php echo $row->getfotoGaleriAgent()->items[$z]->deskripsiNotepad;?>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="edge e-<?php echo $row->getfotoGaleriAgent()->items[$z]->warnaNotepad;?>">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
                 <?php
-						}
-					}
+                        }
+                    }
                 ?>
             </ul>
             </div>
-	</div><!-- .wrapper-special -->
+    </div><!-- .wrapper-special -->
 
-	
-	
-	<div>
-		
-		<div class="full-w bg-white">
 
+
+    <div>
+
+        <div class="full-w bg-white custom-section">
             <h2>
-                <span class="judul_section"><strong>PROFIL AGENT</strong></span>
+                <span class="judul_section">Profil Agent</span>
             </h2>
-            <div class="description width-66" style="width: 100%">
+            <div class="description width-66">
                 <div class="section-left-40">
-                    <img src="<?php echo $fotoAgent;?>" width="226" />
-                </div>
+                    <img src="<?php echo $fotoAgent; ?>" alt="<?php echo $namaAgent; ?>">
+                    <!--
+                    <img src="http://placekitten.com/g/256/256" alt="Gambar" />
+                    -->
+                </div><!--/ .section-left-40 -->
                 <div class="section-right-60">
-                    <p>
-                    <h3><strong><?php echo "NAMA  :<br/>"; ?></strong></h3>
-                        <label><?php echo $namaAgent."<br/><br/>";?></label>
-                        <h3><strong><?php echo "PROFIL :<br/>"; ?></strong></h3>
-                        <textarea id="profil" class="form-control" rows=10 cols=50 readonly><?php echo $profilAgent ?></textarea>
-                        <br/>
-						
-					</p>
-					<a href="mailto:<?php echo $emailAgent; ?>?Subject=Hello%20again" target="_top" class="btn btn-sendmail">Call Agent</a>
-                </div>
-            </div>
-        </div>
-		<div style="clear: both"></div>
-		
+                    <h2><?php echo $namaAgent; ?></h2>
+                    <p><?php echo $profilAgent."<br />"; ?></p>
+                    <a href="tel:<?php echo $telepon;?>" target="_top" class="btn btn-sendmail">Contact Agent</a>
+                </div><!--/ .section-right-60 -->
+            </div><!--/ .description-width-66 -->
+        </div><!--/ .full-w -->
+
+        <div style="clear: both"></div>
+
         <!--Button to Calc Live Insurance-->
         <div class="items-container">
             <div class="item">
                 <div class="heading">
                     <!--<h2 class="title_news">CALCULATOR LIVE INSURANCE</h2>-->
-					<h2 class="title_news">Artikel</h2>
+                    <h2 class="title_news"><a href="http://www.allianz.co.id/community-tips" target="_blank">Artikel</a></h2>
                     <div class="btn-group">
                         <!--Link-->
                     </div>
                 </div>
                 <!--<center><a href="#"><img src="/website/static/images/agent_locator/Calc-Live-Insurance.jpg" width="150" height="130" /></a></center>-->
-				<center><a href="#"><img src="/website/static/images/agent_locator/Agent_Profile_Picture_article.png" /></a></center>
-				<div class="description">
-                    <a href="#">&gt; Selengkapnya</a>
+                <center><img src="/website/static/images/agent_locator/Agent_Profile_Picture_article.png" /></center>
+                <div class="description">
+                    <a href="http://www.allianz.co.id/community-tips" target="_blank">&gt; Selengkapnya</a>
                 </div>
             </div>
-            
+
              <div class="item">
                 <div class="heading">
                     <!--<h2 class="title_news">NEWS</h2>-->
-					<h2 class="title_news">Produk Asuransi Jiwa</h2>
+                    <h2 class="title_news"><a href="http://www.allianz.co.id/produk/asuransi-jiwa" target="_blank">Produk Asuransi Jiwa</a></h2>
                     <div class="btn-group">
                         <!--Link-->
                     </div>
@@ -148,32 +192,32 @@
                         //echo ". . .<br/>";
                     ?>
                 </p>-->
-				<center><a href="#"><img src="/website/static/images/agent_locator/asuransi-jiwa-allianz-flexi-account-plus.jpg" /></a></center>
+                <center><img src="/website/static/images/agent_locator/asuransi-jiwa-allianz-flexi-account-plus.jpg" /></center>
                 <div class="description">
-                    <a href="#">&gt; Selengkapnya</a>
+                    <a href="http://www.allianz.co.id/produk/asuransi-jiwa" target="_blank">&gt; Selengkapnya</a>
                 </div>
             </div>
-            
+
             <div class="item">
                 <div class="heading">
                     <!--<h2 class="title_news">FACEBOOK</h2>-->
-					<h2 class="title_news">Agent Facebook Fan Page</h2>
+                    <h2 class="title_news"><a href="https://www.facebook.com/AllianzIndonesiaCommunity" target="_blank">Facebook Allianz Indonesia</a></h2>
                     <div class="btn-group">
                         <!--Link-->
                     </div>
                 </div>
-                <center><a href="#"><img src="/website/static/images/agent_locator/Agent_Profile_Picture_SocialMedia.png" /></a></center>
+                <center><img src="/website/static/images/agent_locator/Agent_Profile_Picture_SocialMedia.png" /></center>
                 <div class="description">
-                    <a href="#">&gt; Selengkapnya</a>
+                    <a href="https://www.facebook.com/AllianzIndonesiaCommunity" target="_blank">&gt; Selengkapnya</a>
                 </div>
 
-                
+
                 <!--<div class="fb-page" data-href="<?php echo $Facebook; ?>" data-width="304" data-height="130" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/FacebookIndonesia?brand_redir=20531316728"><a href="https://www.facebook.com/FacebookIndonesia?brand_redir=20531316728">Facebook</a></blockquote></div></div>-->
             </div>
-		</div>
-        
-        
-	</div>
+        </div>
+
+
+    </div>
 </div>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

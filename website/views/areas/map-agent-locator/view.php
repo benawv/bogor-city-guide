@@ -126,7 +126,7 @@
       }
       markers.length = 0;
     }
-
+    
     function initialize() {
         var mapOptions = {
           center: new google.maps.LatLng(-6.2297465, 106.829518),
@@ -359,6 +359,7 @@
 		var kordinat = (lat - degreeRadius) +"#"+ (lng - degreeRadius) +"#"+ (lat + degreeRadius) +"#"+ (lng + degreeRadius);
 		return kordinat;
 	}
+    
 	var MapLoad = function(titik, lat, long, titikMarker){
 	    clearOverlays();
 		//console.log(k+"  "+w);
@@ -368,7 +369,7 @@
 			"type" : "POST",
 			"success" : function(responseData){
 				var entries = responseData;
-				var listLoc = jQuery.parseJSON(entries);
+                var listLoc = jQuery.parseJSON(entries);
 				var image = '/website/static/images/allianz-map-marker-shadow-105.png';
 				var image2 = '/website/static/images/allianz-map-marker-shadow_2.png';
 			    var marker = [];
@@ -442,20 +443,57 @@
 					else{
 						nomorFax = "-";
 					}
-					
-				    var data_content = '<div class="content">'+
+                    var jumSubKordinat = item.sub_kordinat.length;
+                    if (jumSubKordinat > 1) {
+                        if (item.namaLokasi != null) {
+                            tmpNamaLokasi = item.namaLokasi.split('-');
+                            NamaLokasi = tmpNamaLokasi[1];
+                            if (NamaLokasi != undefined) {
+                                tmpNamaLokasi2 = NamaLokasi.split(' ');
+                                NamaLokasi = "";
+                                NamaLokasi = tmpNamaLokasi2[1]+" "+tmpNamaLokasi2[2];
+                            }
+                        }
+                        else{
+                            NamaLokasi = "-";
+                        }
+                        var loop = 0;
+                        var satuGedung = "";
+                        for(loop;loop < jumSubKordinat;loop++){
+                            tmpNamaLokasi2 = item.sub_kordinat[loop].namaLokasi.split('-');
+                            NamaLokasi2 = tmpNamaLokasi2[1];
+                            //console.log(item.sub_kordinat[loop]);
+                            satuGedung = satuGedung+'<br /><a href="/detail-kantor/'+item.sub_kordinat[loop].o_key+"-"+item.sub_kordinat[loop].o_id+'" style="margin-top=5px;"><strong>'+NamaLokasi2+'</strong></a>';
+                        }
+                        var data_content = '<div class="content cusContent" style="width:160px;max-height:200px;overflow:scroll;">'+
 											'<div id="siteNotice"></div>'+
 											'<img src="/website/static/images/allianz-eagle-3d.png" height="50" width="50" />'+
 											'<h2 id="firstHeading" class="firstHeading">'+NamaLokasi+'</h2>'+
 											'<div id="bodyContent">'+
 											//'<b>'+item.kodeLokasi+'</b><br />'+
-											'Alamat : '+Alamat+'<br />'+
+											//'Alamat : '+Alamat+'<br />'+
+											'Telp :'+kodeTelepon+" "+nomorTelepon+'<br />'+
+											'Fax :'+kodeFax+" "+nomorFax+''+
+											satuGedung+
+											'</div>'+
+										'</div>';
+                    }
+					
+				    else{
+                        var data_content = '<div class="content">'+
+											'<div id="siteNotice"></div>'+
+											'<img src="/website/static/images/allianz-eagle-3d.png" height="50" width="50" />'+
+											'<h2 id="firstHeading" class="firstHeading">'+NamaLokasi+'</h2>'+
+											'<div id="bodyContent">'+
+											//'<b>'+item.kodeLokasi+'</b><br />'+
+											//'Alamat : '+Alamat+'<br />'+
 											'Telp :'+kodeTelepon+" "+nomorTelepon+'<br />'+
 											'Fax :'+kodeFax+" "+nomorFax+''+
 											'<br /><a href="/detail-kantor/'+item.o_key+"-"+item.o_id+'" style="margin-top=5px;"><strong>&gt; Homepage Kantor</strong></a>'+
 											'</div>'+
 										'</div>';
-				    
+                    }
+                    
 					if(item.o_key == "allianz-tower")
 				    {
 					    var marker = new google.maps.Marker({
@@ -494,6 +532,10 @@
                         map: map,
                         html: "Lokasi Anda saat ini."
                     });
+                    google.maps.event.addListener(marker2, 'click', function () {
+                        infowindow.setContent(this.html);
+                        infowindow.open(map, this);
+                    });
                 }
                 
                 if (titikMarker == "search") {
@@ -503,11 +545,10 @@
                         icon: imageCurrentMarker,
                         map: map
                     });
+                    google.maps.event.addListener(marker2, 'click', function () {
+                        
+                    });
                 }
-                google.maps.event.addListener(marker2, 'click', function () {
-                    infowindow.setContent(this.html);
-                    infowindow.open(map, this);
-                });
                 
 			}
 		})
@@ -519,7 +560,7 @@
 			return $1.toUpperCase();
 		  });
 	  }
-	
+  
 	function MapLoad2(k,w){
 		clearOverlays();
 		//console.log(k+"  "+w);
@@ -541,7 +582,7 @@
 											    '<h2 id="firstHeading" class="firstHeading">'+item.officeName+'</h2>'+
 											    '<div id="bodyContent">'+
 											    '<b>'+item.subName+'</b><br />'+
-											    'Alamat : '+item.alamat+'<br />'+
+											    //'Alamat : '+item.alamat+'<br />'+
 											    'Telp :'+item.phone+'<br />'+
 											    'Fax :'+item.fax+''+
 											    '</div>'+
@@ -585,7 +626,7 @@
 		})
 		
 	}
-	
+    
 	  $(function(){
 			//google.maps.event.addDomListener(window, 'load', initialize);
 			$('#map-shortcut .kantor').change(function(e){
