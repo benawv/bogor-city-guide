@@ -101,6 +101,7 @@
                                 $fotoAgent = $row->getfotoAgent()->path.$row->getfotoAgent()->filename;
                                 $Facebook = $row->getURLFacebook();
                                 $Artikel = $row->getArtikel();
+                                $telepon = $row->kantor[0]->nomorTelepon;
                         $x = count($row->getfotoGaleriAgent()->items);
                         for($z;$z<$x;$z++){
                 ?>
@@ -151,7 +152,7 @@
                 <div class="section-right-60">
                     <h2><?php echo $namaAgent; ?></h2>
                     <p><?php echo $profilAgent."<br />"; ?></p>
-                    <a href="mailto:<?php echo $emailAgent; ?>?Subject=Hello%20again" target="_top" class="btn btn-sendmail">Call Agent</a>
+                    <a href="tel:<?php echo $telepon;?>" target="_top" class="btn btn-sendmail">Contact Agent</a>
                 </div><!--/ .section-right-60 -->
             </div><!--/ .description-width-66 -->
         </div><!--/ .full-w -->
@@ -163,22 +164,22 @@
             <div class="item">
                 <div class="heading">
                     <!--<h2 class="title_news">CALCULATOR LIVE INSURANCE</h2>-->
-                    <h2 class="title_news">Artikel</h2>
+                    <h2 class="title_news"><a href="http://www.allianz.co.id/community-tips" target="_blank">Artikel</a></h2>
                     <div class="btn-group">
                         <!--Link-->
                     </div>
                 </div>
                 <!--<center><a href="#"><img src="/website/static/images/agent_locator/Calc-Live-Insurance.jpg" width="150" height="130" /></a></center>-->
-                <center><a href="#"><img src="/website/static/images/agent_locator/Agent_Profile_Picture_article.png" /></a></center>
+                <center><img src="/website/static/images/agent_locator/Agent_Profile_Picture_article.png" /></center>
                 <div class="description">
-                    <a href="#">&gt; Selengkapnya</a>
+                    <a href="http://www.allianz.co.id/community-tips" target="_blank">&gt; Selengkapnya</a>
                 </div>
             </div>
 
              <div class="item">
                 <div class="heading">
                     <!--<h2 class="title_news">NEWS</h2>-->
-                    <h2 class="title_news">Produk Asuransi Jiwa</h2>
+                    <h2 class="title_news"><a href="http://www.allianz.co.id/produk/asuransi-jiwa" target="_blank">Produk Asuransi Jiwa</a></h2>
                     <div class="btn-group">
                         <!--Link-->
                     </div>
@@ -191,23 +192,23 @@
                         //echo ". . .<br/>";
                     ?>
                 </p>-->
-                <center><a href="#"><img src="/website/static/images/agent_locator/asuransi-jiwa-allianz-flexi-account-plus.jpg" /></a></center>
+                <center><img src="/website/static/images/agent_locator/asuransi-jiwa-allianz-flexi-account-plus.jpg" /></center>
                 <div class="description">
-                    <a href="#">&gt; Selengkapnya</a>
+                    <a href="http://www.allianz.co.id/produk/asuransi-jiwa" target="_blank">&gt; Selengkapnya</a>
                 </div>
             </div>
 
             <div class="item">
                 <div class="heading">
                     <!--<h2 class="title_news">FACEBOOK</h2>-->
-                    <h2 class="title_news">Agent Facebook Fan Page</h2>
+                    <h2 class="title_news"><a href="https://www.facebook.com/AllianzIndonesiaCommunity" target="_blank">Facebook Allianz Indonesia</a></h2>
                     <div class="btn-group">
                         <!--Link-->
                     </div>
                 </div>
-                <center><a href="#"><img src="/website/static/images/agent_locator/Agent_Profile_Picture_SocialMedia.png" /></a></center>
+                <center><img src="/website/static/images/agent_locator/Agent_Profile_Picture_SocialMedia.png" /></center>
                 <div class="description">
-                    <a href="#">&gt; Selengkapnya</a>
+                    <a href="https://www.facebook.com/AllianzIndonesiaCommunity" target="_blank">&gt; Selengkapnya</a>
                 </div>
 
 
