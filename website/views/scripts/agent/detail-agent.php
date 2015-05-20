@@ -111,6 +111,7 @@
                                         <img src="<?php echo $row->getfotoGaleriAgent()->items[$z]->fotoFotoAgent->path.$row->getfotoGaleriAgent()->items[$z]->fotoFotoAgent->filename;?>" />
                                     </div>
 
+                                    <?php if($row->getfotoGaleriAgent()->items[$z]->posisiNotepad != ""){?>
                                     <div class="fixbox <?php echo $row->getfotoGaleriAgent()->items[$z]->posisiNotepad;?>60">
                                         <div class="place-bg bg-<?php echo $row->getfotoGaleriAgent()->items[$z]->warnaNotepad;?> place-bg-gallery">
                                             <div>
@@ -124,6 +125,15 @@
 
                                         </div>
                                     </div>
+                                    <?php }else{?>
+                                        <style>
+                                            @media (max-width: 600px) {
+                                                #slideshow .flex-direction-nav .flex-next,#slideshow .flex-direction-nav .flex-prev{
+                                                    top:20px !important;
+                                                }
+                                              }
+                                        </style>
+                                    <?php }?>
                                 </div>
                             </li>
                 <?php
