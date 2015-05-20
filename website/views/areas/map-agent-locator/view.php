@@ -449,7 +449,7 @@
 											'<h2 id="firstHeading" class="firstHeading">'+NamaLokasi+'</h2>'+
 											'<div id="bodyContent">'+
 											//'<b>'+item.kodeLokasi+'</b><br />'+
-											'Alamat : '+Alamat+'<br />'+
+											//'Alamat : '+Alamat+'<br />'+
 											'Telp :'+kodeTelepon+" "+nomorTelepon+'<br />'+
 											'Fax :'+kodeFax+" "+nomorFax+''+
 											'<br /><a href="/detail-kantor/'+item.o_key+"-"+item.o_id+'" style="margin-top=5px;"><strong>&gt; Homepage Kantor</strong></a>'+
@@ -544,7 +544,7 @@
 											    '<h2 id="firstHeading" class="firstHeading">'+item.officeName+'</h2>'+
 											    '<div id="bodyContent">'+
 											    '<b>'+item.subName+'</b><br />'+
-											    'Alamat : '+item.alamat+'<br />'+
+											    //'Alamat : '+item.alamat+'<br />'+
 											    'Telp :'+item.phone+'<br />'+
 											    'Fax :'+item.fax+''+
 											    '</div>'+
