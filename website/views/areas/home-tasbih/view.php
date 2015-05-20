@@ -16,7 +16,7 @@
         nav.main-navigation a.nav-item {
   display: block;
   position: relative;
-  height: 35px;
+  height: 45px;
   background: #d31f42;
 }
         nav.main-navigation a.nav-item::after {
@@ -186,8 +186,9 @@
 </div>
     </div><!--/ .background -->
     </div>
-            <nav class="main-navigation">
+            <nav class="main-navigation" style="max-width:1140px; margin:auto;">
             <div class="row">
+
 
                 
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
