@@ -26,8 +26,6 @@
   height: 50px;
   background: #d31f42;
 }
-        nav.main-navigation a.nav-item.blueA{
-      background: #003781;}
         nav.main-navigation a.nav-item::after {
   content: "";
   display: inline-block;
@@ -48,6 +46,8 @@
   font-size: 45px;
   pointer-events: none;
 }
+        nav.main-navigation a.nav-item.blueA{
+      background: #003781;}
 </style>
 
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
@@ -64,147 +64,67 @@
                 <form class="form-horizontal" role="form">
 
                     <div class="form-box">
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Tanggal Pembuatan Perhitungan</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" id="tgl-hitung" value="<?php echo date( 'd/m/Y' ); ?>" required>
-                             <label id="notif-tglhitung" style="display:none; color: #f00;">
-                                Mohon maaf Anda belum memasukkan tanggal pembuatan
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-                    <label><strong>Kalkulasi</strong></label>
-
+                    <div class="form-box" id="notif-confirm" style="display:block; background:#009a44;"><h3  style=" color:white;"><strong>Terima kasih Anda telah membuat ilustrasi produk Allianz Tasbih (Tabungan Asuransi Produk Biaya Haji). Untuk mengetahui hasil perhitungan silahkan isi field dibawah ini untuk dikirimkan ke email pribadi Anda</strong></h3>
+                        </div>
+                    <label><strong>Data Diri</strong></label>
                     
 
-
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Tanggal Lahir (Min.  18 tahun)</label>
+                            <label>Nama</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
-                            <label id="notif-tgllahir" style="display:none; color: #f00;">
-                                Mohon maaf inputan Anda belum benar
+                            <input type="text" class="form-control" id="nama" placeholder="Nama" required onfocusout="this.value=validateNama(this.value)">
+                            <label id="notif-nama" style="display:none; color: #f00;">
+                                Mohon maaf Anda belum atau salah memasukkan nama
                             </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Jenis Kelamin</label>
+                            <label>No Handphone (Min. 8 digit)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" name="JenisKelamin" id="JenisKelamin">
-                                <option value="l">Pria</option>
-                                <option value="p">Wanita</option>
-                            </select>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Usia(Tahun)</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" id="usia" placeholder="Usia(Tahun)" readonly>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Frekuensi Pembayaran</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <select class="form-control" name="Frekuensi" id="Frekuensi">
-                                <option value="3">Triwulan</option>
-                                <option value="2">Semesteran</option>
-                                <option value="1">Tahunan</option>
-                            </select>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-                    </div><!--/ .form-box -->
-                    <div class="form-box">
-
-                    <label><strong>Santunan Meninggal Dunia</strong></label>
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Asuransi Jiwa(Min. Rp.50.000.000)</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Asuransi Jiwa(Min. Rp.50.000.000)">
-                            <label id="notif-asuransijiwa" style="display:none; color: #f00;">
-                                Mohon maaf inputan yang Anda masukkan belum benar
+                            <input type="text" class="form-control" id="nohp" name="nohp" placeholder="No Handphone" required onfocusout="this.value=validateNumber(this.value)">
+                            <label id="notifNoHP" style="display:none; color: #f00;">
+                                Mohon maaf No HP yang Anda masukkan belum benar
                             </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Massa Pembayaran Kontribusi/Premi(Tahun)</label>
+                            <label>Email</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" name="masa-premi" id="masa-premi">
-                                <option value="5">5</option>
-                                <option value="10">10</option>
-                                <option value="15">15</option>
-                            </select>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required onfocusout="this.value=validateEMAIL(this.value)">
+                            <label id="notifemail" style="display:none; color: #f00;">
+                                Mohon maaf email yang Anda masukkan belum benar
+                            </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
-                    </div><!--/ .form-box -->
 
-                    <div class="form-box text-center waiting-calc" style="display: none;">
-                        <i class="fa fa-refresh fa-3x fa-spin"></i>
-                    </div><!--/ .form-box -->
-
-                    <div class="form-box result-calc" style="display:none; ">
-			<label><strong>Setoran Tahunan</strong></label>
-    
-			<div class="form-group">
-			    <div class="col-md-4">
-				<label>Kontribusi Berkala/ Premi pertahun</label>
-			    </div><!--/ .col-md-4 -->
-			    <div class="col-md-4">
-				<input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly>
-			    </div><!--/ .col-md-4 -->
-			</div><!--/ .form-group -->
-			
-		    </div>
 		    
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
-                            <a href="/tasbih/tasbih-kedua">
-                            <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" value="Kalkulasi">
+                            <a href="/tasbih/thankyou">
+                            <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next" value="Submit">
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
 
                 </form>
+    <nav class="main-navigation">
 
-                <div class="col-md-12 note">
-                    <h4 class="mb10"><strong>Note: </strong></h4>
-                    <ul class="mb30">
-                        <li>Jika meninggal dunia karena sakit, Ahli waris akan mendapatkan Santunan meninggal Dunia 100%</li>
-                        <li>Jika meninggal dunia di saat menunaikan Ibadah Haji maka akan mendapatkan Santunan meninggal Dunia sebesar 200%</li>
-                        <li>Selama mengikuti asuransi Tertanggung akan mendapatkan perlindungan Medical Evakuasi</li>
-                        <li>Masa asuransi adalah = masa pembayaran konstribusi / premi + 10 tahun + 1 tahun</li>
-                        <li>Setelah selesai masa pembayaran kontribusi / premi pemegang polis akan mendapatkan tahapan dana pertama sebesar 50% dari santunan meninggal dunia</li>
-                        <li>Setelah tahapan dana pertama pemegang polis akan mendapatkan tahapan dana kedua sebesar sisa saldo dana yang berkembang didalam produk ini</li>
-                        <li>Untuk informasi lebih lengkap silahkan menghubungi Agen atau Kantor pemasaran Allianz terdekat</li>
-                    </ul>
-                </div><!--/ .col-md-12 -->
+                
 
-                    
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
     </div><!--/ .description -->
-        <nav class="main-navigation">
+                
+</div><!--/ #newsletter-allianz -->
+<nav class="main-navigation">
             <div class="row">
 
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px;margin:auto; !important">
@@ -241,8 +161,6 @@
                 
             </div>
     </nav>
-</div><!--/ #newsletter-allianz -->
-
 <link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
 <script src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="/website/static/mobilku/jquery-ui.js" type="text/javascript"></script>
@@ -316,12 +234,11 @@
                     $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
                 }
 
-                
+
             });
 
 
             }
-            
         });
 
     });

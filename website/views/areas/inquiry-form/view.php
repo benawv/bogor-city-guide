@@ -9,8 +9,37 @@
         .box-dent::before{ border-top: 28px solid #009a44 !important;}
         .social-feeds .social-feeds--box.twitter{ background: #009a44 !important;}
         .social-feeds .social-feeds--box.facebook{background: #73c898!important;}
-        .backg{max-width:960px; position:relative; margin:auto;}
+        .backg{max-width:1140px; position:relative; margin:auto;}
+        #backg{max-width:1140px; position:relative; margin:auto;}
         .foto{width:100%; height:auto;}
+        #but-size{width:292.5px;}
+        nav.main-navigation a.nav-item {
+  display: block;
+  position: relative;
+  height: 50px;
+  background: #d31f42;
+}
+        nav.main-navigation a.nav-item::after {
+  content: "";
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 45px;
+  pointer-events: none;
+}
+        
     </style>
 <div class="row">
      <div class="backg">
@@ -156,35 +185,7 @@
 </div>
     </div><!--/ .background -->
     </div>
-        <nav class="main-navigation">
-        <div class="container">
-           <div class="row">
-                <div class="col-xs-12 col-md-3">
-                    <a href="/kalkulator/tasbih" class="nav-item green sitemap">
-                        <h4><small>01</small>Ilustrasi</h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-3">
-                    <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4><small>02</small>Tanya Jawab Produk</h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-3">
-                    <a href="http://agen.imkepo.com" class="nav-item users">
-                        <h4><small>03</small> Cari Agen Syariah </h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-3">
-                    <a href="/tasbih/inquiry-form" class="nav-item red users">
-                        <h4><small>04</small> Inquiry Form</h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-            </div><!--/ .row -->
-        </div><!--/ .container -->
-    </nav>
+
 
 </header>
 
@@ -219,7 +220,7 @@
     .btn-tasbih{ background: #009a44 !important; }
     .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
     
-    @media only screen and (min-width: 960px){
+    @media only screen and (min-width: 1140px){
         body {
           font-size: initial !important;
         }
@@ -232,7 +233,7 @@
     <div class="description">
 
         <div class="header-calc">
-            <h1>Inqury Form</h1>
+            <h1>INQUIRY FORM</h1>
         </div><!--/ .header-calc -->
 
         <div class="content-calc">
@@ -339,6 +340,7 @@
                     </div><!--/ .form-group -->
 
                 </form>
+                
 
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
@@ -346,14 +348,50 @@
 </div><!--/ #newsletter-allianz -->
 
 <link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
-
+        
 
 
 <!--
 </div>
 --></div>
         <div style="clear:both; "></div>
+<nav class="main-navigation">
+            <div class="row">
 
+                <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px;margin:auto; !important">
+                    <a href="/tasbih" class="nav-item blueA sitemap">
+                        <h4><small>Beranda</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="/kalkulator/tasbih" class="nav-item green sitemap">
+                        <h4><small>Ilustrasi</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="/tasbih/tanya-jawab" class="nav-item orange question">
+                        <h4><small>Tanya Jawab Produk</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item users">
+                        <h4><small>Cari Agen</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                
+                <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="/tasbih/inquiry-form" class="nav-item red users">
+                        <h4><small>Inquiry Form</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+            </div>
+            <div class="row">
+                
+            </div>
+    </nav>
         <div class="items-container">
                     </div><!--/ .container -->
 
