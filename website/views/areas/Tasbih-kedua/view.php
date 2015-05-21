@@ -170,7 +170,7 @@
 		    
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
-                            <!--<a href="/tasbih/thankyou">-->
+                            <a href="/tasbih/thankyou">
                             <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next" value="Submit">
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
