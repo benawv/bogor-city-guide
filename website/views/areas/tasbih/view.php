@@ -97,7 +97,7 @@
                 </div><!--/ .col-xs-12 -->
                 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/inquiry-form" class="nav-item greenChat chat">
+                    <a href="/tasbih/inquiry-form" class="nav-item grey chat">
                         <h4 style="font-size:18px"><small>Inquiry Form</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->

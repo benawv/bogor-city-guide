@@ -27,9 +27,10 @@
         {
             display: block;
             position: relative;
-            height: 45px;
+            height: 50px;
             background: #d31f42;
         }
+        
         nav.main-navigation a.nav-item::after
         {
             content: "";
@@ -51,6 +52,16 @@
             font-size: 45px;
             pointer-events: none;
         }
+        
+        nav.main-navigation a.nav-item.chat::after {
+            content: "\f003  ";
+        }
+
+        
+        .nav-item{
+            text-align: left !important;
+        }
+      
     </style>
 <div class="row">
      <div class="backg">
@@ -201,29 +212,27 @@
             <nav class="main-navigation" style="max-width:960px; margin:auto;">
             <div class="row">
 
-
-
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/kalkulator/tasbih" class="nav-item green">
-                        <h4><small>Ilustrasi</small></h4>
+                    <a href="/kalkulator/tasbih" class="nav-item green sitemap">
+                        <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-
+                
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/tanya-jawab" class="nav-item orange">
-                        <h4><small>Tanya Jawab</small></h4>
+                    <a href="/tasbih/tanya-jawab" class="nav-item orange question">
+                        <h4 style="font-size:18px"><small>Tanya Jawab</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-
+                
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item">
-                        <h4><small>Cari Agen</small></h4>
+                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
+                        <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-
+                
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/inquiry-form" class="nav-item red">
-                        <h4><small>Inquiry Form</small></h4>
+                    <a href="/tasbih/inquiry-form" class="nav-item grey chat">
+                        <h4 style="font-size:18px"><small>Inquiry Form</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
             </div>
