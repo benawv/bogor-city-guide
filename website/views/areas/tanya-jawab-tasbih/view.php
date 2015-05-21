@@ -82,25 +82,25 @@
                     <div id="tab-contact" class="tab-content">
                         <h3>Kontak</h3>
                         <p>Asuransi Jiwa:<br></p>
-                        
+
                         <ul>
                             <li>Tel: +6221-2926 9999</li>
                             <li>Fax: +6221-2926 8080</li>
                             <li>contactus@allianz.co.id</li>
                         </ul>
-                        
+
                         <p>&nbsp;</p>
-                        
+
                         <p>Asuransi Umum:<br></p>
-                        
+
                         <ul>
                             <li>Tel: +6221-2926 9999</li>
                             <li>Fax: +6221-2926 9090</li>
                             <li>Feedback@allianz.co.id</li>
                         </ul>
-                        
+
                         <p>&nbsp;</p>
-                        
+
                     </div>
                     <div id="tab-socialmedia" class="tab-content">
                         <h3>Social Media</h3>
@@ -124,8 +124,8 @@
                         </ul>
                         </p>
                     </div>
-                    
-                
+
+
                     <!--<div class="tab-button">
                         <ul>
                             <li><a href="#tab-quicklinks">Quick Links</a></li>
@@ -154,7 +154,7 @@
                                 <li><a href="#tab-contact" class="accordion-tab" onclick="changeHeader(this)">Kontak</a></li>
                                 <li><a href="#tab-socialmedia" class="accordion-tab" onclick="changeHeader(this)">Social Media</a></li>
                                 <li><a href="#tab-download" class="accordion-tab" onclick="changeHeader(this)">Download</a></li>
-                                
+
                             </ul>
                         </div>
                     </div>
@@ -162,7 +162,6 @@
                 <?php } ?>
             </div>
         </div><!-- .wrapper-special -->
->>>>>>> 8562b8318cacb94898a312bee6d0404cdb53f4f6
     </div>
 
 <nav class="main-navigation" style="max-width:960px; margin:auto;">
