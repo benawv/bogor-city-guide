@@ -244,7 +244,8 @@
                     <div class="form-group">
                         <div class="col-md-2 col-md-offset-4">
                             <a href="/tasbih/thankyou-inquiry">
-                            <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih inquiry-send" id="Submit" name="Submit" value="Submit">
+                                <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih inquiry-send" id="Submit" name="Submit" value="Submit">
+                            </a>
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
 
@@ -325,6 +326,9 @@
                           "&prov="+prov+
                           "&pesan="+pesan,
                  "success" : function(response){
+                    if (response == "success") {
+                        window.location = "/tasbih/thankyou-inquiry";
+                    }
                  }
              });
             }
