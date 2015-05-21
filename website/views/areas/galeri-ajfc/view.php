@@ -67,9 +67,11 @@
             $entries->setOrder("desc");
             $entries->setCondition("statusSubmitKuis LIKE 1 AND approve LIKE 1");
             $jml = count($entries);
+			//echo $jml;
+			//die();
             $sisa = 8 - $jml;
             //echo $jml.'sisa='.$sisa;
-            if($jml < 8){
+            if($jml >= 8){
                 $n = 1;
             }else{
                 $n = 2;
@@ -238,6 +240,7 @@
             }
             //console.log('xx='+$hidden.next('.group').length);
             //setInterval(image, 3000);
+			resizePageWrapper();
         });
 
 
