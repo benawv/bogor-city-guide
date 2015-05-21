@@ -54,8 +54,7 @@ class TasbihController extends Website_Controller_Action {
             $mail->addTo($email);
             $mail->send();
 		
-            echo "success";    
-            die();
+            echo "success";
         }
         
         public function listAction () {
