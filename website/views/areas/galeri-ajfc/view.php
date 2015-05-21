@@ -111,7 +111,8 @@
                     }
                     if($nomer == 4 && $no == 1)
                         $num = 0;
-
+				    if($num == 8)
+				        $num =0;
 
                     if($no == 1){
                         echo '<div class="row group '.$active.'" id="'.$nclass.'">';
