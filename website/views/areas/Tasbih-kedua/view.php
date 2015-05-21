@@ -23,7 +23,7 @@
         nav.main-navigation a.nav-item.home::after {
       content: "\f015"; }        
     nav.main-navigation a.nav-item.chat::after {
-      content: "\f1d7 "; }
+      content: "\f003  "; }
     nav.main-navigation a.nav-item {
   display: block;
   position: relative;
