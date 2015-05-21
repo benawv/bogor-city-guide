@@ -55,7 +55,13 @@
     <div class="container" id="container">
         <?php
 
-            $posistion = "odd";
+            function limit_words($string, $word_limit)
+				{
+					$words = explode(" ",$string);
+					return implode(" ",array_splice($words,0,$word_limit));
+				}
+				
+			$posistion = "odd";
             $no = 1;
             $num = $default = 0;
             $nomer = $nurut = 1;
@@ -85,8 +91,8 @@
 
                 foreach ($entries as $key) {
                     $img = $key->fotoPeserta;
-                    $ptg = ucfirst($key->satuTerpenting);
-                    $nama = ucwords($key->namaLengkap);
+                    $ptg = limit_words(ucfirst(strtolower($key->satuTerpenting)),10);
+                    $nama = ucwords(strtolower($key->namaLengkap));
                     $tgll = date("Y", strtotime($key->tanggalLahir));
                     $nyear = date("Y",time());
                     $umur = $nyear-$tgll;
