@@ -168,7 +168,7 @@
                 </div><!--/ .heading -->
                 <img src="<?php echo $ag->getFotoAgent();?>" width="304" />
                 <div class="description">
-                    <a href="/detail-agent/<?php echo $ag->getO_key()."-".$ag->getO_id();?>">&gt; Selengkapnya</a>
+                    <a href="<?php echo $this->url(array($o_Id ,$ag->getO_id()),"detail-agent");?>">&gt; Selengkapnya</a>
                 </div>
             </div>
         <?php }?>
