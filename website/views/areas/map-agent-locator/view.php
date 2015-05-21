@@ -115,6 +115,7 @@
 <script type="text/javascript">
     var map = new Object();
     var imageCurrentMarker = '/website/static/images/map-pointer-green.png';
+    var imageSearchMarker = '/website/static/images/pointer-blue.png';
     var markers = [];
     var titikMarker = "";
     var infowindow = null;
@@ -542,7 +543,7 @@
                     var marker2 = new google.maps.Marker({
                         position: new google.maps.LatLng(lat, long),
                         draggable: false,
-                        icon: imageCurrentMarker,
+                        icon: imageSearchMarker,
                         map: map
                     });
                     google.maps.event.addListener(marker2, 'click', function () {
