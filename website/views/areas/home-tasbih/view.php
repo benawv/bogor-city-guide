@@ -61,6 +61,10 @@
         .nav-item{
             text-align: left !important;
         }
+        
+        #slideshow .slide p, .place-bg h1{
+            text-align: left !important;
+        }
       
     </style>
 <div class="row">
