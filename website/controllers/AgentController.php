@@ -116,11 +116,16 @@ class AgentController extends Website_Controller_Action {
 		$this->enableLayout();
 		//$key = $this->_getParam('text');
 		$id = $this->_getParam('id');
+		$idKantor = $this->_getParam('id2');
 		
 		//$kantor = Object_Abstract::getById($id);
 		$kondisi1 = array("condition" => "o_id = '".$id."'",
 						 "limit" => 1);
 		$data = Object_AgentLocatorData::getList($kondisi1);
+		
+		$kondisi2 = array("condition" => "o_id = '".$idKantor."'",
+						 "limit" => 1);
+		$kantor = Object_AgentLocatorKantor::getList($kondisi2);
 
 		/*$kondisi2 = array("condition" => "kantor = ',".$id.",'",
 						 "limit" => 6);
@@ -130,7 +135,7 @@ class AgentController extends Website_Controller_Action {
 			$this->redirect("/");
 		}
 		*/
-		//$this->view->kantor = $kantor;
+		$this->view->kantor = $kantor;
 		$this->view->agent = $data;
 
 	}
