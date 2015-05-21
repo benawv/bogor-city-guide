@@ -20,6 +20,7 @@ class TasbihController extends Website_Controller_Action {
             $email = $_POST["email"];
 	    $tlp= $_POST["nohp"];
 	    $prov = $_POST["prov"];
+		$pesan = $_POST["pesan"];
             
             $o_key=str_replace(' ', '_', strtolower($nama));		
 	    $getId=Object_Abstract::getByPath('/tasbih-inquiry/');//get folder id
@@ -30,6 +31,7 @@ class TasbihController extends Website_Controller_Action {
             $inquiry->setBod($date_tglLahir);
             $inquiry->setEmail($email);
             $inquiry->setTlp($tlp);
+			$inquiry->setPesan($pesan);
             $inquiry->setProvinsi($objProv);
             $inquiry->setO_key($o_key.'_'.strtotime(date("YmdHis")));
             $inquiry->setO_parentId($getId->o_id);
