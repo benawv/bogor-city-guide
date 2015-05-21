@@ -71,9 +71,9 @@
         color: #666;
         line-height: 1.8;
     }
-    .btn.btn-sendmail.hide{
+    /*.btn.btn-sendmail.hide{
         display: none;
-    }
+    }*/
     @media (max-width: 768px) {
         .btn.btn-sendmail{
             display: block;
