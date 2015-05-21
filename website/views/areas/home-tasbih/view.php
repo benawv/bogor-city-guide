@@ -5,40 +5,52 @@
         .box-dent::before{ border-top: 28px solid #009a44 !important;}
         .social-feeds .social-feeds--box.twitter{ background: #009a44 !important;}
         .social-feeds .social-feeds--box.facebook{background: #73c898!important;}
-        .news-feed{ background: none repeat scroll 0 0 white;
-            
-    border: 1px solid #ddd;
-    min-height: 260px;
-    padding: 24px;
-    position: relative;}
-                .backg{max-width:1150px; position:relative; margin:auto;}
-        .foto{width:100%; height:auto;}
-        nav.main-navigation a.nav-item {
-  display: block;
-  position: relative;
-  height: 45px;
-  background: #d31f42;
-}
-        nav.main-navigation a.nav-item::after {
-  content: "";
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 45px;
-  pointer-events: none;
-}
+        .news-feed{
+            background: none repeat scroll 0 0 white;
+            border: 1px solid #ddd;
+            min-height: 260px;
+            padding: 24px;
+            position: relative;
+        }
+        .backg
+        {
+            max-width: 960px;
+            position:relative;
+            margin:auto;
+        }
+        .foto
+        {
+            width:100%;
+            height:auto;
+        }
+        nav.main-navigation a.nav-item
+        {
+            display: block;
+            position: relative;
+            height: 45px;
+            background: #d31f42;
+        }
+        nav.main-navigation a.nav-item::after
+        {
+            content: "";
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 45px;
+            pointer-events: none;
+        }
     </style>
 <div class="row">
      <div class="backg">
@@ -68,14 +80,14 @@
             min-height: 377px;
         }
         .place-bg-gallery{
-        	height: 265px !important;
+            height: 265px !important;
         }
     </style>
 <?php } ?>
-<?php 
-	$id = "gallery-carousel-".uniqid();
-	$slides = 2;
-	if(!$this->select("slides")->isEmpty()){
+<?php
+    $id = "gallery-carousel-".uniqid();
+    $slides = 2;
+    if(!$this->select("slides")->isEmpty()){
         $slides = (int) $this->select("slides")->getData();
     }
     $seq = [];
@@ -84,131 +96,131 @@
     }
 ?>
 <ul class="slides">
-	<?php
-		for($z=0;$z<$slides;$z++) {
-			for($i=0;$i<$slides;$i++) { 
-				$v = $this->select('seq_'.$i)->getData() ? $this->select('seq_'.$i)->getData() : 1;
-				$w = $z+1;
-				if($w == $v){
+    <?php
+        for($z=0;$z<$slides;$z++) {
+            for($i=0;$i<$slides;$i++) {
+                $v = $this->select('seq_'.$i)->getData() ? $this->select('seq_'.$i)->getData() : 1;
+                $w = $z+1;
+                if($w == $v){
 ?>
-					<li>
-						<?php
-						    if(!$this->editmode){
-							if($i!=0){
-							    $hide = "hide";
-							}
-							else{
-							    $hide = "";
-							}
-						    }
-						    else{
-							$hide = "";
-						    }
-						?>
-						<div class="slide <?php echo $hide;?>">
-							<div class="foto">
-								<?php echo $this->image("image_".$i, ["thumbnail" => "galleryCarousel", "dropClass" => $id . "-" . $i, "title" => "Image Size 1020x400", "width" => "100%", "height" => "auto"])?>
-							</div>
-							<?php
-								$extra = $this->image("image_".$i)->getHotspots();
-								//$pos = $extra[0]['data'][0]['value'];
-								//$color = $extra[0]['data'][1]['value'];
-								$pos = $this->select('position_'.$i)->getData();
-								$color = $this->select('color_'.$i)->getData();
-							?>
-							<div class="fixbox <?php echo $pos?>60">
-								<div class="place-bg bg-<?php echo $color?> place-bg-gallery">
-								    <div>
-									<?php if($this->editmode || !$this->input("caption-title-" . $i)->isEmpty()) { ?>
-			                            <h1><?php echo $this->input("caption-title-" . $i, ["width" => 251]) ?></h1>
-			                        <?php } ?>
-			                        <?php if($this->editmode || !$this->textarea("caption-text-" . $i)->isEmpty()) { ?>
-			                            <p>
-			                                <?php echo $this->textarea("caption-text-" . $i, ["width" => 251, "height" => 100, "maxlength" => 140]) ?>
-			                            </p>
-			                        <?php } ?>
-			                        <?php if($this->editmode) { ?>
-			                        	<p>
-				                        <?php 
-				                        	echo "Sequence: <br />";
-			                        		echo $this->select("seq_".$i,array(
-											    "store" => $selectSeq,
-			                        			"reload" => true
-											    )
-											); 
-										?>
-			                        	</p>
-			                        	<p>
-			                        	<?php 
-			                        		echo "Position: <br />";
-			                        		echo $this->select("position_".$i,array(
-											    "store" => array(
-											        array("left", "Left"),
-											        array("right", "Right")
-											    )
-											)); 
-										?>
-			                        	</p>
-			                        	<p>
-				                        <?php 
-				                        	echo "Color: <br />";
-			                        		echo $this->select("color_".$i,array(
-											    "store" => array(
-											        array("red", "Red"),
-											        array("lightgreen", "Light Green"),
+                    <li>
+                        <?php
+                            if(!$this->editmode){
+                            if($i!=0){
+                                $hide = "hide";
+                            }
+                            else{
+                                $hide = "";
+                            }
+                            }
+                            else{
+                            $hide = "";
+                            }
+                        ?>
+                        <div class="slide <?php echo $hide;?>">
+                            <div class="foto">
+                                <?php echo $this->image("image_".$i, ["thumbnail" => "galleryCarousel", "dropClass" => $id . "-" . $i, "title" => "Image Size 1020x400", "width" => "100%", "height" => "auto"])?>
+                            </div>
+                            <?php
+                                $extra = $this->image("image_".$i)->getHotspots();
+                                //$pos = $extra[0]['data'][0]['value'];
+                                //$color = $extra[0]['data'][1]['value'];
+                                $pos = $this->select('position_'.$i)->getData();
+                                $color = $this->select('color_'.$i)->getData();
+                            ?>
+                            <div class="fixbox <?php echo $pos?>60">
+                                <div class="place-bg bg-<?php echo $color?> place-bg-gallery">
+                                    <div>
+                                    <?php if($this->editmode || !$this->input("caption-title-" . $i)->isEmpty()) { ?>
+                                        <h1><?php echo $this->input("caption-title-" . $i, ["width" => 251]) ?></h1>
+                                    <?php } ?>
+                                    <?php if($this->editmode || !$this->textarea("caption-text-" . $i)->isEmpty()) { ?>
+                                        <p>
+                                            <?php echo $this->textarea("caption-text-" . $i, ["width" => 251, "height" => 100, "maxlength" => 140]) ?>
+                                        </p>
+                                    <?php } ?>
+                                    <?php if($this->editmode) { ?>
+                                        <p>
+                                        <?php
+                                            echo "Sequence: <br />";
+                                            echo $this->select("seq_".$i,array(
+                                                "store" => $selectSeq,
+                                                "reload" => true
+                                                )
+                                            );
+                                        ?>
+                                        </p>
+                                        <p>
+                                        <?php
+                                            echo "Position: <br />";
+                                            echo $this->select("position_".$i,array(
+                                                "store" => array(
+                                                    array("left", "Left"),
+                                                    array("right", "Right")
+                                                )
+                                            ));
+                                        ?>
+                                        </p>
+                                        <p>
+                                        <?php
+                                            echo "Color: <br />";
+                                            echo $this->select("color_".$i,array(
+                                                "store" => array(
+                                                    array("red", "Red"),
+                                                    array("lightgreen", "Light Green"),
                                                     array("green", "Green"),
-											        array("purple", "Purple"),
-											        array("blue", "Blue"),
+                                                    array("purple", "Purple"),
+                                                    array("blue", "Blue"),
                                                     array("#64A70B", "GreenTasbih"),
-											        array("orange", "Orange")
+                                                    array("orange", "Orange")
 
-											    ),
-											    "reload" => true
-											)); 
-										?>
-			                        	</p>
-			                        <?php } ?>
-								    </div>
-								</div>
-								<div class="edge e-<?php echo $color?>">
-									<?php echo $this->link("boxlink_".$i); ?>
-								</div>
-							</div>
-						</div>
-					</li>
+                                                ),
+                                                "reload" => true
+                                            ));
+                                        ?>
+                                        </p>
+                                    <?php } ?>
+                                    </div>
+                                </div>
+                                <div class="edge e-<?php echo $color?>">
+                                    <?php echo $this->link("boxlink_".$i); ?>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-	<?php 		} 
-			}
-		}
-	?>
-	
+    <?php 		}
+            }
+        }
+    ?>
+
 </ul>
 </div>
     </div><!--/ .background -->
     </div>
-            <nav class="main-navigation" style="max-width:1140px; margin:auto;">
+            <nav class="main-navigation" style="max-width:960px; margin:auto;">
             <div class="row">
 
 
-                
+
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/kalkulator/tasbih" class="nav-item green sitemap">
                         <h4><small>Ilustrasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/tanya-jawab" class="nav-item orange question">
                         <h4><small>Tanya Jawab Produk</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="http://agen.imkepo.com" target="_blank" class="nav-item users">
                         <h4><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/inquiry-form" class="nav-item red users">
                         <h4><small>Inquiry Form</small></h4>
@@ -216,19 +228,19 @@
                 </div><!--/ .col-xs-12 -->
             </div>
             <div class="row">
-                
+
             </div>
     </nav>
 
 </header>
 
 <section id="calendar-wrapper">
-    <div class="container">
+    <div class="container" style="max-width: 960px;">
         <div class="row">
-            <div class="col-xs-12 col-md-6 pr0">
+            <div class="col-xs-12 col-md-6 pr0 pl0">
                 <div id="my-calendar"></div>
             </div><!--/ .col-xs-12 -->
-            <div class="col-xs-12 col-md-6 calendar-info pl0">
+            <div class="col-xs-12 col-md-6 calendar-info pl0 pr0">
                 <div class="calendar-info--inner">
                     <?php
                         $bulanInd = array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
@@ -442,14 +454,14 @@
     </script>
 
 </section><!--/ #calendar -->
-<?php 
+<?php
 
                     $listnews = new Object_TasbihNews_List();
                     $listnews->setLimit(4);
                     $listnews->setOrder('desc');
                     $i=0;
                     foreach($listnews as $items){
-                     
+
                         $news_stack[$i]=array(
                                 "date"=>$items->newsdate,
                                 "teaser"=>$items->deskripsisingkat,
@@ -463,12 +475,12 @@
                     }/*
                     echo "<pre>";
                     print_r($news_stack);
-                    echo "</pre>";  
+                    echo "</pre>";
                    */ ?>
 <section class="mt32 mb72">
-    <div class="container">
+    <div class="container" style="max-width: 960px;">
         <div class="row">
-            <div class="col-xs-12 col-md-6 news-feeds">
+            <div class="col-xs-12 col-md-6 news-feeds" style="padding-left: 15px; padding-right: 30px;">
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
                         <div class="news-feed">
@@ -478,14 +490,14 @@
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
-                                <a href="<?php echo $news_stack[0]['link'];?>"> 
+                                <a href="<?php echo $news_stack[0]['link'];?>">
                                 <h2><?php echo $news_stack[0]['title'];?></h2>
                                 <p><small><?php echo $news_stack[0]['teaser'];?></small></p>
                                 </a>
                             </div><!--/ .body -->
                             <div class="footer">
                                 <div class="media">
-                                    <div class="media-left">                                        
+                                    <div class="media-left">
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
                                         <p><small><?php echo $news_stack[0]['date'];?></small></p>
@@ -515,14 +527,14 @@
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
-                                <a href="<?php echo $news_stack[1]['link'];?>"> 
+                                <a href="<?php echo $news_stack[1]['link'];?>">
                                 <h2><?php echo $news_stack[1]['title'];?></h2>
                                 <p><small><?php echo $news_stack[1]['teaser'];?></small></p>
                                 </a>
                             </div><!--/ .body -->
                             <div class="footer">
                                 <div class="media">
-                                    <div class="media-left">                                        
+                                    <div class="media-left">
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
                                         <p><small><?php echo $news_stack[1]['date'];?></small></p>
@@ -533,7 +545,7 @@
                     </div><!--/ .col-xs-12 -->
                 </div><!--/ .row -->
             </div><!--/ .col-xs-12 col-md-6 news-feeds -->
-            <div class="col-xs-12 col-md-6 news-feeds">
+            <div class="col-xs-12 col-md-6 news-feeds" style="padding-right: 15px;">
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
                         <div class="news-feed">
@@ -543,14 +555,14 @@
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
-                                <a href="<?php echo $news_stack[2]['link'];?>"> 
+                                <a href="<?php echo $news_stack[2]['link'];?>">
                                 <h2><?php echo $news_stack[2]['title'];?></h2>
                                 <p><small><?php echo $news_stack[2]['teaser'];?></small></p>
                                 </a>
                             </div><!--/ .body -->
                             <div class="footer">
                                 <div class="media">
-                                    <div class="media-left">                                        
+                                    <div class="media-left">
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
                                         <p><small><?php echo $news_stack[2]['date'];?></small></p>
@@ -580,14 +592,14 @@
                             </div><!--/ .header -->
                             <div class="clearfix"></div>
                             <div class="body">
-                                <a href="<?php echo $news_stack[3]['link'];?>"> 
+                                <a href="<?php echo $news_stack[3]['link'];?>">
                                 <h2><?php echo $news_stack[3]['title'];?></h2>
                                 <p><small><?php echo $news_stack[3]['teaser'];?></small></p>
                                 </a>
                             </div><!--/ .body -->
                             <div class="footer">
                                 <div class="media">
-                                    <div class="media-left">                                        
+                                    <div class="media-left">
                                     </div><!--/ .media-left -->
                                     <div class="media-body">
                                         <p><small><?php echo $news_stack[3]['date'];?></small></p>

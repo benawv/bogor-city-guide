@@ -50,7 +50,7 @@
 	<div role="main" class="main noPaddingTop">
 		<?php echo $this->layout()->content; ?>
 	</div>
-	<?php echo $this->template("includes/footer.php"); ?>
+	<?php echo $this->template("includes/tasbih/footer.php"); ?>
 </body>
 <script type="text/javascript">
 	var map = new Object();
