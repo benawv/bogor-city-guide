@@ -119,7 +119,7 @@
 
     <div class="description">
 
-        <div class="header-calc">
+        <div class="header-calc" style="background-color:#707372;">
             <h1>INQUIRY FORM</h1>
         </div><!--/ .header-calc -->
 
@@ -127,7 +127,7 @@
             <div class="col-md-12">
 
                 <div class="form-box" id="notif-confirm">
-    <h1>TERIMA KASIH</h1>
+    
     <h3  style=" color:black;"><strong>Terima kasih Anda telah mengirimkan permintaan Anda. Anda akan segera dihubungi oleh agen Allianz Star Network.Jika Anda belum menerima kabar lebih dari 5 hari kerja silahkan langsung menghubungi csallianzina@gmail.com </strong></h3>
                         </div>
 
