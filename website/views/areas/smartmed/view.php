@@ -265,7 +265,10 @@
         }
 
     }
-
+    .table-responsive > table > tbody > tr > td.tabletd{
+        text-align: center;
+        padding-top: 15px;
+    }
 
 </style>
 
@@ -370,15 +373,53 @@
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>PLAN IP</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <select class="form-control" required tabindex="6" id="planip">
+                                <?php
+                                    $cat = new Object_smartmedPlanType_List();
+                                    foreach($cat as $payment)
+                                    {
+                                        echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."'>".$payment->getPlanname()."</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>UW Loading</label>
+                            <label>PLAN MAT</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="7" id="uwl">
-                                <option value="0">0%</option>
-                                <option value="25">25%</option>
+                            <select class="form-control" required tabindex="6" id="planmat">
+                                <?php
+                                    $cat = new Object_smartmedPlanType_List();
+                                    foreach($cat as $payment)
+                                    {
+                                        echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."'>".$payment->getPlanname()."</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>PLAN OP+DEN</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <select class="form-control" required tabindex="6" id="planop_den">
+                                <?php
+                                    $cat = new Object_smartmedPlanType_List();
+                                    foreach($cat as $payment)
+                                    {
+                                        echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."'>".$payment->getPlanname()."</option>";
+                                    }
+                                ?>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -454,58 +495,17 @@
                             <input type="text" class="form-control datepicker" id="cd" placeholder="Calculation Date" tabindex="4" required>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
-
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>PLAN IP</label>
+                            <label>UW Loading</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="6" id="planip">
-                                <?php
-                                    $cat = new Object_smartmedPlanType_List();
-                                    foreach($cat as $payment)
-                                    {
-                                        echo "<option value='".$payment->getO_id()."'>".$payment->getPlanname()."</option>";
-                                    }
-                                ?>
+                            <select class="form-control" required tabindex="7" id="uwl">
+                                <option value="0">0%</option>
+                                <option value="25">25%</option>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>PLAN MAT</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <select class="form-control" required tabindex="6" id="planmat">
-                                <?php
-                                    $cat = new Object_smartmedPlanType_List();
-                                    foreach($cat as $payment)
-                                    {
-                                        echo "<option value='".$payment->getO_id()."'>".$payment->getPlanname()."</option>";
-                                    }
-                                ?>
-                            </select>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>PLAN OP+DEN</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <select class="form-control" required tabindex="6" id="planop_den">
-                                <?php
-                                    $cat = new Object_smartmedPlanType_List();
-                                    foreach($cat as $payment)
-                                    {
-                                        echo "<option value='".$payment->getO_id()."'>".$payment->getPlanname()."</option>";
-                                    }
-                                ?>
-                            </select>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
                             <input type="submit" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Add" name="next" value="Add">
@@ -544,78 +544,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!--
-                            <tr>
-                                <td></td>
-                                <td>1</td>
-                                <td><input type="text" placeholder="Name"></td>
-                                <td>
-                                    <select>
-                                        <option value="M">M</option>
-                                        <option value="F">F</option>
-                                    </select>
-                                </td>
-                                <td><input type="text" placeholder="Date of Birth" class="datepicker"></td>
-                                <td><input type="text" placeholder="Calculation Date" class="datepicker" value="<?php echo date( 'd F Y' ); ?>"></td>
-                                <td>25</td>
-                                <td>
-                                    <select>
-                                        <option value="NEW BUSINESS">NEW BUSINESS</option>
-                                        <option value="OLD BUSINESS">OLD BUSINESS</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <select>
-                                        <option value="A">A</option>
-                                        <option value="B">B</option>
-                                        <option value="C">C</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <select>
-                                        <option value="A">A</option>
-                                        <option value="B">B</option>
-                                        <option value="C">C</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <select>
-                                        <option value="-">-</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <select>
-                                        <option value="0">0%</option>
-                                        <option value="25">25%</option>
-                                        <option value="50">50%</option>
-                                        <option value="75">75%</option>
-                                    </select>
-                                </td>
-                                <td>5.476.125</td>
-                                <td>1.234.567</td>
-                                <td>-</td>
-                                <td>1.2345.567</td>
-                            </tr>-->
-                            <?php /*for( $i = 1; $i < 5; $i++ ): ?>
-                            <tr>
-                                <td><a href="#" class="edit">Edit</a> | <a href="#" class="add">Delete</a></td>
-                                <td><?php echo $i; ?></td>
-                                <td>Mohammed Ali</td>
-                                <td>M</td>
-                                <td>10 Jan 1990</td>
-                                <td><?php echo date( 'd F Y' ); ?></td>
-                                <td>25</td>
-                                <td>NEW BUSINESS</td>
-                                <td>A</td>
-                                <td>A</td>
-                                <td>-</td>
-                                <td>25%</td>
-                                <td>5.476.125</td>
-                                <td>1.234.567</td>
-                                <td>-</td>
-                                <td>1.2345.567</td>
-                            </tr>
-                            <?php endfor; */?>
                         </tbody>
                         <tfoot>
                             <tr>
@@ -739,6 +667,24 @@
 
     });
 
+    function selisih(dob, cd){
+        var date = dob.split('/');
+        var y1 = date[2];
+        var d1 = date[1];
+        var m1 = date[0];
+
+        var date2 = cd.split('/');
+        var y2 = date2[2];
+        var d2 = date2[1];
+        var m2 = date2[0];
+
+        var start = new Date(y1,m1,d1);
+        var end = new Date(y2,m2,d2);
+        var selisih = Date.parse(end.toGMTString()) - Date.parse(start.toGMTString());
+        // console.log("selisih"+selisih);
+        return selisih;
+    }
+
     
     function kalk(age,sex,code,coshare,withval,plan){
         var payment = $("#payment_methods").val();
@@ -766,12 +712,15 @@
                 beforeSend: function () {
                 },
                 success: function(msg){
-                    console.log(msg);
-                    value = parseInt(msg);
+                    // console.log(plan+" "+msg);
+                    if(msg=="")
+                        value = 0;
+                    else
+                        value = parseInt(msg);
                 },error: function (xhr, ajaxOptions, thrownError){
                 }
         });
-        if(withval == 1){
+        if(withval == 1 && value != 0){
             var disc = value * (25/100);
             value += disc ;
         }
@@ -782,18 +731,21 @@
         var rowCount = $('table.table tbody tr').length;
         var total = stamp = totfd = jml = totalwithoutuwl = 0;
         var fd = $("#family_discount").val();
+        var dob = $("#dob").val();
+        var cd = $("#cd").val();
+
         for(var i = 0; i < rowCount; i++){
             total += parseInt($('table.table tbody').children()[0].children[15].innerHTML);
             totalwithoutuwl += parseInt($('table.table tbody').children()[0].children[16].innerHTML);
         }
-        console.log(total);
         $('table.table tfoot tr:first').children()[0].innerHTML = total;
         if(total>=250000 && total<1000000) stamp = 3000;
         else if(total>=1000000) stamp = 6000;
         $('table.table tfoot').children()[1].children[1].innerHTML = stamp;
 
-        if(fd == "Y" && rowCount>1) totfd = 0,05 * totalwithoutuwl;
+        if(fd == "Y" && rowCount > 1) totfd = 0.05 * totalwithoutuwl;
         else totfd = 0;
+
         $('table.table tfoot').children()[3].children[1].innerHTML = totfd;
 
         jml = stamp + total + 30000 - totfd;
@@ -811,83 +763,113 @@
         return 0;
     }
 
+    function form_sex(sex){
+        if(sex == 'M')
+            sex_form = "<select id='sex' name='sex' class='form-control'>"+
+                            "<option selected value='M'>M</option>"+
+                            "<option value='F'>F</option>"+
+                        "</select>";
+        else
+            sex_form = "<select id='sex' name='sex' class='form-control'>"+
+                            "<option value='M'>M</option>"+
+                            "<option selected value='F'>F</option>"+
+                        "</select>";
+        return sex_form;
+    }
+    function form_uwl(val){
+        if(val == '0')
+            uwl_form = "<select id='uwl' name='uwl' class='form-control'>"+
+                            "<option selected value='0'>0%</option>"+
+                            "<option value='25'>25%</option>"+
+                        "</select>";
+        else
+            uwl_form = "<select id='uwl' name='uwl' class='form-control'>"+
+                            "<option value='0'>0%</option>"+
+                            "<option selected value='25'>25%</option>"+
+                        "</select>";
+        return uwl_form;
+    }
+
+
     $("#Add").click(function(){
         var payment = $("#payment_methods").val();
-
-        var total = "total";
-        var opdenp = "-";
-        var matp = "matpremium";
-        var ipp = "ip premium";
-        var uwl = "25%";
-        var pop = "-";
-        var pmat = "A";
-        var pip = "A";
+        var uwl = $("#uwl").val();
+        var fd = $("#family_discount").val();
+        var uwl = $("#uwl").val();
         var sts_allowed = "NEW BUSINESS ";
         var name = $("#name").val();
         var dob = $("#dob").val();
         var cd = $("#cd").val();
 
-        var date = dob.split('/');
-        var y1 = date[2];
-        var d1 = date[1];
-        var m1 = date[0];
-
-        var date2 = cd.split('/');
-        var y2 = date2[2];
-        var d2 = date2[1];
-        var m2 = date2[0];
-
-        var start = new Date(y1,m1,d1);
-        var end = new Date(y2,m2,d2);
-        var selisih = Date.parse(end.toGMTString()) - Date.parse(start.toGMTString());
+        dist = parseInt(selisih(dob, cd));
         
-        var age = Math.round(selisih/(1000*60*60*24*365));
+        var age = Math.round(dist/(1000*60*60*24*365));
         var sex = $("#sex").val();
         var ip = $("#ip").val();
         var mat = $("#mat").val();
         var outden = $("#out_den").val();
+        var planipval = $("#planip").val();
+        var planmatval = $("#planmat").val();
+        var planop_denval = $("#planop_den").val();
 
-        var planip = $("#planip").val();
-        var planmat = $("#planmat").val();
-        var planop_den = $("#planop_den").val();
+        planip = planipval.split("_")[0];
+        planmat = planmatval.split("_")[0];
+        planop_den = planop_denval.split("_")[0];
 
-        ipp = kalk(age,sex,"ip",ip,1,planip);
-        matp = kalk(age,sex,"ma",mat,1,planmat);
-        opdenp = kalk(age,sex,"od",outden,1,planop_den);
+        //with premium
+        ipp1 = kalk(age,sex,"ip",ip,1,planip);
+        matp1 = kalk(age,sex,"ma",mat,1,planmat);
+        opdenp1 = kalk(age,sex,"od",outden,1,planop_den);
+        
+        //with no premium
+        ipp0 = kalk(age,sex,"ip",ip,0,planip);
+        matp0 = kalk(age,sex,"ma",mat,0,planmat);
+        opdenp0 = kalk(age,sex,"od",outden,0,planop_den);
+        totalwithout = parseInt(ipp0)+parseInt(matp0)+parseInt(opdenp0);
+        
+        if(payment != "Annually"){
+            matp = 0;
+            opdenp = 0;
+            if(uwl > 0) ipp = ipp1;
+            else ipp = ipp0;
+        }else{
+            if(uwl > 0) {
+                ipp = ipp1;
+                matp = matp1;
+                opdenp = opdenp1;
+            }else {
+                ipp = ipp0;
+                matp = matp0;
+                opdenp = opdenp0;
+            }
+        }
         total = parseInt(ipp)+parseInt(matp)+parseInt(opdenp);
-
-        ipp = kalk(age,sex,"ip",ip,0,planip);
-        matp = kalk(age,sex,"ma",mat,0,planmat);
-        opdenp = kalk(age,sex,"od",outden,0,planop_den);
-        totalwithout = parseInt(ipp)+parseInt(matp)+parseInt(opdenp);
-        //console.log(matp);
         var rowCount = $('table.table tbody tr').length;
         var no = parseInt(rowCount)+1;
+
         $("table.table tbody").append("<tr>"+
-                "<td><a data-id='"+no+"' onclick='edit(this)'>Edit</a> | <a data-id='"+no+"' onclick='delrow(this)'>Delete</a></td>"+
-                "<td>"+no+"</td>"+
-                "<td><input type='text' placeholder='Name' value='"+name+"' class='display'></td>"+
-                "<td><select value='"+sex+"'>"+
-                        "<option value='M'>M</option>"+
-                        "<option value='F'>F</option>"+
-                    "</select></td>"+
-                "<td><input type='text' placeholder='Date of Birth' name='dob2' id='dob2' class='datepicker' value='"+m1+"/"+d1+"/"+y1+"'></td>"+
-                "<td><input type='text' placeholder='Calculation Date' name='cd2' id='cd2' class='datepicker' value='"+m2+"/"+d2+"/"+y2+"'></td>"+
-                "<td>"+age+"</td>"+
-                "<td>NEW BUSINESS</td>"+
-                "<td><select><option value='A'>A</option><option value='B'>B</option><option value='C'>C</option></select></td>"+
-                "<td><select><option value='A'>A</option><option value='B'>B</option><option value='C'>C</option></select></td>"+
-                "<td><select><option value='-'>-</option></select></td>"+
-                "<td><select><option value='0'>0%</option><option value='25'>25%</option><option value='50'>50%</option><option value='75'>75%</option></select></td>"+
-                "<td>"+ipp+"</td>"+
-                "<td>"+matp+"</td>"+
-                "<td>"+opdenp+"</td>"+
-                "<td>"+total+"</td>"+
+                "<td class='tabletd'><a data-id='"+no+"' onclick='edit(this)'>Edit</a> | <a data-id='"+no+"' onclick='delrow(this)'>Delete</a></td>"+
+                "<td class='tabletd'>"+no+"</td>"+
+                "<td><input type='text' class='form-control' placeholder='Name' value='"+name+"' class='display'></td>"+
+                "<td>"+form_sex(sex)+"</td>"+
+                "<td><input class='form-control datepicker' type='text' placeholder='Date of Birth' name='dob2' id='dob2' value='"+dob+"'></td>"+
+                "<td><input class='form-control datepicker' type='text' placeholder='Calculation Date' name='cd2' id='cd2' value='"+cd+"'></td>"+
+                "<td class='tabletd'>"+age+"</td>"+
+                "<td class='tabletd'>NEW BUSINESS</td>"+
+                "<td class='tabletd'>"+planipval.split("_")[1]+"</td>"+
+                "<td class='tabletd'>"+planmatval.split("_")[1]+"</td>"+
+                "<td class='tabletd'>"+planop_denval.split("_")[1]+"</td>"+
+                "<td>"+form_uwl(uwl)+"</td>"+
+                "<td class='tabletd'>"+ipp+"</td>"+
+                "<td class='tabletd'>"+matp+"</td>"+
+                "<td class='tabletd'>"+opdenp+"</td>"+
+                "<td class='tabletd'>"+total+"</td>"+
                 "<td style='display:none;'>"+totalwithout+"</td>"+
             "</tr>");
         jumlah();
     });
-    
+
+
     $(document).on('focus',".datepicker", function(){ //bind to all instances of class "date". 
        $(this).datepicker({
                 changeMonth: true,
@@ -897,39 +879,72 @@
     });
     
     function edit(){
-        var id = $(event.target).attr("data-id");
+        var rowCount = $('table.table tbody tr').length;
+        var total = stamp = totfd = jml = totalwithoutuwl = 0;
+        var fd = $("#family_discount").val();
+        var payment = $("#payment_methods").val();
+        // console.log(rowCount);
+        for(var i = 0; i < rowCount; i++){
+            console.log($('table.table tbody').children()[i].children[3].value);
+            sex = $('table.table tbody').children()[i].children[3].value;
+            date1 = $('table.table tbody').children()[i].children[4].value;
+            date2 = $('table.table tbody').children()[i].children[5].value;
+            uwl = $('table.table tbody').children()[i].children[11].value;
+            dist = selisih(date1, date2);
+            age = Math.round(dist/(1000*60*60*24*365));
+            $('table.table tbody').children()[i].children[5].innerHTML = age;
+            var ip = $("#ip").val();
+            var mat = $("#mat").val();
+            var outden = $("#out_den").val();
+            var planipval = $("#planip").val();
+            var planmatval = $("#planmat").val();
+            var planop_denval = $("#planop_den").val();
 
-        var total = "total";
-        var opdenp = "-";
-        var matp = "matpremium";
-        var ipp = "ip premium";
-        var uwl = "25%";
-        var pop = "-";
-        var pmat = "A";
-        var pip = "A";
-        var sts_allowed = $("table.table tbody").children()[id].children[2].children[0].value;
-        var name = $("table.table tbody").children()[id].children[2].children[0].value;
-        var sex = $("table.table tbody").children()[id].children[3].children[0].value;
-        var dob = $("table.table tbody").children()[id].children[4].children[0].value;
-        var cd = $("table.table tbody").children()[id].children[5].children[0].value;
+            planip = planipval.split("_")[0];
+            planmat = planmatval.split("_")[0];
+            planop_den = planop_denval.split("_")[0];
 
-        ipp = kalk(15,pip,pmat,'a',uwl,sex);
-        //ipp
-        $("table.table tbody").children()[id].children[12].innerHTML = ipp;
-        //matp
-        $("table.table tbody").children()[id].children[13].innerHTML = 12;
-        //opden
-        $("table.table tbody").children()[id].children[14].innerHTML = 123;
-        //total
-        $("table.table tbody").children()[id].children[15].innerHTML = 1234;
+            //with premium
+            ipp1 = kalk(age,sex,"ip",ip,1,planip);
+            matp1 = kalk(age,sex,"ma",mat,1,planmat);
+            opdenp1 = kalk(age,sex,"od",outden,1,planop_den);
+            
+            //with no premium
+            ipp0 = kalk(age,sex,"ip",ip,0,planip);
+            matp0 = kalk(age,sex,"ma",mat,0,planmat);
+            opdenp0 = kalk(age,sex,"od",outden,0,planop_den);
+            totalwithout = parseInt(ipp0)+parseInt(matp0)+parseInt(opdenp0);
 
-        update();
+            if(payment != "Annually"){
+                matp = 0;
+                opdenp = 0;
+                if(uwl > 0) ipp = ipp1;
+                else ipp = ipp0;
+            }else{
+                if(uwl > 0) {
+                    ipp = ipp1;
+                    matp = matp1;
+                    opdenp = opdenp1;
+                }else {
+                    ipp = ipp0;
+                    matp = matp0;
+                    opdenp = opdenp0;
+                }
+            }
+            total = parseInt(ipp)+parseInt(matp)+parseInt(opdenp);
+
+            $('table.table tbody').children()[i].children[12].innerHTML = ipp;//ipp
+            $('table.table tbody').children()[i].children[13].innerHTML = matp;//matp
+            $('table.table tbody').children()[i].children[14].innerHTML = opdenp;//opden
+            $('table.table tbody').children()[i].children[15].innerHTML = total;//total
+            $('table.table tbody').children()[i].children[16].innerHTML = totalwithout;//total without
+        }
 
         return 0;
     }
     
     function delrow(){
-        alert($(event.target).attr("data-id"));
+        // alert($(event.target).attr("data-id"));
         var id = parseInt($(event.target).attr("data-id"))-1;
         $("table.table tbody").children()[id].innerHTML = "";
         jumlah();
