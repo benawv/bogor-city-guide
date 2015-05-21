@@ -103,7 +103,7 @@
                 <form class="form-horizontal" role="form">
 
                     <div class="form-box">
-                    <div class="form-box" id="notif-confirm" style="display:block; background:#009a44;"><h3  style=" color:white;"><strong>Terima kasih Anda telah membuat ilustrasi produk Allianz Tasbih (Tabungan Asuransi Produk Biaya Haji). Untuk mengetahui hasil perhitungan silahkan isi field dibawah ini untuk dikirimkan ke email pribadi Anda</strong></h3>
+                        <div class="form-box" id="notif-confirm" style="display:block; background:#009a44;"><h3  style=" color:white;"><strong>Terima kasih Anda telah membuat ilustrasi produk Allianz Tasbih (Tabungan Asuransi Produk Biaya Haji). Untuk mengetahui hasil perhitungan silahkan isi field dibawah ini untuk dikirimkan ke email pribadi Anda. Hasil kalkulasi Anda dengan setoran tahunan sebesar</strong><span id="hasil"></span></h3>
                         </div>
                     <label><strong>Data Diri</strong></label>
                     
@@ -173,6 +173,10 @@
 
 <script>
     // document.getElementById('tgl-hitung').value = (new Date()).format("m/dd/yy");
+    window.onload = function(){
+            
+    }
+    
     $(document).ready(function(){
         /*
          * jQueryUI DatePicker
@@ -213,7 +217,7 @@
                     //console.log(data);
 		    $('.waiting-calc').hide();
 		    $('.result-calc').show();
-                    $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
+                    $('#hasil').val(accounting.formatMoney(data, "Rp ", 0,","));
                 }
 
 
