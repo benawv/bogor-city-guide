@@ -325,7 +325,6 @@
                           "&prov="+prov+
                           "&pesan="+pesan,
                  "success" : function(response){
-                    alert("Inquiry Send");
                  }
              });
             }
