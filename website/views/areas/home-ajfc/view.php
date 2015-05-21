@@ -21,6 +21,12 @@
                             <p>#1ygterpenting mewujudkan mimpi menjadi kenyataan.</p>
                 <p>Daftarkan anak/kerabat Anda yang berusia 14-16 tahun untuk dilatih oleh pelatih remaja FC Bayern Munchen di Jerman.</p>
                             <?php
+				function limit_words($string, $word_limit)
+				{
+					$words = explode(" ",$string);
+					return implode(" ",array_splice($words,0,$word_limit));
+				}
+				
                 if($this->editmode)
                 {
                     echo $this->link("linkDaftar");
@@ -151,7 +157,7 @@
     $count = count($entries);
     $sisa = 8 - $count;
     //echo $count;
-    if($count < 8){
+    if($count >= 8){
         $n = 1;
     }else{
         $n = 2;
@@ -164,7 +170,7 @@
         }
         foreach ($entries as $key) {
             $img = (string)$key->fotoPeserta;
-            $ptg = ucfirst(strtolower($key->satuTerpenting));
+            $ptg = limit_words(ucfirst(strtolower($key->satuTerpenting)),10);
             $nama = ucwords(strtolower($key->namaLengkap));
             $tgll = date("Y", strtotime($key->tanggalLahir));
             $nyear = date("Y",time());
@@ -534,8 +540,8 @@
                     <div class="col-xs-12 col-md-6 nopadding br bb">
                         <div class="text" id="textBoxC">
                             <h3 class="tbc-title"><a href="/galeri-ajfc"><?php echo $c[0][1]; ?></a></h3>
-                            <p class="text-muted"><small class="tbc-date"><?php echo $b[0][2]; ?></small></p>
-                            <p class="tbc-body"><?php echo $b[0][3]; ?></p>
+                            <p class="text-muted"><small class="tbc-date"><?php echo $c[0][2]; ?></small></p>
+                            <p class="tbc-body"><?php echo $c[0][3]; ?></p>
                         </div><!--/ .text -->
                     </div><!--/ .col-xs-12 -->
                 </div><!--/ .row -->
