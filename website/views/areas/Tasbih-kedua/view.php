@@ -54,7 +54,7 @@
       background: #003781;}        
     
     nav.main-navigation a.nav-item.greenChat{
-      background: #B20065;}
+      background: #707372;}
 
       nav.main-navigation a.nav-item.blueA::before {
         background: #3122F9; }
@@ -88,7 +88,7 @@
                 </div><!--/ .col-xs-12 -->
                 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/inquiry-form" class="nav-item greenChat chat">
+                    <a href="/tasbih/inquiry-form" class="nav-item grey chat">
                         <h4 style="font-size:18px"><small>Inquiry Form</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
@@ -113,7 +113,7 @@
                 <form class="form-horizontal" role="form">
 
                     <div class="form-box">
-                        <div class="form-box" id="notif-confirm" style="display:block; background:#009a44;"><h3  style=" color:white;"><strong>Terima kasih Anda telah membuat ilustrasi produk Allianz Tasbih (Tabungan Asuransi Produk Biaya Haji). Untuk mengetahui hasil perhitungan silahkan isi field dibawah ini untuk dikirimkan ke email pribadi Anda. Hasil kalkulasi Anda dengan setoran tahunan sebesar</strong><span id="hasil"></span></h3>
+                        <div class="form-box" id="notif-confirm" style="display:block; background:#009a44;"><h3  style=" color:white;"><strong>Terima kasih Anda telah melakukan kalkulasi ilustrasi produk Allianz Tasbih. Hasil kalkulasi Anda akan dikirimkan ke email pribadi Anda. Silahkan isi field dibawah ini.</strong><span id="hasil"></span></h3>
                         </div>
                     <label><strong>Data Diri</strong></label>
                     
@@ -155,13 +155,38 @@
                     </div><!--/ .form-group -->
 
 
+    
+			<div class="form-group">
+			    <div class="col-md-4">
+				<label>Kontribusi Berkala/ Premi pertahun</label>
+			    </div><!--/ .col-md-4 -->
+			    <div class="col-md-4">
+				<input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly>
+			    </div><!--/ .col-md-4 -->
+			</div><!--/ .form-group -->
+			
+		    
+
 		    
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
-                            <a href="/tasbih/thankyou">
+                            <!--<a href="/tasbih/thankyou">-->
                             <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next" value="Submit">
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
+                        
+                    <div class="col-md-12 note">
+                    <h4 class="mb10"><strong>Note: </strong></h4>
+                    <ul class="mb30">
+                        <li>Jika meninggal dunia karena sakit, Ahli waris akan mendapatkan Santunan meninggal Dunia 100%</li>
+                        <li>Jika meninggal dunia di saat menunaikan Ibadah Haji maka akan mendapatkan Santunan meninggal Dunia sebesar 200%</li>
+                        <li>Selama mengikuti asuransi Tertanggung akan mendapatkan perlindungan Medical Evakuasi</li>
+                        <li>Masa asuransi adalah = masa pembayaran konstribusi / premi + 10 tahun + 1 tahun</li>
+                        <li>Setelah selesai masa pembayaran kontribusi / premi pemegang polis akan mendapatkan tahapan dana pertama sebesar 50% dari santunan meninggal dunia</li>
+                        <li>Setelah tahapan dana pertama pemegang polis akan mendapatkan tahapan dana kedua sebesar sisa saldo dana yang berkembang didalam produk ini</li>
+                        <li>Untuk informasi lebih lengkap silahkan menghubungi Agen atau Kantor pemasaran Allianz terdekat</li>
+                    </ul>
+                </div><!--/ .col-md-12 -->
 
                 </form>
     <nav class="main-navigation">
@@ -194,7 +219,6 @@
 
         $('#Submit').click(function() {
             
-	    
             
             var nama = $('#nama').val();
             var email = $('#email').val();
@@ -213,10 +237,8 @@
                     alert("Mohon Periksa Inputan Anda");
             }else{
 
-	    $('.waiting-calc').show();
-            
 	    $.ajax({
-                url      : '//kalkulator-tasbih-kedua//',
+                url      : '/kalkulator-tasbih-kedua/',
                 type     : 'POST',
                 data     : {
                             'nama' : nama,
@@ -224,16 +246,15 @@
                             'nohp' : nohp
                             },
                     success  : function(data){
+                    console.log(data);
+                        //document.location.href = "/tasbih/thankyou";
                     //console.log(data);
 		    $('.waiting-calc').hide();
 		    $('.result-calc').show();
-                    $('#hasil').val(accounting.formatMoney(data, "Rp ", 0,","));
+                    //$('#hasil').val(accounting.formatMoney(data, "Rp ", 0,","));
                 }
 
-
             });
-
-
             }
         });
 

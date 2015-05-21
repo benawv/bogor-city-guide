@@ -55,10 +55,17 @@
       background: #003781;}        
     
     nav.main-navigation a.nav-item.greenChat{
-      background: #B20065;}
+      background: #707372;}
+    
+    nav.main-navigation a.nav-item.greenChat::before{
+      background: #3C3941;}
 
       nav.main-navigation a.nav-item.blueA::before {
         background: #3122F9; }
+    
+    input[type="radio"] {
+  display: block;
+}
 </style>
 
 
@@ -90,7 +97,7 @@
                 </div><!--/ .col-xs-12 -->
                 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/inquiry-form" class="nav-item greenChat chat">
+                    <a href="/tasbih/inquiry-form" class="nav-item grey chat">
                         <h4 style="font-size:18px"><small>Inquiry Form</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
@@ -106,7 +113,7 @@
     <div class="description">
 
         <div class="header-calc">
-            <h1>KALKULATOR ALLIANZ TASBIH</h1>
+            <h1>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
         </div><!--/ .header-calc -->
 
         <div class="content-calc">
@@ -116,17 +123,7 @@
 
                     <div class="form-box">
 
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Tanggal Pembuatan Perhitungan</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" id="tgl-hitung" value="<?php echo date( 'd/m/Y' ); ?>" required>
-                             <label id="notif-tglhitung" style="display:none; color: #f00;">
-                                Mohon maaf Anda belum memasukkan tanggal pembuatan
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
+
 
                     <label><strong>Kalkulasi</strong></label>
 
@@ -150,10 +147,11 @@
                             <label>Jenis Kelamin</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" name="JenisKelamin" id="JenisKelamin">
-                                <option value="l">Pria</option>
-                                <option value="p">Wanita</option>
-                            </select>
+                            
+                            <INPUT TYPE="Radio" name="jenisKelamin" VALUE="l">Pria</INPUT>
+                                <br>
+                            <INPUT TYPE="Radio" name="jenisKelamin" VALUE="p">Wanita</INPUT>
+                            
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -238,18 +236,7 @@
 
                 </form>
 
-                <div class="col-md-12 note">
-                    <h4 class="mb10"><strong>Note: </strong></h4>
-                    <ul class="mb30">
-                        <li>Jika meninggal dunia karena sakit, Ahli waris akan mendapatkan Santunan meninggal Dunia 100%</li>
-                        <li>Jika meninggal dunia di saat menunaikan Ibadah Haji maka akan mendapatkan Santunan meninggal Dunia sebesar 200%</li>
-                        <li>Selama mengikuti asuransi Tertanggung akan mendapatkan perlindungan Medical Evakuasi</li>
-                        <li>Masa asuransi adalah = masa pembayaran konstribusi / premi + 10 tahun + 1 tahun</li>
-                        <li>Setelah selesai masa pembayaran kontribusi / premi pemegang polis akan mendapatkan tahapan dana pertama sebesar 50% dari santunan meninggal dunia</li>
-                        <li>Setelah tahapan dana pertama pemegang polis akan mendapatkan tahapan dana kedua sebesar sisa saldo dana yang berkembang didalam produk ini</li>
-                        <li>Untuk informasi lebih lengkap silahkan menghubungi Agen atau Kantor pemasaran Allianz terdekat</li>
-                    </ul>
-                </div><!--/ .col-md-12 -->
+                
 
                     
             </div><!--/ .col-md-12 -->
@@ -297,7 +284,7 @@
                     alert("Mohon Periksa Inputan Anda");
             }else{
 
-	    $('.waiting-calc').show();
+	   
             
 	    $.ajax({
                 url      : '/kalkulator-tasbih/',
@@ -315,9 +302,9 @@
                     success  : function(data){
                     //console.log(data);
 		    $('.waiting-calc').hide();
-		    $('.result-calc').show();
+		    
                     $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
-                        alert(data);
+                     
                 }
 
                 
