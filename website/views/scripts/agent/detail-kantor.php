@@ -85,13 +85,14 @@
                 <?php
                     $z = 0;
                     foreach($kantor as $row){
+                        $o_Id = $row->getO_id();
                         $fotoProf = $row->getFotoKantor()->path.$row->getFotoKantor()->filename;
                         $namaLokasi = ucwords(strtolower($row->getNamaLokasi()));
-                        $alamat = ucwords(strtolower($row->getAlamat1()." ".$row->getAlamat2()." ".$row->getAlamat3()));
-                        $telp = $row->getKodeAreaTelepon()." ".$row->getNomorTelepon();
-                        $fax = $row->getKodeAreaFax()." ".$row->getNomorFax();
+                        $alamat = ucwords(strtolower($row->getAlamat1()."<br /> ".$row->getAlamat2()."<br /> ".$row->getAlamat3()));
+                        $telp = "(".$row->getKodeAreaTelepon().") ".$row->getNomorTelepon();
+                        $fax = "(".$row->getKodeAreaFax().") ".$row->getNomorFax();
                         $x = count($row->getFotoGaleriKantor()->items);
-                        $email = $row->getEmailKantor();
+                        $email = strtolower($row->getEmailKantor());
                         for($z;$z<$x;$z++){
                 ?>
                             <li>
@@ -160,7 +161,7 @@
         <?php foreach( $agent as $ag ){ ?>
             <div class="item">
                 <div class="heading">
-                    <h2 class="title_news"><a href="/detail-agent/<?php echo $ag->getO_key()."-".$ag->getO_id();?>"><?php echo ucwords(strtolower($ag->getNamaAgent()));?></a></h2>
+                    <h2 class="title_news"><a href="<?php echo $this->url(array($o_Id ,$ag->getO_id()),"detail-agent");?>"><?php echo ucwords(strtolower($ag->getNamaAgent()));?></a></h2>
                     <div class="btn-group">
                         <!--Link-->
                     </div>

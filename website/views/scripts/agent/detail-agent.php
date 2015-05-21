@@ -71,16 +71,27 @@
         color: #666;
         line-height: 1.8;
     }
-
+    .btn.btn-sendmail.hide{
+        display: none;
+    }
+    @media (max-width: 768px) {
+        .btn.btn-sendmail{
+            display: block;
+            text-align: left;
+        }
+        .btn.btn-sendmail.hide{
+            display: block;
+        }
+      }
 </style>
 <?php
 
-    //$kantor = $this->kantor;
+    $kantor = $this->kantor;
 
     //echo 'test';
     $agent = $this->agent;
     //echo "<pre>";
-    //print_r($agent);
+    //print_r($kantor);
     //die();
 
 ?>
@@ -95,7 +106,7 @@
                     foreach($agent as $row){
                                 $kodeAgent = $row->getkodeAgent();
                                 $namaAgent = $row->getnamaAgent();
-                                $emailAgent = $row->getemail();
+                                $emailAgent = strtolower($row->getemail());
                                 $kantor = $row->getkantor();
                                 $profilAgent = $row->getprofilAgent();
                                 $fotoAgent = $row->getfotoAgent()->path.$row->getfotoAgent()->filename;
@@ -161,8 +172,27 @@
                 </div><!--/ .section-left-40 -->
                 <div class="section-right-60">
                     <h2><?php echo $namaAgent; ?></h2>
-                    <p><?php echo $profilAgent."<br />"; ?></p>
-                    <a href="tel:<?php echo $telepon;?>" target="_top" class="btn btn-sendmail">Contact Agent</a>
+                    <?php foreach($kantor as $dataKantor){
+                            $namaLokasi = ucwords(strtolower($dataKantor->getNamaLokasi()));
+                            $alamat = ucwords(strtolower($dataKantor->getAlamat1()."<br /> ".$dataKantor->getAlamat2()."<br /> ".$dataKantor->getAlamat3()));
+                            $telp = "(".$dataKantor->getKodeAreaTelepon().") ".$dataKantor->getNomorTelepon();
+                            $fax = "(".$dataKantor->getKodeAreaFax().") ".$dataKantor->getNomorFax();
+                            $x = count($dataKantor->getFotoGaleriKantor()->items);
+                            $email = strtolower($dataKantor->getEmailKantor());
+                    ?>
+                        <h2><?php echo $namaLokasi; ?></h2>
+                        <p>
+                            <?php
+                                echo $alamat."<br />";
+                                echo "Telp. ".$telp."<br />";
+                                echo "Fax. ".$fax."<br />";
+                                echo "Contact Agent. ".$telp."<br />";
+                                echo "Email Agent. ".$emailAgent;
+                            ?>
+                        </p>
+                    <?php }?>
+                    <a href="mailto:<?php echo $emailAgent;?>?Subject=Call%20Kantor" target="_top" class="btn btn-sendmail">Email Agent</a>&nbsp;
+                    <a href="tel:<?php echo $telp;?>" target="_top" class="btn btn-sendmail hide">Contact Agent</a>
                 </div><!--/ .section-right-60 -->
             </div><!--/ .description-width-66 -->
         </div><!--/ .full-w -->
