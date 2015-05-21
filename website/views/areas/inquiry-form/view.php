@@ -52,6 +52,9 @@
             body {
   text-align: left !important;
 }
+        input[type="radio"] {
+  display: block;
+}
 </style>
 
 
@@ -137,7 +140,7 @@
 
     <div class="description">
 
-        <div class="header-calc">
+        <div class="header-calc" style="background-color:#707372;">
             <h1>INQUIRY FORM</h1>
         </div><!--/ .header-calc -->
 
@@ -167,17 +170,15 @@
                             <label>Jenis Kelamin</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" name="JenisKelamin" id="JenisKelamin">
-                                <option value="p">Pria</option>
-                                <option value="w">Wanita</option>
-                            </select>
+                            <INPUT TYPE="Radio" name="jenisKelamin" VALUE="l" style="display: block;">Pria</INPUT>
+                            <INPUT TYPE="Radio" name="jenisKelamin" VALUE="p" style="display: block;">Wanita</INPUT>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>DOB</label>
+                            <label>DOB (Min. 18 tahun)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="DOB" value="" placeholder="Tanggal Lahir" />
@@ -245,7 +246,7 @@
                             <label id="notifPesan" style="display:none; color: #f00;">
                                 Mohon maaf, Anda harus mengisi pesan.
                             </label>
-                            <textarea cols="35" rows="10" placeholder="Tuliskan Pesan Anda disini Maksimal 250 Kata" id="pesan" ></textarea>
+                            <textarea cols="35" rows="10" class="form-control" placeholder="Tuliskan Pesan Anda disini Maksimal 250 Kata" id="pesan" ></textarea>
                             <label id="notifemail" style="display:block; font-size:10px; color: #f00;">
                                 Sisa karakter yang Anda tulis : <span id="counterString">250</span>  Kata
                             </label>
@@ -344,6 +345,20 @@
              });
             }
             e.preventDefault();
+        });
+        
+        $('#DOB').on('change', function() {
+
+            var dob = new Date(this.value);
+            var today = new Date();
+            var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+            if(age >= 18) {
+                $('#usia').val(age);
+               document.getElementById('notif-DOB').style.display= 'none';
+            }else{
+                document.getElementById('notif-DOB').style.display= 'block';
+                $('#usia').val('Umur Anda dibawah 18 tahun');
+            }
         });
 
         $( ".pagenav .navi li" ).click(function(){

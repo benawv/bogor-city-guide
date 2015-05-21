@@ -145,8 +145,8 @@
 				    <div class="main-content--header">
 					<h1 class="mb12"><?php echo $items->title; ?></h1>
 					<h5>
-						<span><a href="/">Home </a></span>
-						<?php
+						<span><a href="/tasbih">Home</a> / <a href="#">artikel</a></span>
+						<?php /*
 							$id = $this->document->getId();
 							$parent_id = $this->document->getParentId();
 							$path = $this->document->getPath();
@@ -169,7 +169,7 @@
 							$this->navigation()->menu()->setUseTranslator(false); // to deactivate the translator provided by the view helper
 							$this->navigation($navigation);
 							$this->navigation()->breadcrumbs()->setMinDepth(0);
-							
+							*/
 						?>
 						<?php echo $this->navigation()->breadcrumbs()->setPartial(array('includes/tasbih/breadcrumb-partial.php', 'website'));?>
 					</h5>
