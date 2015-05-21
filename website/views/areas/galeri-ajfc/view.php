@@ -55,7 +55,13 @@
     <div class="container" id="container">
         <?php
 
-            $posistion = "odd";
+            function limit_words($string, $word_limit)
+				{
+					$words = explode(" ",$string);
+					return implode(" ",array_splice($words,0,$word_limit));
+				}
+				
+			$posistion = "odd";
             $no = 1;
             $num = $default = 0;
             $nomer = $nurut = 1;
@@ -67,9 +73,11 @@
             $entries->setOrder("desc");
             $entries->setCondition("statusSubmitKuis LIKE 1 AND approve LIKE 1");
             $jml = count($entries);
+			//echo $jml;
+			//die();
             $sisa = 8 - $jml;
             //echo $jml.'sisa='.$sisa;
-            if($jml < 8){
+            if($jml >= 8){
                 $n = 1;
             }else{
                 $n = 2;
@@ -83,8 +91,8 @@
 
                 foreach ($entries as $key) {
                     $img = $key->fotoPeserta;
-                    $ptg = ucfirst($key->satuTerpenting);
-                    $nama = ucwords($key->namaLengkap);
+                    $ptg = limit_words(ucfirst(strtolower($key->satuTerpenting)),10);
+                    $nama = ucwords(strtolower($key->namaLengkap));
                     $tgll = date("Y", strtotime($key->tanggalLahir));
                     $nyear = date("Y",time());
                     $umur = $nyear-$tgll;
@@ -103,7 +111,8 @@
                     }
                     if($nomer == 4 && $no == 1)
                         $num = 0;
-
+				    if($num == 8)
+				        $num =0;
 
                     if($no == 1){
                         echo '<div class="row group '.$active.'" id="'.$nclass.'">';
@@ -238,6 +247,7 @@
             }
             //console.log('xx='+$hidden.next('.group').length);
             //setInterval(image, 3000);
+			resizePageWrapper();
         });
 
 

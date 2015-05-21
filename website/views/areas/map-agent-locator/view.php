@@ -115,6 +115,7 @@
 <script type="text/javascript">
     var map = new Object();
     var imageCurrentMarker = '/website/static/images/map-pointer-green.png';
+    var imageSearchMarker = '/website/static/images/pointer-blue.png';
     var markers = [];
     var titikMarker = "";
     var infowindow = null;
@@ -463,7 +464,7 @@
                             tmpNamaLokasi2 = item.sub_kordinat[loop].namaLokasi.split('-');
                             NamaLokasi2 = tmpNamaLokasi2[1];
                             //console.log(item.sub_kordinat[loop]);
-                            satuGedung = satuGedung+'<br /><a href="/detail-kantor/'+item.sub_kordinat[loop].o_key+"-"+item.sub_kordinat[loop].o_id+'" style="margin-top=5px;"><strong>'+NamaLokasi2+'</strong></a>';
+                            satuGedung = satuGedung+'<a href="/detail-kantor/'+item.sub_kordinat[loop].o_key+"-"+item.sub_kordinat[loop].o_id+'" style="display:block;margin-top:5px;"><strong>'+NamaLokasi2+'</strong></a>';
                         }
                         var data_content = '<div class="content cusContent" style="width:160px;max-height:200px;overflow:scroll;">'+
 											'<div id="siteNotice"></div>'+
@@ -489,7 +490,7 @@
 											//'Alamat : '+Alamat+'<br />'+
 											'Telp :'+kodeTelepon+" "+nomorTelepon+'<br />'+
 											'Fax :'+kodeFax+" "+nomorFax+''+
-											'<br /><a href="/detail-kantor/'+item.o_key+"-"+item.o_id+'" style="margin-top=5px;"><strong>&gt; Homepage Kantor</strong></a>'+
+											'<a href="/detail-kantor/'+item.o_key+"-"+item.o_id+'" style="display:block;margin-top:5px;"><strong>&gt; Homepage Kantor</strong></a>'+
 											'</div>'+
 										'</div>';
                     }
@@ -542,7 +543,7 @@
                     var marker2 = new google.maps.Marker({
                         position: new google.maps.LatLng(lat, long),
                         draggable: false,
-                        icon: imageCurrentMarker,
+                        icon: imageSearchMarker,
                         map: map
                     });
                     google.maps.event.addListener(marker2, 'click', function () {
