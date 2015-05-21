@@ -95,7 +95,7 @@
 		
 		<img src="<?php echo $items->images->path.$items->images->filename; ?>" alt="" class="img-responsive">
 	    </div><!--/ .background -->
-	        <nav class="main-navigation floating" style="bottom: 170px !important;">
+	        <nav class="main-navigation floating" style="bottom: 170px !important; z-index: 3;">
 		<div class="container" style="max-width:960px; margin:auto;">
             <div class="row">
 
@@ -206,7 +206,3 @@
 		
 	</div><!--/ .page-wrapper-outer -->
 <?php } ?>
-
-<script>
-resizePageWrapper();	
-</script>
