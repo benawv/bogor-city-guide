@@ -52,6 +52,9 @@
             body {
   text-align: left !important;
 }
+        input[type="radio"] {
+  display: block;
+}
 </style>
 
 
@@ -167,10 +170,9 @@
                             <label>Jenis Kelamin</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" name="JenisKelamin" id="JenisKelamin">
-                                <option value="p">Pria</option>
-                                <option value="w">Wanita</option>
-                            </select>
+                            <INPUT TYPE="Radio" name="jenisKelamin" VALUE="l" style="display: block;">Pria</INPUT>
+                                <br>
+                            <INPUT TYPE="Radio" name="jenisKelamin" VALUE="p" style="display: block;">Wanita</INPUT>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -223,7 +225,7 @@
                                     $getProv=new Object_MarketingOfficeWilayah_List();                                    
                                     foreach($getProv as $items){
                                         ?>
-                                            <option value= "<?php echo $items->o_id; ?> "><?php echo $items->namaWilayah; ?></option>
+                                            <option value= "<?php echo $items->o_id == "asc"; ?> "><?php echo $items->namaWilayah; ?></option>
                                         <?php
                                     }
                                 
