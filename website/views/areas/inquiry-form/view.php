@@ -231,6 +231,9 @@
                             <label>Pesan</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
+                            <label id="notifPesan" style="display:none; color: #f00;">
+                                Mohon maaf, Anda harus mengisi pesan.
+                            </label>
                             <textarea cols="35" rows="10" placeholder="Tuliskan Pesan Anda disini Maksimal 250 Kata" id="pesan" ></textarea>
                             <label id="notifemail" style="display:block; font-size:10px; color: #f00;">
                                 Sisa karakter yang Anda tulis : <span id="counterString">250</span>  Kata
@@ -241,7 +244,8 @@
                     <div class="form-group">
                         <div class="col-md-2 col-md-offset-4">
                             <a href="/tasbih/thankyou-inquiry">
-                            <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih inquiry-send" id="Submit" name="Submit" value="Submit">
+                                <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih inquiry-send" id="Submit" name="Submit" value="Submit">
+                            </a>
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
 
@@ -291,10 +295,11 @@
             var email=$('#email').val();
             var nohp=$('#nohp').val();
             var prov=$('#provinsi_id').val();
+            var pesan=$('#pesan').val();
             
             //alert(bod);
             
-            if( nama == '' || email == '' || nohp == '' || bod == '' ||  nohp.length <= 8 || prov == ''){
+            if( nama == '' || email == '' || nohp == '' || bod == '' ||  nohp.length <= 8 || prov == '' || pesan == ''){
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
                     if( email == '' )
@@ -305,6 +310,8 @@
                         document.getElementById('notif-tgllahir').style.display= 'block';
                     if( nohp.length <= 8 || nohp == '')
                         document.getElementById('notifNoHP').style.display='block';
+                    if( pesan == '' )
+                        document.getElementById('notifPesan').style.display= 'block';
                     alert("Mohon Periksa Inputan Anda");
             }else{
             e.preventDefault();
@@ -316,8 +323,12 @@
                           "&bod="+bod+
                           "&email="+email+
                           "&nohp="+nohp+
-                          "&prov="+prov,
+                          "&prov="+prov+
+                          "&pesan="+pesan,
                  "success" : function(response){
+                    if (response == "success") {
+                        window.location = "/tasbih/thankyou-inquiry";
+                    }
                  }
              });
             }
