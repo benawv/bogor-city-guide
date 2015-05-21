@@ -55,7 +55,7 @@
             'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
             'smartlink-factsheet', 'syariah-factsheet',
             'pension-factsheet', 'saving-factsheet','multi-video',
-            'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi','Tasbih-kedua','thankyou-tasbih'))); ?>
+            'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi','Tasbih-kedua','thankyou-tasbih','thankyou-inquiry'))); ?>
 
         <div style="clear:both; "></div>
 
