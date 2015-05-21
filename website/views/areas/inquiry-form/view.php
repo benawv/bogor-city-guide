@@ -31,7 +31,7 @@
   -moz-osx-font-smoothing: grayscale;
   position: absolute;
   right: 20px;
-  top: 50%;
+  top: 40%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
