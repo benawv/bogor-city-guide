@@ -95,7 +95,8 @@
 		
 		<img src="<?php echo $items->images->path.$items->images->filename; ?>" alt="" class="img-responsive">
 	    </div><!--/ .background -->
-	        <nav class="main-navigation" style="max-width:960px; margin:auto;">
+	        <nav class="main-navigation floating" style="bottom: 170px !important;">
+		<div class="container" style="max-width:960px; margin:auto;">
             <div class="row">
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
@@ -128,15 +129,13 @@
                     </a>
                 </div><!--/ .col-xs-12 -->
             </div>
-            <div class="row">
-                
-            </div>
+	    </div>
     </nav>
 	</header>
 	
 	<div class="page-wrapper-outer">
 		
-		<section class="page-wrapper mt32 mb72" style="margin-top:0 !important ">
+		<section class="page-wrapper mt32 mb72" style="margin-top: -165px !important;">
 		    <div class="container"  style="max-width: 960px">
 			<div class="row">
 			    <div class="col-xs-12 col-md-8 pr0">
@@ -207,3 +206,7 @@
 		
 	</div><!--/ .page-wrapper-outer -->
 <?php } ?>
+
+<script>
+resizePageWrapper();	
+</script>
