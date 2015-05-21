@@ -318,7 +318,6 @@
                           "&nohp="+nohp+
                           "&prov="+prov,
                  "success" : function(response){
-                    alert("Inquiry Send");
                  }
              });
             }
