@@ -20,6 +20,10 @@
     .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
     .form-box{ border: solid 1px #ddd; padding: 16px 20px; margin-bottom: 32px; }
     .form-control{ border-radius: 0; }
+        nav.main-navigation a.nav-item.home::after {
+      content: "\f015"; }        
+    nav.main-navigation a.nav-item.chat::after {
+      content: "\f1d7 "; }
     nav.main-navigation a.nav-item {
   display: block;
   position: relative;
@@ -43,18 +47,21 @@
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
   color: rgba(255, 255, 255, 0.5);
-  font-size: 45px;
+  font-size: 20px;
   pointer-events: none;
 }
         nav.main-navigation a.nav-item.blueA{
-      background: #003781;}
+      background: #003781;}        
+    
+    nav.main-navigation a.nav-item.greenChat{
+      background: #B20065;}
 </style>
 <header>
     <nav class="main-navigation" style="max-width:1140px; margin:auto;">
             <div class="row">
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
-                    <a href="/tasbih" class="nav-item blueA sitemap">
+                    <a href="/tasbih" class="nav-item blueA home">
                         <h4 style="font-size:18px"><small>Beranda</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
@@ -67,7 +74,7 @@
                 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4 style="font-size:18px"><small>Tanya Jawab Produk</small></h4>
+                        <h4 style="font-size:18px"><small>Tanya Jawab</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 
@@ -78,7 +85,7 @@
                 </div><!--/ .col-xs-12 -->
                 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/inquiry-form" class="nav-item red users">
+                    <a href="/tasbih/inquiry-form" class="nav-item greenChat chat">
                         <h4 style="font-size:18px"><small>Inquiry Form</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
