@@ -178,35 +178,22 @@
          * jQueryUI DatePicker
          */
 
-        $('#Kalkulasi').click(function() {
+        $('#Submit').click(function() {
             
 	    
-            var tanggalpembuatan = $('#tgl-hitung').val();
+            
             var nama = $('#nama').val();
             var email = $('#email').val();
-            var tanggallahir = $('#tgl-lahir').val();
-            var sex = $('#JenisKelamin option:Selected').val();
-            var usia = $('#usia').val();
-            var frekuensi = $('#Frekuensi option:Selected').val();
-            var asuransijiwa = $('#asuransi-jiwa').val();
-            var kontribusi = $('#masa-premi option:Selected').val();
-            var unfnum = accounting.unformat(asuransijiwa,0,",");
             var nohp = $('#nohp').val();
 
 			
 
 
-            if( nama == '' || asuransijiwa == '' || asuransijiwa >= 49000000 ||email == '' || tanggalpembuatan == '' || tanggallahir == '' || nohp == '' || nohp.length <= 8){
+            if( nama == '' ||email == '' || nohp == '' || nohp.length <= 8){
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
-                    if( asuransijiwa == '' || asuransijiwa < 50000000 )
-                        document.getElementById('notif-asuransijiwa').style.display= 'block';
                     if( email == '' )
                         document.getElementById('notifemail').style.display= 'block';
-                    if( tanggalpembuatan == '')
-                        document.getElementById('notif-tglhitung').style.display= 'block';
-                    if( tanggallahir == '' )
-                        document.getElementById('notif-tgllahir').style.display= 'block';
                     if( nohp.length <= 8 || no.hp == '')
                         document.getElementById('notifNoHP').style.display='block';
                     alert("Mohon Periksa Inputan Anda");
@@ -215,19 +202,11 @@
 	    $('.waiting-calc').show();
             
 	    $.ajax({
-                url      : '/kalkulator-tasbih/',
+                url      : '//kalkulator-tasbih-kedua//',
                 type     : 'POST',
                 data     : {
-                            'tgl' : tanggalpembuatan,
                             'nama' : nama,
                             'email' : email,
-                            'tanggallahir' : tanggallahir,
-                            'sex' : sex,
-                            'usia' : usia,
-                            'frekuensi' : frekuensi,
-                            'asuransijiwa' : unfnum,
-                            'AJ' : asuransijiwa,
-                            'kontribusi' : kontribusi,
                             'nohp' : nohp
                             },
                     success  : function(data){
