@@ -216,13 +216,13 @@
                 </div><!--/ .col-xs-12 -->
 
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item">
+                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item red">
                         <h4><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
 
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/inquiry-form" class="nav-item red">
+                    <a href="/tasbih/inquiry-form" class="nav-item grey">
                         <h4><small>Inquiry Form</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
