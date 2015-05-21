@@ -18,15 +18,14 @@
             $tglLahir_[2]; //year 
             $TanggalLahir=$tglLahir_[2]."-".$tglLahir_[1]."-".$tglLahir_[0];
 
-			$Nama = $_POST["nama"];
-            $Email = $_POST["email"];
 			$JenisKelamin = $_POST["sex"];
             $Usia = $_POST["usia"];
             $Frekuensi = $_POST["frekuensi"];
             $AsuransiJiwa = $_POST["asuransijiwa"];
             $AJ= $_POST["AJ"];
             $Kontribusi = $_POST["kontribusi"];
-            $nohp = $_POST["nohp"];
+            
+            
 			//print_r($_POST[]);
 		
 			$rates= new Object_TasbihRate_List();
@@ -45,7 +44,49 @@
 			$tglLahir = strtotime($TanggalLahir);
 	        $date_tglLahir= new Pimcore_Date($TanggalLahir);//set date into pimcore formats		
 
-	        $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
+	        
+			echo $Calculation;
+            
+            
+            $session = new Zend_Session_Namespace('calculation');
+            $session->date_tglBuat = $date_tglBuat;
+            $session->date_tglLahir = $date_tglLahir;
+            $session->JenisKelamin = $JenisKelamin;
+            $session->Usia = $Usia;
+            $session->Frekuensi = $Frekuensi;
+            $session->AsuransiJiwa = $AsuransiJiwa;
+            $session->AJ = $AJ;
+            $session->Kontribusi = $Kontribusi;
+            $session->Calculation = $Calculation;
+
+
+        }
+        
+        /*public function KalkulasiAction($Usia,$Frekuensi,$AsuransiJiwa){
+        
+
+            
+        }*/
+        
+        public function sendemailAction(){
+
+            
+            $Nama = $_POST["nama"];
+            $Email = $_POST["email"];
+            $nohp = $_POST["nohp"];
+
+            $session = new Zend_Session_Namespace('calculation');
+            $date_tglBuat = $session->date_tglBuat;
+            $date_tglLahir = $session->date_tglLahir;
+            $JenisKelamin = $session->JenisKelamin;
+            $Usia = $session->Usia;
+            $Frekuensi = $session->Frekuensi;
+            $AsuransiJiwa = $session->AsuransiJiwa;
+            $AJ = $session->AJ;
+            $Kontribusi = $session->Kontribusi;
+            $Calculation = $session->Calculation;
+            
+            $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
 		
 			$cookie = new Object_Tasbih();
 			$cookie->setTanggalPembuatan($date_tglBuat);
@@ -104,22 +145,8 @@
 			$mail->setParams($params);
 			$mail->addTo($Email);
 			$mail->send();
-			echo $Calculation;
-
-
-        }
-        
-        /*public function KalkulasiAction($Usia,$Frekuensi,$AsuransiJiwa){
-        
-
             
-        }*/
-        
-        public function sendemailAction(){
-        
-
-            
-            
+            Zend_Session::namespaceUnset('calculation');
         }
     }
 ?>
