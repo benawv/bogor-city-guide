@@ -164,49 +164,49 @@ $(function(){
 
 				<ul class="ulLanguage deactive">
 					<?php
-						$languages = new Object_Languages_List();
-						$count = count($uri);
-						$path = "";
-						
-						if(($uri[1]<>"" and ((($uri[1])=="id") or (($uri[1])=="en"))) ){
-
-							foreach($languages as $language)
-							
-							{
-								$path = "/". $language->country_id ."/";
-								for($x = 2; $x < $count; $x++){
-									if($x == $count-1)
-										$path .= $uri[$x];
-									else
-										$path .= $uri[$x]."/";
-								}
-								echo '<li class="liLanguage"><a class="language" targetId="'.$language->o_id.'" targetCode="'.$language->country_id.'" href="'.$path.'">'. $language->country_name .'</a></li>';	
-	
-							}
-
-						}else{
-							if(($uri[1]<>"")){
-								
-								foreach($languages as $language)
-								
-								{
-									$path = "/". $language->country_id ."/";
-									for($x = 1; $x < $count; $x++){
-										if($x == $count-1)
-											$path .= $uri[$x];
-										else
-											$path .= $uri[$x]."/";
-									}
-									echo '<li class="liLanguage"><a class="language" targetId="'.$language->o_id.'" targetCode="'.$language->country_id.'" href="'.$path.'">'. $language->country_name .'</a></li>';	
-		
-								}
-							}else{
-							echo '<li class="liLanguage"><a class="language" targetId="" targetCode="id" href="/en/home">English</a></li>';
-							echo '<li class="liLanguage"><a class="language" targetId="" targetCode="id" href="/in/home">Indonesia</a></li>';
-								
-							}
-							
-						}
+						//$languages = new Object_Languages_List();
+						//$count = count($uri);
+						//$path = "";
+						//
+						//if(($uri[1]<>"" and ((($uri[1])=="id") or (($uri[1])=="en"))) ){
+						//
+						//	foreach($languages as $language)
+						//	
+						//	{
+						//		$path = "/". $language->country_id ."/";
+						//		for($x = 2; $x < $count; $x++){
+						//			if($x == $count-1)
+						//				$path .= $uri[$x];
+						//			else
+						//				$path .= $uri[$x]."/";
+						//		}
+						//		echo '<li class="liLanguage"><a class="language" targetId="'.$language->o_id.'" targetCode="'.$language->country_id.'" href="'.$path.'">'. $language->country_name .'</a></li>';	
+						//
+						//	}
+						//
+						//}else{
+						//	if(($uri[1]<>"")){
+						//		
+						//		foreach($languages as $language)
+						//		
+						//		{
+						//			$path = "/". $language->country_id ."/";
+						//			for($x = 1; $x < $count; $x++){
+						//				if($x == $count-1)
+						//					$path .= $uri[$x];
+						//				else
+						//					$path .= $uri[$x]."/";
+						//			}
+						//			echo '<li class="liLanguage"><a class="language" targetId="'.$language->o_id.'" targetCode="'.$language->country_id.'" href="'.$path.'">'. $language->country_name .'</a></li>';	
+						//
+						//		}
+						//	}else{
+						//	echo '<li class="liLanguage"><a class="language" targetId="" targetCode="id" href="/en/home">English</a></li>';
+						//	echo '<li class="liLanguage"><a class="language" targetId="" targetCode="id" href="/in/home">Indonesia</a></li>';
+						//		
+						//	}
+						//	
+						//}
 				    ?>
 				</ul>
 				<ul class="ulCustomerOnline deactive">

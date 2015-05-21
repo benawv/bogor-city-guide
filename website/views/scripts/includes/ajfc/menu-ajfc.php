@@ -1,7 +1,7 @@
 <ul class="clearfix">
 <?php
 	$useragent=$_SERVER['HTTP_USER_AGENT'];
-	$languages = new Object_Languages_List();
+	//$languages = new Object_Languages_List();
 	$uri = explode("/", $_SERVER[REQUEST_URI]);
 
 						
