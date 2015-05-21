@@ -168,31 +168,31 @@
             <div class="row">
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
-                    <a href="/tasbih" class="nav-item blueA sitemap">
+                    <a href="/tasbih" class="nav-item blueA">
                         <h4><small>Beranda</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/kalkulator/tasbih" class="nav-item green sitemap">
+                    <a href="/kalkulator/tasbih" class="nav-item green">
                         <h4><small>Ilustrasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/tanya-jawab" class="nav-item orange question">
+                    <a href="/tasbih/tanya-jawab" class="nav-item orange">
                         <h4><small>Tanya Jawab</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item users">
+                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item">
                         <h4><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/inquiry-form" class="nav-item red users">
+                    <a href="/tasbih/inquiry-form" class="nav-item red">
                         <h4><small>Inquiry Form</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
