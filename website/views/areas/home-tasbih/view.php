@@ -237,10 +237,10 @@
 <section id="calendar-wrapper">
     <div class="container" style="max-width: 960px;">
         <div class="row">
-            <div class="col-xs-12 col-md-6 pr0">
+            <div class="col-xs-12 col-md-6 pr0 pl0">
                 <div id="my-calendar"></div>
             </div><!--/ .col-xs-12 -->
-            <div class="col-xs-12 col-md-6 calendar-info pl0">
+            <div class="col-xs-12 col-md-6 calendar-info pl0 pr0">
                 <div class="calendar-info--inner">
                     <?php
                         $bulanInd = array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
