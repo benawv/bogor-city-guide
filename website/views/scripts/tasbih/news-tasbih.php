@@ -49,48 +49,47 @@
 		
 		<img src="<?php echo $items->images->path.$items->images->filename; ?>" alt="" class="img-responsive">
 	    </div><!--/ .background -->
-	     <nav class="main-navigation" style="max-width:960px; margin:auto;">
-		<div class="continer">
-			    <div class="row">
-	
-			<div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
-			    <a href="/tasbih" class="nav-item blueA">
-				<h4><small>Beranda</small></h4>
-			    </a>
-			</div><!--/ .col-xs-12 -->
-	
-			<div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-			    <a href="/kalkulator/tasbih" class="nav-item green">
-				<h4><small>Ilustrasi</small></h4>
-			    </a>
-			</div><!--/ .col-xs-12 -->
-	
-			<div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-			    <a href="/tasbih/tanya-jawab" class="nav-item orange">
-				<h4><small>Tanya Jawab</small></h4>
-			    </a>
-			</div><!--/ .col-xs-12 -->
-	
-			<div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-			    <a href="http://agen.imkepo.com" target="_blank" class="nav-item">
-				<h4><small>Cari Agen</small></h4>
-			    </a>
-			</div><!--/ .col-xs-12 -->
-	
-			<div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-			    <a href="/tasbih/inquiry-form" class="nav-item red">
-				<h4><small>Inquiry Form</small></h4>
-			    </a>
-			</div><!--/ .col-xs-12 -->
-		    </div>
-		</div>
-		</nav>
+	    <nav class="main-navigation floating">
+        <div class="container" style="max-width: 960px">
+           <div class="row">
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
+                    <a href="/tasbih" class="nav-item blueA">
+                        <h4><small>Beranda</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="/kalkulator/tasbih" class="nav-item green">
+                        <h4><small>Ilustrasi</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="/tasbih/tanya-jawab" class="nav-item orange">
+                        <h4><small>Tanya Jawab</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item">
+                        <h4><small>Cari Agen</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="/tasbih/inquiry-form" class="nav-item red">
+                        <h4><small>Inquiry Form</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+            </div><!--/ .row -->
+        </div><!--/ .container -->
+    </nav>
 	</header>
 	
 	<div class="page-wrapper-outer">
 		
-		<section class="page-wrapper mt32 mb72">
-		    <div class="container">
+		<section class="page-wrapper mt32 mb72" style="margin-top:0 !important ">
+		    <div class="container"  style="max-width: 960px">
 			<div class="row">
 			    <div class="col-xs-12 col-md-8 pr0">
 		
