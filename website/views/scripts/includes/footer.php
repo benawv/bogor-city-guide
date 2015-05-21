@@ -15,7 +15,7 @@
 </div>
 <footer role="contentinfo" class="contentinfo">
 	<div class="meta clearfix">
-		<div class="container clearfix mw960">
+		<div class="container clearfix">
 			<div class="statement">&copy; Allianz 2014. All Rights Reserved.</div>
 			<ul class="static-links">
 				<li><a href="/data-privasi/prinsip-privasi">Kebijakan Privasi</a></li>
