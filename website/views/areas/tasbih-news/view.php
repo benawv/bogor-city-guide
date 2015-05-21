@@ -121,7 +121,7 @@
 <div class="page-wrapper-outer">
 
 <section class="page-wrapper mt32 mb72">
-    <div class="container">
+    <div class="container" style="max-width: 960px">
         <div class="row">
             <div class="col-xs-12 col-md-8 pr0">
 
