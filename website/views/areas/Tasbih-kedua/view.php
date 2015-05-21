@@ -113,8 +113,9 @@
                 <form class="form-horizontal" role="form">
 
                     <div class="form-box">
-                        <div class="form-box" id="notif-confirm" style="display:block; background:#009a44;"><h3  style=" color:white;"><strong>Terima kasih Anda telah melakukan kalkulasi ilustrasi produk Allianz Tasbih. Hasil kalkulasi Anda akan dikirimkan ke email pribadi Anda. Silahkan isi field dibawah ini.</strong><span id="hasil"></span></h3>
+                        <div><h3 >Terima kasih Anda telah melakukan kalkulasi ilustrasi produk Allianz Tasbih. Hasil kalkulasi Anda akan dikirimkan ke email pribadi Anda. Silahkan isi field dibawah ini.</h3>
                         </div>
+                        <br>
                     <label><strong>Data Diri</strong></label>
                     
 
