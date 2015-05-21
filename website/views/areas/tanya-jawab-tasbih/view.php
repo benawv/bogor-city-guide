@@ -43,17 +43,18 @@
 }
     nav.main-navigation a.nav-item.blueA{
       background: #003781;}
+      
 </style>
 
 <div class="row addPadding15">
-    <div class="container boxes-view">
+    <div class="container boxes-view" style="max-width: 960px">
 	    <div class="wrapper-special clearfix">
-			<div id="best-products" class="banner_products" style="min-height: 100px; width:825px; margin:auto;">
+			<div id="best-products" class="banner_products" style="min-height: 100px; width:635px; margin:auto;">
 			<?php 
 				echo $this->image("staticBanner", array(
 						"thumbnail" => "staticBanner",
-						'title' 	=> 'Banner 825x310',
-						'width' 	=> 825,
+						'title' 	=> 'Banner 635x310',
+						'width' 	=> 635,
 						'height' 	=> 310
 				));
 			?>
