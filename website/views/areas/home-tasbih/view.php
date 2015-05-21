@@ -27,9 +27,10 @@
         {
             display: block;
             position: relative;
-            height: 45px;
+            height: 50px;
             background: #d31f42;
         }
+        
         nav.main-navigation a.nav-item::after
         {
             content: "";
@@ -51,6 +52,16 @@
             font-size: 45px;
             pointer-events: none;
         }
+        
+        nav.main-navigation a.nav-item.chat::after {
+            content: "\f003  ";
+        }
+
+        
+        .nav-item{
+            text-align: left !important;
+        }
+      
     </style>
 <div class="row">
      <div class="backg">
