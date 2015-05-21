@@ -171,7 +171,6 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <INPUT TYPE="Radio" name="jenisKelamin" VALUE="l" style="display: block;">Pria</INPUT>
-                                <br>
                             <INPUT TYPE="Radio" name="jenisKelamin" VALUE="p" style="display: block;">Wanita</INPUT>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -179,7 +178,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>DOB</label>
+                            <label>DOB (Min. 18 tahun)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="DOB" value="" placeholder="Tanggal Lahir" />
@@ -346,6 +345,20 @@
              });
             }
             e.preventDefault();
+        });
+        
+        $('#DOB').on('change', function() {
+
+            var dob = new Date(this.value);
+            var today = new Date();
+            var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+            if(age >= 18) {
+                $('#usia').val(age);
+               document.getElementById('notif-DOB').style.display= 'none';
+            }else{
+                document.getElementById('notif-DOB').style.display= 'block';
+                $('#usia').val('Umur Anda dibawah 18 tahun');
+            }
         });
 
         $( ".pagenav .navi li" ).click(function(){
