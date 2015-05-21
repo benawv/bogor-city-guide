@@ -79,6 +79,9 @@
 
       nav.main-navigation a.nav-item.blueA::before {
         background: #3122F9; }
+    body {
+  text-align: left;
+}
 
 </style>
 <?php
@@ -92,7 +95,7 @@
 		
 		<img src="<?php echo $items->images->path.$items->images->filename; ?>" alt="" class="img-responsive">
 	    </div><!--/ .background -->
-	        <nav class="main-navigation" style="max-width:1140px; margin:auto;">
+	        <nav class="main-navigation" style="max-width:960px; margin:auto;">
             <div class="row">
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
