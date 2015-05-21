@@ -113,8 +113,8 @@
 
 <div class="form-box" id="notif-confirm">
     <h1>TERIMA KASIH</h1>
-    <h3  style=" color:black;"><strong>Perhitungan ilustrasi produk Allianz Tasbih (sudah dikirimkan ke alamat email Anda)</strong></h3>
-                        </div>
+    <h3  style=" color:black;"><strong>Perhitungan ilustrasi produk Allianz Tasbih (sudah dikirimkan ke alamat email Anda)</strong> <?php echo $session->Calculation;?></h3>
+                         </div>
 
                    
 
