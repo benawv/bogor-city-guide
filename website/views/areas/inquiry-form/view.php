@@ -140,7 +140,7 @@
 
     <div class="description">
 
-        <div class="header-calc">
+        <div class="header-calc" style="background-color:#707372;">
             <h1>INQUIRY FORM</h1>
         </div><!--/ .header-calc -->
 
@@ -225,7 +225,7 @@
                                     $getProv=new Object_MarketingOfficeWilayah_List();                                    
                                     foreach($getProv as $items){
                                         ?>
-                                            <option value= "<?php echo $items->o_id == "asc"; ?> "><?php echo $items->namaWilayah; ?></option>
+                                            <option value= "<?php echo $items->o_id; ?> "><?php echo $items->namaWilayah; ?></option>
                                         <?php
                                     }
                                 
@@ -247,7 +247,7 @@
                             <label id="notifPesan" style="display:none; color: #f00;">
                                 Mohon maaf, Anda harus mengisi pesan.
                             </label>
-                            <textarea cols="35" rows="10" placeholder="Tuliskan Pesan Anda disini Maksimal 250 Kata" id="pesan" ></textarea>
+                            <textarea cols="35" rows="10" class="form-control" placeholder="Tuliskan Pesan Anda disini Maksimal 250 Kata" id="pesan" ></textarea>
                             <label id="notifemail" style="display:block; font-size:10px; color: #f00;">
                                 Sisa karakter yang Anda tulis : <span id="counterString">250</span>  Kata
                             </label>
