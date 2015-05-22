@@ -191,7 +191,7 @@
 					<div class="sidebar-item--content">
 					    <ul class="sidebar-nav">
 						<?php foreach($this->sidelist as $lists){?>
-								<li><a href="/tasbih/tasbih-news/<?php  echo $lists->o_id; ?>"><?php  echo $lists->title; ?></a></li>
+								<li><a href="/tasbih/artikel/<?php  echo $lists->o_key."-".$lists->o_id; ?>"><?php  echo $lists->title; ?></a></li>
 						<?php } ?>
 					    </ul>
 					</div><!--/ .sidebar-item--content -->

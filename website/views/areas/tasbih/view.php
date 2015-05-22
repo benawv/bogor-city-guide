@@ -160,10 +160,10 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Usia(Tahun)</label>
+                            <label>Usia (Tahun)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="usia" placeholder="Usia(Tahun)" readonly>
+                            <input type="text" class="form-control" id="usia" placeholder="Usia (Tahun)" readonly>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
