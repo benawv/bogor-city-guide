@@ -106,7 +106,7 @@
 			$cookie->setDetailAsuransiJiwa($AsuransiJiwa);
 			$cookie->setMassaPembayaranKontribusi($Kontribusi);
 			$cookie->setKontribusiBerkala($Calculation);                
-			$cookie->setO_key('premium_tasbih'.strtotime(date("YmdHis")));
+			$cookie->setO_key('premium_tasbih'.rand().strtotime(date("YmdHis")));
 			$cookie->setO_parentId($getId->o_id);
 			$cookie->setO_index(0);
 			$cookie->setO_published(1);
@@ -154,6 +154,7 @@
 			$mail->addTo($Email);
 			$mail->send();
             
+			echo "sukses";
             //Zend_Session::namespaceUnset('calculation');
         }
     }
