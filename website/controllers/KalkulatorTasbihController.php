@@ -91,10 +91,8 @@
 				echo $Calculation."<br>";
 			*/	
 			
-			
+			/*
             $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
-
-
 			$cookie = new Object_Tasbih();
 			//$cookie->setTanggalPembuatan($date_tglBuat);
 			$cookie->setNama($Nama);
@@ -111,7 +109,7 @@
 			$cookie->setO_index(0);
 			$cookie->setO_published(1);
 			$cookie->save();
-			
+			*/
 	
 			if($JenisKelamin == 'l') {
 				$JK = 'Pria';
