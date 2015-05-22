@@ -26,7 +26,6 @@
             $Kontribusi = $_POST["kontribusi"];
             
             
-			//print_r($_POST[]);
 		
 			$rates= new Object_TasbihRate_List();
 			$rates->setCondition("kelamin='".$JenisKelamin."' and frekuensi=$Kontribusi and usia=$Usia");
@@ -34,7 +33,7 @@
 			foreach($rates as $items){
 				$rate=$items->rate;
 			}
-	
+		
 			$Calculation = ($rate*$AsuransiJiwa)/1000; //The Pattern of ALLIANZ
             //SetData
 	        
@@ -44,11 +43,6 @@
 			$tglLahir = strtotime($TanggalLahir);
 	        $date_tglLahir= new Pimcore_Date($TanggalLahir);//set date into pimcore formats		
 
-	        
-			echo $Calculation;
-            
-            
-            
             $session = new Zend_Session_Namespace('calculation');
             $session->date_tglBuat = $date_tglBuat;
             $session->date_tglLahir = $date_tglLahir;
@@ -70,7 +64,7 @@
         }*/
         
         public function sendemailAction(){
-            echo('test');
+			
             $Nama = $_POST["nama"];
             $Email = $_POST["email"];
             $nohp = $_POST["nohp"];
@@ -85,20 +79,7 @@
             $AJ = $session->AJ;
             $Kontribusi = $session->Kontribusi;
             $Calculation = $session->Calculation;
-            
-            print_r($date_tglBuat);
-            print_r($date_tglLahir);
-            print_r($JenisKelamin);
-            print_r($Usia);
-            print_r($Frekuensi);
-            print_r($date_tglBuat);
-            print_r($Asuransi);
-            print_r($AJ);
-            print_r($Kontribusi);
-            print_r($Calculation);
-            
-        die();    
-            
+                        
             $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
 		
 			$cookie = new Object_Tasbih();

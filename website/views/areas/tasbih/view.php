@@ -147,12 +147,15 @@
                             <label>Jenis Kelamin</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            
-                            <INPUT TYPE="Radio" name="jenisKelamin" VALUE="l">Pria</INPUT>
-                                <br>
-                            <INPUT TYPE="Radio" name="jenisKelamin" VALUE="p">Wanita</INPUT>
-                            
-                        </div><!--/ .col-md-4 -->
+				<div class="form-group">
+					<div class="col-xs-6">
+						<label class="radio-inline"><input name="jenisKelamin" value="l" type="Radio">Pria</label>
+					</div>
+					<div class="col-xs-6">
+						<label class="radio-inline"><input name="jenisKelamin" value="p" type="Radio">Wanita</label>
+					</div>
+				</div>                            
+                        </div>
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
@@ -188,10 +191,13 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Asuransi Jiwa(Min. Rp.50.000.000)">
-                            <label id="notif-asuransijiwa" style="display:none; color: #f00;">
+                           
+			    <label id="notif-asuransijiwa" style="display:none; color: #f00;">
                                 Mohon maaf inputan yang Anda masukkan belum benar
                             </label>
                         </div><!--/ .col-md-4 -->
+			<div class="col-md-4"> <span>* Uang pertanggungan asuransi jiwa bila terjadi risio pada tertanggung.</span></div>
+			
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
@@ -229,7 +235,6 @@
 		    
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
-                            <a href="/tasbih/tasbih-kedua">
                             <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" value="Kalkulasi" style="background-color:#009a44">
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
@@ -258,13 +263,22 @@
         /*
          * jQueryUI DatePicker
          */
+	var sex;
+	$("input:radio[name=jenisKelamin]").click(function() {
+			sex= $(this).val();
+	});
 
         $('#Kalkulasi').click(function() {
-            
+        
+	    //get current date format //dd/yy/mm
+	    var fullDate = new Date()
+            var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
+	    var currentDate = fullDate.getDate() + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
 	    
-            var tanggalpembuatan = $('#tgl-hitung').val();
+            var tanggalpembuatan = currentDate;
             var tanggallahir = $('#tgl-lahir').val();
-            var sex = $('#JenisKelamin option:Selected').val();
+            
+	   // var sex = $('#JenisKelamin option:Selected').val();
             var usia = $('#usia').val();
             var frekuensi = $('#Frekuensi option:Selected').val();
             var asuransijiwa = $('#asuransi-jiwa').val();
@@ -301,10 +315,9 @@
                             },
                     success  : function(data){
                     //console.log(data);
-		    $('.waiting-calc').hide();
-		    
+		    $('.waiting-calc').hide();		    
                     $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
-                     
+                     document.location.href='/tasbih/tasbih-kedua';
                 }
 
                 
