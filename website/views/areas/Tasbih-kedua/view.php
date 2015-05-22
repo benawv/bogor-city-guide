@@ -1,3 +1,9 @@
+<?php
+//call session yang di buat di controller kalkulatortassbihControler function saveAction()
+  $session = new Zend_Session_Namespace('calculation');
+?>
+
+
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/bootstrap.min.css"  />
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
@@ -105,6 +111,7 @@
 
         <div class="header-calc">
             <h1>KALKULATOR ALLIANZ TASBIH</h1>
+            
         </div><!--/ .header-calc -->
 
         <div class="content-calc">
@@ -162,7 +169,7 @@
 				<label>Kontribusi Berkala/ Premi pertahun</label>
 			    </div><!--/ .col-md-4 -->
 			    <div class="col-md-4">
-				<input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly>
+				<input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" value="<?php echo $session->Calculation; ?>" readonly>
 			    </div><!--/ .col-md-4 -->
 			</div><!--/ .form-group -->
 			
