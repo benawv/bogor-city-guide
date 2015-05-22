@@ -110,7 +110,7 @@
     <div class="description">
 
         <div class="header-calc">
-            <h1>KALKULATOR ALLIANZ TASBIH</h1>
+            <h1>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
             
         </div><!--/ .header-calc -->
 
@@ -242,24 +242,23 @@
                     alert("Mohon Periksa Inputan Anda");
             }else{
 
-	    $.ajax({
-                url      : '/kalkulator-tasbih-kedua/',
-                type     : 'POST',
-                data     : {
-                            'nama' : nama,
-                            'email' : email,
-                            'nohp' : nohp
-                            },
-                    success  : function(data){
-                    console.log(data);
-                    //console.log(data);
-		    $('.waiting-calc').hide();
-		    $('.result-calc').show();
-                    //$('#hasil').val(accounting.formatMoney(data, "Rp ", 0,","));
-                    document.location.href = "/tasbih/thankyou";
-                }
-
-            });
+              $.ajax({
+                  url      : '/kalkulator-tasbih-kedua/',
+                  type     : 'POST',
+                  data     : {
+                              'nama' : nama,
+                              'email' : email,
+                              'nohp' : nohp
+                              },
+                      success  : function(data){
+                        console.log(data);
+                        //console.log(data);
+                        $('.waiting-calc').hide();
+                        $('.result-calc').show();
+                        //$('#hasil').val(accounting.formatMoney(data, "Rp ", 0,","));
+                        document.location.href = "/tasbih/thankyou";
+                      }  
+              });
             }
         });
 

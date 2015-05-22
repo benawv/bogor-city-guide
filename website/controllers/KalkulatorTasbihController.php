@@ -91,7 +91,7 @@
 				echo $Calculation."<br>";
 			*/	
 			
-			/*
+			
             $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
 			$cookie = new Object_Tasbih();
 			//$cookie->setTanggalPembuatan($date_tglBuat);
@@ -104,12 +104,12 @@
 			$cookie->setDetailAsuransiJiwa($AsuransiJiwa);
 			$cookie->setMassaPembayaranKontribusi($Kontribusi);
 			$cookie->setKontribusiBerkala($Calculation);                
-			$cookie->setO_key('premium_tasbih'.rand().strtotime(date("YmdHis")));
+			$cookie->setO_key('premium_tasbih_'.strtotime(date("YmdHis")));
 			$cookie->setO_parentId($getId->o_id);
 			$cookie->setO_index(0);
 			$cookie->setO_published(1);
 			$cookie->save();
-			*/
+			
 	
 			if($JenisKelamin == 'l') {
 				$JK = 'Pria';
