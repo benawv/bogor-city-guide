@@ -83,13 +83,13 @@
                 </div><!--/ .col-xs-12 -->
                 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item users">
+                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
                         <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/inquiry-form" class="nav-item greenChat chat">
+                    <a href="/tasbih/inquiry-form" class="nav-item grey chat">
                         <h4 style="font-size:18px"><small>Inquiry Form</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
@@ -114,7 +114,11 @@
 <div class="form-box" id="notif-confirm">
     <h1 style="text-align:center">TERIMA KASIH</h1>
     <h3  style=" color:black; text-align:center;"><strong>Kalkulasi ilustrasi produk Allianz Tasbih (sudah dikirimkan ke alamat email Anda)</strong></h3>
+    <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next" value="Submit">
                          </div>
+                      
+
+     
 
                    
 
