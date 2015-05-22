@@ -1970,7 +1970,7 @@ div.zabuto_calendar div.legend span.badge-today {
   font-weight: 300;
   color: white;
   text-shadow: 1px 1px 0 #003781;
-  background: #003781;
+  background: none repeat scroll 0 0 transparent;
   text-align: center;
   cursor: pointer;
   border-radius: 9999px;
