@@ -338,8 +338,6 @@ nav.main-navigation {
       pointer-events: none; }
     nav.main-navigation a.nav-item.green {
       background: #12a95a; }
-    nav.main-navigation a.nav-item.blueA{
-      background: #003781;}
       nav.main-navigation a.nav-item.green::before {
         background: #137f5f; }
     nav.main-navigation a.nav-item.orange {
@@ -1968,9 +1966,10 @@ div.zabuto_calendar div.legend span.badge-today {
   padding: 0;
   font-size: 18px;
   font-weight: 300;
-  color: white;
-  text-shadow: 1px 1px 0 #003781;
-  background: none repeat scroll 0 0 transparent;
+  color: #003781;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+  background: transparent;
+  border: solid 1px #003781;
   text-align: center;
   cursor: pointer;
   border-radius: 9999px;
@@ -1987,6 +1986,11 @@ div.zabuto_calendar div.legend span.badge-today {
   -ms-transition: ease 0.3s;
   -o-transition: ease 0.3s;
   transition: ease 0.3s; }
+  div.zabuto_calendar .badge-today:hover, div.zabuto_calendar .badge-today:focus,
+  div.zabuto_calendar div.legend span.badge-today:hover,
+  div.zabuto_calendar div.legend span.badge-today:focus {
+    color: white;
+    text-shadow: 1px 1px 0 #003781; }
 
 div.zabuto_calendar .badge-event,
 div.zabuto_calendar div.legend span.badge-event {
