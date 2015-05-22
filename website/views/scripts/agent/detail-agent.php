@@ -156,9 +156,18 @@
     </div><!-- .wrapper-special -->
 
 
-
+    <?php foreach($kantor as $dataKantor2){
+            $idKantor = $dataKantor2->getO_id();
+            $keyKantor = $dataKantor2->getO_key();
+        }
+    ?>
     <div>
-
+        <h5>
+			<span><a href="/">Home </a></span>
+            &rsaquo; <a href="<?php echo $this->url(array($keyKantor ,$idKantor),"detail-kantor");?>"><span>Detail Kantor</span></a>
+            &rsaquo; <span class='currentPage'>Detail Agen</span>
+		</h5>
+        <span
         <div class="full-w bg-white custom-section">
             <h2>
                 <span class="judul_section">Profil Agent</span>
