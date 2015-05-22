@@ -134,14 +134,19 @@
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 <script>
   
-   $(document).ready(function(){
+$(document).ready(function(){
         /*
          * jQueryUI DatePicker
          */
 
         $('#cari-agen').click(function() {
-          
-          $.ajax({
+            
+            
+            var nama = $('#nama').val();
+            var email = $('#email').val();
+            var nohp = $('#nohp').val();
+
+              $.ajax({
                   url      : 'http://agen.imkepo.com/v1/api/calculator',
                   type     : 'POST',
                   data     : {
@@ -150,18 +155,12 @@
                               'nohp' : nohp
                               },
                       success  : function(data){
-                        console.log(data);
-                        //console.log(data);
-                        $('.waiting-calc').hide();
-                        $('.result-calc').show();
-                        //$('#hasil').val(accounting.formatMoney(data, "Rp ", 0,","));
-                        document.location.href = "/tasbih/thankyou";
+                          console.log(data);
                       }  
-              });
-            }
+              });            
         });
-
     });
+
   
   
 </script>
