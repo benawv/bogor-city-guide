@@ -44,7 +44,7 @@
 	        $date_tglLahir= new Pimcore_Date($TanggalLahir);//set date into pimcore formats		
 
             $session = new Zend_Session_Namespace('calculation');
-            $session->date_tglBuat = $date_tglBuat;
+            $session->date_tglBuat = $tglBuat;
             $session->date_tglLahir = $date_tglLahir;
             $session->JenisKelamin = $JenisKelamin;
             $session->Usia = $Usia;
@@ -79,26 +79,38 @@
             $AJ = $session->AJ;
             $Kontribusi = $session->Kontribusi;
             $Calculation = $session->Calculation;
-                        
+           /*             
+				echo $date_tglBuat."<br>";
+				echo $date_tglLahir."<br>";
+				echo $JenisKelamin."<br>";
+				echo $Usia."<br>";
+				echo $Frekuensi."<br>";
+				echo $AsuransiJiwa."<br>";
+				echo $AJ."<br>";
+				echo $Kontribusi."<br>";
+				echo $Calculation."<br>";
+			*/	
+			
+			
             $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
-		
 			$cookie = new Object_Tasbih();
-			$cookie->setTanggalPembuatan($date_tglBuat);
+			//$cookie->setTanggalPembuatan($date_tglBuat);
 			$cookie->setNama($Nama);
 			$cookie->setEmail($Email);
-			$cookie->setTanggalLahir($date_tglLahir);
+			//$cookie->setTanggalLahir($date_tglLahir);
 			$cookie->setJenisKelamin($JenisKelamin);
 			$cookie->setUsia($Usia);
 			$cookie->setFrekuensiPembayaran($Frekuensi);
 			$cookie->setDetailAsuransiJiwa($AsuransiJiwa);
 			$cookie->setMassaPembayaranKontribusi($Kontribusi);
 			$cookie->setKontribusiBerkala($Calculation);                
-			$cookie->setO_key('tasbih'.$cookies.strtotime(date("YmdHis")));
+			$cookie->setO_key('premium_tasbih_'.strtotime(date("YmdHis")));
 			$cookie->setO_parentId($getId->o_id);
 			$cookie->setO_index(0);
 			$cookie->setO_published(1);
 			$cookie->save();
 			
+	
 			if($JenisKelamin == 'l') {
 				$JK = 'Pria';
 			}
@@ -140,7 +152,8 @@
 			$mail->addTo($Email);
 			$mail->send();
             
-            Zend_Session::namespaceUnset('calculation');
+			echo "sukses";
+            //Zend_Session::namespaceUnset('calculation');
         }
     }
 ?>

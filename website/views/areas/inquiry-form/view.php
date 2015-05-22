@@ -170,8 +170,16 @@
                             <label>Jenis Kelamin</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <INPUT TYPE="Radio" name="jenisKelamin" VALUE="l" style="display: block;">Pria</INPUT>
-                            <INPUT TYPE="Radio" name="jenisKelamin" VALUE="p" style="display: block;">Wanita</INPUT>
+                            <!--<INPUT TYPE="Radio" name="jenisKelamin" VALUE="l" style="display: block;">Pria</INPUT>
+                            <INPUT TYPE="Radio" name="jenisKelamin" VALUE="p" style="display: block;">Wanita</INPUT>-->
+                            <div class="form-group">
+                                <div class="col-xs-6">
+                                    <label class="radio-inline"><input type="Radio" style="display: block;" name="jenisKelamin" value="l" style="display:block">Pria</label>
+                                </div>
+                                <div class="col-xs-6">
+                                    <label class="radio-inline"><input type="Radio" style="display: block;" name="jenisKelamin" value="p" style="display:block">Wanita</label>
+                                </div>
+                            </div>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
