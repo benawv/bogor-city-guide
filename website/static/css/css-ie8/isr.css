@@ -376,7 +376,24 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 	border: 0px solid #F00;
 	text-align: center;
 }
-
+/*ROBBI*/
+@media only screen and (max-width : 320px){
+	.heading .customAnchorHide #membername{
+		width: 280px !important;
+	}
+	.heading .customAnchorHide #membername .super_navi{
+		position: relative;
+		float: left;
+		width: 240px;
+		margin-left: 0px;
+	}
+	.heading .customAnchorHide #membername .super_navi .navi{
+		margin-left: 0px;
+	}
+	.heading .customAnchorHide #navigate{
+		width: 700px !important;
+	}
+}
 @media only screen and (max-width : 640px){
 
 	.fixbox{
@@ -406,6 +423,28 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 
 	#membername{
 		display: none;
+	}
+	/*ROBBI*/
+	.customAnchorHide, .customAnchorHide #navigate, .customAnchorHide #membername{
+		display: block !important;
+	}
+	.customAnchorHide #membername{
+		width: 320px !important;
+	}
+	.customAnchorHide #membername .super_navi{
+		position: relative;
+		float: left;
+		width: 280px;
+		margin-left: 0px;
+	}
+	.customAnchorHide #membername .super_navi .navi{
+		margin-left: 0px;
+	}
+	.customAnchorHide #navigate{
+		width: 500px !important;
+	}
+	#quicklinks{
+		margin-top: 80px !important;
 	}
 	
 	.full-w p, .description{
