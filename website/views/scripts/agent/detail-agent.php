@@ -199,6 +199,15 @@
                                 echo "Email Agent. ".$emailAgent;
                             ?>
                         </p>
+                        <!--<p> DI HIDE DULU YAA
+                            Parameter dari tasbih: <br />
+                            <?php
+                                //$session = new Zend_Session_Namespace('tasbih');
+                                ////unset($session->name);
+                                //echo "Nama user: ".$session->name."<br />";
+                                //echo "Email: ".$session->email."<br />";
+                            ?>
+                        </p>-->
                     <?php }?>
                     <a href="mailto:<?php echo $emailAgent;?>?Subject=Call%20Kantor" target="_top" class="btn btn-sendmail">Email Agent</a>&nbsp;
                     <a href="tel:<?php echo $telp;?>" target="_top" class="btn btn-sendmail hide">Contact Agent</a>
