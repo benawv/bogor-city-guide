@@ -2,7 +2,7 @@
             <div class="modal-dialog">
                     <div class="modal-content" style="padding: 20px">
                             <form class="form-signin" action="asncenter" method="POST">
-                                    <h2 class="form-signin-heading"><b>ASN Digital Download Center Sign In</b></h2>
+                                    <h2 class="form-signin-heading"><b>ASN Multimedia Center Sign In</b></h2>
                                     
                                     <!--label for="username" class="sr-only">Username</label-->
                                     <!--<input type="input" id="username" name="login_username" title="login_username" tabindex="4" class="input_login form-control popup-asn-label" placeholder="Username" required autofocus style="margin-bottom:10px">-->
