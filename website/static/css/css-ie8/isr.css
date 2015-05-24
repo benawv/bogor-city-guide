@@ -393,6 +393,22 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 	.heading .customAnchorHide #navigate{
 		width: 700px !important;
 	}
+	
+	ul.slides #membername{
+		width: 280px !important;
+	}
+	ul.slides #membername .super_navi{
+		position: relative;
+		float: left;
+		width: 240px;
+		margin-left: 0px;
+	}
+	ul.slides #membername .super_navi .navi{
+		margin-left: 0px;
+	}
+	ul.slides .navi{
+		width: 700px !important;
+	}
 }
 @media only screen and (max-width : 640px){
 
@@ -425,22 +441,22 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 		display: none;
 	}
 	/*ROBBI*/
-	.customAnchorHide, .customAnchorHide #navigate, .customAnchorHide #membername{
+	.customAnchorHide, .customAnchorHide #navigate, .customAnchorHide #membername, ul.slides #membername{
 		display: block !important;
 	}
-	.customAnchorHide #membername{
+	.customAnchorHide #membername, ul.slides #membername{
 		width: 320px !important;
 	}
-	.customAnchorHide #membername .super_navi{
+	.customAnchorHide #membername .super_navi, ul.slides #membername .super_navi{
 		position: relative;
 		float: left;
 		width: 280px;
 		margin-left: 0px;
 	}
-	.customAnchorHide #membername .super_navi .navi{
+	.customAnchorHide #membername .super_navi .navi, ul.slides #membername .super_navi .navi{
 		margin-left: 0px;
 	}
-	.customAnchorHide #navigate{
+	.customAnchorHide #navigate, ul.slides .navi{
 		width: 500px !important;
 	}
 	#quicklinks{
