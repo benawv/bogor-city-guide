@@ -65,6 +65,11 @@
         #slideshow .slide p, .place-bg h1{
             text-align: left !important;
         }
+        @media only screen and (max-width : 640px){
+            .place-bg.place-bg-gallery{
+            padding: 15px;
+        }
+}
       
     </style>
 <div class="row">
