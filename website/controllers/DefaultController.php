@@ -101,7 +101,7 @@ class DefaultController extends Website_Controller_Action {
 				//die(print_r($session->verified));
 				//echo $session->verified;
 				//$_SESSION["loginCenter"] = "Yes";
-				$this->redirect("/asn/asn-digital-download-center");
+				$this->redirect("/asn/asn-multimedia-center");
 		}
 		else{
 				//$_SESSION["loginCenter"] = "No";
