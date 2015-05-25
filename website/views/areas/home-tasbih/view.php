@@ -65,19 +65,12 @@
         #slideshow .slide p, .place-bg h1{
             text-align: left !important;
         }
-
-        /**
-         * Respsonsive
-         */
-
-        @media ( max-width: 640px )
-        {
-            .backg .slides .edge
-            {
-                display: none;
-            }
+        @media only screen and (max-width : 640px){
+            .place-bg.place-bg-gallery{
+            padding: 15px;
         }
-
+}
+      
     </style>
 <div class="row">
      <div class="backg">
@@ -248,7 +241,7 @@
 
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/inquiry-form" class="nav-item grey chat">
-                        <h4 style="font-size:18px"><small>Inquiry Form</small></h4>
+                        <h4 style="font-size:18px; bottom:0px !important;"><small>Permintaan<br/>Keterangan</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
             </div>
@@ -290,7 +283,7 @@
                         }
                     ?>
                     <div class="header">
-                        <h2>Kalender Hijriah</h2>
+                        <h2><strong>Kalender Hijriah</strong></h2>
                     </div>
                     <div class="body">
                         <h2 id="calendar-title"><?php echo $title; ?></h2>
@@ -490,7 +483,7 @@
                         $news_stack[$i]=array(
                                 "date"=>$items->newsdate,
                                 "teaser"=>$items->deskripsisingkat,
-                                "link"=>"/tasbih/artikel/".$items->o_key."_".$items->o_id,
+                                "link"=>"/tasbih/artikel/".$items->o_key."".$items->o_id,
                                 "title"=> $items->title,
                                 "images"=>$items->images->path.$items->images->filename,
                                 "thumb"=>$items->thumbnail->path.$items->thumbnail->filename
