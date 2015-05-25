@@ -98,7 +98,7 @@
                 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/inquiry-form" class="nav-item grey chat">
-                        <h4 style="font-size:18px; bottom:0px !important;"><small>Permintaan Keterangan</small></h4>
+                        <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
             </div>
@@ -190,7 +190,7 @@
                             <label>Asuransi Jiwa (Min. Rp.50.000.000)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Asuransi Jiwa(Min. Rp.50.000.000)">
+                            <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Asuransi Jiwa (Min. Rp.50.000.000)">
                            
 			    <label id="notif-asuransijiwa" style="display:none; color: #f00;">
                                 Mohon maaf inputan yang Anda masukkan belum benar
