@@ -665,3 +665,11 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 		width: 33.33% !important;
 	}
 }
+
+@media  ( max-width: 800px )
+{
+	ul#membername.navi
+	{
+		display: block !important;
+	}
+}
