@@ -377,7 +377,7 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 	text-align: center;
 }
 /*ROBBI*/
-@media only screen and (max-width : 320px){
+@media only screen and (max-width : 768px){
 	.heading .customAnchorHide #membername{
 		width: 280px !important;
 	}
