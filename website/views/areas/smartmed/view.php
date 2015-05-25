@@ -301,7 +301,7 @@
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="1" name="payment_methods" id="payment_methods">
                             <?php
-                                $cat = new Object_smartmedPaymentType_List();
+                                $cat = new Object_SmartmedPaymentType_List();
                                 foreach($cat as $payment)
                                 {
                                     echo "<option value='".$payment->getPaymenttype()."'>".$payment->getPaymenttype()."</option>";
@@ -380,7 +380,7 @@
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="6" id="planip">
                                 <?php
-                                    $cat = new Object_smartmedPlanType_List();
+                                    $cat = new Object_SmartmedPlanType_List();
                                     foreach($cat as $payment)
                                     {
                                         echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."'>".$payment->getPlanname()."</option>";
@@ -397,7 +397,7 @@
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="6" id="planmat">
                                 <?php
-                                    $cat = new Object_smartmedPlanType_List();
+                                    $cat = new Object_SmartmedPlanType_List();
                                     foreach($cat as $payment)
                                     {
                                         echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."'>".$payment->getPlanname()."</option>";
@@ -414,7 +414,7 @@
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="6" id="planop_den">
                                 <?php
-                                    $cat = new Object_smartmedPlanType_List();
+                                    $cat = new Object_SmartmedPlanType_List();
                                     foreach($cat as $payment)
                                     {
                                         echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."'>".$payment->getPlanname()."</option>";
