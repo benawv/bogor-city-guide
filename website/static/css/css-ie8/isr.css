@@ -628,27 +628,40 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 		display: block !important;
 	}
 	
-	.customAnchorHide #membername
+	.customAnchorHide div#membername
 	{
 		width: 740px !important;
 		display: block !important;
 		overflow: hidden;
 	}
 	
-	.customAnchorHide #memebername .super_navi
+	.customAnchorHide div#memebername .super_navi
 	{
 	
 	}
 	
-	.customAnchorHide #membername .super_navi .navi
+	.customAnchorHide div#membername .super_navi .navi
 	{
 		display: block !important;
 		width: auto !important;
 		min-width: 2450px !important;
 	}
 	
-	.customAnchorHide #membername .super_navi .navi li
+	.customAnchorHide div#membername .super_navi .navi li
 	{
 		width: 720px !important;
+	}
+}
+
+@media ( max-width: 991px )
+{
+	ul#membername.navi
+	{
+		display: block !important;
+		width: 100% !important;
+	}
+	ul#membername.navi > li
+	{
+		width: 33.33% !important;
 	}
 }
