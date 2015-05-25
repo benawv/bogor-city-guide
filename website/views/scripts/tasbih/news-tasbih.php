@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/websit  e/static/css-ajfc/hotspot/ajfc.hotspot.css">
+<link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css-ajfc/hotspot/ajfc.hotspot.css">
 
 <!--<link rel="stylesheet" href="/website/ajfc/css/bootstrap.min.css">-->
 <link rel="stylesheet" href="/website/ajfc/css/bootstrap-custom-wcm/bootstrap.css">
@@ -10,17 +10,20 @@
 <script src="/website/ajfc/js/javascripts.js"></script>
 
 <style>
+
     .page-wrapper-outer .sidebar
     {
         background: white;
         border-left: solid 1px #ddd;
     }
 
-    .sidebar .sidebar-item .sidebar-item--header h1, .sidebar .sidebar-item .sidebar-item--header h2, .sidebar .sidebar-item .sidebar-item--header h3, .sidebar .sidebar-item .sidebar-item--header h4, .sidebar .sidebar-item .sidebar-item--header h5, .sidebar .sidebar-item .sidebar-item--header h6, .sidebar .sidebar-item .sidebar-item--header p
-    {
-        color: black;
-    }
-
+    .sidebar .sidebar-item .sidebar-item--header h1,
+    .sidebar .sidebar-item .sidebar-item--header h2,
+    .sidebar .sidebar-item .sidebar-item--header h3,
+    .sidebar .sidebar-item .sidebar-item--header h4,
+    .sidebar .sidebar-item .sidebar-item--header h5,
+    .sidebar .sidebar-item .sidebar-item--header h6,
+    .sidebar .sidebar-item .sidebar-item--header p
     .sidebar .sidebar-item .sidebar-item--content ul > li > a
     {
         color: black;
@@ -30,74 +33,71 @@
     {
         color: #999;
     }
-    .sidebar-font-green-h1{
-	color: #009a44 !important;
-	font-weight: bold;	
+
+    .sidebar-font-green-h1
+    {
+       color: #009a44 !important;
+       font-weight: bold;
     }
-    
+
     .box-dent--inner{ background: #009a44; }
     .box-dent::before{ border-top: 28px solid #009a44 !important;}
     .btn-tasbih{ background: #009a44 !important; border: none !important; border-radius: 0; }
     .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
     .form-box{ border: solid 1px #ddd; padding: 16px 20px; margin-bottom: 32px; }
     .form-control{ border-radius: 0; }
-        nav.main-navigation a.nav-item.home::after {
-      content: "\f015"; }        
-    nav.main-navigation a.nav-item.chat::after {
-      content: "\f003  "; }
-    nav.main-navigation a.nav-item {
-  display: block;
-  position: relative;
-  height: 50px;
-  background: #d31f42;
-}
-        nav.main-navigation a.nav-item::after {
-  content: "";
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 20px;
-  pointer-events: none;
-}
-        nav.main-navigation a.nav-item.blueA{
-      background: #003781;}        
-    
-    nav.main-navigation a.nav-item.greenChat{
-      background: #B20065;}
+    nav.main-navigation a.nav-item.home::after { content: "\f015"; }
+    nav.main-navigation a.nav-item.chat::after { content: "\f003  "; }
+    nav.main-navigation a.nav-item
+    {
+        display: block;
+        position: relative;
+        height: 50px;
+        background: #d31f42;
+    }
 
-      nav.main-navigation a.nav-item.blueA::before {
-        background: #3122F9; }
-    body {
-  text-align: left;
-}
+    nav.main-navigation a.nav-item::after {
+        content: "";
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 20px;
+        pointer-events: none;
+    }
+
+    nav.main-navigation a.nav-item.blueA{ background: #003781; }
+    nav.main-navigation a.nav-item.greenChat{ background: #B20065; }
+    nav.main-navigation a.nav-item.blueA::before{ background: #3122F9; }
+    body { text-align: left; }
 
 </style>
 <?php
      foreach($this->newsTasbih as $items){
-		/*echo "<pre>";
-		print_r($items);
-		echo "</pre>";*/
+        /*echo "<pre>";
+        print_r($items);
+        echo "</pre>";*/
 ?>
-	<header style="margin-top: -20px;">
-	    <div class="background">
-		
-		<img src="<?php echo $items->images->path.$items->images->filename; ?>" alt="" class="img-responsive">
-	    </div><!--/ .background -->
-	        <nav class="main-navigation floating" style="bottom: 170px !important; z-index: 3;">
-		<div class="container" style="max-width:960px; margin:auto;">
-            <div class="row">
+    <header style="margin-top: -20px;">
+
+        <div class="background">
+            <img src="<?php echo $items->images->path.$items->images->filename; ?>" alt="" class="img-responsive">
+        </div><!--/ .background -->
+
+        <nav class="main-navigation floating" style="bottom: 170px !important; z-index: 3;">
+            <div class="container" style="max-width:960px; margin:auto;">
+                <div class="row">
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
                     <a href="/tasbih" class="nav-item blueA home">
