@@ -60,7 +60,7 @@
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-4">
                     <a href="/tanya-jawab" class="nav-item orange question">
-                        <h4><small>02</small> Pertanyaan Umum</h4>
+                        <h4><small>02</small> Tanya Jawab</h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-4">
