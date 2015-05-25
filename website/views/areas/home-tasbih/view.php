@@ -528,7 +528,7 @@
 <section class="mt32 mb72">
     <div class="container" style="max-width: 960px;">
         <div class="row">
-            <div class="col-xs-12 col-md-6 news-feeds left-side" style="padding-left: 15px; padding-right: 30px;">
+            <div class="col-xs-12 col-md-6 news-feeds left-side" style="">
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
                         <div class="news-feed">
@@ -593,7 +593,7 @@
                     </div><!--/ .col-xs-12 -->
                 </div><!--/ .row -->
             </div><!--/ .col-xs-12 col-md-6 news-feeds -->
-            <div class="col-xs-12 col-md-6 news-feeds right-side" style="padding-right: 15px;">
+            <div class="col-xs-12 col-md-6 news-feeds right-side" style="">
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
                         <div class="news-feed">
