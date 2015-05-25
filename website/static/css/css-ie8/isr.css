@@ -377,7 +377,7 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 	text-align: center;
 }
 /*ROBBI*/
-@media only screen and (max-width : 768px){
+@media only screen and (max-width : 320px){
 	.heading .customAnchorHide #membername{
 		width: 280px !important;
 	}
@@ -620,3 +620,35 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 }
 /* ========================================== */
 
+/* added by Otoy May 25 2015 */
+@media screen ( max-width: 768px )
+{
+	.customAnchorHide
+	{
+		display: block;
+	}
+	
+	.customAnchorHide #membername
+	{
+		width: 740px;
+		display: block !important;
+		overflow: hidden;
+	}
+	
+	.customAnchorHide #memebername .super_navi
+	{
+	
+	}
+	
+	.customAnchorHide #membername .super_navi .navi
+	{
+		display: block !important;
+		width: auto !important;
+		min-width: 2450px !important;
+	}
+	
+	.customAnchorHide #membername .super_navi .navi li
+	{
+		width: 720px !important;
+	}
+}
