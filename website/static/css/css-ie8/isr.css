@@ -410,6 +410,47 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 		width: 700px !important;
 	}
 }
+@media only screen and (max-width : 768px) and (min-width: 641px){
+	.customAnchorHide, .customAnchorHide #navigate, .customAnchorHide #membername, ul.slides #membername{
+		display: block !important;
+	}
+	
+	.heading .customAnchorHide #membername{
+		width: 700px !important;
+	}
+	.heading .customAnchorHide #membername .super_navi{
+		position: relative;
+		float: left;
+		width: 660px;
+		margin-left: 0px;
+	}
+	.heading .customAnchorHide #membername .super_navi .navi{
+		margin-left: 0px;
+	}
+	.heading .customAnchorHide #navigate{
+		width: 1000px !important;
+	}
+	
+	ul.slides #membername{
+		width: 280px !important;
+	}
+	ul.slides #membername .super_navi{
+		position: relative;
+		float: left;
+		width: 240px;
+		margin-left: 0px;
+	}
+	ul.slides #membername .super_navi .navi{
+		margin-left: 0px;
+	}
+	ul.slides .navi{
+		width: 700px !important;
+	}
+	#quicklinks{
+		margin-top: 80px !important;
+	}
+}
+
 @media only screen and (max-width : 640px){
 
 	.fixbox{
@@ -622,7 +663,7 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 
 /* added by Otoy May 25 2015 */
 
-@media screen ( max-width: 640px )
+/*@media screen ( max-width: 640px )
 {
 	ul#membername
 	{
@@ -691,4 +732,4 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 	{
 		display: block !important;
 	}
-}
+}*/
