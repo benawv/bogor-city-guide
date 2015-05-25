@@ -78,8 +78,8 @@
     }
 
     .list-artikel{
-        color: black;
-        font-weight: bold;
+        color: black !important;
+        font-weight: bold !important;
     }
 
     nav.main-navigation a.nav-item.blueA{ background: #003781; }
