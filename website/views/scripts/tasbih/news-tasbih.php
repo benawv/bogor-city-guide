@@ -77,6 +77,11 @@
         pointer-events: none;
     }
 
+    .list-artikel{
+        color: black;
+        font-weight: bold;
+    }
+
     nav.main-navigation a.nav-item.blueA{ background: #003781; }
     nav.main-navigation a.nav-item.greenChat{ background: #B20065; }
     nav.main-navigation a.nav-item.blueA::before{ background: #3122F9; }
@@ -191,7 +196,7 @@
 					<div class="sidebar-item--content">
 					    <ul class="sidebar-nav">
 						<?php foreach($this->sidelist as $lists){?>
-								<li><a href="/tasbih/artikel/<?php  echo $lists->o_key."-".$lists->o_id; ?>"><?php  echo $lists->title; ?></a></li>
+								<li><a href="/tasbih/artikel/<?php  echo $lists->o_key."-".$lists->o_id; ?>" class="list-artikel" ><?php  echo $lists->title; ?></a></li>
 						<?php } ?>
 					    </ul>
 					</div><!--/ .sidebar-item--content -->
