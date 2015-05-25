@@ -621,6 +621,25 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 /* ========================================== */
 
 /* added by Otoy May 25 2015 */
+
+@media screen ( max-width: 640px )
+{
+	ul#membername
+	{
+		display: none !important;
+	}
+	
+	.customAnchorHide div#membername
+	{
+		width: 95% !important;
+	}
+	
+	.customAnchorHide div#membername .super_navi
+	{
+		width: 93.24%% !important;
+	}
+}
+
 @media screen ( max-width: 768px )
 {
 	.customAnchorHide
