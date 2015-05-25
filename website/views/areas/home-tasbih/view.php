@@ -30,7 +30,7 @@
             height: 50px;
             background: #d31f42;
         }
-        
+
         nav.main-navigation a.nav-item::after
         {
             content: "";
@@ -52,20 +52,32 @@
             font-size: 45px;
             pointer-events: none;
         }
-        
+
         nav.main-navigation a.nav-item.chat::after {
             content: "\f003  ";
         }
 
-        
+
         .nav-item{
             text-align: left !important;
         }
-        
+
         #slideshow .slide p, .place-bg h1{
             text-align: left !important;
         }
-      
+
+        /**
+         * Respsonsive
+         */
+
+        @media ( max-width: 640px )
+        {
+            .backg .slides .edge
+            {
+                display: none;
+            }
+        }
+
     </style>
 <div class="row">
      <div class="backg">
@@ -221,19 +233,19 @@
                         <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/tanya-jawab" class="nav-item orange question">
                         <h4 style="font-size:18px"><small>Tanya Jawab</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
                         <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/inquiry-form" class="nav-item grey chat">
                         <h4 style="font-size:18px"><small>Inquiry Form</small></h4>
