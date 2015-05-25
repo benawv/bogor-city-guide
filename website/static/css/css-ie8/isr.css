@@ -625,12 +625,12 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 {
 	.customAnchorHide
 	{
-		display: block;
+		display: block !important;
 	}
 	
 	.customAnchorHide #membername
 	{
-		width: 740px;
+		width: 740px !important;
 		display: block !important;
 		overflow: hidden;
 	}
