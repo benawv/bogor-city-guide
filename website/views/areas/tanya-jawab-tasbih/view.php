@@ -70,7 +70,7 @@
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4 style="font-size:18px"><small>Tanya Jawab</small></h4>
+                        <h4 style="font-size:18px"><small>Pertanyaan Umum</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
 
