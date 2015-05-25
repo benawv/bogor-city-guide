@@ -65,12 +65,42 @@
         #slideshow .slide p, .place-bg h1{
             text-align: left !important;
         }
-        @media only screen and (max-width : 640px){
-            .place-bg.place-bg-gallery{
-            padding: 15px;
+
+        .news-feeds.left-side
+        {
+            padding-left: 15px;
+            padding-right: 30px;
         }
-}
-      
+
+        .news-feeds.right-side
+        {
+            padding-right: 15px;
+        }
+
+        @media( max-width : 640px)
+        {
+            .place-bg.place-bg-gallery
+            {
+                padding: 15px;
+            }
+
+        }
+
+        @media ( max-width: 767px )
+        {
+            .news-feeds.left-side
+            {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            .news-feeds.right-side
+            {
+                padding-left: 30px;
+                padding-right: 30px
+            }
+        }
+
     </style>
 <div class="row">
      <div class="backg">
@@ -498,7 +528,7 @@
 <section class="mt32 mb72">
     <div class="container" style="max-width: 960px;">
         <div class="row">
-            <div class="col-xs-12 col-md-6 news-feeds" style="padding-left: 15px; padding-right: 30px;">
+            <div class="col-xs-12 col-md-6 news-feeds left-side" style="padding-left: 15px; padding-right: 30px;">
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
                         <div class="news-feed">
@@ -563,7 +593,7 @@
                     </div><!--/ .col-xs-12 -->
                 </div><!--/ .row -->
             </div><!--/ .col-xs-12 col-md-6 news-feeds -->
-            <div class="col-xs-12 col-md-6 news-feeds" style="padding-right: 15px;">
+            <div class="col-xs-12 col-md-6 news-feeds right-side" style="padding-right: 15px;">
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
                         <div class="news-feed">
