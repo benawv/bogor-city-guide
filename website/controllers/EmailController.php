@@ -46,6 +46,10 @@ class EmailController extends Website_Controller_Action {
 			$mail->setEnableLayoutOnPlaceholderRendering(false);
 			$mail->send(); */
 	}
+	public function emailtasbihAction(){
+
+	}
+	
 	public function sendemailAction(){
 		/* $doc = new Document_List();
 		$doc->setCondition("type='email'");
