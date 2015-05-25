@@ -30,7 +30,7 @@
             height: 50px;
             background: #d31f42;
         }
-        
+
         nav.main-navigation a.nav-item::after
         {
             content: "";
@@ -52,20 +52,55 @@
             font-size: 45px;
             pointer-events: none;
         }
-        
+
         nav.main-navigation a.nav-item.chat::after {
             content: "\f003  ";
         }
 
-        
+
         .nav-item{
             text-align: left !important;
         }
-        
+
         #slideshow .slide p, .place-bg h1{
             text-align: left !important;
         }
-      
+
+        .news-feeds.left-side
+        {
+            padding-left: 15px;
+            padding-right: 30px;
+        }
+
+        .news-feeds.right-side
+        {
+            padding-right: 15px;
+        }
+
+        @media( max-width : 640px)
+        {
+            .place-bg.place-bg-gallery
+            {
+                padding: 15px;
+            }
+
+        }
+
+        @media ( max-width: 767px )
+        {
+            .news-feeds.left-side
+            {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            .news-feeds.right-side
+            {
+                padding-left: 30px;
+                padding-right: 30px
+            }
+        }
+
     </style>
 <div class="row">
      <div class="backg">
@@ -221,22 +256,22 @@
                         <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4 style="font-size:18px"><small>Tanya Jawab</small></h4>
+                        <h4 style="font-size:18px"><small>Pertanyaan Umum</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
                         <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/inquiry-form" class="nav-item grey chat">
-                        <h4 style="font-size:18px"><small>Inquiry Form</small></h4>
+                        <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
             </div>
@@ -278,7 +313,7 @@
                         }
                     ?>
                     <div class="header">
-                        <h2>Kalender Hijriah</h2>
+                        <h2><strong>Kalender Hijriah</strong></h2>
                     </div>
                     <div class="body">
                         <h2 id="calendar-title"><?php echo $title; ?></h2>
@@ -478,7 +513,7 @@
                         $news_stack[$i]=array(
                                 "date"=>$items->newsdate,
                                 "teaser"=>$items->deskripsisingkat,
-                                "link"=>"/tasbih/artikel/".$items->o_key."_".$items->o_id,
+                                "link"=>"/tasbih/artikel/".$items->o_key."-".$items->o_id,
                                 "title"=> $items->title,
                                 "images"=>$items->images->path.$items->images->filename,
                                 "thumb"=>$items->thumbnail->path.$items->thumbnail->filename
@@ -493,7 +528,7 @@
 <section class="mt32 mb72">
     <div class="container" style="max-width: 960px;">
         <div class="row">
-            <div class="col-xs-12 col-md-6 news-feeds" style="padding-left: 15px; padding-right: 30px;">
+            <div class="col-xs-12 col-md-6 news-feeds left-side" style="">
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
                         <div class="news-feed">
@@ -558,7 +593,7 @@
                     </div><!--/ .col-xs-12 -->
                 </div><!--/ .row -->
             </div><!--/ .col-xs-12 col-md-6 news-feeds -->
-            <div class="col-xs-12 col-md-6 news-feeds" style="padding-right: 15px;">
+            <div class="col-xs-12 col-md-6 news-feeds right-side" style="">
                 <div class="row row-eq-height">
                     <div class="col-xs-12 col-md-6 nopadding bl bt">
                         <div class="news-feed">

@@ -78,7 +78,7 @@
                 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4 style="font-size:18px"><small>Tanya Jawab</small></h4>
+                        <h4 style="font-size:18px"><small>Pertanyaan Umum</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 
@@ -90,7 +90,7 @@
                 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/inquiry-form" class="nav-item grey chat">
-                        <h4 style="font-size:18px"><small>Inquiry Form</small></h4>
+                        <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
             </div>
@@ -105,7 +105,7 @@
     <div class="description">
 
         <div class="header-calc">
-            <h1>KALKULATOR ALLIANZ TASBIH</h1>
+            <h1>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
         </div><!--/ .header-calc -->
 
         <div class="content-calc">
@@ -114,8 +114,9 @@
 <div class="form-box" id="notif-confirm">
     <h1 style="text-align:center">TERIMA KASIH</h1>
     <h3  style=" color:black; text-align:center;"><strong>Kalkulasi ilustrasi produk Allianz Tasbih (sudah dikirimkan ke alamat email Anda)</strong></h3>
-    <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next" value="Submit">
-                         </div>
+   <br />
+    <center><input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen"></center>
+  </div>
                       
 
      
@@ -130,10 +131,39 @@
 <link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
 <script src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="/website/static/mobilku/jquery-ui.js" type="text/javascript"></script>
-
-
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
+<script>
+  
+$(document).ready(function(){
+        /*
+         * jQueryUI DatePicker
+         */
 
+        $('#cari-agen').click(function() {
+            
+            
+            var nama = $('#nama').val();
+            var email = $('#email').val();
+            var nohp = $('#nohp').val();
+
+              $.ajax({
+                  url      : 'http://agen.imkepo.com/v1/api/calculator',
+                  type     : 'POST',
+                  data     : {
+                              'nama' : nama,
+                              'email' : email,
+                              'nohp' : nohp
+                              },
+                      success  : function(data){
+                          console.log(data);
+                      }  
+              });            
+        });
+    });
+
+  
+  
+</script>
 
 
 <!--

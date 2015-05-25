@@ -7,7 +7,7 @@
     .form-box{ border: solid 1px #ddd; padding: 16px 20px; margin-bottom: 32px; }
     .form-control{ border-radius: 0; }
         nav.main-navigation a.nav-item.home::after {
-      content: "\f015"; }        
+      content: "\f015"; }
     nav.main-navigation a.nav-item.chat::after {
       content: "\f003  "; }
     nav.main-navigation a.nav-item {
@@ -37,8 +37,8 @@
   pointer-events: none;
 }
         nav.main-navigation a.nav-item.blueA{
-      background: #003781;}        
-    
+      background: #003781;}
+
     nav.main-navigation a.nav-item.greenChat{
       background: #B20065;}
 
@@ -47,6 +47,8 @@
     body {
   text-align: left;
 }
+
+
 </style>
 
 <div class="row addPadding15">
@@ -59,33 +61,33 @@
                         <h4 style="font-size:18px"><small>Beranda</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/kalkulator/tasbih" class="nav-item green sitemap">
                         <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4 style="font-size:18px"><small>Tanya Jawab</small></h4>
+                        <h4 style="font-size:18px"><small>Pertanyaan Umum</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
                         <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/inquiry-form" class="nav-item grey chat">
-                        <h4 style="font-size:18px"><small>Inquiry Form</small></h4>
+                        <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
             </div>
             <div class="row">
-                
+
             </div>
     </nav>
 

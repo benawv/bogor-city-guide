@@ -298,7 +298,7 @@
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="1" name="payment_methods" id="payment_methods">
                             <?php
-                                $cat = new Object_SmartmedPaymentType_List();
+                                $cat = new Object_smartmedPaymentType_List();
                                 foreach($cat as $payment)
                                 {
                                     echo "<option value='".$payment->getPaymenttype()."'>".$payment->getPaymenttype()."</option>";
@@ -784,11 +784,7 @@
         var d2 = date2[1];
         var m2 = date2[0];
 
-        var start = new Date(y1,m1,d1);
-        var end = new Date(y2,m2,d2);
-        var selisih = Date.parse(end.toGMTString()) - Date.parse(start.toGMTString());
-        
-        var age = Math.round(selisih/(1000*60*60*24*365));
+        var age = parseInt(y2+m2+d2) - parseInt(y1+m1+d1);
         var sex = $("#sex").val();
         var ip = $("#ip").val();
         var mat = $("#mat").val();

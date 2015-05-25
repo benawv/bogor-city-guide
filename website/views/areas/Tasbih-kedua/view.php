@@ -83,7 +83,7 @@
                 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4 style="font-size:18px"><small>Tanya Jawab</small></h4>
+                        <h4 style="font-size:18px"><small>Pertanyaan Umum</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 
@@ -95,7 +95,7 @@
                 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/inquiry-form" class="nav-item grey chat">
-                        <h4 style="font-size:18px"><small>Inquiry Form</small></h4>
+                        <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
             </div>
@@ -110,7 +110,7 @@
     <div class="description">
 
         <div class="header-calc">
-            <h1>KALKULATOR ALLIANZ TASBIH</h1>
+            <h1>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
             
         </div><!--/ .header-calc -->
 
@@ -242,24 +242,23 @@
                     alert("Mohon Periksa Inputan Anda");
             }else{
 
-	    $.ajax({
-                url      : '/kalkulator-tasbih-kedua/',
-                type     : 'POST',
-                data     : {
-                            'nama' : nama,
-                            'email' : email,
-                            'nohp' : nohp
-                            },
-                    success  : function(data){
-                    console.log(data);
-                    //console.log(data);
-		    $('.waiting-calc').hide();
-		    $('.result-calc').show();
-                    //$('#hasil').val(accounting.formatMoney(data, "Rp ", 0,","));
-                    document.location.href = "/tasbih/thankyou";
-                }
-
-            });
+              $.ajax({
+                  url      : '/kalkulator-tasbih-kedua/',
+                  type     : 'POST',
+                  data     : {
+                              'nama' : nama,
+                              'email' : email,
+                              'nohp' : nohp
+                              },
+                      success  : function(data){
+                        console.log(data);
+                        //console.log(data);
+                        $('.waiting-calc').hide();
+                        $('.result-calc').show();
+                        //$('#hasil').val(accounting.formatMoney(data, "Rp ", 0,","));
+                        document.location.href = "/tasbih/thankyou";
+                      }  
+              });
             }
         });
 
