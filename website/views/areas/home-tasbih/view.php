@@ -483,7 +483,7 @@
                         $news_stack[$i]=array(
                                 "date"=>$items->newsdate,
                                 "teaser"=>$items->deskripsisingkat,
-                                "link"=>"/tasbih/artikel/".$items->o_key."".$items->o_id,
+                                "link"=>"/tasbih/artikel/".$items->o_key."-".$items->o_id,
                                 "title"=> $items->title,
                                 "images"=>$items->images->path.$items->images->filename,
                                 "thumb"=>$items->thumbnail->path.$items->thumbnail->filename
