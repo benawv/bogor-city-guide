@@ -190,7 +190,7 @@
                             <label>Asuransi Jiwa (Min. Rp.50.000.000)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Asuransi Jiwa(Min. Rp.50.000.000)">
+                            <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Asuransi Jiwa (Min. Rp.50.000.000)">
                            
 			    <label id="notif-asuransijiwa" style="display:none; color: #f00;">
                                 Mohon maaf inputan yang Anda masukkan belum benar
