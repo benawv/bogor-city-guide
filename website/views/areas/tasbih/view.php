@@ -79,6 +79,15 @@
 }
 
 
+    @media only screen and (max-width:775px){
+        .btn img{
+            height: 20px;
+            width: 15px;
+            margin-left: 5px;
+            top: 10px;
+        }
+    }
+  
 </style>
 
 
@@ -294,6 +303,7 @@
                 display: block;
                 list-style: none;
                 position: relative;
+                line-height: 30px;
             }
 
             .content-widget li a
@@ -319,13 +329,18 @@
                 font-size: x-small;
                 font-weight: normal;
             }
-
+            .content-widget h4{
+                color: #009a44;
+                font-weight: bold;
+                font-size: 20px;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
         </style>
 
         <div class="content-widget">
             <div class="row">
                 <div class="col-xs-12">
-                    <h4><strong>Baca Juga</strong></h4>
+                    <h4><strong>BACA JUGA</strong></h4>
                     <ul>
                         <?php 
                             $entries = new Object_TasbihNews_List();
