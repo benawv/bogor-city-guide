@@ -70,8 +70,8 @@
             $nohp = $_POST["nohp"];
 
             $session = new Zend_Session_Namespace('calculation');
-            $date_tglBuat = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglBuat)));
-            $date_tglLahir = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglLahir)));
+            $date_tglBuat = $session->date_tglBuat;
+            $date_tglLahir = $session->date_tglLahir;
             $JenisKelamin = $session->JenisKelamin;
             $Usia = $session->Usia;
             $Frekuensi = $session->Frekuensi;
@@ -80,7 +80,8 @@
             $Kontribusi = $session->Kontribusi;
             $Calculation = $session->Calculation;
 			
-
+			$date_tglBuat1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglBuat)));
+            $date_tglLahir1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglLahir)));
            /*             
 				echo $date_tglBuat."<br>";
 				echo $date_tglLahir."<br>";
@@ -133,10 +134,10 @@
 			$hasil = number_format($Calculation,0,",",".");
 			$document = '/email/email-tasbih';
 			$params = array(
-							'tglhitung' => $TanggalPembuatan,
+							'tglhitung' => $date_tglBuat1,
 							'nama' => $Nama,
 							'email' => $Email,
-							'tgllahir' => $TanggalLahir,
+							'tgllahir' => $date_tglLahir1,
 							'usia'=> $Usia,
 							'kontribusi' => $Kontribusi,
 							'AJ' => $AJ,
