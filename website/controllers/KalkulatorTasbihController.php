@@ -79,6 +79,11 @@
             $AJ = $session->AJ;
             $Kontribusi = $session->Kontribusi;
             $Calculation = $session->Calculation;
+			
+			echo "<pre>";
+			$today = new Pimcore_Date($date_tglBuat);
+			print_r($today);
+			die();
            /*             
 				echo $date_tglBuat."<br>";
 				echo $date_tglLahir."<br>";
