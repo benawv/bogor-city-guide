@@ -145,7 +145,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Tanggal Lahir (Min.  18 tahun, Max. 55 tahun)</label>
+                            <label>Tanggal Lahir<br>(Min.  18 tahun, Max. 55 tahun)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
@@ -209,13 +209,13 @@
                                 Mohon maaf inputan yang Anda masukkan belum benar
                             </label>
                         </div><!--/ .col-md-4 -->
-            <div class="col-md-4"> <span>* Uang pertanggungan asuransi jiwa bila terjadi risio pada tertanggung.</span></div>
+            <div class="col-md-4"> <span>* Uang pertanggungan asuransi jiwa bila terjadi risiko pada tertanggung.</span></div>
 
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Massa Pembayaran Kontribusi/Premi(Tahun)</label>
+                            <label>Massa Pembayaran Premi (Tahun)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" name="masa-premi" id="masa-premi">
