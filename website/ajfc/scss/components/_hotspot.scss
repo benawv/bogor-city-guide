@@ -1,0 +1,210 @@
+.animated {
+    -webkit-animation-duration: 0.9s;
+    animation-duration: 0.9s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-iteration-count:infinite;
+    -webkit-animation-iteration-count:infinite;
+}
+
+@-webkit-keyframes pulse {
+    0% { -webkit-transform: scale(1); }
+    50% { -webkit-transform: scale(1.1); }
+    100% { -webkit-transform: scale(1); }
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+.pulse {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+}
+
+.image-hotspot
+{
+    position: relative;
+
+    & > img
+    {
+        min-width: 100%;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+
+    & > .image-hotspot--container
+    {
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        & > .image-hotspot--item
+        {
+            display: block;
+            position: relative;
+            @include fixedSize( 36px );
+
+            & > a
+            {
+                @include transition( ease, 0.3s );
+                display: block;
+                margin: 0;
+                padding: 0;
+                background: $color_red; //primary;
+                color: white;
+                border-radius: 9999px;
+                text-decoration: none;
+                text-align: center;
+                font-size: large;
+                font-weight: bold;
+
+                /*
+                &:hover,
+                &.active
+                {
+                    background: $color_maroon; //#0a4088;
+                }
+                */
+                &:hover,
+                &:focus
+                {
+                    outline: none;
+                }
+
+                &:hover,
+                &.active
+                {
+                    background: transparent !important;
+                    color: transparent !important;
+                    &::before
+                    {
+                        display: block;
+                        opacity: 1;
+                        -webkit-animation-name: spin;
+                        -webkit-animation-duration: 1000ms;
+                        -webkit-animation-iteration-count: infinite;
+                        -webkit-animation-timing-function: linear;
+                        -moz-animation-name: spin;
+                        -moz-animation-duration: 1000ms;
+                        -moz-animation-iteration-count: infinite;
+                        -moz-animation-timing-function: linear;
+                        -ms-animation-name: spin;
+                        -ms-animation-duration: 1000ms;
+                        -ms-animation-iteration-count: infinite;
+                        -ms-animation-timing-function: linear;
+
+                        animation-name: spin;
+                        animation-duration: 1000ms;
+                        animation-iteration-count: infinite;
+                        animation-timing-function: linear;
+                    }
+                }
+
+                position: relative;
+
+                &::before
+                {
+                    @include transition( ease, 0.3s );
+                    @include fixedSize( 36px );
+                    @include fontAwesome();
+                    content: "\f1e3";
+                    position: absolute;
+                    //left: 50%;
+                    //top: 50%;
+                    // @include translate3d(-50%, -50%, 0);
+                    display: none;
+                    color: black !important;
+                    font-size: 36px;
+                    background: white;
+                    border-radius: 9999px;
+                    border: none;
+                    opacity: 0;
+
+                }
+
+            }
+
+            & > .image-hotspot--content
+            {
+                display: none;
+                position: absolute;
+                background: rgba(83,88,94,0.9);
+                width: auto;
+                min-width: 400px;
+                margin: 4px 0 0;
+                padding: 16px 28px 0;
+                border-radius: 0;
+                text-align: left;
+                z-index: 999;
+
+                &::before
+                {
+                    $box_dent_size: 28px;
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    bottom: -$box_dent_size;
+                    border-top: $box_dent_size solid rgba(83,88,94,0.9);
+                    border-left: 0 solid transparent;
+                    border-right: $box_dent_size solid transparent;
+                    height: 0;
+                    width: 100%;
+                }
+
+                &.right
+                {
+                    right: 0;
+                }
+
+                h1, h2, h3, h4, h5, h6, p, a
+                {
+                    margin: 0;
+                    padding: 0;
+                    color: white;
+                    line-height: 1.6;
+                }
+
+                a
+                {
+                    &:hover
+                    {
+                        text-decoration: underline;
+                    }
+                }
+
+            } /* .image-hotspot--content */
+
+        } /* .image-hotspot--item */
+
+    } /* .image-hotspot--container */
+
+} /* .image-hotspot */
+

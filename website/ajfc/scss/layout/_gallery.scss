@@ -1,0 +1,374 @@
+section.gallery-wrapper
+{
+    & > .container,
+    & > .container-fluid
+    {
+        & > .row
+        {
+            & > div[class^="col-"]
+            {
+                height: 100%;
+            }
+
+        }
+    }
+
+    &.page-wrapper
+    {
+        margin-top: -32px !important;
+    }
+
+    .gallery-item
+    {
+        background: $color_red;
+        position: relative;
+
+        &.blue
+        {
+            background: $color_blue;
+
+            .row > div[class^="col-"]:first-child > .gallery-item--text::before
+            {
+                border-left-color: $color_blue;
+                @media ( max-width: 767px )
+                {
+                    border-top-color: $color_blue;
+                }
+            }
+
+            .row > div[class^="col-"]:last-child > .gallery-item--text::before
+            {
+                border-right-color: $color_blue;
+                @media ( max-width: 767px )
+                {
+                    border-bottom-color: $color_blue;
+                }
+            }
+
+        }
+
+        &.blue-light
+        {
+            background: $color_blue_light;
+
+            .row > div[class^="col-"]:first-child > .gallery-item--text::before
+            {
+                border-left-color: $color_blue_light;
+                @media ( max-width: 767px )
+                {
+                    border-top-color: $color_blue_light;
+                }
+            }
+
+            .row > div[class^="col-"]:last-child > .gallery-item--text::before
+            {
+                border-right-color: $color_blue_light;
+                @media ( max-width: 767px )
+                {
+                    border-bottom-color: $color_blue_light;
+                }
+            }
+        }
+
+        &.green
+        {
+            background: $color_green;
+
+            .row > div[class^="col-"]:first-child > .gallery-item--text::before
+            {
+                border-left-color: $color_green;
+                @media ( max-width: 767px )
+                {
+                    border-top-color: $color_green;
+                }
+            }
+
+            .row > div[class^="col-"]:last-child > .gallery-item--text::before
+            {
+                border-right-color: $color_green;
+                @media ( max-width: 767px )
+                {
+                    border-bottom-color: $color_green;
+                }
+            }
+        }
+
+        &.orange
+        {
+            background: $color_orange;
+
+            .row > div[class^="col-"]:first-child > .gallery-item--text::before
+            {
+                border-left-color: $color_orange;
+                @media ( max-width: 767px )
+                {
+                    border-top-color: $color_orange;
+                }
+            }
+
+            .row > div[class^="col-"]:last-child > .gallery-item--text::before
+            {
+                border-right-color: $color_orange;
+                @media ( max-width: 767px )
+                {
+                    border-bottom-color: $color_orange;
+                }
+            }
+        }
+
+        &.grey
+        {
+            background: $color_satan;
+
+            .row > div[class^="col-"]:first-child > .gallery-item--text::before
+            {
+                border-left-color: $color_satan;
+                @media ( max-width: 767px )
+                {
+                    border-top-color: $color_satan;
+                }
+            }
+
+            .row > div[class^="col-"]:last-child > .gallery-item--text::before
+            {
+                border-right-color: $color_satan;
+                @media ( max-width: 767px )
+                {
+                    border-bottom-color: $color_satan;
+                }
+            }
+        }
+
+        &.maroon
+        {
+            background: $color_maroon;
+
+            .row > div[class^="col-"]:first-child > .gallery-item--text::before
+            {
+                border-left-color: $color_maroon;
+                @media ( max-width: 767px )
+                {
+                    border-top-color: $color_maroon;
+                }
+            }
+
+            .row > div[class^="col-"]:last-child > .gallery-item--text::before
+            {
+                border-right-color: $color_maroon;
+                @media ( max-width: 767px )
+                {
+                    border-bottom-color: $color_maroon;
+                }
+            }
+        }
+
+        &.purple
+        {
+            background: $color_purple;
+
+            .row > div[class^="col-"]:first-child > .gallery-item--text::before
+            {
+                border-left-color: $color_purple;
+                @media ( max-width: 767px )
+                {
+                    border-top-color: $color_purple;
+                }
+            }
+
+            .row > div[class^="col-"]:last-child > .gallery-item--text::before
+            {
+                border-right-color: $color_purple;
+                @media ( max-width: 767px )
+                {
+                    border-bottom-color: $color_purple;
+                }
+            }
+        }
+
+        & > .row
+        {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            // display: table;
+
+            & > div[class^="col-"]
+            {
+                position: relative;
+                padding: 0;
+                display: table-cell;
+                float: none !important;
+                vertical-align: middle;
+
+                @media ( max-width: 767px )
+                {
+                    position: relative;
+                    width: 100%;
+                    display: block !important;
+
+                    .gallery-item--text
+                    {
+                        padding: 32px 0;
+                        min-height: 256px !important;
+                    }
+                }
+
+                &:first-child
+                {
+                    .gallery-item--text
+                    {
+                        &::before
+                        {
+                            @media (min-width: 768px)
+                            {
+                                content: "";
+                                position: absolute;
+                                right: -64px;
+                                top: 50%;
+                                @include translateY(-50%);
+                                border: solid 32px transparent;
+                                border-left-color: $color_red;
+                                z-index: 999;
+                            }
+
+                            @media ( max-width: 767px )
+                            {
+                                content: "";
+                                position: absolute;
+                                left: 50%;
+                                bottom: -64px;
+                                @include translateX(-50%);
+                                border: solid 32px transparent;
+                                border-left-color: transparent !important;
+                                border-top-color: $color_red;
+                                z-index: 999;
+                            }
+                        }
+                    }
+                }
+
+                &:last-child
+                {
+                    .gallery-item--text
+                    {
+                        &::before
+                        {
+                            @media (min-width:768px)
+                            {
+                                content: "";
+                                position: absolute;
+                                left: -64px;
+                                top: 50%;
+                                @include translateY(-50%);
+                                border: solid 32px transparent;
+                                border-right-color: $color_red;
+                                z-index: 999;
+                            }
+
+                            @media ( max-width: 767px )
+                            {
+                                content: "";
+                                position: absolute;
+                                left: 50%;
+                                top: -64px;
+                                @include translateX(-50%);
+                                border: solid 32px transparent;
+                                border-right-color: transparent !important;
+                                border-bottom-color: $color_red;
+                                z-index: 999;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .gallery-item--image
+        {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0;
+            line-height: 1;
+            cursor: default;
+            min-height: 256px;
+            min-width: 256px;
+
+            @media ( max-width: 767px )
+            {
+                min-height: 480px;
+                & > img
+                {
+                    width: auto !important;
+                    min-width: 105% !important;
+                    max-width: none !important;
+                }
+            }
+
+            & > img
+            {
+                width: auto;
+                min-width: 105%;
+                max-width: 120%; //none; //100%;
+                height: auto;
+                min-height: 100%;
+                max-height: none;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                @include translate3d(-50%, 0, 0);
+                @include transition( ease, 0.3s );
+                z-index: 2;
+            }
+
+            &:hover
+            {
+                & > img
+                {
+                    // min-width: 105%;
+                    // min-height: 105%;
+                }
+            }
+
+        } /* .galery-item--image */
+
+        .gallery-item--text
+        {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .gallery-item--text-inner
+        {
+            padding: 0 28px;
+            color: white;
+            // border: solid 1px red !important;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            @include translateY(-50%);
+            h1, h2, h3, h4, h5, h6, p
+            {
+                margin: 0;
+                padding: 0;
+            }
+            h1, h2, h3, h4, h5, h6
+            {
+                font-size: x-large;
+                line-height: 1.2;
+            }
+            p
+            {
+                margin: 16px 0;
+            }
+        }
+
+    }
+
+}
