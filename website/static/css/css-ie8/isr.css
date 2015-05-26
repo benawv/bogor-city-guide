@@ -377,8 +377,24 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 	text-align: center;
 }
 /*ROBBI*/
+@media only screen and (max-width : 599px){
+	.heading.clearfix.pagenav{
+		width: 320px;
+	}
+}
+
+@media only screen and (max-width : 640px) and (min-width: 600px){
+	.customAnchorHide, .customAnchorHide #navigate, .customAnchorHide #membername, ul.slides #membername{
+		display: block !important;
+	}
+	#quicklinks{
+		/*margin-top: 80px !important;*/
+		display: none;
+	}
+}
+
 @media only screen and (max-width : 320px){
-	.heading .customAnchorHide #membername{
+	/*.heading .customAnchorHide #membername{
 		width: 280px !important;
 	}
 	.heading .customAnchorHide #membername .super_navi{
@@ -408,7 +424,7 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 	}
 	ul.slides .navi{
 		width: 700px !important;
-	}
+	}*/
 }
 @media only screen and (max-width : 768px) and (min-width: 641px){
 	.customAnchorHide, .customAnchorHide #navigate, .customAnchorHide #membername, ul.slides #membername{
@@ -482,7 +498,7 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 		display: none;
 	}
 	/*ROBBI*/
-	.customAnchorHide, .customAnchorHide #navigate, .customAnchorHide #membername, ul.slides #membername{
+	/*.customAnchorHide, .customAnchorHide #navigate, .customAnchorHide #membername, ul.slides #membername{
 		display: block !important;
 	}
 	.customAnchorHide #membername, ul.slides #membername{
@@ -502,7 +518,7 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 	}
 	#quicklinks{
 		margin-top: 80px !important;
-	}
+	}*/
 	
 	.full-w p, .description{
 		width: 100%;
