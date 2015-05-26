@@ -48,6 +48,17 @@
   text-align: left;
 }
 
+    .faq-item--answer ol,
+    .faq-item--answer ul,
+    {
+        margin-left: 16px;
+    }
+
+    .faq-item--question h4
+    {
+        color: #003781;
+        font-weight: bold;
+    }
 
 </style>
 
