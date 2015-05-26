@@ -257,7 +257,7 @@
                         $('.waiting-calc').hide();
                         $('.result-calc').show();
                         //$('#hasil').val(accounting.formatMoney(data, "Rp ", 0,","));
-                        //document.location.href = "/tasbih/thankyou";
+                        document.location.href = "/tasbih/thankyou";
                       }  
               });
             }

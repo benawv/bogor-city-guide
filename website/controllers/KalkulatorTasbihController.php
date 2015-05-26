@@ -70,8 +70,8 @@
             $nohp = $_POST["nohp"];
 
             $session = new Zend_Session_Namespace('calculation');
-            $date_tglBuat = $session->date_tglBuat;
-            $date_tglLahir = $session->date_tglLahir;
+            $date_tglBuat = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglBuat)));
+            $date_tglLahir = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglLahir)));
             $JenisKelamin = $session->JenisKelamin;
             $Usia = $session->Usia;
             $Frekuensi = $session->Frekuensi;
@@ -80,10 +80,7 @@
             $Kontribusi = $session->Kontribusi;
             $Calculation = $session->Calculation;
 			
-			echo "<pre>";
-			$today = new Pimcore_Date($date_tglBuat);
-			print_r($today);
-			die();
+
            /*             
 				echo $date_tglBuat."<br>";
 				echo $date_tglLahir."<br>";
