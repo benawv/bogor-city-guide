@@ -110,6 +110,17 @@
         outline: none;
     }
 
+    @media ( max-width: 992px )
+    {
+        .main-content,
+        .sidebar
+        {
+            min-height: 0 !important;
+            padding: 48px 36px;
+        }
+    }
+
+
 </style>
 
 <header style="margin-top: -20px;">
