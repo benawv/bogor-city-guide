@@ -169,7 +169,8 @@
 				<label>Kontribusi Berkala/ Premi pertahun</label>
 			    </div><!--/ .col-md-4 -->
 			    <div class="col-md-4">
-				<input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" value="<?php echo $session->Calculation; ?>" readonly>
+                <input type="text" class="form-control" id="kontribusi-berkala_view" placeholder="0" value="<?php echo 'Rp. '.number_format($session->Calculation,0,',','.'); ?>" readonly>
+                <input type="hidden" class="form-control" id="kontribusi-berkala" placeholder="0" value="<?php echo $session->Calculation; ?>" readonly>
 			    </div><!--/ .col-md-4 -->
 			</div><!--/ .form-group -->
 			
