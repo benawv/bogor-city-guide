@@ -269,7 +269,7 @@
 
             .content-widget
             {
-                border: 1px solid #DDD;
+                border-top: 1px solid #DDD;
                 padding: 16px 20px;
                 margin-bottom: 32px;
             }
@@ -324,34 +324,23 @@
 
         <div class="content-widget">
             <div class="row">
-                <div class="col-xs-12 col-md-4">
-                    <h4>Baca Juga</h4>
+                <div class="col-xs-12">
+                    <h4><strong>Baca Juga</strong></h4>
                     <ul>
-                        <li><a href="#">Sample List Item <span>Sen, 14 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Sel, 15 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Rab, 16 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Kam, 17 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Jum, 18 Mei 2015</span></a></li>
-                    </ul>
-                </div><!--/ .col-xs-12 -->
-                <div class="col-xs-12 col-md-4">
-                    <h4>Baca Juga</h4>
-                    <ul>
-                        <li><a href="#">Sample List Item <span>Sen, 14 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Sel, 15 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Rab, 16 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Kam, 17 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Jum, 18 Mei 2015</span></a></li>
-                    </ul>
-                </div><!--/ .col-xs-12 -->
-                <div class="col-xs-12 col-md-4">
-                    <h4>Baca Juga</h4>
-                    <ul>
-                        <li><a href="#">Sample List Item <span>Sen, 14 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Sel, 15 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Rab, 16 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Kam, 17 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Jum, 18 Mei 2015</span></a></li>
+                        <?php 
+                            $entries = new Object_TasbihNews_List();
+                            $entries->setLimit(4);
+                            $entries->setOrderKey("o_creationDate");
+                            $entries->setOrder("desc");
+                            foreach ($entries as $key) {
+                         ?>
+                            <li>
+                                <a href="tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                    <?php echo $key->title; ?>
+                                    <span><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></span>
+                                </a>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div><!--/ .col-xs-12 -->
             </div><!--/ .row -->
