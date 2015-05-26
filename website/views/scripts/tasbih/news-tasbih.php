@@ -91,7 +91,7 @@
     .sidebar
     {
         /* min-height: 0 !important; */
-        padding: 24px 36px;
+        padding: 24px 36px 99999px;
     }
 
     .main-content p:last-child
@@ -163,7 +163,7 @@
 
     <div class="page-wrapper-outer">
 
-        <section class="page-wrapper mt32 mb72" style="margin-top: -165px !important;">
+        <section class="page-wrapper mt32 mb72" style="margin-top: -171px !important;">
             <div class="container"  style="max-width: 960px">
             <div class="row">
                 <div class="col-xs-12 col-md-8 pr0">
