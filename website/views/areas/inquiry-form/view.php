@@ -390,10 +390,17 @@
             }
         });
         
+        var d = new Date();
+        var y = d.getFullYear();
+        minyear = y - 55;
+        maxyear = y - 18;
+        range = minyear+':'+maxyear;
+        def = '1/1/'+minyear;
         $('#DOB').datepicker({
+            defaultDate: def,
             changeMonth: true,
             changeYear: true,
-            yearRange: "-100:+0"
+            yearRange: range
         });
         
     });
