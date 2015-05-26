@@ -1,0 +1,138 @@
+@mixin fixedSize( $size )
+{
+    min-width: $size;
+    max-width: $size;
+    width: $size;
+    min-height: $size;
+    max-height: $size;
+    height: $size;
+    line-height: $size;
+}
+
+@mixin transition( $duration, $effect )
+{
+    // ease | linear | ease-in | ease-out | ease-in-out
+    -webkit-transition: $duration $effect;
+    -moz-transition:    $duration $effect;
+    -ms-transition:    $duration $effect;
+    -o-transition:      $duration $effect;
+    transition:         $duration $effect;
+}
+
+.animated { 
+    -webkit-animation-duration: 0.9s; 
+    animation-duration: 0.9s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+    animation-iteration-count:infinite; 
+    -webkit-animation-iteration-count:infinite; 
+} 
+
+@-webkit-keyframes pulse { 
+    0% { -webkit-transform: scale(1); } 
+    50% { -webkit-transform: scale(1.1); } 
+    100% { -webkit-transform: scale(1); } 
+} 
+@keyframes pulse { 
+    0% { transform: scale(1); } 
+    50% { transform: scale(1.1); } 
+    100% { transform: scale(1); } 
+} 
+.pulse { 
+    -webkit-animation-name: pulse; 
+    animation-name: pulse; 
+}
+
+.image-hotspot
+{
+    position: relative;
+    
+    & > img
+    {
+        min-width: 100%;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+    
+    & > .image-hotspot--container
+    {
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+        & > .image-hotspot--item
+        {
+            display: block;
+            position: relative;
+            @include fixedSize( 36px );
+            
+            & > a
+            {
+                @include transition( ease, 0.3s );
+                display: block;
+                margin: 0;
+                padding: 0;
+                background: #111;
+                color: white;
+                border-radius: 9999px;
+                text-decoration: none;
+                font-size: x-large;
+                
+                &:hover,
+                &.active
+                {
+                    background: #0a4088;
+                }
+                
+                &:hover,
+                &:focus
+                {
+                    outline: none;
+                }
+                
+            }
+            
+            & > .image-hotspot--content
+            {
+                display: none;
+                position: absolute;
+                background: rgba(0,0,0,0.8);
+                width: auto;
+                min-width: 360px;
+                margin: 4px 0 0;
+                padding: 8px 16px;
+                border-radius: 4px;
+                text-align: left;
+                z-index: 999;
+                
+                &.right
+                {
+                    right: 0;
+                }
+                
+                h1, h2, h3, h4, h5, h6, p, a
+                {
+                    margin: 0;
+                    padding: 0;
+                    color: white;
+                }
+                
+                a
+                {
+                    &:hover
+                    {
+                        text-decoration: underline;
+                    }
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+}
