@@ -62,45 +62,44 @@
 
 </style>
 
-<div class="row addPadding15">
+<div class="addPadding15">
+    <nav class="main-navigation">
+        <div class="container" style="max-width:960px; margin:0 auto;">
+        <div class="row">
 
-    <nav class="main-navigation" style="max-width:960px; margin:auto;">
-            <div class="row">
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
+            <a href="/tasbih" class="nav-item blueA home">
+                <h4 style="font-size:18px"><small>Beranda</small></h4>
+            </a>
+            </div><!--/ .col-xs-12 -->
 
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
-                    <a href="/tasbih" class="nav-item blueA home">
-                        <h4 style="font-size:18px"><small>Beranda</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                <a href="/kalkulator/tasbih" class="nav-item green sitemap">
+                    <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
+                </a>
+            </div><!--/ .col-xs-12 -->
 
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/kalkulator/tasbih" class="nav-item green sitemap">
-                        <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                <a href="/tasbih/tanya-jawab" class="nav-item orange question">
+                    <h4 style="font-size:18px"><small>Pertanyaan Umum</small></h4>
+                </a>
+            </div><!--/ .col-xs-12 -->
 
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4 style="font-size:18px"><small>Pertanyaan Umum</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
+                    <h4 style="font-size:18px"><small>Cari Agen</small></h4>
+                </a>
+            </div><!--/ .col-xs-12 -->
 
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
-                        <h4 style="font-size:18px"><small>Cari Agen</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/inquiry-form" class="nav-item grey chat">
-                        <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                <a href="/tasbih/inquiry-form" class="nav-item grey chat">
+                    <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
+                </a>
+            </div><!--/ .col-xs-12 -->
             </div>
-            <div class="row">
-
-            </div>
+        </div><!--/ .container -->
     </nav>
+</div><!--/ .addPadding15 -->
 
 <div class="page-wrapper-outer">
     <div class="container" style="max-width: 960px;">
