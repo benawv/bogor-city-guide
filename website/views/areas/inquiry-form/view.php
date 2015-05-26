@@ -231,7 +231,7 @@
                                     
                                     $getProv=new Object_MarketingOfficeWilayah_List();                                    
                                     $getProv->setOrderKey("namaWilayah");
-                                    $getProv->setOrder("desc");
+                                    $getProv->setOrder("asc");
                                     foreach($getProv as $items){
                                         ?>
                                             <option value= "<?php echo $items->o_id; ?> "><?php echo $items->namaWilayah; ?></option>
