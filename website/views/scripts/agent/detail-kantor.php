@@ -130,6 +130,10 @@
     </div><!-- .wrapper-special -->
 
     <div>
+        <h5>
+			<span><a href="/">Home </a></span>
+            &rsaquo; <span class='currentPage'>Detail Kantor</span>
+		</h5>
         <div class="full-w bg-white custom-section">
             <h2>
                 <span class="judul_section">Profil Kantor</span>

@@ -71,9 +71,9 @@
         color: #666;
         line-height: 1.8;
     }
-    /*.btn.btn-sendmail.hide{
+    .btn.btn-sendmail.hide{
         display: none;
-    }*/
+    }
     @media (max-width: 768px) {
         .btn.btn-sendmail{
             display: block;
@@ -156,9 +156,18 @@
     </div><!-- .wrapper-special -->
 
 
-
+    <?php foreach($kantor as $dataKantor2){
+            $idKantor = $dataKantor2->getO_id();
+            $keyKantor = $dataKantor2->getO_key();
+        }
+    ?>
     <div>
-
+        <h5>
+			<span><a href="/">Home </a></span>
+            &rsaquo; <a href="<?php echo $this->url(array($keyKantor ,$idKantor),"detail-kantor");?>"><span>Detail Kantor</span></a>
+            &rsaquo; <span class='currentPage'>Detail Agen</span>
+		</h5>
+        <span
         <div class="full-w bg-white custom-section">
             <h2>
                 <span class="judul_section">Profil Agent</span>
@@ -190,6 +199,15 @@
                                 echo "Email Agen. ".$emailAgent;
                             ?>
                         </p>
+                        <!--<p> DI HIDE DULU YAA
+                            Parameter dari tasbih: <br />
+                            <?php
+                                //$session = new Zend_Session_Namespace('tasbih');
+                                ////unset($session->name);
+                                //echo "Nama user: ".$session->name."<br />";
+                                //echo "Email: ".$session->email."<br />";
+                            ?>
+                        </p>-->
                     <?php }?>
                     <a href="mailto:<?php echo $emailAgent;?>?Subject=Call%20Kantor" target="_top" class="btn btn-sendmail">Email Agen</a>&nbsp;
                     <a href="tel:<?php echo $telp;?>" target="_top" class="btn btn-sendmail hide">Hubungi Agen</a>
