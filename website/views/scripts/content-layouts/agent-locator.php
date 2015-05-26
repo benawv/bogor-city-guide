@@ -16,6 +16,12 @@
 			}
 		</style>
 <?php } ?>
+<style>
+	.imageAgent img{
+		display: block;
+		margin: 0px auto;
+	}
+</style>
 <script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
 <script src="/website/static/js/jquery.tools.min.js" type="text/javascript"></script>
 <?php if(!$this->editmode):?>
@@ -62,7 +68,7 @@
 			'pension-factsheet', 'saving-factsheet','multi-video',
 			'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi','teks-agenlocator','gallery-agenlocator'))); ?>
 		<div style="clear: both"></div>
-		<div class="items-container">
+		<div class="items-container imageAgent">
 			<?php echo $this->areablock('container2', array(
 						"allowed" => array("container-box-static-section", "container-box-carousel-section", "container-box-carousel-text-section", 'jurnal-allianz','tahukah-anda')))?>
 		</div>

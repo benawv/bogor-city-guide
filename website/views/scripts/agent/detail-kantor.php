@@ -154,7 +154,7 @@
                             echo "Fax. ".$fax;
                         ?>
                     </p>
-                    <a href="mailto:<?php echo $email;?>?Subject=Call%20Kantor" target="_top" class="btn btn-sendmail">Send Mail</a>
+                    <a href="mailto:<?php echo $email;?>?Subject=Call%20Kantor" target="_top" class="btn btn-sendmail">Kirim eMail</a>
                 </div><!--/ .section-right-60 -->
             </div><!--/ .description-width-66 -->
         </div><!--/ .full-w -->
