@@ -141,7 +141,7 @@
     <div class="description">
 
         <div class="header-calc" style="background-color:#707372;">
-            <h1>INQUIRY FORM</h1>
+            <h1>FORM MINTA INFORMASI</h1>
         </div><!--/ .header-calc -->
 
         <div class="content-calc">
