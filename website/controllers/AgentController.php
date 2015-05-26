@@ -113,6 +113,7 @@ class AgentController extends Website_Controller_Action {
 	}
     
     public function detailAgentAction(){
+		
 		$this->enableLayout();
 		//$key = $this->_getParam('text');
 		$id = $this->_getParam('id');

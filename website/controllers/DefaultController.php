@@ -119,4 +119,11 @@ class DefaultController extends Website_Controller_Action {
 		
 		echo json_encode($entries);
 	}
+	
+	public function routerAction() {
+		$action = $this->_getParam('actionname');
+		$controller = $this->_getParam('controllername');
+		
+		$this->_forward($action, $controller, $this->_getParam("module"), $this->_getAllParams());
+	}
 }
