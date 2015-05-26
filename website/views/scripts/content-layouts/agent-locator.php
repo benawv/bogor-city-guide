@@ -20,6 +20,8 @@
 	.imageAgent img{
 		display: block;
 		margin: 0px auto;
+		width: 100%;
+		height: 100%;
 	}
 </style>
 <script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
@@ -28,8 +30,8 @@
 <script src="/website/static/js/sticky-jquery.js" type="text/javascript"></script>
 <?php endif; ?>
 <div class="container boxes-view">
-	<?php echo $this->template("includes/breadcrumb.php")?>
-	<span class="breadcrumb"><h1 class="title"><?php echo $this->document->getProperty('navigation_title');?></h1></span>
+	<?php /*echo $this->template("includes/breadcrumb.php")*/?>
+	<!--<span class="breadcrumb"><h1 class="title"><?php //echo $this->document->getProperty('navigation_title');?></h1></span>-->
 	
 	<!--<div class="heading clearfix pagenav">
 		<?php //echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
