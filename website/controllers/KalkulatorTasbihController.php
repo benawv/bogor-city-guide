@@ -94,10 +94,10 @@
 			
             $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
 			$cookie = new Object_Tasbih();
-			//$cookie->setTanggalPembuatan($date_tglBuat);
+			$cookie->setTanggalPembuatan($date_tglBuat);
 			$cookie->setNama($Nama);
 			$cookie->setEmail($Email);
-			//$cookie->setTanggalLahir($date_tglLahir);
+			$cookie->setTanggalLahir($date_tglLahir);
 			$cookie->setJenisKelamin($JenisKelamin);
 			$cookie->setUsia($Usia);
 			$cookie->setFrekuensiPembayaran($Frekuensi);
@@ -145,7 +145,7 @@
 							);
 
 			$mail = new Pimcore_Mail();
-			$mail->setSubject("Konfirmasi kalkulasi produk Allianz tasbih");
+			$mail->setSubject("Konfirmasi Hasil Kalkulasi Ilustrasi Produk Allianz Tasbih");
 			$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 			$mail->setDocument($document);
 			$mail->setParams($params);
