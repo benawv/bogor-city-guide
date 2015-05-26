@@ -223,19 +223,19 @@
                     </div><!--/ .form-box -->
 
                     <div class="form-box result-calc" style="display:none; ">
-			<label><strong>Setoran Tahunan</strong></label>
-    
-			<div class="form-group">
-			    <div class="col-md-4">
-				<label>Massa Pembayaran Premi / Premi pertahun</label>
-			    </div><!--/ .col-md-4 -->
-			    <div class="col-md-4">
-				<input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly>
-			    </div><!--/ .col-md-4 -->
-			</div><!--/ .form-group -->
-			
-		    </div>
-		    
+            <label><strong>Setoran Tahunan</strong></label>
+
+            <div class="form-group">
+                <div class="col-md-4">
+                <label>Massa Pembayaran Premi / Premi pertahun</label>
+                </div><!--/ .col-md-4 -->
+                <div class="col-md-4">
+                <input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly>
+                </div><!--/ .col-md-4 -->
+            </div><!--/ .form-group -->
+
+            </div>
+
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
                             <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" value="Kalkulasi" style="background-color:#009a44">
@@ -251,16 +251,31 @@
         </div><!--/ .content-calc -->
 
         <style>
+
+            .content-widget
+            {
+                border: 1px solid #DDD;
+                padding: 16px 20px;
+                margin-bottom: 32px;
+            }
+
+            .content-widget h4
+            {
+                margin-bottom: 8px;
+            }
+
             .content-widget ul,
             .content-widget ol,
             .content-widget li,
             {
-                margin: 0 auto;
-                padding: 0;
+                margin: 0 auto !important;
+                padding: 0 !important;
             }
 
             .content-widget li
             {
+                margin: 0;
+                padding: 0;
                 display: block;
                 list-style: none;
                 position: relative;
@@ -286,7 +301,8 @@
             .content-widget li a span
             {
                 color: #999;
-                font-size: small;
+                font-size: x-small;
+                font-weight: normal;
             }
 
         </style>
@@ -294,30 +310,33 @@
         <div class="content-widget">
             <div class="row">
                 <div class="col-xs-12 col-md-4">
+                    <h4>Baca Juga</h4>
                     <ul>
-                        <li><a href="#">Sample List Item<span>Sen, 14 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item<span>Sel, 15 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item<span>Rab, 16 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item<span>Kam, 17 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item<span>Jum, 18 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item <span>Sen, 14 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item <span>Sel, 15 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item <span>Rab, 16 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item <span>Kam, 17 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item <span>Jum, 18 Mei 2015</span></a></li>
                     </ul>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-4">
+                    <h4>Baca Juga</h4>
                     <ul>
-                        <li><a href="#">Sample List Item<span>Sen, 14 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item<span>Sel, 15 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item<span>Rab, 16 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item<span>Kam, 17 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item<span>Jum, 18 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item <span>Sen, 14 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item <span>Sel, 15 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item <span>Rab, 16 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item <span>Kam, 17 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item <span>Jum, 18 Mei 2015</span></a></li>
                     </ul>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-4">
+                    <h4>Baca Juga</h4>
                     <ul>
-                        <li><a href="#">Sample List Item<span>Sen, 14 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item<span>Sel, 15 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item<span>Rab, 16 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item<span>Kam, 17 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item<span>Jum, 18 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item <span>Sen, 14 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item <span>Sel, 15 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item <span>Rab, 16 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item <span>Kam, 17 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item <span>Jum, 18 Mei 2015</span></a></li>
                     </ul>
                 </div><!--/ .col-xs-12 -->
             </div><!--/ .row -->
