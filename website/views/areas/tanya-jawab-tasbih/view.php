@@ -48,7 +48,7 @@
   text-align: left;
 }
 
-    .faq-item--answer;
+    .faq-item--answer
     {
         padding-left: 16px;
         padding-right: 16px;
