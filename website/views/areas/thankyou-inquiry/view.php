@@ -129,7 +129,9 @@
                 <div class="form-box" id="notif-confirm">
     
     <h3  style=" color:black;"><strong>Terima kasih Anda telah mengirimkan permintaan Anda. Anda akan segera dihubungi oleh agen Allianz Star Network atau temukan agen terdekat. </strong></h3>
-                        </div>
+                   <br />
+    <center><input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen"></center>
+                </div>
 
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
