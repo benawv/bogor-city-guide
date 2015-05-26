@@ -230,6 +230,7 @@
                                 <?php
                                     
                                     $getProv=new Object_MarketingOfficeWilayah_List();                                    
+                                    $getProv->setOrderKey("namaWilayah");
                                     $getProv->setOrder("desc");
                                     foreach($getProv as $items){
                                         ?>
