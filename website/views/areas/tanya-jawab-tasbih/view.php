@@ -48,10 +48,10 @@
   text-align: left;
 }
 
-    .faq-item--answer ol,
-    .faq-item--answer ul,
+    .faq-item--answer
     {
-        margin-left: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
     .faq-item--question h4
