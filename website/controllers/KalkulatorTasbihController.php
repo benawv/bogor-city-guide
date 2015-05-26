@@ -145,7 +145,7 @@
 							);
 
 			$mail = new Pimcore_Mail();
-			$mail->setSubject("Konfirmasi Perhitungan");
+			$mail->setSubject("Konfirmasi kalkulasi produk Allianz tasbih");
 			$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 			$mail->setDocument($document);
 			$mail->setParams($params);

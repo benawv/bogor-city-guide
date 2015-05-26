@@ -1390,8 +1390,8 @@ div.zabuto_calendar div.legend span.badge-today {
   padding: 0;
   font-size: 18px;
   font-weight: 300;
-  color: white;
-  text-shadow: 1px 1px 0 #003781;
+  color: #003781;
+  /*text-shadow: 1px 1px 0 #003781;*/
   background: transparent;
   text-align: center;
   cursor: pointer;
