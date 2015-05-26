@@ -275,30 +275,31 @@
                 
 
             </div><!--/ .col-md-12 -->
-            <div class="content-widget">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h4><strong>BACA JUGA</strong></h4>
-                        <ul>
-                            <?php 
-                                $entries = new Object_TasbihNews_List();
-                                $entries->setLimit(4);
-                                $entries->setOrderKey("o_creationDate");
-                                $entries->setOrder("desc");
-                                foreach ($entries as $key) {
-                             ?>
-                                <li>
-                                    <a href="tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
-                                        <?php echo $key->title; ?>
-                                        <span><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></span>
-                                    </a>
-                                </li>
-                            <?php } ?>
-                        </ul>
-                    </div><!--/ .col-xs-12 -->
-                </div><!--/ .row -->
-            </div><!--/ .content-widget -->
         </div><!--/ .content-calc -->
+        <div class="content-widget">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4><strong>BACA JUGA</strong></h4>
+                    <ul>
+                        <?php 
+                            $entries = new Object_TasbihNews_List();
+                            $entries->setLimit(4);
+                            $entries->setOrderKey("o_creationDate");
+                            $entries->setOrder("desc");
+                            foreach ($entries as $key) {
+                         ?>
+                            <li>
+                                <a href="tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                    <?php echo $key->title; ?>
+                                    <span><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></span>
+                                </a>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div><!--/ .col-xs-12 -->
+            </div><!--/ .row -->
+        </div><!--/ .content-widget -->
+        
     </div><!--/ .description -->
 </div><!--/ #newsletter-allianz -->
 
