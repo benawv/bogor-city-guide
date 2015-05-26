@@ -186,13 +186,13 @@
                                 echo $alamat."<br />";
                                 echo "Telp. ".$telp."<br />";
                                 echo "Fax. ".$fax."<br />";
-                                echo "Contact Agent. ".$telp."<br />";
-                                echo "Email Agent. ".$emailAgent;
+                                echo "Hubungi Agen. ".$telp."<br />";
+                                echo "Email Agen. ".$emailAgent;
                             ?>
                         </p>
                     <?php }?>
-                    <a href="mailto:<?php echo $emailAgent;?>?Subject=Call%20Kantor" target="_top" class="btn btn-sendmail">Email Agent</a>&nbsp;
-                    <a href="tel:<?php echo $telp;?>" target="_top" class="btn btn-sendmail hide">Contact Agent</a>
+                    <a href="mailto:<?php echo $emailAgent;?>?Subject=Call%20Kantor" target="_top" class="btn btn-sendmail">Email Agen</a>&nbsp;
+                    <a href="tel:<?php echo $telp;?>" target="_top" class="btn btn-sendmail hide">Hubungi Agen</a>
                 </div><!--/ .section-right-60 -->
             </div><!--/ .description-width-66 -->
         </div><!--/ .full-w -->
