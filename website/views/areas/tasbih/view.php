@@ -132,7 +132,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Tanggal Lahir (Min.  18 tahun)</label>
+                            <label>Tanggal Lahir (Min.  18 tahun, Max. 55 tahun)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
@@ -330,11 +330,17 @@
 
     });
     $(function() {
+        var d = new Date();
+        var y = d.getFullYear();
+        minyear = y - 55;
+        maxyear = y - 18;
+        range = minyear+':'+maxyear;
        $('#tgl-hitung, #tgl-lahir').datepicker({
-        changeMonth: true,
-        changeYear: true,
-        yearRange: "-100:+0"
+            changeMonth: true,
+            changeYear: true,
+            yearRange: range
         });
+       
     });
 
     $(document).ready(function(){
