@@ -224,7 +224,7 @@
     
 			<div class="form-group">
 			    <div class="col-md-4">
-				<label>Massa Pembayaran Premi / Premi pertahun</label>
+				<label>Massa Pembayaran Premi Pertahun</label>
 			    </div><!--/ .col-md-4 -->
 			    <div class="col-md-4">
 				<input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly>
