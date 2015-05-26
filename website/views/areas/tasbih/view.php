@@ -79,6 +79,15 @@
 }
 
 
+    @media only screen and (max-width:775px){
+        .btn img{
+            height: 20px;
+            width: 15px;
+            margin-left: 5px;
+            top: 10px;
+        }
+    }
+  
 </style>
 
 
@@ -145,7 +154,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Tanggal Lahir (Min.  18 tahun, Max. 55 tahun)</label>
+                            <label>Tanggal Lahir<br>(Min.  18 tahun, Max. 55 tahun)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
@@ -209,13 +218,13 @@
                                 Mohon maaf inputan yang Anda masukkan belum benar
                             </label>
                         </div><!--/ .col-md-4 -->
-            <div class="col-md-4"> <span>* Uang pertanggungan asuransi jiwa bila terjadi risio pada tertanggung.</span></div>
+            <div class="col-md-4"> <span>* Uang pertanggungan asuransi jiwa bila terjadi risiko pada tertanggung.</span></div>
 
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Massa Pembayaran Kontribusi/Premi(Tahun)</label>
+                            <label>Massa Pembayaran Premi (Tahun)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" name="masa-premi" id="masa-premi">
@@ -269,7 +278,7 @@
 
             .content-widget
             {
-                border: 1px solid #DDD;
+                border-top: 1px solid #DDD;
                 padding: 16px 20px;
                 margin-bottom: 32px;
             }
@@ -294,6 +303,7 @@
                 display: block;
                 list-style: none;
                 position: relative;
+                line-height: 30px;
             }
 
             .content-widget li a
@@ -319,39 +329,33 @@
                 font-size: x-small;
                 font-weight: normal;
             }
-
+            .content-widget h4{
+                color: #009a44;
+                font-weight: bold;
+                font-size: 20px;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
         </style>
 
         <div class="content-widget">
             <div class="row">
-                <div class="col-xs-12 col-md-4">
-                    <h4>Baca Juga</h4>
+                <div class="col-xs-12">
+                    <h4><strong>BACA JUGA</strong></h4>
                     <ul>
-                        <li><a href="#">Sample List Item <span>Sen, 14 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Sel, 15 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Rab, 16 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Kam, 17 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Jum, 18 Mei 2015</span></a></li>
-                    </ul>
-                </div><!--/ .col-xs-12 -->
-                <div class="col-xs-12 col-md-4">
-                    <h4>Baca Juga</h4>
-                    <ul>
-                        <li><a href="#">Sample List Item <span>Sen, 14 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Sel, 15 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Rab, 16 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Kam, 17 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Jum, 18 Mei 2015</span></a></li>
-                    </ul>
-                </div><!--/ .col-xs-12 -->
-                <div class="col-xs-12 col-md-4">
-                    <h4>Baca Juga</h4>
-                    <ul>
-                        <li><a href="#">Sample List Item <span>Sen, 14 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Sel, 15 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Rab, 16 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Kam, 17 Mei 2015</span></a></li>
-                        <li><a href="#">Sample List Item <span>Jum, 18 Mei 2015</span></a></li>
+                        <?php 
+                            $entries = new Object_TasbihNews_List();
+                            $entries->setLimit(4);
+                            $entries->setOrderKey("o_creationDate");
+                            $entries->setOrder("desc");
+                            foreach ($entries as $key) {
+                         ?>
+                            <li>
+                                <a href="tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                    <?php echo $key->title; ?>
+                                    <span><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></span>
+                                </a>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div><!--/ .col-xs-12 -->
             </div><!--/ .row -->

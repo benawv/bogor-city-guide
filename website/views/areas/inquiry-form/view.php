@@ -141,7 +141,7 @@
     <div class="description">
 
         <div class="header-calc" style="background-color:#707372;">
-            <h1>INQUIRY FORM</h1>
+            <h1>FORM MINTA INFORMASI</h1>
         </div><!--/ .header-calc -->
 
         <div class="content-calc">
@@ -230,7 +230,8 @@
                                 <?php
                                     
                                     $getProv=new Object_MarketingOfficeWilayah_List();                                    
-                                    $getProv->setOrder("desc");
+                                    $getProv->setOrderKey("namaWilayah");
+                                    $getProv->setOrder("asc");
                                     foreach($getProv as $items){
                                         ?>
                                             <option value= "<?php echo $items->o_id; ?> "><?php echo $items->namaWilayah; ?></option>
