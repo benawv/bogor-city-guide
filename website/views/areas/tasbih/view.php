@@ -22,7 +22,7 @@
     .form-box{ border: solid 1px #ddd; padding: 16px 20px; margin-bottom: 32px; }
     .form-control{ border-radius: 0; }
         nav.main-navigation a.nav-item.home::after {
-      content: "\f015"; }        
+      content: "\f015"; }
     nav.main-navigation a.nav-item.chat::after {
       content: "\f003  "; }
     nav.main-navigation a.nav-item {
@@ -52,20 +52,23 @@
   pointer-events: none;
 }
         nav.main-navigation a.nav-item.blueA{
-      background: #003781;}        
-    
+      background: #003781;}
+
     nav.main-navigation a.nav-item.greenChat{
       background: #707372;}
-    
+
     nav.main-navigation a.nav-item.greenChat::before{
       background: #3C3941;}
 
       nav.main-navigation a.nav-item.blueA::before {
         background: #3122F9; }
-    
+
     input[type="radio"] {
   display: block;
 }
+
+
+
 </style>
 
 
@@ -77,25 +80,25 @@
                         <h4 style="font-size:18px"><small>Beranda</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/kalkulator/tasbih" class="nav-item green sitemap">
                         <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/tanya-jawab" class="nav-item orange question">
                         <h4 style="font-size:18px"><small>Pertanyaan Umum</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="http://agen.imkepo.com" target="_blank" class="nav-item users">
                         <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/inquiry-form" class="nav-item grey chat">
                         <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
@@ -103,13 +106,13 @@
                 </div><!--/ .col-xs-12 -->
             </div>
             <div class="row">
-                
+
             </div>
     </nav>
 </header>
 
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
-    
+
     <div class="description">
 
         <div class="header-calc">
@@ -127,7 +130,7 @@
 
                     <label><strong>Kalkulasi</strong></label>
 
-                    
+
 
 
                     <div class="form-group">
@@ -147,14 +150,14 @@
                             <label>Jenis Kelamin</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-				<div class="form-group">
-					<div class="col-xs-6">
-						<label class="radio-inline"><input name="jenisKelamin" value="l" type="Radio">Pria</label>
-					</div>
-					<div class="col-xs-6">
-						<label class="radio-inline"><input name="jenisKelamin" value="p" type="Radio">Wanita</label>
-					</div>
-				</div>                            
+                <div class="form-group">
+                    <div class="col-xs-6">
+                        <label class="radio-inline"><input name="jenisKelamin" value="l" type="Radio">Pria</label>
+                    </div>
+                    <div class="col-xs-6">
+                        <label class="radio-inline"><input name="jenisKelamin" value="p" type="Radio">Wanita</label>
+                    </div>
+                </div>
                         </div>
                     </div><!--/ .form-group -->
 
@@ -191,13 +194,13 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Asuransi Jiwa (Min. Rp.50.000.000)">
-                           
-			    <label id="notif-asuransijiwa" style="display:none; color: #f00;">
+
+                <label id="notif-asuransijiwa" style="display:none; color: #f00;">
                                 Mohon maaf inputan yang Anda masukkan belum benar
                             </label>
                         </div><!--/ .col-md-4 -->
-			<div class="col-md-4"> <span>* Uang pertanggungan asuransi jiwa bila terjadi risio pada tertanggung.</span></div>
-			
+            <div class="col-md-4"> <span>* Uang pertanggungan asuransi jiwa bila terjadi risio pada tertanggung.</span></div>
+
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
@@ -241,13 +244,87 @@
 
                 </form>
 
-                
 
-                    
+
+
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
+
+        <style>
+            .content-widget ul,
+            .content-widget ol,
+            .content-widget li,
+            {
+                margin: 0 auto;
+                padding: 0;
+            }
+
+            .content-widget li
+            {
+                display: block;
+                list-style: none;
+                position: relative;
+            }
+
+            .content-widget li a
+            {
+                color: black;
+                text-decoration: none;
+                font-weight: bold;
+                position: relative;
+            }
+
+            .content-widget li a:hover,
+            .content-widget li a:focus
+            {
+                text-decoration: none;
+                outline: none;
+                color: #009a44;
+            }
+
+            .content-widget li a small,
+            .content-widget li a span
+            {
+                color: #999;
+                font-size: small;
+            }
+
+        </style>
+
+        <div class="content-widget">
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <ul>
+                        <li><a href="#">Sample List Item<span>Sen, 14 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item<span>Sel, 15 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item<span>Rab, 16 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item<span>Kam, 17 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item<span>Jum, 18 Mei 2015</span></a></li>
+                    </ul>
+                </div><!--/ .col-xs-12 -->
+                <div class="col-xs-12 col-md-4">
+                    <ul>
+                        <li><a href="#">Sample List Item<span>Sen, 14 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item<span>Sel, 15 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item<span>Rab, 16 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item<span>Kam, 17 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item<span>Jum, 18 Mei 2015</span></a></li>
+                    </ul>
+                </div><!--/ .col-xs-12 -->
+                <div class="col-xs-12 col-md-4">
+                    <ul>
+                        <li><a href="#">Sample List Item<span>Sen, 14 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item<span>Sel, 15 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item<span>Rab, 16 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item<span>Kam, 17 Mei 2015</span></a></li>
+                        <li><a href="#">Sample List Item<span>Jum, 18 Mei 2015</span></a></li>
+                    </ul>
+                </div><!--/ .col-xs-12 -->
+            </div><!--/ .row -->
+        </div><!--/ .content-widget -->
+
     </div><!--/ .description -->
-        
+
 </div><!--/ #newsletter-allianz -->
 
 <link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
@@ -263,29 +340,29 @@
         /*
          * jQueryUI DatePicker
          */
-	var sex;
-	$("input:radio[name=jenisKelamin]").click(function() {
-			sex= $(this).val();
-	});
+    var sex;
+    $("input:radio[name=jenisKelamin]").click(function() {
+            sex= $(this).val();
+    });
 
         $('#Kalkulasi').click(function() {
-        
-	    //get current date format //dd/yy/mm
-	    var fullDate = new Date()
+
+        //get current date format //dd/yy/mm
+        var fullDate = new Date()
             var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
-	    var currentDate = fullDate.getDate() + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
-	    
+        var currentDate = fullDate.getDate() + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
+
             var tanggalpembuatan = currentDate;
             var tanggallahir = $('#tgl-lahir').val();
-            
-	   // var sex = $('#JenisKelamin option:Selected').val();
+
+       // var sex = $('#JenisKelamin option:Selected').val();
             var usia = $('#usia').val();
             var frekuensi = $('#Frekuensi option:Selected').val();
             var asuransijiwa = $('#asuransi-jiwa').val();
             var kontribusi = $('#masa-premi option:Selected').val();
             var unfnum = accounting.unformat(asuransijiwa,0,",");
 
-			
+
 
 
             if( asuransijiwa == '' || asuransijiwa >= 49000000 ||tanggalpembuatan == '' || tanggallahir == ''){
@@ -298,9 +375,9 @@
                     alert("Mohon Periksa Inputan Anda");
             }else{
 
-	   
-            
-	    $.ajax({
+
+
+        $.ajax({
                 url      : '/kalkulator-tasbih/',
                 type     : 'POST',
                 data     : {
@@ -315,17 +392,17 @@
                             },
                     success  : function(data){
                     //console.log(data);
-		    $('.waiting-calc').hide();		    
+            $('.waiting-calc').hide();
                     $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
                      document.location.href='/tasbih/tasbih-kedua';
                 }
 
-                
+
             });
 
 
             }
-            
+
         });
 
     });
@@ -342,7 +419,7 @@
             changeYear: true,
             yearRange: range
         });
-       
+
     });
 
     $(document).ready(function(){
