@@ -235,9 +235,6 @@
 		    
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
-                            <button>
-                                <span class="glyphicon glyphicon-align-left"></span>
-                            </button>
                             <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" value="Kalkulasi" style="background-color:#009a44">
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
