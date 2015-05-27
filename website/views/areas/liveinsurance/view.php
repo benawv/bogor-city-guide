@@ -427,15 +427,16 @@
 <script>
     $(function(){
         $('#Kalkulasi').click(function() {
-            var nama = $('nama').val();
-            var nohp = $('nohp').val();
-            var gender = $('gender').val();
-            var uangpertanggungan = $('uang_pertanggungan').val();
-            var cia = $('critical_illness_accelerated').val();
-            var smoking = $('smoking').val();
-            var email = $('email').val();
+            var nama = $('#nama').val();
+            var nohp = $('#nohp').val();
+            var gender = $('#gender').val();
+            var uangpertanggungan = $('#uang_pertanggungan').val();
+            var cia = $('#critical_illness_accelerated').val();
+            var smoking = $('#smoking').val();
+            var email = $('#email').val();
+            var tanggallahir = $('#tgl-lahir').val();
             
-            if(nama == '' || nohp == '' || gender == 'Pilih' || uangpertanggungan == 'Pilih' || cia == 'Pilih' || smoking == 'Pilih' || email == '' || nohp.length() < 8){
+            if(nama == '' || nohp == '' || gender == 'Pilih' || uangpertanggungan == 'Pilih' || cia == 'Pilih' || smoking == 'Pilih' || email == '' || nohp.length() < 8 || tanggallahir == ''){
                 if(nama == ''){
                     document.getElementById('notif-nama').style.display = 'block';
                 }
@@ -454,8 +455,8 @@
                 if(smoking == 'Pilih'){
                     document.getElementById('notif-smoking').style.display = 'block';
                 }
-                if(email == ''){
-                    document.getElementById('notif-email').style.display = 'block';
+                if(tanggallahir == ''){
+                    document.getElementById('notif-tgllahir').style.display = 'block';
                 }
             }else{
                 
@@ -469,7 +470,8 @@
                                         'uangpertanggungan' : uangpertanggungan,
                                         'cia' : cia,
                                         'smoking' : smoking,
-                                        'email' : email
+                                        'email' : email,
+                                        'tanggallahir' : tanggallahir
                                         },
                                 success  : function(data){
                                 //console.log(data);

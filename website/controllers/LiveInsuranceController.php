@@ -11,6 +11,8 @@
                 $cia = $_POST['cia'];
                 $smoking = $_POST['smoking'];
                 $email = $_POST['email'];
+                $tanggallahir = $_POST['tanggallahir'];
+                $bod = new Pimcore_Date($tanggallahir);;
                 
                 //Calculatiom
                 $premi = 10000000+2000000+300000+40000;
@@ -26,7 +28,8 @@
                 $cookie->setCriticalIllnessAccelerated($cia);
                 $cookie->setUangPertanggungan($uangpertanggungan);
                 $cookie->setMerokok($smoking);
-                $cookie->setPremi($premi);                
+                $cookie->setPremi($premi);  
+                $cookie->setTanggalLahir($bod);
                 $cookie->setO_key('live_insurance'.strtotime(date("YmdHis")));
                 $cookie->setO_parentId($getId->o_id);
                 $cookie->setO_index(0);
@@ -46,6 +49,7 @@
                                 'uangpertanggungan' => $uangpertanggungan,
                                 'smoking' => $smoking,
                                 'premi' => $premi,
+                                'bod' => $bod
                                 );
 
                 $mail = new Pimcore_Mail();
