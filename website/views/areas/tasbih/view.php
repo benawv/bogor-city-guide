@@ -218,7 +218,7 @@
                                 Mohon maaf uang pertanggungan yang Anda masukan kurang dari Rp. 50,000,000.-
                             </label>
                         </div><!--/ .col-md-4 -->
-            <div class="col-md-4"> <span>*uang pertanggungan yang akan dibaerikan bila terjadi risiko pada tertanggung.</span></div>
+            <div class="col-md-4"> <span>*Uang pertanggungan yang akan diberikan bila terjadi risiko pada tertanggung.</span></div>
 
                     </div><!--/ .form-group -->
 
