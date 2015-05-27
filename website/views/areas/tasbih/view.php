@@ -224,13 +224,13 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Selama berapa lama Anda ingin terlindungi</label>
+                            <label>Berapa lama pembayaran premi/iuran yang Anda inginkan</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" name="masa-premi" id="masa-premi">
-                                <option value="5">5</option>
-                                <option value="10">10</option>
-                                <option value="15">15</option>
+                                <option value="5">5 tahun</option>
+                                <option value="10">10 tahun</option>
+                                <option value="15">15 tahun</option>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
