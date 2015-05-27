@@ -444,7 +444,7 @@
                     document.getElementById('notif-nohp').style.display = 'block';
                 }
                 if(gender == ''){
-                    document.getElementById('notif-gender').style.display = 'block';
+                    document.getElementById('notif-jeniskelamin').style.display = 'block';
                 }
                 if(uangpertanggungan == 'Pilih'){
                     document.getElementById('notif-uangpertanggungan').style.display = 'block';
@@ -453,10 +453,13 @@
                     document.getElementById('notif-cia').style.display = 'block';
                 }
                 if(smoking == 'Pilih'){
-                    document.getElementById('notif-smoking').style.display = 'block';
+                    document.getElementById('notif-merokok').style.display = 'block';
                 }
                 if(tanggallahir == ''){
                     document.getElementById('notif-tgllahir').style.display = 'block';
+                }
+                if(email == ''){
+                    document.getElementById('notif-email').style.display = 'block';
                 }
             }else{
                 
