@@ -285,13 +285,35 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
+                            <label>Nama</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Nama Anda" id="nama" tabindex="6" maxlength="32" required>
+                            <label id="notif-nama" style="display:none; color: #f00;">Maaf Anda Belum Memasukkan Nama</label>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+                    
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>Nomor Handphone (Min. 8 Digit)</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="0812345xxx" id="nohp" tabindex="6" maxlength="32" required onfocusout="this.value=validateNumber(this.value)">
+                            <label id="notif-nohp" style="display:none; color: #f00;">Maaf Anda Belum Memasukkan No Handphone</label>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+                    
+                    <div class="form-group">
+                        <div class="col-md-4">
                             <label>Jenis Kelamin</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="1" id="gender">
+                                <option value="Pilih">Pilih</option>
                                 <option value="M">Pria</option>
                                 <option value="F">Wanita</option>
                             </select>
+                            <label id="notif-jeniskelamin" style="display:none; color: #f00;">Maaf Anda Belum Memilih</label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -301,9 +323,10 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="2" id="uang_pertanggungan">
-                                <option value="">Pilih</option>
+                                <option value="Pilih">Pilih</option>
                                 <option value="1">1M</option>
                             </select>
+                            <label id="notif-uangpertanggungan" style="display:none; color: #f00;">Maaf Anda Belum Memilih</label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -313,9 +336,10 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="3" id="critical_illness_accelerated">
-                                <option value="">Pilih</option>
+                                <option value="Pilih">Pilih</option>
                                 <option value="1">1M</option>
                             </select>
+                            <label id="notif-cia" style="display:none; color: #f00;">Maaf Anda Belum Memilih</label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -325,9 +349,11 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="4" id="smoking">
+                                <option value="Pilih">Pilih</option>
                                 <option value="Y">Ya</option>
                                 <option value="N">Tidak</option>
                             </select>
+                            <label id="notif-merokok" style="display:none; color: #f00;">Maaf Anda Belum Memilih</label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -336,7 +362,7 @@
                             <label>Premi</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" readonly class="form-control disabled" placeholder="0" tabindex="5">
+                            <input type="text" readonly class="form-control disabled" placeholder="0" id="premi" tabindex="5">
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -345,7 +371,8 @@
                             <label>E-Mail</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="email" class="form-control" placeholder="Alamat E-Mail" tabindex="6" maxlength="32" required>
+                            <input type="email" class="form-control" placeholder="Alamat E-Mail" id="email" tabindex="6" maxlength="32" required onfocusout="this.value=validateEMAIL(this.value)">
+                            <label id="notif-email" style="display:none; color: #f00;">Maaf Anda Belum Memasukkan Email</label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -383,7 +410,76 @@
 
 <script>
     $(function(){
+        $('#Kalkulasi').click(function() {
+            var nama = $('nama').val();
+            var nohp = $('nohp').val();
+            var gender = $('gender').val();
+            var uangpertanggungan = $('uang_pertanggungan').val();
+            var cia = $('critical_illness_accelerated').val();
+            var smoking = $('smoking').val();
+            var premi = $('premi').val();
+            var email = $('email').val();
+            
+            if(nama == '' || nohp == '' || gender == 'Pilih' || uangpertanggungan == 'Pilih' || cia == 'Pilih' || smoking == 'Pilih' || email == '' || nohp.length() < 8){
+                if(nama == ''){
+                    document.getElementById('notif-nama').style.display = 'block';
+                }
+                if(nohp == '' || nohp.length() < 8){
+                    document.getElementById('notif-nohp').style.display = 'block';
+                }
+                if(uangpertanggungan == 'Pilih'){
+                    document.getElementById('notif-uangpertanggungan').style.display = 'block';
+                }
+                if(cia == 'Pilih'){
+                    document.getElementById('notif-cia').style.display = 'block';
+                }
+                if(smoking == 'Pilih'){
+                    document.getElementById('notif-smoking').style.display = 'block';
+                }
+                if(email == ''){
+                    document.getElementById('notif-email').style.display = 'block';
+                }
+            } //else
+        })
+        
+            $('#nohp').bind("input", function(){
+               var re = /^[0-9]*$/;
 
+                var value = $('#nohp').val();
+                $(this).val(value);
+                if(!re.test(value)){
+                    document.getElementById('notif-nohp').style.display= 'block';
+                    $('#nohp').val('');
+                }else{
+                    document.getElementById('notif-nohp').style.display= 'none';
+                }
+
+            });
+        
+        function validateEMAIL(surat)
+        {
+            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+            if(!re.test(surat))
+            {
+                document.getElementById('notif-email').style.display= 'block';
+                return null;
+            }
+            else
+            {
+                document.getElementById('notif-email').style.display= 'none';
+                return surat;
+            }
+        };
+        
+            function validateNumber(value){
+        if(value.length <= 8 ){
+            document.getElementById('notif-nohp').style.display= 'block';
+            return null;
+        }else{
+            document.getElementById('notif-nohp').style.display= 'none';
+            return value;
+        }
+    };
     });
 </script>
 
