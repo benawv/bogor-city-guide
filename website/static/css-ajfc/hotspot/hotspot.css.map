@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,cACA;EACI,MAAM,EAAE,aAAa;EACrB,QAAQ,EAAE,QAAQ;EAElB,oBACA;IACI,SAAS,EAAE,IAAI;IACf,SAAS,EAAE,IAAI;IACf,KAAK,EAAE,IAAI;IACX,MAAM,EAAE,IAAI;IACZ,MAAM,EAAE,aAAa",
+"sources": ["hotspot.scss"],
+"names": [],
+"file": "hotspot.css"
+}

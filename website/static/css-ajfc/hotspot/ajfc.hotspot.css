@@ -1,0 +1,89 @@
+.animated {
+  -webkit-animation-duration: 0.9s;
+  animation-duration: 0.9s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite; }
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1); }
+  50% {
+    -webkit-transform: scale(1.1); }
+  100% {
+    -webkit-transform: scale(1); } }
+@keyframes pulse {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.1); }
+  100% {
+    transform: scale(1); } }
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse; }
+
+.image-hotspot {
+  position: relative; }
+  .image-hotspot > img {
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+    height: auto; }
+  .image-hotspot > .image-hotspot--container {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+    .image-hotspot > .image-hotspot--container > .image-hotspot--item {
+      display: block;
+      position: relative;
+      min-width: 36px;
+      max-width: 36px;
+      width: 36px;
+      min-height: 36px;
+      max-height: 36px;
+      height: 36px;
+      line-height: 36px; }
+      .image-hotspot > .image-hotspot--container > .image-hotspot--item > a {
+        -webkit-transition: ease 0.3s;
+        -moz-transition: ease 0.3s;
+        -ms-transition: ease 0.3s;
+        -o-transition: ease 0.3s;
+        transition: ease 0.3s;
+        display: block;
+        margin: 0;
+        padding: 0;
+        background: #111;
+        color: white;
+        border-radius: 9999px;
+        text-decoration: none;
+        font-size: x-large; }
+        .image-hotspot > .image-hotspot--container > .image-hotspot--item > a:hover, .image-hotspot > .image-hotspot--container > .image-hotspot--item > a.active {
+          background: #0a4088; }
+        .image-hotspot > .image-hotspot--container > .image-hotspot--item > a:hover, .image-hotspot > .image-hotspot--container > .image-hotspot--item > a:focus {
+          outline: none; }
+      .image-hotspot > .image-hotspot--container > .image-hotspot--item > .image-hotspot--content {
+        display: none;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.8);
+        width: auto;
+        min-width: 360px;
+        margin: 4px 0 0;
+        padding: 8px 16px;
+        border-radius: 4px;
+        text-align: left;
+        z-index: 999; }
+        .image-hotspot > .image-hotspot--container > .image-hotspot--item > .image-hotspot--content.right {
+          right: 0; }
+        .image-hotspot > .image-hotspot--container > .image-hotspot--item > .image-hotspot--content h1, .image-hotspot > .image-hotspot--container > .image-hotspot--item > .image-hotspot--content h2, .image-hotspot > .image-hotspot--container > .image-hotspot--item > .image-hotspot--content h3, .image-hotspot > .image-hotspot--container > .image-hotspot--item > .image-hotspot--content h4, .image-hotspot > .image-hotspot--container > .image-hotspot--item > .image-hotspot--content h5, .image-hotspot > .image-hotspot--container > .image-hotspot--item > .image-hotspot--content h6, .image-hotspot > .image-hotspot--container > .image-hotspot--item > .image-hotspot--content p, .image-hotspot > .image-hotspot--container > .image-hotspot--item > .image-hotspot--content a {
+          margin: 0;
+          padding: 0;
+          color: white; }
+        .image-hotspot > .image-hotspot--container > .image-hotspot--item > .image-hotspot--content a:hover {
+          text-decoration: underline; }
+
+/*# sourceMappingURL=ajfc.hotspot.css.map */
