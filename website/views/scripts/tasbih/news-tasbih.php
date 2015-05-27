@@ -90,7 +90,7 @@
     .main-content,
     .sidebar
     {
-        min-height: 0 !important;
+        /* min-height: 0 !important; */
         padding: 24px 36px;
     }
 

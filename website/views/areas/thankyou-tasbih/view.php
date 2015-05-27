@@ -114,6 +114,7 @@
 <div class="form-box" id="notif-confirm">
     <h1 style="text-align:center">TERIMA KASIH</h1>
     <h3  style=" color:black; text-align:center;"><strong>Kalkulasi ilustrasi produk Allianz Tasbih (sudah dikirimkan ke alamat email Anda)</strong></h3>
+    <h3 style=" color:black; text-align:center;"><strong>Temukan agen terdekat: </strong></h3>
    <br />
     <center><input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen"></center>
   </div>
@@ -146,16 +147,40 @@ $(document).ready(function(){
             var email = $('#email').val();
             var nohp = $('#nohp').val();
 
+           <?php  $session = new Zend_Session_Namespace('calculation'); ?>
+
+            var date_tglBuat = "<?php echo $session->date_tglBuat; ?>";
+            var date_tglLahir = "<?php echo $session->date_tglLahir; ?>";
+            var JenisKelamin = "<?php echo $session->JenisKelamin; ?>";
+            var Usia = "<?php echo $session->Usia; ?>";
+            var Frekuensi = "<?php echo $session->Frekuensi; ?>";
+            var AsuransiJiwa = "<?php echo $session->AsuransiJiwa; ?>";
+            var AJ = "<?php echo $session->AJ; ?>";
+            var Kontribusi = "<?php echo $session->Kontribusi; ?>";
+            var Calculation = "<?php echo $session->Calculation; ?>";
+
               $.ajax({
-                  url      : 'http://agen.imkepo.com/v1/api/calculator',
+                  url      : '/v1/api/calculator',
                   type     : 'POST',
+                  crossDomain: true,
                   data     : {
                               'nama' : nama,
                               'email' : email,
-                              'nohp' : nohp
+                              'nohp' : nohp,
+                              'date_tglBuat': date_tglBuat,
+                              'date_tglLahir': date_tglLahir,
+                              'JenisKelamin': JenisKelamin ,
+                              'Usia': Usia,
+                              'Frekuensi': Frekuensi,
+                              'AsuransiJiwa' : AsuransiJiwa,
+                              'AJ' : AJ,
+                              'Kontribusi' : Kontribusi,
+                              'Calculation' : Calculation,
+                              'source' :'Kalkulator Tasbih User'
                               },
-                      success  : function(data){
-                          console.log(data);
+                      complete  : function(data){
+                         // console.log(data);
+                          document.location.href='/agen-locator';
                       }  
               });            
         });

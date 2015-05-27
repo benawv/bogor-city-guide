@@ -48,10 +48,10 @@
   text-align: left;
 }
 
-    .faq-item--answer ol,
-    .faq-item--answer ul,
+    .faq-item--answer
     {
-        margin-left: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
     .faq-item--question h4
@@ -59,48 +59,107 @@
         color: #003781;
         font-weight: bold;
     }
+    
+    .content-widget
+    {
+        border-top: 1px solid #DDD;
+        padding: 16px 20px;
+        margin-bottom: 32px;
+    }
+
+    .content-widget h4
+    {
+        margin-bottom: 8px;
+    }
+
+    .content-widget ul,
+    .content-widget ol,
+    .content-widget li,
+    {
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+
+    .content-widget li
+    {
+        margin: 0;
+        padding: 0;
+        display: block;
+        list-style: none;
+        position: relative;
+        line-height: 30px;
+    }
+
+    .content-widget li a
+    {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        position: relative;
+    }
+
+    .content-widget li a:hover,
+    .content-widget li a:focus
+    {
+        text-decoration: none;
+        outline: none;
+        color: #009a44;
+    }
+
+    .content-widget li a small,
+    .content-widget li a span
+    {
+        color: #999;
+        font-size: x-small;
+        font-weight: normal;
+    }
+    .content-widget h4{
+        color: #009a44;
+        font-weight: bold;
+        font-size: 20px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
 
 </style>
 
-<div class="row addPadding15">
+<div class="addPadding15">
+    <nav class="main-navigation">
+        <div class="container" style="max-width:960px; margin:0 auto;">
+        <div class="row">
 
-    <nav class="main-navigation" style="max-width:960px; margin:auto;">
-            <div class="row">
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
+            <a href="/tasbih" class="nav-item blueA home">
+                <h4 style="font-size:18px"><small>Beranda</small></h4>
+            </a>
+            </div><!--/ .col-xs-12 -->
 
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
-                    <a href="/tasbih" class="nav-item blueA home">
-                        <h4 style="font-size:18px"><small>Beranda</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                <a href="/kalkulator/tasbih" class="nav-item green sitemap">
+                    <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
+                </a>
+            </div><!--/ .col-xs-12 -->
 
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/kalkulator/tasbih" class="nav-item green sitemap">
-                        <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                <a href="/tasbih/tanya-jawab" class="nav-item orange question">
+                    <h4 style="font-size:18px"><small>Pertanyaan Umum</small></h4>
+                </a>
+            </div><!--/ .col-xs-12 -->
 
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4 style="font-size:18px"><small>Pertanyaan Umum</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
+                    <h4 style="font-size:18px"><small>Cari Agen</small></h4>
+                </a>
+            </div><!--/ .col-xs-12 -->
 
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
-                        <h4 style="font-size:18px"><small>Cari Agen</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/inquiry-form" class="nav-item grey chat">
-                        <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                <a href="/tasbih/inquiry-form" class="nav-item grey chat">
+                    <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
+                </a>
+            </div><!--/ .col-xs-12 -->
             </div>
-            <div class="row">
-
-            </div>
+        </div><!--/ .container -->
     </nav>
+</div><!--/ .addPadding15 -->
 
 <div class="page-wrapper-outer">
     <div class="container" style="max-width: 960px;">
@@ -139,7 +198,31 @@
             <?php echo $this->wysiwyg('description-bottom')?>
                     <!--<p>Tidak menemukan jawaban untuk pertanyaan kamu? Silahkan hubungi kami melalui <a href="https://www.facebook.com/AJFCIndonesia">facebook</a>!</p>-->
 
+                    <div class="content-widget">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4><strong>BACA JUGA</strong></h4>
+                                <ul>
+                                    <?php 
+                                        $entries = new Object_TasbihNews_List();
+                                        $entries->setLimit(4);
+                                        $entries->setOrderKey("o_creationDate");
+                                        $entries->setOrder("desc");
+                                        foreach ($entries as $key) {
+                                     ?>
+                                        <li>
+                                            <a href="tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                                <?php echo $key->title; ?>
+                                                <span><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></span>
+                                            </a>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
+                            </div><!--/ .col-xs-12 -->
+                        </div><!--/ .row -->
+                    </div><!--/ .content-widget -->
                 </div><!--/ .main-content -->
+                
 
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->

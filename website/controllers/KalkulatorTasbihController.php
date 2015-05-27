@@ -79,6 +79,9 @@
             $AJ = $session->AJ;
             $Kontribusi = $session->Kontribusi;
             $Calculation = $session->Calculation;
+			
+			$date_tglBuat1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglBuat)));
+            $date_tglLahir1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglLahir)));
            /*             
 				echo $date_tglBuat."<br>";
 				echo $date_tglLahir."<br>";
@@ -94,10 +97,10 @@
 			
             $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
 			$cookie = new Object_Tasbih();
-			//$cookie->setTanggalPembuatan($date_tglBuat);
+			$cookie->setTanggalPembuatan($date_tglBuat);
 			$cookie->setNama($Nama);
 			$cookie->setEmail($Email);
-			//$cookie->setTanggalLahir($date_tglLahir);
+			$cookie->setTanggalLahir($date_tglLahir);
 			$cookie->setJenisKelamin($JenisKelamin);
 			$cookie->setUsia($Usia);
 			$cookie->setFrekuensiPembayaran($Frekuensi);
@@ -131,10 +134,10 @@
 			$hasil = number_format($Calculation,0,",",".");
 			$document = '/email/email-tasbih';
 			$params = array(
-							'tglhitung' => $TanggalPembuatan,
+							'tglhitung' => $date_tglBuat1,
 							'nama' => $Nama,
 							'email' => $Email,
-							'tgllahir' => $TanggalLahir,
+							'tgllahir' => $date_tglLahir1,
 							'usia'=> $Usia,
 							'kontribusi' => $Kontribusi,
 							'AJ' => $AJ,
@@ -145,7 +148,7 @@
 							);
 
 			$mail = new Pimcore_Mail();
-			$mail->setSubject("Konfirmasi kalkulasi produk Allianz tasbih");
+			$mail->setSubject("Konfirmasi Hasil Kalkulasi Ilustrasi Produk Allianz Tasbih");
 			$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 			$mail->setDocument($document);
 			$mail->setParams($params);

@@ -9,7 +9,8 @@ class AgentController extends Website_Controller_Action {
 		
 		$kondisi = array("condition" => "(titikKordinat__latitude >".$kordinat[0]." AND titikKordinat__latitude <".$kordinat[2].")  AND (titikKordinat__longitude >".$kordinat[1]." AND titikKordinat__longitude <".$kordinat[3].")"
 						 ,"groupBy" => "titikKordinat__latitude");
-		$entries = Object_AgentLocatorKantor::getList($kondisi);
+		//$entries = Object_AgentLocatorKantor::getList($kondisi);
+		$entries = Object_AgentLocatorKantor::getList();
 		
 		$return = array();		
 		foreach($entries as $entry)

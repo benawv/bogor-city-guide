@@ -22,7 +22,7 @@
     .form-box{ border: solid 1px #ddd; padding: 16px 20px; margin-bottom: 32px; }
     .form-control{ border-radius: 0; }
         nav.main-navigation a.nav-item.home::after {
-      content: "\f015"; }        
+      content: "\f015"; }
     nav.main-navigation a.nav-item.chat::after {
       content: "\f003  "; }
     nav.main-navigation a.nav-item {
@@ -52,20 +52,42 @@
   pointer-events: none;
 }
         nav.main-navigation a.nav-item.blueA{
-      background: #003781;}        
-    
+      background: #003781;}
+
     nav.main-navigation a.nav-item.greenChat{
       background: #707372;}
-    
+
     nav.main-navigation a.nav-item.greenChat::before{
       background: #3C3941;}
 
       nav.main-navigation a.nav-item.blueA::before {
         background: #3122F9; }
-    
+
     input[type="radio"] {
   display: block;
 }
+.icon-submit{
+    width: 20px;  
+    position: absolute;
+    top: 5px;
+    margin-left: 15px;
+}
+.font-submit{
+    position: absolute;
+    top: 12px;
+    margin-left: -12px;
+}
+
+
+    @media only screen and (max-width:775px){
+        .btn img{
+            height: 20px;
+            width: 15px;
+            margin-left: 5px;
+            top: 10px;
+        }
+    }
+  
 </style>
 
 
@@ -77,25 +99,25 @@
                         <h4 style="font-size:18px"><small>Beranda</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/kalkulator/tasbih" class="nav-item green sitemap">
                         <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4 style="font-size:18px"><small>Tanya Jawab</small></h4>
+                        <h4 style="font-size:18px"><small>Pertanyaan Umum</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="http://agen.imkepo.com" target="_blank" class="nav-item users">
                         <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/inquiry-form" class="nav-item grey chat">
                         <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
@@ -103,13 +125,13 @@
                 </div><!--/ .col-xs-12 -->
             </div>
             <div class="row">
-                
+
             </div>
     </nav>
 </header>
 
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
-    
+
     <div class="description">
 
         <div class="header-calc">
@@ -125,19 +147,19 @@
 
 
 
-                    <label><strong>Kalkulasi</strong></label>
+                    <label><strong>Ilustrasi ini berguna untuk menghitung perkiraan biaya yang Anda bayarkan untuk melindungi diri Anda, jika terjadi risiko yang Anda alami di masa yang akan datang.</strong></label>
 
-                    
+
 
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Tanggal Lahir (Min.  18 tahun)</label>
+                            <label>Masukan tanggal lahir Anda<br>(Minimum usia dari 18 tahun sampai 55 tahun)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
                             <label id="notif-tgllahir" style="display:none; color: #f00;">
-                                Mohon maaf inputan Anda belum benar
+                                Mohon maaf, umur yang Anda masukan belum sesuai dengan ketentuan ilustrasi 
                             </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -147,20 +169,20 @@
                             <label>Jenis Kelamin</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-				<div class="form-group">
-					<div class="col-xs-6">
-						<label class="radio-inline"><input name="jenisKelamin" value="l" type="Radio">Pria</label>
-					</div>
-					<div class="col-xs-6">
-						<label class="radio-inline"><input name="jenisKelamin" value="p" type="Radio">Wanita</label>
-					</div>
-				</div>                            
+                <div class="form-group">
+                    <div class="col-xs-6">
+                        <label class="radio-inline"><input name="jenisKelamin" value="l" type="Radio">Pria</label>
+                    </div>
+                    <div class="col-xs-6">
+                        <label class="radio-inline"><input name="jenisKelamin" value="p" type="Radio">Wanita</label>
+                    </div>
+                </div>
                         </div>
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Usia (Tahun)</label>
+                            <label>Berarti usia Anda</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="usia" placeholder="Usia (Tahun)" readonly>
@@ -169,7 +191,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Frekuensi Pembayaran</label>
+                            <label>Termin Pembayaran</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" name="Frekuensi" id="Frekuensi">
@@ -187,28 +209,28 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Asuransi Jiwa (Min. Rp.50.000.000)</label>
+                            <label>Berapa uang pertanggungan yang Anda butuhkan bila terjadi risiko</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Asuransi Jiwa (Min. Rp.50.000.000)">
-                           
-			    <label id="notif-asuransijiwa" style="display:none; color: #f00;">
-                                Mohon maaf inputan yang Anda masukkan belum benar
+
+                            <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Min Rp.50.000.000">
+                <label id="notif-asuransijiwa" style="display:none; color: #f00;">
+                                Mohon maaf uang pertanggungan yang Anda masukan kurang dari Rp. 50,000,000.-
                             </label>
                         </div><!--/ .col-md-4 -->
-			<div class="col-md-4"> <span>* Uang pertanggungan asuransi jiwa bila terjadi risio pada tertanggung.</span></div>
-			
+            <div class="col-md-4"> <span>*Uang pertanggungan yang akan diberikan bila terjadi risiko pada tertanggung.</span></div>
+
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Massa Pembayaran Kontribusi/Premi(Tahun)</label>
+                            <label>Berapa lama pembayaran premi/iuran yang Anda inginkan</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" name="masa-premi" id="masa-premi">
-                                <option value="5">5</option>
-                                <option value="10">10</option>
-                                <option value="15">15</option>
+                                <option value="5">5 tahun</option>
+                                <option value="10">10 tahun</option>
+                                <option value="15">15 tahun</option>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -220,34 +242,133 @@
                     </div><!--/ .form-box -->
 
                     <div class="form-box result-calc" style="display:none; ">
-			<label><strong>Setoran Tahunan</strong></label>
+            <label><strong>Setoran Tahunan</strong></label>
     
-			<div class="form-group">
-			    <div class="col-md-4">
-				<label>Kontribusi Berkala/ Premi pertahun</label>
-			    </div><!--/ .col-md-4 -->
-			    <div class="col-md-4">
-				<input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly>
-			    </div><!--/ .col-md-4 -->
-			</div><!--/ .form-group -->
-			
-		    </div>
-		    
+            <div class="form-group">
+                <div class="col-md-4">
+                <label>Massa Pembayaran Premi Pertahun</label>
+                </div><!--/ .col-md-4 -->
+                <div class="col-md-4">
+                <input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly>
+                </div><!--/ .col-md-4 -->
+            </div><!--/ .form-group -->
+            
+            </div>
+            
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
-                            <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" value="Kalkulasi" style="background-color:#009a44">
+                            <?php $asets=Asset::getByPath('/icon-tasbih/calculator.png');?>
+                            <button class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" 
+                            id="Kalkulasi" name="next" style="background-color:#009a44"> 
+                            <img src="<?php echo $asets; ?>" alt="background-galeri" class="img-responsive icon-submit" />
+                            <font class="font-submit">Kalkulasi</font></button>
+                            <!-- <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" value="Kalkulasi" style="background-color:#009a44"> -->
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
 
                 </form>
 
-                
 
-                    
+
+
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
+
+        <style>
+
+            .content-widget
+            {
+                border-top: 1px solid #DDD;
+                padding: 16px 20px;
+                margin-bottom: 32px;
+            }
+
+            .content-widget h4
+            {
+                margin-bottom: 8px;
+            }
+
+            .content-widget ul,
+            .content-widget ol,
+            .content-widget li,
+            {
+                margin: 0 auto !important;
+                padding: 0 !important;
+            }
+
+            .content-widget li
+            {
+                margin: 0;
+                padding: 0;
+                /*display: block;*/
+                list-style: circle;
+                position: relative;
+                line-height: 30px;
+            }
+
+            .content-widget li a
+            {
+                color: black;
+                text-decoration: none;
+                font-weight: bold;
+                position: relative;
+            }
+
+            .content-widget li a:hover,
+            .content-widget li a:focus
+            {
+                text-decoration: none;
+                outline: none;
+                color: #009a44;
+            }
+
+            .content-widget li a small,
+            .content-widget li a span
+            {
+                color: #999;
+                font-size: x-small;
+                font-weight: normal;
+            }
+            .content-widget h4{
+                color: #009a44;
+                font-weight: bold;
+                font-size: 20px;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+            .news-date{
+                color: #999;
+                font-size: x-small;
+                font-weight: normal;
+                margin-top: -10px;
+            }
+        </style>
+
+        <div class="content-widget">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4><strong>BACA JUGA</strong></h4>
+                    <ol>
+                        <?php 
+                            $entries = new Object_TasbihNews_List();
+                            $entries->setLimit(4);
+                            $entries->setOrderKey("o_creationDate");
+                            $entries->setOrder("desc");
+                            foreach ($entries as $key) {
+                         ?>
+                            <li>
+                                <a href="tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                    <?php echo $key->title; ?>
+                                </a>
+                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
+                            </li>
+                        <?php } ?>
+                    </ol>
+                </div><!--/ .col-xs-12 -->
+            </div><!--/ .row -->
+        </div><!--/ .content-widget -->
+
     </div><!--/ .description -->
-        
+
 </div><!--/ #newsletter-allianz -->
 
 <link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
@@ -263,29 +384,29 @@
         /*
          * jQueryUI DatePicker
          */
-	var sex;
-	$("input:radio[name=jenisKelamin]").click(function() {
-			sex= $(this).val();
-	});
+    var sex;
+    $("input:radio[name=jenisKelamin]").click(function() {
+            sex= $(this).val();
+    });
 
         $('#Kalkulasi').click(function() {
-        
-	    //get current date format //dd/yy/mm
-	    var fullDate = new Date()
+
+        //get current date format //dd/yy/mm
+        var fullDate = new Date()
             var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
-	    var currentDate = fullDate.getDate() + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
-	    
+        var currentDate = fullDate.getDate() + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
+
             var tanggalpembuatan = currentDate;
             var tanggallahir = $('#tgl-lahir').val();
-            
-	   // var sex = $('#JenisKelamin option:Selected').val();
+
+       // var sex = $('#JenisKelamin option:Selected').val();
             var usia = $('#usia').val();
             var frekuensi = $('#Frekuensi option:Selected').val();
             var asuransijiwa = $('#asuransi-jiwa').val();
             var kontribusi = $('#masa-premi option:Selected').val();
             var unfnum = accounting.unformat(asuransijiwa,0,",");
 
-			
+
 
 
             if( asuransijiwa == '' || asuransijiwa >= 49000000 ||tanggalpembuatan == '' || tanggallahir == ''){
@@ -298,9 +419,9 @@
                     alert("Mohon Periksa Inputan Anda");
             }else{
 
-	   
-            
-	    $.ajax({
+
+
+        $.ajax({
                 url      : '/kalkulator-tasbih/',
                 type     : 'POST',
                 data     : {
@@ -315,26 +436,34 @@
                             },
                     success  : function(data){
                     //console.log(data);
-		    $('.waiting-calc').hide();		    
+            $('.waiting-calc').hide();
                     $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
                      document.location.href='/tasbih/tasbih-kedua';
                 }
 
-                
+
             });
 
 
             }
-            
+
         });
 
     });
     $(function() {
+        var d = new Date();
+        var y = d.getFullYear();
+        minyear = y - 55;
+        maxyear = y - 18;
+        range = minyear+':'+maxyear;
+        def = '1/1/'+minyear;
        $('#tgl-hitung, #tgl-lahir').datepicker({
-        changeMonth: true,
-        changeYear: true,
-        yearRange: "-100:+0"
+            defaultDate: def,
+            changeMonth: true,
+            changeYear: true,
+            yearRange: range
         });
+
     });
 
     $(document).ready(function(){

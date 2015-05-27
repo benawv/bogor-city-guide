@@ -195,22 +195,35 @@
                                 echo $alamat."<br />";
                                 echo "Telp. ".$telp."<br />";
                                 echo "Fax. ".$fax."<br />";
-                                echo "Contact Agent. ".$telp."<br />";
-                                echo "Email Agent. ".$emailAgent;
+                                echo "Hubungi Agen. ".$telp."<br />";
+                                echo "Email Agen. ".$emailAgent;
                             ?>
                         </p>
-                        <!--<p> DI HIDE DULU YAA
-                            Parameter dari tasbih: <br />
+                        <!-- <p> DI HIDE DULU YAA
+                            Parameter dari tasbih: <br /> -->
+
                             <?php
-                                //$session = new Zend_Session_Namespace('tasbih');
-                                ////unset($session->name);
-                                //echo "Nama user: ".$session->name."<br />";
-                                //echo "Email: ".$session->email."<br />";
+
+                                $session = new Zend_Session_Namespace('calculation');
+                                if(isset($session->name)){
+                                    //unset($session->name);
+                                    $content;
+                                    $content.="Nama user: ".$session->name."<br />";
+                                    $content.="Email: ".$session->email."<br />";
+                                    $content.="phone: ".$session->phone."<br />";
+                                    $content.="Tanggal di Buat: ".$session->date_tglBuat."<br />";
+                                    $content.="Tanggal Lahir: ".$session->date_tglLahir."<br />";
+                                    $content.="Jenis Kelamin: ".$session->JenisKelamin."<br />";
+                                    $content.="Frekuensi Pembayaran: ".$session->Frekuensi."<br />";
+                                    $content.="Asuransi Jiwa: ".$session->AJ."<br />";
+                                    $content.="Kontribusi Pertahun: ".$session->Kontribusi."<br />";
+                                    $content.="Calculation: ".$session->Calculation."<br />";
+                                }
                             ?>
-                        </p>-->
+                        </p>
                     <?php }?>
-                    <a href="mailto:<?php echo $emailAgent;?>?Subject=Call%20Kantor" target="_top" class="btn btn-sendmail">Email Agent</a>&nbsp;
-                    <a href="tel:<?php echo $telp;?>" target="_top" class="btn btn-sendmail hide">Contact Agent</a>
+                    <a href="mailto:<?php echo $emailAgent;?>?Subject=Tasbih<?php //echo $session->source; ?>&body=<?php echo $content; ?>" target="_top" class="btn btn-sendmail">Email Agen</a>&nbsp;
+                    <a href="tel:<?php echo $telp;?>" target="_top" class="btn btn-sendmail hide">Hubungi Agen</a>
                 </div><!--/ .section-right-60 -->
             </div><!--/ .description-width-66 -->
         </div><!--/ .full-w -->
