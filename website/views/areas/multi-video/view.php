@@ -34,6 +34,11 @@
 	    width: 100%;
 	    height: 100%;
 	}
+	@media only screen and (max-width : 640px) and (min-width: 600px){
+		.slides.customMulti , .slides.customMulti #navigate, .slides.customMulti #membername, .slides.customMulti ul.cus-slide #membername{
+			display: block !important;
+		}
+	}
 </style>
 
 	<style type="text/css">
@@ -125,7 +130,7 @@
 	
 	
 	<div style="clear: both;padding-top:50px;">
-		<ul class="slides">
+		<ul class="slides customMulti">
 				<div id="membername" style="width: 580px;">
 					<div class="cus-slide prev"><span class="arrow"></span></div>
 					<div class="super_navi cus_super_navi">
