@@ -87,6 +87,16 @@
             top: 10px;
         }
     }
+    @media only screen and (max-width:640px){
+        .kalkulasi{
+            width: 100%;
+            text-align: center;
+        }
+        .kalkulasi img{
+            display: inherit;
+            margin-left:-34px;
+        }
+    }
   
 </style>
 
@@ -258,7 +268,7 @@
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
                             <?php $asets=Asset::getByPath('/icon-tasbih/calculator.png');?>
-                            <button class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" 
+                            <button class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" 
                             id="Kalkulasi" name="next" style="background-color:#009a44"> 
                             <img src="<?php echo $asets; ?>" alt="background-galeri" class="img-responsive icon-submit" />
                             <font class="font-submit">Kalkulasi</font></button>
