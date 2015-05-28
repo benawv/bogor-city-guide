@@ -294,7 +294,7 @@
 </div>
 <div id="fb-root"></div>
 <script>
-console.log("<?php echo "ini body email: $content; ?>")
+console.log("<?php echo ini body email: $content; ?>");
 
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
