@@ -542,7 +542,7 @@
                                 <a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
                             </div>
                         </div>
-                        <img src="<?php echo $news_stack[0]['images'];?>" class="thumb1 clickPage" title="Laporan Perkembangan Unit Link 2014" width="304" height="295" alt="Laporan Perkembangan Unit Link 2014">         
+                        <img src="<?php echo $news_stack[0]['thumb'];?>" class="thumb1 clickPage" title="Laporan Perkembangan Unit Link 2014" width="304" height="295" alt="Laporan Perkembangan Unit Link 2014">         
                         <div class="description thumb1 clickPage">
                             <?php echo $news_stack[0]['teaser'];?>
                         </div>
@@ -558,7 +558,7 @@
                                 <a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
                             </div>
                         </div>
-                        <img src="<?php echo $news_stack[1]['images'];?>" class="thumb1 clickPage" title="Laporan Perkembangan Unit Link 2014" width="304" height="295" alt="Laporan Perkembangan Unit Link 2014">         
+                        <img src="<?php echo $news_stack[1]['thumb'];?>" class="thumb1 clickPage" title="Laporan Perkembangan Unit Link 2014" width="304" height="295" alt="Laporan Perkembangan Unit Link 2014">         
                         <div class="description thumb1 clickPage">
                             <?php echo $news_stack[1]['teaser'];?>
                         </div>
@@ -574,7 +574,7 @@
                                 <a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
                             </div>
                         </div>
-                        <img src="<?php echo $news_stack[2]['images'];?>" class="thumb1 clickPage" title="Laporan Perkembangan Unit Link 2014" width="304" height="295" alt="Laporan Perkembangan Unit Link 2014">         
+                        <img src="<?php echo $news_stack[2]['thumb'];?>" class="thumb1 clickPage" title="Laporan Perkembangan Unit Link 2014" width="304" height="295" alt="Laporan Perkembangan Unit Link 2014">         
                         <div class="description thumb1 clickPage">
                             <?php echo $news_stack[2]['teaser'];?>
                         </div>
@@ -647,7 +647,7 @@
                                 <a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
                             </div>
                         </div>
-                        <img src="<?php echo $news_stack[3]['images'];?>" class="thumb1 clickPage" title="Laporan Perkembangan Unit Link 2014" width="304" height="295" alt="Laporan Perkembangan Unit Link 2014">         
+                        <img src="<?php echo $news_stack[3]['thumb'];?>" class="thumb1 clickPage" title="Laporan Perkembangan Unit Link 2014" width="304" height="295" alt="Laporan Perkembangan Unit Link 2014">         
                         <div class="description thumb1 clickPage">
                             <?php echo $news_stack[3]['teaser'];?>
                         </div>
@@ -663,7 +663,7 @@
                                 <a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
                             </div>
                         </div>
-                        <img src="<?php echo $news_stack[4]['images'];?>" class="thumb1 clickPage" title="Laporan Perkembangan Unit Link 2014" width="304" height="295" alt="Laporan Perkembangan Unit Link 2014">         
+                        <img src="<?php echo $news_stack[4]['thumb'];?>" class="thumb1 clickPage" title="Laporan Perkembangan Unit Link 2014" width="304" height="295" alt="Laporan Perkembangan Unit Link 2014">         
                         <div class="description thumb1 clickPage">
                             <?php echo $news_stack[4]['teaser'];?>
                         </div>
@@ -672,16 +672,16 @@
                     <div class="item" id="item-left-6" style="position: absolute; left: 652px; top: 0px;">
                         <div class="heading">
                             <h2 class="title_news  clickPage">
-                                <a href="<?php echo $news_stack[0]['link'];?>" class="thumbnail thumbnail-popup id1" title="Download Laporan Unit Link"><?php echo $news_stack[0]['title'];?></a>               
+                                <a href="<?php echo $news_stack[5]['link'];?>" class="thumbnail thumbnail-popup id1" title="Download Laporan Unit Link"><?php echo $news_stack[5]['title'];?></a>               
                             </h2>
                             <div class="btn-group">
                                 <a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
                                 <a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
                             </div>
                         </div>
-                        <img src="<?php echo $news_stack[0]['images'];?>" class="thumb1 clickPage" title="Laporan Perkembangan Unit Link 2014" width="304" height="295" alt="Laporan Perkembangan Unit Link 2014">         
+                        <img src="<?php echo $news_stack[5]['thumb'];?>" class="thumb1 clickPage" title="Laporan Perkembangan Unit Link 2014" width="304" height="295" alt="Laporan Perkembangan Unit Link 2014">         
                         <div class="description thumb1 clickPage">
-                            <?php echo $news_stack[0]['teaser'];?>
+                            <?php echo $news_stack[5]['teaser'];?>
                         </div>
                     </div>
 
