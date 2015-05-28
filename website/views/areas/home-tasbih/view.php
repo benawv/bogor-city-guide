@@ -512,6 +512,7 @@
 
                         $news_stack[$i]=array(
                                 "date"=>$items->newsdate,
+                                "video"=>$items->video->data,
                                 "teaser"=>$items->deskripsisingkat,
                                 "link"=>"/tasbih/artikel/".$items->o_key."-".$items->o_id,
                                 "title"=> $items->title,
@@ -523,8 +524,8 @@
                     }/*
                     echo "<pre>";
                     print_r($news_stack);
-                    echo "</pre>";
-                    */?>
+                    echo "</pre>";*/
+                    ?>
 <section class="mt32 mb72"><!--section artikel-->
     <div class="container" style="max-width: 960px;">
         <div class="container boxes-view">
@@ -535,14 +536,20 @@
                     <div class="item" id="item-left-1" style="position: absolute; left: 0px; top: 0px;">
                         <div class="heading">
                             <h2 class="title_news  clickPage">
-                                <a href="<?php echo $news_stack[0]['link'];?>" class="thumbnail thumbnail-popup id1" title="Download Laporan Unit Link"><?php echo $news_stack[0]['title'];?></a>               
+                                <a href="<?php echo $news_stack[0]['link'];?>" class="thumbnail thumbnail-popup id1" title="<?php echo $news_stack[0]['title'];?>"><?php echo $news_stack[0]['title'];?></a>               
                             </h2>
                             <div class="btn-group">
                                 <a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
                                 <a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
                             </div>
                         </div>
+                         <?php if(isset($news_stack[0]['video'])){ ?>
+
+                            <iframe width="304" height="295" src="https://www.youtube.com/embed/<?php echo $news_stack[0]['video'];?>" frameborder="0" allowfullscreen></iframe>
+
+                        <?php }else{ ?>
                         <img src="<?php echo $news_stack[0]['thumb'];?>" class="thumb1 clickPage" title="Laporan Perkembangan Unit Link 2014" width="304" height="295" alt="Laporan Perkembangan Unit Link 2014">         
+                        <?php } ?>
                         <div class="description thumb1 clickPage">
                             <?php echo $news_stack[0]['teaser'];?>
                         </div>
@@ -551,15 +558,20 @@
                     <div class="item" id="item-left-2" style="position: absolute; left: 326px; top: 0px;">
                         <div class="heading">
                             <h2 class="title_news  clickPage">
-                                <a href="<?php echo $news_stack[1]['link'];?>" class="thumbnail thumbnail-popup id1" title="Download Laporan Unit Link"><?php echo $news_stack[1]['title'];?></a>               
+                                <a href="<?php echo $news_stack[1]['link'];?>" class="thumbnail thumbnail-popup id1" title="<?php echo $news_stack[1]['title'];?>"><?php echo $news_stack[1]['title'];?></a>               
                             </h2>
                             <div class="btn-group">
                                 <a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
                                 <a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
                             </div>
                         </div>
-                        <img src="<?php echo $news_stack[1]['thumb'];?>" class="thumb1 clickPage" title="Laporan Perkembangan Unit Link 2014" width="304" height="295" alt="Laporan Perkembangan Unit Link 2014">         
-                        <div class="description thumb1 clickPage">
+                        <?php if(isset($news_stack[1]['video'])){ ?>
+
+                            <iframe width="304" height="295" src="https://www.youtube.com/embed/<?php echo $news_stack[1]['video'];?>" frameborder="0" allowfullscreen></iframe>
+
+                        <?php }else{ ?>
+                        <img src="<?php echo $news_stack[1]['thumb'];?>" class="thumb1 clickPage" title="<?php echo $news_stack[1]['title'];?>" width="304" height="295" alt="<?php echo $news_stack[1]['title'];?>">         
+                        <?php } ?>                        <div class="description thumb1 clickPage">
                             <?php echo $news_stack[1]['teaser'];?>
                         </div>
                     </div>
@@ -567,15 +579,20 @@
                     <div class="item" id="item-left-3" style="position: absolute; left: 652px; top: 0px;">
                         <div class="heading">
                             <h2 class="title_news  clickPage">
-                                <a href="<?php echo $news_stack[2]['link'];?>" class="thumbnail thumbnail-popup id1" title="Download Laporan Unit Link"><?php echo $news_stack[2]['title'];?></a>               
+                                <a href="<?php echo $news_stack[2]['link'];?>" class="thumbnail thumbnail-popup id1" title="<?php echo $news_stack[2]['title'];?>"><?php echo $news_stack[2]['title'];?></a>               
                             </h2>
                             <div class="btn-group">
                                 <a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
                                 <a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
                             </div>
                         </div>
-                        <img src="<?php echo $news_stack[2]['thumb'];?>" class="thumb1 clickPage" title="Laporan Perkembangan Unit Link 2014" width="304" height="295" alt="Laporan Perkembangan Unit Link 2014">         
-                        <div class="description thumb1 clickPage">
+                        <?php if(isset($news_stack[2]['video'])){ ?>
+
+                            <iframe width="304" height="295" src="https://www.youtube.com/embed/<?php echo $news_stack[2]['video'];?>" frameborder="0" allowfullscreen></iframe>
+
+                        <?php }else{ ?>
+                        <img src="<?php echo $news_stack[2]['thumb'];?>" class="thumb1 clickPage" title="<?php echo $news_stack[2]['title'];?>" width="304" height="295" alt="<?php echo $news_stack[2]['title'];?>">         
+                        <?php } ?>                        <div class="description thumb1 clickPage">
                             <?php echo $news_stack[2]['teaser'];?>
                         </div>
                     </div>
@@ -640,51 +657,71 @@
                     <div class="item" id="item-left-4" style="position: absolute; left: 0px; top: 0px;">
                         <div class="heading">
                             <h2 class="title_news  clickPage">
-                                <a href="<?php echo $news_stack[3]['link'];?>" class="thumbnail thumbnail-popup id1" title="Download Laporan Unit Link"><?php echo $news_stack[3]['title'];?></a>               
+                                <a href="<?php echo $news_stack[3]['link'];?>" class="thumbnail thumbnail-popup id1" title="<?php echo $news_stack[3]['title'];?>"><?php echo $news_stack[3]['title'];?></a>               
                             </h2>
                             <div class="btn-group">
                                 <a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
                                 <a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
                             </div>
                         </div>
-                        <img src="<?php echo $news_stack[3]['thumb'];?>" class="thumb1 clickPage" title="Laporan Perkembangan Unit Link 2014" width="304" height="295" alt="Laporan Perkembangan Unit Link 2014">         
+                         <?php if(isset($news_stack[3]['video'])){ ?>
+
+                            <iframe width="304" height="295" src="https://www.youtube.com/embed/<?php echo $news_stack[3]['video'];?>" frameborder="0" allowfullscreen></iframe>
+
+                        <?php }else{ ?>
+                        <img src="<?php echo $news_stack[3]['thumb'];?>" class="thumb1 clickPage" title="<?php echo $news_stack[3]['title'];?>" width="304" height="295" alt="<?php echo $news_stack[3]['title'];?>">         
+                        <?php } ?>                        
                         <div class="description thumb1 clickPage">
                             <?php echo $news_stack[3]['teaser'];?>
                         </div>
                     </div>
-                    
+                    <?php if(isset($news_stack[4]['title'])){ ?>
                     <div class="item" id="item-left-5" style="position: absolute; left: 326px; top: 0px;">
                         <div class="heading">
                             <h2 class="title_news  clickPage">
-                                <a href="<?php echo $news_stack[4]['link'];?>" class="thumbnail thumbnail-popup id1" title="Download Laporan Unit Link"><?php echo $news_stack[4]['title'];?></a>               
+                                <a href="<?php echo $news_stack[4]['link'];?>" class="thumbnail thumbnail-popup id1" title="<?php echo $news_stack[4]['title'];?>"><?php echo $news_stack[4]['title'];?></a>               
                             </h2>
                             <div class="btn-group">
                                 <a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
                                 <a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
                             </div>
                         </div>
-                        <img src="<?php echo $news_stack[4]['thumb'];?>" class="thumb1 clickPage" title="Laporan Perkembangan Unit Link 2014" width="304" height="295" alt="Laporan Perkembangan Unit Link 2014">         
+                        <?php if(isset($news_stack[4]['video'])){ ?>
+
+                            <iframe width="304" height="295" src="https://www.youtube.com/embed/<?php echo $news_stack[4]['video'];?>" frameborder="0" allowfullscreen></iframe>
+
+                        <?php }else{ ?>
+                        <img src="<?php echo $news_stack[4]['thumb'];?>" class="thumb1 clickPage" title="<?php echo $news_stack[4]['title'];?>" width="304" height="295" alt="<?php echo $news_stack[4]['title'];?>">         
+                        <?php } ?>   
                         <div class="description thumb1 clickPage">
                             <?php echo $news_stack[4]['teaser'];?>
                         </div>
                     </div>
+                    <?php } ?>
                     
+                    <?php if(isset($news_stack[5]['title'])){ ?>
                     <div class="item" id="item-left-6" style="position: absolute; left: 652px; top: 0px;">
                         <div class="heading">
                             <h2 class="title_news  clickPage">
-                                <a href="<?php echo $news_stack[5]['link'];?>" class="thumbnail thumbnail-popup id1" title="Download Laporan Unit Link"><?php echo $news_stack[5]['title'];?></a>               
+                                <a href="<?php echo $news_stack[5]['link'];?>" class="thumbnail thumbnail-popup id1" title="<?php echo $news_stack[5]['title'];?>"><?php echo $news_stack[5]['title'];?></a>               
                             </h2>
                             <div class="btn-group">
                                 <a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
                                 <a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
                             </div>
                         </div>
-                        <img src="<?php echo $news_stack[5]['thumb'];?>" class="thumb1 clickPage" title="Laporan Perkembangan Unit Link 2014" width="304" height="295" alt="Laporan Perkembangan Unit Link 2014">         
+                        <?php if(isset($news_stack[5]['video'])){ ?>
+
+                            <iframe width="304" height="295" src="https://www.youtube.com/embed/<?php echo $news_stack[5]['video'];?>" frameborder="0" allowfullscreen></iframe>
+
+                        <?php }else{ ?>
+                        <img src="<?php echo $news_stack[5]['thumb'];?>" class="thumb1 clickPage" title="<?php echo $news_stack[5]['title'];?>" width="304" height="295" alt="<?php echo $news_stack[5]['title'];?>">         
+                        <?php } ?>            
                         <div class="description thumb1 clickPage">
                             <?php echo $news_stack[5]['teaser'];?>
                         </div>
                     </div>
-
+                    <?php } ?>
                     <!-- Modal Premi -->
 
                     <!-- Modal Fakta Klaim -->
