@@ -3156,7 +3156,7 @@ strong {
         margin-left: 0px;
         margin-right: 0px;
     }
-    footer.contentinfo .clearfix .container{
+    footer.contentinfo .meta .container{
       width: auto;
       min-width: auto;
     }
