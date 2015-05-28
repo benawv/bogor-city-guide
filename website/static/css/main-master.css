@@ -3157,8 +3157,8 @@ strong {
         margin-right: 0px;
     }
     footer.contentinfo .meta .container{
-      width: auto;
-      min-width: auto;
+      width: auto !important;
+      min-width: auto !important;
     }
 }
 @media only screen and (max-width : 800px) and (min-width: 480px) {
