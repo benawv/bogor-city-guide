@@ -12,24 +12,49 @@
                 $smoking = $_POST['smoking'];
                 $email = $_POST['email'];
                 
+                //Calculatiom
+                $premi = 10000000+2000000+300000+40000;
+                print_r($premi);
+                
                 //Saving Database
                 $getId=Object_Abstract::getByPath('/kalkulator-live-insurance/');//get folder id
                 $cookie = new Object_LiveInsurance();
-                //$cookie->setTanggalPembuatan($date_tglBuat);
                 $cookie->setNama($nama);
                 $cookie->setEmail($email);
                 $cookie->setNoHP($nohp);
                 $cookie->setJenisKelamin($gender);
                 $cookie->setCriticalIllnessAccelerated($cia);
                 $cookie->setUangPertanggungan($uangpertanggungan);
-                $cookie->setDetailAsuransiJiwa($AsuransiJiwa);
-                $cookie->setMassaPembayaranKontribusi($Kontribusi);
-                $cookie->setKontribusiBerkala($Calculation);                
-                $cookie->setO_key('premium_tasbih_'.strtotime(date("YmdHis")));
+                $cookie->setMerokok($smoking);
+                $cookie->setPremi($premi);                
+                $cookie->setO_key('live_insurance'.strtotime(date("YmdHis")));
                 $cookie->setO_parentId($getId->o_id);
                 $cookie->setO_index(0);
                 $cookie->setO_published(1);
                 $cookie->save();
+                
+                
+                //Send to Email
+                $hasil = number_format($Calculation,0,",",".");
+                $document = '/email/email-live-insurance';
+                $params = array(
+                                'nama' => $nama,
+                                'email' => $email,
+                                'nohp' => $nohp,
+                                'gender' => $gender,
+                                'cia'=> $cia,
+                                'uangpertanggungan' => $uangpertanggungan,
+                                'smoking' => $smoking,
+                                'premi' => $premi,
+                                );
+
+                $mail = new Pimcore_Mail();
+                $mail->setSubject("Konfirmasi Hasil Kalkulasi Ilustrasi Produk Allianz Tasbih");
+                $mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+                $mail->setDocument($document);
+                $mail->setParams($params);
+                $mail->addTo($email);
+                $mail->send();
                 
             }
         }

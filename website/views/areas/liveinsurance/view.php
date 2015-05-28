@@ -482,8 +482,23 @@
 
 
             }
-        })
+        });
         
+    $(function() {
+        var d = new Date();
+        var y = d.getFullYear();
+        minyear = y - 55;
+        maxyear = y - 18;
+        range = minyear+':'+maxyear;
+        def = '1/1/'+minyear;
+       $('#tgl-hitung, #tgl-lahir').datepicker({
+            defaultDate: def,
+            changeMonth: true,
+            changeYear: true,
+            yearRange: range
+        });
+
+    });
             
     });
     $('#nohp').bind("input", function(){
@@ -525,21 +540,7 @@
         }
     };
     
-    $(function() {
-        var d = new Date();
-        var y = d.getFullYear();
-        minyear = y - 55;
-        maxyear = y - 18;
-        range = minyear+':'+maxyear;
-        def = '1/1/'+minyear;
-       $('#tgl-hitung, #tgl-lahir').datepicker({
-            defaultDate: def,
-            changeMonth: true,
-            changeYear: true,
-            yearRange: range
-        });
 
-    });
 </script>
 
 <!--
