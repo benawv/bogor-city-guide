@@ -205,9 +205,10 @@
                             <?php
 
                                 $session = new Zend_Session_Namespace('calculation');
+                                $content;
                                 if(isset($session->name)){
                                     //unset($session->name);
-                                    $content;
+                                    
                                     $content.="Nama user: ".$session->name."<br />";
                                     $content.="Email: ".$session->email."<br />";
                                     $content.="phone: ".$session->phone."<br />";
@@ -219,6 +220,7 @@
                                     $content.="Kontribusi Pertahun: ".$session->Kontribusi."<br />";
                                     $content.="Calculation: ".$session->Calculation."<br />";
                                 }
+                                
                             ?>
                         </p>
                     <?php }?>
@@ -291,7 +293,10 @@
     </div>
 </div>
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script>
+console.log("<?php echo "ini body email: $content; ?>")
+
+(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
