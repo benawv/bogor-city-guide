@@ -3163,6 +3163,9 @@ strong {
     .content-widget .col-xs-12 ul{
       padding-left: 0px;
     }
+    .faq-item--answer{
+      padding-left: 40px;
+    }
 }
 @media only screen and (max-width : 800px) and (min-width: 480px) {
     /* Sticky */
