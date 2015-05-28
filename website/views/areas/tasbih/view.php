@@ -300,8 +300,8 @@
             {
                 margin: 0;
                 padding: 0;
-                display: block;
-                list-style: none;
+                /*display: block;*/
+                list-style: circle;
                 position: relative;
                 line-height: 30px;
             }
@@ -335,13 +335,19 @@
                 font-size: 20px;
                 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             }
+            .news-date{
+                color: #999;
+                font-size: x-small;
+                font-weight: normal;
+                margin-top: -10px;
+            }
         </style>
 
         <div class="content-widget">
             <div class="row">
                 <div class="col-xs-12">
                     <h4><strong>BACA JUGA</strong></h4>
-                    <ul>
+                    <ol>
                         <?php 
                             $entries = new Object_TasbihNews_List();
                             $entries->setLimit(4);
@@ -352,11 +358,11 @@
                             <li>
                                 <a href="tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
                                     <?php echo $key->title; ?>
-                                    <span><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></span>
                                 </a>
+                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
                             </li>
                         <?php } ?>
-                    </ul>
+                    </ol>
                 </div><!--/ .col-xs-12 -->
             </div><!--/ .row -->
         </div><!--/ .content-widget -->
