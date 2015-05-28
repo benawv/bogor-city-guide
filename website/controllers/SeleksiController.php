@@ -16,18 +16,18 @@ class SeleksiController extends Website_Controller_Action {
 				
 				$date2 = strtotime(date('Y-m-d 18:00'));
 				$today2 = new Pimcore_Date($date2);
-				//echo $today;
-				//die();
-				//if($tgl1 <= $tgl2)
-				if($tgl1 <= $today2)
-				{
-					$this->enableLayout();
-					$this->setLayout('ajfc');
-					$this->view->peserta = $data;
-				}
-				else{
+				////echo $today;
+				////die();
+				////if($tgl1 <= $tgl2)
+				//if($tgl1 <= $today2)
+				//{
+				//	$this->enableLayout();
+				//	$this->setLayout('ajfc');
+				//	$this->view->peserta = $data;
+				//}
+				//else{
 					$this->redirect("/expire/expire-page");
-				}
+				//}
 			}
 		}
 		else
