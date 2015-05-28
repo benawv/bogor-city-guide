@@ -141,7 +141,7 @@
         <div class="content-calc">
             <div class="col-md-12">
 
-                <form class="form-horizontal" role="form">
+                <div class="form-horizontal">
 
                     <div class="form-box">
 
@@ -266,7 +266,7 @@
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
 
-                </form>
+                </div>
 
 
 

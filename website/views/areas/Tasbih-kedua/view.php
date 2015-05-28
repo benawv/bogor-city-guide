@@ -117,7 +117,7 @@
         <div class="content-calc">
             <div class="col-md-12">
 
-                <form class="form-horizontal" role="form">
+                <div class="form-horizontal" role="form">
 
                     <div class="form-box">
                         <div><h3 >Terima kasih Anda telah melakukan kalkulasi ilustrasi produk Allianz Tasbih. Hasil kalkulasi Anda akan dikirimkan ke email pribadi Anda. Silahkan isi field dibawah ini.</h3>
@@ -196,7 +196,7 @@
                     </ul>
                 </div><!--/ .col-md-12 -->
 
-                </form>
+                </div>
     <nav class="main-navigation">
 
                 
