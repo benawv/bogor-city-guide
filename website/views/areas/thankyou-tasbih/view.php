@@ -178,9 +178,9 @@ $(document).ready(function(){
                               'Calculation' : Calculation,
                               'source' :'Kalkulator Tasbih User'
                               },
-                      complete  : function(data){
+                  complete  : function(data){
                          // console.log(data);
-                          document.location.href='/agen-locator';
+                          document.location.href='/agent-locator';
                       }  
               });            
         });
