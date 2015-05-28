@@ -505,7 +505,7 @@
 <?php
 
                     $listnews = new Object_TasbihNews_List();
-                    $listnews->setLimit(4);
+                    $listnews->setLimit(6);
                     $listnews->setOrder('desc');
                     $i=0;
                     foreach($listnews as $items){
