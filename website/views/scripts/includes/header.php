@@ -117,26 +117,26 @@ $(function(){
 			
 			<nav class="toolbar">
 				<ul class="clearfix">
-					<li>
+					<!--<li>
 						<a href="javascript:void(0);" class="icon-user cusLanguage">
 						<?php 
-							$languages = new Object_Languages_List();
-							if(($uri[1]<>"" and ((($uri[1])=="id") or (($uri[1])=="en"))) ){
-								foreach($languages as $language)
-								{
-								    if( $language->country_id == $uri[1]){
-									echo $language->country_name;
-								    }
-		
-								}
-								
-							}else{
-								echo "Indonesia";
-								
-							}
+							//$languages = new Object_Languages_List();
+							//if(($uri[1]<>"" and ((($uri[1])=="id") or (($uri[1])=="en"))) ){
+							//	foreach($languages as $language)
+							//	{
+							//	    if( $language->country_id == $uri[1]){
+							//		echo $language->country_name;
+							//	    }
+							//
+							//	}
+							//	
+							//}else{
+							//	echo "Indonesia";
+							//	
+							//}
 						?>
 						<img class="arrowDown" src='/website/static/images/arrow/bottom-arrow.png' alt="arrow" /></a>
-					</li>
+					</li>-->
 					<li>
 						<a href="javascript:void(0);" class="icon-user cusLogin">Portal Login <img class="arrowDown" src='/website/static/images/arrow/bottom-arrow.png' alt="arrow" /></a>
 					</li>
