@@ -10,4 +10,4 @@
 <script src="/website/ajfc/js/zabuto_calendar.min.js"></script>
 <script src="/website/ajfc/js/javascripts.js"></script>
 
-<?php echo $this->areablock('halaman-ajfc', array('allowed' => array('sudah-submit','pendaftaran','daftar-peserta','thanks-page','expire-page','home-ajfc','table-text','table-li','proses-seleksi','galeri-ajfc')))?>
+<?php echo $this->areablock('halaman-ajfc', array('allowed' => array('sudah-submit','pendaftaran','daftar-peserta','thanks-page','expire-page','home-ajfc','table-text','table-li','proses-seleksi','galeri-ajfc','pengumuman-ajfc')))?>

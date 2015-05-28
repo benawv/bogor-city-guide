@@ -61,10 +61,11 @@
                                 <li><a href="/">Beranda</a></li>
                                 <li><a href="/galeri-ajfc">Galeri</a></li>
                                 <li><a href="/proses-seleksi">Proses Seleksi</a></li>
-                		<li class="active"><a href="/tanya-jawab">Tanya Jawab</a></li>
-                		<li><a href="/kebijakan-privasi">Kebijakan Privasi</a></li>
+								<li class="active"><a href="/tanya-jawab">Tanya Jawab</a></li>
+								<li><a href="/kebijakan-privasi">Kebijakan Privasi</a></li>
                                 <li><a href="/pendaftaran">Pendaftaran</a></li>
-				<li><a href="/daftar-peserta">Daftar Peserta</a></li>                                
+								<li><a href="/daftar-peserta">Daftar Peserta</a></li>
+								<li><a href="/pengumuman">Pengumuman</a></li>
                             </ul>
                         </div><!--/ .sidebar-item--content -->
                     </div><!--/ .sidebar-item -->

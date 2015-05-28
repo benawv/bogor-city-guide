@@ -7,7 +7,8 @@
 <header>
 
     <div class="background">
-        <img src="/website/ajfc/img/bg-faq.jpg" alt="Home" class="img-responsive" />
+        <?php $asets=Asset::getByPath('/ajfc/background/bgtanya-jawab.jpg');?>
+        <img src="<?php echo $asets; ?>" alt="background pengumuman" class="img-responsive" />
     </div><!--/ .background -->
 
 </header>
@@ -23,22 +24,26 @@
 
                     <div class="main-content--header">
                         <h1 class="mb12"><?php echo $this->input('title_page_faq')?></h1>
+						<?php echo $this->wysiwyg("textPengumuman");?>
                     </div><!--/ .main-content--header -->
+					<br /><br />
 
                     <table id="example" class="display" cellspacing="0" width="100%">
                         <thead>
                             <tr>
                             <th>No</th>
                             <th>Nama</th>
+							<th>Tanggal Lahir</th>
                             <th>No Peserta</th>
-                            <th>Tanggal Lahir</th>
                             </tr>
                         </thead>
 
                         <tbody>
                             <?php
                                 $data = new Object_DataPesertaAJFC_List();
-				$data->setOrderKey("namaLengkap");
+								$data->setOrderKey("namaLengkap");
+								$data->setOrder("asc");
+								$data->setCondition("lulus = 1");
                                 $x = 1;
                                 $NoDada = "";
                                 foreach($data as $peserta)
@@ -62,8 +67,8 @@
                                 <tr>
                                 <td><?php echo $x;?></td>
                                 <td><?php echo ucwords(strtolower($peserta->getNamaLengkap()));?></td>
-                                <td><?php echo $NoDada;?></td>
                                 <td><?php if($peserta->getTanggalLahir()!="" || $peserta->getTanggalLahir()!= NULL){echo date("d / m / Y",strtotime($peserta->getTanggalLahir()));}?></td>
+								<td><?php echo $NoDada;?></td>
                                 </tr>
                             <?php
                                     $x++;
@@ -101,8 +106,8 @@
 								<li><a href="/tanya-jawab">Tanya Jawab</a></li>
 								<li><a href="/kebijakan-privasi">Kebijakan Privasi</a></li>
                                 <li><a href="/pendaftaran">Pendaftaran</a></li>
-								<li class="active"><a href="/daftar-peserta">Daftar Peserta</a></li>
-								<li><a href="/pengumuman">Pengumuman</a></li>
+								<li><a href="/daftar-peserta">Daftar Peserta</a></li>
+								<li class="active"><a href="/pengumuman">Pengumuman</a></li>
                             </ul>
                         </div><!--/ .sidebar-item--content -->
                     </div><!--/ .sidebar-item -->
