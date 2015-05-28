@@ -74,6 +74,15 @@
             margin-left:-34px;
         }
     }
+
+    @media only screen and (max-width:320px){
+        .kalkulasi{
+            text-align: left;
+        }
+        .kalkulasi font{
+            margin-left: 177px;
+        }
+    }
 </style>
 <header>
     <nav class="main-navigation" style="max-width:1140px; margin:auto;">
