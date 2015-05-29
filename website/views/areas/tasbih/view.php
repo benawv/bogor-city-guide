@@ -353,7 +353,7 @@
             .content-widget h4{
                 color: #009a44;
                 font-weight: bold;
-                font-size: 20px;
+                font-size: 17px;
                 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             }
             .news-date{

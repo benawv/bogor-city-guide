@@ -135,65 +135,70 @@
     }
     
     .content-widget
-    {
-        border-top: 1px solid #DDD;
-        padding: 16px 20px;
-        margin-bottom: 32px;
-    }
+            {
+                /*border-top: 1px solid #DDD;*/
+                padding: 16px 20px;
+                margin-bottom: 32px;
+            }
 
-    .content-widget h4
-    {
-        margin-bottom: 8px;
-    }
+            .content-widget h4
+            {
+                margin-bottom: 8px;
+            }
 
-    .content-widget ul,
-    .content-widget ol,
-    .content-widget li,
-    {
-        margin: 0 auto !important;
-        padding: 0 !important;
-    }
+            .content-widget ul,
+            .content-widget ol,
+            .content-widget li,
+            {
+                margin: 0 auto !important;
+                padding: 0 !important;
+            }
 
-    .content-widget li
-    {
-        margin: 0;
-        padding: 0;
-        display: block;
-        list-style: none;
-        position: relative;
-        line-height: 30px;
-    }
+            .content-widget li
+            {
+                margin: 0;
+                padding: 0;
+                /*display: block;*/
+                list-style: circle;
+                position: relative;
+                line-height: 30px;
+            }
 
-    .content-widget li a
-    {
-        color: black;
-        text-decoration: none;
-        font-weight: bold;
-        position: relative;
-    }
+            .content-widget li a
+            {
+                color: black;
+                text-decoration: none;
+                font-weight: bold;
+                position: relative;
+            }
 
-    .content-widget li a:hover,
-    .content-widget li a:focus
-    {
-        text-decoration: none;
-        outline: none;
-        color: #009a44;
-    }
+            .content-widget li a:hover,
+            .content-widget li a:focus
+            {
+                text-decoration: none;
+                outline: none;
+                color: #009a44;
+            }
 
-    .content-widget li a small,
-    .content-widget li a span
-    {
-        color: #999;
-        font-size: x-small;
-        font-weight: normal;
-    }
-    .content-widget h4{
-        color: #009a44;
-        font-weight: bold;
-        font-size: 20px;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
-
+            .content-widget li a small,
+            .content-widget li a span
+            {
+                color: #999;
+                font-size: x-small;
+                font-weight: normal;
+            }
+            .content-widget h4{
+                color: #009a44;
+                font-weight: bold;
+                font-size: 17px;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+            .news-date{
+                color: #999;
+                font-size: x-small;
+                font-weight: normal;
+                margin-top: -10px;
+            }
 </style>
 
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
