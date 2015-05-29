@@ -105,4 +105,7 @@ class EmailController extends Website_Controller_Action {
 	public function emailajfcAction(){
 		
 	}
+	public function emaillulusAction(){
+		
+	}
 }
