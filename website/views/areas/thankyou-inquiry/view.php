@@ -12,7 +12,7 @@
 
     <div>
 
-        
+
 <div class="pimcore_area_tasbih pimcore_area_content">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
@@ -37,7 +37,7 @@
     .form-box{ border: solid 1px #ddd; padding: 16px 20px; margin-bottom: 32px; }
     .form-control{ border-radius: 0; }
         nav.main-navigation a.nav-item.home::after {
-      content: "\f015"; }        
+      content: "\f015"; }
     nav.main-navigation a.nav-item.chat::after {
       content: "\f003  "; }
     nav.main-navigation a.nav-item {
@@ -67,15 +67,15 @@
   pointer-events: none;
 }
         nav.main-navigation a.nav-item.blueA{
-      background: #003781;}        
-    
+      background: #003781;}
+
     nav.main-navigation a.nav-item.greenChat{
       background: #B20065;}
 
       nav.main-navigation a.nav-item.blueA::before {
         background: #3122F9; }
 </style>
-<header>
+<header style="margin: 48px auto 0;">
         <nav class="main-navigation" style="max-width:1140px; margin:auto;">
             <div class="row">
 
@@ -84,25 +84,25 @@
                         <h4 style="font-size:18px"><small>Beranda</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/kalkulator/tasbih" class="nav-item green sitemap">
                         <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/tanya-jawab" class="nav-item orange question">
                         <h4 style="font-size:18px"><small>Informasi produk</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
                         <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/inquiry-form" class="nav-item grey chat">
                         <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
@@ -110,10 +110,10 @@
                 </div><!--/ .col-xs-12 -->
             </div>
             <div class="row">
-                
+
             </div>
     </nav>
-    
+
 </header>
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
 
@@ -127,7 +127,7 @@
             <div class="col-md-12">
 
                 <div class="form-box" id="notif-confirm">
-    
+
     <h3  style=" color:black;"><strong>Terima kasih Anda telah mengirimkan permintaan Anda. Anda akan segera dihubungi oleh agen Allianz Star Network atau temukan agen terdekat. </strong></h3>
                    <br />
     <center><input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen"></center>
@@ -135,11 +135,103 @@
 
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
+        <style>
+
+            .content-widget
+            {
+                border-top: 1px solid #DDD;
+                padding: 16px 20px;
+                margin-bottom: 32px;
+            }
+
+            .content-widget h4
+            {
+                margin-bottom: 8px;
+            }
+
+            .content-widget ul,
+            .content-widget ol,
+            .content-widget li,
+            {
+                margin: 0 auto !important;
+                padding: 0 !important;
+            }
+
+            .content-widget li
+            {
+                margin: 0;
+                padding: 0;
+                /*display: block;*/
+                list-style: circle;
+                position: relative;
+                line-height: 30px;
+            }
+
+            .content-widget li a
+            {
+                color: black;
+                text-decoration: none;
+                font-weight: bold;
+                position: relative;
+            }
+
+            .content-widget li a:hover,
+            .content-widget li a:focus
+            {
+                text-decoration: none;
+                outline: none;
+                color: #009a44;
+            }
+
+            .content-widget li a small,
+            .content-widget li a span
+            {
+                color: #999;
+                font-size: x-small;
+                font-weight: normal;
+            }
+            .content-widget h4{
+                color: #009a44;
+                font-weight: bold;
+                font-size: 17px;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+            .news-date{
+                color: #999;
+                font-size: x-small;
+                font-weight: normal;
+                margin-top: -10px;
+            }
+        </style>
+
+        <div class="content-widget">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4><strong>BACA JUGA</strong></h4>
+                    <ol>
+                        <?php 
+                            $entries = new Object_TasbihNews_List();
+                            $entries->setLimit(4);
+                            $entries->setOrderKey("o_creationDate");
+                            $entries->setOrder("desc");
+                            foreach ($entries as $key) {
+                         ?>
+                            <li>
+                                <a href="tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                    <?php echo $key->title; ?>
+                                </a>
+                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
+                            </li>
+                        <?php } ?>
+                    </ol>
+                </div><!--/ .col-xs-12 -->
+            </div><!--/ .row -->
+        </div><!--/ .content-widget -->
     </div><!--/ .description -->
 </div><!--/ #newsletter-allianz -->
 
 <link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
-        
+
 
 
 <!--
@@ -167,18 +259,18 @@
             var target = '#modal-' + hash;
             $( target ).modal( 'show' );
         }
-        
+
         $(this).on('click', '.inquiry-send', function(e){
-            
+
             var nama=$('#nama').val();
             var kelamin=$('#JenisKelamin').val();
             var bod=$('#DOB').val();
             var email=$('#email').val();
             var nohp=$('#nohp').val();
             var prov=$('#provinsi_id').val();
-            
+
             //alert(bod);
-            
+
             if( nama == '' || email == '' || nohp == '' || bod == '' ||  nohp.length <= 8 || prov == ''){
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
@@ -229,15 +321,15 @@
                 $('html, body').animate({scrollTop:$("#"+id[0]).offset().top-90}, 500);
             }
         });
-        
+
         $('#DOB').datepicker({
             changeMonth: true,
             changeYear: true,
             yearRange: "-100:+0"
         });
-        
+
     });
-    
+
     function validateEMAIL(surat)
     {
         var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -252,7 +344,7 @@
             return surat;
         }
     };
-    
+
     $('#nohp').bind("input", function(){
        var re = /^[0-9]*$/;
 
@@ -265,22 +357,22 @@
             document.getElementById('notifNoHP').style.display= 'none';
         }
 
-    });   
+    });
     $('#pesan').bind("input", function(){
         var n = $('#pesan').val().length;
         var max = 250;
-        
+
         if(n > max){
-               $('#pesan').attr('readonly','readonly');        
+               $('#pesan').attr('readonly','readonly');
         }
-        
+
         $('#counterString').html(250-n);
-        
+
 //        var CountStr = parseInt($('#counterString').html());
-//        var re = /^[a-zA-Z0-9]*$/; 
+//        var re = /^[a-zA-Z0-9]*$/;
 //        var del = /^[\b]*$/;
 //        var value= $(this).html();
-//        
+//
 //        if(del.value){
 //            alert('test');
 //            document.getElementById('notif-nama').style.disbled= 'false';
@@ -300,9 +392,9 @@
 //        }
 
     });
-    
 
-    
+
+
     function validateNumber(value){
         if(value.length <= 8 ){
             document.getElementById('notifNoHP').style.display= 'block';
@@ -314,5 +406,5 @@
     };
 </script>
 
-	</div>
+    </div>
 
