@@ -110,7 +110,7 @@
 
                     .content-widget
                     {
-                        border-top: 1px solid #DDD;
+                        border-top: none; /*1px solid #DDD;*/
                         padding: 16px 20px;
                         margin-bottom: 32px;
                     }
@@ -301,8 +301,8 @@
             <div class="row">
                 <div class="col-xs-12">
                     <h4><strong>BACA JUGA</strong></h4>
-                    <ol>
-                        <?php 
+                    <ol style="padding: 0;">
+                        <?php
                             $entries = new Object_TasbihNews_List();
                             $entries->setLimit(4);
                             $entries->setOrderKey("o_creationDate");
