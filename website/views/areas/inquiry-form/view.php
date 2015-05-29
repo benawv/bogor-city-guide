@@ -394,7 +394,7 @@
             .content-widget h4{
                 color: #009a44;
                 font-weight: bold;
-                font-size: 20px;
+                font-size: 17px;
                 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             }
             .news-date{
@@ -408,8 +408,8 @@
             <div class="row">
                 <div class="col-xs-12">
                     <h4><strong>BACA JUGA</strong></h4>
-                    <ul>
-                        <?php
+                    <ol>
+                        <?php 
                             $entries = new Object_TasbihNews_List();
                             $entries->setLimit(4);
                             $entries->setOrderKey("o_creationDate");
@@ -419,11 +419,11 @@
                             <li>
                                 <a href="tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
                                     <?php echo $key->title; ?>
-                                    <span><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></span>
                                 </a>
+                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
                             </li>
                         <?php } ?>
-                    </ul>
+                    </ol>
                 </div><!--/ .col-xs-12 -->
             </div><!--/ .row -->
         </div><!--/ .content-widget -->
