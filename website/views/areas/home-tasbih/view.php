@@ -538,7 +538,7 @@
         {
             .container.boxes-view
             {
-                padding: 0 15px !important;
+                padding: 0 30px !important;
             }
         }
     </style>
