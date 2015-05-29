@@ -166,95 +166,89 @@
 
                     <div class="form-box">
 
+                        <label><strong>Ilustrasi ini berguna untuk menghitung perkiraan biaya yang Anda bayarkan untuk melindungi diri Anda, jika terjadi risiko yang Anda alami di masa yang akan datang.</strong></label>
 
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>Masukan tanggal lahir Anda<br>(Minimum usia dari 18 tahun sampai 55 tahun)</label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
+                                <label id="notif-tgllahir" style="display:none; color: #f00;">
+                                    Mohon maaf, umur yang Anda masukan belum sesuai dengan ketentuan ilustrasi
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
 
-                    <label><strong>Ilustrasi ini berguna untuk menghitung perkiraan biaya yang Anda bayarkan untuk melindungi diri Anda, jika terjadi risiko yang Anda alami di masa yang akan datang.</strong></label>
-
-
-
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Masukan tanggal lahir Anda<br>(Minimum usia dari 18 tahun sampai 55 tahun)</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
-                            <label id="notif-tgllahir" style="display:none; color: #f00;">
-                                Mohon maaf, umur yang Anda masukan belum sesuai dengan ketentuan ilustrasi
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Jenis Kelamin</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <label class="radio-inline"><input name="jenisKelamin" value="l" type="Radio">Pria</label>
-                                </div>
-                                <div class="col-xs-6">
-                                    <label class="radio-inline"><input name="jenisKelamin" value="p" type="Radio">Wanita</label>
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>Jenis Kelamin</label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <label class="radio-inline"><input name="jenisKelamin" value="l" type="Radio">Pria</label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <label class="radio-inline"><input name="jenisKelamin" value="p" type="Radio">Wanita</label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div><!--/ .form-group -->
+                        </div><!--/ .form-group -->
 
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Berarti usia Anda</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" id="usia" placeholder="Usia (Tahun)" readonly>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>Berarti usia Anda</label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" id="usia" placeholder="Usia (Tahun)" readonly>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
 
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Termin Pembayaran</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <select class="form-control" name="Frekuensi" id="Frekuensi">
-                                <option value="3">Triwulan</option>
-                                <option value="2">Semesteran</option>
-                                <option value="1">Tahunan</option>
-                            </select>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>Termin Pembayaran</label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <select class="form-control" name="Frekuensi" id="Frekuensi">
+                                    <option value="3">Triwulan</option>
+                                    <option value="2">Semesteran</option>
+                                    <option value="1">Tahunan</option>
+                                </select>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
 
                     </div><!--/ .form-box -->
                     <div class="form-box">
 
-                    <label><strong>Santunan Meninggal Dunia</strong></label>
+                        <label><strong>Santunan Meninggal Dunia</strong></label>
 
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Berapa uang pertanggungan yang Anda butuhkan bila terjadi risiko</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>Berapa uang pertanggungan yang Anda butuhkan bila terjadi risiko</label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
 
-                            <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Min Rp.50.000.000">
-                <label id="notif-asuransijiwa" style="display:none; color: #f00;">
-                                Mohon maaf uang pertanggungan yang Anda masukan kurang dari Rp. 50,000,000.-
-                            </label>
-                        </div><!--/ .col-md-4 -->
-            <div class="col-md-4"> <span>*Uang pertanggungan yang akan diberikan bila terjadi risiko pada tertanggung.</span></div>
+                                <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Min Rp.50.000.000">
+                                <label id="notif-asuransijiwa" style="display:none; color: #f00;">
+                                    Mohon maaf uang pertanggungan yang Anda masukan kurang dari Rp. 50,000,000.-
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4"> <span>*Uang pertanggungan yang akan diberikan bila terjadi risiko pada tertanggung.</span></div>
+                        </div><!--/ .form-group -->
 
-                    </div><!--/ .form-group -->
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Berapa lama pembayaran premi/iuran yang Anda inginkan</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <select class="form-control" name="masa-premi" id="masa-premi">
-                                <option value="5">5 tahun</option>
-                                <option value="10">10 tahun</option>
-                                <option value="15">15 tahun</option>
-                            </select>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>Berapa lama pembayaran premi/iuran yang Anda inginkan</label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <select class="form-control" name="masa-premi" id="masa-premi">
+                                    <option value="5">5 tahun</option>
+                                    <option value="10">10 tahun</option>
+                                    <option value="15">15 tahun</option>
+                                </select>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
 
                     </div><!--/ .form-box -->
 
@@ -263,18 +257,18 @@
                     </div><!--/ .form-box -->
 
                     <div class="form-box result-calc" style="display:none; ">
-            <label><strong>Setoran Tahunan</strong></label>
+                        <label><strong>Setoran Tahunan</strong></label>
 
-            <div class="form-group">
-                <div class="col-md-4">
-                <label>Massa Pembayaran Premi Pertahun</label>
-                </div><!--/ .col-md-4 -->
-                <div class="col-md-4">
-                <input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly>
-                </div><!--/ .col-md-4 -->
-            </div><!--/ .form-group -->
+                        <div class="form-group">
+                            <div class="col-md-4">
+                            <label>Massa Pembayaran Premi Pertahun</label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                            <input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
 
-            </div>
+                    </div>
 
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
@@ -288,10 +282,6 @@
                     </div><!--/ .form-group -->
 
                 </div>
-
-
-
-
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
 
