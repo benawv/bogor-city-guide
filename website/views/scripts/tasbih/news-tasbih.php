@@ -91,7 +91,7 @@
     .sidebar
     {
         /* min-height: 0 !important; */
-        padding: 24px 36px;
+        padding: 24px 36px 99999px;
     }
 
     .main-content p:last-child
@@ -153,7 +153,7 @@
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/inquiry-form" class="nav-item grey chat">
-                        <h4 style="font-size:18px"><small>Inquiry Form</small></h4>
+                        <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
             </div>
@@ -163,7 +163,7 @@
 
     <div class="page-wrapper-outer">
 
-        <section class="page-wrapper mt32 mb72" style="margin-top: -165px !important;">
+        <section class="page-wrapper mt32 mb72" style="margin-top: -171px !important;">
             <div class="container"  style="max-width: 960px">
             <div class="row">
                 <div class="col-xs-12 col-md-8 pr0">
