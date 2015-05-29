@@ -28,13 +28,33 @@ class ApiController extends Zend_Rest_Controller {
         $name = $this->_getParam('nama');
         $email = $this->_getParam('email');
         $nohp = $this->_getParam('nohp');
-        
+        $date_tglBuat = $this->_getParam('date_tglBuat');
+        $date_tglLahir = $this->_getParam('date_tglLahir');
+        $JenisKelamin = $this->_getParam('JenisKelamin');
+        $Usia = $this->_getParam('Usia');
+        $Frekuensi = $this->_getParam('Frekuensi');
+        $AsuransiJiwa = $this->_getParam('AsuransiJiwa');
+        $AJ = $this->_getParam('AJ');
+        $Kontribusi = $this->_getParam('Kontribusi');
+        $Calculation = $this->_getParam('Calculation');
+        $source = $this->_getParam('source');
+
         //$name = "robbi test";
         
         $session = new Zend_Session_Namespace('tasbih');
         $session->name = $name;
         $session->email = $email;
         $session->phone = $nohp;
+        $session->date_tglBuat = $date_tglBuat;
+        $session->date_tglLahir = $date_tglLahir;
+        $session->JenisKelamin = $JenisKelamin;
+        $session->Usia = $Usia;
+        $session->Frekuensi = $Frekuensi;
+        $session->AsuransiJiwa = $AsuransiJiwa;
+        $session->AJ= $AJ;
+        $session->Kontribusi = $Kontribusi;
+        $session->Calculation = $Calculation;
+        $session->source = $source;
         
         echo "<pre>";
         print_r($session->name);

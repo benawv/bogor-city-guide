@@ -133,6 +133,66 @@
           font-size: initial !important;
         }
     }
+    
+    .content-widget
+    {
+        border-top: 1px solid #DDD;
+        padding: 16px 20px;
+        margin-bottom: 32px;
+    }
+
+    .content-widget h4
+    {
+        margin-bottom: 8px;
+    }
+
+    .content-widget ul,
+    .content-widget ol,
+    .content-widget li,
+    {
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+
+    .content-widget li
+    {
+        margin: 0;
+        padding: 0;
+        display: block;
+        list-style: none;
+        position: relative;
+        line-height: 30px;
+    }
+
+    .content-widget li a
+    {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        position: relative;
+    }
+
+    .content-widget li a:hover,
+    .content-widget li a:focus
+    {
+        text-decoration: none;
+        outline: none;
+        color: #009a44;
+    }
+
+    .content-widget li a small,
+    .content-widget li a span
+    {
+        color: #999;
+        font-size: x-small;
+        font-weight: normal;
+    }
+    .content-widget h4{
+        color: #009a44;
+        font-weight: bold;
+        font-size: 20px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
 
 </style>
 
@@ -276,6 +336,30 @@
 
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
+        <div class="content-widget">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4><strong>BACA JUGA</strong></h4>
+                    <ul>
+                        <?php 
+                            $entries = new Object_TasbihNews_List();
+                            $entries->setLimit(4);
+                            $entries->setOrderKey("o_creationDate");
+                            $entries->setOrder("desc");
+                            foreach ($entries as $key) {
+                         ?>
+                            <li>
+                                <a href="tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                    <?php echo $key->title; ?>
+                                    <span><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></span>
+                                </a>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div><!--/ .col-xs-12 -->
+            </div><!--/ .row -->
+        </div><!--/ .content-widget -->
+        
     </div><!--/ .description -->
 </div><!--/ #newsletter-allianz -->
 

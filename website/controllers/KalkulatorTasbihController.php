@@ -79,6 +79,9 @@
             $AJ = $session->AJ;
             $Kontribusi = $session->Kontribusi;
             $Calculation = $session->Calculation;
+			
+			$date_tglBuat1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglBuat)));
+            $date_tglLahir1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglLahir)));
            /*             
 				echo $date_tglBuat."<br>";
 				echo $date_tglLahir."<br>";
@@ -131,10 +134,10 @@
 			$hasil = number_format($Calculation,0,",",".");
 			$document = '/email/email-tasbih';
 			$params = array(
-							'tglhitung' => $TanggalPembuatan,
+							'tglhitung' => $date_tglBuat1,
 							'nama' => $Nama,
 							'email' => $Email,
-							'tgllahir' => $TanggalLahir,
+							'tgllahir' => $date_tglLahir1,
 							'usia'=> $Usia,
 							'kontribusi' => $Kontribusi,
 							'AJ' => $AJ,

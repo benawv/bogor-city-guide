@@ -285,13 +285,57 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
+                            <label>Nama</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Nama Anda" id="nama" tabindex="6" maxlength="32" required>
+                            <label id="notif-nama" style="display:none; color: #f00;">Maaf Anda Belum Memasukkan Nama</label>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+                    
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>Nomor Handphone (Min. 8 Digit)</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="0812345xxx" id="nohp" tabindex="6" maxlength="32" required onfocusout="this.value=validateNumber(this.value)">
+                            <label id="notif-nohp" style="display:none; color: #f00;">Maaf Anda Belum Memasukkan No Handphone</label>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+                    
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>E-Mail</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <input type="email" class="form-control" placeholder="Alamat E-Mail" id="email" tabindex="6" maxlength="32" required onfocusout="this.value=validateEMAIL(this.value)">
+                            <label id="notif-email" style="display:none; color: #f00;">Maaf Anda Belum Memasukkan Email</label>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+                    
+                    <div class="form-group">
+                        <div class="col-md-4">
                             <label>Jenis Kelamin</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="1" id="gender">
+                                <option value="Pilih">Pilih</option>
                                 <option value="M">Pria</option>
                                 <option value="F">Wanita</option>
                             </select>
+                            <label id="notif-jeniskelamin" style="display:none; color: #f00;">Maaf Anda Belum Memilih</label>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+                    
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>Masukan tanggal lahir Anda<br>(Minimum usia dari 18 tahun sampai 55 tahun)</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
+                            <label id="notif-tgllahir" style="display:none; color: #f00;">
+                                Mohon maaf, umur yang Anda masukan belum sesuai dengan ketentuan ilustrasi 
+                            </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -301,9 +345,12 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="2" id="uang_pertanggungan">
-                                <option value="">Pilih</option>
+                                <option value="Pilih">Pilih</option>
                                 <option value="1">1M</option>
+                                <option value="2">500juta</option>
+                                <option value="3">250juta</option>
                             </select>
+                            <label id="notif-uangpertanggungan" style="display:none; color: #f00;">Maaf Anda Belum Memilih</label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -313,9 +360,12 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="3" id="critical_illness_accelerated">
-                                <option value="">Pilih</option>
+                                <option value="Pilih">Pilih</option>
                                 <option value="1">1M</option>
+                                <option value="2">500juta</option>
+                                <option value="3">250juta</option>
                             </select>
+                            <label id="notif-cia" style="display:none; color: #f00;">Maaf Anda Belum Memilih</label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -325,9 +375,11 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="4" id="smoking">
+                                <option value="Pilih">Pilih</option>
                                 <option value="Y">Ya</option>
                                 <option value="N">Tidak</option>
                             </select>
+                            <label id="notif-merokok" style="display:none; color: #f00;">Maaf Anda Belum Memilih</label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -336,16 +388,7 @@
                             <label>Premi</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" readonly class="form-control disabled" placeholder="0" tabindex="5">
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>E-Mail</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="email" class="form-control" placeholder="Alamat E-Mail" tabindex="6" maxlength="32" required>
+                            <input type="text" readonly class="form-control disabled" placeholder="0" id="premi" tabindex="5">
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -383,8 +426,126 @@
 
 <script>
     $(function(){
+        $('#Kalkulasi').click(function() {
+            var nama = $('#nama').val();
+            var nohp = $('#nohp').val();
+            var gender = $('#gender').val();
+            var uangpertanggungan = $('#uang_pertanggungan').val();
+            var cia = $('#critical_illness_accelerated').val();
+            var smoking = $('#smoking').val();
+            var email = $('#email').val();
+            var tanggallahir = $('#tgl-lahir').val();
+            
+            if(nama == '' || nohp == '' || gender == 'Pilih' || uangpertanggungan == 'Pilih' || cia == 'Pilih' || smoking == 'Pilih' || email == '' || nohp.length() < 8 || tanggallahir == ''){
+                if(nama == ''){
+                    document.getElementById('notif-nama').style.display = 'block';
+                }
+                if(nohp == '' || nohp.length() < 8){
+                    document.getElementById('notif-nohp').style.display = 'block';
+                }
+                if(gender == ''){
+                    document.getElementById('notif-jeniskelamin').style.display = 'block';
+                }
+                if(uangpertanggungan == 'Pilih'){
+                    document.getElementById('notif-uangpertanggungan').style.display = 'block';
+                }
+                if(cia == 'Pilih'){
+                    document.getElementById('notif-cia').style.display = 'block';
+                }
+                if(smoking == 'Pilih'){
+                    document.getElementById('notif-merokok').style.display = 'block';
+                }
+                if(tanggallahir == ''){
+                    document.getElementById('notif-tgllahir').style.display = 'block';
+                }
+                if(email == ''){
+                    document.getElementById('notif-email').style.display = 'block';
+                }
+            }else{
+                
+                    $.ajax({
+                            url      : '/kalkulator-live-insurance/',
+                            type     : 'POST',
+                            data     : {
+                                        'nama' : nama,
+                                        'nohp' : nohp,
+                                        'gender' : gender,
+                                        'uangpertanggungan' : uangpertanggungan,
+                                        'cia' : cia,
+                                        'smoking' : smoking,
+                                        'email' : email,
+                                        'tanggallahir' : tanggallahir
+                                        },
+                                success  : function(data){
+                                //console.log(data);
+                                //$('.waiting-calc').hide();
+                                $('#premi').val(accounting.formatMoney(data, "Rp ", 0,","));
+                            }
+
+
+                    });
+
+
+            }
+        });
+        
+    $(function() {
+        var d = new Date();
+        var y = d.getFullYear();
+        minyear = y - 55;
+        maxyear = y - 18;
+        range = minyear+':'+maxyear;
+        def = '1/1/'+minyear;
+       $('#tgl-hitung, #tgl-lahir').datepicker({
+            defaultDate: def,
+            changeMonth: true,
+            changeYear: true,
+            yearRange: range
+        });
 
     });
+            
+    });
+    $('#nohp').bind("input", function(){
+               var re = /^[0-9]*$/;
+
+                var value = $('#nohp').val();
+                $(this).val(value);
+                if(!re.test(value)){
+                    document.getElementById('notif-nohp').style.display= 'block';
+                    $('#nohp').val('');
+                }else{
+                    document.getElementById('notif-nohp').style.display= 'none';
+                }
+
+            });
+        
+        function validateEMAIL(surat)
+        {
+            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+            if(!re.test(surat))
+            {
+                document.getElementById('notif-email').style.display= 'block';
+                return null;
+            }
+            else
+            {
+                document.getElementById('notif-email').style.display= 'none';
+                return surat;
+            }
+        };
+        
+            function validateNumber(value){
+        if(value.length <= 8 ){
+            document.getElementById('notif-nohp').style.display= 'block';
+            return null;
+        }else{
+            document.getElementById('notif-nohp').style.display= 'none';
+            return value;
+        }
+    };
+    
+
 </script>
 
 <!--

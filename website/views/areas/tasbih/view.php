@@ -87,6 +87,27 @@
             top: 10px;
         }
     }
+    @media only screen and (max-width:640px){
+        .kalkulasi{
+            width: 100%;
+            text-align: center;
+        }
+        .kalkulasi img{
+            display: inherit;
+            margin-left:-34px;
+        }
+    }
+    @media only screen and (max-width:320px){
+        .kalkulasi{
+            text-align: left;
+        }
+        .kalkulasi font{
+            margin-left: 177px;
+        }
+        .kalkulasi img{
+            margin-left: 150px;
+        }
+    }
   
 </style>
 
@@ -141,25 +162,25 @@
         <div class="content-calc">
             <div class="col-md-12">
 
-                <form class="form-horizontal" role="form">
+                <div class="form-horizontal">
 
                     <div class="form-box">
 
 
 
-                    <label><strong>Kalkulasi</strong></label>
+                    <label><strong>Ilustrasi ini berguna untuk menghitung perkiraan biaya yang Anda bayarkan untuk melindungi diri Anda, jika terjadi risiko yang Anda alami di masa yang akan datang.</strong></label>
 
 
 
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Tanggal Lahir<br>(Min.  18 tahun, Max. 55 tahun)</label>
+                            <label>Masukan tanggal lahir Anda<br>(Minimum usia dari 18 tahun sampai 55 tahun)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
                             <label id="notif-tgllahir" style="display:none; color: #f00;">
-                                Mohon maaf inputan Anda belum benar
+                                Mohon maaf, umur yang Anda masukan belum sesuai dengan ketentuan ilustrasi 
                             </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -182,7 +203,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Usia (Tahun)</label>
+                            <label>Berarti usia Anda</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="usia" placeholder="Usia (Tahun)" readonly>
@@ -191,7 +212,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Frekuensi Pembayaran</label>
+                            <label>Termin Pembayaran</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" name="Frekuensi" id="Frekuensi">
@@ -209,28 +230,28 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Asuransi Jiwa (Min. Rp.50.000.000)</label>
+                            <label>Berapa uang pertanggungan yang Anda butuhkan bila terjadi risiko</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Asuransi Jiwa (Min. Rp.50.000.000)">
 
+                            <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Min Rp.50.000.000">
                 <label id="notif-asuransijiwa" style="display:none; color: #f00;">
-                                Mohon maaf inputan yang Anda masukkan belum benar
+                                Mohon maaf uang pertanggungan yang Anda masukan kurang dari Rp. 50,000,000.-
                             </label>
                         </div><!--/ .col-md-4 -->
-            <div class="col-md-4"> <span>* Uang pertanggungan asuransi jiwa bila terjadi risiko pada tertanggung.</span></div>
+            <div class="col-md-4"> <span>*Uang pertanggungan yang akan diberikan bila terjadi risiko pada tertanggung.</span></div>
 
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Massa Pembayaran Premi (Tahun)</label>
+                            <label>Berapa lama pembayaran premi/iuran yang Anda inginkan</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" name="masa-premi" id="masa-premi">
-                                <option value="5">5</option>
-                                <option value="10">10</option>
-                                <option value="15">15</option>
+                                <option value="5">5 tahun</option>
+                                <option value="10">10 tahun</option>
+                                <option value="15">15 tahun</option>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -242,23 +263,23 @@
                     </div><!--/ .form-box -->
 
                     <div class="form-box result-calc" style="display:none; ">
-			<label><strong>Setoran Tahunan</strong></label>
+            <label><strong>Setoran Tahunan</strong></label>
     
-			<div class="form-group">
-			    <div class="col-md-4">
-				<label>Massa Pembayaran Premi Pertahun</label>
-			    </div><!--/ .col-md-4 -->
-			    <div class="col-md-4">
-				<input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly>
-			    </div><!--/ .col-md-4 -->
-			</div><!--/ .form-group -->
-			
-		    </div>
-		    
+            <div class="form-group">
+                <div class="col-md-4">
+                <label>Massa Pembayaran Premi Pertahun</label>
+                </div><!--/ .col-md-4 -->
+                <div class="col-md-4">
+                <input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly>
+                </div><!--/ .col-md-4 -->
+            </div><!--/ .form-group -->
+            
+            </div>
+            
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
                             <?php $asets=Asset::getByPath('/icon-tasbih/calculator.png');?>
-                            <button class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" 
+                            <button class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" 
                             id="Kalkulasi" name="next" style="background-color:#009a44"> 
                             <img src="<?php echo $asets; ?>" alt="background-galeri" class="img-responsive icon-submit" />
                             <font class="font-submit">Kalkulasi</font></button>
@@ -266,7 +287,7 @@
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
 
-                </form>
+                </div>
 
 
 
@@ -300,8 +321,8 @@
             {
                 margin: 0;
                 padding: 0;
-                display: block;
-                list-style: none;
+                /*display: block;*/
+                list-style: circle;
                 position: relative;
                 line-height: 30px;
             }
@@ -335,13 +356,19 @@
                 font-size: 20px;
                 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             }
+            .news-date{
+                color: #999;
+                font-size: x-small;
+                font-weight: normal;
+                margin-top: -10px;
+            }
         </style>
 
         <div class="content-widget">
             <div class="row">
                 <div class="col-xs-12">
                     <h4><strong>BACA JUGA</strong></h4>
-                    <ul>
+                    <ol>
                         <?php 
                             $entries = new Object_TasbihNews_List();
                             $entries->setLimit(4);
@@ -352,11 +379,11 @@
                             <li>
                                 <a href="tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
                                     <?php echo $key->title; ?>
-                                    <span><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></span>
                                 </a>
+                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
                             </li>
                         <?php } ?>
-                    </ul>
+                    </ol>
                 </div><!--/ .col-xs-12 -->
             </div><!--/ .row -->
         </div><!--/ .content-widget -->

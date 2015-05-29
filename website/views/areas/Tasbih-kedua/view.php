@@ -64,6 +64,25 @@
 
       nav.main-navigation a.nav-item.blueA::before {
         background: #3122F9; }
+    @media only screen and (max-width:640px){
+        .kalkulasi{
+            width: 100%;
+            text-align: center;
+        }
+        .kalkulasi img{
+            display: inherit;
+            margin-left:-34px;
+        }
+    }
+
+    @media only screen and (max-width:320px){
+        .kalkulasi{
+            text-align: left;
+        }
+        .kalkulasi font{
+            margin-left: 177px;
+        }
+    }
 </style>
 <header>
     <nav class="main-navigation" style="max-width:1140px; margin:auto;">
@@ -117,7 +136,7 @@
         <div class="content-calc">
             <div class="col-md-12">
 
-                <form class="form-horizontal" role="form">
+                <div class="form-horizontal" role="form">
 
                     <div class="form-box">
                         <div><h3 >Terima kasih Anda telah melakukan kalkulasi ilustrasi produk Allianz Tasbih. Hasil kalkulasi Anda akan dikirimkan ke email pribadi Anda. Silahkan isi field dibawah ini.</h3>
@@ -179,7 +198,7 @@
 		    
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
-                          <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next" value="Submit">
+                          <input type="button" class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next" value="Submit">
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
                         
@@ -196,7 +215,7 @@
                     </ul>
                 </div><!--/ .col-md-12 -->
 
-                </form>
+                </div>
     <nav class="main-navigation">
 
                 
