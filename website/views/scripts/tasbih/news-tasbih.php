@@ -91,7 +91,7 @@
     .sidebar
     {
         /* min-height: 0 !important; */
-        padding: 24px 36px 99999px;
+        padding: 24px 36px; /*99999px;*/
     }
 
     .main-content p:last-child
