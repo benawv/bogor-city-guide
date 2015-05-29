@@ -1772,6 +1772,15 @@ footer.contentinfo .container {
   padding: 0; }
 footer.contentinfo .worldwide {
   padding: 30px 0 0; }
+@media (max-width: 360px) {
+  .static-links.mobile.deactive.share{
+    position: relative !important;
+    clear: both;
+  }
+  footer.contentinfo .mw960 .static-links.mobile.deactive.share{
+    right: 0px !important;
+  }
+}
 @media (max-width: 640px) {
   footer.contentinfo .statement {
     padding: 0 15px; }
@@ -1780,7 +1789,7 @@ footer.contentinfo .worldwide {
     footer.contentinfo .static-links > li:first-child {
       padding-left: 15px; }
     footer.contentinfo .static-links a::before {
-      content: "" !important; }
+      content: "\203A\00a0" !important; }
     footer.contentinfo .static-links.mobile.deactive.share {
       right: 15px !important; }
       footer.contentinfo .static-links.mobile.deactive.share a::before {
