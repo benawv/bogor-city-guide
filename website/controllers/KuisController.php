@@ -299,11 +299,18 @@ class KuisController extends Website_Controller_Action {
 		$db = Pimcore_Resource_Mysql::get();
 		
 		$peserta = new Object_DataPesertaAJFC_List();
-		$peserta->setCondition("lulus = 1");
+		$peserta->setCondition("emaillulus <> 1 OR emaillulus is null AND lulus = 1");
 		$peserta->setLimit(20);
 		
 		foreach($peserta as $row)
 		{
+			//echo "<pre>";
+			//print_r($row);
+			//die();
+			$id = $row->getId();
+			$data = Object_DataPesertaAJFC::getById($id);
+			$data->setEmaillulus(1);
+		
 			$noLari = $row->getNoLari();
 			$digit = 4-(int)(strlen($noLari));
 			$noDada = "";
@@ -326,7 +333,8 @@ class KuisController extends Website_Controller_Action {
 			
 			try{
 				$mail->send();
-				echo $row->getNamaLengkap()." email terkirim.<br />";
+				$data->save();
+				echo $row->getNamaLengkap()." email lolos terkirim.<br />";
 			}
 			catch(Exception $e){
 				echo 'ERROR: ',  $e->getMessage(), "\n";
