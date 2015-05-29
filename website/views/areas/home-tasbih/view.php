@@ -528,15 +528,21 @@
                     ?>
 <section class="mt32 mb72"><!--section artikel-->
     <style>
+        .container.boxes-view
+        {
+            max-width: 960px !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+        }
         @media ( max-width: 767px )
         {
             .container.boxes-view
             {
-                padding: 0 15px;
+                padding: 0 15px !important;
             }
         }
     </style>
-    <div class="container boxes-view" style="max-width: 960px; margin: 0 auto; padding: 0;">
+    <div class="container boxes-view" style="">
             <div class="items-container custom_item_home" style="position: relative; height: 1001px;">
 
             <!-- Community -->
