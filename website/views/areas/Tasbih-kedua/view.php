@@ -142,86 +142,102 @@
                         <div><h3 >Terima kasih Anda telah melakukan kalkulasi ilustrasi produk Allianz Tasbih. Hasil kalkulasi Anda akan dikirimkan ke email pribadi Anda. Silahkan isi field dibawah ini.</h3>
                         </div>
                         <br>
-                    <label><strong>Data Diri</strong></label>
+                        <label><strong>Data Diri</strong></label>
                     
 
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Nama</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" id="nama" placeholder="Nama" required onfocusout="this.value=validateNama(this.value)">
-                            <label id="notif-nama" style="display:none; color: #f00;">
-                                Mohon maaf Anda belum atau salah memasukkan nama
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>Nama</label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" id="nama" placeholder="Nama" required onfocusout="this.value=validateNama(this.value)">
+                                <label id="notif-nama" style="display:none; color: #f00;">
+                                    Mohon maaf Anda belum atau salah memasukkan nama
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
 
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>No Handphone (Min. 8 digit)</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" id="nohp" name="nohp" placeholder="No Handphone" required onfocusout="this.value=validateNumber(this.value)">
-                            <label id="notifNoHP" style="display:none; color: #f00;">
-                                Mohon maaf No HP yang Anda masukkan belum benar
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>No Handphone (Min. 8 digit)</label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" id="nohp" name="nohp" placeholder="No Handphone" required onfocusout="this.value=validateNumber(this.value)">
+                                <label id="notifNoHP" style="display:none; color: #f00;">
+                                    Mohon maaf No HP yang Anda masukkan belum benar
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
 
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Email</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required onfocusout="this.value=validateEMAIL(this.value)">
-                            <label id="notifemail" style="display:none; color: #f00;">
-                                Mohon maaf email yang Anda masukkan belum benar
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-
-    
-			<div class="form-group">
-			    <div class="col-md-4">
-				<label>Kontribusi Berkala/ Premi pertahun</label>
-			    </div><!--/ .col-md-4 -->
-			    <div class="col-md-4">
-                <input type="text" class="form-control" id="kontribusi-berkala_view" placeholder="0" value="<?php echo 'Rp. '.number_format($session->Calculation,0,',','.'); ?>" readonly>
-                <input type="hidden" class="form-control" id="kontribusi-berkala" placeholder="0" value="<?php echo $session->Calculation; ?>" readonly>
-			    </div><!--/ .col-md-4 -->
-			</div><!--/ .form-group -->
-			
-		    
-
-		    
-                    <div class="form-group">
-                        <div class="col-md-8 col-md-offset-4">
-                          <input type="button" class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next" value="Submit">
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>Email</label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required onfocusout="this.value=validateEMAIL(this.value)">
+                                <label id="notifemail" style="display:none; color: #f00;">
+                                    Mohon maaf email yang Anda masukkan belum benar
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
+        
+            			<div class="form-group">
+            			    <div class="col-md-4">
+            				<label>Kontribusi Berkala/ Premi pertahun</label>
+            			    </div><!--/ .col-md-4 -->
+            			    <div class="col-md-4">
+                            <input type="text" class="form-control" id="kontribusi-berkala_view" placeholder="0" value="<?php echo 'Rp. '.number_format($session->Calculation,0,',','.'); ?>" readonly>
+                            <input type="hidden" class="form-control" id="kontribusi-berkala" placeholder="0" value="<?php echo $session->Calculation; ?>" readonly>
+            			    </div><!--/ .col-md-4 -->
+            			</div><!--/ .form-group -->
+    			
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
+                              <input type="button" class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next" value="Submit">
+                            </div><!--/ .col-md-12 -->
+                        </div><!--/ .form-group -->
+                            
+                        <div class="col-md-12 note">
+                            <h4 class="mb10"><strong>Note: </strong></h4>
+                            <ul class="mb30">
+                                <li>Jika meninggal dunia karena sakit, Ahli waris akan mendapatkan Santunan meninggal Dunia 100%</li>
+                                <li>Jika meninggal dunia di saat menunaikan Ibadah Haji maka akan mendapatkan Santunan meninggal Dunia sebesar 200%</li>
+                                <li>Selama mengikuti asuransi Tertanggung akan mendapatkan perlindungan Medical Evakuasi</li>
+                                <li>Masa asuransi adalah = masa pembayaran konstribusi / premi + 10 tahun + 1 tahun</li>
+                                <li>Setelah selesai masa pembayaran kontribusi / premi pemegang polis akan mendapatkan tahapan dana pertama sebesar 50% dari santunan meninggal dunia</li>
+                                <li>Setelah tahapan dana pertama pemegang polis akan mendapatkan tahapan dana kedua sebesar sisa saldo dana yang berkembang didalam produk ini</li>
+                                <li>Untuk informasi lebih lengkap silahkan menghubungi Agen atau Kantor pemasaran Allianz terdekat</li>
+                            </ul>
                         </div><!--/ .col-md-12 -->
-                    </div><!--/ .form-group -->
-                        
-                    <div class="col-md-12 note">
-                    <h4 class="mb10"><strong>Note: </strong></h4>
-                    <ul class="mb30">
-                        <li>Jika meninggal dunia karena sakit, Ahli waris akan mendapatkan Santunan meninggal Dunia 100%</li>
-                        <li>Jika meninggal dunia di saat menunaikan Ibadah Haji maka akan mendapatkan Santunan meninggal Dunia sebesar 200%</li>
-                        <li>Selama mengikuti asuransi Tertanggung akan mendapatkan perlindungan Medical Evakuasi</li>
-                        <li>Masa asuransi adalah = masa pembayaran konstribusi / premi + 10 tahun + 1 tahun</li>
-                        <li>Setelah selesai masa pembayaran kontribusi / premi pemegang polis akan mendapatkan tahapan dana pertama sebesar 50% dari santunan meninggal dunia</li>
-                        <li>Setelah tahapan dana pertama pemegang polis akan mendapatkan tahapan dana kedua sebesar sisa saldo dana yang berkembang didalam produk ini</li>
-                        <li>Untuk informasi lebih lengkap silahkan menghubungi Agen atau Kantor pemasaran Allianz terdekat</li>
-                    </ul>
-                </div><!--/ .col-md-12 -->
 
-                </div>
-    <nav class="main-navigation">
-
-                
-
+                    </div>
+                <!-- <nav class="main-navigation"> -->
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
+        
+        <div class="content-widget">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4><strong>BACA JUGA</strong></h4>
+                    <ol>
+                        <?php 
+                            $entries = new Object_TasbihNews_List();
+                            $entries->setLimit(4);
+                            $entries->setOrderKey("o_creationDate");
+                            $entries->setOrder("desc");
+                            foreach ($entries as $key) {
+                         ?>
+                            <li>
+                                <a href="tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                    <?php echo $key->title; ?>
+                                </a>
+                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
+                            </li>
+                        <?php } ?>
+                    </ol>
+                </div><!--/ .col-xs-12 -->
+            </div><!--/ .row -->
+        </div><!--/ .content-widget -->
     </div><!--/ .description -->
                 
 </div><!--/ #newsletter-allianz -->
