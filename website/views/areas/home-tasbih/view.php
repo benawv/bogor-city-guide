@@ -527,7 +527,7 @@
                     echo "</pre>";*/
                     ?>
 <section class="mt32 mb72"><!--section artikel-->
-    <div class="container" style="max-width: 960px;">
+    <div class="container" style="padding-left: 0px; max-width: 960px;">
         <div class="container boxes-view">
             <div class="items-container custom_item_home" style="position: relative; height: 1001px;">
             
