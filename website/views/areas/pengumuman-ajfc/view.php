@@ -76,6 +76,7 @@
                             ?>
                         </tbody>
                     </table>
+					<?php echo $this->wysiwyg("text2Pengumuman");?>
                     <script>
                         $(document).ready(function() {
                             $('#example').DataTable({
