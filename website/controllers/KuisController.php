@@ -299,7 +299,7 @@ class KuisController extends Website_Controller_Action {
 		$db = Pimcore_Resource_Mysql::get();
 		
 		$peserta = new Object_DataPesertaAJFC_List();
-		$data->setCondition("lulus = 1");
+		$peserta->setCondition("lulus = 1");
 		$peserta->setLimit(20);
 		
 		foreach($peserta as $row)
@@ -311,11 +311,11 @@ class KuisController extends Website_Controller_Action {
 			{
 				$noDada = $noDada."0";
 			}
-			$fixNoDada = $noDada.$setLari;
+			$fixNoDada = $noDada.$noLari;
 			
 			$document = '/email/email-lulus';
-			$params = array('name' => ucwords(strtolower($row->getNamaLengkap()))
-							'noPeserta' => $fixNoDada;
+			$params = array('name' => ucwords(strtolower($row->getNamaLengkap())),
+							'noPeserta' => $fixNoDada
 							);
 			$mail = new Pimcore_Mail();
 			$mail->setSubject("Selamat Anda Lolos Tahap 1 AJFC 2015");
@@ -325,7 +325,7 @@ class KuisController extends Website_Controller_Action {
 			$mail->addTo($row->getEmail());
 			
 			try{
-				//$mail->send();
+				$mail->send();
 				echo $row->getNamaLengkap()." email terkirim.<br />";
 			}
 			catch(Exception $e){
