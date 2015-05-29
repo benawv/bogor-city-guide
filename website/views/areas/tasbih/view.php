@@ -67,7 +67,7 @@
   display: block;
 }
 .icon-submit{
-    width: 20px;  
+    width: 20px;
     position: absolute;
     top: 5px;
     margin-left: 15px;
@@ -108,7 +108,7 @@
             margin-left: 150px;
         }
     }
-  
+
 </style>
 
 
@@ -180,7 +180,7 @@
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
                             <label id="notif-tgllahir" style="display:none; color: #f00;">
-                                Mohon maaf, umur yang Anda masukan belum sesuai dengan ketentuan ilustrasi 
+                                Mohon maaf, umur yang Anda masukan belum sesuai dengan ketentuan ilustrasi
                             </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -190,14 +190,14 @@
                             <label>Jenis Kelamin</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                <div class="form-group">
-                    <div class="col-xs-6">
-                        <label class="radio-inline"><input name="jenisKelamin" value="l" type="Radio">Pria</label>
-                    </div>
-                    <div class="col-xs-6">
-                        <label class="radio-inline"><input name="jenisKelamin" value="p" type="Radio">Wanita</label>
-                    </div>
-                </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <label class="radio-inline"><input name="jenisKelamin" value="l" type="Radio">Pria</label>
+                                </div>
+                                <div class="col-xs-6">
+                                    <label class="radio-inline"><input name="jenisKelamin" value="p" type="Radio">Wanita</label>
+                                </div>
+                            </div>
                         </div>
                     </div><!--/ .form-group -->
 
@@ -264,7 +264,7 @@
 
                     <div class="form-box result-calc" style="display:none; ">
             <label><strong>Setoran Tahunan</strong></label>
-    
+
             <div class="form-group">
                 <div class="col-md-4">
                 <label>Massa Pembayaran Premi Pertahun</label>
@@ -273,14 +273,14 @@
                 <input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly>
                 </div><!--/ .col-md-4 -->
             </div><!--/ .form-group -->
-            
+
             </div>
-            
+
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
                             <?php $asets=Asset::getByPath('/icon-tasbih/calculator.png');?>
-                            <button class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" 
-                            id="Kalkulasi" name="next" style="background-color:#009a44"> 
+                            <button class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih"
+                            id="Kalkulasi" name="next" style="background-color:#009a44">
                             <img src="<?php echo $asets; ?>" alt="background-galeri" class="img-responsive icon-submit" />
                             <font class="font-submit">Kalkulasi</font></button>
                             <!-- <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" value="Kalkulasi" style="background-color:#009a44"> -->
@@ -369,7 +369,7 @@
                 <div class="col-xs-12">
                     <h4><strong>BACA JUGA</strong></h4>
                     <ol>
-                        <?php 
+                        <?php
                             $entries = new Object_TasbihNews_List();
                             $entries->setLimit(4);
                             $entries->setOrderKey("o_creationDate");
