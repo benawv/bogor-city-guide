@@ -282,6 +282,17 @@
 
 </header>
 
+<style>
+    @media ( max-width: 992px )
+    {
+        section#calendar-wrapper .row > div.pr0[class^="col-"]
+        {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+    }
+</style>
+
 <section id="calendar-wrapper">
     <div class="container" style="max-width: 960px;">
         <div class="row">
@@ -538,7 +549,7 @@
         {
             .container.boxes-view
             {
-                padding: 0 30px !important;
+                padding: 0 15px !important;
             }
         }
     </style>
