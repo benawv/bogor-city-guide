@@ -100,32 +100,119 @@
     </nav>
 </header>
 
-<div id="newsletter-allianz" class="full-w bg-white nopadding">
-    
-    <div class="description">
+      <div id="newsletter-allianz" class="full-w bg-white nopadding">
+          
+          <div class="description">
 
-        <div class="header-calc">
-            <h1>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
-        </div><!--/ .header-calc -->
+              <div class="header-calc">
+                  <h1>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
+              </div><!--/ .header-calc -->
 
-        <div class="content-calc">
-            <div class="col-md-12">
+              <div class="content-calc">
+                  <div class="col-md-12">
 
-<div class="form-box" id="notif-confirm">
-    <h1 style="text-align:center">TERIMA KASIH</h1>
-    <h3  style=" color:black; text-align:center;"><strong>Kalkulasi ilustrasi produk Allianz Tasbih (sudah dikirimkan ke alamat email Anda)</strong></h3>
-    <h3 style=" color:black; text-align:center;"><strong>Temukan agen terdekat: </strong></h3>
-   <br />
-    <center><input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen"></center>
-  </div>
-                      
-
-     
-
-                   
+                    <div class="form-box" id="notif-confirm">
+                        <h1 style="text-align:center">TERIMA KASIH</h1>
+                        <h3  style=" color:black; text-align:center;"><strong>Kalkulasi ilustrasi produk Allianz Tasbih (sudah dikirimkan ke alamat email Anda)</strong></h3>
+                        <h3 style=" color:black; text-align:center;"><strong>Temukan agen terdekat: </strong></h3>
+                       <br />
+                        <center><input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen"></center>
+                    </div>
 
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
+        <style>
+
+            .content-widget
+            {
+                border-top: 1px solid #DDD;
+                padding: 16px 20px;
+                margin-bottom: 32px;
+            }
+
+            .content-widget h4
+            {
+                margin-bottom: 8px;
+            }
+
+            .content-widget ul,
+            .content-widget ol,
+            .content-widget li,
+            {
+                margin: 0 auto !important;
+                padding: 0 !important;
+            }
+
+            .content-widget li
+            {
+                margin: 0;
+                padding: 0;
+                /*display: block;*/
+                list-style: circle;
+                position: relative;
+                line-height: 30px;
+            }
+
+            .content-widget li a
+            {
+                color: black;
+                text-decoration: none;
+                font-weight: bold;
+                position: relative;
+            }
+
+            .content-widget li a:hover,
+            .content-widget li a:focus
+            {
+                text-decoration: none;
+                outline: none;
+                color: #009a44;
+            }
+
+            .content-widget li a small,
+            .content-widget li a span
+            {
+                color: #999;
+                font-size: x-small;
+                font-weight: normal;
+            }
+            .content-widget h4{
+                color: #009a44;
+                font-weight: bold;
+                font-size: 17px;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+            .news-date{
+                color: #999;
+                font-size: x-small;
+                font-weight: normal;
+                margin-top: -10px;
+            }
+        </style>
+
+        <div class="content-widget">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4><strong>BACA JUGA</strong></h4>
+                    <ol>
+                        <?php 
+                            $entries = new Object_TasbihNews_List();
+                            $entries->setLimit(4);
+                            $entries->setOrderKey("o_creationDate");
+                            $entries->setOrder("desc");
+                            foreach ($entries as $key) {
+                         ?>
+                            <li>
+                                <a href="tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                    <?php echo $key->title; ?>
+                                </a>
+                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
+                            </li>
+                        <?php } ?>
+                    </ol>
+                </div><!--/ .col-xs-12 -->
+            </div><!--/ .row -->
+        </div><!--/ .content-widget -->
     </div><!--/ .description -->
 </div><!--/ #newsletter-allianz -->
 
