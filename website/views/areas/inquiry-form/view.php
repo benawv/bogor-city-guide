@@ -12,7 +12,7 @@
     .form-box{ border: solid 1px #ddd; padding: 16px 20px; margin-bottom: 32px; }
     .form-control{ border-radius: 0; }
         nav.main-navigation a.nav-item.home::after {
-      content: "\f015"; }        
+      content: "\f015"; }
     nav.main-navigation a.nav-item.chat::after {
       content: "\f003  "; }
     nav.main-navigation a.nav-item {
@@ -42,8 +42,8 @@
   pointer-events: none;
 }
         nav.main-navigation a.nav-item.blueA{
-      background: #003781;}        
-    
+      background: #003781;}
+
     nav.main-navigation a.nav-item.greenChat{
       background: #B20065;}
 
@@ -66,25 +66,25 @@
                         <h4 style="font-size:18px"><small>Beranda</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/kalkulator/tasbih" class="nav-item green sitemap">
                         <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/tanya-jawab" class="nav-item orange question">
                         <h4 style="font-size:18px"><small>Pertanyaan Umum</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="http://agen.imkepo.com" target="_blank" class="nav-item red">
                         <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/inquiry-form" class="nav-item grey chat">
                         <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
@@ -92,7 +92,7 @@
                 </div><!--/ .col-xs-12 -->
             </div>
             <div class="row">
-                
+
             </div>
     </nav>
 </header>
@@ -105,7 +105,7 @@
 
     <div>
 
-        
+
 <div class="pimcore_area_tasbih pimcore_area_content">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
@@ -127,13 +127,13 @@
     .box-dent::before{ border-top: 28px solid #009a44 !important;}
     .btn-tasbih{ background: #009a44 !important; }
     .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
-    
+
     @media only screen and (min-width: 1140px){
         body {
           font-size: initial !important;
         }
     }
-    
+
     .content-widget
             {
                 /*border-top: 1px solid #DDD;*/
@@ -214,22 +214,22 @@
 
                 <form class="form-horizontal" role="form">
 
-                    
+
 
                     <div class="form-group">
                         <div class="col-md-4">
                             <label>Nama</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="name" class="form-control" id="nama" placeholder="Nama" required /> 
+                            <input type="name" class="form-control" id="nama" placeholder="Nama" required />
                             <label id="notif-nama" style="display:none; color: #f00;">
                                 Mohon maaf Anda belum atau salah memasukkan nama
                             </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
-                    
-                   
-                    
+
+
+
                     <div class="form-group">
                         <div class="col-md-4">
                             <label>Jenis Kelamin</label>
@@ -237,7 +237,7 @@
                         <div class="col-md-4">
                             <!--<INPUT TYPE="Radio" name="jenisKelamin" VALUE="l" style="display: block;">Pria</INPUT>
                             <INPUT TYPE="Radio" name="jenisKelamin" VALUE="p" style="display: block;">Wanita</INPUT>-->
-                            <div class="form-group">
+                            <div class="row">
                                 <div class="col-xs-6">
                                     <label class="radio-inline"><input type="Radio" style="display: block;" name="jenisKelamin" value="l" style="display:block">Pria</label>
                                 </div>
@@ -272,8 +272,8 @@
                             </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
-                    
-                    
+
+
                     <div class="form-group">
                         <div class="col-md-4">
                             <label>Email</label>
@@ -293,8 +293,8 @@
                         <div class="col-md-4">
                             <select class="form-control" name="provinsi" id="provinsi_id" required>
                                 <?php
-                                    
-                                    $getProv=new Object_MarketingOfficeWilayah_List();                                    
+
+                                    $getProv=new Object_MarketingOfficeWilayah_List();
                                     $getProv->setOrderKey("namaWilayah");
                                     $getProv->setOrder("asc");
                                     foreach($getProv as $items){
@@ -302,17 +302,17 @@
                                             <option value= "<?php echo $items->o_id; ?> "><?php echo $items->namaWilayah; ?></option>
                                         <?php
                                     }
-                                
+
                                 ?>
-                                
-                            
+
+
                             </select>
                             <label id="notifProvinsi" style="display:none; color: #f00;">
                                 Mohon maaf inputan yang Anda masukkan belum benar
                             </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
-                    
+
                     <div class="form-group">
                         <div class="col-md-4">
                             <label>Pesan</label>
@@ -337,7 +337,7 @@
                     </div><!--/ .form-group -->
 
                 </form>
-                
+
 
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
@@ -414,7 +414,7 @@
                 <div class="col-xs-12">
                     <h4><strong>BACA JUGA</strong></h4>
                     <ul>
-                        <?php 
+                        <?php
                             $entries = new Object_TasbihNews_List();
                             $entries->setLimit(4);
                             $entries->setOrderKey("o_creationDate");
@@ -432,12 +432,12 @@
                 </div><!--/ .col-xs-12 -->
             </div><!--/ .row -->
         </div><!--/ .content-widget -->
-        
+
     </div><!--/ .description -->
 </div><!--/ #newsletter-allianz -->
 
 <link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
-        
+
 
 
 <!--
@@ -465,9 +465,9 @@
             var target = '#modal-' + hash;
             $( target ).modal( 'show' );
         }
-        
+
         $(this).on('click', '.inquiry-send', function(e){
-            
+
             var nama=$('#nama').val();
             var kelamin=$('#JenisKelamin').val();
             var bod=$('#DOB').val();
@@ -475,9 +475,9 @@
             var nohp=$('#nohp').val();
             var prov=$('#provinsi_id').val();
             var pesan=$('#pesan').val();
-            
+
             //alert(bod);
-            
+
             if( nama == '' || email == '' || nohp == '' || bod == '' ||  nohp.length <= 8 || prov == '' || pesan == ''){
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
@@ -513,7 +513,7 @@
             }
             e.preventDefault();
         });
-        
+
         $('#DOB').on('change', function() {
 
             var dob = new Date(this.value);
@@ -547,7 +547,7 @@
                 $('html, body').animate({scrollTop:$("#"+id[0]).offset().top-90}, 500);
             }
         });
-        
+
         var d = new Date();
         var y = d.getFullYear();
         minyear = y - 55;
@@ -560,9 +560,9 @@
             changeYear: true,
             yearRange: range
         });
-        
+
     });
-    
+
     function validateEMAIL(surat)
     {
         var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -577,7 +577,7 @@
             return surat;
         }
     };
-    
+
     $('#nohp').bind("input", function(){
        var re = /^[0-9]*$/;
 
@@ -590,22 +590,22 @@
             document.getElementById('notifNoHP').style.display= 'none';
         }
 
-    });   
+    });
     $('#pesan').bind("input", function(){
         var n = $('#pesan').val().length;
         var max = 250;
-        
+
         if(n > max){
-               $('#pesan').attr('readonly','readonly');        
+               $('#pesan').attr('readonly','readonly');
         }
-        
+
         $('#counterString').html(250-n);
-        
+
 //        var CountStr = parseInt($('#counterString').html());
-//        var re = /^[a-zA-Z0-9]*$/; 
+//        var re = /^[a-zA-Z0-9]*$/;
 //        var del = /^[\b]*$/;
 //        var value= $(this).html();
-//        
+//
 //        if(del.value){
 //            alert('test');
 //            document.getElementById('notif-nama').style.disbled= 'false';
@@ -625,9 +625,9 @@
 //        }
 
     });
-    
 
-    
+
+
     function validateNumber(value){
         if(value.length <= 8 ){
             document.getElementById('notifNoHP').style.display= 'block';
@@ -639,5 +639,5 @@
     };
 </script>
 
-	</div>
+    </div>
 
