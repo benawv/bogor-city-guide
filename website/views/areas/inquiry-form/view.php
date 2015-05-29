@@ -78,106 +78,98 @@
 </header>
 
 <div class="header" style="margin-top:-20px;">
+    <div class="container boxes-view">
+        <div>
+            <div class="pimcore_area_tasbih pimcore_area_content">
+                <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/bootstrap.min.css">
+                <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
+                <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
+                <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/main.css">
 
+                <link rel="stylesheet" type="text/css" media="all" href="/website/static/mobilku/tasbih/tasbih.css">
+                <link rel="stylesheet" type="text/css" media="all" href="/website/static/mobilku/wizard-step.css">
 
+                <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/flexslider.css">-->
+                <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/tabs-accordion.css">-->
+                <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/product.css">-->
 
-<div class="container boxes-view">
+                <script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
 
-    <div>
+                <style>
+                    /* Override AJFC's feature box color */
+                    .box-dent--inner{ background: #009a44; }
+                    .box-dent::before{ border-top: 28px solid #009a44 !important;}
+                    .btn-tasbih{ background: #009a44 !important; }
+                    .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
 
+                    @media only screen and (min-width: 1140px){
+                        body {
+                          font-size: initial !important;
+                        }
+                    }
 
-<div class="pimcore_area_tasbih pimcore_area_content">
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
-<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/main.css">
+                    .content-widget
+                    {
+                        border-top: none; /*1px solid #DDD;*/
+                        padding: 16px 20px;
+                        margin-bottom: 32px;
+                    }
 
-<link rel="stylesheet" type="text/css" media="all" href="/website/static/mobilku/tasbih/tasbih.css">
-<link rel="stylesheet" type="text/css" media="all" href="/website/static/mobilku/wizard-step.css">
+                    .content-widget h4
+                    {
+                        margin-bottom: 8px;
+                    }
 
-<!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/flexslider.css">-->
-<!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/tabs-accordion.css">-->
-<!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/product.css">-->
+                    .content-widget ul,
+                    .content-widget ol,
+                    .content-widget li,
+                    {
+                        margin: 0 auto !important;
+                        padding: 0 !important;
+                    }
 
-<script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
+                    .content-widget li
+                    {
+                        margin: 0;
+                        padding: 0;
+                        display: block;
+                        list-style: none;
+                        position: relative;
+                        line-height: 30px;
+                    }
 
-<style>
-    /* Override AJFC's feature box color */
-    .box-dent--inner{ background: #009a44; }
-    .box-dent::before{ border-top: 28px solid #009a44 !important;}
-    .btn-tasbih{ background: #009a44 !important; }
-    .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
+                    .content-widget li a
+                    {
+                        color: black;
+                        text-decoration: none;
+                        font-weight: bold;
+                        position: relative;
+                    }
 
-    @media only screen and (min-width: 1140px){
-        body {
-          font-size: initial !important;
-        }
-    }
+                    .content-widget li a:hover,
+                    .content-widget li a:focus
+                    {
+                        text-decoration: none;
+                        outline: none;
+                        color: #009a44;
+                    }
 
-    .content-widget
-    {
-        border-top: 1px solid #DDD;
-        padding: 16px 20px;
-        margin-bottom: 32px;
-    }
-
-    .content-widget h4
-    {
-        margin-bottom: 8px;
-    }
-
-    .content-widget ul,
-    .content-widget ol,
-    .content-widget li,
-    {
-        margin: 0 auto !important;
-        padding: 0 !important;
-    }
-
-    .content-widget li
-    {
-        margin: 0;
-        padding: 0;
-        display: block;
-        list-style: none;
-        position: relative;
-        line-height: 30px;
-    }
-
-    .content-widget li a
-    {
-        color: black;
-        text-decoration: none;
-        font-weight: bold;
-        position: relative;
-    }
-
-    .content-widget li a:hover,
-    .content-widget li a:focus
-    {
-        text-decoration: none;
-        outline: none;
-        color: #009a44;
-    }
-
-    .content-widget li a small,
-    .content-widget li a span
-    {
-        color: #999;
-        font-size: x-small;
-        font-weight: normal;
-    }
-    .content-widget h4{
-        color: #009a44;
-        font-weight: bold;
-        font-size: 20px;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
-
-</style>
+                    .content-widget li a small,
+                    .content-widget li a span
+                    {
+                        color: #999;
+                        font-size: x-small;
+                        font-weight: normal;
+                    }
+                    .content-widget h4{
+                        color: #009a44;
+                        font-weight: bold;
+                        font-size: 20px;
+                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                    }
+                </style>
 
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
-
     <div class="description">
 
         <div class="header-calc" style="background-color:#707372;">
@@ -186,202 +178,131 @@
 
         <div class="content-calc">
             <div class="col-md-12">
+
                 <form class="form-horizontal" role="form">
-                    <div class="form-box">
-                        <div class="form-group">
-                            <div class="col-md-4">
-                                <label>Nama</label>
-                            </div><!--/ .col-md-4 -->
-                            <div class="col-md-4">
-                                <input type="name" class="form-control" id="nama" placeholder="Nama" required />
-                                <label id="notif-nama" style="display:none; color: #f00;">
-                                    Mohon maaf Anda belum atau salah memasukkan nama
-                                </label>
-                            </div><!--/ .col-md-4 -->
-                        </div><!--/ .form-group -->
 
-                        <div class="form-group">
-                            <div class="col-md-4">
-                                <label>Jenis Kelamin</label>
-                            </div><!--/ .col-md-4 -->
-                            <div class="col-md-4">
-                                <!--<INPUT TYPE="Radio" name="jenisKelamin" VALUE="l" style="display: block;">Pria</INPUT>
-                                <INPUT TYPE="Radio" name="jenisKelamin" VALUE="p" style="display: block;">Wanita</INPUT>-->
-                                <div class="row">
-                                    <div class="col-xs-6">
-                                        <label class="radio-inline"><input type="Radio" style="display: block;" name="jenisKelamin" value="l" style="display:block">Pria</label>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <label class="radio-inline"><input type="Radio" style="display: block;" name="jenisKelamin" value="p" style="display:block">Wanita</label>
-                                    </div>
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>Nama</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <input type="name" class="form-control" id="nama" placeholder="Nama" required />
+                            <label id="notif-nama" style="display:none; color: #f00;">
+                                Mohon maaf Anda belum atau salah memasukkan nama
+                            </label>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>Jenis Kelamin</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <!--<INPUT TYPE="Radio" name="jenisKelamin" VALUE="l" style="display: block;">Pria</INPUT>
+                            <INPUT TYPE="Radio" name="jenisKelamin" VALUE="p" style="display: block;">Wanita</INPUT>-->
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <label class="radio-inline"><input type="Radio" style="display: block;" name="jenisKelamin" value="l" style="display:block">Pria</label>
                                 </div>
-                            </div><!--/ .col-md-4 -->
-                        </div><!--/ .form-group -->
+                                <div class="col-xs-6">
+                                    <label class="radio-inline"><input type="Radio" style="display: block;" name="jenisKelamin" value="p" style="display:block">Wanita</label>
+                                </div>
+                            </div><!--/ .row -->
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
 
-                        <div class="form-group">
-                            <div class="col-md-4">
-                                <label>DOB (Min. 18 tahun)</label>
-                            </div><!--/ .col-md-4 -->
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" id="DOB" value="" placeholder="Tanggal Lahir" />
-                                <label id="notif-DOB" style="display:none; color: #f00;">
-                                    Mohon maaf inputan yang Anda masukkan belum benar
-                                </label>
-                            </div><!--/ .col-md-4 -->
-                        </div><!--/ .form-group -->
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>DOB (Min. 18 tahun)</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="DOB" value="" placeholder="Tanggal Lahir" />
+                            <label id="notif-DOB" style="display:none; color: #f00;">
+                                Mohon maaf inputan yang Anda masukkan belum benar
+                            </label>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
 
-                        <div class="form-group">
-                            <div class="col-md-4">
-                                <label>No Handphone (Min. 8 digit)</label>
-                            </div><!--/ .col-md-4 -->
-                            <div class="col-md-4">
-                                <input type="phone" class="form-control" id="nohp" name="nohp" placeholder="0812345678" required onfocusout="this.value=validateNumber(this.value)" />
-                                <label id="notifNoHP" style="display:none; color: #f00;">
-                                    Mohon maaf No HP yang Anda masukkan belum benar
-                                </label>
-                            </div><!--/ .col-md-4 -->
-                        </div><!--/ .form-group -->
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>No Handphone (Min. 8 digit)</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <input type="phone" class="form-control" id="nohp" name="nohp" placeholder="0812345678" required onfocusout="this.value=validateNumber(this.value)" />
+                            <label id="notifNoHP" style="display:none; color: #f00;">
+                                Mohon maaf No HP yang Anda masukkan belum benar
+                            </label>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
 
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>Email</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required onfocusout="this.value=validateEMAIL(this.value)" />
+                            <label id="notifemail" style="display:none; color: #f00;">
+                                Mohon maaf email yang Anda masukkan belum benar
+                            </label>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
 
-                        <div class="form-group">
-                            <div class="col-md-4">
-                                <label>Email</label>
-                            </div><!--/ .col-md-4 -->
-                            <div class="col-md-4">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required onfocusout="this.value=validateEMAIL(this.value)" />
-                                <label id="notifemail" style="display:none; color: #f00;">
-                                    Mohon maaf email yang Anda masukkan belum benar
-                                </label>
-                            </div><!--/ .col-md-4 -->
-                        </div><!--/ .form-group -->
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>Provinsi</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <select class="form-control" name="provinsi" id="provinsi_id" required>
+                                <?php
 
-                        <div class="form-group">
-                            <div class="col-md-4">
-                                <label>Provinsi</label>
-                            </div><!--/ .col-md-4 -->
-                            <div class="col-md-4">
-                                <select class="form-control" name="provinsi" id="provinsi_id" required>
-                                    <?php
+                                    $getProv=new Object_MarketingOfficeWilayah_List();
+                                    $getProv->setOrderKey("namaWilayah");
+                                    $getProv->setOrder("asc");
+                                    foreach($getProv as $items){
+                                ?>
+                                <option value= "<?php echo $items->o_id; ?> "><?php echo $items->namaWilayah; ?></option>
+                                <?php } ?>
+                            </select>
+                            <label id="notifProvinsi" style="display:none; color: #f00;">
+                                Mohon maaf inputan yang Anda masukkan belum benar
+                            </label>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
 
-                                        $getProv=new Object_MarketingOfficeWilayah_List();
-                                        $getProv->setOrderKey("namaWilayah");
-                                        $getProv->setOrder("asc");
-                                        foreach($getProv as $items){
-                                            ?>
-                                                <option value= "<?php echo $items->o_id; ?> "><?php echo $items->namaWilayah; ?></option>
-                                            <?php
-                                        }
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>Pesan</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <label id="notifPesan" style="display:none; color: #f00;">
+                                Mohon maaf, Anda harus mengisi pesan.
+                            </label>
+                            <textarea cols="35" rows="10" class="form-control" placeholder="Tuliskan Pesan Anda disini Maksimal 250 Kata" id="pesan" ></textarea>
+                            <label id="notifemail" style="display:block; font-size:10px; color: #f00;">
+                                Sisa karakter yang Anda tulis : <span id="counterString">250</span>  Kata
+                            </label>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
 
-                                    ?>
+                    <div class="form-group">
+                        <div class="col-md-2 col-md-offset-4">
+                            <a href="/tasbih/thankyou-inquiry">
+                                <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih inquiry-send" id="Submit" name="Submit" value="Submit">
+                            </a>
+                        </div><!--/ .col-md-12 -->
+                    </div><!--/ .form-group -->
 
-
-                                </select>
-                                <label id="notifProvinsi" style="display:none; color: #f00;">
-                                    Mohon maaf inputan yang Anda masukkan belum benar
-                                </label>
-                            </div><!--/ .col-md-4 -->
-                        </div><!--/ .form-group -->
-
-                        <div class="form-group">
-                            <div class="col-md-4">
-                                <label>Pesan</label>
-                            </div><!--/ .col-md-4 -->
-                            <div class="col-md-4">
-                                <label id="notifPesan" style="display:none; color: #f00;">
-                                    Mohon maaf, Anda harus mengisi pesan.
-                                </label>
-                                <textarea cols="35" rows="10" class="form-control" placeholder="Tuliskan Pesan Anda disini Maksimal 250 Kata" id="pesan" ></textarea>
-                                <label id="notifemail" style="display:block; font-size:10px; color: #f00;">
-                                    Sisa karakter yang Anda tulis : <span id="counterString">250</span>  Kata
-                                </label>
-                            </div><!--/ .col-md-4 -->
-                        </div><!--/ .form-group -->
-
-                        <div class="form-group">
-                            <div class="col-md-2 col-md-offset-4">
-                                <a href="/tasbih/thankyou-inquiry">
-                                    <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih inquiry-send" id="Submit" name="Submit" value="Submit">
-                                </a>
-                            </div><!--/ .col-md-12 -->
-                        </div><!--/ .form-group -->
-                    </div><!-- end form-box -->
                 </form>
+
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
-        <style>
 
-            .content-widget
-            {
-                border-top: 1px solid #DDD;
-                padding: 16px 20px;
-                margin-bottom: 32px;
-            }
-
-            .content-widget h4
-            {
-                margin-bottom: 8px;
-            }
-
-            .content-widget ul,
-            .content-widget ol,
-            .content-widget li,
-            {
-                margin: 0 auto !important;
-                padding: 0 !important;
-            }
-
-            .content-widget li
-            {
-                margin: 0;
-                padding: 0;
-                /*display: block;*/
-                list-style: circle;
-                position: relative;
-                line-height: 30px;
-            }
-
-            .content-widget li a
-            {
-                color: black;
-                text-decoration: none;
-                font-weight: bold;
-                position: relative;
-            }
-
-            .content-widget li a:hover,
-            .content-widget li a:focus
-            {
-                text-decoration: none;
-                outline: none;
-                color: #009a44;
-            }
-
-            .content-widget li a small,
-            .content-widget li a span
-            {
-                color: #999;
-                font-size: x-small;
-                font-weight: normal;
-            }
-            .content-widget h4{
-                color: #009a44;
-                font-weight: bold;
-                font-size: 17px;
-                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            }
-            .news-date{
-                color: #999;
-                font-size: x-small;
-                font-weight: normal;
-                margin-top: -10px;
-            }
-        </style>
         <div class="content-widget">
             <div class="row">
                 <div class="col-xs-12">
                     <h4><strong>BACA JUGA</strong></h4>
-                    <ol>
-                        <?php 
+                    <ol style="padding: 0;">
+                        <?php
                             $entries = new Object_TasbihNews_List();
                             $entries->setLimit(4);
                             $entries->setOrderKey("o_creationDate");
@@ -405,16 +326,11 @@
 
 <link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
 
-
-
 <!--
 </div>
 --></div>
         <div style="clear:both; "></div>
-
-        <div class="items-container">
-        </div><!--/ .container -->
-
+        <div class="items-container"></div><!--/ .container -->
     </div>
 </div><!--/ .container -->
 
