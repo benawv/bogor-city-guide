@@ -294,7 +294,9 @@
 </div>
 <div id="fb-root"></div>
 <script>
-
+$(document).ready(function(){
+    $("#slideshow ul.flex-direction-nav").remove();
+});
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
