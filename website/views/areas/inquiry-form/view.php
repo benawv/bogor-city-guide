@@ -186,134 +186,126 @@
 
         <div class="content-calc">
             <div class="col-md-12">
-
                 <form class="form-horizontal" role="form">
+                    <div class="form-box">
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>Nama</label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <input type="name" class="form-control" id="nama" placeholder="Nama" required />
+                                <label id="notif-nama" style="display:none; color: #f00;">
+                                    Mohon maaf Anda belum atau salah memasukkan nama
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
 
-
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Nama</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="name" class="form-control" id="nama" placeholder="Nama" required />
-                            <label id="notif-nama" style="display:none; color: #f00;">
-                                Mohon maaf Anda belum atau salah memasukkan nama
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Jenis Kelamin</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <!--<INPUT TYPE="Radio" name="jenisKelamin" VALUE="l" style="display: block;">Pria</INPUT>
-                            <INPUT TYPE="Radio" name="jenisKelamin" VALUE="p" style="display: block;">Wanita</INPUT>-->
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <label class="radio-inline"><input type="Radio" style="display: block;" name="jenisKelamin" value="l" style="display:block">Pria</label>
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>Jenis Kelamin</label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <!--<INPUT TYPE="Radio" name="jenisKelamin" VALUE="l" style="display: block;">Pria</INPUT>
+                                <INPUT TYPE="Radio" name="jenisKelamin" VALUE="p" style="display: block;">Wanita</INPUT>-->
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <label class="radio-inline"><input type="Radio" style="display: block;" name="jenisKelamin" value="l" style="display:block">Pria</label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <label class="radio-inline"><input type="Radio" style="display: block;" name="jenisKelamin" value="p" style="display:block">Wanita</label>
+                                    </div>
                                 </div>
-                                <div class="col-xs-6">
-                                    <label class="radio-inline"><input type="Radio" style="display: block;" name="jenisKelamin" value="p" style="display:block">Wanita</label>
-                                </div>
-                            </div>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
+
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>DOB (Min. 18 tahun)</label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" id="DOB" value="" placeholder="Tanggal Lahir" />
+                                <label id="notif-DOB" style="display:none; color: #f00;">
+                                    Mohon maaf inputan yang Anda masukkan belum benar
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
+
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>No Handphone (Min. 8 digit)</label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <input type="phone" class="form-control" id="nohp" name="nohp" placeholder="0812345678" required onfocusout="this.value=validateNumber(this.value)" />
+                                <label id="notifNoHP" style="display:none; color: #f00;">
+                                    Mohon maaf No HP yang Anda masukkan belum benar
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
 
 
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>DOB (Min. 18 tahun)</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" id="DOB" value="" placeholder="Tanggal Lahir" />
-                            <label id="notif-DOB" style="display:none; color: #f00;">
-                                Mohon maaf inputan yang Anda masukkan belum benar
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>Email</label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required onfocusout="this.value=validateEMAIL(this.value)" />
+                                <label id="notifemail" style="display:none; color: #f00;">
+                                    Mohon maaf email yang Anda masukkan belum benar
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
 
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>No Handphone (Min. 8 digit)</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="phone" class="form-control" id="nohp" name="nohp" placeholder="0812345678" required onfocusout="this.value=validateNumber(this.value)" />
-                            <label id="notifNoHP" style="display:none; color: #f00;">
-                                Mohon maaf No HP yang Anda masukkan belum benar
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>Provinsi</label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <select class="form-control" name="provinsi" id="provinsi_id" required>
+                                    <?php
 
+                                        $getProv=new Object_MarketingOfficeWilayah_List();
+                                        $getProv->setOrderKey("namaWilayah");
+                                        $getProv->setOrder("asc");
+                                        foreach($getProv as $items){
+                                            ?>
+                                                <option value= "<?php echo $items->o_id; ?> "><?php echo $items->namaWilayah; ?></option>
+                                            <?php
+                                        }
 
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Email</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required onfocusout="this.value=validateEMAIL(this.value)" />
-                            <label id="notifemail" style="display:none; color: #f00;">
-                                Mohon maaf email yang Anda masukkan belum benar
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Provinsi</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <select class="form-control" name="provinsi" id="provinsi_id" required>
-                                <?php
-
-                                    $getProv=new Object_MarketingOfficeWilayah_List();
-                                    $getProv->setOrderKey("namaWilayah");
-                                    $getProv->setOrder("asc");
-                                    foreach($getProv as $items){
-                                        ?>
-                                            <option value= "<?php echo $items->o_id; ?> "><?php echo $items->namaWilayah; ?></option>
-                                        <?php
-                                    }
-
-                                ?>
+                                    ?>
 
 
-                            </select>
-                            <label id="notifProvinsi" style="display:none; color: #f00;">
-                                Mohon maaf inputan yang Anda masukkan belum benar
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
+                                </select>
+                                <label id="notifProvinsi" style="display:none; color: #f00;">
+                                    Mohon maaf inputan yang Anda masukkan belum benar
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
 
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Pesan</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <label id="notifPesan" style="display:none; color: #f00;">
-                                Mohon maaf, Anda harus mengisi pesan.
-                            </label>
-                            <textarea cols="35" rows="10" class="form-control" placeholder="Tuliskan Pesan Anda disini Maksimal 250 Kata" id="pesan" ></textarea>
-                            <label id="notifemail" style="display:block; font-size:10px; color: #f00;">
-                                Sisa karakter yang Anda tulis : <span id="counterString">250</span>  Kata
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>Pesan</label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <label id="notifPesan" style="display:none; color: #f00;">
+                                    Mohon maaf, Anda harus mengisi pesan.
+                                </label>
+                                <textarea cols="35" rows="10" class="form-control" placeholder="Tuliskan Pesan Anda disini Maksimal 250 Kata" id="pesan" ></textarea>
+                                <label id="notifemail" style="display:block; font-size:10px; color: #f00;">
+                                    Sisa karakter yang Anda tulis : <span id="counterString">250</span>  Kata
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
 
-                    <div class="form-group">
-                        <div class="col-md-2 col-md-offset-4">
-                            <a href="/tasbih/thankyou-inquiry">
-                                <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih inquiry-send" id="Submit" name="Submit" value="Submit">
-                            </a>
-                        </div><!--/ .col-md-12 -->
-                    </div><!--/ .form-group -->
-
+                        <div class="form-group">
+                            <div class="col-md-2 col-md-offset-4">
+                                <a href="/tasbih/thankyou-inquiry">
+                                    <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih inquiry-send" id="Submit" name="Submit" value="Submit">
+                                </a>
+                            </div><!--/ .col-md-12 -->
+                        </div><!--/ .form-group -->
+                    </div><!-- end form-box -->
                 </form>
-
-
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
         <style>
@@ -421,7 +413,7 @@
         <div style="clear:both; "></div>
 
         <div class="items-container">
-                    </div><!--/ .container -->
+        </div><!--/ .container -->
 
     </div>
 </div><!--/ .container -->
