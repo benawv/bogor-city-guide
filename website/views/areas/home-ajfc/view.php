@@ -68,7 +68,7 @@
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-4">
                     <a href="/pengumuman" class="nav-item users">
-                        <h4><small>03</small> Pengumuman Seleksi Tahap 1 <span>Cek Disini</span></h4>
+                        <h4><small>03</small> Pengumuman Tahap 1 <span>Cek Disini</span></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
             </div><!--/ .row -->
