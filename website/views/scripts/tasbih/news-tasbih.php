@@ -163,8 +163,8 @@
 
     <div class="page-wrapper-outer">
 
-        <section class="page-wrapper mt32 mb72" style="margin-top: -171px !important;">
-            <div class="container"  style="max-width: 960px">
+        <section class="page-wrapper mt32 mb72" style="margin-top: -140px !important;">
+            <div class="container" style="max-width: 960px;">
             <div class="row">
                 <div class="col-xs-12 col-md-8 pr0">
 
