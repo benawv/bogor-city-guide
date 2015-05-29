@@ -17,8 +17,9 @@
                 <div class="main-content">
                     
                     <div class="main-content--header">
-                        <h1 class="mb12">Kebijakan Privasi</h1>
-                        <p>Pernyataan seputar program Allianz Junior Football Camp 2015.</p>
+                        <h1 class="mb12"><?php echo $this->input("titleAjfc");?></h1>
+						<?php echo $this->wysiwyg("descAjfc");?>
+                        <!--<p>Pernyataan seputar program Allianz Junior Football Camp 2015.</p>-->
                     </div><!--/ .main-content--header -->
                     
                     <div class="main-content--inner mt16">
