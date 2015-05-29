@@ -80,7 +80,7 @@
                 </div><!--/ .col-xs-12 -->
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item red">
+                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
                         <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
