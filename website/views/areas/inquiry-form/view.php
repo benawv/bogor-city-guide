@@ -110,7 +110,7 @@
 
                     .content-widget
                     {
-                        border-top: none; /*1px solid #DDD;*/
+                        border-top: 1px solid #DDD;
                         padding: 16px 20px;
                         margin-bottom: 32px;
                     }
@@ -297,11 +297,13 @@
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
 
+        <div class="clearfix"></div>
+
         <div class="content-widget">
             <div class="row">
                 <div class="col-xs-12">
                     <h4><strong>BACA JUGA</strong></h4>
-                    <ol style="padding: 0;">
+                    <ol style="padding: 0 !important;">
                         <?php
                             $entries = new Object_TasbihNews_List();
                             $entries->setLimit(4);
