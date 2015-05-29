@@ -1,100 +1,80 @@
-
 <script src="/website/static/mobilku/jquery-ui.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 
 <header>
     <style>
-    /* Override AJFC's feature box color */
-    .box-dent--inner{ background: #009a44; }
-    .box-dent::before{ border-top: 28px solid #009a44 !important;}
-    .btn-tasbih{ background: #009a44 !important; border: none !important; border-radius: 0; }
-    .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
-    .form-box{ border: solid 1px #ddd; padding: 16px 20px; margin-bottom: 32px; }
-    .form-control{ border-radius: 0; }
-        nav.main-navigation a.nav-item.home::after {
-      content: "\f015"; }
-    nav.main-navigation a.nav-item.chat::after {
-      content: "\f003  "; }
-    nav.main-navigation a.nav-item {
-  display: block;
-  position: relative;
-  height: 50px;
-  background: #d31f42;
-}
+        /* Override AJFC's feature box color */
+        .box-dent--inner{ background: #009a44; }
+        .box-dent::before{ border-top: 28px solid #009a44 !important;}
+        .btn-tasbih{ background: #009a44 !important; border: none !important; border-radius: 0; }
+        .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
+        .form-box{ border: solid 1px #ddd; padding: 16px 20px; margin-bottom: 32px; }
+        .form-control{ border-radius: 0; }
+        nav.main-navigation a.nav-item.home::after { content: "\f015"; }
+        nav.main-navigation a.nav-item.chat::after { content: "\f003  "; }
+        nav.main-navigation a.nav-item {
+            display: block;
+            position: relative;
+            height: 50px;
+            background: #d31f42;
+        }
         nav.main-navigation a.nav-item::after {
-  content: "";
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  position: absolute;
-  right: 20px;
-  top: 40%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 20px;
-  pointer-events: none;
-}
-        nav.main-navigation a.nav-item.blueA{
-      background: #003781;}
-
-    nav.main-navigation a.nav-item.greenChat{
-      background: #B20065;}
-
-      nav.main-navigation a.nav-item.blueA::before {
-        background: #3122F9; }
-            body {
-  text-align: left !important;
-}
-        input[type="radio"] {
-  display: block;
-}
-</style>
-
+            content: "";
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: absolute;
+            right: 20px;
+            top: 40%;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 20px;
+            pointer-events: none;
+        }
+        nav.main-navigation a.nav-item.blueA{ background: #003781; }
+        nav.main-navigation a.nav-item.greenChat{ background: #B20065; }
+        nav.main-navigation a.nav-item.blueA::before { background: #3122F9; }
+        body { text-align: left !important; }
+        input[type="radio"] { display: block; }
+    </style>
 
     <nav class="main-navigation" style="max-width:960px; margin:auto;">
-            <div class="row">
+        <div class="row">
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
+                <a href="/tasbih" class="nav-item blueA home">
+                    <h4 style="font-size:18px"><small>Beranda</small></h4>
+                </a>
+            </div><!--/ .col-xs-12 -->
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                <a href="/kalkulator/tasbih" class="nav-item green sitemap">
+                    <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
+                </a>
+            </div><!--/ .col-xs-12 -->
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                <a href="/tasbih/tanya-jawab" class="nav-item orange question">
+                    <h4 style="font-size:18px"><small>Informasi produk</small></h4>
+                </a>
+            </div><!--/ .col-xs-12 -->
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
+                    <h4 style="font-size:18px"><small>Cari Agen</small></h4>
+                </a>
+            </div><!--/ .col-xs-12 -->
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                <a href="/tasbih/inquiry-form" class="nav-item grey chat">
+                    <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
+                </a>
+            </div><!--/ .col-xs-12 -->
+        </div><!--/ .row -->
+    </nav><!--/ .main-navigation -->
 
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
-                    <a href="/tasbih" class="nav-item blueA home">
-                        <h4 style="font-size:18px"><small>Beranda</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/kalkulator/tasbih" class="nav-item green sitemap">
-                        <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4 style="font-size:18px"><small>Informasi produk</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
-                        <h4 style="font-size:18px"><small>Cari Agen</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/inquiry-form" class="nav-item grey chat">
-                        <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-            </div>
-            <div class="row">
-
-            </div>
-    </nav>
 </header>
 
 <div class="header" style="margin-top:-20px;">
