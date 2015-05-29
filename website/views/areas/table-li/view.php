@@ -18,7 +18,7 @@
                     
                     <div class="main-content--header">
                         <h1 class="mb12">Kebijakan Privasi</h1>
-                        <p>Pertanyaan seputar program Allianz Junior Football Camp 2015.</p>
+                        <p>Pernyataan seputar program Allianz Junior Football Camp 2015.</p>
                     </div><!--/ .main-content--header -->
                     
                     <div class="main-content--inner mt16">
