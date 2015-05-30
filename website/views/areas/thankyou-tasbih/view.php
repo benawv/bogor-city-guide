@@ -229,22 +229,20 @@ $(document).ready(function(){
 
         $('#cari-agen').click(function() {
             
-            
-            var nama = $('#nama').val();
-            var email = $('#email').val();
-            var nohp = $('#nohp').val();
-
            <?php  $session = new Zend_Session_Namespace('calculation'); ?>
 
-            var date_tglBuat = "<?php echo $session->date_tglBuat; ?>";
-            var date_tglLahir = "<?php echo $session->date_tglLahir; ?>";
-            var JenisKelamin = "<?php echo $session->JenisKelamin; ?>";
-            var Usia = "<?php echo $session->Usia; ?>";
-            var Frekuensi = "<?php echo $session->Frekuensi; ?>";
-            var AsuransiJiwa = "<?php echo $session->AsuransiJiwa; ?>";
-            var AJ = "<?php echo $session->AJ; ?>";
-            var Kontribusi = "<?php echo $session->Kontribusi; ?>";
-            var Calculation = "<?php echo $session->Calculation; ?>";
+            var nama = '<?php echo $session->nama; ?>';
+            var email = '<?php echo $session->email; ?>';
+            var nohp = '<?php echo $session->nohp; ?>';
+            var date_tglBuat = '<?php echo $session->date_tglBuat; ?>';
+            var date_tglLahir = '<?php echo $session->date_tglLahir; ?>';
+            var JenisKelamin = '<?php echo $session->JenisKelamin; ?>';
+            var Usia = '<?php echo $session->Usia; ?>';
+            var Frekuensi = '<?php echo $session->Frekuensi; ?>';
+            var AsuransiJiwa = '<?php echo $session->AsuransiJiwa; ?>';
+            var AJ = '<?php echo $session->AJ; ?>';
+            var Kontribusi = '<?php echo $session->Kontribusi; ?>';
+            var Calculation = '<?php echo $session->Calculation; ?>';
 
               $.ajax({
                   url      : '/v1/api/calculator',
@@ -266,7 +264,7 @@ $(document).ready(function(){
                               'source' :'Kalkulator Tasbih User'
                               },
                   complete  : function(data){
-                         // console.log(data);
+                         //console.log(data);
                           document.location.href='/agent-locator';
                       }  
               });            

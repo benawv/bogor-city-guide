@@ -37,7 +37,7 @@ class ApiController extends Zend_Rest_Controller {
         $AJ = $this->_getParam('AJ');
         $Kontribusi = $this->_getParam('Kontribusi');
         $Calculation = $this->_getParam('Calculation');
-        $source = $this->_getParam('source');
+        $source = $this->_getParam('kalkulator');
 
         //$name = "robbi test";
         
@@ -56,10 +56,11 @@ class ApiController extends Zend_Rest_Controller {
         $session->Calculation = $Calculation;
         $session->source = $source;
         
-        echo "<pre>";
-        print_r($session->name);
+
+        print_r($session->Usia);
+        echo "rererere";
         die();
-        
+
         //$json = $this->_helper->json(array('name' => $name));
         //$this->sendResponse($json);
     }

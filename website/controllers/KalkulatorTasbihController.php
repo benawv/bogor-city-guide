@@ -43,7 +43,7 @@
 			$tglLahir = strtotime($TanggalLahir);
 	        $date_tglLahir= new Pimcore_Date($TanggalLahir);//set date into pimcore formats		
 
-            $session = new Zend_Session_Namespace('calculation');
+            $session = new Zend_Session_Namespace('tasbih');
             $session->date_tglBuat = $tglBuat;
             $session->date_tglLahir = $date_tglLahir;
             $session->JenisKelamin = $JenisKelamin;
@@ -65,11 +65,16 @@
         
         public function sendemailAction(){
 			
-            $Nama = $_POST["nama"];
-            $Email = $_POST["email"];
+            $nama = $_POST["nama"];
+            $email = $_POST["email"];
             $nohp = $_POST["nohp"];
 
-            $session = new Zend_Session_Namespace('calculation');
+
+            $session = new Zend_Session_Namespace('tasbih');
+            $session->nama = $nama ;
+            $session->email = $email;
+            $session->nohp = $nohp;
+
             $date_tglBuat = $session->date_tglBuat;
             $date_tglLahir = $session->date_tglLahir;
             $JenisKelamin = $session->JenisKelamin;
@@ -82,6 +87,11 @@
 			
 			$date_tglBuat1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglBuat)));
             $date_tglLahir1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglLahir)));
+
+
+
+
+
            /*             
 				echo $date_tglBuat."<br>";
 				echo $date_tglLahir."<br>";
@@ -98,8 +108,8 @@
             $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
 			$cookie = new Object_Tasbih();
 			$cookie->setTanggalPembuatan($date_tglBuat);
-			$cookie->setNama($Nama);
-			$cookie->setEmail($Email);
+			$cookie->setNama($nama);
+			$cookie->setEmail($email);
 			$cookie->setTanggalLahir($date_tglLahir);
 			$cookie->setJenisKelamin($JenisKelamin);
 			$cookie->setUsia($Usia);
@@ -112,8 +122,8 @@
 			$cookie->setO_index(0);
 			$cookie->setO_published(1);
 			$cookie->save();
-			
-	
+		
+
 			if($JenisKelamin == 'l') {
 				$JK = 'Pria';
 			}
@@ -130,13 +140,13 @@
 			else{
 				$frek = 'Triwulan';
 			}
-		
+
 			$hasil = number_format($Calculation,0,",",".");
 			$document = '/email/email-tasbih';
 			$params = array(
 							'tglhitung' => $date_tglBuat1,
-							'nama' => $Nama,
-							'email' => $Email,
+							'nama' => $nama,
+							'email' => $email,
 							'tgllahir' => $date_tglLahir1,
 							'usia'=> $Usia,
 							'kontribusi' => $Kontribusi,
@@ -152,7 +162,7 @@
 			$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 			$mail->setDocument($document);
 			$mail->setParams($params);
-			$mail->addTo($Email);
+			$mail->addTo($email);
 			$mail->send();
             
 			echo "sukses";

@@ -356,7 +356,7 @@
                               'nohp' : nohp
                               },
                       success  : function(data){
-                        console.log(data);
+                        //console.log(data);
                         //console.log(data);
                         $('.waiting-calc').hide();
                         $('.result-calc').show();
