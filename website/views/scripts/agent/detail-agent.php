@@ -220,7 +220,7 @@
                                     $content.="Kontribusi Pertahun: ".$session->Kontribusi."<br />";
                                     $content.="Calculation: ".$session->Calculation."<br />";
                                 }
-                               print_r($content);
+                               //print_r($content);
                             ?>
                        
                     <?php }?>
