@@ -229,7 +229,7 @@ $(document).ready(function(){
 
         $('#cari-agen').click(function() {
             
-           <?php  $session = new Zend_Session_Namespace('calculation'); ?>
+           <?php  $session = new Zend_Session_Namespace('tasbih'); ?>
 
             var nama = '<?php echo $session->nama; ?>';
             var email = '<?php echo $session->email; ?>';

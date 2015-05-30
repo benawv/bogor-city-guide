@@ -54,6 +54,7 @@
             $session->Kontribusi = $Kontribusi;
             $session->Calculation = $Calculation;
 
+            echo $session->Calculation;//print result of calculation into form
 
         }
         
@@ -74,6 +75,7 @@
             $session->nama = $nama ;
             $session->email = $email;
             $session->nohp = $nohp;
+            $session->emailFrom = "tasbih_calc";
 
             $date_tglBuat = $session->date_tglBuat;
             $date_tglLahir = $session->date_tglLahir;
@@ -156,7 +158,12 @@
 							'JK' => $JK,
 							'nohp' => $nohp
 							);
-
+			/*
+			$systemConfig = Pimcore_Config::getSystemConfig()->toArray();
+			$emailSettings = $systemConfig['email'];	
+			print_r($emailSettings);
+			die();
+			*/
 			$mail = new Pimcore_Mail();
 			$mail->setSubject("Konfirmasi Hasil Kalkulasi Ilustrasi Produk Allianz Tasbih");
 			$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
