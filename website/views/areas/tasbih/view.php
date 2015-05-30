@@ -102,10 +102,10 @@
             text-align: left;
         }
         .kalkulasi font{
-            margin-left: 177px;
+            margin-left: 90px;
         }
         .kalkulasi img{
-            margin-left: 150px;
+            margin-left: 70px;
         }
     }
 
