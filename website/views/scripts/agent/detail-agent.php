@@ -204,9 +204,9 @@
 
                             <?php
 
-                                $session = new Zend_Session_Namespace('calculation');
+                                $session = new Zend_Session_Namespace('tasbih');
                                 $content;
-                                if(isset($session->name)){
+                                if(isset($session->date_tglBuat)){
                                     //unset($session->name);
                                     
                                     $content.="Nama user: ".$session->name."<br />";
@@ -220,9 +220,9 @@
                                     $content.="Kontribusi Pertahun: ".$session->Kontribusi."<br />";
                                     $content.="Calculation: ".$session->Calculation."<br />";
                                 }
-                                
+                               print_r($content);
                             ?>
-                        </p>
+                       
                     <?php }?>
                     <a href="mailto:<?php echo $emailAgent;?>?Subject=Tasbih<?php //echo $session->source; ?>&body=<?php echo $content; ?>" target="_top" class="btn btn-sendmail">Email Agen</a>&nbsp;
                     <a href="tel:<?php echo $telp;?>" target="_top" class="btn btn-sendmail hide">Hubungi Agen</a>
