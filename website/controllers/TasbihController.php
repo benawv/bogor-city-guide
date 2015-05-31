@@ -6,7 +6,13 @@ class TasbihController extends Website_Controller_Action {
             parent :: init();
 	}
 	
-	public function pageTasbihAction () {
+	
+    public function sectionTasbihAction () {
+        $this->enableLayout();
+        $this->setLayout('tasbih');
+    }
+
+    public function pageTasbihAction () {
 	    $this->enableLayout();
 	    $this->setLayout('tasbih');
 	}
