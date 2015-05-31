@@ -477,7 +477,7 @@
                 if(nohp == '' || nohp.length() < 8){
                     document.getElementById('notif-nohp').style.display = 'block';
                 }
-                if(gender == ''){
+                if(gender == 'Pilih'){
                     document.getElementById('notif-jeniskelamin').style.display = 'block';
                 }
                 if(uangpertanggungan == 'Pilih'){
@@ -556,6 +556,38 @@
                 }
 
             });
+    
+    $('#uang_pertanggungan').bind("input", function(){
+               var value = $('#uang_pertanggungan').val();
+                if(value == 'Pilih'){
+                    document.getElementById('notif-uangpertanggungan').style.display= 'block';   
+                }else if(value == '1000' || value == '500' || value == '250'){
+                    document.getElementById('notif-uangpertanggungan').style.display= 'none';
+                }
+
+            });
+    
+    $('#smoking').bind("input", function(){
+               var value = $('#smoking').val();
+                if(value == 'Pilih'){
+                    document.getElementById('notif-merokok').style.display= 'block';   
+                }else if(value == 'Y' || value == 'T'){
+                    document.getElementById('notif-merokok').style.display= 'none';
+                }
+
+            });
+    
+    $('#critical_illness_accelerated').bind("input", function(){
+               var value = $('#critical_illness_accelerated').val();
+                if(value == 'Pilih'){
+                    document.getElementById('notif-cia').style.display= 'block';   
+                }else if(value == '1000' || value == '500' || value == '250'){
+                    document.getElementById('notif-cia').style.display= 'none';
+                }
+
+            });
+    
+    
         
         function validateEMAIL(surat)
         {
