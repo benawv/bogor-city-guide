@@ -12,36 +12,28 @@
                 $smoking = $_POST['smoking'];
                 $email = $_POST['email'];
                 $tanggallahir = $_POST['tanggallahir'];
-                $bod = new Pimcore_Date($tanggallahir);;
+                $bod = new Pimcore_Date($tanggallahir);
+                $usia = $_POST('usia');
                 
                 //Calculatiom
                 //$premi = 10000000+2000000+300000+40000;
                 //Replace Values
-                if($gender == 'M') $gender='Male';
-                else $gender='Female';
                 
-                if($uangpertanggungan == '1000') $uangpertanggungan = '1M';
-                else if($uangpertanggungan == '500') $uangpertanggungan = '500juta';
-                else $uangpertanggungan = '250juta';
-                    
-                if($cia == '1000') $cia = '1M';
-                else if($cia == '500') $cia = '500juta';
-                else $cia = '250juta';
                 
                 //Select from Database
-                $ins= new Object_liveinsurance_List();
-			    $ins->setCondition("JenisKelamin='".$gender."' and UangPertanggungan='".$uangpertanggungan."' and          CriticalIllnessAccelerated='".$Usia."' and Merokok='".$smoking."'");
+                $ins= new Object_liveinsuranceRate_List();
+			    $ins->setCondition("JenisKelamin='".$gender."' and UangPertanggungan='".$uangpertanggungan."' and          CriticalIllnessAccelerated='".$cia."' and Merokok='".$smoking."' and $Usia='".$usia."'");
                 $premi='';
                 foreach($ins as $items){
                     $premi = $items->premi;
                 }
                 print_r($premi);
                 
-                die();
+                //die();
                 
                 //Saving Database
                 $getId=Object_Abstract::getByPath('/kalkulator-live-insurance/');//get folder id
-                $cookie = new Object_LiveInsurance();
+                $cookie = new Object_liveinsurance();
                 $cookie->setNama($nama);
                 $cookie->setEmail($email);
                 $cookie->setNoHP($nohp);

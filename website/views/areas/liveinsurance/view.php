@@ -469,6 +469,7 @@
             var smoking = $('#smoking').val();
             var email = $('#email').val();
             var tanggallahir = $('#tgl-lahir').val();
+            var usia = $('#usia').val();
             
             if(nama == '' || nohp == '' || gender == 'Pilih' || uangpertanggungan == 'Pilih' || cia == 'Pilih' || smoking == 'Pilih' || email == '' || nohp.length() < 8 || tanggallahir == ''){
                 if(nama == ''){
@@ -508,7 +509,8 @@
                                         'cia' : cia,
                                         'smoking' : smoking,
                                         'email' : email,
-                                        'tanggallahir' : tanggallahir
+                                        'tanggallahir' : tanggallahir,
+                                        'usia' : usia
                                         },
                                 success  : function(data){
                                 //console.log(data);
@@ -587,7 +589,15 @@
 
             });
     
-    
+    $('#gender').bind("input", function(){
+               var value = $('#gender').val();
+                if(value == 'Pilih'){
+                    document.getElementById('notif-jeniskelamin').style.display= 'block';   
+                }else if(value == 'F' || value == 'M'){
+                    document.getElementById('notif-jeniskelamin').style.display= 'none';
+                }
+
+            });
         
         function validateEMAIL(surat)
         {
