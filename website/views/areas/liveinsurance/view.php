@@ -281,7 +281,7 @@
         <div class="content-calc custom-tab-item active" id="first">
             <div class="col-md-12">
 
-                <form class="form-horizontal" role="form">
+                <div class="form-horizontal" role="form">
 
                     <div class="form-group">
                         <div class="col-md-4">
@@ -410,7 +410,7 @@
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
 
-                </form>
+                </div>
                 <!--
                 <div class="col-md-12 note">
                     <h4 class="mb10"><strong>Note: </strong></h4>

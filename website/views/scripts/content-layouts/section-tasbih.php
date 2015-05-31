@@ -45,7 +45,7 @@
         ?>
 
         <?php echo $this->areablock('container', array('allowed' => array(
-            'mobilku','tasbih', 'tasbih-news', 'payment','smartmed','liveinsurance','thanksyou-liveinsurance'.'container-box2', 'community-tips2',
+            'mobilku','tasbih', 'tasbih-news', 'payment','smartmed','liveinsurance','container-box2', 'community-tips2',
             'sections', 'sections-box-full', 'sections-tab', 'teks-tabs',
             'sections-video', 'sections-gallery',
             'sections-select', 'tekskanan60-imagekiri40_wizard',
@@ -55,7 +55,7 @@
             'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
             'smartlink-factsheet', 'syariah-factsheet',
             'pension-factsheet', 'saving-factsheet','multi-video',
-            'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi','Tasbih-kedua','thankyou-tasbih','thankyou-inquiry'))); ?>
+            'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi','Tasbih-kedua','thankyou-tasbih','thankyou-inquiry','thanksyou-liveinsurance'))); ?>
 
         <div style="clear:both; "></div>
 
