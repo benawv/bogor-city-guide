@@ -434,10 +434,10 @@
     </div><!--/ .description -->
 </div><!--/ #newsletter-allianz -->
 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/website/static/mobilku/jquery-ui.js" type="text/javascript"></script>
 
 <script>
     $(function(){
@@ -449,6 +449,7 @@
         range = minyear+':'+maxyear;
         def = '1/1/'+minyear;
        $('#tgl-lahir').datepicker({
+           
             defaultDate: def,
             changeMonth: true,
             changeYear: true,
