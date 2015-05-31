@@ -434,6 +434,9 @@
     </div><!--/ .description -->
 </div><!--/ #newsletter-allianz -->
 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 
 <script>
@@ -455,21 +458,6 @@
     });
     
     $(document).ready(function(){
-
-
-        $('#tgl-lahir').on('change', function() {
-
-            var dob = new Date(this.value);
-            var today = new Date();
-            var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
-            if(age >= 18) {
-                $('#usia').val(age);
-               document.getElementById('notif-tgllahir').style.display= 'none';
-            }else{
-                document.getElementById('notif-tgllahir').style.display= 'block';
-                $('#usia').val('Umur Anda dibawah 18 tahun');
-            }
-        });
         
         $('#Kalkulasi').click(function() {
             var nama = $('#nama').val();
@@ -535,6 +523,24 @@
             }
         });
     });
+    
+        $(document).ready(function(){
+
+
+        $('#tgl-lahir').on('change', function() {
+
+            var dob = new Date(this.value);
+            var today = new Date();
+            var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+            if(age >= 18) {
+                $('#usia').val(age);
+               document.getElementById('notif-tgllahir').style.display= 'none';
+            }else{
+                document.getElementById('notif-tgllahir').style.display= 'block';
+                $('#usia').val('Umur Anda dibawah 18 tahun');
+            }
+        });
+        });
     
     $('#nohp').bind("input", function(){
                var re = /^[0-9]*$/;
