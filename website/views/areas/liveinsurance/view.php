@@ -373,9 +373,9 @@
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="3" id="critical_illness_accelerated">
                                 <option value="Pilih">Pilih</option>
-                                <option value="1000">1M</option>
-                                <option value="500">500juta</option>
-                                <option value="250">250juta</option>
+                                <option value="1000">1 M</option>
+                                <option value="500">500 juta</option>
+                                <option value="250">250 juta</option>
                             </select>
                             <label id="notif-cia" style="display:none; color: #f00;">Maaf Anda Belum Memilih</label>
                         </div><!--/ .col-md-4 -->
