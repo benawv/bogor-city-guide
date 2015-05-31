@@ -329,7 +329,7 @@
                     
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Masukan tanggal lahir Anda<br>(Minimum usia dari 18 tahun sampai 55 tahun)</label>
+                            <label>Masukan tanggal lahir Anda<br>(Minimum usia dari 18 tahun sampai 64 tahun)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
@@ -341,14 +341,26 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
+                            <label>Usia</label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="usia" name="usia" placeholder="Umur"  required readonly>
+                            <label id="notif-usia" style="display:none; color: #f00;">
+                                Mohon maaf, umur yang Anda masukan belum sesuai dengan ketentuan ilustrasi 
+                            </label>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+                    
+                    <div class="form-group">
+                        <div class="col-md-4">
                             <label>Uang Pertanggungan(UP)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="2" id="uang_pertanggungan">
                                 <option value="Pilih">Pilih</option>
-                                <option value="1">1M</option>
-                                <option value="2">500juta</option>
-                                <option value="3">250juta</option>
+                                <option value="1000">1M</option>
+                                <option value="500">500juta</option>
+                                <option value="250">250juta</option>
                             </select>
                             <label id="notif-uangpertanggungan" style="display:none; color: #f00;">Maaf Anda Belum Memilih</label>
                         </div><!--/ .col-md-4 -->
@@ -361,9 +373,9 @@
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="3" id="critical_illness_accelerated">
                                 <option value="Pilih">Pilih</option>
-                                <option value="1">1M</option>
-                                <option value="2">500juta</option>
-                                <option value="3">250juta</option>
+                                <option value="1000">1M</option>
+                                <option value="500">500juta</option>
+                                <option value="250">250juta</option>
                             </select>
                             <label id="notif-cia" style="display:none; color: #f00;">Maaf Anda Belum Memilih</label>
                         </div><!--/ .col-md-4 -->
@@ -426,6 +438,39 @@
 
 <script>
     $(function(){
+        
+        var d = new Date();
+        var y = d.getFullYear();
+        minyear = y - 64;
+        maxyear = y - 18;
+        range = minyear+':'+maxyear;
+        def = '1/1/'+minyear;
+       $('#tgl-lahir').datepicker({
+            defaultDate: def,
+            changeMonth: true,
+            changeYear: true,
+            yearRange: range
+        });
+            
+    });
+    
+    $(document).ready(function(){
+
+
+        $('#tgl-lahir').on('change', function() {
+
+            var dob = new Date(this.value);
+            var today = new Date();
+            var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+            if(age >= 18) {
+                $('#usia').val(age);
+               document.getElementById('notif-tgllahir').style.display= 'none';
+            }else{
+                document.getElementById('notif-tgllahir').style.display= 'block';
+                $('#usia').val('Umur Anda dibawah 18 tahun');
+            }
+        });
+        
         $('#Kalkulasi').click(function() {
             var nama = $('#nama').val();
             var nohp = $('#nohp').val();
@@ -480,6 +525,7 @@
                                 //console.log(data);
                                 //$('.waiting-calc').hide();
                                 $('#premi').val(accounting.formatMoney(data, "Rp ", 0,","));
+                                document.location.href='';
                             }
 
 
@@ -488,24 +534,8 @@
 
             }
         });
-        
-    $(function() {
-        var d = new Date();
-        var y = d.getFullYear();
-        minyear = y - 55;
-        maxyear = y - 18;
-        range = minyear+':'+maxyear;
-        def = '1/1/'+minyear;
-       $('#tgl-hitung, #tgl-lahir').datepicker({
-            defaultDate: def,
-            changeMonth: true,
-            changeYear: true,
-            yearRange: range
-        });
-
     });
-            
-    });
+    
     $('#nohp').bind("input", function(){
                var re = /^[0-9]*$/;
 
