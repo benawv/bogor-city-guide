@@ -102,10 +102,10 @@
             text-align: left;
         }
         .kalkulasi font{
-            margin-left: 177px;
+            margin-left: 90px;
         }
         .kalkulasi img{
-            margin-left: 150px;
+            margin-left: 70px;
         }
     }
 
@@ -449,7 +449,7 @@
                     //console.log(data);
             $('.waiting-calc').hide();
                     $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
-                     document.location.href='/tasbih/tasbih-kedua';
+                    document.location.href='/tasbih/tasbih-kedua';
                 }
 
 

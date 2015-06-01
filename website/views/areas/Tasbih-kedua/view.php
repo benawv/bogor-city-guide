@@ -1,6 +1,6 @@
 <?php
 //call session yang di buat di controller kalkulatortassbihControler function saveAction()
-  $session = new Zend_Session_Namespace('calculation');
+  $session = new Zend_Session_Namespace('tasbih');
 ?>
 
 
@@ -356,7 +356,7 @@
                               'nohp' : nohp
                               },
                       success  : function(data){
-                        console.log(data);
+                        //console.log(data);
                         //console.log(data);
                         $('.waiting-calc').hide();
                         $('.result-calc').show();

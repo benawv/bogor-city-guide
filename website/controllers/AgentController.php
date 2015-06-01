@@ -208,4 +208,79 @@ class AgentController extends Website_Controller_Action {
 		die();
 	}
 
+	public function sendMailAgenTasbihAction(){
+
+
+
+		// harusnya ini jadi  class Object_Abstract untuk email(sementara static harus cepet ganti !!!!!)
+		$session = new Zend_Session_Namespace('tasbih');
+        $nama = $session->nama;
+        $email=$session->email ;
+        $nohp=$session->nohp ;
+        $date_tglBuat = $session->date_tglBuat;
+        $date_tglLahir = $session->date_tglLahir;
+        $JenisKelamin = $session->JenisKelamin;
+        $Usia = $session->Usia;
+        $Frekuensi = $session->Frekuensi;
+        $AsuransiJiwa = $session->AsuransiJiwa;
+        $AJ = $session->AJ;
+        $Kontribusi = $session->Kontribusi;
+        $Calculation = $session->Calculation;
+
+		$date_tglBuat1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglBuat)));
+        $date_tglLahir1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglLahir)));
+
+
+		if($JenisKelamin == 'l') {
+			$JK = 'Pria';
+		}
+		else{
+			$JK = 'Wanita';
+		}
+	
+		if($Frekuensi == 1){
+			$frek = 'Tahunan';
+		}
+		else if($Frekuensi == 2){
+			$frek = 'Semesteran';
+		}
+		else{
+			$frek = 'Triwulan';
+		}
+
+
+
+
+		$hasil = number_format($Calculation,0,",",".");
+		$document = '/email/email-agen-tasbih';
+		$params = array(
+						'tglhitung' => $date_tglBuat1,
+						'nama' => $nama,
+						'email' => $email,
+						'tgllahir' => $date_tglLahir1,
+						'usia'=> $Usia,
+						'kontribusi' => $Kontribusi,
+						'AJ' => $AJ,
+						'pembayaran' => $hasil,
+						'frek' => $frek,
+						'JK' => $JK,
+						'nohp' => $nohp
+						);
+		/*
+		$systemConfig = Pimcore_Config::getSystemConfig()->toArray();
+		$emailSettings = $systemConfig['email'];	
+		print_r($emailSettings);
+		die();
+		*/
+		$mail = new Pimcore_Mail();
+		$mail->setSubject("Permintaan $nama Calon Nasabah Produk Allianz Tasbih");
+		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+		$mail->setDocument($document);
+		$mail->setParams($params);
+		$mail->addTo($email);
+		$mail->send();
+
+
+	}
+
 }

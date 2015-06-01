@@ -204,9 +204,11 @@
 
                             <?php
 
-                                $session = new Zend_Session_Namespace('calculation');
+                                $session = new Zend_Session_Namespace('tasbih');
+                                $getStatus=$session->emailFrom;
+                                //echo $getStatus;
                                 $content;
-                                if(isset($session->name)){
+                                if(isset($session->date_tglBuat)){
                                     //unset($session->name);
                                     
                                     $content.="Nama user: ".$session->name."<br />";
@@ -220,11 +222,11 @@
                                     $content.="Kontribusi Pertahun: ".$session->Kontribusi."<br />";
                                     $content.="Calculation: ".$session->Calculation."<br />";
                                 }
-                                
+                               //print_r($content);
                             ?>
-                        </p>
+                       
                     <?php }?>
-                    <a href="mailto:<?php echo $emailAgent;?>?Subject=Tasbih<?php //echo $session->source; ?>&body=<?php echo $content; ?>" target="_top" class="btn btn-sendmail">Email Agen</a>&nbsp;
+                    <a href="javascript:void(0)" target="_top" class="btn btn-sendmail">Email Agen</a>&nbsp;
                     <a href="tel:<?php echo $telp;?>" target="_top" class="btn btn-sendmail hide">Hubungi Agen</a>
                 </div><!--/ .section-right-60 -->
             </div><!--/ .description-width-66 -->
@@ -295,6 +297,39 @@
 <div id="fb-root"></div>
 <script>
 
+
+    $('.btn-sendmail').click(function() {
+        <?php 
+
+        if($getStatus=='tasbih_calc'){ ?>
+            
+            $.ajax({
+                url      : '/send-email-agen-tasbih/',
+                type     : 'POST',
+                data     : {
+                            'from' : 'agent_locator'
+                            },
+                    success  : function(data){
+                    //console.log(data);
+                    alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
+                }
+
+
+            });
+
+        <?php }else{ ?>
+
+                alert('dari agent_locator'<?php echo $getStatus;?>);
+        <?php } ?>
+
+    });
+
+
+
+
+$(document).ready(function(){
+    $("#slideshow ul.flex-direction-nav").remove();
+});
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
