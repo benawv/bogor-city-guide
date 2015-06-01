@@ -380,9 +380,13 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 @media only screen and (max-width : 599px){
 	.heading.clearfix.pagenav{
 		width: 320px;
+		display: none;
 	}
 	.heading.clearfix.pagenav.nav-sticky{
 		display: none !important;
+	}
+	#quicklinks{
+		display: none;
 	}
 	/*ROBBI*/
 	.customAnchorHide, .customAnchorHide #navigate, .customAnchorHide #membername, ul.slides #membername{
