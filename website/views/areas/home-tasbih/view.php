@@ -49,7 +49,7 @@
             -o-transform: translateY(-50%);
             transform: translateY(-50%);
             color: rgba(255, 255, 255, 0.5);
-            font-size: 45px;
+            font-size: 20px;
             pointer-events: none;
         }
 
