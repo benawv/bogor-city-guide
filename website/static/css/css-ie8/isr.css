@@ -381,8 +381,27 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 	.heading.clearfix.pagenav{
 		width: 320px;
 	}
-	.heading.clearfix.pagenav{
-		display: none;
+	.heading.clearfix.pagenav.nav-sticky{
+		display: none !important;
+	}
+	/*ROBBI*/
+	.customAnchorHide, .customAnchorHide #navigate, .customAnchorHide #membername, ul.slides #membername{
+		display: block !important;
+	}
+	.customAnchorHide #membername, ul.slides #membername{
+		width: 280px !important;
+	}
+	.customAnchorHide #membername .super_navi, ul.slides #membername .super_navi{
+		position: relative;
+		float: left;
+		width: 240px;
+		margin-left: 0px;
+	}
+	.customAnchorHide #membername .super_navi .navi, ul.slides #membername .super_navi .navi{
+		margin-left: 0px;
+	}
+	.customAnchorHide #navigate, ul.slides .navi{
+		width: 500px !important;
 	}
 }
 
@@ -397,13 +416,13 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 }
 
 @media only screen and (max-width : 320px){
-	/*.heading .customAnchorHide #membername{
-		width: 280px !important;
+	.heading .customAnchorHide #membername{
+		width: 240px !important;
 	}
 	.heading .customAnchorHide #membername .super_navi{
 		position: relative;
 		float: left;
-		width: 240px;
+		width: 200px;
 		margin-left: 0px;
 	}
 	.heading .customAnchorHide #membername .super_navi .navi{
@@ -413,13 +432,14 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 		width: 700px !important;
 	}
 	
-	ul.slides #membername{
-		width: 280px !important;
+	ul.slides.customMulti #membername{
+		width: 240px !important;
+		display: block !important;
 	}
 	ul.slides #membername .super_navi{
 		position: relative;
 		float: left;
-		width: 240px;
+		width: 200px;
 		margin-left: 0px;
 	}
 	ul.slides #membername .super_navi .navi{
@@ -427,7 +447,7 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 	}
 	ul.slides .navi{
 		width: 700px !important;
-	}*/
+	}
 }
 @media only screen and (max-width : 768px) and (min-width: 641px){
 	.customAnchorHide, .customAnchorHide #navigate, .customAnchorHide #membername, ul.slides #membername{
@@ -500,28 +520,10 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 	#membername{
 		display: none;
 	}
-	/*ROBBI*/
-	/*.customAnchorHide, .customAnchorHide #navigate, .customAnchorHide #membername, ul.slides #membername{
-		display: block !important;
-	}
-	.customAnchorHide #membername, ul.slides #membername{
-		width: 320px !important;
-	}
-	.customAnchorHide #membername .super_navi, ul.slides #membername .super_navi{
-		position: relative;
-		float: left;
-		width: 280px;
-		margin-left: 0px;
-	}
-	.customAnchorHide #membername .super_navi .navi, ul.slides #membername .super_navi .navi{
-		margin-left: 0px;
-	}
-	.customAnchorHide #navigate, ul.slides .navi{
-		width: 500px !important;
-	}
+	
 	#quicklinks{
 		margin-top: 80px !important;
-	}*/
+	}
 	
 	.full-w p, .description{
 		width: 100%;
