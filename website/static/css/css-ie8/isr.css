@@ -381,6 +381,9 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 	.heading.clearfix.pagenav{
 		width: 320px;
 	}
+	.heading.clearfix.pagenav{
+		display: none;
+	}
 }
 
 @media only screen and (max-width : 640px) and (min-width: 600px){
