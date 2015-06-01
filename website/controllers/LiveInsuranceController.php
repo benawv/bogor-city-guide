@@ -20,12 +20,12 @@
                 if($gender == 'M') $gender='Male';
                 else $gender='Female';
                 
-                if($uangpertanggungan == '1') $uangpertanggungan = '1M';
-                else if($uangpertanggungan == '2') $uangpertanggungan = '500juta';
+                if($uangpertanggungan == '1000') $uangpertanggungan = '1M';
+                else if($uangpertanggungan == '500') $uangpertanggungan = '500juta';
                 else $uangpertanggungan = '250juta';
                     
-                if($cia == '1') $cia = '1M';
-                else if($cia == '2') $cia = '500juta';
+                if($cia == '1000') $cia = '1M';
+                else if($cia == '500') $cia = '500juta';
                 else $cia = '250juta';
                 
                 //Select from Database
