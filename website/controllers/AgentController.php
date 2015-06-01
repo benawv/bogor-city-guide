@@ -280,7 +280,8 @@ class AgentController extends Website_Controller_Action {
 		$mail->addTo($email);
 		$mail->send();
 
-
+		echo "Sukses $Calculation";
+		die();
 	}
 
 }

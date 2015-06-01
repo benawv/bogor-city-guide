@@ -15,8 +15,29 @@
                 $bod = new Pimcore_Date($tanggallahir);;
                 
                 //Calculatiom
-                $premi = 10000000+2000000+300000+40000;
+                //$premi = 10000000+2000000+300000+40000;
+                //Replace Values
+                if($gender == 'M') $gender='Male';
+                else $gender='Female';
+                
+                if($uangpertanggungan == '1') $uangpertanggungan = '1M';
+                else if($uangpertanggungan == '2') $uangpertanggungan = '500juta';
+                else $uangpertanggungan = '250juta';
+                    
+                if($cia == '1') $cia = '1M';
+                else if($cia == '2') $cia = '500juta';
+                else $cia = '250juta';
+                
+                //Select from Database
+                $ins= new Object_liveinsurance_List();
+			    $ins->setCondition("JenisKelamin='".$gender."' and UangPertanggungan='".$uangpertanggungan."' and          CriticalIllnessAccelerated='".$Usia."' and Merokok='".$smoking."'");
+                $premi='';
+                foreach($ins as $items){
+                    $premi = $items->premi;
+                }
                 print_r($premi);
+                
+                die();
                 
                 //Saving Database
                 $getId=Object_Abstract::getByPath('/kalkulator-live-insurance/');//get folder id
@@ -49,7 +70,7 @@
                                 'uangpertanggungan' => $uangpertanggungan,
                                 'smoking' => $smoking,
                                 'premi' => $premi,
-                                'bod' => $bod
+                                'tanggallahir' => $tanggallahir
                                 );
 
                 $mail = new Pimcore_Mail();
