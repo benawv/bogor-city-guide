@@ -166,7 +166,7 @@
 
                     <div class="form-box">
 
-                        <label><strong>Ilustrasi ini berguna untuk menghitung perkiraan biaya yang Anda bayarkan untuk melindungi diri Anda, jika terjadi risiko yang Anda alami di masa yang akan datang.</strong></label>
+                        <label><strong>Ilustrasi ini berguna untuk menghitung perkiraan biaya yang Anda bayarkan untuk melindungi diri Anda, jika terjadi risiko yang Anda alami di masa yang akan datang</strong></label>
 
                         <div class="form-group">
                             <div class="col-md-4">
@@ -225,7 +225,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Berapa uang pertanggungan yang Anda butuhkan bila terjadi risiko</label>
+                                <label>Berapa uang pertanggungan yang Anda butuhkan bila terjadi risiko?</label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
 
@@ -239,7 +239,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Berapa lama pembayaran premi/iuran yang Anda inginkan</label>
+                                <label>Berapa lama pembayaran premi/iuran yang Anda inginkan?</label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <select class="form-control" name="masa-premi" id="masa-premi">
@@ -276,7 +276,7 @@
                             <button class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih"
                             id="Kalkulasi" name="next" style="background-color:#009a44">
                             <img src="<?php echo $asets; ?>" alt="background-galeri" class="img-responsive icon-submit" />
-                            <font class="font-submit">Kalkulasi</font></button>
+                            <font class="font-submit">Selanjutnya</font></button>
                             <!-- <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" value="Kalkulasi" style="background-color:#009a44"> -->
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->

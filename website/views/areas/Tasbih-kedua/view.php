@@ -141,15 +141,17 @@
                 <div class="form-horizontal" role="form">
 
                     <div class="form-box">
-                        <div><h3 >Terima kasih Anda telah melakukan kalkulasi ilustrasi produk Allianz Tasbih. Hasil kalkulasi Anda akan dikirimkan ke email pribadi Anda. Silahkan isi field dibawah ini.</h3>
+                        <div>
+                            <!--h3 >Terima kasih Anda telah melakukan kalkulasi ilustrasi produk Allianz Tasbih. Hasil kalkulasi Anda akan dikirimkan ke email pribadi Anda. Silahkan isi field dibawah ini.</h3-->
+                            <h3 >Sekarang, tolong isi data diri Anda.</h3>
                         </div>
                         <br>
-                        <label><strong>Data Diri</strong></label>
+                        <!--label><strong>Data Diri</strong></label-->
                     
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Nama</label>
+                                <label>Nama Anda?</label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <input type="text" class="form-control" id="nama" placeholder="Nama" required onfocusout="this.value=validateNama(this.value)">
@@ -161,7 +163,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>No Handphone (Min. 8 digit)</label>
+                                <label>No Handphone Anda? (Min. 8 digit)</label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <input type="text" class="form-control" id="nohp" name="nohp" placeholder="No Handphone" required onfocusout="this.value=validateNumber(this.value)">
@@ -173,7 +175,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Email</label>
+                                <label>Email Anda?</label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <input type="email" class="form-control" id="email" name="email" placeholder="Email" required onfocusout="this.value=validateEMAIL(this.value)">
