@@ -76,6 +76,7 @@
             $session->email = $email;
             $session->nohp = $nohp;
             $session->emailFrom = "tasbih_calc";
+            $session->setExpirationSeconds( 600, 'tasbih' );
 
             $date_tglBuat = $session->date_tglBuat;
             $date_tglLahir = $session->date_tglLahir;

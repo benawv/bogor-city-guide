@@ -280,6 +280,8 @@ class AgentController extends Website_Controller_Action {
 		$mail->addTo($email);
 		$mail->send();
 
+		Zend_Session::namespaceUnset('tasbih');
+
 		echo "Sukses $Calculation";
 		die();
 	}
