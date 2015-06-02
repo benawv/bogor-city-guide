@@ -126,4 +126,32 @@ class DefaultController extends Website_Controller_Action {
 		
 		$this->_forward($action, $controller, $this->_getParam("module"), $this->_getAllParams());
 	}
+	
+    public function loginAsnCenterAction(){
+		
+		$session = new Zend_Session_Namespace('loginasn');
+		//session_start();
+		$pass = $_POST["password"];
+		$user = $_POST["login_username"];
+		
+		$checkUser = new Object_DataLoginAsn_List();
+		$checkUser->setCondition("`username` = '".$user."' AND `password` = '".$pass."'");
+
+		if(count($checkUser) == 1)
+		{
+				$session->verified = 'true';
+				//die(print_r($session->verified));
+				//echo $session->verified;
+				//$_SESSION["loginCenter"] = "Yes";
+				$this->redirect("/asn/asn-multimedia-center");
+		}
+		else{
+				//$_SESSION["loginCenter"] = "No";
+				Zend_Session::namespaceUnset('loginasn');
+				$this->redirect("/asn/login-asn-center");
+		}
+		
+		//echo $_SESSION["loginCenter"];
+		//die();
+	}
 }
