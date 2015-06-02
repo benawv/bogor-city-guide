@@ -143,3 +143,9 @@
 		</div>
 <!--Tab gantung -->
 <?php } ?>
+
+<script>
+	$(document).ready(function(){
+		$(".tab-wrapper").parent().parent().css("display","block !important");
+	});
+</script>
