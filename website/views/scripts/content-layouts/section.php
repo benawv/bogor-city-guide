@@ -52,7 +52,7 @@
 		<?php echo $this->areablock('container', array('allowed' => array(
 			'mobilku','tasbih','container-box2', 'community-tips2',
 			'sections', 'sections-box-full', 'sections-tab', 'teks-tabs',
-			'sections-video', 'sections-gallery', 
+			'sections-video', 'sections-gallery', 'sections-popup-video',
 			'sections-select', 'tekskanan60-imagekiri40_wizard', 
 			'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
 			'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
