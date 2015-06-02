@@ -380,7 +380,17 @@ button.goto.prime .icon, a.button.goto.prime .icon{
 	border: 0px solid #F00;
 	text-align: center;
 }
-
+@media only screen and (max-width : 599px){
+	.heading.clearfix.pagenav.nav-sticky{
+		display: none;
+	}
+	.jcarousel-wrapper .jcarousel-pagination{
+		display: block !important;
+	}
+	.jcarousel-wrapper .jcarousel-pagination a{
+		display: inline-block !important;
+	}
+}
 @media only screen and (max-width : 640px){
 
 	.fixbox{
