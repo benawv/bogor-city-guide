@@ -146,6 +146,6 @@
 
 <script>
 	$(document).ready(function(){
-		$(".tab-wrapper").parent().parent().css("display","block !important");
+		$("#quicklinks").show();
 	});
 </script>
