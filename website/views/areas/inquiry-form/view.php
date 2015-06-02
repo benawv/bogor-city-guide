@@ -189,7 +189,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Nama</label>
+                            <label>Nama Anda?</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="name" class="form-control" id="nama" placeholder="Nama" required />
@@ -201,7 +201,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Jenis Kelamin</label>
+                            <label>Jenis Kelamin?</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <!--<INPUT TYPE="Radio" name="jenisKelamin" VALUE="l" style="display: block;">Pria</INPUT>
@@ -219,7 +219,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>DOB (Min. 18 tahun)</label>
+                            <label>Tanggal Lahir Anda? <br>(Min. Usia 18 tahun)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="DOB" value="" placeholder="Tanggal Lahir" />
@@ -231,7 +231,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>No Handphone (Min. 8 digit)</label>
+                            <label>No Handphone Anda?(Min. 8 digit)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="phone" class="form-control" id="nohp" name="nohp" placeholder="0812345678" required onfocusout="this.value=validateNumber(this.value)" />
@@ -243,10 +243,10 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Email</label>
+                            <label>Email Anda?</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required onfocusout="this.value=validateEMAIL(this.value)" />
+                            <input type="email" class="form-control" id="email" name="email" placeholder="email@domain.com" required onfocusout="this.value=validateEMAIL(this.value)" />
                             <label id="notifemail" style="display:none; color: #f00;">
                                 Mohon maaf email yang Anda masukkan belum benar
                             </label>

@@ -78,6 +78,14 @@
     margin-left: -12px;
 }
 
+    @media screen and (max-width: 1024px) {
+
+        .row{
+            margin-left: -15px !important;
+            margin-right: -15px !important;
+        }
+
+    }
 
     @media only screen and (max-width:775px){
         .btn img{
@@ -86,7 +94,12 @@
             margin-left: 5px;
             top: 10px;
         }
+        .row{
+            margin-left: -15px !important;
+            margin-right: -15px !important;
+        }
     }
+
     @media only screen and (max-width:640px){
         .kalkulasi{
             width: 100%;
@@ -96,6 +109,7 @@
             display: inherit;
             margin-left:-34px;
         }
+
     }
     @media only screen and (max-width:320px){
         .kalkulasi{
