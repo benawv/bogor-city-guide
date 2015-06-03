@@ -1,7 +1,7 @@
 <?php
     	class KalkulatorTasbihController extends Website_Controller_Action{
 		
-            public function allInOneAction() {
+            public function SaveDatabase() {
                 try{
                 //Deklarasi Variabel
                 $nama = $_POST["nama"];
