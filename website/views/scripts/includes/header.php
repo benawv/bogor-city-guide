@@ -273,7 +273,6 @@ $(function(){
 								$(this).find("img").attr("src" , "/website/static/images/arrow/bottom-arrow.png");
 							}
 						});
-					});
 						
 						function link(isi, extension, force)
 						{
@@ -282,6 +281,15 @@ $(function(){
 							if(useragent != '1' || force == true)
 								window.location.href = isi + extension;
 						}
+					});
+						
+						//function link(isi, extension, force)
+						//{
+						//	extension = extension == undefined ? '.php' : '';
+						//	useragent = '<?php echo check_user_agent('mobile');?>';
+						//	if(useragent != '1' || force == true)
+						//		window.location.href = isi + extension;
+						//}
 				</script>
 				
 				<div class="language">
