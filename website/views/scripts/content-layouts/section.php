@@ -52,7 +52,7 @@
 		<?php echo $this->areablock('container', array('allowed' => array(
 			'mobilku','tasbih','container-box2', 'community-tips2',
 			'sections', 'sections-box-full', 'sections-tab', 'teks-tabs',
-			'sections-video', 'sections-gallery', 
+			'sections-video', 'sections-gallery', 'sections-popup-video',
 			'sections-select', 'tekskanan60-imagekiri40_wizard', 
 			'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
 			'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
@@ -60,7 +60,7 @@
 			'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
 			'smartlink-factsheet', 'syariah-factsheet',
 			'pension-factsheet', 'saving-factsheet','multi-video',
-			'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi'))); ?>
+			'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi', 'asn-center'))); ?>
 		<div style="clear: both"></div>
 		<div class="items-container">
 			<?php echo $this->areablock('container2', array(
