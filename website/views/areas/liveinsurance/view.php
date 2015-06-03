@@ -471,11 +471,11 @@
             var tanggallahir = $('#tgl-lahir').val();
             var usia = $('#usia').val();
             
-            if(nama == '' || nohp == '' || gender == 'Pilih' || uangpertanggungan == 'Pilih' || cia == 'Pilih' || smoking == 'Pilih' || email == '' || nohp.length() < 8 || tanggallahir == ''){
+            if(nama == '' || nohp == '' || gender == 'Pilih' || uangpertanggungan == 'Pilih' || cia == 'Pilih' || smoking == 'Pilih' || email == '' || nohp.length < 8 || tanggallahir == ''){
                 if(nama == ''){
                     document.getElementById('notif-nama').style.display = 'block';
                 }
-                if(nohp == '' || nohp.length() < 8){
+                if(nohp == '' || nohp.length < 8){
                     document.getElementById('notif-nohp').style.display = 'block';
                 }
                 if(gender == 'Pilih'){
