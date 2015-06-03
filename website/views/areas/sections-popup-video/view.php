@@ -5,7 +5,9 @@
 
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/jcarousel.responsive.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/jquery.fancybox.css">
-<?php } ?>
+<?php }
+	$videoId = uniqid();
+?>
 
 <style type="text/css">
 	.pimcore_tag_video{
@@ -73,7 +75,7 @@
 			<div class="jcarousel-wrapper">
 				<div class="jcarousel jc2">
 					<ul>
-						<?php $v = 1;while ($this->block("imageblock")->loop()) { ?>
+						<?php $v = $videoId;while ($this->block("imageblock")->loop()) { ?>
 							<?php if($this->editmode) { ?>
 								<li>
 									<?php echo $this->video("myVideo", array("width" => 299,"height" => 270));?>
@@ -96,7 +98,7 @@
 						<?php } ?>
 					</ul>
 					<?php
-						if(!$this->editmode) { $v = 1;
+						if(!$this->editmode) { $v = $videoId;
 						while ($this->block("imageblock")->loop()) {
 					?>
 							<!-- Modal -->
