@@ -400,7 +400,7 @@
                             <label>Premi</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" readonly class="form-control disabled" placeholder="0" id="premi" tabindex="5">
+                            <input type="text" readonly class="form-control disabled" placeholder="0" id="premi" tabindex="5" style="display:none">
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -497,24 +497,24 @@
                     document.getElementById('notif-email').style.display = 'block';
                 }
             }else{
-                
                     $.ajax({
                             url      : '/kalkulator-live-insurance/',
                             type     : 'POST',
                             data     : {
                                         'nama' : nama,
                                         'nohp' : nohp,
+                                        'email' : email,
                                         'gender' : gender,
                                         'uangpertanggungan' : uangpertanggungan,
                                         'cia' : cia,
                                         'smoking' : smoking,
-                                        'email' : email,
                                         'tanggallahir' : tanggallahir,
                                         'usia' : usia
                                         },
                                 success  : function(data){
                                 //console.log(data);
                                 //$('.waiting-calc').hide();
+                                document.getElementByID('#premi').style.display = 'block';
                                 $('#premi').val(accounting.formatMoney(data, "Rp ", 0,","));
                                 document.location.href='kalkulator/thankyou-liveinsurance';
                             }

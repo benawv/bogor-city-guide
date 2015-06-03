@@ -82,7 +82,6 @@
    <br />
     <center><input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen"></center>
   </div>
-                      
 
      
 
