@@ -516,7 +516,7 @@
                                 //$('.waiting-calc').hide();
                                 document.getElementByID('#premi').style.display = 'block';
                                 document.getElementByID('#labelprem').style.display = 'block';
-                                $('#premi').val(data));
+                                $('#premi').val(data);
                                 document.location.href='kalkulator/thankyou-liveinsurance';
                             }
 
