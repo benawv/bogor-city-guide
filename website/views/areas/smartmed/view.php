@@ -483,7 +483,7 @@
                             <label><strong>Date of Birth</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control datepicker" id="dob" placeholder="Date of Birth" tabindex="3" required>
+                            <input type="text" class="form-control date" id="dob" placeholder="Date of Birth" tabindex="3" required>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -492,7 +492,7 @@
                             <label><strong>Calculation Date</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control datepicker" id="cd" placeholder="Calculation Date" tabindex="4" required>
+                            <input type="text" class="form-control date" id="cd" placeholder="Calculation Date" tabindex="4" required>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
                     <div class="form-group">
@@ -581,21 +581,45 @@
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 <script>
+    $(document).on('change',"#dob", function(){ //bind to all instances of class "date". 
+        var date = $("#dob").datepicker('getDate'),
+            day  = date.getDate(),
+            month = date.getMonth() + 1,
+            year =  date.getFullYear();
+            yearnext =  date.getFullYear()+50;
+            range = year+":"+yearnext;
+        console.log(range);
+        $("#cd").datepicker('setDate', null);
+        $("#cd").datepicker("destroy"); 
+        $("#cd").datepicker({
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true,
+            yearRange: range,
+            maxDate: new Date()
+        });
+
+    });
+
     $(function(){
 
         /**
          * jQuery DatePicker
          */
 
-        if( $( '.datepicker' ).length > 0 )
+        if( $( '.date' ).length > 0 )
         {
-            $( '.datepicker' ).datepicker({
+            $( '.date' ).datepicker({
+                dateFormat: 'yy-mm-dd',
                 changeMonth: true,
                 changeYear: true,
-                maxDate: '0'
+                yearRange: "-100:+0"
             });
         }
 
+
+        // dob cd
+        
         /**
          * Custom Tab
          */
@@ -852,8 +876,8 @@
                 "<td class='tabletd'>"+no+"</td>"+
                 "<td><input type='text' class='form-control' placeholder='Name' value='"+name+"' class='display'></td>"+
                 "<td>"+form_sex(sex)+"</td>"+
-                "<td><input class='form-control datepicker' type='text' placeholder='Date of Birth' name='dob2' id='dob2' value='"+dob+"'></td>"+
-                "<td><input class='form-control datepicker' type='text' placeholder='Calculation Date' name='cd2' id='cd2' value='"+cd+"'></td>"+
+                "<td><input class='form-control date' type='text' placeholder='Date of Birth' name='dob2' id='dob2' value='"+dob+"'></td>"+
+                "<td><input class='form-control date' type='text' placeholder='Calculation Date' name='cd2' id='cd2' value='"+cd+"'></td>"+
                 "<td class='tabletd'>"+age+"</td>"+
                 "<td class='tabletd'>NEW BUSINESS</td>"+
                 "<td class='tabletd'>"+planipval.split("_")[1]+"</td>"+
@@ -867,15 +891,6 @@
                 "<td style='display:none;'>"+totalwithout+"</td>"+
             "</tr>");
         jumlah();
-    });
-
-
-    $(document).on('focus',".datepicker", function(){ //bind to all instances of class "date". 
-       $(this).datepicker({
-                changeMonth: true,
-                changeYear: true,
-                maxDate: '0'
-            });
     });
     
     function edit(){
