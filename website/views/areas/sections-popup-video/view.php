@@ -1,6 +1,3 @@
-<?php 
-	$class = "fancybox-".uniqid();
-?>
 <?php if(!$this->editmode) {?>
 <script src="/website/static/js/jquery.jcarousel.min.js" type="text/javascript"></script>
 <script src="/website/static/js/jcarousel.responsive.js" type="text/javascript"></script>
@@ -67,36 +64,79 @@
 	</h2>
 	<div class="description">
 		<?php if($this->editmode): ?>
-			<?php echo "anchor name: ".$this->input('anchor')?>
+			<?php echo "Anchor name: ".$this->input('anchor')?>
+		Deskripsi Section Box
 		<?php endif;?>
-		
 		<?php echo $this->wysiwyg('description')?>
 		
 		<div class="wrapper1">
 			<div class="jcarousel-wrapper">
 				<div class="jcarousel jc2">
 					<ul>
-						<?php while ($this->block("imageblock")->loop()) { ?>
+						<?php $v = 1;while ($this->block("imageblock")->loop()) { ?>
 							<?php if($this->editmode) { ?>
 								<li>
 									<?php echo $this->video("myVideo", array("width" => 299,"height" => 270));?>
-									<?php echo $this->link('sectionImages')?>
-									<?php echo $this->input('download', array("width" => 250))?>
+									Judul Video<br />
+									<?php echo $this->input('titleVideo', array("width" => 250))?>
+									<br />
+									Deskripsi Video
+									<?php echo $this->wysiwyg('descVideo', array("width" => 250))?>
 								</li>
 							<?php } else { ?>
 								<li>
-									<a class="<?php echo $class?> gallery-box" rel="group" href="#<?php //echo $this->image('myImage')->getThumbnail("sec_gallery");?>">
-										<!--<img style="margin-right: 10px; width: 299px;" src="<?php //echo $this->image('myImage')->getSrc();?>" />-->
-										<?php echo $this->video("myVideo", array("width" => 299,"height" => 270));?>
+									<a data-toggle="modal" id="<?php echo $v;?>" data-target="#myModal<?php echo $v;?>" class="gallery-box" rel="group" href="#<?php //echo $this->image('myImage')->getThumbnail("sec_gallery");?>">
+									<img style="margin-right: 10px; width: 299px;" src="<?php echo $this->video("myVideo")->getPosterAsset();?>" />
+										
 									</a>
-									<a href="<?php echo $this->link('sectionImages')->getHref();?>">
-										<h3><?php echo $this->link('sectionImages')->getText();?></h3>
-										<a class="dwn img" target="_blank" href="<?php echo $this->image('myImage')->getSrc();?>"><?php echo $this->input('download')->text?></a>
+									<h3><?php echo $this->input('titleVideo')->text;?></h3>
 									</a>
 								</li>
-							<?php } ?>
+							<?php } $v++; ?>
 						<?php } ?>
 					</ul>
+					<?php
+						if(!$this->editmode) { $v = 1;
+						while ($this->block("imageblock")->loop()) {
+					?>
+							<!-- Modal -->
+							<div class="modal fade" id="myModal<?php echo $v;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							  <div class="modal-dialog">
+								<div class="modal-content">
+								  <div class="modal-header">
+									<button type="button" class="close tutup" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<h4 class="modal-title" id="myModalLabel"><?php echo $this->input('titleVideo')->text;?></h4>
+								  </div>
+								  <div class="modal-body">
+									<?php echo $this->video("myVideo", array("width" => 299,"height" => 270));?>
+									<?php echo $this->wysiwyg('descVideo')->text;?>
+									<input type="hidden" class="hideSrc" />
+								  </div>
+								  <div class="modal-footer">
+									<button type="button" class="btn btn-primary tutup" data-dismiss="modal">Tutup</button>
+								  </div>
+								</div>
+							  </div>
+							</div>
+							<script>
+								$(document).ready(function(){
+									var src = $("#myModal<?php echo $v;?>").find("iframe").attr("src");
+									$("#myModal<?php echo $v;?>").find(".hideSrc").val(src);
+									
+									$("#myModal<?php echo $v;?> .tutup").on("click",function(){
+										$("#myModal<?php echo $v;?>").find("iframe").attr("src","");
+									});
+									
+									$("#myModal<?php echo $v;?>").on("click",function(){
+										$("#myModal<?php echo $v;?>").find("iframe").attr("src","");
+									});
+								});
+							</script>
+					<?php
+								$v++;
+							}
+						}
+					?>
 				</div>
 				<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
 				<a href="#" class="jcarousel-control-next">&rsaquo;</a>
@@ -105,6 +145,12 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-	$(".<?php echo $class?>").fancybox();
+<script>
+	$(document).ready(function(){
+		$(".gallery-box").on("click",function(){
+			var id = $(this).attr("id");
+			var src = $("#myModal"+id).find(".hideSrc").attr("value");
+			$("#myModal"+id).find("iframe").attr("src",src);
+		});
+	});
 </script>
