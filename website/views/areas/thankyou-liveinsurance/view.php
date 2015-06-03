@@ -61,43 +61,7 @@
         background: #3122F9; }
 </style>
 
-    <nav class="main-navigation" style="max-width:1140px; margin:auto;">
-            <div class="row">
 
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
-                    <a href="/tasbih" class="nav-item blueA home">
-                        <h4 style="font-size:18px"><small>Beranda</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/kalkulator/tasbih" class="nav-item green sitemap">
-                        <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4 style="font-size:18px"><small>Informasi produk</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
-                        <h4 style="font-size:18px"><small>Cari Agen</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/inquiry-form" class="nav-item grey chat">
-                        <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-            </div>
-            <div class="row">
-                
-            </div>
-    </nav>
 </header>
 
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
