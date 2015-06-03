@@ -86,6 +86,17 @@
         width: 100%;
     }
 
+    /* Responsiveness */
+    @media screen ( max-width: 767px )
+    {
+        section.tasbih-skema > .container
+        {
+            max-width: 100%;
+            overflow: hidden;
+            overflow-x: scroll;
+        } /* .container */
+    }
+
 </style>
 
 
