@@ -143,7 +143,7 @@
                     <div class="form-box">
                         <div>
                             <!--h3 >Terima kasih Anda telah melakukan kalkulasi ilustrasi produk Allianz Tasbih. Hasil kalkulasi Anda akan dikirimkan ke email pribadi Anda. Silahkan isi field dibawah ini.</h3-->
-                            <h3 >Sekarang, tolong isi data diri Anda.</h3>
+                            <h3 >Sekarang, mohon isi terlebih dahulu data diri Anda.</h3>
                         </div>
                         <br>
                         <!--label><strong>Data Diri</strong></label-->
@@ -202,10 +202,10 @@
                         </div><!--/ .form-group -->
                             
                         <div class="col-md-12 note">
-                            <h4 class="mb10"><strong>Note: </strong></h4>
+                            <h4 class="mb10"><strong>Keterangan: </strong></h4>
                             <ul class="mb30">
-                                <li>Jika meninggal dunia karena sakit, Ahli waris akan mendapatkan Santunan meninggal Dunia 100%</li>
-                                <li>Jika meninggal dunia di saat menunaikan Ibadah Haji maka akan mendapatkan Santunan meninggal Dunia sebesar 200%</li>
+                                <li>Jika Anda meninggal dunia karena sakit, Ahli waris akan mendapatkan Santunan meninggal Dunia 100%</li>
+                                <li>Jika Anda meninggal dunia di saat menunaikan Ibadah Haji maka akan mendapatkan Santunan meninggal Dunia sebesar 200%</li>
                                 <li>Selama mengikuti asuransi Tertanggung akan mendapatkan perlindungan Medical Evakuasi</li>
                                 <li>Masa asuransi adalah = masa pembayaran konstribusi / premi + 10 tahun + 1 tahun</li>
                                 <li>Setelah selesai masa pembayaran kontribusi / premi pemegang polis akan mendapatkan tahapan dana pertama sebesar 50% dari santunan meninggal dunia</li>

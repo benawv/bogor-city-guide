@@ -86,6 +86,11 @@
             margin-left: 5px;
             top: 10px;
         }
+        .row{
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+
     }
     @media only screen and (max-width:640px){
         .kalkulasi{
