@@ -2,7 +2,7 @@
     	class KalkulatorTasbihController extends Website_Controller_Action{
 		
             public function allInOneAction() {
-                
+                try{
                 //Deklarasi Variabel
                 $nama = $_POST["nama"];
                 $nohp = $_POST["nohp"];
@@ -81,7 +81,10 @@
                 $mail->setParams($params);
                 $mail->addTo($email);
                 $mail->send();
-                
+                }catch(Exception $e) {
+                    print('Error');
+                    
+                }
             }
         }
 ?>
