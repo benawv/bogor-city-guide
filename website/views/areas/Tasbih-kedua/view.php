@@ -166,7 +166,7 @@
                                 <label>No Handphone Anda? (Min. 8 digit)</label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
-                                <input type="text" class="form-control" id="nohp" name="nohp" placeholder="No Handphone" required onfocusout="this.value=validateNumber(this.value)">
+                                <input type="text" class="form-control" id="nohp" name="nohp" placeholder="0812345678" required onfocusout="this.value=validateNumber(this.value)">
                                 <label id="notifNoHP" style="display:none; color: #f00;">
                                     Mohon maaf No HP yang Anda masukkan belum benar
                                 </label>
@@ -178,7 +178,7 @@
                                 <label>Email Anda?</label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required onfocusout="this.value=validateEMAIL(this.value)">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="email@domain.com" required onfocusout="this.value=validateEMAIL(this.value)">
                                 <label id="notifemail" style="display:none; color: #f00;">
                                     Mohon maaf email yang Anda masukkan belum benar
                                 </label>

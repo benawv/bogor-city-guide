@@ -2,6 +2,7 @@
     	class KalkulatorTasbihController extends Website_Controller_Action{
 		
             public function allInOneAction() {
+                echo('Masuk Donk Please');
                 try{
                 //Deklarasi Variabel
                 $nama = $_POST["nama"];
@@ -37,7 +38,7 @@
                 foreach($ins as $items){
                     $premi = $items->premi;
                 }
-                print_r($premi);
+                print_r('Rp. '.$premi);
                 
                 //die();
                 

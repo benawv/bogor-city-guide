@@ -397,7 +397,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Premi</label>
+                            <label id='labelprem' style="display:none">Premi</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" readonly class="form-control disabled" placeholder="0" id="premi" tabindex="5" style="display:none">
@@ -515,7 +515,8 @@
                                 //console.log(data);
                                 //$('.waiting-calc').hide();
                                 document.getElementByID('#premi').style.display = 'block';
-                                $('#premi').val(accounting.formatMoney(data, "Rp ", 0,","));
+                                document.getElementByID('#labelprem').style.display = 'block';
+                                $('#premi').val(data);
                                 document.location.href='kalkulator/thankyou-liveinsurance';
                             }
 
