@@ -98,57 +98,20 @@
 <script src="/website/static/mobilku/jquery-ui.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 <script>
-/*
+
 $(document).ready(function(){
 
         $('#cari-agen').click(function() {
             
             
-            var nama = $('#nama').val();
-            var email = $('#email').val();
-            var nohp = $('#nohp').val();
-
-           <?php  $session = new Zend_Session_Namespace('calculation'); ?>
-
-            var date_tglBuat = "<?php echo $session->date_tglBuat; ?>";
-            var date_tglLahir = "<?php echo $session->date_tglLahir; ?>";
-            var JenisKelamin = "<?php echo $session->JenisKelamin; ?>";
-            var Usia = "<?php echo $session->Usia; ?>";
-            var Frekuensi = "<?php echo $session->Frekuensi; ?>";
-            var AsuransiJiwa = "<?php echo $session->AsuransiJiwa; ?>";
-            var AJ = "<?php echo $session->AJ; ?>";
-            var Kontribusi = "<?php echo $session->Kontribusi; ?>";
-            var Calculation = "<?php echo $session->Calculation; ?>";
-
-              $.ajax({
-                  url      : '/v1/api/calculator',
-                  type     : 'POST',
-                  crossDomain: true,
-                  data     : {
-                              'nama' : nama,
-                              'email' : email,
-                              'nohp' : nohp,
-                              'date_tglBuat': date_tglBuat,
-                              'date_tglLahir': date_tglLahir,
-                              'JenisKelamin': JenisKelamin ,
-                              'Usia': Usia,
-                              'Frekuensi': Frekuensi,
-                              'AsuransiJiwa' : AsuransiJiwa,
-                              'AJ' : AJ,
-                              'Kontribusi' : Kontribusi,
-                              'Calculation' : Calculation,
-                              'source' :'Kalkulator Tasbih User'
-                              },
-                  complete  : function(data){
-                         // console.log(data);
+           
                           document.location.href='/agent-locator';
-                      }  
+                       
               });            
-        });
     });
 
   
-  */
+
 </script>
 
 

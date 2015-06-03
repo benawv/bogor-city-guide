@@ -516,7 +516,7 @@
                                 //console.log(data);
                                 //$('.waiting-calc').hide();
                                 $('#premi').val(accounting.formatMoney(data, "Rp ", 0,","));
-                                document.location.href='';
+                                document.location.href='kalkulator/thankyou-liveinsurance';
                             }
 
 
