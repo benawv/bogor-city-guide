@@ -61,43 +61,7 @@
         background: #3122F9; }
 </style>
 
-    <nav class="main-navigation" style="max-width:1140px; margin:auto;">
-            <div class="row">
 
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
-                    <a href="/tasbih" class="nav-item blueA home">
-                        <h4 style="font-size:18px"><small>Beranda</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/kalkulator/tasbih" class="nav-item green sitemap">
-                        <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4 style="font-size:18px"><small>Informasi produk</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
-                        <h4 style="font-size:18px"><small>Cari Agen</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/inquiry-form" class="nav-item grey chat">
-                        <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-            </div>
-            <div class="row">
-                
-            </div>
-    </nav>
 </header>
 
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
@@ -118,7 +82,6 @@
    <br />
     <center><input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen"></center>
   </div>
-                      
 
      
 
@@ -134,57 +97,20 @@
 <script src="/website/static/mobilku/jquery-ui.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 <script>
-/*
+
 $(document).ready(function(){
 
         $('#cari-agen').click(function() {
             
             
-            var nama = $('#nama').val();
-            var email = $('#email').val();
-            var nohp = $('#nohp').val();
-
-           <?php  $session = new Zend_Session_Namespace('calculation'); ?>
-
-            var date_tglBuat = "<?php echo $session->date_tglBuat; ?>";
-            var date_tglLahir = "<?php echo $session->date_tglLahir; ?>";
-            var JenisKelamin = "<?php echo $session->JenisKelamin; ?>";
-            var Usia = "<?php echo $session->Usia; ?>";
-            var Frekuensi = "<?php echo $session->Frekuensi; ?>";
-            var AsuransiJiwa = "<?php echo $session->AsuransiJiwa; ?>";
-            var AJ = "<?php echo $session->AJ; ?>";
-            var Kontribusi = "<?php echo $session->Kontribusi; ?>";
-            var Calculation = "<?php echo $session->Calculation; ?>";
-
-              $.ajax({
-                  url      : '/v1/api/calculator',
-                  type     : 'POST',
-                  crossDomain: true,
-                  data     : {
-                              'nama' : nama,
-                              'email' : email,
-                              'nohp' : nohp,
-                              'date_tglBuat': date_tglBuat,
-                              'date_tglLahir': date_tglLahir,
-                              'JenisKelamin': JenisKelamin ,
-                              'Usia': Usia,
-                              'Frekuensi': Frekuensi,
-                              'AsuransiJiwa' : AsuransiJiwa,
-                              'AJ' : AJ,
-                              'Kontribusi' : Kontribusi,
-                              'Calculation' : Calculation,
-                              'source' :'Kalkulator Tasbih User'
-                              },
-                  complete  : function(data){
-                         // console.log(data);
+           
                           document.location.href='/agent-locator';
-                      }  
+                       
               });            
-        });
     });
 
   
-  */
+
 </script>
 
 
