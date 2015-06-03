@@ -2,7 +2,6 @@
     	class KalkulatorTasbihController extends Website_Controller_Action{
 		
             public function allInOneAction() {
-                echo('Masuk Donk Please');
                 try{
                 //Deklarasi Variabel
                 $nama = $_POST["nama"];
