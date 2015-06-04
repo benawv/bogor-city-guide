@@ -63,7 +63,7 @@
                 $cookie->setO_published(1);
                 $cookie->save();
                 
-            die();
+            
                 //Send to Email
                 //$hasil = number_format($Calculation,0,",",".");
                 $document = '/email/email-live-insurance';
