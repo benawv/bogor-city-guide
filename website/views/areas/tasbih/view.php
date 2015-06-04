@@ -123,6 +123,18 @@
         }
     }
 
+    a.calc-overlay-trigger
+    {
+        color: #009A44; /*inherit */;
+        cursor: help;
+    }
+
+     a.calc-overlay-trigger:hover
+    {
+        color: #009A44; /*inherit */;
+        text-decoration: underline;
+    }
+
 </style>
 
 
@@ -180,7 +192,7 @@
 
                     <div class="form-box">
 
-                        <label><strong>Ilustrasi ini berguna untuk menghitung perkiraan biaya yang Anda bayarkan untuk melindungi diri Anda, jika terjadi risiko yang Anda alami di masa yang akan datang</strong></label>
+                        <label><strong>Ilustrasi ini berguna untuk menghitung perkiraan biaya yang Anda bayarkan untuk melindungi diri Anda, jika terjadi <a href="#" class="calc-overlay-trigger" data-target="calcOverlayRisiko">risiko</a> yang Anda alami di masa yang akan datang</strong></label>
 
                         <div class="form-group">
                             <div class="col-md-4">
@@ -239,7 +251,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Berapa uang pertanggungan yang Anda butuhkan bila terjadi risiko?</label>
+                                <label>Berapa uang pertanggungan yang Anda butuhkan bila terjadi <a href="#" class="calc-overlay-trigger" data-target="calcOverlayRisiko">risiko</a>?</label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
 
@@ -253,7 +265,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Berapa lama pembayaran premi/iuran yang Anda inginkan?</label>
+                                <label>Berapa lama pembayaran <a href="#" class="calc-overlay-trigger" data-target="calcOverlayPremi">premi</a>/iuran yang Anda inginkan?</label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <select class="form-control" name="masa-premi" id="masa-premi">
@@ -396,6 +408,160 @@
 
 </div><!--/ #newsletter-allianz -->
 
+<style>
+    /* Pop-up */
+    .calc-overlay
+    {
+        display: none;
+        position: fixed;
+        z-index: 999999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8);
+    }
+
+    .calc-overlay > .calc-overlay-inner
+    {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box
+    {
+        display: block;
+        position: absolute;
+        background: white;
+        top: 50%;
+        left: 50%;
+        width: 70%;
+        transform: translate3d( -50%, -50%, 0);
+        padding: 48px 52px;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > a.calc-overlay-close
+    {
+        display: block;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        font-size: xx-large;
+        color: #999; /* rgba( 0, 0, 0, 0.3 ); */
+        min-width: 48px;
+        min-height: 48px;
+        line-height: 48px;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > a.calc-overlay-close:hover,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > a.calc-overlay-close:focus
+    {
+        color: #666; /* rgba( 0, 0, 0, 0.6 ); */
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > h1,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > h2,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > h3,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > h4,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > h5,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > h6
+    {
+        margin: 0 0 12px;
+        padding: 0;
+        font-size: x-large;
+        font-weight: bold;
+        color: #009A44;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > p
+    {
+        color: #666;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box ul,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box ol
+    {
+        margin: 0 20px !important;
+        padding: 0 !important;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box ul > li,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box ol > li
+    {
+        margin: 0 auto 8px;
+        padding: 0;
+        position: relative;
+        color: #333;
+        font-size: normal;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > table
+    {
+        text-align: left;
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > table td,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > table th
+    {
+        padding: 5px 10px;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > table > thead > tr > td,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > table > thead > tr > th
+    {
+        background: #003781;
+        color: white;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > table > tbody > tr > td
+    {
+        background: #d0d8e8;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > table > tbody > tr:nth-child(even) > td
+    {
+        background: #e9edf4;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > table > tfoot > tr > td
+    {
+        font-size: small;
+        text-align: right;
+        padding: 8px 0;
+    }
+</style>
+
+<div class="calc-overlay" id="calcOverlayRisiko">
+    <div class="calc-overlay-inner">
+        <div class="calc-overlay-box">
+            <a href="#" class="calc-overlay-close">&times;</a>
+            <h3>5 Risiko Kehidupan</h3>
+            <ol>
+                <li>Penyakit Kritis(Jika Anda)</li>
+                <li>Kecelakaan (Jika Anda)</li>
+                <li>Cacat Tetap (Karena Kecelakaan)</li>
+                <li>Tua (Memasuki umur tua)</li>
+                <li>Meninggal Dunia</li>
+            </ol>
+        </div><!--/ .calc-overlay-box -->
+    </div><!--/ .calc-inner -->
+</div><!--/ .calc-overlay -->
+
+<div class="calc-overlay" id="calcOverlayPremi">
+    <div class="calc-overlay-inner">
+        <div class="calc-overlay-box">
+            <a href="#" class="calc-overlay-close">&times;</a>
+            <h3>Premi</h3>
+            <p>Premi adalah iuran yang anda bayarkan secara berkala sesuai dengan periode pilihan Anda untuk mendapatkan uang pertangungan yang Anda inginkan.</p>
+        </div><!--/ .calc-overlay-box -->
+    </div><!--/ .calc-inner -->
+</div><!--/ .calc-overlay -->
+
 <link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
 <script src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="/website/static/mobilku/jquery-ui.js" type="text/javascript"></script>
@@ -406,6 +572,37 @@
 <script>
     // document.getElementById('tgl-hitung').value = (new Date()).format("m/dd/yy");
     $(document).ready(function(){
+
+        /**
+         * Calculator Pop-Up
+         */
+
+        if( $( 'a.calc-overlay-trigger' ).length > 0 )
+        {
+            $( 'a.calc-overlay-trigger' ).click(function(e){
+                e.preventDefault();
+                var dataTarget = $( this ).attr( 'data-target' );
+                if( $( '.calc-overlay#' + dataTarget ).length > 0 )
+                {
+                    $( '.calc-overlay#' + dataTarget ).stop().fadeIn( 'fast' );
+                }
+                return false;
+            });
+        }
+
+        if( $( 'a.calc-overlay-close' ).length > 0 )
+        {
+            $( 'a.calc-overlay-close' ).click(function(e){
+                e.preventDefault();
+                $( this ).parent().parent().parent().stop().fadeOut( 'fast' );
+                return false;
+            });
+        }
+
+        /**
+         * End Calculator Pop-Up
+         */
+
         /*
          * jQueryUI DatePicker
          */

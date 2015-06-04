@@ -28,9 +28,9 @@
     .form-control{ border-radius: 0; }
     nav.main-navigation a.nav-item.home::after {
       content: "\f015";
-    }        
+    }
     nav.main-navigation a.nav-item.chat::after {
-      content: "\f003  "; 
+      content: "\f003  ";
     }
     nav.main-navigation a.nav-item {
       display: block;
@@ -59,8 +59,8 @@
       pointer-events: none;
     }
     nav.main-navigation a.nav-item.blueA{
-      background: #003781;}        
-    
+      background: #003781;}
+
     nav.main-navigation a.nav-item.greenChat{
       background: #707372;}
 
@@ -85,6 +85,19 @@
             margin-left: 177px;
         }
     }
+
+    a.calc-overlay-trigger
+    {
+        color: #009A44; /*inherit */;
+        cursor: help;
+    }
+
+     a.calc-overlay-trigger:hover
+    {
+        color: #009A44; /*inherit */;
+        text-decoration: underline;
+    }
+
 </style>
 <header>
     <nav class="main-navigation" style="max-width:1140px; margin:auto;">
@@ -95,25 +108,25 @@
                         <h4 style="font-size:18px"><small>Beranda</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/kalkulator/tasbih" class="nav-item green sitemap">
                         <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/tanya-jawab" class="nav-item orange question">
                         <h4 style="font-size:18px"><small>Pertanyaan Umum</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="http://agen.imkepo.com" target="_blank" class="nav-item users">
                         <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/inquiry-form" class="nav-item grey chat">
                         <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
@@ -121,18 +134,18 @@
                 </div><!--/ .col-xs-12 -->
             </div>
             <div class="row">
-                
+
             </div>
     </nav>
-    
+
 </header>
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
-    
+
     <div class="description">
 
         <div class="header-calc">
             <h1>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
-            
+
         </div><!--/ .header-calc -->
 
         <div class="content-calc">
@@ -147,7 +160,7 @@
                         </div>
                         <br>
                         <!--label><strong>Data Diri</strong></label-->
-                    
+
 
                         <div class="form-group">
                             <div class="col-md-4">
@@ -184,28 +197,28 @@
                                 </label>
                             </div><!--/ .col-md-4 -->
                         </div><!--/ .form-group -->
-        
-            			<div class="form-group">
-            			    <div class="col-md-4">
-            				<label>Kontribusi Berkala/ Premi pertahun</label>
-            			    </div><!--/ .col-md-4 -->
-            			    <div class="col-md-4">
+
+                        <div class="form-group">
+                            <div class="col-md-4">
+                            <label>Kontribusi Berkala/ Premi pertahun</label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
                             <input type="text" class="form-control" id="kontribusi-berkala_view" placeholder="0" value="<?php echo 'Rp. '.number_format($session->Calculation,0,',','.'); ?>" readonly>
                             <input type="hidden" class="form-control" id="kontribusi-berkala" placeholder="0" value="<?php echo $session->Calculation; ?>" readonly>
-            			    </div><!--/ .col-md-4 -->
-            			</div><!--/ .form-group -->
-    			
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
+
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
                               <input type="button" class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next" value="Submit">
                             </div><!--/ .col-md-12 -->
                         </div><!--/ .form-group -->
-                            
+
                         <div class="col-md-12 note">
                             <h4 class="mb10"><strong>Keterangan: </strong></h4>
                             <ul class="mb30">
-                                <li>Jika Anda meninggal dunia karena sakit, Ahli waris akan mendapatkan Santunan meninggal Dunia 100%</li>
-                                <li>Jika Anda meninggal dunia di saat menunaikan Ibadah Haji maka akan mendapatkan Santunan meninggal Dunia sebesar 200%</li>
+                                <li>Jika meninggal dunia karena sakit, <a href="#" class="calc-overlay-trigger" data-target="calcOverlayAhliWaris">Ahli waris</a> akan mendapatkan Santunan meninggal Dunia 100%</li>
+                                <li>Jika meninggal dunia di saat menunaikan Ibadah Haji maka akan mendapatkan Santunan meninggal Dunia sebesar 200%</li>
                                 <li>Selama mengikuti asuransi Tertanggung akan mendapatkan perlindungan Medical Evakuasi</li>
                                 <li>Masa asuransi adalah = masa pembayaran konstribusi / premi + 10 tahun + 1 tahun</li>
                                 <li>Setelah selesai masa pembayaran kontribusi / premi pemegang polis akan mendapatkan tahapan dana pertama sebesar 50% dari santunan meninggal dunia</li>
@@ -291,7 +304,7 @@
                 <div class="col-xs-12">
                     <h4><strong>BACA JUGA</strong></h4>
                     <ol>
-                        <?php 
+                        <?php
                             $entries = new Object_TasbihNews_List();
                             $entries->setLimit(4);
                             $entries->setOrderKey("o_creationDate");
@@ -310,8 +323,151 @@
             </div><!--/ .row -->
         </div><!--/ .content-widget -->
     </div><!--/ .description -->
-                
+
 </div><!--/ #newsletter-allianz -->
+
+    <style>
+    /* Pop-up */
+    .calc-overlay
+    {
+        display: none;
+        position: fixed;
+        z-index: 999999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8);
+    }
+
+    .calc-overlay > .calc-overlay-inner
+    {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box
+    {
+        display: block;
+        position: absolute;
+        background: white;
+        top: 50%;
+        left: 50%;
+        width: 70%;
+        transform: translate3d( -50%, -50%, 0);
+        padding: 48px 52px;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > a.calc-overlay-close
+    {
+        display: block;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        font-size: xx-large;
+        color: #999; /* rgba( 0, 0, 0, 0.3 ); */
+        min-width: 48px;
+        min-height: 48px;
+        line-height: 48px;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > a.calc-overlay-close:hover,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > a.calc-overlay-close:focus
+    {
+        color: #666; /* rgba( 0, 0, 0, 0.6 ); */
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > h1,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > h2,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > h3,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > h4,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > h5,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > h6
+    {
+        margin: 0 0 12px;
+        padding: 0;
+        font-size: x-large;
+        font-weight: bold;
+        color: #009A44;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > p
+    {
+        color: #666;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box ul,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box ol
+    {
+        margin: 0 20px !important;
+        padding: 0 !important;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box ul > li,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box ol > li
+    {
+        margin: 0 auto 8px;
+        padding: 0;
+        position: relative;
+        color: #333;
+        font-size: normal;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > table
+    {
+        text-align: left;
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > table td,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > table th
+    {
+        padding: 5px 10px;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > table > thead > tr > td,
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > table > thead > tr > th
+    {
+        background: #003781;
+        color: white;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > table > tbody > tr > td
+    {
+        background: #d0d8e8;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > table > tbody > tr:nth-child(even) > td
+    {
+        background: #e9edf4;
+    }
+
+    .calc-overlay > .calc-overlay-inner > .calc-overlay-box > table > tfoot > tr > td
+    {
+        font-size: small;
+        text-align: right;
+        padding: 8px 0;
+    }
+</style>
+
+<div class="calc-overlay" id="calcOverlayAhliWaris">
+    <div class="calc-overlay-inner">
+        <div class="calc-overlay-box">
+            <a href="#" class="calc-overlay-close">&times;</a>
+            <h3>Ahli Waris</h3>
+            <p>Ahli waris adalah orang yang anda tunjuk untuk menerima uang pertanggungan Anda. Contoh :</p>
+            <ol>
+                <li>Istri</li>
+                <li>Anak</li>
+                <li>Keluarga dekat</li>
+            </ol>
+        </div><!--/ .calc-overlay-box -->
+    </div><!--/ .calc-inner -->
+</div><!--/ .calc-overlay -->
 
 <link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
 <script src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
@@ -323,17 +479,48 @@
 <script>
     // document.getElementById('tgl-hitung').value = (new Date()).format("m/dd/yy");
     window.onload = function(){
-            
+
     }
-    
+
     $(document).ready(function(){
+
+        /**
+         * Calculator Pop-Up
+         */
+
+        if( $( 'a.calc-overlay-trigger' ).length > 0 )
+        {
+            $( 'a.calc-overlay-trigger' ).click(function(e){
+                e.preventDefault();
+                var dataTarget = $( this ).attr( 'data-target' );
+                if( $( '.calc-overlay#' + dataTarget ).length > 0 )
+                {
+                    $( '.calc-overlay#' + dataTarget ).stop().fadeIn( 'fast' );
+                }
+                return false;
+            });
+        }
+
+        if( $( 'a.calc-overlay-close' ).length > 0 )
+        {
+            $( 'a.calc-overlay-close' ).click(function(e){
+                e.preventDefault();
+                $( this ).parent().parent().parent().stop().fadeOut( 'fast' );
+                return false;
+            });
+        }
+
+        /**
+         * End Calculator Pop-Up
+         */
+
         /*
          * jQueryUI DatePicker
          */
 
         $('#Submit').click(function() {
-            
-            
+
+
             var nama = $('#nama').val();
             var email = $('#email').val();
             var nohp = $('#nohp').val();
@@ -364,7 +551,7 @@
                         $('.result-calc').show();
                         //$('#hasil').val(accounting.formatMoney(data, "Rp ", 0,","));
                         document.location.href = "/tasbih/thankyou";
-                      }  
+                      }
               });
             }
         });
