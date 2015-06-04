@@ -1,19 +1,25 @@
 <?php
-    	class KalkulatorTasbihController extends Website_Controller_Action{
+	
+	class LiveInsuranceController extends Website_Controller_Action{
 		
-            public function saveDatabase() {
-                try{
+        public function savingSendingAction() {
+                //print_r('Test');
+                //die();
+                
                 //Deklarasi Variabel
                 $nama = $_POST["nama"];
                 $nohp = $_POST["nohp"];
                 $gender = $_POST["gender"];
+                
                 $uangpertanggungan = $_POST['uangpertanggungan'];
+                
                 $cia = $_POST['cia'];
+            
                 $smoking = $_POST['smoking'];
+            
                 $email = $_POST['email'];
-                //$tanggallahir = $_POST['tanggallahir'];
-                //$bod = new Pimcore_Date($tanggallahir);
-                $usia = $_POST('usia');
+            
+                $usia = $_POST['usia'];
                 
                 
                 $TanggalLahir = $_POST["tanggallahir"];
@@ -24,14 +30,15 @@
                 $TanggalLahir=$tglLahir_[2]."-".$tglLahir_[1]."-".$tglLahir_[0];
                 $tglLahir = strtotime($TanggalLahir);
 	            $date_tglLahir= new Pimcore_Date($TanggalLahir);//set date into pimcore formats	
-                
+               
                 //Calculatiom
                 //$premi = 10000000+2000000+300000+40000;
                 //Replace Values
                 
                 
                 //Select from Database
-                $ins= new Object_liveinsuranceRate_List();
+                $ins= new Object_LiveInsuranceRate_List();
+            
 			    $ins->setCondition("JenisKelamin='".$gender."' and UangPertanggungan='".$uangpertanggungan."' and          CriticalIllnessAccelerated='".$cia."' and Merokok='".$smoking."' and $Usia='".$usia."'");
                 $premi='';
                 foreach($ins as $items){
@@ -81,10 +88,11 @@
                 $mail->setParams($params);
                 $mail->addTo($email);
                 $mail->send();
-                }catch(Exception $e) {
-                    print('Error');
-                    
-                }
+                
             }
+        
+        public function sendEmailAction() {
+        
         }
+    }
 ?>
