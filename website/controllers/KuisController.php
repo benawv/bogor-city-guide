@@ -377,50 +377,36 @@ class KuisController extends Website_Controller_Action {
 	}
 	
 	public function notifinfotambahanAction(){
-		//$db = Pimcore_Resource_Mysql::get();
-		//
-		//$peserta = new Object_Seratusdatapeserta_List();
-		//$peserta->setCondition("(emailinfo <> 1 OR emailinfo is null) AND lulus = 1");
-		//$peserta->setLimit(20);
-		//
-		//foreach($peserta as $row)
-		//{
-		//	//echo "<pre>";
-		//	//print_r($row);
-		//	//die();
-		//	$id = $row->getId();
-		//	$data = Object_Seratusdatapeserta::getById($id);
-		//	$data->setEmaillulus(1);
-		//
-		//	$noLari = $row->getNoLari();
-		//	$digit = 4-(int)(strlen($noLari));
-		//	$noDada = "";
-		//	for($i=1;$i<=$digit;$i++)
-		//	{
-		//		$noDada = $noDada."0";
-		//	}
-		//	$fixNoDada = $noDada.$noLari;
-		//	
-		//	$document = '/email/email-lulus';
-		//	$params = array('name' => ucwords(strtolower($row->getNamaLengkap())),
-		//					'noPeserta' => $fixNoDada
-		//					);
-		//	$mail = new Pimcore_Mail();
-		//	$mail->setSubject("Selamat Anda Lolos Tahap 1 AJFC 2015");
-		//	$mail->setFrom("no-reply@ajfc.allianz.co.id","Allianz Junior Football Camp 2015");
-		//	$mail->setDocument($document);
-		//	$mail->setParams($params);
-		//	$mail->addTo($row->getEmail());
-		//	
-		//	try{
-		//		$mail->send();
-		//		$data->save();
-		//		echo $row->getNamaLengkap()." email lolos terkirim.<br />";
-		//	}
-		//	catch(Exception $e){
-		//		echo 'ERROR: ',  $e->getMessage(), "\n";
-		//	}
-		//}
+		$db = Pimcore_Resource_Mysql::get();
+		
+		$peserta = new Object_Seratusdatapeserta_List();
+		$peserta->setCondition("emailinfo is null AND lulus = 1");
+		$peserta->setLimit(1);
+		
+		foreach($peserta as $row)
+		{
+			$id = $row->getId();
+			$data = Object_Seratusdatapeserta::getById($id);
+			$data->setEmailinfo(1);
+		
+			$document = '/email/email-tambahan';
+			
+			$mail = new Pimcore_Mail();
+			$mail->setSubject("Pengumuman Tambahan AJFC 2015");
+			$mail->setFrom("no-reply@ajfc.allianz.co.id","Allianz Junior Football Camp 2015");
+			$mail->setDocument($document);
+			
+			$mail->addTo($row->getEmail());
+			
+			try{
+				$mail->send();
+				$data->save();
+				echo $row->getNamaLengkap()." email lolos terkirim.<br />";
+			}
+			catch(Exception $e){
+				echo 'ERROR: ',  $e->getMessage(), "\n";
+			}
+		}
 	}
 	
 	public function notifkirimulangAction(){
