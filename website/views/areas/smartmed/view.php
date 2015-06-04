@@ -747,7 +747,7 @@
             value += disc ;
         }
         return value;
-    }
+    } 
 
     function jumlah(){
         var rowCount = $('table.table tbody tr').length;
