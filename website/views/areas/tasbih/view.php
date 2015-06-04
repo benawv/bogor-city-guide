@@ -297,7 +297,7 @@
                     </div>
 
                     <div class="form-group">
-                        <div class="col-md-8 col-md-offset-4">
+                        <div class="col-md-4 col-md-offset-4 text-center">
                             <?php $asets=Asset::getByPath('/icon-tasbih/calculator.png');?>
                             <button class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih"
                             id="Kalkulasi" name="next" style="background-color:#009a44">
@@ -346,7 +346,9 @@
               </div>
             </div>
           </div>
-        </div>  
+        </div>
+
+
         <style>
 
             .content-widget
