@@ -64,6 +64,18 @@
         
                 //Send to Email
                 //$hasil = number_format($Calculation,0,",",".");
+            
+                if($gender == 'M') $gender = 'Pria';
+                else $gender = 'Wanita';
+            
+                if($cia == '1000') $cia = 'Rp 1 Miliar';
+                else if($cia == '500') $cia = 'Rp 500 Juta';
+                else $cia = 'Rp 250 Juta';
+                    
+                if($uangpertanggungan == '1000') $uangpertanggungan = 'Rp 1 Miliar';
+                else if($uangpertanggungan == '500') $uangpertanggungan = 'Rp 500 Juta';
+                else $uangpertanggungan = 'Rp 250 Juta';
+                    
                 $document = '/email/email-live-insurance';
                 $params = array(
                                 'nama' => $nama,
