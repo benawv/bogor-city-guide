@@ -518,7 +518,7 @@
                                 $('.waiting-calc').show();
                                 alert('Perhitungan Berhasil');
                                 $('#premi').val(data);
-                                document.location.href='/kalkulator/thankyou-liveinsurance';
+                                //document.location.href='/kalkulator/thankyou-liveinsurance';
                             }
 
 
