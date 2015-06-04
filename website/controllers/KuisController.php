@@ -380,7 +380,7 @@ class KuisController extends Website_Controller_Action {
 		$db = Pimcore_Resource_Mysql::get();
 		
 		$peserta = new Object_Seratusdatapeserta_List();
-		$peserta->setCondition("(emailinfo <> 1 AND emailinfo is null) AND lulus = 1");
+		$peserta->setCondition("(emailinfo <> 1 OR emailinfo is null) AND lulus = 1");
 		$peserta->setLimit(1);
 		
 		foreach($peserta as $row)
