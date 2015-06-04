@@ -395,12 +395,12 @@
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
-                    <div class="form-group">
+                    <div class="form-group waiting-calc">
                         <div class="col-md-4">
-                            <label id='labelprem' style="display:none">Premi</label>
+                            <label id='labelprem'>Premi</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" readonly class="form-control disabled" placeholder="0" id="premi" tabindex="5" style="display:none">
+                            <input type="text" readonly class="form-control disabled" placeholder="0" id="premi" tabindex="5">
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -470,6 +470,7 @@
             var email = $('#email').val();
             var tanggallahir = $('#tgl-lahir').val();
             var usia = $('#usia').val();
+         
             
             if(nama == '' || nohp == '' || gender == 'Pilih' || uangpertanggungan == 'Pilih' || cia == 'Pilih' || smoking == 'Pilih' || email == '' || nohp.length < 8 || tanggallahir == ''){
                 if(nama == ''){
@@ -497,6 +498,7 @@
                     document.getElementById('notif-email').style.display = 'block';
                 }
             }else{
+                //alert('test');
                     $.ajax({
                             url      : '/kalkulator-live-insurance/',
                             type     : 'POST',
@@ -513,9 +515,8 @@
                                         },
                                 success  : function(data){
                                 //console.log(data);
-                                //$('.waiting-calc').hide();
-                                document.getElementByID('#premi').style.display = 'block';
-                                document.getElementByID('#labelprem').style.display = 'block';
+                                $('.waiting-calc').show();
+                                alert('Perhitungan Berhasil');
                                 $('#premi').val(data);
                                 document.location.href='kalkulator/thankyou-liveinsurance';
                             }
