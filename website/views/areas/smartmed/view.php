@@ -592,7 +592,6 @@
         $("#cd").datepicker('setDate', null);
         $("#cd").datepicker("destroy"); 
         $("#cd").datepicker({
-            dateFormat: 'yy-mm-dd',
             changeMonth: true,
             changeYear: true,
             yearRange: range,
@@ -610,7 +609,6 @@
         if( $( '.date' ).length > 0 )
         {
             $( '.date' ).datepicker({
-                dateFormat: 'yy-mm-dd',
                 changeMonth: true,
                 changeYear: true,
                 yearRange: "-100:+0"
