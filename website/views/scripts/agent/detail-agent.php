@@ -83,6 +83,40 @@
             display: block;
         }
       }
+    .bisnis{
+        margin-top: -10px;
+    }
+    .custom-section .description .section-left-40{
+        background: none;
+    }
+    .logo-icon a{
+        float: left;
+        margin-right: 10px;
+        margin-top: 10px;
+        display: block;
+        width: 33px;
+        height: 33px;
+    }
+    .icon-fb{
+        background: url("/website/static/images/agent_locator/fb2.png") no-repeat;
+    }
+    a.icon-fb:hover{
+        background: url("/website/static/images/agent_locator/fb1.png") no-repeat;
+    }
+    
+    .icon-in{
+        background: url("/website/static/images/agent_locator/in2.png") no-repeat;
+    }
+    a.icon-in:hover{
+        background: url("/website/static/images/agent_locator/in1.png") no-repeat;
+    }
+    
+    .icon-me{
+        background: url("/website/static/images/agent_locator/info2.png") no-repeat;
+    }
+    a.icon-me:hover{
+        background: url("/website/static/images/agent_locator/info1.png") no-repeat;
+    }
 </style>
 <?php
 
@@ -133,12 +167,18 @@
             <div class="description width-66">
                 <div class="section-left-40">
                     <img src="<?php echo $fotoAgent; ?>" alt="<?php echo $namaAgent; ?>">
+                    <div class="logo-icon">
+                        <a href="#" class="icon-fb"></a>
+                        <a href="#" class="icon-in"></a>
+                        <a href="#" class="icon-me"></a>
+                    </div>
                     <!--
                     <img src="http://placekitten.com/g/256/256" alt="Gambar" />
                     -->
                 </div><!--/ .section-left-40 -->
                 <div class="section-right-60">
                     <h2><?php echo $namaAgent; ?></h2>
+                    <div class="bisnis">Bisnis Partner</div>
                     <?php foreach($kantor as $dataKantor){
                             $namaLokasi = ucwords(strtolower($dataKantor->getNamaLokasi()));
                             $alamat = ucwords(strtolower($dataKantor->getAlamat1()."<br /> ".$dataKantor->getAlamat2()."<br /> ".$dataKantor->getAlamat3()));
