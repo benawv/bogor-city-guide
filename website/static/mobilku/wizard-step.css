@@ -189,7 +189,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 .btn-sm, .btn-xs {
     border-radius: 3px;
-    font-size: 12px;
+    font-size: 14px;
     padding: 5px 10px;
 }
 .btn-xs {

@@ -208,7 +208,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label><strong>Jenis Kelamin</strong></label>
+                                <label><strong>Jenis Kelamin Anda adalah?</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <div class="row">
@@ -224,7 +224,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label><strong>Berarti usia Anda</strong></label>
+                                <label><strong>Berarti usia Anda adalah?</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <input type="text" class="form-control" id="usia" placeholder="Usia (Tahun)" readonly>
@@ -233,7 +233,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label><strong>Termin Pembayaran</strong></label>
+                                <label><strong>Pilihlah Termin Pembayaran Anda</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <select class="form-control" name="Frekuensi" id="Frekuensi">
@@ -297,11 +297,14 @@
 
                     <div class="form-group">
                         <div class="col-md-4 col-md-offset-4 text-center">
+                            <button class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" style="background-color:#009a44">Selanjutnya <i class="fa fa-chevron-right" style="border-radius: 9999px; min-width: 16px; min-height: 16px; line-height: 16px; background: white; color: #009A44; font-size: 8px;"></i></button>
+                            <!--
                             <?php $asets=Asset::getByPath('/icon-tasbih/calculator.png');?>
                             <button class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih"
                             id="Kalkulasi" name="next" style="background-color:#009a44">
                             <img src="<?php echo $asets; ?>" alt="background-galeri" class="img-responsive icon-submit" />
                             <font class="font-submit">Selanjutnya</font></button>
+                            -->
                             <!-- <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" value="Kalkulasi" style="background-color:#009a44"> -->
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
@@ -321,16 +324,16 @@
               <div class="modal-body">
                 <!--h3>5 Risiko Kehidupan</h3-->
                 <ol>
-                    <li>Penyakit Kritis(Jika Anda)</li>
-                    <li>Kecelakaan (Jika Anda)</li>
-                    <li>Cacat Tetap (Karena Kecelakaan)</li>
-                    <li>Tua (Memasuki umur tua)</li>
-                    <li>Meninggal Dunia</li>
+                    <li>Jika Anda mengalami penyakit kritis</li>
+                    <li>Jika Anda mengalami kecelakaan</li>
+                    <li>Cacat tetap karena kecelakaan</li>
+                    <li>Memasuki usia tua</li>
+                    <li>Meninggal dunia</li>
                 </ol>
               </div>
             </div>
           </div>
-        </div>   
+        </div>
 
         <div class="modal fade" id="premi" tabindex="-1" role="dialog" aria-labelledby="premiLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -432,7 +435,7 @@
             }
 
             .modal-body ol>li{
-                padding-bottom: 0px; 
+                padding-bottom: 0px;
             }
 
 
