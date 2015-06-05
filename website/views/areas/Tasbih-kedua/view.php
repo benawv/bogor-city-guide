@@ -97,9 +97,9 @@
         color: #009A44; /*inherit */;
         text-decoration: underline;
     }
-    
+
     .modal-body ol>li{
-                padding-bottom: 0px; 
+                padding-bottom: 0px;
     }
 
 </style>
@@ -214,7 +214,12 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
+                                <!--
                               <input type="button" class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next" value="Submit">
+                                -->
+                                <button type="button" class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next">
+                                    <i class="fa fa-envelope-o"></i> Submit
+                                </button>
                             </div><!--/ .col-md-12 -->
                         </div><!--/ .form-group -->
 
@@ -350,7 +355,7 @@
               </div>
             </div>
           </div>
-        </div> 
+        </div>
 
         <div class="modal fade" id="premi" tabindex="-1" role="dialog" aria-labelledby="premiLabel" aria-hidden="true">
           <div class="modal-dialog">
