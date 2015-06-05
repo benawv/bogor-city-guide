@@ -297,7 +297,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4 col-md-offset-4 text-center">
-                            <button class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" style="background-color:#009a44">Selanjutnya <i class="fa fa-chevron-right" style="border-radius: 9999px; min-width: 16px; min-height: 16px; line-height: 16px; background: white; color: #009A44; font-size: 8px;"></i></button>
+                            <button class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" style="background-color:#009a44"><i class="fa fa-chevron-right" style="border-radius: 9999px; min-width: 16px; min-height: 16px; line-height: 16px; background: white; color: #009A44; font-size: 8px;"></i>&nbsp;Selanjutnya </button>
                             <!--
                             <?php $asets=Asset::getByPath('/icon-tasbih/calculator.png');?>
                             <button class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih"

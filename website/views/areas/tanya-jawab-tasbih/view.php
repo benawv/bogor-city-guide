@@ -34,6 +34,11 @@
         font-size: 20px;
         pointer-events: none;
     }
+    nav.main-navigation a.nav-item::after{
+        font-size: 20px !important; /*icon di button*/
+    }
+
+
     nav.main-navigation a.nav-item.blueA{ background: #003781; }
     nav.main-navigation a.nav-item.greenChat{ background: #B20065; }
     nav.main-navigation a.nav-item.blueA::before { background: #3122F9; }
@@ -117,39 +122,164 @@
         margin-top: -10px;
     }
 
+    @media (min-width: 1200px){
+        .container{
+            max-width: 989px;
+        }
+
+    }
+
 </style>
 
-<header>
+
+<?php if( $this->editmode ): ?>
+<style>
+    .navi{
+        margin-bottom: 50px;
+    }
+    .flex-viewport{
+        margin-bottom: 50px;
+    }
+    .wrapper-special{
+        margin-bottom: 100px;
+    }
+    .navi li{
+        float: none;
+    }
+</style>
+<?php endif; ?>
+
+<link rel="stylesheet" type="text/css" media="all" href="/website/ajfc/css/style.css" />
+
+<script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
+<script src="/website/static/js/jquery.tools.min.js" type="text/javascript"></script>
+
+<?php if( !$this->editmode ): ?>
+<script src="/website/static/js/sticky-jquery.js" type="text/javascript"></script>
+<?php endif; ?>
+
+<script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
+<script src="/website/static/js/jquery.tools.min.js" type="text/javascript"></script>
+<?php if(!$this->editmode):?>
+<script src="/website/static/js/sticky-jquery.js" type="text/javascript"></script>
+<?php endif; ?>
+
+
+<div class="container">
+        <?php //echo $this->template("includes/breadcrumb.php")?>
+    <span class="breadcrumb"><h2 class="title"><?php echo $this->document->getProperty('navigation_title');?></h2></span>
+    
+    <div class="heading clearfix pagenav">
+        <?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
+    </div>
+
+
+    <?php echo $this->areablock('bannerArea', array(
+                'allowed' => array('gallery-carousel','static-banner-wide')))?>
+
+<header style="margin: 0px -15px 0px -15px;">
     <nav class="main-navigation" style="max-width:960px; margin: 0 auto;">
         <div class="row">
             <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
-                <a href="/tasbih" class="nav-item blueA home">
+                <a href="/tasbih" class="nav-item blueA home" style="height: 48px !important;">
                     <h4 style="font-size:18px"><small>Beranda</small></h4>
                 </a>
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                <a href="/kalkulator/tasbih" class="nav-item green sitemap">
+                <a href="/kalkulator/tasbih" class="nav-item green sitemap" style="height: 48px !important;">
                     <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
                 </a>
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                <a href="/tasbih/tanya-jawab" class="nav-item orange question">
+                <a href="/tasbih/tanya-jawab" class="nav-item orange question" style="height: 48px !important;">
                     <h4 style="font-size:18px"><small>Informasi produk</small></h4>
                 </a>
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
+                <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users" style="height: 48px !important;">
                     <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                 </a>
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                <a href="/tasbih/inquiry-form" class="nav-item grey chat">
+                <a href="/tasbih/inquiry-form" class="nav-item grey chat" style="height: 48px !important;">
                     <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
                 </a>
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
     </nav><!--/ .main-navigation -->
 </header>
+
+
+<div class="container boxes-view">
+    <div>
+
+        <?php
+            function limit_words($string, $word_limit)
+            {
+                $words = explode(" ",$string);
+                return implode(" ",array_splice($words,0,$word_limit));
+            }
+        ?>
+
+        <?php echo $this->areablock('container', array('allowed' => array(
+            'mobilku','tasbih', 'tasbih-news', 'payment','smartmed','liveinsurance','thanksyou-liveinsurance'.'container-box2', 'community-tips2',
+            'sections', 'sections-box-full', 'sections-tab', 'teks-tabs',
+            'sections-video', 'sections-gallery',
+            'sections-select', 'tekskanan60-imagekiri40_wizard',
+            'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
+            'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
+            'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
+            'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
+            'tanya-jawab-tasbih',
+            'smartlink-factsheet', 'syariah-factsheet',
+            'pension-factsheet', 'saving-factsheet','multi-video',
+            'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi','Tasbih-kedua','thankyou-tasbih','thankyou-inquiry'))); ?>
+
+        <div style="clear:both; "></div>
+
+    </div>
+</div><!--/ .container -->
+
+<?php if( !$this->editmode ): ?>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        $( 'li.aktif .nav_menu div' ).css( 'display', 'none' );
+        $( 'li .nav_menu .white_image' ).css( 'display', 'none' );
+        $( 'li.aktif .nav_menu .white_image' ).css( 'display', 'block' );
+        var hash = window.location.hash.substring(1);
+
+        if( hash != '' )
+        {
+            var target = '#modal-' + hash;
+            $( target ).modal( 'show' );
+        }
+
+        $( ".pagenav .navi li" ).click(function(){
+            $(".pagenav .navi li").removeClass('aktif');
+            $(".pagenav .navi li .nav_menu div").css('display','block');
+            $(".pagenav .navi li .nav_menu .white_image").css('display','none');
+            $(this).addClass('aktif');
+            $('li.aktif .nav_menu div').css('display', 'none');
+            $('li.aktif .nav_menu .white_image').css('display', 'block');
+            var data = $(this).attr('class');
+            var id = data.split(' ');
+            //alert($(".heading").offset().top);
+            if(Math.floor( $(".heading").offset().top)<=212)
+            {
+                $('html, body').animate({scrollTop:$("#"+id[0]).offset().top-190}, 500);
+            }
+            else
+            {
+                $('html, body').animate({scrollTop:$("#"+id[0]).offset().top-90}, 500);
+            }
+        });
+    });
+</script>
+
+<?php endif; ?>
+
 
 <div class="page-wrapper-outer">
     <div class="container" style="max-width: 960px; background: white;">
@@ -213,3 +343,4 @@
         </div><!--/ .row -->
     </div><!--/ .container -->
 </div><!--/ .page-wrapper-outer -->
+</div>
