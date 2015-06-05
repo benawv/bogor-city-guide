@@ -22,7 +22,7 @@
     .form-box{ border: solid 1px #ddd; padding: 16px 20px; margin-bottom: 32px; }
     .form-control{ border-radius: 0; }
         nav.main-navigation a.nav-item.home::after {
-      content: "\f015"; }        
+      content: "\f015"; }
     nav.main-navigation a.nav-item.chat::after {
       content: "\f003  "; }
     nav.main-navigation a.nav-item {
@@ -52,8 +52,8 @@
   pointer-events: none;
 }
         nav.main-navigation a.nav-item.blueA{
-      background: #003781;}        
-    
+      background: #003781;}
+
     nav.main-navigation a.nav-item.greenChat{
       background: #B20065;}
 
@@ -69,25 +69,25 @@
                         <h4 style="font-size:18px"><small>Beranda</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/kalkulator/tasbih" class="nav-item green sitemap">
                         <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/tanya-jawab" class="nav-item orange question">
                         <h4 style="font-size:18px"><small>Informasi produk</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
                         <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
-                
+
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/inquiry-form" class="nav-item grey chat">
                         <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
@@ -95,13 +95,13 @@
                 </div><!--/ .col-xs-12 -->
             </div>
             <div class="row">
-                
+
             </div>
     </nav>
 </header>
 
       <div id="newsletter-allianz" class="full-w bg-white nopadding">
-          
+
           <div class="description">
 
               <div class="header-calc">
@@ -116,7 +116,12 @@
                         <h3  style=" color:black; text-align:center;"><strong>Perhitungan ilustrasi produk Allianz Tasbih sudah dikirimkan ke alamat email Anda</strong></h3>
                         <h3 style=" color:black; text-align:center;"><strong>Temukan agen terdekat: </strong></h3>
                        <br />
-                        <center><input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen"></center>
+                        <center>
+                            <!--
+                            <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen">
+                            -->
+                            <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next"><i class="fa fa-users"></i> Cari Agen</button>
+                        </center>
                     </div>
 
             </div><!--/ .col-md-12 -->
@@ -195,7 +200,7 @@
                 <div class="col-xs-12">
                     <h4><strong>BACA JUGA</strong></h4>
                     <ol>
-                        <?php 
+                        <?php
                             $entries = new Object_TasbihNews_List();
                             $entries->setLimit(4);
                             $entries->setOrderKey("o_creationDate");
@@ -221,14 +226,14 @@
 <script src="/website/static/mobilku/jquery-ui.js" type="text/javascript"></script>
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 <script>
-  
+
 $(document).ready(function(){
         /*
          * jQueryUI DatePicker
          */
 
         $('#cari-agen').click(function() {
-            
+
            <?php  $session = new Zend_Session_Namespace('tasbih'); ?>
 
             var nama = '<?php echo $session->nama; ?>';
@@ -266,13 +271,13 @@ $(document).ready(function(){
                   complete  : function(data){
                          //console.log(data);
                           document.location.href='/agent-locator';
-                      }  
-              });            
+                      }
+              });
         });
     });
 
-  
-  
+
+
 </script>
 
 
