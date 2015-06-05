@@ -167,180 +167,186 @@
 
 <div class="container">
         <?php //echo $this->template("includes/breadcrumb.php")?>
-    <span class="breadcrumb"><h2 class="title"><?php echo $this->document->getProperty('navigation_title');?></h2></span>
-    
-    <div class="heading clearfix pagenav">
-        <?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
-    </div>
+        <span class="breadcrumb"><h2 class="title"><?php echo $this->document->getProperty('navigation_title');?></h2></span>
+        
+        <div class="heading clearfix pagenav">
+            <?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
+        </div>
 
 
-    <?php echo $this->areablock('bannerArea', array(
-                'allowed' => array('gallery-carousel','static-banner-wide')))?>
+        <?php echo $this->areablock('bannerArea', array(
+                    'allowed' => array('gallery-carousel','static-banner-wide')))?>
 
-<header style="margin: 0px -15px 0px -15px;">
-    <nav class="main-navigation" style="max-width:960px; margin: 0 auto;">
-        <div class="row">
-            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
-                <a href="/tasbih" class="nav-item blueA home" style="height: 48px !important;">
-                    <h4 style="font-size:18px"><small>Beranda</small></h4>
-                </a>
-            </div><!--/ .col-xs-12 -->
-            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                <a href="/kalkulator/tasbih" class="nav-item green sitemap" style="height: 48px !important;">
-                    <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
-                </a>
-            </div><!--/ .col-xs-12 -->
-            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                <a href="/tasbih/tanya-jawab" class="nav-item orange question" style="height: 48px !important;">
-                    <h4 style="font-size:18px"><small>Informasi produk</small></h4>
-                </a>
-            </div><!--/ .col-xs-12 -->
-            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users" style="height: 48px !important;">
-                    <h4 style="font-size:18px"><small>Cari Agen</small></h4>
-                </a>
-            </div><!--/ .col-xs-12 -->
-            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                <a href="/tasbih/inquiry-form" class="nav-item grey chat" style="height: 48px !important;">
-                    <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
-                </a>
-            </div><!--/ .col-xs-12 -->
-        </div><!--/ .row -->
-    </nav><!--/ .main-navigation -->
-</header>
-
-
-<div class="container boxes-view">
-    <div>
-
-        <?php
-            function limit_words($string, $word_limit)
-            {
-                $words = explode(" ",$string);
-                return implode(" ",array_splice($words,0,$word_limit));
-            }
-        ?>
-
-        <?php echo $this->areablock('container', array('allowed' => array(
-            'mobilku','tasbih', 'tasbih-news', 'payment','smartmed','liveinsurance','thanksyou-liveinsurance'.'container-box2', 'community-tips2',
-            'sections', 'sections-box-full', 'sections-tab', 'teks-tabs',
-            'sections-video', 'sections-gallery',
-            'sections-select', 'tekskanan60-imagekiri40_wizard',
-            'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
-            'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
-            'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
-            'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
-            'tanya-jawab-tasbih',
-            'smartlink-factsheet', 'syariah-factsheet',
-            'pension-factsheet', 'saving-factsheet','multi-video',
-            'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi','Tasbih-kedua','thankyou-tasbih','thankyou-inquiry'))); ?>
-
-        <div style="clear:both; "></div>
-
-    </div>
-</div><!--/ .container -->
-
-<?php if( !$this->editmode ): ?>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-
-        $( 'li.aktif .nav_menu div' ).css( 'display', 'none' );
-        $( 'li .nav_menu .white_image' ).css( 'display', 'none' );
-        $( 'li.aktif .nav_menu .white_image' ).css( 'display', 'block' );
-        var hash = window.location.hash.substring(1);
-
-        if( hash != '' )
-        {
-            var target = '#modal-' + hash;
-            $( target ).modal( 'show' );
-        }
-
-        $( ".pagenav .navi li" ).click(function(){
-            $(".pagenav .navi li").removeClass('aktif');
-            $(".pagenav .navi li .nav_menu div").css('display','block');
-            $(".pagenav .navi li .nav_menu .white_image").css('display','none');
-            $(this).addClass('aktif');
-            $('li.aktif .nav_menu div').css('display', 'none');
-            $('li.aktif .nav_menu .white_image').css('display', 'block');
-            var data = $(this).attr('class');
-            var id = data.split(' ');
-            //alert($(".heading").offset().top);
-            if(Math.floor( $(".heading").offset().top)<=212)
-            {
-                $('html, body').animate({scrollTop:$("#"+id[0]).offset().top-190}, 500);
-            }
-            else
-            {
-                $('html, body').animate({scrollTop:$("#"+id[0]).offset().top-90}, 500);
-            }
-        });
-    });
-</script>
-
-<?php endif; ?>
+    <header style="margin: 0px -15px 0px -15px;">
+        <nav class="main-navigation" style="max-width:960px; margin: 0 auto;">
+            <div class="row">
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
+                    <a href="/tasbih" class="nav-item blueA home" style="height: 48px !important;">
+                        <h4 style="font-size:18px"><small>Beranda</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="/kalkulator/tasbih" class="nav-item green sitemap" style="height: 48px !important;">
+                        <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="/tasbih/tanya-jawab" class="nav-item orange question" style="height: 48px !important;">
+                        <h4 style="font-size:18px"><small>Informasi produk</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users" style="height: 48px !important;">
+                        <h4 style="font-size:18px"><small>Cari Agen</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="/tasbih/inquiry-form" class="nav-item grey chat" style="height: 48px !important;">
+                        <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+            </div><!--/ .row -->
+        </nav><!--/ .main-navigation -->
+    </header>
 
 
-<div class="page-wrapper-outer">
-    <div class="container" style="max-width: 960px; background: white;">
-        <div class="row">
-            <div class="col-xs-12 col-md-12 pr0">
+    <div class="container boxes-view">
+        <div>
 
-                <div class="main-content">
+            <?php
+                function limit_words($string, $word_limit)
+                {
+                    $words = explode(" ",$string);
+                    return implode(" ",array_splice($words,0,$word_limit));
+                }
+            ?>
 
-                    <div class="main-content--header">
-                        <h1 class="mb12"><?php echo $this->input('title_page_faq')?></h1>
-                    </div><!--/ .main-content--header -->
+            <?php echo $this->areablock('container', array('allowed' => array(
+                'mobilku','tasbih', 'tasbih-news', 'payment','smartmed','liveinsurance','thanksyou-liveinsurance'.'container-box2', 'community-tips2',
+                'sections', 'sections-box-full', 'sections-tab', 'teks-tabs',
+                'sections-video', 'sections-gallery',
+                'sections-select', 'tekskanan60-imagekiri40_wizard',
+                'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
+                'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
+                'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
+                'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
+                'tanya-jawab-tasbih',
+                'smartlink-factsheet', 'syariah-factsheet',
+                'pension-factsheet', 'saving-factsheet','multi-video',
+                'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi','Tasbih-kedua','thankyou-tasbih','thankyou-inquiry'))); ?>
 
-                    <div class="faq-wrapper mt16 pt16">
-                        <?php
-                        $l=0;
-                        while ($this->block("rowTable")->loop()) {
-                            $l++;
-                        ?>
-                        <div class="faq-item">
-                            <div class="faq-item--question" style="padding-right: 20px;">
-                                <ol start="<?php echo $l; ?>">
-                                    <li><h4><?php echo $this->input('title_faq')?></h4></li>
-                                </ol>
-                            </div><!--/ .faq-item--question -->
-                            <div class="faq-item--answer">
-                                <?php echo $this->wysiwyg('description')?>
-                            </div><!--/ .faq-item--answer -->
-                        </div><!--/ .faq-item -->
-                        <?php } ?>
-                    </div><!--/ .faq-wrapper -->
+            <div style="clear:both; "></div>
 
-                    <?php echo $this->wysiwyg('description-bottom')?>
-                    <!--<p>Tidak menemukan jawaban untuk pertanyaan kamu? Silahkan hubungi kami melalui <a href="https://www.facebook.com/AJFCIndonesia">facebook</a>!</p>-->
-
-                    <div class="content-widget">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <h4><strong>BACA JUGA</strong></h4>
-                                <ol>
-                                    <?php
-                                        $entries = new Object_TasbihNews_List();
-                                        $entries->setLimit(4);
-                                        $entries->setOrderKey("o_creationDate");
-                                        $entries->setOrder("desc");
-                                        foreach ($entries as $key) {
-                                     ?>
-                                        <li>
-                                            <a href="tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
-                                                <?php echo $key->title; ?>
-                                            </a>
-                                            <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
-                                        </li>
-                                    <?php } ?>
-                                </ol>
-                            </div><!--/ .col-xs-12 -->
-                        </div><!--/ .row -->
-                    </div><!--/ .content-widget -->
-
-                </div><!--/ .main-content -->
-            </div><!--/ .col-xs-12 -->
-        </div><!--/ .row -->
+        </div>
     </div><!--/ .container -->
-</div><!--/ .page-wrapper-outer -->
+
+    <?php if( !$this->editmode ): ?>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $( 'li.aktif .nav_menu div' ).css( 'display', 'none' );
+            $( 'li .nav_menu .white_image' ).css( 'display', 'none' );
+            $( 'li.aktif .nav_menu .white_image' ).css( 'display', 'block' );
+            var hash = window.location.hash.substring(1);
+
+            if( hash != '' )
+            {
+                var target = '#modal-' + hash;
+                $( target ).modal( 'show' );
+            }
+
+            $( ".pagenav .navi li" ).click(function(){
+                $(".pagenav .navi li").removeClass('aktif');
+                $(".pagenav .navi li .nav_menu div").css('display','block');
+                $(".pagenav .navi li .nav_menu .white_image").css('display','none');
+                $(this).addClass('aktif');
+                $('li.aktif .nav_menu div').css('display', 'none');
+                $('li.aktif .nav_menu .white_image').css('display', 'block');
+                var data = $(this).attr('class');
+                var id = data.split(' ');
+                //alert($(".heading").offset().top);
+                if(Math.floor( $(".heading").offset().top)<=212)
+                {
+                    $('html, body').animate({scrollTop:$("#"+id[0]).offset().top-190}, 500);
+                }
+                else
+                {
+                    $('html, body').animate({scrollTop:$("#"+id[0]).offset().top-90}, 500);
+                }
+            });
+        });
+    </script>
+
+    <?php endif; ?>
+
+
+    <div class="page-wrapper-outer">
+        <div class="container" style="max-width: 960px; background: white;">
+            <div class="row">
+                <div class="col-xs-12 col-md-12 pr0">
+
+                    <div class="main-content">
+
+                        <div class="main-content--header">
+                            <h1 class="mb12"><?php echo $this->input('title_page_faq')?></h1>
+                        </div><!--/ .main-content--header -->
+
+                        <div class="faq-wrapper mt16 pt16">
+                            <?php
+                            $l=0;
+                            while ($this->block("rowTable")->loop()) {
+                                $l++;
+                            ?>
+                            <div class="faq-item">
+                                <div class="faq-item--question" style="padding-right: 20px;">
+                                    <ol start="<?php echo $l; ?>">
+                                        <li><h4><?php echo $this->input('title_faq')?></h4></li>
+                                    </ol>
+                                </div><!--/ .faq-item--question -->
+                                <div class="faq-item--answer">
+                                    <?php echo $this->wysiwyg('description')?>
+                                </div><!--/ .faq-item--answer -->
+                            </div><!--/ .faq-item -->
+                            <?php } ?>
+                        </div><!--/ .faq-wrapper -->
+
+                        <?php echo $this->areablock('section_wgd', array('allowed' => array(
+                            'sections', 'sections-box-full'))); ?>
+
+                        <div style="clear:both; "></div>
+
+                        <div class="content-widget">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <h4><strong>BACA JUGA</strong></h4>
+                                    <ol>
+                                        <?php
+                                            $entries = new Object_TasbihNews_List();
+                                            $entries->setLimit(4);
+                                            $entries->setOrderKey("o_creationDate");
+                                            $entries->setOrder("desc");
+                                            foreach ($entries as $key) {
+                                         ?>
+                                            <li>
+                                                <a href="tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                                    <?php echo $key->title; ?>
+                                                </a>
+                                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
+                                            </li>
+                                        <?php } ?>
+                                    </ol>
+                                </div><!--/ .col-xs-12 -->
+                            </div><!--/ .row -->
+                        </div><!--/ .content-widget -->
+
+                    </div><!--/ .main-content -->
+                </div><!--/ .col-xs-12 -->
+            </div><!--/ .row -->
+        </div><!--/ .container -->
+    </div><!--/ .page-wrapper-outer -->
+
+    
+
+
 </div>
