@@ -93,66 +93,24 @@
     //echo "<pre>";
     //print_r($kantor);
     //die();
+    foreach($agent as $row){
+        $kodeAgent = $row->getkodeAgent();
+        $namaAgent = $row->getnamaAgent();
+        $emailAgent = strtolower($row->getemail());
+        $kantor = $row->getkantor();
+        $profilAgent = $row->getprofilAgent();
+        $fotoAgent = $row->getfotoAgent()->path.$row->getfotoAgent()->filename;
+        $Facebook = $row->getURLFacebook();
+        $Artikel = $row->getArtikel();
+        $telepon = $row->kantor[0]->nomorTelepon;
+    }
 
 ?>
 <div class="container boxes-view">
     <?php //echo $this->template("includes/breadcrumb.php")?>
     <!--<span class="breadcrumb"><h1 class="title"><?php /*echo $this->document->getProperty('navigation_title');*/?></h1></span>-->
-                         <div class="wrapper-special clearfix">
-        <div id="slideshow" class="clearfix">
-            <ul class="slides">
-                <?php
-                    $z = 0;
-                    foreach($agent as $row){
-                                $kodeAgent = $row->getkodeAgent();
-                                $namaAgent = $row->getnamaAgent();
-                                $emailAgent = strtolower($row->getemail());
-                                $kantor = $row->getkantor();
-                                $profilAgent = $row->getprofilAgent();
-                                $fotoAgent = $row->getfotoAgent()->path.$row->getfotoAgent()->filename;
-                                $Facebook = $row->getURLFacebook();
-                                $Artikel = $row->getArtikel();
-                                $telepon = $row->kantor[0]->nomorTelepon;
-                        $x = count($row->getfotoGaleriAgent()->items);
-                        for($z;$z<$x;$z++){
-                ?>
-                            <li>
-                                <div class="slide">
-                                    <div class="photo">
-                                        <img src="<?php echo $row->getfotoGaleriAgent()->items[$z]->fotoFotoAgent->path.$row->getfotoGaleriAgent()->items[$z]->fotoFotoAgent->filename;?>" />
-                                    </div>
-
-                                    <?php if($row->getfotoGaleriAgent()->items[$z]->posisiNotepad != ""){?>
-                                    <div class="fixbox <?php echo $row->getfotoGaleriAgent()->items[$z]->posisiNotepad;?>60">
-                                        <div class="place-bg bg-<?php echo $row->getfotoGaleriAgent()->items[$z]->warnaNotepad;?> place-bg-gallery">
-                                            <div>
-                                                <h2><?php echo $row->getfotoGaleriAgent()->items[$z]->judulNotepad;?></h2>
-                                                <p>
-                                                    <?php echo $row->getfotoGaleriAgent()->items[$z]->deskripsiNotepad;?>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="edge e-<?php echo $row->getfotoGaleriAgent()->items[$z]->warnaNotepad;?>">
-
-                                        </div>
-                                    </div>
-                                    <?php }else{?>
-                                        <style>
-                                            @media (max-width: 600px) {
-                                                #slideshow .flex-direction-nav .flex-next,#slideshow .flex-direction-nav .flex-prev{
-                                                    top:20px !important;
-                                                }
-                                              }
-                                        </style>
-                                    <?php }?>
-                                </div>
-                            </li>
-                <?php
-                        }
-                    }
-                ?>
-            </ul>
-            </div>
+    <div class="wrapper-special clearfix">
+        
     </div><!-- .wrapper-special -->
 
 
