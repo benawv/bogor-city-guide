@@ -24,14 +24,8 @@
                 
                 
                 $TanggalLahir = $_POST["tanggallahir"];
-                $tglLahir_ = explode("/", $TanggalLahir);
-                $tglLahir_[0]; //day
-                $tglLahir_[1]; //month
-                $tglLahir_[2]; //year 
-                $TanggalLahir=$tglLahir_[2]."-".$tglLahir_[1]."-".$tglLahir_[0];
-                $tglLahir = strtotime($TanggalLahir);
-	            $date_tglLahir= new Pimcore_Date($TanggalLahir);//set date into pimcore formats	
-               
+                $date_tglLahir= new Pimcore_Date($period);
+               //print_r($date_tglLahir);
                 //Calculatiom
                 //$premi = 10000000+2000000+300000+40000;
                 //Replace Values
@@ -64,8 +58,24 @@
                 $cookie->save();
                 
             
+                //$date_tglBuat1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglBuat)));
+            //$date_tglLahir1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglLahir)));
+            
+        
                 //Send to Email
                 //$hasil = number_format($Calculation,0,",",".");
+            
+                if($gender == 'M') $gender = 'Pria';
+                else $gender = 'Wanita';
+            
+                if($cia == '1000') $cia = 'Rp 1 Miliar';
+                else if($cia == '500') $cia = 'Rp 500 Juta';
+                else $cia = 'Rp 250 Juta';
+                    
+                if($uangpertanggungan == '1000') $uangpertanggungan = 'Rp 1 Miliar';
+                else if($uangpertanggungan == '500') $uangpertanggungan = 'Rp 500 Juta';
+                else $uangpertanggungan = 'Rp 250 Juta';
+                    
                 $document = '/email/email-live-insurance';
                 $params = array(
                                 'nama' => $nama,
@@ -78,7 +88,6 @@
                                 'premi' => $premi,
                                 'tanggallahir' => $TanggalLahir 
                                 );
-
                 $mail = new Pimcore_Mail();
                 $mail->setSubject("Konfirmasi Hasil Kalkulasi Ilustrasi Produk Allianz Live Insurance");
                 $mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");

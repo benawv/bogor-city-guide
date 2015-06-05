@@ -196,7 +196,7 @@
                         <!-- Modal -->
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Masukan tanggal lahir Anda<br>(Minimum usia dari 18 tahun sampai 55 tahun)</label>
+                                <label><strong>Masukan tanggal lahir Anda<br>(Minimum usia dari 18 tahun sampai 55 tahun)</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
@@ -208,7 +208,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Jenis Kelamin</label>
+                                <label><strong>Jenis Kelamin Anda adalah?</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <div class="row">
@@ -224,7 +224,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Berarti usia Anda</label>
+                                <label><strong>Berarti usia Anda adalah?</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <input type="text" class="form-control" id="usia" placeholder="Usia (Tahun)" readonly>
@@ -233,7 +233,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Termin Pembayaran</label>
+                                <label><strong>Pilihlah Termin Pembayaran Anda</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <select class="form-control" name="Frekuensi" id="Frekuensi">
@@ -251,7 +251,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Berapa uang pertanggungan yang Anda butuhkan bila terjadi <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#risiko">risiko</a>?</label>
+                                <label><strong>Berapa <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#uangpertanggungan">uang pertanggungan</a> yang Anda butuhkan bila terjadi <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#risiko">risiko</a>?</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
 
@@ -260,12 +260,11 @@
                                     Mohon maaf uang pertanggungan yang Anda masukan kurang dari Rp. 50,000,000.-
                                 </label>
                             </div><!--/ .col-md-4 -->
-                            <div class="col-md-4"> <span>*Uang pertanggungan yang akan diberikan bila terjadi <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#risiko">risiko</a> pada tertanggung.</span></div>
                         </div><!--/ .form-group -->
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Berapa lama pembayaran <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#premi" >premi</a></label>
+                                <label><strong>Berapa lama pembayaran <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#premi" >premi</a></strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <select class="form-control" name="masa-premi" id="masa-premi">
@@ -325,11 +324,11 @@
               <div class="modal-body">
                 <!--h3>5 Risiko Kehidupan</h3-->
                 <ol>
-                    <li>Penyakit Kritis(Jika Anda)</li>
-                    <li>Kecelakaan (Jika Anda)</li>
-                    <li>Cacat Tetap (Karena Kecelakaan)</li>
-                    <li>Tua (Memasuki umur tua)</li>
-                    <li>Meninggal Dunia</li>
+                    <li>Jika Anda mengalami penyakit kritis</li>
+                    <li>Jika Anda mengalami kecelakaan</li>
+                    <li>Cacat tetap karena kecelakaan</li>
+                    <li>Memasuki usia tua</li>
+                    <li>Meninggal dunia</li>
                 </ol>
               </div>
             </div>
@@ -346,6 +345,21 @@
               <div class="modal-body">
                 <!--h3>5 Risiko Kehidupan</h3-->
                 <p>Premi adalah iuran yang anda bayarkan secara berkala sesuai dengan periode pilihan Anda untuk mendapatkan uang pertangungan yang Anda inginkan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="uangpertanggungan" tabindex="-1" role="dialog" aria-labelledby="uangpertanggunganLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="uangpertanggunganLabel">Uang Pertanggungan</h4>
+              </div>
+              <div class="modal-body">
+                <!--h3>5 Risiko Kehidupan</h3-->
+                <p>Uang pertanggungan yang akan diberikan bila terjadi risiko pada tertanggung.</p>
               </div>
             </div>
           </div>

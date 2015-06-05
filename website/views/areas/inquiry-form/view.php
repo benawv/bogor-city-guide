@@ -189,7 +189,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Nama Anda?</label>
+                            <label><strong>Nama Anda?</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="name" class="form-control" id="nama" placeholder="Nama" required />
@@ -201,7 +201,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Jenis Kelamin?</label>
+                            <label><strong>Jenis Kelamin?</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <!--<INPUT TYPE="Radio" name="jenisKelamin" VALUE="l" style="display: block;">Pria</INPUT>
@@ -219,7 +219,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Tanggal Lahir Anda? <br>(Min. Usia 18 tahun)</label>
+                            <label><strong>Tanggal Lahir Anda? <br>(Min. Usia 18 tahun)</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="DOB" value="" placeholder="Tanggal Lahir" />
@@ -231,7 +231,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>No Handphone Anda?(Min. 8 digit)</label>
+                            <label><strong>No Handphone Anda?(Min. 8 digit)</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="phone" class="form-control" id="nohp" name="nohp" placeholder="0812345678" required onfocusout="this.value=validateNumber(this.value)" />
@@ -243,7 +243,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Email Anda?</label>
+                            <label><strong>Email Anda?</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="email" class="form-control" id="email" name="email" placeholder="email@domain.com" required onfocusout="this.value=validateEMAIL(this.value)" />
@@ -255,7 +255,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Provinsi</label>
+                            <label><strong>Provinsi</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" name="provinsi" id="provinsi_id" required>
@@ -277,7 +277,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Pesan</label>
+                            <label><strong>Pesan</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <label id="notifPesan" style="display:none; color: #f00;">

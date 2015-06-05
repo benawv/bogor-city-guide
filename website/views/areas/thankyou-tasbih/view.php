@@ -113,7 +113,7 @@
 
                     <div class="form-box" id="notif-confirm">
                         <h1 style="text-align:center">TERIMA KASIH</h1>
-                        <h3  style=" color:black; text-align:center;"><strong>Kalkulasi ilustrasi produk Allianz Tasbih (sudah dikirimkan ke alamat email Anda)</strong></h3>
+                        <h3  style=" color:black; text-align:center;"><strong>Perhitungan ilustrasi produk Allianz Tasbih sudah dikirimkan ke alamat email Anda</strong></h3>
                         <h3 style=" color:black; text-align:center;"><strong>Temukan agen terdekat: </strong></h3>
                        <br />
                         <center><input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen"></center>
