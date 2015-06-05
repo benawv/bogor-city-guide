@@ -186,7 +186,7 @@
                                     <?php } ?>
                                     <?php if($this->editmode || !$this->textarea("caption-text-" . $i)->isEmpty()) { ?>
                                         <p>
-                                            <?php echo $this->textarea("caption-text-" . $i, ["width" => 251, "height" => 100, "maxlength" => 140]) ?>
+                                            <?php echo $this->textarea("caption-text-" . $i, ["width" => 251, "height" => 100, "maxlength" => 250]) ?>
                                         </p>
                                     <?php } ?>
                                     <?php if($this->editmode) { ?>
