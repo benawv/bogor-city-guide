@@ -94,8 +94,12 @@ class DefaultController extends Website_Controller_Action {
 		$session = new Zend_Session_Namespace('loginasn');
 		//session_start();
 		$pass = $_POST["password"];
+		$user = $_POST["login_username"];
 		
-		if($pass == "asnlayananprima")
+		$checkUser = new Object_DataLoginAsn_List();
+		$checkUser->setCondition("`username` = '".$user."' AND `password` = '".$pass."'");
+
+		if(count($checkUser) == 1)
 		{
 				$session->verified = 'true';
 				//die(print_r($session->verified));
