@@ -264,7 +264,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label><strong>Berapa lama pembayaran <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#premi" >premi</a></strong></label>
+                                <label><strong>Berapa lama pembayaran <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#premi" >premi</a> yang anda inginkan</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <select class="form-control" name="masa-premi" id="masa-premi">
