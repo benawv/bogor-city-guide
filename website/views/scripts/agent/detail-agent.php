@@ -125,7 +125,7 @@
     //echo 'test';
     $agent = $this->agent;
     //echo "<pre>";
-    //print_r($kantor);
+    //print_r($agent);
     //die();
     foreach($agent as $row){
         $kodeAgent = $row->getkodeAgent();
@@ -137,6 +137,33 @@
         $Facebook = $row->getURLFacebook();
         $Artikel = $row->getArtikel();
         $telepon = $row->kantor[0]->nomorTelepon;
+        $linkFB = $row->getLinkfacebook()->direct;
+        $linkIN = $row->getLinklinkedin()->direct;
+        $linkME = $row->getLinkaboutme()->direct;
+        
+        if(isset($linkFB)){
+            $linkFB = $linkFB;
+        }
+        else{
+            $linkFB = "#";
+        }
+        
+        if(isset($linkIN)){
+            $linkIN = $linkIN;
+        }
+        else{
+            $linkIN = "#";
+        }
+        
+        if(isset($linkME)){
+            $linkME = $linkME;
+        }
+        else{
+            $linkME = "#";
+        }
+        //echo "<pre>";
+        //print_r($row);
+        //die();
     }
 
 ?>
@@ -168,9 +195,9 @@
                 <div class="section-left-40">
                     <img src="<?php echo $fotoAgent; ?>" alt="<?php echo $namaAgent; ?>">
                     <div class="logo-icon">
-                        <a href="#" class="icon-fb"></a>
-                        <a href="#" class="icon-in"></a>
-                        <a href="#" class="icon-me"></a>
+                        <a href="<?php echo $linkFB;?>" target="_blank" class="icon-fb"></a>
+                        <a href="<?php echo $linkIN;?>" target="_blank" class="icon-in"></a>
+                        <a href="<?php echo $linkME;?>" target="_blank" class="icon-me"></a>
                     </div>
                     <!--
                     <img src="http://placekitten.com/g/256/256" alt="Gambar" />
@@ -230,6 +257,24 @@
                 </div><!--/ .section-right-60 -->
             </div><!--/ .description-width-66 -->
         </div><!--/ .full-w -->
+        
+        <div class="modal fade" id="modalEmail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+        </div>
 
         <div style="clear: both"></div>
 
@@ -298,28 +343,29 @@
 
 
     $('.btn-sendmail').click(function() {
+        $('#modalEmail').modal();
         <?php 
 
-        if($getStatus=='tasbih_calc'){ ?>
+        /*if($getStatus=='tasbih_calc'){*/ ?>
             
-            $.ajax({
-                url      : '/send-email-agen-tasbih/',
-                type     : 'POST',
-                data     : {
-                            'from' : 'agent_locator'
-                            },
-                    success  : function(data){
-                    //console.log(data);
-                    alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
-                }
+            //$.ajax({
+            //    url      : '/send-email-agen-tasbih/',
+            //    type     : 'POST',
+            //    data     : {
+            //                'from' : 'agent_locator'
+            //                },
+            //        success  : function(data){
+            //        //console.log(data);
+            //        alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
+            //    }
+            //
+            //
+            //});
 
+        <?php /*}else{*/ ?>
 
-            });
-
-        <?php }else{ ?>
-
-                alert('dari agent_locator'<?php echo $getStatus;?>);
-        <?php } ?>
+                //('dari agent_locator'<?php echo $getStatus;?>);
+        <?php //} ?>
 
     });
 
