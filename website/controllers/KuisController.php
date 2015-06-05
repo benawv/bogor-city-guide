@@ -459,16 +459,16 @@ class KuisController extends Website_Controller_Action {
 	public function notifSalahKirimAction(){
 		$db = Pimcore_Resource_Mysql::get();
 		
-		//$peserta = new Object_Salahkirim_List();
-		//$peserta->setCondition("emailsalah <> 1 OR emailsalah is null");
-		//$peserta->setLimit(1);
-		//
-		//foreach($peserta as $row)
-		//{
-		//	$id = $row->getId();
-		//	$data = Object_Salahkirim::getById($id);
-		//	$data->setEmailsalah(1);
-		//
+		$peserta = new Object_Salahkirim_List();
+		$peserta->setCondition("emailsalah <> 1 OR emailsalah is null");
+		$peserta->setLimit(1);
+		
+		foreach($peserta as $row)
+		{
+			$id = $row->getId();
+			$data = Object_Salahkirim::getById($id);
+			$data->setEmailsalah(1);
+		
 			$document = '/email/email-salah-kirim';
 			
 			$mail = new Pimcore_Mail();
@@ -476,18 +476,18 @@ class KuisController extends Website_Controller_Action {
 			$mail->setFrom("no-reply@ajfc.allianz.co.id","Allianz Junior Football Camp 2015");
 			$mail->setDocument($document);
 			
-			//$mail->addTo($row->getEmail());
-			$mail->addTo("mrobbi.nugraha@gmail.com");
+			$mail->addTo($row->getEmail());
+			//$mail->addTo("mrobbi.nugraha@gmail.com");
 			
-			//try{
+			try{
 				$mail->send();
-			//	$data->save();
-			//	echo $row->getNamaLengkap()." email belum lolos terkirim.<br />";
-			//}
-			//catch(Exception $e){
-			//	echo 'ERROR: ',  $e->getMessage(), "\n";
-			//}
-		//}
+				$data->save();
+				echo $row->getNamaLengkap()." email belum lolos terkirim.<br />";
+			}
+			catch(Exception $e){
+				echo 'ERROR: ',  $e->getMessage(), "\n";
+			}
+		}
 	}
 	
 	public function createPdfAction($namaP,$nomer)
