@@ -160,7 +160,7 @@
                     <div class="form-box">
                         <div>
                             <!--h3 >Terima kasih Anda telah melakukan kalkulasi ilustrasi produk Allianz Tasbih. Hasil kalkulasi Anda akan dikirimkan ke email pribadi Anda. Silahkan isi field dibawah ini.</h3-->
-                            <h3 >Sekarang, mohon isi terlebih dahulu data diri Anda.</h3>
+                            <h3 ><strong>Sekarang, mohon isi terlebih dahulu data diri Anda.</strong></h3>
                         </div>
                         <br>
                         <!--label><strong>Data Diri</strong></label-->
@@ -168,7 +168,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Nama Anda?</label>
+                                <label><strong>Nama Anda?</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <input type="text" class="form-control" id="nama" placeholder="Nama" required onfocusout="this.value=validateNama(this.value)">
@@ -180,7 +180,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>No Handphone Anda? (Min. 8 digit)</label>
+                                <label><strong>No Handphone Anda? (Min. 8 digit)</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <input type="text" class="form-control" id="nohp" name="nohp" placeholder="0812345678" required onfocusout="this.value=validateNumber(this.value)">
@@ -192,7 +192,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Email Anda?</label>
+                                <label><strong>Email Anda?</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <input type="email" class="form-control" id="email" name="email" placeholder="email@domain.com" required onfocusout="this.value=validateEMAIL(this.value)">
@@ -204,7 +204,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                            <label>Kontribusi Berkala/<a href="#" class="calc-overlay-trigger"  data-toggle="modal" data-target="#premi">Premi</a> pertahun</label>
+                            <label><strong>Kontribusi Berkala/<a href="#" class="calc-overlay-trigger"  data-toggle="modal" data-target="#premi">Premi</a> pertahun</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                             <input type="text" class="form-control" id="kontribusi-berkala_view" placeholder="0" value="<?php echo 'Rp. '.number_format($session->Calculation,0,',','.'); ?>" readonly>

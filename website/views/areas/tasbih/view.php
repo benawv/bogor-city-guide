@@ -196,7 +196,7 @@
                         <!-- Modal -->
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Masukan tanggal lahir Anda<br>(Minimum usia dari 18 tahun sampai 55 tahun)</label>
+                                <label><strong>Masukan tanggal lahir Anda<br>(Minimum usia dari 18 tahun sampai 55 tahun)</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
@@ -208,7 +208,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Jenis Kelamin</label>
+                                <label><strong>Jenis Kelamin</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <div class="row">
@@ -224,7 +224,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Berarti usia Anda</label>
+                                <label><strong>Berarti usia Anda</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <input type="text" class="form-control" id="usia" placeholder="Usia (Tahun)" readonly>
@@ -233,7 +233,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Termin Pembayaran</label>
+                                <label><strong>Termin Pembayaran</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <select class="form-control" name="Frekuensi" id="Frekuensi">
@@ -251,7 +251,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Berapa uang pertanggungan yang Anda butuhkan bila terjadi <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#risiko">risiko</a>?</label>
+                                <label><strong>Berapa uang pertanggungan yang Anda butuhkan bila terjadi <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#risiko">risiko</a>?</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
 
@@ -265,7 +265,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Berapa lama pembayaran <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#premi" >premi</a></label>
+                                <label><strong>Berapa lama pembayaran <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#premi" >premi</a></strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <select class="form-control" name="masa-premi" id="masa-premi">
