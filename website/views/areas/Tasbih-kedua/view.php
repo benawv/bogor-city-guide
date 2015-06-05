@@ -213,8 +213,8 @@
                         </div><!--/ .form-group -->
 
                         <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                              <input type="button" class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next" value="Submit">
+                            <div class="col-md-4 col-md-offset-4 text-center">
+                              <input type="button" class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next" value="Kirim">
                             </div><!--/ .col-md-12 -->
                         </div><!--/ .form-group -->
 
