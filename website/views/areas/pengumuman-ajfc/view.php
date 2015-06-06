@@ -24,6 +24,8 @@
 
                     <div class="main-content--header">
                         <h1 class="mb12"><?php echo $this->input('title_page_faq')?></h1>
+						<?php echo $this->wysiwyg("textPengumumanMunich");?>
+						<?php echo $this->wysiwyg("textPengumumanAsiaCamp");?>
 						<?php echo $this->wysiwyg("textPengumuman");?>
                     </div><!--/ .main-content--header -->
 					<br /><br />
