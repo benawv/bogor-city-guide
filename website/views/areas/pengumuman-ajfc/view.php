@@ -25,7 +25,71 @@
                     <div class="main-content--header">
                         <h1 class="mb12"><?php echo $this->input('title_page_faq')?></h1>
 						<?php echo $this->wysiwyg("textPengumumanMunich");?>
+                    </div><!--/ .main-content--header -->
+					<br /><br />
+
+                    <table id="munich" class="display" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+								<th>No</th>
+								<th>Nama</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                                <tr>
+									<td>1</td>
+									<td>Andhika Ezra</td>
+                                </tr>
+								<tr>
+									<td>2</td>
+									<td>Hasya Hanifan Indra Putra</td>
+                                </tr>
+                        </tbody>
+                    </table>
+					
+					<div class="main-content--header">
 						<?php echo $this->wysiwyg("textPengumumanAsiaCamp");?>
+                    </div><!--/ .main-content--header -->
+					<br /><br />
+
+                    <table id="asia" class="display" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+								<th>No</th>
+								<th>Nama</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                                <tr>
+									<td>1</td>
+									<td>Azlan Dwi</td>
+                                </tr>
+								<tr>
+									<td>2</td>
+									<td>Dicky Alvin</td>
+                                </tr>
+								<tr>
+									<td>3</td>
+									<td>Mikhail Siholnaune</td>
+                                </tr>
+								<tr>
+									<td>4</td>
+									<td>Rakha Valensky</td>
+                                </tr>
+								<tr>
+									<td>5</td>
+									<td>Rihanazka Syahputra</td>
+                                </tr>
+								<tr>
+									<td>6</td>
+									<td>Yoga Yuhelpin</td>
+                                </tr>
+                        </tbody>
+                    </table>
+					
+					<div class="main-content--header">
 						<?php echo $this->wysiwyg("textPengumuman");?>
                     </div><!--/ .main-content--header -->
 					<br /><br />
@@ -85,7 +149,17 @@
                                 "iDisplayLength": 25,
                                 'responsive': true
                             });
+							$('#munich').DataTable({
+                                "iDisplayLength": 25,
+                                'responsive': true
+                            });
+							$('#asia').DataTable({
+                                "iDisplayLength": 25,
+                                'responsive': true
+                            });
 			    $("#example_length.dataTables_length").remove();
+				$("#munich_length.dataTables_length").remove();
+				$("#asia_length.dataTables_length").remove();
                         } );
                     </script>
 
