@@ -231,8 +231,9 @@
 
                                 $session = new Zend_Session_Namespace('tasbih');
                                 $getStatus=$session->emailFrom;
+                                //echo $getStatus;
 
-                                echo $getStatus;
+                                
                                 $content;
                                 if(isset($session->date_tglBuat)){
                                     //unset($session->name);
