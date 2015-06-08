@@ -108,7 +108,7 @@ $(document).ready(function(){
             
             
            
-                          document.location.href='/agent-locator';
+                          window.open('/agent-locator');
                        
               });            
     });

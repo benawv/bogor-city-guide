@@ -286,10 +286,18 @@
             <div class="row">
                 <div class="col-xs-12 col-md-12 pr0">
 
-                    <div class="main-content">
+                    <?php echo $this->areablock('section_wgd', array('allowed' => array(
+                        'sections', 'sections-box-full'))); ?>
 
-                        <div class="main-content--header">
-                            <h1 class="mb12"><?php echo $this->input('title_page_faq')?></h1>
+                    <div style="clear:both; "></div>
+                    <div class="main-content">   
+
+                        <div id="tanyajawab" class="main-content--header">
+                            <h2 class="mb12"><?php echo $this->image('icon_', array(
+                                    'title'     => 'Image Size 31x31',
+                                    'width'     => 100,
+                                    'height'    => 100,
+                                    'thumbnail' => 'icon')) ?><?php echo $this->input('title_page_faq')?></h2>
                         </div><!--/ .main-content--header -->
 
                         <div class="faq-wrapper mt16 pt16">
@@ -311,10 +319,6 @@
                             <?php } ?>
                         </div><!--/ .faq-wrapper -->
 
-                        <?php echo $this->areablock('section_wgd', array('allowed' => array(
-                            'sections', 'sections-box-full'))); ?>
-
-                        <div style="clear:both; "></div>
 
                         <div class="content-widget">
                             <div class="row">
