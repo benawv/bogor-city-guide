@@ -117,11 +117,16 @@
     a.icon-me:hover{
         background: url("/website/static/images/agent_locator/info1.png") no-repeat;
     }
+    .tbl-email{
+        display: block;
+        margin: 10px 0px;
+    }
+    .tbl-email td{
+        padding: 3px;
+    }
 </style>
 <?php
-
     $kantor = $this->kantor;
-
     //echo 'test';
     $agent = $this->agent;
     //echo "<pre>";
@@ -237,17 +242,55 @@
                                 $content;
                                 if(isset($session->date_tglBuat)){
                                     //unset($session->name);
-                                    
-                                    $content.="Nama user: ".$session->name."<br />";
-                                    $content.="Email: ".$session->email."<br />";
-                                    $content.="phone: ".$session->phone."<br />";
-                                    $content.="Tanggal di Buat: ".$session->date_tglBuat."<br />";
-                                    $content.="Tanggal Lahir: ".$session->date_tglLahir."<br />";
-                                    $content.="Jenis Kelamin: ".$session->JenisKelamin."<br />";
-                                    $content.="Frekuensi Pembayaran: ".$session->Frekuensi."<br />";
-                                    $content.="Asuransi Jiwa: ".$session->AJ."<br />";
-                                    $content.="Kontribusi Pertahun: ".$session->Kontribusi."<br />";
-                                    $content.="Calculation: ".$session->Calculation."<br />";
+                                    $content.= "<table>";
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Nama</td>
+                                                    <td>: '.$session->nama.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Email</td>
+                                                    <td>: '.$session->email.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Nomor Telepon</td>
+                                                    <td>: '.$session->nohp.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Tanggal di Buat</td>
+                                                    <td>: '.$session->date_tglBuat.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Tanggal Lahir</td>
+                                                    <td>: '.$session->date_tglLahir.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Jenis Kelamin</td>
+                                                    <td>: '.$session->JenisKelamin.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Frekuensi Pembayaran</td>
+                                                    <td>: '.$session->Frekuensi.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Asuransi Jiwa</td>
+                                                    <td>: '.$session->AJ.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Kontribusi Pertahun</td>
+                                                    <td>: '.$session->Kontribusi.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Calculation</td>
+                                                    <td>: '.$session->Calculation.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Keterangan tambahan</td>
+                                                    <td>: </td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td colspan="3"><textarea class="form-control" rows="3"></textarea></td>
+                                                </tr>';
+                                    $content.= "</table>";
                                 }
                                //print_r($content);
                             ?>
@@ -267,11 +310,12 @@
                   <h4 class="modal-title" id="myModalLabel">Kirim Pesan ke Agen.</h4>
                 </div>
                 <div class="modal-body">
-                    Keterangan tambahan
-                    <textarea class="form-control" rows="3"></textarea>
+                    <?php
+                        echo $content;
+                    ?>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-primary">Kirim email</button>
+                  <button type="button" class="btn btn-primary kirim-email">Kirim email</button>
                 </div>
               </div>
             </div>
@@ -345,29 +389,31 @@
 
     $('.btn-sendmail').click(function() {
         $('#modalEmail').modal();
+    });
+    
+    $(".kirim-email").click(function(){
         <?php 
 
-        /*if($getStatus=='tasbih_calc'){*/ ?>
+        if($getStatus=='tasbih_calc'){ ?>
             
-            //$.ajax({
-            //    url      : '/send-email-agen-tasbih/',
-            //    type     : 'POST',
-            //    data     : {
-            //                'from' : 'agent_locator'
-            //                },
-            //        success  : function(data){
-            //        //console.log(data);
-            //        alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
-            //    }
-            //
-            //
-            //});
+            $.ajax({
+                url      : '/send-email-agen-tasbih/',
+                type     : 'POST',
+                data     : {
+                            'from' : 'agent_locator'
+                            },
+                    success  : function(data){
+                    //console.log(data);
+                    alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
+                }
+            
+            
+            });
 
-        <?php /*}else{*/ ?>
+        <?php }else{ ?>
 
                 //('dari agent_locator'<?php echo $getStatus;?>);
-        <?php //} ?>
-
+        <?php } ?>
     });
 
 

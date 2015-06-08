@@ -115,6 +115,20 @@ class AgentController extends Website_Controller_Action {
     
     public function detailAgentAction(){
 		
+		//$session = new Zend_Session_Namespace('tasbih');
+		//$session->nama = "nama1";
+		//$session->email = "email1";
+		//$session->nohp = "nohp1";
+		//$session->date_tglBuat = "tgl buat";
+		//$session->date_tglLahir = "tgl lahir";
+		//$session->JenisKelamin = "jenis kelamin";
+		//$session->Usia = "usia";
+		//$session->Frekuensi = "Frekuensi";
+		//$session->AJ = "AJ";
+		//$session->Kontribusi = "Kontribusi";
+		//$session->Calculation = "Calculation";
+		
+		
 		$this->enableLayout();
 		//$key = $this->_getParam('text');
 		$id = $this->_getParam('id');
