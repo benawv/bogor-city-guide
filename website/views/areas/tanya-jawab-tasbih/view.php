@@ -293,11 +293,20 @@
                     <div class="main-content">   
 
                         <div id="tanyajawab" class="main-content--header">
-                            <h2 class="mb12"><?php echo $this->image('icon_', array(
-                                    'title'     => 'Image Size 31x31',
-                                    'width'     => 100,
-                                    'height'    => 100,
-                                    'thumbnail' => 'icon')) ?><?php echo $this->input('title_page_faq')?></h2>
+                            <h2 class="mb12">
+                                <?php if($this->editmode){ ?>
+                                            Icon: <?php echo $this->image('icon_tanyajawab', array(
+                                            'title'     => 'Image Size 31x31',
+                                            'width'     => 100,
+                                            'height'    => 100,
+                                            'thumbnail' => 'icon')); } 
+                                    else{  ?>
+                                
+                                            <?php echo $this->input('title-tanyajawab', ["width" => 250])?>           
+                                            <div style="background-image: url('<?php echo $this->image('icon_tanyajawab')->getSrc()?>'); height: 31px; width: 31px; float: left; margin-right: 10px; "></div>
+                                
+                                <?php } ?>
+                            </h2>
                         </div><!--/ .main-content--header -->
 
                         <div class="faq-wrapper mt16 pt16">
