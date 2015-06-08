@@ -293,7 +293,11 @@
                     <div class="main-content">   
 
                         <div id="tanyajawab" class="main-content--header">
-                            <h1 class="mb12"><?php echo $this->input('title_page_faq')?></h1>
+                            <h2 class="mb12"><?php echo $this->image('icon_', array(
+                                    'title'     => 'Image Size 31x31',
+                                    'width'     => 100,
+                                    'height'    => 100,
+                                    'thumbnail' => 'icon')) ?><?php echo $this->input('title_page_faq')?></h2>
                         </div><!--/ .main-content--header -->
 
                         <div class="faq-wrapper mt16 pt16">
