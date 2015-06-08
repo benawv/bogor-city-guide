@@ -120,7 +120,7 @@
                             <!--
                             <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen">
                             -->
-                            <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next"><i class="fa fa-users"></i> Cari Agen</button>
+                            <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next"><i class="fa fa-users"></i> Cari Agen</button>
                         </center>
                     </div>
 
