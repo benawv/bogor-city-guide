@@ -42,6 +42,17 @@
 	    width: 100%;
 	    height: 100%;
 	}
+	@media only screen and (max-width: 599px) {
+		.heading.clearfix.pagenav.nav-sticky{
+			display: none;
+		}
+		.jcarousel-wrapper .jcarousel-pagination {
+			display: block !important;
+		}
+		.jcarousel-wrapper .jcarousel-pagination a {
+			display: inline-block !important;
+		}
+	}
 </style>
 
 <div id="<?php echo $this->input('anchor')->text?>" class="full-w bg-white item">
