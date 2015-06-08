@@ -118,11 +118,11 @@
         background: url("/website/static/images/agent_locator/info1.png") no-repeat;
     }
     .tbl-email{
-        display: block;
+        /*display: block;*/
         margin: 10px 0px;
     }
     .tbl-email td{
-        padding: 3px;
+        padding: 10px;
     }
 </style>
 <?php
@@ -238,7 +238,12 @@
                                 $getStatus=$session->emailFrom;
                                 //echo $getStatus;
 
-                                
+                                if($session->JenisKelamin=="l"){
+                                    $jenis = "Pria";
+                                }
+                                else{
+                                    $jenis = "Wanita";
+                                }
                                 $content;
                                 if(isset($session->date_tglBuat)){
                                     //unset($session->name);
@@ -257,15 +262,15 @@
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Tanggal di Buat</td>
-                                                    <td>: '.$session->date_tglBuat.'</td>
+                                                    <td>: '.date("d/m/Y",$session->date_tglBuat).'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Tanggal Lahir</td>
-                                                    <td>: '.$session->date_tglLahir.'</td>
+                                                    <td>: '.date("d/m/Y",strtotime($session->date_tglLahir)).'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Jenis Kelamin</td>
-                                                    <td>: '.$session->JenisKelamin.'</td>
+                                                    <td>: '.$jenis.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Frekuensi Pembayaran</td>
