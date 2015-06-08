@@ -38,7 +38,7 @@
                     $premi = $items->Premi;    
                 }
             
-                print_r($premi);
+                //print_r($premi);
                 //Saving Database
                 $getId=Object_Abstract::getByPath('/kalkulator-live-insurance/');//get folder id
                 $cookie = new Object_liveinsurance();
@@ -95,7 +95,8 @@
                 $mail->setParams($params);
                 $mail->addTo($email);
                 $mail->send();
-                
+				
+				echo $premi;
             }
         
         public function sendEmailAction() {
