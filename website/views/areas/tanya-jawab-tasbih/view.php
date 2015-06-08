@@ -299,10 +299,11 @@
                                             'title'     => 'Image Size 31x31',
                                             'width'     => 100,
                                             'height'    => 100,
-                                            'thumbnail' => 'icon')); } 
-                                    else{  ?>
-                                
-                                            <?php echo $this->input('title-tanyajawab', ["width" => 250])?>           
+                                            'thumbnail' => 'icon')); 
+                                             echo $this->input('title-tanyajawab', ["width" => 250]);
+                                    } else{                                  
+                                            echo $this->input('title-tanyajawab'); 
+                                    ?>
                                             <div style="background-image: url('<?php echo $this->image('icon_tanyajawab')->getSrc()?>'); height: 31px; width: 31px; float: left; margin-right: 10px; "></div>
                                 
                                 <?php } ?>
