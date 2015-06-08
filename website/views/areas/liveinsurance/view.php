@@ -514,11 +514,11 @@
                                         'usia' : usia
                                         },
                             success  : function(hasil){
-                                console.log(hasil);
-                                //$('.waiting-calc').show();
-                                //alert('Perhitungan Berhasil');
-                                //$('#premi').val(hasil);
-                                //document.location.href='/kalkulator/thankyou-liveinsurance';
+                                //console.log(hasil);
+                                $('.waiting-calc').show();
+                                alert('Perhitungan Berhasil');
+                                $('#premi').val(hasil);
+                                document.location.href='/kalkulator/thankyou-liveinsurance';
                             }
 
 

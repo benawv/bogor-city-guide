@@ -31,7 +31,7 @@
                 //Replace Values
                 //Select from Database
     
-                $rates= new Object_LiveInsuranceRate_List();                      
+                $rates= new Object_LiveinsuranceRate_List();                      
                 $rates->setCondition("JenisKelamin='".$gender."' and UangPertanggungan='".$uangpertanggungan."' and CriticalIllnessAccelerated='".$cia."' and Merokok='".$smoking."' and Usia='".$usia."'");
                 
                 foreach($rates as $items){
@@ -41,7 +41,7 @@
                 //print_r($premi);
                 //Saving Database
                 $getId=Object_Abstract::getByPath('/kalkulator-live-insurance/');//get folder id
-                $cookie = new Object_liveinsurance();
+                $cookie = new Object_Liveinsurance();
                 $cookie->setNama($nama);
                 $cookie->setEmail($email);
                 $cookie->setNoHP($nohp);
@@ -96,7 +96,7 @@
                 $mail->addTo($email);
                 $mail->send();
 				
-				echo json_encode($premi);
+				echo $premi;
             }
         
         public function sendEmailAction() {
