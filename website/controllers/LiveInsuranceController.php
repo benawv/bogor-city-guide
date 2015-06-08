@@ -96,7 +96,7 @@
                 $mail->addTo($email);
                 $mail->send();
 				
-				echo $premi;
+				echo json_encode($premi);
             }
         
         public function sendEmailAction() {

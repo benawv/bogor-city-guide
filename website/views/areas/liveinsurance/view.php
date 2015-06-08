@@ -513,12 +513,12 @@
                                         'tanggallahir' : tanggallahir,
                                         'usia' : usia
                                         },
-                                success  : function(hasil){
-                                //console.log(data);
-                                $('.waiting-calc').show();
-                                alert('Perhitungan Berhasil');
-                                $('#premi').val(hasil);
-                                document.location.href='/kalkulator/thankyou-liveinsurance';
+                            success  : function(hasil){
+                                console.log(hasil);
+                                //$('.waiting-calc').show();
+                                //alert('Perhitungan Berhasil');
+                                //$('#premi').val(hasil);
+                                //document.location.href='/kalkulator/thankyou-liveinsurance';
                             }
 
 
