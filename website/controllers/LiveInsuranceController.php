@@ -86,7 +86,8 @@
                                 'uangpertanggungan' => $uangpertanggungan,
                                 'smoking' => $smoking,
                                 'premi' => $premi,
-                                'tanggallahir' => $TanggalLahir 
+                                'tanggallahir' => $TanggalLahir,
+                                'usia' => $usia;
                                 );
                 $mail = new Pimcore_Mail();
                 $mail->setSubject("Konfirmasi Hasil Kalkulasi Ilustrasi Produk Allianz Live Insurance");

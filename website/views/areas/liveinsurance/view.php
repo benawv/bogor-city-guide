@@ -275,7 +275,7 @@
     <div class="description">
 
         <div class="header-calc">
-            <h1>KALKULATOR LIVE INSURANCE</h1>
+            <h1>KALKULATOR LIFE INSURANCE</h1>
         </div><!--/ .header-calc -->
 
         <div class="content-calc custom-tab-item active" id="first">
