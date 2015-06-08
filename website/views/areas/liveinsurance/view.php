@@ -395,14 +395,14 @@
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
-                    <div class="form-group waiting-calc">
+                    <!--<div class="form-group waiting-calc">
                         <div class="col-md-4">
                             <label id='labelprem'>Premi</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
+                        </div> --><!--/ .col-md-4 -->
+                        <!-- <div class="col-md-4">
                             <input type="text" readonly class="form-control disabled" placeholder="0" id="premi" tabindex="5">
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
+                        </div> --><!--/ .col-md-4 -->
+                    <!-- </div> --><!--/ .form-group -->
 
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
@@ -517,7 +517,7 @@
                                 //console.log(hasil);
                                 $('.waiting-calc').show();
                                 alert('Perhitungan Berhasil');
-                                $('#premi').val(hasil);
+                                //$('#premi').val(hasil);
                                 document.location.href='/kalkulator/thankyou-liveinsurance';
                             }
 

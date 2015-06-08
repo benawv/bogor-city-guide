@@ -96,11 +96,16 @@
                 $mail->addTo($email);
                 $mail->send();
 				
-				echo $premi;
+				$session = new Zend_Session_Namespace('liveinsurance');
+                $session->premi = $premi ;
+                //echo $session->premi = $premi;
             }
         
-        public function sendEmailAction() {
+
         
+        public function sendEmailAction() {
+            $session = new Zend_Session_Namespace('liveinsurance');
+            $premi = $session ->premi;
         }
     }
 ?>

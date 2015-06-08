@@ -1,3 +1,7 @@
+<?php
+//call session yang di buat di controller kalkulatortassbihControler function saveAction()
+  $session = new Zend_Session_Namespace('liveinsurance');
+?>
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/bootstrap.min.css"  />
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
@@ -77,7 +81,7 @@
 
 <div class="form-box" id="notif-confirm">
     <h1 style="text-align:center">TERIMA KASIH</h1>
-    <h3  style=" color:black; text-align:center;"><strong>Kalkulasi ilustrasi produk Allianz Live Insurance (sudah dikirimkan ke alamat email Anda)</strong></h3>
+    <h3  style=" color:black; text-align:center;"><strong>Hasil kalkulasi Anda adalah <?php echo 'Rp'.$session->premi; ?> Kalkulasi ilustrasi produk Allianz Live Insurance (sudah dikirimkan ke alamat email Anda)</strong></h3>
     <!--<h3 style=" color:black; text-align:center;"><strong>Temukan agen terdekat: </strong></h3>-->
    <br />
     <center><input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen"></center>
