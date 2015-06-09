@@ -83,76 +83,100 @@
             display: block;
         }
       }
+    .bisnis{
+        margin-top: -10px;
+    }
+    .custom-section .description .section-left-40{
+        background: none;
+    }
+    .logo-icon a{
+        float: left;
+        margin-right: 10px;
+        margin-top: 10px;
+        display: block;
+        width: 33px;
+        height: 33px;
+    }
+    .icon-fb{
+        background: url("/website/static/images/agent_locator/fb2.png") no-repeat;
+    }
+    a.icon-fb:hover{
+        background: url("/website/static/images/agent_locator/fb1.png") no-repeat;
+    }
+    
+    .icon-in{
+        background: url("/website/static/images/agent_locator/in2.png") no-repeat;
+    }
+    a.icon-in:hover{
+        background: url("/website/static/images/agent_locator/in1.png") no-repeat;
+    }
+    
+    .icon-me{
+        background: url("/website/static/images/agent_locator/info2.png") no-repeat;
+    }
+    a.icon-me:hover{
+        background: url("/website/static/images/agent_locator/info1.png") no-repeat;
+    }
+    .tbl-email{
+        /*display: block;*/
+        margin: 10px 0px;
+    }
+    .tbl-email td{
+        padding: 10px;
+    }
 </style>
 <?php
-
     $kantor = $this->kantor;
-
     //echo 'test';
     $agent = $this->agent;
     //echo "<pre>";
-    //print_r($kantor);
+    //print_r($agent);
     //die();
+    foreach($agent as $row){
+        $kodeAgent = $row->getkodeAgent();
+        $namaAgent = $row->getnamaAgent();
+        $emailAgent = strtolower($row->getemail());
+        $kantor = $row->getkantor();
+        $profilAgent = $row->getprofilAgent();
+        $fotoAgent = $row->getfotoAgent()->path.$row->getfotoAgent()->filename;
+        $Facebook = $row->getURLFacebook();
+        $Artikel = $row->getArtikel();
+        $telepon = $row->kantor[0]->nomorTelepon;
+        $linkFB = $row->getLinkfacebook()->direct;
+        $linkIN = $row->getLinklinkedin()->direct;
+        $linkME = $row->getLinkaboutme()->direct;
+        
+        if(isset($linkFB)){
+            $linkFB = $linkFB;
+        }
+        else{
+            $linkFB = "#";
+        }
+        
+        if(isset($linkIN)){
+            $linkIN = $linkIN;
+        }
+        else{
+            $linkIN = "#";
+        }
+        
+        if(isset($linkME)){
+            $linkME = $linkME;
+        }
+        else{
+            $linkME = "#";
+        }
+        //echo "<pre>";
+        //print_r($row);
+        //die();
+    }
 
 ?>
 <div class="container boxes-view">
     <?php //echo $this->template("includes/breadcrumb.php")?>
     <!--<span class="breadcrumb"><h1 class="title"><?php /*echo $this->document->getProperty('navigation_title');*/?></h1></span>-->
-                         <div class="wrapper-special clearfix">
-        <div id="slideshow" class="clearfix">
-            <ul class="slides">
-                <?php
-                    $z = 0;
-                    foreach($agent as $row){
-                                $kodeAgent = $row->getkodeAgent();
-                                $namaAgent = $row->getnamaAgent();
-                                $emailAgent = strtolower($row->getemail());
-                                $kantor = $row->getkantor();
-                                $profilAgent = $row->getprofilAgent();
-                                $fotoAgent = $row->getfotoAgent()->path.$row->getfotoAgent()->filename;
-                                $Facebook = $row->getURLFacebook();
-                                $Artikel = $row->getArtikel();
-                                $telepon = $row->kantor[0]->nomorTelepon;
-                        $x = count($row->getfotoGaleriAgent()->items);
-                        for($z;$z<$x;$z++){
-                ?>
-                            <li>
-                                <div class="slide">
-                                    <div class="photo">
-                                        <img src="<?php echo $row->getfotoGaleriAgent()->items[$z]->fotoFotoAgent->path.$row->getfotoGaleriAgent()->items[$z]->fotoFotoAgent->filename;?>" />
-                                    </div>
-
-                                    <?php if($row->getfotoGaleriAgent()->items[$z]->posisiNotepad != ""){?>
-                                    <div class="fixbox <?php echo $row->getfotoGaleriAgent()->items[$z]->posisiNotepad;?>60">
-                                        <div class="place-bg bg-<?php echo $row->getfotoGaleriAgent()->items[$z]->warnaNotepad;?> place-bg-gallery">
-                                            <div>
-                                                <h2><?php echo $row->getfotoGaleriAgent()->items[$z]->judulNotepad;?></h2>
-                                                <p>
-                                                    <?php echo $row->getfotoGaleriAgent()->items[$z]->deskripsiNotepad;?>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="edge e-<?php echo $row->getfotoGaleriAgent()->items[$z]->warnaNotepad;?>">
-
-                                        </div>
-                                    </div>
-                                    <?php }else{?>
-                                        <style>
-                                            @media (max-width: 600px) {
-                                                #slideshow .flex-direction-nav .flex-next,#slideshow .flex-direction-nav .flex-prev{
-                                                    top:20px !important;
-                                                }
-                                              }
-                                        </style>
-                                    <?php }?>
-                                </div>
-                            </li>
-                <?php
-                        }
-                    }
-                ?>
-            </ul>
-            </div>
+    <div class="wrapper-special clearfix">
+        
     </div><!-- .wrapper-special -->
 
 
@@ -175,12 +199,18 @@
             <div class="description width-66">
                 <div class="section-left-40">
                     <img src="<?php echo $fotoAgent; ?>" alt="<?php echo $namaAgent; ?>">
+                    <div class="logo-icon">
+                        <a href="<?php echo $linkFB;?>" target="_blank" class="icon-fb"></a>
+                        <a href="<?php echo $linkIN;?>" target="_blank" class="icon-in"></a>
+                        <a href="<?php echo $linkME;?>" target="_blank" class="icon-me"></a>
+                    </div>
                     <!--
                     <img src="http://placekitten.com/g/256/256" alt="Gambar" />
                     -->
                 </div><!--/ .section-left-40 -->
                 <div class="section-right-60">
                     <h2><?php echo $namaAgent; ?></h2>
+                    <div class="bisnis">Bisnis Partner</div>
                     <?php foreach($kantor as $dataKantor){
                             $namaLokasi = ucwords(strtolower($dataKantor->getNamaLokasi()));
                             $alamat = ucwords(strtolower($dataKantor->getAlamat1()."<br /> ".$dataKantor->getAlamat2()."<br /> ".$dataKantor->getAlamat3()));
@@ -199,21 +229,182 @@
                                 echo "Email Agen. ".$emailAgent;
                             ?>
                         </p>
-                        <!--<p> DI HIDE DULU YAA
-                            Parameter dari tasbih: <br />
+                        <!-- <p> DI HIDE DULU YAA
+                            Parameter dari tasbih: <br /> -->
+
                             <?php
-                                //$session = new Zend_Session_Namespace('tasbih');
-                                ////unset($session->name);
-                                //echo "Nama user: ".$session->name."<br />";
-                                //echo "Email: ".$session->email."<br />";
+
+                                $session = new Zend_Session_Namespace('tasbih');
+                                $getStatus=$session->emailFrom;
+                                $idObject = $session->idObject;
+                                //echo $getStatus;
+
+                                if($session->JenisKelamin=="l"){
+                                    $jenis = "Pria";
+                                }
+                                else{
+                                    $jenis = "Wanita";
+                                }
+                                $content;
+                                if(isset($session->date_tglBuat)){
+                                    //unset($session->name);
+                                    $content.= "<table>";
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Nama</td>
+                                                    <td>: '.$session->nama.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Email</td>
+                                                    <td>: '.$session->email.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Nomor Telepon</td>
+                                                    <td>: '.$session->nohp.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Tanggal di Buat</td>
+                                                    <td>: '.date("d/m/Y",$session->date_tglBuat).'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Tanggal Lahir</td>
+                                                    <td>: '.date("d/m/Y",strtotime($session->date_tglLahir)).'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Jenis Kelamin</td>
+                                                    <td>: '.$jenis.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Frekuensi Pembayaran</td>
+                                                    <td>: '.$session->Frekuensi.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Asuransi Jiwa</td>
+                                                    <td>: '.$session->AJ.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Kontribusi Pertahun</td>
+                                                    <td>: '.$session->Kontribusi.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Calculation</td>
+                                                    <td>: '.$session->Calculation.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Keterangan tambahan</td>
+                                                    <td>: </td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Keterangan tambahan</td>
+                                                    <td>: </td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
+                                                </tr>';
+                                    $content.= "</table>";
+                                }
+                                
+                               //print_r($content);
                             ?>
-                        </p>-->
+                            
+                            <?php
+
+                                $session1 = new Zend_Session_Namespace('inquiry');
+                                $getStatusInquiry=$session1->form_inquiry;
+                                $idObject = $session1->idObject;
+                                //echo $getStatus;
+
+                                if($session1->JenisKelamin=="l"){
+                                    $jenis1 = "Pria";
+                                }
+                                else{
+                                    $jenis1 = "Wanita";
+                                }
+                                $content;
+                                if(isset($session1->nama)){
+                                    //unset($session->name);
+                                    $content.= "<table>";
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Nama</td>
+                                                    <td>: '.$session1->nama.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Email</td>
+                                                    <td>: '.$session1->email.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Nomor Telepon</td>
+                                                    <td>: '.$session1->no_hp.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Tanggal Lahir</td>
+                                                    <td>: '.date("d/m/Y",strtotime($session1->tgl_lahir)).'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Jenis Kelamin</td>
+                                                    <td>: '.$jenis1.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Pesan</td>
+                                                    <td>: '.$session1->pesan.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Keterangan tambahan</td>
+                                                    <td>: </td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
+                                                </tr>';
+                                    $content.= "</table>";
+                                }
+                                
+                                if(!isset($session->date_tglBuat) && !isset($session1->nama)){
+                                    $content.= "<table>";
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Keterangan tambahan</td>
+                                                    <td>: </td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
+                                                </tr>';
+                                    $content.= "</table>";
+                                }
+                               //print_r($content);
+                            ?>
+                       
                     <?php }?>
-                    <a href="mailto:<?php echo $emailAgent;?>?Subject=Call%20Kantor" target="_top" class="btn btn-sendmail">Email Agen</a>&nbsp;
+                    <?php
+                        if(!isset($session->date_tglBuat) && !isset($session1->nama)){
+                    ?>
+                        <a href="mailto:<?php echo $email;?>?Subject=Call%20Agen" target="_top" class="btn btn-sendmail">Kirim EMail</a>
+                    <?php } else{?>
+                        <a href="javascript:void(0)" target="_top" class="btn btn-sendmail btn-email">Email Agen</a>&nbsp;
+                    <?php }?>
                     <a href="tel:<?php echo $telp;?>" target="_top" class="btn btn-sendmail hide">Hubungi Agen</a>
                 </div><!--/ .section-right-60 -->
             </div><!--/ .description-width-66 -->
         </div><!--/ .full-w -->
+        
+        <div class="modal fade" id="modalEmail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Kirim Pesan ke Agen.</h4>
+                </div>
+                <div class="modal-body">
+                    <?php
+                        echo $content;
+                    ?>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary kirim-email">Kirim email</button>
+                </div>
+              </div>
+            </div>
+        </div>
 
         <div style="clear: both"></div>
 
@@ -278,7 +469,67 @@
     </div>
 </div>
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script>
+
+
+    $('.btn-email').click(function() {
+        $('#modalEmail').modal();
+    });
+    
+    $(".kirim-email").click(function(){
+        <?php 
+
+        if($getStatus=='tasbih_calc'){ ?>
+            var keterangan = $(".textareaForm").val();
+            
+            $.ajax({
+                url      : '/send-email-agen-tasbih/',
+                type     : 'POST',
+                data     : {
+                            'from' : 'agent_locator',
+                            'keterangan' : keterangan
+                            },
+                    success  : function(data){
+                    //console.log(data);
+                    alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
+                }
+            
+            
+            });
+
+        <?php }else{ ?>
+                //var keterangan = $(".textareaForm").val();
+                //('dari agent_locator'<?php echo $getStatus;?>);
+        <?php } ?>
+        
+        <?php if($getStatusInquiry=='inquiry'){ ?>
+            var keterangan = $(".textareaForm").val();
+            
+            $.ajax({
+                url      : '/send-email-agen-inquiry/',
+                type     : 'POST',
+                data     : {
+                            'keterangan' : keterangan
+                            },
+                    success  : function(data){
+                    //console.log(data);
+                    alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
+                }
+            
+            
+            });
+
+        <?php }?>
+        $('#modalEmail').modal('hide');
+    });
+
+
+
+
+$(document).ready(function(){
+    $("#slideshow ul.flex-direction-nav").remove();
+});
+(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
