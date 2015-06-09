@@ -298,7 +298,7 @@ class AgentController extends Website_Controller_Action {
 		$mail->setDocument($document);
 		$mail->setParams($params);
 		$mail->addTo($email);
-		//$mail->addBcc("asn.tasbih@gmail.com");
+		$mail->addBcc("asn.tasbih@gmail.com");
 		$mail->send();
 
 		Zend_Session::namespaceUnset('tasbih');
@@ -357,7 +357,7 @@ class AgentController extends Website_Controller_Action {
 		$mail->setDocument($document);
 		$mail->setParams($params);
 		$mail->addTo($email);
-		//$mail->addBcc("asn.tasbih@gmail.com");
+		$mail->addBcc("asn.tasbih@gmail.com");
 		$mail->send();
 
 		Zend_Session::namespaceUnset('inquiry');
