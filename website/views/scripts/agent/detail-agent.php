@@ -378,17 +378,6 @@
                                                 </tr>';
                                     $content.= "</table>";
                                 }
-                                else{
-                                    $content.= "<table>";
-                                    $content.='<tr class="tbl-email">
-                                                    <td>Keterangan tambahan</td>
-                                                    <td>: </td>
-                                                </tr>';
-                                    $content.='<tr class="tbl-email">
-                                                    <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
-                                                </tr>';
-                                    $content.= "</table>";
-                                }
                                //print_r($content);
                             ?>
                        
