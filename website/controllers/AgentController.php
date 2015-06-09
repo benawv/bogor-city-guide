@@ -61,7 +61,7 @@ class AgentController extends Website_Controller_Action {
 		}
 		echo json_encode($return);
 	}
-	//public function mapAgentAction() {
+	//public function mapAgent() {
 	//	$k = $_POST["kordinat"];
 	//	$kordinat = explode("#",$k);
 	//	
