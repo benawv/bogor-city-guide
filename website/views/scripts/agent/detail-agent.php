@@ -287,7 +287,7 @@
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Premi yang harus anda bayarkan pertahun</td>
-                                                    <td>: Rp '.number_format($session->Calculation,0,",",".").'</td>
+                                                    <td>: Rp '.number_format($session->Calculation,0,".",",").'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Keterangan tambahan</td>
