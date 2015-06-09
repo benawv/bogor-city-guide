@@ -24,6 +24,16 @@
             $AsuransiJiwa = $_POST["asuransijiwa"];
             $AJ= $_POST["AJ"];
             $Kontribusi = $_POST["kontribusi"];
+			
+			if($Frekuensi == 1){
+				$frek = 'Tahunan';
+			}
+			else if($Frekuensi == 2){
+				$frek = 'Semesteran';
+			}
+			else{
+				$frek = 'Triwulan';
+			}
             
             
 		
@@ -48,7 +58,7 @@
             $session->date_tglLahir = $date_tglLahir;
             $session->JenisKelamin = $JenisKelamin;
             $session->Usia = $Usia;
-            $session->Frekuensi = $Frekuensi;
+            $session->Frekuensi = $frek;
             $session->AsuransiJiwa = $AsuransiJiwa;
             $session->AJ = $AJ;
             $session->Kontribusi = $Kontribusi;

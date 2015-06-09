@@ -278,16 +278,16 @@
                                                     <td>: '.$session->Frekuensi.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td>Pertanggungan</td>
+                                                    <td>Uang Pertanggungan</td>
                                                     <td>: '.$session->AJ.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Massa Pembayaran Premi</td>
-                                                    <td>: '.$session->Kontribusi.'</td>
+                                                    <td>: '.$session->Kontribusi.' tahun</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Premi yang harus anda bayarkan pertahun</td>
-                                                    <td>: '.$session->Calculation.'</td>
+                                                    <td>: '.number_format($session->Calculation,0,",",".").'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Keterangan tambahan</td>
