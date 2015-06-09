@@ -375,7 +375,13 @@
                             ?>
                        
                     <?php }?>
-                    <a href="javascript:void(0)" target="_top" class="btn btn-sendmail">Email Agen</a>&nbsp;
+                    <?php
+                        if(!isset($session->date_tglBuat) && !isset($session1->nama)){
+                    ?>
+                        <a href="mailto:<?php echo $email;?>?Subject=Call%20Agen" target="_top" class="btn btn-sendmail">Kirim EMail</a>
+                    <?php } else{?>
+                        <a href="javascript:void(0)" target="_top" class="btn btn-sendmail btn-email">Email Agen</a>&nbsp;
+                    <?php }?>
                     <a href="tel:<?php echo $telp;?>" target="_top" class="btn btn-sendmail hide">Hubungi Agen</a>
                 </div><!--/ .section-right-60 -->
             </div><!--/ .description-width-66 -->
@@ -466,7 +472,7 @@
 <script>
 
 
-    $('.btn-sendmail').click(function() {
+    $('.btn-email').click(function() {
         $('#modalEmail').modal();
     });
     
