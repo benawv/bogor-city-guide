@@ -248,19 +248,7 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-
-        //$( 'li.aktif .nav_menu div' ).css( 'display', 'none' );
-        //$( 'li .nav_menu .white_image' ).css( 'display', 'none' );
-        //$( 'li.aktif .nav_menu .white_image' ).css( 'display', 'block' );
-        //var hash = window.location.hash.substring(1);
-        //
-        //if( hash != '' )
-        //{
-        //    var target = '#modal-' + hash;
-        //    $( target ).modal( 'show' );
-        //}
-
-        $('#cari-agen').click(function() {
+        $('#cari-agen').on("click",function() {
 
            <?php  $session = new Zend_Session_Namespace('inquiry'); ?>
             console.log("debug coy");
@@ -303,26 +291,6 @@
             //          }
             //  });
         });
-
-        //$( ".pagenav .navi li" ).click(function(){
-        //    $(".pagenav .navi li").removeClass('aktif');
-        //    $(".pagenav .navi li .nav_menu div").css('display','block');
-        //    $(".pagenav .navi li .nav_menu .white_image").css('display','none');
-        //    $(this).addClass('aktif');
-        //    $('li.aktif .nav_menu div').css('display', 'none');
-        //    $('li.aktif .nav_menu .white_image').css('display', 'block');
-        //    var data = $(this).attr('class');
-        //    var id = data.split(' ');
-        //    //alert($(".heading").offset().top);
-        //    if(Math.floor( $(".heading").offset().top)<=212)
-        //    {
-        //        $('html, body').animate({scrollTop:$("#"+id[0]).offset().top-190}, 500);
-        //    }
-        //    else
-        //    {
-        //        $('html, body').animate({scrollTop:$("#"+id[0]).offset().top-90}, 500);
-        //    }
-        //});
 
         $('#DOB').datepicker({
             changeMonth: true,
