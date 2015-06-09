@@ -270,7 +270,8 @@ $(document).ready(function(){
                               },
                   complete  : function(data){
                          //console.log(data);
-                          document.location.href='/agent-locator';
+                          window.open('/agent-locator', '_blank');
+                          //document.location.href='/agent-locator';
                       }
               });
         });
