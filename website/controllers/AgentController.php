@@ -114,6 +114,21 @@ class AgentController extends Website_Controller_Action {
 	}
     
     public function detailAgentAction(){
+		
+		//$session = new Zend_Session_Namespace('tasbih');
+		//$session->nama = "nama1";
+		//$session->email = "email1";
+		//$session->nohp = "nohp1";
+		//$session->date_tglBuat = "tgl buat";
+		//$session->date_tglLahir = "tgl lahir";
+		//$session->JenisKelamin = "jenis kelamin";
+		//$session->Usia = "usia";
+		//$session->Frekuensi = "Frekuensi";
+		//$session->AJ = "AJ";
+		//$session->Kontribusi = "Kontribusi";
+		//$session->Calculation = "Calculation";
+		
+		
 		$this->enableLayout();
 		//$key = $this->_getParam('text');
 		$id = $this->_getParam('id');
@@ -204,6 +219,146 @@ class AgentController extends Website_Controller_Action {
 		
 		echo "<pre>";
 		print_r($return);
+		die();
+	}
+
+	public function sendMailAgenTasbihAction(){
+
+
+
+		// harusnya ini jadi  class Object_Abstract untuk email(sementara static harus cepet ganti !!!!!)
+		$session = new Zend_Session_Namespace('tasbih');
+        $nama = $session->nama;
+        $email=$session->email ;
+        $nohp=$session->nohp ;
+        $date_tglBuat = $session->date_tglBuat;
+        $date_tglLahir = $session->date_tglLahir;
+        $JenisKelamin = $session->JenisKelamin;
+        $Usia = $session->Usia;
+        $Frekuensi = $session->Frekuensi;
+        $AsuransiJiwa = $session->AsuransiJiwa;
+        $AJ = $session->AJ;
+        $Kontribusi = $session->Kontribusi;
+        $Calculation = $session->Calculation;
+		$idObject = $session->idObject;
+		
+		$update = Object_Tasbih::getById($idObject);
+		$update->setKeterangan($_POST["keterangan"]);
+		$update->save();
+
+		$date_tglBuat1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglBuat)));
+        $date_tglLahir1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglLahir)));
+
+
+		if($JenisKelamin == 'l') {
+			$JK = 'Pria';
+		}
+		else{
+			$JK = 'Wanita';
+		}
+	
+		if($Frekuensi == 1){
+			$frek = 'Tahunan';
+		}
+		else if($Frekuensi == 2){
+			$frek = 'Semesteran';
+		}
+		else{
+			$frek = 'Triwulan';
+		}
+
+
+
+
+		$hasil = number_format($Calculation,0,",",".");
+		$document = '/email/email-agen-tasbih';
+		$params = array(
+						'tglhitung' => $date_tglBuat1,
+						'nama' => $nama,
+						'email' => $email,
+						'tgllahir' => $date_tglLahir1,
+						'usia'=> $Usia,
+						'kontribusi' => $Kontribusi,
+						'AJ' => $AJ,
+						'pembayaran' => $hasil,
+						'frek' => $frek,
+						'JK' => $JK,
+						'nohp' => $nohp
+						);
+		/*
+		$systemConfig = Pimcore_Config::getSystemConfig()->toArray();
+		$emailSettings = $systemConfig['email'];	
+		print_r($emailSettings);
+		die();
+		*/
+		$mail = new Pimcore_Mail();
+		$mail->setSubject("Permintaan $nama Calon Nasabah Produk Allianz Tasbih");
+		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+		$mail->setDocument($document);
+		$mail->setParams($params);
+		$mail->addTo($email);
+		$mail->send();
+
+		Zend_Session::namespaceUnset('tasbih');
+
+		echo "Sukses $Calculation";
+		die();
+	}
+	
+	public function sendMailAgenInquiryAction(){
+
+		// harusnya ini jadi  class Object_Abstract untuk email(sementara static harus cepet ganti !!!!!)
+		$session = new Zend_Session_Namespace('inquiry');
+        $nama = $session->nama;
+		$idObject = $session->idObject;
+		$kelamin = $session->JenisKelamin;
+		$date_tglLahir = $session->tgl_lahir;
+		$tlp = $session->no_hp;
+		$email = $session->email;
+		$objProv = $session->provinsi;
+		$pesan = $session->pesan;
+		
+		$update = Object_TasbihInquiry::getById($idObject);
+		$update->setKeterangan($_POST["keterangan"]);
+		$update->save();
+
+        $date_tglLahir1 = date("d/m/Y",strtotime(new Pimcore_Date($session->tgl_lahir)));
+
+		if($kelamin == 'l') {
+			$JK = 'Pria';
+		}
+		else{
+			$JK = 'Wanita';
+		}
+
+		$document = '/email/email-agen-inquiry';
+		$params = array(
+						'nama' => $nama,
+						'email' => $email,
+						'jenisKelamin' => $JK,
+						'tgllahir' => $date_tglLahir1,
+						'nohp' => $tlp,
+						'pesan' => $pesan,
+						'propinsi' => $objProv,
+						'ket' => $_POST["keterangan"]
+						);
+		/*
+		$systemConfig = Pimcore_Config::getSystemConfig()->toArray();
+		$emailSettings = $systemConfig['email'];	
+		print_r($emailSettings);
+		die();
+		*/
+		$mail = new Pimcore_Mail();
+		$mail->setSubject("Permintaan $nama Calon Nasabah Produk Allianz Tasbih");
+		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+		$mail->setDocument($document);
+		$mail->setParams($params);
+		$mail->addTo($email);
+		$mail->send();
+
+		Zend_Session::namespaceUnset('inquiry');
+
+		echo "Sukses Minta Informasi";
 		die();
 	}
 
