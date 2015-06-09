@@ -48,12 +48,13 @@ class TasbihController extends Website_Controller_Action {
 			$session = new Zend_Session_Namespace('inquiry');
             $session->nama = $nama;
 			$session->idObject = $inquiry->getO_id();
-            $session->JenisKelamin = $JenisKelamin;
+            $session->JenisKelamin = $kelamin;
 			$session->tgl_lahir = $date_tglLahir;
             $session->no_hp = $tlp;
             $session->email = $email;
             $session->provinsi = $objProv;
             $session->pesan = $pesan;
+			$session->form_inquiry = "inquiry";
         
             $params = array(
                         'nama' => $nama,
