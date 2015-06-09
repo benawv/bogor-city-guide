@@ -77,6 +77,10 @@
             padding-right: 15px;
         }
 
+        .edge a {
+            float: left;
+        }
+
         @media( max-width : 640px)
         {
             .place-bg.place-bg-gallery
