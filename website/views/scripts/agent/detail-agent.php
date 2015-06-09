@@ -343,6 +343,7 @@
                                                     <td>Pesan</td>
                                                     <td>: '.$session1->pesan.'</td>
                                                 </tr>';
+                                    $content = "";
                                     $content.='<tr class="tbl-email">
                                                     <td>Keterangan tambahan</td>
                                                     <td>: </td>
@@ -351,6 +352,7 @@
                                                     <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
                                                 </tr>';
                                     $content.= "</table>";
+                                    
                                 }
                                 
                                 if(!isset($session->date_tglBuat) && !isset($session1->nama)){
@@ -480,7 +482,8 @@
                 type     : 'POST',
                 data     : {
                             'from' : 'agent_locator',
-                            'keterangan' : keterangan
+                            'keterangan' : keterangan,
+                            'nama_agen' : '<?php echo $namaAgent;?>'
                             },
                     success  : function(data){
                     //console.log(data);
@@ -502,7 +505,8 @@
                 url      : '/send-email-agen-inquiry/',
                 type     : 'POST',
                 data     : {
-                            'keterangan' : keterangan
+                            'keterangan' : keterangan,
+                            'nama_agen' : '<?php echo $namaAgent;?>'
                             },
                     success  : function(data){
                     //console.log(data);
