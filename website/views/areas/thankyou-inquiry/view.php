@@ -130,7 +130,7 @@
 
     <h3  style=" color:black;"><strong>Terima kasih Anda telah mengirimkan permintaan Anda. Anda akan segera dihubungi oleh agen Allianz Star Network atau temukan agen terdekat. </strong></h3>
                    <br />
-    <center><input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen"></center>
+    <center><input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih " id="cari-agen" name="next" value="Cari Agen" ></center>
                 </div>
 
             </div><!--/ .col-md-12 -->
@@ -260,46 +260,48 @@
             $( target ).modal( 'show' );
         }
 
-        $(this).on('click', '.inquiry-send', function(e){
+        $('#cari-agen').click(function() {
 
-            var nama=$('#nama').val();
-            var kelamin=$('#JenisKelamin').val();
-            var bod=$('#DOB').val();
-            var email=$('#email').val();
-            var nohp=$('#nohp').val();
-            var prov=$('#provinsi_id').val();
+           <?php  $session = new Zend_Session_Namespace('inquiry'); ?>
 
-            //alert(bod);
+            var nama = '<?php echo $session->nama; ?>';
+            var email = '<?php echo $session->email; ?>';
+            var nohp = '<?php echo $session->nohp; ?>';
+            var date_tglBuat = '<?php echo $session->date_tglBuat; ?>';
+            var date_tglLahir = '<?php echo $session->date_tglLahir; ?>';
+            var JenisKelamin = '<?php echo $session->JenisKelamin; ?>';
+            var Usia = '<?php echo $session->Usia; ?>';
+            var Frekuensi = '<?php echo $session->Frekuensi; ?>';
+            var AsuransiJiwa = '<?php echo $session->AsuransiJiwa; ?>';
+            var AJ = '<?php echo $session->AJ; ?>';
+            var Kontribusi = '<?php echo $session->Kontribusi; ?>';
+            var Calculation = '<?php echo $session->Calculation; ?>';
 
-            if( nama == '' || email == '' || nohp == '' || bod == '' ||  nohp.length <= 8 || prov == ''){
-                    if( nama == ''  )
-                        document.getElementById('notif-nama').style.display= 'block';
-                    if( email == '' )
-                        document.getElementById('notifemail').style.display= 'block';
-                    if( bod == '')
-                        document.getElementById('notif-DOB').style.display= 'block';
-                    if( prov == '' )
-                        document.getElementById('notif-tgllahir').style.display= 'block';
-                    if( nohp.length <= 8 || nohp == '')
-                        document.getElementById('notifNoHP').style.display='block';
-                    alert("Mohon Periksa Inputan Anda");
-            }else{
-            e.preventDefault();
-            $.ajax({
-                 "url" : "/inquriy-tasbih/",
-                 "type" : "POST",
-                 "data" : "nama="+ nama +
-                          "&kelamin="+kelamin+
-                          "&bod="+bod+
-                          "&email="+email+
-                          "&nohp="+nohp+
-                          "&prov="+prov,
-                 "success" : function(response){
-                    alert("Inquiry Send");
-                 }
-             });
-            }
-            e.preventDefault();
+              $.ajax({
+                  url      : '/v1/api/calculator',
+                  type     : 'POST',
+                  crossDomain: true,
+                  data     : {
+                              'nama' : nama,
+                              'email' : email,
+                              'nohp' : nohp,
+                              'date_tglBuat': date_tglBuat,
+                              'date_tglLahir': date_tglLahir,
+                              'JenisKelamin': JenisKelamin ,
+                              'Usia': Usia,
+                              'Frekuensi': Frekuensi,
+                              'AsuransiJiwa' : AsuransiJiwa,
+                              'AJ' : AJ,
+                              'Kontribusi' : Kontribusi,
+                              'Calculation' : Calculation,
+                              'source' :'Kalkulator Tasbih User'
+                              },
+                  complete  : function(data){
+                         //console.log(data);
+                          window.open('/agent-locator', '_blank');
+                          //document.location.href='/agent-locator';
+                      }
+              });
         });
 
         $( ".pagenav .navi li" ).click(function(){

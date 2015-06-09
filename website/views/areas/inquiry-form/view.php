@@ -293,7 +293,7 @@
                     <div class="form-group">
                         <div class="col-md-2 col-md-offset-4">
                             <a href="/tasbih/thankyou-inquiry">
-                                <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih inquiry-send" id="Submit" name="Submit" value="Submit">
+                                <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih inquiry-send" id="Submit" name="Submit" value="Kirim">
                             </a>
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
