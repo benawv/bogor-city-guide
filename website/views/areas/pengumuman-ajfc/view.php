@@ -39,7 +39,7 @@
                         <tbody>
                                 <tr>
 									<td>1</td>
-									<td>Andhika Ezra</td>
+									<td>Adhika Ezra</td>
                                 </tr>
 								<tr>
 									<td>2</td>
