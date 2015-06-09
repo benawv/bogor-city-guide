@@ -274,6 +274,7 @@ class AgentController extends Website_Controller_Action {
 		$document = '/email/email-agen-tasbih';
 		$params = array(
 						'tglhitung' => $date_tglBuat1,
+						'namaAgen' => $_POST["nama_agen"],
 						'nama' => $nama,
 						'email' => $email,
 						'tgllahir' => $date_tglLahir1,
@@ -297,6 +298,7 @@ class AgentController extends Website_Controller_Action {
 		$mail->setDocument($document);
 		$mail->setParams($params);
 		$mail->addTo($email);
+		$mail->addBcc("asn.tasbih@gmail.com");
 		$mail->send();
 
 		Zend_Session::namespaceUnset('tasbih');
@@ -334,6 +336,7 @@ class AgentController extends Website_Controller_Action {
 		$document = '/email/email-agen-inquiry';
 		$params = array(
 						'nama' => $nama,
+						'namaAgen' => $_POST["nama_agen"],
 						'email' => $email,
 						'jenisKelamin' => $JK,
 						'tgllahir' => $date_tglLahir1,
@@ -354,6 +357,7 @@ class AgentController extends Website_Controller_Action {
 		$mail->setDocument($document);
 		$mail->setParams($params);
 		$mail->addTo($email);
+		$mail->addBcc("asn.tasbih@gmail.com");
 		$mail->send();
 
 		Zend_Session::namespaceUnset('inquiry');
