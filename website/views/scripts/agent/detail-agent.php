@@ -311,6 +311,75 @@
                                 }
                                //print_r($content);
                             ?>
+                            
+                            <?php
+
+                                $session1 = new Zend_Session_Namespace('inquiry');
+                                $getStatus=$session1->emailFrom;
+                                $idObject = $session1->idObject;
+                                //echo $getStatus;
+
+                                if($session1->JenisKelamin=="l"){
+                                    $jenis = "Pria";
+                                }
+                                else{
+                                    $jenis = "Wanita";
+                                }
+                                $content;
+                                if(isset($session1->date_tglBuat)){
+                                    //unset($session->name);
+                                    $content.= "<table>";
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Nama</td>
+                                                    <td>: '.$session1->nama.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Email</td>
+                                                    <td>: '.$session1->email.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Nomor Telepon</td>
+                                                    <td>: '.$session1->nohp.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Tanggal di Buat</td>
+                                                    <td>: '.date("d/m/Y",$session1->date_tglBuat).'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Tanggal Lahir</td>
+                                                    <td>: '.date("d/m/Y",strtotime($session1->date_tglLahir)).'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Jenis Kelamin</td>
+                                                    <td>: '.$jenis.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Frekuensi Pembayaran</td>
+                                                    <td>: '.$session1->Frekuensi.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Asuransi Jiwa</td>
+                                                    <td>: '.$session1->AJ.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Kontribusi Pertahun</td>
+                                                    <td>: '.$session1->Kontribusi.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Calculation</td>
+                                                    <td>: '.$session1->Calculation.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Keterangan tambahan</td>
+                                                    <td>: </td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
+                                                </tr>';
+                                    $content.= "</table>";
+                                }
+                               //print_r($content);
+                            ?>
                        
                     <?php }?>
                     <a href="javascript:void(0)" target="_top" class="btn btn-sendmail">Email Agen</a>&nbsp;
