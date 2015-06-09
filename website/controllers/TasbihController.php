@@ -54,6 +54,7 @@ class TasbihController extends Website_Controller_Action {
             $session->email = $email;
             $session->provinsi = $objProv;
             $session->pesan = $pesan;
+			$session->form_inquiry = "inquiry";
         
             $params = array(
                         'nama' => $nama,

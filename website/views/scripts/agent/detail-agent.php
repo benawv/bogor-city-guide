@@ -312,7 +312,7 @@
                             <?php
 
                                 $session1 = new Zend_Session_Namespace('inquiry');
-                                $getStatus=$session1->emailFrom;
+                                $getStatusInquiry=$session1->form_inquiry;
                                 $idObject = $session1->idObject;
                                 //echo $getStatus;
 
@@ -492,9 +492,28 @@
             });
 
         <?php }else{ ?>
-                var keterangan = $(".textareaForm").val();
+                //var keterangan = $(".textareaForm").val();
                 //('dari agent_locator'<?php echo $getStatus;?>);
         <?php } ?>
+        
+        <?php if($getStatusInquiry=='inquiry'){ ?>
+            var keterangan = $(".textareaForm").val();
+            
+            $.ajax({
+                url      : '/send-email-agen-inquiry/',
+                type     : 'POST',
+                data     : {
+                            'keterangan' : keterangan
+                            },
+                    success  : function(data){
+                    //console.log(data);
+                    alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
+                }
+            
+            
+            });
+
+        <?php }?>
         $('#modalEmail').modal('hide');
     });
 

@@ -304,5 +304,62 @@ class AgentController extends Website_Controller_Action {
 		echo "Sukses $Calculation";
 		die();
 	}
+	
+	public function sendMailAgenInquiryAction(){
+
+		// harusnya ini jadi  class Object_Abstract untuk email(sementara static harus cepet ganti !!!!!)
+		$session = new Zend_Session_Namespace('inquiry');
+        $nama = $session->nama;
+		$idObject = $session->idObject;
+		$kelamin = $session->JenisKelamin;
+		$date_tglLahir = $session->tgl_lahir;
+		$tlp = $session->no_hp;
+		$email = $session->email;
+		$objProv = $session->provinsi;
+		$pesan = $session->pesan;
+		
+		$update = Object_TasbihInquiry::getById($idObject);
+		$update->setKeterangan($_POST["keterangan"]);
+		$update->save();
+
+        $date_tglLahir1 = date("d/m/Y",strtotime(new Pimcore_Date($session->tgl_lahir)));
+
+		if($kelamin == 'l') {
+			$JK = 'Pria';
+		}
+		else{
+			$JK = 'Wanita';
+		}
+
+		$document = '/email/email-agen-inquiry';
+		$params = array(
+						'nama' => $nama,
+						'email' => $email,
+						'jenisKelamin' => $JK,
+						'tgllahir' => $date_tglLahir1,
+						'nohp' => $tlp,
+						'pesan' => $pesan,
+						'propinsi' => $objProv,
+						'ket' => $_POST["keterangan"]
+						);
+		/*
+		$systemConfig = Pimcore_Config::getSystemConfig()->toArray();
+		$emailSettings = $systemConfig['email'];	
+		print_r($emailSettings);
+		die();
+		*/
+		$mail = new Pimcore_Mail();
+		$mail->setSubject("Permintaan $nama Calon Nasabah Produk Allianz Tasbih");
+		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+		$mail->setDocument($document);
+		$mail->setParams($params);
+		$mail->addTo($email);
+		$mail->send();
+
+		Zend_Session::namespaceUnset('inquiry');
+
+		echo "Sukses Minta Informasi";
+		die();
+	}
 
 }
