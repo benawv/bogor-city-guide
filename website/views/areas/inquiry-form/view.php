@@ -360,7 +360,7 @@
         $(this).on('click', '.inquiry-send', function(e){
 
             var nama=$('#nama').val();
-            var kelamin=$('#JenisKelamin').val();
+            var kelamin=$('input[name=jenisKelamin]:checked').val();
             var bod=$('#DOB').val();
             var email=$('#email').val();
             var nohp=$('#nohp').val();
