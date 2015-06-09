@@ -283,7 +283,7 @@
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Massa Pembayaran Premi</td>
-                                                    <td>: '.$session->Kontribusi.' tahun</td>
+                                                    <td>: Rp '.$session->Kontribusi.' tahun</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Premi yang harus anda bayarkan pertahun</td>
