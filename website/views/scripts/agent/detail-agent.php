@@ -296,13 +296,6 @@
                                     $content.='<tr class="tbl-email">
                                                     <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
                                                 </tr>';
-                                    $content.='<tr class="tbl-email">
-                                                    <td>Keterangan tambahan</td>
-                                                    <td>: </td>
-                                                </tr>';
-                                    $content.='<tr class="tbl-email">
-                                                    <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
-                                                </tr>';
                                     $content.= "</table>";
                                 }
                                 
@@ -362,11 +355,11 @@
                                 
                                 if(!isset($session->date_tglBuat) && !isset($session1->nama)){
                                     $content.= "<table>";
-                                    $content.='<tr class="tbl-email">
+                                    $content.= '<tr class="tbl-email">
                                                     <td>Keterangan tambahan</td>
                                                     <td>: </td>
                                                 </tr>';
-                                    $content.='<tr class="tbl-email">
+                                    $content.= '<tr class="tbl-email">
                                                     <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
                                                 </tr>';
                                     $content.= "</table>";
