@@ -125,8 +125,9 @@
 			$cookie->setO_index(0);
 			$cookie->setO_published(1);
 			$cookie->save();
-		
-
+			
+			$session->idObject = $cookie->getO_id();
+			
 			if($JenisKelamin == 'l') {
 				$JK = 'Pria';
 			}

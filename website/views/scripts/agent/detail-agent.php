@@ -236,6 +236,7 @@
 
                                 $session = new Zend_Session_Namespace('tasbih');
                                 $getStatus=$session->emailFrom;
+                                $idObject = $session->idObject;
                                 //echo $getStatus;
 
                                 if($session->JenisKelamin=="l"){
@@ -293,7 +294,18 @@
                                                     <td>: </td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td colspan="3"><textarea class="form-control" rows="3"></textarea></td>
+                                                    <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
+                                                </tr>';
+                                    $content.= "</table>";
+                                }
+                                else{
+                                    $content.= "<table>";
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Keterangan tambahan</td>
+                                                    <td>: </td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
                                                 </tr>';
                                     $content.= "</table>";
                                 }
@@ -400,12 +412,14 @@
         <?php 
 
         if($getStatus=='tasbih_calc'){ ?>
+            var keterangan = $(".textareaForm").val();
             
             $.ajax({
                 url      : '/send-email-agen-tasbih/',
                 type     : 'POST',
                 data     : {
-                            'from' : 'agent_locator'
+                            'from' : 'agent_locator',
+                            'keterangan' : keterangan
                             },
                     success  : function(data){
                     //console.log(data);
@@ -416,9 +430,10 @@
             });
 
         <?php }else{ ?>
-
+                var keterangan = $(".textareaForm").val();
                 //('dari agent_locator'<?php echo $getStatus;?>);
         <?php } ?>
+        $('#modalEmail').modal('hide');
     });
 
 

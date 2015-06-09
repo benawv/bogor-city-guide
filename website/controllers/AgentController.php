@@ -240,6 +240,11 @@ class AgentController extends Website_Controller_Action {
         $AJ = $session->AJ;
         $Kontribusi = $session->Kontribusi;
         $Calculation = $session->Calculation;
+		$idObject = $session->idObject;
+		
+		$update = Object_Tasbih::getById($idObject);
+		$update->setKeterangan($_POST["keterangan"]);
+		$update->save();
 
 		$date_tglBuat1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglBuat)));
         $date_tglLahir1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglLahir)));
