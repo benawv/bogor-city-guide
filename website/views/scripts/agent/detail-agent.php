@@ -360,7 +360,7 @@
                                     $content.= "</table>";
                                 }
                                 
-                                if(!isset($session->date_tglBuat) || !isset($session1->nama)){
+                                if(!isset($session->date_tglBuat) && !isset($session1->nama)){
                                     $content.= "<table>";
                                     $content.='<tr class="tbl-email">
                                                     <td>Keterangan tambahan</td>
