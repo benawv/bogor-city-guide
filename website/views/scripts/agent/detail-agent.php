@@ -296,10 +296,6 @@
                                     $content.='<tr class="tbl-email">
                                                     <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
                                                 </tr>';
-                                    $content.= "</table>";
-                                }
-                                else{
-                                    $content.= "<table>";
                                     $content.='<tr class="tbl-email">
                                                     <td>Keterangan tambahan</td>
                                                     <td>: </td>
@@ -309,6 +305,7 @@
                                                 </tr>';
                                     $content.= "</table>";
                                 }
+                                
                                //print_r($content);
                             ?>
                             
@@ -320,13 +317,13 @@
                                 //echo $getStatus;
 
                                 if($session1->JenisKelamin=="l"){
-                                    $jenis = "Pria";
+                                    $jenis1 = "Pria";
                                 }
                                 else{
-                                    $jenis = "Wanita";
+                                    $jenis1 = "Wanita";
                                 }
                                 $content;
-                                if(isset($session1->date_tglBuat)){
+                                if(isset($session1->nama)){
                                     //unset($session->name);
                                     $content.= "<table>";
                                     $content.='<tr class="tbl-email">
@@ -339,36 +336,32 @@
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Nomor Telepon</td>
-                                                    <td>: '.$session1->nohp.'</td>
-                                                </tr>';
-                                    $content.='<tr class="tbl-email">
-                                                    <td>Tanggal di Buat</td>
-                                                    <td>: '.date("d/m/Y",$session1->date_tglBuat).'</td>
+                                                    <td>: '.$session1->no_hp.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Tanggal Lahir</td>
-                                                    <td>: '.date("d/m/Y",strtotime($session1->date_tglLahir)).'</td>
+                                                    <td>: '.date("d/m/Y",strtotime($session1->tgl_lahir)).'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Jenis Kelamin</td>
-                                                    <td>: '.$jenis.'</td>
+                                                    <td>: '.$jenis1.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td>Frekuensi Pembayaran</td>
-                                                    <td>: '.$session1->Frekuensi.'</td>
+                                                    <td>Pesan</td>
+                                                    <td>: '.$session1->pesan.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td>Asuransi Jiwa</td>
-                                                    <td>: '.$session1->AJ.'</td>
+                                                    <td>Keterangan tambahan</td>
+                                                    <td>: </td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td>Kontribusi Pertahun</td>
-                                                    <td>: '.$session1->Kontribusi.'</td>
+                                                    <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
                                                 </tr>';
-                                    $content.='<tr class="tbl-email">
-                                                    <td>Calculation</td>
-                                                    <td>: '.$session1->Calculation.'</td>
-                                                </tr>';
+                                    $content.= "</table>";
+                                }
+                                
+                                if(!isset($session->date_tglBuat) || !isset($session1->nama)){
+                                    $content.= "<table>";
                                     $content.='<tr class="tbl-email">
                                                     <td>Keterangan tambahan</td>
                                                     <td>: </td>
