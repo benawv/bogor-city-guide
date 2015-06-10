@@ -22,6 +22,7 @@
 .bg-orange{background: #F16410;}
 .bg-purple{background: #850AA0;}
 .bg-lightgreen{background: #B3BE25;}
+.bg-green{background: #009B49;}
 .bg-red{background: #A40033;}
 .bg-blue{background: #113388;}
 
@@ -70,6 +71,9 @@
 }
 .e-lightgreen{
 	background: url(../../images/edge-lightgreen.png) no-repeat bottom right;
+}
+.e-green{
+	background: url(../../images/edge-green.png) no-repeat bottom right;
 }
 .e-red{
 	background: url(../../images/edge-red.png) no-repeat bottom right;
