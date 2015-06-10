@@ -117,6 +117,16 @@
 				echo $Calculation."<br>";
 			*/	
 			
+			if($Frekuensi == 'Tahunan'){
+				$frek = 1;
+			}
+			else if($Frekuensi == 'Semesteran'){
+				$frek = 2;
+			}
+			else{
+				$frek = 3;
+			}
+
 			
             $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
 			$cookie = new Object_Tasbih();
@@ -126,7 +136,7 @@
 			$cookie->setTanggalLahir($date_tglLahir);
 			$cookie->setJenisKelamin($JenisKelamin);
 			$cookie->setUsia($Usia);
-			$cookie->setFrekuensiPembayaran($Frekuensi);
+			$cookie->setFrekuensiPembayaran($frek);
 			$cookie->setDetailAsuransiJiwa($AsuransiJiwa);
 			$cookie->setMassaPembayaranKontribusi($Kontribusi);
 			$cookie->setKontribusiBerkala($Calculation);                
@@ -145,15 +155,6 @@
 				$JK = 'Wanita';
 			}
 		
-			if($Frekuensi == 1){
-				$frek = 'Tahunan';
-			}
-			else if($Frekuensi == 2){
-				$frek = 'Semesteran';
-			}
-			else{
-				$frek = 'Triwulan';
-			}
 
 			$hasil = number_format($Calculation,0,",",".");
 			$document = '/email/email-tasbih';
@@ -166,7 +167,7 @@
 							'kontribusi' => $Kontribusi,
 							'AJ' => $AJ,
 							'pembayaran' => $hasil,
-							'frek' => $frek,
+							'frek' => $Frekuensi,
 							'JK' => $JK,
 							'nohp' => $nohp
 							);
