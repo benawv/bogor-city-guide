@@ -67,7 +67,7 @@
   display: block;
 }
 .icon-submit{
-    width: 20px;  
+    width: 20px;
     position: absolute;
     top: 5px;
     margin-left: 15px;
@@ -78,6 +78,14 @@
     margin-left: -12px;
 }
 
+    @media screen and (max-width: 1024px) {
+
+        .row{
+            margin-left: -15px !important;
+            margin-right: -15px !important;
+        }
+
+    }
 
     @media only screen and (max-width:775px){
         .btn img{
@@ -86,8 +94,47 @@
             margin-left: 5px;
             top: 10px;
         }
+        .row{
+            margin-left: -15px !important;
+            margin-right: -15px !important;
+        }
     }
-  
+
+    @media only screen and (max-width:640px){
+        .kalkulasi{
+            width: 100%;
+            text-align: center;
+        }
+        .kalkulasi img{
+            display: inherit;
+            margin-left:-34px;
+        }
+
+    }
+    @media only screen and (max-width:320px){
+        .kalkulasi{
+            text-align: left;
+        }
+        .kalkulasi font{
+            margin-left: 90px;
+        }
+        .kalkulasi img{
+            margin-left: 70px;
+        }
+    }
+
+    a.calc-overlay-trigger
+    {
+        color: #009A44; /*inherit */;
+        cursor: help;
+    }
+
+     a.calc-overlay-trigger:hover
+    {
+        color: #009A44; /*inherit */;
+        text-decoration: underline;
+    }
+
 </style>
 
 
@@ -108,7 +155,7 @@
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4 style="font-size:18px"><small>Pertanyaan Umum</small></h4>
+                        <h4 style="font-size:18px"><small>Informasi produk</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
 
@@ -141,99 +188,92 @@
         <div class="content-calc">
             <div class="col-md-12">
 
-                <form class="form-horizontal" role="form">
+                <div class="form-horizontal">
 
                     <div class="form-box">
 
+                        <label><strong>Ilustrasi ini berguna untuk menghitung perkiraan biaya yang Anda bayarkan untuk melindungi diri Anda, jika terjadi <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#risiko">risiko</a> yang Anda alami di masa yang akan datang</strong></label>
+                        <!-- Modal -->
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label><strong>Masukan tanggal lahir Anda<br>(Minimum usia dari 18 tahun sampai 55 tahun)</strong></label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
+                                <label id="notif-tgllahir" style="display:none; color: #f00;">
+                                    Mohon maaf, umur yang Anda masukan belum sesuai dengan ketentuan ilustrasi
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
 
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label><strong>Jenis Kelamin Anda adalah?</strong></label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <label class="radio-inline"><input name="jenisKelamin" value="l" type="Radio">Pria</label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <label class="radio-inline"><input name="jenisKelamin" value="p" type="Radio">Wanita</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--/ .form-group -->
 
-                    <label><strong>Kalkulasi</strong></label>
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label><strong>Berarti usia Anda adalah?</strong></label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" id="usia" placeholder="Usia (Tahun)" readonly>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
 
-
-
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Tanggal Lahir<br>(Min.  18 tahun, Max. 55 tahun)</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
-                            <label id="notif-tgllahir" style="display:none; color: #f00;">
-                                Mohon maaf inputan Anda belum benar
-                            </label>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Jenis Kelamin</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                <div class="form-group">
-                    <div class="col-xs-6">
-                        <label class="radio-inline"><input name="jenisKelamin" value="l" type="Radio">Pria</label>
-                    </div>
-                    <div class="col-xs-6">
-                        <label class="radio-inline"><input name="jenisKelamin" value="p" type="Radio">Wanita</label>
-                    </div>
-                </div>
-                        </div>
-                    </div><!--/ .form-group -->
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Usia (Tahun)</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" id="usia" placeholder="Usia (Tahun)" readonly>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Frekuensi Pembayaran</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <select class="form-control" name="Frekuensi" id="Frekuensi">
-                                <option value="3">Triwulan</option>
-                                <option value="2">Semesteran</option>
-                                <option value="1">Tahunan</option>
-                            </select>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label><strong>Pilihlah Termin Pembayaran Anda</strong></label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <select class="form-control" name="Frekuensi" id="Frekuensi">
+                                    <option value="3">Triwulan</option>
+                                    <option value="2">Semesteran</option>
+                                    <option value="1">Tahunan</option>
+                                </select>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
 
                     </div><!--/ .form-box -->
                     <div class="form-box">
 
-                    <label><strong>Santunan Meninggal Dunia</strong></label>
+                        <label><strong>Santunan Meninggal Dunia</strong></label>
 
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Asuransi Jiwa (Min. Rp.50.000.000)</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Asuransi Jiwa (Min. Rp.50.000.000)">
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label><strong>Berapa <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#uangpertanggungan">uang pertanggungan</a> yang Anda butuhkan bila terjadi <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#risiko">risiko</a>?</strong></label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
 
-                <label id="notif-asuransijiwa" style="display:none; color: #f00;">
-                                Mohon maaf inputan yang Anda masukkan belum benar
-                            </label>
-                        </div><!--/ .col-md-4 -->
-            <div class="col-md-4"> <span>* Uang pertanggungan asuransi jiwa bila terjadi risiko pada tertanggung.</span></div>
+                                <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Min Rp.50.000.000">
+                                <label id="notif-asuransijiwa" style="display:none; color: #f00;">
+                                    Mohon maaf uang pertanggungan yang Anda masukan kurang dari Rp. 50,000,000.-
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
 
-                    </div><!--/ .form-group -->
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Massa Pembayaran Premi (Tahun)</label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <select class="form-control" name="masa-premi" id="masa-premi">
-                                <option value="5">5</option>
-                                <option value="10">10</option>
-                                <option value="15">15</option>
-                            </select>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label><strong>Berapa lama pembayaran <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#premi" >premi</a> yang anda inginkan</strong></label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <select class="form-control" name="masa-premi" id="masa-premi">
+                                    <option value="5">5 tahun</option>
+                                    <option value="10">10 tahun</option>
+                                    <option value="15">15 tahun</option>
+                                </select>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
 
                     </div><!--/ .form-box -->
 
@@ -242,37 +282,89 @@
                     </div><!--/ .form-box -->
 
                     <div class="form-box result-calc" style="display:none; ">
-			<label><strong>Setoran Tahunan</strong></label>
-    
-			<div class="form-group">
-			    <div class="col-md-4">
-				<label>Massa Pembayaran Premi Pertahun</label>
-			    </div><!--/ .col-md-4 -->
-			    <div class="col-md-4">
-				<input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly>
-			    </div><!--/ .col-md-4 -->
-			</div><!--/ .form-group -->
-			
-		    </div>
-		    
+                        <label><strong>Setoran Tahunan</strong></label>
+
+                        <div class="form-group">
+                            <div class="col-md-4">
+                            <label>Massa Pembayaran Premi Pertahun</label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                            <input type="email" class="form-control" id="kontribusi-berkala" placeholder="0" readonly>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
+
+                    </div>
+
                     <div class="form-group">
-                        <div class="col-md-8 col-md-offset-4">
+                        <div class="col-md-4 col-md-offset-4 text-center">
+                            <button class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" style="background-color:#009a44"><i class="fa fa-chevron-right" style="border-radius: 9999px; min-width: 16px; min-height: 16px; line-height: 16px; background: white; color: #009A44; font-size: 8px;"></i>&nbsp;Selanjutnya </button>
+                            <!--
                             <?php $asets=Asset::getByPath('/icon-tasbih/calculator.png');?>
-                            <button class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" 
-                            id="Kalkulasi" name="next" style="background-color:#009a44"> 
+                            <button class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih"
+                            id="Kalkulasi" name="next" style="background-color:#009a44">
                             <img src="<?php echo $asets; ?>" alt="background-galeri" class="img-responsive icon-submit" />
-                            <font class="font-submit">Kalkulasi</font></button>
+                            <font class="font-submit">Selanjutnya</font></button>
+                            -->
                             <!-- <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" value="Kalkulasi" style="background-color:#009a44"> -->
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
 
-                </form>
-
-
-
-
+                </div>
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
+
+        <!--Modal-->
+         <div class="modal fade" id="risiko" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">5 Risiko Kehidupan</h4>
+              </div>
+              <div class="modal-body">
+                <!--h3>5 Risiko Kehidupan</h3-->
+                <ol>
+                    <li>Jika Anda mengalami penyakit kritis</li>
+                    <li>Jika Anda mengalami kecelakaan</li>
+                    <li>Cacat tetap karena kecelakaan</li>
+                    <li>Memasuki usia tua</li>
+                    <li>Meninggal dunia</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="premi" tabindex="-1" role="dialog" aria-labelledby="premiLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="premiLabel">Premi</h4>
+              </div>
+              <div class="modal-body">
+                <!--h3>5 Risiko Kehidupan</h3-->
+                <p>Premi adalah iuran yang anda bayarkan secara berkala sesuai dengan periode pilihan Anda untuk mendapatkan uang pertangungan yang Anda inginkan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="uangpertanggungan" tabindex="-1" role="dialog" aria-labelledby="uangpertanggunganLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="uangpertanggunganLabel">Uang Pertanggungan</h4>
+              </div>
+              <div class="modal-body">
+                <!--h3>5 Risiko Kehidupan</h3-->
+                <p>Uang pertanggungan yang akan diberikan bila terjadi risiko pada tertanggung.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
         <style>
 
@@ -300,8 +392,8 @@
             {
                 margin: 0;
                 padding: 0;
-                display: block;
-                list-style: none;
+                /*display: block;*/
+                list-style: circle;
                 position: relative;
                 line-height: 30px;
             }
@@ -332,17 +424,29 @@
             .content-widget h4{
                 color: #009a44;
                 font-weight: bold;
-                font-size: 20px;
+                font-size: 17px;
                 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             }
+            .news-date{
+                color: #999;
+                font-size: x-small;
+                font-weight: normal;
+                margin-top: -10px;
+            }
+
+            .modal-body ol>li{
+                padding-bottom: 0px;
+            }
+
+
         </style>
 
         <div class="content-widget">
             <div class="row">
                 <div class="col-xs-12">
                     <h4><strong>BACA JUGA</strong></h4>
-                    <ul>
-                        <?php 
+                    <ol>
+                        <?php
                             $entries = new Object_TasbihNews_List();
                             $entries->setLimit(4);
                             $entries->setOrderKey("o_creationDate");
@@ -352,11 +456,11 @@
                             <li>
                                 <a href="tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
                                     <?php echo $key->title; ?>
-                                    <span><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></span>
                                 </a>
+                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
                             </li>
                         <?php } ?>
-                    </ul>
+                    </ol>
                 </div><!--/ .col-xs-12 -->
             </div><!--/ .row -->
         </div><!--/ .content-widget -->
@@ -375,6 +479,37 @@
 <script>
     // document.getElementById('tgl-hitung').value = (new Date()).format("m/dd/yy");
     $(document).ready(function(){
+
+        /**
+         * Calculator Pop-Up
+         */
+
+        if( $( 'a.calc-overlay-trigger' ).length > 0 )
+        {
+            $( 'a.calc-overlay-trigger' ).click(function(e){
+                e.preventDefault();
+                var dataTarget = $( this ).attr( 'data-target' );
+                if( $( '.calc-overlay#' + dataTarget ).length > 0 )
+                {
+                    $( '.calc-overlay#' + dataTarget ).stop().fadeIn( 'fast' );
+                }
+                return false;
+            });
+        }
+
+        if( $( 'a.calc-overlay-close' ).length > 0 )
+        {
+            $( 'a.calc-overlay-close' ).click(function(e){
+                e.preventDefault();
+                $( this ).parent().parent().parent().stop().fadeOut( 'fast' );
+                return false;
+            });
+        }
+
+        /**
+         * End Calculator Pop-Up
+         */
+
         /*
          * jQueryUI DatePicker
          */
@@ -387,15 +522,16 @@
 
         //get current date format //dd/yy/mm
         var fullDate = new Date()
-            var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
-        var currentDate = fullDate.getDate() + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
+        var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
+        var currentDate = twoDigitMonth + "/" +fullDate.getDate() + "/" +  fullDate.getFullYear();
 
             var tanggalpembuatan = currentDate;
             var tanggallahir = $('#tgl-lahir').val();
 
-       // var sex = $('#JenisKelamin option:Selected').val();
+            // var sex = $('#JenisKelamin option:Selected').val();
             var usia = $('#usia').val();
             var frekuensi = $('#Frekuensi option:Selected').val();
+            console.log("rek"+frekuensi);
             var asuransijiwa = $('#asuransi-jiwa').val();
             var kontribusi = $('#masa-premi option:Selected').val();
             var unfnum = accounting.unformat(asuransijiwa,0,",");
@@ -432,7 +568,7 @@
                     //console.log(data);
             $('.waiting-calc').hide();
                     $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
-                     document.location.href='/tasbih/tasbih-kedua';
+                   document.location.href='/tasbih/tasbih-kedua';
                 }
 
 

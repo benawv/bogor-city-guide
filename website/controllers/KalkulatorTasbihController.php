@@ -24,6 +24,16 @@
             $AsuransiJiwa = $_POST["asuransijiwa"];
             $AJ= $_POST["AJ"];
             $Kontribusi = $_POST["kontribusi"];
+			
+			if($Frekuensi == 1){
+				$frek = 'Tahunan';
+			}
+			else if($Frekuensi == 2){
+				$frek = 'Semesteran';
+			}
+			else{
+				$frek = 'Triwulan';
+			}
             
             
 		
@@ -43,17 +53,18 @@
 			$tglLahir = strtotime($TanggalLahir);
 	        $date_tglLahir= new Pimcore_Date($TanggalLahir);//set date into pimcore formats		
 
-            $session = new Zend_Session_Namespace('calculation');
+            $session = new Zend_Session_Namespace('tasbih');
             $session->date_tglBuat = $tglBuat;
             $session->date_tglLahir = $date_tglLahir;
             $session->JenisKelamin = $JenisKelamin;
             $session->Usia = $Usia;
-            $session->Frekuensi = $Frekuensi;
+            $session->Frekuensi = $frek;
             $session->AsuransiJiwa = $AsuransiJiwa;
             $session->AJ = $AJ;
             $session->Kontribusi = $Kontribusi;
             $session->Calculation = $Calculation;
 
+            echo $session->Calculation;//print result of calculation into form
 
         }
         
@@ -65,11 +76,18 @@
         
         public function sendemailAction(){
 			
-            $Nama = $_POST["nama"];
-            $Email = $_POST["email"];
+            $nama = $_POST["nama"];
+            $email = $_POST["email"];
             $nohp = $_POST["nohp"];
 
-            $session = new Zend_Session_Namespace('calculation');
+
+            $session = new Zend_Session_Namespace('tasbih');
+            $session->nama = $nama ;
+            $session->email = $email;
+            $session->nohp = $nohp;
+            $session->emailFrom = "tasbih_calc";
+            $session->setExpirationSeconds( 600, 'tasbih' );
+
             $date_tglBuat = $session->date_tglBuat;
             $date_tglLahir = $session->date_tglLahir;
             $JenisKelamin = $session->JenisKelamin;
@@ -82,6 +100,11 @@
 			
 			$date_tglBuat1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglBuat)));
             $date_tglLahir1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglLahir)));
+
+
+
+
+
            /*             
 				echo $date_tglBuat."<br>";
 				echo $date_tglLahir."<br>";
@@ -94,16 +117,26 @@
 				echo $Calculation."<br>";
 			*/	
 			
+			if($Frekuensi == 'Tahunan'){
+				$frek = 1;
+			}
+			else if($Frekuensi == 'Semesteran'){
+				$frek = 2;
+			}
+			else{
+				$frek = 3;
+			}
+
 			
             $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
 			$cookie = new Object_Tasbih();
 			$cookie->setTanggalPembuatan($date_tglBuat);
-			$cookie->setNama($Nama);
-			$cookie->setEmail($Email);
+			$cookie->setNama($nama);
+			$cookie->setEmail($email);
 			$cookie->setTanggalLahir($date_tglLahir);
 			$cookie->setJenisKelamin($JenisKelamin);
 			$cookie->setUsia($Usia);
-			$cookie->setFrekuensiPembayaran($Frekuensi);
+			$cookie->setFrekuensiPembayaran($frek);
 			$cookie->setDetailAsuransiJiwa($AsuransiJiwa);
 			$cookie->setMassaPembayaranKontribusi($Kontribusi);
 			$cookie->setKontribusiBerkala($Calculation);                
@@ -113,7 +146,8 @@
 			$cookie->setO_published(1);
 			$cookie->save();
 			
-	
+			$session->idObject = $cookie->getO_id();
+			
 			if($JenisKelamin == 'l') {
 				$JK = 'Pria';
 			}
@@ -121,38 +155,34 @@
 				$JK = 'Wanita';
 			}
 		
-			if($Frekuensi == 1){
-				$frek = 'Tahunan';
-			}
-			else if($Frekuensi == 2){
-				$frek = 'Semesteran';
-			}
-			else{
-				$frek = 'Triwulan';
-			}
-		
+
 			$hasil = number_format($Calculation,0,",",".");
 			$document = '/email/email-tasbih';
 			$params = array(
 							'tglhitung' => $date_tglBuat1,
-							'nama' => $Nama,
-							'email' => $Email,
+							'nama' => $nama,
+							'email' => $email,
 							'tgllahir' => $date_tglLahir1,
 							'usia'=> $Usia,
 							'kontribusi' => $Kontribusi,
 							'AJ' => $AJ,
 							'pembayaran' => $hasil,
-							'frek' => $frek,
+							'frek' => $Frekuensi,
 							'JK' => $JK,
 							'nohp' => $nohp
 							);
-
+			/*
+			$systemConfig = Pimcore_Config::getSystemConfig()->toArray();
+			$emailSettings = $systemConfig['email'];	
+			print_r($emailSettings);
+			die();
+			*/
 			$mail = new Pimcore_Mail();
 			$mail->setSubject("Konfirmasi Hasil Kalkulasi Ilustrasi Produk Allianz Tasbih");
 			$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 			$mail->setDocument($document);
 			$mail->setParams($params);
-			$mail->addTo($Email);
+			$mail->addTo($email);
 			$mail->send();
             
 			echo "sukses";

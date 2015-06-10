@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="/website/ajfc/css/main.css">
 
 <script src="/website/ajfc/js/zabuto_calendar.min.js"></script>
-<script src="/website/ajfc/js/javascripts.js"></script>
+<!--<script src="/website/ajfc/js/javascripts.js"></script> -->
 
 <style>
 
@@ -91,7 +91,7 @@
     .sidebar
     {
         /* min-height: 0 !important; */
-        padding: 24px 36px;
+        padding: 24px 36px; /*99999px;*/
     }
 
     .main-content p:last-child
@@ -108,7 +108,9 @@
             padding: 48px 36px;
         }
     }
-
+    .main-content, .sidebar{
+          min-height: 737px !important;
+    }
 
 </style>
 <?php
@@ -141,7 +143,7 @@
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/tanya-jawab" class="nav-item orange question">
-                        <h4 style="font-size:18px"><small>Pertanyaan Umum</small></h4>
+                        <h4 style="font-size:18px"><small>Informasi produk</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
 
@@ -153,7 +155,7 @@
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/tasbih/inquiry-form" class="nav-item grey chat">
-                        <h4 style="font-size:18px"><small>Inquiry Form</small></h4>
+                        <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
             </div>
@@ -163,8 +165,8 @@
 
     <div class="page-wrapper-outer">
 
-        <section class="page-wrapper mt32 mb72" style="margin-top: -165px !important;">
-            <div class="container"  style="max-width: 960px">
+        <section class="page-wrapper mt32 mb72" style="margin-top: -140px !important;">
+            <div class="container" style="max-width: 960px;">
             <div class="row">
                 <div class="col-xs-12 col-md-8 pr0">
 
@@ -209,7 +211,7 @@
                 </div><!--/ .main-content -->
 
                 </div><!--/ .col-xs-12 -->
-                <div class="col-xs-12 col-md-4 pl0">
+                <div class="col-xs-12 col-md-4 pl0 mobileH"><!--mobile H di ambil dari jquery-->
 
                 <div class="sidebar">
                     <div class="sidebar-item">
@@ -234,3 +236,41 @@
 
     </div><!--/ .page-wrapper-outer -->
 <?php } ?>
+<script type="text/javascript">
+
+$( document ).ready(function(){
+
+    var getWidht=$( document ).width();
+    var columnHeight=$( ".main-content" ).height(); 
+
+    if(getWidht < 900){
+        $('.sidebar').css('height', 100 + '%');
+        $('.main-content, .sidebar').css('min-height', 100 + 'px');
+
+        $( '.main-content, .sidebar' ).each(function () {
+            this.style.setProperty( 'min-height', '130%', 'important' );
+        });
+
+        $( '.mobileH' ).each(function () {
+            this.style.setProperty( 'padding-top', '15px', 'important' );
+        });
+
+        var page_wrapper=$( ".sidebar" ).height(); 
+        var maincontent=$( ".main-content" ).height(); 
+        
+        $('.page-wrapper-outer').css('min-height', maincontent+page_wrapper+75 + 'px');
+
+
+
+
+    }else{
+        columnHeight=columnHeight-88;
+        $('.sidebar').css('height', columnHeight+135 + 'px');
+        $('.page-wrapper-outer').css('height', columnHeight + 'px');
+
+    }  
+    
+});
+
+
+</script>
