@@ -64,8 +64,8 @@ class TasbihController extends Website_Controller_Action {
                         );
 
             die('die inquiry');
-            
-            $document = '/email/email-inquriy-tasbih';
+
+            $document = '/email/email-inquriy';
             $mail = new Pimcore_Mail();
             $mail->setSubject("Konfirmasi permintaan informasi mengenai Produk Allianz tasbih");
             $mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
