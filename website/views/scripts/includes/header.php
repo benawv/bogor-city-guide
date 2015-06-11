@@ -14,14 +14,14 @@ if($this->editmode){
 		$db = Pimcore_Resource_Mysql::get();
 		$sql = "SELECT * FROM sites";
 		$data = $db->fetchAll($sql);
-		$selectStore[] = [1, "Default"];
+		$selectStoreSite[] = [1, "Default"];
 		foreach($data as $row)
 		{
-				$selectStore[] = [$row["rootId"], $row["mainDomain"]];
+				$selectStoreSite[] = [$row["rootId"], $row["mainDomain"]];
 				//print_r($row["mainDomain"]."<br />");
 		}
 		echo $this->select("mainDomain",[
-						"store" => $selectStore,
+						"store" => $selectStoreSite,
 						"reload" => true
 					]);
 		//die();
