@@ -9,6 +9,7 @@
 <div id="<?php echo $this->input('anchor')->text?>" class="full-w bg-white">
 	<h2>
 		<?php if($this->editmode): ?>
+			Judul section: <?php echo $this->input('judulSection');?><br />
 			Icon: <?php echo $this->image('icon', array(
 								'title' 	=> 'Image Size 31x31',
 								'width' 	=> 100,
@@ -19,7 +20,16 @@
 			<?php if($this->image('icon')->getSrc()):?>
 				<div style="background-image: url('<?php echo $this->image('icon')->getSrc()?>'); height: 31px; width: 31px; float: left; margin-right: 10px; "></div>
 			<?php endif;?>
-			<span class="judul_section">Brosur</span>
+			<span class="judul_section">
+				<?php
+					if($this->input('judulSection')->text == "" || $this->input('judulSection')->text == " "){
+						echo "Brosur"
+					}
+					else{
+						echo $this->input('judulSection')->text;
+					}
+				?>
+			</span>
 			<div class="btn-group btn-section">
 				<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
 				<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
