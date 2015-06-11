@@ -76,9 +76,6 @@
         
         public function sendemailAction(){
 			
-
-			die('tracking');
-			
             $nama = $_POST["nama"];
             $email = $_POST["email"];
             $nohp = $_POST["nohp"];

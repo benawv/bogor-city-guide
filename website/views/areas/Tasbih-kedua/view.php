@@ -440,7 +440,7 @@
             }else{
 
               $.ajax({
-                  url      : '/kalkulator-tasbih-kedua/',
+                  url      : '/tasbih-kedua/',
                   type     : 'POST',
                   data     : {
                               'nama' : nama,
