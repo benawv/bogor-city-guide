@@ -199,7 +199,7 @@
             <div class="description width-66">
                 <div class="section-left-40">
                     <img src="<?php echo $fotoAgent; ?>" alt="<?php echo $namaAgent; ?>">
-                    <div class="logo-icon">
+                    <div class="logo-icon" style="display: none;">
                         <a href="<?php echo $linkFB;?>" target="_blank" class="icon-fb"></a>
                         <a href="<?php echo $linkIN;?>" target="_blank" class="icon-in"></a>
                         <a href="<?php echo $linkME;?>" target="_blank" class="icon-me"></a>
