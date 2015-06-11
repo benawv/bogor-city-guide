@@ -548,7 +548,7 @@ class InvestmentController extends Website_Controller_Action
             $getYtd="SELECT DISTINCT a.fundname, a.bid, a.offer,DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) AS today
                     FROM $nameCommunity as a
                     WHERE fundname = '".$items['fundname']."' AND 
-                    DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) <= STR_TO_DATE('$getday','%d-%m-%Y')
+                    DATE_ADD(STR_TO_DATE(FROM_UNIXTIME(a.unitdate,'%d-%m-%Y'), '%d-%m-%Y'), INTERVAL 1 DAY) <= STR_TO_DATE('30-12-2016','%d-%m-%Y')
                     GROUP BY fundname,a.bid,a.offer,a.unitdate
 		    ORDER BY a.unitdate desc
 		    limit 1";                    
