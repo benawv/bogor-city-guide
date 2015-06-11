@@ -1,5 +1,40 @@
 <?php
-
+if($this->editmode){
+?>
+		<style>
+				#pimcore_editable_mainDomain{
+						position: absolute;
+						left: 405px;
+				}
+		</style>
+		<div class="alert alert-info" style="height: 75px;">
+				<div class="col-xs-6" style="width: 950px;">
+						Silahkan pilih menubar?
+<?php
+		$db = Pimcore_Resource_Mysql::get();
+		$sql = "SELECT * FROM sites";
+		$data = $db->fetchAll($sql);
+		$selectStore[] = [1, "Default"];
+		foreach($data as $row)
+		{
+				$selectStore[] = [$row["rootId"], $row["mainDomain"]];
+				//print_r($row["mainDomain"]."<br />");
+		}
+		echo $this->select("mainDomain",[
+						"store" => $selectStore,
+						"reload" => true
+					]);
+		//die();
+?>
+				</div>
+		 </div>
+<?php
+		}
+		$site = 1;
+		if(!$this->select("mainDomain")->isEmpty()){
+			$site = (int) $this->select("mainDomain")->getData();
+		}
+		
 $root =  "http://".$_SERVER['HTTP_HOST'];
 $uri_segment = explode("/",$_SERVER['SCRIPT_NAME']);
 $root .= "/".$uri_segment['1']."/";
@@ -63,7 +98,7 @@ $(function(){
 				$navStartNode = Document::getConcreteByPath('/'.$uri[1]);
 				
 			}else{
-				$navStartNode = Document::getById(1);
+				$navStartNode = Document::getById($site);
 				
 			}
 		    }
