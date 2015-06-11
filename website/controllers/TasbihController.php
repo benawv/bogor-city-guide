@@ -62,6 +62,8 @@ class TasbihController extends Website_Controller_Action {
                         'tlp' => $tlp,
                         'pesan'=>$pesan
                         );
+
+            die('die inquiry');
             
             $document = '/email/email-inquriy-tasbih';
             $mail = new Pimcore_Mail();
