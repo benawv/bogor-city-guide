@@ -222,11 +222,11 @@
                         <h2><?php echo $namaLokasi; ?></h2>
                         <p>
                             <?php
-                                echo $alamat."<br />";
+                                echo "<span id='alamat_agen'>".$alamat."</span><br />";
                                 echo "Telp. ".$telp."<br />";
                                 echo "Fax. ".$fax."<br />";
                                 echo "Hubungi Agen. ".$telp."<br />";
-                                echo "Email Agen. ".$emailAgent;
+                                echo "Email Agen. <span id='email_agen'>".$emailAgent."</span>";
                             ?>
                         </p>
                         <!-- <p> DI HIDE DULU YAA
@@ -476,20 +476,21 @@
 
         if($getStatus=='tasbih_calc'){ ?>
             var keterangan = $(".textareaForm").val();
-            
+
             $.ajax({
                 url      : '/send-email-agen-tasbih/',
                 type     : 'POST',
                 data     : {
                             'from' : 'agent_locator',
                             'keterangan' : keterangan,
-                            'nama_agen' : '<?php echo $namaAgent;?>'
+                            'nama_agen' : '<?php echo $namaAgent;?>',
+                            'lokasi' : '<?php echo $namaLokasi;?>',
+                            'email' : '<?php echo $email;?>'
                             },
                     success  : function(data){
-                    //console.log(data);
+                    console.log(data);
                     alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
                 }
-            
             
             });
 
