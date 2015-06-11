@@ -35,15 +35,16 @@
 				$frek = 'Triwulan';
 			}
             
+            print_r($_POST);
             
-		
+		die('tracking');
 			$rates= new Object_TasbihRate_List();
 			$rates->setCondition("kelamin='".$JenisKelamin."' and frekuensi=$Kontribusi and usia=$Usia");
 			$rate='';
 			foreach($rates as $items){
 				$rate=$items->rate;
 			}
-		die('tracking');
+		
 			$Calculation = ($rate*$AsuransiJiwa)/1000; //The Pattern of ALLIANZ
             //SetData
 	        
