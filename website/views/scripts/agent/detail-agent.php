@@ -485,6 +485,7 @@
                             'keterangan' : keterangan,
                             'nama_agen' : '<?php echo $namaAgent;?>',
                             'lokasi' : '<?php echo $namaLokasi;?>',
+                            'telp' : '<?php echo $telepon;?>',
                             'email' : '<?php echo $email;?>'
                             },
                     success  : function(data){

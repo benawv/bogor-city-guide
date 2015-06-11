@@ -229,6 +229,7 @@ class AgentController extends Website_Controller_Action {
         $nama_agen = $_POST["nama_agen"];
         $lokasi_agen = $_POST["lokasi"];
         $email_agen = $_POST["email"];
+        $telp_agen = $_POST["telp"];
 
 		// harusnya ini jadi  class Object_Abstract untuk email(sementara static harus cepet ganti !!!!!)
 		$session = new Zend_Session_Namespace('tasbih');
@@ -301,6 +302,7 @@ class AgentController extends Website_Controller_Action {
 						'email_agen' => $email_agen,
 						'nama_agen' => $nama_agen,
 						'lokasi_agen' => $lokasi_agen,
+						'telp_agen' => $telp_agen,
 						'bodyEmail' => $bodyEmail,
 						'DateSent' => strtotime(date("YmdHis")),
 						'email' => $email,
@@ -389,13 +391,14 @@ class AgentController extends Website_Controller_Action {
 		$new = new Object_AgentEmailTracking();
 		$new->setAgenEmail($paramsLocator['email_agen']);
 		$new->setAgenName($paramsLocator['nama_agen']);
+		$new->setNoTelpAgen($paramsLocator['telp_agen']);
 		$new->setLokasi($paramsLocator['lokasi_agen']);
 		$new->setDateSent($date_tglBuat1);
 		$new->setBodyEmail($paramsLocator['bodyEmail']);
 		$new->setFromEmail($params['email']);
 		$new->setFromName($params['nama']);
+		$new->setFromNoTelp($params['nohp']);
 		$new->setTypeForm('TasbihKalkulator');
-		$new->setNoTelpAgen($params['nohp']);
 		$new->setO_key($paramsLocator['nama_agen'].'_'.$params['nama'].'_'.strtotime(date("Y/m/d,H.i.s"))).'_'.strtotime(date("YmdHis")));
 		$new->setO_parentId($getId->o_id);
 		$new->setO_index(0);
