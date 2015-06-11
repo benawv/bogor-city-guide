@@ -172,12 +172,12 @@
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/kalkulator/tasbih" class="nav-item green sitemap" style="height: 48px !important;">
+                    <a href="/kalkulator/ilustrasi" class="nav-item green sitemap" style="height: 48px !important;">
                         <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/tanya-jawab" class="nav-item orange question" style="height: 48px !important;">
+                    <a href="/tasbih/info-produk" class="nav-item orange question" style="height: 48px !important;">
                         <h4 style="font-size:18px"><small>Informasi produk</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
@@ -187,7 +187,7 @@
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/inquiry-form" class="nav-item grey chat" style="height: 48px !important;">
+                    <a href="/tasbih/minta-informasi" class="nav-item grey chat" style="height: 48px !important;">
                         <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
