@@ -1,4 +1,39 @@
 <?php
+if($this->editmode){
+?>
+		<style>
+				#pimcore_editable_mainDomain{
+						position: absolute;
+						left: 405px;
+				}
+		</style>
+		<div class="alert alert-info" style="height: 75px;">
+				<div class="col-xs-6" style="width: 950px;">
+						Silahkan pilih menubar?
+<?php
+		$db = Pimcore_Resource_Mysql::get();
+		$sql = "SELECT * FROM sites";
+		$data = $db->fetchAll($sql);
+		$selectStore[] = [1, "Default"];
+		foreach($data as $row)
+		{
+				$selectStore[] = [$row["rootId"], $row["mainDomain"]];
+				//print_r($row["mainDomain"]."<br />");
+		}
+		echo $this->select("mainDomain",[
+						"store" => $selectStore,
+						"reload" => true
+					]);
+		//die();
+?>
+				</div>
+		 </div>
+<?php
+		}
+		$site = 1;
+		if(!$this->select("mainDomain")->isEmpty()){
+			$site = (int) $this->select("mainDomain")->getData();
+		}
 
 $root =  "http://".$_SERVER['HTTP_HOST'];
 $uri_segment = explode("/",$_SERVER['SCRIPT_NAME']);
@@ -49,13 +84,13 @@ $(function(){
     
 		    // get root node if there is no document defined (for pages which are routed directly through static route)
 		    if(!$this->document instanceof Document_Page) {
-		        $this->document = Document::getById(1);
+		        $this->document = Document::getById($site);
 		    }
 		 
 		    // get the document which should be used to start in navigation | default home
 		    $navStartNode = $this->document->getProperty("navigationRoot");
 		    if(!$navStartNode instanceof Document_Page) {
-		        $navStartNode = Document::getById(1);
+		        $navStartNode = Document::getById($site);
 		    }
 		 
 		    //this is used as id prefix for the html menu element
