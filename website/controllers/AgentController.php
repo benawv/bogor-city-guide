@@ -307,7 +307,7 @@ class AgentController extends Website_Controller_Action {
 						'nama'=> $nama
 						);
 
-		$this->emailTrackingAction($paramsLocator,$params);
+		$this->emailTracking($paramsLocator,$params);
 
 		$mail = new Pimcore_Mail();
 		$mail->setSubject("Permintaan $nama Calon Nasabah Produk Allianz Tasbih");
@@ -383,7 +383,7 @@ class AgentController extends Website_Controller_Action {
 		die();
 	}
 
-	public function emailTrackingAction($paramsLocator,$params){
+	public function emailTracking($paramsLocator,$params){
     	$date_tglBuat1 = new Pimcore_Date(date("Y-m-d,H-i-s"));
 		$getId=Object_Abstract::getByPath('/agent-email-tracking/');//get folder id
 		$new = new Object_AgentEmailTracking();
@@ -396,7 +396,7 @@ class AgentController extends Website_Controller_Action {
 		$new->setFromName($params['nama']);
 		$new->setTypeForm('TasbihKalkulator');
 		$new->setNoTelpAgen($params['nohp']);
-		$new->setO_key($paramsLocator['nama_agen'].'_'.$params['nama'].'_'.strtotime(date("Y/m/d,H.i.s"))).'_'.strtotime(date("YmdHis")));
+		$new->setO_key($paramsLocator['nama_agen'].'_'.$params['nama'].'_'.strtotime(date("Y/m/d,H.i.s")).'_'.strtotime(date("YmdHis")));
 		$new->setO_parentId($getId->o_id);
 		$new->setO_index(0);
 		$new->setO_published(1);
