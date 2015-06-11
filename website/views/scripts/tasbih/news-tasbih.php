@@ -130,31 +130,31 @@
                 <div class="row">
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
-                    <a href="/tasbih" class="nav-item blueA home">
+                    <a href="/produk/asuransi-syariah/tasbih" class="nav-item blueA home">
                         <h4 style="font-size:18px"><small>Beranda</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/kalkulator/ilustrasi" class="nav-item green sitemap">
+                    <a href="/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi" class="nav-item green sitemap">
                         <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/info-produk" class="nav-item orange question">
+                    <a href="/produk/asuransi-syariah/tasbih/info-produk" class="nav-item orange question">
                         <h4 style="font-size:18px"><small>Informasi produk</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
+                    <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users">
                         <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/minta-informasi" class="nav-item grey chat">
+                    <a href="/produk/asuransi-syariah/tasbih/minta-informasi" class="nav-item grey chat">
                         <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
@@ -221,7 +221,7 @@
                     <div class="sidebar-item--content">
                         <ul class="sidebar-nav">
                         <?php foreach($this->sidelist as $lists){?>
-                                <li><a href="/tasbih/artikel/<?php  echo $lists->o_key."-".$lists->o_id; ?>" class="list-artikel" ><?php  echo $lists->title; ?></a></li>
+                                <li><a href="/produk/asuransi-syariah/tasbih/artikel/<?php  echo $lists->o_key."-".$lists->o_id; ?>" class="list-artikel" ><?php  echo $lists->title; ?></a></li>
                         <?php } ?>
                         </ul>
                     </div><!--/ .sidebar-item--content -->
