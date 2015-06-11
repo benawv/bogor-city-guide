@@ -80,7 +80,7 @@
             $email = $_POST["email"];
             $nohp = $_POST["nohp"];
 
-
+die('tracking');
             $session = new Zend_Session_Namespace('tasbih');
             $session->nama = $nama ;
             $session->email = $email;
@@ -103,6 +103,7 @@
 
 
 print_r($session);
+
 
 
            /*             
@@ -128,8 +129,7 @@ print_r($session);
 			}
 
 
-			die('tracking');
-
+			
             $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
 			$cookie = new Object_Tasbih();
 			$cookie->setTanggalPembuatan($date_tglBuat);
