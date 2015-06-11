@@ -22,7 +22,7 @@
             
 		</div> <!--Community-->
 		
-		<div id="community" class="clearfix padding no-margin" style="background: none repeat scroll 0 0 #fff;clear: both;margin-bottom: 20px;padding: 15px;padding: 15px 34px !important;margin: 0 !important;">
+		<div id="community" class="clearfix padding no-margin" style="background: none repeat scroll 0 0 #fff;clear: both;margin-bottom: 20px;padding: 15px;padding: 15px !important;margin: 0 !important; float:left;">
 			
             <?php echo $this->wysiwyg('description')?>
             

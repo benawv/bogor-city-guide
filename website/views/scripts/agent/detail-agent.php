@@ -222,11 +222,11 @@
                         <h2><?php echo $namaLokasi; ?></h2>
                         <p>
                             <?php
-                                echo $alamat."<br />";
+                                echo "<span id='alamat_agen'>".$alamat."</span><br />";
                                 echo "Telp. ".$telp."<br />";
                                 echo "Fax. ".$fax."<br />";
                                 echo "Hubungi Agen. ".$telp."<br />";
-                                echo "Email Agen. ".$emailAgent;
+                                echo "Email Agen. <span id='email_agen'>".$emailAgent."</span>";
                             ?>
                         </p>
                         <!-- <p> DI HIDE DULU YAA
@@ -250,44 +250,44 @@
                                     //unset($session->name);
                                     $content.= "<table>";
                                     $content.='<tr class="tbl-email">
-                                                    <td>Nama</td>
+                                                    <td>Nama Anda</td>
                                                     <td>: '.$session->nama.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td>Email</td>
+                                                    <td>Email Anda </td>
                                                     <td>: '.$session->email.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td>Nomor Telepon</td>
+                                                    <td>Nomor Handphone Anda</td>
                                                     <td>: '.$session->nohp.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td>Tanggal di Buat</td>
+                                                    <td>Tanggal Penghitungan</td>
                                                     <td>: '.date("d/m/Y",$session->date_tglBuat).'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td>Tanggal Lahir</td>
+                                                    <td>Tanggal Lahir Anda</td>
                                                     <td>: '.date("d/m/Y",strtotime($session->date_tglLahir)).'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td>Jenis Kelamin</td>
+                                                    <td>Jenis Kelamin Anda</td>
                                                     <td>: '.$jenis.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td>Frekuensi Pembayaran</td>
+                                                    <td>Termin Pembayaran Anda</td>
                                                     <td>: '.$session->Frekuensi.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td>Asuransi Jiwa</td>
+                                                    <td>Uang Pertanggungan</td>
                                                     <td>: '.$session->AJ.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td>Kontribusi Pertahun</td>
-                                                    <td>: '.$session->Kontribusi.'</td>
+                                                    <td>Massa Pembayaran Premi</td>
+                                                    <td>: '.$session->Kontribusi.' tahun</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td>Calculation</td>
-                                                    <td>: '.$session->Calculation.'</td>
+                                                    <td>Premi yang harus anda bayarkan pertahun</td>
+                                                    <td>: Rp '.number_format($session->Calculation,0,".",",").'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Keterangan tambahan</td>
@@ -298,13 +298,70 @@
                                                 </tr>';
                                     $content.= "</table>";
                                 }
+                                
+                               //print_r($content);
+                            ?>
+                            
+                            <?php
+
+                                $session1 = new Zend_Session_Namespace('inquiry');
+                                $getStatusInquiry=$session1->form_inquiry;
+                                $idObject = $session1->idObject;
+                                //echo $getStatus;
+
+                                if($session1->JenisKelamin=="l"){
+                                    $jenis1 = "Pria";
+                                }
                                 else{
+                                    $jenis1 = "Wanita";
+                                }
+                                $content;
+                                if(isset($session1->nama)){
+                                    //unset($session->name);
                                     $content.= "<table>";
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Nama</td>
+                                                    <td>: '.$session1->nama.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Email</td>
+                                                    <td>: '.$session1->email.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Nomor Telepon</td>
+                                                    <td>: '.$session1->no_hp.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Tanggal Lahir</td>
+                                                    <td>: '.date("d/m/Y",strtotime($session1->tgl_lahir)).'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Jenis Kelamin</td>
+                                                    <td>: '.$jenis1.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Pesan</td>
+                                                    <td>: '.$session1->pesan.'</td>
+                                                </tr>';
+                                    $content = "";
                                     $content.='<tr class="tbl-email">
                                                     <td>Keterangan tambahan</td>
                                                     <td>: </td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
+                                                    <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
+                                                </tr>';
+                                    $content.= "</table>";
+                                    
+                                }
+                                
+                                if(!isset($session->date_tglBuat) && !isset($session1->nama)){
+                                    $content.= "<table>";
+                                    $content.= '<tr class="tbl-email">
+                                                    <td>Keterangan tambahan</td>
+                                                    <td>: </td>
+                                                </tr>';
+                                    $content.= '<tr class="tbl-email">
                                                     <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
                                                 </tr>';
                                     $content.= "</table>";
@@ -313,7 +370,13 @@
                             ?>
                        
                     <?php }?>
-                    <a href="javascript:void(0)" target="_top" class="btn btn-sendmail">Email Agen</a>&nbsp;
+                    <?php
+                        if(!isset($session->date_tglBuat) && !isset($session1->nama)){
+                    ?>
+                        <a href="mailto:<?php echo $email;?>?Subject=Call%20Agen" target="_top" class="btn btn-sendmail">Kirim EMail</a>
+                    <?php } else{?>
+                        <a href="javascript:void(0)" target="_top" class="btn btn-sendmail btn-email">Email Agen</a>&nbsp;
+                    <?php }?>
                     <a href="tel:<?php echo $telp;?>" target="_top" class="btn btn-sendmail hide">Hubungi Agen</a>
                 </div><!--/ .section-right-60 -->
             </div><!--/ .description-width-66 -->
@@ -404,7 +467,7 @@
 <script>
 
 
-    $('.btn-sendmail').click(function() {
+    $('.btn-email').click(function() {
         $('#modalEmail').modal();
     });
     
@@ -413,13 +476,39 @@
 
         if($getStatus=='tasbih_calc'){ ?>
             var keterangan = $(".textareaForm").val();
-            
+
             $.ajax({
                 url      : '/send-email-agen-tasbih/',
                 type     : 'POST',
                 data     : {
                             'from' : 'agent_locator',
-                            'keterangan' : keterangan
+                            'keterangan' : keterangan,
+                            'nama_agen' : '<?php echo $namaAgent;?>',
+                            'lokasi' : '<?php echo $namaLokasi;?>',
+                            'telp' : '<?php echo $telepon;?>',
+                            'email' : '<?php echo $email;?>'
+                            },
+                    success  : function(data){
+                    console.log(data);
+                    alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
+                }
+            
+            });
+
+        <?php }else{ ?>
+                //var keterangan = $(".textareaForm").val();
+                //('dari agent_locator'<?php echo $getStatus;?>);
+        <?php } ?>
+        
+        <?php if($getStatusInquiry=='inquiry'){ ?>
+            var keterangan = $(".textareaForm").val();
+            
+            $.ajax({
+                url      : '/send-email-agen-inquiry/',
+                type     : 'POST',
+                data     : {
+                            'keterangan' : keterangan,
+                            'nama_agen' : '<?php echo $namaAgent;?>'
                             },
                     success  : function(data){
                     //console.log(data);
@@ -429,10 +518,7 @@
             
             });
 
-        <?php }else{ ?>
-                var keterangan = $(".textareaForm").val();
-                //('dari agent_locator'<?php echo $getStatus;?>);
-        <?php } ?>
+        <?php }?>
         $('#modalEmail').modal('hide');
     });
 

@@ -522,15 +522,16 @@
 
         //get current date format //dd/yy/mm
         var fullDate = new Date()
-            var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
-        var currentDate = fullDate.getDate() + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
+        var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
+        var currentDate = twoDigitMonth + "/" +fullDate.getDate() + "/" +  fullDate.getFullYear();
 
             var tanggalpembuatan = currentDate;
             var tanggallahir = $('#tgl-lahir').val();
 
-       // var sex = $('#JenisKelamin option:Selected').val();
+            // var sex = $('#JenisKelamin option:Selected').val();
             var usia = $('#usia').val();
             var frekuensi = $('#Frekuensi option:Selected').val();
+            console.log("rek"+frekuensi);
             var asuransijiwa = $('#asuransi-jiwa').val();
             var kontribusi = $('#masa-premi option:Selected').val();
             var unfnum = accounting.unformat(asuransijiwa,0,",");
@@ -567,7 +568,7 @@
                     //console.log(data);
             $('.waiting-calc').hide();
                     $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
-                    document.location.href='/tasbih/tasbih-kedua';
+                   document.location.href='/tasbih/tasbih-kedua';
                 }
 
 

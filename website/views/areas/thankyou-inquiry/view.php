@@ -128,9 +128,12 @@
 
                 <div class="form-box" id="notif-confirm">
 
-    <h3  style=" color:black;"><strong>Terima kasih Anda telah mengirimkan permintaan Anda. Anda akan segera dihubungi oleh agen Allianz Star Network atau temukan agen terdekat. </strong></h3>
-                   <br />
-    <center><input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih " id="cari-agen" name="next" value="Cari Agen" ></center>
+                    <h3  style=" color:black;"><strong>Terima kasih Anda telah mengirimkan permintaan Anda. Anda akan segera dihubungi oleh agen Allianz Star Network atau temukan agen terdekat. </strong></h3>
+                    <br />
+                    <center>
+                         <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next"><i class="fa fa-users"></i> Cari Agen</button>
+                         <!--input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih " id="cari-agen" name="next" value="Cari Agen" -->
+                    </center>
                 </div>
 
             </div><!--/ .col-md-12 -->
@@ -245,8 +248,41 @@
     </div>
 </div><!--/ .container -->
 
-
+    </div>
 <script type="text/javascript">
+    $('#cari-agen').click(function() {
+
+           <?php  $session = new Zend_Session_Namespace('inquiry'); ?>
+
+            var nama = '<?php echo $session->nama; ?>';
+            var JenisKelamin = '<?php echo $session->JenisKelamin; ?>';
+            var tgl_lahir = '<?php echo $session->tgl_lahir; ?>';
+            var no_hp = '<?php echo $session->no_hp; ?>';
+            var email = '<?php echo $session->email; ?>';
+            var provinsi = '<?php echo $session->provinsi; ?>';
+            var pesan = '<?php echo $session->pesan; ?>';
+
+              $.ajax({
+                  url      : '/v1/api/calculator',
+                  type     : 'POST',
+                  crossDomain: true,
+                  data     : {
+                              'nama' : nama,
+                              'email' : email,
+                              'no_hp' : no_hp,
+                              'date_tglLahir': tgl_lahir,
+                              'JenisKelamin': JenisKelamin,
+                              'provinsi': provinsi,
+                              'pesan': pesan,
+                              'source' :'Kalkulator Tasbih User'
+                              },
+                  complete  : function(data){
+                         //console.log(data);
+                          window.open('/agent-locator', '_blank');
+                          //document.location.href='/agent-locator';
+                      }
+              });
+        });
     $(document).ready(function(){
 
         $( 'li.aktif .nav_menu div' ).css( 'display', 'none' );
@@ -260,49 +296,49 @@
             $( target ).modal( 'show' );
         }
 
-        $('#cari-agen').click(function() {
-
-           <?php  $session = new Zend_Session_Namespace('inquiry'); ?>
-
-            var nama = '<?php echo $session->nama; ?>';
-            var email = '<?php echo $session->email; ?>';
-            var nohp = '<?php echo $session->nohp; ?>';
-            var date_tglBuat = '<?php echo $session->date_tglBuat; ?>';
-            var date_tglLahir = '<?php echo $session->date_tglLahir; ?>';
-            var JenisKelamin = '<?php echo $session->JenisKelamin; ?>';
-            var Usia = '<?php echo $session->Usia; ?>';
-            var Frekuensi = '<?php echo $session->Frekuensi; ?>';
-            var AsuransiJiwa = '<?php echo $session->AsuransiJiwa; ?>';
-            var AJ = '<?php echo $session->AJ; ?>';
-            var Kontribusi = '<?php echo $session->Kontribusi; ?>';
-            var Calculation = '<?php echo $session->Calculation; ?>';
-
-              $.ajax({
-                  url      : '/v1/api/calculator',
-                  type     : 'POST',
-                  crossDomain: true,
-                  data     : {
-                              'nama' : nama,
-                              'email' : email,
-                              'nohp' : nohp,
-                              'date_tglBuat': date_tglBuat,
-                              'date_tglLahir': date_tglLahir,
-                              'JenisKelamin': JenisKelamin ,
-                              'Usia': Usia,
-                              'Frekuensi': Frekuensi,
-                              'AsuransiJiwa' : AsuransiJiwa,
-                              'AJ' : AJ,
-                              'Kontribusi' : Kontribusi,
-                              'Calculation' : Calculation,
-                              'source' :'Kalkulator Tasbih User'
-                              },
-                  complete  : function(data){
-                         //console.log(data);
-                          window.open('/agent-locator', '_blank');
-                          //document.location.href='/agent-locator';
-                      }
-              });
-        });
+        //$('#cari-agen').click(function() {
+        //
+        //   <?php  $session = new Zend_Session_Namespace('inquiry'); ?>
+        //
+        //    var nama = '<?php echo $session->nama; ?>';
+        //    var email = '<?php echo $session->email; ?>';
+        //    var nohp = '<?php echo $session->nohp; ?>';
+        //    var date_tglBuat = '<?php echo $session->date_tglBuat; ?>';
+        //    var date_tglLahir = '<?php echo $session->date_tglLahir; ?>';
+        //    var JenisKelamin = '<?php echo $session->JenisKelamin; ?>';
+        //    var Usia = '<?php echo $session->Usia; ?>';
+        //    var Frekuensi = '<?php echo $session->Frekuensi; ?>';
+        //    var AsuransiJiwa = '<?php echo $session->AsuransiJiwa; ?>';
+        //    var AJ = '<?php echo $session->AJ; ?>';
+        //    var Kontribusi = '<?php echo $session->Kontribusi; ?>';
+        //    var Calculation = '<?php echo $session->Calculation; ?>';
+        //
+        //      $.ajax({
+        //          url      : '/v1/api/calculator',
+        //          type     : 'POST',
+        //          crossDomain: true,
+        //          data     : {
+        //                      'nama' : nama,
+        //                      'email' : email,
+        //                      'nohp' : nohp,
+        //                      'date_tglBuat': date_tglBuat,
+        //                      'date_tglLahir': date_tglLahir,
+        //                      'JenisKelamin': JenisKelamin ,
+        //                      'Usia': Usia,
+        //                      'Frekuensi': Frekuensi,
+        //                      'AsuransiJiwa' : AsuransiJiwa,
+        //                      'AJ' : AJ,
+        //                      'Kontribusi' : Kontribusi,
+        //                      'Calculation' : Calculation,
+        //                      'source' :'Kalkulator Tasbih User'
+        //                      },
+        //          complete  : function(data){
+        //                 //console.log(data);
+        //                  window.open('/agent-locator', '_blank');
+        //                  //document.location.href='/agent-locator';
+        //              }
+        //      });
+        //});
 
         $( ".pagenav .navi li" ).click(function(){
             $(".pagenav .navi li").removeClass('aktif');
@@ -407,6 +443,3 @@
         }
     };
 </script>
-
-    </div>
-
