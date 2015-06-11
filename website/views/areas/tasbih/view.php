@@ -568,7 +568,7 @@
                     //console.log(data);
             $('.waiting-calc').hide();
                     $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
-                   //document.location.href='/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi-identitas';
+                   document.location.href='/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi-identitas';
                 }
 
 

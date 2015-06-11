@@ -35,9 +35,8 @@
 				$frek = 'Triwulan';
 			}
             
-            print_r($_POST);
             
-		die('tracking');
+		
 			$rates= new Object_TasbihRate_List();
 			$rates->setCondition("kelamin='".$JenisKelamin."' and frekuensi=$Kontribusi and usia=$Usia");
 			$rate='';
@@ -81,7 +80,7 @@
             $email = $_POST["email"];
             $nohp = $_POST["nohp"];
 
-die('tracking');
+
             $session = new Zend_Session_Namespace('tasbih');
             $session->nama = $nama ;
             $session->email = $email;
@@ -103,7 +102,6 @@ die('tracking');
             $date_tglLahir1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglLahir)));
 
 
-print_r($session);
 
 
 
@@ -128,7 +126,6 @@ print_r($session);
 			else{
 				$frek = 3;
 			}
-
 
 			
             $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
