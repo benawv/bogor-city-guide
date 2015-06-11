@@ -102,7 +102,7 @@
             $date_tglLahir1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglLahir)));
 
 
-
+print_r($session);
 
 
            /*             
@@ -127,7 +127,9 @@
 				$frek = 3;
 			}
 
-			
+
+			die('tracking');
+
             $getId=Object_Abstract::getByPath('/tasbih-kalkulator/');//get folder id
 			$cookie = new Object_Tasbih();
 			$cookie->setTanggalPembuatan($date_tglBuat);
