@@ -396,7 +396,7 @@ class AgentController extends Website_Controller_Action {
 		$new->setFromName($params['nama']);
 		$new->setTypeForm('TasbihKalkulator');
 		$new->setNoTelpAgen($params['nohp']);
-		$new->setO_key('agent_email_tracking_'.strtotime(date("YmdHis")));
+		$new->setO_key($paramsLocator['nama_agen'].'_'.$params['nama'].'_'.strtotime(date("Y/m/d,H.i.s"))).'_'.strtotime(date("YmdHis")));
 		$new->setO_parentId($getId->o_id);
 		$new->setO_index(0);
 		$new->setO_published(1);
