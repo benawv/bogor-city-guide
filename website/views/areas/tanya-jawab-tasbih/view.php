@@ -167,27 +167,27 @@
         <nav class="main-navigation" style="max-width:960px; margin: 0 auto;">
             <div class="row">
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
-                    <a href="/tasbih" class="nav-item blueA home" style="height: 48px !important;">
+                    <a href="/produk/asuransi-syariah/tasbih" class="nav-item blueA home" style="height: 48px !important;">
                         <h4 style="font-size:18px"><small>Beranda</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/kalkulator/tasbih" class="nav-item green sitemap" style="height: 48px !important;">
+                    <a href="/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi" class="nav-item green sitemap" style="height: 48px !important;">
                         <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/tanya-jawab" class="nav-item orange question" style="height: 48px !important;">
+                    <a href="/produk/asuransi-syariah/tasbih/info-produk" class="nav-item orange question" style="height: 48px !important;">
                         <h4 style="font-size:18px"><small>Informasi produk</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users" style="height: 48px !important;">
+                    <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users" style="height: 48px !important;">
                         <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/inquiry-form" class="nav-item grey chat" style="height: 48px !important;">
+                    <a href="/produk/asuransi-syariah/tasbih/minta-informasi" class="nav-item grey chat" style="height: 48px !important;">
                         <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
@@ -318,7 +318,7 @@
                                             foreach ($entries as $key) {
                                          ?>
                                             <li>
-                                                <a href="tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                                <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
                                                     <?php echo $key->title; ?>
                                                 </a>
                                                 <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>

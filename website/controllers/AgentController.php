@@ -273,7 +273,7 @@ class AgentController extends Website_Controller_Action {
 		}
 
 		$hasil = number_format($Calculation,0,",",".");
-		$document = '/email/email-agen-tasbih';
+		$document = '/email/email-agentasbih';
 		$params = array(
 						'tglhitung' => $date_tglBuat1,
 						'namaAgen' => $_POST["nama_agen"],
@@ -352,7 +352,7 @@ class AgentController extends Website_Controller_Action {
 			$JK = 'Wanita';
 		}
 
-		$document = '/email/email-agen-inquiry';
+		$document = '/email/email-ageninquiry';
 		$params = array(
 						'nama' => $nama,
 						'namaAgen' => $_POST["nama_agen"],

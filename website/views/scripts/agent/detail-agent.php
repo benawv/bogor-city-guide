@@ -478,7 +478,7 @@
             var keterangan = $(".textareaForm").val();
 
             $.ajax({
-                url      : '/send-email-agen-tasbih/',
+                url      : '/send-emailagentasbih/',
                 type     : 'POST',
                 data     : {
                             'from' : 'agent_locator',
