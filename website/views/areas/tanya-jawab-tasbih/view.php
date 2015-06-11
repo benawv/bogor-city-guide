@@ -37,37 +37,30 @@
     nav.main-navigation a.nav-item::after{
         font-size: 20px !important; /*icon di button*/
     }
-
-
     nav.main-navigation a.nav-item.blueA{ background: #003781; }
     nav.main-navigation a.nav-item.greenChat{ background: #B20065; }
     nav.main-navigation a.nav-item.blueA::before { background: #3122F9; }
     body { text-align: left; }
-
     .faq-item--answer
     {
         padding-left: 16px;
         padding-right: 16px;
     }
-
     .faq-item--question h4
     {
         color: #003781;
         font-weight: bold;
     }
-
     .content-widget
     {
         border-top: 1px solid #DDD;
         padding: 16px 20px;
         margin-bottom: 32px;
     }
-
     .content-widget h4
     {
         margin-bottom: 8px;
     }
-
     .content-widget ul,
     .content-widget ol,
     .content-widget li,
@@ -75,7 +68,6 @@
         margin: 0 auto !important;
         padding: 0 !important;
     }
-
     .content-widget li
     {
         margin: 0;
@@ -85,7 +77,6 @@
         position: relative;
         line-height: 30px;
     }
-
     .content-widget li a
     {
         color: black;
@@ -93,7 +84,6 @@
         font-weight: bold;
         position: relative;
     }
-
     .content-widget li a:hover,
     .content-widget li a:focus
     {
@@ -101,7 +91,6 @@
         outline: none;
         color: #009a44;
     }
-
     .content-widget li a small,
     .content-widget li a span
     {
@@ -121,14 +110,11 @@
         font-weight: normal;
         margin-top: -10px;
     }
-
     @media (min-width: 1200px){
         .container{
             max-width: 989px;
         }
-
     }
-
 </style>
 
 
@@ -236,18 +222,15 @@
 
     <script type="text/javascript">
         $(document).ready(function(){
-
             $( 'li.aktif .nav_menu div' ).css( 'display', 'none' );
             $( 'li .nav_menu .white_image' ).css( 'display', 'none' );
             $( 'li.aktif .nav_menu .white_image' ).css( 'display', 'block' );
             var hash = window.location.hash.substring(1);
-
             if( hash != '' )
             {
                 var target = '#modal-' + hash;
                 $( target ).modal( 'show' );
             }
-
             $( ".pagenav .navi li" ).click(function(){
                 $(".pagenav .navi li").removeClass('aktif');
                 $(".pagenav .navi li .nav_menu div").css('display','block');
