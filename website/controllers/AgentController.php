@@ -307,7 +307,7 @@ class AgentController extends Website_Controller_Action {
 						'nama'=> $nama
 						);
 
-		$this->emailTracking($paramsLocator,$params);
+		$this->emailTrackingAction($paramsLocator,$params);
 
 		$mail = new Pimcore_Mail();
 		$mail->setSubject("Permintaan $nama Calon Nasabah Produk Allianz Tasbih");
@@ -383,7 +383,7 @@ class AgentController extends Website_Controller_Action {
 		die();
 	}
 
-	public function emailTracking($paramsLocator,$params){
+	public function emailTrackingAction($paramsLocator,$params){
     	$date_tglBuat1 = new Pimcore_Date(date("Y-m-d,H-i-s"));
 		$getId=Object_Abstract::getByPath('/agent-email-tracking/');//get folder id
 		$new = new Object_AgentEmailTracking();
