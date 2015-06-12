@@ -535,11 +535,11 @@
             var kontribusi = $('#masa-premi option:Selected').val();
             var unfnum = accounting.unformat(asuransijiwa,0,",");
 
+            alert(unfnum);
 
 
-
-            if( asuransijiwa == '' || asuransijiwa >= 49000000 ||tanggalpembuatan == '' || tanggallahir == ''){
-                    if( asuransijiwa == '' || asuransijiwa < 50000000 )
+            if( asuransijiwa == '' || unfnum <= 50000000 ||tanggalpembuatan == '' || tanggallahir == ''){
+                    if( unfnum == '' || unfnum < 50000000 )
                         document.getElementById('notif-asuransijiwa').style.display= 'block';
                     if( tanggalpembuatan == '')
                         document.getElementById('notif-tglhitung').style.display= 'block';
