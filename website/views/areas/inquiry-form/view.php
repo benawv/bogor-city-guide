@@ -192,7 +192,7 @@
                             <label><strong>Nama Anda?</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="name" class="form-control" id="nama" placeholder="Nama" required />
+                            <input type="name" class="form-control" id="nama" placeholder="Nama" required onfocusout="this.value=validateNama(this.value)">
                             <label id="notif-nama" style="display:none; color: #f00;">
                                 Mohon maaf Anda belum atau salah memasukkan nama
                             </label>
@@ -517,7 +517,16 @@
 
     });
 
-
+function validateNama(nama){
+        var re = /^[a-zA-Z ]*$/;
+        if(!re.test(nama)){
+            document.getElementById('notif-nama').style.display= 'block';
+            return null;
+        }else{
+            document.getElementById('notif-nama').style.display= 'none';
+            return nama;
+        }
+    };
 
     function validateNumber(value){
         if(value.length <= 8 ){
