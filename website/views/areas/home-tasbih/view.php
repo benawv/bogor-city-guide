@@ -236,9 +236,7 @@
                                     <?php } ?>
                                     </div>
                                 </div>
-                                <div class="edge e-<?php echo $color?>">
-                                    <?php echo $this->link("boxlink_".$i);echo "."; ?>
-                                </div>
+                                <div class="edge e-<?php echo $color?>"><?php echo $this->link("boxlink_".$i);?></div>
                             </div>
                         </div>
                     </li>
