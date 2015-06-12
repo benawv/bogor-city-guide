@@ -399,7 +399,7 @@ class AgentController extends Website_Controller_Action {
 		$new->setFromName($params['nama']);
 		$new->setFromNoTelp($params['nohp']);
 		$new->setTypeForm('TasbihKalkulator');
-		$new->setKey($paramsLocator['nama_agen'].'_'.$params['nama'].'_'.strtotime(date("Y/m/d,H.i.s")).'_'.strtotime(date("YmdHis")));
+		$new->setKey(strtolower($paramsLocator['nama_agen']).'_'.$params['nama'].'_'.strtotime(date("Y/m/d,H.i.s")).'_'.strtotime(date("YmdHis")));
 		$new->setO_parentId($getId->o_id);
 		$new->setIndex(0);
 		$new->setPublished(1);
