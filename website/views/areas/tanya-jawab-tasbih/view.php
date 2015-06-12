@@ -129,11 +129,10 @@
         }
         .force-faq {
             padding: 25px 0 0 0 !important;
-            margin-left: -15px;
+            margin-left: -5px;
         }
         .force-baca {
-            margin-left: -15px !important;
-            margin-left: -15px;
+            margin-left: -5px !important;
         }
     }
 </style>
