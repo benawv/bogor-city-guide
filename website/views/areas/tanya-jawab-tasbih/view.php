@@ -110,9 +110,18 @@
         font-weight: normal;
         margin-top: -10px;
     }
+    .force-margin {
+        margin-left: -15px;
+        margin-right: 15px;
+    }
     @media (min-width: 1200px){
         .container{
             max-width: 989px;
+        }
+    }
+    @media (max-width: 640px){
+        .force-margin {
+            margin-right: -15px !important;
         }
     }
 </style>
@@ -197,7 +206,7 @@
 
 
     <div class="container boxes-view">
-        <div>
+        <div class="force-margin">
 
             <?php echo $this->areablock('container', array('allowed' => array(
                 'mobilku','tasbih', 'tasbih-news', 'payment','smartmed','liveinsurance','thanksyou-liveinsurance'.'container-box2', 'community-tips2',
