@@ -254,7 +254,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label><strong>Berapa <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#uangpertanggungan">uang pertanggungan</a> yang Anda butuhkan bila terjadi <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#risiko">risiko</a>?</strong></label>
+                                <label><strong>Berapa <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#uangpertanggungan">uang pertanggungan</a> yang Anda butuhkan bila terjadi risiko?</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
 
