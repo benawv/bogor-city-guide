@@ -233,7 +233,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label><strong>Pilihlah Termin Pembayaran Anda</strong></label>
+                                <label><strong>Pilihlah <a href="#" data-toggle="tooltip" data-original-title="Termin pembayaran hanya tersedia untuk pembayaran triwulan, semesteran, tahunan. tidak menyediakan pembayaran bulanan.">Termin</a> Pembayaran Anda</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <select class="form-control" name="Frekuensi" id="Frekuensi">
@@ -472,7 +472,10 @@
 <link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
 <script src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="/website/static/mobilku/jquery-ui.js" type="text/javascript"></script>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 
@@ -484,6 +487,10 @@
          * Calculator Pop-Up
          */
 
+        $('[data-toggle="tooltip"]').tooltip({
+        placement : 'bottom'
+    });
+        
         if( $( 'a.calc-overlay-trigger' ).length > 0 )
         {
             $( 'a.calc-overlay-trigger' ).click(function(e){
