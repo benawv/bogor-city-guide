@@ -192,7 +192,7 @@
 
                     <div class="form-box">
 
-                        <label><strong>Ilustrasi ini berguna untuk menghitung perkiraan biaya yang Anda bayarkan untuk melindungi diri Anda, jika terjadi <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#risiko">risiko</a> yang Anda alami di masa yang akan datang</strong></label>
+                        <label><strong>Ilustrasi ini berguna untuk menghitung perkiraan biaya yang Anda bayarkan untuk melindungi diri Anda, jika terjadi risiko yang Anda alami di masa yang akan datang</strong></label>
                         <!-- Modal -->
                         <div class="form-group">
                             <div class="col-md-4">
@@ -314,26 +314,7 @@
         </div><!--/ .content-calc -->
 
         <!--Modal-->
-         <div class="modal fade" id="risiko" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">5 Risiko Kehidupan</h4>
-              </div>
-              <div class="modal-body">
-                <!--h3>5 Risiko Kehidupan</h3-->
-                <ol>
-                    <li>Jika Anda mengalami penyakit kritis</li>
-                    <li>Jika Anda mengalami kecelakaan</li>
-                    <li>Cacat tetap karena kecelakaan</li>
-                    <li>Memasuki usia tua</li>
-                    <li>Meninggal dunia</li>
-                </ol>
-              </div>
-            </div>
-          </div>
-        </div>
+
 
         <div class="modal fade" id="premi" tabindex="-1" role="dialog" aria-labelledby="premiLabel" aria-hidden="true">
           <div class="modal-dialog">
