@@ -110,9 +110,18 @@
         font-weight: normal;
         margin-top: -10px;
     }
+    .force-margin {
+        margin-left: -15px;
+        margin-right: 15px;
+    }
     @media (min-width: 1200px){
         .container{
             max-width: 989px;
+        }
+    }
+    @media (max-width: 640px){
+        .force-margin {
+            margin-right: -15px !important;
         }
     }
 </style>
@@ -172,13 +181,13 @@
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi" class="nav-item green sitemap" style="height: 48px !important;">
-                        <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
+                    <a href="/produk/asuransi-syariah/tasbih/info-produk" class="nav-item orange question" style="height: 48px !important;">
+                        <h4 style="font-size:18px"><small>Informasi produk</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/produk/asuransi-syariah/tasbih/info-produk" class="nav-item orange question" style="height: 48px !important;">
-                        <h4 style="font-size:18px"><small>Informasi produk</small></h4>
+                    <a href="/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi" class="nav-item green sitemap" style="height: 48px !important;">
+                        <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
@@ -197,7 +206,7 @@
 
 
     <div class="container boxes-view">
-        <div>
+        <div class="force-margin">
 
             <?php echo $this->areablock('container', array('allowed' => array(
                 'mobilku','tasbih', 'tasbih-news', 'payment','smartmed','liveinsurance','thanksyou-liveinsurance'.'container-box2', 'community-tips2',
