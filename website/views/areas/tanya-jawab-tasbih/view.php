@@ -54,7 +54,8 @@
     .content-widget
     {
         border-top: 1px solid #DDD;
-        padding: 16px 20px;
+        /*padding: 16px 20px;*/
+        padding: 16px 0;
         margin-bottom: 32px;
     }
     .content-widget h4
@@ -114,6 +115,9 @@
         margin-left: -15px;
         margin-right: 15px;
     }
+    .force-faq {
+        padding: 25px 36px 0 10px !important;
+    }
     @media (min-width: 1200px){
         .container{
             max-width: 989px;
@@ -122,6 +126,14 @@
     @media (max-width: 640px){
         .force-margin {
             margin-right: -15px !important;
+        }
+        .force-faq {
+            padding: 25px 0 0 0 !important;
+            margin-left: -15px;
+        }
+        .force-baca {
+            margin-left: -15px !important;
+            margin-left: -15px;
         }
     }
 </style>
@@ -274,7 +286,7 @@
                         'sections', 'sections-box-full'))); ?>
 
                     <div style="clear:both; "></div>
-                    <div class="main-content">   
+                    <div class="main-content force-faq">   
 
                         <div id="tanyajawab" class="main-content--header">
                             <h2 class="mb12">
@@ -314,7 +326,7 @@
                         </div><!--/ .faq-wrapper -->
 
 
-                        <div class="content-widget">
+                        <div class="content-widget force-baca">
                             <div class="row">
                                 <div class="col-xs-12">
                                     <h4><strong>BACA JUGA</strong></h4>
