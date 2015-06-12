@@ -278,7 +278,7 @@
                               },
                   complete  : function(data){
                          //console.log(data);
-                          window.open('/agent-locator', '_blank');
+                          window.open('agen-locator/agen', '_blank');
                           //document.location.href='/agent-locator';
                       }
               });
