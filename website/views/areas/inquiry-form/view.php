@@ -376,7 +376,7 @@
             if (kelamin == 'p' || kelamin == 'l') {
                 document.getElementById('notifJK').style.display= 'none';
             }
-            else if( nama == '' || email == '' || nohp == '' || bod == '' ||  nohp.length <= 8 || prov == '' || pesan == '' || kelamin == null){
+            if( nama == '' || email == '' || nohp == '' || bod == '' ||  nohp.length <= 8 || prov == '' || pesan == '' || kelamin == null){
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
                     if( email == '' )
@@ -392,8 +392,7 @@
                     if( kelamin == null)
                         document.getElementById('notifJK').style.display= 'block';
                     alert("Mohon Periksa Inputan Anda");
-            }
-            else{
+            }else{
             e.preventDefault();
             $.ajax({
                  "url" : "/inquiry-tasbih/",
