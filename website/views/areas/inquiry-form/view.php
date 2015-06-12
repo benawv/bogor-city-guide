@@ -372,7 +372,7 @@
             var pesan=$('#pesan').val();
 
             
-            $('input[name=jenisKelamin]:checked').change(function(){
+            $('input[name=jenisKelamin]').change(function(){
                 document.getElementById('notifJK').style.display= 'none';
             });
             //if (kelamin == 'p' || kelamin == 'l') {
