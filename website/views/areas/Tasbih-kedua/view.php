@@ -217,6 +217,7 @@
                                 <!--
                               <input type="button" class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next" value="Submit">
                                 -->
+                                
                                 <button type="button" class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next">
                                     <i class="fa fa-envelope-o"></i> Kirim
                                 </button>
