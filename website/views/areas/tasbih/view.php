@@ -233,7 +233,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label><strong>Pilihlah <a href="#" data-toggle="tooltip" data-original-title="Termin pembayaran hanya tersedia untuk pembayaran triwulan, semesteran, tahunan. tidak menyediakan pembayaran bulanan.">Termin</a> Pembayaran Anda</strong></label>
+                                <label><strong>Pilihlah <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#termin" >termin</a> Pembayaran Anda</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <select class="form-control" name="Frekuensi" id="Frekuensi">
@@ -350,6 +350,21 @@
           </div>
         </div>
 
+        <div class="modal fade" id="termin" tabindex="-1" role="dialog" aria-labelledby="terminLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="terminLabel">Termi</h4>
+              </div>
+              <div class="modal-body">
+                <!--h3>5 Risiko Kehidupan</h3-->
+                <p>Termin pembayaran hanya tersedia untuk pembayaran triwulan, semesteran, tahunan. tidak menyediakan pembayaran bulanan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <div class="modal fade" id="uangpertanggungan" tabindex="-1" role="dialog" aria-labelledby="uangpertanggunganLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
