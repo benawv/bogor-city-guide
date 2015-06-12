@@ -32,7 +32,7 @@
 	<?php
 		$db = Pimcore_Resource_Mysql::get();
 		$sql = "SELECT o_id FROM objects
-				where o_key = 'footer-ajfc'";
+				where o_key = 'footer-tasbih'";
 		$footer = $db->fetchAll($sql);
 		$idFooter = $footer[0][o_id];
 		
