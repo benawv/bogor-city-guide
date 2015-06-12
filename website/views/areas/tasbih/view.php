@@ -192,7 +192,7 @@
 
                     <div class="form-box">
 
-                        <label><strong>Ilustrasi ini berguna untuk menghitung perkiraan biaya yang Anda bayarkan untuk melindungi diri Anda, jika terjadi <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#risiko">risiko</a> yang Anda alami di masa yang akan datang</strong></label>
+                        <label><strong>Ilustrasi ini berguna untuk menghitung perkiraan biaya yang Anda bayarkan untuk melindungi diri Anda, jika terjadi risiko yang Anda alami di masa yang akan datang</strong></label>
                         <!-- Modal -->
                         <div class="form-group">
                             <div class="col-md-4">
@@ -218,6 +218,9 @@
                                     <div class="col-xs-6">
                                         <label class="radio-inline"><input name="jenisKelamin" value="p" type="Radio">Wanita</label>
                                     </div>
+                                    <label id="notif-jeniskelamin" style="display:none; color: #f00;">
+                                    Mohon maaf,jenis kelamin yang Anda masukan belum sesuai
+                                </label>
                                 </div>
                             </div>
                         </div><!--/ .form-group -->
@@ -233,7 +236,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label><strong>Pilihlah Termin Pembayaran Anda</strong></label>
+                                <label><strong>Pilihlah <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#termin" >termin</a> Pembayaran Anda</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <select class="form-control" name="Frekuensi" id="Frekuensi">
@@ -251,7 +254,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label><strong>Berapa <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#uangpertanggungan">uang pertanggungan</a> yang Anda butuhkan bila terjadi <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#risiko">risiko</a>?</strong></label>
+                                <label><strong>Berapa <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#uangpertanggungan">uang pertanggungan</a> yang Anda butuhkan bila terjadi risiko?</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
 
@@ -314,26 +317,7 @@
         </div><!--/ .content-calc -->
 
         <!--Modal-->
-         <div class="modal fade" id="risiko" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">5 Risiko Kehidupan</h4>
-              </div>
-              <div class="modal-body">
-                <!--h3>5 Risiko Kehidupan</h3-->
-                <ol>
-                    <li>Jika Anda mengalami penyakit kritis</li>
-                    <li>Jika Anda mengalami kecelakaan</li>
-                    <li>Cacat tetap karena kecelakaan</li>
-                    <li>Memasuki usia tua</li>
-                    <li>Meninggal dunia</li>
-                </ol>
-              </div>
-            </div>
-          </div>
-        </div>
+
 
         <div class="modal fade" id="premi" tabindex="-1" role="dialog" aria-labelledby="premiLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -350,6 +334,21 @@
           </div>
         </div>
 
+        <div class="modal fade" id="termin" tabindex="-1" role="dialog" aria-labelledby="terminLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="terminLabel">Termin</h4>
+              </div>
+              <div class="modal-body">
+                <!--h3>5 Risiko Kehidupan</h3-->
+                <p>Termin pembayaran hanya tersedia untuk pembayaran triwulan, semesteran, tahunan. tidak menyediakan pembayaran bulanan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <div class="modal fade" id="uangpertanggungan" tabindex="-1" role="dialog" aria-labelledby="uangpertanggunganLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -473,7 +472,6 @@
 <script src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="/website/static/mobilku/jquery-ui.js" type="text/javascript"></script>
 
-
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 
 <script>
@@ -484,6 +482,10 @@
          * Calculator Pop-Up
          */
 
+        $('[data-toggle="tooltip"]').tooltip({
+        placement : 'bottom'
+    });
+        
         if( $( 'a.calc-overlay-trigger' ).length > 0 )
         {
             $( 'a.calc-overlay-trigger' ).click(function(e){
@@ -536,16 +538,17 @@
             var kontribusi = $('#masa-premi option:Selected').val();
             var unfnum = accounting.unformat(asuransijiwa,0,",");
 
+      // alert(sex);
 
-
-
-            if( asuransijiwa == '' || asuransijiwa >= 49000000 ||tanggalpembuatan == '' || tanggallahir == ''){
-                    if( asuransijiwa == '' || asuransijiwa < 50000000 )
+            if( asuransijiwa == '' || unfnum < 50000000 ||tanggalpembuatan == '' || tanggallahir == '' || sex == null){
+                    if( unfnum == '' || unfnum < 50000000 )
                         document.getElementById('notif-asuransijiwa').style.display= 'block';
                     if( tanggalpembuatan == '')
                         document.getElementById('notif-tglhitung').style.display= 'block';
                     if( tanggallahir == '' )
                         document.getElementById('notif-tgllahir').style.display= 'block';
+                    if( sex == null )
+                        document.getElementById('notif-jeniskelamin').style.display= 'block';
                     alert("Mohon Periksa Inputan Anda");
             }else{
 

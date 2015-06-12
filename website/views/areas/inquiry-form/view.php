@@ -192,7 +192,7 @@
                             <label><strong>Nama Anda?</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="name" class="form-control" id="nama" placeholder="Nama" required />
+                            <input type="name" class="form-control" id="nama" placeholder="Nama" required onfocusout="this.value=validateNama(this.value)">
                             <label id="notif-nama" style="display:none; color: #f00;">
                                 Mohon maaf Anda belum atau salah memasukkan nama
                             </label>
@@ -213,6 +213,9 @@
                                 <div class="col-xs-6">
                                     <label class="radio-inline"><input type="Radio" style="display: block;" name="jenisKelamin" value="p" style="display:block">Wanita</label>
                                 </div>
+                                <label id="notifJK" style="display:none; color: #f00;">
+                                Mohon maaf Anda belum memilih jenis kelamin
+                            </label>
                             </div><!--/ .row -->
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -280,12 +283,13 @@
                             <label><strong>Pesan</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <label id="notifPesan" style="display:none; color: #f00;">
-                                Mohon maaf, Anda harus mengisi pesan.
-                            </label>
+                            
                             <textarea cols="35" rows="10" class="form-control" placeholder="Tuliskan Pesan Anda disini Maksimal 250 Kata" id="pesan" ></textarea>
                             <label id="notifemail" style="display:block; font-size:10px; color: #f00;">
                                 Sisa karakter yang Anda tulis : <span id="counterString">250</span>  Kata
+                            </label>
+                            <label id="notifPesan" style="display:none; color: #f00;">
+                                Mohon maaf inputan yang Anda masukkan melebihi batas jumlah karakter
                             </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -367,9 +371,9 @@
             var prov=$('#provinsi_id').val();
             var pesan=$('#pesan').val();
 
-            //alert(bod);
+            
 
-            if( nama == '' || email == '' || nohp == '' || bod == '' ||  nohp.length <= 8 || prov == '' || pesan == ''){
+            if( nama == '' || email == '' || nohp == '' || bod == '' ||  nohp.length <= 8 || prov == '' || pesan == '' || kelamin == null){
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
                     if( email == '' )
@@ -382,11 +386,13 @@
                         document.getElementById('notifNoHP').style.display='block';
                     if( pesan == '' )
                         document.getElementById('notifPesan').style.display= 'block';
+                    if( kelamin == null)
+                        document.getElementById('notifJK').style.display= 'block';
                     alert("Mohon Periksa Inputan Anda");
             }else{
             e.preventDefault();
             $.ajax({
-                 "url" : "/inquriy-tasbih/",
+                 "url" : "/inquiry-tasbih/",
                  "type" : "POST",
                  "data" : "nama="+ nama +
                           "&kelamin="+kelamin+
@@ -487,7 +493,9 @@
         var max = 250;
 
         if(n > max){
-               $('#pesan').attr('readonly','readonly');
+               document.getElementById('notifPesan').style.display= 'block';
+        }else{
+            document.getElementById('notifPesan').style.display= 'none';
         }
 
         $('#counterString').html(250-n);
@@ -517,7 +525,16 @@
 
     });
 
-
+function validateNama(nama){
+        var re = /^[a-zA-Z ]*$/;
+        if(!re.test(nama)){
+            document.getElementById('notif-nama').style.display= 'block';
+            return null;
+        }else{
+            document.getElementById('notif-nama').style.display= 'none';
+            return nama;
+        }
+    };
 
     function validateNumber(value){
         if(value.length <= 8 ){
