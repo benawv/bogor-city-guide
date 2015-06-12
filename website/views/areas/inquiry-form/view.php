@@ -361,6 +361,10 @@
             $( target ).modal( 'show' );
         }
 
+        $('input[name=jenisKelamin]').change(function(){
+            document.getElementById('notifJK').style.display= 'none';
+        });
+        
         $(this).on('click', '.inquiry-send', function(e){
 
             var nama=$('#nama').val();
@@ -371,13 +375,17 @@
             var prov=$('#provinsi_id').val();
             var pesan=$('#pesan').val();
 
+            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+            if(re.test(email))
+            {
+                document.getElementById('notifemail').style.display= 'none';
+            }
+            else
+            {
+                document.getElementById('notifemail').style.display= 'block';
+                email = "";
+            }
             
-            $('input[name=jenisKelamin]').change(function(){
-                document.getElementById('notifJK').style.display= 'none';
-            });
-            //if (kelamin == 'p' || kelamin == 'l') {
-            //    document.getElementById('notifJK').style.display= 'none';
-            //}
             if( nama == '' || email == '' || nohp == '' || bod == '' ||  nohp.length <= 8 || prov == '' || pesan == '' || kelamin == null){
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
@@ -396,6 +404,7 @@
                     alert("Mohon Periksa Inputan Anda");
             }else{
             e.preventDefault();
+            alert("else");
             $.ajax({
                  "url" : "/inquriy-tasbih/",
                  "type" : "POST",
@@ -468,14 +477,14 @@
     function validateEMAIL(surat)
     {
         var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-        if(!re.test(surat))
+        if(re.test(surat))
         {
-            document.getElementById('notifemail').style.display= 'block';
+            document.getElementById('notifemail').style.display= 'none';
             return surat;
         }
         else
         {
-            document.getElementById('notifemail').style.display= 'none';
+            document.getElementById('notifemail').style.display= 'block';
             return surat;
         }
     };
