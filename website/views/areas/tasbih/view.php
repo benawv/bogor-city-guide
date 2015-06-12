@@ -538,7 +538,7 @@
         
 
 
-            if( asuransijiwa == '' || unfnum <= 50000000 ||tanggalpembuatan == '' || tanggallahir == ''){
+            if( asuransijiwa == '' || unfnum < 50000000 ||tanggalpembuatan == '' || tanggallahir == ''){
                     if( unfnum == '' || unfnum < 50000000 )
                         document.getElementById('notif-asuransijiwa').style.display= 'block';
                     if( tanggalpembuatan == '')
