@@ -9,186 +9,198 @@
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/flexslider.css">-->
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/tabs-accordion.css">-->
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/product.css">-->
+<script src="/website/static/mobilku/jquery-ui.js" type="text/javascript"></script>
+<script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
 
-<script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
+
+
 
 <header>
-<style>
-    /* Override AJFC's feature box color */
-    .box-dent--inner{ background: #009a44; }
-    .box-dent::before{ border-top: 28px solid #009a44 !important;}
-    .btn-tasbih{ background: #009a44 !important; border: none !important; border-radius: 0; }
-    .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
-    .form-box{ border: solid 1px #ddd; padding: 16px 20px; margin-bottom: 32px; }
-    .form-control{ border-radius: 0; }
-        nav.main-navigation a.nav-item.home::after {
-      content: "\f015"; }
-    nav.main-navigation a.nav-item.chat::after {
-      content: "\f003  "; }
-    nav.main-navigation a.nav-item {
-  display: block;
-  position: relative;
-  height: 50px;
-  background: #d31f42;
-}
+    <style>
+        /* Override AJFC's feature box color */
+        .box-dent--inner{ background: #009a44; }
+        .box-dent::before{ border-top: 28px solid #009a44 !important;}
+        .btn-tasbih{ background: #009a44 !important; border: none !important; border-radius: 0; }
+        .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
+        .form-box{ border: solid 1px #ddd; padding: 16px 20px; margin-bottom: 32px; }
+        .form-control{ border-radius: 0; }
+        nav.main-navigation a.nav-item.home::after { content: "\f015"; }
+        nav.main-navigation a.nav-item.chat::after { content: "\f003  "; }
+        nav.main-navigation a.nav-item {
+            display: block;
+            position: relative;
+            height: 50px;
+            background: #d31f42;
+        }
         nav.main-navigation a.nav-item::after {
-  content: "";
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 20px;
-  pointer-events: none;
-}
-        nav.main-navigation a.nav-item.blueA{
-      background: #003781;}
-
-    nav.main-navigation a.nav-item.greenChat{
-      background: #707372;}
-
-    nav.main-navigation a.nav-item.greenChat::before{
-      background: #3C3941;}
-
-      nav.main-navigation a.nav-item.blueA::before {
-        background: #3122F9; }
-
-    input[type="radio"] {
-  display: block;
-}
-.icon-submit{
-    width: 20px;
-    position: absolute;
-    top: 5px;
-    margin-left: 15px;
-}
-.font-submit{
-    position: absolute;
-    top: 12px;
-    margin-left: -12px;
-}
-
-    @media screen and (max-width: 1024px) {
-
-        .row{
-            margin-left: -15px !important;
-            margin-right: -15px !important;
+            content: "";
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: absolute;
+            right: 20px;
+            top: 40%;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 20px;
+            pointer-events: none;
         }
+        nav.main-navigation a.nav-item.blueA{ background: #003781; }
+        nav.main-navigation a.nav-item.greenChat{ background: #B20065; }
+        nav.main-navigation a.nav-item.blueA::before { background: #3122F9; }
+        body { text-align: left !important; }
+        input[type="radio"] { display: block; }
+    </style>
 
-    }
+    <nav class="main-navigation" style="max-width:960px; margin:auto;">
+        <div class="row">
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
+                <a href="/produk/asuransi-syariah/tasbih" class="nav-item blueA home">
+                    <h4 style="font-size:18px"><small>Beranda</small></h4>
+                </a>
+            </div><!--/ .col-xs-12 -->
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                <a href="/produk/asuransi-syariah/tasbih/info-produk" class="nav-item orange question">
+                    <h4 style="font-size:18px"><small>Informasi produk</small></h4>
+                </a>
+            </div><!--/ .col-xs-12 -->
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                <a href="/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi" class="nav-item green sitemap">
+                    <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
+                </a>
+            </div><!--/ .col-xs-12 -->
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users">
+                    <h4 style="font-size:18px"><small>Cari Agen</small></h4>
+                </a>
+            </div><!--/ .col-xs-12 -->
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                <a href="/produk/asuransi-syariah/tasbih/minta-informasi" class="nav-item grey chat">
+                    <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
+                </a>
+            </div><!--/ .col-xs-12 -->
+        </div><!--/ .row -->
+    </nav><!--/ .main-navigation -->
 
-    @media only screen and (max-width:775px){
-        .btn img{
-            height: 20px;
-            width: 15px;
-            margin-left: 5px;
-            top: 10px;
-        }
-        .row{
-            margin-left: -15px !important;
-            margin-right: -15px !important;
-        }
-    }
-
-    @media only screen and (max-width:640px){
-        .kalkulasi{
-            width: 100%;
-            text-align: center;
-        }
-        .kalkulasi img{
-            display: inherit;
-            margin-left:-34px;
-        }
-
-    }
-    @media only screen and (max-width:320px){
-        .kalkulasi{
-            text-align: left;
-        }
-        .kalkulasi font{
-            margin-left: 90px;
-        }
-        .kalkulasi img{
-            margin-left: 70px;
-        }
-    }
-
-    a.calc-overlay-trigger
-    {
-        color: #009A44; /*inherit */;
-        cursor: help;
-    }
-
-     a.calc-overlay-trigger:hover
-    {
-        color: #009A44; /*inherit */;
-        text-decoration: underline;
-    }
-
-</style>
-
-
-    <nav class="main-navigation" style="max-width:1140px; margin:auto;">
-            <div class="row">
-
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
-                    <a href="/produk/asuransi-syariah/tasbih" class="nav-item blueA home">
-                        <h4 style="font-size:18px"><small>Beranda</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/produk/asuransi-syariah/tasbih/info-produk" class="nav-item orange question">
-                        <h4 style="font-size:18px"><small>Informasi produk</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi" class="nav-item green sitemap">
-                        <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.allianz.co.id" target="_blank" class="nav-item users">
-                        <h4 style="font-size:18px"><small>Cari Agen</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/produk/asuransi-syariah/tasbih/minta-informasi" class="nav-item grey chat">
-                        <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-            </div>
-            <div class="row">
-
-            </div>
-    </nav>
 </header>
 
-<div id="newsletter-allianz" class="full-w bg-white nopadding">
+<div class="header" style="margin-top:-20px;">
+    <div class="container boxes-view">
+        <div>
+            <div class="pimcore_area_tasbih pimcore_area_content">
+                <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/bootstrap.min.css">
+                <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
+                <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
+                <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/main.css">
 
+                <link rel="stylesheet" type="text/css" media="all" href="/website/static/mobilku/tasbih/tasbih.css">
+                <link rel="stylesheet" type="text/css" media="all" href="/website/static/mobilku/wizard-step.css">
+
+                <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/flexslider.css">-->
+                <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/tabs-accordion.css">-->
+                <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/product.css">-->
+
+                <script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
+
+                <style>
+                    /* Override AJFC's feature box color */
+                    .box-dent--inner{ background: #009a44; }
+                    .box-dent::before{ border-top: 28px solid #009a44 !important;}
+                    .btn-tasbih{ background: #009a44 !important; }
+                    .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
+
+                    @media only screen and (min-width: 1140px){
+                        body {
+                          font-size: initial !important;
+                        }
+                    }
+
+                    .content-widget
+            {
+                border-top: 1px solid #DDD;
+                padding: 16px 20px;
+                margin-bottom: 32px;
+            }
+
+            .content-widget h4
+            {
+                margin-bottom: 8px;
+            }
+
+            .content-widget ul,
+            .content-widget ol,
+            .content-widget li,
+            {
+                margin: 0 auto !important;
+                padding: 0 !important;
+            }
+
+            .content-widget li
+            {
+                margin: 0;
+                padding: 0;
+                /*display: block;*/
+                list-style: circle;
+                position: relative;
+                line-height: 30px;
+            }
+
+            .content-widget li a
+            {
+                color: black;
+                text-decoration: none;
+                font-weight: bold;
+                position: relative;
+            }
+
+            .content-widget li a:hover,
+            .content-widget li a:focus
+            {
+                text-decoration: none;
+                outline: none;
+                color: #009a44;
+            }
+
+            .content-widget li a small,
+            .content-widget li a span
+            {
+                color: #999;
+                font-size: x-small;
+                font-weight: normal;
+            }
+            .content-widget h4{
+                color: #009a44;
+                font-weight: bold;
+                font-size: 17px;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+            .news-date{
+                color: #999;
+                font-size: x-small;
+                font-weight: normal;
+                margin-top: -10px;
+            }
+                </style>
+
+<div id="newsletter-allianz" class="full-w bg-white nopadding">
     <div class="description">
 
-        <div class="header-calc">
-            <h1>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
+        <div class="header-calc" style="background-color:#707372;">
+            <h1>FORM MINTA INFORMASI</h1>
         </div><!--/ .header-calc -->
 
         <div class="content-calc">
             <div class="col-md-12">
 
-                <div class="form-horizontal">
+ <div class="form-horizontal">
 
                     <div class="form-box">
 
@@ -213,10 +225,10 @@
                             <div class="col-md-4">
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <label class="radio-inline"><input name="jenisKelamin" value="l" type="Radio">Pria</label>
+                                        <label class="radio-inline"><input name="jenisKelamin" value="l" type="Radio" style="display: block;">Pria</label>
                                     </div>
                                     <div class="col-xs-6">
-                                        <label class="radio-inline"><input name="jenisKelamin" value="p" type="Radio">Wanita</label>
+                                        <label class="radio-inline"><input name="jenisKelamin" value="p" type="Radio" style="display: block;">Wanita</label>
                                     </div>
                                     <label id="notif-jeniskelamin" style="display:none; color: #f00;">
                                         Mohon maaf,jenis kelamin yang Anda masukan belum sesuai
@@ -313,139 +325,19 @@
                     </div><!--/ .form-group -->
 
                 </div>
+\
+
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
 
-        <!--Modal-->
-
-
-        <div class="modal fade" id="premi" tabindex="-1" role="dialog" aria-labelledby="premiLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="premiLabel">Premi</h4>
-              </div>
-              <div class="modal-body">
-                <!--h3>5 Risiko Kehidupan</h3-->
-                <p>Premi adalah iuran yang anda bayarkan secara berkala sesuai dengan periode pilihan Anda untuk mendapatkan uang pertangungan yang Anda inginkan.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="termin" tabindex="-1" role="dialog" aria-labelledby="terminLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="terminLabel">Termin</h4>
-              </div>
-              <div class="modal-body">
-                <!--h3>5 Risiko Kehidupan</h3-->
-                <p>Termin pembayaran hanya tersedia untuk pembayaran triwulan, semesteran, tahunan. tidak menyediakan pembayaran bulanan.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="modal fade" id="uangpertanggungan" tabindex="-1" role="dialog" aria-labelledby="uangpertanggunganLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="uangpertanggunganLabel">Uang Pertanggungan</h4>
-              </div>
-              <div class="modal-body">
-                <!--h3>5 Risiko Kehidupan</h3-->
-                <p>Uang pertanggungan yang akan diberikan bila terjadi risiko pada tertanggung.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <style>
-
-            .content-widget
-            {
-                border-top: 1px solid #DDD;
-                padding: 16px 20px;
-                margin-bottom: 32px;
-            }
-
-            .content-widget h4
-            {
-                margin-bottom: 8px;
-            }
-
-            .content-widget ul,
-            .content-widget ol,
-            .content-widget li,
-            {
-                margin: 0 auto !important;
-                padding: 0 !important;
-            }
-
-            .content-widget li
-            {
-                margin: 0;
-                padding: 0;
-                /*display: block;*/
-                list-style: circle;
-                position: relative;
-                line-height: 30px;
-            }
-
-            .content-widget li a
-            {
-                color: black;
-                text-decoration: none;
-                font-weight: bold;
-                position: relative;
-            }
-
-            .content-widget li a:hover,
-            .content-widget li a:focus
-            {
-                text-decoration: none;
-                outline: none;
-                color: #009a44;
-            }
-
-            .content-widget li a small,
-            .content-widget li a span
-            {
-                color: #999;
-                font-size: x-small;
-                font-weight: normal;
-            }
-            .content-widget h4{
-                color: #009a44;
-                font-weight: bold;
-                font-size: 17px;
-                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            }
-            .news-date{
-                color: #999;
-                font-size: x-small;
-                font-weight: normal;
-                margin-top: -10px;
-            }
-
-            .modal-body ol>li{
-                padding-bottom: 0px;
-            }
-
-
-        </style>
+        <div class="clearfix"></div>
 
         <div class="content-widget">
             <div class="row">
                 <div class="col-xs-12">
                     <h4><strong>BACA JUGA</strong></h4>
                     <ol>
-                        <?php
+                        <?php 
                             $entries = new Object_TasbihNews_List();
                             $entries->setLimit(4);
                             $entries->setOrderKey("o_creationDate");
@@ -465,14 +357,10 @@
         </div><!--/ .content-widget -->
 
     </div><!--/ .description -->
-
 </div><!--/ #newsletter-allianz -->
 
-<link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
-<script src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="/website/static/mobilku/jquery-ui.js" type="text/javascript"></script>
 
-<script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
+
 
 <script>
     // document.getElementById('tgl-hitung').value = (new Date()).format("m/dd/yy");
