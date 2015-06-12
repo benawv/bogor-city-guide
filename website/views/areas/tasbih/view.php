@@ -540,7 +540,7 @@
 
       // alert(sex);
 
-            if( asuransijiwa == '' || unfnum < 50000000 ||tanggalpembuatan == '' || tanggallahir == '' || sex == null || sex == null){
+            if( asuransijiwa == '' || unfnum < 50000000 ||tanggalpembuatan == '' || tanggallahir == '' || sex == null){
                     if( unfnum == '' || unfnum < 50000000 )
                         document.getElementById('notif-asuransijiwa').style.display= 'block';
                     if( tanggalpembuatan == '')
