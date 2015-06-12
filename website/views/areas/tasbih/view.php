@@ -218,6 +218,9 @@
                                     <div class="col-xs-6">
                                         <label class="radio-inline"><input name="jenisKelamin" value="p" type="Radio">Wanita</label>
                                     </div>
+                                    <label id="notif-jeniskelamin" style="display:none; color: #f00;">
+                                    Mohon maaf,jenis kelamin yang Anda masukan belum sesuai
+                                </label>
                                 </div>
                             </div>
                         </div><!--/ .form-group -->
@@ -535,16 +538,17 @@
             var kontribusi = $('#masa-premi option:Selected').val();
             var unfnum = accounting.unformat(asuransijiwa,0,",");
 
-        
+      // alert(sex);
 
-
-            if( asuransijiwa == '' || unfnum <= 49000000 ||tanggalpembuatan == '' || tanggallahir == ''){
+            if( asuransijiwa == '' || unfnum < 50000000 ||tanggalpembuatan == '' || tanggallahir == '' || sex == null || sex == null){
                     if( unfnum == '' || unfnum < 50000000 )
                         document.getElementById('notif-asuransijiwa').style.display= 'block';
                     if( tanggalpembuatan == '')
                         document.getElementById('notif-tglhitung').style.display= 'block';
                     if( tanggallahir == '' )
                         document.getElementById('notif-tgllahir').style.display= 'block';
+                    if( sex == null )
+                        document.getElementById('notif-jeniskelamin').style.display= 'block';
                     alert("Mohon Periksa Inputan Anda");
             }else{
 
