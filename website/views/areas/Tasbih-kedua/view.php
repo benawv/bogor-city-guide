@@ -527,7 +527,7 @@
     };
 
     function validateNama(nama){
-        var re = /^[^\\\/&]*$/;
+        var re = /^[a-zA-Z ]*$/;
         if(!re.test(nama)){
             document.getElementById('notif-nama').style.display= 'block';
             return null;
