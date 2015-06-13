@@ -183,7 +183,7 @@
                                 $color = $this->select('color_'.$i)->getData();
                             ?>
                             <div class="fixbox <?php echo $pos?>60">
-                                <div class="place-bg bg-<?php echo $color?> place-bg-gallery place-bg$i">
+                                <div class="place-bg bg-<?php echo $color?> place-bg-gallery place-bg<?php echo $i;?>">
                                     <div>
                                     <?php if($this->editmode || !$this->input("caption-title-" . $i)->isEmpty()) { ?>
                                         <h1><?php echo $this->input("caption-title-" . $i, ["width" => 251]) ?></h1>
@@ -236,9 +236,7 @@
                                     <?php } ?>
                                     </div>
                                 </div>
-                                <div class="edge e-<?php echo $color?>">
-                                    <?php echo $this->link("boxlink_".$i); ?>
-                                </div>
+                                <div class="edge e-<?php echo $color?>"><?php echo $this->link("boxlink_".$i);?></div>
                             </div>
                         </div>
                     </li>
@@ -256,25 +254,25 @@
             <div class="row">
 
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/kalkulator/tasbih" class="nav-item green sitemap">
-                        <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-
-                <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/tanya-jawab" class="nav-item orange question">
+                    <a href="/produk/asuransi-syariah/tasbih/info-produk" class="nav-item orange question">
                         <h4 style="font-size:18px"><small>Informasi produk</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
 
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
+                    <a href="/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi" class="nav-item green sitemap">
+                        <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+
+                <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users">
                         <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
 
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/inquiry-form" class="nav-item grey chat">
+                    <a href="/produk/asuransi-syariah/tasbih/minta-informasi" class="nav-item grey chat">
                         <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
@@ -529,7 +527,7 @@
                                 "date"=>$items->newsdate,
                                 "video"=>$items->video->data,
                                 "teaser"=>$items->deskripsisingkat,
-                                "link"=>"/tasbih/artikel/".$items->o_key."-".$items->o_id,
+                                "link"=>"/produk/asuransi-syariah/tasbih/artikel/".$items->o_key."-".$items->o_id,
                                 "title"=> $items->title,
                                 "images"=>$items->images->path.$items->images->filename,
                                 "thumb"=>$items->thumbnail->path.$items->thumbnail->filename
