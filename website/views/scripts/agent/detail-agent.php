@@ -74,6 +74,9 @@
     .btn.btn-sendmail.hide{
         display: none;
     }
+    .marginKantor{
+        margin-left:97px;
+    }
     @media (max-width: 768px) {
         .btn.btn-sendmail{
             display: block;
@@ -215,6 +218,8 @@
                             $namaLokasi = ucwords(strtolower($dataKantor->getNamaLokasi()));
                             $alamat = ucwords(strtolower($dataKantor->getAlamat1()."<br /> ".$dataKantor->getAlamat2()."<br /> ".$dataKantor->getAlamat3()));
                             $telp = "(".$dataKantor->getKodeAreaTelepon().") ".$dataKantor->getNomorTelepon();
+                            $telpKantor = str_replace(" ","",$dataKantor->getNomorTelepon());
+                            $expTelp = explode("-",$telpKantor);
                             $fax = "(".$dataKantor->getKodeAreaFax().") ".$dataKantor->getNomorFax();
                             $x = count($dataKantor->getFotoGaleriKantor()->items);
                             $email = strtolower($dataKantor->getEmailKantor());
@@ -223,9 +228,20 @@
                         <p>
                             <?php
                                 echo "<span id='alamat_agen'>".$alamat."</span><br />";
-                                echo "Telp. ".$telp."<br />";
                                 echo "Fax. ".$fax."<br />";
-                                echo "Hubungi Agen. ".$telp."<br />";
+                                echo "Hubungi Agen. ";
+                                $x = 1;
+                                foreach($expTelp as $key => $val){
+                                    if($x > 1){
+                                        echo "<span class='marginKantor'>(".$dataKantor->getKodeAreaTelepon().") ".$val."</span><br />";
+                                    }
+                                    else{
+                                        $callKantor = "(".$dataKantor->getKodeAreaTelepon().") ".$val;
+                                        echo "(".$dataKantor->getKodeAreaTelepon().") ".$val."<br />";
+                                    }
+                                    $x++;
+                                }
+                                //echo "Hubungi Agen. ".$telp."<br />";
                                 echo "Email Agen. <span id='email_agen'>".$emailAgent."</span>";
                             ?>
                         </p>
@@ -377,7 +393,8 @@
                     <?php } else{?>
                         <a href="javascript:void(0)" target="_top" class="btn btn-sendmail btn-email">Email Agen</a>&nbsp;
                     <?php }?>
-                    <a href="tel:<?php echo $telp;?>" target="_top" class="btn btn-sendmail hide">Hubungi Agen</a>
+                    <br />
+                    <a href="tel:<?php echo $callKantor;?>" target="_top" class="btn btn-sendmail hide">Hubungi Agen</a>
                 </div><!--/ .section-right-60 -->
             </div><!--/ .description-width-66 -->
         </div><!--/ .full-w -->
