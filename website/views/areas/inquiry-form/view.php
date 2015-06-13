@@ -291,7 +291,10 @@
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
-                        <div class="col-md-2 col-md-offset-4">
+                        <div class="col-md-4 col-md-offset-4">
+                                <label>
+                                    <input type="checkbox" class="privasi"> Saya telah membaca dan menerima <a href="/data-privasi/prinsip-privasi" target="_blank">prinsip privasi.</a>
+                                </label><br>
                             <a href="/tasbih/thankyou-minta-informasi">
                                 <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih inquiry-send" id="Submit" name="Submit" value="Kirim">
                             </a>
@@ -358,6 +361,13 @@
         }
 
         $(this).on('click', '.inquiry-send', function(e){
+
+            if($(".privasi").is(':checked')){
+                   
+            }else{
+                 alert('Anda harus menyetujui persyaratan dan ketentuan.');
+                    return false;
+            }
 
             var nama=$('#nama').val();
             var kelamin=$('input[name=jenisKelamin]:checked').val();

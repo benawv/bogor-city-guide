@@ -270,6 +270,12 @@
                                 <!--
                               <input type="button" class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next" value="Submit">
                                 -->
+                                <label>
+                                    <input type="checkbox" class="privasi"> Saya telah membaca dan menerima <a href="/data-privasi/prinsip-privasi" target="_blank">prinsip privasi.</a>
+                                    <span class="error"></span>
+                                </label><br>
+
+                                
                                 <button type="button" class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next">
                                     <i class="fa fa-envelope-o"></i> Kirim
                                 </button>
@@ -405,6 +411,13 @@
          */
 
         $('#Submit').click(function() {
+            
+            if($(".privasi").is(':checked')){
+                   
+            }else{
+                 alert('Anda harus menyetujui persyaratan dan ketentuan.');
+                    return false;
+            }
 
 
             var nama = $('#nama').val();
