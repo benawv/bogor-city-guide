@@ -270,13 +270,13 @@
 
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label><strong>Berapa <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#uangpertanggungan">uang pertanggungan</a> yang Anda butuhkan bila terjadi risiko?</strong></label>
+                                <label><strong>Berapa <a href="#" class="calc-overlay-trigger" data-toggle="modal" data-target="#uangpertanggungan">uang pertanggungan/santunan</a> yang Anda butuhkan bila terjadi risiko?</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
 
                                 <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Min Rp.50.000.000">
                                 <label id="notif-asuransijiwa" style="display:none; color: #f00;">
-                                    Mohon maaf uang pertanggungan yang Anda masukan kurang dari Rp. 50,000,000.-
+                                    Mohon maaf uang pertanggungan/santunan yang Anda masukan kurang dari Rp. 50,000,000.-
                                 </label>
                             </div><!--/ .col-md-4 -->
                         </div><!--/ .form-group -->
@@ -402,11 +402,11 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="uangpertanggunganLabel">Uang Pertanggungan</h4>
+                <h4 class="modal-title" id="uangpertanggunganLabel">Uang Pertanggungan/Santunan</h4>
               </div>
               <div class="modal-body">
                 <!--h3>5 Risiko Kehidupan</h3-->
-                <p>Uang pertanggungan yang akan diberikan bila terjadi risiko pada tertanggung.</p>
+                <p>Uang pertanggungan/santunan yang akan diberikan bila terjadi risiko pada tertanggung.</p>
               </div>
             </div>
           </div>
