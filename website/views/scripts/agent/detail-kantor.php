@@ -25,7 +25,18 @@
         background: #003da5;
         border: solid 1px #003da5;
     }
-
+    .btn.btn-sendmail.hide{
+        display: none;
+    }
+    @media (max-width: 768px) {
+        .btn.btn-sendmail{
+            display: block;
+            text-align: left;
+        }
+        .btn.btn-sendmail.hide{
+            display: block;
+        }
+    }
     .custom-section
     {
         padding: 0 !important;
@@ -90,6 +101,14 @@
                         $namaLokasi = ucwords(strtolower($row->getNamaLokasi()));
                         $alamat = ucwords(strtolower($row->getAlamat1()."<br /> ".$row->getAlamat2()."<br /> ".$row->getAlamat3()));
                         $telp = "(".$row->getKodeAreaTelepon().") ".$row->getNomorTelepon();
+                        $telpKantor = str_replace(" ","",$row->getNomorTelepon());
+                        $expTelp = explode("-",$telpKantor);
+                        //echo "<pre>";
+                        //foreach($expTelp as $key => $val)
+                        //{
+                        //    echo $val."<br />";
+                        //}
+                        //die();
                         $fax = "(".$row->getKodeAreaFax().") ".$row->getNomorFax();
                         $x = count($row->getFotoGaleriKantor()->items);
                         $email = strtolower($row->getEmailKantor());
@@ -150,11 +169,23 @@
                     <p>
                         <?php
                             echo $alamat."<br />";
-                            echo "Telp. ".$telp."<br />";
+                            echo "Telp. ";
+                            $x = 1;
+                            foreach($expTelp as $key => $val){
+                                if($x > 1){
+                                    echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (".$row->getKodeAreaTelepon().") ".$val."<br />";
+                                }
+                                else{
+                                    $callKantor = "(".$row->getKodeAreaTelepon().") ".$val;
+                                    echo "(".$row->getKodeAreaTelepon().") ".$val."<br />";
+                                }
+                                $x++;
+                            }
                             echo "Fax. ".$fax;
                         ?>
                     </p>
-                    <a href="mailto:<?php echo $email;?>?Subject=Call%20Kantor" target="_top" class="btn btn-sendmail">Kirim eMail</a>
+                    <a href="mailto:<?php echo $email;?>?Subject=Call%20Kantor" target="_top" class="btn btn-sendmail">Kirim eMail</a><br />
+                    <a href="tel:<?php echo $callKantor;?>" target="_top" class="btn btn-sendmail hide">Hubungi Kantor</a>
                 </div><!--/ .section-right-60 -->
             </div><!--/ .description-width-66 -->
         </div><!--/ .full-w -->
