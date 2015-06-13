@@ -135,6 +135,7 @@
 			$cookie->setEmail($email);
 			$cookie->setTanggalLahir($date_tglLahir);
 			$cookie->setJenisKelamin($JenisKelamin);
+			$cookie->setNohp($nohp);
 			$cookie->setUsia($Usia);
 			$cookie->setFrekuensiPembayaran($frek);
 			$cookie->setDetailAsuransiJiwa($AsuransiJiwa);
