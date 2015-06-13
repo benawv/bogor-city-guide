@@ -403,6 +403,10 @@
         /*
          * jQueryUI DatePicker
          */
+    var sex;
+    $("input:radio[name=jenisKelamin]").click(function() {
+            sex= $(this).val();
+    });
 
         $('#Kalkulasi').click(function() {
 
