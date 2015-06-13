@@ -503,7 +503,7 @@
                             'nama_agen' : '<?php echo $namaAgent;?>',
                             'lokasi' : '<?php echo $namaLokasi;?>',
                             'telp' : '<?php echo $telepon;?>',
-                            'email_agen' : <?php echo $emailAgent;?>,
+                            'email_agen' : '<?php echo $emailAgent;?>',
                             'email' : '<?php echo $email;?>'
                             },
                     success  : function(data){
@@ -526,7 +526,7 @@
                 type     : 'POST',
                 data     : {
                             'keterangan' : keterangan,
-                            'email_agen' : <?php echo $emailAgent;?>,
+                            'email_agen' : '<?php echo $emailAgent;?>',
                             'nama_agen' : '<?php echo $namaAgent;?>'
                             },
                     success  : function(data){
