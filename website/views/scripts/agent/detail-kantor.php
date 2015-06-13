@@ -28,6 +28,9 @@
     .btn.btn-sendmail.hide{
         display: none;
     }
+    .marginKantor{
+        margin-left:34px;
+    }
     @media (max-width: 768px) {
         .btn.btn-sendmail{
             display: block;
@@ -173,7 +176,7 @@
                             $x = 1;
                             foreach($expTelp as $key => $val){
                                 if($x > 1){
-                                    echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (".$row->getKodeAreaTelepon().") ".$val."<br />";
+                                    echo "<span class='marginKantor'>(".$row->getKodeAreaTelepon().") ".$val."</span><br />";
                                 }
                                 else{
                                     $callKantor = "(".$row->getKodeAreaTelepon().") ".$val;
