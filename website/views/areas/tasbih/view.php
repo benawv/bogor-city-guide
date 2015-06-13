@@ -193,7 +193,7 @@
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
     <div class="description">
 
-        <div class="header-calc" style="background-color:#707372;">
+        <div class="header-calc">
             <h1>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
         </div><!--/ .header-calc -->
 
