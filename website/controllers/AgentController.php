@@ -228,7 +228,7 @@ class AgentController extends Website_Controller_Action {
         $keterangan = $_POST["keterangan"];
         $nama_agen = $_POST["nama_agen"];
         $lokasi_agen = $_POST["lokasi"];
-        $email_agen = $_POST["email"];
+        $email_agen = $_POST["email_agen"];
         $telp_agen = $_POST["telp"];
 
 		// harusnya ini jadi  class Object_Abstract untuk email(sementara static harus cepet ganti !!!!!)
@@ -246,9 +246,11 @@ class AgentController extends Website_Controller_Action {
         $Kontribusi = $session->Kontribusi;
         $Calculation = $session->Calculation;
 		$idObject = $session->idObject;
+		
+		$ket = $_POST["keterangan"];
 
 		$update = Object_Tasbih::getById($idObject);
-		$update->setKeterangan($_POST["keterangan"]);
+		$update->setKeterangan($ket);
 		$update->save();
 
 		$date_tglBuat1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglBuat)));
@@ -286,7 +288,8 @@ class AgentController extends Website_Controller_Action {
 						'pembayaran' => $hasil,
 						'frek' => $frek,
 						'JK' => $JK,
-						'nohp' => $nohp
+						'nohp' => $nohp,
+						'ket' => $ket
 						);
 		$bodyEmail = "Tanggal Perhitungan: ".$date_tglBuat1."<br>Nama: ".$nama."<br>
 		No Handphone: ".$nohp."<br>Email: ".$email."<br>Tanggal Lahir: ".$date_tglLahir1."<br>
@@ -316,7 +319,7 @@ class AgentController extends Website_Controller_Action {
 		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 		$mail->setDocument($document);
 		$mail->setParams($params);
-		$mail->addTo($email);
+		$mail->addTo($email_agen);
 		$mail->addBcc(array("asn.tasbih@gmail.com","developer@dreamcube.co.id"));
 		$mail->send();
 
@@ -338,6 +341,8 @@ class AgentController extends Website_Controller_Action {
 		$email = $session->email;
 		$objProv = $session->provinsi;
 		$pesan = $session->pesan;
+		
+		$email_agen = $_POST["email_agen"];
 		
 		$update = Object_TasbihInquiry::getById($idObject);
 		$update->setKeterangan($_POST["keterangan"]);
@@ -375,7 +380,7 @@ class AgentController extends Website_Controller_Action {
 		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 		$mail->setDocument($document);
 		$mail->setParams($params);
-		$mail->addTo($email);
+		$mail->addTo($email_agen);
 		$mail->addBcc(array("asn.tasbih@gmail.com","developer@dreamcube.co.id"));
 		$mail->send();
 
