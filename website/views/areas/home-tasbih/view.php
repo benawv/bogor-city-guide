@@ -24,7 +24,7 @@
             height:auto;
         }
         .slide .fixbox .edge{
-            height: 29px;
+            height: 29px !important;
         }
         nav.main-navigation a.nav-item
         {
