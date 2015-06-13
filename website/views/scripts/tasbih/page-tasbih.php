@@ -16,6 +16,14 @@
             display: block !important;
         }
     }
+    @media only screen and (max-width:600px){
+        .heading.clearfix.pagenav {
+            display: none;
+        }
+        .backg{
+            padding-top: 10px;
+        }
+    }
 </style>
 
 <?php echo $this->areablock(
