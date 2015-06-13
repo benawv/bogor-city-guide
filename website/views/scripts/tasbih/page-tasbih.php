@@ -9,6 +9,15 @@
 <script src="/website/ajfc/js/zabuto_calendar.min.js"></script>
 <script src="/website/ajfc/js/javascripts.js"></script>
 
+<!--ROBBI-->
+<style>
+    @media only screen and (min-width:768px){
+        #membername {
+            display: block !important;
+        }
+    }
+</style>
+
 <?php echo $this->areablock(
     'halaman-tasbih',
     array(
