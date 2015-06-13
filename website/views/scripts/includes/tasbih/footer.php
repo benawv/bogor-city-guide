@@ -32,7 +32,7 @@
 	<?php
 		$db = Pimcore_Resource_Mysql::get();
 		$sql = "SELECT o_id FROM objects
-				where o_key = 'footer-tasbih'";
+				where o_key = 'footer'";
 		$footer = $db->fetchAll($sql);
 		$idFooter = $footer[0][o_id];
 		
@@ -44,35 +44,34 @@
 	?>
 		<div class="container clearfix mw960">
 			<ul class="footer-links level1">
-				<?php foreach ($footerAJFC as $row){?>
+				<?php foreach ($footerList as $row){?>
 					<li class="left wi200">
-						<!--<a>-->
+						<a>
 							<?php
-								echo $row->getLink();
-								//$title = explode("-", $row[o_key]);
-								//foreach ($title as $jdl)
-								//{
-								//	echo strtoupper(substr($jdl, 0, 1))."".substr($jdl, 1)." ";
-								//}
+								$title = explode("-", $row[o_key]);
+								foreach ($title as $jdl)
+								{
+									echo strtoupper(substr($jdl, 0, 1))."".substr($jdl, 1)." ";
+								}
 							?>
-						<!--</a>-->
-						<!--<ul class="level2">-->
+						</a>
+						<ul class="level2">
 							<?php
-								//$sql3 = "SELECT o_id FROM objects
-								//		where o_parentId = '".$row[o_id]."'";
-								//$list = $db->fetchAll($sql3);
-								//foreach ($list as $row2){
-								//	$entries = new Object_Footer_List();
-								//	$entries->setCondition('oo_id="'.$row2[o_id].'"');
-								//	foreach ($entries as $data)
-								//	{
+								$sql3 = "SELECT o_id FROM objects
+										where o_parentId = '".$row[o_id]."'";
+								$list = $db->fetchAll($sql3);
+								foreach ($list as $row2){
+									$entries = new Object_Footer_List();
+									$entries->setCondition('oo_id="'.$row2[o_id].'"');
+									foreach ($entries as $data)
+									{
 							?>
-										<!--<li><?php //echo $data->getLink();?></li>-->
+										<li><?php echo $data->getLink();?></li>
 							<?php
-								//	}
-								//}
+									}
+								}
 							?>
-						<!--</ul>-->
+						</ul>
 					</li>
 				<?php }?>
 				
