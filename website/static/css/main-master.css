@@ -2952,6 +2952,11 @@ strong {
         width: 660px;
     }
 }
+@media only screen and (max-width: 767px) and (min-width: 620px) {
+    #membername {
+        display: none;
+    }
+}
 @media only screen and (max-width: 768px) and (min-width: 620px) {
     .boxes-view .items-container .item_visimisi {
         width: 647px !important;
@@ -2971,9 +2976,6 @@ strong {
     }
     .combo_year {
         margin: 0px;
-    }
-    #membername {
-        display: none;
     }
     div.float_tujuan_finansial {
         width: 550px;
