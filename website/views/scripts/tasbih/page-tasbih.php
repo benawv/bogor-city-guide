@@ -13,22 +13,33 @@
     'halaman-tasbih',
     array(
         'allowed' => array(
-            'sudah-submit',
-            'pendaftaran',
-            'daftar-peserta',
-            'thanks-page',
             'expire-page',
             'home-tasbih',
             'table-text',
             'table-li',
-            'proses-seleksi',
-            'galeri-ajfc',
             'cari-agen-syariah',
             'inquiry-form',
-            'tasbih-news',
             'tasbih-news-detail',
-            'tanya-jawab-tasbih'
-        )
+            'tanya-jawab-tasbih',
+            'mobilku','tasbih', 
+            'tasbih-news', 'payment',
+            'smartmed','liveinsurance',
+            'thanksyou-liveinsurance',
+            'container-box2',
+            'community-tips2',
+            'sections',
+            'sections-box-full', 'sections-tab', 'teks-tabs',
+            'sections-video', 'sections-gallery',
+            'sections-select', 'tekskanan60-imagekiri40_wizard',
+            'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
+            'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
+            'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
+            'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
+            'tanya-jawab-tasbih',
+            'smartlink-factsheet', 'syariah-factsheet',
+            'pension-factsheet', 'saving-factsheet','multi-video',
+            'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 
+            'brosur','kalkulator-investasi','Tasbih-kedua','thankyou-tasbih','thankyou-inquiry')
     )
 );
 ?>

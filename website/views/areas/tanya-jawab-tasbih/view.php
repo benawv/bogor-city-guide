@@ -37,37 +37,31 @@
     nav.main-navigation a.nav-item::after{
         font-size: 20px !important; /*icon di button*/
     }
-
-
     nav.main-navigation a.nav-item.blueA{ background: #003781; }
     nav.main-navigation a.nav-item.greenChat{ background: #B20065; }
     nav.main-navigation a.nav-item.blueA::before { background: #3122F9; }
     body { text-align: left; }
-
     .faq-item--answer
     {
         padding-left: 16px;
         padding-right: 16px;
     }
-
     .faq-item--question h4
     {
         color: #003781;
         font-weight: bold;
     }
-
     .content-widget
     {
         border-top: 1px solid #DDD;
-        padding: 16px 20px;
+        /*padding: 16px 20px;*/
+        padding: 16px 0;
         margin-bottom: 32px;
     }
-
     .content-widget h4
     {
         margin-bottom: 8px;
     }
-
     .content-widget ul,
     .content-widget ol,
     .content-widget li,
@@ -75,7 +69,6 @@
         margin: 0 auto !important;
         padding: 0 !important;
     }
-
     .content-widget li
     {
         margin: 0;
@@ -85,7 +78,6 @@
         position: relative;
         line-height: 30px;
     }
-
     .content-widget li a
     {
         color: black;
@@ -93,7 +85,6 @@
         font-weight: bold;
         position: relative;
     }
-
     .content-widget li a:hover,
     .content-widget li a:focus
     {
@@ -101,7 +92,6 @@
         outline: none;
         color: #009a44;
     }
-
     .content-widget li a small,
     .content-widget li a span
     {
@@ -121,14 +111,30 @@
         font-weight: normal;
         margin-top: -10px;
     }
-
+    .force-margin {
+        margin-left: -15px;
+        margin-right: 15px;
+    }
+    .force-faq {
+        padding: 25px 36px 0 10px !important;
+    }
     @media (min-width: 1200px){
         .container{
             max-width: 989px;
         }
-
     }
-
+    @media (max-width: 640px){
+        .force-margin {
+            margin-right: -15px !important;
+        }
+        .force-faq {
+            padding: 25px 0 0 0 !important;
+            margin-left: -5px;
+        }
+        .force-baca {
+            margin-left: -5px !important;
+        }
+    }
 </style>
 
 
@@ -181,27 +187,27 @@
         <nav class="main-navigation" style="max-width:960px; margin: 0 auto;">
             <div class="row">
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
-                    <a href="/tasbih" class="nav-item blueA home" style="height: 48px !important;">
+                    <a href="/produk/asuransi-syariah/tasbih" class="nav-item blueA home" style="height: 48px !important;">
                         <h4 style="font-size:18px"><small>Beranda</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/kalkulator/tasbih" class="nav-item green sitemap" style="height: 48px !important;">
-                        <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
-                    </a>
-                </div><!--/ .col-xs-12 -->
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/tanya-jawab" class="nav-item orange question" style="height: 48px !important;">
+                    <a href="/produk/asuransi-syariah/tasbih/info-produk" class="nav-item orange question" style="height: 48px !important;">
                         <h4 style="font-size:18px"><small>Informasi produk</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users" style="height: 48px !important;">
+                    <a href="/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi" class="nav-item green sitemap" style="height: 48px !important;">
+                        <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
+                    </a>
+                </div><!--/ .col-xs-12 -->
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users" style="height: 48px !important;">
                         <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/tasbih/inquiry-form" class="nav-item grey chat" style="height: 48px !important;">
+                    <a href="/produk/asuransi-syariah/tasbih/minta-informasi" class="nav-item grey chat" style="height: 48px !important;">
                         <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
@@ -211,15 +217,7 @@
 
 
     <div class="container boxes-view">
-        <div>
-
-            <?php
-                function limit_words($string, $word_limit)
-                {
-                    $words = explode(" ",$string);
-                    return implode(" ",array_splice($words,0,$word_limit));
-                }
-            ?>
+        <div class="force-margin">
 
             <?php echo $this->areablock('container', array('allowed' => array(
                 'mobilku','tasbih', 'tasbih-news', 'payment','smartmed','liveinsurance','thanksyou-liveinsurance'.'container-box2', 'community-tips2',
@@ -244,18 +242,15 @@
 
     <script type="text/javascript">
         $(document).ready(function(){
-
             $( 'li.aktif .nav_menu div' ).css( 'display', 'none' );
             $( 'li .nav_menu .white_image' ).css( 'display', 'none' );
             $( 'li.aktif .nav_menu .white_image' ).css( 'display', 'block' );
             var hash = window.location.hash.substring(1);
-
             if( hash != '' )
             {
                 var target = '#modal-' + hash;
                 $( target ).modal( 'show' );
             }
-
             $( ".pagenav .navi li" ).click(function(){
                 $(".pagenav .navi li").removeClass('aktif');
                 $(".pagenav .navi li .nav_menu div").css('display','block');
@@ -290,7 +285,7 @@
                         'sections', 'sections-box-full'))); ?>
 
                     <div style="clear:both; "></div>
-                    <div class="main-content">   
+                    <div class="main-content force-faq">   
 
                         <div id="tanyajawab" class="main-content--header">
                             <h2 class="mb12">
@@ -330,7 +325,7 @@
                         </div><!--/ .faq-wrapper -->
 
 
-                        <div class="content-widget">
+                        <div class="content-widget force-baca">
                             <div class="row">
                                 <div class="col-xs-12">
                                     <h4><strong>BACA JUGA</strong></h4>
@@ -343,7 +338,7 @@
                                             foreach ($entries as $key) {
                                          ?>
                                             <li>
-                                                <a href="tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                                <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
                                                     <?php echo $key->title; ?>
                                                 </a>
                                                 <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
