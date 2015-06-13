@@ -403,89 +403,51 @@
         /*
          * jQueryUI DatePicker
          */
-    var sex;
-    $("input:radio[name=jenisKelamin]").click(function() {
-            sex= $(this).val();
-    });
-
-        $('#Kalkulasi').click(function() {
-
-        //get current date format //dd/yy/mm
-        var fullDate = new Date()
-        var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
-        var currentDate = twoDigitMonth + "/" +fullDate.getDate() + "/" +  fullDate.getFullYear();
-
-            var tanggalpembuatan = currentDate;
-            var tanggallahir = $('#tgl-lahir').val();
-
-            // var sex = $('#JenisKelamin option:Selected').val();
-            var usia = $('#usia').val();
-            var frekuensi = $('#Frekuensi option:Selected').val();
-            console.log("rek"+frekuensi);
-            var asuransijiwa = $('#asuransi-jiwa').val();
-            var kontribusi = $('#masa-premi option:Selected').val();
-            var unfnum = accounting.unformat(asuransijiwa,0,",");
-
-        
+ $('#Submit').click(function() {
 
 
-            if( asuransijiwa == '' || unfnum < 50000000 ||tanggalpembuatan == '' || tanggallahir == '' || sex == null){
-                    if( unfnum == '' || unfnum < 50000000 )
-                        document.getElementById('notif-asuransijiwa').style.display= 'block';
-                    if( tanggalpembuatan == '')
-                        document.getElementById('notif-tglhitung').style.display= 'block';
-                    if( tanggallahir == '' )
-                        document.getElementById('notif-tgllahir').style.display= 'block';
-                    if( sex == null )
-                        document.getElementById('notif-jeniskelamin').style.display= 'block';
+            var nama = $('#nama').val();
+            var email = $('#email').val();
+            var nohp = $('#nohp').val();
+
+
+            if( nama == '' ||email == '' || nohp == '' || nohp.length <= 8){
+                    if( nama == ''  )
+                        document.getElementById('notif-nama').style.display= 'block';
+                    if( email == '' )
+                        document.getElementById('notifemail').style.display= 'block';
+                    if( nohp.length <= 8 || no.hp == '')
+                        document.getElementById('notifNoHP').style.display='block';
                     alert("Mohon Periksa Inputan Anda");
             }else{
 
-
-
-        $.ajax({
-                url      : '/kalkulator-tasbih/',
-                type     : 'POST',
-                data     : {
-                            'tgl' : tanggalpembuatan,
-                            'tanggallahir' : tanggallahir,
-                            'sex' : sex,
-                            'usia' : usia,
-                            'frekuensi' : frekuensi,
-                            'asuransijiwa' : unfnum,
-                            'AJ' : asuransijiwa,
-                            'kontribusi' : kontribusi
-                            },
-                    success  : function(data){
-                    //console.log(data);
-            $('.waiting-calc').hide();
-                    $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
-                   document.location.href='/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi-identitas';
-                }
-
-
-            });
-
-
+              $.ajax({
+                  url      : '/tasbih-kedua/',
+                  type     : 'POST',
+                  data     : {
+                              'nama' : nama,
+                              'email' : email,
+                              'nohp' : nohp
+                              },
+                      success  : function(data){
+                        //console.log(data);
+                        //console.log(data);
+                        $('.waiting-calc').hide();
+                        $('.result-calc').show();
+                        //$('#hasil').val(accounting.formatMoney(data, "Rp ", 0,","));
+                        document.location.href = "/produk/asuransi-syariah/tasbih/kalkulator/thankyou";
+                      }
+              });
             }
-
         });
 
     });
     $(function() {
-        var d = new Date();
-        var y = d.getFullYear();
-        minyear = y - 55;
-        maxyear = y - 18;
-        range = minyear+':'+maxyear;
-        def = '1/1/'+minyear;
        $('#tgl-hitung, #tgl-lahir').datepicker({
-            defaultDate: def,
-            changeMonth: true,
-            changeYear: true,
-            yearRange: range
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "-100:+0"
         });
-
     });
 
     $(document).ready(function(){
@@ -581,7 +543,3 @@
             });
 
 </script>
-
-<!--
-</div>
--->
