@@ -194,7 +194,7 @@
     <div class="description">
 
         <div class="header-calc" style="background-color:#707372;">
-            <h1>FORM MINTA INFORMASI</h1>
+            <h1>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
         </div><!--/ .header-calc -->
 
         <div class="content-calc">
@@ -325,7 +325,6 @@
                     </div><!--/ .form-group -->
 
                 </div>
-\
 
             </div><!--/ .col-md-12 -->
         </div><!--/ .content-calc -->
@@ -359,6 +358,7 @@
     </div><!--/ .description -->
 </div><!--/ #newsletter-allianz -->
 
+</div>
 
 
 
