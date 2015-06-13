@@ -23,6 +23,9 @@
             width:100%;
             height:auto;
         }
+        .slide .foto .fixbox .edge{
+            height: 29px;
+        }
         nav.main-navigation a.nav-item
         {
             display: block;
