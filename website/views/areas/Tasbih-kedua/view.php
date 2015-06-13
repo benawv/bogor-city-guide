@@ -364,16 +364,16 @@
 
 <script>
     // document.getElementById('tgl-hitung').value = (new Date()).format("m/dd/yy");
+    window.onload = function(){
+
+    }
+
     $(document).ready(function(){
 
         /**
          * Calculator Pop-Up
          */
 
-        $('[data-toggle="tooltip"]').tooltip({
-        placement : 'bottom'
-    });
-        
         if( $( 'a.calc-overlay-trigger' ).length > 0 )
         {
             $( 'a.calc-overlay-trigger' ).click(function(e){
@@ -403,7 +403,8 @@
         /*
          * jQueryUI DatePicker
          */
- $('#Submit').click(function() {
+
+        $('#Submit').click(function() {
 
 
             var nama = $('#nama').val();
@@ -543,3 +544,7 @@
             });
 
 </script>
+
+<!--
+</div>
+-->
