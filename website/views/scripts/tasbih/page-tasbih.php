@@ -12,7 +12,7 @@
 <!--ROBBI-->
 <style>
     @media only screen and (min-width:768px){
-        #membername {
+        .customAnchorHide #membername {
             display: block !important;
         }
     }
