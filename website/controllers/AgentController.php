@@ -265,15 +265,16 @@ class AgentController extends Website_Controller_Action {
 			$JK = 'Wanita';
 		}
 	
-		if($Frekuensi == 1){
-			$frek = 'Tahunan';
-		}
-		else if($Frekuensi == 2){
-			$frek = 'Semesteran';
-		}
-		else{
-			$frek = 'Triwulan';
-		}
+		//if($Frekuensi == 1){
+		//	$frek = 'Tahunan';
+		//}
+		//else if($Frekuensi == 2){
+		//	$frek = 'Semesteran';
+		//}
+		//else{
+		//	$frek = 'Triwulan';
+		//}
+		$frek = $Frekuensi;
 
 		$hasil = number_format($Calculation,0,",",".");
 		$document = '/email/email-agentasbih';
