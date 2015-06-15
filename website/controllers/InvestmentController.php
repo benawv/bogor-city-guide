@@ -446,7 +446,7 @@ class InvestmentController extends Website_Controller_Action
         
          $getLastDay1M="SELECT LAST_DAY(STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y')) AS last_one_month 
                         FROM $nameCommunity 
-                        WHERE STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y') > DATE_ADD(NOW(), INTERVAL- 2 MONTH)
+                        WHERE STR_TO_DATE(FROM_UNIXTIME(unitdate,'%d-%m-%Y'), '%d-%m-%Y') > DATE_ADD(NOW(), INTERVAL- 1 MONTH)
                         ORDER BY unitdate ASC
                         LIMIT 1 ";
         $lastday1M=$db->fetchAll($getLastDay1M);   
