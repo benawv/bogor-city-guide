@@ -456,10 +456,7 @@
         /*
          * jQueryUI DatePicker
          */
-    var sex;
-    $("input:radio[name=jenisKelamin]").click(function() {
-            sex= $(this).val();
-    });
+
 
         $('#Kalkulasi').click(function() {
 
@@ -477,9 +474,10 @@
             console.log("rek"+frekuensi);
             var asuransijiwa = $('#asuransi-jiwa').val();
             var kontribusi = $('#masa-premi option:Selected').val();
+            var sex= $("input:radio[name=jenisKelamin]:checked").val();
             var unfnum = accounting.unformat(asuransijiwa,0,",");
 
-        
+        //alert(sex);
 
 
             if( asuransijiwa == '' || unfnum < 50000000 ||tanggalpembuatan == '' || tanggallahir == '' || sex == null){
@@ -525,6 +523,11 @@
         });
 
     });
+    
+            $('input[name=jenisKelamin]').change(function(){
+                document.getElementById('notif-jeniskelamin').style.display= 'none';
+            });
+    
     $(function() {
         var d = new Date();
         var y = d.getFullYear();
