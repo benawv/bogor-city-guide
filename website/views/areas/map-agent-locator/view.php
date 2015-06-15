@@ -466,7 +466,7 @@
                             //console.log(item.sub_kordinat[loop]);
                             satuGedung = satuGedung+'<a href="/detail-kantor/'+item.sub_kordinat[loop].o_key+"-"+item.sub_kordinat[loop].o_id+'" style="display:block;margin-top:5px;"><strong>'+NamaLokasi2+'</strong></a>';
                         }
-                        var data_content = '<div class="content cusContent" style="width:160px;max-height:200px;overflow:scroll;">'+
+                        var data_content = '<div class="content cusContent" style="width:165px;max-height:200px;overflow-y:scroll;">'+
 											'<div id="siteNotice"></div>'+
 											'<img src="/website/static/images/allianz-eagle-3d.png" height="50" width="50" />'+
 											'<h2 id="firstHeading" class="firstHeading">'+NamaLokasi+'</h2>'+

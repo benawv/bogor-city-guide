@@ -48,27 +48,27 @@
     <nav class="main-navigation" style="max-width:960px; margin:auto;">
         <div class="row">
             <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;margin:auto; !important">
-                <a href="/tasbih" class="nav-item blueA home">
+                <a href="/produk/asuransi-syariah/tasbih" class="nav-item blueA home">
                     <h4 style="font-size:18px"><small>Beranda</small></h4>
                 </a>
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                <a href="/kalkulator/tasbih" class="nav-item green sitemap">
-                    <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
-                </a>
-            </div><!--/ .col-xs-12 -->
-            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                <a href="/tasbih/tanya-jawab" class="nav-item orange question">
+                <a href="/produk/asuransi-syariah/tasbih/info-produk" class="nav-item orange question">
                     <h4 style="font-size:18px"><small>Informasi produk</small></h4>
                 </a>
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                <a href="http://agen.imkepo.com" target="_blank" class="nav-item red users">
+                <a href="/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi" class="nav-item green sitemap">
+                    <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
+                </a>
+            </div><!--/ .col-xs-12 -->
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+                <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users">
                     <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                 </a>
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                <a href="/tasbih/inquiry-form" class="nav-item grey chat">
+                <a href="/produk/asuransi-syariah/tasbih/minta-informasi" class="nav-item grey chat">
                     <h4 style="font-size:18px"><small>Minta Informasi</small></h4>
                 </a>
             </div><!--/ .col-xs-12 -->
@@ -192,7 +192,7 @@
                             <label><strong>Nama Anda?</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="name" class="form-control" id="nama" placeholder="Nama" required onfocusout="this.value=validateNama(this.value)">
+                            <input type="name" class="form-control" id="nama" placeholder="Nama" required />
                             <label id="notif-nama" style="display:none; color: #f00;">
                                 Mohon maaf Anda belum atau salah memasukkan nama
                             </label>
@@ -213,9 +213,6 @@
                                 <div class="col-xs-6">
                                     <label class="radio-inline"><input type="Radio" style="display: block;" name="jenisKelamin" value="p" style="display:block">Wanita</label>
                                 </div>
-                                <label id="notifJK" style="display:none; color: #f00;">
-                                Mohon maaf Anda belum memilih jenis kelamin
-                            </label>
                             </div><!--/ .row -->
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -283,20 +280,22 @@
                             <label><strong>Pesan</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            
+                            <label id="notifPesan" style="display:none; color: #f00;">
+                                Mohon maaf, Anda harus mengisi pesan.
+                            </label>
                             <textarea cols="35" rows="10" class="form-control" placeholder="Tuliskan Pesan Anda disini Maksimal 250 Kata" id="pesan" ></textarea>
                             <label id="notifemail" style="display:block; font-size:10px; color: #f00;">
                                 Sisa karakter yang Anda tulis : <span id="counterString">250</span>  Kata
-                            </label>
-                            <label id="notifPesan" style="display:none; color: #f00;">
-                                Mohon maaf inputan yang Anda masukkan melebihi batas jumlah karakter
                             </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
-                        <div class="col-md-2 col-md-offset-4">
-                            <a href="/tasbih/thankyou-inquiry">
+                        <div class="col-md-4 col-md-offset-4">
+                                <label>
+                                    <input type="checkbox" class="privasi"> Saya telah membaca dan menerima <a href="/data-privasi/prinsip-privasi" target="_blank">prinsip privasi.</a>
+                                </label><br>
+                            <a href="/tasbih/thankyou-minta-informasi">
                                 <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih inquiry-send" id="Submit" name="Submit" value="Kirim">
                             </a>
                         </div><!--/ .col-md-12 -->
@@ -322,7 +321,7 @@
                             foreach ($entries as $key) {
                          ?>
                             <li>
-                                <a href="tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
                                     <?php echo $key->title; ?>
                                 </a>
                                 <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
@@ -363,6 +362,13 @@
 
         $(this).on('click', '.inquiry-send', function(e){
 
+            if($(".privasi").is(':checked')){
+                   
+            }else{
+                 alert('Anda harus menyetujui persyaratan dan ketentuan.');
+                    return false;
+            }
+
             var nama=$('#nama').val();
             var kelamin=$('input[name=jenisKelamin]:checked').val();
             var bod=$('#DOB').val();
@@ -371,9 +377,9 @@
             var prov=$('#provinsi_id').val();
             var pesan=$('#pesan').val();
 
-            
+            //alert(bod);
 
-            if( nama == '' || email == '' || nohp == '' || bod == '' ||  nohp.length <= 8 || prov == '' || pesan == '' || kelamin == null){
+            if( nama == '' || email == '' || nohp == '' || bod == '' ||  nohp.length <= 8 || prov == '' || pesan == ''){
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
                     if( email == '' )
@@ -386,13 +392,11 @@
                         document.getElementById('notifNoHP').style.display='block';
                     if( pesan == '' )
                         document.getElementById('notifPesan').style.display= 'block';
-                    if( kelamin == null)
-                        document.getElementById('notifJK').style.display= 'block';
                     alert("Mohon Periksa Inputan Anda");
             }else{
             e.preventDefault();
             $.ajax({
-                 "url" : "/inquiry-tasbih/",
+                 "url" : "/inquriy-tasbih/",
                  "type" : "POST",
                  "data" : "nama="+ nama +
                           "&kelamin="+kelamin+
@@ -403,7 +407,7 @@
                           "&pesan="+pesan,
                  "success" : function(response){
                     if (response == "success") {
-                        window.location = "/tasbih/thankyou-inquiry";
+                        window.location = "/produk/asuransi-syariah/tasbih/thankyou-minta-informasi";
                     }
                  }
              });
@@ -493,9 +497,7 @@
         var max = 250;
 
         if(n > max){
-               document.getElementById('notifPesan').style.display= 'block';
-        }else{
-            document.getElementById('notifPesan').style.display= 'none';
+               $('#pesan').attr('readonly','readonly');
         }
 
         $('#counterString').html(250-n);
@@ -525,16 +527,7 @@
 
     });
 
-function validateNama(nama){
-        var re = /^[a-zA-Z ]*$/;
-        if(!re.test(nama)){
-            document.getElementById('notif-nama').style.display= 'block';
-            return null;
-        }else{
-            document.getElementById('notif-nama').style.display= 'none';
-            return nama;
-        }
-    };
+
 
     function validateNumber(value){
         if(value.length <= 8 ){

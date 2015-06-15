@@ -54,7 +54,7 @@
 	        $date_tglLahir= new Pimcore_Date($TanggalLahir);//set date into pimcore formats		
 
             $session = new Zend_Session_Namespace('tasbih');
-            $session->date_tglBuat = $tglBuat;
+            $session->date_tglBuat = $date_tglBuat;
             $session->date_tglLahir = $date_tglLahir;
             $session->JenisKelamin = $JenisKelamin;
             $session->Usia = $Usia;

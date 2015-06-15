@@ -246,9 +246,11 @@ class AgentController extends Website_Controller_Action {
         $Kontribusi = $session->Kontribusi;
         $Calculation = $session->Calculation;
 		$idObject = $session->idObject;
+		
+		$ket = $_POST["keterangan"];
 
 		$update = Object_Tasbih::getById($idObject);
-		$update->setKeterangan($_POST["keterangan"]);
+		$update->setKeterangan($ket);
 		$update->save();
 
 		$date_tglBuat1 = date("d/m/Y",strtotime(new Pimcore_Date($session->date_tglBuat)));
@@ -273,7 +275,7 @@ class AgentController extends Website_Controller_Action {
 		}
 
 		$hasil = number_format($Calculation,0,",",".");
-		$document = '/email/email-agen-tasbih';
+		$document = '/email/email-agentasbih';
 		$params = array(
 						'tglhitung' => $date_tglBuat1,
 						'namaAgen' => $_POST["nama_agen"],
@@ -286,7 +288,8 @@ class AgentController extends Website_Controller_Action {
 						'pembayaran' => $hasil,
 						'frek' => $frek,
 						'JK' => $JK,
-						'nohp' => $nohp
+						'nohp' => $nohp,
+						'ket' => $ket
 						);
 		$bodyEmail = "Tanggal Perhitungan: ".$date_tglBuat1."<br>Nama: ".$nama."<br>
 		No Handphone: ".$nohp."<br>Email: ".$email."<br>Tanggal Lahir: ".$date_tglLahir1."<br>
@@ -316,8 +319,8 @@ class AgentController extends Website_Controller_Action {
 		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 		$mail->setDocument($document);
 		$mail->setParams($params);
-		$mail->addTo($email);
 		$mail->addBcc("asn.tasbih@gmail.com");
+		$mail->addTo($email);
 		$mail->send();
 
 		Zend_Session::namespaceUnset('tasbih');
@@ -352,7 +355,7 @@ class AgentController extends Website_Controller_Action {
 			$JK = 'Wanita';
 		}
 
-		$document = '/email/email-agen-inquiry';
+		$document = '/email/email-ageninquiry';
 		$params = array(
 						'nama' => $nama,
 						'namaAgen' => $_POST["nama_agen"],
@@ -398,11 +401,12 @@ class AgentController extends Website_Controller_Action {
 		$new->setFromEmail($params['email']);
 		$new->setFromName($params['nama']);
 		$new->setFromNoTelp($params['nohp']);
+		$new->setTglLahir(new Pimcore_Date($session->date_tglLahir));
 		$new->setTypeForm('TasbihKalkulator');
-		$new->setO_key($paramsLocator['nama_agen'].'_'.$params['nama'].'_'.strtotime(date("Y/m/d,H.i.s")).'_'.strtotime(date("YmdHis")));
+		$new->setKey(strtolower(str_replace(" ","-",$paramsLocator['nama_agen'])).'_'.strtolower(str_replace(" ","-",$params['nama'])).'_'.strtotime(date("Y/m/d,H.i.s")).'_'.strtotime(date("YmdHis")));
 		$new->setO_parentId($getId->o_id);
-		$new->setO_index(0);
-		$new->setO_published(1);
+		$new->setIndex(0);
+		$new->setPublished(1);
 		$new->save();
 	}
 
