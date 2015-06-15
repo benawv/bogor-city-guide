@@ -288,7 +288,7 @@
                             <label>Nama</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" placeholder="Nama Anda" id="nama" tabindex="6" maxlength="32" required>
+                            <input type="text" class="form-control" placeholder="Nama Anda" id="nama" tabindex="6" maxlength="32" required onfocusout="this.value=validateNama(this.value)">
                             <label id="notif-nama" style="display:none; color: #f00;">Maaf Anda Belum Memasukkan Nama</label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -470,6 +470,7 @@
             var email = $('#email').val();
             var tanggallahir = $('#tgl-lahir').val();
             var usia = $('#usia').val();
+            //var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
          
             
             if(nama == '' || nohp == '' || gender == 'Pilih' || uangpertanggungan == 'Pilih' || cia == 'Pilih' || smoking == 'Pilih' || email == '' || nohp.length < 8 || tanggallahir == ''){
@@ -494,7 +495,7 @@
                 if(tanggallahir == ''){
                     document.getElementById('notif-tgllahir').style.display = 'block';
                 }
-                if(email == ''){
+                if(email == '' || re.test(email)){
                     document.getElementById('notif-email').style.display = 'block';
                 }
             }else{
@@ -615,6 +616,17 @@
                 return surat;
             }
         };
+    
+        function validateNama(nama){
+        var re = /^[a-zA-Z ]*$/;
+        if(!re.test(nama)){
+            document.getElementById('notif-nama').style.display= 'block';
+            return null;
+        }else{
+            document.getElementById('notif-nama').style.display= 'none';
+            return nama;
+        }
+    };
         
             function validateNumber(value){
         if(value.length <= 8 ){
