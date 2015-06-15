@@ -285,7 +285,7 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <label id="notifPesan" style="display:none; color: #f00;">
-                                Mohon maaf Anda memasukkan pesan lebih dari 250 karakter
+                                Mohon maaf Anda harus memasukkan pesan 1 - 250 karakter
                             </label>
                             <textarea cols="35" rows="10" class="form-control" placeholder="Tuliskan Pesan Anda disini Maksimal 250 Kata" id="pesan" ></textarea>
                             <label id="notifemail" style="display:block; font-size:10px; color: #f00;">
@@ -384,7 +384,7 @@
 
             //alert(bod);
 
-            if( nama == '' || email == '' || nohp == '' || bod == '' ||  nohp.length <= 8 || prov == 'Pilih' || pesan == '' || kelamin == null){
+            if( nama == '' || email == '' || nohp == '' || bod == '' ||  nohp.length <= 8 || prov == 'Pilih' || pesan == '' || kelamin == null || $('#pesan').val().length >250){
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
                     if( email == '' )
@@ -395,7 +395,7 @@
                         document.getElementById('notifProvinsi').style.display= 'block';
                     if( nohp.length <= 8 || nohp == '')
                         document.getElementById('notifNoHP').style.display='block';
-                    if( pesan == '' )
+                    if( pesan == '' ||$('#pesan').val().length >250)
                         document.getElementById('notifPesan').style.display= 'block';
                     if( kelamin == null )
                         document.getElementById('notifJK').style.display= 'block';

@@ -106,9 +106,42 @@ $(document).ready(function(){
 
         $('#cari-agen').click(function() {
             
-            
+                            var premi = '<?php echo $session->premi; ?>'
+                            var nama = '<?php echo $session->nama; ?>'
+                            var email = '<?php echo $session->email; ?>'
+                            var nohp = '<?php echo $session->nohp; ?>'
+                            var gender = '<?php echo $session->gender; ?>'
+                            var cia = '<?php echo $session->cia; ?>'
+                            var uangpertanggungan = '<?php echo $session->uangpertanggungan; ?>'
+                            var smoking = '<?php echo $session->smoking; ?>'
+                            var tanggallahir = '<?php echo $session->tanggallhir; ?>'
+                            var usia = '<?php echo $session->usia; ?>'
+                            
+                            
            
-                          window.open('/agent-locator');
+                          $.ajax({
+                              url      : '/v1/api/calculator',
+                              type     : 'POST',
+                              crossDomain: true,
+                              data     : {
+                                          'premi' : premi,
+                                          'nama' : nama,
+                                          'email' : email,
+                                          'nohp': nohp,
+                                          'gender': gender,
+                                          'cia': cia,
+                                          'uangpertanggungan': uangpertanggungan,
+                                          'smoking' :smoking,
+                                          'tanggallahir' : tanggallahir,
+                                          'usia' : usia
+                                          'source' :'Kalkulator Life Insurance User'
+                                          },
+                              complete  : function(data){
+                                     //console.log(data);
+                                      window.open('/agent-locator', '_blank');
+                                      //document.location.href='/agent-locator';
+                      }
+              });
                        
               });            
     });
