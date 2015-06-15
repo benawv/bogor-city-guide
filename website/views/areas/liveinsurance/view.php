@@ -495,7 +495,7 @@
                 if(tanggallahir == ''){
                     document.getElementById('notif-tgllahir').style.display = 'block';
                 }
-                if(email == '' || re.test(email)){
+                if(email == ''){
                     document.getElementById('notif-email').style.display = 'block';
                 }
             }else{
