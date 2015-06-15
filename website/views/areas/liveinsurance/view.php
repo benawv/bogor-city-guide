@@ -371,12 +371,13 @@
                             <label>Critical Illness Accelerated(CIA)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="3" id="critical_illness_accelerated">
+                            <input type="text" class="form-control" id="critical_illness_accelerated" name="cia" placeholder="Rp. 0"  required readonly>
+                            <!--<select class="form-control" required tabindex="3" id="critical_illness_accelerated">
                                 <option value="Pilih">Pilih</option>
                                 <option value="1000">1 M</option>
                                 <option value="500">500 juta</option>
                                 <option value="250">250 juta</option>
-                            </select>
+                            </select>-->
                             <label id="notif-cia" style="display:none; color: #f00;">Maaf Anda Belum Memilih</label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -465,14 +466,14 @@
             var nohp = $('#nohp').val();
             var gender = $('#gender').val();
             var uangpertanggungan = $('#uang_pertanggungan').val();
-            var cia = $('#critical_illness_accelerated').val();
+            var cia = uangpertanggungan;
             var smoking = $('#smoking').val();
             var email = $('#email').val();
             var tanggallahir = $('#tgl-lahir').val();
             var usia = $('#usia').val();
             //var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
          
-            
+                    
             if(nama == '' || nohp == '' || gender == 'Pilih' || uangpertanggungan == 'Pilih' || cia == 'Pilih' || smoking == 'Pilih' || email == '' || nohp.length < 8 || tanggallahir == ''){
                 if(nama == ''){
                     document.getElementById('notif-nama').style.display = 'block';
@@ -568,6 +569,15 @@
                     document.getElementById('notif-uangpertanggungan').style.display= 'block';   
                 }else if(value == '1000' || value == '500' || value == '250'){
                     document.getElementById('notif-uangpertanggungan').style.display= 'none';
+                    if(value=='1000'){
+                    var nilai = '1M';
+                    $('#critical_illness_accelerated').val(nilai);}
+                    else if(value=='500'){
+                    var nilai = '500juta';
+                    $('#critical_illness_accelerated').val(nilai);}
+                    else if(value=='250'){
+                    var nilai = '250juta';
+                    $('#critical_illness_accelerated').val(nilai);}
                 }
 
             });
@@ -578,11 +588,12 @@
                     document.getElementById('notif-merokok').style.display= 'block';   
                 }else if(value == 'Y' || value == 'T'){
                     document.getElementById('notif-merokok').style.display= 'none';
+                    
                 }
 
             });
     
-    $('#critical_illness_accelerated').bind("input", function(){
+    /*$('#critical_illness_accelerated').bind("input", function(){
                var value = $('#critical_illness_accelerated').val();
                 if(value == 'Pilih'){
                     document.getElementById('notif-cia').style.display= 'block';   
@@ -590,7 +601,7 @@
                     document.getElementById('notif-cia').style.display= 'none';
                 }
 
-            });
+            });*/
     
     $('#gender').bind("input", function(){
                var value = $('#gender').val();
