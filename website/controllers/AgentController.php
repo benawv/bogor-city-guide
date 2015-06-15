@@ -233,6 +233,7 @@ class AgentController extends Website_Controller_Action {
 
 		// harusnya ini jadi  class Object_Abstract untuk email(sementara static harus cepet ganti !!!!!)
 		$session = new Zend_Session_Namespace('tasbih');
+		
         $nama = $session->nama;
         $email=$session->email ;
         $nohp=$session->nohp ;
@@ -310,7 +311,7 @@ class AgentController extends Website_Controller_Action {
 						'DateSent' => strtotime(date("YmdHis")),
 						'email' => $email,
 						'nama'=> $nama,
-						'tglLahir' => $date_tglLahir
+						'tglLahirCustomer' => $session->date_tglLahir
 						);
 
 		$this->emailTracking($paramsLocator,$params);
@@ -368,6 +369,9 @@ class AgentController extends Website_Controller_Action {
 						'propinsi' => $objProv,
 						'ket' => $_POST["keterangan"]
 						);
+		
+		//$this->emailTracking($paramsLocator,$params);
+		
 		/*
 		$systemConfig = Pimcore_Config::getSystemConfig()->toArray();
 		$emailSettings = $systemConfig['email'];	
@@ -402,7 +406,7 @@ class AgentController extends Website_Controller_Action {
 		$new->setFromEmail($params['email']);
 		$new->setFromName($params['nama']);
 		$new->setFromNoTelp($params['nohp']);
-		$new->setTglLahir($paramsLocator["tglLahir"]);
+		$new->setTglLahir($paramsLocator["tglLahirCustomer"]);
 		$new->setTypeForm('TasbihKalkulator');
 		$new->setKey(strtolower(str_replace(" ","-",$paramsLocator['nama_agen'])).'_'.strtolower(str_replace(" ","-",$params['nama'])).'_'.strtotime(date("Y/m/d,H.i.s")).'_'.strtotime(date("YmdHis")));
 		$new->setO_parentId($getId->o_id);
