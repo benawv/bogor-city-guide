@@ -278,10 +278,6 @@
                                                     <td>: '.$session->nohp.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td>Tanggal Penghitungan</td>
-                                                    <td>: '.date("d/m/Y",$session->date_tglBuat).'</td>
-                                                </tr>';
-                                    $content.='<tr class="tbl-email">
                                                     <td>Tanggal Lahir Anda</td>
                                                     <td>: '.date("d/m/Y",strtotime($session->date_tglLahir)).'</td>
                                                 </tr>';
