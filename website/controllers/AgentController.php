@@ -309,7 +309,8 @@ class AgentController extends Website_Controller_Action {
 						'bodyEmail' => $bodyEmail,
 						'DateSent' => strtotime(date("YmdHis")),
 						'email' => $email,
-						'nama'=> $nama
+						'nama'=> $nama,
+						'tglLahir' => $date_tglLahir
 						);
 
 		$this->emailTracking($paramsLocator,$params);
@@ -401,7 +402,7 @@ class AgentController extends Website_Controller_Action {
 		$new->setFromEmail($params['email']);
 		$new->setFromName($params['nama']);
 		$new->setFromNoTelp($params['nohp']);
-		$new->setTglLahir(new Pimcore_Date($session->date_tglLahir));
+		$new->setTglLahir($paramsLocator["tglLahir"]);
 		$new->setTypeForm('TasbihKalkulator');
 		$new->setKey(strtolower(str_replace(" ","-",$paramsLocator['nama_agen'])).'_'.strtolower(str_replace(" ","-",$params['nama'])).'_'.strtotime(date("Y/m/d,H.i.s")).'_'.strtotime(date("YmdHis")));
 		$new->setO_parentId($getId->o_id);
