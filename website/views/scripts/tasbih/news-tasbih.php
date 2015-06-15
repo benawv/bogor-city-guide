@@ -98,6 +98,10 @@
     {
         margin-bottom: 0 !important;
     }
+    /* override icon style */
+    nav.main-navigation a.nav-item h1, nav.main-navigation a.nav-item h2, nav.main-navigation a.nav-item h3, nav.main-navigation a.nav-item h4, nav.main-navigation a.nav-item h5, nav.main-navigation a.nav-item h6 {
+        bottom: 12px !important;
+    }
 
     @media ( max-width: 992px )
     {
