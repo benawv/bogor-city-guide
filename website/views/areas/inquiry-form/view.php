@@ -192,7 +192,7 @@
                             <label><strong>Nama Anda?</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="name" class="form-control" id="nama" placeholder="Nama" required />
+                            <input type="name" class="form-control" id="nama" placeholder="Nama" required onfocusout="this.value=validateNama(this.value)"/>
                             <label id="notif-nama" style="display:none; color: #f00;">
                                 Mohon maaf Anda belum atau salah memasukkan nama
                             </label>
@@ -213,6 +213,9 @@
                                 <div class="col-xs-6">
                                     <label class="radio-inline"><input type="Radio" style="display: block;" name="jenisKelamin" value="p" style="display:block">Wanita</label>
                                 </div>
+                                <label id="notifJK" style="display:none; color: #f00;">
+                                Mohon maaf Anda belum memilih jenis kelamin
+                            </label>
                             </div><!--/ .row -->
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -263,8 +266,9 @@
 
                                     $getProv=new Object_MarketingOfficeWilayah_List();
                                     $getProv->setOrderKey("namaWilayah");
-                                    $getProv->setOrder("asc");
-                                    foreach($getProv as $items){
+                                    $getProv->setOrder("asc");?>
+                                <option value = "Pilih">-Pilih-</option>
+                                    <?php foreach($getProv as $items){
                                 ?>
                                 <option value= "<?php echo $items->o_id; ?> "><?php echo $items->namaWilayah; ?></option>
                                 <?php } ?>
@@ -281,7 +285,7 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <label id="notifPesan" style="display:none; color: #f00;">
-                                Mohon maaf, Anda harus mengisi pesan.
+                                Mohon maaf Anda memasukkan pesan lebih dari 250 karakter
                             </label>
                             <textarea cols="35" rows="10" class="form-control" placeholder="Tuliskan Pesan Anda disini Maksimal 250 Kata" id="pesan" ></textarea>
                             <label id="notifemail" style="display:block; font-size:10px; color: #f00;">
@@ -376,24 +380,28 @@
             var nohp=$('#nohp').val();
             var prov=$('#provinsi_id').val();
             var pesan=$('#pesan').val();
+            
 
             //alert(bod);
 
-            if( nama == '' || email == '' || nohp == '' || bod == '' ||  nohp.length <= 8 || prov == '' || pesan == ''){
+            if( nama == '' || email == '' || nohp == '' || bod == '' ||  nohp.length <= 8 || prov == 'Pilih' || pesan == '' || kelamin == null){
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
                     if( email == '' )
                         document.getElementById('notifemail').style.display= 'block';
                     if( bod == '')
                         document.getElementById('notif-DOB').style.display= 'block';
-                    if( prov == '' )
-                        document.getElementById('notif-tgllahir').style.display= 'block';
+                    if( prov == 'Pilih' )
+                        document.getElementById('notifProvinsi').style.display= 'block';
                     if( nohp.length <= 8 || nohp == '')
                         document.getElementById('notifNoHP').style.display='block';
                     if( pesan == '' )
                         document.getElementById('notifPesan').style.display= 'block';
+                    if( kelamin == null )
+                        document.getElementById('notifJK').style.display= 'block';
                     alert("Mohon Periksa Inputan Anda");
             }else{
+            //alert('Masuk');
             e.preventDefault();
             $.ajax({
                  "url" : "/inquriy-tasbih/",
@@ -414,7 +422,25 @@
             }
             e.preventDefault();
         });
+        
+         
+        
+        $('input[name=jenisKelamin]').change(function(){
+                document.getElementById('notifJK').style.display= 'none';
+            });
 
+    $('#provinsi_id').bind("input", function(){
+               var value = $('#notifProvinsi').val();
+                if(value == 'Pilih'){
+                    document.getElementById('notifProvinsi').style.display= 'block';   
+                }else {
+                    document.getElementById('notifProvinsi').style.display= 'none';
+                }
+
+            });
+        
+        
+        
         $('#DOB').on('change', function() {
 
             var dob = new Date(this.value);
@@ -429,6 +455,8 @@
             }
         });
 
+
+        
         $( ".pagenav .navi li" ).click(function(){
             $(".pagenav .navi li").removeClass('aktif');
             $(".pagenav .navi li .nav_menu div").css('display','block');
@@ -470,7 +498,7 @@
         if(!re.test(surat))
         {
             document.getElementById('notifemail').style.display= 'block';
-            return surat;
+            return null;
         }
         else
         {
@@ -479,6 +507,17 @@
         }
     };
 
+            function validateNama(nama){
+        var re = /^[a-zA-Z ]*$/;
+        if(!re.test(nama)){
+            document.getElementById('notif-nama').style.display= 'block';
+            return null;
+        }else{
+            document.getElementById('notif-nama').style.display= 'none';
+            return nama;
+        }
+    };
+    
     $('#nohp').bind("input", function(){
        var re = /^[0-9]*$/;
 
@@ -497,9 +536,11 @@
         var max = 250;
 
         if(n > max){
-               $('#pesan').attr('readonly','readonly');
+               document.getElementById('notifPesan').style.display= 'block';
         }
-
+        else{
+            document.getElementById('notifPesan').style.display= 'none';
+        }
         $('#counterString').html(250-n);
 
 //        var CountStr = parseInt($('#counterString').html());
