@@ -312,7 +312,8 @@ class AgentController extends Website_Controller_Action {
 						'DateSent' => strtotime(date("YmdHis")),
 						'email' => $email,
 						'nama'=> $nama,
-						'tglLahirCustomer' => $session->date_tglLahir
+						'tglLahirCustomer' => $session->date_tglLahir,
+						'typeForm' => 'TasbihKalkulator'
 						);
 
 		$this->emailTracking($paramsLocator,$params);
@@ -371,7 +372,22 @@ class AgentController extends Website_Controller_Action {
 						'ket' => $_POST["keterangan"]
 						);
 		
-		//$this->emailTracking($paramsLocator,$params);
+		$bodyEmail = "Nama: ".$nama."<br>
+		No Handphone: ".$tlp."<br>Email: ".$email."<br>Tanggal Lahir: ".$date_tglLahir1."<br>
+		Jenis Kelamin: ".$JK."<br>Pesan: ".$pesan."<br>Propinsi: ".$objProv."<br>"."<br>Keterangan: ".$_POST["keterangan"];
+		
+		$paramsLocator = array(
+						'email_agen' => $_POST["email_agen"],
+						'nama_agen' => $_POST["nama_agen"],
+						'telp_agen' => $_POST["telp"],
+						'lokasi_agen' => $_POST["lokasi"],
+						'bodyEmail' => $bodyEmail,
+						'tglLahirCustomer' => $date_tglLahir,
+						'typeForm' => 'TasbihInquiry'
+						);
+		
+		
+		$this->emailTracking($paramsLocator,$params);
 		
 		/*
 		$systemConfig = Pimcore_Config::getSystemConfig()->toArray();
@@ -408,7 +424,7 @@ class AgentController extends Website_Controller_Action {
 		$new->setFromName($params['nama']);
 		$new->setFromNoTelp($params['nohp']);
 		$new->setTglLahir($paramsLocator["tglLahirCustomer"]);
-		$new->setTypeForm('TasbihKalkulator');
+		$new->setTypeForm($paramsLocator["typeForm"]);
 		$new->setKey(strtolower(str_replace(" ","-",$paramsLocator['nama_agen'])).'_'.strtolower(str_replace(" ","-",$params['nama'])).'_'.strtotime(date("Y/m/d,H.i.s")).'_'.strtotime(date("YmdHis")));
 		$new->setO_parentId($getId->o_id);
 		$new->setIndex(0);
