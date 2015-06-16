@@ -121,9 +121,9 @@ $(document).ready(function(){
                             var tanggallahir = '<?php echo $session->tanggallhir; ?>'
                             var usia = '<?php echo $session->usia; ?>'
                             
-                            
+                            window.open('http://agen.imkepo.com', '_blank');
            
-                          $.ajax({
+                          /*$.ajax({
                               url      : '/v1/api/calculator',
                               type     : 'POST',
                               crossDomain: true,
@@ -142,10 +142,10 @@ $(document).ready(function(){
                                           },
                               complete  : function(data){
                                      //console.log(data);
-                                      window.open('/agent-locator', '_blank');
+                                      
                                       //document.location.href='/agent-locator';
                       }
-              });
+              });*/
                        
               });            
     });
