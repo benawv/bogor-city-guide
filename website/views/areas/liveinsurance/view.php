@@ -569,6 +569,7 @@
                     document.getElementById('notif-uangpertanggungan').style.display= 'block';   
                 }else if(value == '1000' || value == '500' || value == '250'){
                     document.getElementById('notif-uangpertanggungan').style.display= 'none';
+                    document.getElementById('notif-cia').style.display= 'none';
                     if(value=='1000'){
                     var nilai = '1M';
                     $('#critical_illness_accelerated').val(nilai);}
@@ -586,7 +587,7 @@
                var value = $('#smoking').val();
                 if(value == 'Pilih'){
                     document.getElementById('notif-merokok').style.display= 'block';   
-                }else if(value == 'Y' || value == 'T'){
+                }else{
                     document.getElementById('notif-merokok').style.display= 'none';
                     
                 }
