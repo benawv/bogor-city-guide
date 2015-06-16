@@ -521,7 +521,10 @@
                 type     : 'POST',
                 data     : {
                             'keterangan' : keterangan,
-                            'nama_agen' : '<?php echo $namaAgent;?>'
+                            'nama_agen' : '<?php echo $namaAgent;?>',
+                            'email_agen' : '<?php echo $emailAgent;?>',
+                            'telp' : '<?php echo $telepon;?>',
+                            'lokasi' : '<?php echo $namaLokasi;?>'
                             },
                     success  : function(data){
                     //console.log(data);
