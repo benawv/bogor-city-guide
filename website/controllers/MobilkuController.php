@@ -176,7 +176,7 @@ class MobilkuController extends Website_Controller_Action {
 		$getModelMap = new Object_MobilModel_List();
 		$getModelMap->setCondition('Oo_id ="'.$model.'"');
 		foreach($getModelMap as $items){
-			$modelmap_id=$items->modelmaps->o_id;
+			$modelmap_id=$items->o_id;
 		}
 		
 		$getRegId=new Object_MobilRegionCode_List();
