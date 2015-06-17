@@ -63,6 +63,14 @@
 
       nav.main-navigation a.nav-item.blueA::before {
         background: #3122F9; }
+    
+    .header-calc{
+        background: #003781;
+    }
+    
+    .btn-tasbih{
+        background: #003781 !important;
+    }
 </style>
 
 
@@ -110,18 +118,8 @@ $(document).ready(function(){
 
         $('#cari-agen').click(function() {
             
-                            var premi = '<?php echo $session->premi; ?>'
-                            var nama = '<?php echo $session->nama; ?>'
-                            var email = '<?php echo $session->email; ?>'
-                            var nohp = '<?php echo $session->nohp; ?>'
-                            var gender = '<?php echo $session->gender; ?>'
-                            var cia = '<?php echo $session->cia; ?>'
-                            var uangpertanggungan = '<?php echo $session->uangpertanggungan; ?>'
-                            var smoking = '<?php echo $session->smoking; ?>'
-                            var tanggallahir = '<?php echo $session->tanggallhir; ?>'
-                            var usia = '<?php echo $session->usia; ?>'
                             
-                            window.open('http://agen.imkepo.com', '_blank');
+                            window.open('/agent-locator/agen', '_blank');
            
                           /*$.ajax({
                               url      : '/v1/api/calculator',
