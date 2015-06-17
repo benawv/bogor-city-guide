@@ -33,7 +33,7 @@
             height: 50px;
             background: #d31f42;
         }
-        .cusNext{font-size: 14px;}
+        .content-calc span.cusNext{font-size: 14px;}
         nav.main-navigation a.nav-item::after {
             content: "";
             display: inline-block;
