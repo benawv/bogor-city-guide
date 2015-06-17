@@ -248,32 +248,32 @@ $(document).ready(function(){
             var AJ = '<?php echo $session->AJ; ?>';
             var Kontribusi = '<?php echo $session->Kontribusi; ?>';
             var Calculation = '<?php echo $session->Calculation; ?>';
-
-              $.ajax({
-                  url      : '/v1/api/calculator',
-                  type     : 'POST',
-                  crossDomain: true,
-                  data     : {
-                              'nama' : nama,
-                              'email' : email,
-                              'nohp' : nohp,
-                              'date_tglBuat': date_tglBuat,
-                              'date_tglLahir': date_tglLahir,
-                              'JenisKelamin': JenisKelamin ,
-                              'Usia': Usia,
-                              'Frekuensi': Frekuensi,
-                              'AsuransiJiwa' : AsuransiJiwa,
-                              'AJ' : AJ,
-                              'Kontribusi' : Kontribusi,
-                              'Calculation' : Calculation,
-                              'source' :'Kalkulator Tasbih User'
-                              },
-                  complete  : function(data){
-                         //console.log(data);
-                          window.open('/agent-locator/agen', '_blank');
-                          //document.location.href='/agent-locator';
-                      }
-              });
+            window.open('/agent-locator/agen', '_blank');
+              //$.ajax({
+              //    url      : '/v1/api/calculator',
+              //    type     : 'POST',
+              //    crossDomain: true,
+              //    data     : {
+              //                'nama' : nama,
+              //                'email' : email,
+              //                'nohp' : nohp,
+              //                'date_tglBuat': date_tglBuat,
+              //                'date_tglLahir': date_tglLahir,
+              //                'JenisKelamin': JenisKelamin ,
+              //                'Usia': Usia,
+              //                'Frekuensi': Frekuensi,
+              //                'AsuransiJiwa' : AsuransiJiwa,
+              //                'AJ' : AJ,
+              //                'Kontribusi' : Kontribusi,
+              //                'Calculation' : Calculation,
+              //                'source' :'Kalkulator Tasbih User'
+              //                },
+              //    complete  : function(data){
+              //           //console.log(data);
+              //            window.open('/agent-locator/agen', '_blank');
+              //            //document.location.href='/agent-locator';
+              //        }
+              //});
         });
     });
 
