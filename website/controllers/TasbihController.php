@@ -17,7 +17,7 @@ class TasbihController extends Website_Controller_Action {
 	    $this->setLayout('tasbih');
 	}
 	
-        public function inquriyFormAction(){
+    public function inquriyFormAction(){
             
             $nama = $_POST["nama"];
 	    $kelamin = $_POST["kelamin"];
@@ -73,9 +73,9 @@ class TasbihController extends Website_Controller_Action {
             $mail->send();
 		
             echo "success";
-        }
+    }
         
-        public function listAction () {
+    public function listAction () {
 		$this->enableLayout();
 
 		$entries_all = new Object_TasbihNews_List();

@@ -233,6 +233,7 @@ class AgentController extends Website_Controller_Action {
 
 		// harusnya ini jadi  class Object_Abstract untuk email(sementara static harus cepet ganti !!!!!)
 		$session = new Zend_Session_Namespace('tasbih');
+		
         $nama = $session->nama;
         $email=$session->email ;
         $nohp=$session->nohp ;
@@ -264,15 +265,16 @@ class AgentController extends Website_Controller_Action {
 			$JK = 'Wanita';
 		}
 	
-		if($Frekuensi == 1){
-			$frek = 'Tahunan';
-		}
-		else if($Frekuensi == 2){
-			$frek = 'Semesteran';
-		}
-		else{
-			$frek = 'Triwulan';
-		}
+		//if($Frekuensi == 1){
+		//	$frek = 'Tahunan';
+		//}
+		//else if($Frekuensi == 2){
+		//	$frek = 'Semesteran';
+		//}
+		//else{
+		//	$frek = 'Triwulan';
+		//}
+		$frek = $Frekuensi;
 
 		$hasil = number_format($Calculation,0,",",".");
 		$document = '/email/email-agentasbih';
@@ -309,7 +311,9 @@ class AgentController extends Website_Controller_Action {
 						'bodyEmail' => $bodyEmail,
 						'DateSent' => strtotime(date("YmdHis")),
 						'email' => $email,
-						'nama'=> $nama
+						'nama'=> $nama,
+						'tglLahirCustomer' => $session->date_tglLahir,
+						'typeForm' => 'TasbihKalkulator'
 						);
 
 		$this->emailTracking($paramsLocator,$params);
@@ -367,6 +371,24 @@ class AgentController extends Website_Controller_Action {
 						'propinsi' => $objProv,
 						'ket' => $_POST["keterangan"]
 						);
+		
+		$bodyEmail = "Nama: ".$nama."<br>
+		No Handphone: ".$tlp."<br>Email: ".$email."<br>Tanggal Lahir: ".$date_tglLahir1."<br>
+		Jenis Kelamin: ".$JK."<br>Pesan: ".$pesan."<br>Propinsi: ".$objProv."<br>"."<br>Keterangan: ".$_POST["keterangan"];
+		
+		$paramsLocator = array(
+						'email_agen' => $_POST["email_agen"],
+						'nama_agen' => $_POST["nama_agen"],
+						'telp_agen' => $_POST["telp"],
+						'lokasi_agen' => $_POST["lokasi"],
+						'bodyEmail' => $bodyEmail,
+						'tglLahirCustomer' => $date_tglLahir,
+						'typeForm' => 'TasbihInquiry'
+						);
+		
+		
+		$this->emailTracking($paramsLocator,$params);
+		
 		/*
 		$systemConfig = Pimcore_Config::getSystemConfig()->toArray();
 		$emailSettings = $systemConfig['email'];	
@@ -401,8 +423,8 @@ class AgentController extends Website_Controller_Action {
 		$new->setFromEmail($params['email']);
 		$new->setFromName($params['nama']);
 		$new->setFromNoTelp($params['nohp']);
-		$new->setTglLahir(new Pimcore_Date($session->date_tglLahir));
-		$new->setTypeForm('TasbihKalkulator');
+		$new->setTglLahir($paramsLocator["tglLahirCustomer"]);
+		$new->setTypeForm($paramsLocator["typeForm"]);
 		$new->setKey(strtolower(str_replace(" ","-",$paramsLocator['nama_agen'])).'_'.strtolower(str_replace(" ","-",$params['nama'])).'_'.strtotime(date("Y/m/d,H.i.s")).'_'.strtotime(date("YmdHis")));
 		$new->setO_parentId($getId->o_id);
 		$new->setIndex(0);
