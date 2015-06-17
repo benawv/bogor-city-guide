@@ -210,7 +210,7 @@ $(document).ready(function(){
                  "success" : function(response){
                         localStorage.setItem("gettlo", response);
                         rate=response;
-                        alert(response);
+                        console.log(response);
                  }
              }); 
         }
