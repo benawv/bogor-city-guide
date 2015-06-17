@@ -194,6 +194,7 @@ $(document).ready(function(){
             }
 
         }else{
+        console.log(tahun_pembuatan+'-'+harga+'-'+model+'-'+periode+'-'+wilayah+'-'+radio+'-'+hargaKonv+'-'+paket);
            $.ajax({
                   "url" : "/mobilkucalc/",
                   "async": false,
@@ -213,7 +214,6 @@ $(document).ready(function(){
                  }
              }); 
         }
-        console.log(tahun_pembuatan+'-'+harga+'-'+model+'-'+periode+'-'+wilayah+'-'+radio+'-'+hargaKonv+'-'+paket);
         return rate;
     }
 
