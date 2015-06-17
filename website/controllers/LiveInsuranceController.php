@@ -32,7 +32,7 @@
                 //Select from Database
     
                 $rates= new Object_LiveinsuranceRate_List();                      
-                $rates->setCondition("JenisKelamin='".$gender."' and UangPertanggungan='".$uangpertanggungan."' and CriticalIllnessAccelerated='".$cia."' and Merokok='".$smoking."' and Usia='".$usia."'");
+                $rates->setCondition("JenisKelamin='".$gender."' and UangPertanggungan='".$uangpertanggungan."' and CriticalIllnessAccelerated='".$cia."' and Usia='".$usia."'");
                 
                 foreach($rates as $items){
                     $premi = $items->Premi;    
