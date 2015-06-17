@@ -173,8 +173,8 @@ class MobilkuController extends Website_Controller_Action {
 			$paket=2;
 		}
 
-		$getModelMap = new Object_MobilModel_List(); 
-		$getModelMap->setCondition("oo_id =".$model);		
+		$getModelMap = new Object_MobilModel_List();
+		$getModelMap->setCondition('Oo_id ="'.$model.'"');
 		foreach($getModelMap as $items){
 			$modelmap_id=$items->modelmaps->o_id;
 		}
