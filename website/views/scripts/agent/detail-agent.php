@@ -248,7 +248,70 @@
                         <!-- <p> DI HIDE DULU YAA
                             Parameter dari tasbih: <br /> -->
 
-                            <?php
+                    
+                    <?php
+                        $session0 = new Zend_Session_Namespace('liveinsurance');
+                        $status = $session0->status;
+                        $ID = $session0->ID;
+        
+
+        
+                        if($session0->smoking == 'Y'){
+                        $Rokok = 'Ya';}
+                        else if($session0->smoking == 'N'){
+                        $Rokok = 'Tidak';}
+
+                        $content;
+                        if(isset($session->nama)){
+                            $content.="<table>";
+                            $content.='<tr class="tbl-email">
+                                                    <td>Nama Anda</td>
+                                                    <td>: '.$session0->nama.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Email Anda </td>
+                                                    <td>: '.$session0->email.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Nomor Handphone Anda</td>
+                                                    <td>: '.$session0->nohp.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Tanggal Lahir Anda</td>
+                                                    <td>: '.date("d/m/Y",strtotime($session0->tanggalLahir)).'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Jenis Kelamin Anda</td>
+                                                    <td>: '.$session0->$gender.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Uang Pertanggungan Anda</td>
+                                                    <td>: '.$session0->uangpertanggungan.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>CIA</td>
+                                                    <td>: '.$session0->cia.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Merokok</td>
+                                                    <td>: '.$Rokok.' tahun</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Premi yang harus anda bayarkan pertahun</td>
+                                                    <td>: Rp '.$session0->premi.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Keterangan tambahan</td>
+                                                    <td>: </td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
+                                                </tr>';
+                                    $content.= "</table>";
+                        }
+                    ?>
+
+                    <?php
 
                                 $session = new Zend_Session_Namespace('tasbih');
                                 $getStatus=$session->emailFrom;
@@ -535,6 +598,31 @@
             });
 
         <?php }?>
+        
+        <?php if($status=='life_insurance'){ ?>
+            var keterangan = $(".textareaForm").val();
+            
+            $.ajax({
+                url      : '/send-email-agen-lifeinsurance/',
+                type     : 'POST',
+                data     : {
+                            'keterangan' : keterangan,
+                            'nama_agen' : '<?php echo $namaAgent;?>',
+                            'email_agen' : '<?php echo $emailAgent;?>',
+                            'telp' : '<?php echo $telepon;?>',
+                            'lokasi' : '<?php echo $namaLokasi;?>'
+                            },
+                    success  : function(data){
+                    //console.log(data);
+                    alert('Permintaan Informasi Layanan Life Insurance Anda sudah kami kirim ke Agen Kami');    
+                }
+            
+            
+            });
+
+        <?php }?>
+        
+        
         $('#modalEmail').modal('hide');
     });
 

@@ -409,6 +409,82 @@ class AgentController extends Website_Controller_Action {
 		echo "Sukses Minta Informasi";
 		die();
 	}
+    
+    public function sendMailAgenLifeinsuranceAction(){
+
+		// harusnya ini jadi  class Object_Abstract untuk email(sementara static harus cepet ganti !!!!!)
+		$session = new Zend_Session_Namespace('life_insurance');
+        $nama = $session->nama;
+		$idObject = $session->ID;
+		$kelamin = $session->gender;
+		$bod = $session->tanggalLahir;
+		$tlp = $session->nohp;
+		$email = $session->email;
+		$usia = $session->usia;
+		$cia = $session->cia;
+        $up = $session->uangpertanggungan;
+        $premi = $session->premi;
+		
+		$update = Object_TasbihInquiry::getById($idObject);
+		$update->setKeterangan($_POST["keterangan"]);
+		$update->save();
+
+        $date_tglLahir1 = date("d/m/Y",strtotime(new Pimcore_Date($bod)));
+
+		
+
+		$document = '/email/email-agenlifeinsurance';
+		$params = array(
+						'nama' => $nama,
+						'namaAgen' => $_POST["nama_agen"],
+						'email' => $email,
+						'jenisKelamin' => $kelamin,
+						'tgllahir' => $date_tglLahir1,
+						'nohp' => $tlp,
+                        'usia' => $usia,
+						'cia' => $cia,
+                        'up' => $up,
+                        'premi' => $premi,
+						'ket' => $_POST["keterangan"]
+						);
+		
+		$bodyEmail = "Nama: ".$nama."<br>
+		No Handphone: ".$tlp."<br>Email: ".$email."<br>Tanggal Lahir: ".$date_tglLahir1."<br>
+		Jenis Kelamin: ".$JK."<br>Usia: ".$usia."<br>CIA: ".$cia."<br>Uang Pertanggungan: ".$up."<br>Premi: ".$premi."<br>"."           <br>Keterangan: ".$_POST["keterangan"];
+		
+		$paramsLocator = array(
+						'email_agen' => $_POST["email_agen"],
+						'nama_agen' => $_POST["nama_agen"],
+						'telp_agen' => $_POST["telp"],
+						'lokasi_agen' => $_POST["lokasi"],
+						'bodyEmail' => $bodyEmail,
+						'tglLahirCustomer' => $date_tglLahir,
+						'typeForm' => 'LifeInsurance'
+						);
+		
+		
+		$this->emailTracking($paramsLocator,$params);
+		
+		/*
+		$systemConfig = Pimcore_Config::getSystemConfig()->toArray();
+		$emailSettings = $systemConfig['email'];	
+		print_r($emailSettings);
+		die();
+		*/
+		$mail = new Pimcore_Mail();
+		$mail->setSubject("Permintaan $nama Calon Nasabah Produk Allianz Life Insurance");
+		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+		$mail->setDocument($document);
+		$mail->setParams($params);
+		$mail->addTo($email);
+		$mail->addBcc("asn.tasbih@gmail.com");
+		$mail->send();
+
+		Zend_Session::namespaceUnset('life_insurance');
+
+		echo "Sukses";
+		die();
+	}
 
 	public function emailTracking($paramsLocator,$params){
     	$date_tglBuat1 = new Pimcore_Date(date("Y-m-d,H-i-s"));
