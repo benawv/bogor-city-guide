@@ -197,8 +197,8 @@ class MobilkuController extends Website_Controller_Action {
 			$condition_price="prices>800000000";
 		}
 		
-		// $paket=1;		
-		// $condition="pakettype=$pakettype AND $condition_price AND retetype=$paket AND region__id=$getRegId_id AND age=$age and makemodel__id=$modelmap_id";
+		$paket=1;		
+		$condition="pakettype=$pakettype AND $condition_price AND retetype=$paket AND region__id=$getRegId_id AND age=$age and makemodel__id=$modelmap_id";
 		
 		
 		// $getTloRate=new Object_MobilRate_List();
