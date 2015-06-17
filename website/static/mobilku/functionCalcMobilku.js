@@ -213,7 +213,7 @@ $(document).ready(function(){
                  }
              }); 
         }
-        //console.log(tahun_pembuatan+'-'+harga+'-'+model+'-'+periode+'-'+wilayah+'-'+radio+'-'+hargaKonv+'-'+paket);
+        console.log(tahun_pembuatan+'-'+harga+'-'+model+'-'+periode+'-'+wilayah+'-'+radio+'-'+hargaKonv+'-'+paket);
         return rate;
     }
 
