@@ -262,26 +262,27 @@
             var provinsi = '<?php echo $session->provinsi; ?>';
             var pesan = '<?php echo $session->pesan; ?>';
 
-              $.ajax({
-                  url      : '/v1/api/calculator',
-                  type     : 'POST',
-                  crossDomain: true,
-                  data     : {
-                              'nama' : nama,
-                              'email' : email,
-                              'no_hp' : no_hp,
-                              'date_tglLahir': tgl_lahir,
-                              'JenisKelamin': JenisKelamin,
-                              'provinsi': provinsi,
-                              'pesan': pesan,
-                              'source' :'Kalkulator Tasbih User'
-                              },
-                  complete  : function(data){
-                         //console.log(data);
-                          window.open(window.location.origin+'/agent-locator/agen', '_blank');
-                          //document.location.href='/agent-locator';
-                      }
-              });
+            window.open(window.location.origin+'/agent-locator/agen', '_blank');
+              //$.ajax({
+              //    url      : '/v1/api/calculator',
+              //    type     : 'POST',
+              //    crossDomain: true,
+              //    data     : {
+              //                'nama' : nama,
+              //                'email' : email,
+              //                'no_hp' : no_hp,
+              //                'date_tglLahir': tgl_lahir,
+              //                'JenisKelamin': JenisKelamin,
+              //                'provinsi': provinsi,
+              //                'pesan': pesan,
+              //                'source' :'Kalkulator Tasbih User'
+              //                },
+              //    complete  : function(data){
+              //           //console.log(data);
+              //            window.open(window.location.origin+'/agent-locator/agen', '_blank');
+              //            //document.location.href='/agent-locator';
+              //        }
+              //});
         });
     $(document).ready(function(){
 

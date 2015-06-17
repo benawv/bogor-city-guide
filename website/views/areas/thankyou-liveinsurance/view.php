@@ -63,6 +63,14 @@
 
       nav.main-navigation a.nav-item.blueA::before {
         background: #3122F9; }
+    
+    .header-calc{
+        background: #003781;
+    }
+    
+    .btn-tasbih{
+        background: #003781 !important;
+    }
 </style>
 
 
@@ -81,7 +89,11 @@
 
 <div class="form-box" id="notif-confirm">
     <h1 style="text-align:center">TERIMA KASIH</h1>
-    <h3  style=" color:black; text-align:center;"><strong>Hasil kalkulasi Anda adalah <?php echo 'Rp'.$session->premi; ?> Kalkulasi ilustrasi produk Allianz Live Insurance (sudah dikirimkan ke alamat email Anda)</strong></h3>
+    <h3  style=" color:black; text-align:center;"><strong>Hasil kalkulasi Anda adalah 
+        <?php if ($session->premi != null){ 
+                echo 'Rp'. $session->premi;} 
+              else {echo 'Rp.0'; } ?> 
+        Kalkulasi ilustrasi produk Allianz Live Insurance (sudah dikirimkan ke alamat email Anda)</strong></h3>
     <!--<h3 style=" color:black; text-align:center;"><strong>Temukan agen terdekat: </strong></h3>-->
    <br />
     <center><input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen"></center>
@@ -106,20 +118,10 @@ $(document).ready(function(){
 
         $('#cari-agen').click(function() {
             
-                            var premi = '<?php echo $session->premi; ?>'
-                            var nama = '<?php echo $session->nama; ?>'
-                            var email = '<?php echo $session->email; ?>'
-                            var nohp = '<?php echo $session->nohp; ?>'
-                            var gender = '<?php echo $session->gender; ?>'
-                            var cia = '<?php echo $session->cia; ?>'
-                            var uangpertanggungan = '<?php echo $session->uangpertanggungan; ?>'
-                            var smoking = '<?php echo $session->smoking; ?>'
-                            var tanggallahir = '<?php echo $session->tanggallhir; ?>'
-                            var usia = '<?php echo $session->usia; ?>'
                             
-                            
+                            window.open('/agent-locator/agen', '_blank');
            
-                          $.ajax({
+                          /*$.ajax({
                               url      : '/v1/api/calculator',
                               type     : 'POST',
                               crossDomain: true,
@@ -138,10 +140,10 @@ $(document).ready(function(){
                                           },
                               complete  : function(data){
                                      //console.log(data);
-                                      window.open('/agent-locator', '_blank');
+                                      
                                       //document.location.href='/agent-locator';
                       }
-              });
+              });*/
                        
               });            
     });
