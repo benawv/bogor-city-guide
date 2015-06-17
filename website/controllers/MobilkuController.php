@@ -155,58 +155,59 @@ class MobilkuController extends Website_Controller_Action {
 	
 	public function mobilkucalcAction(){
 		
-		$th=$_POST['tahun_pembuatan'];
-		$harga=$_POST['hargaKonv'];
-		$model=$_POST['model'];
-		$period=$_POST['periode'];
-		$radio=$_POST['radio'];
-		$hargaKonv=$_POST['hargaKonv'];
-		$wilayah=$_POST['wilayah'];
-		$ratetype=$_POST['ratetype'];
-		$date_tglPeriod= new Pimcore_Date($period);
-		$pakettype=$_POST['pakettype'];
+		// $th=$_POST['tahun_pembuatan'];
+		// $harga=$_POST['hargaKonv'];
+		// $model=$_POST['model'];
+		// $period=$_POST['periode'];
+		// $radio=$_POST['radio'];
+		// $hargaKonv=$_POST['hargaKonv'];
+		// $wilayah=$_POST['wilayah'];
+		// $ratetype=$_POST['ratetype'];
+		// $date_tglPeriod= new Pimcore_Date($period);
+		// $pakettype=$_POST['pakettype'];
 		
-		$age=(date("Y") - $th);
-		if($radio=='comprehensive'){
-			$paket=1;
-		}else{
-			$paket=2;
-		}
+		// $age=(date("Y") - $th);
+		// if($radio=='comprehensive'){
+		// 	$paket=1;
+		// }else{
+		// 	$paket=2;
+		// }
 
-		$getModelMap = new Object_MobilModel_List(); 
-		$getModelMap->setCondition("oo_id =".$model);		
-		foreach($getModelMap as $items){
-			$modelmap_id=$items->modelmaps->o_id;
-		}
+		// $getModelMap = new Object_MobilModel_List(); 
+		// $getModelMap->setCondition("oo_id =".$model);		
+		// foreach($getModelMap as $items){
+		// 	$modelmap_id=$items->modelmaps->o_id;
+		// }
 		
-		$getRegId=new Object_MobilRegionCode_List();
-		$getRegId->setCondition("regionid =".$wilayah);
-		foreach($getRegId as $item){
-			$getRegId_id=$item->o_id;
-		}
+		// $getRegId=new Object_MobilRegionCode_List();
+		// $getRegId->setCondition("regionid =".$wilayah);
+		// foreach($getRegId as $item){
+		// 	$getRegId_id=$item->o_id;
+		// }
 	
-		if($harga<=125000000){
-			$condition_price="prices<=125000000";
-		}elseif($harga>=125000001 and $harga <=200000000){
-			$condition_price="(prices>=125000001 and prices<=200000000)";
-		}elseif($harga>=200000001 and $harga <=400000000){
-			$condition_price="(prices>=125000001 and prices<=200000000)";
-		}elseif($harga>=400000001 and $harga <=800000000){
-			$condition_price="(prices>=400000001 and prices<=800000000)";
-		}else{
-			$condition_price="prices>800000000";
-		}
+		// if($harga<=125000000){
+		// 	$condition_price="prices<=125000000";
+		// }elseif($harga>=125000001 and $harga <=200000000){
+		// 	$condition_price="(prices>=125000001 and prices<=200000000)";
+		// }elseif($harga>=200000001 and $harga <=400000000){
+		// 	$condition_price="(prices>=125000001 and prices<=200000000)";
+		// }elseif($harga>=400000001 and $harga <=800000000){
+		// 	$condition_price="(prices>=400000001 and prices<=800000000)";
+		// }else{
+		// 	$condition_price="prices>800000000";
+		// }
 		
-		$paket=1;		
-		$condition="pakettype=$pakettype AND $condition_price AND retetype=$paket AND region__id=$getRegId_id AND age=$age and makemodel__id=$modelmap_id";
+		// $paket=1;		
+		// $condition="pakettype=$pakettype AND $condition_price AND retetype=$paket AND region__id=$getRegId_id AND age=$age and makemodel__id=$modelmap_id";
 		
 		
-		$getTloRate=new Object_MobilRate_List();
-		$getTloRate->setCondition($condition);
-		foreach($getTloRate as $items){
-			$rates= $items->rate;
-		}
-		print_r($rates);
+		// $getTloRate=new Object_MobilRate_List();
+		// $getTloRate->setCondition($condition);
+		// foreach($getTloRate as $items){
+		// 	$rates= $items->rate;
+		// }
+		echo '123';
+		//print_r($rates);
 		die();
 	}
 	
