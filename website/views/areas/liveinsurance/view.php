@@ -267,7 +267,9 @@
 
     }
 
-
+    .header-calc{
+        background: #003781;
+    }
 </style>
 
 <div id="newsletter-allianz" class="full-w bg-white nopadding">

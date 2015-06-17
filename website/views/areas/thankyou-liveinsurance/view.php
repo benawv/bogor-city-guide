@@ -63,6 +63,14 @@
 
       nav.main-navigation a.nav-item.blueA::before {
         background: #3122F9; }
+    
+    .header-calc{
+        background: #003781;
+    }
+    
+    .btn-tasbih{
+        background: #003781 !important;
+    }
 </style>
 
 
@@ -111,7 +119,7 @@ $(document).ready(function(){
         $('#cari-agen').click(function() {
             
                             
-                            window.open('http://agen.imkepo.com', '_blank');
+                            window.open('/agent-locator/agen', '_blank');
            
                           /*$.ajax({
                               url      : '/v1/api/calculator',
