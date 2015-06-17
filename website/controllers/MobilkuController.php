@@ -201,13 +201,13 @@ class MobilkuController extends Website_Controller_Action {
 		$condition="pakettype=$pakettype AND $condition_price AND retetype=$paket AND region__id=$getRegId_id AND age=$age and makemodel__id=$modelmap_id";
 		
 		
-		// $getTloRate=new Object_MobilRate_List();
-		// $getTloRate->setCondition($condition);
-		// foreach($getTloRate as $items){
-		// 	$rates= $items->rate;
-		// }
-		echo $condition;
-		//print_r($rates);
+		$getTloRate=new Object_MobilRate_List();
+		$getTloRate->setCondition($condition);
+		foreach($getTloRate as $items){
+			$rates= $items->rate;
+		}
+		// echo $condition;
+		print_r($rates);
 		die();
 	}
 	
