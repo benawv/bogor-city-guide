@@ -206,7 +206,7 @@ class MobilkuController extends Website_Controller_Action {
 		// foreach($getTloRate as $items){
 		// 	$rates= $items->rate;
 		// }
-		echo '123';
+		echo $condition;
 		//print_r($rates);
 		die();
 	}
