@@ -195,9 +195,10 @@ $(document).ready(function(){
 
         }else{
            $.ajax({
-                 "url" : "/mobilkucalc/",
-                 "type" : "POST",
-                 "data" : "tahun_pembuatan=" + tahun_pembuatan +
+                  "url" : "/mobilkucalc/",
+                  "async": false,
+                  "type" : "POST",
+                  "data" : "tahun_pembuatan=" + tahun_pembuatan +
                           "&harga="+harga+
                           "&model="+model+
                           "&periode="+periode+
@@ -211,6 +212,7 @@ $(document).ready(function(){
                  }
              }); 
         }
+        //console.log(tahun_pembuatan+'-'+harga+'-'+model+'-'+periode+'-'+wilayah+'-'+radio+'-'+hargaKonv+'-'+paket);
         return rate;
     }
 
@@ -304,7 +306,6 @@ $(document).ready(function(){
     }
 
     function calc_result(paket) {
-        
         var getColom;
         var harga=clearFormat($('#harga').val());
         var tahun_pembuatan;
@@ -373,11 +374,10 @@ $(document).ready(function(){
         var tlo=getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html,1);
         compre_tlo_persen=localStorage.getItem("gettlo");
         workshop_persen=parseFloat(getWorkshop(merk_html,1))*(compre_tlo_persen/100);
-        console.log(merk_html);
-        console.log("compre_tlo_persen : "+(compre_tlo_persen));
-        console.log("getWorkshop parsefloat: "+parseFloat(getWorkshop(merk_html,1)));
+        // console.log("compre_tlo_persen : "+(compre_tlo_persen));
+        // console.log("getWorkshop parsefloat: "+parseFloat(getWorkshop(merk_html,1)));
         //console.log("Workshop %:"+compre_tlo_persen*(parseFloat(getWorkshop(merk,1))/100));
-        console.log("workshop_persen:"+workshop_persen);
+        // console.log("workshop_persen:"+workshop_persen);
         //console.log("compre "+compre_tlo_persen);
         // if (tlo= 5+wilayah) else (1+wilayah)
         if (jenisasuransi=='tlo') {
@@ -555,8 +555,11 @@ $(document).ready(function(){
         var tipe=$('#tipe').val().toLowerCase();
         var wilayah=parseInt($('#wilayah').val());
         var kapasitas=parseInt($('#kapasitas').val());
-        
-        
+        if($("input[type='radio']#radio01").is(':checked') == true)
+          var jenisasuransi = 'comprehensive';
+        else
+          var jenisasuransi = 'tlo';
+
         //=========================perhitungan standar======================================//
         var val_tlo=harga*1; //harga dikali tahun pertama (1), tahun kedua dikali 2 dst.
         var cleanVarTlo=parseInt(val_tlo); //get clean tlo
