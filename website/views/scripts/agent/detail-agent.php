@@ -294,7 +294,7 @@
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Merokok</td>
-                                                    <td>: '.$Rokok.' tahun</td>
+                                                    <td>: '.$Rokok.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Premi yang harus anda bayarkan pertahun</td>

@@ -106,7 +106,7 @@
                 $session->cia = $cia;
                 $session->uangpertanggungan = $uangpertanggungan;
                 $session->smoking = $smoking;
-                $session->premi = $premi;
+                //$session->premi = $premi;
                 $session->tanggalLahir = $tanggallahir;
                 $session->usia = $usia;
                 $session->status = 'life_insurance';
