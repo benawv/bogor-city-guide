@@ -450,7 +450,7 @@ class AgentController extends Website_Controller_Action {
 		
 		$bodyEmail = "Nama: ".$nama."<br>
 		No Handphone: ".$tlp."<br>Email: ".$email."<br>Tanggal Lahir: ".$date_tglLahir1."<br>
-		Jenis Kelamin: ".$JK."<br>Usia: ".$usia."<br>CIA: ".$cia."<br>Uang Pertanggungan: ".$up."<br>Premi: ".$premi."<br>"."           <br>Keterangan: ".$_POST["keterangan"];
+		Jenis Kelamin: ".$kelamin."<br>Usia: ".$usia."<br>CIA: ".$cia."<br>Uang Pertanggungan: ".$up."<br>Premi: ".$premi."<br>"."           <br>Keterangan: ".$_POST["keterangan"];
 		
 		$paramsLocator = array(
 						'email_agen' => $_POST["email_agen"],
@@ -458,7 +458,7 @@ class AgentController extends Website_Controller_Action {
 						'telp_agen' => $_POST["telp"],
 						'lokasi_agen' => $_POST["lokasi"],
 						'bodyEmail' => $bodyEmail,
-						'tglLahirCustomer' => $bod,
+						'tglLahirCustomer' => $date_tglLahir1,
 						'typeForm' => 'LifeInsurance'
 						);
 		
