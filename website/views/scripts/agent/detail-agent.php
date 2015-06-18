@@ -430,7 +430,7 @@
                                     
                                 }
                                 
-                                if(!isset($session->date_tglBuat) && !isset($session1->nama)){
+                                if(!isset($session->date_tglBuat) && !isset($session1->nama) && !isset($session0->nama)){
                                     $content.= "<table>";
                                     $content.= '<tr class="tbl-email">
                                                     <td>Keterangan tambahan</td>
@@ -446,7 +446,7 @@
                        
                     <?php }?>
                     <?php
-                        if(!isset($session->date_tglBuat) && !isset($session1->nama)){
+                        if(!isset($session->date_tglBuat) && !isset($session1->nama) && !isset($session0->nama)){
                     ?>
                         <a href="mailto:<?php echo $email;?>?Subject=Call%20Agen" target="_top" class="btn btn-sendmail">Kirim EMail</a>
                     <?php } else{?>
