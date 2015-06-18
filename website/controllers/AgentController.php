@@ -480,7 +480,7 @@ class AgentController extends Website_Controller_Action {
 		$mail->addBcc("asn.tasbih@gmail.com");
 		$mail->send();
 
-		Zend_Session::namespaceUnset('life_insurance');
+		Zend_Session::namespaceUnset('liveinsurance');
 
 		echo "Sukses";
 		die();
