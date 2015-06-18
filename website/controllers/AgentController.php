@@ -438,7 +438,7 @@ class AgentController extends Website_Controller_Action {
 						'nama' => $nama,
 						'namaAgen' => $_POST["nama_agen"],
 						'email' => $email,
-						'jenisKelamin' => $gender,
+						'jenisKelamin' => $kelamin,
 						'tgllahir' => $date_tglLahir1,
 						'nohp' => $tlp,
                         'usia' => $usia,
@@ -458,7 +458,7 @@ class AgentController extends Website_Controller_Action {
 						'telp_agen' => $_POST["telp"],
 						'lokasi_agen' => $_POST["lokasi"],
 						'bodyEmail' => $bodyEmail,
-						'tglLahirCustomer' => $date_tglLahir,
+						'tglLahirCustomer' => $bod,
 						'typeForm' => 'LifeInsurance'
 						);
 		
