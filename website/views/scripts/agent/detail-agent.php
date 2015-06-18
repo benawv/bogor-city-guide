@@ -282,7 +282,7 @@
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Jenis Kelamin Anda</td>
-                                                    <td>: '.$sessionLive->$gender.'</td>
+                                                    <td>: '.$sessionLive->gender.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Uang Pertanggungan Anda</td>
