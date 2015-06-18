@@ -137,6 +137,11 @@
     <Tasbih-kedua>1</Tasbih-kedua>
     <thankyou-inquiry>1</thankyou-inquiry>
     <thankyou-tasbih>1</thankyou-tasbih>
+    <static-banner-wide>1</static-banner-wide>
+    <thankyou-liveinsurance>1</thankyou-liveinsurance>
+    <rekomendasiV>1</rekomendasiV>
+    <listV>1</listV>
+    <searchV>1</searchV>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>
