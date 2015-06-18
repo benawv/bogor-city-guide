@@ -458,7 +458,7 @@ class AgentController extends Website_Controller_Action {
 						'telp_agen' => $_POST["telp"],
 						'lokasi_agen' => $_POST["lokasi"],
 						'bodyEmail' => $bodyEmail,
-						'tglLahirCustomer' => $date_tglLahir1,
+						'tglLahirCustomer' => new Pimcore_Date($bod),
 						'typeForm' => 'LifeInsurance'
 						);
 		
