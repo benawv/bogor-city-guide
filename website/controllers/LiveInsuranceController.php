@@ -100,13 +100,14 @@
 				$session = new Zend_Session_Namespace('liveinsurance');
                 $session->premi = $premi ;
                 $session->nama= $nama;
+                $session->email= $email;
                 $session->nohp = $nohp;
                 $session->gender = $gender;
                 $session->cia = $cia;
                 $session->uangpertanggungan = $uangpertanggungan;
                 $session->smoking = $smoking;
                 $session->premi = $premi;
-                $session->tanggallahir = $tanggallahir;
+                $session->tanggalLahir = $tanggallahir;
                 $session->usia = $usia;
                 $session->status = 'life_insurance';
                 $session->ID = $getId->o_id;
