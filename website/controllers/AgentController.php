@@ -411,7 +411,7 @@ class AgentController extends Website_Controller_Action {
 	}
     
     public function sendMailAgenLifeinsuranceAction(){
-
+    
 		// harusnya ini jadi  class Object_Abstract untuk email(sementara static harus cepet ganti !!!!!)
 		$session = new Zend_Session_Namespace('liveinsurance');
         $nama = $session->nama;
@@ -429,7 +429,7 @@ class AgentController extends Website_Controller_Action {
 		$update->setKeterangan($_POST["keterangan"]);
 		$update->save();
 
-        $date_tglLahir1 = date("d/m/Y",strtotime(new Pimcore_Date($bod)));
+        //$date_tglLahir1 = date("d/m/Y",strtotime(new Pimcore_Date($bod)));
 
 		
 
@@ -438,8 +438,8 @@ class AgentController extends Website_Controller_Action {
 						'nama' => $nama,
 						'namaAgen' => $_POST["nama_agen"],
 						'email' => $email,
-						'jenisKelamin' => $kelamin,
-						'tgllahir' => $date_tglLahir1,
+						'jenisKelamin' => $gender,
+						'tgllahir' => $bod,
 						'nohp' => $tlp,
                         'usia' => $usia,
 						'cia' => $cia,
@@ -449,8 +449,15 @@ class AgentController extends Website_Controller_Action {
 						);
 		
 		$bodyEmail = "Nama: ".$nama."<br>
-		No Handphone: ".$tlp."<br>Email: ".$email."<br>Tanggal Lahir: ".$date_tglLahir1."<br>
-		Jenis Kelamin: ".$JK."<br>Usia: ".$usia."<br>CIA: ".$cia."<br>Uang Pertanggungan: ".$up."<br>Premi: ".$premi."<br>"."           <br>Keterangan: ".$_POST["keterangan"];
+		No Handphone: ".$tlp."<br>
+        Email: ".$email."<br>
+        Tanggal Lahir: ".$bod."<br>
+		Jenis Kelamin: ".$JK."<br
+        >Usia: ".$usia."<br>
+        CIA: ".$cia."<br>
+        Uang Pertanggungan: ".$up."<br>
+        Premi: ".$premi."<br>"."           <br>
+        Keterangan: ".$_POST["keterangan"];
 		
 		$paramsLocator = array(
 						'email_agen' => $_POST["email_agen"],
