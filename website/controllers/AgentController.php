@@ -425,7 +425,7 @@ class AgentController extends Website_Controller_Action {
         $up = $session->uangpertanggungan;
         $premi = $session->premi;
 		
-		$update = Object_TasbihInquiry::getById($idObject);
+		$update = Object_Liveinsurance::getById($idObject);
 		$update->setKeterangan($_POST["keterangan"]);
 		$update->save();
 
