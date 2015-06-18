@@ -449,8 +449,8 @@ class AgentController extends Website_Controller_Action {
 						);
 		
 		$bodyEmail = "Nama: ".$nama."<br>
-		No Handphone: ".$tlp."<br>Email: ".$email."<br>Tanggal Lahir: ".bod."<br>
-		Jenis Kelamin: ".$bod."<br>Usia: ".$usia."<br>CIA: ".$cia."<br>Uang Pertanggungan: ".$up."<br>Premi: ".$premi."<br>"."           <br>Keterangan: ".$_POST["keterangan"];
+		No Handphone: ".$tlp."<br>Email: ".$email."<br>Tanggal Lahir: ".$bod."<br>
+		Jenis Kelamin: ".$kelamin."<br>Usia: ".$usia."<br>CIA: ".$cia."<br>Uang Pertanggungan: ".$up."<br>Premi: ".$premi."<br>"."           <br>Keterangan: ".$_POST["keterangan"];
 		
 		$paramsLocator = array(
 						'email_agen' => $_POST["email_agen"],
@@ -458,7 +458,7 @@ class AgentController extends Website_Controller_Action {
 						'telp_agen' => $_POST["telp"],
 						'lokasi_agen' => $_POST["lokasi"],
 						'bodyEmail' => $bodyEmail,
-						'tglLahirCustomer' => new Pimcore_Date($bod),
+						'tglLahirCustomer' => $bod,
 						'typeForm' => 'LifeInsurance'
 						);
 		
