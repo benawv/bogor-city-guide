@@ -429,7 +429,7 @@ class AgentController extends Website_Controller_Action {
 		$update->setKeterangan($_POST["keterangan"]);
 		$update->save();
 
-        $date_tglLahir1 = date("d/m/Y",strtotime(new Pimcore_Date($bod)));
+        $date_tglLahir1 = date("d/m/Y",strtotime(Pimcore_Date($bod)));
 
 		
 
@@ -449,8 +449,8 @@ class AgentController extends Website_Controller_Action {
 						);
 		
 		$bodyEmail = "Nama: ".$nama."<br>
-		No Handphone: ".$tlp."<br>Email: ".$email."<br>Tanggal Lahir: ".$date_tglLahir1."<br>
-		Jenis Kelamin: ".$kelamin."<br>Usia: ".$usia."<br>CIA: ".$cia."<br>Uang Pertanggungan: ".$up."<br>Premi: ".$premi."<br>"."           <br>Keterangan: ".$_POST["keterangan"];
+		No Handphone: ".$tlp."<br>Email: ".$email."<br>Tanggal Lahir: ".bod."<br>
+		Jenis Kelamin: ".$bod."<br>Usia: ".$usia."<br>CIA: ".$cia."<br>Uang Pertanggungan: ".$up."<br>Premi: ".$premi."<br>"."           <br>Keterangan: ".$_POST["keterangan"];
 		
 		$paramsLocator = array(
 						'email_agen' => $_POST["email_agen"],
