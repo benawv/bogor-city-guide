@@ -250,47 +250,47 @@
 
                     
                     <?php
-                        $session0 = new Zend_Session_Namespace('liveinsurance');
-                        $status = $session0->status;
-                        $ID = $session0->ID;
+                        $sessionLive = new Zend_Session_Namespace('liveinsurance');
+                        $status = $sessionLive->status;
+                        $ID = $sessionLive->ID;
         
 
         
-                        if($session0->smoking == 'Y'){
+                        if($sessionLive->smoking == 'Y'){
                         $Rokok = 'Ya';}
-                        else if($session0->smoking == 'N'){
+                        else if($sessionLive->smoking == 'N'){
                         $Rokok = 'Tidak';}
 
                         $content;
-                        if(isset($session->nama)){
+                        if(isset($sessionLive->nama)){
                             $content.="<table>";
                             $content.='<tr class="tbl-email">
                                                     <td>Nama Anda</td>
-                                                    <td>: '.$session0->nama.'</td>
+                                                    <td>: '.$sessionLive->nama.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Email Anda </td>
-                                                    <td>: '.$session0->email.'</td>
+                                                    <td>: '.$sessionLive->email.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Nomor Handphone Anda</td>
-                                                    <td>: '.$session0->nohp.'</td>
+                                                    <td>: '.$sessionLive->nohp.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Tanggal Lahir Anda</td>
-                                                    <td>: '.date("d/m/Y",strtotime($session0->tanggalLahir)).'</td>
+                                                    <td>: '.date("d/m/Y",strtotime($sessionLive->tanggalLahir)).'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Jenis Kelamin Anda</td>
-                                                    <td>: '.$session0->$gender.'</td>
+                                                    <td>: '.$sessionLive->$gender.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Uang Pertanggungan Anda</td>
-                                                    <td>: '.$session0->uangpertanggungan.'</td>
+                                                    <td>: '.$sessionLive->uangpertanggungan.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>CIA</td>
-                                                    <td>: '.$session0->cia.'</td>
+                                                    <td>: '.$sessionLive->cia.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Merokok</td>
@@ -298,7 +298,7 @@
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Premi yang harus anda bayarkan pertahun</td>
-                                                    <td>: Rp '.$session0->premi.'</td>
+                                                    <td>: Rp '.$sessionLive->premi.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Keterangan tambahan</td>
@@ -430,7 +430,7 @@
                                     
                                 }
                                 
-                                if(!isset($session->date_tglBuat) && !isset($session1->nama) && !isset($session0->nama)){
+                                if(!isset($session->date_tglBuat) && !isset($session1->nama) && !isset($sessionLive->nama)){
                                     $content.= "<table>";
                                     $content.= '<tr class="tbl-email">
                                                     <td>Keterangan tambahan</td>
@@ -446,7 +446,7 @@
                        
                     <?php }?>
                     <?php
-                        if(!isset($session->date_tglBuat) && !isset($session1->nama) && !isset($session0->nama)){
+                        if(!isset($session->date_tglBuat) && !isset($session1->nama) && !isset($sessionLive->nama)){
                     ?>
                         <a href="mailto:<?php echo $email;?>?Subject=Call%20Agen" target="_top" class="btn btn-sendmail">Kirim EMail</a>
                     <?php } else{?>
