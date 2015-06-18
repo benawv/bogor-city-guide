@@ -413,7 +413,7 @@ class AgentController extends Website_Controller_Action {
     public function sendMailAgenLifeinsuranceAction(){
 
 		// harusnya ini jadi  class Object_Abstract untuk email(sementara static harus cepet ganti !!!!!)
-		$session = new Zend_Session_Namespace('life_insurance');
+		$session = new Zend_Session_Namespace('liveinsurance');
         $nama = $session->nama;
 		$idObject = $session->ID;
 		$kelamin = $session->gender;
