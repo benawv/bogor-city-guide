@@ -429,7 +429,7 @@ class AgentController extends Website_Controller_Action {
 		$update->setKeterangan($_POST["keterangan"]);
 		$update->save();
 
-        $date_tglLahir1 = date("d/m/Y",strtotime(Pimcore_Date($bod)));
+        $date_tglLahir1 = date("d/m/Y",strtotime(new Pimcore_Date($bod)));
 
 		
 
