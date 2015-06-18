@@ -137,11 +137,14 @@
     <Tasbih-kedua>1</Tasbih-kedua>
     <thankyou-inquiry>1</thankyou-inquiry>
     <thankyou-tasbih>1</thankyou-tasbih>
-    <static-banner-wide>1</static-banner-wide>
+    <gallery-agenlocator>1</gallery-agenlocator>
+    <button-nav>1</button-nav>
+    <gallery-carousel-tasbih>1</gallery-carousel-tasbih>
+    <sitemap>1</sitemap>
     <thankyou-liveinsurance>1</thankyou-liveinsurance>
-    <rekomendasiV>1</rekomendasiV>
-    <listV>1</listV>
-    <searchV>1</searchV>
+    <static-banner-wide>1</static-banner-wide>
+    <asn-center>1</asn-center>
+    <sections-popup-video>1</sections-popup-video>
   </brick>
   <plugin>
     <ColorPicker>1</ColorPicker>
