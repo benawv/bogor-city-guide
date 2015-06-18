@@ -110,7 +110,7 @@
                 $session->tanggalLahir = $tanggallahir;
                 $session->usia = $usia;
                 $session->status = 'life_insurance';
-                $session->ID = $getId->o_id;
+                $session->ID = $cookie->getO_id();
                 //echo $session->premi = $premi;
             }
         
