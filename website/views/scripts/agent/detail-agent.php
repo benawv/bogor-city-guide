@@ -262,7 +262,7 @@
                         $Rokok = 'Tidak';}
 
                         $content;
-                        if(isset($session0->nama)){
+                        if(isset($session->nama)){
                             $content.="<table>";
                             $content.='<tr class="tbl-email">
                                                     <td>Nama Anda</td>
