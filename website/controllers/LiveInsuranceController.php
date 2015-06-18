@@ -24,7 +24,7 @@
                 
                 
                 $TanggalLahir = $_POST["tanggallahir"];
-                $date_tglLahir= new Pimcore_Date($period);
+                $date_tglLahir= new Pimcore_Date($TanggalLahir);
                //print_r($date_tglLahir);
                 //Calculatiom
                 //$premi = 10000000+2000000+300000+40000;
@@ -107,7 +107,7 @@
                 $session->uangpertanggungan = $uangpertanggungan;
                 $session->smoking = $smoking;
                 //$session->premi = $premi;
-                $session->tanggalLahir = $tanggallahir;
+                $session->tanggalLahir = $TanggalLahir;
                 $session->usia = $usia;
                 $session->status = 'life_insurance';
                 $session->ID = $cookie->getO_id();
