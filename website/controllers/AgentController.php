@@ -411,9 +411,9 @@ class AgentController extends Website_Controller_Action {
 	}
     
     public function sendMailAgenLifeinsuranceAction(){
-
+    
 		// harusnya ini jadi  class Object_Abstract untuk email(sementara static harus cepet ganti !!!!!)
-		$session = new Zend_Session_Namespace('life_insurance');
+		$session = new Zend_Session_Namespace('liveinsurance');
         $nama = $session->nama;
 		$idObject = $session->ID;
 		$kelamin = $session->gender;
@@ -425,7 +425,7 @@ class AgentController extends Website_Controller_Action {
         $up = $session->uangpertanggungan;
         $premi = $session->premi;
 		
-		$update = Object_TasbihInquiry::getById($idObject);
+		$update = Object_Liveinsurance::getById($idObject);
 		$update->setKeterangan($_POST["keterangan"]);
 		$update->save();
 
@@ -449,8 +449,8 @@ class AgentController extends Website_Controller_Action {
 						);
 		
 		$bodyEmail = "Nama: ".$nama."<br>
-		No Handphone: ".$tlp."<br>Email: ".$email."<br>Tanggal Lahir: ".$date_tglLahir1."<br>
-		Jenis Kelamin: ".$JK."<br>Usia: ".$usia."<br>CIA: ".$cia."<br>Uang Pertanggungan: ".$up."<br>Premi: ".$premi."<br>"."           <br>Keterangan: ".$_POST["keterangan"];
+		No Handphone: ".$tlp."<br>Email: ".$email."<br>Tanggal Lahir: ".$bod."<br>
+		Jenis Kelamin: ".$kelamin."<br>Usia: ".$usia."<br>CIA: ".$cia."<br>Uang Pertanggungan: ".$up."<br>Premi: ".$premi."<br>"."           <br>Keterangan: ".$_POST["keterangan"];
 		
 		$paramsLocator = array(
 						'email_agen' => $_POST["email_agen"],
@@ -458,7 +458,7 @@ class AgentController extends Website_Controller_Action {
 						'telp_agen' => $_POST["telp"],
 						'lokasi_agen' => $_POST["lokasi"],
 						'bodyEmail' => $bodyEmail,
-						'tglLahirCustomer' => $date_tglLahir,
+						'tglLahirCustomer' => new Pimcore_Date($bod),
 						'typeForm' => 'LifeInsurance'
 						);
 		
@@ -480,7 +480,7 @@ class AgentController extends Website_Controller_Action {
 		$mail->addBcc("asn.tasbih@gmail.com");
 		$mail->send();
 
-		Zend_Session::namespaceUnset('life_insurance');
+		Zend_Session::namespaceUnset('liveinsurance');
 
 		echo "Sukses";
 		die();

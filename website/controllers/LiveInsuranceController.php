@@ -24,7 +24,7 @@
                 
                 
                 $TanggalLahir = $_POST["tanggallahir"];
-                $date_tglLahir= new Pimcore_Date($period);
+                $date_tglLahir= new Pimcore_Date($TanggalLahir);
                //print_r($date_tglLahir);
                 //Calculatiom
                 //$premi = 10000000+2000000+300000+40000;
@@ -32,7 +32,7 @@
                 //Select from Database
     
                 $rates= new Object_LiveinsuranceRate_List();                      
-                $rates->setCondition("JenisKelamin='".$gender."' and UangPertanggungan='".$uangpertanggungan."' and CriticalIllnessAccelerated='".$cia."' and Merokok='".$smoking."' and Usia='".$usia."'");
+                $rates->setCondition("JenisKelamin='".$gender."' and UangPertanggungan='".$uangpertanggungan."' and CriticalIllnessAccelerated='".$cia."' and Usia='".$usia."'");
                 
                 foreach($rates as $items){
                     $premi = $items->Premi;    
@@ -100,16 +100,17 @@
 				$session = new Zend_Session_Namespace('liveinsurance');
                 $session->premi = $premi ;
                 $session->nama= $nama;
+                $session->email= $email;
                 $session->nohp = $nohp;
                 $session->gender = $gender;
                 $session->cia = $cia;
                 $session->uangpertanggungan = $uangpertanggungan;
                 $session->smoking = $smoking;
-                $session->premi = $premi;
-                $session->tanggallahir = $tanggallahir;
+                //$session->premi = $premi;
+                $session->tanggalLahir = $TanggalLahir;
                 $session->usia = $usia;
                 $session->status = 'life_insurance';
-                $session->ID = $getId->o_id;
+                $session->ID = $cookie->getO_id();
                 //echo $session->premi = $premi;
             }
         

@@ -1,3 +1,15 @@
+<style>
+	footer.contentinfo {
+	  font-size: 0.9em !important;
+}
+	footer.contentinfo .footer-links ul a {
+	  padding: 0.5em 10px !important;
+	  font-size: 0.92em !important;
+	  line-height: 1em !important;
+}
+
+</style>
+
 <div class="modal fade" id="modalPopUpImage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">

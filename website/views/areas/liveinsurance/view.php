@@ -18,8 +18,8 @@
     /* Override AJFC's feature box color */
     .box-dent--inner{ background: #0077c8; }
     .box-dent::before{ border-top: 28px solid #0077c8 !important;}
-    .btn-tasbih{ background: #0077c8 !important; border: none; border-radius:0; }
-    .btn-tasbih:hover, .btn-tasbih:focus{ background: #0077c8 !important;  }
+    .btn-tasbih{ background: #003781  !important; border: none; border-radius:0; }
+    .btn-tasbih:hover, .btn-tasbih:focus{ background: #003781  !important;  }
     .header-calc{ background: #0077c8; }
 
     .table-responsive
@@ -373,7 +373,7 @@
                             <label>Critical Illness Accelerated(CIA)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="critical_illness_accelerated" name="cia" placeholder="Rp. 0"  required readonly>
+                            <input type="text" class="form-control" id="critical_illness_accelerated" name="cia" placeholder="0"  required readonly>
                             <!--<select class="form-control" required tabindex="3" id="critical_illness_accelerated">
                                 <option value="Pilih">Pilih</option>
                                 <option value="1000">1 M</option>
