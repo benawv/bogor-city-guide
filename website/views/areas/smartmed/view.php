@@ -735,6 +735,7 @@
                 },
                 success: function(msg){
                     // console.log(plan+" "+msg);
+                    console.log("plan="+plan+"|msg="+msg);
                     if(msg=="")
                         value = 0;
                     else
