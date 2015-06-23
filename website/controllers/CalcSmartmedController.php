@@ -19,7 +19,7 @@ class CalcSmartmedController extends Website_Controller_Action {
 		//$this->enableLayout();
 		//echo $payment."-".$fd."-".$ncd."-".$age."-".$sex."-".$code."-".$coshare."-".$nbc."-".$uwl;
 		//ALL
-		$entries = new Object_smartmedPremium_List();
+		$entries = new Object_SmartmedPremium_List();
 		$entries->setLimit(1);
 		$entries->setCondition("nbc LIKE '".$nbc."' AND sex LIKE '".$sex."' AND age LIKE '".$age."' AND coshare LIKE '".$coshare."' AND kode LIKE '".$code."' AND plantype__id='".$plan."'");
 		
