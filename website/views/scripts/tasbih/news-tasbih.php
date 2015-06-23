@@ -119,7 +119,7 @@
         print_r($items);
         echo "</pre>";*/
 ?>
-    <header style="margin-top: -20px;">
+    <header style="/*margin-top: -20px;*/">
 
         <div class="background">
             <img src="<?php echo $items->images->path.$items->images->filename; ?>" alt="" class="img-responsive">
