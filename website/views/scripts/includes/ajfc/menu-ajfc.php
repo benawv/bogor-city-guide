@@ -48,7 +48,9 @@
 								<?php 
 									$list = new Document_List();
 									$list->setLimit(7);
-									$list->setCondition('parentId = '.$subpage->getDocument()->getId());
+									$list->setOrderKey("index");
+									$list->setOrder("asc");
+									$list->setCondition('parentId = '.$subpage->getDocument()->getId().' AND published = 1');
 									$documents = $list->load();
 									//echo '<pre>'; die(print_r($documents));
 									foreach($documents as $anchor)
@@ -103,7 +105,9 @@
 								<?php 
 									$list = new Document_List();
 									$list->setLimit(7);
-									$list->setCondition('parentId = '.$subpage->getDocument()->getId());
+									$list->setOrderKey("index");
+									$list->setOrder("asc");
+									$list->setCondition('parentId = '.$subpage->getDocument()->getId().' AND published = 1');
 									$documents = $list->load();
 									//echo '<pre>'; die(print_r($documents));
 									foreach($documents as $anchor)
