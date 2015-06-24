@@ -289,6 +289,7 @@ $( document ).ready(function(){
     
     
     var url = window.location.host+window.location.pathname;
+    //alert(url);
 	var metas = document.getElementsByTagName('meta'); 
     for (i=0; i<metas.length; i++) { 
       if (metas[i].getAttribute("name") == "title") { 
@@ -311,6 +312,8 @@ $( document ).ready(function(){
 		  });
 
     $('.community-btn .fbshare').on("click",function(){
+        //alert(url);
+       //var url ="https://www.youtube.com/watch?v=n1a7o44WxNo";
                 $.ajax({
 					type: 'POST',
 					url: window.location.origin+'/website/static/inv-fbshare/sharedfb.php',
@@ -323,8 +326,8 @@ $( document ).ready(function(){
 						link_in_fb : window.location.host+window.location.pathname
 					},
 					success: function(response)
+                    //console.log(response);
 					{
-						var url = window.location.origin+'/website/static/inv-fbshare/sharedfb.php'+response;
 						window.open('http://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), 'sharer', 'width=626,height=436');
 					}
 				});
