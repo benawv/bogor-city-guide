@@ -176,6 +176,7 @@ $(function(){
 						<a href="javascript:void(0);" class="icon-user cusLogin">Portal Login <img class="arrowDown" src='/website/static/images/arrow/bottom-arrow.png' alt="arrow" /></a>
 					</li>
 					<li class="liMobileHide"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank" class="icon-mail hide-text">Registrasi</a></li>
+					<li class="liMobileHide"><a class="icon-mail hide-text">Bagikan : </a></li>
 					<!--<li><a href="#" class="icon-fav hide-text">My Product</a></li>-->
 					<li class="liMobileHide">
 						<a href="javascript:void(0);" class="fbshare-fullpage"><img src="/website/static/images/icon-share/facebook.png" alt="facebook" /></a>
