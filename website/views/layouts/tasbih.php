@@ -7,6 +7,8 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<?php echo $this->cusMetaTitle.$this->cusMetaDesc.$this->cusMetaImage;?>
 	<?php
+
+
         // portal detection => portal needs an adapted version of the layout
         $isPortal = false;
         if($this->getParam("controller") == "content" && $this->getParam("action") == "portal") {
@@ -19,7 +21,29 @@
             $this->document = Document::getConcreteByPath('/');
         }
 
-        if($this->document->getTitle()) {
+        if($this->request->controller == 'tasbih' && $this->request->action == 'news-tasbih')
+	    {
+		$id = $this->_getParam('id');
+		$entries = Object_Abstract::getById($id);
+		$data = $entries;
+		
+
+            //echo "<pre>";
+	//print_r($this->request->action);
+	//die();
+		//$metaCustom = $data->getProperties()
+		//echo "<pre>";
+		//print_r($data->getProperties());
+		//die();
+	?>
+		<meta name="title" content="<?php echo $data->gettitle();?>">
+		<meta name="description" content="<?php echo $data->getdeskripsisingkat();?>" >
+		<meta name="image" content="<?php echo $data->getimages();?>" >
+	<?php
+	    }
+else{
+
+            if($this->document->getTitle()) {
             // use the manually set title if available
             $this->headTitle()->set($this->document->getTitle());
         }
@@ -32,6 +56,9 @@
         if($this->document->getKeywords()) {
             $this->headMeta()->appendName('keywords', $this->document->getKeywords());
         }
+}
+
+
 
         /* $this->headTitle()->append("Asuransi Indonesia Terbaik");
         $this->headTitle()->setSeparator(" : "); */

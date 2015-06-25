@@ -222,7 +222,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label><strong>Tanggal Lahir Anda? <br>(Min. Usia 18 tahun)</strong></label>
+                            <label><strong>Tanggal Lahir Anda? <br>(Min. Usia 1 tahun)</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="DOB" value="" placeholder="Tanggal Lahir" />
@@ -446,12 +446,12 @@
             var dob = new Date(this.value);
             var today = new Date();
             var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
-            if(age >= 18) {
+            if(age >= 1) {
                 $('#usia').val(age);
                document.getElementById('notif-DOB').style.display= 'none';
             }else{
                 document.getElementById('notif-DOB').style.display= 'block';
-                $('#usia').val('Umur Anda dibawah 18 tahun');
+                $('#usia').val('Umur Anda dibawah 1 tahun');
             }
         });
 
@@ -480,7 +480,7 @@
         var d = new Date();
         var y = d.getFullYear();
         minyear = y - 55;
-        maxyear = y - 18;
+        maxyear = y - 1;
         range = minyear+':'+maxyear;
         def = '1/1/'+minyear;
         $('#DOB').datepicker({

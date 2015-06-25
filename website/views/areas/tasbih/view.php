@@ -213,7 +213,7 @@
                         <!-- Modal -->
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label><strong>Masukan tanggal lahir Anda<br>(Minimum usia dari 18 tahun sampai 55 tahun)</strong></label>
+                                <label><strong>Masukan tanggal lahir Anda<br>(Minimum usia dari 1 tahun sampai 55 tahun)</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
@@ -533,7 +533,7 @@
         var d = new Date();
         var y = d.getFullYear();
         minyear = y - 55;
-        maxyear = y - 18;
+        maxyear = y - 1;
         range = minyear+':'+maxyear;
         def = '1/1/'+minyear;
        $('#tgl-hitung, #tgl-lahir').datepicker({
@@ -553,12 +553,12 @@
             var dob = new Date(this.value);
             var today = new Date();
             var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
-            if(age >= 18) {
+            if(age >= 1) {
                 $('#usia').val(age);
                document.getElementById('notif-tgllahir').style.display= 'none';
             }else{
                 document.getElementById('notif-tgllahir').style.display= 'block';
-                $('#usia').val('Umur Anda dibawah 18 tahun');
+                $('#usia').val('Umur Anda dibawah 1 tahun');
             }
         });
     });

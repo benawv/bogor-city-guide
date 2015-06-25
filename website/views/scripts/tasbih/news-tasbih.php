@@ -115,6 +115,14 @@
     .main-content, .sidebar{
           min-height: 737px !important;
     }
+    
+    .fa-facebook, .fa-twitter{
+        font-size:25px !important;
+    }
+    
+    a.tw-share{
+        font-size:26px !important;
+    }
 
 </style>
 <?php
@@ -206,8 +214,13 @@
                             */
                         ?>
                         <?php echo $this->navigation()->breadcrumbs()->setPartial(array('includes/tasbih/breadcrumb-partial.php', 'website'));?>
+                        <div class="community-btn" style="width:53.938px !important; height:29px !important; float:right !important;">
+										<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
+										<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
+								</div>
                     </h5>
                     <p class="meta">Posted on <?php echo $items->newsdate; ?></p>
+                                
                     </div><!--/ .main-content--header -->
 
                     <?php echo $items->content; ?>
@@ -274,6 +287,55 @@ $( document ).ready(function(){
 
     }  
     
+    
+    var url = window.location.host+window.location.pathname;
+    //alert(url);
+	var metas = document.getElementsByTagName('meta'); 
+    for (i=0; i<metas.length; i++) { 
+      if (metas[i].getAttribute("name") == "title") { 
+         var title = metas[i].getAttribute("content"); 
+      }else if(metas[i].getAttribute("name") == "description"){
+        var description = metas[i].getAttribute("content");
+      } else if(metas[i].getAttribute("name") == 'image'){
+        var image = metas[i].getAttribute("content");
+      }
+    } 
+    
+    		$('.community-btn .twshare').on("click",function(){
+        
+	        
+            //alert(isiText);
+	        var subT = title+" "+url;
+	        //var tweet = title+" : "+isiText+url;
+	        var encodeTweet = encodeURIComponent(subT);
+	        window.open('https://twitter.com/intent/tweet?text='+encodeTweet, 'sharer', 'width=626,height=436');
+		  });
+
+    $('.community-btn .fbshare').on("click",function(){
+        //alert(url);
+       //var url ="http://beta.allianz.co.id/produk/asuransi-syariah/tasbih/artikel/prioritas-keuangan-dalam-rencana-naik-haji-26386";
+       // alert(description.substring(3,80)+"...");
+                $.ajax({
+					type: 'POST',
+					url: window.location.origin+'/website/static/fbshare/sharedfb.php',
+					data: {
+						filename: title+"-artikel tasbih",
+						title_fb : title,
+						image_name: image,
+						description: description.substring(3,80)+"...",
+						url: window.location.host,
+						link_in_fb : window.location.host+window.location.pathname
+					},
+					success: function(response)
+                    //console.log(response);
+					{
+                        //print_r(response);
+						var url = window.location.origin+'/website/static/fbshare/'+response;
+						window.open('http://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), 'sharer', 'width=626,height=436');
+					}
+				});
+    });
+            
 });
 
 
