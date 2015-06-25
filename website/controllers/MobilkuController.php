@@ -183,7 +183,7 @@ class MobilkuController extends Website_Controller_Action {
 		$getRegId->setCondition("regionid =".$wilayah);
 		foreach($getRegId as $item){
 			$getRegId_id=$item->o_id;
-		}
+		} 
 	
 		if($harga<=125000000){
 			$condition_price="prices<=125000000";
@@ -199,14 +199,11 @@ class MobilkuController extends Website_Controller_Action {
 		
 		$paket=1;		
 		$condition="pakettype=$pakettype AND $condition_price AND retetype=$paket AND region__id=$getRegId_id AND age=$age and makemodel__id=$modelmap_id";
-		
-		
 		$getTloRate=new Object_MobilRate_List();
 		$getTloRate->setCondition($condition);
 		foreach($getTloRate as $items){
 			$rates= $items->rate;
 		}
-		// echo $condition;
 		print_r($rates);
 		die();
 	}

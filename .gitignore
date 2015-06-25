@@ -1,3 +1,4 @@
+website/var/*
 website/var/areas/*
 website/var/assets/*
 website/var/backup/*
@@ -19,6 +20,7 @@ website/static/fbshare/*
 website/static/config/*
 website/static/inv-fbshare/*
 .htaccess
+!website/var/config/*
 !website/var/areas/.dummy
 !website/var/assets/.dummy
 !website/var/backup/.dummy

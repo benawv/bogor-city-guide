@@ -59,7 +59,7 @@ $(document).ready(function(){
                         
                        
 
-        if (tipe=='tlo') {
+        /*if (tipe=='tlo') {
             if(map=='PK_R1_S1_Sedan'){
                       if(type_mobil=='bmw'){
                         rate='0.2900';
@@ -190,10 +190,9 @@ $(document).ready(function(){
                       } 
                      
             }else{
-                     rate='0';
+                     rate=0;
             }
-
-        }else{
+        }else{*/
         console.log(tahun_pembuatan+'-'+harga+'-'+model+'-'+periode+'-'+wilayah+'-'+radio+'-'+hargaKonv+'-'+paket);
            $.ajax({
                   "url" : "/mobilkucalc/",
@@ -213,7 +212,7 @@ $(document).ready(function(){
                         //console.log(response);
                  }
              }); 
-        }
+        //}
         return rate;
     }
 
