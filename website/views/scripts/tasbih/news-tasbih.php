@@ -315,14 +315,19 @@ $( document ).ready(function(){
         //alert(url);
        //var url ="http://beta.allianz.co.id/produk/asuransi-syariah/tasbih/artikel/prioritas-keuangan-dalam-rencana-naik-haji-26386";
        // alert(description.substring(3,80)+"...");
+        var desc = description.substring(3,80)+"...";
+        var name = (title.replace(/[^a-zA-Z()]/g,''))+"-artikel-tasbih";
+        var filename = name.replace(/\s/g,'-');
+        //alert(filename);
+        //alert(title);
                 $.ajax({
 					type: 'POST',
 					url: window.location.origin+'/website/static/fbshare/sharedfb.php',
 					data: {
-						filename: title+"-artikel tasbih",
+						filename: filename,
 						title_fb : title,
 						image_name: image,
-						description: description.substring(3,80)+"...",
+						description: desc,
 						url: window.location.host,
 						link_in_fb : window.location.host+window.location.pathname
 					},
