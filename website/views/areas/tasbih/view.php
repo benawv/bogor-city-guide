@@ -553,7 +553,7 @@
             var dob = new Date(this.value);
             var today = new Date();
             var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
-            if(age >= 0) {
+            if(age >= 1) {
                 $('#usia').val(age);
                document.getElementById('notif-tgllahir').style.display= 'none';
             }else{
