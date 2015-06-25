@@ -735,6 +735,7 @@
                 },
                 success: function(msg){
                     // console.log(plan+" "+msg);
+                    console.log("XxX="+payment+"_"+fd+"_"+ncd+"_"+age+"_"+sex+"_"+code+"_"+coshare+"_"+uwl+"_"+plan+"|msg="+msg);
                     if(msg=="")
                         value = 0;
                     else
@@ -755,7 +756,7 @@
         var fd = $("#family_discount").val();
         var dob = $("#dob").val();
         var cd = $("#cd").val();
-
+        console.log(rowCount);
         for(var i = 0; i < rowCount; i++){
             total += parseInt($('table.table tbody').children()[0].children[15].innerHTML);
             totalwithoutuwl += parseInt($('table.table tbody').children()[0].children[16].innerHTML);
@@ -763,12 +764,12 @@
         $('table.table tfoot tr:first').children()[0].innerHTML = total;
         if(total>=250000 && total<1000000) stamp = 3000;
         else if(total>=1000000) stamp = 6000;
-        $('table.table tfoot').children()[1].children[1].innerHTML = stamp;
+        $('table.table tfoot').children()[1].children[1].innerHTML = stamp;//stamp duty
 
         if(fd == "Y" && rowCount > 1) totfd = 0.05 * totalwithoutuwl;
         else totfd = 0;
 
-        $('table.table tfoot').children()[3].children[1].innerHTML = totfd;
+        $('table.table tfoot').children()[3].children[1].innerHTML = totfd;//family discount
 
         jml = stamp + total + 30000 - totfd;
         $('table.table tfoot').children()[4].children[1].innerHTML = 'Rp. ' + jml + ',0';
@@ -778,10 +779,12 @@
     function update(){
         var rowCount = $('table.table tbody tr').length;
         var total = 0;
-        for(var i = 1; i<=rowCount; i++){
-            total += $("table.table tbody").children()[i].children[15].innerHTML;
+        for(var i = 0; i<rowCount; i++){
+            total += parseInt($('table.table tbody').children()[0].children[15].innerHTML);
         }
-        $("table.table tfoot").children()[0].children[1].innerHTML = total;
+        console.log(total);
+        $('table.table tfoot tr:first').children()[0].innerHTML = total;
+        console.log($('table.table tfoot tr:first').children()[0].innerHTML);
         return 0;
     }
 
@@ -959,7 +962,7 @@
     function delrow(){
         // alert($(event.target).attr("data-id"));
         var id = parseInt($(event.target).attr("data-id"))-1;
-        $("table.table tbody").children()[id].innerHTML = "";
+        $("table.table tbody").children()[id].remove();
         jumlah();
         return 0;
     }
