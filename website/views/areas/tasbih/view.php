@@ -213,7 +213,7 @@
                         <!-- Modal -->
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label><strong>Masukan tanggal lahir Anda<br>(Minimum usia dari 18 tahun sampai 55 tahun)</strong></label>
+                                <label><strong>Masukan tanggal lahir Anda<br>(Minimum usia dari 1 tahun sampai 55 tahun)</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
