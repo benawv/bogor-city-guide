@@ -313,7 +313,8 @@ $( document ).ready(function(){
 
     $('.community-btn .fbshare').on("click",function(){
         //alert(url);
-       var url ="http://beta.allianz.co.id/produk/asuransi-syariah/tasbih/artikel/prioritas-keuangan-dalam-rencana-naik-haji-26386";
+       //var url ="http://beta.allianz.co.id/produk/asuransi-syariah/tasbih/artikel/prioritas-keuangan-dalam-rencana-naik-haji-26386";
+       // alert(description.substring(3,80)+"...");
                 $.ajax({
 					type: 'POST',
 					url: window.location.origin+'/website/static/fbshare/sharedfb.php',
@@ -321,7 +322,7 @@ $( document ).ready(function(){
 						filename: title+"-artikel tasbih",
 						title_fb : title,
 						image_name: image,
-						description: description.substring(0,20)+"...",
+						description: description.substring(3,80)+"...",
 						url: window.location.host,
 						link_in_fb : window.location.host+window.location.pathname
 					},
