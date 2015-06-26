@@ -173,7 +173,14 @@
                         ?>
                         <div class="slide <?php echo $hide;?>">
                             <div class="foto">
-                                <?php echo $this->image("image_".$i, ["thumbnail" => "galleryCarousel", "dropClass" => $id . "-" . $i, "title" => "Image Size 1020x400", "width" => "100%", "height" => "auto"])?>
+                                <?php
+                                    if($this->editmode) {
+                                        echo $this->image("image_".$i, ["thumbnail" => "galleryCarousel", "dropClass" => $id . "-" . $i, "title" => "Image Size 1020x400", "width" => "100%", "height" => "auto"]);
+                                    }
+                                    else{
+                                        echo $this->image("image_".$i, ["dropClass" => $id . "-" . $i, "title" => "Image Size 1020x400", "width" => "100%", "height" => "auto"]);
+                                    }
+                                ?>
                             </div>
                             <?php
                                 $extra = $this->image("image_".$i)->getHotspots();
