@@ -70,11 +70,17 @@
 
                 <div class="landing-tasbih-grid--item inline purple">
                     <div class="landing-tasbih-grid--item-image">
-                        <img src="/website/static/images/landing-tasbih/info-produk.jpg" alt="Info Produk" class="">
+                        <?php 
+                        echo $this->image("gallery-informasi", array(
+                                "thumbnail" => "staticBanner",
+                                'title' 	=> 'informasi',
+                                 "width" => "349.125px", "height" => "163.297px"
+                        ));
+                    ?>
                     </div><!--/ .landing-tasbih-grid--item-image -->
                     <div class="landing-tasbih-grid--item-inner">
-                        <h3>Informasi Produk</h3>
-                        <p>Pelajari produk-produk Allianz Indonesia lainnya disini!</p>
+                        <h3><?php echo $this->wysiwyg('title-box-section-informasi')?></h3>
+                        <p><?php echo $this->wysiwyg('title-box-description-informasi')?></p>
                         <a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
                     </div><!--/ .landing-tasbih-grid--item-inner -->
                 </div><!--/ .landing-tasbih-grid--item -->
@@ -84,8 +90,8 @@
 
                 <div class="landing-tasbih-grid--item red">
                     <div class="landing-tasbih-grid--item-inner">
-                        <h3>Frequently Asked Question</h3>
-                        <p>&nbsp;</p>
+                        <h3><?php echo $this->wysiwyg('title-box-section-item')?></h3>
+                        <p><?php echo $this->wysiwyg('title-box-description-item')?></p>
                         <a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
                     </div><!--/ .landing-tasbih-grid--item-inner -->
                 </div><!--/ .landing-tasbih-grid--item -->
