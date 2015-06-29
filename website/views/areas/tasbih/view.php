@@ -33,6 +33,7 @@
             height: 50px;
             background: #d31f42;
         }
+        .content-calc span.cusNext{font-size: 14px;}
         nav.main-navigation a.nav-item::after {
             content: "";
             display: inline-block;
@@ -212,7 +213,7 @@
                         <!-- Modal -->
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label><strong>Masukan tanggal lahir Anda<br>(Minimum usia dari 18 tahun sampai 55 tahun)</strong></label>
+                                <label><strong>Masukan tanggal lahir Anda<br>(Minimum usia dari 1 tahun sampai 55 tahun)</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
@@ -316,7 +317,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4 col-md-offset-4 text-center">
-                            <button class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" style="background-color:#009a44"><i class="fa fa-chevron-right" style="border-radius: 9999px; min-width: 16px; min-height: 16px; line-height: 16px; background: white; color: #009A44; font-size: 8px;"></i>&nbsp;Selanjutnya </button>
+                            <button class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next" style="background-color:#009a44"><i class="fa fa-chevron-right" style="border-radius: 9999px; min-width: 16px; min-height: 16px; line-height: 16px; background: white; color: #009A44; font-size: 8px;"></i>&nbsp;<span class="cusNext">Selanjutnya</span> </button>
                             <!--
                             <?php $asets=Asset::getByPath('/icon-tasbih/calculator.png');?>
                             <button class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih"
@@ -456,10 +457,7 @@
         /*
          * jQueryUI DatePicker
          */
-    var sex;
-    $("input:radio[name=jenisKelamin]").click(function() {
-            sex= $(this).val();
-    });
+
 
         $('#Kalkulasi').click(function() {
 
@@ -477,9 +475,10 @@
             console.log("rek"+frekuensi);
             var asuransijiwa = $('#asuransi-jiwa').val();
             var kontribusi = $('#masa-premi option:Selected').val();
+            var sex= $("input:radio[name=jenisKelamin]:checked").val();
             var unfnum = accounting.unformat(asuransijiwa,0,",");
 
-        
+        //alert(sex);
 
 
             if( asuransijiwa == '' || unfnum < 50000000 ||tanggalpembuatan == '' || tanggallahir == '' || sex == null){
@@ -525,11 +524,16 @@
         });
 
     });
+    
+            $('input[name=jenisKelamin]').change(function(){
+                document.getElementById('notif-jeniskelamin').style.display= 'none';
+            });
+    
     $(function() {
         var d = new Date();
         var y = d.getFullYear();
         minyear = y - 55;
-        maxyear = y - 18;
+        maxyear = y - 1;
         range = minyear+':'+maxyear;
         def = '1/1/'+minyear;
        $('#tgl-hitung, #tgl-lahir').datepicker({
@@ -549,12 +553,12 @@
             var dob = new Date(this.value);
             var today = new Date();
             var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
-            if(age >= 18) {
+            if(age >= 1) {
                 $('#usia').val(age);
                document.getElementById('notif-tgllahir').style.display= 'none';
             }else{
                 document.getElementById('notif-tgllahir').style.display= 'block';
-                $('#usia').val('Umur Anda dibawah 18 tahun');
+                $('#usia').val('Umur Anda dibawah 1 tahun');
             }
         });
     });
