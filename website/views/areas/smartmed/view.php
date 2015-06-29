@@ -590,7 +590,7 @@
             range = year+":"+yearnext;
         console.log(range);
         $("#cd").datepicker('setDate', null);
-        $("#cd").datepicker("destroy"); 
+        $("#cd").datepicker("destroy");
         $("#cd").datepicker({
             changeMonth: true,
             changeYear: true,
@@ -687,6 +687,11 @@
             });
         }
 
+    });
+
+    $(document).on('focus',".date", function(){ //bind to all instances of class "date". 
+        // console.log('klik');
+        $(".date").datepicker();
     });
 
     function selisih(dob, cd){
@@ -877,19 +882,19 @@
                 "<td class='tabletd'>"+no+"</td>"+
                 "<td><input type='text' class='form-control' placeholder='Name' value='"+name+"' class='display'></td>"+
                 "<td>"+form_sex(sex)+"</td>"+
-                "<td><input class='form-control date' type='text' placeholder='Date of Birth' name='dob2' id='dob2' value='"+dob+"'></td>"+
-                "<td><input class='form-control date' type='text' placeholder='Calculation Date' name='cd2' id='cd2' value='"+cd+"'></td>"+
-                "<td class='tabletd'>"+age+"</td>"+
+                "<td><input class='date' type='text' placeholder='Date of Birth' name='dob2' id='dob2' value='"+dob+"'></td>"+
+                "<td><input class='date' type='text' placeholder='Calculation Date' name='cd2' id='cd2' value='"+cd+"'></td>"+
+                "<td class='tabletd age'>"+age+"</td>"+
                 "<td class='tabletd'>NEW BUSINESS</td>"+
                 "<td class='tabletd'>"+planipval.split("_")[1]+"</td>"+
                 "<td class='tabletd'>"+planmatval.split("_")[1]+"</td>"+
                 "<td class='tabletd'>"+planop_denval.split("_")[1]+"</td>"+
-                "<td>"+form_uwl(uwl)+"</td>"+
-                "<td class='tabletd'>"+ipp+"</td>"+
-                "<td class='tabletd'>"+matp+"</td>"+
-                "<td class='tabletd'>"+opdenp+"</td>"+
-                "<td class='tabletd'>"+total+"</td>"+
-                "<td style='display:none;'>"+totalwithout+"</td>"+
+                "<td class='uwl'>"+form_uwl(uwl)+"</td>"+
+                "<td class='tabletd ipp'>"+ipp+"</td>"+
+                "<td class='tabletd matp'>"+matp+"</td>"+
+                "<td class='tabletd opdenp'>"+opdenp+"</td>"+
+                "<td class='tabletd to'>"+total+"</td>"+
+                "<td style='display:none;' class='towithout'>"+totalwithout+"</td>"+
             "</tr>");
         jumlah();
     });
@@ -900,21 +905,25 @@
         var fd = $("#family_discount").val();
         var payment = $("#payment_methods").val();
         // console.log(rowCount);
-        for(var i = 0; i < rowCount; i++){
-            console.log($('table.table tbody').children()[i].children[3].value);
-            sex = $('table.table tbody').children()[i].children[3].value;
-            date1 = $('table.table tbody').children()[i].children[4].value;
-            date2 = $('table.table tbody').children()[i].children[5].value;
-            uwl = $('table.table tbody').children()[i].children[11].value;
-            dist = selisih(date1, date2);
-            age = Math.round(dist/(1000*60*60*24*365));
-            $('table.table tbody').children()[i].children[5].innerHTML = age;
+        //console.log($(this).parent().html());
+        $('table.table tbody tr').each(function(index){
+
+            var uwl = $( this ).find(".uwl").val()
+
+            var dob = $( this ).find("#dob2").val();
+            var cd = $( this ).find("#cd2").val();
+            var sex = $( this ).find("#sex").val();
+            dist = parseInt(selisih(dob, cd));
+            var age = Math.round(dist/(1000*60*60*24*365));
+            $( this ).find(".age").html(age);
+
             var ip = $("#ip").val();
             var mat = $("#mat").val();
             var outden = $("#out_den").val();
             var planipval = $("#planip").val();
             var planmatval = $("#planmat").val();
             var planop_denval = $("#planop_den").val();
+            console.log( index + ": " + $( this ).find("#dob2").val() );
 
             planip = planipval.split("_")[0];
             planmat = planmatval.split("_")[0];
@@ -930,7 +939,7 @@
             matp0 = kalk(age,sex,"ma",mat,0,planmat);
             opdenp0 = kalk(age,sex,"od",outden,0,planop_den);
             totalwithout = parseInt(ipp0)+parseInt(matp0)+parseInt(opdenp0);
-
+            
             if(payment != "Annually"){
                 matp = 0;
                 opdenp = 0;
@@ -948,13 +957,68 @@
                 }
             }
             total = parseInt(ipp)+parseInt(matp)+parseInt(opdenp);
+            $( this ).find(".ipp").html(ipp);
+            $( this ).find(".matp").html(matp);
+            $( this ).find(".opdenp").html(opdenp);
+            $( this ).find(".to").html(totalwithout);
+            $( this ).find(".towithout").html(totalwithout);
+            jumlah();
+        });
+        // for(var i = 0; i < rowCount; i++){
+        //     console.log($('table.table tbody').children()[0].children[5].find("input"));
+        //     sex = $('table.table tbody').children()[i].children[3].value;
+        //     date1 = $('table.table tbody').children()[0].children[4].value;
+        //     date2 = $('table.table tbody').children()[i].children[5].value;
+        //     uwl = $('table.table tbody').children()[i].children[11].value;
+        //     dist = selisih(date1, date2);
+        //     age = Math.round(dist/(1000*60*60*24*365));
+        //     $('table.table tbody').children()[i].children[5].innerHTML = age;
+        //     var ip = $("#ip").val();
+        //     var mat = $("#mat").val();
+        //     var outden = $("#out_den").val();
+        //     var planipval = $("#planip").val();
+        //     var planmatval = $("#planmat").val();
+        //     var planop_denval = $("#planop_den").val();
 
-            $('table.table tbody').children()[i].children[12].innerHTML = ipp;//ipp
-            $('table.table tbody').children()[i].children[13].innerHTML = matp;//matp
-            $('table.table tbody').children()[i].children[14].innerHTML = opdenp;//opden
-            $('table.table tbody').children()[i].children[15].innerHTML = total;//total
-            $('table.table tbody').children()[i].children[16].innerHTML = totalwithout;//total without
-        }
+        //     planip = planipval.split("_")[0];
+        //     planmat = planmatval.split("_")[0];
+        //     planop_den = planop_denval.split("_")[0];
+
+        //     //with premium
+        //     ipp1 = kalk(age,sex,"ip",ip,1,planip);
+        //     matp1 = kalk(age,sex,"ma",mat,1,planmat);
+        //     opdenp1 = kalk(age,sex,"od",outden,1,planop_den);
+            
+        //     //with no premium
+        //     ipp0 = kalk(age,sex,"ip",ip,0,planip);
+        //     matp0 = kalk(age,sex,"ma",mat,0,planmat);
+        //     opdenp0 = kalk(age,sex,"od",outden,0,planop_den);
+        //     totalwithout = parseInt(ipp0)+parseInt(matp0)+parseInt(opdenp0);
+
+        //     if(payment != "Annually"){
+        //         matp = 0;
+        //         opdenp = 0;
+        //         if(uwl > 0) ipp = ipp1;
+        //         else ipp = ipp0;
+        //     }else{
+        //         if(uwl > 0) {
+        //             ipp = ipp1;
+        //             matp = matp1;
+        //             opdenp = opdenp1;
+        //         }else {
+        //             ipp = ipp0;
+        //             matp = matp0;
+        //             opdenp = opdenp0;
+        //         }
+        //     }
+        //     total = parseInt(ipp)+parseInt(matp)+parseInt(opdenp);
+
+        //     $('table.table tbody').children()[i].children[12].innerHTML = ipp;//ipp
+        //     $('table.table tbody').children()[i].children[13].innerHTML = matp;//matp
+        //     $('table.table tbody').children()[i].children[14].innerHTML = opdenp;//opden
+        //     $('table.table tbody').children()[i].children[15].innerHTML = total;//total
+        //     $('table.table tbody').children()[i].children[16].innerHTML = totalwithout;//total without
+        // }
 
         return 0;
     }
