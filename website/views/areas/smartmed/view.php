@@ -943,13 +943,13 @@
             if(payment != "Annually"){
                 matp = 0;
                 opdenp = 0;
-                if(uwl > 0) ipp = ipp1;
+                if(uwl > 0) ipp = ipp0*(1+uwl);
                 else ipp = ipp0;
             }else{
                 if(uwl > 0) {
-                    ipp = ipp1;
-                    matp = matp1;
-                    opdenp = opdenp1;
+                    ipp = ipp0*(1+uwl);
+                    matp = matp0*(1+uwl);
+                    opdenp = opdenp0*(1+uwl);
                 }else {
                     ipp = ipp0;
                     matp = matp0;
