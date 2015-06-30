@@ -106,6 +106,35 @@
           border: solid 128px #009a44;
           border-right-color: transparent;
           border-bottom-color: transparent; }
+
+.landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box .trapezoid-tasbih {
+        position: absolute;
+        left: 0;
+        bottom: -32px;
+        width: 100%;
+        height: 32px;
+        overflow: hidden; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box .trapezoid-tasbih::before {
+          content: "";
+          background: #003781;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 80%;
+          height: 32px; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box .trapezoid-tasbih::after {
+          content: "";
+          background: transparent;
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 32px;
+          height: 32px;
+          max-height: 32px;
+          max-width: 32px;
+          border: solid 128px #003781;
+          border-right-color: transparent;
+          border-bottom-color: transparent; }
       .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box .form-control {
         box-shadow: 0 0 0 transparent;
         border: none; }

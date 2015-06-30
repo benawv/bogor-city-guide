@@ -102,18 +102,39 @@
 
                 <div class="row">
 <?php for($i=0;$i<$slides;$i++) { ?>
+                    <?php
+								$color = $this->select('color_'.$i)->getData();
+                    ?>
                     <div class="col-xs-12 col-md-6">
-                        <div class="landing-tasbih-grid--item orange">
+                        <div class="landing-tasbih-grid--item <?php echo $color;?>">
                             <div class="landing-tasbih-grid--item-inner">
-                                <div class="title">
-                                    <h3><?php echo $this->wysiwyg('title-box-section'.$i)?></h3>
-                                </div>
-                                
-                                <div class="description">
-                                    <p><?php echo $this->wysiwyg('description-box-section'.$i)?></p>
-                                </div>
+                                        <?= $this->renderlet("gallery".$i, array(
+                                            "controller" => "Landing",
+                                            "action" => "renderlet",
+                                            "title" => "Drag an object folder here to get a gallery",
+                                            "height" => 200
+                                        )); ?>
                                 <a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
                             </div><!--/ .landing-tasbih-grid--item-inner -->
+                            <?php if($this->editmode) { ?>
+			                        	
+			                        	<p>
+				                        <?php 
+				                        	echo "Color: <br />";
+			                        		echo $this->select("color_".$i,array(
+											    "store" => array(
+											        array("red", "Red"),
+											        array("lightgreen", "Light Green"),
+                                                    array("green", "Green"),
+											        array("purple", "Purple"),
+											        array("blue", "Blue"),
+											        array("orange", "Orange")
+											    ),
+											    "reload" => true
+											)); 
+										?>
+			                        	</p>
+			                        <?php } ?>
                         </div><!--/ .landing-tasbih-grid--item -->
                     </div><!--/ .col-xs-12 -->
 <?php }?>
