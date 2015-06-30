@@ -1,0 +1,77 @@
+section.profile-maker {
+  /* .profile-maker--title */
+  /* .profile-maker--box */
+  /* .profile-maker--uploader */
+  /* .page-maker--form */
+  /* .page-maker--placeholder */ }
+  section.profile-maker .profile-maker--title h1, section.profile-maker .profile-maker--title h2, section.profile-maker .profile-maker--title h3, section.profile-maker .profile-maker--title h4, section.profile-maker .profile-maker--title h5, section.profile-maker .profile-maker--title h6, section.profile-maker .profile-maker--title p {
+    margin: 16px auto 24px;
+    padding: 0; }
+  section.profile-maker .profile-maker--box {
+    position: relative;
+    margin: 0 auto 32px;
+    padding: 0;
+    background: white;
+    border: solid 1px #ccc;
+    /* .pm-buttons */ }
+    section.profile-maker .profile-maker--box h1, section.profile-maker .profile-maker--box h2, section.profile-maker .profile-maker--box h3, section.profile-maker .profile-maker--box h4, section.profile-maker .profile-maker--box h5, section.profile-maker .profile-maker--box h6, section.profile-maker .profile-maker--box .pm-buttons {
+      margin: 0 auto;
+      padding: 12px 20px; }
+    section.profile-maker .profile-maker--box > img {
+      display: block;
+      min-width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      padding: 0; }
+  section.profile-maker .profile-maker--uploader {
+    display: block;
+    border: solid 1px #ccc;
+    background: white;
+    padding: 20px;
+    margin: 0 auto 16px; }
+    section.profile-maker .profile-maker--uploader p {
+      margin: 0 auto 12px;
+      padding: 0;
+      line-height: 1.4; }
+  section.profile-maker .page-maker--form {
+    position: relative;
+    background: white;
+    border: solid 1px #ccc;
+    margin: 0 auto 32px;
+    /* .page-maker--form-title */
+    /* .page-maker--form-inner */ }
+    section.profile-maker .page-maker--form .page-maker--form-title {
+      background: #00397D;
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 12px 20px; }
+      section.profile-maker .page-maker--form .page-maker--form-title h1, section.profile-maker .page-maker--form .page-maker--form-title h2, section.profile-maker .page-maker--form .page-maker--form-title h3, section.profile-maker .page-maker--form .page-maker--form-title h4, section.profile-maker .page-maker--form .page-maker--form-title h5, section.profile-maker .page-maker--form .page-maker--form-title h6 {
+        padding: 0;
+        margin: 0; }
+    section.profile-maker .page-maker--form .page-maker--form-inner {
+      padding: 32px 20px 12px;
+      /* .row */ }
+      section.profile-maker .page-maker--form .page-maker--form-inner .row {
+        margin-bottom: 20px; }
+      section.profile-maker .page-maker--form .page-maker--form-inner label {
+        font-weight: normal; }
+      section.profile-maker .page-maker--form .page-maker--form-inner .btn {
+        margin: 0 auto 20px; }
+  section.profile-maker .page-maker--placeholder {
+    position: relative;
+    margin: 0 auto 32px; }
+    section.profile-maker .page-maker--placeholder > img {
+      min-width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      padding: 0;
+      display: block;
+      border: none; }
+
+/* section.profile-maker */
+
+/*# sourceMappingURL=profil-maker.css.map */

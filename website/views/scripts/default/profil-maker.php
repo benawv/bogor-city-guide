@@ -1,0 +1,297 @@
+<?php
+
+    /**
+     * ./website/views/scripts/default/profil-maker.php
+     * Profil Maker Static Pages
+     */
+
+?>
+
+<link rel="stylesheet" href="/website/static/css/bootstrap-grid-only.css">
+<link rel="stylesheet" href="/website/static/css/profil-maker.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<?php if( $this->idHalaman == 1 ): ?>
+
+<section class="profile-maker">
+    <div class="container">
+
+        <div class="row profile-maker--title">
+            <div class="col-xs-12">
+                <h2>Allianz Profile Maker</h2>
+            </div><!--/ .col-xs-12 -->
+        </div><!--/ .row -->
+
+        <?php for( $i = 0; $i < 2; $i++ ): ?>
+
+        <div class="row">
+
+            <div class="col-xs-12 col-md-4">
+                <div class="profile-maker--box">
+                    <h4>Page Cover Landscaped Notepad</h4>
+                    <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
+                    <div class="pm-buttons">
+                        <a href="/profil-maker/2" class="btn btn-primary">Create</a>
+                    </div><!--/ .pm-buttons -->
+                </div><!--/ .profile-maker-box -->
+            </div><!--/ .col-xs-12 -->
+
+            <div class="col-xs-12 col-md-4">
+                <div class="profile-maker--box">
+                    <h4>Page Cover Landscaped Notepad</h4>
+                    <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
+                    <div class="pm-buttons">
+                        <a href="/profil-maker/2" class="btn btn-primary">Create</a>
+                    </div><!--/ .pm-buttons -->
+                </div><!--/ .profile-maker-box -->
+            </div><!--/ .col-xs-12 -->
+
+            <div class="col-xs-12 col-md-4">
+                <div class="profile-maker--box">
+                    <h4>Page Cover Landscaped Notepad</h4>
+                    <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
+                    <div class="pm-buttons">
+                        <a href="/profil-maker/2" class="btn btn-primary">Create</a>
+                    </div><!--/ .pm-buttons -->
+                </div><!--/ .profile-maker-box -->
+            </div><!--/ .col-xs-12 -->
+
+        </div><!--/ .row -->
+
+        <?php endfor; ?>
+
+    </div><!--/ .container -->
+</section><!--/ .profile-maker -->
+
+<?php elseif( $this->idHalaman == 2 ): ?>
+
+<section class="profile-maker">
+    <div class="container">
+
+        <div class="row profile-maker--title">
+            <div class="col-xs-12">
+                <h2>Page Cover Landscaped Notepad</h2>
+            </div><!--/ .col-xs-12 -->
+        </div><!--/ .row -->
+
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div class="profile-maker--uploader">
+                    <p>
+                        Upload your files here. Supported formats: JPG and PNG,<br />
+                        Page cover landscaped notepad<br />
+                        (851 x 351)
+                    </p>
+                    <form role="form" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <input type="file" required>
+                        </div><!--/ .form-group -->
+                        <div class="form-group">
+                            <a href="/profil-maker/3" class="btn btn-primary">Upload</a>
+                            <a href="javascript:history.go(-1);" class="btn btn-default">Kembali</a>
+                        </div><!--/ .form-group -->
+                    </form>
+                </div><!--/ .profile-maker--uploader -->
+
+            </div><!--/ .col-xs-12 -->
+        </div><!--/ .row -->
+
+    </div><!--/ .container -->
+</section><!--/ .profile-maker -->
+
+<?php elseif( $this->idHalaman == 3 ): ?>
+
+<section class="profile-maker">
+    <div class="container">
+
+        <div class="row profile-maker--title">
+            <div class="col-xs-12">
+                <h2>Page Cover Landscaped Notepad</h2>
+            </div><!--/ .col-xs-12 -->
+        </div><!--/ .row -->
+
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div class="page-maker--placeholder">
+                    <img src="http://placehold.it/851x351" alt="Page Cover Landscaped Notepad" class="img-responsive">
+                </div><!--/ .page-maker--placeholder -->
+
+                <div class="page-maker--form">
+                    <div class="page-maker--form-title">
+                        <h3>Notepad</h3>
+                    </div><!--/ .page-maker--form-title -->
+                    <div class="page-maker--form-inner">
+                        <form role="form">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-3">
+                                    <label>Headline</label>
+                                </div><!--/ .col-xs-12 -->
+                                <div class="col-xs-12 col-md-9">
+                                    <input type="text" class="form-control">
+                                </div><!--/ .col-xs-12 -->
+                            </div><!--/ .row -->
+                            <div class="row">
+                                <div class="col-xs-12 col-md-3">
+                                    <label>Description</label>
+                                </div><!--/ .col-xs-12 -->
+                                <div class="col-xs-12 col-md-9">
+                                    <textarea class="form-control" rows="5"></textarea>
+                                </div><!--/ .col-xs-12 -->
+                            </div><!--/ .row -->
+                            <div class="row">
+                                <div class="col-xs-12 col-md-3">
+                                    <label>First Name</label>
+                                </div><!--/ .col-xs-12 -->
+                                <div class="col-xs-12 col-md-9">
+                                    <input type="text" class="form-control">
+                                </div><!--/ .col-xs-12 -->
+                            </div><!--/ .row -->
+                            <div class="row">
+                                <div class="col-xs-12 col-md-3">
+                                    <label>Last Name</label>
+                                </div><!--/ .col-xs-12 -->
+                                <div class="col-xs-12 col-md-9">
+                                    <input type="text" class="form-control">
+                                </div><!--/ .col-xs-12 -->
+                            </div><!--/ .row -->
+                            <div class="row">
+                                <div class="col-xs-12 col-md-3">
+                                    <label>Notepad Color</label>
+                                </div><!--/ .col-xs-12 -->
+                                <div class="col-xs-12 col-md-9">
+                                    <select class="form-control">
+                                        <option value="">Blue</option>
+                                        <option value="">Red</option>
+                                    </select>
+                                </div><!--/ .col-xs-12 -->
+                            </div><!--/ .row -->
+                            <div class="row">
+                                <div class="col-xs-12 col-md-3">
+                                    <label>Notepad Position</label>
+                                </div><!--/ .col-xs-12 -->
+                                <div class="col-xs-12 col-md-9">
+                                    <select class="form-control">
+                                        <option value="">Left Side</option>
+                                        <option value="">RIght Side</option>
+                                    </select>
+                                </div><!--/ .col-xs-12 -->
+                            </div><!--/ .row -->
+                            <div class="row" style="margin-top: 16px;">
+                                <div class="col-xs-6 col-sm-3">
+                                    <a href="#" class="btn btn-default btn-block">Pratinjau</a>
+                                </div><!--/ .col-xs-12 -->
+                                <div class="col-xs-6 col-sm-3">
+                                    <a href="/profil-maker/4" class="btn btn-primary btn-block">Simpan</a>
+                                </div><!--/ .col-xs-12 -->
+                                <div class="col-xs-12 col-sm-3">
+                                    <input type="button" class="btn btn-default btn-block" value="Ganti Gambar">
+                                </div><!--/ .col-xs-12 -->
+                                <div class="col-xs-12 col-sm-3">
+                                    <input type="button" class="btn btn-default btn-block" value="Pilih Template">
+                                </div><!--/ .col-xs-12 -->
+                            </div><!--/ .row -->
+                        </form>
+
+                    </div><!--/ .page-maker--form-inner -->
+
+                </div><!--/ .page-maker--form -->
+
+            </div><!--/ .col-xs-12 -->
+        </div><!--/ .row -->
+
+        <?php for( $i = 0; $i < 2; $i++ ): ?>
+
+        <div class="row">
+
+            <div class="col-xs-12 col-md-4">
+                <div class="profile-maker--box">
+                    <h4>Page Cover Landscaped Notepad</h4>
+                    <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
+                    <div class="pm-buttons">
+                        <a href="/profil-maker/2" class="btn btn-primary">Create</a>
+                    </div><!--/ .pm-buttons -->
+                </div><!--/ .profile-maker-box -->
+            </div><!--/ .col-xs-12 -->
+
+            <div class="col-xs-12 col-md-4">
+                <div class="profile-maker--box">
+                    <h4>Page Cover Landscaped Notepad</h4>
+                    <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
+                    <div class="pm-buttons">
+                        <a href="/profil-maker/2" class="btn btn-primary">Create</a>
+                    </div><!--/ .pm-buttons -->
+                </div><!--/ .profile-maker-box -->
+            </div><!--/ .col-xs-12 -->
+
+            <div class="col-xs-12 col-md-4">
+                <div class="profile-maker--box">
+                    <h4>Page Cover Landscaped Notepad</h4>
+                    <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
+                    <div class="pm-buttons">
+                        <a href="/profil-maker/2" class="btn btn-primary">Create</a>
+                    </div><!--/ .pm-buttons -->
+                </div><!--/ .profile-maker-box -->
+            </div><!--/ .col-xs-12 -->
+
+        </div><!--/ .row -->
+
+        <?php endfor; ?>
+
+    </div><!--/ .container -->
+</section><!--/ .profile-maker -->
+
+<?php elseif( $this->idHalaman == 4 ): ?>
+
+<section class="profile-maker">
+    <div class="container">
+
+        <div class="row profile-maker--title">
+            <div class="col-xs-12">
+                <h2>Page Cover Landscaped Notepad</h2>
+            </div><!--/ .col-xs-12 -->
+        </div><!--/ .row -->
+
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div class="page-maker--placeholder">
+                    <img src="http://placehold.it/851x351" alt="Page Cover Landscaped Notepad" class="img-responsive">
+                </div><!--/ .page-maker--placeholder -->
+
+                <div class="page-maker--form">
+                    <div class="page-maker--form-title">
+                        <h3>Notepad Detail</h3>
+                    </div><!--/ .page-maker--form-title -->
+                    <div class="page-maker--form-inner">
+                        <form role="form">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <p>Apakah anda yakin dengan gambar ini?</p>
+                                </div><!--/ .col-xs-12 -->
+                            </div><!--/ .row -->
+                            <div class="row" style="margin-top: 16px;">
+                                <div class="col-xs-6 col-sm-3">
+                                    <a href="javascript:history.go(-1);" class="btn btn-default btn-block">Batal</a>
+                                </div><!--/ .col-xs-12 -->
+                                <div class="col-xs-6 col-sm-3">
+                                    <input type="submit" class="btn btn-primary btn-block" value="Simpan">
+                                </div><!--/ .col-xs-12 -->
+                                <div class="col-xs-12 col-sm-3">
+                                    <input type="button" class="btn btn-default btn-block" value="Pilih Template">
+                                </div><!--/ .col-xs-12 -->
+                            </div><!--/ .row -->
+                        </form>
+
+                    </div><!--/ .page-maker--form-inner -->
+
+                </div><!--/ .page-maker--form -->
+
+            </div><!--/ .col-xs-12 -->
+        </div><!--/ .row -->
+
+    </div><!--/ .container -->
+</section><!--/ .profile-maker -->
+
+<?php endif; ?>
