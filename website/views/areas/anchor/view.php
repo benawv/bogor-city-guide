@@ -26,7 +26,7 @@
 ?>
 
 <?php if(!$this->editmode): ?>
-	<?php if($anchors < 7) { ?>
+	<?php if($anchors < 6) { ?>
 	<?php 
 		$style = $this->editmode?'height: 250px':'';
 	?>
@@ -152,11 +152,11 @@
 	<?php } ?>
 <?php else : ?>
 	<?php
-		if($anchors <= 7) {
+		if($anchors <= 6) {
 			$style = $this->editmode?'height: 310px':'';
 		}
 		else {
-			$countHeight = $anchors/7;
+			$countHeight = $anchors/6;
 			$height = 310 * (ceil($countHeight));
 			
 			$style = $this->editmode?'height: '.$height.'px':'';
