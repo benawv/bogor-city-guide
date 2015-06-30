@@ -367,8 +367,6 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="6" id="out_den">
-                                <option value="0">0%</option>
-                                <option value="10">10%</option>
                                 <option value="20">20%</option>
                             </select>
                         </div><!--/ .col-md-4 -->
@@ -691,7 +689,11 @@
 
     $(document).on('focus',".date", function(){ //bind to all instances of class "date". 
         // console.log('klik');
-        $(".date").datepicker();
+        $(".date").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "-100:+0"
+            });
     });
 
     function selisih(dob, cd){
@@ -943,13 +945,13 @@
             if(payment != "Annually"){
                 matp = 0;
                 opdenp = 0;
-                if(uwl > 0) ipp = ipp0*(1+uwl);
+                if(uwl > 0) ipp = ipp1;
                 else ipp = ipp0;
             }else{
                 if(uwl > 0) {
-                    ipp = ipp0*(1+uwl);
-                    matp = matp0*(1+uwl);
-                    opdenp = opdenp0*(1+uwl);
+                    ipp = ipp1;
+                    matp = matp1;
+                    opdenp = opdenp1;
                 }else {
                     ipp = ipp0;
                     matp = matp0;
@@ -964,62 +966,6 @@
             $( this ).find(".towithout").html(totalwithout);
             jumlah();
         });
-        // for(var i = 0; i < rowCount; i++){
-        //     console.log($('table.table tbody').children()[0].children[5].find("input"));
-        //     sex = $('table.table tbody').children()[i].children[3].value;
-        //     date1 = $('table.table tbody').children()[0].children[4].value;
-        //     date2 = $('table.table tbody').children()[i].children[5].value;
-        //     uwl = $('table.table tbody').children()[i].children[11].value;
-        //     dist = selisih(date1, date2);
-        //     age = Math.round(dist/(1000*60*60*24*365));
-        //     $('table.table tbody').children()[i].children[5].innerHTML = age;
-        //     var ip = $("#ip").val();
-        //     var mat = $("#mat").val();
-        //     var outden = $("#out_den").val();
-        //     var planipval = $("#planip").val();
-        //     var planmatval = $("#planmat").val();
-        //     var planop_denval = $("#planop_den").val();
-
-        //     planip = planipval.split("_")[0];
-        //     planmat = planmatval.split("_")[0];
-        //     planop_den = planop_denval.split("_")[0];
-
-        //     //with premium
-        //     ipp1 = kalk(age,sex,"ip",ip,1,planip);
-        //     matp1 = kalk(age,sex,"ma",mat,1,planmat);
-        //     opdenp1 = kalk(age,sex,"od",outden,1,planop_den);
-            
-        //     //with no premium
-        //     ipp0 = kalk(age,sex,"ip",ip,0,planip);
-        //     matp0 = kalk(age,sex,"ma",mat,0,planmat);
-        //     opdenp0 = kalk(age,sex,"od",outden,0,planop_den);
-        //     totalwithout = parseInt(ipp0)+parseInt(matp0)+parseInt(opdenp0);
-
-        //     if(payment != "Annually"){
-        //         matp = 0;
-        //         opdenp = 0;
-        //         if(uwl > 0) ipp = ipp1;
-        //         else ipp = ipp0;
-        //     }else{
-        //         if(uwl > 0) {
-        //             ipp = ipp1;
-        //             matp = matp1;
-        //             opdenp = opdenp1;
-        //         }else {
-        //             ipp = ipp0;
-        //             matp = matp0;
-        //             opdenp = opdenp0;
-        //         }
-        //     }
-        //     total = parseInt(ipp)+parseInt(matp)+parseInt(opdenp);
-
-        //     $('table.table tbody').children()[i].children[12].innerHTML = ipp;//ipp
-        //     $('table.table tbody').children()[i].children[13].innerHTML = matp;//matp
-        //     $('table.table tbody').children()[i].children[14].innerHTML = opdenp;//opden
-        //     $('table.table tbody').children()[i].children[15].innerHTML = total;//total
-        //     $('table.table tbody').children()[i].children[16].innerHTML = totalwithout;//total without
-        // }
-
         return 0;
     }
     
@@ -1032,26 +978,3 @@
     }
 </script>
 
-<style type="text/css">
-    /*table.table tbody tr td span.display
-    {
-        display: inherit;
-    }
-    table.table tbody tr td span.edit
-    {
-        display: none;
-    }
-
-    table.table tbody tr td input.display
-    {
-        display: none;
-    }
-    table.table tbody tr td input.edit
-    {
-        display: inherit;
-    }*/
-</style>
-
-<!--
-</div>
--->
