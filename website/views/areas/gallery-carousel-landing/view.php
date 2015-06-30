@@ -47,8 +47,8 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-4 col-md-offset-1">
                                 <?php
-                                    $pos = $this->select('position_'.$i)->getData();
-								    $color = $this->select('color_'.$i)->getData();
+                                    $pos = $this->select('position_')->getData();
+								    $color = $this->select('color_')->getData();
 							?>
                                 <div class="landing-tasbih-header-caption--box <?php echo $color; ?> <?php echo $pos; ?>" id="fixbox" style="display:block;">
                                     <h3>Pilih Jenis Asuransi</h3>
@@ -66,7 +66,7 @@
 			                        	<p>
 			                        	<?php 
 			                        		echo "Position: <br />";
-			                        		echo $this->select("position_".$i,array(
+			                        		echo $this->select("position_",array(
 											    "store" => array(
 											        array("left", "Left"),
 											        array("right", "Right")
@@ -77,7 +77,7 @@
 			                        	<p>
 				                        <?php 
 				                        	echo "Color: <br />";
-			                        		echo $this->select("color_".$i,array(
+			                        		echo $this->select("color_",array(
 											    "store" => array(
 											        array("green", "Green"),
 											        array("blue", "Blue")
@@ -91,8 +91,8 @@
                                 </div><!--/ .landing-tasbih-header-caption--box -->
 
                             <?php
-                                    $posTasbih = $this->select('positionTasbih_'.$i)->getData();
-								    $colorTasbih = $this->select('colorTasbih_'.$i)->getData();
+                                    $posTasbih = $this->select('positionTasbih_')->getData();
+								    $colorTasbih = $this->select('colorTasbih_')->getData();
 							?>
                                 <div class="landing-tasbih-header-caption--box <?php echo $colorTasbih; ?> <?php echo $posTasbih; ?>" id="fixboxTasbih" style=" display:none;">
                                     <h2><span id="title">Ilustrasi Allianz Tasbih</span></h2>
@@ -125,7 +125,7 @@
 			                        	<p>
 			                        	<?php 
 			                        		echo "Position: <br />";
-			                        		echo $this->select("positionTasbih_".$i,array(
+			                        		echo $this->select("positionTasbih_",array(
 											    "store" => array(
 											        array("left", "Left"),
 											        array("right", "Right")
@@ -136,7 +136,7 @@
 			                        	<p>
 				                        <?php 
 				                        	echo "Color: <br />";
-			                        		echo $this->select("colorTasbih_".$i,array(
+			                        		echo $this->select("colorTasbih_",array(
 											    "store" => array(
 											        array("green", "Green"),
 											        array("blue", "Blue")
@@ -152,8 +152,8 @@
                                 
         <!-- Pembatas -->
                                 <?php
-                                    $posLife = $this->select('positionLife_'.$i)->getData();
-								    $colorLife = $this->select('colorLife_'.$i)->getData();
+                                    $posLife = $this->select('positionLife_')->getData();
+								    $colorLife = $this->select('colorLife_')->getData();
 							?>
                                 
                                 <div class="landing-tasbih-header-caption--box <?php echo $colorLife; ?> <?php echo $posLife; ?>" id="fixboxLifeinsurance" style="display:none;">
@@ -190,7 +190,7 @@
 			                        	<p>
 			                        	<?php 
 			                        		echo "Position: <br />";
-			                        		echo $this->select("positionLife_".$i,array(
+			                        		echo $this->select("positionLife_",array(
 											    "store" => array(
 											        array("left", "Left"),
 											        array("right", "Right")
@@ -201,7 +201,7 @@
 			                        	<p>
 				                        <?php 
 				                        	echo "Color: <br />";
-			                        		echo $this->select("colorLife_".$i,array(
+			                        		echo $this->select("colorLife_",array(
 											    "store" => array(
 											        array("green", "Green"),
 											        array("blue", "Blue")
