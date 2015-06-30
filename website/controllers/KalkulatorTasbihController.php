@@ -157,6 +157,22 @@
 		
 
 			$hasil = number_format($Calculation,0,",",".");
+			
+			if($Frekuensi == "Semesteran")
+			{
+				$nilai = $Calculation/2;
+				$per = "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per Semester";
+			}
+			elseif($Frekuensi == "Triwulan")
+			{
+				$nilai = $Calculation/4;
+				$per = "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per Triwulan";
+			}
+			else
+			{
+				$per = "per Tahun";
+			}
+			
 			$document = '/email/email-tasbih';
 			$params = array(
 							'tglhitung' => $date_tglBuat1,
@@ -167,6 +183,7 @@
 							'kontribusi' => $Kontribusi,
 							'AJ' => $AJ,
 							'pembayaran' => $hasil,
+							'per' => $per,
 							'frek' => $Frekuensi,
 							'JK' => $JK,
 							'nohp' => $nohp
