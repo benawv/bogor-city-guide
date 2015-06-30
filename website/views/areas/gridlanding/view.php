@@ -148,12 +148,6 @@
 
                 <div class="landing-tasbih-map">
                     <div id="agent-locator">
-                        <div class="searchbox" style="height:20px">
-                            <input type="search" name="search" id="search" placeholder="Cari agen terdekat">
-                            <button type="button" name="search-btn" id="search-btn" class="search-btn">
-                                <h5>Cari</h5> <i class="fa fa-search"></i>
-                            </button>
-                        </div><!--/ .searchbox -->
                         <div id="maparea"></div>
                     </div><!--/ #agent-locator -->
                     <div class="landing-tasbih-map--button">
@@ -587,8 +581,7 @@
 								    position: new google.maps.LatLng(item.titikKordinat.latitude, item.titikKordinat.longitude),
 								    draggable: false,
 								    icon: image,
-								    map: map,
-								    html: data_content
+								    map: map
 							    });
 				    }
 				    else {
@@ -596,8 +589,7 @@
 								    position: new google.maps.LatLng(item.titikKordinat.latitude, item.titikKordinat.longitude),
 								    draggable: false,
 									icon: image2,
-								    map: map,
-								    html: data_content
+								    map: map
 							    });
 				    }
 				    markers.push(marker);
