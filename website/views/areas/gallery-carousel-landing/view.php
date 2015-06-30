@@ -62,31 +62,6 @@
                                             </select>
                                         </div><!--/ .form-group -->
                                     </form>
-                                    <?php if($this->editmode) { ?>
-			                        	<p>
-			                        	<?php 
-			                        		echo "Position: <br />";
-			                        		echo $this->select("position_",array(
-											    "store" => array(
-											        array("left", "Left"),
-											        array("right", "Right")
-											    )
-											)); 
-										?>
-			                        	</p>
-			                        	<p>
-				                        <?php 
-				                        	echo "Color: <br />";
-			                        		echo $this->select("color_",array(
-											    "store" => array(
-											        array("green", "Green"),
-											        array("blue", "Blue")
-											    ),
-											    "reload" => true
-											)); 
-										?>
-			                        	</p>
-			                        <?php } ?>
                                     <div class="trapezoid"></div>
                                 </div><!--/ .landing-tasbih-header-caption--box -->
 
@@ -151,12 +126,9 @@
                                 </div><!--/ .landing-tasbih-header-caption--box -->
                                 
         <!-- Pembatas -->
-                                <?php
-                                    $posLife = $this->select('positionLife_')->getData();
-								    $colorLife = $this->select('colorLife_')->getData();
-							?>
                                 
-                                <div class="landing-tasbih-header-caption--box <?php echo $colorLife; ?> <?php echo $posLife; ?>" id="fixboxLifeinsurance" style="display:none;">
+                                
+                                <div class="landing-tasbih-header-caption--box" id="fixboxLifeinsurance" style="display:none;">
                                     <h2><span id="title">Ilustrasi Allianz Life Insurance</span></h2>
                                     <form role="form">
                                         <div class="form-group">
