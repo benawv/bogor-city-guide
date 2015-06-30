@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="/website/static/css/bootstrap-grid-only.css">
 <link rel="stylesheet" href="/website/static/css/landing-tasbih.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 
 <style>
     .landing-tasbih-header-caption--box .blue .left {
@@ -35,7 +36,7 @@
                         echo $this->image("gallery-tasbih", array(
                                 "thumbnail" => "staticBanner",
                                 'title' 	=> 'Tasbih',
-                                 "width" => "1020px", "height" => "400px",
+                                 "width" => "100%", "height" => "400px",
                                  "id" => "tasbih"
                         ));
                     ?>
@@ -81,10 +82,10 @@
                                             </select>
                                         </div><!--/ .form-group -->
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Uang Pertanggungan" required tabindex="1">
+                                            <input type="text" class="form-control" placeholder="Uang Pertanggungan" required tabindex="1" id="uangpertanggunganTasbih">
                                         </div><!--/ .form-group -->
                                         <div class="form-group">
-                                            <select class="form-control" required tabindex="2">
+                                            <select class="form-control" required tabindex="2" id="lamapembayaranTasbih">
                                                 <option value="null">Lama Pembayaran</option>
                                                 <option value="5">5 tahun</option>
                                                 <option value="10">10 tahun</option>
@@ -92,7 +93,7 @@
                                             </select>
                                         </div><!--/ .form-group -->
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-default" tabindex="3">
+                                            <button type="submit" class="btn btn-default" tabindex="3" id="KalTasbih">
                                                 <i class="fa fa-calculator"></i> Hitung Premi Anda
                                             </button>
                                         </div><!--/ .form-group -->
@@ -143,10 +144,10 @@
                                             <input type="text" class="form-control" placeholder="Nama" id="Nama" required tabindex="1" onfocusout="this.value=validateNama(this.value)">
                                         </div><!--/ .form-group -->
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Usia" id="Usia" required tabindex="1">
+                                            <input type="text" class="form-control" placeholder="Usia" id="Usia" required tabindex="1" onfocusout="this.value=validateUsia(this.value)">
                                         </div><!--/ .form-group -->
                                         <div class="form-group">
-                                            <select class="form-control" required tabindex="2" id="UangPertanggungan">
+                                            <select class="form-control" required tabindex="2" id="UangPertanggunganLife">
                                                 <option value="null">Uang Pertanggungan</option>
                                                 <option value="1000">1 Milyar</option>
                                                 <option value="500">500 Juta</option>
@@ -154,7 +155,7 @@
                                             </select>
                                         </div><!--/ .form-group -->
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-default" tabindex="3">
+                                            <button type="submit" class="btn btn-default" tabindex="3" id="KalLife">
                                                 <i class="fa fa-calculator"></i> Hitung Premi Anda
                                             </button>
                                         </div><!--/ .form-group -->
@@ -254,8 +255,7 @@
          }
     };
     
-//Tooltip
-this.tooltip=function(){xOffset=10;yOffset=20;$("a.tooltip,img.tooltip,p.tooltip").hover(function(e){this.t=this.title;this.title="";$("body").append("<p id='tooltip'>"+this.t+"</p>");$("#tooltip").css("top",e.pageY-xOffset+"px").css("left",e.pageX+yOffset+"px").fadeIn("fast")},function(){this.title=this.t;$("#tooltip").remove()});$("a.tooltip,img.tooltip,p.tooltip").mousemove(function(e){$("#tooltip").css("top",e.pageY-xOffset+"px").css("left",e.pageX+yOffset+"px")})};$(document).ready(function(){tooltip()})
+
        
 //Validasi
     
@@ -266,6 +266,51 @@ this.tooltip=function(){xOffset=10;yOffset=20;$("a.tooltip,img.tooltip,p.tooltip
         }else{
             return nama;
         }
+    };
+    
+        $(document).ready(function(){
+             $( "#uangpertanggunganTasbih" ).bind( "input", function() {
+                 var value = $("#uangpertanggunganTasbih").val();
+                 var conv = accounting.formatMoney(value, "Rp ", 0,",");
+                 $(this).val(conv);
+             });   
+            
+            $('#KalTasbih').click(function() {
+                var value = $("#uangpertanggunganTasbih").val();
+                var unc = accounting.unformat(value,0,",");
+                var lp = $('#lamapembayaranTasbih option:Selected').val();
+                
+                if(unc < 50000000 || lp=="null") {
+                    alert("Mohom maaf, pastikan uang pertanggungan Anda masukkan minimal 50 juta dan lama pembayaran telah Anda pilih")
+                }
+            });
+            
+                $('#Usia').bind("input", function(){
+                       var re = /^[0-9]*$/;
+
+                        var value = $('#Usia').val();
+                        $(this).val(value);
+                        if(!re.test(value)){
+                            $('#Usia').val("");
+                        }
+                });
+            
+            $('#KalLife').click(function() {
+                var nama = $("#Nama").val();
+                var usia = $("#Usia").val();
+                var up = $('#UangPertanggunganLife option:Selected').val();
+                
+                if(usia < 18 || usia > 64 || usia == '' || nama == '' || up=="null") {
+                    alert("Mohon maaf, pastikan usia Anda berada di 18-64 tahun dan pastikan semua inputan Anda benar")
+                }
+            });
+        });
+    
+    function validateUsia(value){
+        if(value>=18 && value <=64)
+            return value;
+        else
+            return null;
     };
     
 </script>
