@@ -115,7 +115,79 @@
             <div class="col-xs-12">
 
                 <div class="page-maker--placeholder">
-                    <img src="http://placehold.it/851x351" alt="Page Cover Landscaped Notepad" class="img-responsive">
+                    <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive">
+                </div><!--/ .page-maker--placeholder -->
+
+                <div class="page-maker--placeholder">
+                    <div class="facebook">
+                        <div class="facebook-profile">
+                            <p>Profile Picture</p>
+                        </div><!--/.facebook-profile -->
+                        <div class="facebook-clear-area left"></div>
+                        <div class="facebook-clear-area right"></div>
+                        <div class="facebook-caption">
+                            <div class="facebook-caption--inner">
+                                <h3>Headline</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Mauris posuere vitae nulla et commodo.
+                                </p>
+                                <p><span>&lt;First Name&gt;</span> <span>&lt;Lasr Name&gt;</span></p>
+                            </div><!--/ .facebook-caption--inner -->
+                            <div class="facebook-caption-trapezoid"></div>
+                        </div><!--/ .facebook-caption -->
+                        <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive">
+                    </div><!--/ .facebook -->
+                </div><!--/ .page-maker--placeholder -->
+
+                <div class="page-maker--placeholder">
+                    <div class="facebook">
+                        <div class="facebook-profile">
+                            <p>Profile Picture</p>
+                        </div><!--/.facebook-profile -->
+                        <div class="facebook-clear-area left"></div>
+                        <div class="facebook-clear-area right"></div>
+                        <div class="facebook-caption right">
+                            <div class="facebook-caption--inner">
+                                <h3>Headline</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Mauris posuere vitae nulla et commodo.
+                                </p>
+                                <p><span>&lt;First Name&gt;</span> <span>&lt;Lasr Name&gt;</span></p>
+                            </div><!--/ .facebook-caption--inner -->
+                            <div class="facebook-caption-trapezoid"></div>
+                        </div><!--/ .facebook-caption -->
+                        <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive">
+                    </div><!--/ .facebook -->
+                </div><!--/ .page-maker--placeholder -->
+
+                <div class="page-maker--placeholder">
+                    <div class="avatar">
+                        <div class="avatar-caption">
+                            <div class="avatar-caption--logo">
+                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
+                            </div><!--/ .avatar-caption--logo -->
+                        </div><!--/ .avatar-caption -->
+                        <img src="http://placehold.it/256/256" alt="Profile Picture" class="img-responsive">
+                    </div><!--/ .facebook -->
+                </div><!--/ .page-maker--placeholder -->
+
+                <div class="page-maker--placeholder">
+                    <div class="avatar">
+                        <div class="avatar-caption">
+                            <div class="avatar-caption--logo">
+                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
+                            </div><!--/ .avatar-caption--logo -->
+                            <div class="avatar-caption--footer">
+                                <i class="fa fa-facebook-square fa-2x"></i>&nbsp;
+                                <span>Allianz Indonesia</span>&nbsp;
+                                <strong>&lt;First Name&gt;</strong>&nbsp;
+                                <strong>&lt;Last Name&gt;</strong>
+                            </div><!--/ .avatar-caption-footer -->
+                        </div><!--/ .avatar-caption -->
+                        <img src="http://placehold.it/256/256" alt="Profile Picture" class="img-responsive">
+                    </div><!--/ .facebook -->
                 </div><!--/ .page-maker--placeholder -->
 
                 <div class="page-maker--form">
