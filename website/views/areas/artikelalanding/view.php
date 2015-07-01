@@ -71,93 +71,41 @@
     }
 </style>
 
-                	<?php if($this->editmode) { ?>
-	            How many slides you want to show?
-	
-	            <?php
-	                // prepare the store
-	                $selectStore = [];
-	                for($i=2; $i<30; $i++) {
-	                    $selectStore[] = [$i, $i];
-	                }
-	            ?>
-	            <?php echo $this->select("slides",[
-	                "store" => $selectStore,
-	                "reload" => true
-	            ]); ?>
-
-	<?php } ?>
-	<?php 
-		$id = "container-carousel-".uniqid();
-		$slides = 1;
-		if(!$this->select("slides")->isEmpty()){
-	        $slides = (int) $this->select("slides")->getData();
-	    }
-	?>
 <section class="landing-tasbih-grid">
     <div class="container">
-        
         <div class="row">
             <div class="col-xs-12 col-md-9">
 
-                <div class="row">
-                    <?php for($i=0;$i<$slides;$i++) { ?>
-                    <?php
-								$color = $this->select('color_'.$i)->getData();
+                <div class="landing-tasbih-grid--item inline purple">
+                    <div class="landing-tasbih-grid--item-image">
+                        <?php 
+                        echo $this->image("gallery-informasi", array(
+                                "thumbnail" => "staticBanner",
+                                'title' 	=> 'informasi',
+                                 "width" => "349.125px", "height" => "163.297px"
+                        ));
                     ?>
-                    <div class="col-xs-12 col-md-6">
-                        <div class="landing-tasbih-grid--item <?php echo $color;?>">
-                            <div class="landing-tasbih-grid--item-inner">
-                                        <?= $this->renderlet("gallery".$i, array(
-                                            "controller" => "Landing",
-                                            "action" => "renderlet",
-                                            "title" => "Drag an object folder here to get a gallery",
-                                            "height" => 200
-                                        )); ?>
-                                <a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
-                            </div><!--/ .landing-tasbih-grid--item-inner -->
-                            <?php if($this->editmode) { ?>
-			                        	
-			                        	<p>
-				                        <?php 
-				                        	echo "Color: <br />";
-			                        		echo $this->select("color_".$i,array(
-											    "store" => array(
-											        array("red", "Red"),
-											        array("lightgreen", "Light Green"),
-                                                    array("green", "Green"),
-											        array("purple", "Purple"),
-											        array("blue", "Blue"),
-											        array("orange", "Orange")
-											    ),
-											    "reload" => true
-											)); 
-										?>
-			                        	</p>
-			                        <?php } ?>
-                        </div><!--/ .landing-tasbih-grid--item -->
-                    </div><!--/ .col-xs-12 -->
-<?php }?>
-                    
-
-                </div><!--/ .row -->
-                                    
+                    </div><!--/ .landing-tasbih-grid--item-image -->
+                    <div class="landing-tasbih-grid--item-inner">
+                        <h3><?php echo $this->wysiwyg('title-box-section-informasi')?></h3>
+                        <p><?php echo $this->wysiwyg('title-box-description-informasi')?></p>
+                        <a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
+                    </div><!--/ .landing-tasbih-grid--item-inner -->
+                </div><!--/ .landing-tasbih-grid--item -->
 
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-3">
 
-                <div class="landing-tasbih-map">
-                    <div id="agent-locator">
-                        <div id="maparea"></div>
-                    </div><!--/ #agent-locator -->
-                    <div class="landing-tasbih-map--button">
-                        <a href="#"><i class="fa fa-search"></i> Temukan Agen</a>
-                    </div><!--/ .landing-tasbih-map--button -->
-                </div><!--/ .landing-tasbih-map -->
+                <div class="landing-tasbih-grid--item red">
+                    <div class="landing-tasbih-grid--item-inner">
+                        <h3><?php echo $this->wysiwyg('title-box-section-item')?></h3>
+                        <p><?php echo $this->wysiwyg('title-box-description-item')?></p>
+                        <a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
+                    </div><!--/ .landing-tasbih-grid--item-inner -->
+                </div><!--/ .landing-tasbih-grid--item -->
 
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
-        
     </div><!--/ .container -->
 </section><!--/ .landing-tasbih-grid -->
 <script type="text/javascript">

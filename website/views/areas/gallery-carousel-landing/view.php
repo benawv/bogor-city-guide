@@ -76,7 +76,7 @@
                                         <div class="form-group">
                                             <select class="form-control" required tabindex="2" id="JenisAsuransi1" onfocusout="this.value=ubahJenis1(this.value)">
                                                 <option value="null">Pilih</option>
-                                                <option value="tasbih">Tasbih</option>
+                                                <option value="tasbih" selected>Tasbih</option>
                                                 <option value="lifeInsurance">Life Insurance</option>
                                                 <option value="payment">Payment</option>
                                             </select>
@@ -136,7 +136,7 @@
                                             <select class="form-control" required tabindex="2" id="JenisAsuransi2" onfocusout="this.value=ubahJenis2(this.value)">
                                                 <option value="null">Pilih</option>
                                                 <option value="tasbih">Tasbih</option>
-                                                <option value="lifeInsurance">Life Insurance</option>
+                                                <option value="lifeInsurance" selected>Life Insurance</option>
                                                 <option value="payment">Payment</option>
                                             </select>
                                         </div><!--/ .form-group -->
@@ -282,6 +282,19 @@
                 
                 if(unc < 50000000 || lp=="null") {
                     alert("Mohom maaf, pastikan uang pertanggungan Anda masukkan minimal 50 juta dan lama pembayaran telah Anda pilih")
+                }else{
+                    $.ajax({
+                        url : '/landing-tasbih/',
+                        type : 'POST',
+                        data :{
+                            'up' : unc,
+                            'lp' : lp
+                        },
+                        success : function(data){
+                            alert(data);
+                        }
+                    });
+                     //alert('Tahan');
                 }
             });
             
@@ -299,9 +312,23 @@
                 var nama = $("#Nama").val();
                 var usia = $("#Usia").val();
                 var up = $('#UangPertanggunganLife option:Selected').val();
-                
+
                 if(usia < 18 || usia > 64 || usia == '' || nama == '' || up=="null") {
                     alert("Mohon maaf, pastikan usia Anda berada di 18-64 tahun dan pastikan semua inputan Anda benar")
+                }else{
+                    $.ajax({
+                        url : '/landing-life/',
+                        type : 'POST',
+                        data :{
+                            'nama' : nama,
+                            'usia' : usia,
+                            'up' : up
+                        },
+                        success : function(data){
+                            alert(data);
+                        }
+                    });
+                     //alert('Tahan');
                 }
             });
         });
