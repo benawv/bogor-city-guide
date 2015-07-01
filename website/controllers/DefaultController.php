@@ -53,6 +53,11 @@ class DefaultController extends Website_Controller_Action {
 	public function indexAction() {
 	}
 	
+    public function landingAction() {
+        
+        $this->enableLayout();
+	}
+    
 	public function datanabAction() {
 		$fundtype = $_POST["fundName"];
 		//$date1 = date("Y-n-d",strtotime(date("Y-n-d") . "+1 days"));

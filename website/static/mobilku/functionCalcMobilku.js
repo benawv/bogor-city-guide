@@ -50,8 +50,9 @@ $(document).ready(function(){
              var telp=$('#telp').val();
              var hargaKonv=clearFormat($('#harga').val());
              var model_html=$('#model option:selected').html().toLowerCase();
-                        
-             if($('#radio01').checked == true){
+            //alert($('#radio01').is(":checked"));         
+             //if($('#radio01').checked == true){
+              if($('#radio01').is(":checked") == true){
                    var radio = $('#radio01').val();
              }else{
                    var radio = $('#radio02').val();
@@ -368,12 +369,14 @@ $(document).ready(function(){
         
         
         //=========================//perhitungan rate/persen======================================//
-        var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
+        var hitung, workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
         var band_id=getBand(cleanVarTlo);
 
         var tlo=getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html,1);
         compre_tlo_persen=localStorage.getItem("gettlo");
-        workshop_persen=parseFloat(getWorkshop(merk_html,1))*(compre_tlo_persen/100);
+        hitung = parseFloat(getWorkshop(merk_html,1))*(compre_tlo_persen)/100;
+        workshop_persen = hitung.toFixed(4);
+
         // console.log("compre_tlo_persen : "+(compre_tlo_persen));
         // console.log("getWorkshop parsefloat: "+parseFloat(getWorkshop(merk_html,1)));
         //console.log("Workshop %:"+compre_tlo_persen*(parseFloat(getWorkshop(merk,1))/100));
@@ -542,7 +545,7 @@ $(document).ready(function(){
 
 
     function calc_resultstandard(paket) {
-        
+      //alert("alert2");
         var getColom;
         var harga=clearFormat($('#harga').val());
         var tahun_pembuatan;
@@ -609,6 +612,7 @@ $(document).ready(function(){
         //=========================//perhitungan rate/persen======================================//
         var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
         var band_id=getBand(cleanVarTlo);
+        
         compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html,1);
         workshop_persen=parseFloat(getWorkshop(merk_html,2))*(getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html,1)/100);
 
@@ -1586,7 +1590,7 @@ $(document).ready(function(){
     });*/
     
     $(this).on('click','#finish-btn',function(){
-
+//alert("alert3");
         var tahun_pembuatan=$('#tahun_pembuatan').val();
         var harga=$('#harga').val();
         var merk=$('#merk').val();
@@ -1602,8 +1606,8 @@ $(document).ready(function(){
         
         //var radio1=$('#radio01').val();
         //var radio2=$('#radio02').val();
-        
-        if($('#radio01').checked == true){
+        //$('#radio01').checked
+        if($('#radio01').is(":checked") == true){
             var radio = $('#radio01').val();
         }else{
             var radio = $('#radio02').val();
