@@ -35,7 +35,8 @@
 
 /* container hack */
 .landing-tasbih-header {
-  margin-bottom: 32px;
+  margin-top: -4px;
+  margin-bottom: 16px;
   /* .landing-tasbih-header-caption */ }
   .landing-tasbih-header img {
     min-width: 100%;
@@ -113,11 +114,20 @@
 /* .landing-tasbih-header */
 .landing-tasbih-grid {
   /* .landing-tasbih-grid--item */ }
+  @media (max-width: 992px) {
+    .landing-tasbih-grid {
+      padding-top: 16px; } }
+  @media (min-width: 992px) {
+    .landing-tasbih-grid .pl8 {
+      padding-left: 8px; } }
+  @media (min-width: 992px) {
+    .landing-tasbih-grid .pr8 {
+      padding-right: 8px; } }
   .landing-tasbih-grid .landing-tasbih-grid--item {
     background: #003da5;
     color: white;
     min-height: 160px;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
     /* .landing-tasbih-grid--item-inner */
     /* .inline */ }
     .landing-tasbih-grid .landing-tasbih-grid--item.orange {
@@ -181,9 +191,9 @@
 /* .landing-tasbih-grid */
 .landing-tasbih-map {
   position: relative;
-  min-height: 352px;
+  min-height: 340px;
   background: #54585a;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   /* .landing-tasbih-map--button */ }
   .landing-tasbih-map > .landing-tasbih-map--button {
     position: absolute;
