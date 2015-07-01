@@ -62,7 +62,11 @@ section.profile-maker {
         margin: 0 auto 20px; }
   section.profile-maker .page-maker--placeholder {
     position: relative;
-    margin: 0 auto 32px; }
+    margin: 0 auto 32px;
+    max-width: 100%;
+    overflow: auto;
+    /* .facebook */
+    /* .avatar */ }
     section.profile-maker .page-maker--placeholder > img {
       min-width: 100%;
       max-width: 100%;
@@ -71,6 +75,138 @@ section.profile-maker {
       padding: 0;
       display: block;
       border: none; }
+    section.profile-maker .page-maker--placeholder .facebook {
+      position: relative;
+      width: 851px;
+      height: 315px;
+      margin: 0 auto 52px;
+      padding: 0;
+      overflow: hidden;
+      /* .facebook-profile*/
+      /* .facebook-clear-area */
+      /* .facebook-caption */ }
+      section.profile-maker .page-maker--placeholder .facebook > img {
+        min-width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding: 0; }
+      section.profile-maker .page-maker--placeholder .facebook .facebook-profile {
+        position: absolute;
+        top: 176px;
+        left: 16px;
+        width: 160px;
+        height: 160px;
+        background: white;
+        border: solid 1px #ccc;
+        z-index: 2; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-profile > p {
+          margin: 0 auto;
+          padding: 0;
+          font-size: x-small;
+          line-height: 160px;
+          text-align: center; }
+      section.profile-maker .page-maker--placeholder .facebook .facebook-clear-area {
+        position: absolute;
+        background: rgba(255, 165, 0, 0.2);
+        min-width: 180px;
+        min-height: 100%;
+        left: 0; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-clear-area.right {
+          right: 0;
+          left: auto; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-clear-area:before {
+          content: "Clear Area";
+          position: absolute;
+          top: 50%;
+          width: 100%;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+          text-align: center;
+          text-transform: uppercase;
+          font-size: x-small; }
+      section.profile-maker .page-maker--placeholder .facebook .facebook-caption {
+        position: absolute;
+        top: 32px;
+        left: 200px;
+        max-width: 30%;
+        min-width: 30%;
+        color: white;
+        /* .facebook-caption--inner --*/
+        /* .facebook-caption-trapezoid */ }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.right {
+          left: auto;
+          right: 200px; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption > .facebook-caption--inner {
+          background: #00397D;
+          padding: 12px 20px 0; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption .facebook-caption-trapezoid {
+          position: absolute;
+          bottom: -16px;
+          min-width: 100%;
+          height: 32px;
+          overflow: hidden; }
+          section.profile-maker .page-maker--placeholder .facebook .facebook-caption .facebook-caption-trapezoid::before {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            right: 0;
+            border: solid 100px #00397D;
+            border-right-color: transparent;
+            border-bottom-color: transparent; }
+    section.profile-maker .page-maker--placeholder .avatar {
+      border: solid 1px red;
+      display: block;
+      position: relative;
+      width: 512px;
+      height: 512px;
+      margin: 0 auto;
+      padding: 0;
+      background: white;
+      border: solid 1px #ccc;
+      /* .avatar-caption */ }
+      section.profile-maker .page-maker--placeholder .avatar > img {
+        min-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding: 0;
+        border: none;
+        display: block; }
+      section.profile-maker .page-maker--placeholder .avatar .avatar-caption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        /* .avatar-caption--logo */
+        /* .avatar-caption--footer */ }
+        section.profile-maker .page-maker--placeholder .avatar .avatar-caption .avatar-caption--logo {
+          position: absolute;
+          right: 16px;
+          top: 16px; }
+        section.profile-maker .page-maker--placeholder .avatar .avatar-caption .avatar-caption--footer {
+          background: #b4b4b4;
+          color: #3b579d;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          padding: 0 56px;
+          line-height: 52px;
+          min-height: 52px; }
+          section.profile-maker .page-maker--placeholder .avatar .avatar-caption .avatar-caption--footer i.fa {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            transform: translateY(-50%); }
 
 /* section.profile-maker */
 
