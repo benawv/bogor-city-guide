@@ -13,7 +13,7 @@ class CalcSmartmedController extends Website_Controller_Action {
 		$coshare = $this->_getParam('coshare');
 		$uwl = $this->_getParam('uwl');
 		$plan = $this->_getParam('plan');//ip,ma,od
-		if($uwl < 25) $nbc = "2";
+		if($ncd == "Y") $nbc = "2";
 		else $nbc = "1";
 		
 		//$this->enableLayout();
