@@ -60,7 +60,7 @@
 			'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
 			'smartlink-factsheet', 'syariah-factsheet',
 			'pension-factsheet', 'saving-factsheet','multi-video',
-			'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi', 'asn-center', 'gridlanding'))); ?>
+			'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi', 'asn-center', 'gridlanding','artikelalanding'))); ?>
 		<div style="clear: both"></div>
 		<div class="items-container">
 			<?php echo $this->areablock('container2', array(
