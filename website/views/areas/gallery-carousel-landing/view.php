@@ -3,29 +3,20 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 
-<style>
-    .landing-tasbih-header-caption--box .blue .left {
-        left:60px;
-        background:#003781;
-    }
-    
-    .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box .landing-tasbih-header-caption--box .blue .right{
-        right:60px !important;
-        background:#003781 !important;
-    }
-    
-    .landing-tasbih-header-caption--box .green .left {
-        left:60px;
-        background:#009a44;
-    }
-    
-    .landing-tasbih-header-caption--box .green .right{
-        right:60px;
-        background:#009a44;
-    }
-    
-    
-</style>
+
+<?php if($this->editmode) { ?>
+			                        	<p style="font-size:14px">
+			                        	<?php 
+			                        		echo "Jenis: <br />";
+			                        		echo $this->select("jenis_",array(
+											    "store" => array(
+											        array("tasbih", "Tasbih"),
+											        array("life", "Life")
+											    )
+											)); 
+										?>
+			                        	</p>
+<?php } ?>
 
 <section class="landing-tasbih-header">
     <div class="container">
@@ -33,25 +24,25 @@
             <div class="col-xs-12">
 
                     <?php 
-                        echo $this->image("gallery-tasbih", array(
+                        echo $this->image("gallery-carousel", array(
                                 "thumbnail" => "staticBanner",
                                 'title' 	=> 'Tasbih',
-                                 "width" => "100%", "height" => "400px",
+                                 "width" => "100%", "height" =>400,
                                  "id" => "tasbih"
                         ));
                     ?>
                 
-
-
+            </div><!--/ .col-xs-12 -->
+<?php
+                                    $jenis = $this->select('jenis_')->getData();
+            ?>
                 <div class="landing-tasbih-header-caption">
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-12 col-md-4 col-md-offset-1">
-                                <?php
-                                    $pos = $this->select('position_')->getData();
-								    $color = $this->select('color_')->getData();
-							?>
-                                <div class="landing-tasbih-header-caption--box <?php echo $color; ?> <?php echo $pos; ?>" id="fixbox" style="display:block;">
+                                
+                                <!--<div class="landing-tasbih-header-caption--box <?php echo $color; ?> <?php echo $pos; ?>" id="fixbox" style="display:block;">
+                                    
                                     <h3>Pilih Jenis Asuransi</h3>
                                     <form role="form">
                                         <div class="form-group">
@@ -61,26 +52,18 @@
                                                 <option value="lifeInsurance">Life Insurance</option>
                                                 <option value="payment">Payment</option>
                                             </select>
-                                        </div><!--/ .form-group -->
-                                    </form>
+                                        </div>--><!--/ .form-group -->
+                                    <!--</form>
                                     <div class="trapezoid"></div>
-                                </div><!--/ .landing-tasbih-header-caption--box -->
+                                </div-->><!--/ .landing-tasbih-header-caption--box -->
 
                             <?php
-                                    $posTasbih = $this->select('positionTasbih_')->getData();
-								    $colorTasbih = $this->select('colorTasbih_')->getData();
+                                    $pt = $this->select('positionTasbih_')->getData();
+								    $ct = $this->select('colorTasbih_')->getData();
 							?>
-                                <div class="landing-tasbih-header-caption--box <?php echo $colorTasbih; ?> <?php echo $posTasbih; ?>" id="fixboxTasbih" style=" display:none;">
+                                <div class="landing-tasbih-header-caption--box" id="fixboxTasbih  <?php echo $ct; ?> <?php echo $pt; ?>" style=" display:<?php if($jenis=="tasbih") echo "block"; else echo "none"; ?>">
                                     <h2><span id="title">Ilustrasi Allianz Tasbih</span></h2>
                                     <form role="form">
-                                        <div class="form-group">
-                                            <select class="form-control" required tabindex="2" id="JenisAsuransi1" onfocusout="this.value=ubahJenis1(this.value)">
-                                                <option value="null">Pilih</option>
-                                                <option value="tasbih" selected>Tasbih</option>
-                                                <option value="lifeInsurance">Life Insurance</option>
-                                                <option value="payment">Payment</option>
-                                            </select>
-                                        </div><!--/ .form-group -->
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Uang Pertanggungan" required tabindex="1" id="uangpertanggunganTasbih">
                                         </div><!--/ .form-group -->
@@ -127,19 +110,15 @@
                                 </div><!--/ .landing-tasbih-header-caption--box -->
                                 
         <!-- Pembatas -->
+                                <?php
+                                    $colorLife = $this->select('positionLife_')->getData();
+								    $posLife = $this->select('colorLife_')->getData();
+							?>
                                 
-                                
-                                <div class="landing-tasbih-header-caption--box" id="fixboxLifeinsurance" style="display:none;">
+                                <div class="landing-tasbih-header-caption--box" id="fixboxLifeinsurance <?php echo $colorLife; ?> <?php echo $posLife; ?>" style="display:<?php if($jenis=="tasbih") echo "none"; else echo "block"; ?>;">
                                     <h2><span id="title">Ilustrasi Allianz Life Insurance</span></h2>
                                     <form role="form">
-                                        <div class="form-group">
-                                            <select class="form-control" required tabindex="2" id="JenisAsuransi2" onfocusout="this.value=ubahJenis2(this.value)">
-                                                <option value="null">Pilih</option>
-                                                <option value="tasbih">Tasbih</option>
-                                                <option value="lifeInsurance" selected>Life Insurance</option>
-                                                <option value="payment">Payment</option>
-                                            </select>
-                                        </div><!--/ .form-group -->
+
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Nama" id="Nama" required tabindex="1" onfocusout="this.value=validateNama(this.value)">
                                         </div><!--/ .form-group -->
@@ -193,7 +172,7 @@
                     </div><!--/ .container -->
                 </div><!--/ .landing-tasbih-header-caption -->
 
-            </div><!--/ .col-xs-12 -->
+
         </div><!--/ .row -->
     </div><!--/ .container -->
 </section><!--/ .landing-tasbih-header -->
@@ -292,6 +271,7 @@
                         },
                         success : function(data){
                             alert(data);
+                            document.location.href='produk/asuransi-syariah/tasbih/kalkulator/ilustrasi';
                         }
                     });
                      //alert('Tahan');
@@ -326,6 +306,7 @@
                         },
                         success : function(data){
                             alert(data);
+                            document.location.href='/kalkulator/lifeinsurance';
                         }
                     });
                      //alert('Tahan');
