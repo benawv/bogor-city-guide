@@ -241,7 +241,7 @@
 
 <!--script src="/website/static/js/masonry.min.js" type="text/javascript"></script-->
 
-<!--   plugins 	 -->
+<!--   plugins   -->
 
 <script src="/website/static/mobilku/jquery.bootstrap.wizard.js" type="text/javascript"></script>
 <script src="/website/static/mobilku/wizard.js"></script>
@@ -375,7 +375,8 @@
                                             <label for="input2">Registration No</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="5" onfocusout="this.value=validateVehicle(this.value)">
+                                            <input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="5">
+                                            <!--<input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="5" onfocusout="this.value=validateVehicle(this.value)">-->
                                             <label id="notifRegno" style="display:none; color: #f00;">
                                 Mohon maaf Registrasi Nomor yang Anda masukkan belum benar
                             </label>
@@ -1214,52 +1215,54 @@
         
     });
     
-    
-     function validateVehicle(value){
-    //alert('test');
-       var re1 = /^[A-Za-z]{1}[0-9]{1,4}[A-Za-z]{0,3}$/;
-       var re2 = /^[A-Za-z]{2}[0-9]{1,4}[A-Za-z]{0,3}$/;
-       var res;
-       
-       //var res2 = str.substring(0,2);
-            
-            if(re1.test(value)){
-                document.getElementById('notifRegno').style.display= 'none';
-                res = value.substring(0,1);
-            }else if(re2.test(value)){
-                document.getElementById('notifRegno').style.display= 'none';
-                res = value.substring(0,2);
-            }else{
-                document.getElementById('notifRegno').style.display= 'block';
-            }
-            //console.log(res);
-            
-         //alert(res);
-            $.ajax({
-                url      : '/getregistrationnum/',
-                type     : 'POST',
-                data     : {
-                            'res' : res
-                            },
-                    success  : function(data){
-                    //console.log(data);
-                    //alert(data);
-                    if(data == ''){
-                        document.getElementById('notifRegno').style.display= 'block';
-                         $('#wilayah').val('');
-                    }else{
-                        document.getElementById('notifRegno').style.display= 'none';
-                        $('#wilayah').val(data);
+    $(document).ready(function(){
+    //function validateVehicle(value){
+        $("#regno").focusout(function(){
+           var value = $(this).val();    
+           var re1 = /^[A-Za-z]{1}[0-9]{1,4}[A-Za-z]{0,3}$/;
+           var re2 = /^[A-Za-z]{2}[0-9]{1,4}[A-Za-z]{0,3}$/;
+           var res;
+           
+           //var res2 = str.substring(0,2);
+                
+                if(re1.test(value)){
+                    document.getElementById('notifRegno').style.display= 'none';
+                    res = value.substring(0,1);
+                }else if(re2.test(value)){
+                    document.getElementById('notifRegno').style.display= 'none';
+                    res = value.substring(0,2);
+                }else{
+                    document.getElementById('notifRegno').style.display= 'block';
+                }
+                //console.log(res);
+                
+             //alert(res);
+                $.ajax({
+                    url      : '/getregistrationnum/',
+                    type     : 'POST',
+                    data     : {
+                                'res' : res
+                                },
+                        success  : function(data){
+                        //console.log(data);
+                        //alert(data);
+                        if(data == ''){
+                            document.getElementById('notifRegno').style.display= 'block';
+                             $('#wilayah').val('');
+                        }else{
+                            document.getElementById('notifRegno').style.display= 'none';
+                            $('#wilayah').val(data);
+                        }
+                        
+                        
                     }
                     
-                    
-                }
+                });
                 
-            });
-            
-            return value;
-
-    };
+                return value;
+    
+        });
+    });
     
     function validateNumber(value){
         if(value.length <= 8 ){

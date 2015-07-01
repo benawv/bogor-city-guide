@@ -50,8 +50,9 @@ $(document).ready(function(){
              var telp=$('#telp').val();
              var hargaKonv=clearFormat($('#harga').val());
              var model_html=$('#model option:selected').html().toLowerCase();
-                        
-             if($('#radio01').checked == true){
+            //alert($('#radio01').is(":checked"));         
+             //if($('#radio01').checked == true){
+              if($('#radio01').is(":checked") == true){
                    var radio = $('#radio01').val();
              }else{
                    var radio = $('#radio02').val();
@@ -544,7 +545,7 @@ $(document).ready(function(){
 
 
     function calc_resultstandard(paket) {
-        
+      //alert("alert2");
         var getColom;
         var harga=clearFormat($('#harga').val());
         var tahun_pembuatan;
@@ -1589,7 +1590,7 @@ $(document).ready(function(){
     });*/
     
     $(this).on('click','#finish-btn',function(){
-
+//alert("alert3");
         var tahun_pembuatan=$('#tahun_pembuatan').val();
         var harga=$('#harga').val();
         var merk=$('#merk').val();
@@ -1605,8 +1606,8 @@ $(document).ready(function(){
         
         //var radio1=$('#radio01').val();
         //var radio2=$('#radio02').val();
-        
-        if($('#radio01').checked == true){
+        //$('#radio01').checked
+        if($('#radio01').is(":checked") == true){
             var radio = $('#radio01').val();
         }else{
             var radio = $('#radio02').val();
