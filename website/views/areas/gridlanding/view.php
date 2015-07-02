@@ -98,23 +98,24 @@
     <div class="container">
         
         <div class="row">
-            <div class="col-xs-12 col-md-9">
+            <div class="col-xs-12 col-md-8 pr8">
 
                 <div class="row">
                     <?php for($i=0;$i<$slides;$i++) { ?>
                     <?php
 								$color = $this->select('color_'.$i)->getData();
                     ?>
-                    <div class="col-xs-12 col-md-6">
+                    <div class="col-xs-12 col-md-6 <?php if($slides%2 == 0){ echo 'pl8';} else {echo 'pr8';} ?>">
                         <div class="landing-tasbih-grid--item <?php echo $color;?>">
                             <div class="landing-tasbih-grid--item-inner">
-                                        <?= $this->renderlet("gallery".$i, array(
-                                            "controller" => "Landing",
+                                        <?php echo $this->renderlet("artikel".$i, array(
+                                            "controller" => "landing",
                                             "action" => "renderlet",
-                                            "title" => "Drag an object folder here to get a gallery",
+											"editmode" => $this->editmode,
+                                            "title" => "Drag objek artikel",
                                             "height" => 200
                                         )); ?>
-                                <a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
+                                <!--<a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>-->
                             </div><!--/ .landing-tasbih-grid--item-inner -->
                             <?php if($this->editmode) { ?>
 			                        	
@@ -144,14 +145,14 @@
                                     
 
             </div><!--/ .col-xs-12 -->
-            <div class="col-xs-12 col-md-3">
+            <div class="col-xs-12 col-md-4 pl8">
 
                 <div class="landing-tasbih-map">
                     <div id="agent-locator">
                         <div id="maparea"></div>
                     </div><!--/ #agent-locator -->
                     <div class="landing-tasbih-map--button">
-                        <a href="#"><i class="fa fa-search"></i> Temukan Agen</a>
+                        <a href="http://agen.allianz.co.id"><i class="fa fa-search"></i> Temukan Agen</a>
                     </div><!--/ .landing-tasbih-map--button -->
                 </div><!--/ .landing-tasbih-map -->
 

@@ -61,11 +61,11 @@
 <section class="landing-tasbih-grid">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-9">
+            <div class="col-xs-12 col-md-8 pr8">
 
                 <div class="row">
 
-                    <div class="col-xs-12 col-md-6">
+                    <div class="col-xs-12 col-md-6 pr8">
                         <div class="landing-tasbih-grid--item orange">
                             <div class="landing-tasbih-grid--item-inner">
                                 <h3>Rukun Islam Sebagai Pondasi Hidup Seorang Muslim</h3>
@@ -75,30 +75,30 @@
                         </div><!--/ .landing-tasbih-grid--item -->
                     </div><!--/ .col-xs-12 -->
 
-                    <div class="col-xs-12 col-md-6">
+                    <div class="col-xs-12 col-md-6 pl8">
                         <div class="landing-tasbih-grid--item blue">
                             <div class="landing-tasbih-grid--item-inner">
-                                <h3>Rukun Islam Sebagai Pondasi Hidup Seorang Muslim</h3>
+                                <h3>Kafir Secara Terang-Terangan adalah Ketika Mendengar Adzan</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit&hellip;</p>
                                 <a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
                             </div><!--/ .landing-tasbih-grid--item-inner -->
                         </div><!--/ .landing-tasbih-grid--item -->
                     </div><!--/ .col-xs-12 -->
 
-                    <div class="col-xs-12 col-md-6">
+                    <div class="col-xs-12 col-md-6 pr8">
                         <div class="landing-tasbih-grid--item">
                             <div class="landing-tasbih-grid--item-inner">
-                                <h3>Rukun Islam Sebagai Pondasi Hidup Seorang Muslim</h3>
+                                <h3>10 Tempat Ngabuburit Seru Bersama Teman</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit&hellip;</p>
                                 <a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
                             </div><!--/ .landing-tasbih-grid--item-inner -->
                         </div><!--/ .landing-tasbih-grid--item -->
                     </div><!--/ .col-xs-12 -->
 
-                    <div class="col-xs-12 col-md-6">
+                    <div class="col-xs-12 col-md-6 pl8">
                         <div class="landing-tasbih-grid--item green">
                             <div class="landing-tasbih-grid--item-inner">
-                                <h3>Rukun Islam Sebagai Pondasi Hidup Seorang Muslim</h3>
+                                <h3>10 Tempat Ngabuburit Seru Bersama Teman</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit&hellip;</p>
                                 <a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
                             </div><!--/ .landing-tasbih-grid--item-inner -->
@@ -108,7 +108,7 @@
                 </div><!--/ .row -->
 
             </div><!--/ .col-xs-12 -->
-            <div class="col-xs-12 col-md-3">
+            <div class="col-xs-12 col-md-4 pl8">
 
                 <div class="landing-tasbih-map">
                     <div id="map-canvas"></div>
@@ -120,7 +120,7 @@
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
         <div class="row">
-            <div class="col-xs-12 col-md-9">
+            <div class="col-xs-12 col-md-8 pr8">
 
                 <div class="landing-tasbih-grid--item inline purple">
                     <div class="landing-tasbih-grid--item-image">
@@ -134,7 +134,7 @@
                 </div><!--/ .landing-tasbih-grid--item -->
 
             </div><!--/ .col-xs-12 -->
-            <div class="col-xs-12 col-md-3">
+            <div class="col-xs-12 col-md-4 pl8">
 
                 <div class="landing-tasbih-grid--item red">
                     <div class="landing-tasbih-grid--item-inner">

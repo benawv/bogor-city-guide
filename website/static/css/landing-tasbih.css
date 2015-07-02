@@ -35,9 +35,10 @@
 
 /* container hack */
 .landing-tasbih-header {
-  margin-bottom: 32px;
+  margin-top: -4px;
+  margin-bottom: 16px;
   /* .landing-tasbih-header-caption */ }
-  .landing-tasbih-header img {
+  .landing-tasbih-header img.tasbih {
     min-width: 100%;
     max-width: 100%;
     height: auto;
@@ -106,35 +107,6 @@
           border: solid 128px #009a44;
           border-right-color: transparent;
           border-bottom-color: transparent; }
-
-.landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box .trapezoid-tasbih {
-        position: absolute;
-        left: 0;
-        bottom: -32px;
-        width: 100%;
-        height: 32px;
-        overflow: hidden; }
-        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box .trapezoid-tasbih::before {
-          content: "";
-          background: #003781;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 80%;
-          height: 32px; }
-        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box .trapezoid-tasbih::after {
-          content: "";
-          background: transparent;
-          position: absolute;
-          top: 0;
-          right: 0;
-          width: 32px;
-          height: 32px;
-          max-height: 32px;
-          max-width: 32px;
-          border: solid 128px #003781;
-          border-right-color: transparent;
-          border-bottom-color: transparent; }
       .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box .form-control {
         box-shadow: 0 0 0 transparent;
         border: none; }
@@ -142,11 +114,20 @@
 /* .landing-tasbih-header */
 .landing-tasbih-grid {
   /* .landing-tasbih-grid--item */ }
+  @media (max-width: 992px) {
+    .landing-tasbih-grid {
+      padding-top: 16px; } }
+  @media (min-width: 992px) {
+    .landing-tasbih-grid .pl8 {
+      padding-left: 8px; } }
+  @media (min-width: 992px) {
+    .landing-tasbih-grid .pr8 {
+      padding-right: 8px; } }
   .landing-tasbih-grid .landing-tasbih-grid--item {
     background: #003da5;
     color: white;
     min-height: 160px;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
     /* .landing-tasbih-grid--item-inner */
     /* .inline */ }
     .landing-tasbih-grid .landing-tasbih-grid--item.orange {
@@ -167,8 +148,11 @@
       line-height: 1.3; }
     .landing-tasbih-grid .landing-tasbih-grid--item p {
       line-height: 1.3;
-      margin: 8px auto; }
+      margin: 8px auto;
+      display: none; }
     .landing-tasbih-grid .landing-tasbih-grid--item a {
+      display: block;
+      margin: 8px auto 0;
       color: inherit;
       text-decoration: none; }
       .landing-tasbih-grid .landing-tasbih-grid--item a:hover, .landing-tasbih-grid .landing-tasbih-grid--item a:focus {
@@ -181,23 +165,35 @@
       min-height: 160px;
       overflow: hidden; }
       .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-image > img {
-        min-width: 100%;
-        max-width: 100%;
-        height: auto;
-        position: absolute; }
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        -moz-transform: translate3d(-50%, -50%, 0);
+        -ms-transform: translate3d(-50%, -50%, 0);
+        -o-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0);
+        min-width: 120%;
+        height: auto; }
     .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-image, .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-inner {
       display: inline-block;
       width: 49%;
       min-width: 49%;
       max-width: 49%;
       vertical-align: top; }
+      @media (max-width: 767px) {
+        .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-image, .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-inner {
+          display: block;
+          width: 100%;
+          min-width: 100%;
+          max-width: 100%; } }
 
 /* .landing-tasbih-grid */
 .landing-tasbih-map {
   position: relative;
-  min-height: 364px;
+  min-height: 340px;
   background: #54585a;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   /* .landing-tasbih-map--button */ }
   .landing-tasbih-map > .landing-tasbih-map--button {
     position: absolute;

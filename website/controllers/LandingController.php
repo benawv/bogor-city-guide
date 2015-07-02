@@ -29,6 +29,17 @@ class LandingController extends Website_Controller_Action{
 
             print_r("Selamat Datang di Ilustrasi Tasbih");
     }
+    
+    public function renderletAction() {
+		$id = $this->_getParam("id");
+		$entries = Object_Abstract::getById($id);
+		if($this->getParam("type") == "object") {
+			$id = $this->_getParam("id");
+			$entries = Object_Abstract::getById($id);
+            $this->view->artikel = $entries;
+        }
+        $this->renderScript('/landing/render.php');
+	}
 
 }
 
