@@ -1,12 +1,3 @@
-<?php
-
-	if($_SERVER['SERVER_NAME'] != "allianz.co.id")
-	{
-		header("Location: http://".$_SERVER['SERVER_NAME']);
-		die();
-	}
-	
-?>
 <style type="text/css">
 	.community-btn a{
 		font-size: 25px;
