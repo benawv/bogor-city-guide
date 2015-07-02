@@ -1,3 +1,12 @@
+<?php
+
+	if($_SERVER['SERVER_NAME'] != "allianz.co.id")
+	{
+		header("Location: http://".$_SERVER['SERVER_NAME']);
+		die();
+	}
+	
+?>
 <link rel="stylesheet" type="text/css" href="/website/static/css/virgin.css">
 	<?php
 		function limit_words($string, $word_limit)
