@@ -17,7 +17,7 @@
         width: 100% !important;
         min-width: 100% !important;
         max-width: 100% !important;
-        height: 480px;
+        height: 340px !important;
     }
 
     #agent-locator .searchbox
@@ -145,14 +145,14 @@
                                     
 
             </div><!--/ .col-xs-12 -->
-            <div class="col-xs-12 col-md-4 pl8">
+                        <div class="col-xs-12 col-md-4 pl8">
 
                 <div class="landing-tasbih-map">
                     <div id="agent-locator">
                         <div id="maparea"></div>
                     </div><!--/ #agent-locator -->
                     <div class="landing-tasbih-map--button">
-                        <a href="http://agen.allianz.co.id"><i class="fa fa-search"></i> Temukan Agen</a>
+                        <a href="#"><i class="fa fa-search"></i> Temukan Agen</a>
                     </div><!--/ .landing-tasbih-map--button -->
                 </div><!--/ .landing-tasbih-map -->
 
