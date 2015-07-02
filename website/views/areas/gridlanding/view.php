@@ -98,14 +98,14 @@
     <div class="container">
         
         <div class="row">
-            <div class="col-xs-12 col-md-9">
+            <div class="col-xs-12 col-md-8 pr8">
 
                 <div class="row">
                     <?php for($i=0;$i<$slides;$i++) { ?>
                     <?php
 								$color = $this->select('color_'.$i)->getData();
                     ?>
-                    <div class="col-xs-12 col-md-6">
+                    <div class="col-xs-12 col-md-6 <?php if($slides%2 == 0){ echo 'pl8';} else {echo 'pr8';} ?>">
                         <div class="landing-tasbih-grid--item <?php echo $color;?>">
                             <div class="landing-tasbih-grid--item-inner">
                                         <?php echo $this->renderlet("artikel".$i, array(
@@ -145,7 +145,7 @@
                                     
 
             </div><!--/ .col-xs-12 -->
-            <div class="col-xs-12 col-md-3">
+            <div class="col-xs-12 col-md-4 pl8">
 
                 <div class="landing-tasbih-map">
                     <div id="agent-locator">
