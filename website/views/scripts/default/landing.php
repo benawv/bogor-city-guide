@@ -98,7 +98,7 @@
                     <div class="col-xs-12 col-md-6 pl8">
                         <div class="landing-tasbih-grid--item green">
                             <div class="landing-tasbih-grid--item-inner">
-                                <h3>Namun Tidak Segera Mendatanginya, yang manggil Allah BROSIS!</h3>
+                                <h3>10 Tempat Ngabuburit Seru Bersama Teman</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit&hellip;</p>
                                 <a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
                             </div><!--/ .landing-tasbih-grid--item-inner -->
