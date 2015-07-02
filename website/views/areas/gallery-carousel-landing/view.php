@@ -12,7 +12,8 @@
 											    "store" => array(
 											        array("tasbih", "Tasbih"),
 											        array("life", "Life")
-											    )
+											    ),
+												"reload" => true
 											)); 
 										?>
 			                        	</p>
@@ -25,10 +26,11 @@
 
                     <?php 
                         echo $this->image("gallery-carousel", array(
-                                "thumbnail" => "staticBanner",
-                                'title' 	=> 'Tasbih',
-                                 "width" => "100%", "height" =>400,
-                                 "id" => "tasbih"
+                                'title' 	=> 'Image Size 960x400',
+                                 "width" => "100%",
+								 "height" =>400,
+                                 "id" => "tasbih",
+								 "class" => "tasbih"
                         ));
                     ?>
                 
@@ -41,7 +43,7 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-4 col-md-offset-1">
                                 
-                                <!--<div class="landing-tasbih-header-caption--box <?php echo $color; ?> <?php echo $pos; ?>" id="fixbox" style="display:block;">
+                                <!--<div class="landing-tasbih-header-caption--box <?php //echo $color; ?> <?php //echo $pos; ?>" id="fixbox" style="display:block;">
                                     
                                     <h3>Pilih Jenis Asuransi</h3>
                                     <form role="form">
@@ -55,7 +57,7 @@
                                         </div>--><!--/ .form-group -->
                                     <!--</form>
                                     <div class="trapezoid"></div>
-                                </div-->><!--/ .landing-tasbih-header-caption--box -->
+                                </div--><!--/ .landing-tasbih-header-caption--box -->
 
                             <?php
                                     $pt = $this->select('positionTasbih_')->getData();
@@ -115,7 +117,7 @@
 								    $posLife = $this->select('colorLife_')->getData();
 							?>
                                 
-                                <div class="landing-tasbih-header-caption--box" id="fixboxLifeinsurance <?php echo $colorLife; ?> <?php echo $posLife; ?>" style="display:<?php if($jenis=="tasbih") echo "none"; else echo "block"; ?>;">
+                                <div class="landing-tasbih-header-caption--box" id="fixboxLifeinsurance <?php echo $colorLife; ?> <?php echo $posLife; ?>" style="display:<?php if($jenis=="life") echo "block"; else echo "none"; ?>;">
                                     <h2><span id="title">Ilustrasi Allianz Life Insurance</span></h2>
                                     <form role="form">
 
@@ -162,7 +164,7 @@
 											)); 
 										?>
 			                        	</p>
-			                        <?php } ?>
+										<?php } ?>
                                     </form>
                                      <div class="trapezoid-tasbih"></div>
                                 </div><!--/ .landing-tasbih-header-caption--box -->
@@ -182,9 +184,9 @@
 <script>
 
     //alert('test');
-         
+	var value;
     function ubahJenis(value){
-         var value = $('#JenisAsuransi option:Selected').val();
+         value = $('#JenisAsuransi option:Selected').val();
          if(value == 'lifeInsurance'){
             document.getElementById('fixbox').style.display = 'none';
             document.getElementById('fixboxTasbih').style.display = 'none';
@@ -201,7 +203,7 @@
     };
     
     function ubahJenis1(value){
-         var value = $('#JenisAsuransi1 option:Selected').val();
+         value = $('#JenisAsuransi1 option:Selected').val();
          if(value == 'lifeInsurance'){
             document.getElementById('fixbox').style.display = 'none';
             document.getElementById('fixboxTasbih').style.display = 'none';
@@ -218,7 +220,7 @@
     };
     
     function ubahJenis2(value){
-         var value = $('#JenisAsuransi2 option:Selected').val();
+         value = $('#JenisAsuransi2 option:Selected').val();
          if(value == 'lifeInsurance'){
             document.getElementById('fixbox').style.display = 'none';
             document.getElementById('fixboxTasbih').style.display = 'none';
