@@ -2,6 +2,8 @@
 <link rel="stylesheet" href="/website/static/css/landing-tasbih.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
+
+
 <style>
     #agent-locator
     {
@@ -69,7 +71,10 @@
             margin-top: 16px;
         }
     }
+    
+
 </style>
+
 
                 	<?php if($this->editmode) { ?>
 	            How many slides you want to show?
@@ -101,11 +106,11 @@
             <div class="col-xs-12 col-md-8 pr8">
 
                 <div class="row">
-                    <?php for($i=0;$i<$slides;$i++) { ?>
+                    <?php for($i=1;$i<$slides+1;$i++) { ?>
                     <?php
 								$color = $this->select('color_'.$i)->getData();
                     ?>
-                    <div class="col-xs-12 col-md-6 <?php if($slides%2 == 0){ echo 'pl8';} else {echo 'pr8';} ?>">
+                    <div class="col-xs-12 col-md-6 <?php if($i % 2 == 1){ echo 'pr8';} elseif($i % 2 == 0) {echo 'pl8';} ?>">
                         <div class="landing-tasbih-grid--item <?php echo $color;?>">
                             <div class="landing-tasbih-grid--item-inner">
                                         <?php echo $this->renderlet("artikel".$i, array(
