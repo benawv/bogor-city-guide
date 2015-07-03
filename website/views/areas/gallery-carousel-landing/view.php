@@ -41,7 +41,7 @@
                 <div class="landing-tasbih-header-caption">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xs-12 col-md-4 col-md-offset-1">
+                            
                                 
                                 <!--<div class="landing-tasbih-header-caption--box <?php //echo $color; ?> <?php //echo $pos; ?>" id="fixbox" style="display:block;">
                                     
@@ -63,7 +63,8 @@
                                     $pt = $this->select('positionTasbih_')->getData();
 								    $ct = $this->select('colorTasbih_')->getData();
 							?>
-                                <div class="landing-tasbih-header-caption--box" id="fixboxTasbih  <?php echo $ct; ?> <?php echo $pt; ?>" style=" display:<?php if($jenis=="tasbih") echo "block"; else echo "none"; ?>">
+                            <div class="col-xs-12 col-md-4 col-md-offset-<?php if($pt == 'left') echo '1'; else echo '7' ?>">
+                                <div class="landing-tasbih-header-caption--box <?php echo $ct; ?>" id="fixboxTasbih  <?php echo $ct; ?> <?php echo $pt; ?>" style=" display:<?php if($jenis=="tasbih") echo "block"; else echo "none"; ?>">
                                     <h2><span id="title">Ilustrasi Allianz Tasbih</span></h2>
                                     <form role="form">
                                         <div class="form-group">
@@ -99,8 +100,11 @@
 				                        	echo "Color: <br />";
 			                        		echo $this->select("colorTasbih_",array(
 											    "store" => array(
-											        array("green", "Green"),
-											        array("blue", "Blue")
+											        array("blue", "Blue"),
+											        array("yellow", "Yellow"),
+											        array("light-blue", "Light-Blue"),
+											        array("red", "Red"),
+											        array("purple", "Purple")
 											    ),
 											    "reload" => true
 											)); 
@@ -110,14 +114,16 @@
                                     </form>
                                     <div class="trapezoid" style="color:#009a44;"></div>
                                 </div><!--/ .landing-tasbih-header-caption--box -->
+                                </div><!--/ .col-xs-12 -->
                                 
         <!-- Pembatas -->
                                 <?php
                                     $colorLife = $this->select('positionLife_')->getData();
 								    $posLife = $this->select('colorLife_')->getData();
 							?>
-                                
-                                <div class="landing-tasbih-header-caption--box" id="fixboxLifeinsurance <?php echo $colorLife; ?> <?php echo $posLife; ?>" style="display:<?php if($jenis=="life") echo "block"; else echo "none"; ?>;">
+                            <div class="col-xs-12 col-md-4 col-md-offset-<?php if($pt == 'left') echo '1'; else echo '7' ?>">
+
+                                <div class="landing-tasbih-header-caption--box <?php echo $colorLife; ?>" id="fixboxLifeinsurance <?php echo $colorLife; ?> <?php echo $posLife; ?>" style="display:<?php if($jenis=="life") echo "block"; else echo "none"; ?>;">
                                     <h2><span id="title">Ilustrasi Allianz Life Insurance</span></h2>
                                     <form role="form">
 
@@ -157,8 +163,11 @@
 				                        	echo "Color: <br />";
 			                        		echo $this->select("colorLife_",array(
 											    "store" => array(
-											        array("green", "Green"),
-											        array("blue", "Blue")
+											         array("blue", "Blue"),
+											        array("yellow", "Yellow"),
+											        array("light-blue", "Light-Blue"),
+											        array("red", "Red"),
+											        array("purple", "Purple")
 											    ),
 											    "reload" => true
 											)); 
@@ -166,7 +175,7 @@
 			                        	</p>
 										<?php } ?>
                                     </form>
-                                     <div class="trapezoid-tasbih"></div>
+                                     <div class="trapezoid"></div>
                                 </div><!--/ .landing-tasbih-header-caption--box -->
                                 
                             </div><!--/ .col-xs-12 -->
