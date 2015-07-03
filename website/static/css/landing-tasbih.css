@@ -64,6 +64,23 @@
       background: #009a44;
       color: white;
       padding: 20px 28px 0;
+      /* Color variants */
+      /* .yellow */
+      /* .orange */
+      /* .light-blue */
+      /* .blue */
+      /* .purple */
+      /* .red */
+      /*
+      $color_green: #009a44;
+      $color_yellow: #ffcd00;
+      $color_yellow_lighter: #ffd733;
+      $color_orange: #ff8200;
+      $color_light_blue: #0077c8;
+      $color_blue: #003da5;
+      $color_purple: #87189d;
+      $color_red: #e4002b;
+      */
       /* .trapezoid */
       /* .form-control*/ }
       .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form {
@@ -74,6 +91,53 @@
           border: none; }
           .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="submit"]:hover, .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="submit"]:focus {
             background: #ffd733; }
+      .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.yellow {
+        background: #ffcd00; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.yellow button[type="submit"] {
+          background: #003da5;
+          border: solid 1px #003da5; }
+          .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.yellow button[type="submit"]:hover, .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.yellow button[type="submit"]:focus {
+            background: #0077c8; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.yellow .trapezoid::before {
+          background: #ffcd00; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.yellow .trapezoid::after {
+          border-top-color: #ffcd00;
+          border-left-color: #ffcd00; }
+      .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.orange {
+        background: #ff8200; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.orange .trapezoid::before {
+          background: #ff8200; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.orange .trapezoid::after {
+          border-top-color: #ff8200;
+          border-left-color: #ff8200; }
+      .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.light-blue {
+        background: #0077c8; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.light-blue .trapezoid::before {
+          background: #0077c8; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.light-blue .trapezoid::after {
+          border-top-color: #0077c8;
+          border-left-color: #0077c8; }
+      .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.blue {
+        background: #003da5; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.blue .trapezoid::before {
+          background: #003da5; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.blue .trapezoid::after {
+          border-top-color: #003da5;
+          border-left-color: #003da5; }
+      .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.purple {
+        background: #87189d; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.purple .trapezoid::before {
+          background: #87189d; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.purple .trapezoid::after {
+          border-top-color: #87189d;
+          border-left-color: #87189d; }
+      .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.red {
+        background: #e4002b; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.red .trapezoid::before {
+          background: #e4002b; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.red .trapezoid::after {
+          border-top-color: #e4002b;
+          border-left-color: #e4002b; }
       .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box .trapezoid {
         position: absolute;
         left: 0;
