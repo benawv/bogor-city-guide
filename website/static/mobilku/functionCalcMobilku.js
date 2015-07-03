@@ -1063,11 +1063,12 @@ $(document).ready(function(){
         
         
         //=========================//perhitungan rate/persen======================================//
-        var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
+        var calc, workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
         compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2);//jenisasuransi, type *ga perlu,merk_html,jenis paket)
         //console.log(parseFloat(getWorkshopNonPack(merk,ages)));
         //console.log(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
-        workshop_persen=parseFloat(getWorkshopNonPack(merk_html,ages))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2)/100);
+        calc =parseFloat(getWorkshopNonPack(merk_html,ages))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2)/100);
+        workshop_persen = calc.toFixed(4);
         
         // if (tlo= 5+wilayah) else (1+wilayah)
         if (jenisasuransi=='tlo') {
@@ -1699,6 +1700,32 @@ $(document).ready(function(){
             $(this).click(function() {
                     var datatarget=$(this).attr('data-target');
                     var dataangka=$(this).attr('data-angka');
+                    var datainsured=$(this).attr('data-insured');
+                    $('.'+datatarget).html('');
+                    $('.'+datatarget).append(dataangka);
+
+                    if ( ! this.checked) {
+                          //alert(datainsured);
+                          $('.'+datainsured).attr('disabled', 'disabled');
+                          $('.'+datatarget).html('');
+                          $('.'+datatarget).append('0,00');
+                    }else{
+                          $('.'+datainsured).removeAttr('disabled');
+                          $('.'+datatarget).html('');
+                          $('.'+datatarget).append(dataangka);
+                    }
+                    totalrecalc_custome();
+
+            });
+
+            //cekboxnya on klik
+            //nanti $( #data-target).html( $this.attr( data-angka ) )
+    });
+
+    /*$( 'table.tbl_ck input[id="no_tpl_is_calc"]' ).each(function(index,value){
+            $(this).click(function() {
+                    var datatarget=$(this).attr('data-target');
+                    var dataangka=$(this).attr('data-angka');
                     $('.'+datatarget).html('');
                     $('.'+datatarget).append(dataangka);
 
@@ -1716,6 +1743,14 @@ $(document).ready(function(){
             //cekboxnya on klik
             //nanti $( #data-target).html( $this.attr( data-angka ) )
     });
+    $(document).ready(function(){
+        if($('#no_tpl_is_calc').is(":checked") == true){
+            $("#notplval").prop("disabled",false);
+        }else{
+            $("#notplval").prop("disabled",true);
+        }
+    })*/
+
 
 
     /*
