@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-xs-12">
 
-                <img src="/website/static/images/landing-tasbih/landing-tasbih-header.jpg" alt="Landing Tasbih Header Image">
+                <img src="/website/static/images/landing-tasbih/landing-tasbih-header.jpg" alt="Landing Tasbih Header Image" class="tasbih">
 
                 <div class="landing-tasbih-header-caption">
                     <div class="container">
