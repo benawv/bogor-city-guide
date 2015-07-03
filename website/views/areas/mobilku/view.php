@@ -924,7 +924,7 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td>
-                                                                        <input type="checkbox" class='no_compre_is_calc' name="no_compre_is_calc" checked data-angka="0" data-target="no_compre_prem">
+                                                                        <input type="checkbox" class='no_compre_is_calc' name="no_compre_is_calc" checked data-angka="0" data-target="no_compre_prem" disabled="disabled">
                                                                     </td>
                                                                     <td id="nojenisasuransi">Comprehensive</td>
                                                                     <td class='no_compre_val'>-</td>
@@ -933,7 +933,7 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
-                                                                        <input type="checkbox" class='no_tpl_is_calc' name="no_tpl_is_calc" checked data-angka="0" data-target="no_tpl_prem">
+                                                                        <input type="checkbox" class='no_tpl_is_calc' id="no_tpl_is_calc" name="no_tpl_is_calc" checked data-insured="no_tpl_val" data-angka="0" data-target="no_tpl_prem">
                                                                     </td>
                                                                     <td>TPL</td>
                                                                     <td class=''>
@@ -944,16 +944,17 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
-                                                                        <input type="checkbox"  class="no_med_ex_is_calc" name="no_med_ex_prem_is_calc" checked data-angka="0" data-target="no_med_ex_prem">
+                                                                        <input type="checkbox" class="no_med_ex_is_calc" id="no_med_ex_is_calc" name="no_med_ex_is_calc" checked data-insured="no_med_ex_val" data-angka="0" data-target="no_med_ex_prem">
                                                                     </td>
                                                                     <td>Medical Expense</td>
-                                                                    <td class=''><input type="text" name="no_med_ex_val" class="no_med_ex_val" id="nomedexval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;"></td>
+                                                                    <td class=''>
+                                                                        <input type="text" name="no_med_ex_val" class="no_med_ex_val" id="nomedexval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;"></td>
                                                                     <td class='no_med_ex_persen'>-</td>
                                                                     <td class='no_med_ex_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
-                                                                        <input type="checkbox" class="no_pll_is_calc" name="no_pll_prem_is_calc" checked data-angka="0" data-target="no_pll_prem">
+                                                                        <input type="checkbox" class="no_pll_is_calc" name="no_pll_prem_is_calc" checked data-insured="no_pll_val" data-angka="0" data-target="no_pll_prem">
                                                                     </td>
                                                                     <td>PLL</td>
                                                                     <td class=''>
@@ -964,7 +965,7 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
-                                                                        <input type="checkbox"  class="no_flood_is_calc" name="no_flood_is_calc" checked data-angka="0" data-target="no_flood_prem">
+                                                                        <input type="checkbox"  class="no_flood_is_calc" name="no_flood_is_calc" checked data-angka="0" data-target="no_flood_prem" disabled="disabled">
                                                                     </td>
                                                                     <td>Flood</td>
                                                                     <td class='no_flood_val'>-</td>
@@ -973,7 +974,7 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
-                                                                        <input type="checkbox" class="no_earthquake_is_calc" name="no_earthquake_is_calc" checked data-angka="0" data-target="no_earthquake_prem">
+                                                                        <input type="checkbox" class="no_earthquake_is_calc" name="no_earthquake_is_calc" checked data-angka="0" data-target="no_earthquake_prem" disabled="disabled">
                                                                     </td>
                                                                     <td>Earthquake</td>
                                                                     <td class='no_earthquake_val'>-</td>
@@ -982,7 +983,7 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
-                                                                        <input type="checkbox" class="no_riot_is_calc" name="no_tpl_is_calc" checked data-angka="0" data-target="no_riot_prem">
+                                                                        <input type="checkbox" class="no_riot_is_calc" name="no_tpl_is_calc" checked data-angka="0" data-target="no_riot_prem"  disabled="disabled">
                                                                     </td>
                                                                     <td>Strike, Riot, and Civil Commotion</td>
                                                                     <td class='no_riot_val'>-</td>
@@ -991,7 +992,7 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
-                                                                        <input type="checkbox" class="no_terror_is_calc" name="no_terror_is_calc" checked data-angka="0" data-target="no_terror_prem">
+                                                                        <input type="checkbox" class="no_terror_is_calc" name="no_terror_is_calc" checked data-angka="0" data-target="no_terror_prem"  disabled="disabled">
                                                                     </td>
                                                                     <td>Terrorist and Sabotage</td>
                                                                         <td class='no_terror_val'>-</td>
@@ -1000,7 +1001,10 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <td>
-                                                                            <input type="checkbox" class="no_passenger_is_calc" name="no_passenger_is_calc" checked data-angka="0" data-target="no_passenger_prem">
+                                                                            <input type="checkbox" class="no_passenger_is_calc" name="no_passenger_is_calc" checked data-insured="no_passenger_val" data-angka="0" data-target="no_passenger_prem">
+                                                                            <?php
+
+                                                                            ?>
                                                                         </td>
                                                                         <td>PA Passenger</td>
                                                                         <td class=''><input type="text" name="no_passenger_val" class="no_passenger_val" id="nopassengerval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
@@ -1010,7 +1014,7 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <td>
-                                                                            <input type="checkbox" class="no_pa_is_calc" name="no_pa_is_calc" checked data-angka="0" data-target="no_pa_prem">
+                                                                            <input type="checkbox" class="no_pa_is_calc" name="no_pa_is_calc" checked data-insured="no_pa_val" data-angka="0" data-target="no_pa_prem">
                                                                         </td>
                                                                         <td>PA Driver</td>
                                                                         <td class=''>
@@ -1021,7 +1025,7 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <td>
-                                                                            <input type="checkbox" class="no_workshop_is_calc" name="no_workshop_is_calc" checked data-angka="0" data-target="no_workshop_prem">
+                                                                            <input type="checkbox" class="no_workshop_is_calc" name="no_workshop_is_calc" checked data-angka="0" data-target="no_workshop_prem" disabled="disabled">
                                                                         </td>
                                                                         <td>Authorized Workshop</td>
                                                                         <td class='no_workshop_val'>-</td>
@@ -1157,7 +1161,18 @@
         }
         
     });
-    
+
+    //var check = $('#no_tpl_is_calc');
+    /*$(document).ready(function(){
+        if($('#no_tpl_is_calc').is(":checked") == true){
+            alert("asdf");
+            $("#notplval").prop("disabled",false);
+        }else{
+            $("#notplval").prop("disabled",true);
+        }
+    });*/
+
+
     function validateNumber(value){
         if(value.length <= 8 ){
             document.getElementById('notifNoHP').style.display= 'block';
@@ -1263,7 +1278,7 @@
     
         });
     });
-    
+
     function validateNumber(value){
         if(value.length <= 8 ){
             document.getElementById('notifNoHP').style.display= 'block';
