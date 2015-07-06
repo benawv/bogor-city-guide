@@ -170,6 +170,16 @@
                         <div class="facebook-clear-area left"></div>
                         <div class="facebook-clear-area right"></div>
                         <div class="facebook-caption right condensed no-dent red">
+                            <!--
+                                .right      Supaya caption-nya ada di kanan
+                                .no-dent    Supaya 'penyok'-nya ilang
+                                .condensed  Ukurannya jadi lebih imut
+                                .green      Jadi ijo
+                                .light_blue Jadi biru cerah
+                                .red        Jadi merah
+                                .orange     Jadi jingga / oranye
+                                .purple     Jadi Jandaaaa
+                            -->
                             <div class="facebook-caption--inner">
                                 <h3>Headline</h3>
                                 <p>
