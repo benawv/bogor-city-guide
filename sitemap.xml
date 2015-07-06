@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
-<urlset
-		xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
@@ -165,10 +164,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/produk/asuransi-jiwa-bank/asuransi-jiwa-bank-muamalat</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>http://www.allianz.co.id/layanan</loc>
     <priority>0.5</priority>
   </url>
@@ -193,11 +188,19 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/layanan/customer-service/nasabah-allianz</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://www.allianz.co.id/layanan/hubungi-kami/survey-website</loc>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://www.allianz.co.id/layanan/hubungi-kami/kontak-allianz-indonesia</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/layanan/hubungi-kami/faq</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -237,15 +240,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/program-allianz/promo/promo-tasbih</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://www.allianz.co.id/program-allianz/promo/ci-100-bank-ekonomi-raharja</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/program-allianz/promo/rider-attachment-promo-hsbc</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/program-allianz/promo/rider-attachment-promo-btpn</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -269,18 +268,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/produk/asuransi-jiwa</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/produk/asuransi-kesehatan</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/produk/asuransi-syariah</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>http://www.allianz.co.id/asn/events/event-2015</loc>
     <priority>0.5</priority>
   </url>
@@ -297,11 +284,19 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/community-tips</loc>
+    <loc>http://www.allianz.co.id/produk/asuransi-jiwa</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/</loc>
+    <loc>http://www.allianz.co.id/produk/asuransi-kesehatan</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/produk/asuransi-syariah</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/community-tips</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -309,43 +304,15 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.allianzlife.co.id/CustomerOnlinePortal/Group/</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.allianzlife.co.id/ePolicy/general/frmHomeGeneral.aspx</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/tasbih</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>http://ajfc.allianz.co.id/pengumuman</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/layanan/nasabah-allianz</loc>
+    <loc>https://services.allianz.co.id/gsw</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.allianzlife.co.id/eBancassurance/</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.allianzlife.co.id/ePension/</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.allianzlife.co.id/eSaving/login.aspx</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/layanan/hubungi-kami/faq</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://instagram.com/allianzindonesia</loc>
+    <loc>https://services.allianz.co.id/gsw/</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -353,7 +320,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.allianzlife.co.id/asntb/index.html</loc>
+    <loc>http://www.allianz.co.id/community-detail/nuansa-1yangterpenting-di-album-baru-alexa-dulu-kemarin-sekarang--9831-1</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -362,10 +329,6 @@
   </url>
   <url>
     <loc>http://www.allianz.co.id/community-detail/yuk-jaga-kesehatan-binatang-peliharaan-anda-9134-1</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/community-detail/nutrisi-penting-bagi-perempuan-pasca-menopause-9131-1</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -397,11 +360,87 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://allianz.com</loc>
+    <loc>http://www.allianz.co.id/website/static/images/arrow/bottom-arrow.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.allianzlife.co.id/CustomerOnlinePortal/</loc>
+    <loc>http://www.allianz.co.id/website/static/images/icon-share/facebook.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/static/images/icon-share/twitter.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/static/images/icon-share/g-plus.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/home/gallery-carousel/image_static_hajj.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/home/gallery-carousel/layout_960x400_ajfc.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/home/gallery-carousel/slidding-banner-website-960x400.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/home/gallery-carousel/layout_960x400_125tahun.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/home/gallery-carousel/slideshow-garuda-indonesia-travel-insurance.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/6487/thumb__galleryCarouselStatic/allianz-customer-testimoni-video-banner.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/allianz-financial-planning-banner-01_1.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/home/tahukah-anda/allianz-indonesia-asn-tool-box-download-image_1.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/home/tahukah-anda/brand_finance.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/community-tips/juni/alexa/alexa-304.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/community-tips/juni/30/lindungi-masa-depannya-siapkan-biaya-sekolah-si-kecil-sejak-dini-304.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/community-tips/juni/29/yuk-jaga-kesehatan-binatang-peliharaan-anda-304.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/static/images/icon-share/facebook-black.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/static/images/icon-share/twitter-black.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/static/images/icon-share/g-plus-black.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/static/images/Socially-Devoted-Badge.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/static/images/badge.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -417,7 +456,51 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://allianz.co.id</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://www.allianz.co.id/tentang-kami/finansial</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/15/thumb__staticBanner/tentang-kami-banner-utama-allianz.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/tentang-kami-profil-allianz.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/tentang-kami-finansial-allianz.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/tentang-kami-visi-misi-allianz.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/tentang-kami-mitra-kerja-allianz.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/tentang-kami-karir-allianz.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/profil/core1.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/profil/core2.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/profil/core3.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/profil/core4.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -441,10 +524,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://instagram.com/allianzindonesia/</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>http://www.allianz.co.id/asn/news-event/i-contest</loc>
     <priority>0.5</priority>
   </url>
@@ -465,11 +544,147 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/image/portal-asn/home/lim_lie_sia_2004.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/foto-mobil/2015/gfx_ljndacnadraadi.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/foto-mobil/az_mobil-ivanmaleakhi.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/foto-mobil/2015/jozef_sujanto_sugianto_2005.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/foto-mobil/2015/wong-shandy-surya.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/foto-mobil/az_mobil-hendywinata.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/foto-mobil/az_mobil-iwanpoerwoko.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/foto-mobil/az_mobil-venny-wantouw.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/foto-mobil/az_mobil-alisughiarto.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/foto-mobil/az_mobil-cristineadi-susanto.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/foto-mobil/az_mobil-lindaherawati.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/foto-mobil/az_mobil-richardkaryadi.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/foto-mobil/2015/gfx_sony-arief.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/top-weekly/juni-22-27-jun-15/athena-chitasura.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/home/304x295.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/top-weekly/juni-22-27-jun-15/rachel.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/top-weekly/juni-22-27-jun-15/ahong_.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/top-weekly/juni-22-27-jun-15/liena-gunawan.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/top-monthly/april-2015/az_liem-lia-sia.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/top-monthly/juni-2015/ummaya-khuzaimah.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/top-monthly/juni-2015/beriman-sinaga.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/top-monthly/juni-2015/fendy-satntoso.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/top-monthly/juni-2015/sukmana.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/home/additional-posters-02.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/home/additional-posters-01.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/home/poster-to-portal-01.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/home/poster-to-portal-02.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/asn/home/poster-to-portal-03.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://www.allianz.co.id/pdf/mitra-kerja/succes-stories-mdrt.pdf</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.com</loc>
+    <loc>http://www.allianz.co.id/image/tentang-kami/mitra-kerja/asn-allianz-star-network.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/mitra-kerja/allianz-bancassurance.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/mitra-kerja/allianz-reasuransi.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/mitra-kerja/broker-allianz.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/mitra-kerja/jalur-distribusi-allianz.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/mitra-kerja/mdrt_logo.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/logoasn.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -481,11 +696,43 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/layanan/hubungi-kami</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://allianz.co.id/AZLIFE/Indonesian/Contact/Sales+Offices/</loc>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/246/thumb__banner/slide-agen-allianz.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/247/thumb__banner/slide-karyawan-allianz.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/karir/keunggulan.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/karir/slide-agen-allianz.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/karir/slide-karyawan-allianz.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://www.allianz.co.id/tentang-kami/karir/berani-berubah/distribusi-allianz</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/karir/distribusi_allianz.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/karir/pendaftaran.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -521,11 +768,43 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://play.google.com/store/apps/details?id=id.co.allianz.healthcard</loc>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/22/thumb__banner/asuransi-allianz-kartu-proteksiku-banner.jpeg</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://itunes.apple.com/id/app/allianz-eazy-claim/id904866637?mt=8</loc>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/23/thumb__banner/asuransi-allianz-smartlink-flexi-account-plus-banner.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/1018/thumb__banner/asuransi-allianz-smartlink-new-flexi-account-banner.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/1019/thumb__banner/asuransi-allianz-allisya-protection-plus-banner.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/1020/thumb__banner/asuransi-perjalanan-allianz-travelpro-main-banner.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kesehatan/produk-asuransi-kesehatan.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa/produk-asuransi-jiwa.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-umum/produk-asuransi-umum.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kumpulan/produk-asuransi-kumpulan.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-syariah/produk-asuransi-syariah.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -537,7 +816,31 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/528/thumb__auto_850904660de984af948beee3aee98a4f/1yangterpenting-eazy-claim.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/531/thumb__auto_6ef639dc39a19a1a3fb89309ff5bc384/button-get-it-on-google-play.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/530/thumb__auto_6ef639dc39a19a1a3fb89309ff5bc384/available_on_the_app_store_-black-.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://www.allianz.co.id</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kesehatan/smartmed-premier/detail-produk-allianz-smartmed-premier.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/claim.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/brosur/brosur-smartmed-premier.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -545,11 +848,31 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kesehatan/smarthealth-maxi-violet/detail-produk-allianz-smarthealth-maxi-violet.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/brosur/brosur-smarthealth-maxi-violet.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://www.allianz.co.id/pdf/brochure/asuransi-kesehatan/smarthealth-kumpulan.pdf</loc>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kesehatan/smarthealth-asuransi-kumpulan/banner-304x173-detil-produk-smarthealth-kumpulan.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/brosur/brosur.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://www.allianz.co.id/pdf/brochure/asuransi-kesehatan/allisya-care.pdf</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kesehatan/smarthealth-allisya-care/detail-produk-allianz-allisya-care.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -558,6 +881,14 @@
   </url>
   <url>
     <loc>http://www.allianz.co.id/pdf/brochure/asuransi-kesehatan/smartlink-new-flexi-account-plus.pdf</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa/smartlink-new-flexi-account-plus/detil-produk-allianz-new-flexi-account-plus.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/brosur/brosur-smartlink-new-flexi-account-plus.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -565,11 +896,11 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/pdf/brochure/asuransi-kesehatan/allisya-care.pdf</loc>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa/smartlink-flexi-account/detil-produk-allianz-flexy-account-plus.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://investment.allianz.co.id</loc>
+    <loc>http://www.allianz.co.id/image/produk/brosur/brosur-smartlink-flexi-account.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -577,7 +908,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/pdf/brochure/asuransi-kesehatan/smartlink-new-flexi-account-plus.pdf</loc>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa/smartlink-ci100/allianz-ci-100.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -585,7 +916,11 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/pdf/brochure/asuransi-jiwa/smartlink-flexi-fund-plus.pdf</loc>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa/hospital-surgical-care/detil-produk-allianz-hospital-and-surgical-konvensional.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/brosur/preview-brosur-allianz-hospital-and-surgical-care.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -593,15 +928,31 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://allianz.co.id</loc>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa/allisya-hospital-surgical-care/detil-produk-allianz-allisya-hospital-and-surgical-syariah.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/pdf/brochure/asuransi-jiwa/flyer-allianz-smartlink-ci-100.jpg</loc>
+    <loc>http://www.allianz.co.id/image/produk/brosur/preview-brosur-allianz-allisya-hospital-and-surgical-care.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://www.allianz.co.id/pdf/brochure/asuransi-jiwa/smartlink-maxi-fund-plus.pdf</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa/smartlink-maxi-fund-plus/banner-304x173-allisya-maxi-fund-plus.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/brosur/preview-brosur-allianz-smartlink-smartlink-maxi-fund-plus.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-syariah/allisya-maxi-fund-plus/detail-maxi-fund-plus.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-umum/allianz-mobilku/banner-304x173-detil-produk---allianz-mobilku.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -609,11 +960,19 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/pdf/brochure/asuransi-jiwa/h-s-konventional.pdf</loc>
+    <loc>http://www.allianz.co.id/pdf/brochure/asuransi-umum/polis-kartu-proteksiku.pdf</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/pdf/brochure/asuransi-umum/polis-kartu-proteksiku.pdf</loc>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-umum/kartu-proteksiku/detil-produk-allianz-kartu-proteksiku.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/screen-shot-2015-03-24-at-5.33.17-pm.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-umum/kartuproteksiku_allianz_polis.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -621,15 +980,15 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/pdf/brochure/asuransi-syariah/h-s-syariah.pdf</loc>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-umum/dana-kesehatanku/asuransi-allianz-dana-kesehatanku.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://allianz.co.id</loc>
+    <loc>http://www.allianz.co.id/screen-shot-2015-03-24-at-5.25.50-pm_1.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/pdf/brochure/asuransi-jiwa/smartlink-maxi-fund-plus.pdf</loc>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-umum/danakesehatanku_allianz_polis.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -637,19 +996,35 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/pdf/brochure/asuransi-umum/kartu-perdana-proteksiku-2013.pdf</loc>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-umum/asuransi-travelpro/allianz-asurnasi-perjalanan-travelpro-kecil.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/pdf/brochure/asuransi-umum/polis-kartu-proteksiku.pdf</loc>
+    <loc>http://www.allianz.co.id/image/produk/brosur/preview-brosur-allianz-allisya-asuransi-perjalanan-travelpro.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianzglobalbenefits.com</loc>
+    <loc>http://www.allianz.co.id/image_asuransi_rumahku_plus.jpeg</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/pdf/brochure/asuransi-umum/broch-dana-kesehatanku-nov12.pdf</loc>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kumpulan/smartpension/banner-304x173-smartpension.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kesehatan/banner-304x295-smarthealth-kumpulan.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kumpulan/smartprotection/banner-304x173-smartprotection.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kumpulan/payung-keluarga/banner-304x173-payung-keluarga.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kumpulan/smartfinance/banner-304x173-smart-finance.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -666,46 +1041,6 @@
   </url>
   <url>
     <loc>http://agen.allianz.co.id</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/produk/asuransi-syariah/tasbih/minta-informasi</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/produk/asuransi-syariah/tasbih/artikel/rukun-islam-sebagai-fondasi-hidup-seorang-muslim-7419</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/produk/asuransi-syariah/tasbih/artikel/prioritas-keuangan-dalam-rencana-naik-haji-7420</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/produk/asuransi-syariah/tasbih/artikel/merencanakan-ibadah-haji-dengan-mudah-7421</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/produk/asuransi-syariah/tasbih/artikel/gaya-hidup-wanita-muslim-7422</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/pdf/brochure/asuransi-umum/travelpro.pdf</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianzglobalbenefits.com</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/asn/asn-login</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/produk/asuransi-syariah/tasbih/info-produk</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -741,7 +1076,47 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/tasbih/background/image_static_hajj.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/tasbih/background/homescreen.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/tasbih/background/asdasdsadsadas-3423432423423-copy.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/tasbih/background/bapak-anak-ibu.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/tasbih/background/homescreen-copy-copy.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/tasbih/background/berdua.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-umum/allianz-asuransi-umum-kartu-proteksiku.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/tasbih/artikel-news/picture-2.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://www.allianz.co.id/pdf/brochure/asuransi-syariah/allisya-protection-plus.pdf</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-syariah/allisya-invest-plus/banner-304x173-allisya-invest-plus.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-syariah/allisya-benefit/banner-304x173-allisya-benefit-account.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -757,7 +1132,23 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa-bank/hsbc/banner-allianz-hsbc-college-care.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa-bank/hsbc/banner-allianz-hsbc-optima-care-invest.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa-bank/hsbc/banner-allianz-hsbc-care-protection-link.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://www.allianz.co.id/produk/asuransi-jiwa-bank/asuransi-jiwa-scb/scb-smartlegacy</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa-bank/scb/banner-smartlegacy-scb.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -769,11 +1160,67 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/produk/asuransi-jiwa-bank/asuransi-jiwa-bank-muamalat/muamalat-allisya-relink</loc>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa-bank/bank-muamalat-btpn/banner_m_allisya_relink.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa-bank/bank-muamalat-btpn/banner-guardia-premium.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa-bank/bank-muamalat-btpn/banner-guardia-investa.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://www.allianz.co.id/layanan/customer-service</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/2829/thumb__staticBanner/layanan-01.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/allianz-customer-service.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/social-media-services.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/icon_anchor/icon-sosmed/facebook-mini.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/icon_anchor/icon-sosmed/twitter-mini.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/icon_anchor/icon-sosmed/phone-mini.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/policy-check.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/layanan/allianz-platinum/allianz-platinum-batik.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/layanan/layanan-faq-allianz.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/layanan/layanan-umpan-balik-allianz.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/layanan/layanan-download-allianz.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/layanan/layanan-permintaan-informasi-allianz.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -889,7 +1336,83 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://investment.allianz.co.id/website/static/inv/images/sitelabel.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://investment.allianz.co.id/website/var/assets/eq2.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://investment.allianz.co.id/website/var/assets/balanced_1.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://investment.allianz.co.id/website/var/assets/fixed-income_4.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://investment.allianz.co.id/website/var/assets/mm4.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://investment.allianz.co.id/financial-planning</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://investment.allianz.co.id/box_perencana_keuangan_5.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://investment.allianz.co.id/box_kalkulator_3.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://investment.allianz.co.id/box_allianz_fund_5.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://investment.allianz.co.id/box_artikel_8.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://investment.allianz.co.id/website/var/assets/kalkulator-investasi.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://investment.allianz.co.id/website/var/assets/kalkulator-asuransi.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://investment.allianz.co.id/website/var/assets/kalkulator-pendidikan.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://investment.allianz.co.id/website/var/assets/kalkulator-pensiun.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://investment.allianz.co.id/website/var/assets/investment-daily.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://investment.allianz.co.id/website/var/assets/invesment-outlook.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://investment.allianz.co.id/website/var/assets/unit-link-anual-report.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://investment.allianz.co.id/website/var/assets/artikel.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://investment.allianz.co.id/website/var/assets/pustaka.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://investment.allianz.co.id/website/var/assets/laporan_arus-kas.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -898,6 +1421,18 @@
   </url>
   <url>
     <loc>http://www.allianz.co.id/layanan/faq</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/5029/thumb__staticBanner/survey-website.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/4898/thumb__staticBanner/layanan-kontak-allianz-indonesia.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/static/images/allianz-eagle-3d.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -1081,6 +1616,30 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/image/layanan/allianz-platinum/golf-tournament/agenda-golf.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/2706/thumb__auto_850904660de984af948beee3aee98a4f/best-net-and-gross-overall.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/2707/thumb__auto_850904660de984af948beee3aee98a4f/flight-a---winners.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/2708/thumb__auto_850904660de984af948beee3aee98a4f/flight-b---winners.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/2709/thumb__auto_850904660de984af948beee3aee98a4f/flight-c---winners.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/2710/thumb__auto_850904660de984af948beee3aee98a4f/novelties---winners.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://www.allianz.co.id/pdf/allianz-platinum/formulir-platinum-mgm---hsbc-v2.pdf</loc>
     <priority>0.5</priority>
   </url>
@@ -1097,11 +1656,35 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/program-allianz/sponsor</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://www.allianz.co.id/program-allianz/merchandise</loc>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/2019/thumb__staticBanner/allianz-arena-703.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/allianz-bayern-munchen-spectators.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/sposnorship.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/allianz-shop-01.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://www.allianz.co.id/program-allianz/promo</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/6574/thumb__auto_850904660de984af948beee3aee98a4f/sliding-banner-promo-tasbih-umroh.jpeg</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -1121,11 +1704,47 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/image/promo-sponsor/promo/allianz-detektif-keselamatan.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://www.allianz.co.id/image/promo-sponsor/promo/customer-digital-campaign/flyer-customer-digital-campaign-hal1_nasabah_v1.4.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://www.allianz.co.id/image/promo-sponsor/promo/customer-digital-campaign/flyer-customer-digital-campaign-hal2_nasabah_v1.3.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/promo-sponsor/promo/customer-digital-campaign.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/4112/thumb__auto_850904660de984af948beee3aee98a4f/marketing-banner_backpage_2287x904_e-statement.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/berani-berubah/sutji_sosrowardojo_allianzindonesia.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/berani-berubah/hari-cahyono.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/berani-berubah/ahmad-merian.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/mitra-allianz/shanty_226x200.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/mitra-allianz/sontani_226x200.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/mitra-allianz/hartono_226x200.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -2297,6 +2916,74 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa/asuransi-jiwa-allianz-new-flexi-account.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa/asuransi-jiwa-allianz-flexi-account-plus.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa/asuransi-jiwa-allianz-ci100.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa/asuransi-jiwa-allianz-health-and-surgical-konvensional.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa/asuransi-jiwa-allianz-allisya-health-and-surgical-syariah.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-jiwa/asuransi-jiwa-allianz-maxi-fund-plus.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kesehatan/smartmed_premier.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kesehatan/banner-304x295-smartwealth-maxi-violet.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kesehatan/banner-304x295-allisya-care-kesehatan_1.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kesehatan/eazy-claim-304-295.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-syariah/banner-304x295-allisya-benefit-account.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-syariah/banner-304x295-allisya-maxi-fund-plus.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-syariah/banner-304x295-asuransi-umum---rumahku-plus.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-syariah/banner-304x295-asuransi-umum---mobilku.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-syariah/banner-304x295-allisya-usaha.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-syariah/banner-304x295-allisya-invest-plus.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/community-detail/nuansa-1yangterpenting-di-album-baru-9831-1</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://www.allianz.co.id/community-detail/lindungi-masa-depannya-siapkan-biaya-9135-1</loc>
     <priority>0.5</priority>
   </url>
@@ -2349,10 +3036,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/community-detail/agar-lebaran-istimewa-pilih-asuransi-7337-1</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>http://www.allianz.co.id/list-category/aman+di+jalan-156</loc>
     <priority>0.5</priority>
   </url>
@@ -2381,6 +3064,10 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/community-detail/-interval-running-menambah-kekuatan-4573-1</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://www.allianz.co.id/community-detail/12-benda-yang-harus-ada-1265-1</loc>
     <priority>0.5</priority>
   </url>
@@ -2393,19 +3080,75 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.allianzlife.co.id/ePolicy/frmPortal.aspx</loc>
+    <loc>http://www.allianz.co.id/image/community-tips/juni/alexa/alexa-467.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.allianzlife.co.id/ePolicy/general/frmKontakGeneral.aspx</loc>
+    <loc>http://www.allianz.co.id/image/community-tips/juni/30/lindungi-masa-depannya-siapkan-biaya-sekolah-si-kecil-sejak-dini-467.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.allianzlife.co.id/ePolicy/general/frmProsedurKlaim.aspx</loc>
+    <loc>http://www.allianz.co.id/image/community-tips/juni/29/yuk-jaga-kesehatan-binatang-peliharaan-anda-467.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.allianzlife.co.id/ePolicy/general/frmDownloadForm.aspx</loc>
+    <loc>http://www.allianz.co.id/image/community-tips/juni/27/nutrisi-penting-bagi-perempuan-pasca-menopause-467.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/community-tips/juni/26/5-langkah-yang-perlu-dilakukan-sebelum-pergi-mudik-ke-kampung-halaman-467.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/community-tips/juni/24/4-tips-agar-bagasi-anda-tidak-hilang-di-perjalanan-467.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/community-tips/juni/23/7-langkah-menjaga-kesehatan-ginjal-sejak-dini-467.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/community-tips/juni/22/osteoporosis-apakah-anda-juga-berisiko-467.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/community-tips/juni/19/berat-badan-naik-turun-hati-hati-diabetes-ya-467.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/community-tips/juni/18/5-tips-membeli-rumah-second-467.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/community-tips/juni/17/berikan-hak-tubuh-untuk-beristirahat-467.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/community-tips/juni/16/7-pilihan-olahraga-yang-cocok-untuk-sifat-moody-anda-467.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/community-tips/juni/15/10-manfaat-kesehatan-dari-kebiasaan-masak-tanpa-garam-467.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/community-tips/juni/12/mengenal-gaya-hidup-vegetarian-467.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/community-tips/teamchubby/churcolsesi3_4april2015/churcol-3-gambarartikel.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/pdf/community-tips/gambar_artikel.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/community-tips/aman-minggu-ke-5/beberapa-kesalahan-fatal-pengendara-motor-yang-seharusnya-tidak-dilakukan-amanbermotor_image_artikel.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/allianz-asuransi-indonesia-facebook-02102015-02.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -2445,167 +3188,71 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.allianzlife.co.id/eBancassurance/UserManagement/frmSignUp.aspx</loc>
+    <loc>http://ajfc.allianz.co.id/website/static/images/icon-share/facebook.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.allianzlife.co.id/eBancassurance/UserManagement/frmForgetPassword.aspx</loc>
+    <loc>http://ajfc.allianz.co.id/website/static/images/icon-share/twitter.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.allianzlife.co.id/ePension/changepwd.aspx</loc>
+    <loc>http://ajfc.allianz.co.id/website/static/images/icon-share/g-plus.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.allianzlife.co.id/eSaving/changepwd.aspx</loc>
+    <loc>http://ajfc.allianz.co.id/ajfc/background/bgtanya-jawab.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/zip/smartlink-mffs-2014/smartlinkmffsjan2014.zip</loc>
+    <loc>http://ajfc.allianz.co.id/website/static/images/icon-share/facebook-black.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/zip/smartlink-mffs-2014/smartlinkmffsfeb2015.zip</loc>
+    <loc>http://ajfc.allianz.co.id/website/static/images/icon-share/twitter-black.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/zip/smartlink-mffs-2014/smartlinkmffsmar2014.zip</loc>
+    <loc>http://ajfc.allianz.co.id/website/static/images/icon-share/g-plus-black.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/zip/smartlink-mffs-2014/smartlinkmffsapr2014.zip</loc>
+    <loc>http://ajfc.allianz.co.id/website/static/images/Socially-Devoted-Badge.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/zip/smartlink-mffs-2014/smartlink-mffsmay2014.zip</loc>
+    <loc>http://ajfc.allianz.co.id/website/static/images/badge.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/zip/smartlink-mffs-2014/smartlink-mffs-june-2014.zip</loc>
+    <loc>http://www.allianz.co.id/website/var/tmp/image-thumbnails/0/2793/thumb__staticBanner/investment_635x351.jpeg</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/zip/smartlink-mffs-2014/smartlink-mffs-july-2014.zip</loc>
+    <loc>http://www.allianz.co.id/allianz-financial-planning-banner-01.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/zip/allisya-mffs-2014/allisyamffsjan2014.zip</loc>
+    <loc>http://www.allianz.co.id/image/investasi/image_hargaunit.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/zip/allisya-mffs-2014/allisyamffsfeb2014.zip</loc>
+    <loc>http://www.allianz.co.id/image/investasi/investment_box_fund_allianz.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/zip/allisya-mffs-2014/allisyamffsmar2014.zip</loc>
+    <loc>http://www.allianz.co.id/program-allianz/alexatheband</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/zip/allisya-mffs-2014/allisyamffsapr2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/allisya-mffs-2014/syariah-mffs-may-2014.rar</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/allisya-mffs-2014/allisya_mffs_june_2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/allisya-mffs-2014/allisya-mffs-july-2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/dplk-mffs-2014/dplkmffsjan2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/dplk-mffs-2014/dplkmffsfeb2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/dplk-mffs-2014/dplkmffsmar2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/dplk-mffs-2014/dplkmffsapr2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/dplk-mffs-2014/pension-mffs-may-2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/dplk-mffs-2014/dplk-mffs-june-2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/dplk-mffs-2014/dplk-mffs-july-2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/saving-plan-mffs-2014/savingsplanmffsjan2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/saving-plan-mffs-2014/savingsplanmffsfeb2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/saving-plan-mffs-2014/savingsplanmffsmar2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/saving-plan-mffs-2014/savingsplanmffsapr2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/saving-plan-mffs-2014/savings-planmffsmay2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/saving-plan-mffs-2014/savings-plan-mffs-june-2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/smartwealth-mffs-2014/smartwealthmffsjan2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/smartwealth-mffs-2014/smartwealthmffsfeb2015.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/smartwealth-mffs-2014/smartwealthmffsmar2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/smartwealth-mffs-2014/smartwealthmffsapr2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/smartwealth-mffs-2014/smartwealthmffsmay2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/smartwealth-mffs-2014/smartwealth-mffs-june-2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/zip/smartwealth-mffs-2014/smartwealth-mffs-july-2014.zip</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/community-detail/memilih-beras-yang-sehat-untuk-7333-1</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/community-detail/pilah-pilih-asuransi-yang-tepat-4884-1</loc>
+    <loc>http://www.allianz.co.id/community-detail/-interval-running-menambah-kekuatan-berlari-4573-1</loc>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://www.allianz.co.id/community-detail/berat-badan-naik-turun-hati-hati-diabetes-ya-8720-1</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/community-detail/nutrisi-penting-bagi-perempuan-pasca-menopause-9131-1</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -2617,11 +3264,27 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/community-detail/posisi-berkendara-yang-baik-untuk-pengguna-sepeda-motor-1046-1</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://www.allianz.co.id/community-detail/12-tips-lari-di-outdoor-yang-aman-amanberlari-1374-1</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/community-detail/posisi-berkendara-yang-baik-untuk-pengguna-sepeda-motor-1046-1</loc>
+    <loc>http://www.allianz.co.id/image/home/community-tips/berkendara571x380.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/community-tips/aman-minggu-ke-6/gambar-artikel_12-tips-lari.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/community-detail/memilih-beras-yang-sehat-untuk-7333-1</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/community-detail/pilah-pilih-asuransi-yang-tepat-4884-1</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -2633,7 +3296,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/community-detail/7-teknik-praktis-menjaga-kesehatan-5540-1</loc>
+    <loc>http://www.allianz.co.id/image/allianz_map.gif</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -2645,19 +3308,15 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/program-allianz/sponsor</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.allianz.co.id/program-allianz/alexatheband</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>http://www.allianz.co.id/program-allianz/team-chubby</loc>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://www.allianz.co.id/program-allianz/pendaftaran-pelatihan-singkat-coaching-clinic</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/asn/syarat-dan-ketentuan-smfs-2015</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -2817,10 +3476,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/community-detail/-interval-running-menambah-kekuatan-berlari-4573-1</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>http://www.allianz.co.id/community-detail/tips-berlari-cepat-tanpa-berhenti-4864-1</loc>
     <priority>0.5</priority>
   </url>
@@ -2861,6 +3516,42 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kumpulan/banner-304x295-smartpension.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kumpulan/banner-304x295-smarthealth.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kumpulan/banner-304x295-smartprotection.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kumpulan/banner-304x295-payung-keluarga.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-kumpulan/banner-304x295-smart-finance.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-umum/allianz-asuransi-umum-asuransi-mobilku.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-umum/allianz-asuransi-umum-asuransi-perjalanan-travelpro.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-umum/allianz-asuransi-umum-sub-dana-kesehatanku.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/produk/asuransi-umum/banner-304x295-asuransi-umum---rumahku-plus.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://www.allianz.co.id/pdf/klaim-asuransi-kumpulan/persyaratanpengajuanklaimasuransikumpulan_v12.pdf</loc>
     <priority>0.5</priority>
   </url>
@@ -2886,6 +3577,14 @@
   </url>
   <url>
     <loc>http://www.allianz.co.id/pdf/klaim-asuransi-kesehatan/spadisclosuremaxiviolet_new21juli2010__2_.pdf</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/layanan/klaim/alur-klaim-asuransi-jiwa.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/layanan/klaim/alur-klaim-kendaraan.jpg</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -3397,6 +4096,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/image/layanan/download/allianztipskesehatan.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/layanan/download/allianzartikelinvestasi.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/website/static/inv/images/sitelabel.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://beta.allianz.co.id/image/layanan/allianz-platinum/spring-gathering/smallspring1.jpg</loc>
     <priority>0.5</priority>
   </url>
@@ -3409,11 +4120,467 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.allianz.co.id/image/layanan/allianz-platinum/gallery-carousel/image_slider_960x400.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/layanan/allianz-platinum/gallery-carousel/image_cover.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/960x400_allianz-platinum_slidding-banner-01.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/960x400_allianz-platinum_slidding-banner-02.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/960x400_allianz-platinum_slidding-banner-04_1.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/layanan/allianz-platinum/allianz_platinum_benefit.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/layanan/allianz-platinum/allianz_platinum_welcome_package.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/layanan/allianz-platinum/allianz_platinum_free-medical_checkup.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/layanan/allianz-platinum/allianz_platinum_spring_gathering.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/layanan/allianz-platinum/allianz_platinum_redeem_voucher.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/layanan/allianz-platinum/allianz_platinum_pemenang_voucher.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/layanan/allianz-platinum/allianz_platinum_golftournament.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/layanan/allianz-platinum/allianz_platinum_majalah.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://www.allianz.co.id/tentang-kami/profil/direksi-allianz-life</loc>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://www.allianz.co.id/tentang-kami/profil/direksi-allianz-utama</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/profil/joachim_new_226x200.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/tentang-kami/profil/visi-misi</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/asn</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/tentang-kami/mitra-kerja</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/tentang-kami/karir</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/tentang-kami/karir/berani-berubah</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/tentang-kami/berita/berita</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/tentang-kami/berita/majalah-mobilitas/majalah-mobilitas</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-kesehatan/allianz-eazy-claim</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-kesehatan/smartmed-premier</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-kesehatan/smarthealth-maxi-violet</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-kesehatan/smarthealth-asuransi-kesehatan-kumpulan</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-kesehatan/asuransi-kesehatan-allisya-care</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-jiwa/smartlink-new-flexi-account-plus</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-jiwa/smartlink-flexi-account</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-jiwa/smartlink-ci100</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-jiwa/hospital-and-surgical-care</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-jiwa/allisya-hospital-and-surgical-care</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-jiwa/smartlink-maxi-fund-plus</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-jiwa/taproku</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-umum/asuransi-allianz-mobilku</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-umum/asuransi-kartu-proteksiku</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-umum/asuransi-dana-kesehatanku</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-umum/asuransi-perjalanan-travelpro</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-umum/asuransi-rumahku-plus</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-kumpulan/allianz-global</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-kumpulan/smartpension</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-kumpulan/smarthealth</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-kumpulan/smart-protection</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-kumpulan/payung-keluarga</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-kumpulan/smart-finance</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-syariah/tasbih</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-syariah/allisya-protection</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-syariah/allisya-maxi-fund-plus</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-syariah/allisya-invest-plus</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-syariah/allisya-benefit-account</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-jiwa-bank/asuransi-jiwa-bank-hsbc</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-jiwa-bank/asuransi-jiwa-scb</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-jiwa-bank/asuransi-jiwa-btpn</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/layanan/customer-service/nasabah-allianz</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/layanan/hubungi-kami/survey-website</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/layanan/hubungi-kami/kontak-allianz-indonesia</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/layanan/hubungi-kami/faq</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/layanan</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/layanan/hubungi-kami/kantor-pemasaran-allianz</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/layanan/allianz-platinum/benefit</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/layanan/allianz-platinum/welcome-package</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/layanan/allianz-platinum/free-medical</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/layanan/allianz-platinum/spring-gathering</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/layanan/allianz-platinum/pemenang-survey</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/layanan/allianz-platinum/golf-tournament</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/layanan/allianz-platinum/promo-platinum</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/program-allianz/promo/promo-tasbih</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/program-allianz/promo/ci-100-bank-ekonomi-raharja</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/program-allianz/promo/program-undian-allianz-eazy-claim</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/program-allianz/promo/kontes-detektif-keselamatan</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/program-allianz/promo/customer-digital-campaign</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/program-allianz/promo/e-statement</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/asn/asn-business-system/bergabung-bersama-allianz-star-network</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/asn/events/event-2015</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/asn/events/event-2014</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/asn/events/event-2013</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/asn/events/event-2012</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-jiwa</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-kesehatan</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-syariah</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/community-tips</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/portal-asn/asn-login</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/layanan/investasi</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/community-detail/nuansa-1yangterpenting-di-album-baru-alexa-dulu-kemarin-sekarang--9831-1</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/community-detail/lindungi-masa-depannya-siapkan-biaya-sekolah-si-kecil-sejak-dini-9135-1</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/community-detail/yuk-jaga-kesehatan-binatang-peliharaan-anda-9134-1</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/data-privasi/prinsip-privasi</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/sitemap</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-kumpulan</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/produk/asuransi-umum</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/layanan/klaim</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/layanan/download</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/website/static/images/arrow/bottom-arrow.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/website/static/images/icon-share/facebook.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/website/static/images/icon-share/twitter.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/website/static/images/icon-share/g-plus.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/image/home/gallery-carousel/image_static_hajj.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/image/home/gallery-carousel/layout_960x400_ajfc.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/image/home/gallery-carousel/slidding-banner-website-960x400.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/image/home/gallery-carousel/layout_960x400_125tahun.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/image/home/gallery-carousel/slideshow-garuda-indonesia-travel-insurance.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/website/var/tmp/image-thumbnails/0/6487/thumb__galleryCarouselStatic/allianz-customer-testimoni-video-banner.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/allianz-financial-planning-banner-01_1.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/image/home/tahukah-anda/allianz-indonesia-asn-tool-box-download-image_1.jpeg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/image/home/tahukah-anda/brand_finance.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/image/community-tips/juni/alexa/alexa-304.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/image/community-tips/juni/30/lindungi-masa-depannya-siapkan-biaya-sekolah-si-kecil-sejak-dini-304.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/image/community-tips/juni/29/yuk-jaga-kesehatan-binatang-peliharaan-anda-304.jpg</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/website/static/images/icon-share/facebook-black.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/website/static/images/icon-share/twitter-black.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/website/static/images/icon-share/g-plus-black.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/website/static/images/Socially-Devoted-Badge.png</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/website/static/images/badge.png</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -3478,6 +4645,10 @@
   </url>
   <url>
     <loc>http://www.allianz.co.id/pdf/finansial/laporan-keuangan-allianz-life/laporan-keuangan-allianz-life-2007.pdf</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/image/tentang-kami/finansial/laporan-keuangan-dana-pensiun/laporan-keuangan-dplk-allianz-2014.pdf</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -3673,11 +4844,47 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.allianz.co.id/layanan/hubungi-kami</loc>
+    <loc>http://www.allianz.co.id/program-allianz/sponsor/allianz-dan-formula-one</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://agen.allianz.co.id/produk</loc>
+    <loc>http://www.allianz.co.id/mailto:Feedback@allianz.co.id</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/financial-planning/financial-planning/retirement</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/tentang-kami</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/program-allianz</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/mailto:compliance@allianz.co.id</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/asn/tentang-asn/asn-business-system</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/asn/galeri-panduan-asn/syarat-dan-ketentuan-smfs-2015</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.allianz.co.id/asn/galeri-panduan-asn</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/asn/tentang-asn/asn-business-system</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://allianz.co.id/asn/galeri-panduan-asn/syarat-dan-ketentuan-smfs-2015</loc>
     <priority>0.5</priority>
   </url>
   <url>
@@ -3794,10 +5001,6 @@
   </url>
   <url>
     <loc>http://www.allianz.co.id/tentang-kami/berita/berita/arsip-berita/lini-bisnis-asuransi-mikro-allianz-indonesia-berikan-nilai-tambah-santunan-tunai-kepada-hampir-4-juta-tertanggung</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://services.allianz.co.id/gsw/</loc>
     <priority>0.5</priority>
   </url>
 </urlset>
