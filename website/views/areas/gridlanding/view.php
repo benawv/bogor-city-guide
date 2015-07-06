@@ -153,7 +153,7 @@
             </div><!--/ .col-xs-12 -->
                         <div class="col-xs-12 col-md-4 pl8">
 
-                <div class="landing-tasbih-map" style="height:334px !important;">
+                <div class="landing-tasbih-map" style="height:335px !important;">
                     <div id="agent-locator">
                         <div id="maparea"></div>
                     </div><!--/ #agent-locator -->
