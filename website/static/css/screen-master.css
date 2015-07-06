@@ -490,7 +490,9 @@ nav.primary .menu-level2 > ul > li > a:hover{color:#199dd7;}
 #quicklinks{float:none;width:100%;}
 .tips-item-kanan{right:0;}
 }
-@media only screen and (max-width:640px){body{font-size:90%;}
+@media only screen and (max-width:640px){
+.static-links.mobile.deactive.share{top: 0;}
+body{font-size:90%;}
 .banner .minibar{display:none;}
 .box-orange{height:360px;}
 #quicklinks{float:none;width:100%;}
