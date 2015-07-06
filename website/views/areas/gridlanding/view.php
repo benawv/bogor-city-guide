@@ -19,7 +19,7 @@
         width: 100% !important;
         min-width: 100% !important;
         max-width: 100% !important;
-        height: 340px !important;
+        height: 328px !important;
     }
 
     #agent-locator .searchbox
@@ -118,7 +118,8 @@
                                             "action" => "renderlet",
 											"editmode" => $this->editmode,
                                             "title" => "Drag objek artikel",
-                                            "height" => 200
+                                            "height" => 200,
+                                            "maxlength" => 10
                                         )); ?>
                                 <!--<a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>-->
                             </div><!--/ .landing-tasbih-grid--item-inner -->
@@ -152,7 +153,7 @@
             </div><!--/ .col-xs-12 -->
                         <div class="col-xs-12 col-md-4 pl8">
 
-                <div class="landing-tasbih-map">
+                <div class="landing-tasbih-map" style="height:335px !important;">
                     <div id="agent-locator">
                         <div id="maparea"></div>
                     </div><!--/ #agent-locator -->
