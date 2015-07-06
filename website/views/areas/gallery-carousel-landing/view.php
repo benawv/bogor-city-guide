@@ -110,11 +110,11 @@
 				                        	echo "Color: <br />";
 			                        		echo $this->select("colorTasbih_",array(
 											    "store" => array(
-											        array("blue", "Blue"),
-											        array("yellow", "Yellow"),
-											        array("light-blue", "Light-Blue"),
-											        array("red", "Red"),
-											        array("purple", "Purple")
+											        array("blue", "blue"),
+											        array("yellow", "yellow"),
+											        array("light-blue", "light-blue"),
+											        array("red", "red"),
+											        array("purple", "purple")
 											    ),
 											    "reload" => true
 											)); 
@@ -173,11 +173,11 @@
 				                        	echo "Color: <br />";
 			                        		echo $this->select("colorLife_",array(
 											    "store" => array(
-											         array("blue", "Blue"),
-											        array("yellow", "Yellow"),
-											        array("light-blue", "Light-Blue"),
-											        array("red", "Red"),
-											        array("purple", "Purple")
+											         array("blue", "blue"),
+											        array("yellow", "yellow"),
+											        array("light-blue", "light-Blue"),
+											        array("red", "red"),
+											        array("purple", "purple")
 											    ),
 											    "reload" => true
 											)); 
