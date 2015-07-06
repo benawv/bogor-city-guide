@@ -90,7 +90,7 @@
                         echo $this->image("gallery-informasi", array(
                                 "thumbnail" => "staticBanner",
                                 'title' 	=> 'informasi',
-                                 "width" => "349.125px", "height" => "163.297px"
+                                 "width" => "349.125px", "height" => "160px"
                         ));
                     ?>
                     </div><!--/ .landing-tasbih-grid--item-image -->

@@ -124,7 +124,16 @@
         .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.blue .trapezoid::after {
           border-top-color: #003da5;
           border-left-color: #003da5; }
-      .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.purple {
+
+.landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.green {
+        background: #009a44; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.green .trapezoid::before {
+          background: #009a44; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.green .trapezoid::after {
+          border-top-color: #009a44;
+          border-left-color: #009a44; }
+
+.landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.purple {
         background: #87189d; }
         .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.purple .trapezoid::before {
           background: #87189d; }
