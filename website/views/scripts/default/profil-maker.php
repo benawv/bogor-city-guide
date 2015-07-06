@@ -163,6 +163,26 @@
                 </div><!--/ .page-maker--placeholder -->
 
                 <div class="page-maker--placeholder">
+                    <div class="facebook">
+                        <div class="facebook-profile">
+                            <p>Profile Picture</p>
+                        </div><!--/.facebook-profile -->
+                        <div class="facebook-clear-area left"></div>
+                        <div class="facebook-clear-area right"></div>
+                        <div class="facebook-caption right condensed no-dent red">
+                            <div class="facebook-caption--inner">
+                                <h3>Headline</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </p>
+                                <p><span>&lt;First Name&gt;</span> <span>&lt;Lasr Name&gt;</span></p>
+                            </div><!--/ .facebook-caption--inner -->
+                        </div><!--/ .facebook-caption -->
+                        <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive">
+                    </div><!--/ .facebook -->
+                </div><!--/ .page-maker--placeholder -->
+
+                <div class="page-maker--placeholder">
                     <div class="avatar">
                         <div class="avatar-caption">
                             <div class="avatar-caption--logo">
