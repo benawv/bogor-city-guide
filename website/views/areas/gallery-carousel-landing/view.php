@@ -74,7 +74,7 @@
 								    $ct = $this->select('colorTasbih_')->getData();
 							?>
                             <div class="col-xs-12 col-md-4 col-md-offset-<?php if($pt == 'left') echo '1'; else echo '7' ?>">
-                                <div class="landing-tasbih-header-caption--box <?php echo $ct; ?>" id="fixboxTasbih  <?php echo $ct; ?> <?php echo $pt; ?>" style=" display:<?php if($jenis=="tasbih") echo "block"; else echo "none"; ?>">
+                                <div class="landing-tasbih-header-caption--box <?php echo $ct; ?>" id="fixboxTasbih" style=" display:<?php if($jenis=="tasbih") echo "block"; else echo "none"; ?>">
                                     <h2><span id="title">Ilustrasi Allianz Tasbih</span></h2>
                                     <form role="form">
                                         <div class="form-group">
@@ -133,7 +133,7 @@
 							?>
                             <div class="col-xs-12 col-md-4 col-md-offset-<?php if($pt == 'left') echo '1'; else echo '7' ?>">
 
-                                <div class="landing-tasbih-header-caption--box <?php echo $colorLife; ?>" id="fixboxLifeinsurance <?php echo $colorLife; ?> <?php echo $posLife; ?>" style="display:<?php if($jenis=="life") echo "block"; else echo "none"; ?>;">
+                                <div class="landing-tasbih-header-caption--box <?php echo $colorLife; ?>" id="fixboxLifeinsurance" style="display:<?php if($jenis=="life") echo "block"; else echo "none"; ?>;">
                                     <h2><span id="title">Ilustrasi Allianz Life Insurance</span></h2>
                                     <form role="form">
 
