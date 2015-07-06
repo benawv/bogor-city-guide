@@ -625,7 +625,7 @@ div.search{width:100%;}
 .detail-border .judul-kotak{border-bottom:1px solid #e6e6e6;padding-bottom:15px;margin-bottom:15px;color:#414141;}
 .detail-border .kotak_kiri{float:left;width:296px;}
 .detail-border .kotak_tengah{float:left;width:296px;margin:auto 16px;}
-.detail-border .kotak_kanan{float:right;width:296px;}
+.detail-border .kotak_kanan{float:left;width:296px;}
 .detail-border .description{font-size:14px;line-height:20px;}
 .detail-border .description h3{font-weight:bold;}
 .detail-border .description a{padding:9px 0 9px 20px;background:transparent url('../images/ic_download_service.png') -230px 11px no-repeat;}
