@@ -21,7 +21,7 @@
 <style>
     .gmbr{
           width: 100%;
-          height: 400px;
+          height: auto;
           position: relative;
     }
 </style>
