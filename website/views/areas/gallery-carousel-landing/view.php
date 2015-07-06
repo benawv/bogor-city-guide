@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 
-
 <?php if($this->editmode) { ?>
 			                        	<p style="font-size:14px">
 			                        	<?php 
@@ -19,13 +18,21 @@
 			                        	</p>
 <?php } ?>
 
+<style>
+    .gmbr{
+          width: 100%;
+          height: 400px;
+          position: relative;
+    }
+</style>
 <section class="landing-tasbih-header">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-
+                
+                <div class="gmbr">
                     <?php 
-                        echo $this->image("gallery-carousel", array(
+                        echo $this->image("gallery-carousel-landing", array(
                                 'title' 	=> 'Image Size 960x400',
                                  "width" => "100%",
 								 "height" =>400,
@@ -33,6 +40,9 @@
 								 "class" => "tasbih"
                         ));
                     ?>
+                </div>
+
+
                 
             </div><!--/ .col-xs-12 -->
 <?php
