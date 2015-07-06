@@ -167,6 +167,8 @@ class MobilkuController extends Website_Controller_Action {
 		$pakettype=$_POST['pakettype'];
 		
 		$age=(date("Y") - $th);
+
+
 		if($radio=='comprehensive'){
 			$paket=1;
 		}else{
@@ -206,6 +208,8 @@ class MobilkuController extends Website_Controller_Action {
 		$getTloRate=new Object_MobilRate_List();
 		$getTloRate->setCondition($condition);
 		foreach($getTloRate as $items){
+			//print_r($items);
+			//die();
 			$rates= $items->rate;
 
 		}
