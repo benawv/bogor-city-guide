@@ -79,7 +79,7 @@
     }
 </style>
 
-<section class="landing-tasbih-grid">
+<section class="landing-tasbih-grid" style="float: left;">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-8 pr8">
@@ -88,9 +88,9 @@
                     <div class="landing-tasbih-grid--item-image">
                         <?php 
                         echo $this->image("gallery-informasi", array(
-                                "thumbnail" => "staticBanner",
                                 'title' 	=> 'informasi',
-                                 "width" => "349.125px", "height" => "160px"
+                                 "width" => 313,
+                                 "height" => 180
                         ));
                     ?>
                     </div><!--/ .landing-tasbih-grid--item-image -->
