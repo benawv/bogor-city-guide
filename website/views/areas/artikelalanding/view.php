@@ -3,6 +3,10 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 <style>
+    .landing-tasbih-grid .landing-tasbih-grid--item p {
+    display : 'block' !important;
+    }
+    
     #agent-locator
     {
         position: relative;
@@ -69,9 +73,13 @@
             margin-top: 16px;
         }
     }
+    
+    .landing-tasbih-grid--item p {
+        style: 'block' !important;
+    }
 </style>
 
-<section class="landing-tasbih-grid">
+<section class="landing-tasbih-grid" style="float: left;">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-8 pr8">
@@ -80,15 +88,15 @@
                     <div class="landing-tasbih-grid--item-image">
                         <?php 
                         echo $this->image("gallery-informasi", array(
-                                "thumbnail" => "staticBanner",
                                 'title' 	=> 'informasi',
-                                 "width" => "349.125px", "height" => "163.297px"
+                                 "width" => 313,
+                                 "height" => 180
                         ));
                     ?>
                     </div><!--/ .landing-tasbih-grid--item-image -->
                     <div class="landing-tasbih-grid--item-inner">
-                        <h3><?php echo $this->wysiwyg('title-box-section-informasi')?></h3>
-                        <p><?php echo $this->wysiwyg('title-box-description-informasi')?></p>
+                        <h3><?= $this->input("headline") ?></h3>
+                        <p id="desc"><?php echo $this->wysiwyg('description')?></p>
                         <a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
                     </div><!--/ .landing-tasbih-grid--item-inner -->
                 </div><!--/ .landing-tasbih-grid--item -->
@@ -98,7 +106,7 @@
 
                 <div class="landing-tasbih-grid--item red">
                     <div class="landing-tasbih-grid--item-inner">
-                        <h3><?php echo $this->wysiwyg('title-box-section-item')?></h3>
+                        <h3><?= $this->input("headline2") ?></h3>
                         <p><?php echo $this->wysiwyg('title-box-description-item')?></p>
                         <a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
                     </div><!--/ .landing-tasbih-grid--item-inner -->

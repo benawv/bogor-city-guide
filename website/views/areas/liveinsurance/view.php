@@ -1,3 +1,8 @@
+<?php
+//call session yang di buat di controller kalkulatortassbihControler function saveAction()
+  $session = new Zend_Session_Namespace('landingLife');
+?>
+
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/bootstrap.min.css"  />
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
@@ -290,7 +295,7 @@
                             <label>Nama</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" placeholder="Nama Anda" id="nama" tabindex="6" maxlength="32" required onfocusout="this.value=validateNama(this.value)">
+                            <input type="text" class="form-control" placeholder="Nama Anda" id="nama" tabindex="6" maxlength="32" value="<?php if($session->nama != null) echo $session->nama;?>" required onfocusout="this.value=validateNama(this.value)">
                             <label id="notif-nama" style="display:none; color: #f00;">Maaf Anda Belum Memasukkan Nama</label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -359,10 +364,11 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="2" id="uang_pertanggungan">
+                                
                                 <option value="Pilih">Pilih</option>
-                                <option value="1000">1M</option>
-                                <option value="500">500juta</option>
-                                <option value="250">250juta</option>
+                                <option value="1000" <?php if($session->up == 1000) echo 'selected'; ?> >1M</option>
+                                <option value="500" <?php if($session->up == 500) echo 'selected'; ?>>500juta</option>
+                                <option value="250" <?php if($session->up == 250) echo 'selected'; ?>>250juta</option>
                             </select>
                             <label id="notif-uangpertanggungan" style="display:none; color: #f00;">Maaf Anda Belum Memilih</label>
                         </div><!--/ .col-md-4 -->
@@ -565,7 +571,7 @@
 
             });
     
-    $('#uang_pertanggungan').bind("input", function(){
+    $('#uang_pertanggungan').bind("change", function(){
                var value = $('#uang_pertanggungan').val();
                 if(value == 'Pilih'){
                     document.getElementById('notif-uangpertanggungan').style.display= 'block';   

@@ -1,12 +1,3 @@
-<?php
-
-	if($_SERVER['SERVER_NAME'] != "beta.allianz.co.id")
-	{
-		header("Location: http://".$_SERVER['SERVER_NAME']);
-		die();
-	}
-	
-?>
 <link rel="stylesheet" type="text/css" href="/website/static/css/virgin.css">
 
 <div role="main" class="tips-main main" style="background: url(<?php echo $this->fetchBackground;?>);background-size: 1500px auto;background-repeat: no-repeat;background-position: top;">

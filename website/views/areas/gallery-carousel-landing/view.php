@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 
-
 <?php if($this->editmode) { ?>
 			                        	<p style="font-size:14px">
 			                        	<?php 
@@ -19,20 +18,31 @@
 			                        	</p>
 <?php } ?>
 
+<style>
+    .gmbr{
+          width: 100%;
+          height: auto;
+          position: relative;
+    }
+</style>
 <section class="landing-tasbih-header">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-
+                
+                <div class="gmbr">
                     <?php 
-                        echo $this->image("gallery-carousel", array(
+                        echo $this->image("gallery-carousel-landing", array(
                                 'title' 	=> 'Image Size 960x400',
-                                 "width" => "100%",
+                                 "width" => 960,
 								 "height" =>400,
                                  "id" => "tasbih",
 								 "class" => "tasbih"
                         ));
                     ?>
+                </div>
+
+
                 
             </div><!--/ .col-xs-12 -->
 <?php
@@ -41,7 +51,7 @@
                 <div class="landing-tasbih-header-caption">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xs-12 col-md-4 col-md-offset-1">
+                            
                                 
                                 <!--<div class="landing-tasbih-header-caption--box <?php //echo $color; ?> <?php //echo $pos; ?>" id="fixbox" style="display:block;">
                                     
@@ -63,7 +73,8 @@
                                     $pt = $this->select('positionTasbih_')->getData();
 								    $ct = $this->select('colorTasbih_')->getData();
 							?>
-                                <div class="landing-tasbih-header-caption--box" id="fixboxTasbih  <?php echo $ct; ?> <?php echo $pt; ?>" style=" display:<?php if($jenis=="tasbih") echo "block"; else echo "none"; ?>">
+                            <div class="col-xs-12 col-md-4 col-md-offset-<?php if($pt == 'left') echo '1'; else echo '7' ?>">
+                                <div class="landing-tasbih-header-caption--box <?php echo $ct; ?>" id="fixboxTasbih" style=" display:<?php if($jenis=="tasbih") echo "block"; else echo "none"; ?>">
                                     <h2><span id="title">Ilustrasi Allianz Tasbih</span></h2>
                                     <form role="form">
                                         <div class="form-group">
@@ -99,8 +110,12 @@
 				                        	echo "Color: <br />";
 			                        		echo $this->select("colorTasbih_",array(
 											    "store" => array(
-											        array("green", "Green"),
-											        array("blue", "Blue")
+											        array("blue", "blue"),
+											        array("yellow", "yellow"),
+											        array("light-blue", "light-blue"),
+											        array("red", "red"),
+											        array("green", "green"),
+											        array("purple", "purple")
 											    ),
 											    "reload" => true
 											)); 
@@ -110,14 +125,17 @@
                                     </form>
                                     <div class="trapezoid" style="color:#009a44;"></div>
                                 </div><!--/ .landing-tasbih-header-caption--box -->
+                                </div><!--/ .col-xs-12 -->
                                 
         <!-- Pembatas -->
                                 <?php
                                     $colorLife = $this->select('positionLife_')->getData();
 								    $posLife = $this->select('colorLife_')->getData();
 							?>
-                                
-                                <div class="landing-tasbih-header-caption--box" id="fixboxLifeinsurance <?php echo $colorLife; ?> <?php echo $posLife; ?>" style="display:<?php if($jenis=="life") echo "block"; else echo "none"; ?>;">
+                            <div class="col-xs-12 col-md-4 col-md-offset-<?php if($pt == 'left') echo '1'; else echo '7' ?>">
+
+                                <div class="landing-tasbih-header-caption--box <?php echo $colorLife; ?> " id="fixboxLifeinsurance" style="display:<?php if($jenis=="life") echo "block"; else echo "none"; ?>;">
+                                    
                                     <h2><span id="title">Ilustrasi Allianz Life Insurance</span></h2>
                                     <form role="form">
 
@@ -157,8 +175,12 @@
 				                        	echo "Color: <br />";
 			                        		echo $this->select("colorLife_",array(
 											    "store" => array(
-											        array("green", "Green"),
-											        array("blue", "Blue")
+											         array("blue", "blue"),
+											        array("yellow", "yellow"),
+											        array("light-blue", "light-Blue"),
+											        array("red", "red"),
+											        array("green", "green"),
+											        array("purple", "purple")
 											    ),
 											    "reload" => true
 											)); 
@@ -166,7 +188,7 @@
 			                        	</p>
 										<?php } ?>
                                     </form>
-                                     <div class="trapezoid-tasbih"></div>
+                                     <div class="trapezoid"></div>
                                 </div><!--/ .landing-tasbih-header-caption--box -->
                                 
                             </div><!--/ .col-xs-12 -->
