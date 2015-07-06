@@ -114,6 +114,7 @@
 											        array("yellow", "yellow"),
 											        array("light-blue", "light-blue"),
 											        array("red", "red"),
+											        array("green", "green"),
 											        array("purple", "purple")
 											    ),
 											    "reload" => true
@@ -133,7 +134,8 @@
 							?>
                             <div class="col-xs-12 col-md-4 col-md-offset-<?php if($pt == 'left') echo '1'; else echo '7' ?>">
 
-                                <div class="landing-tasbih-header-caption--box <?php echo $colorLife; ?>" id="fixboxLifeinsurance" style="display:<?php if($jenis=="life") echo "block"; else echo "none"; ?>;">
+                                <div class="landing-tasbih-header-caption--box <?php echo $colorLife; ?> " id="fixboxLifeinsurance" style="display:<?php if($jenis=="life") echo "block"; else echo "none"; ?>;">
+                                    
                                     <h2><span id="title">Ilustrasi Allianz Life Insurance</span></h2>
                                     <form role="form">
 
@@ -177,6 +179,7 @@
 											        array("yellow", "yellow"),
 											        array("light-blue", "light-Blue"),
 											        array("red", "red"),
+											        array("green", "green"),
 											        array("purple", "purple")
 											    ),
 											    "reload" => true
