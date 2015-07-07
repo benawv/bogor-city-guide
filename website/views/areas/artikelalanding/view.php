@@ -79,7 +79,7 @@
     }
 </style>
 
-<section class="landing-tasbih-grid" style="float: left;">
+<section class="landing-tasbih-grid">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-8 pr8">
