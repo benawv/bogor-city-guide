@@ -573,8 +573,10 @@
 			    for(x=0;x < markers.length;x++){
 				    var marker = markers[x];
 				    google.maps.event.addListener(marker, 'click', function () {
-					    infowindow.setContent(this.html);
-					    infowindow.open(map, this);
+					    //infowindow.setContent(this.html);
+					    //infowindow.open(map, this);
+						window.open('http://agen.allianz.co.id', '_blank');
+						//window.location.href = "http://agen.allianz.co.id";
 				    });
 			    }
                 
@@ -587,8 +589,9 @@
                         html: "Lokasi Anda saat ini."
                     });
                     google.maps.event.addListener(marker2, 'click', function () {
-                        infowindow.setContent(this.html);
-                        infowindow.open(map, this);
+                        //infowindow.setContent(this.html);
+                        //infowindow.open(map, this);
+						window.open('http://agen.allianz.co.id', '_blank');
                     });
                 }
                 
@@ -672,8 +675,9 @@
 			    for(x=0;x < markers.length;x++){
 				    var marker = markers[x];
 				    google.maps.event.addListener(marker, 'click', function () {
-					    infowindow.setContent(this.html);
-					    infowindow.open(map, this);
+					    //infowindow.setContent(this.html);
+					    //infowindow.open(map, this);
+						window.open('http://agen.allianz.co.id', '_blank');
 				    });
 			    }
 			}
