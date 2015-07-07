@@ -33,7 +33,7 @@
     }
 }
 /*Hide div anchor*/
-.container .heading.clearfix.pagenav.nav-sticky{
+.container .heading.clearfix.pagenav.nav-sticky, .container .heading.clearfix.pagenav{
   display: none;
 }
 
