@@ -32,10 +32,6 @@
       }
     }
 }
-/*Hide div anchor*/
-.container .heading.clearfix.pagenav.nav-sticky, .container .heading.clearfix.pagenav{
-  display: none;
-}
 
 /* container hack */
 .landing-tasbih-header {
@@ -230,6 +226,9 @@
       position: relative;
       min-height: 160px;
       overflow: hidden; }
+      @media (max-width: 480px) {
+        .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-image {
+          min-height: auto; } }
       .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-image > img {
         position: absolute;
         top: 50%;
