@@ -298,8 +298,8 @@
                             'lp' : lp
                         },
                         success : function(data){
-                            alert(data);
-                            document.location.assign(window.location.protocol+"//"+window.location.host+'/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi');
+                            //alert(data);
+                            document.location.href=window.location.protocol+"//"+window.location.host+'/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi';
                         }
                     });
                      //alert(lp);
