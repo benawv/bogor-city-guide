@@ -89,7 +89,7 @@
                                             </select>
                                         </div><!--/ .form-group -->
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-default" tabindex="3" id="KalTasbih">
+                                            <button type="button" class="btn btn-default" tabindex="3" id="KalTasbih" >
                                                 <i class="fa fa-calculator"></i> Hitung Premi Anda
                                             </button>
                                         </div><!--/ .form-group -->
@@ -122,10 +122,11 @@
 										?>
 			                        	</p>
 			                        <?php } ?>
-                                    </form>
+                                    
                                     <div class="trapezoid" style="color:#009a44;"></div>
                                 </div><!--/ .landing-tasbih-header-caption--box -->
                                 </div><!--/ .col-xs-12 -->
+                                 </form>
                                 
         <!-- Pembatas -->
                                 <?php
@@ -288,7 +289,7 @@
                 
                 if(unc < 50000000 || lp=="null") {
                     alert("Mohom maaf, pastikan uang pertanggungan Anda masukkan minimal 50 juta dan lama pembayaran telah Anda pilih")
-                    return false;
+                    //return false;
                 }else{
                     $.ajax({
                         url : '/landtasbih/',
@@ -299,7 +300,7 @@
                         },
                         success : function(data){
                             //alert(data);
-                            document.location.href=window.location.protocol+"//"+window.location.host+'/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi';
+                                    document.location.href=window.location.protocol+"//"+window.location.host+'/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi';
                         }
                     });
                      //alert(lp);

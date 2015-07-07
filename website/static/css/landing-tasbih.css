@@ -85,11 +85,17 @@
       /* .form-control*/ }
       .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form {
         margin-top: 16px; }
-        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="submit"] {
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="submit"],
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="button"],
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="reset"] {
           background: #ffcd00;
           border: solid 1px #ffcd00;
           border: none; }
-          .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="submit"]:hover, .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="submit"]:focus {
+          .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="submit"]:hover, .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="submit"]:focus,
+          .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="button"]:hover,
+          .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="button"]:focus,
+          .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="reset"]:hover,
+          .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="reset"]:focus {
             background: #ffd733; }
       .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.yellow {
         background: #ffcd00; }
@@ -292,5 +298,9 @@
         text-decoration: none; }
 
 /* .landing-tasbih-map */
+/* Hide div anchor by mrobbi */
+.container .heading.clearfix.pagenav.nav-sticky,
+.container .heading.clearfix.pagenav {
+  display: none; }
 
 /*# sourceMappingURL=landing-tasbih.css.map */
