@@ -478,7 +478,7 @@
                                     <div class="form-group">
                                         <div class="col-sm-3"></div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="periode-last" class="form-control" id="periode-last" placeholder="" value="<?php echo date("m/d/Y",strtotime("+ 1 year")); ?>" disabled=disabled tabindex="12">
+                                            <input type="text" name="periode-last" class="form-control" id="periode-last" placeholder="" value="<?php echo date("m/d/Y",strtotime("+ 365 day")); ?>" disabled=disabled tabindex="12">
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
                                 </div><!--/ .row -->
@@ -577,16 +577,16 @@
                                                                     <td class='tpl_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>Medical Expense</td>
-                                                                    <td class='med_ex_val'>-</td>
-                                                                    <td class='med_ex_persen'>-</td>
-                                                                    <td class='med_ex_prem'>-</td>
-                                                                </tr>
-                                                                <tr>
                                                                     <td>PLL</td>
                                                                     <td class='pll_val'>-</td>
                                                                     <td class='pll_persen'>-</td>
                                                                     <td class='pll_prem'>-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Medical Expense</td>
+                                                                    <td class='med_ex_val'>-</td>
+                                                                    <td class='med_ex_persen'>-</td>
+                                                                    <td class='med_ex_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Personal Effect</td>
