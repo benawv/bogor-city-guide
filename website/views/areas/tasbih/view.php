@@ -1,3 +1,7 @@
+<?php
+  $session = new Zend_Session_Namespace('landingTasbih');
+?>
+
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/bootstrap.min.css"  />
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
@@ -275,7 +279,7 @@
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
 
-                                <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Min Rp.50.000.000">
+                                <input type="text" class="form-control" id="asuransi-jiwa" value="<?php if($session->up != null) echo $session->up; ?>" placeholder="Min Rp.50.000.000">
                                 <label id="notif-asuransijiwa" style="display:none; color: #f00;">
                                     Mohon maaf uang pertanggungan/santunan yang Anda masukan kurang dari Rp. 50,000,000.-
                                 </label>
@@ -288,9 +292,9 @@
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <select class="form-control" name="masa-premi" id="masa-premi">
-                                    <option value="5">5 tahun</option>
-                                    <option value="10">10 tahun</option>
-                                    <option value="15">15 tahun</option>
+                                    <option value="5" <?php if($session->lp == '5') echo 'Selected'; ?> >5 tahun</option>
+                                    <option value="10" <?php if($session->lp == '10') echo 'Selected'; ?>>10 tahun</option>
+                                    <option value="15" <?php if($session->lp == '15') echo 'Selected'; ?>>15 tahun</option>
                                 </select>
                             </div><!--/ .col-md-4 -->
                         </div><!--/ .form-group -->
@@ -419,7 +423,7 @@
 <script>
     // document.getElementById('tgl-hitung').value = (new Date()).format("m/dd/yy");
     $(document).ready(function(){
-
+        //alert(<?php echo  $session->up ?>);
         /**
          * Calculator Pop-Up
          */
