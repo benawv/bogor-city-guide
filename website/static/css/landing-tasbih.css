@@ -128,16 +128,7 @@
         .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.blue .trapezoid::after {
           border-top-color: #003da5;
           border-left-color: #003da5; }
-
-.landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.green {
-        background: #009a44; }
-        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.green .trapezoid::before {
-          background: #009a44; }
-        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.green .trapezoid::after {
-          border-top-color: #009a44;
-          border-left-color: #009a44; }
-
-.landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.purple {
+      .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.purple {
         background: #87189d; }
         .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.purple .trapezoid::before {
           background: #87189d; }
@@ -231,6 +222,9 @@
         text-decoration: underline; }
     .landing-tasbih-grid .landing-tasbih-grid--item > .landing-tasbih-grid--item-inner {
       padding: 20px 32px; }
+    @media (min-width: 480px) {
+      .landing-tasbih-grid .landing-tasbih-grid--item.inline {
+        display: table; } }
     .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-image {
       position: relative;
       min-height: 160px;
@@ -246,12 +240,26 @@
         transform: translate3d(-50%, -50%, 0);
         min-width: 100%;
         height: auto; }
+        @media (max-width: 480px) {
+          .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-image > img {
+            position: relative;
+            top: auto;
+            left: auto;
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
     .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-image, .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-inner {
       display: inline-block;
       width: 49%;
       min-width: 49%;
       max-width: 49%;
-      vertical-align: top; }
+      vertical-align: top;
+      height: 100%; }
+      @media (min-width: 480px) {
+        .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-image, .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-inner {
+          display: table-cell; } }
       @media (max-width: 767px) {
         .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-image, .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-inner {
           display: block;
