@@ -283,14 +283,17 @@
                 var unc = accounting.unformat(value,0,",");
                 var lp = $('#lamapembayaranTasbih option:Selected').val();
                 
+                //alert(lp);
+                //alert(value)
+                
                 if(unc < 50000000 || lp=="null") {
                     alert("Mohom maaf, pastikan uang pertanggungan Anda masukkan minimal 50 juta dan lama pembayaran telah Anda pilih")
                 }else{
                     $.ajax({
-                        url : '/landing-tasbih/',
+                        url : '/landtasbih/',
                         type : 'POST',
                         data :{
-                            'up' : unc,
+                            'up' : value,
                             'lp' : lp
                         },
                         success : function(data){
@@ -298,7 +301,8 @@
                             document.location.href='produk/asuransi-syariah/tasbih/kalkulator/ilustrasi';
                         }
                     });
-                     //alert('Tahan');
+                     //alert(lp);
+                     //alert(unc);
                 }
             });
             
@@ -321,7 +325,7 @@
                     alert("Mohon maaf, pastikan usia Anda berada di 18-64 tahun dan pastikan semua inputan Anda benar")
                 }else{
                     $.ajax({
-                        url : '/landing-life/',
+                        url : '/landlife/',
                         type : 'POST',
                         data :{
                             'nama' : nama,
