@@ -220,7 +220,8 @@
       padding: 20px 32px; }
     @media (min-width: 480px) {
       .landing-tasbih-grid .landing-tasbih-grid--item.inline {
-        display: table; } }
+        display: table;
+        min-width: 100%; } }
     .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-image {
       position: relative;
       min-height: 160px;
@@ -266,7 +267,7 @@
 /* .landing-tasbih-grid */
 .landing-tasbih-map {
   position: relative;
-  min-height: 335px;
+  min-height: 340px;
   background: #54585a;
   margin-bottom: 16px;
   /* .landing-tasbih-map--button */ }
