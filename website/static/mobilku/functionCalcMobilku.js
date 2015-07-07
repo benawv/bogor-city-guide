@@ -252,49 +252,49 @@ $(document).ready(function(){
     function getWorkshopNonPack(merk,age) {
 
         if(age==0){
-           if(merk.toLowerCase=='bmw'){//calc_type: premier
+           if(merk.toLowerCase()=='bmw'){//calc_type: premier
                 workshop_rate=15;
-            }else if(merk.toLowerCase=='mercedes benz'){
+            }else if(merk.toLowerCase()=='mercedes benz'){
                 workshop_rate=15;
             }else{
                 workshop_rate=7.5;
             }
         }else if(age==1){
-           if(merk.toLowerCase=='bmw'){//calc_type: premier
+           if(merk.toLowerCase()=='bmw'){//calc_type: premier
                 workshop_rate=15;
-            }else if(merk.toLowerCase=='mercedes benz'){
+            }else if(merk.toLowerCase()=='mercedes benz'){
                 workshop_rate=15;
             }else{
                 workshop_rate=7.5;
             }
         }else if(age==2){
-           if(merk.toLowerCase=='bmw'){//calc_type: premier
+           if(merk.toLowerCase()=='bmw'){//calc_type: premier
                 workshop_rate=15;
-            }else if(merk.toLowerCase=='mercedes benz'){
+            }else if(merk.toLowerCase()=='mercedes benz'){
                 workshop_rate=15;
             }else{
                 workshop_rate=7.5;
             }
         }else if(age==3){
-           if(merk.toLowerCase=='bmw'){//calc_type: premier
+           if(merk.toLowerCase()=='bmw'){//calc_type: premier
                 workshop_rate=15;
-            }else if(merk.toLowerCase=='mercedes benz'){
+            }else if(merk.toLowerCase()=='mercedes benz'){
                 workshop_rate=15;
             }else{
                 workshop_rate=7.5;
             }
         }else if(age==4){
-           if(merk.toLowerCase=='bmw'){//calc_type: premier
+           if(merk.toLowerCase()=='bmw'){//calc_type: premier
                 workshop_rate=20;
-            }else if(merk.toLowerCase=='mercedes benz'){
+            }else if(merk.toLowerCase()=='mercedes benz'){
                 workshop_rate=20;
             }else{
                 workshop_rate=10;
             }
         }else if(age==5){
-           if(merk.toLowerCase=='bmw'){//calc_type: premier
+           if(merk.toLowerCase()=='bmw'){//calc_type: premier
                 workshop_rate=30;
-            }else if(merk.toLowerCase=='mercedes benz'){
+            }else if(merk.toLowerCase()=='mercedes benz'){
                 workshop_rate=25;
             }else{
                 workshop_rate=15;
@@ -302,6 +302,7 @@ $(document).ready(function(){
         }else{
                workshop_rate=0;
         }
+        console.log("workshop_rate:"+workshop_rate);
         return workshop_rate;
 
     }
@@ -1067,6 +1068,7 @@ $(document).ready(function(){
         compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2);//jenisasuransi, type *ga perlu,merk_html,jenis paket)
         //console.log(parseFloat(getWorkshopNonPack(merk,ages)));
         //console.log(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
+        //calc =parseFloat(getWorkshopNonPack(merk_html,ages));
         calc =parseFloat(getWorkshopNonPack(merk_html,ages))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2)/100);
         workshop_persen = calc.toFixed(4);
         
