@@ -292,5 +292,9 @@
         text-decoration: none; }
 
 /* .landing-tasbih-map */
+/* Hide div anchor by mrobbi */
+.container .heading.clearfix.pagenav.nav-sticky,
+.container .heading.clearfix.pagenav {
+  display: none; }
 
 /*# sourceMappingURL=landing-tasbih.css.map */
