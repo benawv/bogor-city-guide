@@ -288,6 +288,7 @@
                 
                 if(unc < 50000000 || lp=="null") {
                     alert("Mohom maaf, pastikan uang pertanggungan Anda masukkan minimal 50 juta dan lama pembayaran telah Anda pilih")
+                    return false;
                 }else{
                     $.ajax({
                         url : '/landtasbih/',
@@ -297,8 +298,8 @@
                             'lp' : lp
                         },
                         success : function(data){
-                            alert(data);
-                            document.location.href='produk/asuransi-syariah/tasbih/kalkulator/ilustrasi';
+                            //alert(data);
+                            document.location.href=window.location.protocol+"//"+window.location.host+'/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi';
                         }
                     });
                      //alert(lp);
