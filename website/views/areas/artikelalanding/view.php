@@ -96,7 +96,7 @@
                     </div><!--/ .landing-tasbih-grid--item-image -->
                     <div class="landing-tasbih-grid--item-inner">
                         <h3><?= $this->input("headline") ?></h3>
-                        <p id="desc"><?php echo $this->wysiwyg('description')?></p>
+                        <div id="desc"><?php echo $this->wysiwyg('description')?></div>
                         <a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
                     </div><!--/ .landing-tasbih-grid--item-inner -->
                 </div><!--/ .landing-tasbih-grid--item -->
@@ -107,7 +107,7 @@
                 <div class="landing-tasbih-grid--item red">
                     <div class="landing-tasbih-grid--item-inner">
                         <h3><?= $this->input("headline2") ?></h3>
-                        <p><?php echo $this->wysiwyg('title-box-description-item')?></p>
+                        <?php echo $this->wysiwyg('title-box-description-item')?>
                         <a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
                     </div><!--/ .landing-tasbih-grid--item-inner -->
                 </div><!--/ .landing-tasbih-grid--item -->
