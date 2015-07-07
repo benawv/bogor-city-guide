@@ -796,15 +796,15 @@
     }
 
     function form_sex(sex){
-        if(sex == 'M')
+        if(sex == "m")
             sex_form = "<select id='sex' name='sex' class='form-control'>"+
-                            "<option selected value='M'>M</option>"+
-                            "<option value='F'>F</option>"+
+                            "<option selected value='m'>M</option>"+
+                            "<option value='f'>F</option>"+
                         "</select>";
         else
             sex_form = "<select id='sex' name='sex' class='form-control'>"+
-                            "<option value='M'>M</option>"+
-                            "<option selected value='F'>F</option>"+
+                            "<option value='m'>M</option>"+
+                            "<option selected value='f'>F</option>"+
                         "</select>";
         return sex_form;
     }
