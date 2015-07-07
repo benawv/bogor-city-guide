@@ -89,8 +89,8 @@
                                             </select>
                                         </div><!--/ .form-group -->
                                         <div class="form-group">
-                                            <button type="button" class="btn btn-default" tabindex="3" id="KalTasbih">
-                                                <i class="fa fa-calculator"></i> Hitung Premi Andas
+                                            <button type="button" class="btn btn-default" tabindex="3" id="KalTasbih" >
+                                                <i class="fa fa-calculator"></i> Hitung Premi Anda
                                             </button>
                                         </div><!--/ .form-group -->
                                         <?php if($this->editmode) { ?>
