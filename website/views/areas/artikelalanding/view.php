@@ -97,7 +97,7 @@
                     <div class="landing-tasbih-grid--item-inner">
                         <h3><?= $this->input("headline") ?></h3>
                         <div id="desc"><?php echo $this->wysiwyg('description')?></div>
-                        <a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
+                        <a href="http://beta.allianz.co.id/produk/asuransi-syariah/tasbih/info-produk"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
                     </div><!--/ .landing-tasbih-grid--item-inner -->
                 </div><!--/ .landing-tasbih-grid--item -->
 
@@ -108,7 +108,7 @@
                     <div class="landing-tasbih-grid--item-inner">
                         <h3><?= $this->input("headline2") ?></h3>
                         <?php echo $this->wysiwyg('title-box-description-item')?>
-                        <a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
+                        <a href="http://beta.allianz.co.id/produk/asuransi-syariah/tasbih/info-produk"></i> Selengkapnya</a>
                     </div><!--/ .landing-tasbih-grid--item-inner -->
                 </div><!--/ .landing-tasbih-grid--item -->
 
