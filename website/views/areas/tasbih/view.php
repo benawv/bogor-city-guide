@@ -294,13 +294,16 @@
                                 <select class="form-control" name="masa-premi" id="masa-premi">
                                     <option value="5" <?php if($session->lp == '5') echo 'Selected'; ?> >5 tahun</option>
                                     <option value="10" <?php if($session->lp == '10') echo 'Selected'; ?>>10 tahun</option>
-                                    <option value="15" <?php if($session->lp == '15') echo 'Selected'; ?>>15 tahun</option>
+                                    <option value="15" <?php if($session->lp == '15') echo 'Selected';  ?>>15 tahun</option>
                                 </select>
                             </div><!--/ .col-md-4 -->
                         </div><!--/ .form-group -->
 
                     </div><!--/ .form-box -->
-
+     
+                    <!--Unset Session for Landing Tasbih-->
+                    <?php Zend_Session::namespaceUnset('landingTasbih'); ?>
+     
                     <div class="form-box text-center waiting-calc" style="display: none;">
                         <i class="fa fa-refresh fa-3x fa-spin"></i>
                     </div><!--/ .form-box -->
@@ -514,6 +517,7 @@
                             },
                     success  : function(data){
                     //console.log(data);
+                        
             $('.waiting-calc').hide();
                     $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
                    document.location.href='/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi-identitas';
