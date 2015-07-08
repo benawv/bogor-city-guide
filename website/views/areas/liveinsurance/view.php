@@ -19,6 +19,18 @@
 
 <link rel="stylesheet" href="/website/static/mobilku/wizard-step.css" type="text/css" media="all" />
 
+<script>
+    window.onload=function(){
+        var dob = <?php echo $session->bod; ?>;
+        if(dob != null){
+            var today = new Date();
+            var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+            $('#usia').val(age);
+        }
+        
+    };
+</script>
+
 <style>
     /* Override AJFC's feature box color */
     .box-dent--inner{ background: #0077c8; }
@@ -339,7 +351,7 @@
                             <label>Masukan tanggal lahir Anda<br>(Minimum usia dari 18 tahun sampai 64 tahun)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
+                            <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir" value="<?php if($session->bod != null) echo $session->bod; ?>"  required>
                             <label id="notif-tgllahir" style="display:none; color: #f00;">
                                 Mohon maaf, umur yang Anda masukan belum sesuai dengan ketentuan ilustrasi 
                             </label>
@@ -370,6 +382,7 @@
                                 <option value="500" <?php if($session->up == 500) echo 'selected'; ?>>500juta</option>
                                 <option value="250" <?php if($session->up == 250) echo 'selected'; ?>>250juta</option>
                             </select>
+                            <?php Zend_Session::namespaceUnset('landingLife'); ?>
                             <label id="notif-uangpertanggungan" style="display:none; color: #f00;">Maaf Anda Belum Memilih</label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -449,6 +462,8 @@
 <script src="/website/static/mobilku/jquery-ui.js" type="text/javascript"></script>
 
 <script>
+
+    
     $(function(){
         
         var d = new Date();

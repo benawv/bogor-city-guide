@@ -1,7 +1,10 @@
 <link rel="stylesheet" href="/website/static/css/bootstrap-grid-only.css">
 <link rel="stylesheet" href="/website/static/css/landing-tasbih.css">
+<link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
+<script src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/website/static/mobilku/jquery-ui.js" type="text/javascript"></script>
 
 <?php if($this->editmode) { ?>
 			                        	<p style="font-size:14px">
@@ -73,8 +76,8 @@
                                     $pt = $this->select('positionTasbih_')->getData();
 								    $ct = $this->select('colorTasbih_')->getData();
 							?>
-                            <div class="col-xs-12 col-md-4 col-md-offset-<?php if($pt == 'left') echo '1'; else echo '7' ?>">
-                                <div class="landing-tasbih-header-caption--box <?php echo $ct; ?>" id="fixboxTasbih" style=" display:<?php if($jenis=="tasbih") echo "block"; else echo "none"; ?>">
+                            <div class="col-xs-12 col-md-4 col-md-offset-<?php if($pt == 'left') echo '1'; else echo '7' ?>" id="fixboxTasbih" style=" display:<?php if($jenis=="tasbih") echo "block"; else echo "none"; ?>">
+                                <div class="landing-tasbih-header-caption--box <?php echo $ct; ?>" >
                                     <h2><span id="title">Ilustrasi Allianz Tasbih</span></h2>
                                     <form role="form">
                                         <div class="form-group">
@@ -129,13 +132,12 @@
                                  </form>
                                 
         <!-- Pembatas -->
-                                <?php
-                                    $colorLife = $this->select('positionLife_')->getData();
-								    $posLife = $this->select('colorLife_')->getData();
+                                  <?php
+                                    $colorLife = $this->select('colorLife_')->getData();
+								    $posLife = $this->select('positionLife_')->getData();
 							?>
-                            <div class="col-xs-12 col-md-4 col-md-offset-<?php if($pt == 'left') echo '1'; else echo '7' ?>">
-
-                                <div class="landing-tasbih-header-caption--box <?php echo $colorLife; ?> " id="fixboxLifeinsurance" style="display:<?php if($jenis=="life") echo "block"; else echo "none"; ?>;">
+                            <div class="col-xs-12 col-md-4 col-md-offset-<?php if($posLife == 'left') echo '1'; else echo '7' ?>" id="fixboxLifeinsurance" style=" display:<?php if($jenis=="life") echo "block"; else echo "none"; ?>">
+                                <div class="landing-tasbih-header-caption--box <?php echo $colorLife; ?>" >
                                     
                                     <h2><span id="title">Ilustrasi Allianz Life Insurance</span></h2>
                                     <form role="form">
@@ -144,7 +146,7 @@
                                             <input type="text" class="form-control" placeholder="Nama" id="Nama" required tabindex="1" onfocusout="this.value=validateNama(this.value)">
                                         </div><!--/ .form-group -->
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Usia" id="Usia" required tabindex="1" onfocusout="this.value=validateUsia(this.value)">
+                                            <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir"  required>
                                         </div><!--/ .form-group -->
                                         <div class="form-group">
                                             <select class="form-control" required tabindex="2" id="UangPertanggunganLife">
@@ -155,7 +157,7 @@
                                             </select>
                                         </div><!--/ .form-group -->
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-default" tabindex="3" id="KalLife">
+                                            <button type="button" class="btn btn-default" tabindex="3" id="KalLife" >
                                                 <i class="fa fa-calculator"></i> Hitung Premi Anda
                                             </button>
                                         </div><!--/ .form-group -->
@@ -188,11 +190,12 @@
 										?>
 			                        	</p>
 										<?php } ?>
-                                    </form>
-                                     <div class="trapezoid"></div>
+                                    
+                                    <div class="trapezoid" style="color:#009a44;"></div>
                                 </div><!--/ .landing-tasbih-header-caption--box -->
-                                
-                            </div><!--/ .col-xs-12 -->
+                                </div><!--/ .col-xs-12 -->
+                                 </form>
+
                         </div><!--/ .row -->
                     </div><!--/ .container -->
                 </div><!--/ .landing-tasbih-header-caption -->
@@ -205,6 +208,24 @@
 
 
 <script>
+    
+    $(function(){
+        
+        var d = new Date();
+        var y = d.getFullYear();
+        minyear = y - 64;
+        maxyear = y - 18;
+        range = minyear+':'+maxyear;
+        def = '1/1/'+minyear;
+       $('#tgl-lahir').datepicker({
+           
+            defaultDate: def,
+            changeMonth: true,
+            changeYear: true,
+            yearRange: range
+        });
+            
+    });
 
     //alert('test');
 	var value;
@@ -273,6 +294,19 @@
     };
     
         $(document).ready(function(){
+
+            
+                    $('#tgl-lahir').on('change', function() {
+
+            var dob = new Date(this.value);
+            var today = new Date();
+            var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+            if(age < 18) {
+                $(this).val('');
+                alert('Anda belum berumur 18 tahun ke atas');
+               //document.getElementById('notif-tgllahir').style.display= 'none';
+            }
+        });
              $( "#uangpertanggunganTasbih" ).bind( "input", function() {
                  var value = $("#uangpertanggunganTasbih").val();
                  var conv = accounting.formatMoney(value, "Rp ", 0,",");
@@ -322,6 +356,7 @@
                 var nama = $("#Nama").val();
                 var usia = $("#Usia").val();
                 var up = $('#UangPertanggunganLife option:Selected').val();
+                var tanggal = $('#tgl-lahir').val();
 
                 if(usia < 18 || usia > 64 || usia == '' || nama == '' || up=="null") {
                     alert("Mohon maaf, pastikan usia Anda berada di 18-64 tahun dan pastikan semua inputan Anda benar")
@@ -331,12 +366,12 @@
                         type : 'POST',
                         data :{
                             'nama' : nama,
-                            'usia' : usia,
+                            'bod' : tanggal,
                             'up' : up
                         },
                         success : function(data){
                             alert(data);
-                            document.location.href='/kalkulator/lifeinsurance';
+                            document.location.href=window.location.protocol+"//"+window.location.host+'/kalkulator/lifeinsurance';
                         }
                     });
                      //alert('Tahan');
