@@ -22,11 +22,17 @@
 <script>
     window.onload=function(){
         var dob = <?php echo $session->bod; ?>;
-        if(dob != null){
+        var dup = <?php echo $session->up; ?>;
+        if(dob != null && dup !=null){
             var today = new Date();
             var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
             $('#usia').val(age);
+            if(dup=='1000') dup='1M';
+            else if(dup=='500') dup='500juta';
+            else if(dup=='250') dup='250juta';
+            $('#critical_illness_accelerated').val(dup);
         }
+        
         
     };
 </script>
