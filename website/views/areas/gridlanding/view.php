@@ -158,7 +158,7 @@
                         <div id="maparea"></div>
                     </div><!--/ #agent-locator -->
                     <div class="landing-tasbih-map--button">
-                        <a href='/agent-locator/agen' target="_blank"><i class="fa fa-search"></i> Temukan Agen</a>
+                        <a href='http://agen.allianz.co.id' target="_blank"><i class="fa fa-search"></i> Temukan Agen</a>
                     </div><!--/ .landing-tasbih-map--button -->
                 </div><!--/ .landing-tasbih-map -->
 

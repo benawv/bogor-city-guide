@@ -302,7 +302,7 @@ $(document).ready(function(){
         }else{
                workshop_rate=0;
         }
-        console.log("workshop_rate:"+workshop_rate);
+        //console.log("workshop_rate:"+workshop_rate);
         return workshop_rate;
 
     }
@@ -842,9 +842,14 @@ $(document).ready(function(){
         //=========================//perhitungan rate/persen======================================//
         var workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, personal_ef_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
         var band_id=getBand(cleanVarTlo);
+        var calc, calc2, workshop_persen_show
         compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html,1);
-        workshop_persen=parseFloat(getWorkshop(merk_html,3))*(getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html,1)/100);
 
+        calc = parseFloat(getWorkshop(merk_html,3))*(getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html,1)/100);
+        workshop_persen= calc.toFixed(6);
+
+        calc2 = parseFloat(getWorkshop(merk_html,3))*(getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html,1)/100);
+        workshop_persen_show = calc2.toFixed(4);
         
         // if (tlo= 5+wilayah) else (1+wilayah)
         if (jenisasuransi=='tlo') {
@@ -948,7 +953,7 @@ $(document).ready(function(){
         
         //INSERT INTO FORM
         $('.workshop_persen3, .compre_persen3, .earthquake_presen3, .era_persen3, .flood_persen3, .med_ex_persen3, .pa_persen3, .passenger_persen3, .personal_ef_persen3, .pll_persen3, .riot_persen3, .terror_persen3, .tpl_persen3, .totalPremium3').html("");
-        $('.workshop_persen3').append(workshop_persen+"%");
+        $('.workshop_persen3').append(workshop_persen_show+"%");
         $('.compre_persen3').append(compre_tlo_persen+"%");
         $('.earthquake_presen3').append(earthquake_presen+"%");
         $('.era_persen3').append(era_persen+"%");
@@ -1064,13 +1069,16 @@ $(document).ready(function(){
         
         
         //=========================//perhitungan rate/persen======================================//
-        var calc, workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
+        var workshop_persen_show, calc, calc2, workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
         compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2);//jenisasuransi, type *ga perlu,merk_html,jenis paket)
         //console.log(parseFloat(getWorkshopNonPack(merk,ages)));
         //console.log(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
         //calc =parseFloat(getWorkshopNonPack(merk_html,ages));
         calc =parseFloat(getWorkshopNonPack(merk_html,ages))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2)/100);
-        workshop_persen = calc.toFixed(4);
+        workshop_persen_show = calc.toFixed(4);
+
+        calc2 =parseFloat(getWorkshopNonPack(merk_html,ages))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2)/100);
+        workshop_persen = calc.toFixed(6);
         
         // if (tlo= 5+wilayah) else (1+wilayah)
         if (jenisasuransi=='tlo') {
@@ -1200,7 +1208,7 @@ $(document).ready(function(){
         
         //INSERT INTO FORM NON PAKT
         $('.no_workshop_persen, .no_compre_persen, .no_earthquake_presen, .no_flood_persen, .no_med_ex_persen, .no_pa_persen, .no_passenger_persen, .no_pll_persen, .no_riot_persen, .no_terror_persen, .no_tpl_persen').html("");
-        $('.no_workshop_persen').append(workshop_persen+"%");
+        $('.no_workshop_persen').append(workshop_persen_show+"%");
         $('.no_compre_persen').append(compre_tlo_persen+"%");
         $('.no_earthquake_presen').append(earthquake_presen+"%");
         $('.no_flood_persen').append(flood_persen+"%");

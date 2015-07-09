@@ -475,10 +475,26 @@
                                 </div><!--/ .row -->
 
                                 <div class="row">
+                                    <?php
+                                    $tahun = date("Y");
+                                    if ($tahun%4==0){
+                                        if ($tahun%100==0){
+                                            if ($tahun%400==0){
+                                                $day = date("m/d/Y",strtotime("+ 366 day"));
+                                            }else{
+                                                $day = date("m/d/Y",strtotime("+ 365 day"));
+                                            }
+                                        }else{
+                                            $day = date("m/d/Y",strtotime("+ 366 day"));
+                                        }
+                                    }else{
+                                        $day = date("m/d/Y",strtotime("+ 365 day"));
+                                    }
+                                    ?>
                                     <div class="form-group">
                                         <div class="col-sm-3"></div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="periode-last" class="form-control" id="periode-last" placeholder="" value="<?php echo date("m/d/Y",strtotime("+ 1 year")); ?>" disabled=disabled tabindex="12">
+                                            <input type="text" name="periode-last" class="form-control" id="periode-last" placeholder="" value="<?php echo $day; ?>" disabled=disabled tabindex="12">
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
                                 </div><!--/ .row -->
@@ -944,16 +960,6 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
-                                                                        <input type="checkbox" class="no_med_ex_is_calc" id="no_med_ex_is_calc" name="no_med_ex_is_calc" checked data-insured="no_med_ex_val" data-angka="0" data-target="no_med_ex_prem">
-                                                                    </td>
-                                                                    <td>Medical Expense</td>
-                                                                    <td class=''>
-                                                                        <input type="text" name="no_med_ex_val" class="no_med_ex_val" id="nomedexval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;"></td>
-                                                                    <td class='no_med_ex_persen'>-</td>
-                                                                    <td class='no_med_ex_prem'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
                                                                         <input type="checkbox" class="no_pll_is_calc" name="no_pll_prem_is_calc" checked data-insured="no_pll_val" data-angka="0" data-target="no_pll_prem">
                                                                     </td>
                                                                     <td>PLL</td>
@@ -962,6 +968,16 @@
                                                                     </td>
                                                                     <td class='no_pll_persen'>-</td>
                                                                     <td class='no_pll_prem'>-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <input type="checkbox" class="no_med_ex_is_calc" id="no_med_ex_is_calc" name="no_med_ex_is_calc" checked data-insured="no_med_ex_val" data-angka="0" data-target="no_med_ex_prem">
+                                                                    </td>
+                                                                    <td>Medical Expense</td>
+                                                                    <td class=''>
+                                                                        <input type="text" name="no_med_ex_val" class="no_med_ex_val" id="nomedexval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;"></td>
+                                                                    <td class='no_med_ex_persen'>-</td>
+                                                                    <td class='no_med_ex_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
