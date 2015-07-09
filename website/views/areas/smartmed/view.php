@@ -774,7 +774,7 @@
         else if(total>=1000000) stamp = 6000;
         $('table.table tfoot').children()[1].children[1].innerHTML = stamp;//stamp duty
 
-        if(fd == "Y" && rowCount > 1) totfd = 0.05 * totalwithoutuwl;
+        if(fd == "Y" && rowCount > 1) totfd = 0.05 * total;
         else totfd = 0;
 
         $('table.table tfoot').children()[3].children[1].innerHTML = totfd;//family discount
