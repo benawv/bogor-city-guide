@@ -765,9 +765,9 @@
         var cd = $("#cd").val();
         console.log(rowCount);
         for(var i = 0; i < rowCount; i++){
-            total += parseInt($('table.table tbody').children()[0].children[15].innerHTML);
+            total += parseInt($('table.table tbody').children()[i].children[15].innerHTML);
             totalwithoutuwl += parseInt($('table.table tbody').children()[0].children[16].innerHTML);
-            console.log("total"+parseInt($('table.table tbody').children()[0].children[15].innerHTML));
+            console.log("total"+parseInt($('table.table tbody').children()[i].children[15].innerHTML));
         }
         $('table.table tfoot tr:first').children()[0].innerHTML = total;
         if(total>=250000 && total<1000000) stamp = 3000;
