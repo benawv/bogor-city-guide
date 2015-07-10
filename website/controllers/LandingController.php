@@ -6,12 +6,12 @@ class LandingController extends Website_Controller_Action{
             //print_r('Test');
             //die();
             $nama = $_POST["nama"];
-            $usia = $_POST["usia"];
+            $bod = $_POST["bod"];
             $up = $_POST["up"];
 
             $session = new Zend_Session_Namespace('landingLife');
             $session->nama = $nama ;
-            $session->usia = $usia;
+            $session->bod = $bod;
             $session->up = $up;
 
             print_r("Selamat Datang di Ilustrasi Life Insurance");

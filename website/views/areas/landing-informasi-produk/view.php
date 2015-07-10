@@ -106,22 +106,7 @@
                 </div><!--/ .landing-tasbih-grid--item -->
 
             </div><!--/ .col-xs-12 -->
-            <div class="col-xs-12 col-md-4 pl8">
 
-                <div class="landing-tasbih-grid--item red">
-                    <div class="landing-tasbih-grid--item-inner">
-                        <h3><?= $this->input("headline2") ?></h3>
-                        <?php echo $this->wysiwyg('title-box-description-item')?>
-  
-                                 <?php if ($this->editmode) { ?>
-                                    <?= $this->link("linkFAQ"); ?>
-                                <?php } else { ?>
-                        <a href="<?php echo $this->link("linkFAQ")->getHref(); ?>"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
-                                <?php } ?>
-                    </div><!--/ .landing-tasbih-grid--item-inner -->
-                </div><!--/ .landing-tasbih-grid--item -->
-
-            </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
     </div><!--/ .container -->
 </section><!--/ .landing-tasbih-grid -->

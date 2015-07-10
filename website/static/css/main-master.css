@@ -3201,9 +3201,9 @@ a.fbshare, a.twshare {
 .stButton .sharethis {
     background-image: url("/website/static/images/shareThis/16x16.png") !important;
 }
-#brosur {
+/*#brosur {
     display: none !important;
-}
+}*/
 .cusTable table tr td.vertical {
     vertical-align: top !important;
     width: 20px;

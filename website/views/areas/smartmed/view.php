@@ -765,15 +765,16 @@
         var cd = $("#cd").val();
         console.log(rowCount);
         for(var i = 0; i < rowCount; i++){
-            total += parseInt($('table.table tbody').children()[0].children[15].innerHTML);
+            total += parseInt($('table.table tbody').children()[i].children[15].innerHTML);
             totalwithoutuwl += parseInt($('table.table tbody').children()[0].children[16].innerHTML);
+            console.log("total"+parseInt($('table.table tbody').children()[i].children[15].innerHTML));
         }
         $('table.table tfoot tr:first').children()[0].innerHTML = total;
         if(total>=250000 && total<1000000) stamp = 3000;
         else if(total>=1000000) stamp = 6000;
         $('table.table tfoot').children()[1].children[1].innerHTML = stamp;//stamp duty
 
-        if(fd == "Y" && rowCount > 1) totfd = 0.05 * totalwithoutuwl;
+        if(fd == "Y" && rowCount > 1) totfd = 0.05 * total;
         else totfd = 0;
 
         $('table.table tfoot').children()[3].children[1].innerHTML = totfd;//family discount
