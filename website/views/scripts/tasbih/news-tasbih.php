@@ -14,7 +14,6 @@
     .page-wrapper-outer .sidebar
     {
         background: white;
-        border-left: solid 1px #ddd;
     }
 
     .sidebar .sidebar-item .sidebar-item--header h1,
@@ -102,13 +101,16 @@
     nav.main-navigation a.nav-item h1, nav.main-navigation a.nav-item h2, nav.main-navigation a.nav-item h3, nav.main-navigation a.nav-item h4, nav.main-navigation a.nav-item h5, nav.main-navigation a.nav-item h6 {
         bottom: 12px !important;
     }
+    
+    <!-- Script Media Query by Bastian 10-07-2015 -->
 
     @media ( max-width: 992px )
     {
         .main-content,
         .sidebar
         {
-            min-height: 0 !important;
+            height : 100% !important;
+            min-height: 130% !important;
             padding: 48px 36px;
         }
     }
@@ -128,6 +130,33 @@
             .page-wrapper-outer .sidebar
         {
             border-left: solid 0px #ddd;
+        }
+        
+        .mobileH{
+            padding-top: 15px !important;
+        }
+        
+        .sidebar{
+            height : 100%;
+        }
+        
+        .main-content, .sidebar{
+            min-height: 130% !important;
+        }
+        
+        .page-wrapper-outer{
+            min-height: 1050px !important;
+        }
+    }
+    
+    @media screen and (min-width : 992px ){
+            .page-wrapper-outer .sidebar
+        {
+            border-left: solid 1px #ddd;
+        }
+        
+        .mobileH{
+            padding-top: 0px !important;
         }
     }
 
@@ -264,36 +293,7 @@
 
 $( document ).ready(function(){
 
-    var getWidht=$( document ).width();
-    var columnHeight=$( ".main-content" ).height(); 
 
-    if(getWidht < 995){
-        $('.sidebar').css('height', 100 + '%');
-        $('.main-content, .sidebar').css('min-height', 100 + 'px');
-
-        $( '.main-content, .sidebar' ).each(function () {
-            this.style.setProperty( 'min-height', '130%', 'important' );
-        });
-
-        $( '.mobileH' ).each(function () {
-            this.style.setProperty( 'padding-top', '0px', 'important' );
-        });
-
-        var page_wrapper=$( ".sidebar" ).height(); 
-        var maincontent=$( ".main-content" ).height(); 
-        
-        $('.page-wrapper-outer').css('min-height', maincontent+page_wrapper+75 + 'px');
-
-
-
-
-    }else{
-        columnHeight=columnHeight-88;
-        $('.sidebar').css('height', columnHeight+135 + 'px');
-        $('.page-wrapper-outer').css('height', columnHeight + 'px');
-
-    }  
-    
     
     var url = window.location.host+window.location.pathname;
     //alert(url);
