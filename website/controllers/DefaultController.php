@@ -57,6 +57,12 @@ class DefaultController extends Website_Controller_Action {
         
         $this->enableLayout();
 	}
+
+	public function profilMakerAction(){
+		$this->enableLayout();
+		$id = $this->_getParam('id');
+		$this->view->idHalaman = $id;
+	}
     
 	public function datanabAction() {
 		$fundtype = $_POST["fundName"];
