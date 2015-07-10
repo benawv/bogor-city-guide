@@ -276,7 +276,7 @@ $( document ).ready(function(){
         });
 
         $( '.mobileH' ).each(function () {
-            this.style.setProperty( 'padding-top', '2px', 'important' );
+            this.style.setProperty( 'padding-top', '0px', 'important' );
         });
 
         var page_wrapper=$( ".sidebar" ).height(); 
