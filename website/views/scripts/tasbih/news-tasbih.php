@@ -136,17 +136,7 @@
             padding-top: 15px !important;
         }
         
-        .sidebar{
-            height : 100%;
-        }
-        
-        .main-content, .sidebar{
-            min-height: 130% !important;
-        }
-        
-        .page-wrapper-outer{
-            min-height: 1050px !important
-        }
+
     }
     
     @media screen and (min-width : 992px ){
@@ -159,13 +149,7 @@
             padding-top: 0px !important;
         }
         
-        .sidebar , .main-content{
-            height : 779px;
-        }
 
-        .page-wrapper-outer{
-            height: 689px;
-        }
         
     }
 
@@ -299,6 +283,35 @@
     </div><!--/ .page-wrapper-outer -->
 <?php } ?>
 <script type="text/javascript">
+    
+        var getWidht=$( document ).width();
+    var columnHeight=$( ".main-content" ).height(); 
+
+    if(getWidht < 995){
+        $('.sidebar').css('height', 100 + '%');
+        $('.main-content, .sidebar').css('min-height', 100 + 'px');
+
+        $( '.main-content, .sidebar' ).each(function () {
+            this.style.setProperty( 'min-height', '130%', 'important' );
+        });
+
+
+
+        var page_wrapper=$( ".sidebar" ).height(); 
+        var maincontent=$( ".main-content" ).height(); 
+        
+        $('.page-wrapper-outer').css('min-height', maincontent+page_wrapper+75 + 'px');
+
+
+
+
+    }else{
+        columnHeight=columnHeight-88;
+        $('.sidebar').css('height', columnHeight+135 + 'px');
+        $('.page-wrapper-outer').css('height', columnHeight + 'px');
+
+    }  
+    
 
 $( document ).ready(function(){
 
