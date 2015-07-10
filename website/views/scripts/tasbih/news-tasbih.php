@@ -145,7 +145,7 @@
         }
         
         .page-wrapper-outer{
-            min-height: 1050px !important;
+            min-height: 1050px !important
         }
     }
     
@@ -158,6 +158,15 @@
         .mobileH{
             padding-top: 0px !important;
         }
+        
+        .sidebar , .main-content{
+            height : 779px;
+        }
+
+        .page-wrapper-outer{
+            height: 689px;
+        }
+        
     }
 
 </style>
