@@ -123,6 +123,13 @@
     a.tw-share{
         font-size:26px !important;
     }
+    
+    @media screen and (max-width : 991px ){
+            .page-wrapper-outer .sidebar
+        {
+            border-left: solid 0px #ddd;
+        }
+    }
 
 </style>
 <?php
@@ -260,7 +267,7 @@ $( document ).ready(function(){
     var getWidht=$( document ).width();
     var columnHeight=$( ".main-content" ).height(); 
 
-    if(getWidht < 900){
+    if(getWidht < 995){
         $('.sidebar').css('height', 100 + '%');
         $('.main-content, .sidebar').css('min-height', 100 + 'px');
 
@@ -269,7 +276,7 @@ $( document ).ready(function(){
         });
 
         $( '.mobileH' ).each(function () {
-            this.style.setProperty( 'padding-top', '15px', 'important' );
+            this.style.setProperty( 'padding-top', '2px', 'important' );
         });
 
         var page_wrapper=$( ".sidebar" ).height(); 
