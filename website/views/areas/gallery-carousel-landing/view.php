@@ -376,7 +376,7 @@
                             'tanggal' :tanggal
                         },
                         success : function(data){
-                            alert(data);
+                           // alert(data);
                             document.location.href=window.location.protocol+"//"+window.location.host+'/kalkulator/lifeinsurance';
                         }
                     });

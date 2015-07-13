@@ -22,7 +22,7 @@
 <script>
 
     window.onload=function(){
-        var dup= <?php echo $session->up?>;
+        var dup= <?php echo $session->up;?>;
           if(dup != null) {
           if(dup == '1000') dup='1M';
           else if (dup == '500') dup='500juta';
