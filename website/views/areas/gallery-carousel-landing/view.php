@@ -354,11 +354,16 @@
             
             $('#KalLife').click(function() {
                 var nama = $("#Nama").val();
-                var usia = $("#Usia").val();
+                //var usia = $("#Usia").val();
                 var up = $('#UangPertanggunganLife option:Selected').val();
                 var tanggal = $('#tgl-lahir').val();
+                
+                var dob=new Date(tanggal);
+                var today = new Date();
+                var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+               // alert(tanggal);
 
-                if(usia < 18 || usia > 64 || usia == '' || nama == '' || up=="null") {
+                if(age < 18 || age > 64 || nama == '' || up=="null") {
                     alert("Mohon maaf, pastikan usia Anda berada di 18-64 tahun dan pastikan semua inputan Anda benar")
                 }else{
                     $.ajax({
@@ -366,11 +371,12 @@
                         type : 'POST',
                         data :{
                             'nama' : nama,
-                            'bod' : tanggal,
-                            'up' : up
+                            'bod' : age,
+                            'up' : up,
+                            'tanggal' :tanggal
                         },
                         success : function(data){
-                            alert(data);
+                           // alert(data);
                             document.location.href=window.location.protocol+"//"+window.location.host+'/kalkulator/lifeinsurance';
                         }
                     });
