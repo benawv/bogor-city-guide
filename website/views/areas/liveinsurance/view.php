@@ -20,22 +20,20 @@
 <link rel="stylesheet" href="/website/static/mobilku/wizard-step.css" type="text/css" media="all" />
 
 <script>
+
     window.onload=function(){
-        var dob = <?php echo $session->bod; ?>;
-        var dup = <?php echo $session->up; ?>;
-        if(dob != null && dup !=null){
-            var today = new Date();
-            var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
-            $('#usia').val(age);
-            if(dup=='1000') dup='1M';
-            else if(dup=='500') dup='500juta';
-            else if(dup=='250') dup='250juta';
+        var dup= <?php echo $session->up?>;
+          if(dup != null) {
+          if(dup == '1000') dup='1M';
+          else if (dup == '500') dup='500juta';
+          else if(dup == '250') dup='250juta';
+              //alert(dup);
             $('#critical_illness_accelerated').val(dup);
-        }
-        
-        
-    };
+          }
+    }
+
 </script>
+
 
 <style>
     /* Override AJFC's feature box color */
@@ -357,7 +355,7 @@
                             <label>Masukan tanggal lahir Anda<br>(Minimum usia dari 18 tahun sampai 64 tahun)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir" value="<?php if($session->bod != null) echo $session->bod; ?>"  required>
+                            <input type="text" class="form-control" id="tgl-lahir" name="tgl-lahir" placeholder="Tanggal Lahir" value="<?php if($session->tanggal != null) echo $session->tanggal; ?>"  required>
                             <label id="notif-tgllahir" style="display:none; color: #f00;">
                                 Mohon maaf, umur yang Anda masukan belum sesuai dengan ketentuan ilustrasi 
                             </label>
@@ -369,7 +367,7 @@
                             <label>Usia</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="usia" name="usia" placeholder="Umur"  required readonly>
+                            <input type="text" class="form-control" id="usia" name="usia" placeholder="Umur"  required readonly value="<?php if($session->bod != null) echo $session->bod; ?>">
                             <label id="notif-usia" style="display:none; color: #f00;">
                                 Mohon maaf, umur yang Anda masukan belum sesuai dengan ketentuan ilustrasi 
                             </label>
@@ -388,7 +386,7 @@
                                 <option value="500" <?php if($session->up == 500) echo 'selected'; ?>>500juta</option>
                                 <option value="250" <?php if($session->up == 250) echo 'selected'; ?>>250juta</option>
                             </select>
-                            <?php Zend_Session::namespaceUnset('landingLife'); ?>
+                            
                             <label id="notif-uangpertanggungan" style="display:none; color: #f00;">Maaf Anda Belum Memilih</label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -398,7 +396,7 @@
                             <label>Critical Illness Accelerated(CIA)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="critical_illness_accelerated" name="cia" placeholder="0"  required readonly>
+                            <input type="text" class="form-control" id="critical_illness_accelerated" name="cia" placeholder="0"  required readonly value="">
                             <!--<select class="form-control" required tabindex="3" id="critical_illness_accelerated">
                                 <option value="Pilih">Pilih</option>
                                 <option value="1000">1 M</option>
@@ -408,7 +406,7 @@
                             <label id="notif-cia" style="display:none; color: #f00;">Maaf Anda Belum Memilih</label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
-
+<?php Zend_Session::namespaceUnset('landingLife'); ?>
                     <div class="form-group">
                         <div class="col-md-4">
                             <label>Merokok?</label>
@@ -471,6 +469,7 @@
 
     
     $(function(){
+        //alert('test');
         
         var d = new Date();
         var y = d.getFullYear();
