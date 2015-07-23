@@ -23,7 +23,15 @@
 	<div id="tab-quicklinks" class="tab-content">
 		<h3 class="judul-quicklink"><?php echo $this->input("judul-quicklink-static", array("width" => 200));?></h3>
 		<?php while ($this->block("block-layanankami")->loop()) { ?>
-			<h4><b><?php echo $this->input("layanan", array("width" => 240));?><br /></b></h4>
+			<?php if($this->editmode){ ?>
+					<h4><b><?php echo $this->input("layanan", array("width" => 240));?><br /></b></h4>
+			<?php }else{
+						if($this->input("layanan")->text != "" || $this->input("layanan")->text != null){
+			?>
+							<h4><b><?php echo $this->input("layanan", array("width" => 240));?><br /></b></h4>
+			<?php 		}
+					}
+			?>
 			<?php if($this->editmode){ ?>
 				<style>
 					ul.cusLi > div
@@ -53,7 +61,15 @@
 	<div id="tab-contact" class="tab-content">
 		<h3 class="judul-quicklink"></h3>
 		<?php while ($this->block("block-contact")->loop()) { ?>
-			<h4><b><?php echo $this->input("contact",array("width" => 240));?><br /></b></h4>
+			<?php if($this->editmode){ ?>
+				<h4><b><?php echo $this->input("contact",array("width" => 240));?><br /></b></h4>
+			<?php }else{
+						if($this->input("contact")->text != "" || $this->input("contact")->text != null){
+			?>
+							<h4><b><?php echo $this->input("contact",array("width" => 240));?><br /></b></h4>
+			<?php 		}
+					}
+			?>
 			<ul class="list-links bold-list nav cusLi">
 				<?php while ($this->block("linkblock-contact")->loop()) { ?>
 							    <li><?php echo $this->link("myLink-contact"); echo $this->input("myText-contact", array("width" => 240));?></li>
@@ -84,7 +100,15 @@
 	<div id="tab-socialmedia" class="tab-content">
 		<h3 class="judul-quicklink"></h3>
 		<?php while ($this->block("block-social")->loop()) { ?>
-			<h4><b><?php echo $this->input("social",array("width" => 240));?><br /></b></h4>
+			<?php if($this->editmode){ ?>
+					<h4><b><?php echo $this->input("social",array("width" => 240));?><br /></b></h4>
+			<?php }else{
+						if($this->input("social")->text != "" || $this->input("social")->text != null){
+			?>
+							<h4><b><?php echo $this->input("social",array("width" => 240));?><br /></b></h4>
+			<?php 		}
+					}
+			?>
 			<ul class="nav cusLi">
 				<?php while ($this->block("linkblock-socialmedia")->loop()) { ?>
 							    <li><?php echo $this->link("myLink-socialmedia"); echo $this->input("myText-social", array("width" => 240));?></li>
@@ -100,7 +124,15 @@
 	<div id="tab-download" class="tab-content">
 		<h3 class="judul-quicklink"></h3>
 		<?php while ($this->block("block-download")->loop()) { ?>
-			<h4><b><?php echo $this->input("download",array("width" => 240));?><br /></b></h4>
+			<?php if($this->editmode){ ?>
+				<h4><b><?php echo $this->input("download",array("width" => 240));?><br /></b></h4>
+			<?php }else{
+						if($this->input("download")->text != "" || $this->input("download")->text != null){
+			?>
+							<h4><b><?php echo $this->input("download",array("width" => 240));?><br /></b></h4>
+			<?php 		}
+					}
+			?>
 			<ul class="nav cusLi">
 			<?php while ($this->block("linkblock-download")->loop()) { ?>
 						    <li><?php echo $this->link("myLink-download"); echo $this->input("myText-download", array("width" => 240));?></li>
