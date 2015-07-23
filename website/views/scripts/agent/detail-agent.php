@@ -197,7 +197,7 @@
         <span
         <div class="full-w bg-white custom-section">
             <h2>
-                <span class="judul_section">Profil Agent</span>
+                <span class="judul_section">Profil Agen</span>
             </h2>
             <div class="description width-66">
                 <div class="section-left-40">
@@ -229,7 +229,7 @@
                             <?php
                                 echo "<span id='alamat_agen'>".$alamat."</span><br />";
                                 echo "Fax. ".$fax."<br />";
-                                echo "Hubungi Agen. ";
+                                echo "Hubungi Admin Agen. ";
                                 $x = 1;
                                 foreach($expTelp as $key => $val){
                                     if($x > 1){
@@ -242,7 +242,7 @@
                                     $x++;
                                 }
                                 //echo "Hubungi Agen. ".$telp."<br />";
-                                echo "Email Agen. <span id='email_agen'>".$emailAgent."</span>";
+                                echo "Email Admin Agen. <span id='email_agen'>".$emailAgent."</span>";
                             ?>
                         </p>
                         <!-- <p> DI HIDE DULU YAA
