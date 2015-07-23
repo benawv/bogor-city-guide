@@ -225,6 +225,12 @@
         min-width: 280px;
     }
 
+    .tooltips{
+        font-family: Arial,Helvetica,sans-serif;
+        font-size: 12px;
+        color: rgb(213, 14, 44);
+        font-weight: bold;
+    }
 </style>
 
 <script>
@@ -342,7 +348,7 @@
                                             <label for="input3">Merk Mobil</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <select id="merk" class="form-control" tabindex="3">
+                                            <select id="merk" class="form-control required" tabindex="3">
                                                 <option value="">Silahkan pilih</option>
                                                 <?php
                                                     $merk = new Object_MobilBrandName_List();
@@ -352,6 +358,9 @@
                                                     }
                                                 ?>
                                             </select>
+                                        <div class="col-sm-4">
+                                            <span id="tooltips2" class="tooltips">*Pilih merk mobil</span>
+                                        </div><!--/ .col-sm-4 -->
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
                                 </div><!--/ .row -->
@@ -359,12 +368,15 @@
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-sm-3">
-                                            <label for="input4">    Model Mobil</label>
+                                            <label for="input4">Model Mobil</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4" >
-                                            <select id="model" class="form-control model-form" tabindex="4">
+                                            <select id="model" class="form-control model-form required" tabindex="4">
                                                 <option value="">Silahkan pilih</option>
                                             </select>
+                                        </div><!--/ .col-sm-4 -->
+                                        <div class="col-sm-4">
+                                            <span id="tooltips2" class="tooltips">*Pilih model mobil</span>
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
                                 </div><!--/ .row -->
@@ -378,8 +390,8 @@
                                             <input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="5">
                                             <!--<input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="5" onfocusout="this.value=validateVehicle(this.value)">-->
                                             <label id="notifRegno" style="display:none; color: #f00;">
-                                Mohon maaf Registrasi Nomor yang Anda masukkan belum benar
-                            </label>
+                                                Mohon maaf Registrasi Nomor yang Anda masukkan belum benar
+                                            </label>
                                         </div><!--/ .col-sm-4 -->
                                         <div class="col-sm-4">
                                             <span id="tooltips2" class="tooltips">*No kendaraan</span>
@@ -1400,5 +1412,10 @@
         });
 
     });
-
+    $(document).ready(function(event){
+        $("input[name='next']").on('click',function(){
+            $("#model").focus();
+            $("#model").focusout();
+        })
+    });
 </script>

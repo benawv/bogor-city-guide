@@ -46,7 +46,7 @@ $(document).ready(function()
 			});
 
 
-			/* Bannert Position Save*/
+			/* Banner Position Save*/
 			$("body").on('click','.bgSave',function ()
 			{
 				var id = $(this).attr("id");
@@ -81,8 +81,7 @@ $(document).ready(function()
 	
 		});
 
-// Choose notepad color detail
-
+			// Choose notepad color detail
 		    $(document).ready(function() {
 		        $("#color").change(function() {
 		            if($(this).val() == "Blue"){
@@ -176,13 +175,19 @@ $(document).ready(function()
                         
                 });
 
-                $( "#square" ).click(function() {  
+                
+				$( "#square" ).click(function() {  
                 	//alert('square');
-                	if ( $("#place").hasClass('square') ) {
-                		//alert('cok');
-    					$("#place").removeClass('square').addClass('square');
-    				}
+                	$('#place').prop('class', 'square facebook-caption leftside');
                 });  
+
+                $( "#portrait" ).click(function() {  
+                	$('#place').prop('class', 'portrait facebook-caption leftside');
+                });
+
+                $( "#landscape" ).click(function() {  	
+                	$('#place').prop('class', 'landscape facebook-caption leftside');
+                });
                 
                 //Capture image and download it   
 				$('body').on('click','#download',function(){
