@@ -139,7 +139,7 @@
 
                     </div><!--/ .page-maker--placeholder -->
 
-                    <div id="place" class="facebook-caption leftside">
+                    <div id="place" class="square facebook-caption leftside">
                         <div id="notepad" class="facebook-caption--inner bg-blue">
 
                             <h3><span id="judul">Headline</span></h3> <br />
@@ -284,7 +284,7 @@
                         <h3>Notepad</h3>
                     </div><!--/ .page-maker--form-title -->
                     <div class="page-maker--form-inner">
-                        <form role="form">
+                        <form id="formx" role="form">
                             <div class="row">
                                 <div class="col-xs-12 col-md-3">
                                     <label>Headline</label>
@@ -377,7 +377,9 @@
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-6 col-sm-3">
                                     <!-- <input type="submit" class="btn btn-primary btn-block" value="Simpan"> -->
+                                    <!-- <a id="" href="/website/static/profil-maker/download.php?filename=banner2.jpg" class="btn btn-primary btn-block">Simpan</a> -->
                                     <a id="download" href="#" class="btn btn-primary btn-block">Simpan</a>
+                                    
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
                                     <input type="button" class="btn btn-default btn-block" value="Pilih Template">
@@ -408,7 +410,7 @@
 
             <div class="col-xs-12 col-md-4">
                 <div class="profile-maker--box">
-                    <h4>Page Cover Landscaped Notepad</h4>
+                    <h4>Page Cover Portrait Notepad</h4>
                     <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
                         <a href="/profil-maker/2" class="btn btn-primary">Create</a>
@@ -418,10 +420,10 @@
 
             <div class="col-xs-12 col-md-4">
                 <div class="profile-maker--box">
-                    <h4>Page Cover Landscaped Notepad</h4>
+                    <h4>Page Cover Square Notepad</h4>
                     <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker/2" class="btn btn-primary">Create</a>
+                        <a id="square" href="#" class="btn btn-primary">Create</a>
                     </div><!--/ .pm-buttons -->
                 </div><!--/ .profile-maker-box -->
             </div><!--/ .col-xs-12 -->

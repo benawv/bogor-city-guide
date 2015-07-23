@@ -8,6 +8,14 @@
   position: relative;
   overflow: hidden;
 }
+.square {
+  max-width: 250px;
+  min-width: 250px;
+}
+.landscape {
+  max-width: 350px;
+  min-width: 250px;
+}
 .btn-file input[type=file] {
   position: absolute;
   top: 0;
@@ -185,8 +193,8 @@ section.profile-maker {
         position: absolute;
         top: 10px;
         /*left: 190px;*/
-        max-width: 250px;
-        min-width: 250px;
+        /*max-width: 250px;
+        min-width: 250px;*/
         color: white;
         /* .right */
         /* .condensed */

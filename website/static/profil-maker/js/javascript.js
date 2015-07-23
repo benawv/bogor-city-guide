@@ -161,7 +161,7 @@ $(document).ready(function()
                         $("#place").css({display: "block"});
                 });
 
-
+                  
                 //Ask to save or no    
                     $("#save").click(function(){
                     	$('#fillform').hide();
@@ -176,30 +176,51 @@ $(document).ready(function()
                         
                 });
 
+                $( "#square" ).click(function() {  
+                	//alert('square');
+                	if ( $("#place").hasClass('square') ) {
+                		//alert('cok');
+    					$("#place").removeClass('square').addClass('square');
+    				}
+                });  
                 
                 //Capture image and download it   
-			    $("#download").click(function() { 
-			    	//alert('download');
-			       html2canvas([document.getElementById('timelineContainer')], {
-					    onrendered: function (canvas) {
-					        //document.getElementById('canvas').appendChild(canvas);
-					        var data = canvas.toDataURL('image/png');
-					        // AJAX call to send `data` to a PHP file that creates an image from the dataURI string and saves it to a directory on the server
+				$('body').on('click','#download',function(){
+	                html2canvas($('#timelineContainer'), {
+	                    onrendered: function(canvas) {
+	                        //$('#imaged').html(canvas);
+	                            var dataURL = canvas.toDataURL("image/png");
 
-					        var image = new Image();
-					        image.src = data;
-					        document.getElementById('imaged').appendChild(image);
-	                       // document.getElementById('note').style.display('block');
-					    }
-					});
-			    });
-		
+	                           	//$('#imaged').append('<img src="'+dataURL+'" />');
+	                            //$('#imaged').html('Generating..');
+	                            // $.post('image.php',{image: dataURL},function(data){
+	                            //     $('#imaged').html(data);
+	                            //     console.log(data);
+	                            // });
 
+	                			// Random filename after download
+	                			var filename = new Array(5).join().replace(/(.|$)/g, function(){return ((Math.random()*36)|0).toString(36);})
+	                            var a = $("<a>")
+								    .attr("href", dataURL)
+								    .attr("download", filename)
+								    .appendTo("body");
+
+								a[0].click();
+
+								a.remove();
+	                    }
+	                });
+					
+					// clear input text form
+	                var form = document.getElementById("formx");
+					form.reset();
+
+					//hiding ask form
+	                $('#ask').hide();
+			    	$('#fillform').show();
+ 				});
 
 
 			}); 	
-
-
-// Upload image ajax
 
 
