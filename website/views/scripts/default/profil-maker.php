@@ -403,7 +403,7 @@
                     <h4>Page Cover Landscaped Notepad</h4>
                     <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker/2" class="btn btn-primary">Create</a>
+                        <a id="landscape" href="#" class="btn btn-primary">Create</a>
                     </div><!--/ .pm-buttons -->
                 </div><!--/ .profile-maker-box -->
             </div><!--/ .col-xs-12 -->
@@ -413,7 +413,7 @@
                     <h4>Page Cover Portrait Notepad</h4>
                     <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker/2" class="btn btn-primary">Create</a>
+                        <a id="portrait" href="#" class="btn btn-primary">Create</a>
                     </div><!--/ .pm-buttons -->
                 </div><!--/ .profile-maker-box -->
             </div><!--/ .col-xs-12 -->

@@ -10,11 +10,12 @@
 }
 .square {
   max-width: 250px;
-  min-width: 250px;
 }
 .landscape {
   max-width: 350px;
-  min-width: 250px;
+}
+.portrait {
+  max-width: 200px;
 }
 .btn-file input[type=file] {
   position: absolute;
