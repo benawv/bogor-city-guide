@@ -75,7 +75,7 @@
         display: none;
     }
     .marginKantor{
-        margin-left:97px;
+        margin-left:140px;
     }
     @media (max-width: 768px) {
         .btn.btn-sendmail{
