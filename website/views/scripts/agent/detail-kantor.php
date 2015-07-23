@@ -114,6 +114,10 @@
                         //die();
                         $fax = "(".$row->getKodeAreaFax().") ".$row->getNomorFax();
                         $x = count($row->getFotoGaleriKantor()->items);
+                        if($x>0)
+                        {
+                            $x = 1;
+                        }
                         $email = strtolower($row->getEmailKantor());
                         for($z;$z<$x;$z++){
                 ?>
