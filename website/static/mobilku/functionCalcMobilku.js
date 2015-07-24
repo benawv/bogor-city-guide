@@ -194,7 +194,7 @@ $(document).ready(function(){
                      rate=0;
             }
         }else{*/
-        console.log(tahun_pembuatan+'-'+harga+'-'+model+'-'+periode+'-'+wilayah+'-'+radio+'-'+hargaKonv+'-'+paket);
+        console.log('#='+tahun_pembuatan+'-'+harga+'-'+model+'-'+periode+'-'+wilayah+'-'+radio+'-'+hargaKonv+'-'+paket);
            $.ajax({
                   "url" : "/mobilkucalc/",
                   "async": false,
@@ -210,7 +210,7 @@ $(document).ready(function(){
                  "success" : function(response){
                         localStorage.setItem("gettlo", response);
                         rate=response;
-                        //console.log(response);
+                        console.log(rate);
                  }
              }); 
         //}
@@ -1557,10 +1557,15 @@ $(document).ready(function(){
         if (text > 100000000000) {
             text = 100000000000;
         }
+        if(text != 0){
+          text = accounting.formatMoney(text,'Rp ',0,'.',',');
+        }else{
+          text = '';
+        }
         
-        text = accounting.formatMoney(text,'Rp ',0,'.',',');
         $(this).val(text);
     });
+    
 
     $("#nopassengerval, #nopaval, #notplval, #nomedexval, #nopllval").bind('input',function(){
         var text1 = clearFormat($(this).val());
