@@ -75,7 +75,7 @@ setcookie("gettamplate","value",time()+$int);
             }
             function getId(obj) {
                 var id=obj;
-                alert("idnya"+id);
+                //alert("idnya"+id);
                 setCookie("template", id);
                 //document.cookie = id;
                 //var x = document.cookie

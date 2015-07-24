@@ -1176,7 +1176,7 @@
 
 <script type="text/javascript">
     
-        $('#telp').bind("input", function(){
+    $('#telp').bind("input", function(){
        var re = /^[0-9]*$/; 
         
         var value = $('#telp').val();
@@ -1186,6 +1186,18 @@
             $('#telp').val('');
         }else{
             document.getElementById('notifNoHP').style.display= 'none';
+        }
+        
+    });
+
+    $('#nama').bind("input", function(){
+       var re = /^[A-Za-z]*$/; 
+        
+        var value = $('#nama').val();
+        $(this).val(value);
+        if(!re.test(value)){
+            $('#nama').val('');
+        }else{
         }
         
     });
