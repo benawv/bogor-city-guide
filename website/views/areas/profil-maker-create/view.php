@@ -39,7 +39,7 @@ function readURL(input) {
                             <!--<input type="file" required>-->
                         </div><!--/ .form-group -->
                         <div class="form-group">
-                            <a href="/profil-maker-setting/" class="btn btn-primary"><input type="button" onclick="myImg()" value="Upload" class="btn btn-primary"/>
+                            <a href="/profil-maker/page3" class="btn btn-primary"><input type="button" onclick="myImg()" value="Upload" class="btn btn-primary"/>
                             </a>
                             <a href="javascript:history.go(-1);" class="btn btn-default">Kembali</a>
                         </div><!--/ .form-group -->
