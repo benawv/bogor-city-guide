@@ -1191,7 +1191,7 @@
     });
 
     $('#nama').bind("input", function(){
-       var re = /^[A-Za-z]*$/; 
+       var re = /^[A-Za-z\s- ]*$/; 
         
         var value = $('#nama').val();
         $(this).val(value);
