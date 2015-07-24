@@ -24,9 +24,7 @@ setcookie("gettamplate","value",time()+$int);
                     <h4>Page Cover Landscaped Notepad</h4>
                     <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker/page2">
-                            <input type="button" id="template1" onclick="getId(this.id)" value="Pilih" class="btn btn-primary"/>
-                        </a>
+                        <a href="/profil-maker/page2"> <input type="button" id="template1" onclick="getId(this.id)" value="Pilih" class="btn btn-primary"/></a>
                         <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
                     </div><!--/ .pm-buttons -->
                 </div><!--/ .profile-maker-box -->
@@ -35,11 +33,11 @@ setcookie("gettamplate","value",time()+$int);
             <div class="col-xs-12 col-md-4">
                 <div class="profile-maker--box">
                     <h4>Page Cover Landscaped Notepad</h4>
-                    <a href="/profil-maker/page2">
-                        <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
-                    </a>
+                    <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker-create/"> <input type="button" id="template2" onclick="getId(this.id)" value="Pilih" class="btn btn-primary"/></a>
+                        <a href="/profil-maker/page2">
+                            <input type="button" id="template2" onclick="getId(this.id)" value="Pilih" class="btn btn-primary"/>
+                        </a>
                         <!--<a href="/profil-maker-create" class="btn btn-primary">Pilih</a>-->
                     </div><!--/ .pm-buttons -->
                 </div><!--/ .profile-maker-box -->
@@ -48,11 +46,11 @@ setcookie("gettamplate","value",time()+$int);
             <div class="col-xs-12 col-md-4">
                 <div class="profile-maker--box">
                     <h4>Page Cover Landscaped Notepad</h4>
-                    <a href="/profil-maker/page2">
-                        <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
-                    </a>
+                    <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker-create/"> <input type="button" id="template3" onclick="getId(this.id)" value="Pilih" class="btn btn-primary"/></a>
+                        <a href="/profil-maker/page2">
+                            <input type="button" id="template3" onclick="getId(this.id)" value="Pilih" class="btn btn-primary"/>
+                        </a>
                         <!--<a href="/profil-maker/2" class="btn btn-primary">Pilih</a>-->
                     </div><!--/ .pm-buttons -->
                 </div><!--/ .profile-maker-box -->
@@ -77,7 +75,7 @@ setcookie("gettamplate","value",time()+$int);
             }
             function getId(obj) {
                 var id=obj;
-                //alert("idnya"+id);
+                alert("idnya"+id);
                 setCookie("template", id);
                 //document.cookie = id;
                 //var x = document.cookie
