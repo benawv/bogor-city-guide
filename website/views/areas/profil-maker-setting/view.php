@@ -13,8 +13,8 @@
                 }
                 return "";
             }
-            alert(getCookie("preview"));
-            alert(getCookie("template"));
+            //alert(getCookie("preview"));
+            //alert(getCookie("template"));
 
 </script>
 <link rel="stylesheet" href="/website/static/css/bootstrap-grid-only.css">

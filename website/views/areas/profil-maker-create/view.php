@@ -74,9 +74,9 @@ function readURL(input) {
             var preview = document.getElementById("preview").src;
             setCookie("preview", preview);
            }
-            alert("preview : "+preview);
+            //alert("preview : "+preview);
 
-           alert(getCookie("template"));
+           //alert(getCookie("template"));
 
         </script>
 

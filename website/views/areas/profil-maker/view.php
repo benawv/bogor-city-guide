@@ -35,7 +35,7 @@ setcookie("gettamplate","value",time()+$int);
                     <h4>Page Cover Landscaped Notepad</h4>
                     <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <input type="button" id="template2" onclick="getId(this.id)" value="Pilih" class="btn btn-primary"/>
+                        <a href="/profil-maker-create/"> <input type="button" id="template2" onclick="getId(this.id)" value="Pilih" class="btn btn-primary"/></a>
                         <!--<a href="/profil-maker-create" class="btn btn-primary">Pilih</a>-->
                     </div><!--/ .pm-buttons -->
                 </div><!--/ .profile-maker-box -->
@@ -46,7 +46,7 @@ setcookie("gettamplate","value",time()+$int);
                     <h4>Page Cover Landscaped Notepad</h4>
                     <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <input type="button" id="template3" onclick="getId(this.id)" value="Pilih" class="btn btn-primary"/>
+                        <a href="/profil-maker-create/"> <input type="button" id="template3" onclick="getId(this.id)" value="Pilih" class="btn btn-primary"/></a>
                         <!--<a href="/profil-maker/2" class="btn btn-primary">Pilih</a>-->
                     </div><!--/ .pm-buttons -->
                 </div><!--/ .profile-maker-box -->
@@ -71,7 +71,7 @@ setcookie("gettamplate","value",time()+$int);
             }
             function getId(obj) {
                 var id=obj;
-                alert("idnya"+id);
+                //alert("idnya"+id);
                 setCookie("template", id);
                 //document.cookie = id;
                 //var x = document.cookie
