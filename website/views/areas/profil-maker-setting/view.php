@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="/website/static/css/bootstrap-grid-only.css">
 <link rel="stylesheet" href="/website/static/css/profil-maker.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
 <section class="profile-maker">
     <div class="container">
 
@@ -32,11 +33,54 @@
         <div class="row">
             <div class="col-xs-12">
 
-                <div class="page-maker--placeholder">
-                    <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive">
-                </div><!--/ .page-maker--placeholder -->
+                <div id="timelineContainer">
 
-                <div class="page-maker--placeholder">
+                    <div id="timelineBackground" class="page-maker--placeholder">
+                        <!-- <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive"> -->
+
+                       <img src="/website/static/images/profile-maker/banner2.jpg" alt="Page Cover Landscaped Notepad" id="timelineBGload" class="headerimage ui-corner-all ui-draggable img-responsive" />
+
+                    </div><!--/ .page-maker--placeholder -->
+
+                    <div id="place" class="square facebook-caption leftside">
+                        <div id="notepad" class="facebook-caption--inner bg-blue">
+
+                            <h3><span id="judul">Headline</span></h3> <br />
+                            <span id="konten">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+                                Ut wisi enim ad minim veniam
+                            </span> <br />
+                            <span id="nama">Robbi Nugraha</span>
+
+                        </div><!--/ .facebook-caption--inner -->
+                        <!-- <div class="facebook-caption-trapezoid"></div> -->
+
+                        <div id="edge-note" class="edge e-blue"></div> 
+
+                    </div> <!--/ .facebook-caption -->
+
+                    <div class="shade" id="timelineShade">
+                        <form id="bgimageform" name="newad" method="post" enctype="multipart/form-data" action="">
+                            
+                            <!-- <div class="uploadFile timelineUploadBG col-lg-2 col-sm-2 col-12 pull-right">
+                                <span class="file-input btn btn-primary btn-file">
+                                    Upload <input type="file" name="image" id="bgphotoimg" class=" custom-file-input" original-title="Change Cover Picture" multiple>
+                                </span>
+                                <input name="Submit" type="submit" value="Upload image"> 
+                            </div> -->
+                        </form> <!--/ #bgimageform -->
+                    </div> <!--/ #shade -->
+
+                    <!-- <div id="timelineProfilePic">
+                        <div style="padding:5px">
+                            <img src="/website/static/images/profile-maker/Allianz Agent Facebook Profile Picture.png" style="width:100%">
+                        </div>
+                    </div> --> <!--/ #timelineProfilePic -->
+
+                </div> <!--/ #timelineContainer -->    
+
+                <div class="page-maker--placeholder" style="display: none">
                     <div class="facebook">
                         <div class="facebook-profile">
                             <p>Profile Picture</p>
@@ -50,15 +94,15 @@
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                     Mauris posuere vitae nulla et commodo.
                                 </p>
-                                <p><span>&lt;First Name&gt;</span> <span>&lt;Last Name&gt;</span></p>
+                                <p><span>&lt;First Name&gt;</span> <span>&lt;Lasr Name&gt;</span></p>
                             </div><!--/ .facebook-caption--inner -->
                             <div class="facebook-caption-trapezoid"></div>
                         </div><!--/ .facebook-caption -->
-                        <img src="http://placehold.it/851x315" id="2" alt="Page Cover Landscaped Notepad" class="img-responsive">
+                        <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive">
                     </div><!--/ .facebook -->
                 </div><!--/ .page-maker--placeholder -->
 
-                <div class="page-maker--placeholder">
+                <div class="page-maker--placeholder" style="display: none">
                     <div class="facebook">
                         <div class="facebook-profile">
                             <p>Profile Picture</p>
@@ -78,9 +122,9 @@
                         </div><!--/ .facebook-caption -->
                         <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive">
                     </div><!--/ .facebook -->
-                </div><!--/ .page-maker--placeholder  -->
+                </div><!--/ .page-maker--placeholder -->
 
-                <div class="page-maker--placeholder">
+                <div class="page-maker--placeholder" style="display: none">
                     <div class="facebook">
                         <div class="facebook-profile">
                             <p>Profile Picture</p>
@@ -110,7 +154,7 @@
                     </div><!--/ .facebook -->
                 </div><!--/ .page-maker--placeholder -->
 
-                <div class="page-maker--placeholder">
+                <div class="page-maker--placeholder" style="display: none">
                     <div class="avatar">
                         <div class="avatar-caption">
                             <div class="avatar-caption--logo">
@@ -121,7 +165,7 @@
                     </div><!--/ .facebook -->
                 </div><!--/ .page-maker--placeholder -->
 
-                <div class="page-maker--placeholder">
+                <div class="page-maker--placeholder" style="display: none">
                     <div class="avatar">
                         <div class="avatar-caption">
                             <div class="avatar-caption--logo">
@@ -138,18 +182,18 @@
                     </div><!--/ .facebook -->
                 </div><!--/ .page-maker--placeholder -->
 
-                <div class="page-maker--form">
+                <div id="fillform" class="page-maker--form">
                     <div class="page-maker--form-title">
                         <h3>Notepad</h3>
-                    </div><!--/ .page-maker--form-title-->
+                    </div><!--/ .page-maker--form-title -->
                     <div class="page-maker--form-inner">
-                        <form role="form">
+                        <form id="formx" role="form">
                             <div class="row">
                                 <div class="col-xs-12 col-md-3">
                                     <label>Headline</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="headline" id="atas" class="form-control">
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div class="row">
@@ -157,7 +201,7 @@
                                     <label>Description</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <textarea class="form-control" rows="5"></textarea>
+                                    <textarea class="form-control" name="content" id="tengah" rows="5"></textarea>
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div class="row">
@@ -165,7 +209,7 @@
                                     <label>First Name</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="first_name" id="bawah1" class="form-control">
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div class="row">
@@ -173,7 +217,7 @@
                                     <label>Last Name</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="last_name" id="bawah2" class="form-control">
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div class="row">
@@ -181,9 +225,10 @@
                                     <label>Notepad Color</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <select class="form-control">
-                                        <option value="">Blue</option>
-                                        <option value="">Red</option>
+                                    <select id="color" class="form-control">
+                                        <option value"blue" selected> Blue </option>
+                                        <option value"orange"> Orange </option>
+                                        <option value"red"> Red </option>
                                     </select>
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
@@ -192,21 +237,52 @@
                                     <label>Notepad Position</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <select class="form-control">
-                                        <option value="">Left Side</option>
-                                        <option value="">RIght Side</option>
+                                    <select id="position" class="form-control" >
+                                        <option value"left" selected> Left </option>
+                                        <option value"right"> Right </option>
                                     </select>
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div class="row" style="margin-top: 16px;">
                                 <div class="col-xs-6 col-sm-3">
-                                    <a href="#" class="btn btn-default btn-block">Pratinjau</a>
+                                    <a id="preview" href="#" class="btn btn-default btn-block">Pratinjau</a>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-6 col-sm-3">
-                                    <a href="/profil-maker/4" class="btn btn-primary btn-block">Simpan</a>
+                                    <a id="save" href="#ask" class="btn btn-primary btn-block">Simpan</a>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
                                     <input type="button" class="btn btn-default btn-block" value="Ganti Gambar">
+                                </div><!--/ .col-xs-12 -->
+                                <div class="col-xs-12 col-sm-3">
+                                    <input type="button" class="btn btn-default btn-block" value="Pilih Template">
+                                </div><!--/ .col-xs-12 -->
+                            </div><!--/ .row -->
+                        </form>
+
+                    </div><!--/ .page-maker--form-inner -->
+
+                </div><!--/ .page-maker--form -->
+
+                <div id="ask" class="page-maker--form" style="display: none">
+                    <div class="page-maker--form-title">
+                        <h3>Notepad Detail</h3>
+                    </div><!--/ .page-maker--form-title -->
+                    <div class="page-maker--form-inner">
+                        <form role="form">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <p>Apakah anda yakin dengan gambar ini?</p>
+                                </div><!--/ .col-xs-12 -->
+                            </div><!--/ .row -->
+                            <div class="row" style="margin-top: 16px;">
+                                <div class="col-xs-6 col-sm-3">
+                                    <a id="cancel" href="#fillform" class="btn btn-default btn-block">Batal</a>
+                                </div><!--/ .col-xs-12 -->
+                                <div class="col-xs-6 col-sm-3">
+                                    <!-- <input type="submit" class="btn btn-primary btn-block" value="Simpan"> -->
+                                    <!-- <a id="" href="/website/static/profil-maker/download.php?filename=banner2.jpg" class="btn btn-primary btn-block">Simpan</a> -->
+                                    <a id="download" href="#" class="btn btn-primary btn-block">Simpan</a>
+                                    
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
                                     <input type="button" class="btn btn-default btn-block" value="Pilih Template">
@@ -230,34 +306,51 @@
                     <h4>Page Cover Landscaped Notepad</h4>
                     <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker/2" class="btn btn-primary">Create</a>
-                    </div><!--/ .pm-buttons -->
-                </div><!--/ .profile-maker-box-->
-            </div><!--/ .col-xs-12 -->
-
-            <div class="col-xs-12 col-md-4">
-                <div class="profile-maker--box">
-                    <h4>Page Cover Landscaped Notepad</h4>
-                    <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
-                    <div class="pm-buttons">
-                        <a href="/profil-maker/2" class="btn btn-primary">Create</a>
+                        <a id="landscape" href="#" class="btn btn-primary">Create</a>
                     </div><!--/ .pm-buttons -->
                 </div><!--/ .profile-maker-box -->
             </div><!--/ .col-xs-12 -->
 
             <div class="col-xs-12 col-md-4">
                 <div class="profile-maker--box">
-                    <h4>Page Cover Landscaped Notepad</h4>
+                    <h4>Page Cover Portrait Notepad</h4>
                     <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker/2" class="btn btn-primary">Create</a>
-                    </div><!--/ .pm-buttons -->-->
+                        <a id="portrait" href="#" class="btn btn-primary">Create</a>
+                    </div><!--/ .pm-buttons -->
                 </div><!--/ .profile-maker-box -->
-            </div><!--/ .col-xs-12-->
+            </div><!--/ .col-xs-12 -->
+
+            <div class="col-xs-12 col-md-4">
+                <div class="profile-maker--box">
+                    <h4>Page Cover Square Notepad</h4>
+                    <img src="http://placehold.it/640x320" alt="Template Image" class="img-responsive">
+                    <div class="pm-buttons">
+                        <a id="square" href="#" class="btn btn-primary">Create</a>
+                    </div><!--/ .pm-buttons -->
+                </div><!--/ .profile-maker-box -->
+            </div><!--/ .col-xs-12 -->
 
         </div><!--/ .row -->
 
         <?php endfor; ?>
 
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div id="imaged"></div>
+
+            </div><!--/ .col-xs-12 -->
+        </div><!--/ .row -->
+
     </div><!--/ .container -->
 </section><!--/ .profile-maker -->
+
+
+
+<!-- Javascript -->
+<!-- <script src="/website/static/profil-maker/js/jquery.min.js"></script> -->
+<script src="/website/static/profil-maker/js/jquery-ui.min.js"></script>
+<script src="/website/static/profil-maker/js/jquery.wallform.js"></script>
+<script src="/website/static/profil-maker/js/javascript.js"></script>
+<script src="http://html2canvas.hertzen.com/build/html2canvas.js"></script>
