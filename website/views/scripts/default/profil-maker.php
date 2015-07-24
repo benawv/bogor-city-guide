@@ -169,11 +169,11 @@
                         </form> <!--/ #bgimageform -->
                     </div> <!--/ #shade -->
 
-                    <div id="timelineProfilePic">
+                    <!-- <div id="timelineProfilePic">
                         <div style="padding:5px">
                             <img src="/website/static/images/profile-maker/Allianz Agent Facebook Profile Picture.png" style="width:100%">
                         </div>
-                    </div> <!--/ #timelineProfilePic -->
+                    </div> --> <!--/ #timelineProfilePic -->
 
                 </div> <!--/ #timelineContainer -->    
 
