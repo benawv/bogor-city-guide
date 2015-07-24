@@ -165,6 +165,9 @@
 	width: 70%;
 	clear: both;
 }
+.radio-icon label span p{
+	font-size: 13px;
+}
 .main{
 		padding: 20px 0px;
 	}

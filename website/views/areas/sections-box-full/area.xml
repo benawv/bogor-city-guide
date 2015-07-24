@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <zend-config xmlns:zf="http://framework.zend.com/xml/zend-config-xml/1.0/">
     <id>sections-box-full</id>
-    <name>Section Box Full</name>
+    <name>Section Box 3/3</name>
     <description></description>
     <author>Allianz ID</author>
     <version>1.0</version>

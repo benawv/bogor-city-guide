@@ -1,3 +1,41 @@
+.leftside {
+  left: 190px;
+}
+.rightside {
+  right: 190px;
+}
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.square {
+  max-width: 250px;
+}
+.landscape {
+  max-width: 350px;
+}
+.portrait {
+  max-width: 200px;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: red;
+  cursor: inherit;
+  display: block;
+}
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
+
 section.profile-maker {
   /* .profile-maker--title */
   /* .profile-maker--box */
@@ -60,13 +98,19 @@ section.profile-maker {
         font-weight: normal; }
       section.profile-maker .page-maker--form .page-maker--form-inner .btn {
         margin: 0 auto 20px; }
+  section.profile-maker #timelineContainer {
+      width: 100%;
+      position: relative;
+      background: #fff; }      
   section.profile-maker .page-maker--placeholder {
-    position: relative;
-    margin: 0 auto 32px;
-    max-width: 100%;
-    overflow: auto;
+      position: relative;
+      margin: 0 auto 32px;
+      max-width: 100%;
+      height: 400px;
+      max-height: 400px;
+      overflow: hidden;
     /* .facebook */
-    /* .avatar */ }
+    /* .avatar */ }  
     section.profile-maker .page-maker--placeholder > img {
       min-width: 100%;
       max-width: 100%;
@@ -75,6 +119,23 @@ section.profile-maker {
       padding: 0;
       display: block;
       border: none; }
+    section.profile-maker .page-maker--placeholder > img.headerimage {
+      cursor: move; }  
+    section.profile-maker #timelineContainer #timelineProfilePic {
+      width: 160px;
+       height: 160px; 
+      border: 1px solid #666666;
+      background-color: #ffffff;
+      position: absolute;
+      bottom: 0;
+      /* margin-top: -115px; */
+      /* margin-top: -50px; */
+      margin-left: 20px;
+      z-index: 2;
+      overflow: hidden;
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px; }  
     section.profile-maker .page-maker--placeholder .facebook {
       position: relative;
       width: 851px;
@@ -128,12 +189,13 @@ section.profile-maker {
           text-align: center;
           text-transform: uppercase;
           font-size: x-small; }
-      section.profile-maker .page-maker--placeholder .facebook .facebook-caption {
+      section.profile-maker .page-maker--placeholder .facebook .facebook-caption,
+      section.profile-maker #timelineContainer .facebook-caption {
         position: absolute;
         top: 10px;
-        left: 190px;
-        max-width: 250px;
-        min-width: 250px;
+        /*left: 190px;*/
+        /*max-width: 250px;
+        min-width: 250px;*/
         color: white;
         /* .right */
         /* .condensed */
@@ -145,6 +207,14 @@ section.profile-maker {
         /* .red */
         /* .facebook-caption--inner --*/
         /* .facebook-caption-trapezoid */ }
+        section.profile-maker #timelineContainer .shade {
+          background: url('../images/profile-maker/timeline_shade.png');
+          min-height: 95px;
+          position: absolute;
+          bottom: 0;
+          /* margin-top: -95px; */
+          width: 100%;
+        }
         section.profile-maker .page-maker--placeholder .facebook .facebook-caption.right {
           left: auto;
           right: 155px; }
@@ -175,16 +245,24 @@ section.profile-maker {
           background: #e4002b; }
         section.profile-maker .page-maker--placeholder .facebook .facebook-caption.red .facebook-caption-trapezoid::before {
           border: solid 100px #e4002b; }
-        section.profile-maker .page-maker--placeholder .facebook .facebook-caption > .facebook-caption--inner {
-          background: #00397D;
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption > .facebook-caption--inner,
+        section.profile-maker #timelineContainer .facebook-caption > .facebook-caption--inner {
           padding: 12px 20px 0; }
-        section.profile-maker .page-maker--placeholder .facebook .facebook-caption .facebook-caption-trapezoid {
+        section.profile-maker #timelineContainer .facebook-caption > .facebook-caption--inner span {
+          display: block;
+          /*margin: 10px 0;*/ } 
+        section.profile-maker #timelineContainer .facebook-caption > .facebook-caption--inner span#konten {
+          font-size: 14px;
+        }   
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption .facebook-caption-trapezoid,
+        section.profile-maker #timelineContainer .facebook-caption .facebook-caption-trapezoid {
           position: absolute;
           bottom: -16px;
           min-width: 100%;
           height: 32px;
           overflow: hidden; }
-          section.profile-maker .page-maker--placeholder .facebook .facebook-caption .facebook-caption-trapezoid::before {
+          section.profile-maker .page-maker--placeholder .facebook .facebook-caption .facebook-caption-trapezoid::before,
+          section.profile-maker #timelineContainer .facebook-caption .facebook-caption-trapezoid:before {
             content: "";
             position: absolute;
             width: 400px;
