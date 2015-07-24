@@ -205,14 +205,21 @@ $(document).ready(function()
 
 	                			// Random filename after download
 	                			var filename = new Array(5).join().replace(/(.|$)/g, function(){return ((Math.random()*36)|0).toString(36);})
-	                            var a = $("<a>")
-								    .attr("href", dataURL)
-								    .attr("download", filename)
-								    .appendTo("body");
 
-								a[0].click();
+	                			var link = document.createElement('a');
+									link.href = dataURL;
+									link.download = filename+".png";
+									document.body.appendChild(link);
+									link.click();
 
-								a.remove();
+	       						//var a = $("<a>")
+								//.attr("href", dataURL)
+								//.attr("download", filename)
+								//.appendTo("body");
+
+								//a[0].click();
+
+								//a.remove();
 	                    }
 	                });
 					
