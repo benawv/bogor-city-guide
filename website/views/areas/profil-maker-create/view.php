@@ -30,17 +30,17 @@ function readURL(input) {
                         Page cover landscaped notepad<br />
                         (851 x 351)
                     </p>
-                    <form role="form" enctype="multipart/form-data">
+                    <form role="form" action="/upload-image/" method="post" enctype="multipart/form-data">
                         <div class="form-group">
-                            <img id="preview" src="#" alt="your image" width="100" height="100" />
-                            <p>
-                            </p>
-                            <input id="imgfile" type="file" onchange="readURL(this)"; /> 
+                            <!--<img id="preview" src="#" alt="your image" width="100" height="100" />-->
+                            
+                            <input id="imgfile" type="file" name="uploadFoto" /> 
                             <!--<input type="file" required>-->
                         </div><!--/ .form-group -->
                         <div class="form-group">
-                            <a href="/profil-maker/page3" class="btn btn-primary"><input type="button" onclick="myImg()" value="Upload" class="btn btn-primary"/>
-                            </a>
+                            <!--<a href="/profil-maker/page3" class="btn btn-primary">-->
+                                <input type="submit" value="Upload" class="btn btn-primary"/>
+                            <!--</a>-->
                             <a href="javascript:history.go(-1);" class="btn btn-default">Kembali</a>
                         </div><!--/ .form-group -->
                     </form>
@@ -70,10 +70,10 @@ function readURL(input) {
                 setCookie("image", id);
             }*/
 
-           function myImg(){
-            var preview = document.getElementById("preview").src;
-            setCookie("preview", preview);
-           }
+           //function myImg(){
+           // var preview = document.getElementById("preview").src;
+           // setCookie("preview", preview);
+           //}
             //alert("preview : "+preview);
 
            //alert(getCookie("template"));
