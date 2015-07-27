@@ -146,6 +146,7 @@
 			$cookie->setO_parentId($getId->o_id);
 			$cookie->setO_index(0);
 			$cookie->setO_published(1);
+			$cookie->setNohp($nohp);
 			$cookie->setKategori($kat);
 			$cookie->save();
 			
