@@ -75,6 +75,7 @@
                             <?php
                                     $pt = $this->select('positionTasbih_')->getData();
 								    $ct = $this->select('colorTasbih_')->getData();
+									$kat = $this->select('kategori_')->getData();
 							?>
                             <div class="col-xs-12 col-md-4 col-md-offset-<?php if($pt == 'left') echo '1'; else echo '7' ?>" id="fixboxTasbih" style=" display:<?php if($jenis=="tasbih") echo "block"; else echo "none"; ?>">
                                 <div class="landing-tasbih-header-caption--box <?php echo $ct; ?>" >
@@ -83,6 +84,7 @@
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Uang Pertanggungan" required tabindex="1" id="uangpertanggunganTasbih">
                                         </div><!--/ .form-group -->
+										<input type="hidden" value="<?php echo $kat;?>" name="kategori" />
                                         <div class="form-group">
                                             <select class="form-control" required tabindex="2" id="lamapembayaranTasbih">
                                                 <option value="null">Lama Pembayaran</option>
@@ -119,6 +121,20 @@
 											        array("red", "red"),
 											        array("green", "green"),
 											        array("purple", "purple")
+											    ),
+											    "reload" => true
+											)); 
+										?>
+			                        	</p>
+<p>
+				                        <?php 
+				                        	echo "Kategori: <br />";
+			                        		echo $this->select("kategori_",array(
+											    "store" => array(
+											        array("have-hajj-saving-have-insurance", "Have Hajj Saving Have Insurance"),
+											        array("no-hajj-saving-have-insurance", "No Hajj Saving Have Insurance"),
+											        array("have-hajj-saving-no-insurance", "Have Hajj Saving No Insurance"),
+											        array("no-hajj-saving-no-insurance", "No Hajj Saving No Insurance")
 											    ),
 											    "reload" => true
 											)); 
@@ -330,7 +346,8 @@
                         type : 'POST',
                         data :{
                             'up' : value,
-                            'lp' : lp
+                            'lp' : lp,
+							'kategori' : "<?php echo $kat;?>"
                         },
                         success : function(data){
                             //alert(data);

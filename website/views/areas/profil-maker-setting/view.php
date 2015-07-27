@@ -1,6 +1,6 @@
 <script type="text/javascript">
            function setCookie(cname, cvalue) {
-                document.cookie = cname + "=" + cvalue + "; " + expires;
+                document.cookie = cname + "=" + cvalue;
             }
 
             function getCookie(cname) {
@@ -13,8 +13,7 @@
                 }
                 return "";
             }
-            //alert(getCookie("preview"));
-            //alert(getCookie("template"));
+            ///alert(<?php echo $_COOKIE["uploadImage"]?>);
 
 </script>
 <link rel="stylesheet" href="/website/static/css/bootstrap-grid-only.css">
@@ -37,8 +36,10 @@
 
                     <div id="timelineBackground" class="page-maker--placeholder">
                         <!-- <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive"> -->
-
-                       <img src="/website/static/images/profile-maker/banner2.jpg" alt="Page Cover Landscaped Notepad" id="timelineBGload" class="headerimage ui-corner-all ui-draggable img-responsive" />
+                        <?php
+                                 $session = new Zend_Session_Namespace('srcImage');
+                        ?>
+                       <img src="<?php echo $session->src;?>" alt="Page Cover Landscaped Notepad" id="timelineBGload" class="headerimage ui-corner-all ui-draggable img-responsive" />
 
                     </div><!--/ .page-maker--placeholder -->
 
