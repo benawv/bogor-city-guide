@@ -174,7 +174,7 @@
 			}
 			else
 			{
-				$per = "per Tahun";
+				$per = " ";
 			}
 			
 			$document = '/email/email-tasbih';
