@@ -255,36 +255,7 @@
                             </div><!--/ .col-md-4 -->
                         </div><!--/ .form-group -->
 
-                        <div class="form-group">
-                            <div class="col-md-4">
-                            <?php $sessionTasbih = new Zend_Session_Namespace('tasbih'); ?>
-                            <label><strong>Kontribusi Berkala/<a href="#" class="calc-overlay-trigger"  data-toggle="modal" data-target="#premi">Premi</a></strong></label>
-                            </div><!--/ .col-md-4 -->
-                            <div class="col-md-4">
-                            <input type="text" class="form-control" id="kontribusi-berkala_view" placeholder="0" value="<?php echo 'Rp. '.number_format($session->Calculation,0,',','.'); ?>" readonly>
-                            <input type="hidden" class="form-control" id="kontribusi-berkala" placeholder="0" value="<?php echo $session->Calculation; ?>" readonly>
-                            </div><!--/ .col-md-4 -->
-                            <div class="col-md-4">
-                                <label><strong>
-                                <?php
-                                    if($sessionTasbih->Frekuensi == "Semesteran")
-                                    {
-                                        $nilai = $session->Calculation/2;
-                                        echo "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per Semester";
-                                    }
-                                    elseif($sessionTasbih->Frekuensi == "Triwulan")
-                                    {
-                                        $nilai = $session->Calculation/4;
-                                        echo "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per Triwulan";
-                                    }
-                                    else
-                                    {
-                                        echo "per Tahun";
-                                    }
-                                ?>
-                                </strong></label>
-                            </div><!--/ .col-md-4 -->
-                        </div><!--/ .form-group -->
+                        
                         <?php
                             if($sessionTasbih->kat == "" || $sessionTasbih->kat == null || $sessionTasbih->kat == " ")
                             {
