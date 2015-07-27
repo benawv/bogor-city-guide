@@ -24,11 +24,13 @@ class LandingController extends Website_Controller_Action{
             //die();
             $lp = $_POST["lp"];
             $up = $_POST["up"];
+			$kat = $_POST["kategori"];
 
             $session = new Zend_Session_Namespace('landingTasbih');
             $session->lp = $lp ;
             $session->up = $up;
-
+			$session->kat = $kat;
+			
             print_r("Selamat Datang di Ilustrasi Tasbih");
     }
     

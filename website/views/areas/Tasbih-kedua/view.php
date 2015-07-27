@@ -285,7 +285,15 @@
                                 </strong></label>
                             </div><!--/ .col-md-4 -->
                         </div><!--/ .form-group -->
-
+                        <?php
+                            if($sessionTasbih->kat == "" || $sessionTasbih->kat == null || $sessionTasbih->kat == " ")
+                            {
+                                $kat = "direct";
+                            }
+                            else{
+                                $kat = $sessionTasbih->kat;
+                            }
+                        ?>
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
                                 <!--
@@ -462,7 +470,8 @@
                   data     : {
                               'nama' : nama,
                               'email' : email,
-                              'nohp' : nohp
+                              'nohp' : nohp,
+                              'kategori' : '<?php echo $kat;?>'
                               },
                       success  : function(data){
                         //console.log(data);

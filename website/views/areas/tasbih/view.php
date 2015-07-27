@@ -301,9 +301,6 @@
 
                     </div><!--/ .form-box -->
      
-                    <!--Unset Session for Landing Tasbih-->
-                    <?php Zend_Session::namespaceUnset('landingTasbih'); ?>
-     
                     <div class="form-box text-center waiting-calc" style="display: none;">
                         <i class="fa fa-refresh fa-3x fa-spin"></i>
                     </div><!--/ .form-box -->
@@ -420,8 +417,11 @@
           </div>
         </div>
 
-
-
+<!--Unset Session for Landing Tasbih-->
+<?php $kat = $session->kat;
+      
+      Zend_Session::namespaceUnset('landingTasbih');
+?>
 
 <script>
     // document.getElementById('tgl-hitung').value = (new Date()).format("m/dd/yy");
@@ -513,7 +513,8 @@
                             'frekuensi' : frekuensi,
                             'asuransijiwa' : unfnum,
                             'AJ' : asuransijiwa,
-                            'kontribusi' : kontribusi
+                            'kontribusi' : kontribusi,
+                            'kategori' : '<?php echo $kat;?>'
                             },
                     success  : function(data){
                     //console.log(data);
