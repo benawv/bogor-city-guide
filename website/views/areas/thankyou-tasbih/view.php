@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/bootstrap.min.css"  />
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
@@ -107,13 +108,31 @@
               <div class="header-calc">
                   <h1>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
               </div><!--/ .header-calc -->
+              
+<?php  $session = new Zend_Session_Namespace('tasbih'); ?>
 
               <div class="content-calc">
                   <div class="col-md-12">
 
                     <div class="form-box" id="notif-confirm">
                         <h1 style="text-align:center">TERIMA KASIH</h1>
-                        <h3  style=" color:black; text-align:center;"><strong>Perhitungan ilustrasi produk Allianz Tasbih sudah dikirimkan ke alamat email Anda</strong></h3>
+                        <h3  style=" color:black; text-align:center;"><strong> <a href="#" class="calc-overlay-trigger"  data-toggle="modal" data-target="#premi" style="color:#009a44">Premi</a> yang harus Anda bayarkan sebesar <?php echo 'Rp. '.number_format($session->Calculation,0,',','.').' per Tahun'; ?> 
+                            
+                            <?php
+                                    if($session->Frekuensi == "Semesteran")
+                                    {
+                                        $nilai = $session->Calculation/2;
+                                        echo "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per Semester";
+                                    }
+                                    elseif($session->Frekuensi == "Triwulan")
+                                    {
+                                        $nilai = $session->Calculation/4;
+                                        echo "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per Triwulan";
+                                    }
+                                    
+                                ?>
+                            
+                            Perhitungan ilustrasi produk Allianz Tasbih sudah dikirimkan ke alamat email Anda</strong></h3>
                         <h3 style=" color:black; text-align:center;"><strong>Temukan agen terdekat: </strong></h3>
                        <br />
                         <center>
@@ -221,6 +240,21 @@
     </div><!--/ .description -->
 </div><!--/ #newsletter-allianz -->
 
+        <div class="modal fade" id="premi" tabindex="-1" role="dialog" aria-labelledby="premiLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="premiLabel">Premi</h4>
+              </div>
+              <div class="modal-body">
+                <!--h3>5 Risiko Kehidupan</h3-->
+                <p>Premi adalah iuran yang anda bayarkan secara berkala sesuai dengan periode pilihan Anda untuk mendapatkan uang pertangungan yang Anda inginkan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
 <link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
 <script src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="/website/static/mobilku/jquery-ui.js" type="text/javascript"></script>
@@ -234,7 +268,7 @@ $(document).ready(function(){
 
         $('#cari-agen').click(function() {
 
-           <?php  $session = new Zend_Session_Namespace('tasbih'); ?>
+
 
             var nama = '<?php echo $session->nama; ?>';
             var email = '<?php echo $session->email; ?>';
