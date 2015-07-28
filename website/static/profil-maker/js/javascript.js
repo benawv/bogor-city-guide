@@ -192,7 +192,7 @@ $(document).ready(function()
                 
                 //Capture image and download it   
 				$('body').on('click','#download',function(){
-	                html2canvas($('#timelineContainer'), {
+	                html2canvas($('#cover1'), {
 	                    onrendered: function(canvas) {
 	                        //$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
