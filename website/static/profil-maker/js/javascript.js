@@ -149,14 +149,15 @@ $(document).ready(function()
 
  			$(function() { 
                     $("#preview").click(function(){
-                    	$('#judul, #konten, #nama').empty();
+                    	$('#judul, #konten, #nama, #cname').empty();
                         $headline = $('#atas').val();
                         $konten = $('#tengah').val();
                         $nama1 = $('#bawah1').val();
                         $nama2 = $('#bawah2').val();
                         $('#judul').html($headline);
                         $('#konten').html($konten);
-                        $('#nama').html($nama1+" "+$nama2);
+                        $('#nama').html($nama1+" "+$nama2); //name at form cover
+                        $('#cname').html($nama1+" "+$nama2); //name at form avatar
                         $("#place").css({display: "block"});
                 });
 
@@ -196,7 +197,7 @@ $(document).ready(function()
 	                        //$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
 
-	                           	//$('#imaged').append('<img src="'+dataURL+'" />');
+	                           	$('#imaged').append('<img src="'+dataURL+'" />');
 	                            //$('#imaged').html('Generating..');
 	                            // $.post('image.php',{image: dataURL},function(data){
 	                            //     $('#imaged').html(data);
@@ -204,13 +205,13 @@ $(document).ready(function()
 	                            // });
 
 	                			// Random filename after download
-	                			var filename = new Array(5).join().replace(/(.|$)/g, function(){return ((Math.random()*36)|0).toString(36);})
+	                			//var filename = new Array(5).join().replace(/(.|$)/g, function(){return ((Math.random()*36)|0).toString(36);})
 
-	                			var link = document.createElement('a');
-									link.href = dataURL;
-									link.download = filename+".png";
-									document.body.appendChild(link);
-									link.click();
+	        						// var link = document.createElement('a');
+									// link.href = dataURL;
+									// link.download = filename+".png";
+									// document.body.appendChild(link);
+									// link.click();
 
 	       						//var a = $("<a>")
 								//.attr("href", dataURL)

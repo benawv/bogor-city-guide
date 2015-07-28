@@ -101,14 +101,17 @@ section.profile-maker {
   section.profile-maker #timelineContainer {
       width: 100%;
       position: relative;
-      background: #fff; }      
+      background: #fff; } 
   section.profile-maker .page-maker--placeholder {
+    margin: 0 auto 32px; }         
+  section.profile-maker .page-maker--placeholdermain {
       position: relative;
       margin: 0 auto 32px;
       max-width: 100%;
       height: 400px;
       max-height: 400px;
       overflow: hidden;
+      background: #ccc;
     /* .facebook */
     /* .avatar */ }  
     section.profile-maker .page-maker--placeholder > img {
@@ -119,7 +122,7 @@ section.profile-maker {
       padding: 0;
       display: block;
       border: none; }
-    section.profile-maker .page-maker--placeholder > img.headerimage {
+    section.profile-maker .page-maker--placeholdermain > img.headerimage {
       cursor: move; }  
     section.profile-maker #timelineContainer #timelineProfilePic {
       width: 160px;
@@ -208,7 +211,8 @@ section.profile-maker {
         /* .facebook-caption--inner --*/
         /* .facebook-caption-trapezoid */ }
         section.profile-maker #timelineContainer .shade {
-          background: url('../images/profile-maker/timeline_shade.png');
+          /*background: url('../images/profile-maker/timeline_shade.png');*/
+          background: #ccc;
           min-height: 95px;
           position: absolute;
           bottom: 0;
@@ -218,13 +222,20 @@ section.profile-maker {
         section.profile-maker .page-maker--placeholder .facebook .facebook-caption.right {
           left: auto;
           right: 155px; }
-        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.condensed {
-          max-width: 170px;
-          min-width: 170px; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.portrait {
+          max-width: 210px;
+          min-width: 210px; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.square {
+          max-width: 231px;
+          min-width: 231px; }  
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.landscape {
+          max-width: 300px;
+          min-width: 300px; }  
         section.profile-maker .page-maker--placeholder .facebook .facebook-caption.no-dent {
           /* .facebook-caption--inner */ }
           section.profile-maker .page-maker--placeholder .facebook .facebook-caption.no-dent > .facebook-caption--inner {
-            padding-bottom: 32px !important; }
+            /*padding-bottom: 32px !important;*/ 
+            padding-bottom: 5px !important; }
         section.profile-maker .page-maker--placeholder .facebook .facebook-caption.green > .facebook-caption--inner {
           background: #009a44; }
         section.profile-maker .page-maker--placeholder .facebook .facebook-caption.green .facebook-caption-trapezoid::before {
@@ -243,6 +254,8 @@ section.profile-maker {
           border: solid 100px #87189d; }
         section.profile-maker .page-maker--placeholder .facebook .facebook-caption.red > .facebook-caption--inner {
           background: #e4002b; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption > .facebook-caption--inner p {
+          font-size: 14px; }  
         section.profile-maker .page-maker--placeholder .facebook .facebook-caption.red .facebook-caption-trapezoid::before {
           border: solid 100px #e4002b; }
         section.profile-maker .page-maker--placeholder .facebook .facebook-caption > .facebook-caption--inner,
@@ -257,7 +270,7 @@ section.profile-maker {
         section.profile-maker .page-maker--placeholder .facebook .facebook-caption .facebook-caption-trapezoid,
         section.profile-maker #timelineContainer .facebook-caption .facebook-caption-trapezoid {
           position: absolute;
-          bottom: -16px;
+          /*bottom: -16px;*/
           min-width: 100%;
           height: 32px;
           overflow: hidden; }
@@ -274,8 +287,10 @@ section.profile-maker {
     section.profile-maker .page-maker--placeholder .avatar {
       display: block;
       position: relative;
-      width: 512px;
-      height: 512px;
+      /*width: 512px;
+      height: 512px;*/
+      width: 472px;
+      height: 394px;
       margin: 0 auto;
       padding: 0;
       background: white;
