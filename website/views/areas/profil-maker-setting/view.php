@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-xs-12">
 
-                <div id="cover1" class="timelineContainer">
+                <div id="cover1" class="timelineContainer" style="">
 
                     <div id="timelineBackground" class="page-maker--placeholdermain">
                         <!-- <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive"> -->
@@ -165,7 +165,7 @@
 
                 <div id="ava1" class="page-maker--placeholder" style="">
                     <div class="avatar">
-                        <div id="avacapture" class="avatar-caption">
+                        <div id="avacapture1" class="avatar-caption">
                             <div class="avatar-caption--logo">
                                 <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
                             </div><!--/ .avatar-caption--logo -->
@@ -176,7 +176,7 @@
 
                 <div id="ava2" class="page-maker--placeholder" style="">
                     <div class="avatar">
-                        <div id="avacaptioncapture" class="avatar-caption">
+                        <div id="avacapture2" class="avatar-caption">
                             <div class="avatar-caption--logo">
                                 <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
                             </div><!--/ .avatar-caption--logo -->

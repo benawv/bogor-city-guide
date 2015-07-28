@@ -198,18 +198,19 @@ $(document).ready(function()
 	                            var dataURL = canvas.toDataURL("image/png");
 
 	                           	//$('#imaged').append('<img src="'+dataURL+'" />');
+
 	                            //$('#imaged').html('Generating..');
 	                            // $.post('image.php',{image: dataURL},function(data){
 	                            //     $('#imaged').html(data);
 	                            //     console.log(data);
 	                            // });
 
-	                			// Random filename after download
-	                			var filename = new Array(5).join().replace(/(.|$)/g, function(){return ((Math.random()*36)|0).toString(36);})
+	                			//Random filename after download
+	                			var filename = new Array(2).join().replace(/(.|$)/g, function(){return ((Math.random()*36)|0).toString(36);})
 
 	        						var link = document.createElement('a');
 									link.href = dataURL;
-									link.download = filename+".png";
+									link.download = "Allianz_download_"+filename+".png";
 									document.body.appendChild(link);
 									link.click();
 
