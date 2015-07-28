@@ -266,9 +266,14 @@
                     </div><!--/ .sidebar-item--header -->
                     <div class="sidebar-item--content">
                         <ul class="sidebar-nav">
-                        <?php foreach($this->sidelist as $lists){?>
+                        <?php 
+                        $nsidelist = count($this->sidelist);
+                        for($i=0;$i<$nsidelist;$i++){
+                            foreach($this->sidelist[$i] as $lists){?>
                                 <li><a href="/produk/asuransi-syariah/tasbih/artikel/<?php  echo $lists->o_key."-".$lists->o_id; ?>" class="list-artikel" ><?php  echo $lists->title; ?></a></li>
-                        <?php } ?>
+                        <?php 
+                            }
+                        }?>
                         </ul>
                     </div><!--/ .sidebar-item--content -->
                     </div><!--/ .sidebar-item -->
