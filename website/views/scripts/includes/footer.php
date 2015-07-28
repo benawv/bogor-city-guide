@@ -17,15 +17,16 @@
 	<div class="meta clearfix">
 		<div class="container clearfix">
 			<div class="statement">&copy; Allianz 2014. All Rights Reserved.</div>
-			<ul class="static-links">
-				<li><a href="/data-privasi/terms-of-use">Syarat Penggunaan</a></li>
-				<li><a href="/data-privasi/prinsip-privasi">Kebijakan Privasi</a></li>
-				<li><a href="/sitemap" target="_blank">Sitemap</a></li>
-			</ul>
 			<ul class="static-links mobile deactive share">
 				<li><a href="javascript:void(0);" class="fbshare-fullpage"><img src="/website/static/images/icon-share/facebook-black.png" alt="facebook-black" /></a></li>
 				<li><a href="javascript:void(0);" class="twshare-fullpage"><img src="/website/static/images/icon-share/twitter-black.png" alt="twitter-black" /></a></li>
 				<li><a href="https://plus.google.com/u/0/113109741631464434900/posts" target="_blank" class="gPlus-fullpage"><img src="/website/static/images/icon-share/g-plus-black.png" alt="google plus" /></a></li>
+			</ul>
+			<div class="show-mobile"></div>
+			<ul class="static-links">
+				<li><a href="/data-privasi/terms-of-use">Syarat Penggunaan</a></li>
+				<li><a href="/data-privasi/prinsip-privasi">Kebijakan Privasi</a></li>
+				<li><a href="/sitemap" target="_blank">Sitemap</a></li>
 			</ul>
 		</div>
 	</div>

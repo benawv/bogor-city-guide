@@ -490,8 +490,14 @@ nav.primary .menu-level2 > ul > li > a:hover{color:#199dd7;}
 #quicklinks{float:none;width:100%;}
 .tips-item-kanan{right:0;}
 }
+.show-mobile{display: none;}
 @media only screen and (max-width:640px){
-.static-links.mobile.deactive.share{top: 0;}
+.static-links.mobile.deactive.share, footer.contentinfo .meta .container .static-links{float: left;margin: 9px auto;}
+.static-links.mobile.deactive.share img{float: right;}
+footer.contentinfo .meta .static-links.mobile.deactive.share li{margin-right: 20px;}
+footer.contentinfo .meta .static-links a{display: block;}
+.show-mobile{display: block;clear: both;}
+
 body{font-size:90%;}
 .banner .minibar{display:none;}
 .box-orange{height:360px;}
@@ -541,7 +547,7 @@ div.search{width:100%;}
 .wishlist-content .logo img{right:10px;}
 .button-cart .btn-width{width:140px;}
 .mobile.deactive{display: block;}
-.static-links.mobile.deactive.share{position: absolute;right: 0;}
+/*.static-links.mobile.deactive.share{position: absolute;right: 0;}*/
 .banner .minibar.cusZindex, .banner .minibar.cusZindex.cusLogin{display: block;position: absolute;right:0;}
 .banner .minibar.cusZindex .liMobileHide{display: none;}
 .ulCustomerOnline.deactive{position: absolute;right: 0;}
