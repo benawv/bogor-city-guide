@@ -35,8 +35,8 @@
 				$frek = 'Triwulan';
 			}
             
+			$kat = $_POST["kategori"];
             
-		
 			$rates= new Object_TasbihRate_List();
 			$rates->setCondition("kelamin='".$JenisKelamin."' and frekuensi=$Kontribusi and usia=$Usia");
 			$rate='';
@@ -63,6 +63,7 @@
             $session->AJ = $AJ;
             $session->Kontribusi = $Kontribusi;
             $session->Calculation = $Calculation;
+			$session->kat = $kat;
 
             echo $session->Calculation;//print result of calculation into form
 
@@ -79,6 +80,7 @@
             $nama = $_POST["nama"];
             $email = $_POST["email"];
             $nohp = $_POST["nohp"];
+			$kat = $_POST["kategori"];
 
 
             $session = new Zend_Session_Namespace('tasbih');
@@ -144,6 +146,8 @@
 			$cookie->setO_parentId($getId->o_id);
 			$cookie->setO_index(0);
 			$cookie->setO_published(1);
+			$cookie->setNohp($nohp);
+			$cookie->setKategori($kat);
 			$cookie->save();
 			
 			$session->idObject = $cookie->getO_id();
@@ -170,7 +174,7 @@
 			}
 			else
 			{
-				$per = "per Tahun";
+				$per = " ";
 			}
 			
 			$document = '/email/email-tasbih';

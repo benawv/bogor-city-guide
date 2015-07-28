@@ -1,8 +1,33 @@
-<?php 
-setcookie("gettamplate","value",time()+$int);
-?>
+<div id="slideshow" class="clearfix">
+<?php //if($this->editmode) { ?>
+    <!--<div class="alert alert-info" style="height: 75px">
+        <div class="col-xs-6">
+            How many images you want to show?
 
+            <?php
+                
+                $select= [];
+                for($i=1; $i<30; $i++) {
+                    $select[] = [$i, $i];
+                }
+              ?>
+            <?php echo $this->select("jumlah",[
+                "store" => $select,
+                "reload" => true
+            ]); ?>
 
+        </div>
+    </div>
+
+    <style type="text/css">
+        .gallery .item {
+            min-height: 377px;
+        }
+        .place-bg-gallery{
+            height: 265px !important;
+        }
+    </style>-->
+<?php //} ?>
 <link rel="stylesheet" href="/website/static/css/bootstrap-grid-only.css">
 <link rel="stylesheet" href="/website/static/css/profil-maker.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -14,11 +39,12 @@ setcookie("gettamplate","value",time()+$int);
                 <h2>Allianz Profile Maker</h2>
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
+        <?php //$val = (int) $this->select("jumlah")->getData();
+        ?>
 
         <?php for( $i = 0; $i < 2; $i++ ): ?>
 
         <div class="row">
-
             <div class="col-xs-12 col-md-4">
                 <div class="profile-maker--box">
                     <h4>Page Cover Landscaped Notepad</h4>
@@ -56,8 +82,11 @@ setcookie("gettamplate","value",time()+$int);
                 </div><!--/ .profile-maker-box -->
             </div><!--/ .col-xs-12 -->
 
-        </div><!--/ .row -->
+        </div> <!--/.row -->
 
+
+        <?php endfor; ?>
+        
         <script type="text/javascript">
             function setCookie(cname, cvalue) {
                 document.cookie = cname + "=" + cvalue + "; ";
@@ -84,8 +113,6 @@ setcookie("gettamplate","value",time()+$int);
            }
 
         </script>
-
-        <?php endfor; ?>
 
     </div><!--/ .container -->
 </section><!--/ .profile-maker -->
