@@ -1,6 +1,7 @@
 <?php
 //call session yang di buat di controller kalkulatortassbihControler function saveAction()
   $session = new Zend_Session_Namespace('tasbih');
+  $sessionTasbih = new Zend_Session_Namespace('tasbih');
 ?>
 
 
