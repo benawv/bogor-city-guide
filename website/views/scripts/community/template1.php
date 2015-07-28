@@ -11,7 +11,7 @@
 	.community-btn a{
 		font-size: 25px;
 		float: left;
-		margin: 0px 5px;
+		margin: 0px 17px;
 	}
 	.community-btn{
 		float: right;
