@@ -36,7 +36,10 @@
 
         <div class="row profile-maker--title">
             <div class="col-xs-12">
-                <h2>Page Cover Landscaped Notepad</h2>
+                <h2><script>
+                var title = getCookie("keterangan");
+                document.write(title);
+            </script></h2>
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
 
