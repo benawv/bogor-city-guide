@@ -202,7 +202,13 @@ class MobilkuController extends Website_Controller_Action {
 		//$paket=1;	
 		//print_r($paket);
 		//die();
-		$condition="$condition_price AND retetype=$paket AND region__id=$getRegId_id AND age=$age and makemodel__id=$modelmap_id";
+		if($paket>1){
+			$condition="$condition_price AND retetype=$paket AND region__id=$getRegId_id AND makemodel__id=$modelmap_id";
+			// echo 1234;
+		}else{
+			$condition="$condition_price AND retetype=$paket AND region__id=$getRegId_id AND age=$age and makemodel__id=$modelmap_id";
+			// echo 4321;
+		}
 		//print_r($condition);
 		//die();
 		$getTloRate=new Object_MobilRate_List();
@@ -214,6 +220,7 @@ class MobilkuController extends Website_Controller_Action {
 
 		}
 		print_r($rates);
+		// echo $paket;
 		die();
 	}
 	

@@ -210,10 +210,31 @@ $(document).ready(function(){
                  "success" : function(response){
                         localStorage.setItem("gettlo", response);
                         rate=response;
-                        console.log(rate);
+                        console.log('retetype='+response);
                  }
              }); 
         //}
+        // $('.no_workshop_is_calc').prop('checked', false);
+        $( 'table.tbl_ck input[type="checkbox"]' ).each(function(index,value){
+                      var datatarget=$(this).attr('data-target');
+                      var dataangka=$(this).attr('data-angka');
+                      var datainsured=$(this).attr('data-insured');
+                      $('.'+datatarget).html('');
+                      $('.'+datatarget).append(dataangka);
+
+                      if ( ! this.checked) {
+                            //alert(datainsured);
+                            $('.'+datainsured).attr('disabled', 'disabled');
+                            $('.'+datatarget).html('');
+                            $('.'+datatarget).append('0,00');
+                      }else{
+                            $('.'+datainsured).removeAttr('disabled');
+                            $('.'+datatarget).html('');
+                            $('.'+datatarget).append(dataangka);
+                      }
+                      console.log('tes');
+                      totalrecalc_custome();
+      });
         return rate;
     }
 
@@ -1565,7 +1586,7 @@ $(document).ready(function(){
         
         $(this).val(text);
     });
-    
+
 
     $("#nopassengerval, #nopaval, #notplval, #nomedexval, #nopllval").bind('input',function(){
         var text1 = clearFormat($(this).val());
