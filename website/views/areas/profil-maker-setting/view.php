@@ -17,6 +17,19 @@
 
 </script>
 
+<style>
+    .highlighter {
+                background-color: #eee;
+                color: #f0f;
+                -moz-padding-end: 1.5px;
+                -moz-padding-start: 1.5px
+                -moz-box-sizing: border-box;
+            }
+            .highlight {
+                background-color: #fd8;
+                color: #f0f;
+            }
+</style>
 
 <section class="profile-maker">
     <div class="container">
@@ -45,6 +58,7 @@
                         <div id="notepad" class="facebook-caption--inner square-bg bg-blue">
 
                             <h3><span id="judul">Headline</span></h3> <br />
+
                             <span id="konten">
                                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
                                 sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
@@ -209,7 +223,9 @@
                                     <label>Description</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <textarea class="form-control" name="content" id="tengah" rows="5"></textarea>
+                                    <!-- <div class="highlighter" id="overflowText"></div> -->
+                                    <textarea class="form-control" name="content" id="tengah" maxlength="200" rows="5"></textarea>
+                                    <div id="counter">Letters remaining: <span id="char">140</span></div>
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div class="row">
