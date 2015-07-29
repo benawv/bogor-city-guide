@@ -60,19 +60,17 @@
                     <div id="place" class="square facebook-caption leftside">
                         <div id="notepad" class="facebook-caption--inner square-bg bg-blue">
 
-                            <h3><span id="judul">Headline</span></h3> <br />
+                            <h3><span id="judul">&lt;Title&gt;</span></h3> <br />
 
                             <span id="konten">
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
-                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-                                Ut wisi enim ad minim veniam
+                                &lt;Description&gt;
                             </span> <br />
                             
                         </div><!--/ .facebook-caption--inner -->
                         <!-- <div class="facebook-caption-trapezoid"></div> -->
 
                         <div id="edge-note" class="edge e-blue">
-                            <span id="nama">Robbi Nugraha</span>
+                            <span id="nama">&lt;Name&gt;</span>
                         </div> 
 
                     </div> <!--/ .facebook-caption -->
@@ -180,7 +178,7 @@
                 </div> <!--/ #timelineContainer -->
 
 
-                <div id="ava1" class="page-maker--placeholder" style="">
+                <div id="ava1" class="page-maker--placeholder">
                     <div class="avatar">
                         <div id="avacapture1" class="avatar-caption">
                             <div class="avatar-caption--logo">
@@ -191,7 +189,7 @@
                     </div><!--/ .facebook -->
                 </div><!--/ .page-maker--placeholder -->
 
-                <div id="ava2" class="page-maker--placeholder" style="">
+                <div id="ava2" class="page-maker--placeholder">
                     <div class="avatar">
                         <div id="avacapture2" class="avatar-caption">
                             <div class="avatar-caption--logo">
@@ -278,10 +276,10 @@
                                     <a id="save" href="#ask" class="btn btn-primary btn-block">Simpan</a>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
-                                    <input type="button" class="btn btn-default btn-block" value="Ganti Gambar">
+                                    <input type="button" id="gambar" class="btn btn-default btn-block" value="Ganti Gambar">
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
-                                    <input type="button" class="btn btn-default btn-block" value="Pilih Template">
+                                    <input type="button" id="pilih" class="btn btn-default btn-block" value="Pilih Template">
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                         </form>
