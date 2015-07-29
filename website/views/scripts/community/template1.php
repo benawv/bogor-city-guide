@@ -255,7 +255,7 @@
 		$.ajax({
 			type: "POST",
 			url: "save-cookies",
-			data: {cookies: <?php echo ($_COOKIE["user"]);?>, id: $(".id_art").val()},
+			data: {cookies: "<?php echo ($_COOKIE["user"]);?>", id: $(".id_art").val()},
 			success: function(data){
 				console.log(data);
 			}
