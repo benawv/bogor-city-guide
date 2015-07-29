@@ -319,11 +319,11 @@
                                 //echo $getStatus;
                                 if($session->Frekuensi == "Semesteran")
                                 {
-                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")."atau sebesar ".'Rp. '.number_format($session->Calculation/2,0,',','.')." per Semester";
+                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")."atau sebesar ".'<br/>Rp. '.number_format($session->Calculation/2,0,',','.')." per Semester";
                                 }
                                 elseif($session->Frekuensi == "Triwulan")
                                 {
-                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")." atau sebesar ".'Rp. '.number_format($session->Calculation/4,0,',','.')." per Triwulan";
+                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")." atau sebesar ".'<br/>Rp. '.number_format($session->Calculation/4,0,',','.')." per Triwulan";
                                 } else $nilai="";
 
                                 if($session->JenisKelamin=="l"){
@@ -338,39 +338,48 @@
                                     $content.= "<table>";
                                     $content.='<tr class="tbl-email">
                                                     <td>Nama Anda</td>
-                                                    <td>: '.$session->nama.'</td>
+                                                    <td>:</td>
+                                                    <td> '.$session->nama.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Email Anda </td>
-                                                    <td>: '.$session->email.'</td>
+                                                    <td>:</td>
+                                                    <td> '.$session->email.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Nomor Handphone Anda</td>
-                                                    <td>: '.$session->nohp.'</td>
+                                                    <td>:</td>
+                                                    <td> '.$session->nohp.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Tanggal Lahir Anda</td>
-                                                    <td>: '.date("d/m/Y",strtotime($session->date_tglLahir)).'</td>
+                                                    <td>:</td>
+                                                    <td> '.date("d/m/Y",strtotime($session->date_tglLahir)).'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Jenis Kelamin Anda</td>
-                                                    <td>: '.$jenis.'</td>
+                                                    <td>:</td>
+                                                    <td> '.$jenis.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Termin Pembayaran Anda</td>
-                                                    <td>: '.$session->Frekuensi.'</td>
+                                                    <td>:</td>
+                                                    <td> '.$session->Frekuensi.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Uang Pertanggungan</td>
-                                                    <td>: '.$session->AJ.'</td>
+                                                    <td>:</td>
+                                                    <td> '.$session->AJ.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Massa Pembayaran Premi</td>
-                                                    <td>: '.$session->Kontribusi.' tahun</td>
+                                                    <td>:</td>
+                                                    <td> '.$session->Kontribusi.' tahun</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Premi yang harus anda bayarkan per Tahun</td>
-                                                    <td>:'. $nilai.'</td>
+                                                    <td>:</td>
+                                                    <td>'. $nilai.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Keterangan tambahan</td>
