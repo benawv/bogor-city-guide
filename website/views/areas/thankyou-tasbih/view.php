@@ -132,7 +132,8 @@
                                     
                                 ?>
                             
-                            Perhitungan ilustrasi produk Allianz Tasbih sudah dikirimkan ke alamat email Anda</strong></h3>
+                            </strong></h3>
+                        <center><strong><h3 style=" color:black; text-align:center;"> Perhitungan ilustrasi produk Allianz Tasbih sudah dikirimkan ke alamat email Anda</strong></h3></center>
                         <h3 style=" color:black; text-align:center;"><strong>Temukan agen terdekat: </strong></h3>
                        <br />
                         <center>

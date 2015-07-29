@@ -149,14 +149,15 @@ $(document).ready(function()
 
  			$(function() { 
                     $("#preview").click(function(){
-                    	$('#judul, #konten, #nama').empty();
+                    	$('#judul, #konten, #nama, #cname').empty();
                         $headline = $('#atas').val();
                         $konten = $('#tengah').val();
                         $nama1 = $('#bawah1').val();
                         $nama2 = $('#bawah2').val();
                         $('#judul').html($headline);
                         $('#konten').html($konten);
-                        $('#nama').html($nama1+" "+$nama2);
+                        $('#nama').html($nama1+" "+$nama2); //name at form cover
+                        $('#cname').html($nama1+" "+$nama2); //name at form avatar
                         $("#place").css({display: "block"});
                 });
 
@@ -191,24 +192,25 @@ $(document).ready(function()
                 
                 //Capture image and download it   
 				$('body').on('click','#download',function(){
-	                html2canvas($('#timelineContainer'), {
+	                html2canvas($('#cover1'), {
 	                    onrendered: function(canvas) {
 	                        //$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
 
 	                           	//$('#imaged').append('<img src="'+dataURL+'" />');
+
 	                            //$('#imaged').html('Generating..');
 	                            // $.post('image.php',{image: dataURL},function(data){
 	                            //     $('#imaged').html(data);
 	                            //     console.log(data);
 	                            // });
 
-	                			// Random filename after download
-	                			var filename = new Array(5).join().replace(/(.|$)/g, function(){return ((Math.random()*36)|0).toString(36);})
+	                			//Random filename after download
+	                			var filename = new Array(2).join().replace(/(.|$)/g, function(){return ((Math.random()*36)|0).toString(36);})
 
-	                			var link = document.createElement('a');
+	        						var link = document.createElement('a');
 									link.href = dataURL;
-									link.download = filename+".png";
+									link.download = "Allianz_download_"+filename+".png";
 									document.body.appendChild(link);
 									link.click();
 
@@ -233,6 +235,36 @@ $(document).ready(function()
  				});
 
 
-			}); 	
+			});
+
+			//text counter
+				function limitTextSize(e) {
+				    var max = 180
+				    var txt = $("#tengah").val();
+				    //var left = txt.substring(0, max);
+				    //var right = txt.substring(max);
+				    //var html = left + '<span class="highlight">' + right + "</span>";
+				    //$("#overflowText").html(html);
+				    $("#counter").html("Letters remaining: <span id='char'> " + (max - txt.length) + "</span>");
+				    $("#preview, #save").attr("disabled", txt.length > max);
+				    if(txt.length > max){
+				    	//alert("over");
+				    	$("#char").css("color", "red");
+				    }
+				}
+
+				function maxLength(el) {
+				    if (!('maxLength' in el)) {
+				        var max = el.attributes.maxLength.value;
+				        el.onkeypress = function () {
+				            if (this.value.length >= max) 
+				            	return false;
+				        };
+				    }
+				}
+				$(document).ready(function () {
+				    $("#tengah").bind('input propertychange', limitTextSize)
+				    maxLength($("#tengah"));
+				}); 	
 
 

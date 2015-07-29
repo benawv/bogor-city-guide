@@ -16,9 +16,20 @@
             ///alert(<?php echo $_COOKIE["uploadImage"]?>);
 
 </script>
-<link rel="stylesheet" href="/website/static/css/bootstrap-grid-only.css">
-<link rel="stylesheet" href="/website/static/css/profil-maker.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<style>
+    .highlighter {
+                background-color: #eee;
+                color: #f0f;
+                -moz-padding-end: 1.5px;
+                -moz-padding-start: 1.5px
+                -moz-box-sizing: border-box;
+            }
+            .highlight {
+                background-color: #fd8;
+                color: #f0f;
+            }
+</style>
 
 <section class="profile-maker">
     <div class="container">
@@ -35,9 +46,9 @@
         <div class="row">
             <div class="col-xs-12">
 
-                <div id="timelineContainer">
+                <div id="cover1" class="timelineContainer" style="">
 
-                    <div id="timelineBackground" class="page-maker--placeholder">
+                    <div id="timelineBackground" class="page-maker--placeholdermain">
                         <!-- <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive"> -->
                         <?php
                                  $session = new Zend_Session_Namespace('srcImage');
@@ -47,32 +58,28 @@
                     </div><!--/ .page-maker--placeholder -->
 
                     <div id="place" class="square facebook-caption leftside">
-                        <div id="notepad" class="facebook-caption--inner bg-blue">
+                        <div id="notepad" class="facebook-caption--inner square-bg bg-blue">
 
                             <h3><span id="judul">Headline</span></h3> <br />
+
                             <span id="konten">
                                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
                                 sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
                                 Ut wisi enim ad minim veniam
                             </span> <br />
-                            <span id="nama">Robbi Nugraha</span>
-
+                            
                         </div><!--/ .facebook-caption--inner -->
                         <!-- <div class="facebook-caption-trapezoid"></div> -->
 
-                        <div id="edge-note" class="edge e-blue"></div> 
+                        <div id="edge-note" class="edge e-blue">
+                            <span id="nama">Robbi Nugraha</span>
+                        </div> 
 
                     </div> <!--/ .facebook-caption -->
 
                     <div class="shade" id="timelineShade">
                         <form id="bgimageform" name="newad" method="post" enctype="multipart/form-data" action="">
                             
-                            <!-- <div class="uploadFile timelineUploadBG col-lg-2 col-sm-2 col-12 pull-right">
-                                <span class="file-input btn btn-primary btn-file">
-                                    Upload <input type="file" name="image" id="bgphotoimg" class=" custom-file-input" original-title="Change Cover Picture" multiple>
-                                </span>
-                                <input name="Submit" type="submit" value="Upload image"> 
-                            </div> -->
                         </form> <!--/ #bgimageform -->
                     </div> <!--/ #shade -->
 
@@ -82,107 +89,121 @@
                         </div>
                     </div> --> <!--/ #timelineProfilePic -->
 
-                </div> <!--/ #timelineContainer -->    
+                </div> <!--/ #timelineContainer --> 
 
-                <div class="page-maker--placeholder" style="display: none">
-                    <div class="facebook">
-                        <div class="facebook-profile">
-                            <p>Profile Picture</p>
-                        </div><!--/.facebook-profile -->
-                        <div class="facebook-clear-area left"></div>
-                        <div class="facebook-clear-area right"></div>
-                        <div class="facebook-caption">
-                            <div class="facebook-caption--inner">
-                                <h3>Headline</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Mauris posuere vitae nulla et commodo.
-                                </p>
-                                <p><span>&lt;First Name&gt;</span> <span>&lt;Lasr Name&gt;</span></p>
-                            </div><!--/ .facebook-caption--inner -->
-                            <div class="facebook-caption-trapezoid"></div>
-                        </div><!--/ .facebook-caption -->
-                        <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive">
-                    </div><!--/ .facebook -->
-                </div><!--/ .page-maker--placeholder -->
+                <div id="cover2" class="timelineContainer">
 
-                <div class="page-maker--placeholder" style="display: none">
-                    <div class="facebook">
-                        <div class="facebook-profile">
-                            <p>Profile Picture</p>
-                        </div><!--/.facebook-profile -->
-                        <div class="facebook-clear-area left"></div>
-                        <div class="facebook-clear-area right"></div>
-                        <div class="facebook-caption right">
-                            <div class="facebook-caption--inner">
-                                <h3>Headline</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Mauris posuere vitae nulla et commodo.
-                                </p>
-                                <p><span>&lt;First Name&gt;</span> <span>&lt;Lasr Name&gt;</span></p>
-                            </div><!--/ .facebook-caption--inner -->
-                            <div class="facebook-caption-trapezoid"></div>
-                        </div><!--/ .facebook-caption -->
-                        <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive">
-                    </div><!--/ .facebook -->
-                </div><!--/ .page-maker--placeholder -->
+                    <div id="timelineBackground" class="page-maker--placeholdermain">
+                        <!-- <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive"> -->
+                        <?php
+                                 $session = new Zend_Session_Namespace('srcImage');
+                        ?>
+                       <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" id="timelineBGload" class="headerimage ui-corner-all ui-draggable img-responsive" />
 
-                <div class="page-maker--placeholder" style="display: none">
-                    <div class="facebook">
-                        <div class="facebook-profile">
-                            <p>Profile Picture</p>
-                        </div><!--/.facebook-profile -->
-                        <div class="facebook-clear-area left"></div>
-                        <div class="facebook-clear-area right"></div>
-                        <div class="facebook-caption right condensed no-dent red">
-                            <!--
-                                .right      Supaya caption-nya ada di kanan
-                                .no-dent    Supaya 'penyok'-nya ilang
-                                .condensed  Ukurannya jadi lebih imut
-                                .green      Jadi ijo
-                                .light_blue Jadi biru cerah
-                                .red        Jadi merah
-                                .orange     Jadi jingga / oranye
-                                .purple     Jadi Jandaaaa
-                            -->
-                            <div class="facebook-caption--inner">
-                                <h3>Headline</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                </p>
-                                <p><span>&lt;First Name&gt;</span> <span>&lt;Lasr Name&gt;</span></p>
-                            </div><!--/ .facebook-caption--inner -->
-                        </div><!--/ .facebook-caption -->
-                        <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive">
-                    </div><!--/ .facebook -->
-                </div><!--/ .page-maker--placeholder -->
+                    </div><!--/ .page-maker--placeholder -->
 
-                <div class="page-maker--placeholder" style="display: none">
+                    <div id="place" class="landscape facebook-caption rightside">
+                        <div id="notepad" class="facebook-caption--inner landscape-bg bg-red">
+
+                            <h3><span id="judul">Headline</span></h3> <br />
+                            <span id="konten">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+                                Ut wisi enim ad minim veniam
+                            </span> <br />
+                            
+                        </div><!--/ .facebook-caption--inner -->
+                        <!-- <div class="facebook-caption-trapezoid"></div> -->
+
+                        <div id="edge-note" class="edge e-red">
+                            <span id="nama">Robbi Nugraha</span>
+                        </div> 
+
+                    </div> <!--/ .facebook-caption -->
+
+                    <div class="shade" id="timelineShade">
+                        <form id="bgimageform" name="newad" method="post" enctype="multipart/form-data" action="">
+                            
+                        </form> <!--/ #bgimageform -->
+                    </div> <!--/ #shade -->
+
+                    <!-- <div id="timelineProfilePic">
+                        <div style="padding:5px">
+                            <img src="/website/static/images/profile-maker/Allianz Agent Facebook Profile Picture.png" style="width:100%">
+                        </div>
+                    </div> --> <!--/ #timelineProfilePic -->
+
+                </div> <!--/ #timelineContainer -->
+
+                <div id="cover3" class="timelineContainer">
+
+                    <div id="timelineBackground" class="page-maker--placeholdermain">
+                        <!-- <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive"> -->
+                        <?php
+                                 $session = new Zend_Session_Namespace('srcImage');
+                        ?>
+                       <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" id="timelineBGload" class="headerimage ui-corner-all ui-draggable img-responsive" />
+
+                    </div><!--/ .page-maker--placeholder -->
+
+                    <div id="place" class="portrait facebook-caption leftside">
+                        <div id="notepad" class="facebook-caption--inner portrait-bg bg-orange">
+
+                            <h3><span id="judul">Headline</span></h3> <br />
+                            <span id="konten">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+                                Ut wisi enim ad minim veniam
+                            </span> <br />
+                            
+                        </div><!--/ .facebook-caption--inner -->
+                        <!-- <div class="facebook-caption-trapezoid"></div> -->
+
+                        <div id="edge-note" class="edge e-orange">
+                            <span id="nama">Robbi Nugraha</span>
+                        </div> 
+
+                    </div> <!--/ .facebook-caption -->
+
+                    <div class="shade" id="timelineShade">
+                        <form id="bgimageform" name="newad" method="post" enctype="multipart/form-data" action="">
+                            
+                        </form> <!--/ #bgimageform -->
+                    </div> <!--/ #shade -->
+
+                    <!-- <div id="timelineProfilePic">
+                        <div style="padding:5px">
+                            <img src="/website/static/images/profile-maker/Allianz Agent Facebook Profile Picture.png" style="width:100%">
+                        </div>
+                    </div> --> <!--/ #timelineProfilePic -->
+
+                </div> <!--/ #timelineContainer -->
+
+
+                <div id="ava1" class="page-maker--placeholder" style="">
                     <div class="avatar">
-                        <div class="avatar-caption">
+                        <div id="avacapture1" class="avatar-caption">
                             <div class="avatar-caption--logo">
                                 <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
                             </div><!--/ .avatar-caption--logo -->
                         </div><!--/ .avatar-caption -->
-                        <img src="http://placehold.it/256/256" alt="Profile Picture" class="img-responsive">
+                        <img src="http://placehold.it/472x394" alt="Profile Picture" class="img-responsive">
                     </div><!--/ .facebook -->
                 </div><!--/ .page-maker--placeholder -->
 
-                <div class="page-maker--placeholder" style="display: none">
+                <div id="ava2" class="page-maker--placeholder" style="">
                     <div class="avatar">
-                        <div class="avatar-caption">
+                        <div id="avacapture2" class="avatar-caption">
                             <div class="avatar-caption--logo">
                                 <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
                             </div><!--/ .avatar-caption--logo -->
                             <div class="avatar-caption--footer">
                                 <i class="fa fa-facebook-square fa-2x"></i>&nbsp;
                                 <span>Allianz Indonesia</span>&nbsp;
-                                <strong>&lt;First Name&gt;</strong>&nbsp;
-                                <strong>&lt;Last Name&gt;</strong>
+                                <strong><span id="cname">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
                             </div><!--/ .avatar-caption-footer -->
                         </div><!--/ .avatar-caption -->
-                        <img src="http://placehold.it/256/256" alt="Profile Picture" class="img-responsive">
+                        <img src="http://placehold.it/472x394" alt="Profile Picture" class="img-responsive">
                     </div><!--/ .facebook -->
                 </div><!--/ .page-maker--placeholder -->
 
@@ -205,7 +226,9 @@
                                     <label>Description</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <textarea class="form-control" name="content" id="tengah" rows="5"></textarea>
+                                    <!-- <div class="highlighter" id="overflowText"></div> -->
+                                    <textarea class="form-control" name="content" id="tengah" maxlength="200" rows="5"></textarea>
+                                    <div id="counter">Letters remaining: <span id="char">140</span></div>
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div class="row">
@@ -350,11 +373,3 @@
     </div><!--/ .container -->
 </section><!--/ .profile-maker -->
 
-
-
-<!-- Javascript -->
-<!-- <script src="/website/static/profil-maker/js/jquery.min.js"></script> -->
-<script src="/website/static/profil-maker/js/jquery-ui.min.js"></script>
-<script src="/website/static/profil-maker/js/jquery.wallform.js"></script>
-<script src="/website/static/profil-maker/js/javascript.js"></script>
-<script src="http://html2canvas.hertzen.com/build/html2canvas.js"></script>
