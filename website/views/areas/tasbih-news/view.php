@@ -175,13 +175,74 @@
                         </div><!--/ .sidebar-item--header -->
                         <div class="sidebar-item--content">
                             <ul class="sidebar-nav">
-                                <li><a href="#">10 Alasan mengapa masuk islam itu tindakan yang benar <small><em>Rab, 14 Feb 2015</em></small></a></li>
-                                <li><a href="#">Berani Mengatakan Tiada Tuhan Selain Allah di Depan Densus 88? <small>Sen, 12 Feb 2015</small></a></li>
-                                <li><a href="#">Jihad Tidak Hanya Perang <small>Sen, 12 Feb 2015</small></a></li>
-                                <li><a href="#">Syariat Islam Harga Mati <small>Ming, 11 Feb 2015</small></a></li>
-                                <li><a href="#">Komunis Dilestarikan, Islam Dihancurkan Pelan-Pelan <small>Sab, 10 Feb 2015</small></a></li>
-                                <li><a href="#">Shalat Berjamaah di Masjid itu Fardu Ain <small>Sab, 10 Feb 2015</small></a></li>
-                                <li><a href="#">Katanya "Janganlah Kamu Mendekati Zina" Mendekati Aja Udah Jangan, Gimana Kalo Lewat? <small>Kam, 8 Feb 2015</small></a></li>
+                                            <li>
+                                                <?php
+                                                    
+                                                    $sideList[0] = new Object_TasbihNews_List();
+                                                    $sideList[0]->setCondition("o_path LIKE '/tasbih-news/have-hajj-saving/have-insurance/'");
+                                                    $sideList[0]->setOrderKey("RAND()", false);
+                                                    $sideList[0]->setLimit(1);
+                                                    //print_r($sideList[0]);
+                                                    foreach ($sideList[0] as $key) {
+                                                    //print_r($key);
+                                                 ?>
+                                                <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                                    <?php echo $key->title; ?>
+                                                </a>
+                                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
+                                                <?php } ?>
+                                            </li>
+                                                                                    <li>
+                                                <?php
+                                                    
+                                                    $sideList[1] = new Object_TasbihNews_List();
+                                                    $sideList[1]->setCondition("o_path LIKE '/tasbih-news/have-hajj-saving/no-insurance/'");
+                                                    $sideList[1]->setOrderKey("RAND()", false);
+                                                    $sideList[1]->setLimit(1);
+                                                    //print_r($sideList[0]);
+                                                    foreach ($sideList[1] as $key) {
+                                                    //print_r($key);
+                                                 ?>
+                                                <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                                    <?php echo $key->title; ?>
+                                                </a>
+                                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
+                                                <?php } ?>
+                                            </li>
+                                                                                    <li>
+                                                <?php
+                                                    
+                                                    $sideList[2] = new Object_TasbihNews_List();
+                                                    $sideList[2]->setCondition("o_path LIKE '/tasbih-news/no-hajj-saving/have-insurance/'");
+                                                    $sideList[2]->setOrderKey("RAND()", false);
+                                                    $sideList[2]->setLimit(1);
+                                                    //print_r($sideList[0]);
+                                                    foreach ($sideList[2] as $key) {
+                                                    //print_r($key);
+                                                 ?>
+                                                <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                                    <?php echo $key->title; ?>
+                                                </a>
+                                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
+                                                <?php } ?>
+                                            </li>
+                                                                                    <li>
+                                                <?php
+                                                    
+                                                    $sideList[3] = new Object_TasbihNews_List();
+                                                    $sideList[3]->setCondition("o_path LIKE '/tasbih-news/no-hajj-saving/no-insurance/'");
+                                                    $sideList[3]->setOrderKey("RAND()", false);
+                                                    $sideList[3]->setLimit(1);
+                                                    //print_r($sideList[0]);
+                                                    foreach ($sideList[3] as $key) {
+                                                    //print_r($key);
+                                                 ?>
+                                                <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                                    <?php echo $key->title; ?>
+                                                </a>
+                                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
+                                                <?php } ?>
+                                            </li>
                             </ul>
                         </div><!--/ .sidebar-item--content -->
                     </div><!--/ .sidebar-item -->
