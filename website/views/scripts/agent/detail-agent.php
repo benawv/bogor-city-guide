@@ -319,7 +319,7 @@
                                 //echo $getStatus;
                                 if($session->Frekuensi == "Semesteran")
                                 {
-                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")."atau sebesar ".'<br/>Rp. '.number_format($session->Calculation/2,0,',','.')." per Semester";
+                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")." atau sebesar ".'<br/>Rp. '.number_format($session->Calculation/2,0,',','.')." per Semester";
                                 }
                                 elseif($session->Frekuensi == "Triwulan")
                                 {
