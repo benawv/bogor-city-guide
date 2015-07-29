@@ -17,7 +17,10 @@ function readURL(input) {
 
         <div class="row profile-maker--title">
             <div class="col-xs-12">
-                <h2>Page Cover Landscaped Notepad</h2>
+                <h2><script>
+                var title = getCookie("keterangan");
+                document.write(title);
+            </script></h2>
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
 
@@ -27,8 +30,10 @@ function readURL(input) {
                 <div class="profile-maker--uploader">
                     <p>
                         Upload your files here. Supported formats: JPG and PNG,<br />
-                        Page cover landscaped notepad<br />
-                        (851 x 351)
+                        <script>
+                        var title = getCookie("keterangan");
+                        document.write(title);
+                        </script>
                     </p>
                     <form role="form" action="/upload-image/" method="post" enctype="multipart/form-data">
                         <div class="form-group">
@@ -39,7 +44,7 @@ function readURL(input) {
                         </div><!--/ .form-group -->
                         <div class="form-group">
                             <!--<a href="/profil-maker/page3" class="btn btn-primary">-->
-                                <input type="submit" value="Upload" class="btn btn-primary"/>
+                                <input type="submit" value="Unggah" class="btn btn-primary"/>
                             <!--</a>-->
                             <a href="javascript:history.go(-1);" class="btn btn-default">Kembali</a>
                         </div><!--/ .form-group -->
@@ -75,8 +80,8 @@ function readURL(input) {
            // setCookie("preview", preview);
            //}
             //alert("preview : "+preview);
+            getCookie("template");
 
-           //alert(getCookie("template"));
 
         </script>
 

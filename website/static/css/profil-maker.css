@@ -55,6 +55,11 @@ span#nama {
   cursor: inherit;
   display: block;
 }
+#counter {
+  font-size: 14px;
+  padding: 5px 0;
+  color: #757575;
+}
 input[readonly] {
   background-color: white !important;
   cursor: text !important;
@@ -123,8 +128,11 @@ section.profile-maker {
       section.profile-maker .page-maker--form .page-maker--form-inner .btn {
         margin: 0 auto 20px; }
   section.profile-maker .timelineContainer {
-      width: 100%;
+      /*width: 100%;*/
       position: relative;
+      width: 851px;
+      max-width: 851px;
+      margin: 0 auto 32px;
       /*background: #fff;*/ } 
   section.profile-maker .page-maker--placeholder {
     margin: 0 auto 32px; }         
@@ -148,7 +156,10 @@ section.profile-maker {
       display: block;
       border: none; }
     section.profile-maker .page-maker--placeholdermain > img.headerimage {
-      cursor: move; }  
+      cursor: move;
+      display: block;
+      margin-left: auto;
+      margin-right: auto; }  
     section.profile-maker .timelineContainer #timelineProfilePic {
       width: 160px;
        height: 160px; 
@@ -286,12 +297,14 @@ section.profile-maker {
           border: solid 100px #e4002b; }
         section.profile-maker .page-maker--placeholder .facebook .facebook-caption > .facebook-caption--inner,
         section.profile-maker .timelineContainer .facebook-caption > .facebook-caption--inner {
-          padding: 12px 20px 0; }
+          padding: 12px 20px 0; 
+          overflow: hidden; }
         section.profile-maker .timelineContainer .facebook-caption > .facebook-caption--inner span {
           display: block;
           /*margin: 10px 0;*/ } 
         section.profile-maker .timelineContainer .facebook-caption > .facebook-caption--inner span#konten {
           font-size: 14px;
+          word-wrap: break-word;
         }   
         section.profile-maker .page-maker--placeholder .facebook .facebook-caption .facebook-caption-trapezoid,
         section.profile-maker .timelineContainer .facebook-caption .facebook-caption-trapezoid {

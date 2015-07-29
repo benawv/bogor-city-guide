@@ -332,12 +332,14 @@
                                     <ol>
                                             <li>
                                                 <?php
-                                                    //$entries=Object_Abstract::getByPath('/tasbih-news/have-hajj-saving/have-insurance/');
-                                                    $entries = new Object_TasbihNews_List();
-                                                    //$entries->setO_parentId($getId->o_id);
-                                                    $entries->setLimit(1);
-                                                    $entries->setOrderKey("RAND()", false);
-                                                    foreach ($entries as $key) {
+                                                    
+                                                    $sideList[0] = new Object_TasbihNews_List();
+                                                    $sideList[0]->setCondition("o_path LIKE '/tasbih-news/have-hajj-saving/have-insurance/'");
+                                                    $sideList[0]->setOrderKey("RAND()", false);
+                                                    $sideList[0]->setLimit(1);
+                                                    //print_r($sideList[0]);
+                                                    foreach ($sideList[0] as $key) {
+                                                    //print_r($key);
                                                  ?>
                                                 <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
                                                     <?php echo $key->title; ?>
@@ -345,15 +347,16 @@
                                                 <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
                                                 <?php } ?>
                                             </li>
-                                        
-                                            <li>
+                                                                                    <li>
                                                 <?php
-                                                    //$entries=Object_Abstract::getByPath('/tasbih-news/have-hajj-saving/have-insurance/');
-                                                    $entries = new Object_TasbihNews_List();
-                                                    //$entries->setO_parentId($getId->o_id);
-                                                    $entries->setLimit(1);
-                                                    $entries->setOrderKey("RAND()", false);
-                                                    foreach ($entries as $key) {
+                                                    
+                                                    $sideList[1] = new Object_TasbihNews_List();
+                                                    $sideList[1]->setCondition("o_path LIKE '/tasbih-news/have-hajj-saving/no-insurance/'");
+                                                    $sideList[1]->setOrderKey("RAND()", false);
+                                                    $sideList[1]->setLimit(1);
+                                                    //print_r($sideList[0]);
+                                                    foreach ($sideList[1] as $key) {
+                                                    //print_r($key);
                                                  ?>
                                                 <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
                                                     <?php echo $key->title; ?>
@@ -361,15 +364,16 @@
                                                 <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
                                                 <?php } ?>
                                             </li>
-                                        
-                                            <li>
+                                                                                    <li>
                                                 <?php
-                                                    //$entries=Object_Abstract::getByPath('/tasbih-news/have-hajj-saving/have-insurance/');
-                                                    $entries = new Object_TasbihNews_List();
-                                                    //$entries->setO_parentId($getId->o_id);
-                                                    $entries->setLimit(1);
-                                                    $entries->setOrderKey("RAND()", false);
-                                                    foreach ($entries as $key) {
+                                                    
+                                                    $sideList[2] = new Object_TasbihNews_List();
+                                                    $sideList[2]->setCondition("o_path LIKE '/tasbih-news/no-hajj-saving/have-insurance/'");
+                                                    $sideList[2]->setOrderKey("RAND()", false);
+                                                    $sideList[2]->setLimit(1);
+                                                    //print_r($sideList[0]);
+                                                    foreach ($sideList[2] as $key) {
+                                                    //print_r($key);
                                                  ?>
                                                 <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
                                                     <?php echo $key->title; ?>
@@ -377,15 +381,16 @@
                                                 <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
                                                 <?php } ?>
                                             </li>
-                                        
-                                            <li>
+                                                                                    <li>
                                                 <?php
-                                                    //$entries=Object_Abstract::getByPath('/tasbih-news/have-hajj-saving/have-insurance/');
-                                                    $entries = new Object_TasbihNews_List();
-                                                    //$entries->setO_parentId($getId->o_id);
-                                                    $entries->setLimit(1);
-                                                    $entries->setOrderKey("RAND()", false);
-                                                    foreach ($entries as $key) {
+                                                    
+                                                    $sideList[3] = new Object_TasbihNews_List();
+                                                    $sideList[3]->setCondition("o_path LIKE '/tasbih-news/no-hajj-saving/no-insurance/'");
+                                                    $sideList[3]->setOrderKey("RAND()", false);
+                                                    $sideList[3]->setLimit(1);
+                                                    //print_r($sideList[0]);
+                                                    foreach ($sideList[3] as $key) {
+                                                    //print_r($key);
                                                  ?>
                                                 <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
                                                     <?php echo $key->title; ?>

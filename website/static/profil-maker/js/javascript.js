@@ -198,18 +198,19 @@ $(document).ready(function()
 	                            var dataURL = canvas.toDataURL("image/png");
 
 	                           	//$('#imaged').append('<img src="'+dataURL+'" />');
+
 	                            //$('#imaged').html('Generating..');
 	                            // $.post('image.php',{image: dataURL},function(data){
 	                            //     $('#imaged').html(data);
 	                            //     console.log(data);
 	                            // });
 
-	                			// Random filename after download
-	                			var filename = new Array(5).join().replace(/(.|$)/g, function(){return ((Math.random()*36)|0).toString(36);})
+	                			//Random filename after download
+	                			var filename = new Array(2).join().replace(/(.|$)/g, function(){return ((Math.random()*36)|0).toString(36);})
 
 	        						var link = document.createElement('a');
 									link.href = dataURL;
-									link.download = filename+".png";
+									link.download = "Allianz_download_"+filename+".png";
 									document.body.appendChild(link);
 									link.click();
 
@@ -234,6 +235,36 @@ $(document).ready(function()
  				});
 
 
-			}); 	
+			});
+
+			//text counter
+				function limitTextSize(e) {
+				    var max = 180
+				    var txt = $("#tengah").val();
+				    //var left = txt.substring(0, max);
+				    //var right = txt.substring(max);
+				    //var html = left + '<span class="highlight">' + right + "</span>";
+				    //$("#overflowText").html(html);
+				    $("#counter").html("Letters remaining: <span id='char'> " + (max - txt.length) + "</span>");
+				    $("#preview, #save").attr("disabled", txt.length > max);
+				    if(txt.length > max){
+				    	//alert("over");
+				    	$("#char").css("color", "red");
+				    }
+				}
+
+				function maxLength(el) {
+				    if (!('maxLength' in el)) {
+				        var max = el.attributes.maxLength.value;
+				        el.onkeypress = function () {
+				            if (this.value.length >= max) 
+				            	return false;
+				        };
+				    }
+				}
+				$(document).ready(function () {
+				    $("#tengah").bind('input propertychange', limitTextSize)
+				    maxLength($("#tengah"));
+				}); 	
 
 
