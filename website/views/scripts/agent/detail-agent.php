@@ -317,6 +317,14 @@
                                 $getStatus=$session->emailFrom;
                                 $idObject = $session->idObject;
                                 //echo $getStatus;
+                                if($session->Frekuensi == "Semesteran")
+                                {
+                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")."atau sebesar ".'Rp. '.number_format($session->Calculation/2,0,',','.')." per Semester";
+                                }
+                                elseif($session->Frekuensi == "Triwulan")
+                                {
+                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")." atau sebesar ".'Rp. '.number_format($session->Calculation/4,0,',','.')." per Triwulan";
+                                } else $nilai="";
 
                                 if($session->JenisKelamin=="l"){
                                     $jenis = "Pria";
@@ -361,23 +369,8 @@
                                                     <td>: '.$session->Kontribusi.' tahun</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td>Premi yang harus anda bayarkan</td>
-                                                    <td>: Rp '.number_format($session->Calculation,0,".",",").' per Tahun'.
-                                                    <?php
-                                                        if($session->Frekuensi == "Semesteran")
-                                                        {
-                                                            $nilai = $session->Calculation/2;
-                                                            echo "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per Semester";
-                                                        }
-                                                        elseif($session->Frekuensi == "Triwulan")
-                                                        {
-                                                            $nilai = $session->Calculation/4;
-                                                            echo "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per Triwulan";
-                                                        }
-
-                                                    ?>
-                                                    
-                                                    </td>
+                                                    <td>Premi yang harus anda bayarkan per Tahun</td>
+                                                    <td>:'. $nilai.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Keterangan tambahan</td>
