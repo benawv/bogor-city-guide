@@ -225,7 +225,7 @@
                                 <div class="col-xs-12 col-md-9">
                                     <!-- <div class="highlighter" id="overflowText"></div> -->
                                     <textarea class="form-control" name="content" id="tengah" maxlength="200" rows="5"></textarea>
-                                    <div id="counter">Letters remaining: <span id="char">140</span></div>
+                                    <div id="counter">Letters remaining: <span id="char">180</span></div>
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div class="row">
