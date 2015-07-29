@@ -361,8 +361,23 @@
                                                     <td>: '.$session->Kontribusi.' tahun</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td>Premi yang harus anda bayarkan pertahun</td>
-                                                    <td>: Rp '.number_format($session->Calculation,0,".",",").'</td>
+                                                    <td>Premi yang harus anda bayarkan</td>
+                                                    <td>: Rp '.number_format($session->Calculation,0,".",",").' per Tahun'.
+                                                    <?php
+                                                        if($session->Frekuensi == "Semesteran")
+                                                        {
+                                                            $nilai = $session->Calculation/2;
+                                                            echo "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per Semester";
+                                                        }
+                                                        elseif($session->Frekuensi == "Triwulan")
+                                                        {
+                                                            $nilai = $session->Calculation/4;
+                                                            echo "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per Triwulan";
+                                                        }
+
+                                                    ?>
+                                                    
+                                                    </td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Keterangan tambahan</td>
