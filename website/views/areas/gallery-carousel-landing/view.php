@@ -19,6 +19,11 @@
 											)); 
 										?>
 			                        	</p>
+<style>
+.landing-tasbih-header-caption, .landing-tasbih-header-caption .container, .landing-tasbih-header-caption .container .row{
+										height: 0px !important;
+}
+</style>
 <?php } ?>
 
 <style>
