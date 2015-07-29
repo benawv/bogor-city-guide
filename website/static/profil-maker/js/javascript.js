@@ -235,6 +235,36 @@ $(document).ready(function()
  				});
 
 
-			}); 	
+			});
+
+			//text counter
+				function limitTextSize(e) {
+				    var max = 180
+				    var txt = $("#tengah").val();
+				    //var left = txt.substring(0, max);
+				    //var right = txt.substring(max);
+				    //var html = left + '<span class="highlight">' + right + "</span>";
+				    //$("#overflowText").html(html);
+				    $("#counter").html("Letters remaining: <span id='char'> " + (max - txt.length) + "</span>");
+				    $("#preview, #save").attr("disabled", txt.length > max);
+				    if(txt.length > max){
+				    	//alert("over");
+				    	$("#char").css("color", "red");
+				    }
+				}
+
+				function maxLength(el) {
+				    if (!('maxLength' in el)) {
+				        var max = el.attributes.maxLength.value;
+				        el.onkeypress = function () {
+				            if (this.value.length >= max) 
+				            	return false;
+				        };
+				    }
+				}
+				$(document).ready(function () {
+				    $("#tengah").bind('input propertychange', limitTextSize)
+				    maxLength($("#tengah"));
+				}); 	
 
 
