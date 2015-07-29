@@ -324,7 +324,7 @@
                                 elseif($session->Frekuensi == "Triwulan")
                                 {
                                                         $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")." atau sebesar ".'<br/>Rp. '.number_format($session->Calculation/4,0,',','.')." per Triwulan";
-                                } else $nilai="";
+                                } else $nilai= ' Rp. '.number_format($session->Calculation,0,".",",");
 
                                 if($session->JenisKelamin=="l"){
                                     $jenis = "Pria";
