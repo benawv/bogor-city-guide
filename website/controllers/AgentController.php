@@ -279,16 +279,16 @@ class AgentController extends Website_Controller_Action {
         if($Frekuensi == "Semesteran")
         {
 				$nilai = $Calculation/2;
-				$per = "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per semester";
+				$per = "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per semester.";
         }
         elseif($Frekuensi == "Triwulan")
         {
 				$nilai = $Calculation/4;
-				$per = "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per triwulan";
+				$per = "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per triwulan.";
         }
         else
         {
-				$per = " ";
+				$per = ".";
         }
 
 		$hasil = number_format($Calculation,0,",",".");
