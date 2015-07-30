@@ -275,6 +275,21 @@ class AgentController extends Website_Controller_Action {
 		//	$frek = 'Triwulan';
 		//}
 		$frek = $Frekuensi;
+        
+        if($Frekuensi == "Semesteran")
+        {
+				$nilai = $Calculation/2;
+				$per = "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per semester.";
+        }
+        elseif($Frekuensi == "Triwulan")
+        {
+				$nilai = $Calculation/4;
+				$per = "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per triwulan.";
+        }
+        else
+        {
+				$per = ".";
+        }
 
 		$hasil = number_format($Calculation,0,",",".");
 		$document = '/email/email-agentasbih';
@@ -291,7 +306,8 @@ class AgentController extends Website_Controller_Action {
 						'frek' => $frek,
 						'JK' => $JK,
 						'nohp' => $nohp,
-						'ket' => $ket
+						'ket' => $ket,
+                        'per' => $per
 						);
 		$bodyEmail = "Tanggal Perhitungan: ".$date_tglBuat1."<br>Nama: ".$nama."<br>
 		No Handphone: ".$nohp."<br>Email: ".$email."<br>Tanggal Lahir: ".$date_tglLahir1."<br>

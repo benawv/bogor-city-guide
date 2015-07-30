@@ -77,12 +77,12 @@
 
 
                 	<?php if($this->editmode) { ?>
-	            How many slides you want to show?
+	            How many box you want to show?
 	
 	            <?php
 	                // prepare the store
 	                $selectStore = [];
-	                for($i=2; $i<30; $i++) {
+	                for($i=2; $i<=8; $i++) {
 	                    $selectStore[] = [$i, $i];
 	                }
 	            ?>
