@@ -220,7 +220,7 @@ class MobilkuController extends Website_Controller_Action {
 
 		}
 		print_r($rates);
-		// echo $paket;
+		// echo $condition;
 		die();
 	}
 	

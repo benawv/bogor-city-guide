@@ -1032,8 +1032,10 @@ $(document).ready(function(){
         var getColom;
         var harga=clearFormat($('#harga').val());
         var tahun_pembuatan=($('#tahun_pembuatan').val());
-        var d = new Date();
-        var n = d.getFullYear();
+        var periode=($('#periode').val());
+        var piece_periode = periode.split('/');
+        var d = piece_periode[2];
+        var n = d;
         var ages=n-parseInt(tahun_pembuatan);
         var model;
         var regno;
@@ -1096,9 +1098,10 @@ $(document).ready(function(){
         //console.log(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
         //calc =parseFloat(getWorkshopNonPack(merk_html,ages));
         calc =parseFloat(getWorkshopNonPack(merk_html,ages))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2)/100);
+        console.log("merk_html="+merk_html+"|"+ages);
+        console.log("1==>"+parseFloat(getWorkshopNonPack(merk_html,ages)));
+        console.log("2==>"+(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2)/100));
         workshop_persen_show = calc.toFixed(4);
-
-        calc2 =parseFloat(getWorkshopNonPack(merk_html,ages))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2)/100);
         workshop_persen = calc.toFixed(6);
         
         // if (tlo= 5+wilayah) else (1+wilayah)
