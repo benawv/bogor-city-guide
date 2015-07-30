@@ -23,22 +23,22 @@ $(document).ready(function()
 
 			/* Banner position drag */
 			$("body").on('mouseover','.headerimage',function ()
-			{
+			{	
 				var y1 = $('#timelineBackground').height();
 				var y2 =  $('.headerimage').height();
 				$(this).draggable({
 					scroll: true,
-					axis: "y",
-					drag: function(event, ui) {
-						if(ui.position.top >= 0)
-							{
-								ui.position.top = 0;
-							}
-						else if(ui.position.top <= y1 - y2)
-							{
-								ui.position.top = y1 - y2;
-							}
-					},
+					axis: "x,y",
+					// drag: function(event, ui) {
+					// 	if(ui.position.top >= 0)
+					// 		{
+					// 			ui.position.top = 0;
+					// 		}
+					// 	else if(ui.position.top <= y1 - y2)
+					// 		{
+					// 			ui.position.top = y1 - y2;
+					// 		}
+					//},
 					stop: function(event, ui)
 						{
 						}
@@ -148,7 +148,7 @@ $(document).ready(function()
 			//Preview button
 
  			$(function() { 
-                    $("#preview").click(function(){
+                    $("#preview, #save").click(function(){
                     	$('#judul, #konten, #nama, #cname').empty();
                         $headline = $('#atas').val();
                         $konten = $('#tengah').val();
@@ -189,6 +189,9 @@ $(document).ready(function()
                 $( "#landscape" ).click(function() {  	
                 	$('#place').prop('class', 'landscape facebook-caption leftside');
                 });
+
+                //hiding template
+                $("#cover2, #cover3, #ava1, #ava2, #gambar, #pilih").css("display", "none");
                 
                 //Capture image and download it   
 				$('body').on('click','#download',function(){

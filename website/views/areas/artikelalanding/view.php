@@ -108,7 +108,7 @@
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-4 pl8">
 
-                <div class="landing-tasbih-grid--item red">
+                <div class="landing-tasbih-grid--item green">
                     <div class="landing-tasbih-grid--item-inner">
                         <h3><?= $this->input("headline2") ?></h3>
                         <?php echo $this->wysiwyg('title-box-description-item')?>

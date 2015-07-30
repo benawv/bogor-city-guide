@@ -165,12 +165,12 @@
 			if($Frekuensi == "Semesteran")
 			{
 				$nilai = $Calculation/2;
-				$per = "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per Semester";
+				$per = "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per semester";
 			}
 			elseif($Frekuensi == "Triwulan")
 			{
 				$nilai = $Calculation/4;
-				$per = "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per Triwulan";
+				$per = "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per triwulan";
 			}
 			else
 			{
