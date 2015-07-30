@@ -319,11 +319,11 @@
                                 //echo $getStatus;
                                 if($session->Frekuensi == "Semesteran")
                                 {
-                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")." atau sebesar ".'<br/>Rp. '.number_format($session->Calculation/2,0,',','.')." per Semester";
+                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")." atau sebesar ".'<br/>Rp. '.number_format($session->Calculation/2,0,',','.')." per semester";
                                 }
                                 elseif($session->Frekuensi == "Triwulan")
                                 {
-                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")." atau sebesar ".'<br/>Rp. '.number_format($session->Calculation/4,0,',','.')." per Triwulan";
+                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")." atau sebesar ".'<br/>Rp. '.number_format($session->Calculation/4,0,',','.')." per triwulan";
                                 } else $nilai= ' Rp. '.number_format($session->Calculation,0,".",",");
 
                                 if($session->JenisKelamin=="l"){
@@ -377,7 +377,7 @@
                                                     <td> '.$session->Kontribusi.' tahun</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td>Premi yang harus anda bayarkan per Tahun</td>
+                                                    <td>Premi yang harus anda bayarkan per tahun</td>
                                                     <td>:</td>
                                                     <td>'. $nilai.'</td>
                                                 </tr>';

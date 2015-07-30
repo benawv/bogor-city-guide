@@ -116,18 +116,18 @@
 
                     <div class="form-box" id="notif-confirm">
                         <h1 style="text-align:center">TERIMA KASIH</h1>
-                        <h3  style=" color:black; text-align:center;"><strong> <a href="#" class="calc-overlay-trigger"  data-toggle="modal" data-target="#premi" style="color:#009a44">Premi</a> yang harus Anda bayarkan sebesar <?php echo 'Rp. '.number_format($session->Calculation,0,',','.').' per Tahun'; ?> 
+                        <h3  style=" color:black; text-align:center;"><strong> <a href="#" class="calc-overlay-trigger"  data-toggle="modal" data-target="#premi" style="color:#009a44">Premi</a> yang harus Anda bayarkan sebesar <?php echo 'Rp. '.number_format($session->Calculation,0,',','.').' per tahun'; ?> 
                             
                             <?php
                                     if($session->Frekuensi == "Semesteran")
                                     {
                                         $nilai = $session->Calculation/2;
-                                        echo "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per Semester";
+                                        echo "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per semester";
                                     }
                                     elseif($session->Frekuensi == "Triwulan")
                                     {
                                         $nilai = $session->Calculation/4;
-                                        echo "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per Triwulan";
+                                        echo "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per triwulan";
                                     }
                                     
                                 ?>
