@@ -113,4 +113,26 @@ class EmailController extends Website_Controller_Action {
     public function emailliveinsuranceAction(){
     
     }
+	
+	public function shareEmailAction(){
+		$document = '/email/email-share';
+		$params = array('img' => $_POST["postImg"],
+				'title' => $_POST["postTitle"],
+				'deskripsi' => $_POST["postDesc"],
+				'tanggal' => $_POST["postTanggal"],
+				'link' => $_POST["postLink"]
+				);
+		$mail = new Pimcore_Mail();
+		$mail->setSubject("Share Email");
+		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+		$mail->setDocument($document);
+		$mail->setParams($params);
+		//$mail->addTo($_POST["postEmail"]);
+		$mail->addTo("robbi@dreamcube.co.id");
+		
+		$mail->send();
+    }
+	public function templateShareEmailAction(){
+		
+    }
 }

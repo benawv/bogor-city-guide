@@ -34,10 +34,11 @@ $(document).ready(function () {
         slideshowSpeed: 6000
     });
     $(".menu-level1 > ul > li").hover(function () {
+
         var height_search = $('div.search').position().top;
         if ($(window).width() >= 960) {
             var currentMenu = $(this);
-            currentMenu.children(".menu-level2").slideDown({
+            currentMenu.children(".menu-level2").stop(true,true).delay(500).slideDown({
                 duration: 200,
                 start: function () {
                     $('div.search').addClass('aktif');
@@ -58,8 +59,9 @@ $(document).ready(function () {
             $(this).children(".menu-level2").addClass('active');
         }
     });
-    $('.primary').mouseleave(function () {
+    $('.banner').mouseleave(function () {
         if ($(window).width() >= 960) {
+            $(".menu-level2").stop(true,true).delay(500).hide();
             $(".menu-level2").hide().removeClass('active');
             $('div.search').removeClass('aktif');
         } else {
@@ -267,6 +269,54 @@ $(document).ready(function () {
                 }
             }
         }
+    });
+    $(".emailshare").on("click",function(){
+        var img = $(".imgShare").attr("srcimg");
+        var title = $(".titleShare").text();
+        
+        var limit = 32;
+        var x;
+        var deskripsi = $(".descShare p").text();
+        var words = deskripsi.split(/\s/);
+        var desc='';
+        if (words.length > limit)
+        {
+                for(x=0;x<limit;x++)
+                {
+                        if (x==0)
+                        {
+                                desc = desc+words[x];
+                        }
+                        else
+                        {
+                                desc = desc+' '+words[x];
+                        }
+                }
+                desc = desc+'....';
+        }
+        else
+        {
+                desc = deskripsi;
+        }
+        
+        var tanggal = $(".tglShare time").text();
+        var link = window.location.host + window.location.pathname;
+        
+        $.ajax({
+            type: "POST",
+            url: "/share-email/",
+            data: {
+                postImg : img,
+                postTitle : title,
+                postDesc : desc,
+                postTanggal : tanggal,
+                postLink : link
+            },
+            success: function(reponse){
+                
+            }
+        });
+        
     });
     $('.btn-group .twshare').on("click", function () {
         var url = window.location.host + window.location.pathname;

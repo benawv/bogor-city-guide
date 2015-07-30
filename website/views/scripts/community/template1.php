@@ -2,7 +2,7 @@
 	.community-btn a{
 		font-size: 25px;
 		float: left;
-		margin: 0px 5px;
+		margin: 0px 17px;
 	}
 	.community-btn{
 		float: right;
@@ -10,7 +10,7 @@
 </style>
 <link rel="stylesheet" type="text/css" href="/website/static/css/virgin2.css">
 <script type="text/javascript" src="/website/static/js/paging.js"></script>
-<div role="main" class="tips-main main" style="background: url(<?php echo $this->data->imageBackgroundDetail->path."".$this->data->imageBackgroundDetail->filename;?>);background-size: 1500px auto;background-repeat: no-repeat;background-position: top;">
+<div role="main" class="tips-main main imgShare" srcimg='<?php echo $this->data->imageBackgroundDetail->path.$this->data->imageBackgroundDetail->filename;?>' style="background: url(<?php echo $this->data->imageBackgroundDetail->path."".$this->data->imageBackgroundDetail->filename;?>);background-size: 1500px auto;background-repeat: no-repeat;background-position: top;">
 <div id="js-main-wrp" class="main-wrp" style="background-image:url(/sites/default/files/styles/hero_background_hi/public/Backgrounds/bg_space.jpg?itok=Sw8pyVQq)">
 	<header id="header" class="hdr">
 	           
@@ -44,7 +44,7 @@
 			
 			<div class="s-row hero-bnnr">
 				<div class="txt-wrp">
-					<h1><?php echo $this->data->getTitle();?></h1>
+					<h1 class="titleShare"><?php echo $this->data->getTitle();?></h1>
 				</div>
 				
 			</div>
@@ -60,12 +60,11 @@
 								<div class="community-btn">
 										<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
 										<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
+										<a href="javascript:void(0);" class="emailshare"><i class="fa fa-envelope"></i></a>
 								</div>
 								
-								<p class="custom-art art-inf">
-									<time>
-										<?php echo date("M d, Y" , strtotime($this->data->getDate()));?>
-									</time>
+								<p class="custom-art art-inf tglShare">
+									<time><?php echo date("M d, Y" , strtotime($this->data->getDate()));?></time>
 								</p>
 
 								<section class="art-athr">
@@ -106,7 +105,7 @@
 						<section class="art-sctn clrd custom-text">
 						
 							<div class="s-ct">
-								<div class="c-1of1"> 
+								<div class="c-1of1 descShare"> 
 										<?php echo $this->data->getDescription();?>
 								</div>  
 							</div>

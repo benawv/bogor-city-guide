@@ -765,7 +765,7 @@ ul.flex-direction-nav{display:none;}
 .boxes-view .items-container .item:hover .heading .btn-group{visibility:visible;}
 .btn-section{float:right !important;}
 .upperText{text-transform:uppercase;}
-.art-adv .s-ct .art-box .custom-art.art-inf{text-align:right;clear:both;}
+.art-adv .s-ct .art-box .custom-art.art-inf{text-align:right;clear:both;margin-right: 50px;}
 .ulCustomerOnline{display: block;width: 190px;}
 .arrowDown{height: 12px;width: 12px;float: right;padding-left: 3px;}
 .deactive{display: none;}
