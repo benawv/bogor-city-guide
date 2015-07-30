@@ -166,7 +166,7 @@ class MobilkuController extends Website_Controller_Action {
 		$date_tglPeriod= new Pimcore_Date($period);
 		$pakettype=$_POST['pakettype'];
 		
-		$age=(date("Y") - $th);
+		$age=(date("Y", strtotime($period)) - $th);
 
 
 		if($radio=='comprehensive'){

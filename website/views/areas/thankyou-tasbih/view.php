@@ -122,18 +122,19 @@
                                     if($session->Frekuensi == "Semesteran")
                                     {
                                         $nilai = $session->Calculation/2;
-                                        echo "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per semester";
+                                        echo " atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per semester.";
                                     }
                                     elseif($session->Frekuensi == "Triwulan")
                                     {
                                         $nilai = $session->Calculation/4;
-                                        echo "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per triwulan";
+                                        echo " atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per triwulan.";
                                     }
+                                    else echo".";
                                     
                                 ?>
                             
                             </strong></h3>
-                        <center><strong><h3 style=" color:black; text-align:center;"> Perhitungan ilustrasi produk Allianz Tasbih sudah dikirimkan ke alamat email Anda</strong></h3></center>
+                        <center><strong><h3 style=" color:black; text-align:center;"> Perhitungan ilustrasi produk Allianz Tasbih sudah dikirimkan ke alamat email Anda.</strong></h3></center>
                         <h3 style=" color:black; text-align:center;"><strong>Temukan agen terdekat: </strong></h3>
                        <br />
                         <center>
