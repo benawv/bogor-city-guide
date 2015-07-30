@@ -93,8 +93,8 @@ div.header
             min-height: 100%;
             position: absolute;
             left: 50%;
-            top: 50%;
-            @include translate3d( -50%, -50%, 0 );
+            top: 0; //50%;
+            @include translate3d( -50%, 0/*-50%*/, 0 );
         }
 
     }
