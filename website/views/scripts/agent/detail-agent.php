@@ -319,12 +319,12 @@
                                 //echo $getStatus;
                                 if($session->Frekuensi == "Semesteran")
                                 {
-                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")." atau sebesar ".'<br/>Rp. '.number_format($session->Calculation/2,0,',','.')." per semester";
+                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")." per tahun atau sebesar ".'<br/>Rp. '.number_format($session->Calculation/2,0,',','.')." per semester";
                                 }
                                 elseif($session->Frekuensi == "Triwulan")
                                 {
-                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")." atau sebesar ".'<br/>Rp. '.number_format($session->Calculation/4,0,',','.')." per triwulan";
-                                } else $nilai= ' Rp. '.number_format($session->Calculation,0,".",",");
+                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")." per tahun atau sebesar ".'<br/>Rp. '.number_format($session->Calculation/4,0,',','.')." per triwulan";
+                                } else $nilai= ' Rp. '.number_format($session->Calculation,0,".",",")." per tahun";
 
                                 if($session->JenisKelamin=="l"){
                                     $jenis = "Pria";
@@ -377,7 +377,7 @@
                                                     <td> '.$session->Kontribusi.' tahun</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td>Premi yang harus anda bayarkan per tahun</td>
+                                                    <td>Premi yang harus anda bayarkan</td>
                                                     <td>:</td>
                                                     <td>'. $nilai.'</td>
                                                 </tr>';
