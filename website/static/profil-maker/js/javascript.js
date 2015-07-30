@@ -148,7 +148,7 @@ $(document).ready(function()
 			//Preview button
 
  			$(function() { 
-                    $("#preview").click(function(){
+                    $("#preview, #save").click(function(){
                     	$('#judul, #konten, #nama, #cname').empty();
                         $headline = $('#atas').val();
                         $konten = $('#tengah').val();
