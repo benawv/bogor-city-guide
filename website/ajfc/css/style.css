@@ -635,17 +635,17 @@ div.header {
     div.header .background > img {
       padding: 0;
       margin: 0;
-      min-width: 110%;
+      min-width: 100.2%;
       max-width: none;
       min-height: 100%;
       position: absolute;
       left: 50%;
-      top: 50%;
-      -webkit-transform: translate3d(-50%, -50%, 0);
-      -moz-transform: translate3d(-50%, -50%, 0);
-      -ms-transform: translate3d(-50%, -50%, 0);
-      -o-transform: translate3d(-50%, -50%, 0);
-      transform: translate3d(-50%, -50%, 0); }
+      top: 0 !important;
+      -webkit-transform: translate3d(-50%, 0, 0);
+      -moz-transform: translate3d(-50%, 0, 0);
+      -ms-transform: translate3d(-50%, 0, 0);
+      -o-transform: translate3d(-50%, 0, 0);
+      transform: translate3d(-50%, 0, 0); }
   header .caption,
   div.header .caption {
     position: absolute;
