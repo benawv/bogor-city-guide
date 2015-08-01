@@ -1,0 +1,306 @@
+/**
+ * ./website/static/css/landing-tasbih.scss
+ * ./website/static/css/landing-tasbih.css
+ * ./website/static/css/landing-tasbih.css.map
+ * Used for Allianz Tasbih Landing Page
+ */
+/* container hack
+
+.landing-tasbih-header,
+.landing-tasbih-grid
+{
+    .container {
+      margin-right: auto;
+      margin-left: auto;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        width: 750px;
+      }
+    }
+    @media (min-width: 992px) {
+      .container {
+        width: 970px;
+      }
+    }
+    @media (min-width: 1200px) {
+      .container {
+        width: 1170px;
+      }
+    }
+}
+
+/* container hack */
+.landing-tasbih-header {
+  margin-top: -4px;
+  margin-bottom: 16px;
+  /* .container */
+  /* .landing-tasbih-header-caption */ }
+  .landing-tasbih-header > .container {
+    /* .row */ }
+  .landing-tasbih-header img.tasbih {
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    border: none; }
+  .landing-tasbih-header .landing-tasbih-header-caption {
+    position: absolute;
+    top: 32px;
+    left: 0;
+    width: 100%;
+    /* .landing-tasbih-header-caption--box */ }
+    @media (max-width: 991px) {
+      .landing-tasbih-header .landing-tasbih-header-caption {
+        position: relative;
+        top: auto;
+        left: auto; } }
+    .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box {
+      position: relative;
+      background: #009a44;
+      color: white;
+      padding: 20px 28px 0;
+      /* Color variants */
+      /* .yellow */
+      /* .orange */
+      /* .light-blue */
+      /* .blue */
+      /* .purple */
+      /* .red */
+      /*
+      $color_green: #009a44;
+      $color_yellow: #ffcd00;
+      $color_yellow_lighter: #ffd733;
+      $color_orange: #ff8200;
+      $color_light_blue: #0077c8;
+      $color_blue: #003da5;
+      $color_purple: #87189d;
+      $color_red: #e4002b;
+      */
+      /* .trapezoid */
+      /* .form-control*/ }
+      .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form {
+        margin-top: 16px; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="submit"],
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="button"],
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="reset"] {
+          background: #ffcd00;
+          border: solid 1px #ffcd00;
+          border: none; }
+          .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="submit"]:hover, .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="submit"]:focus,
+          .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="button"]:hover,
+          .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="button"]:focus,
+          .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="reset"]:hover,
+          .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box form button[type="reset"]:focus {
+            background: #ffd733; }
+      .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.yellow {
+        background: #ffcd00; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.yellow button[type="submit"] {
+          background: #003da5;
+          border: solid 1px #003da5; }
+          .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.yellow button[type="submit"]:hover, .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.yellow button[type="submit"]:focus {
+            background: #0077c8; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.yellow .trapezoid::before {
+          background: #ffcd00; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.yellow .trapezoid::after {
+          border-top-color: #ffcd00;
+          border-left-color: #ffcd00; }
+      .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.orange {
+        background: #ff8200; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.orange .trapezoid::before {
+          background: #ff8200; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.orange .trapezoid::after {
+          border-top-color: #ff8200;
+          border-left-color: #ff8200; }
+      .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.light-blue {
+        background: #0077c8; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.light-blue .trapezoid::before {
+          background: #0077c8; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.light-blue .trapezoid::after {
+          border-top-color: #0077c8;
+          border-left-color: #0077c8; }
+      .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.blue {
+        background: #003da5; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.blue .trapezoid::before {
+          background: #003da5; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.blue .trapezoid::after {
+          border-top-color: #003da5;
+          border-left-color: #003da5; }
+      .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.purple {
+        background: #87189d; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.purple .trapezoid::before {
+          background: #87189d; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.purple .trapezoid::after {
+          border-top-color: #87189d;
+          border-left-color: #87189d; }
+      .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.red {
+        background: #e4002b; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.red .trapezoid::before {
+          background: #e4002b; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.red .trapezoid::after {
+          border-top-color: #e4002b;
+          border-left-color: #e4002b; }
+      .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box .trapezoid {
+        position: absolute;
+        left: 0;
+        bottom: -32px;
+        width: 100%;
+        height: 32px;
+        overflow: hidden; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box .trapezoid::before {
+          content: "";
+          background: #009a44;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 80%;
+          height: 32px; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box .trapezoid::after {
+          content: "";
+          background: transparent;
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 32px;
+          height: 32px;
+          max-height: 32px;
+          max-width: 32px;
+          border: solid 128px #009a44;
+          border-right-color: transparent;
+          border-bottom-color: transparent; }
+      .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box .form-control {
+        box-shadow: 0 0 0 transparent;
+        border: none; }
+
+/* .landing-tasbih-header */
+.landing-tasbih-grid {
+  /* .landing-tasbih-grid--item */ }
+  @media (max-width: 992px) {
+    .landing-tasbih-grid {
+      padding-top: 16px; } }
+  @media (min-width: 992px) {
+    .landing-tasbih-grid .pl8 {
+      padding-left: 8px; } }
+  @media (min-width: 992px) {
+    .landing-tasbih-grid .pr8 {
+      padding-right: 8px; } }
+  .landing-tasbih-grid .landing-tasbih-grid--item {
+    background: #003da5;
+    color: white;
+    min-height: 160px;
+    margin-bottom: 16px;
+    /* .landing-tasbih-grid--item-inner */
+    /* .inline */ }
+    .landing-tasbih-grid .landing-tasbih-grid--item.orange {
+      background: #ff8200; }
+    .landing-tasbih-grid .landing-tasbih-grid--item.red {
+      background: #e4002b; }
+    .landing-tasbih-grid .landing-tasbih-grid--item.blue {
+      background: #0077c8; }
+    .landing-tasbih-grid .landing-tasbih-grid--item.green {
+      background: #009a44; }
+    .landing-tasbih-grid .landing-tasbih-grid--item.purple {
+      background: #87189d; }
+    .landing-tasbih-grid .landing-tasbih-grid--item h1, .landing-tasbih-grid .landing-tasbih-grid--item h2, .landing-tasbih-grid .landing-tasbih-grid--item h3, .landing-tasbih-grid .landing-tasbih-grid--item h4, .landing-tasbih-grid .landing-tasbih-grid--item h5, .landing-tasbih-grid .landing-tasbih-grid--item h6, .landing-tasbih-grid .landing-tasbih-grid--item p {
+      margin: 0 auto;
+      padding: 0; }
+    .landing-tasbih-grid .landing-tasbih-grid--item h1, .landing-tasbih-grid .landing-tasbih-grid--item h2, .landing-tasbih-grid .landing-tasbih-grid--item h3, .landing-tasbih-grid .landing-tasbih-grid--item h4, .landing-tasbih-grid .landing-tasbih-grid--item h5, .landing-tasbih-grid .landing-tasbih-grid--item h6 {
+      font-weight: bold;
+      line-height: 1.3; }
+    .landing-tasbih-grid .landing-tasbih-grid--item p {
+      line-height: 1.3;
+      margin: 8px auto; }
+    .landing-tasbih-grid .landing-tasbih-grid--item a {
+      display: block;
+      margin: 8px auto 0;
+      color: inherit;
+      text-decoration: none; }
+      .landing-tasbih-grid .landing-tasbih-grid--item a:hover, .landing-tasbih-grid .landing-tasbih-grid--item a:focus {
+        color: inherit;
+        text-decoration: underline; }
+    .landing-tasbih-grid .landing-tasbih-grid--item > .landing-tasbih-grid--item-inner {
+      padding: 20px 32px; }
+    @media (min-width: 480px) {
+      .landing-tasbih-grid .landing-tasbih-grid--item.inline {
+        display: table;
+        min-width: 100%; } }
+    .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-image {
+      position: relative;
+      min-height: 160px;
+      overflow: hidden; }
+      @media (max-width: 480px) {
+        .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-image {
+          min-height: auto; } }
+      .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-image > img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        -moz-transform: translate3d(-50%, -50%, 0);
+        -ms-transform: translate3d(-50%, -50%, 0);
+        -o-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0);
+        min-width: 100%;
+        height: auto; }
+        @media (max-width: 480px) {
+          .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-image > img {
+            position: relative;
+            top: auto;
+            left: auto;
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+    .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-image, .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-inner {
+      display: inline-block;
+      width: 49%;
+      min-width: 49%;
+      max-width: 49%;
+      vertical-align: top;
+      height: 100%; }
+      @media (min-width: 480px) {
+        .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-image, .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-inner {
+          display: table-cell; } }
+      @media (max-width: 767px) {
+        .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-image, .landing-tasbih-grid .landing-tasbih-grid--item.inline > .landing-tasbih-grid--item-inner {
+          display: block;
+          width: 100%;
+          min-width: 100%;
+          max-width: 100%; } }
+
+/* .landing-tasbih-grid */
+.landing-tasbih-map {
+  position: relative;
+  min-height: 340px;
+  background: #54585a;
+  margin-bottom: 16px;
+  /* .landing-tasbih-map--button */ }
+  .landing-tasbih-map > .landing-tasbih-map--button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; }
+    .landing-tasbih-map > .landing-tasbih-map--button > a {
+      display: block;
+      background: #003da5;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      width: 100%;
+      padding: 12px 24px; }
+      .landing-tasbih-map > .landing-tasbih-map--button > a:hover, .landing-tasbih-map > .landing-tasbih-map--button > a:focus {
+        background: #002f6c;
+        text-decoration: none; }
+
+/* .landing-tasbih-map */
+/* Hide div anchor by mrobbi */
+.container .heading.clearfix.pagenav.nav-sticky,
+.container .heading.clearfix.pagenav {
+  display: none; }
+
+/*# sourceMappingURL=landing-tasbih.css.map */
