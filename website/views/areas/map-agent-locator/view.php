@@ -84,34 +84,7 @@
         <div id="maparea"></div>
     </div><!--/ #agent-locator -->
 
-    <?php //echo $this->area("mapArea", array("type" => "map-point")); ?>
-    <!--
-    <div id="map-shortcut">
-        <h3>Pilih Jenis Kantor:</h3>
-            <select class="combo kantor">
-                <option value="">Pilih Semua</option>
-            <?php	$jenis = Object_MarketingOfficeJenis::getList(array("orderKey" => array("jenis"), "order" => array("asc")));
-                foreach($jenis as $row)
-                {
-            ?>
-                    <option value="<?php echo $row->getId();?>"><?php echo $row->getJenis();?></option>
-            <?php 	} ?>
-            </select>
-
-        <h3>Pilih wilayah:</h3>
-
-            <select class="combo wilayah">
-              <option value="-2.6806246,115.8034375,5,">Pilih Semua</option>
-              <?php	$wilayah = Object_MarketingOfficeWilayah::getList(array("orderKey" => array("namaWilayah"), "order" => array("asc")));
-                foreach($wilayah as $row)
-                {
-            ?>
-                    <option value="<?php echo $row->getLatitude().",".$row->getLongitude().",".$row->getRuangLingkup().",".$row->getId();?>"><?php echo $row->getNamaWilayah();?></option>
-            <?php 	} ?>
-            </select>
-    </div>
-</div>
--->
+    
 <script type="text/javascript">
     var map = new Object();
     var imageCurrentMarker = '/website/static/images/map-pointer-green.png';
