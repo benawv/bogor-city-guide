@@ -34,7 +34,7 @@
 	
 	<div class="wrapper-special clearfix">
 		<?php echo $this->areablock('banner', array(
-					"allowed" => array("banner", "static-banner", "banner-without-note",'gallery-carousel-landing')))?>
+					"allowed" => array("banner", "static-banner", "banner-without-note")))?>
 		<div id="quicklinks">
 			<?php echo $this->areablock('quicklinks-wrapper', array(
 					"allowed" => array("tile-quicklinks", "layanankami-quicklinks", "quicklinks","blank-tile-quicklinks-static", "product-quicklinks", "blank-animation-quicklinks")))?>
@@ -60,7 +60,7 @@
 			'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
 			'smartlink-factsheet', 'syariah-factsheet',
 			'pension-factsheet', 'saving-factsheet','multi-video',
-			'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi', 'asn-center', 'gridlanding','artikelalanding','landing-informasi-produk'))); ?>
+			'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi','asn-center'))); ?>
 		<div style="clear: both"></div>
 		<div class="items-container">
 			<?php echo $this->areablock('container2', array(
