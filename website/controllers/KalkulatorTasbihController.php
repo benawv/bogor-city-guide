@@ -35,8 +35,8 @@
 				$frek = 'Triwulan';
 			}
             
+			$kat = $_POST["kategori"];
             
-		
 			$rates= new Object_TasbihRate_List();
 			$rates->setCondition("kelamin='".$JenisKelamin."' and frekuensi=$Kontribusi and usia=$Usia");
 			$rate='';
@@ -63,6 +63,7 @@
             $session->AJ = $AJ;
             $session->Kontribusi = $Kontribusi;
             $session->Calculation = $Calculation;
+			$session->kat = $kat;
 
             echo $session->Calculation;//print result of calculation into form
 
@@ -79,6 +80,7 @@
             $nama = $_POST["nama"];
             $email = $_POST["email"];
             $nohp = $_POST["nohp"];
+			$kat = $_POST["kategori"];
 
 
             $session = new Zend_Session_Namespace('tasbih');
@@ -135,7 +137,6 @@
 			$cookie->setEmail($email);
 			$cookie->setTanggalLahir($date_tglLahir);
 			$cookie->setJenisKelamin($JenisKelamin);
-			$cookie->setNohp($nohp);
 			$cookie->setUsia($Usia);
 			$cookie->setFrekuensiPembayaran($frek);
 			$cookie->setDetailAsuransiJiwa($AsuransiJiwa);
@@ -145,6 +146,8 @@
 			$cookie->setO_parentId($getId->o_id);
 			$cookie->setO_index(0);
 			$cookie->setO_published(1);
+			$cookie->setNohp($nohp);
+			$cookie->setKategori($kat);
 			$cookie->save();
 			
 			$session->idObject = $cookie->getO_id();
@@ -158,6 +161,22 @@
 		
 
 			$hasil = number_format($Calculation,0,",",".");
+			
+			if($Frekuensi == "Semesteran")
+			{
+				$nilai = $Calculation/2;
+				$per = "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per semester.";
+			}
+			elseif($Frekuensi == "Triwulan")
+			{
+				$nilai = $Calculation/4;
+				$per = "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per triwulan.";
+			}
+			else
+			{
+				$per = ".";
+			}
+			
 			$document = '/email/email-tasbih';
 			$params = array(
 							'tglhitung' => $date_tglBuat1,
@@ -168,6 +187,7 @@
 							'kontribusi' => $Kontribusi,
 							'AJ' => $AJ,
 							'pembayaran' => $hasil,
+							'per' => $per,
 							'frek' => $Frekuensi,
 							'JK' => $JK,
 							'nohp' => $nohp

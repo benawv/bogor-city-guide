@@ -1,6 +1,7 @@
 <?php
 //call session yang di buat di controller kalkulatortassbihControler function saveAction()
   $session = new Zend_Session_Namespace('tasbih');
+  $sessionTasbih = new Zend_Session_Namespace('tasbih');
 ?>
 
 
@@ -255,16 +256,16 @@
                             </div><!--/ .col-md-4 -->
                         </div><!--/ .form-group -->
 
-                        <div class="form-group">
-                            <div class="col-md-4">
-                            <label><strong>Kontribusi Berkala/<a href="#" class="calc-overlay-trigger"  data-toggle="modal" data-target="#premi">Premi</a> pertahun</strong></label>
-                            </div><!--/ .col-md-4 -->
-                            <div class="col-md-4">
-                            <input type="text" class="form-control" id="kontribusi-berkala_view" placeholder="0" value="<?php echo 'Rp. '.number_format($session->Calculation,0,',','.'); ?>" readonly>
-                            <input type="hidden" class="form-control" id="kontribusi-berkala" placeholder="0" value="<?php echo $session->Calculation; ?>" readonly>
-                            </div><!--/ .col-md-4 -->
-                        </div><!--/ .form-group -->
-
+                        
+                        <?php
+                            if($sessionTasbih->kat == "" || $sessionTasbih->kat == null || $sessionTasbih->kat == " ")
+                            {
+                                $kat = "direct";
+                            }
+                            else{
+                                $kat = $sessionTasbih->kat;
+                            }
+                        ?>
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
                                 <!--
@@ -308,20 +309,74 @@
                 <div class="col-xs-12">
                     <h4><strong>BACA JUGA</strong></h4>
                     <ol>
-                        <?php 
-                            $entries = new Object_TasbihNews_List();
-                            $entries->setLimit(4);
-                            $entries->setOrderKey("o_creationDate");
-                            $entries->setOrder("desc");
-                            foreach ($entries as $key) {
-                         ?>
-                            <li>
-                                <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
-                                    <?php echo $key->title; ?>
-                                </a>
-                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
-                            </li>
-                        <?php } ?>
+                                            <li>
+                                                <?php
+                                                    
+                                                    $sideList[0] = new Object_TasbihNews_List();
+                                                    $sideList[0]->setCondition("o_path LIKE '/tasbih-news/have-hajj-saving/have-insurance/'");
+                                                    $sideList[0]->setOrderKey("RAND()", false);
+                                                    $sideList[0]->setLimit(1);
+                                                    //print_r($sideList[0]);
+                                                    foreach ($sideList[0] as $key) {
+                                                    //print_r($key);
+                                                 ?>
+                                                <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                                    <?php echo $key->title; ?>
+                                                </a>
+                                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
+                                                <?php } ?>
+                                            </li>
+                                                                                    <li>
+                                                <?php
+                                                    
+                                                    $sideList[1] = new Object_TasbihNews_List();
+                                                    $sideList[1]->setCondition("o_path LIKE '/tasbih-news/have-hajj-saving/no-insurance/'");
+                                                    $sideList[1]->setOrderKey("RAND()", false);
+                                                    $sideList[1]->setLimit(1);
+                                                    //print_r($sideList[0]);
+                                                    foreach ($sideList[1] as $key) {
+                                                    //print_r($key);
+                                                 ?>
+                                                <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                                    <?php echo $key->title; ?>
+                                                </a>
+                                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
+                                                <?php } ?>
+                                            </li>
+                                                                                    <li>
+                                                <?php
+                                                    
+                                                    $sideList[2] = new Object_TasbihNews_List();
+                                                    $sideList[2]->setCondition("o_path LIKE '/tasbih-news/no-hajj-saving/have-insurance/'");
+                                                    $sideList[2]->setOrderKey("RAND()", false);
+                                                    $sideList[2]->setLimit(1);
+                                                    //print_r($sideList[0]);
+                                                    foreach ($sideList[2] as $key) {
+                                                    //print_r($key);
+                                                 ?>
+                                                <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                                    <?php echo $key->title; ?>
+                                                </a>
+                                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
+                                                <?php } ?>
+                                            </li>
+                                                                                    <li>
+                                                <?php
+                                                    
+                                                    $sideList[3] = new Object_TasbihNews_List();
+                                                    $sideList[3]->setCondition("o_path LIKE '/tasbih-news/no-hajj-saving/no-insurance/'");
+                                                    $sideList[3]->setOrderKey("RAND()", false);
+                                                    $sideList[3]->setLimit(1);
+                                                    //print_r($sideList[0]);
+                                                    foreach ($sideList[3] as $key) {
+                                                    //print_r($key);
+                                                 ?>
+                                                <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                                    <?php echo $key->title; ?>
+                                                </a>
+                                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
+                                                <?php } ?>
+                                            </li>
                     </ol>
                 </div><!--/ .col-xs-12 -->
             </div><!--/ .row -->
@@ -441,7 +496,8 @@
                   data     : {
                               'nama' : nama,
                               'email' : email,
-                              'nohp' : nohp
+                              'nohp' : nohp,
+                              'kategori' : '<?php echo $kat;?>'
                               },
                       success  : function(data){
                         //console.log(data);

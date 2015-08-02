@@ -14,7 +14,6 @@
     .page-wrapper-outer .sidebar
     {
         background: white;
-        border-left: solid 1px #ddd;
     }
 
     .sidebar .sidebar-item .sidebar-item--header h1,
@@ -98,18 +97,60 @@
     {
         margin-bottom: 0 !important;
     }
+    /* override icon style */
+    nav.main-navigation a.nav-item h1, nav.main-navigation a.nav-item h2, nav.main-navigation a.nav-item h3, nav.main-navigation a.nav-item h4, nav.main-navigation a.nav-item h5, nav.main-navigation a.nav-item h6 {
+        bottom: 12px !important;
+    }
+    
+    <!-- Script Media Query by Bastian 10-07-2015 -->
 
     @media ( max-width: 992px )
     {
         .main-content,
         .sidebar
         {
-            min-height: 0 !important;
+            height : 100% !important;
+            min-height: 130% !important;
             padding: 48px 36px;
         }
     }
     .main-content, .sidebar{
           min-height: 737px !important;
+    }
+    
+    .fa-facebook, .fa-twitter{
+        font-size:25px !important;
+    }
+    
+    a.tw-share{
+        font-size:26px !important;
+    }
+    
+    @media screen and (max-width : 991px ){
+            .page-wrapper-outer .sidebar
+        {
+            border-left: solid 0px #ddd;
+        }
+        
+        .mobileH{
+            padding-top: 15px !important;
+        }
+        
+
+    }
+    
+    @media screen and (min-width : 992px ){
+            .page-wrapper-outer .sidebar
+        {
+            border-left: solid 1px #ddd;
+        }
+        
+        .mobileH{
+            padding-top: 0px !important;
+        }
+        
+
+        
     }
 
 </style>
@@ -202,8 +243,13 @@
                             */
                         ?>
                         <?php echo $this->navigation()->breadcrumbs()->setPartial(array('includes/tasbih/breadcrumb-partial.php', 'website'));?>
+                        <div class="community-btn" style="width:53.938px !important; height:29px !important; float:right !important;">
+										<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
+										<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
+								</div>
                     </h5>
                     <p class="meta">Posted on <?php echo $items->newsdate; ?></p>
+                                
                     </div><!--/ .main-content--header -->
 
                     <?php echo $items->content; ?>
@@ -220,9 +266,14 @@
                     </div><!--/ .sidebar-item--header -->
                     <div class="sidebar-item--content">
                         <ul class="sidebar-nav">
-                        <?php foreach($this->sidelist as $lists){?>
+                        <?php 
+                        $nsidelist = count($this->sidelist);
+                        for($i=0;$i<$nsidelist;$i++){
+                            foreach($this->sidelist[$i] as $lists){?>
                                 <li><a href="/produk/asuransi-syariah/tasbih/artikel/<?php  echo $lists->o_key."-".$lists->o_id; ?>" class="list-artikel" ><?php  echo $lists->title; ?></a></li>
-                        <?php } ?>
+                        <?php 
+                            }
+                        }?>
                         </ul>
                     </div><!--/ .sidebar-item--content -->
                     </div><!--/ .sidebar-item -->
@@ -237,13 +288,11 @@
     </div><!--/ .page-wrapper-outer -->
 <?php } ?>
 <script type="text/javascript">
-
-$( document ).ready(function(){
-
-    var getWidht=$( document ).width();
+    
+        var getWidht=$( document ).width();
     var columnHeight=$( ".main-content" ).height(); 
 
-    if(getWidht < 900){
+    if(getWidht < 995){
         $('.sidebar').css('height', 100 + '%');
         $('.main-content, .sidebar').css('min-height', 100 + 'px');
 
@@ -251,9 +300,7 @@ $( document ).ready(function(){
             this.style.setProperty( 'min-height', '130%', 'important' );
         });
 
-        $( '.mobileH' ).each(function () {
-            this.style.setProperty( 'padding-top', '15px', 'important' );
-        });
+
 
         var page_wrapper=$( ".sidebar" ).height(); 
         var maincontent=$( ".main-content" ).height(); 
@@ -270,6 +317,64 @@ $( document ).ready(function(){
 
     }  
     
+
+$( document ).ready(function(){
+
+
+    
+    var url = window.location.host+window.location.pathname;
+    //alert(url);
+	var metas = document.getElementsByTagName('meta'); 
+    for (i=0; i<metas.length; i++) { 
+      if (metas[i].getAttribute("name") == "title") { 
+         var title = metas[i].getAttribute("content"); 
+      }else if(metas[i].getAttribute("name") == "description"){
+        var description = metas[i].getAttribute("content");
+      } else if(metas[i].getAttribute("name") == 'image'){
+        var image = metas[i].getAttribute("content");
+      }
+    } 
+    
+    		$('.community-btn .twshare').on("click",function(){
+        
+	        
+            //alert(isiText);
+	        var subT = title+" "+url;
+	        //var tweet = title+" : "+isiText+url;
+	        var encodeTweet = encodeURIComponent(subT);
+	        window.open('https://twitter.com/intent/tweet?text='+encodeTweet, 'sharer', 'width=626,height=436');
+		  });
+
+    $('.community-btn .fbshare').on("click",function(){
+        //alert(url);
+       //var url ="http://beta.allianz.co.id/produk/asuransi-syariah/tasbih/artikel/prioritas-keuangan-dalam-rencana-naik-haji-26386";
+       // alert(description.substring(3,80)+"...");
+        var desc = description.substring(3,80)+"...";
+        var name = (title.replace(/[^a-zA-Z()]/g,''))+"-artikel-tasbih";
+        var filename = name.replace(/\s/g,'-');
+        //alert(filename);
+        //alert(title);
+                $.ajax({
+					type: 'POST',
+					url: window.location.origin+'/website/static/fbshare/sharedfb.php',
+					data: {
+						filename: filename,
+						title_fb : title,
+						image_name: image,
+						description: desc,
+						url: window.location.host,
+						link_in_fb : window.location.host+window.location.pathname
+					},
+					success: function(response)
+                    //console.log(response);
+					{
+                        //print_r(response);
+						var url = window.location.origin+'/website/static/fbshare/'+response;
+						window.open('http://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), 'sharer', 'width=626,height=436');
+					}
+				});
+    });
+            
 });
 
 

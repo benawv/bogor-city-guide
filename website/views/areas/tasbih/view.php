@@ -1,3 +1,7 @@
+<?php
+  $session = new Zend_Session_Namespace('landingTasbih');
+?>
+
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/bootstrap.min.css"  />
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
@@ -275,7 +279,7 @@
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
 
-                                <input type="text" class="form-control" id="asuransi-jiwa" value="" placeholder="Min Rp.50.000.000">
+                                <input type="text" class="form-control" id="asuransi-jiwa" value="<?php if($session->up != null) echo $session->up; ?>" placeholder="Min Rp.50.000.000">
                                 <label id="notif-asuransijiwa" style="display:none; color: #f00;">
                                     Mohon maaf uang pertanggungan/santunan yang Anda masukan kurang dari Rp. 50,000,000.-
                                 </label>
@@ -288,15 +292,15 @@
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <select class="form-control" name="masa-premi" id="masa-premi">
-                                    <option value="5">5 tahun</option>
-                                    <option value="10">10 tahun</option>
-                                    <option value="15">15 tahun</option>
+                                    <option value="5" <?php if($session->lp == '5') echo 'Selected'; ?> >5 tahun</option>
+                                    <option value="10" <?php if($session->lp == '10') echo 'Selected'; ?>>10 tahun</option>
+                                    <option value="15" <?php if($session->lp == '15') echo 'Selected';  ?>>15 tahun</option>
                                 </select>
                             </div><!--/ .col-md-4 -->
                         </div><!--/ .form-group -->
 
                     </div><!--/ .form-box -->
-
+     
                     <div class="form-box text-center waiting-calc" style="display: none;">
                         <i class="fa fa-refresh fa-3x fa-spin"></i>
                     </div><!--/ .form-box -->
@@ -341,20 +345,74 @@
                 <div class="col-xs-12">
                     <h4><strong>BACA JUGA</strong></h4>
                     <ol>
-                        <?php 
-                            $entries = new Object_TasbihNews_List();
-                            $entries->setLimit(4);
-                            $entries->setOrderKey("o_creationDate");
-                            $entries->setOrder("desc");
-                            foreach ($entries as $key) {
-                         ?>
-                            <li>
-                                <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
-                                    <?php echo $key->title; ?>
-                                </a>
-                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
-                            </li>
-                        <?php } ?>
+                                            <li>
+                                                <?php
+                                                    
+                                                    $sideList[0] = new Object_TasbihNews_List();
+                                                    $sideList[0]->setCondition("o_path LIKE '/tasbih-news/have-hajj-saving/have-insurance/'");
+                                                    $sideList[0]->setOrderKey("RAND()", false);
+                                                    $sideList[0]->setLimit(1);
+                                                    //print_r($sideList[0]);
+                                                    foreach ($sideList[0] as $key) {
+                                                    //print_r($key);
+                                                 ?>
+                                                <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                                    <?php echo $key->title; ?>
+                                                </a>
+                                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
+                                                <?php } ?>
+                                            </li>
+                                                                                    <li>
+                                                <?php
+                                                    
+                                                    $sideList[1] = new Object_TasbihNews_List();
+                                                    $sideList[1]->setCondition("o_path LIKE '/tasbih-news/have-hajj-saving/no-insurance/'");
+                                                    $sideList[1]->setOrderKey("RAND()", false);
+                                                    $sideList[1]->setLimit(1);
+                                                    //print_r($sideList[0]);
+                                                    foreach ($sideList[1] as $key) {
+                                                    //print_r($key);
+                                                 ?>
+                                                <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                                    <?php echo $key->title; ?>
+                                                </a>
+                                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
+                                                <?php } ?>
+                                            </li>
+                                                                                    <li>
+                                                <?php
+                                                    
+                                                    $sideList[2] = new Object_TasbihNews_List();
+                                                    $sideList[2]->setCondition("o_path LIKE '/tasbih-news/no-hajj-saving/have-insurance/'");
+                                                    $sideList[2]->setOrderKey("RAND()", false);
+                                                    $sideList[2]->setLimit(1);
+                                                    //print_r($sideList[0]);
+                                                    foreach ($sideList[2] as $key) {
+                                                    //print_r($key);
+                                                 ?>
+                                                <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                                    <?php echo $key->title; ?>
+                                                </a>
+                                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
+                                                <?php } ?>
+                                            </li>
+                                                                                    <li>
+                                                <?php
+                                                    
+                                                    $sideList[3] = new Object_TasbihNews_List();
+                                                    $sideList[3]->setCondition("o_path LIKE '/tasbih-news/no-hajj-saving/no-insurance/'");
+                                                    $sideList[3]->setOrderKey("RAND()", false);
+                                                    $sideList[3]->setLimit(1);
+                                                    //print_r($sideList[0]);
+                                                    foreach ($sideList[3] as $key) {
+                                                    //print_r($key);
+                                                 ?>
+                                                <a href="/produk/asuransi-syariah/tasbih/artikel/<?php echo $key->o_key."-".$key->o_id; ?>">
+                                                    <?php echo $key->title; ?>
+                                                </a>
+                                                <div class="news-date"><?php echo date("D, d M Y,",strtotime($key->newsdate)); ?></div>
+                                                <?php } ?>
+                                            </li>
                     </ol>
                 </div><!--/ .col-xs-12 -->
             </div><!--/ .row -->
@@ -413,13 +471,16 @@
           </div>
         </div>
 
-
-
+<!--Unset Session for Landing Tasbih-->
+<?php $kat = $session->kat;
+      
+      Zend_Session::namespaceUnset('landingTasbih');
+?>
 
 <script>
     // document.getElementById('tgl-hitung').value = (new Date()).format("m/dd/yy");
     $(document).ready(function(){
-
+        //alert(<?php echo  $session->up ?>);
         /**
          * Calculator Pop-Up
          */
@@ -506,10 +567,12 @@
                             'frekuensi' : frekuensi,
                             'asuransijiwa' : unfnum,
                             'AJ' : asuransijiwa,
-                            'kontribusi' : kontribusi
+                            'kontribusi' : kontribusi,
+                            'kategori' : '<?php echo $kat;?>'
                             },
                     success  : function(data){
                     //console.log(data);
+                        
             $('.waiting-calc').hide();
                     $('#kontribusi-berkala').val(accounting.formatMoney(data, "Rp ", 0,","));
                    document.location.href='/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi-identitas';

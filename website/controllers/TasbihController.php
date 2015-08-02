@@ -17,7 +17,7 @@ class TasbihController extends Website_Controller_Action {
 	    $this->setLayout('tasbih');
 	}
 	
-        public function inquriyFormAction(){
+    public function inquriyFormAction(){
             
             $nama = $_POST["nama"];
 	    $kelamin = $_POST["kelamin"];
@@ -73,9 +73,9 @@ class TasbihController extends Website_Controller_Action {
             $mail->send();
 		
             echo "success";
-        }
+    }
         
-        public function listAction () {
+    public function listAction () {
 		$this->enableLayout();
 
 		$entries_all = new Object_TasbihNews_List();
@@ -93,11 +93,26 @@ class TasbihController extends Website_Controller_Action {
                 $id=$this->_getParam('id');
                 $entries = new Object_TasbihNews_List();
                 $entries->setCondition('oo_id="'.$id.'"');  
+                // $object = Object_Abstract::getByPath("/tasbih-news/have-hajj-saving/have-insurance");
+                $sideList[0] = new Object_TasbihNews_List();
+                $sideList[0]->setCondition("o_path LIKE '/tasbih-news/have-hajj-saving/have-insurance/'");
+                $sideList[0]->setOrderKey("RAND()", false);
+                $sideList[0]->setLimit(1);
+                $sideList[1] = new Object_TasbihNews_List();
+                $sideList[1]->setCondition("o_path LIKE '/tasbih-news/have-hajj-saving/no-insurance/'");
+                $sideList[1]->setOrderKey("RAND()", false);
+                $sideList[1]->setLimit(1);
+                $sideList[2] = new Object_TasbihNews_List();
+                $sideList[2]->setCondition("o_path LIKE '/tasbih-news/no-hajj-saving/have-insurance/'");
+                $sideList[2]->setOrderKey("RAND()", false);
+                $sideList[2]->setLimit(1);
+                $sideList[3] = new Object_TasbihNews_List();
+                $sideList[3]->setCondition("o_path LIKE '/tasbih-news/no-hajj-saving/no-insurance/'");
+                $sideList[3]->setOrderKey("RAND()", false);
+                $sideList[3]->setLimit(1);
                 
-                $sideList = new Object_TasbihNews_List();
-                $sideList->setLimit(7);
-                
-                
+                // echo "<pre>";print_r($object);
+                // die();
                 $this->view->newsTasbih=$entries;
                 $this->view->sidelist=$sideList;
                 
