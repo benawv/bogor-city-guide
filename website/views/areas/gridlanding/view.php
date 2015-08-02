@@ -158,7 +158,7 @@
                         <div id="maparea"></div>
                     </div><!--/ #agent-locator -->
                     <div class="landing-tasbih-map--button">
-                        <a href='http://agen.imkepo.com/' target="_blank"><i class="fa fa-search"></i> Temukan Agen</a>
+                        <a href='http://agen.allianz.co.id/' target="_blank"><i class="fa fa-search"></i> Temukan Agen</a>
                     </div><!--/ .landing-tasbih-map--button -->
                 </div><!--/ .landing-tasbih-map -->
 
@@ -327,7 +327,7 @@
             //	marker = new google.maps.Marker({
             //		position: new google.maps.LatLng(locations[i][1], locations[i][2]),
             //		map: map,
-            //		icon: 'http://agen.imkepo.com//css/img/map-pointer-green.png',
+            //		icon: 'http://agen.allianz.co.id//css/img/map-pointer-green.png',
             //		title: locations[i][3] + ' - ' + locations[i][4]
             //	});
             //
@@ -337,7 +337,7 @@
             //searchMarker = new google.maps.Marker({
             //			  position: mySearchLatlng,
             //			  map: map,
-            //			  icon: 'http://agen.imkepo.com//css/img/pointer-blue.png'
+            //			  icon: 'http://agen.allianz.co.id//css/img/pointer-blue.png'
             //			});
             //
             //if ( google.maps.geometry.poly.containsLocation(mySearchLatlng, jakartaPoly ) ) {
@@ -575,8 +575,8 @@
 				    google.maps.event.addListener(marker, 'click', function () {
 					    //infowindow.setContent(this.html);
 					    //infowindow.open(map, this);
-						window.open('http://agen.imkepo.com/', '_blank');
-						//window.location.href = "http://agen.imkepo.com/";
+						window.open('http://agen.allianz.co.id/', '_blank');
+						//window.location.href = "http://agen.allianz.co.id/";
 				    });
 			    }
                 
@@ -591,7 +591,7 @@
                     google.maps.event.addListener(marker2, 'click', function () {
                         //infowindow.setContent(this.html);
                         //infowindow.open(map, this);
-						window.open('http://agen.imkepo.com/', '_blank');
+						window.open('http://agen.allianz.co.id/', '_blank');
                     });
                 }
                 
@@ -677,7 +677,7 @@
 				    google.maps.event.addListener(marker, 'click', function () {
 					    //infowindow.setContent(this.html);
 					    //infowindow.open(map, this);
-						window.open('http://agen.imkepo.com/', '_blank');
+						window.open('http://agen.allianz.co.id/', '_blank');
 				    });
 			    }
 			}
