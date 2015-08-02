@@ -583,9 +583,7 @@
     });
     
     $(".kirim-email").click(function(){
-        <?php 
-
-        if($getStatus=='tasbih_calc'){ ?>
+        <?php if($getStatus=='tasbih_calc'){ ?>
             var keterangan = $(".textareaForm").val();
 
             $.ajax({
@@ -603,11 +601,14 @@
                             'emailMmBCC' : '<?php echo $emailMmBCC;?>',
                             'emailMmInaBCC' : '<?php echo $emailMmInaBCC;?>'
                             },
-                    success  : function(data){
+                success  : function(data){
                     console.log(data);
                     alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
+                },
+                error: function (xhr, desc, err)
+                {
+                    console.log("error " + err);
                 }
-            
             });
 
         <?php }else{ ?>

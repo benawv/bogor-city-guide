@@ -230,8 +230,11 @@ class AgentController extends Website_Controller_Action {
 		die();
 	}
 
-	public function sendMailAgenTasbihAction(){
-
+	public function sendMailAgenTasbihAction(){        
+        
+        //echo 'TEST';
+        //die();
+        
 		$from = $_POST["from"];
         $keterangan = $_POST["keterangan"];
         $nama_agen = $_POST["nama_agen"];
@@ -239,10 +242,16 @@ class AgentController extends Website_Controller_Action {
         $email_agen = $_POST["email"];
         $telp_agen = $_POST["telp"];
         $emailLeaderBCC = $_POST["emailLeaderBCC"];
-        $emailTeamAsnBCC = $_POST["emailTeamAsnBCC"];
+        $emailTeamAsnBCC = $_POST["emailTeamAsnBCC_"];
         $emailMmBCC = $_POST["emailMmBCC"];
         $emailMmInaBCC = $_POST["emailMmInaBCC"];
         
+        $Leader = strtolower($emailLeaderBCC);
+        $TeamAsn = strtolower($emailTeamAsnBCC);
+        $Mm = strtolower($emailMmBCC);
+        $MmIna = strtolower($emailMmInaBCC);
+
+        $emailBCC = array($Leader,$TeamAsn,$Mm,$MmIna);
 
 		// harusnya ini jadi  class Object_Abstract untuk email(sementara static harus cepet ganti !!!!!)
 		$session = new Zend_Session_Namespace('tasbih');
@@ -344,6 +353,15 @@ class AgentController extends Website_Controller_Action {
 						'tglLahirCustomer' => $session->date_tglLahir,
 						'typeForm' => 'TasbihKalkulator'
 						);
+        /*$emailBCC = array(
+                        print_r(strtolower($emailMmInaBCC)),
+                        print_r(strtolower($emailMmBCC)),
+                        print_r(strtolower($emailTeamAsnBCC)),
+                        print_r(strtolower($emailLeaderBCC))
+                    );*/
+        
+
+        
 
 		$this->emailTracking($paramsLocator,$params);
 
@@ -352,11 +370,8 @@ class AgentController extends Website_Controller_Action {
 		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 		$mail->setDocument($document);
 		$mail->setParams($params);
-		$mail->addBcc($emailMmInaBCC);
-		$mail->addBcc($emailMmBCC);
-		$mail->addBcc($emailTeamAsnBCC);
-		$mail->addBcc($emailLeaderBCC);
-		$mail->addTo($email);
+		$mail->addTo('bastianrdp@gmail.com');
+        $mail->addBcc($emailBCC);
 		$mail->send();
 
 		Zend_Session::namespaceUnset('tasbih');
