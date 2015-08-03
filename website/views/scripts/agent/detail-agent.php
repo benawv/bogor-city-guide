@@ -1,3 +1,4 @@
+
 <style>
 
     #profil{
@@ -128,27 +129,44 @@
         padding: 10px;
     }
 </style>
+
 <?php
+
     $kantor = $this->kantor;
+
     //echo 'test';
     $agent = $this->agent;
+
+
     //echo "<pre>";
     //print_r($agent);
     //die();
     foreach($agent as $row){
+
         $kodeAgent = $row->getkodeAgent();
+
         $namaAgent = $row->getnamaAgent();
+
         $emailAgent = strtolower($row->getemail());
+        
+        $emailLeaderBCC = $row->getbccDirectLeaderEmail();
+        $emailTeamAsnBCC = $row->getbccTeamAsn();
+        $emailMmBCC = $row->getbccMm();
+        $emailMmInaBCC = $row->getbccMmIna();
+
+
         $kantor = $row->getkantor();
-        $profilAgent = $row->getprofilAgent();
+
+        //$profilAgent = $row->getprofilAgent();
+
         $fotoAgent = $row->getfotoAgent()->path.$row->getfotoAgent()->filename;
-        $Facebook = $row->getURLFacebook();
-        $Artikel = $row->getArtikel();
+        //$Facebook = $row->getURLFacebook();
+        //$Artikel = $row->getArtikel();
         $telepon = $row->kantor[0]->nomorTelepon;
         $linkFB = $row->getLinkfacebook()->direct;
         $linkIN = $row->getLinklinkedin()->direct;
         $linkME = $row->getLinkaboutme()->direct;
-        
+
         if(isset($linkFB)){
             $linkFB = $linkFB;
         }
@@ -565,9 +583,7 @@
     });
     
     $(".kirim-email").click(function(){
-        <?php 
-
-        if($getStatus=='tasbih_calc'){ ?>
+        <?php if($getStatus=='tasbih_calc'){ ?>
             var keterangan = $(".textareaForm").val();
 
             $.ajax({
@@ -579,13 +595,20 @@
                             'nama_agen' : '<?php echo $namaAgent;?>',
                             'lokasi' : '<?php echo $namaLokasi;?>',
                             'telp' : '<?php echo $telepon;?>',
-                            'email' : '<?php echo $email;?>'
+                            'email' : '<?php echo $email;?>',
+                            'emailLeaderBCC' : '<?php echo $emailLeaderBCC;?>',
+                            'emailTeamAsnBCC ' : '<?php echo $emailTeamAsnBCC;?>',
+                            'emailMmBCC' : '<?php echo $emailMmBCC;?>',
+                            'emailMmInaBCC' : '<?php echo $emailMmInaBCC;?>'
                             },
-                    success  : function(data){
+                success  : function(data){
                     console.log(data);
                     alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
+                },
+                error: function (xhr, desc, err)
+                {
+                    console.log("error " + err);
                 }
-            
             });
 
         <?php }else{ ?>

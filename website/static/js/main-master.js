@@ -277,6 +277,13 @@ $(document).ready(function () {
         var limit = 32;
         var x;
         var deskripsi = $(".descShare p").text();
+        if (deskripsi == "") {
+            deskripsi = $(".descShare p:eq(2)").text();
+        }
+        if (deskripsi == "") {
+            deskripsi = $(".descShare").text();
+        }
+        
         var words = deskripsi.split(/\s/);
         var desc='';
         if (words.length > limit)

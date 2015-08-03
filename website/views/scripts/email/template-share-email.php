@@ -13,7 +13,7 @@
 		<div id="community no-gutter no-margin" class="clearfix">
 			
 			<div class="blast-img" style="height: auto;">
-                    <img src="%Text(img);" /> 
+                    <img src="%Text(img);" width="100%" /> 
                    <?php /*echo $this->image('imgEmail', array(
 									'title' 	=> 'Image Size 600px X 400px',
 									'width' 	=> 600,

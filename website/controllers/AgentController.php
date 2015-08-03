@@ -95,6 +95,7 @@ class AgentController extends Website_Controller_Action {
 		$this->enableLayout();
 		$key = $this->_getParam('text');
 		$id = $this->_getParam('id');
+
 		
 		//$kantor = Object_Abstract::getById($id);
 		$kondisi1 = array("condition" => "o_id = '".$id."'",
@@ -102,8 +103,10 @@ class AgentController extends Website_Controller_Action {
 		$kantor = Object_AgentLocatorKantor::getList($kondisi1);
 		
 		$kondisi2 = array("condition" => "kantor = ',".$id.",'",
-						 "limit" => 6);
+						 "limit" => 10);
+
 		$agent = Object_AgentLocatorData::getList($kondisi2);
+
 		if(count($kantor) == 0)
 		{
 			$this->redirect("/");
@@ -133,11 +136,16 @@ class AgentController extends Website_Controller_Action {
 		//$key = $this->_getParam('text');
 		$id = $this->_getParam('id');
 		$idKantor = $this->_getParam('id2');
+
 		
 		//$kantor = Object_Abstract::getById($id);
 		$kondisi1 = array("condition" => "o_id = '".$id."'",
 						 "limit" => 1);
 		$data = Object_AgentLocatorData::getList($kondisi1);
+
+        //echo $data;
+        //</pre>;
+        //die();
 		
 		$kondisi2 = array("condition" => "o_id = '".$idKantor."'",
 						 "limit" => 1);
@@ -222,14 +230,28 @@ class AgentController extends Website_Controller_Action {
 		die();
 	}
 
-	public function sendMailAgenTasbihAction(){
-
+	public function sendMailAgenTasbihAction(){        
+        
+        //echo 'TEST';
+        //die();
+        
 		$from = $_POST["from"];
         $keterangan = $_POST["keterangan"];
         $nama_agen = $_POST["nama_agen"];
         $lokasi_agen = $_POST["lokasi"];
         $email_agen = $_POST["email"];
         $telp_agen = $_POST["telp"];
+        $emailLeaderBCC = $_POST["emailLeaderBCC"];
+        $emailTeamAsnBCC = $_POST["emailTeamAsnBCC_"];
+        $emailMmBCC = $_POST["emailMmBCC"];
+        $emailMmInaBCC = $_POST["emailMmInaBCC"];
+        
+        $Leader = strtolower($emailLeaderBCC);
+        $TeamAsn = strtolower($emailTeamAsnBCC);
+        $Mm = strtolower($emailMmBCC);
+        $MmIna = strtolower($emailMmInaBCC);
+
+        $emailBCC = array($Leader,$TeamAsn,$Mm,$MmIna);
 
 		// harusnya ini jadi  class Object_Abstract untuk email(sementara static harus cepet ganti !!!!!)
 		$session = new Zend_Session_Namespace('tasbih');
@@ -331,6 +353,15 @@ class AgentController extends Website_Controller_Action {
 						'tglLahirCustomer' => $session->date_tglLahir,
 						'typeForm' => 'TasbihKalkulator'
 						);
+        /*$emailBCC = array(
+                        print_r(strtolower($emailMmInaBCC)),
+                        print_r(strtolower($emailMmBCC)),
+                        print_r(strtolower($emailTeamAsnBCC)),
+                        print_r(strtolower($emailLeaderBCC))
+                    );*/
+        
+
+        
 
 		$this->emailTracking($paramsLocator,$params);
 
@@ -339,8 +370,8 @@ class AgentController extends Website_Controller_Action {
 		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 		$mail->setDocument($document);
 		$mail->setParams($params);
-		$mail->addBcc("asn.tasbih@gmail.com");
-		$mail->addTo($email);
+		$mail->addTo('bastianrdp@gmail.com');
+        $mail->addBcc($emailBCC);
 		$mail->send();
 
 		Zend_Session::namespaceUnset('tasbih');
