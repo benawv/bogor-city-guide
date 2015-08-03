@@ -342,6 +342,7 @@ section.profile-maker {
       overflow: hidden;
       /* .avatar-caption */ }
       section.profile-maker .page-maker--placeholder .avatar > img {
+        max-width: 720px;
         min-width: 100%;
         height: auto;
         margin: 0 auto;

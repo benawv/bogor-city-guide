@@ -177,7 +177,7 @@ $(document).ready(function()
                 });
 
                     //Back to fill form    
-                    $("#preview, #download").click(function(event){
+                    $("#preview, #download, #square, #portrait, #landscape").click(function(event){
                     	//alert("scroll");
                         event.preventDefault();
 						$('html,body').animate({
@@ -189,14 +189,17 @@ $(document).ready(function()
 				$( "#square" ).click(function() {  
                 	//alert('square');
                 	$('#place').prop('class', 'square facebook-caption leftside');
+                	$("#notepad").prop('class', 'facebook-caption--inner square-bg bg-blue');
                 });  
 
                 $( "#portrait" ).click(function() {  
                 	$('#place').prop('class', 'portrait facebook-caption leftside');
+                	$("#notepad").prop('class', 'facebook-caption--inner portrait-bg bg-blue');
                 });
 
                 $( "#landscape" ).click(function() {  	
                 	$('#place').prop('class', 'landscape facebook-caption leftside');
+                	$("#notepad").prop('class', 'facebook-caption--inner landscape-bg bg-blue');
                 });
 
                 //hiding template
