@@ -320,16 +320,31 @@
 
 $( document ).ready(function(){
 
-
+alert('TEST');
     
+    var description;
+    var title;
+    var image;
     var url = window.location.host+window.location.pathname;
-
-        var title = $('title').html(); 
-        var description = document.getElementsByTagName("meta")[4].getAttribute("content");
-        var image = document.getElementById("backart").src;
-
-    
+    image = document.getElementById("backart").src;
+    title = $('title').html();
+    if(document.getElementsByTagName('meta')[4].getAttribute("name") == "description"){
+        description = document.getElementsByTagName('meta')[4].getAttribute("content");
+    }
+    //alert(url);
+	var metas = document.getElementsByTagName('meta');
+    if(title == "" || description == ""){
+        for (i=0; i<metas.length; i++) { 
+          if (metas[i].getAttribute("name") == "title") { 
+            title = metas[i].getAttribute("content"); 
+          }else if(metas[i].getAttribute("name") == "description"){
+            description = metas[i].getAttribute("content");
+          } 
+        } 
+    }
     		$('.community-btn .twshare').on("click",function(){
+        
+	        
             //alert(isiText);
 	        var subT = title+" "+url;
 	        //var tweet = title+" : "+isiText+url;
