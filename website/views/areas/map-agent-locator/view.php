@@ -121,9 +121,9 @@
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = new google.maps.LatLng(position.coords.latitude,
                                              position.coords.longitude);
-            var titik = radius(pos.A, pos.F);
+            var titik = radius(pos.lat(), pos.lng());
             titikMarker = "marker";
-            MapLoad(titik, pos.A, pos.F, titikMarker);
+            MapLoad(titik, pos.lat(), pos.lng(), titikMarker);
             //var infowindow = new google.maps.InfoWindow({
             //  zoom: 11,
             //  position: pos,
