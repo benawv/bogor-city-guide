@@ -163,7 +163,7 @@
     <header style="/*margin-top: -20px;*/">
 
         <div class="background">
-            <img src="<?php echo $items->images->path.$items->images->filename; ?>" alt="" class="img-responsive">
+            <img id="backart" src="<?php echo $items->images->path.$items->images->filename; ?>" alt="" class="img-responsive">
         </div><!--/ .background -->
 
         <nav class="main-navigation floating" style="bottom: 170px !important; z-index: 3;">
@@ -323,21 +323,13 @@ $( document ).ready(function(){
 
     
     var url = window.location.host+window.location.pathname;
-    //alert(url);
-	var metas = document.getElementsByTagName('meta'); 
-    for (i=0; i<metas.length; i++) { 
-      if (metas[i].getAttribute("name") == "title") { 
-         var title = metas[i].getAttribute("content"); 
-      }else if(metas[i].getAttribute("name") == "description"){
-        var description = metas[i].getAttribute("content");
-      } else if(metas[i].getAttribute("name") == 'image'){
-        var image = metas[i].getAttribute("content");
-      }
-    } 
+
+        var title = $('title').html(); 
+        var description = document.getElementsByTagName("meta")[4].getAttribute("content");
+        var image = document.getElementById("backart").src;
+
     
     		$('.community-btn .twshare').on("click",function(){
-        
-	        
             //alert(isiText);
 	        var subT = title+" "+url;
 	        //var tweet = title+" : "+isiText+url;
