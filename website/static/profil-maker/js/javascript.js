@@ -142,7 +142,7 @@ $(document).ready(function()
 		          
 		        });
 
-		});
+			});
 
 		    
 			//Preview button
@@ -205,6 +205,7 @@ $(document).ready(function()
                 //hiding template
                 //$("#cover2, #cover3, #ava1, #ava2, #gambar, #pilih").css("display", "none");
                 
+                //cek cookie
                 var temp = getCookie("template");
     			console.log("javascript: "+temp);
 
@@ -287,7 +288,7 @@ $(document).ready(function()
 
 			//text counter
 				function limitTextSize(e) {
-				    var max = 180
+				    var max = 180;
 				    var txt = $("#tengah").val();
 				    //var left = txt.substring(0, max);
 				    //var right = txt.substring(max);
@@ -295,10 +296,12 @@ $(document).ready(function()
 				    //$("#overflowText").html(html);
 				    $("#counter").html("Letters remaining: <span id='char'> " + (max - txt.length) + "</span>");
 				    $("#preview, #save").attr("disabled", txt.length > max);
-				    if(txt.length > max){
+				    if(txt.length > max) {
 				    	//alert("over");
 				    	$("#char").css("color", "red");
 				    }
+				    
+
 				}
 
 				function maxLength(el) {
@@ -310,6 +313,7 @@ $(document).ready(function()
 				        };
 				    }
 				}
+
 				$(document).ready(function () {
 				    $("#tengah").bind('input propertychange', limitTextSize)
 				    maxLength($("#tengah"));

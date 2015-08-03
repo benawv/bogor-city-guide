@@ -52,6 +52,10 @@ class DefaultController extends Website_Controller_Action {
 	
 	public function indexAction() {
 	}
+
+	public function staticAction() {
+		
+	}
 	
     public function landingAction() {
         

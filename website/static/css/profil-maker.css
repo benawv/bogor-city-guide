@@ -20,8 +20,8 @@
   max-width: 320px;
 }
 .portrait {
-  width: 230px;
-  max-width: 230px;
+  width: 240px;
+  max-width: 240px;
 }
 .square-bg {
   width: 100%;
@@ -42,7 +42,9 @@
   color: #FFFFFF;
 }
 span#nama {
-  padding: 0 20px; }
+  padding: 0 20px; 
+  font-size: 14px; 
+  word-wrap: break-word; }
 
 .btn-file input[type=file] {
   position: absolute;
@@ -306,7 +308,7 @@ section.profile-maker {
           display: block;
           /*margin: 10px 0;*/ } 
         section.profile-maker .timelineContainer .facebook-caption > .facebook-caption--inner span#konten {
-          font-size: 14px;
+          font-size: 12px;
           word-wrap: break-word;
         }   
         section.profile-maker .page-maker--placeholder .facebook .facebook-caption .facebook-caption-trapezoid,

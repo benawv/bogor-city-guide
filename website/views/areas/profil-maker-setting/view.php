@@ -51,13 +51,20 @@
                             <span id="konten">
                                 &lt;Description&gt;
                             </span> <br />
-                            
+
+                            <!-- <span id="nama">Akbar Fachriansyahasfsghsjsfsgsdgsdgrgdgdfgrhr</span> -->
+
                         </div><!--/ .facebook-caption--inner -->
                         <!-- <div class="facebook-caption-trapezoid"></div> -->
 
                         <div id="edge-note" class="edge e-blue">
                             <span id="nama">&lt;Name&gt;</span>
                         </div> 
+
+                         <script>
+                            var named = $("#nama").text().length;
+                            console.log(named);
+                        </script>
 
                     </div> <!--/ .facebook-caption -->
 
@@ -162,7 +169,6 @@
                     </div> --> <!--/ #timelineProfilePic -->
 
                 </div> <!--/ #timelineContainer -->
-
 
                 <div id="ava1" class="page-maker--placeholder" style="display: none">
                     <div class="avatar">
