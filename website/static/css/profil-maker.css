@@ -1,3 +1,6 @@
+.col-md-20 {
+  width: 20%;
+}
 .leftside {
   left: 190px;
 }
@@ -329,11 +332,14 @@ section.profile-maker {
       /*width: 512px;
       height: 512px;*/
       width: 472px;
+      max-width: 472px;
       height: 394px;
+      max-height: 394px;
       margin: 0 auto;
       padding: 0;
       background: white;
-      border: solid 1px #ccc;
+      /*border: solid 1px #ccc;*/
+      overflow: hidden;
       /* .avatar-caption */ }
       section.profile-maker .page-maker--placeholder .avatar > img {
         min-width: 100%;
@@ -341,17 +347,19 @@ section.profile-maker {
         margin: 0 auto;
         padding: 0;
         border: none;
+        cursor: move;
         display: block; }
       section.profile-maker .page-maker--placeholder .avatar .avatar-caption {
-        position: absolute;
+        /*position: absolute;*/
         top: 0;
         left: 0;
-        min-width: 100%;
-        min-height: 100%;
+        /*min-width: 100%;
+        min-height: 100%;*/
         /* .avatar-caption--logo */
         /* .avatar-caption--footer */ }
         section.profile-maker .page-maker--placeholder .avatar .avatar-caption .avatar-caption--logo {
           position: absolute;
+          z-index: 9999;
           right: 16px;
           top: 16px; }
         section.profile-maker .page-maker--placeholder .avatar .avatar-caption .avatar-caption--footer {
@@ -362,6 +370,7 @@ section.profile-maker {
           left: 0;
           width: 100%;
           padding: 0 56px;
+          z-index: 1;
           line-height: 52px;
           min-height: 52px; }
           section.profile-maker .page-maker--placeholder .avatar .avatar-caption .avatar-caption--footer i.fa {
@@ -377,3 +386,14 @@ section.profile-maker {
 /* section.profile-maker */
 
 /*# sourceMappingURL=profil-maker.css.map */
+
+
+
+/* mobile looks like */
+@media screen and (max-width: 640px) {
+    .col-md-20 {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+}

@@ -68,7 +68,7 @@
 			'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
 			'smartlink-factsheet', 'syariah-factsheet',
 			'pension-factsheet', 'saving-factsheet','multi-video',
-			'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi','teks-agenlocator','gallery-agenlocator'))); ?>
+			'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi','teks-agenlocator','gallery-agenlocator', 'recommended-agent'))); ?>
 		<div style="clear: both"></div>
 		<div class="items-container imageAgent">
 			<?php echo $this->areablock('container2', array(

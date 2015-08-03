@@ -22,10 +22,10 @@ $(document).ready(function()
 
 
 			/* Banner position drag */
-			$("body").on('mouseover','.headerimage',function ()
+			$("body").on('mouseover','.headerimage, .ava-img',function ()
 			{	
-				var y1 = $('#timelineBackground').height();
-				var y2 =  $('.headerimage').height();
+				var y1 = $('#timelineBackground, #avacapture1, #avacapture2').height();
+				var y2 =  $('.headerimage, .ava-img').height();
 				$(this).draggable({
 					scroll: true,
 					axis: "x,y",
@@ -45,7 +45,7 @@ $(document).ready(function()
 				});
 			});
 
-
+			
 			/* Banner Position Save*/
 			$("body").on('click','.bgSave',function ()
 			{
@@ -148,7 +148,7 @@ $(document).ready(function()
 			//Preview button
 
  			$(function() { 
-                    $("#preview, #save").click(function(){
+                    $("#preview, #save").click(function(e){
                     	$('#judul, #konten, #nama, #cname').empty();
                         $headline = $('#atas').val();
                         $konten = $('#tengah').val();
@@ -159,9 +159,9 @@ $(document).ready(function()
                         $('#nama').html($nama1+" "+$nama2); //name at form cover
                         $('#cname').html($nama1+" "+$nama2); //name at form avatar
                         $("#place").css({display: "block"});
-                });
+                	});
 
-                  
+                   
                 //Ask to save or no    
                     $("#save").click(function(){
                     	$('#fillform').hide();
@@ -175,6 +175,15 @@ $(document).ready(function()
                     	$('#ask').hide();
                         
                 });
+
+                    //Back to fill form    
+                    $("#preview, #download").click(function(event){
+                    	//alert("scroll");
+                        event.preventDefault();
+						$('html,body').animate({
+							scrollTop:$(this.hash).offset().top
+						}, 500);
+                	});
 
                 
 				$( "#square" ).click(function() {  
@@ -191,10 +200,16 @@ $(document).ready(function()
                 });
 
                 //hiding template
-                $("#cover2, #cover3, #ava1, #ava2, #gambar, #pilih").css("display", "none");
+                //$("#cover2, #cover3, #ava1, #ava2, #gambar, #pilih").css("display", "none");
                 
+                var temp = getCookie("template");
+    			console.log("javascript: "+temp);
+
                 //Capture image and download it   
 				$('body').on('click','#download',function(){
+
+					//capture cover
+					if(temp == "template1" || temp == "template2" || temp == "template3") {
 	                html2canvas($('#cover1'), {
 	                    onrendered: function(canvas) {
 	                        //$('#imaged').html(canvas);
@@ -217,20 +232,47 @@ $(document).ready(function()
 									document.body.appendChild(link);
 									link.click();
 
-	       						//var a = $("<a>")
-								//.attr("href", dataURL)
-								//.attr("download", filename)
-								//.appendTo("body");
+	                    	}
+	                	});
+					}
 
-								//a[0].click();
+					//capture avatar
+					else if(temp == "template4" || temp == "template6"){
+						html2canvas($('#ava2'), {
+	                    onrendered: function(canvas) {
+	                        //$('#imaged').html(canvas);
+	                            var dataURL = canvas.toDataURL("image/png");
 
-								//a.remove();
-	                    }
-	                });
-					
-					// clear input text form
-	                var form = document.getElementById("formx");
-					form.reset();
+	                			//Random filename after download
+	                			var filename = new Array(2).join().replace(/(.|$)/g, function(){return ((Math.random()*36)|0).toString(36);})
+
+	        						var link = document.createElement('a');
+									link.href = dataURL;
+									link.download = "Allianz_download_"+filename+".png";
+									document.body.appendChild(link);
+									link.click();
+	                    	}
+	                	});
+					}
+
+					//capture avatar
+					else if(temp == "template5"){
+						html2canvas($('#ava1'), {
+	                    onrendered: function(canvas) {
+	                        //$('#imaged').html(canvas);
+	                            var dataURL = canvas.toDataURL("image/png");
+
+	                			//Random filename after download
+	                			var filename = new Array(2).join().replace(/(.|$)/g, function(){return ((Math.random()*36)|0).toString(36);})
+
+	        						var link = document.createElement('a');
+									link.href = dataURL;
+									link.download = "Allianz_download_"+filename+".png";
+									document.body.appendChild(link);
+									link.click();
+	                    	}
+	                	});
+					}
 
 					//hiding ask form
 	                $('#ask').hide();
@@ -269,5 +311,8 @@ $(document).ready(function()
 				    $("#tengah").bind('input propertychange', limitTextSize)
 				    maxLength($("#tengah"));
 				}); 	
+
+
+				
 
 
