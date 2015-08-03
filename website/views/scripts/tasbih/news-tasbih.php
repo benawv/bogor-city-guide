@@ -320,7 +320,7 @@
 
 $( document ).ready(function(){
 
-alert('TEST');
+//alert('TEST');
     
     var description;
     var title;
