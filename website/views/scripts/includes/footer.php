@@ -164,7 +164,7 @@
                         <label id="notif-email" style="display:none; color: #f00;">Maaf Anda Belum Memasukkan Email</label>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" id="SendingEmail" class="btn btn-info btn-lg" data-dismiss="modal" style="background-color:#23527c">Kirim</button>
+                      <button type="button" id="SendingEmail" class="btn btn-info" data-dismiss="modal" style="background-color:#23527c">Kirim</button>
                     </div>
                   </div>
 
