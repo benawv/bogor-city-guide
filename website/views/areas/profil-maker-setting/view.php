@@ -23,9 +23,9 @@
         <div id="top" class="row profile-maker--title">
             <div class="col-xs-12">
                 <h2><script>
-                var title = getCookie("keterangan");
-                document.write(title);
-            </script></h2>
+                    var title = getCookie("keterangan");
+                    document.write(title);
+                </script></h2>
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
 
@@ -60,11 +60,6 @@
                         <div id="edge-note" class="edge e-blue">
                             <span id="nama">&lt;Name&gt;</span>
                         </div> 
-
-                         <script>
-                            var named = $("#nama").text().length;
-                            console.log(named);
-                        </script>
 
                     </div> <!--/ .facebook-caption -->
 
@@ -118,12 +113,6 @@
                         </form> <!--/ #bgimageform -->
                     </div> <!--/ #shade -->
 
-                    <!-- <div id="timelineProfilePic">
-                        <div style="padding:5px">
-                            <img src="/website/static/images/profile-maker/Allianz Agent Facebook Profile Picture.png" style="width:100%">
-                        </div>
-                    </div> --> <!--/ #timelineProfilePic -->
-
                 </div> <!--/ #timelineContainer -->
 
                 <div id="cover3" class="timelineContainer" style="display: none">
@@ -162,13 +151,46 @@
                         </form> <!--/ #bgimageform -->
                     </div> <!--/ #shade -->
 
-                    <!-- <div id="timelineProfilePic">
-                        <div style="padding:5px">
-                            <img src="/website/static/images/profile-maker/Allianz Agent Facebook Profile Picture.png" style="width:100%">
-                        </div>
-                    </div> --> <!--/ #timelineProfilePic -->
-
                 </div> <!--/ #timelineContainer -->
+
+                <div id="cover-m" class="timelineContainer" style="display: none">
+
+                    <div id="timelineBackground" class="page-maker--placeholdermain">
+                        <!-- <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive"> -->
+                        <?php
+                                 $session = new Zend_Session_Namespace('srcImage');
+                        ?>
+                       <img src="<?php echo $session->src;?>" alt="Page Cover Landscaped Notepad" id="timelineBGload" class="headerimage ui-corner-all ui-draggable img-responsive" />
+
+                    </div><!--/ .page-maker--placeholder -->
+
+                    <div id="place" class="landscape facebook-caption leftside">
+                        <div id="notepad" class="facebook-caption--inner landscape-bg bg-blue">
+
+                            <h3><span id="judul">&lt;Title&gt;</span></h3> <br />
+
+                            <span id="konten">
+                                &lt;Description&gt;
+                            </span> <br />
+
+                            <!-- <span id="nama">Akbar Fachriansyahasfsghsjsfsgsdgsdgrgdgdfgrhr</span> -->
+
+                        </div><!--/ .facebook-caption--inner -->
+                        <!-- <div class="facebook-caption-trapezoid"></div> -->
+
+                        <div id="edge-note" class="edge e-blue">
+                            <span id="nama">&lt;Name&gt;</span>
+                        </div> 
+
+                    </div> <!--/ .facebook-caption -->
+
+                    <div class="shade" id="timelineShade">
+                        <form id="bgimageform" name="newad" method="post" enctype="multipart/form-data" action="">
+                            
+                        </form> <!--/ #bgimageform -->
+                    </div> <!--/ #shade -->
+
+                </div> <!--/ #timelineContainer --> 
 
                 <div id="ava1" class="page-maker--placeholder" style="display: none">
                     <div class="avatar">
@@ -275,10 +297,12 @@
                                     <a id="save" href="#ask" class="btn btn-primary btn-block">Simpan</a>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
-                                    <input type="button" id="gambar" class="btn btn-default btn-block" value="Ganti Gambar" style="display: none">
+                                    <!-- <input type="button" id="gambar" class="btn btn-default btn-block" value="Ganti Gambar"> -->
+                                    <a id="gambar" href="/profil-maker/page2" class="btn btn-default btn-block">Ganti Gambar</a>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
-                                    <input type="button" id="pilih" class="btn btn-default btn-block" value="Pilih Template" style="display: none">
+                                    <!-- <input type="button" id="pilih" class="btn btn-default btn-block" value="Pilih Template"> -->
+                                    <a id="pilih" href="/profil-maker/page1" class="btn btn-default btn-block">Pilih Template</a>
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                         </form>
@@ -366,40 +390,3 @@
 
     </div><!--/ .container -->
 </section><!--/ .profile-maker -->
-
-<script>
-
-    var temp = getCookie("template");
-    console.log(temp);
-
-    if(temp == "template1") {
-        //alert("landscape");
-        $("#cover1").show();
-        $("#place").prop('class', 'landscape facebook-caption leftside');
-        $("#notepad").prop('class', 'facebook-caption--inner landscape-bg bg-blue');
-    }
-    else if(temp == "template2") {
-        //alert("portrait");
-        $("#cover1").show();
-        $("#place").prop('class', 'portrait facebook-caption leftside');
-        $("#notepad").prop('class', 'facebook-caption--inner portrait-bg bg-blue');
-    }
-    else if(temp == "template3") {
-        //alert("square");
-        $("#cover1").show();
-        $("#place").prop('class', 'square facebook-caption leftside');
-        $("#notepad").prop('class', 'facebook-caption--inner square-bg bg-blue');
-    }
-    else if(temp == "template4" || temp == "template6") {
-        //alert("ava2");
-        $("#ava2").css("display", "block");
-        $("#input1, #input2, #input5, #input6").hide();
-    }
-    else if(temp == "template5") {
-        //alert("ava1");
-        $("#ava1").css("display", "block");
-        $("#input1, #input2, #input3, #input4, #input5, #input6").hide();
-    }
-    
-
-</script>
