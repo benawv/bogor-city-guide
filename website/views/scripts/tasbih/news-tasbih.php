@@ -214,7 +214,7 @@
                 <div class="main-content">
 
                     <div class="main-content--header">
-                    <h1 class="mb12"><?php echo $items->title; ?></h1>
+                    <h1 class="mb12" id="judul"><?php echo $items->title; ?></h1>
                     <h5>
                         <span><a href="/tasbih">Home</a> / <a href="#">artikel</a></span>
                         <?php /*
@@ -327,7 +327,7 @@ $( document ).ready(function(){
     var image;
     var url = window.location.host+window.location.pathname;
     image = document.getElementById("backart").src;
-    title = $('title').html();
+    title = $('#judul').html();
     if(document.getElementsByTagName('meta')[4].getAttribute("name") == "description"){
         description = document.getElementsByTagName('meta')[4].getAttribute("content");
     }
@@ -335,9 +335,7 @@ $( document ).ready(function(){
 	var metas = document.getElementsByTagName('meta');
     if(title == "" || description == ""){
         for (i=0; i<metas.length; i++) { 
-          if (metas[i].getAttribute("name") == "title") { 
-            title = metas[i].getAttribute("content"); 
-          }else if(metas[i].getAttribute("name") == "description"){
+          if(metas[i].getAttribute("name") == "description"){
             description = metas[i].getAttribute("content");
           } 
         } 
@@ -356,7 +354,7 @@ $( document ).ready(function(){
         //alert(url);
        //var url ="http://beta.allianz.co.id/produk/asuransi-syariah/tasbih/artikel/prioritas-keuangan-dalam-rencana-naik-haji-26386";
        // alert(description.substring(3,80)+"...");
-        var desc = description.substring(3,80)+"...";
+        var desc = description.substring(0,80)+"...";
         var name = (title.replace(/[^a-zA-Z()]/g,''))+"-artikel-tasbih";
         var filename = name.replace(/\s/g,'-');
         //alert(filename);
