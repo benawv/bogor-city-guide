@@ -253,7 +253,8 @@
                     </div><!--/ .main-content--header -->
 
                     <?php echo $items->content; ?>
-
+                    <p>Untuk informasi lebih lengkap mengenai produk allianz tasbih klik :</p>
+                    <button class="btn btn-primary" onclick="location.href='/produk/asuransi-syariah/tasbih/info-produk';" type="button">Informasi Produk Allianz Tasbih</button>
                 </div><!--/ .main-content -->
 
                 </div><!--/ .col-xs-12 -->
