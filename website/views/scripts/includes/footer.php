@@ -149,6 +149,28 @@
 			<div class="ojk-desc">
 				<p>Allianz dan Agen/Tenaga Penjualnya telah terdaftar pada dan diawasi oleh Otoritas Jasa Keuangan.</p>
 			</div>
+            
+              <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Silahkan Masukkan Email Anda</h4>
+                    </div>
+                    <div class="modal-body">
+                      <input type="email" class="form-control" placeholder="Alamat E-Mail" id="email" tabindex="6" maxlength="32" required onfocusout="this.value=validateEMAIL(this.value)">
+                        <label id="notif-email" style="display:none; color: #f00;">Maaf Anda Belum Memasukkan Email</label>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" id="kirim" class="btn btn-info btn-lg" data-dismiss="modal">KIRIM</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
 		</div>
 	</div>
 </footer>
@@ -174,6 +196,16 @@
 			}
 	}
 	
+    
+    $('#Kalkulasi').click(function() {
+        var email = $('#email').val();
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        if(email == "" || !re.test(surat)){
+            document.getElementById('notif-email').style.display= 'block';
+            return null;
+        }
+    });
+    
 	$(window).bind("load", function() {
 		var hash = document.URL.substr(document.URL.indexOf('#')+1);
 		
@@ -192,6 +224,20 @@
 		$('li.aktif .nav_menu div').css('background-position', '0px 0px');
 		
 	});
+            function validateEMAIL(surat)
+        {
+            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+            if(!re.test(surat))
+            {
+                document.getElementById('notif-email').style.display= 'block';
+                return null;
+            }
+            else
+            {
+                document.getElementById('notif-email').style.display= 'none';
+                return surat;
+            }
+        };
 	/*$(document).ready(function(){
 		$(".clickLink").on("click",function(){
 			var url = $(this).find(".linkUrl").attr("href");
