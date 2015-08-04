@@ -163,7 +163,7 @@
     <header style="/*margin-top: -20px;*/">
 
         <div class="background">
-            <img src="<?php echo $items->images->path.$items->images->filename; ?>" alt="" class="img-responsive">
+            <img id="backart" src="<?php echo $items->images->path.$items->images->filename; ?>" alt="" class="img-responsive">
         </div><!--/ .background -->
 
         <nav class="main-navigation floating" style="bottom: 170px !important; z-index: 3;">
@@ -243,10 +243,10 @@
                             */
                         ?>
                         <?php echo $this->navigation()->breadcrumbs()->setPartial(array('includes/tasbih/breadcrumb-partial.php', 'website'));?>
-                        <!--<div class="community-btn" style="width:53.938px !important; height:29px !important; float:right !important;">
+                        <div class="community-btn" style="width:53.938px !important; height:29px !important; float:right !important; display: none !important;">
 										<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
 										<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
-								</div>-->
+								</div>
                     </h5>
                     <p class="meta">Posted on <?php echo $items->newsdate; ?></p>
                                 
@@ -320,21 +320,28 @@
 
 $( document ).ready(function(){
 
-
+//alert('TEST');
     
+    var description;
+    var title;
+    var image;
     var url = window.location.host+window.location.pathname;
+    image = document.getElementById("backart").src;
+    title = $('title').html();
+    if(document.getElementsByTagName('meta')[4].getAttribute("name") == "description"){
+        description = document.getElementsByTagName('meta')[4].getAttribute("content");
+    }
     //alert(url);
-	var metas = document.getElementsByTagName('meta'); 
-    for (i=0; i<metas.length; i++) { 
-      if (metas[i].getAttribute("name") == "title") { 
-         var title = metas[i].getAttribute("content"); 
-      }else if(metas[i].getAttribute("name") == "description"){
-        var description = metas[i].getAttribute("content");
-      } else if(metas[i].getAttribute("name") == 'image'){
-        var image = metas[i].getAttribute("content");
-      }
-    } 
-    
+	var metas = document.getElementsByTagName('meta');
+    if(title == "" || description == ""){
+        for (i=0; i<metas.length; i++) { 
+          if (metas[i].getAttribute("name") == "title") { 
+            title = metas[i].getAttribute("content"); 
+          }else if(metas[i].getAttribute("name") == "description"){
+            description = metas[i].getAttribute("content");
+          } 
+        } 
+    }
     		$('.community-btn .twshare').on("click",function(){
         
 	        
