@@ -129,9 +129,10 @@ class EmailController extends Website_Controller_Action {
 		$mail->setDocument($document);
 		$mail->setParams($params);
 		//$mail->addTo($_POST["postEmail"]);
-		$mail->addTo("robbi@dreamcube.co.id");
+		$mail->addTo($email);
 		
 		$mail->send();
+        print_r("Terima Kasih");
     }
 	public function templateShareEmailAction(){
 		

@@ -253,7 +253,7 @@
                 email :email
             },
             success: function(data){
-                alert('Terima Kasih');
+                alert(data);
             }
         });
 
