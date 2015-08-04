@@ -156,6 +156,7 @@
 </style>
 <?php
      foreach($this->newsTasbih as $items){
+
         /*echo "<pre>";
         print_r($items);
         echo "</pre>";*/
@@ -286,7 +287,8 @@
         </section>
 
     </div><!--/ .page-wrapper-outer -->
-<?php } ?>
+
+
 <script type="text/javascript">
     
         var getWidht=$( document ).width();
@@ -322,24 +324,11 @@ $( document ).ready(function(){
 
 //alert('TEST');
     
-    var description;
-    var title;
-    var image;
+    var description = "<?php echo $items->content; ?>";
+    var title = "<?php echo $items->title; ?>";
+    var image = document.getElementById("backart").src;
     var url = window.location.host+window.location.pathname;
-    image = document.getElementById("backart").src;
-    title = $('#judul').html();
-    if(document.getElementsByTagName('meta')[4].getAttribute("name") == "description"){
-        description = document.getElementsByTagName('meta')[4].getAttribute("content");
-    }
-    //alert(url);
-	var metas = document.getElementsByTagName('meta');
-    if(title == "" || description == ""){
-        for (i=0; i<metas.length; i++) { 
-          if(metas[i].getAttribute("name") == "description"){
-            description = metas[i].getAttribute("content");
-          } 
-        } 
-    }
+    
     		$('.community-btn .twshare').on("click",function(){
         
 	        
@@ -355,6 +344,7 @@ $( document ).ready(function(){
        //var url ="http://beta.allianz.co.id/produk/asuransi-syariah/tasbih/artikel/prioritas-keuangan-dalam-rencana-naik-haji-26386";
        // alert(description.substring(3,80)+"...");
         var desc = description.substring(0,80)+"...";
+        alert(desc);
         var name = (title.replace(/[^a-zA-Z()]/g,''))+"-artikel-tasbih";
         var filename = name.replace(/\s/g,'-');
         //alert(filename);
@@ -384,3 +374,4 @@ $( document ).ready(function(){
 
 
 </script>
+<?php } ?>
