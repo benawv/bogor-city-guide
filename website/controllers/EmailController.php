@@ -122,6 +122,7 @@ class EmailController extends Website_Controller_Action {
 				'tanggal' => $_POST["postTanggal"],
 				'link' => $_POST["postLink"]
 				);
+        $email = $_POST['email'];
 		$mail = new Pimcore_Mail();
 		$mail->setSubject("Share Email");
 		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");

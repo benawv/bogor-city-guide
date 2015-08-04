@@ -164,7 +164,7 @@
                         <label id="notif-email" style="display:none; color: #f00;">Maaf Anda Belum Memasukkan Email</label>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" id="kirim" class="btn btn-info btn-lg" data-dismiss="modal">KIRIM</button>
+                      <button type="button" id="SendingEmail" class="btn btn-info btn-lg" data-dismiss="modal" style="background-color:#23527c">Kirim</button>
                     </div>
                   </div>
 
@@ -195,15 +195,70 @@
 				$('html, body').animate({scrollTop:$("#"+anchor).offset().top-90}, 500);
 			}
 	}
-	
-    
-    $('#Kalkulasi').click(function() {
+
+    $('#SendingEmail').click(function() {
         var email = $('#email').val();
         var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-        if(email == "" || !re.test(surat)){
+        if(email == "" || (!re.test(email)) ){
             document.getElementById('notif-email').style.display= 'block';
-            return null;
+            alert("Mohon Maaf Email Anda Tidak Valid");
+        }else{
+        var img = $(".imgShare").attr("srcimg");
+        var title = $(".titleShare").text();
+        
+        var limit = 32;
+        var x;
+        var deskripsi = $(".descShare p").text();
+        if (deskripsi == "") {
+            deskripsi = $(".descShare p:eq(2)").text();
         }
+        if (deskripsi == "") {
+            deskripsi = $(".descShare").text();
+        }
+        
+        var words = deskripsi.split(/\s/);
+        var desc='';
+        if (words.length > limit)
+        {
+                for(x=0;x<limit;x++)
+                {
+                        if (x==0)
+                        {
+                                desc = desc+words[x];
+                        }
+                        else
+                        {
+                                desc = desc+' '+words[x];
+                        }
+                }
+                desc = desc+'....';
+        }
+        else
+        {
+                desc = deskripsi;
+        }
+        
+        var tanggal = $(".tglShare time").text();
+        var link = window.location.host + window.location.pathname;
+        
+        $.ajax({
+            type: "POST",
+            url: "/share-email/",
+            data: {
+                postImg : img,
+                postTitle : title,
+                postDesc : desc,
+                postTanggal : tanggal,
+                postLink : link,
+                email :email
+            },
+            success: function(data){
+                alert('Terima Kasih');
+            }
+        });
+
+        }
+            
     });
     
 	$(window).bind("load", function() {
