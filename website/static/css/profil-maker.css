@@ -1,0 +1,402 @@
+.col-md-20 {
+  width: 20%;
+}
+.leftside {
+  left: 190px;
+}
+.rightside {
+  right: 190px;
+}
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.square {
+  width: 240px;
+  max-width: 240px;
+}
+.landscape {
+  width: 320px;
+  max-width: 320px;
+}
+.portrait {
+  width: 240px;
+  max-width: 240px;
+}
+.square-bg {
+  width: 100%;
+  float: left;
+  height: 210px;
+  color: #FFFFFF;
+}
+.landscape-bg {
+  width: 100%;
+  float: left;
+  height: 160px;
+  color: #FFFFFF;
+}
+.portrait-bg {
+  width: 100%;
+  float: left;
+  height: 230px;
+  color: #FFFFFF;
+}
+span#nama {
+  padding: 0 20px; 
+  font-size: 14px; 
+  word-wrap: break-word; }
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: red;
+  cursor: inherit;
+  display: block;
+}
+#counter {
+  font-size: 14px;
+  padding: 5px 0;
+  color: #757575;
+}
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
+
+section.profile-maker {
+  /* .profile-maker--title */
+  /* .profile-maker--box */
+  /* .profile-maker--uploader */
+  /* .page-maker--form */
+  /* .page-maker--placeholder */ }
+  section.profile-maker .profile-maker--title h1, section.profile-maker .profile-maker--title h2, section.profile-maker .profile-maker--title h3, section.profile-maker .profile-maker--title h4, section.profile-maker .profile-maker--title h5, section.profile-maker .profile-maker--title h6, section.profile-maker .profile-maker--title p {
+    margin: 16px auto 24px;
+    padding: 0; }
+  section.profile-maker .profile-maker--box {
+    position: relative;
+    margin: 0 auto 32px;
+    padding: 0;
+    background: white;
+    border: solid 1px #ccc;
+    /* .pm-buttons */ }
+    section.profile-maker .profile-maker--box h1, section.profile-maker .profile-maker--box h2, section.profile-maker .profile-maker--box h3, section.profile-maker .profile-maker--box h4, section.profile-maker .profile-maker--box h5, section.profile-maker .profile-maker--box h6, section.profile-maker .profile-maker--box .pm-buttons {
+      margin: 0 auto;
+      padding: 12px 20px; }
+    section.profile-maker .profile-maker--box > img {
+      display: block;
+      min-width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      padding: 0; }
+  section.profile-maker .profile-maker--uploader {
+    display: block;
+    border: solid 1px #ccc;
+    background: white;
+    padding: 20px;
+    margin: 0 auto 16px; }
+    section.profile-maker .profile-maker--uploader p {
+      margin: 0 auto 12px;
+      padding: 0;
+      line-height: 1.4; }
+  section.profile-maker .page-maker--form {
+    position: relative;
+    background: white;
+    border: solid 1px #ccc;
+    margin: 0 auto 32px;
+    /* .page-maker--form-title */
+    /* .page-maker--form-inner */ }
+    section.profile-maker .page-maker--form .page-maker--form-title {
+      background: #00397D;
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 12px 20px; }
+      section.profile-maker .page-maker--form .page-maker--form-title h1, section.profile-maker .page-maker--form .page-maker--form-title h2, section.profile-maker .page-maker--form .page-maker--form-title h3, section.profile-maker .page-maker--form .page-maker--form-title h4, section.profile-maker .page-maker--form .page-maker--form-title h5, section.profile-maker .page-maker--form .page-maker--form-title h6 {
+        padding: 0;
+        margin: 0; }
+    section.profile-maker .page-maker--form .page-maker--form-inner {
+      padding: 32px 20px 12px;
+      /* .row */ }
+      section.profile-maker .page-maker--form .page-maker--form-inner .row {
+        margin-bottom: 20px; }
+      section.profile-maker .page-maker--form .page-maker--form-inner label {
+        font-weight: normal; }
+      section.profile-maker .page-maker--form .page-maker--form-inner .btn {
+        margin: 0 auto 20px; }
+  section.profile-maker .timelineContainer {
+      /*width: 100%;*/
+      position: relative;
+      width: 851px;
+      max-width: 851px;
+      margin: 0 auto 32px;
+      /*background: #fff;*/ } 
+  section.profile-maker .page-maker--placeholder {
+    margin: 0 auto 32px; }         
+  section.profile-maker .page-maker--placeholdermain {
+      position: relative;
+      margin: 0 auto 32px;
+      /*max-width: 100%;*/
+      max-width: 851px;
+      height: 315px;
+      max-height: 315px;
+      overflow: hidden;
+      background: #fff;
+    /* .facebook */
+    /* .avatar */ }  
+    section.profile-maker .page-maker--placeholder > img {
+      min-width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      padding: 0;
+      display: block;
+      border: none; }
+    section.profile-maker .page-maker--placeholdermain > img.headerimage {
+      cursor: move;
+      display: block;
+      margin-left: auto;
+      margin-right: auto; }  
+    section.profile-maker .timelineContainer #timelineProfilePic {
+      width: 160px;
+       height: 160px; 
+      border: 1px solid #666666;
+      background-color: #ffffff;
+      position: absolute;
+      bottom: 0;
+      /* margin-top: -115px; */
+      /* margin-top: -50px; */
+      margin-left: 20px;
+      z-index: 2;
+      overflow: hidden;
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px; }  
+    section.profile-maker .page-maker--placeholder .facebook {
+      position: relative;
+      width: 851px;
+      height: 315px;
+      margin: 0 auto 52px;
+      padding: 0;
+      overflow: hidden;
+      /* .facebook-profile*/
+      /* .facebook-clear-area */
+      /* .facebook-caption */ }
+      section.profile-maker .page-maker--placeholder .facebook > img {
+        min-width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding: 0; }
+      section.profile-maker .page-maker--placeholder .facebook .facebook-profile {
+        position: absolute;
+        top: 176px;
+        left: 16px;
+        width: 160px;
+        height: 160px;
+        background: white;
+        border: solid 1px #ccc;
+        z-index: 2; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-profile > p {
+          margin: 0 auto;
+          padding: 0;
+          font-size: x-small;
+          line-height: 160px;
+          text-align: center; }
+      section.profile-maker .page-maker--placeholder .facebook .facebook-clear-area {
+        position: absolute;
+        background: rgba(255, 165, 0, 0.2);
+        min-width: 145px;
+        min-height: 100%;
+        left: 0; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-clear-area.right {
+          right: 0;
+          left: auto; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-clear-area:before {
+          content: "Clear Area";
+          position: absolute;
+          top: 50%;
+          width: 100%;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+          text-align: center;
+          text-transform: uppercase;
+          font-size: x-small; }
+      section.profile-maker .page-maker--placeholder .facebook .facebook-caption,
+      section.profile-maker .timelineContainer .facebook-caption {
+        position: absolute;
+        top: 10px;
+        /*left: 190px;*/
+        /*max-width: 250px;
+        min-width: 250px;*/
+        color: white;
+        /* .right */
+        /* .condensed */
+        /* .no-dent */
+        /* .green */
+        /* .orange */
+        /* .light_blue */
+        /* .purple */
+        /* .red */
+        /* .facebook-caption--inner --*/
+        /* .facebook-caption-trapezoid */ }
+        section.profile-maker .timelineContainer .shade {
+          /*background: url('../images/profile-maker/timeline_shade.png');*/
+          /*background: #ccc;*/
+          min-height: 95px;
+          position: absolute;
+          bottom: 0;
+          /* margin-top: -95px; */
+          width: 100%;
+          z-index: -1;
+        }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.right {
+          left: auto;
+          right: 155px; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.portrait {
+          max-width: 210px;
+          min-width: 210px; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.square {
+          max-width: 231px;
+          min-width: 231px; }  
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.landscape {
+          max-width: 300px;
+          min-width: 300px; }  
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.no-dent {
+          /* .facebook-caption--inner */ }
+          section.profile-maker .page-maker--placeholder .facebook .facebook-caption.no-dent > .facebook-caption--inner {
+            /*padding-bottom: 32px !important;*/ 
+            padding-bottom: 5px !important; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.green > .facebook-caption--inner {
+          background: #009a44; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.green .facebook-caption-trapezoid::before {
+          border: solid 100px #009a44; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.orange > .facebook-caption--inner {
+          background: #ff8200; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.orange .facebook-caption-trapezoid::before {
+          border: solid 100px #ff8200; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.light_blue > .facebook-caption--inner {
+          background: #0077c8; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.light_blue .facebook-caption-trapezoid::before {
+          border: solid 100px #0077c8; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.purple > .facebook-caption--inner {
+          background: #87189d; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.purple .facebook-caption-trapezoid::before {
+          border: solid 100px #87189d; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.red > .facebook-caption--inner {
+          background: #e4002b; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption > .facebook-caption--inner p {
+          font-size: 14px; }  
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption.red .facebook-caption-trapezoid::before {
+          border: solid 100px #e4002b; }
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption > .facebook-caption--inner,
+        section.profile-maker .timelineContainer .facebook-caption > .facebook-caption--inner {
+          padding: 12px 20px 0; 
+          overflow: hidden; }
+        section.profile-maker .timelineContainer .facebook-caption > .facebook-caption--inner span {
+          display: block;
+          /*margin: 10px 0;*/ } 
+        section.profile-maker .timelineContainer .facebook-caption > .facebook-caption--inner span#konten {
+          font-size: 12px;
+          word-wrap: break-word;
+        }   
+        section.profile-maker .page-maker--placeholder .facebook .facebook-caption .facebook-caption-trapezoid,
+        section.profile-maker .timelineContainer .facebook-caption .facebook-caption-trapezoid {
+          position: absolute;
+          /*bottom: -16px;*/
+          min-width: 100%;
+          height: 32px;
+          overflow: hidden; }
+          section.profile-maker .page-maker--placeholder .facebook .facebook-caption .facebook-caption-trapezoid::before,
+          section.profile-maker .timelineContainer .facebook-caption .facebook-caption-trapezoid:before {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            right: 0;
+            border: solid 100px #00397D;
+            border-right-color: transparent !important;
+            border-bottom-color: transparent !important; }
+    section.profile-maker .page-maker--placeholder .avatar {
+      display: block;
+      position: relative;
+      /*width: 512px;
+      height: 512px;*/
+      width: 472px;
+      max-width: 472px;
+      height: 394px;
+      max-height: 394px;
+      margin: 0 auto;
+      padding: 0;
+      background: white;
+      /*border: solid 1px #ccc;*/
+      overflow: hidden;
+      /* .avatar-caption */ }
+      section.profile-maker .page-maker--placeholder .avatar > img {
+        max-width: 720px;
+        min-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding: 0;
+        border: none;
+        cursor: move;
+        display: block; }
+      section.profile-maker .page-maker--placeholder .avatar .avatar-caption {
+        /*position: absolute;*/
+        top: 0;
+        left: 0;
+        /*min-width: 100%;
+        min-height: 100%;*/
+        /* .avatar-caption--logo */
+        /* .avatar-caption--footer */ }
+        section.profile-maker .page-maker--placeholder .avatar .avatar-caption .avatar-caption--logo {
+          position: absolute;
+          z-index: 9999;
+          right: 16px;
+          top: 16px; }
+        section.profile-maker .page-maker--placeholder .avatar .avatar-caption .avatar-caption--footer {
+          background: #b4b4b4;
+          color: #3b579d;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          padding: 0 56px;
+          z-index: 1;
+          line-height: 52px;
+          min-height: 52px; }
+          section.profile-maker .page-maker--placeholder .avatar .avatar-caption .avatar-caption--footer i.fa {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            transform: translateY(-50%); }
+
+/* section.profile-maker */
+
+/*# sourceMappingURL=profil-maker.css.map */
+
+
+
+/* mobile looks like */
+@media screen and (max-width: 640px) {
+    .col-md-20 {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+}
