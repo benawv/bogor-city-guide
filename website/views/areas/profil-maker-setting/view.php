@@ -17,6 +17,8 @@
 
 </script>
 
+<script src="/website/static/profil-maker/js/jquery.validate.min.js"></script>
+
 <section class="profile-maker">
     <div class="container">
 
@@ -153,6 +155,7 @@
 
                 </div> <!--/ #timelineContainer -->
 
+                <!-- when mobile condition -->
                 <div id="cover-m" class="timelineContainer" style="display: none">
 
                     <div id="timelineBackground" class="page-maker--placeholdermain">
@@ -167,9 +170,9 @@
                     <div id="place" class="landscape facebook-caption leftside">
                         <div id="notepad" class="facebook-caption--inner landscape-bg bg-blue">
 
-                            <h3><span id="judul">&lt;Title&gt;</span></h3> <br />
+                            <h3><span id="judul-m">&lt;Title&gt;</span></h3> <br />
 
-                            <span id="konten">
+                            <span id="konten-m">
                                 &lt;Description&gt;
                             </span> <br />
 
@@ -179,7 +182,7 @@
                         <!-- <div class="facebook-caption-trapezoid"></div> -->
 
                         <div id="edge-note" class="edge e-blue">
-                            <span id="nama">&lt;Name&gt;</span>
+                            <span id="nama-m">&lt;Name&gt;</span>
                         </div> 
 
                     </div> <!--/ .facebook-caption -->
@@ -193,7 +196,22 @@
                 </div> <!--/ #timelineContainer --> 
 
                 <div id="ava1" class="page-maker--placeholder" style="display: none">
-                    <div class="avatar">
+                    <div id="avatar1" class="avatar">
+                        <div id="avacapture1" class="avatar-caption">
+                            <div class="avatar-caption--logo">
+                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
+                            </div><!--/ .avatar-caption--logo -->
+                        </div><!--/ .avatar-caption -->
+                        <?php
+                            $session = new Zend_Session_Namespace('srcImage');
+                        ?>
+                        <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
+                    </div><!--/ .facebook -->
+                </div><!--/ .page-maker--placeholder -->
+
+                <!-- when mobile condition -->
+                <div id="ava1-m" class="page-maker--placeholder" style="display: none">
+                    <div id="avatar1" class="avatar">
                         <div id="avacapture1" class="avatar-caption">
                             <div class="avatar-caption--logo">
                                 <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
@@ -226,6 +244,27 @@
                     </div><!--/ .facebook -->
                 </div><!--/ .page-maker--placeholder -->
 
+                <!-- when mobile condition -->
+                <div id="ava2-m" class="page-maker--placeholder" style="display: none">
+                    <div id="avatar2" class="avatar">
+                        <div id="avacapture2" class="avatar-caption">
+                            <div class="avatar-caption--logo">
+                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
+                            </div><!--/ .avatar-caption--logo -->
+                            <div class="avatar-caption--footer">
+                                <img src="/website/static/images/profile-maker/fb.png" alt="" style="position: absolute; width: 29px; left: 19px; top: 11px;">
+                                <!-- <i class="fa fa-facebook-square fa-2x"></i> --> &nbsp;
+                                <span>Allianz Indonesia</span>&nbsp;
+                                <strong><span id="cname-m">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
+                            </div><!--/ .avatar-caption-footer -->
+                        </div><!--/ .avatar-caption -->
+                         <?php
+                            $session = new Zend_Session_Namespace('srcImage');
+                         ?>
+                        <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
+                    </div><!--/ .facebook -->
+                </div><!--/ .page-maker--placeholder -->
+
                 <div id="fillform" class="page-maker--form">
                     <div class="page-maker--form-title">
                         <h3>Notepad</h3>
@@ -237,7 +276,8 @@
                                     <label>Headline</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <input type="text" name="headline" id="atas" class="form-control">
+                                    <input type="text" name="headline" id="atas" class="form-control" required> 
+                                    
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div id="input2" class="row">
@@ -246,8 +286,9 @@
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
                                     <!-- <div class="highlighter" id="overflowText"></div> -->
-                                    <textarea class="form-control" name="content" id="tengah" maxlength="200" rows="5"></textarea>
-                                    <div id="counter">Letters remaining: <span id="char">180</span></div>
+                                    <textarea class="form-control" name="content" id="tengah" maxlength="200" rows="5" required></textarea>
+                                    <div id="counter">Letters remaining: <span id="char">180</span></div> 
+                                        
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div id="input3" class="row">
@@ -255,7 +296,8 @@
                                     <label>First Name</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <input type="text" name="first_name" id="bawah1" class="form-control">
+                                    <input type="text" name="first_name" id="bawah1" class="form-control" required> 
+                                    
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div id="input4" class="row">
@@ -263,7 +305,8 @@
                                     <label>Last Name</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <input type="text" name="last_name" id="bawah2" class="form-control">
+                                    <input type="text" name="last_name" id="bawah2" class="form-control" required>
+                                    
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div id="input5" class="row">
@@ -271,7 +314,7 @@
                                     <label>Notepad Color</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <select id="color" class="form-control">
+                                    <select id="color" class="form-control" required>
                                         <option value"blue" selected> Blue </option>
                                         <option value"orange"> Orange </option>
                                         <option value"red"> Red </option>
@@ -283,7 +326,7 @@
                                     <label>Notepad Position</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <select id="position" class="form-control" >
+                                    <select id="position" class="form-control" required>
                                         <option value"left" selected> Left </option>
                                         <option value"right"> Right </option>
                                     </select>
@@ -291,7 +334,7 @@
                             </div><!--/ .row -->
                             <div class="row" style="margin-top: 16px;">
                                 <div class="col-xs-6 col-sm-3">
-                                    <a id="preview" href="#top" class="btn btn-default btn-block">Pratinjau</a>
+                                    <a id="preview" href="#top" class="btn btn-default btn-block">Pratinjau</a> 
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-6 col-sm-3">
                                     <a id="save" href="#ask" class="btn btn-primary btn-block">Simpan</a>
@@ -306,6 +349,20 @@
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                         </form>
+
+                            <script>
+                            // just for the demos, avoids form submit
+                                jQuery.validator.setDefaults({
+                                  debug: true,
+                                  success: "valid"
+                                });
+                                var form = $( "#formx" );
+                                form.validate();
+                                $( "#preview" ).click(function() {
+                                  form.valid();
+                                });
+                            </script>
+
 
                     </div><!--/ .page-maker--form-inner -->
 

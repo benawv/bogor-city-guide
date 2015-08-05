@@ -8,5 +8,5 @@
 <script src="/website/static/profil-maker/js/jquery-ui.min.js"></script>
 <script src="/website/static/profil-maker/js/jquery.wallform.js"></script>
 <script src="/website/static/profil-maker/js/javascript.js"></script>
-<!-- <script src="http://html2canvas.hertzen.com/build/html2canvas.js"></script> -->
 <script src="/website/static/profil-maker/js/html2canvas.js"></script>
+
