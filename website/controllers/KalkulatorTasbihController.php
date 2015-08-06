@@ -88,6 +88,7 @@
             $session->nama = $nama ;
             $session->email = $email;
             $session->nohp = $nohp;
+            $session->info = $info;
             $session->emailFrom = "tasbih_calc";
             $session->setExpirationSeconds( 600, 'tasbih' );
 

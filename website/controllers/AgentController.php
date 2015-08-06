@@ -258,6 +258,7 @@ class AgentController extends Website_Controller_Action {
 		
         $nama = $session->nama;
         $email=$session->email ;
+        $info=$session->info;
         $nohp=$session->nohp ;
         $date_tglBuat = $session->date_tglBuat;
         $date_tglLahir = $session->date_tglLahir;
@@ -329,12 +330,13 @@ class AgentController extends Website_Controller_Action {
 						'JK' => $JK,
 						'nohp' => $nohp,
 						'ket' => $ket,
-                        'per' => $per
+                        'per' => $per,
+                        'info' => $info
 						);
 		$bodyEmail = "Tanggal Perhitungan: ".$date_tglBuat1."<br>Nama: ".$nama."<br>
 		No Handphone: ".$nohp."<br>Email: ".$email."<br>Tanggal Lahir: ".$date_tglLahir1."<br>
 		Usia: ".$Usia."<br>Jenis Kelamin: ".$JK."<br>Frekuensi: ".$frek."<br>
-		Asuransi Jiwa: ".$AJ."<br>Massa Pembayaran Premi: ".$Kontribusi."<br>Kontirbusi Berkala/Tahun: ".$hasil."<br>";
+		Asuransi Jiwa: ".$AJ."<br>Massa Pembayaran Premi: ".$Kontribusi."<br>Kontribusi Berkala/Tahun: ".$hasil."<br>";
 		/*
 		$systemConfig = Pimcore_Config::getSystemConfig()->toArray();
 		$emailSettings = $systemConfig['email'];	

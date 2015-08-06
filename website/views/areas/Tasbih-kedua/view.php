@@ -259,13 +259,13 @@
                     
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label><strong>Dari mana Anda mengetahui produk Allianz Tasbih</strong></label>
+                                <label><strong>Dari mana Anda mengetahui produk Allianz Tasbih?</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <select class="form-control" name="informasi" id="informasi">
                                     <option value="pilih">- Pilih -</option>
                                     <option value="Televisi">Televisi</option>
-                                    <option value="Bilboard">Billboard</option>
+                                    <option value="Billboard">Billboard</option>
                                     <option value="Radio">Radio</option>
                                     <option value="Koran">Koran</option>
                                     <option value="Teman/kerabat">Teman/Kerabat</option>
