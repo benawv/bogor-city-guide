@@ -24,4 +24,22 @@ class ProfilMakerController extends Website_Controller_Action {
 		$session->src = $src;
 		$this->redirect("/profil-maker/page3");
 	}
+
+	public function saveAction(){
+		$headline = $_POST['headline'];
+		$description = $_POST['description'];
+		$firstName = $_POST['firstName'];
+		$lastName = $_POST['lastName'];
+
+		$getId = Object_Abstract::getByPath('/profil-maker/'); //get folder
+		$register = new Object_ProfilMaker();
+		$register->setHeadline($headline);
+		$register->setDescription($description);
+		$register->setFirstname($firstName);
+		$register->setLastname($lastName);
+		$register->setO_parentId($getId->o_id);
+		$register->setIndex(0);
+		$register->setPublished(1);
+		$register->save();
+	}
 }
