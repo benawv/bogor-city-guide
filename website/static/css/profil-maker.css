@@ -1,5 +1,11 @@
+/* 5 grid agent locator mobile looks like */
 .col-md-20 {
   width: 20%;
+}
+label.error {
+  padding: 5px 0;
+  font-size: 13px;
+  color: #CA0404;
 }
 .leftside {
   left: 190px;
@@ -41,7 +47,7 @@
   height: 230px;
   color: #FFFFFF;
 }
-span#nama {
+span#nama, span#nama-m {
   padding: 0 20px; 
   font-size: 14px; 
   word-wrap: break-word; }
@@ -392,7 +398,7 @@ section.profile-maker {
 
 
 
-/* mobile looks like */
+/* 5 grid agent locator mobile looks like */
 @media screen and (max-width: 640px) {
     .col-md-20 {
         width: 100% !important;
