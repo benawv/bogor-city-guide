@@ -11,6 +11,27 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+
+
+function checkfiles(){
+    var fup = document.getElementById('imgfile');
+    var fileName = fup.value;
+    var ext = fileName.substring(fileName.lastIndexOf('.')+1);
+
+    if (ext == ""){
+        document.getElementById('test').innerHTML = "Tidak ada file yang dipilih";
+        //var msg ="Tidak ada file yang dipilih";
+        fup.focus();
+        return false;
+    }else if (ext == "JPG" || ext == "PNG" || ext == "jpg" || ext == "png"){
+        return true;
+    }else{
+        document.getElementById('test').innerHTML = "File tidak di dukung";
+        //var msg ="Tidak ada file yang dipilih";
+        fup.focus();
+        return false;
+    }
+}
 </script>
 <section class="profile-maker">
     <div class="container">
@@ -18,8 +39,7 @@ function readURL(input) {
         <div class="row profile-maker--title">
             <div class="col-xs-12">
                 <h2><script>
-                var title = getCookie("keterangan");
-                document.write(title);
+                document.write(getCookie("keterangan"));
             </script></h2>
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
@@ -31,24 +51,27 @@ function readURL(input) {
                     <p>
                         Upload your files here. Supported formats: JPG and PNG,<br />
                         <script>
-                        var title = getCookie("keterangan");
-                        document.write(title);
+                        document.write(getCookie("keterangan"));
                         </script>
                     </p>
-                    <form role="form" action="/upload-image/" method="post" enctype="multipart/form-data">
+                    <form role="form" action="/upload-image/" method="post" enctype="multipart/form-data" onsubmit="return checkfiles();">
                         <div class="form-group">
                             <!--<img id="preview" src="#" alt="your image" width="100" height="100" />-->
                             
                             <input id="imgfile" type="file" name="uploadFoto" /> 
                             <!--<input type="file" required>-->
                         </div><!--/ .form-group -->
-                        <div class="form-group">
+                        <div style="color:red" id="test"></div>
+                        <p></p>
+                        <div class="form-group" id="test">
                             <!--<a href="/profil-maker/page3" class="btn btn-primary">-->
-                                <input type="submit" value="Unggah" class="btn btn-primary"/>
+                                <input type="submit" name="submit" value="Unggah" class="btn btn-primary" />
+                    </form>
                             <!--</a>-->
                             <a href="javascript:history.go(-1);" class="btn btn-default">Kembali</a>
                         </div><!--/ .form-group -->
-                    </form>
+
+                    
                 </div><!--/ .profile-maker--uploader -->
 
             </div><!--/ .col-xs-12 -->
