@@ -256,6 +256,26 @@
                             </div><!--/ .col-md-4 -->
                         </div><!--/ .form-group -->
 
+                    
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label><strong>Dari mana Anda mengetahui produk Allianz Tasbih</strong></label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <select class="form-control" name="informasi" id="informasi">
+                                    <option value="pilih">- Pilih -</option>
+                                    <option value="Televisi">Televisi</option>
+                                    <option value="Bilboard">Billboard</option>
+                                    <option value="Radio">Radio</option>
+                                    <option value="Koran">Koran</option>
+                                    <option value="Teman/kerabat">Teman/Kerabat</option>
+                                    <option value="Agen">Agen Asuransi</option>
+                                </select>
+                                <label id="notif-informasi" style="display:none; color: #f00;">
+                                    Mohon maaf, informasi yang Anda masukan belum sesuai dengan ketentuan ilustrasi
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
                         
                         <?php
                             if($sessionTasbih->kat == "" || $sessionTasbih->kat == null || $sessionTasbih->kat == " ")
@@ -478,15 +498,19 @@
             var nama = $('#nama').val();
             var email = $('#email').val();
             var nohp = $('#nohp').val();
+            var informasi = $('#informasi option:Selected').val();
+            
+            //alert(informasi);
 
-
-            if( nama == '' ||email == '' || nohp == '' || nohp.length <= 8){
+            if( nama == '' ||email == '' || nohp == '' || nohp.length <= 8 || informasi == 'pilih'){
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
                     if( email == '' )
                         document.getElementById('notifemail').style.display= 'block';
-                    if( nohp.length <= 8 || no.hp == '')
+                    if( nohp.length < 8 || nohp == '')
                         document.getElementById('notifNoHP').style.display='block';
+                    if( informasi == 'pilih')
+                        document.getElementById('notif-informasi').style.display='block';
                     alert("Mohon Periksa Inputan Anda");
             }else{
 
@@ -497,7 +521,8 @@
                               'nama' : nama,
                               'email' : email,
                               'nohp' : nohp,
-                              'kategori' : '<?php echo $kat;?>'
+                              'kategori' : '<?php echo $kat;?>',
+                              'informasi' : informasi
                               },
                       success  : function(data){
                         //console.log(data);
@@ -520,6 +545,17 @@
         });
     });
 
+    $('#informasi').on('change',function(){
+        var informasi = $('#informasi option:Selected').val();
+        
+        if(informasi == 'pilih'){
+            document.getElementById('notif-informasi').style.display= 'block';
+        }
+        else{
+            document.getElementById('notif-informasi').style.display= 'none';
+        }
+    });
+    
     $(document).ready(function(){
 
 

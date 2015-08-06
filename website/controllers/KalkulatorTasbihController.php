@@ -81,6 +81,7 @@
             $email = $_POST["email"];
             $nohp = $_POST["nohp"];
 			$kat = $_POST["kategori"];
+            $info = $_POST["informasi"];
 
 
             $session = new Zend_Session_Namespace('tasbih');
@@ -141,7 +142,8 @@
 			$cookie->setFrekuensiPembayaran($frek);
 			$cookie->setDetailAsuransiJiwa($AsuransiJiwa);
 			$cookie->setMassaPembayaranKontribusi($Kontribusi);
-			$cookie->setKontribusiBerkala($Calculation);                
+			$cookie->setKontribusiBerkala($Calculation);   
+            $cookie->setInformasi($info);
 			$cookie->setO_key('premium_tasbih_'.strtotime(date("YmdHis")));
 			$cookie->setO_parentId($getId->o_id);
 			$cookie->setO_index(0);
@@ -190,7 +192,8 @@
 							'per' => $per,
 							'frek' => $Frekuensi,
 							'JK' => $JK,
-							'nohp' => $nohp
+							'nohp' => $nohp,
+                            'info' => $info
 							);
 			/*
 			$systemConfig = Pimcore_Config::getSystemConfig()->toArray();
