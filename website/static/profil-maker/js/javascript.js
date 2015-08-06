@@ -146,34 +146,66 @@ $(document).ready(function()
 
 		    
 			//Preview button
-
  			$(function() { 
-                    $("#preview, #save").click(function(e){
-                    	$('#judul, #konten, #nama, #cname').empty();
-                        $headline = $('#atas').val();
-                        $konten = $('#tengah').val();
-                        $nama1 = $('#bawah1').val();
-                        $nama2 = $('#bawah2').val();
-                        $('#judul').html($headline);
-                        $('#konten').html($konten);
-                        $('#nama').html($nama1+" "+$nama2); //name at form cover
-                        $('#cname').html($nama1+" "+$nama2); //name at form avatar
-                        $("#place").css({display: "block"});
+                    $("#preview").click(function(){
+
+						//preview and save
+						if(form.valid()){
+							//alert("all filled");
+							$("a").attr("href", "#top");
+							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
+	                        $headline = $('#atas').val();
+	                        $konten = $('#tengah').val();
+	                        $nama1 = $('#bawah1').val();
+	                        $nama2 = $('#bawah2').val();
+	                        $('#judul, #judul-m').html($headline);
+	                        $('#konten, #konten-m').html($konten);
+	                        $('#nama, #nama-m').html($nama1+" "+$nama2); //name at form cover
+	                        $('#cname, #cname-m').html($nama1+" "+$nama2); //name at form avatar
+	                        $("#place").css({display: "block"});
+						}
+						else {
+							//alert("no filled");
+							$("a").attr("href", "#fillform");
+							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
+						}
+
+                        
+                	});
+					
+					$("#save").click(function(){
+
+						//preview and save
+						if(form.valid()){
+							//alert("all filled");
+							$("a").attr("href", "#ask");
+							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
+	                        $headline = $('#atas').val();
+	                        $konten = $('#tengah').val();
+	                        $nama1 = $('#bawah1').val();
+	                        $nama2 = $('#bawah2').val();
+	                        $('#judul, #judul-m').html($headline);
+	                        $('#konten, #konten-m').html($konten);
+	                        $('#nama, #nama-m').html($nama1+" "+$nama2); //name at form cover
+	                        $('#cname, #cname-m').html($nama1+" "+$nama2); //name at form avatar
+	                        $("#place").css({display: "block"});
+
+	                        $('#fillform').hide();
+                			$('#ask').show();   
+						}
+						else {
+							//alert("no filled");
+							$("a").attr("href", "#fillform");
+							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
+						}
+                        
                 	});
 
-                   
-                //Ask to save or no    
-                    $("#save").click(function(){
-                    	$('#fillform').hide();
-                    	$('#ask').show();
-                        
-                });
-
+               
                 //Back to fill form    
-                    $("#cancel").click(function(){
-                    	$('#fillform').show();
-                    	$('#ask').hide();
-                        
+                $("#cancel").click(function(){
+                $('#fillform').show();
+                $('#ask').hide();      
                 });
 
                     //Back to fill form    
@@ -207,16 +239,69 @@ $(document).ready(function()
                 
                 //cek cookie
                 var temp = getCookie("template");
-    			console.log("javascript: "+temp);
+    			console.log(temp);
+
+    			//get template from cookie
+			    if(temp == "template1") {
+			        //alert("landscape");
+			        $("#cover1").show();
+			        $("#place").prop('class', 'landscape facebook-caption leftside');
+			        $("#notepad").prop('class', 'facebook-caption--inner landscape-bg bg-blue');
+			    }
+			    else if(temp == "template2") {
+			        //alert("portrait");
+			        $("#cover1").show();
+			        $("#place").prop('class', 'portrait facebook-caption leftside');
+			        $("#notepad").prop('class', 'facebook-caption--inner portrait-bg bg-blue');
+			    }
+			    else if(temp == "template3") {
+			        //alert("square");
+			        $("#cover1").show();
+			        $("#place").prop('class', 'square facebook-caption leftside');
+			        $("#notepad").prop('class', 'facebook-caption--inner square-bg bg-blue');
+			    }
+			    else if(temp == "template4" || temp == "template6") {
+			        //alert("ava2");
+			        $("#ava2").css("display", "block");
+			        $("#input1, #input2, #input5, #input6").hide();
+			    }
+			    else if(temp == "template5") {
+			        //alert("ava1");
+			        $("#ava1").css("display", "block");
+			        $("#input1, #input2, #input3, #input4, #input5, #input6").hide();
+			    }
+
+			    if($(window).width() < 640) {
+			    	//alert("640 coy");
+			    	if(temp == "template1" || temp == "template2" || temp == "template3") {
+			    		$("#cover1").hide();
+			    		$("#cover-m").show();
+			    	}
+			    	else if(temp == "template4" || temp == "template6") {
+			    		//alert("this is avatar 2 comin' up");
+			    		$("#ava2").hide();
+			    		$("#ava2-m").show();
+			    	}
+			    	else if(temp == "template5") {
+			    		//alert("this is avatar 1 comin' up");
+			    		$("#ava1").hide();
+			    		$("#ava1-m").show();
+			    	}
+			    }
 
                 //Capture image and download it   
 				$('body').on('click','#download',function(){
 
 					//capture cover
 					if(temp == "template1" || temp == "template2" || temp == "template3") {
-	                html2canvas($('#cover1'), {
+
+						$("#cover-m").hide();
+	                    $("#cover1").show();
+
+	                	html2canvas($('#cover1'), {
 	                    onrendered: function(canvas) {
-	                        //$('#imaged').html(canvas);
+	                    	
+	                        	//$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
 
 	                           	//$('#imaged').append('<img src="'+dataURL+'" />');
@@ -227,6 +312,12 @@ $(document).ready(function()
 	                            //     console.log(data);
 	                            // });
 
+								if($(window).width() < 640) {
+									alert("after capture, back to cover1");
+									$("#cover-m").show();
+									$("#cover1").hide();
+								}
+
 	                			//Random filename after download
 	                			var filename = new Array(2).join().replace(/(.|$)/g, function(){return ((Math.random()*36)|0).toString(36);})
 
@@ -235,18 +326,51 @@ $(document).ready(function()
 									link.download = "Allianz_download_"+filename+".png";
 									document.body.appendChild(link);
 									link.click();
+									console.log(dataURL);
+									console.log(link);	
 
-	                    	}
-	                	});
-					}
+									//trying to save directory
+									var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+									var output = encodeURIComponent(dataURL);
+									var cur_path = 'downloaded';
+									console.log(output);
+									console.log(cur_path); 
+		                			var Parameters = "image=" + output + "&filedir=" + cur_path;
+								        $.ajax({
+								            type: "POST",
+								            url: "/website/static/profil-maker/save.php",
+								            data: Parameters,
+								            success: function(data) {
+										        //alert(data);
+										        //console.log(data);
+										    },
+										    error: function(data){
+										    	alert("fail");
+										    }
+								        });
+
+	                    		}
+
+		                	});
+						}
 
 					//capture avatar
 					else if(temp == "template4" || temp == "template6"){
-						html2canvas($('#ava2'), {
+
+						$("#ava2-m").hide();
+	                    $("#ava2").show();
+
+						html2canvas($('#avatar2'), {
 	                    onrendered: function(canvas) {
 	                        //$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
 
+	                            if($(window).width() < 640) {
+									alert("after capture, back to ava2");
+									$("#ava2-m").show();
+									$("#ava2").hide();
+								}
+
 	                			//Random filename after download
 	                			var filename = new Array(2).join().replace(/(.|$)/g, function(){return ((Math.random()*36)|0).toString(36);})
 
@@ -255,16 +379,46 @@ $(document).ready(function()
 									link.download = "Allianz_download_"+filename+".png";
 									document.body.appendChild(link);
 									link.click();
+
+									//trying to save directory
+									var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+									var output = encodeURIComponent(dataURL);
+									var cur_path = 'downloaded';
+									console.log(output);
+									console.log(cur_path); 
+		                			var Parameters = "image=" + output + "&filedir=" + cur_path;
+								        $.ajax({
+								            type: "POST",
+								            url: "/website/static/profil-maker/save.php",
+								            data: Parameters,
+								            success: function(data) {
+										        //alert(data);
+										        //console.log(data);
+										    },
+										    error: function(data){
+										    	alert("fail");
+										    }
+								        });
 	                    	}
 	                	});
 					}
 
 					//capture avatar
 					else if(temp == "template5"){
-						html2canvas($('#ava1'), {
+
+						$("#ava1-m").hide();
+						$("#ava1").show();
+
+						html2canvas($('#avatar1'), {
 	                    onrendered: function(canvas) {
-	                        //$('#imaged').html(canvas);
+	                        	//$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
+
+	       						if($(window).width() < 640) {
+								alert("after capture, back to ava1");
+								$("#ava1-m").show();
+								$("#ava1").hide();
+								}
 
 	                			//Random filename after download
 	                			var filename = new Array(2).join().replace(/(.|$)/g, function(){return ((Math.random()*36)|0).toString(36);})
@@ -274,6 +428,27 @@ $(document).ready(function()
 									link.download = "Allianz_download_"+filename+".png";
 									document.body.appendChild(link);
 									link.click();
+
+									//trying to save directory
+									var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+									var output = encodeURIComponent(dataURL);
+									var cur_path = 'downloaded';
+									console.log(output);
+									console.log(cur_path); 
+		                			var Parameters = "image=" + output + "&filedir=" + cur_path;
+								        $.ajax({
+								            type: "POST",
+								            url: "/website/static/profil-maker/save.php",
+								            data: Parameters,
+								            success: function(data) {
+										        //alert(data);
+										        //console.log(data);
+										    },
+										    error: function(data){
+										    	alert("fail");
+										    }
+								        });
+								
 	                    	}
 	                	});
 					}

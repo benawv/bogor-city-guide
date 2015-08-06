@@ -156,6 +156,7 @@
 </style>
 <?php
      foreach($this->newsTasbih as $items){
+
         /*echo "<pre>";
         print_r($items);
         echo "</pre>";*/
@@ -214,7 +215,7 @@
                 <div class="main-content">
 
                     <div class="main-content--header">
-                    <h1 class="mb12"><?php echo $items->title; ?></h1>
+                    <h1 class="mb12" id="judul"><?php echo $items->title; ?></h1>
                     <h5>
                         <span><a href="/tasbih">Home</a> / <a href="#">artikel</a></span>
                         <?php /*
@@ -253,7 +254,9 @@
                     </div><!--/ .main-content--header -->
 
                     <?php echo $items->content; ?>
-
+                    <br/>
+                    <p>Untuk informasi lebih lengkap mengenai produk allianz tasbih klik :</p>
+                    <button class="btn btn-primary" onclick="location.href='/produk/asuransi-syariah/tasbih/info-produk';" type="button">Informasi Produk Allianz Tasbih</button>
                 </div><!--/ .main-content -->
 
                 </div><!--/ .col-xs-12 -->
@@ -286,7 +289,8 @@
         </section>
 
     </div><!--/ .page-wrapper-outer -->
-<?php } ?>
+
+
 <script type="text/javascript">
     
         var getWidht=$( document ).width();
@@ -322,26 +326,12 @@ $( document ).ready(function(){
 
 //alert('TEST');
     
-    var description;
-    var title;
-    var image;
+    var desc = ($('#judul').html()).substring(0,75)+"...";
+    var judul = "<?php echo $items->title; ?>";
+    var title = judul.toLowerCase();
+    var image = document.getElementById("backart").src;
     var url = window.location.host+window.location.pathname;
-    image = document.getElementById("backart").src;
-    title = $('title').html();
-    if(document.getElementsByTagName('meta')[4].getAttribute("name") == "description"){
-        description = document.getElementsByTagName('meta')[4].getAttribute("content");
-    }
-    //alert(url);
-	var metas = document.getElementsByTagName('meta');
-    if(title == "" || description == ""){
-        for (i=0; i<metas.length; i++) { 
-          if (metas[i].getAttribute("name") == "title") { 
-            title = metas[i].getAttribute("content"); 
-          }else if(metas[i].getAttribute("name") == "description"){
-            description = metas[i].getAttribute("content");
-          } 
-        } 
-    }
+    
     		$('.community-btn .twshare').on("click",function(){
         
 	        
@@ -356,7 +346,8 @@ $( document ).ready(function(){
         //alert(url);
        //var url ="http://beta.allianz.co.id/produk/asuransi-syariah/tasbih/artikel/prioritas-keuangan-dalam-rencana-naik-haji-26386";
        // alert(description.substring(3,80)+"...");
-        var desc = description.substring(3,80)+"...";
+        //var desc = description.substring(0,80)+"...";
+        //alert(desc);
         var name = (title.replace(/[^a-zA-Z()]/g,''))+"-artikel-tasbih";
         var filename = name.replace(/\s/g,'-');
         //alert(filename);
@@ -386,3 +377,4 @@ $( document ).ready(function(){
 
 
 </script>
+<?php } ?>

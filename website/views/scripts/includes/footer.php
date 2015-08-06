@@ -149,6 +149,28 @@
 			<div class="ojk-desc">
 				<p>Allianz dan Agen/Tenaga Penjualnya telah terdaftar pada dan diawasi oleh Otoritas Jasa Keuangan.</p>
 			</div>
+            
+              <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Silahkan Masukkan Email Anda</h4>
+                    </div>
+                    <div class="modal-body">
+                      <input type="email" class="form-control" placeholder="Alamat E-Mail" id="email" tabindex="6" maxlength="32" required onfocusout="this.value=validateEMAIL(this.value)">
+                        <label id="notif-email" style="display:none; color: #f00;">Maaf Anda Belum Memasukkan Email</label>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" id="SendingEmail" class="btn btn-info" data-dismiss="modal" style="background-color:#23527c">Kirim</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
 		</div>
 	</div>
 </footer>
@@ -173,7 +195,72 @@
 				$('html, body').animate({scrollTop:$("#"+anchor).offset().top-90}, 500);
 			}
 	}
-	
+
+    $('#SendingEmail').click(function() {
+        var email = $('#email').val();
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        if(email == "" || (!re.test(email)) ){
+            document.getElementById('notif-email').style.display= 'block';
+            alert("Mohon Maaf Email Anda Tidak Valid");
+        }else{
+        var img = $(".imgShare").attr("srcimg");
+        var title = $(".titleShare").text();
+        
+        var limit = 32;
+        var x;
+        var deskripsi = $(".descShare p").text();
+        if (deskripsi == "") {
+            deskripsi = $(".descShare p:eq(2)").text();
+        }
+        if (deskripsi == "") {
+            deskripsi = $(".descShare").text();
+        }
+        
+        var words = deskripsi.split(/\s/);
+        var desc='';
+        if (words.length > limit)
+        {
+                for(x=0;x<limit;x++)
+                {
+                        if (x==0)
+                        {
+                                desc = desc+words[x];
+                        }
+                        else
+                        {
+                                desc = desc+' '+words[x];
+                        }
+                }
+                desc = desc+'....';
+        }
+        else
+        {
+                desc = deskripsi;
+        }
+        
+        var tanggal = $(".tglShare time").text();
+        var link = window.location.host + window.location.pathname;
+        
+        $.ajax({
+            type: "POST",
+            url: "/share-email/",
+            data: {
+                postImg : img,
+                postTitle : title,
+                postDesc : desc,
+                postTanggal : tanggal,
+                postLink : link,
+                email :email
+            },
+            success: function(data){
+                alert(data);
+            }
+        });
+
+        }
+            
+    });
+    
 	$(window).bind("load", function() {
 		var hash = document.URL.substr(document.URL.indexOf('#')+1);
 		
@@ -192,6 +279,20 @@
 		$('li.aktif .nav_menu div').css('background-position', '0px 0px');
 		
 	});
+            function validateEMAIL(surat)
+        {
+            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+            if(!re.test(surat))
+            {
+                document.getElementById('notif-email').style.display= 'block';
+                return null;
+            }
+            else
+            {
+                document.getElementById('notif-email').style.display= 'none';
+                return surat;
+            }
+        };
 	/*$(document).ready(function(){
 		$(".clickLink").on("click",function(){
 			var url = $(this).find(".linkUrl").attr("href");

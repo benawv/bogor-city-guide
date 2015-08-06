@@ -122,15 +122,17 @@ class EmailController extends Website_Controller_Action {
 				'tanggal' => $_POST["postTanggal"],
 				'link' => $_POST["postLink"]
 				);
+        $email = $_POST['email'];
 		$mail = new Pimcore_Mail();
 		$mail->setSubject("Share Email");
 		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 		$mail->setDocument($document);
 		$mail->setParams($params);
 		//$mail->addTo($_POST["postEmail"]);
-		$mail->addTo("robbi@dreamcube.co.id");
+		$mail->addTo($email);
 		
 		$mail->send();
+        print_r("Terima Kasih");
     }
 	public function templateShareEmailAction(){
 		

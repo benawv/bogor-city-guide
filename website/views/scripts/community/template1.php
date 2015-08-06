@@ -9,6 +9,9 @@
 	}
 </style>
 <link rel="stylesheet" type="text/css" href="/website/static/css/virgin2.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/website/static/js/paging.js"></script>
 <div role="main" class="tips-main main imgShare" srcimg='<?php echo $this->data->imageBackgroundDetail->path.$this->data->imageBackgroundDetail->filename;?>' style="background: url(<?php echo $this->data->imageBackgroundDetail->path."".$this->data->imageBackgroundDetail->filename;?>);background-size: 1500px auto;background-repeat: no-repeat;background-position: top;">
 <div id="js-main-wrp" class="main-wrp" style="background-image:url(/sites/default/files/styles/hero_background_hi/public/Backgrounds/bg_space.jpg?itok=Sw8pyVQq)">
@@ -60,7 +63,7 @@
 								<div class="community-btn">
 										<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
 										<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
-										<a href="javascript:void(0);" class="emailshare"><i class="fa fa-envelope"></i></a>
+										<a href="javascript:void(0);" class="emailshare" data-toggle="modal" data-target="#myModal"><i class="fa fa-envelope"></i></a>
 								</div>
 								
 								<p class="custom-art art-inf tglShare">
