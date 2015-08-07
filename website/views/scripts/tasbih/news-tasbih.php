@@ -320,14 +320,7 @@
 
 <script type="text/javascript">
     
-    $('#SendingEmail').click(function() {
-        var email = $('#email').val();
-        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-        if(email == "" || (!re.test(email)) ){
-            document.getElementById('notif-email').style.display= 'block';
-            alert("Mohon Maaf Email Anda Tidak Valid");
-        }
-    });
+
     
         var getWidht=$( document ).width();
     var columnHeight=$( ".main-content" ).height(); 
@@ -367,6 +360,32 @@ $( document ).ready(function(){
     var title = judul.toLowerCase();
     var image = document.getElementById("backart").src;
     var url = window.location.host+window.location.pathname;
+    var date = "<?php echo $items->newsdate; ?>";
+    
+        $('#SendingEmail').click(function() {
+        var email = $('#email').val();
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        if(email == "" || (!re.test(email)) ){
+            document.getElementById('notif-email').style.display= 'block';
+            alert("Mohon Maaf Email Anda Tidak Valid");
+        }else{
+            $.ajax({
+                    type: 'POST',
+					url: '/share-email/',
+				    data: {
+                        postImg : image,
+                        postTitle : title,
+                        postDesc : desc,
+                        postTanggal : date,
+                        postLink : url,
+                        email : email
+                    },
+                    success : function(data){
+                        alert(data);
+                    }
+            });
+        }
+    });
     
     		$('.community-btn .twshare').on("click",function(){
         
