@@ -354,8 +354,9 @@
 $( document ).ready(function(){
 
 //alert('TEST');
+    var description = "<?php echo $items->content; ?>";
     
-    var desc = ($('#judul').html()).substring(0,75)+"...";
+    var desc = description.substring(0,75)+"...";
     var judul = "<?php echo $items->title; ?>";
     var title = judul.toLowerCase();
     var image = document.getElementById("backart").src;
@@ -374,7 +375,7 @@ $( document ).ready(function(){
 					url: '/share-email/',
 				    data: {
                         postImg : image,
-                        postTitle : title,
+                        postTitle : judul,
                         postDesc : desc,
                         postTanggal : date,
                         postLink : url,
