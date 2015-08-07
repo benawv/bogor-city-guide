@@ -291,7 +291,23 @@ $(document).ready(function()
 
                 //Capture image and download it   
 				$('body').on('click','#download',function(){
-
+					var headline = $("#atas").val();
+                    var description = $("#tengah").val();
+                    var firstName = $("#bawah1").val();
+                    var lastName = $("#bawah2").val();
+					$.ajax({
+                        url : '/save-note/',
+                        method : 'post',
+                        data : { headline : headline, description : description, firstName : firstName, lastName : lastName}, // format {variable , value}
+                        success : function(){
+                            alert('Data Tersimpan');
+                       		$('#atas').val('');
+                       		$('#tengah').val('');
+                       		$('#bawah1').val('');
+                       		$('#bawah2').val('');
+                        }
+                       // data : {headline : headline, description : description, firstName : firstName, lastName : lastName}
+                    });
 					//capture cover
 					if(temp == "template1" || temp == "template2" || temp == "template3") {
 
