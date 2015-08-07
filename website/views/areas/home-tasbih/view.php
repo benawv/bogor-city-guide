@@ -179,10 +179,10 @@
                             <div class="foto">
                                 <?php
                                     if($this->editmode) {
-                                        echo $this->image("image_".$i, ["thumbnail" => "galleryCarousel", "dropClass" => $id . "-" . $i, "title" => "Image Size 1020x400", "width" => "100%", "height" => "auto"]);
+                                        echo $this->image("image_".$i, ["thumbnail" => "galleryCarousel", "dropClass" => $id . "-" . $i, "title" => "Image Size 960x400", "width" => "960", "height" => "400"]);
                                     }
                                     else{
-                                        echo $this->image("image_".$i, ["dropClass" => $id . "-" . $i, "title" => "Image Size 1020x400", "width" => "100%", "height" => "auto"]);
+                                        echo $this->image("image_".$i, ["dropClass" => $id . "-" . $i, "title" => "Image Size 960x400", "width" => "100%", "height" => "auto"]);
                                     }
                                 ?>
                             </div>
