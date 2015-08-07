@@ -270,61 +270,61 @@ $(document).ready(function () {
             }
         }
     });
-    $(".emailshare").on("click",function(){
-        var img = $(".imgShare").attr("srcimg");
-        var title = $(".titleShare").text();
-        
-        var limit = 32;
-        var x;
-        var deskripsi = $(".descShare p").text();
-        if (deskripsi == "") {
-            deskripsi = $(".descShare p:eq(2)").text();
-        }
-        if (deskripsi == "") {
-            deskripsi = $(".descShare").text();
-        }
-        
-        var words = deskripsi.split(/\s/);
-        var desc='';
-        if (words.length > limit)
-        {
-                for(x=0;x<limit;x++)
-                {
-                        if (x==0)
-                        {
-                                desc = desc+words[x];
-                        }
-                        else
-                        {
-                                desc = desc+' '+words[x];
-                        }
-                }
-                desc = desc+'....';
-        }
-        else
-        {
-                desc = deskripsi;
-        }
-        
-        var tanggal = $(".tglShare time").text();
-        var link = window.location.host + window.location.pathname;
-        
-        $.ajax({
-            type: "POST",
-            url: "/share-email/",
-            data: {
-                postImg : img,
-                postTitle : title,
-                postDesc : desc,
-                postTanggal : tanggal,
-                postLink : link
-            },
-            success: function(reponse){
-                
-            }
-        });
-        
-    });
+//    $(".emailshare").on("click",function(){
+//        var img = $(".imgShare").attr("srcimg");
+//        var title = $(".titleShare").text();
+//        
+//        var limit = 32;
+//        var x;
+//        var deskripsi = $(".descShare p").text();
+//        if (deskripsi == "") {
+//            deskripsi = $(".descShare p:eq(2)").text();
+//        }
+//        if (deskripsi == "") {
+//            deskripsi = $(".descShare").text();
+//        }
+//        
+//        var words = deskripsi.split(/\s/);
+//        var desc='';
+//        if (words.length > limit)
+//        {
+//                for(x=0;x<limit;x++)
+//                {
+//                        if (x==0)
+//                        {
+//                                desc = desc+words[x];
+//                        }
+//                        else
+//                        {
+//                                desc = desc+' '+words[x];
+//                        }
+//                }
+//                desc = desc+'....';
+//        }
+//        else
+//        {
+//                desc = deskripsi;
+//        }
+//        
+//        var tanggal = $(".tglShare time").text();
+//        var link = window.location.host + window.location.pathname;
+//        
+//        $.ajax({
+//            type: "POST",
+//            url: "/share-email/",
+//            data: {
+//                postImg : img,
+//                postTitle : title,
+//                postDesc : desc,
+//                postTanggal : tanggal,
+//                postLink : link
+//            },
+//            success: function(reponse){
+//                
+//            }
+//        });
+//        
+//    });
     $('.btn-group .twshare').on("click", function () {
         var url = window.location.host + window.location.pathname;
         var title = $(this).parent().siblings("a").find('h2.title_news').text();

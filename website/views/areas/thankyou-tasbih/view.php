@@ -60,6 +60,9 @@
 
       nav.main-navigation a.nav-item.blueA::before {
         background: #3122F9; }
+    
+    
+        nav.main-navigation a.nav-item.red::before {background: #780DEB;}
 </style>
 
     <nav class="main-navigation" style="max-width:1140px; margin:auto;">
@@ -83,9 +86,9 @@
                     </a>
                 </div><!--/ .col-xs-12 -->
 
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users">
-                        <h4 style="font-size:18px"><small>Cari Agen</small></h4>
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;  margin:auto; !important">
+                    <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users" style="background:#5F259F;">
+                        <h4 style="font-size:18px"><small>Lokasi Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
 
@@ -141,7 +144,7 @@
                             <!--
                             <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen">
                             -->
-                            <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next"><i class="fa fa-users"></i> Cari Agen</button>
+                            <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" style="background:#5F259F !important;"><i class="fa fa-users"></i> Lokasi Agen</button>
                         </center>
                     </div>
 

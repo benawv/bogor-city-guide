@@ -156,9 +156,9 @@
                 </div> <!--/ #timelineContainer -->
 
                 <!-- when mobile condition -->
-                <div id="cover-m" class="timelineContainer" style="display: none">
+                <div id="cover-m" class="timelineContainer fluid" style="display: none">
 
-                    <div id="timelineBackground" class="page-maker--placeholdermain">
+                    <div id="timelineBackground" class="page-maker--placeholdermain fluid">
                         <!-- <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive"> -->
                         <?php
                                  $session = new Zend_Session_Namespace('srcImage');
@@ -167,8 +167,8 @@
 
                     </div><!--/ .page-maker--placeholder -->
 
-                    <div id="place" class="landscape facebook-caption leftside">
-                        <div id="notepad" class="facebook-caption--inner landscape-bg bg-blue">
+                    <div id="place-m" class="landscape-m facebook-caption leftside">
+                        <div id="notepad-m" class="facebook-caption--inner landscape-m-bg bg-blue">
 
                             <h3><span id="judul-m">&lt;Title&gt;</span></h3> <br />
 
@@ -181,7 +181,7 @@
                         </div><!--/ .facebook-caption--inner -->
                         <!-- <div class="facebook-caption-trapezoid"></div> -->
 
-                        <div id="edge-note" class="edge e-blue">
+                        <div id="edge-note-m" class="edge e-blue">
                             <span id="nama-m">&lt;Name&gt;</span>
                         </div> 
 
@@ -210,8 +210,8 @@
                 </div><!--/ .page-maker--placeholder -->
 
                 <!-- when mobile condition -->
-                <div id="ava1-m" class="page-maker--placeholder" style="display: none">
-                    <div id="avatar1" class="avatar">
+                <div id="ava1-m" class="page-maker--placeholder fluid" style="display: none">
+                    <div id="avatar1" class="avatar-m">
                         <div id="avacapture1" class="avatar-caption">
                             <div class="avatar-caption--logo">
                                 <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
@@ -245,8 +245,8 @@
                 </div><!--/ .page-maker--placeholder -->
 
                 <!-- when mobile condition -->
-                <div id="ava2-m" class="page-maker--placeholder" style="display: none">
-                    <div id="avatar2" class="avatar">
+                <div id="ava2-m" class="page-maker--placeholder fluid" style="display: none">
+                    <div id="avatar2" class="avatar-m">
                         <div id="avacapture2" class="avatar-caption">
                             <div class="avatar-caption--logo">
                                 <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">

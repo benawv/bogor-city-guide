@@ -2,6 +2,8 @@
     /* Override AJFC's feature box color */
     .box-dent--inner{ background: #009a44; }
     .box-dent::before{ border-top: 28px solid #009a44 !important;}
+    
+        nav.main-navigation a.nav-item.red::before {background: #780DEB;}
     .btn-tasbih{ background: #009a44 !important; border: none !important; border-radius: 0; }
     .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
     .form-box{ border: solid 1px #ddd; padding: 16px 20px; margin-bottom: 32px; }
@@ -202,8 +204,8 @@
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users" style="height: 48px !important;">
-                        <h4 style="font-size:18px"><small>Cari Agen</small></h4>
+                    <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users" style="height: 48px !important; background:#5F259F !important;">
+                        <h4 style="font-size:18px"><small>Lokasi Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">

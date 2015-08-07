@@ -61,6 +61,8 @@
         nav.main-navigation a.nav-item.blueA{ background: #003781; }
         nav.main-navigation a.nav-item.greenChat{ background: #B20065; }
         nav.main-navigation a.nav-item.blueA::before { background: #3122F9; }
+        
+        nav.main-navigation a.nav-item.red::before {background: #780DEB;}
         body { text-align: left !important; }
         input[type="radio"] { display: block; }
     </style>
@@ -83,8 +85,8 @@
                 </a>
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users">
-                    <h4 style="font-size:18px"><small>Cari Agen</small></h4>
+                <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users" style="background:#5F259F;">
+                    <h4 style="font-size:18px"><small>Lokasi Agen</small></h4>
                 </a>
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">

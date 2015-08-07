@@ -47,6 +47,8 @@
     .form-control{ border-radius: 0; }
     nav.main-navigation a.nav-item.home::after { content: "\f015"; }
     nav.main-navigation a.nav-item.chat::after { content: "\f003  "; }
+    
+        nav.main-navigation a.nav-item.red::before {background: #780DEB;}
     nav.main-navigation a.nav-item
     {
         display: block;
@@ -118,12 +120,16 @@
           min-height: 737px !important;
     }
     
-    .fa-facebook, .fa-twitter{
+    .fa-facebook, .fa-twitter,fa-envelope{
         font-size:25px !important;
     }
     
     a.tw-share{
         font-size:26px !important;
+    }
+    
+    .fa{
+        font: normal normal normal 25px/1 FontAwesome !important;
     }
     
     @media screen and (max-width : 991px ){
@@ -161,6 +167,26 @@
         print_r($items);
         echo "</pre>";*/
 ?>
+<div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Silahkan Masukkan Email Anda</h4>
+                    </div>
+                    <div class="modal-body">
+                      <input type="email" class="form-control" placeholder="Alamat E-Mail" id="email" tabindex="6" maxlength="32" required onfocusout="this.value=validateEMAIL(this.value)">
+                        <label id="notif-email" style="display:none; color: #f00;">Maaf Anda Belum Memasukkan Email</label>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" id="SendingEmail" class="btn btn-info" data-dismiss="modal" style="background-color:#23527c">Kirim</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
     <header style="/*margin-top: -20px;*/">
 
         <div class="background">
@@ -190,8 +216,8 @@
                 </div><!--/ .col-xs-12 -->
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users">
-                        <h4 style="font-size:18px"><small>Cari Agen</small></h4>
+                    <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users" style="background:#5F259F;">
+                        <h4 style="font-size:18px"><small>Lokasi Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
 
@@ -244,9 +270,10 @@
                             */
                         ?>
                         <?php echo $this->navigation()->breadcrumbs()->setPartial(array('includes/tasbih/breadcrumb-partial.php', 'website'));?>
-                        <div class="community-btn" style="width:53.938px !important; height:29px !important; float:right !important;">
+                        <div class="community-btn" style="width:73.938px !important; height:29px !important; float:right !important;">
 										<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
 										<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
+                                        <a href="javascript:void(0);" class="emailshare" data-toggle="modal" data-target="#myModal"><i class="fa fa-envelope"></i></a>
 								</div>
                     </h5>
                     <p class="meta">Posted on <?php echo $items->newsdate; ?></p>
@@ -293,6 +320,8 @@
 
 <script type="text/javascript">
     
+
+    
         var getWidht=$( document ).width();
     var columnHeight=$( ".main-content" ).height(); 
 
@@ -325,12 +354,39 @@
 $( document ).ready(function(){
 
 //alert('TEST');
+    var description = "<?php echo $items->content; ?>";
     
-    var desc = ($('#judul').html()).substring(0,75)+"...";
+    var desc = description.substring(0,75)+"...";
     var judul = "<?php echo $items->title; ?>";
     var title = judul.toLowerCase();
     var image = document.getElementById("backart").src;
     var url = window.location.host+window.location.pathname;
+    var date = "<?php echo $items->newsdate; ?>";
+    
+        $('#SendingEmail').click(function() {
+        var email = $('#email').val();
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        if(email == "" || (!re.test(email)) ){
+            document.getElementById('notif-email').style.display= 'block';
+            alert("Mohon Maaf Email Anda Tidak Valid");
+        }else{
+            $.ajax({
+                    type: 'POST',
+					url: '/share-email/',
+				    data: {
+                        postImg : image,
+                        postTitle : judul,
+                        postDesc : desc,
+                        postTanggal : date,
+                        postLink : url,
+                        email : email
+                    },
+                    success : function(data){
+                        alert(data);
+                    }
+            });
+        }
+    });
     
     		$('.community-btn .twshare').on("click",function(){
         

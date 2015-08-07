@@ -87,11 +87,11 @@ $(document).ready(function()
 		            if($(this).val() == "Blue"){
 
 		            	//alert('blue');
-		    			var lastClass = $('#notepad').attr('class').split(' ').pop();
-						$("#notepad").removeClass(lastClass).addClass('bg-blue');
+		    			var lastClass = $('#notepad, #notepad-m').attr('class').split(' ').pop();
+						$("#notepad, #notepad-m").removeClass(lastClass).addClass('bg-blue');
 
-						var lastClass = $('#edge-note').attr('class').split(' ').pop();
-						$("#edge-note").removeClass(lastClass).addClass('e-blue'); 
+						var lastClass = $('#edge-note, #edge-note-m').attr('class').split(' ').pop();
+						$("#edge-note, #edge-note-m").removeClass(lastClass).addClass('e-blue'); 
 						console.log(lastClass);
                         
 		            } 
@@ -99,11 +99,11 @@ $(document).ready(function()
 		            if($(this).val() == "Orange"){
 
 		            	//alert('orange');
-		            	var lastClass = $('#notepad').attr('class').split(' ').pop();
-						$("#notepad").removeClass(lastClass).addClass('bg-orange');
+		            	var lastClass = $('#notepad, #notepad-m').attr('class').split(' ').pop();
+						$("#notepad, #notepad-m").removeClass(lastClass).addClass('bg-orange');
 
-						var lastClass = $('#edge-note').attr('class').split(' ').pop();
-						$("#edge-note").removeClass(lastClass).addClass('e-orange'); 
+						var lastClass = $('#edge-note, #edge-note-m').attr('class').split(' ').pop();
+						$("#edge-note, #edge-note-m").removeClass(lastClass).addClass('e-orange'); 
 						console.log(lastClass);
 		            	
 		            } 
@@ -111,11 +111,11 @@ $(document).ready(function()
 		            if($(this).val() == "Red"){
 
 		            	//alert('red');
-		            	var lastClass = $('#notepad').attr('class').split(' ').pop();
-						$("#notepad").removeClass(lastClass).addClass('bg-red');
+		            	var lastClass = $('#notepad, #notepad-m').attr('class').split(' ').pop();
+						$("#notepad, #notepad-m").removeClass(lastClass).addClass('bg-red');
 
-						var lastClass = $('#edge-note').attr('class').split(' ').pop();
-						$("#edge-note").removeClass(lastClass).addClass('e-red'); 
+						var lastClass = $('#edge-note, #edge-note-m').attr('class').split(' ').pop();
+						$("#edge-note, #edge-note-m").removeClass(lastClass).addClass('e-red'); 
 						console.log(lastClass);
 		               
 		            } 
@@ -125,8 +125,8 @@ $(document).ready(function()
 		            if($(this).val() == "Left"){
 
 		            	// alert('left');
-		    			var lastClass = $('#place').attr('class').split(' ').pop();
-						$("#place").removeClass(lastClass).addClass('leftside');
+		    			var lastClass = $('#place, #place-m').attr('class').split(' ').pop();
+						$("#place, #place-m").removeClass(lastClass).addClass('leftside');
 						console.log(lastClass);
                         
 		            } 
@@ -134,8 +134,8 @@ $(document).ready(function()
 		            if($(this).val() == "Right"){
 
 		            	//alert('right');
-		            	var lastClass = $('#place').attr('class').split(' ').pop();
-						$("#place").removeClass(lastClass).addClass('rightside');
+		            	var lastClass = $('#place, #place-m').attr('class').split(' ').pop();
+						$("#place, #place-m").removeClass(lastClass).addClass('rightside');
 						console.log(lastClass);
 		            	
 		            } 
@@ -176,7 +176,7 @@ $(document).ready(function()
 					$("#save").click(function(){
 
 						//preview and save
-						if(form.valid()){
+						if(form.valid()) {
 							//alert("all filled");
 							$("a").attr("href", "#ask");
 							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
@@ -198,6 +198,8 @@ $(document).ready(function()
 							$("a").attr("href", "#fillform");
 							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
 						}
+
+						//$("a").attr("href", "#top");
                         
                 	});
 
@@ -209,7 +211,7 @@ $(document).ready(function()
                 });
 
                     //Back to fill form    
-                    $("#preview, #download, #square, #portrait, #landscape").click(function(event){
+                    $("#preview, #download, #square, #portrait, #landscape, #save, #ask, #fillform").click(function(event){
                     	//alert("scroll");
                         event.preventDefault();
 						$('html,body').animate({
@@ -247,18 +249,30 @@ $(document).ready(function()
 			        $("#cover1").show();
 			        $("#place").prop('class', 'landscape facebook-caption leftside');
 			        $("#notepad").prop('class', 'facebook-caption--inner landscape-bg bg-blue');
+
+			        //mobile looks like
+			        $("#place-m").prop('class', 'landscape-m facebook-caption leftside');
+			        $("#notepad-m").prop('class', 'facebook-caption--inner landscape-m-bg bg-blue');
 			    }
 			    else if(temp == "template2") {
 			        //alert("portrait");
 			        $("#cover1").show();
-			        $("#place").prop('class', 'portrait facebook-caption leftside');
-			        $("#notepad").prop('class', 'facebook-caption--inner portrait-bg bg-blue');
+			        $("#place, #place-m").prop('class', 'portrait facebook-caption leftside');
+			        $("#notepad, #notepad-m").prop('class', 'facebook-caption--inner portrait-bg bg-blue');
+
+			        //mobile looks like
+			        $("#place-m").prop('class', 'portrait-m facebook-caption leftside');
+			        $("#notepad-m").prop('class', 'facebook-caption--inner portrait-m-bg bg-blue');
 			    }
 			    else if(temp == "template3") {
 			        //alert("square");
 			        $("#cover1").show();
-			        $("#place").prop('class', 'square facebook-caption leftside');
-			        $("#notepad").prop('class', 'facebook-caption--inner square-bg bg-blue');
+			        $("#place, #place-m").prop('class', 'square facebook-caption leftside');
+			        $("#notepad, #notepad-m").prop('class', 'facebook-caption--inner square-bg bg-blue');
+
+			        //mobile looks like
+			        $("#place-m").prop('class', 'square-m facebook-caption leftside');
+			        $("#notepad-m").prop('class', 'facebook-caption--inner square-m-bg bg-blue');
 			    }
 			    else if(temp == "template4" || temp == "template6") {
 			        //alert("ava2");
@@ -329,7 +343,7 @@ $(document).ready(function()
 	                            // });
 
 								if($(window).width() < 640) {
-									alert("after capture, back to cover1");
+									//alert("after capture, back to cover1");
 									$("#cover-m").show();
 									$("#cover1").hide();
 								}
@@ -382,7 +396,7 @@ $(document).ready(function()
 	                            var dataURL = canvas.toDataURL("image/png");
 
 	                            if($(window).width() < 640) {
-									alert("after capture, back to ava2");
+									//alert("after capture, back to ava2");
 									$("#ava2-m").show();
 									$("#ava2").hide();
 								}
@@ -431,7 +445,7 @@ $(document).ready(function()
 	                            var dataURL = canvas.toDataURL("image/png");
 
 	       						if($(window).width() < 640) {
-								alert("after capture, back to ava1");
+								//alert("after capture, back to ava1");
 								$("#ava1-m").show();
 								$("#ava1").hide();
 								}
