@@ -177,7 +177,7 @@
                       <h4 class="modal-title">Silahkan Masukkan Email Anda</h4>
                     </div>
                     <div class="modal-body">
-                      <input type="email" class="form-control" placeholder="Alamat E-Mail" id="email" tabindex="6" maxlength="32" required onfocusout="this.value=validateEMAIL(this.value)">
+                      <input type="email" class="form-control" placeholder="Alamat E-Mail" id="email" tabindex="6" maxlength="32">
                         <label id="notif-email" style="display:none; color: #f00;">Maaf Anda Belum Memasukkan Email</label>
                     </div>
                     <div class="modal-footer">
@@ -354,20 +354,7 @@
 
     }  
     
-    function validateEMAIL(surat)
-        {
-            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-            if(!re.test(surat))
-            {
-                document.getElementById('notif-email').style.display= 'block';
-                return null;
-            }
-            else
-            {
-                document.getElementById('notif-email').style.display= 'none';
-                return surat;
-            }
-        };
+
     
 
 $( document ).ready(function(){
