@@ -270,10 +270,14 @@
                             */
                         ?>
                         <?php echo $this->navigation()->breadcrumbs()->setPartial(array('includes/tasbih/breadcrumb-partial.php', 'website'));?>
-                        <div class="community-btn" style="width:73.938px !important; height:29px !important; float:right !important;">
+                        <div class="community-btn" style="width:103.938px !important; height:29px !important; float:right !important;">
 										<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
-										<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
-                                        <a href="javascript:void(0);" class="emailshare" data-toggle="modal" data-target="#myModal"><i class="fa fa-envelope"></i></a>
+										<a href="javascript:void(0);" class="twshare" style="
+    padding-left: 15px;
+"><i class="fa fa-twitter"></i></a>
+                                        <a href="javascript:void(0);" class="emailshare" data-toggle="modal" data-target="#myModal"><i class="fa fa-envelope" style="
+    padding-left: 15px;
+"></i></a>
 								</div>
                     </h5>
                     <p class="meta">Posted on <?php echo $items->newsdate; ?></p>
@@ -349,6 +353,21 @@
         $('.page-wrapper-outer').css('height', columnHeight + 'px');
 
     }  
+    
+    function validateEMAIL(surat)
+        {
+            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+            if(!re.test(surat))
+            {
+                document.getElementById('notif-email').style.display= 'block';
+                return null;
+            }
+            else
+            {
+                document.getElementById('notif-email').style.display= 'none';
+                return surat;
+            }
+        };
     
 
 $( document ).ready(function(){
