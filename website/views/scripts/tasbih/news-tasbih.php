@@ -359,7 +359,7 @@
 $( document ).ready(function(){
 
 //alert('TEST');
-    var description = <?php echo $items->content; ?>;
+    var description = "<?php echo $items->content; ?>";
     var desc = description.substring(3,80)+"...";
     var judul = $('#judul').html();
     var title = judul.toLowerCase();
