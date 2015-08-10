@@ -351,13 +351,10 @@
 
     }else{
         columnHeight=columnHeight-88;
+        var maincontent=$( ".main-content" ).height(); 
         $('.sidebar').css('height', columnHeight+135 + 'px');
-        $('.page-wrapper-outer').css('height', columnHeight + 'px');
-
+        $('.page-wrapper-outer').height(maincontent);
     }  
-    
-
-    
 
 $( document ).ready(function(){
 
