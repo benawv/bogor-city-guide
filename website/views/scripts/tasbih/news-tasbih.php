@@ -365,7 +365,7 @@ $( document ).ready(function(){
     var title = judul.toLowerCase();
     var image = document.getElementById("backart").src;
     var url = window.location.host+window.location.pathname;
-    var date = $('#date').html();
+    var tanggal = $('#date').html();
     
         $('#sendingemail').click(function() {
         var email = $('#email').val();
@@ -382,7 +382,7 @@ $( document ).ready(function(){
                     postTitle : title,
                     postDesc : desc,
                     postTanggal : tanggal,
-                    postLink : link,
+                    postLink : url,
                     email :email
                 },
                 success: function(data){
