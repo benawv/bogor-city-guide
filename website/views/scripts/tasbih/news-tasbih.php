@@ -360,7 +360,6 @@ $( document ).ready(function(){
 
 //alert('TEST');
     var description = $('#desc').html();
-    
     var desc = description.substring(0,75)+"...";
     var judul = $('#judul').html();
     var title = judul.toLowerCase();
@@ -379,7 +378,7 @@ $( document ).ready(function(){
                 type: "POST",
                 url: "/share-email/",
                 data: {
-                    postImg : img,
+                    postImg : image,
                     postTitle : title,
                     postDesc : desc,
                     postTanggal : tanggal,
