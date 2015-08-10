@@ -323,7 +323,7 @@
 
     </div><!--/ .page-wrapper-outer -->
 
-<?php } ?>
+
 <script type="text/javascript">
     
 
@@ -359,8 +359,8 @@
 $( document ).ready(function(){
 
 //alert('TEST');
-    var description = $('#desc').html();
-    var desc = description.substring(0,75)+"...";
+    var description = <?php echo $items->content; ?>;
+    var desc = description.substring(3,80)+"...";
     var judul = $('#judul').html();
     var title = judul.toLowerCase();
     var image = document.getElementById("backart").src;
@@ -379,7 +379,7 @@ $( document ).ready(function(){
                 url: "/share-email/",
                 data: {
                     postImg : image,
-                    postTitle : title,
+                    postTitle : judul,
                     postDesc : desc,
                     postTanggal : tanggal,
                     postLink : url,
@@ -437,3 +437,4 @@ $( document ).ready(function(){
 
 
 </script>
+<?php } ?>
