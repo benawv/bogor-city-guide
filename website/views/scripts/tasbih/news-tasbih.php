@@ -181,7 +181,7 @@
                         <label id="notif-email" style="display:none; color: #f00;">Maaf Anda Belum Memasukkan Email</label>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" id="SendingEmail" class="btn btn-info" data-dismiss="modal" style="background-color:#23527c">Kirim</button>
+                      <button type="button" id="sendingemail" class="btn btn-info" data-dismiss="modal" style="background-color:#23527c">Kirim</button>
                     </div>
                   </div>
 
@@ -280,14 +280,16 @@
 "></i></a>
 								</div>
                     </h5>
-                    <p class="meta">Posted on <?php echo $items->newsdate; ?></p>
+                        <p class="meta">Posted on<span id="date" style="display:block;"> <?php echo $items->newsdate; ?></span></p>
                                 
                     </div><!--/ .main-content--header -->
 
-                    <?php echo $items->content; ?>
+                    <p id="desc" style="display:block;"><?php echo $items->content; ?></p>
                     <br/>
                     <p>Untuk informasi lebih lengkap mengenai produk allianz tasbih klik :</p>
                     <button class="btn btn-primary" onclick="location.href='/produk/asuransi-syariah/tasbih/info-produk';" type="button">Informasi Produk Allianz Tasbih</button>
+                    
+                    
                 </div><!--/ .main-content -->
 
                 </div><!--/ .col-xs-12 -->
@@ -321,7 +323,7 @@
 
     </div><!--/ .page-wrapper-outer -->
 
-
+<?php } ?>
 <script type="text/javascript">
     
 
@@ -360,16 +362,16 @@
 $( document ).ready(function(){
 
 //alert('TEST');
-    var description = "<?php echo $items->content; ?>";
+    var description = $('#desc').html();
     
     var desc = description.substring(0,75)+"...";
-    var judul = "<?php echo $items->title; ?>";
+    var judul = $('#judul').html();
     var title = judul.toLowerCase();
     var image = document.getElementById("backart").src;
     var url = window.location.host+window.location.pathname;
-    var date = "<?php echo $items->newsdate; ?>";
+    var date = $('#date').html();
     
-        $('#SendingEmail').click(function() {
+        $('#sendingemail').click(function() {
         var email = $('#email').val();
         var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
         if(email == "" || (!re.test(email)) ){
@@ -377,19 +379,19 @@ $( document ).ready(function(){
             alert("Mohon Maaf Email Anda Tidak Valid");
         }else{
             $.ajax({
-                    type: 'POST',
-					url: '/share-email/',
-				    data: {
-                        postImg : image,
-                        postTitle : judul,
-                        postDesc : desc,
-                        postTanggal : date,
-                        postLink : url,
-                        email : email
-                    },
-                    success : function(data){
-                        alert(data);
-                    }
+                type: "POST",
+                url: "/share-email/",
+                data: {
+                    postImg : img,
+                    postTitle : title,
+                    postDesc : desc,
+                    postTanggal : tanggal,
+                    postLink : link,
+                    email :email
+                },
+                success: function(data){
+                    alert(data);
+                }
             });
         }
     });
@@ -439,4 +441,3 @@ $( document ).ready(function(){
 
 
 </script>
-<?php } ?>
