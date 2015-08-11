@@ -1759,7 +1759,6 @@ $(document).ready(function(){
         var email=$('#email').val();
         if (email != '') {
             sendEmail(calc_result(),calc_resultstandard(),calc_resultpremier(),recalc_custome());
-            console.log(recalc_custome());
             adjustTable();
         }
     });
