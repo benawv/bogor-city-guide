@@ -42,7 +42,7 @@
 					"allowed" => array("banner", "static-banner", "banner-without-note")))?>
 		<div id="quicklinks">
 			<?php echo $this->areablock('layananKami-wrapper', array(
-					"allowed" => array("tile-quicklinks", "layanankami-quicklinks", "quicklinks","blank-tile-quicklinks-static")))?>
+					"allowed" => array("tile-quicklinks", "layanankami-quicklinks", "quicklinks","blank-tile-quicklinks-static",,"service-box-static-dynamic","service-box-static-dynamic-paragraph")))?>
 		</div>
 	</div><!-- .wrapper-special -->
 	

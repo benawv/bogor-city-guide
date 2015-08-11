@@ -28,7 +28,7 @@
 	<div class="heading clearfix pagenav">
 		<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
 		<div id="quicklinks">
-			<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks', 'product-quicklinks', "blank-animation-quicklinks")))?>
+			<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks', 'product-quicklinks', "blank-animation-quicklinks","service-box-static-dynamic","service-box-static-dynamic-paragraph")))?>
 		</div>
 	</div>
 	
