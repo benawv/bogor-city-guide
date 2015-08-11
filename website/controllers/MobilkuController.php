@@ -25,9 +25,9 @@ class MobilkuController extends Website_Controller_Action {
 		$date_tglPeriod= new Pimcore_Date($period);
 
 		$namakey = str_replace(' ', '_', $merk)."_".strtotime(date("YmdHis"));
-		$radio1='comprehensive';
-		$period='1425315600';
-		$harga='1000600';
+		// $radio1='comprehensive';
+		// $period='1425315600';
+		// $harga='1000600';
 		
 		if($radio == 'tlo'){
 		    $radiof = 'Total Loss Only';
