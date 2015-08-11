@@ -1053,7 +1053,7 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <td>
-                                                                            <input type="checkbox" class="no_workshop_is_calc" name="no_workshop_is_calc" checked data-angka="0" data-target="no_workshop_prem" disabled="disabled">
+                                                                            <input type="checkbox" class="no_workshop_is_calc" name="no_workshop_is_calc" checked data-angka="0" data-target="no_workshop_prem" value="FALSE">
                                                                         </td>
                                                                         <td>Authorized Workshop</td>
                                                                         <!-- <td class='no_workshop_val'>-</td>
