@@ -92,7 +92,7 @@ $(document).ready(function()
 
 						var lastClass = $('#edge-note, #edge-note-m').attr('class').split(' ').pop();
 						$("#edge-note, #edge-note-m").removeClass(lastClass).addClass('e-blue'); 
-						console.log(lastClass);
+						//console.log(lastClass);
                         
 		            } 
 
@@ -104,7 +104,7 @@ $(document).ready(function()
 
 						var lastClass = $('#edge-note, #edge-note-m').attr('class').split(' ').pop();
 						$("#edge-note, #edge-note-m").removeClass(lastClass).addClass('e-orange'); 
-						console.log(lastClass);
+						//console.log(lastClass);
 		            	
 		            } 
 
@@ -116,7 +116,7 @@ $(document).ready(function()
 
 						var lastClass = $('#edge-note, #edge-note-m').attr('class').split(' ').pop();
 						$("#edge-note, #edge-note-m").removeClass(lastClass).addClass('e-red'); 
-						console.log(lastClass);
+						//console.log(lastClass);
 		               
 		            } 
 		        });
@@ -127,7 +127,7 @@ $(document).ready(function()
 		            	// alert('left');
 		    			var lastClass = $('#place, #place-m').attr('class').split(' ').pop();
 						$("#place, #place-m").removeClass(lastClass).addClass('leftside');
-						console.log(lastClass);
+						//console.log(lastClass);
                         
 		            } 
 
@@ -136,7 +136,7 @@ $(document).ready(function()
 		            	//alert('right');
 		            	var lastClass = $('#place, #place-m').attr('class').split(' ').pop();
 						$("#place, #place-m").removeClass(lastClass).addClass('rightside');
-						console.log(lastClass);
+						//console.log(lastClass);
 		            	
 		            } 
 		          
@@ -238,7 +238,7 @@ $(document).ready(function()
                 
                 //cek cookie
                 var temp = getCookie("template");
-    			console.log(temp);
+    			////console.log(temp);
 
     			//get template from cookie
 			    if(temp == "template1") {
@@ -302,7 +302,23 @@ $(document).ready(function()
 
                 //Capture image and download it   
 				$('body').on('click','#download',function(){
-
+					var headline = $("#atas").val();
+                    var description = $("#tengah").val();
+                    var firstName = $("#bawah1").val();
+                    var lastName = $("#bawah2").val();
+					$.ajax({
+                        url : '/save-note/',
+                        method : 'post',
+                        data : { headline : headline, description : description, firstName : firstName, lastName : lastName}, // format {variable , value}
+                        success : function(){
+                            alert('Data Tersimpan');
+                       		$('#atas').val('');
+                       		$('#tengah').val('');
+                       		$('#bawah1').val('');
+                       		$('#bawah2').val('');
+                        }
+                       // data : {headline : headline, description : description, firstName : firstName, lastName : lastName}
+                    });
 					//capture cover
 					if(temp == "template1" || temp == "template2" || temp == "template3") {
 
@@ -320,7 +336,7 @@ $(document).ready(function()
 	                            //$('#imaged').html('Generating..');
 	                            // $.post('image.php',{image: dataURL},function(data){
 	                            //     $('#imaged').html(data);
-	                            //     console.log(data);
+	                            //     //console.log(data);
 	                            // });
 
 								if($(window).width() < 640) {
@@ -337,19 +353,20 @@ $(document).ready(function()
 									link.download = "Allianz_download_"+filename+".png";
 									document.body.appendChild(link);
 									link.click();
-									console.log(dataURL);
-									console.log(link);	
+									//console.log(dataURL);
+									//console.log(link);	
 
 									//trying to save directory
 									var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 									var output = encodeURIComponent(dataURL);
-									var cur_path = 'downloaded';
-									console.log(output);
-									console.log(cur_path); 
+									var cur_path = 'upload';
+									// console.log(output);
+									// console.log(cur_path); 
 		                			var Parameters = "image=" + output + "&filedir=" + cur_path;
 								        $.ajax({
 								            type: "POST",
-								            url: "/website/static/profil-maker/save.php",
+								            url: "/website/var/assets/profil-maker/save.php",
+								            //url: "/save-img/",
 								            data: Parameters,
 								            success: function(data) {
 										        //alert(data);
@@ -394,13 +411,13 @@ $(document).ready(function()
 									//trying to save directory
 									var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 									var output = encodeURIComponent(dataURL);
-									var cur_path = 'downloaded';
-									console.log(output);
-									console.log(cur_path); 
+									var cur_path = 'upload';
+									//console.log(output);
+									//console.log(cur_path); 
 		                			var Parameters = "image=" + output + "&filedir=" + cur_path;
 								        $.ajax({
 								            type: "POST",
-								            url: "/website/static/profil-maker/save.php",
+								            url: "/website/var/assets/profil-maker/save.php",
 								            data: Parameters,
 								            success: function(data) {
 										        //alert(data);
@@ -443,13 +460,13 @@ $(document).ready(function()
 									//trying to save directory
 									var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 									var output = encodeURIComponent(dataURL);
-									var cur_path = 'downloaded';
-									console.log(output);
-									console.log(cur_path); 
+									var cur_path = 'upload';
+									//console.log(output);
+									//console.log(cur_path); 
 		                			var Parameters = "image=" + output + "&filedir=" + cur_path;
 								        $.ajax({
 								            type: "POST",
-								            url: "/website/static/profil-maker/save.php",
+								            url: "/website/var/assets/profil-maker/save.php",
 								            data: Parameters,
 								            success: function(data) {
 										        //alert(data);
