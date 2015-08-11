@@ -44,7 +44,7 @@ class MobilkuController extends Website_Controller_Action {
 		
 		$arial = Zend_Pdf_Font::fontWithPath('website/static/font-pdf-ajfc/arialbd.ttf');
 			
-		$page->setFont($arial, 16);
+		$page->setFont($arial, 12);
 		
 		// $page->setFillColor(Zend_Pdf_Color_Html::color('#005399'))
 		// 	->drawText('MUHAMMAD ROBBI NUGRAHA', 230, 210);
