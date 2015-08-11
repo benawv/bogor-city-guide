@@ -194,7 +194,7 @@ $(document).ready(function(){
                      rate=0;
             }
         }else{*/
-        console.log('#='+tahun_pembuatan+'-'+harga+'-'+model+'-'+periode+'-'+wilayah+'-'+radio+'-'+hargaKonv+'-'+paket);
+        // console.log('#='+tahun_pembuatan+'-'+harga+'-'+model+'-'+periode+'-'+wilayah+'-'+radio+'-'+hargaKonv+'-'+paket);
            $.ajax({
                   "url" : "/mobilkucalc/",
                   "async": false,
@@ -210,7 +210,7 @@ $(document).ready(function(){
                  "success" : function(response){
                         localStorage.setItem("gettlo", response);
                         rate=response;
-                        console.log('retetype='+response);
+                        // console.log('retetype='+response);
                  }
              }); 
         //}
@@ -232,7 +232,7 @@ $(document).ready(function(){
                             $('.'+datatarget).html('');
                             $('.'+datatarget).append(dataangka);
                       }
-                      console.log('tes');
+                      // console.log('tes');
                       totalrecalc_custome();
       });
         return rate;
@@ -1098,9 +1098,9 @@ $(document).ready(function(){
         //console.log(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
         //calc =parseFloat(getWorkshopNonPack(merk_html,ages));
         calc =parseFloat(getWorkshopNonPack(merk_html,ages))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2)/100);
-        console.log("merk_html="+merk_html+"|"+ages);
-        console.log("1==>"+parseFloat(getWorkshopNonPack(merk_html,ages)));
-        console.log("2==>"+(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2)/100));
+        // console.log("merk_html="+merk_html+"|"+ages);
+        // console.log("1==>"+parseFloat(getWorkshopNonPack(merk_html,ages)));
+        // console.log("2==>"+(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2)/100));
         workshop_persen_show = calc.toFixed(4);
         workshop_persen = calc.toFixed(6);
         
