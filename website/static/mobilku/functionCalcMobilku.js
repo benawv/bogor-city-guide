@@ -1631,38 +1631,38 @@ $(document).ready(function(){
     
     $(this).on('click','#finish-btn',function(){
 //alert("alert3");
-        var tahun_pembuatan=$('#tahun_pembuatan').val();
-        var harga=$('#harga').val();
-        var merk=$('#merk').val();
-        var merk_html=$('#merk option:selected').html().toLowerCase();
-        var model=$('#model').val();
-        var regno=$('#regno').val();
-        var periode=$('#periode').val();
-        var email=$('#email').val();
-        var nama=$('#nama').val();
-        var telp=$('#telp').val();
-        var hargaKonv=clearFormat($('#harga').val());
-        var model_html=$('#model option:selected').html().toLowerCase();
+        // var tahun_pembuatan=$('#tahun_pembuatan').val();
+        // var harga=$('#harga').val();
+        // var merk=$('#merk').val();
+        // var merk_html=$('#merk option:selected').html().toLowerCase();
+        // var model=$('#model').val();
+        // var regno=$('#regno').val();
+        // var periode=$('#periode').val();
+        // var email=$('#email').val();
+        // var nama=$('#nama').val();
+        // var telp=$('#telp').val();
+        // var hargaKonv=clearFormat($('#harga').val());
+        // var model_html=$('#model option:selected').html().toLowerCase();
         
-        //var radio1=$('#radio01').val();
-        //var radio2=$('#radio02').val();
-        //$('#radio01').checked
-        if($('#radio01').is(":checked") == true){
-            var radio = $('#radio01').val();
-        }else{
-            var radio = $('#radio02').val();
-        }
+        // //var radio1=$('#radio01').val();
+        // //var radio2=$('#radio02').val();
+        // //$('#radio01').checked
+        // if($('#radio01').is(":checked") == true){
+        //     var radio = $('#radio01').val();
+        // }else{
+        //     var radio = $('#radio02').val();
+        // }
         
-        //console.log(tahun_pembuatan+'-'+harga+'-'+model+'-'+regno+'-'+periode+'-'+email+'-'+nama+'-'+telp)
-        $.ajax({
-            "url" : "/savemobilku/",
-            "type" : "POST",
-            "data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp+"&radio="+radio+"&hargaKonv="+hargaKonv+"&merk_html="+merk_html+"&model_html="+model_html,
-            "success" : function(){
-                //var getResult=JSON.parse(response);
-                //console.log(response);
-            }
-        });
+        // //console.log(tahun_pembuatan+'-'+harga+'-'+model+'-'+regno+'-'+periode+'-'+email+'-'+nama+'-'+telp)
+        // $.ajax({
+        //     "url" : "/savemobilku/",
+        //     "type" : "POST",
+        //     "data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp+"&radio="+radio+"&hargaKonv="+hargaKonv+"&merk_html="+merk_html+"&model_html="+model_html,
+        //     "success" : function(){
+        //         //var getResult=JSON.parse(response);
+        //         //console.log(response);
+        //     }
+        // });
         window.history.go('/kalkulator/tasbih');
     });
     
@@ -1710,7 +1710,42 @@ $(document).ready(function(){
     });
     
     //pindah ke sini
-   
+  
+   function sendEmail(){
+        var tahun_pembuatan=$('#tahun_pembuatan').val();
+        var harga=$('#harga').val();
+        var merk=$('#merk').val();
+        var merk_html=$('#merk option:selected').html().toLowerCase();
+        // var merk_html = 'Alfa Romeo';
+        var model=$('#model').val();
+        var regno=$('#regno').val();
+        var periode=$('#periode').val();
+        var email=$('#email').val();
+        var nama=$('#nama').val();
+        var telp=$('#telp').val();
+        var hargaKonv=clearFormat($('#harga').val());
+        var model_html=$('#model option:selected').html().toLowerCase();
+        
+        //var radio1=$('#radio01').val();
+        //var radio2=$('#radio02').val();
+        //$('#radio01').checked
+        if($('#radio01').is(":checked") == true){
+            var radio = $('#radio01').val();
+        }else{
+            var radio = $('#radio02').val();
+        }
+        
+        //console.log(tahun_pembuatan+'-'+harga+'-'+model+'-'+regno+'-'+periode+'-'+email+'-'+nama+'-'+telp)
+        $.ajax({
+            "url" : "/savemobilku/",
+            "type" : "POST",
+            "data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp+"&radio="+radio+"&hargaKonv="+hargaKonv+"&merk_html="+merk_html+"&model_html="+model_html,
+            "success" : function(){
+                //var getResult=JSON.parse(response);
+                //console.log(response);
+            }
+        });
+   }
 
     
     $(this).on('click','.btn-next',function(){
@@ -1722,6 +1757,7 @@ $(document).ready(function(){
             calc_resultpremier();
             recalc_custome();
             adjustTable();
+            sendEmail();
         }
     });
          
