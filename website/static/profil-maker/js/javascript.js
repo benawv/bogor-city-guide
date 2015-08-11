@@ -22,30 +22,30 @@ $(document).ready(function()
 
 
 			/* Banner position drag */
-			$("body").on('mouseover','.headerimage, .ava-img',function ()
-			{	
-				var y1 = $('#timelineBackground, #avacapture1, #avacapture2').height();
-				var y2 =  $('.headerimage, .ava-img').height();
-				$(this).draggable({
-					scroll: true,
-					axis: "x,y",
-					// drag: function(event, ui) {
-					// 	if(ui.position.top >= 0)
-					// 		{
-					// 			ui.position.top = 0;
-					// 		}
-					// 	else if(ui.position.top <= y1 - y2)
-					// 		{
-					// 			ui.position.top = y1 - y2;
-					// 		}
-					//},
-					stop: function(event, ui)
-						{
-						}
-				});
-			});
-
+			// $("body").on('mouseover','.headerimage, .ava-img',function ()
+			// {	
+			// 	var y1 = $('#timelineBackground, #avacapture1, #avacapture2').height();
+			// 	var y2 =  $('.headerimage, .ava-img').height();
+			// 	$(this).draggable({
+			// 		scroll: true,
+			// 		axis: "x,y",
+			// 		// drag: function(event, ui) {
+			// 		// 	if(ui.position.top >= 0)
+			// 		// 		{
+			// 		// 			ui.position.top = 0;
+			// 		// 		}
+			// 		// 	else if(ui.position.top <= y1 - y2)
+			// 		// 		{
+			// 		// 			ui.position.top = y1 - y2;
+			// 		// 		}
+			// 		//},
+			// 		stop: function(event, ui)
+			// 			{
+			// 			}
+			// 	});
+			// });
 			
+				
 			/* Banner Position Save*/
 			$("body").on('click','.bgSave',function ()
 			{
@@ -169,7 +169,6 @@ $(document).ready(function()
 							$("a").attr("href", "#fillform");
 							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
 						}
-
                         
                 	});
 					
@@ -203,14 +202,13 @@ $(document).ready(function()
                         
                 	});
 
-               
-                //Back to fill form    
-                $("#cancel").click(function(){
-                $('#fillform').show();
-                $('#ask').hide();      
-                });
+	                //Back to fill form    
+	                $("#cancel").click(function(){
+	                $('#fillform').show();
+	                $('#ask').hide();      
+	                });
 
-                    //Back to fill form    
+                    //Smooth scroll   
                     $("#preview, #download, #square, #portrait, #landscape, #save, #ask, #fillform").click(function(event){
                     	//alert("scroll");
                         event.preventDefault();
@@ -218,7 +216,6 @@ $(document).ready(function()
 							scrollTop:$(this.hash).offset().top
 						}, 500);
                 	});
-
                 
 				$( "#square" ).click(function() {  
                 	//alert('square');
