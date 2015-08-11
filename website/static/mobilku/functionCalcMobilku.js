@@ -1299,8 +1299,7 @@ $(document).ready(function(){
         $('.no_tpl_is_calc').attr('data-angka',accounting.formatMoney(tpl_prem,'',2,'.',','));
                 $('.no_workshop_is_calc').attr('data-angka',accounting.formatMoney(workshop_prem,'',2,'.',','));
 
-        totalrecalc_custome();
-      return no_tpl_prem;                                              
+      return totalrecalc_custome(); 
     }
     
       function totalrecalc_custome(){
@@ -1320,7 +1319,7 @@ $(document).ready(function(){
         var no_totalPremium=parseInt(no_workshop_prem+no_compre_prem+no_earthquake_prem+no_flood_prem+no_med_ex_prem+no_pa_prem+no_passenger_prem+no_riot_prem+no_terror_prem+no_tpl_prem+no_pll_prem);
         $('.no_totalPremium').html('');
         $('.no_totalPremium').append(accounting.formatMoney(no_totalPremium,'',0,'.',','));
-        // return no_totalPremium;
+        return no_totalPremium;
 
     }
 
