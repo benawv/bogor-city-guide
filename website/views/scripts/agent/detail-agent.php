@@ -603,7 +603,7 @@
                             },
                 success  : function(data){
                     console.log(data);
-                    alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
+                    //alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
                 },
                 error: function (xhr, desc, err)
                 {
@@ -631,7 +631,7 @@
                             },
                     success  : function(data){
                     //console.log(data);
-                    alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
+                    //alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
                 }
             
             
@@ -654,7 +654,7 @@
                             },
                     success  : function(data){
                     //console.log(data);
-                    alert('Permintaan Informasi Layanan Life Insurance Anda sudah kami kirim ke Agen Kami');    
+                    //alert('Permintaan Informasi Layanan Life Insurance Anda sudah kami kirim ke Agen Kami');    
                 }
             
             
