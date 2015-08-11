@@ -160,6 +160,7 @@ class MobilkuController extends Website_Controller_Action {
                             'insurancetype' => $radiof
                             );
             $bcc = array("irwan@dreamcube.co.id","robbi@dreamcube.co.id");
+
             $mail = new Pimcore_Mail();
             $mail->setSubject("Konfirmasi Asuransi Mobil");
             $mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
