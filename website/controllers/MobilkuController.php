@@ -159,14 +159,14 @@ class MobilkuController extends Website_Controller_Action {
                             'telp' => $telp,
                             'insurancetype' => $radiof
                             );
-
+            $bcc = array("irwan@dreamcube.co.id","robbi@dreamcube.co.id");
             $mail = new Pimcore_Mail();
             $mail->setSubject("Konfirmasi Asuransi Mobil");
             $mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
             $mail->setDocument($document);
             $mail->setParams($params);
             $mail->addTo($email);
-		    $mail->addBcc("adriansyah.irwan@gmail.com");
+		    $mail->addBcc($bcc);
 		    $at = $mail->createAttachment(file_get_contents( $namapdf ));
 		    $at->type        = 'pdf';
 		    $at->disposition = Zend_Mime::DISPOSITION_INLINE;
