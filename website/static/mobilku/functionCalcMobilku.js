@@ -1300,6 +1300,7 @@ $(document).ready(function(){
                 $('.no_workshop_is_calc').attr('data-angka',accounting.formatMoney(workshop_prem,'',2,'.',','));
 
         totalrecalc_custome();
+        return recalc_custome();
                                                 
     }
     
@@ -1743,6 +1744,7 @@ $(document).ready(function(){
         $.ajax({
             "url" : "/savemobilku/",
             "type" : "POST",
+            "async" : false,
             "data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp+"&radio="+radio+"&hargaKonv="+hargaKonv+"&merk_html="+merk_html+"&model_html="+model_html+"&basic=" + basic +"&standar="+standar+"&premier="+premier+"&non="+non,
             "success" : function(){
                 //var getResult=JSON.parse(response);
@@ -1757,6 +1759,7 @@ $(document).ready(function(){
         var email=$('#email').val();
         if (email != '') {
             sendEmail(calc_result(),calc_resultstandard(),calc_resultpremier(),recalc_custome());
+            console.log(recalc_custome());
             adjustTable();
         }
     });
