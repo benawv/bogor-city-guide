@@ -44,8 +44,8 @@ class MobilkuController extends Website_Controller_Action {
 		$pdf = new Zend_Pdf();
 		$page = $pdf->newPage(Zend_Pdf_Page::SIZE_A4_LANDSCAPE); 
 		$pdf->pages[] = $page;
-		// $image = Zend_Pdf_Image::imageWithPath('website/static/images/template-no-lari/ajfc.jpg');
-		// $page->drawImage($image, 0, 0, 842, 595);
+		$image = Zend_Pdf_Image::imageWithPath('website/static/images/Arena.jpg');
+		$page->drawImage($image, 150, 300, 700, 550);
 		
 		$arial = Zend_Pdf_Font::fontWithPath('website/static/font-pdf-ajfc/arialbd.ttf');
 			
@@ -63,32 +63,37 @@ class MobilkuController extends Website_Controller_Action {
 		//PDF
 		//1
 		//drawRectangle(x1,y1,x2,y2)
-		$page->setFillColor(Zend_Pdf_Color_Html::color('#005399'))->setLineColor(Zend_Pdf_Color_Html::color('#005399'))->setLineDashingPattern(array(3, 2, 3, 4), 1.6)->drawRectangle(200, 500, 400, 450);
-	    $page->setFillColor(Zend_Pdf_Color_Html::color('#111111'))->drawText('Mobilku Basic', 225, 465);
+		$page->setFillColor(Zend_Pdf_Color_Html::color('#003781'))->setLineColor(Zend_Pdf_Color_Html::color('#003781'))->setLineDashingPattern(array(3, 2, 3, 4), 1.6)->drawRectangle(225, 350, 425, 300);
+	    $page->setFillColor(Zend_Pdf_Color_Html::color('#ffffff'))->drawText('Mobilku Basic', 250, 315);
 			
-		$page->setFillColor(Zend_Pdf_Color_Html::color('#E6E6E6'))->setLineColor(Zend_Pdf_Color_Html::color('#E6E6E6'))->setLineDashingPattern(array(3, 2, 3, 4), 1.6)->drawRectangle(400, 500, 600, 450);
-	    $page->setFillColor(Zend_Pdf_Color_Html::color('#111111'))->drawText("Rp. ".number_format($basic, 2), 425, 465);
+		$page->setFillColor(Zend_Pdf_Color_Html::color('#003781'))->setLineColor(Zend_Pdf_Color_Html::color('#E6E6E6'))->setLineDashingPattern(array(3, 2, 3, 4), 1.6)->drawRectangle(425, 350, 625, 300);
+	    $page->setFillColor(Zend_Pdf_Color_Html::color('#ffffff'))->drawText("Rp. ".number_format($basic, 2), 450, 315);
 
 		//2
-		$page->setFillColor(Zend_Pdf_Color_Html::color('#005399'))->setLineColor(Zend_Pdf_Color_Html::color('#005399'))->setLineDashingPattern(array(3, 2, 3, 4), 1.6)->drawRectangle(200, 450, 400, 400);
-	    $page->setFillColor(Zend_Pdf_Color_Html::color('#111111'))->drawText('Mobilku Standar', 225, 415);
+		$page->setFillColor(Zend_Pdf_Color_Html::color('#005399'))->setLineColor(Zend_Pdf_Color_Html::color('#005399'))->setLineDashingPattern(array(3, 2, 3, 4), 1.6)->drawRectangle(225, 300, 425, 250);
+	    $page->setFillColor(Zend_Pdf_Color_Html::color('#ffffff'))->drawText('Mobilku Standar', 250, 265);
 			
-		$page->setFillColor(Zend_Pdf_Color_Html::color('#E6E6E6'))->setLineColor(Zend_Pdf_Color_Html::color('#E6E6E6'))->setLineDashingPattern(array(3, 2, 3, 4), 1.6)->drawRectangle(400, 450, 600, 400);
-	    $page->setFillColor(Zend_Pdf_Color_Html::color('#111111'))->drawText("Rp. ".number_format($standar, 2), 425, 415);
+		$page->setFillColor(Zend_Pdf_Color_Html::color('#005399'))->setLineColor(Zend_Pdf_Color_Html::color('#E6E6E6'))->setLineDashingPattern(array(3, 2, 3, 4), 1.6)->drawRectangle(425, 300, 625, 250);
+	    $page->setFillColor(Zend_Pdf_Color_Html::color('#ffffff'))->drawText("Rp. ".number_format($standar, 2), 450, 265);
 
 		//3
-		$page->setFillColor(Zend_Pdf_Color_Html::color('#005399'))->setLineColor(Zend_Pdf_Color_Html::color('#005399'))->setLineDashingPattern(array(3, 2, 3, 4), 1.6)->drawRectangle(200, 400, 400, 350);
-	    $page->setFillColor(Zend_Pdf_Color_Html::color('#111111'))->drawText('Mobilku Premier', 225, 365);
+		$page->setFillColor(Zend_Pdf_Color_Html::color('#003781'))->setLineColor(Zend_Pdf_Color_Html::color('#005399'))->setLineDashingPattern(array(3, 2, 3, 4), 1.6)->drawRectangle(225, 250, 425, 200);
+	    $page->setFillColor(Zend_Pdf_Color_Html::color('#ffffff'))->drawText('Mobilku Premier', 250, 215);
 			
-		$page->setFillColor(Zend_Pdf_Color_Html::color('#E6E6E6'))->setLineColor(Zend_Pdf_Color_Html::color('#E6E6E6'))->setLineDashingPattern(array(3, 2, 3, 4), 1.6)->drawRectangle(400, 400, 600, 350);
-	    $page->setFillColor(Zend_Pdf_Color_Html::color('#111111'))->drawText("Rp. ".number_format($premier, 2), 425, 365);
+		$page->setFillColor(Zend_Pdf_Color_Html::color('#003781'))->setLineColor(Zend_Pdf_Color_Html::color('#E6E6E6'))->setLineDashingPattern(array(3, 2, 3, 4), 1.6)->drawRectangle(425, 250, 625, 200);
+	    $page->setFillColor(Zend_Pdf_Color_Html::color('#ffffff'))->drawText("Rp. ".number_format($premier, 2), 450, 215);
 
 		//4
-		$page->setFillColor(Zend_Pdf_Color_Html::color('#005399'))->setLineColor(Zend_Pdf_Color_Html::color('#005399'))->setLineDashingPattern(array(3, 2, 3, 4), 1.6)->drawRectangle(200, 350, 400, 300);
-	    $page->setFillColor(Zend_Pdf_Color_Html::color('#111111'))->drawText('Non - Paket', 225, 315);
+		$page->setFillColor(Zend_Pdf_Color_Html::color('#005399'))->setLineColor(Zend_Pdf_Color_Html::color('#005399'))->setLineDashingPattern(array(3, 2, 3, 4), 1.6)->drawRectangle(225, 200, 425, 150);
+	    $page->setFillColor(Zend_Pdf_Color_Html::color('#ffffff'))->drawText('Non - Paket', 250, 165);
 			
-		$page->setFillColor(Zend_Pdf_Color_Html::color('#E6E6E6'))->setLineColor(Zend_Pdf_Color_Html::color('#E6E6E6'))->setLineDashingPattern(array(3, 2, 3, 4), 1.6)->drawRectangle(400, 350, 600, 300);
-	    $page->setFillColor(Zend_Pdf_Color_Html::color('#111111'))->drawText("Rp. ".number_format($non, 2), 425, 315);
+		$page->setFillColor(Zend_Pdf_Color_Html::color('#005399'))->setLineColor(Zend_Pdf_Color_Html::color('#E6E6E6'))->setLineDashingPattern(array(3, 2, 3, 4), 1.6)->drawRectangle(425, 200, 625, 150);
+	    $page->setFillColor(Zend_Pdf_Color_Html::color('#ffffff'))->drawText("Rp. ".number_format($non, 2), 450, 165);
+
+		$page->setFont($arial, 30);
+		// $page->setFillColor(Zend_Pdf_Color_Html::color('#005399'));
+	    $page->setFillColor(Zend_Pdf_Color_Html::color('#111111'))->drawText("Terima kasih", 350, 100);//150,100
+	    // $this->drawCenteredText($page, "Terima kasih", 100);
 
 		// //5
 		// $page->setFillColor(Zend_Pdf_Color_Html::color('#005399'))->setLineColor(Zend_Pdf_Color_Html::color('#005399'))->setLineDashingPattern(array(3, 2, 3, 4), 1.6)->drawRectangle(200, 300, 400, 250);
@@ -125,9 +130,8 @@ class MobilkuController extends Website_Controller_Action {
 		// $page->setFillColor(Zend_Pdf_Color_Html::color('#E6E6E6'))->setLineColor(Zend_Pdf_Color_Html::color('#E6E6E6'))->setLineDashingPattern(array(3, 2, 3, 4), 1.6)->drawRectangle(400, 100, 600, 50);
 	 //    $page->setFillColor(Zend_Pdf_Color_Html::color('#111111'))->drawText($email, 425, 65);
 
-		$namapdf = "website/static/pdf-mobilku/".$nama."pdf";
+		$namapdf = "website/static/pdf-mobilku/".$nama.".pdf";
 		$pdf->save($namapdf);
-
         
         //throw new Exception("Please re-check your entries");
         
@@ -173,7 +177,7 @@ class MobilkuController extends Website_Controller_Action {
             $mail->setDocument($document);
             $mail->setParams($params);
             $mail->addTo($email);
-		    $mail->addBcc($bcc);
+		    // $mail->addBcc($bcc);
 		    $at = $mail->createAttachment(file_get_contents( $namapdf ));
 		    $at->type        = 'pdf';
 		    $at->disposition = Zend_Mime::DISPOSITION_INLINE;
