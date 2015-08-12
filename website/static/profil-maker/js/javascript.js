@@ -238,7 +238,7 @@ $(document).ready(function()
                 
                 //cek cookie
                 var temp = getCookie("template");
-    			////console.log(temp);
+    			console.log(temp);
 
     			//get template from cookie
 			    if(temp == "template1") {
@@ -282,6 +282,7 @@ $(document).ready(function()
 			        $("#input1, #input2, #input3, #input4, #input5, #input6").hide();
 			    }
 
+			    //mobile condition
 			    if($(window).width() < 640) {
 			    	//alert("640 coy");
 			    	if(temp == "template1" || temp == "template2" || temp == "template3") {

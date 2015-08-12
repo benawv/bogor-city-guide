@@ -201,16 +201,19 @@
     </div><!-- .wrapper-special -->
 
 
-    <?php foreach($kantor as $dataKantor2){
-            $idKantor = $dataKantor2->getO_id();
-            $keyKantor = $dataKantor2->getO_key();
-        }
+    <?php 
+            $session = new Zend_Session_Namespace('thanksagen');
+            $idKantor = $session->idKantor;
+            $keyKantor = $session->keyKantor;
+            $kodeAgent = $session->kodeAgent;
     ?>
+    
+    
     <div>
         <h5>
 			<span><a href="/">Home </a></span>
             &rsaquo; <a href="<?php echo $this->url(array($keyKantor ,$idKantor),"detail-kantor");?>"><span>Detail Kantor</span></a>
-            &rsaquo; <a href="<?php echo $this->url(array($idkKantor ,$kodeAgent),"detail-agent");?>"><span>Detail Agen</span></a>
+            &rsaquo; <a href="<?php echo $this->url(array($idKantor ,$kodeAgent),"detail-agent");?>"><span>Detail Agen</span></a>
             &rsaquo; <span class='currentPage'>Thank You Page</span>
 		</h5>
         <span

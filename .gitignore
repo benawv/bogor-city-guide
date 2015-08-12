@@ -17,6 +17,7 @@ website/var/tmp/*
 website/var/versions/*
 website/var/webdav/*
 website/static/fbshare/*
+website/static/pdf-mobilku/*
 website/static/upload-image/*
 website/static/config/*
 website/static/inv-fbshare/*

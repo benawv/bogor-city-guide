@@ -87,8 +87,6 @@
 
                     </script>
 
-                    
-
                     <div id="place" class="landscape facebook-caption leftside">
                         <div id="notepad" class="facebook-caption--inner landscape-bg bg-blue">
 
@@ -207,8 +205,9 @@
                         <?php
                                  $session = new Zend_Session_Namespace('srcImage');
                         ?>
-                       <img src="<?php echo $session->src;?>" alt="Page Cover Landscaped Notepad" id="timelineBGload" class="headerimage ui-corner-all ui-draggable img-responsive" />
-
+                        <div id="draggableHelper-m" style="display:inline-block;">
+                            <img src="<?php echo $session->src;?>" alt="Page Cover Landscaped Notepad" id="timelineBGload" class="headerimage ui-corner-all ui-draggable img-responsive" />
+                        </div>    
                     </div><!--/ .page-maker--placeholder -->
 
                     <div id="place-m" class="landscape-m facebook-caption leftside">
@@ -266,7 +265,9 @@
                         <?php
                             $session = new Zend_Session_Namespace('srcImage');
                         ?>
-                        <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
+                        <div id="draggableHelper-ava1-m" style="display:inline-block;">
+                            <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
+                        </div>    
                     </div><!--/ .facebook -->
                 </div><!--/ .page-maker--placeholder -->
 
@@ -309,7 +310,9 @@
                          <?php
                             $session = new Zend_Session_Namespace('srcImage');
                          ?>
-                        <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
+                         <div id="draggableHelper-ava2-m" style="display:inline-block;">
+                            <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
+                         </div>   
                     </div><!--/ .facebook -->
                 </div><!--/ .page-maker--placeholder -->
 
@@ -546,7 +549,7 @@
 
                     <script>
                         //Draggable option
-                         $('#draggableHelper, #draggableHelper2').draggable();
+                         $('#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper-m, #draggableHelper-ava1-m, #draggableHelper-ava2-m').draggable();
                          $('#timelineBGload, .ava-img').resizable(
                             {
                                 aspectRatio: true,
@@ -556,7 +559,7 @@
                         
                         //Resize available
                         $('.ui-resizable-handle').fadeOut();
-                        $( "img#timelineBGload, img.ava-img" )
+                        $( ".ui-resizable-handle, img#timelineBGload, img.ava-img" )
                           .mouseenter(function() {
                             $('.ui-resizable-handle').fadeIn(100);
                           })
@@ -564,13 +567,4 @@
                             $('.ui-resizable-handle').fadeOut(100);
                           });
                         
-                        // $('#timelineBGload').cropbox({
-                        //     width: 851,
-                        //     height: 315
-                        // }, function() {
-                        //     //on load
-                        //     console.log('Url: ' + this.getDataURL());
-                        // }).on('cropbox', function(e, data) {
-                        //     console.log('crop window: ' + data);
-                        // });
                       </script>
