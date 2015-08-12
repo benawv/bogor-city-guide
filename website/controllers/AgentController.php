@@ -250,8 +250,33 @@ class AgentController extends Website_Controller_Action {
         $TeamAsn = strtolower($emailTeamAsnBCC);
         $Mm = strtolower($emailMmBCC);
         $MmIna = strtolower($emailMmInaBCC);
-
-        $emailBCC = array($Leader,$TeamAsn,$Mm,$MmIna);
+        
+        $emailBCC = array($Leader, $TeamAsn, $Mm, $MmIna);
+        foreach ($emailBCC as $i=>$value) {
+            if ($value === "")
+                unset($emailBCC[$i]);
+        }
+        
+//        print_r($temp);
+//        die();
+        
+//
+//        if($Leader == NULL){
+//            $emailBCC = array($TeamAsn,$Mm, $MmIna);
+//        }else if($TeamAsn == NULL){
+//            $emailBCC = array($Leader, $Mm, $MmIna);
+//        }else if($Mm == NULL){
+//            $emailBCC = array($Leader,$TeamAsn,$MmIna);
+//        }else if($MmIna == NULL){
+//            $emailBCC = array($Leader,$TeamAsn,$Mm);
+//        }else if($Leader == NULL && $TeamAsn == NULL){
+//        }else if($Leader == NULL && $Mm == NULL){
+//        }else if($Leader == NULL && $MmIna == NULL){
+//        }else if($TeamAsn == NULL && $Mm == NULL){
+//        }else if($TeamAsn == NULL && $MmIna == NULL){
+//        }else if($MmIna ==)
+//        $emailBCC = array($Leader,$TeamAsn,$Mm,$MmIna);
+//        $emailBCC = array("","bastianrdp@gmail.com","putramahardiwanata24@gmail.com","");
 
 		// harusnya ini jadi  class Object_Abstract untuk email(sementara static harus cepet ganti !!!!!)
 		$session = new Zend_Session_Namespace('tasbih');

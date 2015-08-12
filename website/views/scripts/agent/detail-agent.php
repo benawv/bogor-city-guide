@@ -212,6 +212,12 @@
             &rsaquo; <a href="<?php echo $this->url(array($keyKantor ,$idKantor),"detail-kantor");?>"><span>Detail Kantor</span></a>
             &rsaquo; <span class='currentPage'>Detail Agen</span>
 		</h5>
+        <?php
+            $session = new Zend_Session_Namespace('thanksagen');
+            $session->idKantor = $idKantor;
+            $session->keyKantor = $keyKantor;
+            $session->kodeAgent = $kodeAgent;
+        ?>
         <span
         <div class="full-w bg-white custom-section">
             <h2>
