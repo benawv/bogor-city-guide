@@ -867,6 +867,11 @@ label{
     left: 0;
 }
 
+.wizard-card.ct-wizard-blue.customArrow > ul > li a:after{
+    border-top: 28px inset transparent;
+    border-bottom: 28px inset transparent;
+}
+
 .wizard-card.ct-wizard-blue > ul > li.first a:before {
     border: none;
 }

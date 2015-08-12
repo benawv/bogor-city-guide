@@ -27,26 +27,6 @@
             <?php echo $this->wysiwyg('description')?>
             
 		</div> <!--Community-->
-		<a href="http://beta.allianz.co.id/layanan/hubungi-kami/kantor-pemasaran-allianz" style="color: #fff;
-	    background-color: #00397d;
-	    border-color: #002d63;
-	    display: inline-block;
-	    margin-bottom: 0;
-	    font-weight: 400;
-	    text-align: center;
-	    vertical-align: middle;
-	    cursor: pointer;
-	    background-image: none;
-	    border: 1px solid transparent;
-	    white-space: nowrap;
-	    padding: 6px 12px;
-	    font-size: 14px;
-	    line-height: 1.428571429;
-	    border-radius: 0;
-	    -webkit-user-select: none;
-	    -moz-user-select: none;
-	    -ms-user-select: none;
-	    user-select: none;text-decoration: none;" >Kantor pemasaran</a>
         <img src="/website/static/images/footer-email-ajfc.jpg" />
 	</div>
 </div>
