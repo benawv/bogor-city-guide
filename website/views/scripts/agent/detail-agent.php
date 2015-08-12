@@ -602,8 +602,9 @@
                             'emailMmInaBCC' : '<?php echo $emailMmInaBCC;?>'
                             },
                 success  : function(data){
-                    console.log(data);
+                    //console.log(data);
                     //alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
+                    window.location = "/agent-locator/agen/thankyou-agent";
                 },
                 error: function (xhr, desc, err)
                 {
@@ -632,6 +633,7 @@
                     success  : function(data){
                     //console.log(data);
                     //alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
+                    window.location = "/agent-locator/agen/thankyou-agent";
                 }
             
             
@@ -654,7 +656,8 @@
                             },
                     success  : function(data){
                     //console.log(data);
-                    //alert('Permintaan Informasi Layanan Life Insurance Anda sudah kami kirim ke Agen Kami');    
+                    //alert('Permintaan Informasi Layanan Life Insurance Anda sudah kami kirim ke Agen Kami');  
+                     window.location = "/agent-locator/agen/thankyou-agent";
                 }
             
             
