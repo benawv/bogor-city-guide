@@ -287,7 +287,7 @@
 
         <div class="wizard-container">
             <form id="myform" method="get" action="" class="">
-            <div class="card wizard-card ct-wizard-blue" id="wizard">
+            <div class="card wizard-card ct-wizard-blue customArrow" id="wizard">
 
                 <!--
                     You can switch "ct-wizard-orange" with one of the next bright colors:
@@ -300,9 +300,9 @@
                 <div class="wizard-header"></div>
 
                 <ul>
-                    <li class="first"><a href="#data-mobil" data-toggle="tab">1. Data Mobil</a></li>
-                    <li class="second"><a href="#jenis-asuransi" data-toggle="tab">2. Jenis Asuransi</a></li>
-                    <li class="third"><a href="#hasil-kalkulasi" data-toggle="tab">3. Hasil Kalkulasi</a></li>
+                    <li class="first"><a href="#data-mobil" data-toggle="tab"><i class="fa fa-car fa-2x"></i> Data Mobil</a></li>
+                    <li class="second"><a href="#jenis-asuransi" data-toggle="tab"><i class="fa fa-pencil-square-o fa-2x"></i> Jenis Asuransi</a></li>
+                    <li class="third"><a href="#hasil-kalkulasi" data-toggle="tab"><i class="fa fa-calculator fa-2x"></i> Hasil Kalkulasi</a></li>
                 </ul>
 
                 <div class="tab-content">
