@@ -138,8 +138,7 @@ class MobilkuController extends Website_Controller_Action {
 	 //    $page->setFillColor(Zend_Pdf_Color_Html::color('#111111'))->drawText($email, 425, 65);
 
 		$namapdf = "website/static/pdf-mobilku/".$nama.".pdf";
-		$pdf->save($namapdf);
-die();
+		$pdf->save($namapdf); 
         
         //throw new Exception("Please re-check your entries");
         
