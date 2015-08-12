@@ -195,7 +195,7 @@
         background: #f9f9f9;
         border-bottom: solid 1px #ddd;
         padding: 8px 16px;
-        background: #f5f6f6 !important;
+        /*background: #f5f6f6 !important;*/
     }
 
     .tabScroll > table > tbody > tr:nth-child(even) > td,
@@ -207,13 +207,13 @@
     .tabScroll > table > tfoot > tr > td:nth-child(3),
     .tabScroll > table > tfoot > tr > td:nth-child(4)
     {
-        background: #e2e3e3 !important;
+        /*background: #e2e3e3 !important;*/
     }
 
     .tabScroll > table > tfoot > tr > td:first-child
     {
         /* display: none; */
-        visibility: hidden;
+        /*visibility: hidden;*/
         border-top: solid 1px #ddd;
         border-bottom: none !important;
     }
@@ -586,96 +586,96 @@
                                                             <thead>
                                                                 <tr>
                                                                     <th class="">Coverage</th>
+                                                                    <th class="">Premium</th>
                                                                     <!-- <th class="">Insured Value</th>
                                                                     <th class="">Rate</th> -->
-                                                                    <th class="">Premium</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
                                                                 <tr>
                                                                     <td id="jenisasuransi">Comprehensive</td>
+                                                                    <td class='compre_prem'>-</td>
                                                                     <!-- <td class='compre_val'>-</td>
                                                                     <td class='compre_persen'>-</td> -->
-                                                                    <td class='compre_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>TPL</td>
+                                                                    <td class='tpl_prem'>-</td>
                                                                     <!-- <td class='tpl_val'>-</td>
                                                                     <td class='tpl_persen'>-</td> -->
-                                                                    <td class='tpl_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Medical Expense</td>
+                                                                    <td class='med_ex_prem'>-</td>
                                                                     <!-- <td class='med_ex_val'>-</td>
                                                                     <td class='med_ex_persen'>-</td> -->
-                                                                    <td class='med_ex_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>PLL</td>
+                                                                    <td class='pll_prem'>-</td>
                                                                     <!-- <td class='pll_val'>-</td>
                                                                     <td class='pll_persen'>-</td> -->
-                                                                    <td class='pll_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Personal Effect</td>
+                                                                    <td class='personal_ef_prem'>-</td>
                                                                     <!-- <td class='personal_ef_val'>-</td>
                                                                     <td class='personal_ef_persen'>-</td> -->
-                                                                    <td class='personal_ef_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Flood</td>
+                                                                    <td class='flood_prem'>-</td>
                                                                     <!-- <td class='flood_val'>-</td>
                                                                     <td class='flood_persen'>-</td> -->
-                                                                    <td class='flood_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Earthquake</td>
+                                                                    <td class='earthquake_prem'>-</td>
                                                                     <!-- <td class='earthquake_val'>-</td>
                                                                     <td class='earthquake_presen'>-</td> -->
-                                                                    <td class='earthquake_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Strike, Riot, and Civil Commotion</td>
+                                                                    <td class='riot_prem'>-</td>
                                                                     <!-- <td class='riot_val'>-</td>
                                                                     <td class='riot_persen'>-</td> -->
-                                                                    <td class='riot_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Terrorist and Sabotage</td>
+                                                                    <td class='terror_prem'>-</td>
                                                                     <!-- <td class='terror_val'>-</td>
                                                                     <td class='terror_persen'>-</td> -->
-                                                                    <td class='terror_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>PA Passenger</td>
+                                                                    <td class='passenger_prem'>-</td>
                                                                     <!-- <td class='passenger_val'>-</td>
                                                                     <td class='passenger_persen'>-</td> -->
-                                                                    <td class='passenger_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>PA Driver</td>
+                                                                    <td class='pa_prem'>-</td>
                                                                     <!-- <td class='pa_val'>-</td>
                                                                     <td class='pa_persen'>-</t -->
-                                                                    <td class='pa_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
-                                                                <td>ERA</td>
+                                                                    <td>ERA</td>
+                                                                    <td class='era_prem'>-</td>
                                                                     <!-- <td class='era_val'>-</td>
                                                                     <td class='era_persen'>-</td> -->
-                                                                    <td class='era_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Authorized Workshop</td>
+                                                                    <td class='workshop_prem'>-</td>
                                                                     <!-- <td class='workshop_val'>-</td>
                                                                     <td class='workshop_persen'>-</td> -->
-                                                                    <td class='workshop_prem'>-</td>
                                                                 </tr>
                                                                 <tfoot>
                                                                     <tr>
-                                                                        <td></td>
-                                                                        <td></td>
-                                                                        <td style="background-color: darkgray;">Total Premium</td>
-                                                                        <td style="background-color: darkgray;" class='totalPremium'></td>
+                                                                        <td style="background: #e2e3e3;">Total Premium</td>
+                                                                        <td style="background: #e2e3e3;" class='totalPremium'></td>
+                                                                        <!-- <td></td>
+                                                                        <td></td> -->
                                                                     </tr>
                                                                 </tfoot>
                                                             </tbody>
@@ -784,10 +784,10 @@
                                                                 </tr>
                                                                 <tfoot>
                                                                     <tr>
-                                                                        <td></td>
-                                                                        <td></td>
-                                                                        <td style="background-color: darkgray;">Total Premium</td>
-                                                                        <td style="background-color: darkgray;" class='totalPremium2'></td>
+                                                                        <td style="background: #e2e3e3;">Total Premium</td>
+                                                                        <!-- <td></td>
+                                                                        <td></td> -->
+                                                                        <td style="background: #e2e3e3;" class='totalPremium2'></td>
                                                                     </tr>
                                                                 </tfoot>
                                                             </tbody>
@@ -896,10 +896,10 @@
                                                                 </tr>
                                                                 <tfoot>
                                                                     <tr>
-                                                                        <td></td>
-                                                                        <td></td>
-                                                                        <td style="background-color: darkgray;">Total Premium</td>
-                                                                        <td style="background-color: darkgray;" class='totalPremium3'></td>
+                                                                        <!-- <td></td>
+                                                                        <td></td> -->
+                                                                        <td style="background: #e2e3e3;">Total Premium</td>
+                                                                        <td style="background: #e2e3e3;" class='totalPremium3'></td>
                                                                     </tr>
                                                                 </tfoot>
                                                             </tbody>
@@ -944,9 +944,9 @@
                                                                 <tr>
                                                                     <th class="">Checklist</th>
                                                                     <th class="">Coverage</th>
+                                                                    <th class="">Premium</th>
                                                                     <!-- <th class="">Insured Value</th>
                                                                     <th class="">Rate</th> -->
-                                                                    <th class="">Premium</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -955,77 +955,77 @@
                                                                         <input type="checkbox" class='no_compre_is_calc' name="no_compre_is_calc" checked data-angka="0" data-target="no_compre_prem" disabled="disabled">
                                                                     </td>
                                                                     <td id="nojenisasuransi">Comprehensive</td>
+                                                                    <td class='no_compre_prem'>-</td>
                                                                     <!-- <td class='no_compre_val'>-</td>
                                                                     <td class='no_compre_persen'>-</td> -->
-                                                                    <td class='no_compre_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
                                                                         <input type="checkbox" class='no_tpl_is_calc' id="no_tpl_is_calc" name="no_tpl_is_calc" checked data-insured="no_tpl_val" data-angka="0" data-target="no_tpl_prem">
                                                                     </td>
                                                                     <td>TPL</td>
+                                                                    <td class='no_tpl_prem'>-</td>
                                                                     <!-- <td class=''>
                                                                         <input type="text" name="no_tpl_val" class="no_tpl_val" id="notplval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
                                                                     </td>
                                                                     <td class='no_tpl_persen'>-</td> -->
-                                                                    <td class='no_tpl_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
                                                                         <input type="checkbox" class="no_pll_is_calc" name="no_pll_prem_is_calc" checked data-insured="no_pll_val" data-angka="0" data-target="no_pll_prem">
                                                                     </td>
                                                                     <td>PLL</td>
+                                                                    <td class='no_pll_prem'>-</td>
                                                                     <!-- <td class=''>
                                                                         <input type="text" name="no_pll_val" class="no_pll_val" id="nopllval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
                                                                     </td>
                                                                     <td class='no_pll_persen'>-</td> -->
-                                                                    <td class='no_pll_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
                                                                         <input type="checkbox" class="no_med_ex_is_calc" id="no_med_ex_is_calc" name="no_med_ex_is_calc" checked data-insured="no_med_ex_val" data-angka="0" data-target="no_med_ex_prem">
                                                                     </td>
                                                                     <td>Medical Expense</td>
+                                                                    <td class='no_med_ex_prem'>-</td>
                                                                     <!-- <td class=''>
                                                                         <input type="text" name="no_med_ex_val" class="no_med_ex_val" id="nomedexval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;"></td>
                                                                     <td class='no_med_ex_persen'>-</td> -->
-                                                                    <td class='no_med_ex_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
                                                                         <input type="checkbox"  class="no_flood_is_calc" name="no_flood_is_calc" checked data-angka="0" data-target="no_flood_prem" disabled="disabled">
                                                                     </td>
                                                                     <td>Flood</td>
+                                                                    <td class='no_flood_prem'>-</td>
                                                                     <!-- <td class='no_flood_val'>-</td>
                                                                     <td class='no_flood_persen'>-</td> -->
-                                                                    <td class='no_flood_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
                                                                         <input type="checkbox" class="no_earthquake_is_calc" name="no_earthquake_is_calc" checked data-angka="0" data-target="no_earthquake_prem" disabled="disabled">
                                                                     </td>
                                                                     <td>Earthquake</td>
+                                                                    <td class='no_earthquake_prem'>-</td>
                                                                     <!-- <td class='no_earthquake_val'>-</td>
                                                                     <td class='no_earthquake_presen'>-</td> -->
-                                                                    <td class='no_earthquake_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
                                                                         <input type="checkbox" class="no_riot_is_calc" name="no_tpl_is_calc" checked data-angka="0" data-target="no_riot_prem"  disabled="disabled">
                                                                     </td>
                                                                     <td>Strike, Riot, and Civil Commotion</td>
+                                                                    <td class='no_riot_prem'>-</td>
                                                                     <!-- <td class='no_riot_val'>-</td>
                                                                     <td class='no_riot_persen'>-</td> -->
-                                                                    <td class='no_riot_prem'>-</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
                                                                         <input type="checkbox" class="no_terror_is_calc" name="no_terror_is_calc" checked data-angka="0" data-target="no_terror_prem"  disabled="disabled">
                                                                     </td>
                                                                     <td>Terrorist and Sabotage</td>
+                                                                    <td class='no_terror_prem'>-</td>
                                                                     <!-- <td class='no_terror_val'>-</td>
                                                                     <td class='no_terror_persen'>-</td> -->
-                                                                    <td class='no_terror_prem'>-</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>
@@ -1035,38 +1035,38 @@
                                                                             ?>
                                                                         </td>
                                                                         <td>PA Passenger</td>
+                                                                        <td class='no_passenger_prem'>-</td>
                                                                         <!-- <td class=''><input type="text" name="no_passenger_val" class="no_passenger_val" id="nopassengerval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
                                                                         </td>
                                                                         <td class='no_passenger_persen'>-</td> -->
-                                                                        <td class='no_passenger_prem'>-</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>
                                                                             <input type="checkbox" class="no_pa_is_calc" name="no_pa_is_calc" checked data-insured="no_pa_val" data-angka="0" data-target="no_pa_prem">
                                                                         </td>
                                                                         <td>PA Driver</td>
+                                                                        <td class='no_pa_prem'>-</td>
                                                                         <!-- <td class=''>
                                                                             <input type="text" name="no_pa_val" class="no_pa_val" id="nopaval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
                                                                         </td>
                                                                         <td class='no_pa_persen'>-</td> -->
-                                                                        <td class='no_pa_prem'>-</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>
                                                                             <input type="checkbox" class="no_workshop_is_calc" name="no_workshop_is_calc" checked data-angka="0" data-target="no_workshop_prem" value="FALSE">
                                                                         </td>
                                                                         <td>Authorized Workshop</td>
+                                                                        <td class='no_workshop_prem'>-</td>
                                                                         <!-- <td class='no_workshop_val'>-</td>
                                                                         <td class='no_workshop_persen'>-</td> -->
-                                                                        <td class='no_workshop_prem'>-</td>
                                                                     </tr>
                                                                     <tfoot>
                                                                         <tr>
                                                                             <td></td>
-                                                                            <td></td>
-                                                                            <td></td>
-                                                                            <td style="background-color: darkgray;">Total Premium</td>
-                                                                            <td style="background-color: darkgray;" class='no_totalPremium'></td>
+                                                                            <td style="background: #e2e3e3;">Total Premium</td>
+                                                                            <td style="background: #e2e3e3;"class='no_totalPremium'></td>
+                                                                            <!-- <td></td>
+                                                                            <td></td> -->
                                                                         </tr>
                                                                     </tfoot>
                                                                 </tbody>
@@ -1086,7 +1086,9 @@
                     <div class="wizard-footer">
                         <div class="pull-right">
                             <input type='button' class='btn btn-next btn-fill btn-warning btn-wd btn-sm' name='next' value='Lanjut' />
-                            <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish' id='finish-btn'/>
+                            <a href="/kalkulator/thankyou-mobilku">
+                                <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish' id='finish-btn'/>
+                            </a>
                         </div><!--/ .pull-right -->
                         <div class="pull-left">
                             <input type='button' class='btn btn-previous btn-fill btn-warning btn-wd btn-sm' name='previous' value='Kembali' />
