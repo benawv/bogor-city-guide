@@ -556,5 +556,16 @@ class AgentController extends Website_Controller_Action {
 		$new->setPublished(1);
 		$new->save();
 	}
+	
+	public function renderletAction() {
+		$id = $this->_getParam("id");
+		$entries = Object_Abstract::getById($id);
+		if($this->getParam("type") == "object") {
+			$id = $this->_getParam("id");
+			$entries = Object_Abstract::getById($id);
+            $this->view->data = $entries;
+        }
+        $this->renderScript('/agent/renderlet.php');
+	}
 
 }
