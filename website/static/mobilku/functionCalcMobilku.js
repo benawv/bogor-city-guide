@@ -194,7 +194,7 @@ $(document).ready(function(){
                      rate=0;
             }
         }else{*/
-        console.log('#='+tahun_pembuatan+'-'+harga+'-'+model+'-'+periode+'-'+wilayah+'-'+radio+'-'+hargaKonv+'-'+paket);
+        // console.log('#='+tahun_pembuatan+'-'+harga+'-'+model+'-'+periode+'-'+wilayah+'-'+radio+'-'+hargaKonv+'-'+paket);
            $.ajax({
                   "url" : "/mobilkucalc/",
                   "async": false,
@@ -210,7 +210,7 @@ $(document).ready(function(){
                  "success" : function(response){
                         localStorage.setItem("gettlo", response);
                         rate=response;
-                        console.log('retetype='+response);
+                        // console.log('retetype='+response);
                  }
              }); 
         //}
@@ -232,7 +232,7 @@ $(document).ready(function(){
                             $('.'+datatarget).html('');
                             $('.'+datatarget).append(dataangka);
                       }
-                      console.log('tes');
+                      // console.log('tes');
                       totalrecalc_custome();
       });
         return rate;
@@ -563,6 +563,7 @@ $(document).ready(function(){
         $('.tpl_prem').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
         $('.totalPremium').append(accounting.formatMoney(totalPremium,'',2,'.',','));
 
+        return totalPremium;
     }//end of function calc_result
 
 
@@ -795,6 +796,8 @@ $(document).ready(function(){
         $('.terror_prem2').append(accounting.formatMoney(terror_prem,'',2,'.',','));
         $('.tpl_prem2').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
         $('.totalPremium2').append(accounting.formatMoney(totalPremium,'',2,'.',','));
+
+        return totalPremium;
         
     }//end of function calc_standard
 
@@ -1024,7 +1027,7 @@ $(document).ready(function(){
         $('.terror_prem3').append(accounting.formatMoney(terror_prem,'',2,'.',','));
         $('.tpl_prem3').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
         $('.totalPremium3').append(accounting.formatMoney(totalPremium,'',2,'.',','));
-        
+        return totalPremium;
     }//end of function calc_resultpremier
 
     function recalc_custome(){
@@ -1098,9 +1101,9 @@ $(document).ready(function(){
         //console.log(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
         //calc =parseFloat(getWorkshopNonPack(merk_html,ages));
         calc =parseFloat(getWorkshopNonPack(merk_html,ages))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2)/100);
-        console.log("merk_html="+merk_html+"|"+ages);
-        console.log("1==>"+parseFloat(getWorkshopNonPack(merk_html,ages)));
-        console.log("2==>"+(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2)/100));
+        // console.log("merk_html="+merk_html+"|"+ages);
+        // console.log("1==>"+parseFloat(getWorkshopNonPack(merk_html,ages)));
+        // console.log("2==>"+(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2)/100));
         workshop_persen_show = calc.toFixed(4);
         workshop_persen = calc.toFixed(6);
         
@@ -1296,8 +1299,7 @@ $(document).ready(function(){
         $('.no_tpl_is_calc').attr('data-angka',accounting.formatMoney(tpl_prem,'',2,'.',','));
                 $('.no_workshop_is_calc').attr('data-angka',accounting.formatMoney(workshop_prem,'',2,'.',','));
 
-        totalrecalc_custome();
-                                                
+      return totalrecalc_custome(); 
     }
     
       function totalrecalc_custome(){
@@ -1317,6 +1319,7 @@ $(document).ready(function(){
         var no_totalPremium=parseInt(no_workshop_prem+no_compre_prem+no_earthquake_prem+no_flood_prem+no_med_ex_prem+no_pa_prem+no_passenger_prem+no_riot_prem+no_terror_prem+no_tpl_prem+no_pll_prem);
         $('.no_totalPremium').html('');
         $('.no_totalPremium').append(accounting.formatMoney(no_totalPremium,'',0,'.',','));
+        return no_totalPremium;
 
     }
 
@@ -1711,7 +1714,7 @@ $(document).ready(function(){
     
     //pindah ke sini
   
-   function sendEmail(){
+   function sendEmail(basic, standar, premier, non){
         var tahun_pembuatan=$('#tahun_pembuatan').val();
         var harga=$('#harga').val();
         var merk=$('#merk').val();
@@ -1726,9 +1729,9 @@ $(document).ready(function(){
         var hargaKonv=clearFormat($('#harga').val());
         var model_html=$('#model option:selected').html().toLowerCase();
         
-        //var radio1=$('#radio01').val();
-        //var radio2=$('#radio02').val();
-        //$('#radio01').checked
+        var radio1=$('#radio01').val();
+        var radio2=$('#radio02').val();
+        $('#radio01').checked
         if($('#radio01').is(":checked") == true){
             var radio = $('#radio01').val();
         }else{
@@ -1739,7 +1742,8 @@ $(document).ready(function(){
         $.ajax({
             "url" : "/savemobilku/",
             "type" : "POST",
-            "data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp+"&radio="+radio+"&hargaKonv="+hargaKonv+"&merk_html="+merk_html+"&model_html="+model_html,
+            "async" : false,
+            "data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp+"&radio="+radio+"&hargaKonv="+hargaKonv+"&merk_html="+merk_html+"&model_html="+model_html+"&basic=" + basic +"&standar="+standar+"&premier="+premier+"&non="+non,
             "success" : function(){
                 //var getResult=JSON.parse(response);
                 //console.log(response);
@@ -1752,12 +1756,8 @@ $(document).ready(function(){
         
         var email=$('#email').val();
         if (email != '') {
-            calc_result();
-            calc_resultstandard();
-            calc_resultpremier();
-            recalc_custome();
+            sendEmail(calc_result(),calc_resultstandard(),calc_resultpremier(),recalc_custome());
             adjustTable();
-            sendEmail();
         }
     });
          

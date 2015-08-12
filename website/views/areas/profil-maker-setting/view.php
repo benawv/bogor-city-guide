@@ -19,6 +19,7 @@
 
 <script src="/website/static/profil-maker/js/jquery.validate.min.js"></script>
 
+
 <section class="profile-maker">
     <div class="container">
 
@@ -34,6 +35,9 @@
         <div class="row">
             <div class="col-xs-12">
 
+            <script src="/website/static/profil-maker/js/jquery-ui-1.11.1.js"></script> 
+            <script src="/website/static/profil-maker/js/jquery.cropbox.js"></script> 
+            
                 <div id="cover1" class="timelineContainer" style="display: none">
 
                     <div id="timelineBackground" class="page-maker--placeholdermain">
@@ -41,9 +45,49 @@
                         <?php
                                  $session = new Zend_Session_Namespace('srcImage');
                         ?>
-                       <img src="<?php echo $session->src;?>" alt="Page Cover Landscaped Notepad" id="timelineBGload" class="headerimage ui-corner-all ui-draggable img-responsive" />
-
+                        <div id="draggableHelper" style="display:inline-block;">
+                            <img src="<?php echo $session->src;?>" alt="Page Cover Landscaped Notepad" id="timelineBGload" class="headerimage ui-corner-all ui-draggable img-responsive" />
+                        </div>    
                     </div><!--/ .page-maker--placeholder -->
+
+                        <!-- <input type="button" value ="-" onclick="zoom(0.9)"/>
+                        <input type="button" value ="+" onclick="zoom(1.1)"/>
+
+                        <div id="thediv">
+                            <img id="pic" src="<?php echo $session->src;?>" />
+                        </div> -->
+
+                    <style>
+                      /*    #thediv {
+                            margin: 0 auto;
+                            height: 315px;
+                            width: 851px;
+                            overflow: hidden;
+                            }
+
+                        #thediv img {
+                                position: relative;
+                                left: 50%;
+                                top: 50%;
+                            }*/
+                    </style>
+                   
+                    <script>
+                        // window.onload = function(){zoom(1)}
+
+                        // function zoom(zm) {
+                        // img = document.getElementById("pic")
+                        // wid = img.width
+                        // ht = img.height
+                        // img.style.width = (wid*zm) + "px"
+                        // img.style.height = (ht*zm) + "px"
+                        //     img.style.marginLeft = -(img.width/2) + "px";
+                        //     img.style.marginTop = -(img.height/2) + "px";
+                        // }
+
+                    </script>
+
+                    
 
                     <div id="place" class="landscape facebook-caption leftside">
                         <div id="notepad" class="facebook-caption--inner landscape-bg bg-blue">
@@ -199,13 +243,15 @@
                     <div id="avatar1" class="avatar">
                         <div id="avacapture1" class="avatar-caption">
                             <div class="avatar-caption--logo">
-                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
+                                    <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
                             </div><!--/ .avatar-caption--logo -->
                         </div><!--/ .avatar-caption -->
                         <?php
                             $session = new Zend_Session_Namespace('srcImage');
                         ?>
-                        <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
+                        <div id="draggableHelper3" style="display:inline-block;">
+                            <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
+                        </div>    
                     </div><!--/ .facebook -->
                 </div><!--/ .page-maker--placeholder -->
 
@@ -240,7 +286,9 @@
                          <?php
                             $session = new Zend_Session_Namespace('srcImage');
                          ?>
-                        <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
+                         <div id="draggableHelper2" style="display:inline-block;">
+                            <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
+                         </div>
                     </div><!--/ .facebook -->
                 </div><!--/ .page-maker--placeholder -->
 
@@ -495,3 +543,34 @@
 
     </div><!--/ .container -->
 </section><!--/ .profile-maker -->
+
+                    <script>
+                        //Draggable option
+                         $('#draggableHelper, #draggableHelper2').draggable();
+                         $('#timelineBGload, .ava-img').resizable(
+                            {
+                                aspectRatio: true,
+                                handles: 'ne, se, sw, nw, n, e, s, w'
+                            }
+                        );
+                        
+                        //Resize available
+                        $('.ui-resizable-handle').fadeOut();
+                        $( "img#timelineBGload, img.ava-img" )
+                          .mouseenter(function() {
+                            $('.ui-resizable-handle').fadeIn(100);
+                          })
+                          .mouseleave(function() {
+                            $('.ui-resizable-handle').fadeOut(100);
+                          });
+                        
+                        // $('#timelineBGload').cropbox({
+                        //     width: 851,
+                        //     height: 315
+                        // }, function() {
+                        //     //on load
+                        //     console.log('Url: ' + this.getDataURL());
+                        // }).on('cropbox', function(e, data) {
+                        //     console.log('crop window: ' + data);
+                        // });
+                      </script>
