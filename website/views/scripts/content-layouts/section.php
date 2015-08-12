@@ -28,7 +28,7 @@
 	<div class="heading clearfix pagenav">
 		<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
 		<div id="quicklinks">
-			<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks', 'product-quicklinks', "blank-animation-quicklinks","service-box-static-dynamic","service-box-static-dynamic-paragraph")))?>
+			<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks', 'product-quicklinks', "blank-animation-quicklinks","service-box-static","service-box-static-paragraph")))?>
 		</div>
 	</div>
 	
@@ -37,7 +37,7 @@
 					"allowed" => array("banner", "static-banner", "banner-without-note",'gallery-carousel-landing')))?>
 		<div id="quicklinks">
 			<?php echo $this->areablock('quicklinks-wrapper', array(
-					"allowed" => array("tile-quicklinks", "layanankami-quicklinks", "quicklinks","blank-tile-quicklinks-static", "product-quicklinks", "blank-animation-quicklinks")))?>
+					"allowed" => array("tile-quicklinks", "layanankami-quicklinks", "quicklinks","blank-tile-quicklinks-static", "product-quicklinks", "blank-animation-quicklinks","service-box-static","service-box-static-paragraph")))?>
 		</div>
 	</div><!-- .wrapper-special -->
 	
