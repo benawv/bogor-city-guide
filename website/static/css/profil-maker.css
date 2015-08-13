@@ -327,7 +327,7 @@ section.profile-maker {
         /*max-width: 250px;
         min-width: 250px;*/
         color: white;
-        z-index: 9999;
+        /*z-index: 9999;*/
         /* .right */
         /* .condensed */
         /* .no-dent */
@@ -349,9 +349,14 @@ section.profile-maker {
           z-index: -1;
         }
         section.profile-maker .timelineContainer #timelineBackground #draggableHelper .ui-wrapper > img,
-        section.profile-maker .page-maker--placeholder .avatar #draggableHelper2 .ui-wrapper > img {
+        section.profile-maker .timelineContainer.fluid #timelineBackground #draggableHelper-m .ui-wrapper > img,
+        section.profile-maker .page-maker--placeholder .avatar #draggableHelper2 .ui-wrapper > img,
+        section.profile-maker .page-maker--placeholder .avatar #draggableHelper3 .ui-wrapper > img,
+        section.profile-maker .page-maker--placeholder .avatar-m #draggableHelper-ava1-m .ui-wrapper > img,
+        section.profile-maker .page-maker--placeholder .avatar-m #draggableHelper-ava2-m .ui-wrapper > img {
           width: auto !important;
           height: auto !important;
+          cursor: move;
         }
         section.profile-maker .page-maker--placeholder .facebook .facebook-caption.right {
           left: auto;
@@ -448,8 +453,12 @@ section.profile-maker {
       /*border: solid 1px #ccc;*/
       overflow: hidden;
       /* .avatar-caption */ }
-      section.profile-maker .page-maker--placeholder .avatar > img, section.profile-maker .page-maker--placeholder .avatar-m > img,
-      section.profile-maker .page-maker--placeholder .avatar #draggableHelper2 .ui-wrapper > img {
+      section.profile-maker .page-maker--placeholder .avatar > img, 
+      section.profile-maker .page-maker--placeholder .avatar-m > img,
+      section.profile-maker .page-maker--placeholder .avatar #draggableHelper2 .ui-wrapper > img,
+      section.profile-maker .page-maker--placeholder .avatar #draggableHelper3 .ui-wrapper > img,
+      section.profile-maker .page-maker--placeholder .avatar-m #draggableHelper-ava1-m .ui-wrapper > img,
+      section.profile-maker .page-maker--placeholder .avatar-m #draggableHelper-ava2-m .ui-wrapper > img {
         max-width: 720px;
         min-width: 100%;
         height: auto;
@@ -497,31 +506,16 @@ section.profile-maker {
 /*# sourceMappingURL=profil-maker.css.map */
 
 
-
-/* 5 grid agent locator mobile looks like */
 @media screen and (max-width: 640px) {
-    .col-md-20 {
-        width: 100% !important;
-        padding: 0 !important;
-    }
-    
-    .e-blue {
-        background: url(../images/edge-blue.png) no-repeat bottom right !important;
-    }
-    .e-orange {
-        background: url(../images/edge-orange.png) no-repeat bottom right !important;
-    }
-    .e-red {
-        background: url(../images/edge-red.png) no-repeat bottom right !important;
-    }
-    section.profile-maker .page-maker--placeholdermain.fluid {
-      height: 180px;
-    }  
-    .leftside {
-      left: 10%;
-    }
-    .rightside {
-      right: 10%;
-    }
+    /* 5 grid agent locator mobile looks like */
+    .col-md-20 { width: 100% !important; padding: 0 !important; }
+
+    .e-blue { background: url(../images/edge-blue.png) no-repeat bottom right !important; }
+    .e-orange { background: url(../images/edge-orange.png) no-repeat bottom right !important; }
+    .e-red { background: url(../images/edge-red.png) no-repeat bottom right !important; }
+    section.profile-maker .page-maker--placeholdermain.fluid { height: 180px; }  
+    .leftside { left: 10%; }
+    .rightside { right: 10%; }
+    /*.ui-resizable-handle { display: block !important; }*/
 
 }
