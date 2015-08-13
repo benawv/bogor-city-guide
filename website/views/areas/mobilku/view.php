@@ -279,6 +279,39 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){
+    $(".next-form").on("click", function(){
+        $("#next").attr("tabindex","15");
+        //alert("yeeee");
+    });
+    
+});
+
+$(document).keyup(function(e){
+    if (e.keyCode==9){
+        var node = document.activeElement;
+        while (node.nodeName != "FORM" && node.parentNode) {
+            node = node.parentNode;
+        }
+        console.log(node.id);
+        if(node.id !== 'myform'){
+            if ($(".first").hasClass('active')){
+                document.getElementById("tahun_pembuatan").focus();
+            }else if ($(".second").hasClass('active')){
+                document.getElementById("nama").focus();
+            }
+            
+        }
+    }
+});
+
+// $("#next").click(function){
+//     //$("#next").attr("tabindex","15");
+//     alert("test");
+// }
+</script>
+
 <!-- End of Header -->
 
 <div id="newsletter-allianz" class="full-w bg-white">
@@ -316,7 +349,7 @@
                                             <label for="input1">Tahun Pembuatan</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <select id="tahun_pembuatan" class="form-control" tabindex="1">
+                                            <select id="tahun_pembuatan" class="form-control" tabindex="2">
                                             <?php
                                                 $year = date("Y",strtotime("-10 year"));
                                                 for( $i = date("Y"); $i >= $year; $i-- ){
@@ -334,7 +367,7 @@
                                             <label for="input2">Harga Mobil</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="harga" class="form-control required" id="harga" placeholder="" value="" tabindex="2">
+                                            <input type="text" name="harga" class="form-control required" id="harga" placeholder="" value="" tabindex="3">
                                         </div><!--/ .col-sm-4 -->
                                         <div class="col-sm-4">
                                             <span id="tooltips2" class="tooltips">*Mohon masukan harga pasar saat ini</span>
@@ -348,7 +381,7 @@
                                             <label for="input3">Merk Mobil</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <select id="merk" class="form-control required" tabindex="3">
+                                            <select id="merk" class="form-control required" tabindex="4">
                                                 <option value="">Silahkan pilih</option>
                                                 <?php
                                                     $merk = new Object_MobilBrandName_List();
@@ -371,7 +404,7 @@
                                             <label for="input4">Model Mobil</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4" >
-                                            <select id="model" class="form-control model-form required" tabindex="4">
+                                            <select id="model" class="form-control model-form required" tabindex="5">
                                                 <option value="">Silahkan pilih</option>
                                             </select>
                                         </div><!--/ .col-sm-4 -->
@@ -387,7 +420,7 @@
                                             <label for="input2">Registration No</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="5">
+                                            <input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="6">
                                             <!--<input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="5" onfocusout="this.value=validateVehicle(this.value)">-->
                                             <label id="notifRegno" style="display:none; color: #f00;">
                                                 Mohon maaf Registrasi Nomor yang Anda masukkan belum benar
@@ -407,7 +440,7 @@
                                         <div class="col-sm-4">
                                             <div class="left-inner-addon">
                                                 <i class="flaticon-black187"></i>
-                                                <input type="text" name="tipe" class="form-control" id="tipe" placeholder="" value="" disabled=disabled tabindex="6" />
+                                                <input type="text" name="tipe" class="form-control" id="tipe" placeholder="" value="" disabled=disabled />
                                             </div><!--/ .left-inner-addon -->
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
@@ -421,7 +454,7 @@
                                         <div class="col-sm-4">
                                             <div class="left-inner-addon">
                                                 <i class="flaticon-facebook30"></i>
-                                                <input type="text" name="wilayah" class="form-control" id="wilayah" placeholder="" value="" disabled=disabled tabindex="7"/>
+                                                <input type="text" name="wilayah" class="form-control" id="wilayah" placeholder="" value="" disabled=disabled>
                                             </div><!--/ .left-inner-addon -->
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
@@ -435,7 +468,7 @@
                                         <div class="col-sm-4">
                                             <div class="left-inner-addon">
                                                 <i class="flaticon-harddisc"></i>
-                                                <input type="text" name="kapasitas" class="form-control" id="kapasitas" placeholder="" value="" disabled=disabled tabindex="8"  />
+                                                <input type="text" name="kapasitas" class="form-control" id="kapasitas" placeholder="" value="" disabled=disabled  />
                                             </div><!--/ .left-inner-addon -->
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
@@ -455,7 +488,7 @@
                                             <label for="inputEmail">Nama</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="nama" class="form-control required" id="nama" placeholder="" tabindex="9" >
+                                            <input type="text" name="nama" class="form-control required" id="nama" placeholder="" tabindex="8" >
 
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
@@ -467,7 +500,7 @@
                                             <label for="inputEmail">No. Telp</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="tel" name="telp" class="form-control required" id="telp" placeholder="0812345678" tabindex="10" onfocusout="this.value=validateNumber(this.value)">
+                                            <input type="tel" name="telp" class="form-control required" id="telp" placeholder="0812345678" tabindex="9" onfocusout="this.value=validateNumber(this.value)">
                                         <label id="notifNoHP" style="display:none; color: #f00;">
                                 Mohon maaf No HP yang Anda masukkan belum benar
                             </label>
@@ -481,7 +514,7 @@
                                             <label for="input1">Periode Asuransi</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="periode" class="form-control" id="periode" placeholder="" value="<?php echo date("m/d/Y"); ?>" tabindex="11">
+                                            <input type="text" name="periode" class="form-control" id="periode" placeholder="" value="<?php echo date("m/d/Y"); ?>" tabindex="10">
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
                                 </div><!--/ .row -->
@@ -506,7 +539,7 @@
                                     <div class="form-group">
                                         <div class="col-sm-3"></div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="periode-last" class="form-control" id="periode-last" placeholder="" value="<?php echo $day; ?>" disabled=disabled tabindex="12">
+                                            <input type="text" name="periode-last" class="form-control" id="periode-last" placeholder="" value="<?php echo $day; ?>" disabled=disabled tabindex="11">
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
                                 </div><!--/ .row -->
@@ -520,8 +553,8 @@
                                             <div class="form-inline">
 
                                                 <div class="radio-icon">
-                                                    <input type="radio" id="radio01" name="radio" checked="checked" value="comprehensive" tabindex="13" />
-                                                    <label for="radio01">
+                                                    <input type="radio" id="radio01" name="radio" checked="checked" value="comprehensive" tabindex="12" />
+                                                    <label for="radio01" >
                                                         <span>
                                                             <p>Komprehensif</p>
                                                             <img class="car-icon" src="/website/static/mobilku/icon/car1.png" />
@@ -530,7 +563,7 @@
                                                 </div><!--/ .radio-icon -->
 
                                                 <div class="radio-icon">
-                                                    <input type="radio" id="radio02" name="radio" value="tlo" tabindex="14" />
+                                                    <input type="radio" id="radio02" name="radio" value="tlo" tabindex="13" />
                                                     <label for="radio02">
                                                         <span>
                                                             <p>Total Loss Only</p>
@@ -550,7 +583,7 @@
                                             <label for="inputEmail">Email Anda</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="email" name="email" class="form-control required" id="email" placeholder="" tabindex="15" >
+                                            <input type="email" name="email" class="form-control required" id="email" placeholder="" tabindex="14" >
                                 
                             </label>
                                         </div><!--/ .col-sm-4 -->
@@ -1085,7 +1118,7 @@
 
                     <div class="wizard-footer">
                         <div class="pull-right">
-                            <input type='button' class='btn btn-next btn-fill btn-warning btn-wd btn-sm' name='next' value='Lanjut' />
+                            <input type='button' id="next" class='btn btn-next btn-fill btn-warning btn-wd btn-sm next-form' name='next' value='Lanjut' tabindex="7" />
                             <a href="/kalkulator/thankyou-mobilku">
                                 <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish' id='finish-btn'/>
                             </a>

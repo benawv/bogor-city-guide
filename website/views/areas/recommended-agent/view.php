@@ -47,27 +47,33 @@
                  <div class="col-xs-12 col-md-20">
                      <div class="profile-maker--box">
                          <h4><?php
-								//if($this->editmode) {
-								//	echo $this->link($link,array("class" => $class));
-								//}else{
-								//	$id = $this->link($link,array("class" => $class))->getHref();
-								//	$data = Object_AgentLocatorData::getById($id);
-								//	echo "<pre>";
-								//	print_r($data->getO_id());
-								//	die();
-								//	if($data->getKantor()[0]->o_id != ""){
+								if($this->editmode) {
+									echo $this->link($link,array("class" => $class));
+								}else{
+									$id = $this->link($link,array("class" => $class))->getHref();
+									if($id != "" && $id != " " && $id != "#"){
+									$data = Object_AgentLocatorData::getById($id);
+									//echo "<pre>";//print_r($data->getO_id());//die();
+									//if($data->getKantor()[0]->o_id != ""){
 							?>
-										<!--<a href="<?php //echo $_SERVER['HTTP_REFERER']."/detail-agent/".$data->getKantor()[0]->o_id."-".$data->getO_id();?>" target="_blank"><?php echo $this->link($link,array("class" => $class))->getText();?></a>-->
+										<a href="<?php echo $_SERVER['HTTP_REFERER'].'/detail-agent/'.$data->getKantor()[0]->o_id.'-'.$data->getO_id();?>" target="_blank"><?php echo $this->link($link)->getText();?></a>
 							<?php
-								//	}
-								//}
+									}
+									else{
 							?>
-							<?php echo $this->renderlet("artikel".$i, array(
+										<a href="#"><?php echo $this->link($link)->getText();?></a>
+							<?php
+									//}
+									}
+								}
+							?>
+							<?php
+								/*echo $this->renderlet("artikel".$i, array(
 								"controller" => "agent",
 								"action" => "renderlet",
 								"editmode" => $this->editmode,
 								"title" => "Drag objek agen yang diinginkan."
-								));
+								));*/
 							?>
 						 </h4>
                          <!--<img src="/website/static/images/profil.jpg" alt="Template Image" class="img-responsive">-->
