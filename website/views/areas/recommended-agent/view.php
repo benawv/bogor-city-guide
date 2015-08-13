@@ -50,8 +50,15 @@
 								if($this->editmode) {
 									echo $this->link($link,array("class" => $class));
 								}else{
-									$id = $this->link($link,array("class" => $class))->getHref();
-									if($id != "" && $id != " " && $id != "#"){
+									$id_agen = $this->link($link,array("class" => $class))->getHref();
+									if($id_agen != "" && $id_agen != " " && $id_agen != "#"){
+									$kondisi = array("condition" => "kodeAgent = ".$id_agen);;
+									$getID = Object_AgentLocatorData::getList($kondisi);
+									foreach($getID as $row)
+									{
+										$id = $row->getO_id();
+									}
+									
 									$data = Object_AgentLocatorData::getById($id);
 									//echo "<pre>";//print_r($data->getO_id());//die();
 									//if($data->getKantor()[0]->o_id != ""){
