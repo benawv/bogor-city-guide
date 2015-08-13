@@ -168,7 +168,7 @@
         echo "</pre>";*/
 ?>
 <script>
-        var desc =  "<?php echo substr($items->content,3,80); ?>";
+        var desc =  "<?php echo substr($items->deskripsisingkat,3,30); ?>...";
 </script>
 <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
@@ -356,7 +356,7 @@
     }else{
         columnHeight=columnHeight-88;
         var maincontent=$(".main-content").height(); 
-        alert(maincontent);
+        //alert(maincontent);
         $('.sidebar').css('height', columnHeight+135 + 'px');
         $('.page-wrapper-outer').height(maincontent);
     }  
