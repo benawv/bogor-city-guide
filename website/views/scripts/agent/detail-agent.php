@@ -246,7 +246,7 @@
                             $expTelp = explode("-",$telpKantor);
                             $fax = "(".$dataKantor->getKodeAreaFax().") ".$dataKantor->getNomorFax();
                             $x = count($dataKantor->getFotoGaleriKantor()->items);
-                            $email = strtolower($dataKantor->getEmailKantor());
+                            $emailkantor = strtolower($dataKantor->getEmailKantor());
                     ?>
                         <h2><?php echo $namaLokasi; ?></h2>
                         <p>
@@ -489,7 +489,7 @@
                     <?php
                         if(!isset($session->date_tglBuat) && !isset($session1->nama) && !isset($sessionLive->nama)){
                     ?>
-                        <a href="mailto:<?php echo $email;?>?Subject=Call%20Agen" target="_top" class="btn btn-sendmail">Kirim EMail</a>
+                        <a href="mailto:<?php echo $emailkantor;?>?Subject=Call%20Agen" target="_top" class="btn btn-sendmail" onclick="setTimeout(function(){window.location='/agent-locator/agen/thankyou-agen/'},5000);">Kirim EMail</a>
                     <?php } else{?>
                         <a href="javascript:void(0)" target="_top" class="btn btn-sendmail btn-email">Email Agen</a>&nbsp;
                     <?php }?>
@@ -591,6 +591,10 @@
     $(".kirim-email").click(function(){
         <?php if($getStatus=='tasbih_calc'){ ?>
             var keterangan = $(".textareaForm").val();
+            var email = $('#email_agen').text();
+            if(email == ""){
+                email = '<?php echo $emailkantor; ?>';
+            }
 
             $.ajax({
                 url      : '/send-email-agen-tasbih/',
@@ -601,7 +605,7 @@
                             'nama_agen' : '<?php echo $namaAgent;?>',
                             'lokasi' : '<?php echo $namaLokasi;?>',
                             'telp' : '<?php echo $telepon;?>',
-                            'email' : '<?php echo $email;?>',
+                            'email' : email,
                             'emailLeaderBCC' : '<?php echo $emailLeaderBCC;?>',
                             'emailTeamAsnBCC ' : '<?php echo $emailTeamAsnBCC;?>',
                             'emailMmBCC' : '<?php echo $emailMmBCC;?>',
