@@ -167,6 +167,9 @@
         print_r($items);
         echo "</pre>";*/
 ?>
+<script>
+        var desc =  "<?php echo substr($items->deskripsisingkat,3,30); ?>...";
+</script>
 <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
 
@@ -324,6 +327,7 @@
     </div><!--/ .page-wrapper-outer -->
 
 
+<?php } ?>
 <script type="text/javascript">
     
 
@@ -351,7 +355,8 @@
 
     }else{
         columnHeight=columnHeight-88;
-        var maincontent=$( ".main-content" ).height(); 
+        var maincontent=$(".main-content").height(); 
+        //alert(maincontent);
         $('.sidebar').css('height', columnHeight+135 + 'px');
         $('.page-wrapper-outer').height(maincontent);
     }  
@@ -359,8 +364,8 @@
 $( document ).ready(function(){
 
 //alert('TEST');
-    var description = "<?php echo $items->content; ?>";
-    var desc = description.substring(3,80)+"...";
+    //var description = "";
+    //var desc = description.substring(3,80)+"...";
     var judul = $('#judul').html();
     var title = judul.toLowerCase();
     var image = document.getElementById("backart").src;
@@ -437,4 +442,3 @@ $( document ).ready(function(){
 
 
 </script>
-<?php } ?>
