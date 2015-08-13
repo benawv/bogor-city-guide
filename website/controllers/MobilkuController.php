@@ -44,7 +44,7 @@ class MobilkuController extends Website_Controller_Action {
 		$pdf = new Zend_Pdf();
 		$page = $pdf->newPage(Zend_Pdf_Page::SIZE_A4); 
 		$pdf->pages[] = $page;
-		$image = Zend_Pdf_Image::imageWithPath('website/static/pdf-mobilku/template.jpg');
+		$image = Zend_Pdf_Image::imageWithPath('website/static/mobilku/images/template.jpg');
 		$page->drawImage($image, 0, 0, 600, 800);
 		// $page->drawImage($image, 125, 505, 475, 800);
 		
