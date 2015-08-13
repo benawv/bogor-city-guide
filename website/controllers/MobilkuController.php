@@ -50,16 +50,18 @@ class MobilkuController extends Website_Controller_Action {
 		
 		$arial = Zend_Pdf_Font::fontWithPath('website/static/font-pdf-ajfc/arialbd.ttf');
 			
+		$page->setFont($arial, 17);
+		$page->setFillColor(Zend_Pdf_Color_Html::color('#111111'))->drawText('Terima kasih telah menggunakan Allianz Mobilku', 100, 310);
 		$page->setFont($arial, 12);
-		
-		// $page->setFillColor(Zend_Pdf_Color_Html::color('#005399'))
-		// 	->drawText('MUHAMMAD ROBBI NUGRAHA', 230, 210);
+		$page->setFillColor(Zend_Pdf_Color_Html::color('#3c3c3c'))->drawText('Informasi lebih lanjut dapat Anda lihat pada website Allianz.co.id', 110, 280);
+		$page->setFillColor(Zend_Pdf_Color_Html::color('#3c3c3c'))->drawText('atau dapat menghubungi langsung 021-2926 9999', 150, 260);
 
-		//$page->setFont($arial, 30);
-		//
-		//$page->setFillColor(Zend_Pdf_Color_Html::color('#005399'));
-		//
-		//$this->drawCenteredText($page, "MUHAMMAD ROBBI NUGRAHA", 210);
+		$page->setFont($arial, 12);
+		// $page->setFont($arial, 30);
+		
+		// $page->setFillColor(Zend_Pdf_Color_Html::color('#111111'));
+		
+		// $this->drawCenteredText($page, "Terima kasih telah menggunakan Allianz Mobilku", 350);
 
 		//PDF
 		//0
