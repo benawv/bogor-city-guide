@@ -45,7 +45,7 @@ class MobilkuController extends Website_Controller_Action {
 		$page = $pdf->newPage(Zend_Pdf_Page::SIZE_A4_LANDSCAPE); 
 		$pdf->pages[] = $page;
 		$image = Zend_Pdf_Image::imageWithPath('website/static/images/Arena.jpg');
-		$page->drawImage($image, 150, 375, 700, 550);
+		$page->drawImage($image, 250, 375, 600, 550);
 		
 		$arial = Zend_Pdf_Font::fontWithPath('website/static/font-pdf-ajfc/arialbd.ttf');
 			
@@ -97,9 +97,9 @@ class MobilkuController extends Website_Controller_Action {
 		$page->setFillColor(Zend_Pdf_Color_Html::color('#005399'))->setLineColor(Zend_Pdf_Color_Html::color('#E6E6E6'))->setLineDashingPattern(array(3, 2, 3, 4), 1.6)->drawRectangle(425, 150, 625, 100);
 	    $page->setFillColor(Zend_Pdf_Color_Html::color('#ffffff'))->drawText("Rp. ".number_format($non, 2), 450, 115);
 
-		$page->setFont($arial, 30);
+		$page->setFont($arial, 24);
 		// $page->setFillColor(Zend_Pdf_Color_Html::color('#005399'));
-	    $page->setFillColor(Zend_Pdf_Color_Html::color('#111111'))->drawText("Terima kasih", 350, 60);//150,100
+	    $page->setFillColor(Zend_Pdf_Color_Html::color('#111111'))->drawText("Terima kasih", 225, 60);//150,100
 	    // $this->drawCenteredText($page, "Terima kasih", 100);
 
 		// //5
@@ -139,7 +139,7 @@ class MobilkuController extends Website_Controller_Action {
 
 		$namapdf = "website/static/pdf-mobilku/".$nama.".pdf";
 		$pdf->save($namapdf); 
-        
+        // die();
         //throw new Exception("Please re-check your entries");
         
         //try{
@@ -184,7 +184,7 @@ class MobilkuController extends Website_Controller_Action {
             $mail->setDocument($document);
             $mail->setParams($params);
             $mail->addTo($email);
-		    // $mail->addBcc($bcc);
+		    $mail->addBcc($bcc);
 		    $at = $mail->createAttachment(file_get_contents( $namapdf ));
 		    $at->type        = 'pdf';
 		    $at->disposition = Zend_Mime::DISPOSITION_INLINE;
