@@ -1369,10 +1369,10 @@ $(document).keyup(function(e){
         $( "#periode" ).datepicker({
             changeMonth: true,
             changeYear: true,
-            yearRange: "-100:+0",
+            yearRange: "+0:+100",
             onSelect: function(date) {
             var a=new Date(date);
-            var year1=a.setFullYear(a.getFullYear() + 1);
+            var year1=a.setDate(a.getDate() - 1);
             var newdate=new Date(year1);
             $( "#periode-last" ).val((newdate.getMonth() + 1)+'/'+newdate.getDate()+'/'+newdate.getFullYear());
           }
