@@ -10,6 +10,23 @@
 <!--<script src="/website/ajfc/js/javascripts.js"></script> -->
 
 <style>
+    
+    @media (max-width : 480px)
+    .sck480{
+       display:inline-block !important;
+    }
+    .scl480{
+       display:none !important;
+    }
+
+    @media (min-width : 480px){
+    .sck480{
+       display:none !important;
+    }
+    .scl480{
+       display:inline-block !important;
+    }
+    }
 
     .page-wrapper-outer .sidebar
     {
@@ -168,7 +185,7 @@
         echo "</pre>";*/
 ?>
 <script>
-        var desc =  "<?php echo substr($items->deskripsisingkat,3,30); ?>...";
+
 </script>
 <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
@@ -283,11 +300,11 @@
 "></i></a>
 								</div>
                     </h5>
-                        <p class="meta">Posted on<span id="date" style="display:block;"> <?php echo $items->newsdate; ?></span></p>
+                        <font class="meta">Posted on<span id="date" style="display:block;"> <?php echo $items->newsdate; ?></span></font>
                                 
                     </div><!--/ .main-content--header -->
 
-                    <p id="desc" style="display:block;"><?php echo $items->content; ?></p>
+                    <div id="desc" style="display:block;"><?php echo $items->content; ?></div>
                     <br/>
                     <p>Untuk informasi lebih lengkap mengenai produk allianz tasbih klik :</p>
                     <button class="btn btn-primary" onclick="location.href='/produk/asuransi-syariah/tasbih/info-produk';" type="button">Informasi Produk Allianz Tasbih</button>
@@ -364,14 +381,18 @@
 $( document ).ready(function(){
 
 //alert('TEST');
-    //var description = "";
-    //var desc = description.substring(3,80)+"...";
+    var description = $('div').find('p').text();
+    //var desc = $("div.desc").find('p');
+    //alert(desc);
+    var desc = description.substring(0,50)+"...";
+    var postDesc = description.substring(0,400)+"...";
     var judul = $('#judul').html();
     var title = judul.toLowerCase();
     var image = document.getElementById("backart").src;
-    var url = window.location.host+window.location.pathname;
+    var link = window.location.pathname;
+    var url = window.location.hostname+window.location.pathname;
     var tanggal = $('#date').html();
-    
+    //alert(url);
         $('#sendingemail').click(function() {
         var email = $('#email').val();
         var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -385,9 +406,9 @@ $( document ).ready(function(){
                 data: {
                     postImg : image,
                     postTitle : judul,
-                    postDesc : desc,
+                    postDesc : postDesc,
                     postTanggal : tanggal,
-                    postLink : url,
+                    postLink : link,
                     email :email
                 },
                 success: function(data){
