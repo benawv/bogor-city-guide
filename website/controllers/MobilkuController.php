@@ -188,8 +188,9 @@ class MobilkuController extends Website_Controller_Action {
             $mail->setParams($params);
             $mail->addTo($email);
 		    $mail->addBcc($bcc);
-		    $at = $mail->createAttachment(file_get_contents( $namapdf ));
-		    $at->type        = 'pdf';
+		    // $at = $mail->createAttachment(file_get_contents( $namapdf ));
+			$at = new Zend_Mime_Part(file_get_contents($namapdf));
+		    $at->type        = 'application/pdf';
 		    $at->disposition = Zend_Mime::DISPOSITION_INLINE;
 		    $at->encoding    = Zend_Mime::ENCODING_BASE64;
 		    $at->filename    = 'mobilku.pdf';
