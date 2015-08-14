@@ -1374,7 +1374,7 @@ $(document).keyup(function(e){
             var a=new Date(date);
             var year1=a.setDate(a.getDate() - 1);
             var newdate=new Date(year1);
-            $( "#periode-last" ).val((newdate.getMonth() + 1)+'/'+newdate.getDate()+'/'+(newdate.getFullYear()-1));
+            $( "#periode-last" ).val((newdate.getMonth() + 1)+'/'+newdate.getDate()+'/'+(newdate.getFullYear()+1));
           }
         });
 
