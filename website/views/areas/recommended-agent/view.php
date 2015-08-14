@@ -63,7 +63,7 @@
 									//echo "<pre>";//print_r($data->getO_id());//die();
 									//if($data->getKantor()[0]->o_id != ""){
 							?>
-										<a href="<?php echo $_SERVER['HTTP_REFERER'].'/detail-agent/'.$data->getKantor()[0]->o_id.'-'.$data->getO_id();?>" target="_blank"><?php echo $this->link($link)->getText();?></a>
+										<a href="<?php echo '/detail-agent/'.$data->getKantor()[0]->o_id.'-'.$data->getO_id();?>" target="_blank"><?php echo $this->link($link)->getText();?></a>
 							<?php
 									}
 									else{
