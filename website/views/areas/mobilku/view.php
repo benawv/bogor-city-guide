@@ -1369,12 +1369,12 @@ $(document).keyup(function(e){
         $( "#periode" ).datepicker({
             changeMonth: true,
             changeYear: true,
-            yearRange: "+0:+100",
+            yearRange: "+0:+5",
             onSelect: function(date) {
             var a=new Date(date);
             var year1=a.setDate(a.getDate() - 1);
             var newdate=new Date(year1);
-            $( "#periode-last" ).val((newdate.getMonth() + 1)+'/'+newdate.getDate()+'/'+newdate.getFullYear());
+            $( "#periode-last" ).val((newdate.getMonth() + 1)+'/'+newdate.getDate()+'/'+(newdate.getFullYear()-1));
           }
         });
 
