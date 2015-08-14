@@ -1370,6 +1370,7 @@ $(document).keyup(function(e){
             changeMonth: true,
             changeYear: true,
             yearRange: "+0:+5",
+            minDate : 0,
             onSelect: function(date) {
             var a=new Date(date);
             var year1=a.setDate(a.getDate() - 1);
