@@ -6,7 +6,7 @@
             <?php
                 // prepare the store
                 $selectStore = [];
-                for($i=2; $i<30; $i++) {
+                for($i=2; $i<5; $i++) {
                     $selectStore[] = [$i, $i];
                 }
             ?>
@@ -27,7 +27,7 @@
     </style>
 <?php } ?> 
 <?php 
-    $button = 1;
+    $button = 2;
     if(!$this->select("buttons")->isEmpty()){
         $button = (int) $this->select("buttons")->getData();
     }
@@ -35,14 +35,22 @@
 <nav class="main-navigation">
         <div class="container">
            <div class="row">
+               <?php $jcol = 12/$button; ?>
                <?php for($loop=1;$loop<=$button;$loop++){ ?>
-                <div class="col-xs-12 col-md-4">
+                <div class="col-xs-12 col-md-<?php echo (int)$jcol; ?>">
                             <?php
                                     $col = $this->select("color_".$loop)->getData();
 								    $ic = $this->select('icon_'.$loop)->getData();
 							?>
-<!--                    <h4><?php echo $col; ?></h4>-->
-                    <a href="#" class="nav-item <?php echo $col; ?> <?php echo $ic; ?>">
+                    <?php 
+                                    if($this->editmode){ 
+                                        echo $this->link("link_".$loop);
+                                        $link = '#';
+                                    }else{
+                                        $link = $this->link("link_".$loop)->getHref();
+                                    }
+				    ?>
+                    <a href="<?php echo $link; ?>" class="nav-item <?php echo $col; ?> <?php echo $ic; ?>">
                         <h4><small>0<?php echo $loop; ?></small><?php echo $this->input("btn-".$loop, array("width" => 125)); ?></h4>
                     </a>
                                     			             
