@@ -6,7 +6,7 @@
             <?php
                 // prepare the store
                 $selectStore = [];
-                for($i=2; $i<5; $i++) {
+                for($i=2; $i<=5; $i++) {
                     $selectStore[] = [$i, $i];
                 }
             ?>
@@ -17,31 +17,24 @@
         </div>
     </div>
 
-    <style type="text/css">
-        .gallery .item {
-            min-height: 377px;
-        }
-        .place-bg-gallery{
-        	height: 265px !important;
-        }
-    </style>
+
 <?php } ?> 
 <?php 
     $button = 2;
     if(!$this->select("buttons")->isEmpty()){
         $button = (int) $this->select("buttons")->getData();
     }
-?>
-<nav class="main-navigation">
-        <div class="container">
-           <div class="row">
-               <?php $jcol = 12/$button; ?>
-               <?php for($loop=1;$loop<=$button;$loop++){ ?>
-                <div class="col-xs-12 col-md-<?php echo (int)$jcol; ?>">
-                            <?php
+?>    
+<nav class="main-navigation" style="max-width:960px; margin:auto;">
+            <div class="row">
+                <?php $jcol = 12 / $button; ?>
+                <?php for($loop=1;$loop<=$button;$loop++){ ?>
+                <div class="col-xs-12 col-md-<?php echo (int)$jcol; ?>" style="min-width:20%; min-height:50px; margin:auto; !important">
+                    
+                    <?php
                                     $col = $this->select("color_".$loop)->getData();
 								    $ic = $this->select('icon_'.$loop)->getData();
-							?>
+                    ?>
                     <?php 
                                     if($this->editmode){ 
                                         echo $this->link("link_".$loop);
@@ -51,10 +44,10 @@
                                     }
 				    ?>
                     <a href="<?php echo $link; ?>" class="nav-item <?php echo $col; ?> <?php echo $ic; ?>">
-                        <h4><small>0<?php echo $loop; ?></small><?php echo $this->input("btn-".$loop, array("width" => 125)); ?></h4>
+                        <h4 style="font-size:18px"><small><?php echo $this->input("btn-".$loop, array("width" => 65)); ?></small></h4>
                     </a>
-                                    			             
-			                        	<?php 
+                    
+                    <?php 
                                             if($this->editmode) {
 			                        		echo "Icon: <br />";
 			                        		echo $this->select("icon_".$loop,array(
@@ -62,7 +55,7 @@
 											        array("question", "Question"),
 											        array("sitemap", "Sitemap"),
 											        array("chat", "Chat"),
-											        array("user", "User")
+											        array("users", "Users")
 											    ),
                                                 "reload" => true
 											)); 
@@ -73,9 +66,9 @@
 				                        	echo "Color: <br />";
 			                        		echo $this->select("color_".$loop,array(
 											    "store" => array(
-											         array("blue", "blue"),
+											        array("blue", "blue"),
 											        array("yellow", "yellow"),
-											        array("light-blue", "light-Blue"),
+											        array("grey", "grey"),
 											        array("red", "red"),
 											        array("green", "green"),
 											        array("purple", "purple"),
@@ -85,10 +78,9 @@
 											)); 
                                             }
 										?>
-			                        	
                 </div><!--/ .col-xs-12 -->
 
-               <?php } ?>
-            </div><!--/ .row -->
-        </div><!--/ .container -->
+                <?php } ?>
+            </div>
+
     </nav>

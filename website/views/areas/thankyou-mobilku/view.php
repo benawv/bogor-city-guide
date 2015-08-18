@@ -71,6 +71,9 @@
     .btn-tasbih{
         background: #003781 !important;
     }
+    .container .heading.clearfix.pagenav.nav-sticky, .container .heading.clearfix.pagenav{
+      display: none;
+    }
 </style>
 
 
@@ -89,14 +92,10 @@
 
 <div class="form-box" id="notif-confirm">
     <h1 style="text-align:center">TERIMA KASIH</h1>
-    <h3  style=" color:black; text-align:center;"><strong>Hasil kalkulasi Anda adalah 
-        <?php if ($session->premi != null){ 
-                echo 'Rp'. $session->premi;} 
-              else {echo 'Rp.0'; } ?> 
-        Kalkulasi ilustrasi produk Allianz Mobilku (sudah dikirimkan ke alamat email Anda)</strong></h3>
+    <h3  style=" color:black; text-align:center;"><strong>Hasil ilustrasi produk Allianz Mobilku sudah dikirimkan ke alamat email Anda.</strong></h3>
     <!--<h3 style=" color:black; text-align:center;"><strong>Temukan agen terdekat: </strong></h3>-->
    <br />
-    <center><input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen"></center>
+    <center><input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Kantor Pemasaran Allianz"></center>
   </div>
 
      
@@ -119,7 +118,7 @@ $(document).ready(function(){
         $('#cari-agen').click(function() {
             
                             
-                            window.open('/agent-locator/agen', '_blank');
+                            window.open('/layanan/hubungi-kami/kantor-pemasaran-allianz', '_blank');
            
                           /*$.ajax({
                               url      : '/v1/api/calculator',
