@@ -342,7 +342,7 @@ $(document).ready(function()
 
 	        						var link = document.createElement('a');
 									link.href = dataURL;
-									link.download = "Allianz_download_"+filename+".png";
+									link.download = "Cover Profil Maker Allianz.png";
 									document.body.appendChild(link);
 									link.click();
 									//console.log(dataURL);
@@ -396,7 +396,7 @@ $(document).ready(function()
 
 	        						var link = document.createElement('a');
 									link.href = dataURL;
-									link.download = "Allianz_download_"+filename+".png";
+									link.download = "Cover Profil Maker Allianz.png";
 									document.body.appendChild(link);
 									link.click();
 
@@ -448,7 +448,7 @@ $(document).ready(function()
 
 	        						var link = document.createElement('a');
 									link.href = dataURL;
-									link.download = "Allianz_download_"+filename+".png";
+									link.download = "Cover Profil Maker Allianz.png";
 									document.body.appendChild(link);
 									link.click();
 
