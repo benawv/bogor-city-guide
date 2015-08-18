@@ -438,11 +438,15 @@
                                     <a id="download" href="#top" class="btn btn-primary btn-block">Simpan</a>    
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
-                                    <a id="download" href="/profil-maker/page2" class="btn btn-default btn-block">Ganti Gambar</a>
+                                    <a href="/profil-maker/page2">
+                                            <input type="button" class="btn btn-default btn-block" value="Ganti Gambar">
+                                    </a>
                                     <!--<input type="button" class="btn btn-default btn-block" value="Pilih Template">-->
                                 </div>
                                 <div class="col-xs-12 col-sm-3">
-                                    <a id="download" href="/profil-maker/page1" class="btn btn-default btn-block">Pilih Template</a>
+                                    <a href="/profil-maker/page1">
+                                            <input type="button" class="btn btn-default btn-block" value="Pilih Template">
+                                    </a>
                                     <!--<input type="button" class="btn btn-default btn-block" value="Pilih Template">-->
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
