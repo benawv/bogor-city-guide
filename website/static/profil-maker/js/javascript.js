@@ -150,6 +150,11 @@ $(document).ready(function()
 				$(".contentCover").text(getCookie("konten"));
 				$(".nama1Cover").val(getCookie("nama1"));
 				$(".nama2Cover").val(getCookie("nama2"));
+				
+				$(".customHref").on("click",function(){
+					var srcLink = $(this).attr("href");
+					window.location.href = srcLink;
+				});
 			});
 
 		    
