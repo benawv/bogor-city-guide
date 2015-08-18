@@ -327,7 +327,7 @@
                                     <label>Headline</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <input type="text" name="headline" id="atas" class="form-control" required> 
+                                    <input type="text" name="headline" id="atas" class="form-control headlineCover" required> 
                                     
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
@@ -337,7 +337,7 @@
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
                                     <!-- <div class="highlighter" id="overflowText"></div> -->
-                                    <textarea class="form-control" name="content" id="tengah" maxlength="200" rows="5" required></textarea>
+                                    <textarea class="form-control contentCover" name="content" id="tengah" maxlength="200" rows="5" required></textarea>
                                     <div id="counter">Letters remaining: <span id="char">180</span></div> 
                                         
                                 </div><!--/ .col-xs-12 -->
@@ -347,7 +347,7 @@
                                     <label>First Name</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <input type="text" name="first_name" id="bawah1" class="form-control" required> 
+                                    <input type="text" name="first_name" id="bawah1" class="form-control nama1Cover" required> 
                                     
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
@@ -356,7 +356,7 @@
                                     <label>Last Name</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <input type="text" name="last_name" id="bawah2" class="form-control" required>
+                                    <input type="text" name="last_name" id="bawah2" class="form-control nama2Cover" required>
                                     
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
