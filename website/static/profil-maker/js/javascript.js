@@ -152,7 +152,7 @@ $(document).ready(function()
 						//preview and save
 						if(form.valid()){
 							//alert("all filled");
-							$("a").attr("href", "#top");
+							$("a#preview").attr("href", "#top");
 							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
 	                        $headline = $('#atas').val();
 	                        $konten = $('#tengah').val();
@@ -163,10 +163,11 @@ $(document).ready(function()
 	                        $('#nama, #nama-m').html($nama1+" "+$nama2); //name at form cover
 	                        $('#cname, #cname-m').html($nama1+" "+$nama2); //name at form avatar
 	                        $("#place").css({display: "block"});
+	                        //anchor.href = null;
 						}
 						else {
 							//alert("no filled");
-							$("a").attr("href", "#fillform");
+							$("a#preview").attr("href", "#fillform");
 							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
 						}
                         
@@ -177,7 +178,7 @@ $(document).ready(function()
 						//preview and save
 						if(form.valid()) {
 							//alert("all filled");
-							$("a").attr("href", "#ask");
+							$("a#save").attr("href", "#ask");
 							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
 	                        $headline = $('#atas').val();
 	                        $konten = $('#tengah').val();
@@ -194,7 +195,7 @@ $(document).ready(function()
 						}
 						else {
 							//alert("no filled");
-							$("a").attr("href", "#fillform");
+							$("a#save").attr("href", "#fillform");
 							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
 						}
 
@@ -303,23 +304,13 @@ $(document).ready(function()
 
                 //Capture image and download it   
 				$('body').on('click','#download',function(){
+					var d = new Date();
+					var tgl = d.getFullYear()+""+d.getMonth()+""+d.getDay()+""+d.getHours()+""+d.getMinutes()+""+d.getSeconds();
 					var headline = $("#atas").val();
                     var description = $("#tengah").val();
                     var firstName = $("#bawah1").val();
                     var lastName = $("#bawah2").val();
-					$.ajax({
-                        url : '/save-note/',
-                        method : 'post',
-                        data : { headline : headline, description : description, firstName : firstName, lastName : lastName}, // format {variable , value}
-                        success : function(){
-                            alert('Data Tersimpan');
-                       		$('#atas').val('');
-                       		$('#tengah').val('');
-                       		$('#bawah1').val('');
-                       		$('#bawah2').val('');
-                        }
-                       // data : {headline : headline, description : description, firstName : firstName, lastName : lastName}
-                    });
+					
 					//capture cover
 					if(temp == "template1" || temp == "template2" || temp == "template3") {
 
@@ -351,7 +342,7 @@ $(document).ready(function()
 
 	        						var link = document.createElement('a');
 									link.href = dataURL;
-									link.download = "Allianz_download_"+filename+".png";
+									link.download = "Cover Profil Maker Allianz.png";
 									document.body.appendChild(link);
 									link.click();
 									//console.log(dataURL);
@@ -363,7 +354,7 @@ $(document).ready(function()
 									var cur_path = 'upload';
 									// console.log(output);
 									// console.log(cur_path); 
-		                			var Parameters = "image=" + output + "&filedir=" + cur_path;
+		                			var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
 								        $.ajax({
 								            type: "POST",
 								            url: "/website/var/assets/profil-maker/save.php",
@@ -377,7 +368,7 @@ $(document).ready(function()
 										    	alert("fail");
 										    }
 								        });
-
+									saveNote(headline,description,firstName,lastName, tgl);
 	                    		}
 
 		                	});
@@ -405,7 +396,7 @@ $(document).ready(function()
 
 	        						var link = document.createElement('a');
 									link.href = dataURL;
-									link.download = "Allianz_download_"+filename+".png";
+									link.download = "Cover Profil Maker Allianz.png";
 									document.body.appendChild(link);
 									link.click();
 
@@ -415,7 +406,7 @@ $(document).ready(function()
 									var cur_path = 'upload';
 									//console.log(output);
 									//console.log(cur_path); 
-		                			var Parameters = "image=" + output + "&filedir=" + cur_path;
+		                			var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
 								        $.ajax({
 								            type: "POST",
 								            url: "/website/var/assets/profil-maker/save.php",
@@ -428,6 +419,9 @@ $(document).ready(function()
 										    	alert("fail");
 										    }
 								        });
+									headline = "";
+									description = "";
+									saveNote(headline,description,firstName,lastName, tgl);
 	                    	}
 	                	});
 					}
@@ -454,7 +448,7 @@ $(document).ready(function()
 
 	        						var link = document.createElement('a');
 									link.href = dataURL;
-									link.download = "Allianz_download_"+filename+".png";
+									link.download = "Cover Profil Maker Allianz.png";
 									document.body.appendChild(link);
 									link.click();
 
@@ -464,7 +458,7 @@ $(document).ready(function()
 									var cur_path = 'upload';
 									//console.log(output);
 									//console.log(cur_path); 
-		                			var Parameters = "image=" + output + "&filedir=" + cur_path;
+		                			var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
 								        $.ajax({
 								            type: "POST",
 								            url: "/website/var/assets/profil-maker/save.php",
@@ -477,7 +471,11 @@ $(document).ready(function()
 										    	alert("fail");
 										    }
 								        });
-								
+									headline = "";
+									description = "";
+									firstName = "";
+									lastName = "";
+									saveNote(headline,description,firstName,lastName, tgl);
 	                    	}
 	                	});
 					}
@@ -506,6 +504,22 @@ $(document).ready(function()
 				    }
 				    
 
+				}
+				
+				function saveNote(headline,description,firstName,lastName, filename) {
+					$.ajax({
+                        url : '/save-note/',
+                        method : 'post',
+                        data : { headline : headline, description : description, firstName : firstName, lastName : lastName, filename : filename}, // format {variable , value}
+                        success : function(){
+                            alert('Data Tersimpan');
+                       		$('#atas').val('');
+                       		$('#tengah').val('');
+                       		$('#bawah1').val('');
+                       		$('#bawah2').val('');
+                        }
+                       // data : {headline : headline, description : description, firstName : firstName, lastName : lastName}
+                    });
 				}
 
 				function maxLength(el) {

@@ -438,7 +438,16 @@
                                     <a id="download" href="#top" class="btn btn-primary btn-block">Simpan</a>    
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
-                                    <input type="button" class="btn btn-default btn-block" value="Pilih Template">
+                                    <a href="/profil-maker/page2">
+                                            <input type="button" class="btn btn-default btn-block" value="Ganti Gambar">
+                                    </a>
+                                    <!--<input type="button" class="btn btn-default btn-block" value="Pilih Template">-->
+                                </div>
+                                <div class="col-xs-12 col-sm-3">
+                                    <a href="/profil-maker/page1">
+                                            <input type="button" class="btn btn-default btn-block" value="Pilih Template">
+                                    </a>
+                                    <!--<input type="button" class="btn btn-default btn-block" value="Pilih Template">-->
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                         </form>
@@ -566,5 +575,24 @@
                           .mouseleave(function() {
                             $('.ui-resizable-handle').fadeOut(100);
                           });
+                 
+                             $(document).ready(function(){
+                                 $(".template").on("click",function(){
+                                     var ket = $(this).parent().parent().parent().find("h4").text();
+                                     var id = $(this).attr("id");
+                                     setCookie("template", id);
+                                     setCookie("keterangan", ket);
+                                 });
+                             });
+                 
+                             function getId(obj) {
+                                 var id=obj;
+                                 //alert("idnya"+id);
+                                 setCookie("template", id);
+                                 //document.cookie = id;
+                                 //var x = document.cookie
+                                 //alert(x);
+                                 //alert(id);
+                            }
                         
                       </script>
