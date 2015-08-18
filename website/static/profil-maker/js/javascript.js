@@ -303,23 +303,13 @@ $(document).ready(function()
 
                 //Capture image and download it   
 				$('body').on('click','#download',function(){
+					var d = new Date();
+					var tgl = d.getFullYear()+""+d.getMonth()+""+d.getDay()+""+d.getHours()+""+d.getMinutes()+""+d.getSeconds();
 					var headline = $("#atas").val();
                     var description = $("#tengah").val();
                     var firstName = $("#bawah1").val();
                     var lastName = $("#bawah2").val();
-					$.ajax({
-                        url : '/save-note/',
-                        method : 'post',
-                        data : { headline : headline, description : description, firstName : firstName, lastName : lastName}, // format {variable , value}
-                        success : function(){
-                            alert('Data Tersimpan');
-                       		$('#atas').val('');
-                       		$('#tengah').val('');
-                       		$('#bawah1').val('');
-                       		$('#bawah2').val('');
-                        }
-                       // data : {headline : headline, description : description, firstName : firstName, lastName : lastName}
-                    });
+					
 					//capture cover
 					if(temp == "template1" || temp == "template2" || temp == "template3") {
 
@@ -363,7 +353,7 @@ $(document).ready(function()
 									var cur_path = 'upload';
 									// console.log(output);
 									// console.log(cur_path); 
-		                			var Parameters = "image=" + output + "&filedir=" + cur_path;
+		                			var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
 								        $.ajax({
 								            type: "POST",
 								            url: "/website/var/assets/profil-maker/save.php",
@@ -377,7 +367,7 @@ $(document).ready(function()
 										    	alert("fail");
 										    }
 								        });
-
+									saveNote(headline,description,firstName,lastName, tgl);
 	                    		}
 
 		                	});
@@ -415,7 +405,7 @@ $(document).ready(function()
 									var cur_path = 'upload';
 									//console.log(output);
 									//console.log(cur_path); 
-		                			var Parameters = "image=" + output + "&filedir=" + cur_path;
+		                			var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
 								        $.ajax({
 								            type: "POST",
 								            url: "/website/var/assets/profil-maker/save.php",
@@ -428,6 +418,9 @@ $(document).ready(function()
 										    	alert("fail");
 										    }
 								        });
+									headline = "";
+									description = "";
+									saveNote(headline,description,firstName,lastName, tgl);
 	                    	}
 	                	});
 					}
@@ -464,7 +457,7 @@ $(document).ready(function()
 									var cur_path = 'upload';
 									//console.log(output);
 									//console.log(cur_path); 
-		                			var Parameters = "image=" + output + "&filedir=" + cur_path;
+		                			var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
 								        $.ajax({
 								            type: "POST",
 								            url: "/website/var/assets/profil-maker/save.php",
@@ -477,7 +470,11 @@ $(document).ready(function()
 										    	alert("fail");
 										    }
 								        });
-								
+									headline = "";
+									description = "";
+									firstName = "";
+									lastName = "";
+									saveNote(headline,description,firstName,lastName, tgl);
 	                    	}
 	                	});
 					}
@@ -506,6 +503,22 @@ $(document).ready(function()
 				    }
 				    
 
+				}
+				
+				function saveNote(headline,description,firstName,lastName, filename) {
+					$.ajax({
+                        url : '/save-note/',
+                        method : 'post',
+                        data : { headline : headline, description : description, firstName : firstName, lastName : lastName, filename : filename}, // format {variable , value}
+                        success : function(){
+                            alert('Data Tersimpan');
+                       		$('#atas').val('');
+                       		$('#tengah').val('');
+                       		$('#bawah1').val('');
+                       		$('#bawah2').val('');
+                        }
+                       // data : {headline : headline, description : description, firstName : firstName, lastName : lastName}
+                    });
 				}
 
 				function maxLength(el) {
