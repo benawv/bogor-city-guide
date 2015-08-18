@@ -365,7 +365,7 @@ $(document).ready(function()
 										        //console.log(data);
 										    },
 										    error: function(data){
-										    	alert("fail");
+										    	//alert("fail");
 										    }
 								        });
 									saveNote(headline,description,firstName,lastName, tgl);
@@ -416,7 +416,7 @@ $(document).ready(function()
 										        //console.log(data);
 										    },
 										    error: function(data){
-										    	alert("fail");
+										    	//alert("fail");
 										    }
 								        });
 									headline = "";
@@ -468,7 +468,7 @@ $(document).ready(function()
 										        //console.log(data);
 										    },
 										    error: function(data){
-										    	alert("fail");
+										    	//alert("fail");
 										    }
 								        });
 									headline = "";
@@ -512,7 +512,7 @@ $(document).ready(function()
                         method : 'post',
                         data : { headline : headline, description : description, firstName : firstName, lastName : lastName, filename : filename}, // format {variable , value}
                         success : function(){
-                            alert('Data Tersimpan');
+                            //alert('Data Tersimpan');
                        		$('#atas').val('');
                        		$('#tengah').val('');
                        		$('#bawah1').val('');
