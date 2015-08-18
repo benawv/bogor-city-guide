@@ -575,5 +575,24 @@
                           .mouseleave(function() {
                             $('.ui-resizable-handle').fadeOut(100);
                           });
+                 
+                             $(document).ready(function(){
+                                 $(".template").on("click",function(){
+                                     var ket = $(this).parent().parent().parent().find("h4").text();
+                                     var id = $(this).attr("id");
+                                     setCookie("template", id);
+                                     setCookie("keterangan", ket);
+                                 });
+                             });
+                 
+                             function getId(obj) {
+                                 var id=obj;
+                                 //alert("idnya"+id);
+                                 setCookie("template", id);
+                                 //document.cookie = id;
+                                 //var x = document.cookie
+                                 //alert(x);
+                                 //alert(id);
+                            }
                         
                       </script>
