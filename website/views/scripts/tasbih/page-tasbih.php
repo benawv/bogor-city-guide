@@ -56,7 +56,10 @@
             'smartlink-factsheet', 'syariah-factsheet',
             'pension-factsheet', 'saving-factsheet','multi-video',
             'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 
-            'brosur','kalkulator-investasi','Tasbih-kedua','thankyou-tasbih','thankyou-inquiry')
+            'brosur','kalkulator-investasi','Tasbih-kedua','thankyou-tasbih','thankyou-inquiry','banner-tasbih')
     )
 );
 ?>
+
+<?php echo $this->areablock('container-tasbih',  array('allowed' => array('button-tasbih','kalender-tasbih'))); ?>
+<?php echo $this->areablock('footer-tasbih',  array('allowed' => array('artikel-tasbih'))); ?>

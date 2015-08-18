@@ -152,7 +152,7 @@ $(document).ready(function()
 						//preview and save
 						if(form.valid()){
 							//alert("all filled");
-							$("a").attr("href", "#top");
+							$("a#preview").attr("href", "#top");
 							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
 	                        $headline = $('#atas').val();
 	                        $konten = $('#tengah').val();
@@ -163,10 +163,11 @@ $(document).ready(function()
 	                        $('#nama, #nama-m').html($nama1+" "+$nama2); //name at form cover
 	                        $('#cname, #cname-m').html($nama1+" "+$nama2); //name at form avatar
 	                        $("#place").css({display: "block"});
+	                        //anchor.href = null;
 						}
 						else {
 							//alert("no filled");
-							$("a").attr("href", "#fillform");
+							$("a#preview").attr("href", "#fillform");
 							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
 						}
                         
@@ -177,7 +178,7 @@ $(document).ready(function()
 						//preview and save
 						if(form.valid()) {
 							//alert("all filled");
-							$("a").attr("href", "#ask");
+							$("a#save").attr("href", "#ask");
 							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
 	                        $headline = $('#atas').val();
 	                        $konten = $('#tengah').val();
@@ -194,7 +195,7 @@ $(document).ready(function()
 						}
 						else {
 							//alert("no filled");
-							$("a").attr("href", "#fillform");
+							$("a#save").attr("href", "#fillform");
 							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
 						}
 
