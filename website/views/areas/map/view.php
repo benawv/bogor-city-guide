@@ -1,3 +1,35 @@
+<?php	
+                $id = '';
+                $jenis = Object_MarketingOfficeJenis::getList(array("orderKey" => array("jenis"), "order" => array("asc")));
+				foreach($jenis as $row)
+                {
+                    if($row->getJenis() == 'Allianz Utama') $id = $row->getId();
+                }
+//                echo $id;
+                $getStatus = '';
+                $sessionCalc = new Zend_Session_Namespace(calc_mobilku);
+                $sessionMail = new Zend_Session_Namespace(mobilku_mail);
+                if( $sessionCalc->status != '') $getStatus = $sessionCalc->status;
+                else if($sessionMail->status != '') $getStatus = $sessionMail->status;
+?>
+<style>
+    <?php if($getStatus == '') { ?>
+            #peta-marketing{
+                    display : block;
+            }
+            #map-pemasaran{
+                    display : none;
+            }
+    <?php }else{ ?>
+            #peta-marketing{
+                    display : none;
+            }
+            #map-pemasaran{
+                display : block;
+            }
+    <?php } ?>
+</style>
+<div id="peta-marketing" style="display:none;">
 <div class="wrapper clearfix">
 	<div id="agent-locator">
 		<h2><?php echo $this->input("lokasi_pemasaran", array("width" => 255));?></h2>
@@ -41,6 +73,108 @@
 			</select>
 	</div>
 </div>
+</div>
+
+<div id="map-pemasaran" style="display:none;">
+<?php	
+                $id = '';
+                $jenis = Object_MarketingOfficeJenis::getList(array("orderKey" => array("jenis"), "order" => array("asc")));
+				foreach($jenis as $row)
+                {
+                    if($row->getJenis() == 'Allianz Utama') $id = $row->getId();
+                }
+//                echo $id;
+?>
+<style>
+
+    #agent-locator2
+    {
+        position: relative;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        width: 100% !important;
+        float: none;
+    }
+
+    #agent-locator2 #maparea2
+    {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        height: 480px;
+    }
+
+    #agent-locator2 .searchbox
+    {
+        margin-bottom: 20px;
+    }
+
+    #agent-locator2 .searchbox > input[type="search"],
+    #agent-locator2 .searchbox > input[type="text"]
+    {
+        width: 78%;
+        border: solid 1px #ddd;
+        font-size: larger;
+        padding: 12px 24px;
+        margin: 0 auto;
+        line-height: 1.5;
+    }
+
+    #agent-locator2 .searchbox > button.search-btn
+    {
+        width: 20%;
+        margin: 0 auto;
+        font-size: larger;
+        padding: 12px 24px;
+        display: inline-block;
+        text-transform: uppercase;
+        background-color: #003781;
+        border: solid 1px #003781;
+        border-radius: 0;
+        color: white;
+        line-height: 1.5;
+        float: right;
+    }
+
+    /* Respsonsive */
+
+    @media ( max-width: 767px )
+    {
+        #agent-locator2 .searchbox > input[type="search"],
+        #agent-locator2 .searchbox > input[type="text"]
+        {
+            width: 100%;
+            display: block;
+        }
+
+        #agent-locator2 .searchbox > button.search-btn
+        {
+            width: 100%;
+            display: block;
+            margin-top: 16px;
+        }
+    }
+
+</style>
+<div class="wrapper clearfix">
+	<div id="agent-locator2">
+        <div class="searchbox">
+            <input type="search" name="search" id="search" placeholder="Cari agen terdekat dari lokasi anda">
+            <button type="button" name="search-btn" id="search-btn" class="search-btn">
+                Search <i class="fa fa-search"></i>
+            </button>
+            <div class="clearfix"></div>
+        </div><!--/ .searchbox -->
+<!--		<h2><?php echo $this->input("lokasi_pemasaran", array("width" => 255));?></h2>-->
+		<div id="maparea2">
+
+		</div>
+	</div>
+
+</div>
+</div>
+
+
 <script type="text/javascript">
 	var map = new Object();
 	var markers = [];

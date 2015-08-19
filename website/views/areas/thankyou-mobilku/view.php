@@ -119,7 +119,8 @@ $(document).ready(function(){
             
                             
                             window.open('/layanan/hubungi-kami/kantor-pemasaran-allianz', '_blank');
-           
+                            $session = new Zend_Session_Namespace("calc_mobilku");
+                            $session->status = 'mobilku';
                           /*$.ajax({
                               url      : '/v1/api/calculator',
                               type     : 'POST',
