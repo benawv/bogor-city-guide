@@ -141,7 +141,20 @@ $(document).ready(function()
 		            } 
 		          
 		        });
-
+				$("#judul").text(getCookie("head"));
+				$("#konten").text(getCookie("konten"));
+				$("#nama").text(getCookie("nama1")+" "+getCookie("nama2"));
+				$("#cname").text(getCookie("nama1")+" "+getCookie("nama2"));
+				
+				$(".headlineCover").val(getCookie("head"));
+				$(".contentCover").text(getCookie("konten"));
+				$(".nama1Cover").val(getCookie("nama1"));
+				$(".nama2Cover").val(getCookie("nama2"));
+				
+				$(".customHref").on("click",function(){
+					var srcLink = $(this).attr("href");
+					window.location.href = srcLink;
+				});
 			});
 
 		    
@@ -163,7 +176,11 @@ $(document).ready(function()
 	                        $('#nama, #nama-m').html($nama1+" "+$nama2); //name at form cover
 	                        $('#cname, #cname-m').html($nama1+" "+$nama2); //name at form avatar
 	                        $("#place").css({display: "block"});
-	                        
+	                        //anchor.href = null;
+							setCookie("head",$headline);
+							setCookie("konten",$konten);
+							setCookie("nama1",$nama1);
+							setCookie("nama2",$nama2);
 						}
 						else {
 							//alert("no filled");
@@ -240,7 +257,7 @@ $(document).ready(function()
                 
                 //cek cookie
                 var temp = getCookie("template");
-    			console.log(temp);
+    			//console.log(temp);
 
     			//get template from cookie
 			    if(temp == "template1") {
@@ -366,7 +383,7 @@ $(document).ready(function()
 										        //console.log(data);
 										    },
 										    error: function(data){
-										    	alert("fail");
+										    	//alert("fail");
 										    }
 								        });
 									saveNote(headline,description,firstName,lastName, tgl);
@@ -417,7 +434,7 @@ $(document).ready(function()
 										        //console.log(data);
 										    },
 										    error: function(data){
-										    	alert("fail");
+										    	//alert("fail");
 										    }
 								        });
 									headline = "";
@@ -469,7 +486,7 @@ $(document).ready(function()
 										        //console.log(data);
 										    },
 										    error: function(data){
-										    	alert("fail");
+										    	//alert("fail");
 										    }
 								        });
 									headline = "";
@@ -520,7 +537,7 @@ $(document).ready(function()
                         method : 'post',
                         data : { headline : headline, description : description, firstName : firstName, lastName : lastName, filename : filename}, // format {variable , value}
                         success : function(){
-                            alert('Data Tersimpan');
+                            //alert('Data Tersimpan');
                        		$('#atas').val('');
                        		$('#tengah').val('');
                        		$('#bawah1').val('');
