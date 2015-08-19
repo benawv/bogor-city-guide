@@ -163,7 +163,7 @@ $(document).ready(function()
 	                        $('#nama, #nama-m').html($nama1+" "+$nama2); //name at form cover
 	                        $('#cname, #cname-m').html($nama1+" "+$nama2); //name at form avatar
 	                        $("#place").css({display: "block"});
-	                        //anchor.href = null;
+	                        
 						}
 						else {
 							//alert("no filled");
@@ -217,6 +217,7 @@ $(document).ready(function()
 							scrollTop:$(this.hash).offset().top
 						}, 500);
                 	});
+
                 
 				$( "#square" ).click(function() {  
                 	//alert('square');
@@ -491,16 +492,23 @@ $(document).ready(function()
 			//text counter
 				function limitTextSize(e) {
 				    var max = 180;
+				    var max2 = 20;
 				    var txt = $("#tengah").val();
+				    var txt2 = $("#atas").val();
 				    //var left = txt.substring(0, max);
 				    //var right = txt.substring(max);
 				    //var html = left + '<span class="highlight">' + right + "</span>";
 				    //$("#overflowText").html(html);
 				    $("#counter").html("Letters remaining: <span id='char'> " + (max - txt.length) + "</span>");
+				    $("#counter2").html("Letters remaining: <span id='char2'> " + (max2 - txt2.length) + "</span>");
 				    $("#preview, #save").attr("disabled", txt.length > max);
+				    $("#preview, #save").attr("disabled", txt2.length > max2);
 				    if(txt.length > max) {
 				    	//alert("over");
 				    	$("#char").css("color", "red");
+				    }
+				    if(txt2.length > max2) {
+				    	$("#char2").css("color", "red");
 				    }
 				    
 
@@ -533,8 +541,8 @@ $(document).ready(function()
 				}
 
 				$(document).ready(function () {
-				    $("#tengah").bind('input propertychange', limitTextSize)
-				    maxLength($("#tengah"));
+				    $("#tengah, #atas").bind('input propertychange', limitTextSize)
+				    maxLength($("#tengah, #atas"));
 				}); 	
 
 

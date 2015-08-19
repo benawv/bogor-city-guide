@@ -327,8 +327,8 @@
                                     <label>Headline</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <input type="text" name="headline" id="atas" class="form-control" required> 
-                                    
+                                    <input type="text" name="headline" id="atas" maxlength="30" class="form-control" required> 
+                                    <div id="counter2">Letters remaining: <span id="char2">20</span></div> 
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div id="input2" class="row">
