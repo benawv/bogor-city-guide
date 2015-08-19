@@ -141,7 +141,20 @@ $(document).ready(function()
 		            } 
 		          
 		        });
-
+				$("#judul").text(getCookie("head"));
+				$("#konten").text(getCookie("konten"));
+				$("#nama").text(getCookie("nama1")+" "+getCookie("nama2"));
+				$("#cname").text(getCookie("nama1")+" "+getCookie("nama2"));
+				
+				$(".headlineCover").val(getCookie("head"));
+				$(".contentCover").text(getCookie("konten"));
+				$(".nama1Cover").val(getCookie("nama1"));
+				$(".nama2Cover").val(getCookie("nama2"));
+				
+				$(".customHref").on("click",function(){
+					var srcLink = $(this).attr("href");
+					window.location.href = srcLink;
+				});
 			});
 
 		    
@@ -164,6 +177,10 @@ $(document).ready(function()
 	                        $('#cname, #cname-m').html($nama1+" "+$nama2); //name at form avatar
 	                        $("#place").css({display: "block"});
 	                        //anchor.href = null;
+							setCookie("head",$headline);
+							setCookie("konten",$konten);
+							setCookie("nama1",$nama1);
+							setCookie("nama2",$nama2);
 						}
 						else {
 							//alert("no filled");
@@ -217,6 +234,7 @@ $(document).ready(function()
 							scrollTop:$(this.hash).offset().top
 						}, 500);
                 	});
+
                 
 				$( "#square" ).click(function() {  
                 	//alert('square');
@@ -239,7 +257,7 @@ $(document).ready(function()
                 
                 //cek cookie
                 var temp = getCookie("template");
-    			console.log(temp);
+    			//console.log(temp);
 
     			//get template from cookie
 			    if(temp == "template1") {
@@ -491,16 +509,23 @@ $(document).ready(function()
 			//text counter
 				function limitTextSize(e) {
 				    var max = 180;
+				    var max2 = 20;
 				    var txt = $("#tengah").val();
+				    var txt2 = $("#atas").val();
 				    //var left = txt.substring(0, max);
 				    //var right = txt.substring(max);
 				    //var html = left + '<span class="highlight">' + right + "</span>";
 				    //$("#overflowText").html(html);
 				    $("#counter").html("Letters remaining: <span id='char'> " + (max - txt.length) + "</span>");
+				    $("#counter2").html("Letters remaining: <span id='char2'> " + (max2 - txt2.length) + "</span>");
 				    $("#preview, #save").attr("disabled", txt.length > max);
+				    $("#preview, #save").attr("disabled", txt2.length > max2);
 				    if(txt.length > max) {
 				    	//alert("over");
 				    	$("#char").css("color", "red");
+				    }
+				    if(txt2.length > max2) {
+				    	$("#char2").css("color", "red");
 				    }
 				    
 
@@ -533,8 +558,8 @@ $(document).ready(function()
 				}
 
 				$(document).ready(function () {
-				    $("#tengah").bind('input propertychange', limitTextSize)
-				    maxLength($("#tengah"));
+				    $("#tengah, #atas").bind('input propertychange', limitTextSize)
+				    maxLength($("#tengah, #atas"));
 				}); 	
 
 

@@ -327,8 +327,8 @@
                                     <label>Headline</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <input type="text" name="headline" id="atas" class="form-control" required> 
-                                    
+                                    <input type="text" name="headline" id="atas" maxlength="30" class="form-control headlineCover" required> 
+                                    <div id="counter2">Letters remaining: <span id="char2">20</span></div> 
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div id="input2" class="row">
@@ -337,7 +337,7 @@
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
                                     <!-- <div class="highlighter" id="overflowText"></div> -->
-                                    <textarea class="form-control" name="content" id="tengah" maxlength="200" rows="5" required></textarea>
+                                    <textarea class="form-control contentCover" name="content" id="tengah" maxlength="200" rows="5" required></textarea>
                                     <div id="counter">Letters remaining: <span id="char">180</span></div> 
                                         
                                 </div><!--/ .col-xs-12 -->
@@ -347,7 +347,7 @@
                                     <label>First Name</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <input type="text" name="first_name" id="bawah1" class="form-control" required> 
+                                    <input type="text" name="first_name" id="bawah1" class="form-control nama1Cover" required> 
                                     
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
@@ -356,7 +356,7 @@
                                     <label>Last Name</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <input type="text" name="last_name" id="bawah2" class="form-control" required>
+                                    <input type="text" name="last_name" id="bawah2" class="form-control nama2Cover" required>
                                     
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
@@ -392,11 +392,17 @@
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
                                     <!-- <input type="button" id="gambar" class="btn btn-default btn-block" value="Ganti Gambar"> -->
-                                    <a id="gambar" href="/profil-maker/page2" class="btn btn-default btn-block">Ganti Gambar</a>
+                                    <!--<a id="gambar" href="/profil-maker/page2" class="btn btn-default btn-block">Ganti Gambar</a>-->
+                                    <a href="/profil-maker/page2" class="customHref">
+                                            <input type="button" class="btn btn-default btn-block" value="Ganti Gambar">
+                                    </a>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
                                     <!-- <input type="button" id="pilih" class="btn btn-default btn-block" value="Pilih Template"> -->
-                                    <a id="pilih" href="/profil-maker/page1" class="btn btn-default btn-block">Pilih Template</a>
+                                    <!--<a id="pilih" href="/profil-maker/page1" class="btn btn-default btn-block">Pilih Template</a>-->
+                                    <a href="/profil-maker/page1" class="customHref">
+                                            <input type="button" class="btn btn-default btn-block" value="Pilih Template">
+                                    </a>
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                         </form>
@@ -438,13 +444,13 @@
                                     <a id="download" href="#top" class="btn btn-primary btn-block">Simpan</a>    
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
-                                    <a href="/profil-maker/page2">
+                                    <a href="/profil-maker/page2" class="customHref">
                                             <input type="button" class="btn btn-default btn-block" value="Ganti Gambar">
                                     </a>
                                     <!--<input type="button" class="btn btn-default btn-block" value="Pilih Template">-->
                                 </div>
                                 <div class="col-xs-12 col-sm-3">
-                                    <a href="/profil-maker/page1">
+                                    <a href="/profil-maker/page1" class="customHref">
                                             <input type="button" class="btn btn-default btn-block" value="Pilih Template">
                                     </a>
                                     <!--<input type="button" class="btn btn-default btn-block" value="Pilih Template">-->
