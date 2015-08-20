@@ -1,3 +1,42 @@
+<?php	
+                $id = '';
+                $jenis = Object_MarketingOfficeJenis::getList(array("orderKey" => array("jenis"), "order" => array("asc")));
+				foreach($jenis as $row)
+                {
+                    if($row->getJenis() == 'Allianz Utama') $id = $row->getId();
+                }
+//                echo $id;
+                $getStatus = '';
+                $sessionCalc = new Zend_Session_Namespace(calc_mobilku);
+                $sessionMail = new Zend_Session_Namespace(mobilku_mail);
+                $isi =  $sessionCalc->status;
+                $isi2 =  $sessionMail->status;
+                if( $isi != '') $getStatus = $isi;
+                else if($isi2 != '') $getStatus = $isi2;
+//                $getStatus = 'mobilku';
+?>
+
+<style>
+    <?php if($getStatus == '') { ?>
+            #peta-marketing{
+                    display : block;
+            }
+            #map-pemasaran{
+                    display : none;
+            }
+    <?php }else{ ?>
+            #peta-marketing{
+                    display : none;
+            }
+            #map-pemasaran{
+                display : block;
+            }
+            <?php Zend_Session::namespaceUnset('calc_mobilku'); ?>
+            <?php Zend_Session::namespaceUnset('mobilku_mail'); ?>
+    <?php } ?>
+</style>
+
+<div id="peta-marketing">
 <div class="wrapper clearfix">
 	<div id="agent-locator">
 		<h2><?php echo $this->input("lokasi_pemasaran", array("width" => 255));?></h2>
@@ -41,17 +80,130 @@
 			</select>
 	</div>
 </div>
+</div>
+
+<div id="map-pemasaran">
+<?php	
+                $id = '';
+                $jenis = Object_MarketingOfficeJenis::getList(array("orderKey" => array("jenis"), "order" => array("asc")));
+				foreach($jenis as $row)
+                {
+                    if($row->getJenis() == 'Allianz Utama') $id = $row->getId();
+                }
+//                echo $id;
+?>
+<style>
+
+    #agent-locator2
+    {
+        position: relative;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        width: 100% !important;
+        float: none;
+    }
+
+    #agent-locator2 #maparea2
+    {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        height: 480px;
+    }
+
+    #agent-locator2 .searchbox
+    {
+        margin-bottom: 20px;
+    }
+
+    #agent-locator2 .searchbox > input[type="search"],
+    #agent-locator2 .searchbox > input[type="text"]
+    {
+        width: 78%;
+        border: solid 1px #ddd;
+        font-size: larger;
+        padding: 12px 24px;
+        margin: 0 auto;
+        line-height: 1.5;
+    }
+
+    #agent-locator2 .searchbox > button.search-btn
+    {
+        width: 20%;
+        margin: 0 auto;
+        font-size: larger;
+        padding: 12px 24px;
+        display: inline-block;
+        text-transform: uppercase;
+        background-color: #003781;
+        border: solid 1px #003781;
+        border-radius: 0;
+        color: white;
+        line-height: 1.5;
+        float: right;
+    }
+
+    /* Respsonsive */
+
+    @media ( max-width: 767px )
+    {
+        #agent-locator2 .searchbox > input[type="search"],
+        #agent-locator2 .searchbox > input[type="text"]
+        {
+            width: 100%;
+            display: block;
+        }
+
+        #agent-locator2 .searchbox > button.search-btn
+        {
+            width: 100%;
+            display: block;
+            margin-top: 16px;
+        }
+    }
+
+</style>
+<div class="wrapper clearfix">
+	<div id="agent-locator2">
+        <div class="searchbox">
+            <input type="search" name="search" id="search" placeholder="Cari agen terdekat dari lokasi anda">
+            <button type="button" name="search-btn" id="search-btn" class="search-btn">
+                Search <i class="fa fa-search"></i>
+            </button>
+            <div class="clearfix"></div>
+        </div><!--/ .searchbox -->
+<!--		<h2><?php echo $this->input("lokasi_pemasaran", array("width" => 255));?></h2>-->
+		<div id="maparea2">
+
+		</div>
+	</div>
+
+</div>
+</div>
+
+
 <script type="text/javascript">
 	var map = new Object();
+	var map2 = new Object();
 	var markers = [];
+	var markers2 = [];
 	var infowindow = null;
-	var BASEURL = "<?php echo $root; ?>";
+    var infowindow2 = null;
+	var BASEURL = "";
 	function clearOverlays() {
 	  for (var i = 0; i < markers.length; i++ ) {
 		markers[i].setMap(null);
 		
 	  }
 	  markers.length = 0;
+	}	
+    
+    function clearOverlays2() {
+	  for (var i = 0; i < markers2.length; i++ ) {
+		markers2[i].setMap(null);
+		
+	  }
+	  markers2.length = 0;
 	}
 
     function initialize() {
@@ -60,7 +212,12 @@
           zoom: 11
         };
         map = new google.maps.Map(document.getElementById("maparea"),mapOptions);
+        map2 = new google.maps.Map(document.getElementById("maparea2"),mapOptions);
 		infowindow = new google.maps.InfoWindow({
+			content: "holding...",
+			maxWidth: 200
+		});		
+        infowindow2 = new google.maps.InfoWindow({
 			content: "holding...",
 			maxWidth: 200
 		});
@@ -70,6 +227,9 @@
 		
     }
 	$.fn.MapLoad = function(){
+        var kant = "<?php echo $id; ?>";
+        var wil = "-2.6806246,115.8034375,5,";
+        MapLoad3(kant,wil);
 	    clearOverlays();
 		//console.log(k+"  "+w);
 		$.ajax({
@@ -131,9 +291,140 @@
 				    });
 			    }
 			}
-		})		
+		})	
+        
+        		
 	}
-	
+
+//    clearOverlays2();
+//        $.ajax({
+//			"url" : "/load-map2/",
+//			"data" : {kantor : "<?php echo $id ?>", wilayah : ""},
+//			"type" : "POST",
+//			"success" : function(responseData){
+//			    var entries = responseData;
+//			    var listLoc = jQuery.parseJSON(entries);
+//			    var image2 = '/website/static/images/blue-with-shadow.png';
+//			    var marker2 = [];
+//			    
+//			    $.each(listLoc.objects, function(i, item){
+//			    
+//				    var data_content2 = '<div class="content">'+
+//											    '<div id="siteNotice"></div>'+
+//											    '<img src="/website/static/images/allianz-eagle-3d.png" height="50" width="50" />'+
+//											    '<h2 id="firstHeading" class="firstHeading">'+item.officeName+'</h2>'+
+//											    '<div id="bodyContent">'+
+//											    '<b>'+item.subName+'</b><br />'+
+//											    'Alamat : '+item.alamat+'<br />'+
+//											    'Telp :'+item.phone+'<br />'+
+//											    'Fax :'+item.fax+''+
+//											    '</div>'+
+//										    '</div>';
+//				    //console.log(item);
+//				    try {
+//					var jenis2 = item.tipe.jenis;
+//				    }
+//				    catch(e){
+//					var jenis2 = null;
+//				    }
+//				    if(item.o_key == "allianz-tower")
+//				    {
+//					    var marker2 = new google.maps.Marker({
+//								    position: new google.maps.LatLng(item.latitude, item.longitude),
+//								    draggable: false,
+//								    icon: image2,
+//								    map: map2,
+//								    html: data_content2
+//							    });
+//				    }
+//				    else {
+//					    var marker2 = new google.maps.Marker({
+//								    position: new google.maps.LatLng(item.latitude, item.longitude),
+//								    draggable: false,
+//								    map: map2,
+//								    html: data_content2
+//							    });
+//				    }
+//				    markers2.push(marker2);
+//			    });
+//			    
+//			    for(x=0;x < markers2.length;x++){
+//				    var marker2 = markers2[x];
+//				    google.maps.event.addListener(marker2, 'click', function () {
+//					    infowindow2.setContent(this.html);
+//					    infowindow2.open(map2, this);
+//				    });
+//			    }
+//			}
+//		});
+	function MapLoad3(k,w){
+		clearOverlays();
+		//console.log(k+"  "+w);
+		$.ajax({
+			"url" : "/load-map/",
+			"data" : {kantor : k, wilayah : w},
+			"type" : "POST",
+			"success" : function(responseData){
+			    var entries = responseData;
+			    var listLoc = jQuery.parseJSON(entries);
+			    var image = '/website/static/images/blue-with-shadow.png';
+			    var marker = [];
+			    
+			    $.each(listLoc.objects, function(i, item){
+			    
+				    var data_content2 = '<div class="content">'+
+											    '<div id="siteNotice"></div>'+
+											    '<img src="/website/static/images/allianz-eagle-3d.png" height="50" width="50" />'+
+											    '<h2 id="firstHeading" class="firstHeading">'+item.officeName+'</h2>'+
+											    '<div id="bodyContent">'+
+											    '<b>'+item.subName+'</b><br />'+
+											    'Alamat : '+item.alamat+'<br />'+
+											    'Telp :'+item.phone+'<br />'+
+											    'Fax :'+item.fax+''+
+											    '</div>'+
+										    '</div>';
+				    //console.log(item);
+				    try {
+					var jenis = item.tipe.jenis;
+				    }
+				    catch(e){
+					var jenis = null;
+				    }
+				    if(item.o_key == "allianz-tower")
+				    {
+					    var marker = new google.maps.Marker({
+								    position: new google.maps.LatLng(item.latitude, item.longitude),
+								    draggable: false,
+								    icon: image,
+								    map: map2,
+								    html: data_content2
+							    });
+				    }
+				    else {
+					    var marker = new google.maps.Marker({
+								    position: new google.maps.LatLng(item.latitude, item.longitude),
+								    draggable: false,
+								    map: map2,
+								    html: data_content2
+							    });
+				    }
+				    markers.push(marker);
+			    });
+			    
+			    for(x=0;x < markers.length;x++){
+				    var marker = markers[x];
+				    google.maps.event.addListener(marker, 'click', function () {
+					    infowindow2.setContent(this.html);
+					    infowindow2.open(map2, this);
+				    });
+			    }
+			}
+		})
+		
+	}
+
+    
+    
 	function MapLoad2(k,w){
 		clearOverlays();
 		//console.log(k+"  "+w);
@@ -204,7 +495,9 @@
 			//google.maps.event.addDomListener(window, 'load', initialize);
 			$('#map-shortcut .kantor').change(function(e){
 				var kantor = $('#map-shortcut .kantor').find(":selected").val();
+//                alert(kantor);
 				var wilayah = $('#map-shortcut .wilayah').find(":selected").val();
+//                alert(wilayah);
 				MapLoad2(kantor,wilayah);
 			});
 			$('#map-shortcut .wilayah').change(function(e){
@@ -219,4 +512,42 @@
 			});
 	  });
       
+    $("#search-btn").click(function(){
+			searchSubmit();
+		});
+    
+    function searchSubmit() {
+			var latitude = null;
+			var longitude = null;
+			var addresscity=document.getElementById("search").value;
+			var geocoder = new google.maps.Geocoder();
+		 
+			geocoder.geocode({ 'address': addresscity }, function (results, status) {
+				 
+				if (status == google.maps.GeocoderStatus.OK)
+				{
+					lat = results[0].geometry.location.lat();
+					long = results[0].geometry.location.lng();
+					var titik = radius(lat, long);
+                    //titikMarker = "search";
+                    var mapOptions = {
+					   center: new google.maps.LatLng(lat, long),
+					   zoom: 13
+				    };
+                    map2 = new google.maps.Map(document.getElementById("maparea2"),mapOptions);
+//					MapLoad(titik, lat, long, titikMarker);
+				 }
+			});
+        
+            		
+        var kant = "<?php echo $id; ?>";
+        var wil = "-2.6806246,115.8034375,5,";
+        MapLoad3(kant,wil);
+		}
+
+    function radius(lat, lng){
+		var degreeRadius = 5/111.32;
+		var kordinat = (lat - degreeRadius) +"#"+ (lng - degreeRadius) +"#"+ (lat + degreeRadius) +"#"+ (lng + degreeRadius);
+		return kordinat;
+	}
 </script>
