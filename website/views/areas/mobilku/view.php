@@ -1365,7 +1365,25 @@ $(document).keyup(function(e){
     };
 
     $(document).ready(function(){
-
+        $("#periode").on("change",function(){
+            var a = new Date();
+            var b = new Date($(this).val());
+            tgla = a.getFullYear()+a.getMonth()+a.getDate();
+            tglb = b.getFullYear()+b.getMonth()+b.getDate();
+            if(b < a){
+                var c=new Date(a);
+                var year1=c.setDate(c.getDate() - 1);
+                var newdate=new Date(year1);
+                $( "#periode-last" ).val((newdate.getMonth() + 1)+'/'+newdate.getDate()+'/'+(newdate.getFullYear()+1));
+                $(this).val(a.getMonth()+'/'+a.getDate()+'/'+a.getFullYear());
+            }else{
+                var c=new Date(b);
+                var year1=c.setDate(c.getDate() - 1);
+                var newdate=new Date(year1);
+                $( "#periode-last" ).val((newdate.getMonth() + 1)+'/'+newdate.getDate()+'/'+(newdate.getFullYear()+1));
+            }
+            // console.log(tgla+"-"+tglb);
+        });
         $( "#periode" ).datepicker({
             changeMonth: true,
             changeYear: true,

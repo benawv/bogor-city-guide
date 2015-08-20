@@ -8,6 +8,9 @@
         background-image: none;
         color: black;
     }
+	.profile-maker.full-w.bg-white{
+		padding-left:0px;
+	}
 </style>
 
 <section class="profile-maker full-w bg-white">
@@ -42,7 +45,7 @@
                                     'thumbnail'	=> 'icon')) ?>
             <?php else: ?>
                 <?php if($this->image('icon_')->getSrc()):?>
-                    <div style="background-image: url('<?php echo $this->image('icon_')->getSrc()?>'); height: 31px; width: 31px; float: left; margin-right: 10px; "></div>
+                    <div style="background-image: url('<?php echo $this->image('icon_')->getSrc()?>'); height: 31px; width: 31px; float: left; margin-right: 10px; margin-left: 10px; "></div>
                 <?php endif;?>
 
             <?php endif; ?>
