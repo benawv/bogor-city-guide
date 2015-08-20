@@ -1273,7 +1273,8 @@ $(document).ready(function(){
         //form NON Paket
         $('.no_workshop_prem, .no_compre_prem, .no_earthquake_prem, .no_flood_prem, .no_med_ex_prem, .no_pa_prem, .no_passenger_prem, .no_pll_prem, .no_riot_prem, .no_terror_prem, .no_tpl_prem').html("");
         $('.no_workshop_prem').append(accounting.formatMoney(workshop_prem,'',2,'.',','));
-        $('.no_compre_prem').append(accounting.formatMoney(compre_prem,'',2,'.',','));
+        $('.no_compre_prem').append(accounting.formatMoney(compre_prem,'',2,'.',','));\
+        console.log("compre_prem="+compre_prem+"*"+compre_tlo_persen);
         $('.no_earthquake_prem').append(accounting.formatMoney(earthquake_prem,'',2,'.',','));
         $('.no_flood_prem').append(accounting.formatMoney(flood_prem,'',2,'.',','));
         $('.no_med_ex_prem').append(accounting.formatMoney(med_ex_prem,'',2,'.',','));
