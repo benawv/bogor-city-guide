@@ -530,7 +530,7 @@
 					   center: new google.maps.LatLng(lat, long),
 					   zoom: 13
 				    };
-                    map = new google.maps.Map(document.getElementById("maparea2"),mapOptions);
+                    map2 = new google.maps.Map(document.getElementById("maparea2"),mapOptions);
 //					MapLoad(titik, lat, long, titikMarker);
 				 }
 			});
