@@ -21,8 +21,8 @@
     /* Override AJFC's feature box color */
     .box-dent--inner{ background: #009a44; }
     .box-dent::before{ border-top: 28px solid #009a44 !important;}
-    .btn-tasbih{ background: #009a44 !important; border: none !important; border-radius: 0; }
-    .btn-tasbih:hover, .btn-tasbih:focus{ background: #007a53 !important;  }
+    .btn-tasbih{ background: #003da5 !important; border: none !important; border-radius: 0; }
+    .btn-tasbih:hover, .btn-tasbih:focus{ background: #003da5 !important;  }
     .form-box{ border: solid 1px #ddd; padding: 16px 20px; margin-bottom: 32px; }
     .form-control{ border-radius: 0; }
         nav.main-navigation a.nav-item.home::after {
