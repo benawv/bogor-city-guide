@@ -117,10 +117,11 @@ $(document).ready(function(){
 
         $('#cari-agen').click(function() {
             
-                            
-                            window.open('/layanan/hubungi-kami/kantor-pemasaran-allianz', '_blank');
                             <?php $sessionCalc = new Zend_Session_Namespace(calc_mobilku); ?>
-                            <?php $sessionCalc->status = 'mobilku'; ?>
+                            <?php $sessionCalc->status ="mobilku"; ?>
+//                            alert("<?php echo $sessionCalc->status; ?>");
+                            window.open('/layanan/hubungi-kami/kantor-pemasaran-allianz', '_blank');
+
                           /*$.ajax({
                               url      : '/v1/api/calculator',
                               type     : 'POST',

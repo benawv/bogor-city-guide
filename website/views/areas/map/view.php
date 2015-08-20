@@ -9,8 +9,10 @@
                 $getStatus = '';
                 $sessionCalc = new Zend_Session_Namespace(calc_mobilku);
                 $sessionMail = new Zend_Session_Namespace(mobilku_mail);
-                if( $sessionCalc->status != '') $getStatus = $sessionCalc->status;
-                else if($sessionMail->status != '') $getStatus = $sessionMail->status;
+                $isi =  $sessionCalc->status;
+                $isi2 =  $sessionMail->status;
+                if( $isi != '') $getStatus = $isi;
+                else if($isi2 != '') $getStatus = $isi2;
 //                $getStatus = 'mobilku';
 ?>
 
@@ -29,6 +31,8 @@
             #map-pemasaran{
                 display : block;
             }
+            <?php Zend_Session::namespaceUnset('calc_mobilku'); ?>
+            <?php Zend_Session::namespaceUnset('mobilku_mail'); ?>
     <?php } ?>
 </style>
 
