@@ -561,10 +561,13 @@
 
     </div><!--/ .container -->
 </section><!--/ .profile-maker -->
-
+                    
+                   
                     <script>
+
                         //Draggable option
                          $('#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper-m, #draggableHelper-ava1-m, #draggableHelper-ava2-m').draggable();
+                         $('#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper-m, #draggableHelper-ava1-m, #draggableHelper-ava2-m').resizable();
                          $('#timelineBGload, .ava-img').resizable(
                             {
                                 aspectRatio: true,
