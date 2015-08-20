@@ -12,4 +12,5 @@
 <script src="/website/static/profil-maker/js/jquery.wallform.js"></script>
 <script src="/website/static/profil-maker/js/javascript.js"></script>
 <script src="/website/static/profil-maker/js/html2canvas.js"></script>
+<script src="/website/static/profil-maker/js/jquery.ui.touch-punch.js"></script>
 

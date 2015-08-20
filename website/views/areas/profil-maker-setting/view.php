@@ -561,16 +561,28 @@
 
     </div><!--/ .container -->
 </section><!--/ .profile-maker -->
-
+                    
                     <script>
-                        //Draggable option
-                         $('#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper-m, #draggableHelper-ava1-m, #draggableHelper-ava2-m').draggable();
-                         $('#timelineBGload, .ava-img').resizable(
+                        $('#draggableHelper').draggable();
+                        $('#draggableHelper').resizable(
                             {
                                 aspectRatio: true,
                                 handles: 'ne, se, sw, nw, n, e, s, w'
                             }
                         );
+
+                    </script>
+
+                    <script>
+
+                        //Draggable option
+                        //  $('#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper-m, #draggableHelper-ava1-m, #draggableHelper-ava2-m').draggable();
+                        //  $('#timelineBGload, .ava-img').resizable(
+                        //     {
+                        //         aspectRatio: true,
+                        //         handles: 'ne, se, sw, nw, n, e, s, w'
+                        //     }
+                        // );
                         
                         //Resize available
                         $('.ui-resizable-handle').fadeOut();
