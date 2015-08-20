@@ -71,6 +71,7 @@ label.error {
   height: 230px;
   color: #FFFFFF;
 }
+img.ava-img {max-width: 620px;}
 span#nama { padding: 0 20px; font-size: 14px; word-wrap: break-word; }
 span#nama-m { padding: 0 20px; font-size: 10px; word-wrap: break-word; }  
 span#konten-m { word-wrap: break-word; font-size: 9px; } 

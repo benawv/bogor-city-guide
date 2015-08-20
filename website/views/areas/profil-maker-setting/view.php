@@ -554,7 +554,6 @@
         <div class="row">
             <div class="col-xs-12">
 
-                <div id="imaged"></div>
 
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
@@ -562,18 +561,28 @@
     </div><!--/ .container -->
 </section><!--/ .profile-maker -->
                     
-                   
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+
                     <script>
 
+                        //Draggable & Resizable option
+                         $(function() {
+                          $( "#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper-m, #draggableHelper-ava1-m, #draggableHelper-ava2-m" ).resizable({
+                                    aspectRatio: true,
+                                    handles: 'ne, se, sw, nw, n, e, s, w'
+                                });
+                          $( "#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper-m, #draggableHelper-ava1-m, #draggableHelper-ava2-m" ).draggable();
+                        });
+
                         //Draggable option
-                         $('#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper-m, #draggableHelper-ava1-m, #draggableHelper-ava2-m').draggable();
-                         $('#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper-m, #draggableHelper-ava1-m, #draggableHelper-ava2-m').resizable();
-                         $('#timelineBGload, .ava-img').resizable(
-                            {
-                                aspectRatio: true,
-                                handles: 'ne, se, sw, nw, n, e, s, w'
-                            }
-                        );
+                        //  $('#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper-m, #draggableHelper-ava1-m, #draggableHelper-ava2-m').draggable();
+                        //  $('#timelineBGload, .ava-img').resizable(
+                        //     {
+                        //         aspectRatio: true,
+                        //         handles: 'ne, se, sw, nw, n, e, s, w'
+                        //     }
+                        // );
                         
                         //Resize available
                         $('.ui-resizable-handle').fadeOut();
