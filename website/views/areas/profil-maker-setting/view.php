@@ -438,10 +438,10 @@
                             </div><!--/ .row -->
                             <div class="row" style="margin-top: 16px;">
                                 <div class="col-xs-6 col-sm-3">
-                                    <a id="cancel" href="#fillform" class="btn btn-default btn-block">Batal</a>
+                                    <a id="cancel" href="#fillform" class="btn btn-default btn-block">Tidak</a>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-6 col-sm-3">
-                                    <a id="download" href="#top" class="btn btn-primary btn-block">Simpan</a>    
+                                    <a id="download" href="#top" class="btn btn-primary btn-block">Ya</a>    
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
                                     <a href="/profil-maker/page2" class="customHref">
