@@ -257,7 +257,7 @@ $(document).ready(function()
                 
                 //cek cookie
                 var temp = getCookie("template");
-    			//console.log(temp);
+    			console.log(temp);
 
     			//get template from cookie
 			    if(temp == "template1") {
@@ -290,7 +290,7 @@ $(document).ready(function()
 			        $("#place-m").prop('class', 'square-m facebook-caption leftside');
 			        $("#notepad-m").prop('class', 'facebook-caption--inner square-m-bg bg-blue');
 			    }
-			    else if(temp == "template4" || temp == "template6") {
+			    else if(temp == "template4") {
 			        //alert("ava2");
 			        $("#ava2").css("display", "block");
 			        $("#input1, #input2, #input5, #input6").hide();
@@ -300,6 +300,11 @@ $(document).ready(function()
 			        $("#ava1").css("display", "block");
 			        $("#input1, #input2, #input3, #input4, #input5, #input6").hide();
 			    }
+			    else if(temp == "template6") {
+			        //alert("ava1");
+			        $("#ava3").css("display", "block");
+			        $("#input1, #input2, #input5, #input6").hide();
+			    }
 
 			    //mobile condition
 			    if($(window).width() < 640) {
@@ -308,7 +313,7 @@ $(document).ready(function()
 			    		$("#cover1").hide();
 			    		$("#cover-m").show();
 			    	}
-			    	else if(temp == "template4" || temp == "template6") {
+			    	else if(temp == "template4") {
 			    		//alert("this is avatar 2 comin' up");
 			    		$("#ava2").hide();
 			    		$("#ava2-m").show();
@@ -317,6 +322,11 @@ $(document).ready(function()
 			    		//alert("this is avatar 1 comin' up");
 			    		$("#ava1").hide();
 			    		$("#ava1-m").show();
+			    	}
+			    	else if(temp == "template6") {
+			    		//alert("this is avatar 3 comin' up");
+			    		$("#ava3").hide();
+			    		$("#ava3-m").show();
 			    	}
 			    }
 
@@ -341,8 +351,8 @@ $(document).ready(function()
 	                        	//$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
 
-	                           	//$('#imaged').append('<img src="'+dataURL+'" />');
-
+	                           	// $('#imaged').append('<img id="resized" src="'+dataURL+'" />');
+	                         
 	                            //$('#imaged').html('Generating..');
 	                            // $.post('image.php',{image: dataURL},function(data){
 	                            //     $('#imaged').html(data);
@@ -393,7 +403,7 @@ $(document).ready(function()
 						}
 
 					//capture avatar
-					else if(temp == "template4" || temp == "template6"){
+					else if(temp == "template4"){
 
 						$("#ava2-m").hide();
 	                    $("#ava2").show();
@@ -493,6 +503,58 @@ $(document).ready(function()
 									description = "";
 									firstName = "";
 									lastName = "";
+									saveNote(headline,description,firstName,lastName, tgl);
+	                    	}
+	                	});
+					}
+
+					//capture avatar
+					else if(temp == "template6"){
+
+						$("#ava3-m").hide();
+	                    $("#ava3").show();
+
+						html2canvas($('#avatar3'), {
+	                    onrendered: function(canvas) {
+	                        //$('#imaged').html(canvas);
+	                            var dataURL = canvas.toDataURL("image/png");
+
+	                            if($(window).width() < 640) {
+									//alert("after capture, back to ava2");
+									$("#ava3-m").show();
+									$("#ava3").hide();
+								}
+
+	                			//Random filename after download
+	                			var filename = new Array(2).join().replace(/(.|$)/g, function(){return ((Math.random()*36)|0).toString(36);})
+
+	        						var link = document.createElement('a');
+									link.href = dataURL;
+									link.download = "Cover Profil Maker Allianz.png";
+									document.body.appendChild(link);
+									link.click();
+
+									//trying to save directory
+									var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+									var output = encodeURIComponent(dataURL);
+									var cur_path = 'upload';
+									//console.log(output);
+									//console.log(cur_path); 
+		                			var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
+								        $.ajax({
+								            type: "POST",
+								            url: "/website/var/assets/profil-maker/save.php",
+								            data: Parameters,
+								            success: function(data) {
+										        //alert(data);
+										        //console.log(data);
+										    },
+										    error: function(data){
+										    	//alert("fail");
+										    }
+								        });
+									headline = "";
+									description = "";
 									saveNote(headline,description,firstName,lastName, tgl);
 	                    	}
 	                	});

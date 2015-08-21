@@ -50,43 +50,6 @@
                         </div>    
                     </div><!--/ .page-maker--placeholder -->
 
-                        <!-- <input type="button" value ="-" onclick="zoom(0.9)"/>
-                        <input type="button" value ="+" onclick="zoom(1.1)"/>
-
-                        <div id="thediv">
-                            <img id="pic" src="<?php echo $session->src;?>" />
-                        </div> -->
-
-                    <style>
-                      /*    #thediv {
-                            margin: 0 auto;
-                            height: 315px;
-                            width: 851px;
-                            overflow: hidden;
-                            }
-
-                        #thediv img {
-                                position: relative;
-                                left: 50%;
-                                top: 50%;
-                            }*/
-                    </style>
-                   
-                    <script>
-                        // window.onload = function(){zoom(1)}
-
-                        // function zoom(zm) {
-                        // img = document.getElementById("pic")
-                        // wid = img.width
-                        // ht = img.height
-                        // img.style.width = (wid*zm) + "px"
-                        // img.style.height = (ht*zm) + "px"
-                        //     img.style.marginLeft = -(img.width/2) + "px";
-                        //     img.style.marginTop = -(img.height/2) + "px";
-                        // }
-
-                    </script>
-
                     <div id="place" class="landscape facebook-caption leftside">
                         <div id="notepad" class="facebook-caption--inner landscape-bg bg-blue">
 
@@ -248,7 +211,7 @@
                         <?php
                             $session = new Zend_Session_Namespace('srcImage');
                         ?>
-                        <div id="draggableHelper3" style="display:inline-block;">
+                        <div id="draggableHelper3" class="override-width" style="display:inline-block;">
                             <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
                         </div>    
                     </div><!--/ .facebook -->
@@ -287,7 +250,7 @@
                          <?php
                             $session = new Zend_Session_Namespace('srcImage');
                          ?>
-                         <div id="draggableHelper2" style="display:inline-block;">
+                         <div id="draggableHelper2" class="override-width" style="display:inline-block;">
                             <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
                          </div>
                     </div><!--/ .facebook -->
@@ -310,7 +273,51 @@
                          <?php
                             $session = new Zend_Session_Namespace('srcImage');
                          ?>
-                         <div id="draggableHelper-ava2-m" style="display:inline-block;">
+                         <div id="draggableHelper-ava2-m" class="override-width" style="display:inline-block;">
+                            <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
+                         </div>   
+                    </div><!--/ .facebook -->
+                </div><!--/ .page-maker--placeholder -->
+
+                <div id="ava3" class="page-maker--placeholder" style="display: none">
+                    <div id="avatar3" class="avatar w504">
+                        <div id="avacapture3" class="avatar-caption">
+                            <div class="avatar-caption--logo">
+                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
+                            </div><!--/ .avatar-caption--logo -->
+                            <div class="avatar-caption--footer">
+                                <img src="/website/static/images/profile-maker/fb.png" alt="" style="position: absolute; width: 29px; left: 19px; top: 11px;">
+                                <!-- <i class="fa fa-facebook-square fa-2x"></i> --> &nbsp;
+                                <span>Allianz Indonesia</span>&nbsp;
+                                <strong><span id="cname">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
+                            </div><!--/ .avatar-caption-footer -->
+                        </div><!--/ .avatar-caption -->
+                         <?php
+                            $session = new Zend_Session_Namespace('srcImage');
+                         ?>
+                         <div id="draggableHelper4" class="override-width-805" style="display:inline-block;">
+                            <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
+                         </div>
+                    </div><!--/ .facebook -->
+                </div><!--/ .page-maker--placeholder -->
+
+                <div id="ava3-m" class="page-maker--placeholder fluid" style="display: none">
+                    <div id="avatar3" class="avatar-m">
+                        <div id="avacapture3" class="avatar-caption">
+                            <div class="avatar-caption--logo">
+                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
+                            </div><!--/ .avatar-caption--logo -->
+                            <div class="avatar-caption--footer">
+                                <img src="/website/static/images/profile-maker/fb.png" alt="" style="position: absolute; width: 29px; left: 19px; top: 11px;">
+                                <!-- <i class="fa fa-facebook-square fa-2x"></i> --> &nbsp;
+                                <span>Allianz Indonesia</span>&nbsp;
+                                <strong><span id="cname-m">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
+                            </div><!--/ .avatar-caption-footer -->
+                        </div><!--/ .avatar-caption -->
+                         <?php
+                            $session = new Zend_Session_Namespace('srcImage');
+                         ?>
+                         <div id="draggableHelper-ava3-m" class="override-width" style="display:inline-block;">
                             <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
                          </div>   
                     </div><!--/ .facebook -->
@@ -553,7 +560,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-
+                    <div id="imaged"></div>
 
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
@@ -561,56 +568,47 @@
     </div><!--/ .container -->
 </section><!--/ .profile-maker -->
                     
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
 
-                    <script>
+<script>
 
-                        //Draggable & Resizable option
-                         $(function() {
-                          $( "#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper-m, #draggableHelper-ava1-m, #draggableHelper-ava2-m" ).resizable({
-                                    aspectRatio: true,
-                                    handles: 'ne, se, sw, nw, n, e, s, w'
-                                });
-                          $( "#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper-m, #draggableHelper-ava1-m, #draggableHelper-ava2-m" ).draggable();
-                        });
+     //Draggable & Resizable option
+    $(function() {
+        $( "#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper4" ).resizable({
+            aspectRatio: true,
+            handles: 'ne, se, sw, nw, n, e, s, w'
+        });
+        $( "#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper4" ).draggable();
+    });
 
-                        //Draggable option
-                        //  $('#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper-m, #draggableHelper-ava1-m, #draggableHelper-ava2-m').draggable();
-                        //  $('#timelineBGload, .ava-img').resizable(
-                        //     {
-                        //         aspectRatio: true,
-                        //         handles: 'ne, se, sw, nw, n, e, s, w'
-                        //     }
-                        // );
-                        
-                        //Resize available
-                        $('.ui-resizable-handle').fadeOut();
-                        $( ".ui-resizable-handle, img#timelineBGload, img.ava-img" )
-                          .mouseenter(function() {
+    //Resize available
+    $('.ui-resizable-handle').css("display", "none");
+    $( ".ui-resizable-handle, img#timelineBGload, img.ava-img" )
+            .mouseenter(function() {
                             $('.ui-resizable-handle').fadeIn(100);
-                          })
-                          .mouseleave(function() {
+                        })
+            .mouseleave(function() {
                             $('.ui-resizable-handle').fadeOut(100);
-                          });
+                        });
                  
-                             $(document).ready(function(){
-                                 $(".template").on("click",function(){
-                                     var ket = $(this).parent().parent().parent().find("h4").text();
-                                     var id = $(this).attr("id");
-                                     setCookie("template", id);
-                                     setCookie("keterangan", ket);
-                                 });
-                             });
+    $(document).ready(function(){
+        $(".template").on("click",function(){
+        var ket = $(this).parent().parent().parent().find("h4").text();
+        var id = $(this).attr("id");
+            setCookie("template", id);
+            setCookie("keterangan", ket);
+        });
+    });
                  
-                             function getId(obj) {
-                                 var id=obj;
-                                 //alert("idnya"+id);
-                                 setCookie("template", id);
-                                 //document.cookie = id;
-                                 //var x = document.cookie
-                                 //alert(x);
-                                 //alert(id);
-                            }
+    function getId(obj) {
+    var id=obj;
+        //alert("idnya"+id);
+        setCookie("template", id);
+        //document.cookie = id;
+        //var x = document.cookie
+        //alert(x);
+        //alert(id);
+    }
                         
-                      </script>
+</script>
