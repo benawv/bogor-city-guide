@@ -245,6 +245,7 @@
 			"success" : function(responseData){
 			    var entries = responseData;
 			    var listLoc = jQuery.parseJSON(entries);
+                var img = '/website/static/images/blue-with-shadow.png';
 			    var image = '/website/static/images/pointer-blue.png';
 			    var marker = [];
 			    
@@ -273,7 +274,7 @@
 					    var marker = new google.maps.Marker({
 								    position: new google.maps.LatLng(item.latitude, item.longitude),
 								    draggable: false,
-								    icon: image,
+								    icon: img,
 								    map: map,
 								    html: data_content
 							    });
@@ -282,8 +283,7 @@
 					    var marker = new google.maps.Marker({
 								    position: new google.maps.LatLng(item.latitude, item.longitude),
 								    draggable: false,
-								    icon: image,
-								    map: map,
+                                    map: map,
 								    html: data_content
 							    });
 				    }
@@ -426,6 +426,14 @@
 				    markers.push(marker);
 			    });
                 
+                for(x=0;x < markers.length;x++){
+				    var marker = markers[x];
+				    google.maps.event.addListener(marker, 'click', function () {
+					    infowindow2.setContent(this.html);
+					    infowindow2.open(map2, this);
+				    });
+			    }
+                
                 if (s == "found") {
                     var marker2 = new google.maps.Marker({
                         position: new google.maps.LatLng(l1, l2),
@@ -434,7 +442,7 @@
                         map: map2,
                         html: "Lokasi Anda saat ini."
                     });
-                    markers.push(marker2);
+                    markers2.push(marker2);
                 }else if( s == "searched"){
                     var marker2 = new google.maps.Marker({
                         position: new google.maps.LatLng(l1, l2),
@@ -442,14 +450,14 @@
                         icon: image,
                         map: map2
                     });
-                    markers.push(marker2);
+                    markers2.push(marker2);
                 }
 			    
-			    for(x=0;x < markers.length;x++){
-				    var marker = markers[x];
+                for(x=0;x < markers.length;x++){
+				    var marker = markers2[x];
 				    google.maps.event.addListener(marker, 'click', function () {
-					    infowindow2.setContent(this.html);
-					    infowindow2.open(map2, this);
+//					    infowindow2.setContent(this.html);
+//					    infowindow2.open(map2, this);
 				    });
 			    }
 			}
@@ -497,7 +505,7 @@
 					    var marker = new google.maps.Marker({
 								    position: new google.maps.LatLng(item.latitude, item.longitude),
 								    draggable: false,
-								    icon: image,
+								    icon: img,
 								    map: map,
 								    html: data_content
 							    });
@@ -506,7 +514,6 @@
 					    var marker = new google.maps.Marker({
 								    position: new google.maps.LatLng(item.latitude, item.longitude),
 								    draggable: false,
-								    icon: image,
 								    map: map,
 								    html: data_content
 							    });
