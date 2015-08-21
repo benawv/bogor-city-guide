@@ -61,8 +61,7 @@
 											    "store" => array(
 											        array("question", "Question"),
 											        array("sitemap", "Sitemap"),
-											        array("chat", "Chat"),
-											        array("user", "User")
+											        array("users", "Users")
 											    ),
                                                 "reload" => true
 											)); 
@@ -73,12 +72,8 @@
 				                        	echo "Color: <br />";
 			                        		echo $this->select("color_".$loop,array(
 											    "store" => array(
-											         array("blue", "blue"),
-											        array("yellow", "yellow"),
-											        array("light-blue", "light-Blue"),
 											        array("red", "red"),
 											        array("green", "green"),
-											        array("purple", "purple"),
 											        array("orange", "orange")
 											    ),
 											    "reload" => true
