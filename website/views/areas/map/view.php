@@ -245,7 +245,7 @@
 			"success" : function(responseData){
 			    var entries = responseData;
 			    var listLoc = jQuery.parseJSON(entries);
-			    var image = '/website/static/images/blue-with-shadow.png';
+			    var image = '/website/static/images/pointer-blue.png';
 			    var marker = [];
 			    
 			    $.each(listLoc.objects, function(i, item){
@@ -376,7 +376,8 @@
 			"success" : function(responseData){
 			    var entries = responseData;
 			    var listLoc = jQuery.parseJSON(entries);
-			    var image = '/website/static/images/blue-with-shadow.png';
+			    var image = '/website/static/images/pointer-blue.png';
+//                var imageSearchMarker = '/website/static/images/pointer-blue.png';
 			    var marker = [];
 			    
 			    $.each(listLoc.objects, function(i, item){
@@ -544,7 +545,10 @@
 			var longitude = null;
 			var addresscity=document.getElementById("search").value;
 			var geocoder = new google.maps.Geocoder();
-		 
+		    var options = {
+              types: ['(cities)'],
+              componentRestrictions: {country: 'fr'}
+            };
 			geocoder.geocode({ 'address': addresscity }, function (results, status) {
 				 
 				if (status == google.maps.GeocoderStatus.OK)
