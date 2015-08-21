@@ -60,7 +60,7 @@
 			                        		echo $this->select("icon_".$loop,array(
 											    "store" => array(
 											        array("question", "Question"),
-											        array("chat", "Chat"),
+											        array("sitemap", "Sitemap"),
 											        array("users", "Users")
 											    ),
                                                 "reload" => true
