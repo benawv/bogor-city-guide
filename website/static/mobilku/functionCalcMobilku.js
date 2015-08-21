@@ -1318,7 +1318,7 @@ $(document).ready(function(){
 
         var no_totalPremium=parseInt(no_workshop_prem+no_compre_prem+no_earthquake_prem+no_flood_prem+no_med_ex_prem+no_pa_prem+no_passenger_prem+no_riot_prem+no_terror_prem+no_tpl_prem+no_pll_prem);
         $('.no_totalPremium').html('');
-        $('.no_totalPremium').append(accounting.formatMoney(no_totalPremium,'',0,'.',','));
+        $('.no_totalPremium').append(accounting.formatMoney(no_totalPremium,'',2,'.',','));
         return no_totalPremium;
 
     }
@@ -1668,49 +1668,53 @@ $(document).ready(function(){
         // });
         window.history.go('/kalkulator/tasbih');
     });
+
+//edit by diah 20 Agustus 2015
     
-    $(this).on('change','#merk, #model',function(){
-        var a=$(this).attr('id');
+    // $(this).on('change','#merk, #model',function(){
+    //     var a=$(this).attr('id');
         
-        if (a=="merk") {
-            //code
-            a=1;
-        }else{
-            a=2;
-        }
+        // if (a=="merk") {
+        //     //code
+        //     alert(a);
+        //     a=1;
+        // }else{
+        //     alert(a);
+        //     a=2;
+        // }
         
-        $.ajax({
-               "url" : "/getdatamobil/",
-               "type" : "POST",
-               "data" : "brand=" + $(this).val()+"&attrs="+a,
+        // $.ajax({
+        //        "url" : "/getdatamobil/",
+        //        "type" : "POST",
+        //        "data" : "brand=" + $(this).val()+"&attrs="+a,
                
-               "success" : function(response){
-                        var getResult=JSON.parse(response);
-                        if (getResult.type==1) {
-                            //code
-                            var i=0;
-                            $('.model-form').html("");
-                            $('.model-form').html("<option value=''>Silahkan pilih</option>");
-                            for(; i<getResult.bodytype.length; i++){
-                            //console.log(getResult.model_name[i]);
-                            $('.model-form').append("<option value='"+getResult.model_o_id[i]+"'>"+getResult.model_name[i]+"</option>");
-                            }
-                        }else{
-                            var i=0;
-                            //$('.model-form').html("");
-                            //$('.model-form').html("<option value=''>Silahkan pilih</option>");
-                            for(; i<getResult.bodytype.length; i++){
-                            $('#tipe').val(getResult.bodytype[i]);
-                            $('#kapasitas').val(getResult.seatingcapacity[i]);
-                            }
-                        }
+        //        "success" : function(response){
+        //                 var getResult=JSON.parse(response);
+        //                 if (getResult.type==1) {
+        //                     //code
+        //                     var i=0;
+        //                     $('.model-form').html("");
+        //                     $('.model-form').html("<option value=''>Silahkan pilih</option>");
+        //                     for(; i<getResult.bodytype.length; i++){
+        //                     //console.log(getResult.model_name[i]);
+        //                     $('.model-form').append("<option value='"+getResult.model_o_id[i]+"'>"+getResult.model_name[i]+"</option>");
+        //                     }
+        //                 }else{
+        //                     var i=0;
+        //                     //$('.model-form').html("");
+        //                     //$('.model-form').html("<option value=''>Silahkan pilih</option>");
+        //                     for(; i<getResult.bodytype.length; i++){
+        //                     $('#tipe').val(getResult.bodytype[i]);
+        //                     $('#kapasitas').val(getResult.seatingcapacity[i]);
+        //                     }
+        //                 }
                 
                 
-            }
+        //     }
                
         
-        });
-    });
+        // });
+    // });
     
     //pindah ke sini
   

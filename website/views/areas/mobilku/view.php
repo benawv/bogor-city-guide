@@ -245,6 +245,8 @@
     }
 </script>
 
+<!-- <script src="//code.jquery.com/jquery-1.10.2.js"></script> -->
+
 <!--script src="/website/static/js/masonry.min.js" type="text/javascript"></script-->
 
 <!--   plugins   -->
@@ -260,6 +262,241 @@
 
 <script src="/website/static/mobilku/jquery.validate.min.js"></script>
 <script src="/website/static/mobilku/jquery-ui.js"></script>
+<!-- <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
+<style type="text/css">
+.ui-autocomplete {
+    max-height: 300px;
+    overflow-y: hidden;   /* prevent horizontal scrollbar */
+    overflow-x: auto; /* add padding to account for vertical scrollbar */
+    z-index:1000 !important;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+}
+</style>
+<style>
+.positionIcon{
+    margin-top: -8px;
+}
+.custom-combobox.customCssComboBox{
+    width: 100% !important;
+}
+  .custom-combobox {
+    position: relative;
+    display: inline-block;
+    z-index:1000 !important;
+  }
+  .heading.clearfix.pagenav.nav-sticky{
+    z-index: 9999 !important;
+  }
+  .custom-combobox-toggle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-left: -34px;
+    padding: 0;
+    background-color: white !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    /*width: 28px !important;*/
+  }
+  .custom-combobox-input {
+    margin: 0;
+    padding: 5px 10px;
+    background-color: white !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    border-bottom-left-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    width: 100% !important;
+  }
+  </style>
+  <script>
+  (function( $ ) {
+    $.widget( "custom.combobox", {
+      _create: function() {
+        this.wrapper = $( "<span>" )
+          .addClass( "custom-combobox customCssComboBox" )
+          .insertAfter( this.element );
+ 
+        this.element.hide();
+        this._createAutocomplete();
+        this._createShowAllButton();
+      },
+ 
+      _createAutocomplete: function() {
+        var selected = this.element.children( ":selected" ),
+          value = selected.val() ? selected.text() : "";
+ 
+        this.input = $( "<input>" )
+          .appendTo( this.wrapper )
+          .val( value )
+          .attr( "tabIndex", "4" )
+          .attr( "title", "" )
+          .addClass( "custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left" )
+          .autocomplete({
+            delay: 0,
+            minLength: 0,
+            source: $.proxy( this, "_source" )
+          })
+          .tooltip({
+            tooltipClass: "ui-state-highlight"
+          });
+ 
+        this._on( this.input, {
+          autocompleteselect: function( event, ui ) {
+            ui.item.option.selected = true;
+            this._trigger( "select", event, {
+              item: ui.item.option
+            });
+          },
+ 
+          autocompletechange: "_removeIfInvalid"
+        });
+      },
+ 
+      _createShowAllButton: function() {
+        var input = this.input,
+          wasOpen = false;
+ 
+        $( "<a>" )
+          .attr( "tabIndex", -1 )
+          .attr( "title", "Show All Items" )
+          .tooltip()
+          .appendTo( this.wrapper )
+          .button({
+            icons: {
+              primary: "ui-icon-triangle-1-s"
+            },
+            text: false
+          })
+          .removeClass( "ui-corner-all" )
+          .addClass( "custom-combobox-toggle ui-corner-right" )
+          .mousedown(function() {
+            wasOpen = input.autocomplete( "widget" ).is( ":visible" );
+          })
+          .click(function() {
+            input.focus();
+ 
+            // Close if already visible
+            if ( wasOpen ) {
+              return;
+            }
+ 
+            // Pass empty string as value to search for, displaying all results
+            input.autocomplete( "search", "" );
+          });
+      },
+ 
+      _source: function( request, response ) {
+        var matcher = new RegExp( $.ui.autocomplete.escapeRegex(request.term), "i" );
+        response( this.element.children( "option" ).map(function() {
+          var text = $( this ).text();
+          if ( this.value && ( !request.term || matcher.test(text) ) )
+            return {
+              label: text,
+              value: text,
+              option: this
+            };
+        }) );
+      },
+ 
+      _removeIfInvalid: function( event, ui ) {
+ 
+        // Selected an item, nothing to do
+        if ( ui.item ) {
+          return;
+        }
+ 
+        // Search for a match (case-insensitive)
+        var value = this.input.val(),
+          valueLowerCase = value.toLowerCase(),
+          valid = false;
+        this.element.children( "option" ).each(function() {
+          if ( $( this ).text().toLowerCase() === valueLowerCase ) {
+            this.selected = valid = true;
+            return false;
+          }
+        });
+ 
+        // Found a match, nothing to do
+        if ( valid ) {
+          return;
+        }
+ 
+        // Remove invalid value
+        this.input
+          .val( "" )
+          .attr( "title", value + " didn't match any item" )
+          .tooltip( "open" );
+        this.element.val( "" );
+        this._delay(function() {
+          this.input.tooltip( "close" ).attr( "title", "" );
+        }, 2500 );
+        this.input.autocomplete( "instance" ).term = "";
+      },
+ 
+      _destroy: function() {
+        this.wrapper.remove();
+        this.element.show();
+      }
+    });
+  })( jQuery );
+ $(document).ready(function(){
+    $( '#merk, #model' ).combobox({
+        select: function (event, ui) { 
+        // alert(this.value);
+        var a = $(this).attr('id');
+        if (a=="merk") {
+            //code
+            a=1;
+        }else{
+            a=2;
+        }
+        
+        $.ajax({
+               "url" : "/getdatamobil/",
+               "type" : "POST",
+               "data" : "brand=" + $(this).val()+"&attrs="+a,
+               
+               "success" : function(response){
+                        var getResult=JSON.parse(response);
+                        if (getResult.type==1) {
+                            //code
+                            var i=0;
+                            $('.model-form').html("");
+                            $('.model-form').html("<option value=''>Silahkan pilih</option>");
+                            for(; i<getResult.bodytype.length; i++){
+                            //console.log(getResult.model_name[i]);
+                            $('.model-form').append("<option value='"+getResult.model_o_id[i]+"'>"+getResult.model_name[i]+"</option>");
+                            }
+                        }else{
+                            var i=0;
+                            //$('.model-form').html("");
+                            //$('.model-form').html("<option value=''>Silahkan pilih</option>");
+                            for(; i<getResult.bodytype.length; i++){
+                            $('#tipe').val(getResult.bodytype[i]);
+                            $('#kapasitas').val(getResult.seatingcapacity[i]);
+                            }
+                        }
+                
+                
+            }
+               
+        
+        });
+        } 
+    });
+    // $( "#model" ).combobox();
+    $( "#toggle" ).click(function() {
+      $( "#combobox" ).toggle();
+    });
+  });
+  </script>
+</head>
+<body>
 
 <script>
     window.fbAsyncInit = function() {
@@ -301,17 +538,10 @@ $(document).keyup(function(e){
             }else if ($(".second").hasClass('active')){
                 document.getElementById("nama").focus();
             }
-            
         }
     }
 });
-
-// $("#next").click(function){
-//     //$("#next").attr("tabindex","15");
-//     alert("test");
-// }
 </script>
-
 <!-- End of Header -->
 
 <div id="newsletter-allianz" class="full-w bg-white">
@@ -439,7 +669,7 @@ $(document).keyup(function(e){
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="left-inner-addon">
-                                                <i class="flaticon-black187"></i>
+                                                <i class="flaticon-black187 positionIcon"></i>
                                                 <input type="text" name="tipe" class="form-control" id="tipe" placeholder="" value="" disabled=disabled />
                                             </div><!--/ .left-inner-addon -->
                                         </div><!--/ .col-sm-4 -->
@@ -453,7 +683,7 @@ $(document).keyup(function(e){
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
                                             <div class="left-inner-addon">
-                                                <i class="flaticon-facebook30"></i>
+                                                <i class="flaticon-facebook30 positionIcon"></i>
                                                 <input type="text" name="wilayah" class="form-control" id="wilayah" placeholder="" value="" disabled=disabled>
                                             </div><!--/ .left-inner-addon -->
                                         </div><!--/ .col-sm-4 -->
@@ -467,7 +697,7 @@ $(document).keyup(function(e){
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
                                             <div class="left-inner-addon">
-                                                <i class="flaticon-harddisc"></i>
+                                                <i class="flaticon-harddisc positionIcon"></i>
                                                 <input type="text" name="kapasitas" class="form-control" id="kapasitas" placeholder="" value="" disabled=disabled  />
                                             </div><!--/ .left-inner-addon -->
                                         </div><!--/ .col-sm-4 -->
