@@ -82,7 +82,8 @@
 								    $ct = $this->select('colorTasbih_')->getData();
 									$kat = $this->select('kategori_')->getData();
 							?>
-                            <div class="col-xs-12 col-md-4 col-md-offset-<?php if($pt == 'left') echo '1'; else echo '7' ?>" id="fixboxTasbih" style=" display:<?php if($jenis=="tasbih") echo "block"; else echo "none"; ?>">
+                            <!--<div class="col-xs-12 col-md-4 col-md-offset-<?php if($pt == 'left') echo '1'; else echo '7' ?>" id="fixboxTasbih" style=" display:<?php if($jenis=="tasbih") echo "block"; else echo "none"; ?>">-->
+							<div class="col-xs-12 col-md-4 col-md-offset-<?php if($pt == 'left') echo '1'; else echo '7' ?>" id="fixboxTasbih" style=" display:<?php echo "none"; ?>">
                                 <div class="landing-tasbih-header-caption--box <?php echo $ct; ?>" >
                                     <h2><span id="title">Ilustrasi Allianz Tasbih</span></h2>
                                     <form role="form">
