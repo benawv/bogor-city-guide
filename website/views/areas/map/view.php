@@ -367,6 +367,7 @@
 	function MapLoad3(k,w,s,l1,l2){
         
         var imageCurrentMarker = '/website/static/images/map-pointer-green.png';
+        var image2 = '/website/static/images/allianz-map-marker-shadow_2.png';
 		clearOverlays();
 		//console.log(k+"  "+w);
 		$.ajax({
@@ -401,6 +402,30 @@
 					var jenis = null;
 				    }
                     
+
+                    
+				    if(item.o_key == "allianz-tower")
+				    {
+					    var marker = new google.maps.Marker({
+								    position: new google.maps.LatLng(item.latitude, item.longitude),
+								    draggable: false,
+								    icon: image2,
+								    map: map2,
+								    html: data_content2
+							    });
+				    }
+				    else {
+					    var marker = new google.maps.Marker({
+								    position: new google.maps.LatLng(item.latitude, item.longitude),
+								    draggable: false,
+								    icon: image2,
+								    map: map2,
+								    html: data_content2
+							    });
+				    }
+				    markers.push(marker);
+			    });
+                
                 if (s == "found") {
                     var marker2 = new google.maps.Marker({
                         position: new google.maps.LatLng(l1, l2),
@@ -410,29 +435,15 @@
                         html: "Lokasi Anda saat ini."
                     });
                     markers.push(marker2);
+                }else if( s == "searched"){
+                    var marker2 = new google.maps.Marker({
+                        position: new google.maps.LatLng(l1, l2),
+                        draggable: false,
+                        icon: image,
+                        map: map2
+                    });
+                    markers.push(marker2);
                 }
-                    
-				    if(item.o_key == "allianz-tower")
-				    {
-					    var marker = new google.maps.Marker({
-								    position: new google.maps.LatLng(item.latitude, item.longitude),
-								    draggable: false,
-								    icon: image,
-								    map: map2,
-								    html: data_content2
-							    });
-				    }
-				    else {
-					    var marker = new google.maps.Marker({
-								    position: new google.maps.LatLng(item.latitude, item.longitude),
-								    draggable: false,
-								    icon: image,
-								    map: map2,
-								    html: data_content2
-							    });
-				    }
-				    markers.push(marker);
-			    });
 			    
 			    for(x=0;x < markers.length;x++){
 				    var marker = markers[x];
@@ -458,7 +469,7 @@
 			"success" : function(responseData){
 			    var entries = responseData;
 			    var listLoc = jQuery.parseJSON(entries);
-			    var image = '/website/static/images/blue-with-shadow.png';
+			    var image = '/website/static/images/pointer-blue.png';
 			    var marker = [];
 			    
 			    $.each(listLoc.objects, function(i, item){
@@ -564,13 +575,14 @@
 //                    alert(lat);
                     map2 = new google.maps.Map(document.getElementById("maparea2"),mapOptions);
 //					MapLoad(titik, lat, long, titikMarker);
+                    var st = "searched";    		
+                    var kant = "<?php echo $id; ?>";
+                    var wil = "-2.6806246,115.8034375,5,";
+                    MapLoad3(kant,wil,st,lat,long);
 				 }
 			});
         
-            		
-        var kant = "<?php echo $id; ?>";
-        var wil = "-2.6806246,115.8034375,5,";
-        MapLoad3(kant,wil);
+
 		}
 
     function radius(lat, lng){
