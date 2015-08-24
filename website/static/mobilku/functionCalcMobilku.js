@@ -1274,6 +1274,7 @@ $(document).ready(function(){
         $('.no_workshop_prem, .no_compre_prem, .no_earthquake_prem, .no_flood_prem, .no_med_ex_prem, .no_pa_prem, .no_passenger_prem, .no_pll_prem, .no_riot_prem, .no_terror_prem, .no_tpl_prem').html("");
         $('.no_workshop_prem').append(accounting.formatMoney(workshop_prem,'',2,'.',','));
         $('.no_compre_prem').append(accounting.formatMoney(compre_prem,'',2,'.',','));
+        console.log("compre_prem="+compre_prem+"*"+compre_tlo_persen);
         $('.no_earthquake_prem').append(accounting.formatMoney(earthquake_prem,'',2,'.',','));
         $('.no_flood_prem').append(accounting.formatMoney(flood_prem,'',2,'.',','));
         $('.no_med_ex_prem').append(accounting.formatMoney(med_ex_prem,'',2,'.',','));
@@ -1304,6 +1305,7 @@ $(document).ready(function(){
     
       function totalrecalc_custome(){
 
+        /*
         var no_workshop_prem=(parseInt(clearFormat($('.no_workshop_prem').html().replace(',00',''))));
         var no_compre_prem=(parseInt(clearFormat($('.no_compre_prem').html().replace(',00',''))));
         var no_earthquake_prem=(parseInt(clearFormat($('.no_earthquake_prem').html().replace(',00',''))));
@@ -1315,8 +1317,24 @@ $(document).ready(function(){
         var no_riot_prem=(parseInt(clearFormat($('.no_riot_prem').html().replace(',00',''))));
         var no_terror_prem=(parseInt(clearFormat($('.no_terror_prem').html().replace(',00',''))));
         var no_tpl_prem=(parseInt(clearFormat($('.no_tpl_prem').html().replace(',00',''))));
-
-        var no_totalPremium=parseInt(no_workshop_prem+no_compre_prem+no_earthquake_prem+no_flood_prem+no_med_ex_prem+no_pa_prem+no_passenger_prem+no_riot_prem+no_terror_prem+no_tpl_prem+no_pll_prem);
+        */
+        var no_workshop_prem=(parseFloat($('.no_workshop_prem').html().split('.').join("")));
+        var no_compre_prem=(parseFloat($('.no_compre_prem').html().split('.').join("")));
+        var no_earthquake_prem=(parseFloat($('.no_earthquake_prem').html().split('.').join("")));
+        var no_flood_prem=(parseFloat($('.no_flood_prem').html().split('.').join("")));
+        var no_med_ex_prem=(parseFloat($('.no_med_ex_prem').html().split('.').join("")));
+        var no_pa_prem=(parseFloat($('.no_pa_prem').html().split('.').join("")));
+        var no_passenger_prem=(parseFloat($('.no_passenger_prem').html().split('.').join("")));
+        var no_pll_prem=(parseFloat($('.no_pll_prem').html().split('.').join("")));
+        var no_riot_prem=(parseFloat($('.no_riot_prem').html().split('.').join("")));
+        var no_terror_prem=(parseFloat($('.no_terror_prem').html().split('.').join("")));
+        var no_tpl_prem=(parseFloat($('.no_tpl_prem').html().split('.').join("")));
+        console.log(parseInt(clearFormat($('.no_workshop_prem').html().replace(',00',''))));
+        console.log(parseInt(clearFormat($('.no_compre_prem').html().replace(',00',''))));
+        console.log(parseInt(clearFormat($('.no_earthquake_prem').html().replace(',00',''))));
+        console.log(parseInt(clearFormat($('.no_flood_prem').html().replace(',00',''))));
+        console.log(parseInt(clearFormat($('.no_med_ex_prem').html().replace(',00',''))));
+        var no_totalPremium=parseFloat(no_workshop_prem+no_compre_prem+no_earthquake_prem+no_flood_prem+no_med_ex_prem+no_pa_prem+no_passenger_prem+no_riot_prem+no_terror_prem+no_tpl_prem+no_pll_prem);
         $('.no_totalPremium').html('');
         $('.no_totalPremium').append(accounting.formatMoney(no_totalPremium,'',2,'.',','));
         return no_totalPremium;

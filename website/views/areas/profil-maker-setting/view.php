@@ -50,43 +50,6 @@
                         </div>    
                     </div><!--/ .page-maker--placeholder -->
 
-                        <!-- <input type="button" value ="-" onclick="zoom(0.9)"/>
-                        <input type="button" value ="+" onclick="zoom(1.1)"/>
-
-                        <div id="thediv">
-                            <img id="pic" src="<?php echo $session->src;?>" />
-                        </div> -->
-
-                    <style>
-                      /*    #thediv {
-                            margin: 0 auto;
-                            height: 315px;
-                            width: 851px;
-                            overflow: hidden;
-                            }
-
-                        #thediv img {
-                                position: relative;
-                                left: 50%;
-                                top: 50%;
-                            }*/
-                    </style>
-                   
-                    <script>
-                        // window.onload = function(){zoom(1)}
-
-                        // function zoom(zm) {
-                        // img = document.getElementById("pic")
-                        // wid = img.width
-                        // ht = img.height
-                        // img.style.width = (wid*zm) + "px"
-                        // img.style.height = (ht*zm) + "px"
-                        //     img.style.marginLeft = -(img.width/2) + "px";
-                        //     img.style.marginTop = -(img.height/2) + "px";
-                        // }
-
-                    </script>
-
                     <div id="place" class="landscape facebook-caption leftside">
                         <div id="notepad" class="facebook-caption--inner landscape-bg bg-blue">
 
@@ -248,7 +211,7 @@
                         <?php
                             $session = new Zend_Session_Namespace('srcImage');
                         ?>
-                        <div id="draggableHelper3" style="display:inline-block;">
+                        <div id="draggableHelper3" class="override-width" style="display:inline-block;">
                             <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
                         </div>    
                     </div><!--/ .facebook -->
@@ -287,7 +250,7 @@
                          <?php
                             $session = new Zend_Session_Namespace('srcImage');
                          ?>
-                         <div id="draggableHelper2" style="display:inline-block;">
+                         <div id="draggableHelper2" class="override-width" style="display:inline-block;">
                             <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
                          </div>
                     </div><!--/ .facebook -->
@@ -310,7 +273,51 @@
                          <?php
                             $session = new Zend_Session_Namespace('srcImage');
                          ?>
-                         <div id="draggableHelper-ava2-m" style="display:inline-block;">
+                         <div id="draggableHelper-ava2-m" class="override-width" style="display:inline-block;">
+                            <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
+                         </div>   
+                    </div><!--/ .facebook -->
+                </div><!--/ .page-maker--placeholder -->
+
+                <div id="ava3" class="page-maker--placeholder" style="display: none">
+                    <div id="avatar3" class="avatar w504">
+                        <div id="avacapture3" class="avatar-caption">
+                            <div class="avatar-caption--logo">
+                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
+                            </div><!--/ .avatar-caption--logo -->
+                            <div class="avatar-caption--footer">
+                                <img src="/website/static/images/profile-maker/fb.png" alt="" style="position: absolute; width: 29px; left: 19px; top: 11px;">
+                                <!-- <i class="fa fa-facebook-square fa-2x"></i> --> &nbsp;
+                                <span>Allianz Indonesia</span>&nbsp;
+                                <strong><span id="cname">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
+                            </div><!--/ .avatar-caption-footer -->
+                        </div><!--/ .avatar-caption -->
+                         <?php
+                            $session = new Zend_Session_Namespace('srcImage');
+                         ?>
+                         <div id="draggableHelper4" class="override-width-805" style="display:inline-block;">
+                            <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
+                         </div>
+                    </div><!--/ .facebook -->
+                </div><!--/ .page-maker--placeholder -->
+
+                <div id="ava3-m" class="page-maker--placeholder fluid" style="display: none">
+                    <div id="avatar3" class="avatar-m">
+                        <div id="avacapture3" class="avatar-caption">
+                            <div class="avatar-caption--logo">
+                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
+                            </div><!--/ .avatar-caption--logo -->
+                            <div class="avatar-caption--footer">
+                                <img src="/website/static/images/profile-maker/fb.png" alt="" style="position: absolute; width: 29px; left: 19px; top: 11px;">
+                                <!-- <i class="fa fa-facebook-square fa-2x"></i> --> &nbsp;
+                                <span>Allianz Indonesia</span>&nbsp;
+                                <strong><span id="cname-m">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
+                            </div><!--/ .avatar-caption-footer -->
+                        </div><!--/ .avatar-caption -->
+                         <?php
+                            $session = new Zend_Session_Namespace('srcImage');
+                         ?>
+                         <div id="draggableHelper-ava3-m" class="override-width" style="display:inline-block;">
                             <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
                          </div>   
                     </div><!--/ .facebook -->
@@ -327,8 +334,8 @@
                                     <label>Headline</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <input type="text" name="headline" id="atas" class="form-control" required> 
-                                    
+                                    <input type="text" name="headline" id="atas" maxlength="30" class="form-control headlineCover" required> 
+                                    <div id="counter2">Letters remaining: <span id="char2">20</span></div> 
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div id="input2" class="row">
@@ -337,7 +344,7 @@
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
                                     <!-- <div class="highlighter" id="overflowText"></div> -->
-                                    <textarea class="form-control" name="content" id="tengah" maxlength="200" rows="5" required></textarea>
+                                    <textarea class="form-control contentCover" name="content" id="tengah" maxlength="200" rows="5" required></textarea>
                                     <div id="counter">Letters remaining: <span id="char">180</span></div> 
                                         
                                 </div><!--/ .col-xs-12 -->
@@ -347,7 +354,7 @@
                                     <label>First Name</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <input type="text" name="first_name" id="bawah1" class="form-control" required> 
+                                    <input type="text" name="first_name" id="bawah1" class="form-control nama1Cover" required> 
                                     
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
@@ -356,7 +363,7 @@
                                     <label>Last Name</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
-                                    <input type="text" name="last_name" id="bawah2" class="form-control" required>
+                                    <input type="text" name="last_name" id="bawah2" class="form-control nama2Cover" required>
                                     
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
@@ -392,11 +399,17 @@
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
                                     <!-- <input type="button" id="gambar" class="btn btn-default btn-block" value="Ganti Gambar"> -->
-                                    <a id="gambar" href="/profil-maker/page2" class="btn btn-default btn-block">Ganti Gambar</a>
+                                    <!--<a id="gambar" href="/profil-maker/page2" class="btn btn-default btn-block">Ganti Gambar</a>-->
+                                    <a href="/profil-maker/page2" class="customHref">
+                                            <input type="button" class="btn btn-default btn-block" value="Ganti Gambar">
+                                    </a>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
                                     <!-- <input type="button" id="pilih" class="btn btn-default btn-block" value="Pilih Template"> -->
-                                    <a id="pilih" href="/profil-maker/page1" class="btn btn-default btn-block">Pilih Template</a>
+                                    <!--<a id="pilih" href="/profil-maker/page1" class="btn btn-default btn-block">Pilih Template</a>-->
+                                    <a href="/profil-maker/page1" class="customHref">
+                                            <input type="button" class="btn btn-default btn-block" value="Pilih Template">
+                                    </a>
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                         </form>
@@ -432,13 +445,22 @@
                             </div><!--/ .row -->
                             <div class="row" style="margin-top: 16px;">
                                 <div class="col-xs-6 col-sm-3">
-                                    <a id="cancel" href="#fillform" class="btn btn-default btn-block">Batal</a>
+                                    <a id="cancel" href="#fillform" class="btn btn-default btn-block">Tidak</a>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-6 col-sm-3">
-                                    <a id="download" href="#top" class="btn btn-primary btn-block">Simpan</a>    
+                                    <a id="download" href="#top" class="btn btn-primary btn-block">Ya</a>    
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
-                                    <input type="button" class="btn btn-default btn-block" value="Pilih Template">
+                                    <a href="/profil-maker/page2" class="customHref">
+                                            <input type="button" class="btn btn-default btn-block" value="Ganti Gambar">
+                                    </a>
+                                    <!--<input type="button" class="btn btn-default btn-block" value="Pilih Template">-->
+                                </div>
+                                <div class="col-xs-12 col-sm-3">
+                                    <a href="/profil-maker/page1" class="customHref">
+                                            <input type="button" class="btn btn-default btn-block" value="Pilih Template">
+                                    </a>
+                                    <!--<input type="button" class="btn btn-default btn-block" value="Pilih Template">-->
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                         </form>
@@ -459,7 +481,7 @@
                     <h4>Page Cover Landscaped Notepad</h4>
                     <img src="/website/static/images/profile-maker/Allianz Agent Page Cover Landscaped Notepad.png" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker/page2">
+                        <a href="/profil-maker/page3">
                             <input type="button" id="template1" value="Pilih" class="btn btn-primary template"/>
                         </a>
                         <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
@@ -472,7 +494,7 @@
                     <h4>Page Cover Portrait Notepad</h4>
                     <img src="/website/static/images/profile-maker/Allianz Agent Page Cover Portrait Notepad.png" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker/page2">
+                        <a href="/profil-maker/page3">
                             <input type="button" id="template2" value="Pilih" class="btn btn-primary template"/>
                         </a>
                         <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
@@ -485,7 +507,7 @@
                     <h4>Page Cover Square Notepad</h4>
                     <img src="/website/static/images/profile-maker/Allianz Agent Page Cover Square Notepad.png" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker/page2">
+                        <a href="/profil-maker/page3">
                             <input type="button" id="template3" value="Pilih" class="btn btn-primary template"/>
                         </a>
                         <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
@@ -498,7 +520,7 @@
                     <h4 id="News Feed Post Template">News Feed Post Template</h4>
                     <img src="/website/static/images/profile-maker/Agent Facebook News Feed Post Template.png" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker/page2">
+                        <a href="/profil-maker/page3">
                             <input type="button" id="template4" value="Pilih" class="btn btn-primary template"/>
                         </a>
                         <!--<a href="/profil-maker-create" class="btn btn-primary">Pilih</a>-->
@@ -511,7 +533,7 @@
                     <h4>Profile Picture</h4>
                     <img src="/website/static/images/profile-maker/Allianz Agent Facebook Profile Picture.png" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker/page2">
+                        <a href="/profil-maker/page3">
                             <input type="button" id="template5" value="Pilih" class="btn btn-primary template"/>
                         </a>
                         <!--<a href="/profil-maker/2" class="btn btn-primary">Pilih</a>-->
@@ -524,7 +546,7 @@
                     <h4>Timeline Post Template</h4>
                     <img src="/website/static/images/profile-maker/Allianz Facebook Timeline Post Template.png" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker/page2"> 
+                        <a href="/profil-maker/page3"> 
                             <input type="button" id="template6" value="Pilih" class="btn btn-primary template"/>
                         </a>
                         <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
@@ -538,33 +560,55 @@
 
         <div class="row">
             <div class="col-xs-12">
-
-                <div id="imaged"></div>
+                    <div id="imaged"></div>
 
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
 
     </div><!--/ .container -->
 </section><!--/ .profile-maker -->
+                    
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
 
-                    <script>
-                        //Draggable option
-                         $('#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper-m, #draggableHelper-ava1-m, #draggableHelper-ava2-m').draggable();
-                         $('#timelineBGload, .ava-img').resizable(
-                            {
-                                aspectRatio: true,
-                                handles: 'ne, se, sw, nw, n, e, s, w'
-                            }
-                        );
-                        
-                        //Resize available
-                        $('.ui-resizable-handle').fadeOut();
-                        $( ".ui-resizable-handle, img#timelineBGload, img.ava-img" )
-                          .mouseenter(function() {
+<script>
+
+     //Draggable & Resizable option
+    $(function() {
+        $( "#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper4" ).resizable({
+            aspectRatio: true,
+            handles: 'ne, se, sw, nw, n, e, s, w'
+        });
+        $( "#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper4" ).draggable();
+    });
+
+    //Resize available
+    $('.ui-resizable-handle').css("display", "none");
+    $( ".ui-resizable-handle, img#timelineBGload, img.ava-img" )
+            .mouseenter(function() {
                             $('.ui-resizable-handle').fadeIn(100);
-                          })
-                          .mouseleave(function() {
+                        })
+            .mouseleave(function() {
                             $('.ui-resizable-handle').fadeOut(100);
-                          });
+                        });
+                 
+    $(document).ready(function(){
+        $(".template").on("click",function(){
+        var ket = $(this).parent().parent().parent().find("h4").text();
+        var id = $(this).attr("id");
+            setCookie("template", id);
+            setCookie("keterangan", ket);
+        });
+    });
+                 
+    function getId(obj) {
+    var id=obj;
+        //alert("idnya"+id);
+        setCookie("template", id);
+        //document.cookie = id;
+        //var x = document.cookie
+        //alert(x);
+        //alert(id);
+    }
                         
-                      </script>
+</script>

@@ -44,9 +44,40 @@ class ProfilMakerController extends Website_Controller_Action {
 		$register->setO_parentId($getId->o_id);
 		$register->setIndex(0);
 		$register->setPublished(1);
-		$register->save();
-
 		
+		// Asset folder for the uploaded images
+		$assetFolder = "/profil-maker/upload";
+		
+		// The key is the unique name of an asset that is also used in the asset tree
+		//$nameFoto = str_replace(" ","-",strtolower($_FILES["uploadFoto"]["name"]));
+		$nameFoto = $_POST['filename'].".png";
+		$key = Pimcore_File::getValidFilename($nameFoto);
+		
+		// Check if there is alraedy an image with the same key
+		if(!$asset = Asset::getByPath($assetFolder . "/" . $key)) {
+		   $asset = new Asset_Image();
+		}
+		else{
+			$asset = new Asset_Image();
+		}
+		
+		// Optionally set the creation date
+		$asset->setCreationDate ( time() );
+		
+		// Optionally set the user
+		$asset->setUserOwner (1);
+		$asset->setUserModification (1);
+		
+		// Set the asset's parent id, which is the asset folder for the uploaded images
+		$asset->setParentId(Asset_Folder::getByPath($assetFolder)->getId());
+		
+		// That's the key
+		$asset->setFilename($nameFoto);
+		//$asset->setData(IMAGE_SOURCE);
+		$asset->save();
+		
+		$register->setImage(Asset_Image::getById($asset->id));
+		$register->save();
 	}
 
 	public function saveImageAction(){

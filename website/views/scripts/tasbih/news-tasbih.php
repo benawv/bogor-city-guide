@@ -10,6 +10,23 @@
 <!--<script src="/website/ajfc/js/javascripts.js"></script> -->
 
 <style>
+    
+    @media (max-width : 480px)
+    .sck480{
+       display:inline-block !important;
+    }
+    .scl480{
+       display:none !important;
+    }
+
+    @media (min-width : 480px){
+    .sck480{
+       display:none !important;
+    }
+    .scl480{
+       display:inline-block !important;
+    }
+    }
 
     .page-wrapper-outer .sidebar
     {
@@ -167,6 +184,9 @@
         print_r($items);
         echo "</pre>";*/
 ?>
+<script>
+
+</script>
 <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
 
@@ -280,11 +300,11 @@
 "></i></a>
 								</div>
                     </h5>
-                        <p class="meta">Posted on<span id="date" style="display:block;"> <?php echo $items->newsdate; ?></span></p>
+                        <font class="meta">Posted on<span id="date" style="display:block;"> <?php echo $items->newsdate; ?></span></font>
                                 
                     </div><!--/ .main-content--header -->
 
-                    <p id="desc" style="display:block;"><?php echo $items->content; ?></p>
+                    <div id="desc" style="display:block;"><?php echo $items->content; ?></div>
                     <br/>
                     <p>Untuk informasi lebih lengkap mengenai produk allianz tasbih klik :</p>
                     <button class="btn btn-primary" onclick="location.href='/produk/asuransi-syariah/tasbih/info-produk';" type="button">Informasi Produk Allianz Tasbih</button>
@@ -324,6 +344,7 @@
     </div><!--/ .page-wrapper-outer -->
 
 
+<?php } ?>
 <script type="text/javascript">
     
 
@@ -351,7 +372,8 @@
 
     }else{
         columnHeight=columnHeight-88;
-        var maincontent=$( ".main-content" ).height(); 
+        var maincontent=$(".main-content").height(); 
+        //alert(maincontent);
         $('.sidebar').css('height', columnHeight+135 + 'px');
         $('.page-wrapper-outer').height(maincontent);
     }  
@@ -359,14 +381,18 @@
 $( document ).ready(function(){
 
 //alert('TEST');
-    var description = "<?php echo $items->content; ?>";
-    var desc = description.substring(3,80)+"...";
+    var description = $('div').find('p').text();
+    //var desc = $("div.desc").find('p');
+    //alert(desc);
+    var desc = description.substring(0,50)+"...";
+    var postDesc = description.substring(0,400)+"...";
     var judul = $('#judul').html();
     var title = judul.toLowerCase();
     var image = document.getElementById("backart").src;
-    var url = window.location.host+window.location.pathname;
+    var link = window.location.pathname;
+    var url = window.location.hostname+window.location.pathname;
     var tanggal = $('#date').html();
-    
+    //alert(url);
         $('#sendingemail').click(function() {
         var email = $('#email').val();
         var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -380,9 +406,9 @@ $( document ).ready(function(){
                 data: {
                     postImg : image,
                     postTitle : judul,
-                    postDesc : desc,
+                    postDesc : postDesc,
                     postTanggal : tanggal,
-                    postLink : url,
+                    postLink : link,
                     email :email
                 },
                 success: function(data){
@@ -437,4 +463,3 @@ $( document ).ready(function(){
 
 
 </script>
-<?php } ?>

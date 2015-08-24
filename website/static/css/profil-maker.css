@@ -2,6 +2,12 @@
 .col-md-20 {
   width: 20%;
 }
+.w504 {
+  width: 504px !important;
+  max-width: 504px !important;
+  height: 504px !important;
+  max-height: 504px !important;
+}
 label.error {
   padding: 5px 0;
   font-size: 13px;
@@ -71,6 +77,8 @@ label.error {
   height: 230px;
   color: #FFFFFF;
 }
+.override-width { width: 620px; max-width: 620px; }
+.override-width-805 { width: 805px; max-width: 805px; }
 span#nama { padding: 0 20px; font-size: 14px; word-wrap: break-word; }
 span#nama-m { padding: 0 20px; font-size: 10px; word-wrap: break-word; }  
 span#konten-m { word-wrap: break-word; font-size: 9px; } 
@@ -98,7 +106,7 @@ img#timelineBGload:hover {
   cursor: inherit;
   display: block;
 }
-#counter {
+#counter, #counter2 {
   font-size: 14px;
   padding: 5px 0;
   color: #757575;
@@ -440,7 +448,8 @@ section.profile-maker {
       /*border: solid 1px #ccc;*/
       overflow: hidden;
       /* .avatar-caption */ }
-       section.profile-maker .page-maker--placeholder .avatar-m {
+
+    section.profile-maker .page-maker--placeholder .avatar-m {
       display: block;
       position: relative;
       width: 100%;
@@ -453,6 +462,7 @@ section.profile-maker {
       /*border: solid 1px #ccc;*/
       overflow: hidden;
       /* .avatar-caption */ }
+    
       section.profile-maker .page-maker--placeholder .avatar > img, 
       section.profile-maker .page-maker--placeholder .avatar-m > img,
       section.profile-maker .page-maker--placeholder .avatar #draggableHelper2 .ui-wrapper > img,

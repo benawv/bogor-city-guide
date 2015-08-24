@@ -563,9 +563,9 @@ $(document).keyup(function(e){
                 <div class="wizard-header"></div>
 
                 <ul>
-                    <li class="first"><a href="#data-mobil" data-toggle="tab"><i class="fa fa-car fa-2x"></i> Data Mobil</a></li>
-                    <li class="second"><a href="#jenis-asuransi" data-toggle="tab"><i class="fa fa-pencil-square-o fa-2x"></i> Jenis Asuransi</a></li>
-                    <li class="third"><a href="#hasil-kalkulasi" data-toggle="tab"><i class="fa fa-calculator fa-2x"></i> Hasil Kalkulasi</a></li>
+                    <li class="first"><a href="#data-mobil" data-toggle="tab"><i class="fa fa-car fa-2x"></i>&nbsp;&nbsp;&nbsp;Data Mobil</a></li>
+                    <li class="second"><a href="#jenis-asuransi" data-toggle="tab"><i class="fa fa-pencil-square-o fa-2x"></i>&nbsp;&nbsp;&nbsp;Jenis Asuransi</a></li>
+                    <li class="third"><a href="#hasil-kalkulasi" data-toggle="tab"><i class="fa fa-calculator fa-2x"></i>&nbsp;&nbsp;&nbsp;Hasil Kalkulasi</a></li>
                 </ul>
 
                 <div class="tab-content">
@@ -1595,16 +1595,35 @@ $(document).keyup(function(e){
     };
 
     $(document).ready(function(){
-
+        $("#periode").on("change",function(){
+            var a = new Date();
+            var b = new Date($(this).val());
+            tgla = a.getFullYear()+a.getMonth()+a.getDate();
+            tglb = b.getFullYear()+b.getMonth()+b.getDate();
+            if(b < a){
+                var c=new Date(a);
+                var year1=c.setDate(c.getDate() - 1);
+                var newdate=new Date(year1);
+                $( "#periode-last" ).val((newdate.getMonth() + 1)+'/'+newdate.getDate()+'/'+(newdate.getFullYear()+1));
+                $(this).val(a.getMonth()+'/'+a.getDate()+'/'+a.getFullYear());
+            }else{
+                var c=new Date(b);
+                var year1=c.setDate(c.getDate() - 1);
+                var newdate=new Date(year1);
+                $( "#periode-last" ).val((newdate.getMonth() + 1)+'/'+newdate.getDate()+'/'+(newdate.getFullYear()+1));
+            }
+            // console.log(tgla+"-"+tglb);
+        });
         $( "#periode" ).datepicker({
             changeMonth: true,
             changeYear: true,
-            yearRange: "-100:+0",
+            yearRange: "+0:+5",
+            minDate : 0,
             onSelect: function(date) {
             var a=new Date(date);
-            var year1=a.setFullYear(a.getFullYear() + 1);
+            var year1=a.setDate(a.getDate() - 1);
             var newdate=new Date(year1);
-            $( "#periode-last" ).val((newdate.getMonth() + 1)+'/'+newdate.getDate()+'/'+newdate.getFullYear());
+            $( "#periode-last" ).val((newdate.getMonth() + 1)+'/'+newdate.getDate()+'/'+(newdate.getFullYear()+1));
           }
         });
 
