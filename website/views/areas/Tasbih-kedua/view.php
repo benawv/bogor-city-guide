@@ -292,7 +292,7 @@
                     
                         <?php
 
-                                    $getProv=new Object_TasbihProvinsi_List();
+                                    $getProv=new Object_Provinsi_List();
 //                                    echo <pre>;
                                     $getProv->setOrderKey("provinsi");
                                     $getProv->setOrder("asc");?>
