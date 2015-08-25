@@ -138,12 +138,12 @@
                             
                             </strong></h3>
                         <center><strong><h3 style=" color:black; text-align:center;"> Perhitungan ilustrasi produk Allianz Tasbih sudah dikirimkan ke alamat email Anda.</strong></h3></center>
-                        <h3 style=" color:black; text-align:center;"><strong>Temukan agen terdekat: </strong></h3>
-                       <br />
+                        <h3 style=" color:black; text-align:center;"><strong>Total premi yang tertera belum disesuaikan dengan profil risiko Anda, silakan hubungi Agen untuk mendapatkan ilustrasi yang sesuai dengan profil risiko Anda. Klik tombol di bawah ini, jika Anda ingin mencari lokasi agen terdekat dari lokasi Anda.</strong></h3>
                         <center>
                             <!--
                             <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen">
                             -->
+                            <br/>
                             <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" style="background:#5F259F !important;"><i class="fa fa-users"></i> Lokasi Agen</button>
                         </center>
                     </div>
