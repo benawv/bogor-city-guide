@@ -39,6 +39,12 @@
 	<?php
 	    }
 	    else{
+			
+		if($this->document->getProperty('script')){
+			echo "<script>".$this->document->getProperty('script')."</script>";
+			echo '<noscript><img width="1" height="1" style="border:0" src="'.$this->document->getProperty('noscript').'" /></noscript>';
+		}
+			
 		if($this->document->getTitle()) {
 		    // use the manually set title if available
 		    $this->headTitle()->set($this->document->getTitle());
