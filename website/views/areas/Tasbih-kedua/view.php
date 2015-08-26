@@ -271,6 +271,9 @@
                                     <option value="Koran">Koran</option>
                                     <option value="Teman/kerabat">Teman/Kerabat</option>
                                     <option value="Agen">Agen Asuransi</option>
+                                    <option value="Facebook">Facebook</option>
+                                    <option value="Google">Google</option>
+                                    <option value="Youtube">Youtube</option>
                                 </select>
                                 <label id="notif-informasi" style="display:none; color: #f00;">
                                     Mohon maaf, informasi yang Anda masukan belum sesuai dengan ketentuan ilustrasi
