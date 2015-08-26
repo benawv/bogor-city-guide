@@ -18,6 +18,6 @@
 	<div class="wrapper-special clearfix">
 		<div id="quicklinks">
 			<?php echo $this->areablock('bawah-news', array(
-					"allowed" => array("newsfeed-ajfc")))?>
+					"allowed" => array("socmed-ajfc")))?>
 		</div>
 	</div><!-- .wrapper-special -->
