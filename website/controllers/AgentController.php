@@ -102,7 +102,7 @@ class AgentController extends Website_Controller_Action {
 		$kantor = Object_AgentLocatorKantor::getList($kondisi1);
 		
 		$kondisi2 = array("condition" => "kantor = ',".$id.",'",
-						 "limit" => 6);
+						 "limit" => 10);
 		$agent = Object_AgentLocatorData::getList($kondisi2);
 		if(count($kantor) == 0)
 		{
