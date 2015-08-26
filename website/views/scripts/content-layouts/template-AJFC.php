@@ -15,9 +15,4 @@
 
 <?php echo $this->areablock('tengah-ajfc',  array('allowed' => array('tombol-ajfc','kalender-ajfc'))) ?>
 
-	<div class="wrapper-special clearfix">
-		<div id="quicklinks">
-			<?php echo $this->areablock('bawah-news', array(
-					"allowed" => array("socmed-ajfc")))?>
-		</div>
-	</div><!-- .wrapper-special -->
+<?php echo $this->areablock('bawah-news', array("allowed" => array("socmed-ajfc")))?>
