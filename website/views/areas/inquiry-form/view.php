@@ -266,13 +266,13 @@
                             <select class="form-control" name="provinsi" id="provinsi_id" required>
                                 <?php
 
-                                    $getProv=new Object_MarketingOfficeWilayah_List();
-                                    $getProv->setOrderKey("namaWilayah");
+                                    $getProv=new Object_Provinsi_List();
+                                    $getProv->setOrderKey("provinsi");
                                     $getProv->setOrder("asc");?>
                                 <option value = "Pilih">-Pilih-</option>
                                     <?php foreach($getProv as $items){
                                 ?>
-                                <option value= "<?php echo $items->o_id; ?> "><?php echo $items->namaWilayah; ?></option>
+                                <option value= "<?php echo $items->o_id; ?> "><?php echo $items->provinsi; ?></option>
                                 <?php } ?>
                             </select>
                             <label id="notifProvinsi" style="display:none; color: #f00;">

@@ -82,6 +82,8 @@
             $nohp = $_POST["nohp"];
 			$kat = $_POST["kategori"];
             $info = $_POST["informasi"];
+            $kota = $_POST["kota"];
+            $provinsi = $_POST["provinsi"];
 
 
             $session = new Zend_Session_Namespace('tasbih');
@@ -89,6 +91,8 @@
             $session->email = $email;
             $session->nohp = $nohp;
             $session->info = $info;
+            $session->kota= $kota;
+            $session->provinsi = $provinsi;
             $session->emailFrom = "tasbih_calc";
             $session->setExpirationSeconds( 600, 'tasbih' );
 
@@ -145,6 +149,8 @@
 			$cookie->setMassaPembayaranKontribusi($Kontribusi);
 			$cookie->setKontribusiBerkala($Calculation);   
             $cookie->setInformasi($info);
+            $cookie->setKota($kota);
+            $cookie->setProvinsi($provinsi);
 			$cookie->setO_key('premium_tasbih_'.strtotime(date("YmdHis")));
 			$cookie->setO_parentId($getId->o_id);
 			$cookie->setO_index(0);
@@ -194,7 +200,9 @@
 							'frek' => $Frekuensi,
 							'JK' => $JK,
 							'nohp' => $nohp,
-                            'info' => $info
+                            'info' => $info,
+                            'kota' => $kota,
+                            'provinsi' => $provinsi
 							);
 			/*
 			$systemConfig = Pimcore_Config::getSystemConfig()->toArray();

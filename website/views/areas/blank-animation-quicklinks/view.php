@@ -20,6 +20,9 @@
 		background: none repeat scroll 0 0 #003781 !important;
 		color: #FFFFFF !important;
 	}
+	.linkblock-jiwa2quicklinks1 .nav{
+		padding-left: 30px !important;
+	}
 </style>
 <?php }?>
 <!-- Accordion -->
@@ -59,7 +62,9 @@
 				</div>		
 				<div id="tab-jiwa" class="tab-content">
 					<!-- <h3>Asuransi Jiwa</h3> -->
-					
+					<?php while ($this->block("linkblock-jiwa2")->loop()) {
+						  echo "<p>".$this->input("input-jiwa",array("width" => 240))."</p>";
+					?>
 					<ul class="nav">
 						<?php while ($this->block("linkblock-jiwa")->loop()) { ?>
 						    <li><?php echo $this->link("myLink-jiwa"); ?></li>
@@ -74,6 +79,7 @@
 						<li><a href="product-detail-allianz-taproku.php">TaproKu</a></li>
 						-->
 					</ul>
+					<?php }?>
 				</div>
 				<div id="tab-kumpulan" class="tab-content">
 					<!-- <h3>Asuransi Kumpulan</h3> -->

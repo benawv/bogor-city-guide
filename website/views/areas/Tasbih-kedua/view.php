@@ -271,6 +271,9 @@
                                     <option value="Koran">Koran</option>
                                     <option value="Teman/kerabat">Teman/Kerabat</option>
                                     <option value="Agen">Agen Asuransi</option>
+                                    <option value="Facebook">Facebook</option>
+                                    <option value="Google">Google</option>
+                                    <option value="Youtube">Youtube</option>
                                 </select>
                                 <label id="notif-informasi" style="display:none; color: #f00;">
                                     Mohon maaf, informasi yang Anda masukan belum sesuai dengan ketentuan ilustrasi
@@ -278,6 +281,43 @@
                             </div><!--/ .col-md-4 -->
                         </div><!--/ .form-group -->
                         
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label><strong>Kota</strong></label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <input type="email" class="form-control" id="kota" name="kota" placeholder="Kota Anda">
+                                <label id="notifkota" style="display:none; color: #f00;">
+                                    Mohon maaf kota yang Anda masukkan belum benar
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
+                    
+                        <?php
+
+                                    $getProv=new Object_Provinsi_List();
+//                                    echo <pre>;
+                                    $getProv->setOrderKey("provinsi");
+                                    $getProv->setOrder("asc");?>
+                                    
+<!--                                    print_r($getProv);-->
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label><strong>Provinsi</strong></label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <select class="form-control" name="provinsi" id="provinsi">
+                                    <option value = "pilih">-Pilih-</option>  
+                                <?php foreach($getProv as $items){
+                                ?>
+                                    <option value= "<?php echo $items->o_id; ?> "><?php echo $items->provinsi; ?></option>
+                                <?php } ?>
+                                </select>
+                                <label id="notif-provinsi" style="display:none; color: #f00;">
+                                    Mohon maaf, provinsi yang Anda masukan belum sesuai dengan ketentuan ilustrasi
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
                         <?php
                             if($sessionTasbih->kat == "" || $sessionTasbih->kat == null || $sessionTasbih->kat == " ")
                             {
@@ -499,11 +539,13 @@
             var nama = $('#nama').val();
             var email = $('#email').val();
             var nohp = $('#nohp').val();
+            var kota = $('#kota').val();
             var informasi = $('#informasi option:Selected').val();
+            var provinsi = $('#provinsi option:Selected').html();
             
             //alert(informasi);
 
-            if( nama == '' ||email == '' || nohp == '' || nohp.length <= 8 || informasi == 'pilih'){
+            if( nama == '' ||email == '' || nohp == '' || nohp.length <= 8 || informasi == 'pilih' || provinsi == 'pilih' || kota == ''){
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
                     if( email == '' )
@@ -512,6 +554,10 @@
                         document.getElementById('notifNoHP').style.display='block';
                     if( informasi == 'pilih')
                         document.getElementById('notif-informasi').style.display='block';
+                    if( kota == '' )
+                        document.getElementById('notifkota').style.display="block";
+                    if( provinsi == 'pilih')
+                        document.getElementById('notif-provinsi').style.display="block";
                     alert("Mohon Periksa Inputan Anda");
             }else{
 
@@ -523,7 +569,9 @@
                               'email' : email,
                               'nohp' : nohp,
                               'kategori' : '<?php echo $kat;?>',
-                              'informasi' : informasi
+                              'informasi' : informasi,
+                              'kota' :kota,
+                              'provinsi' : provinsi
                               },
                       success  : function(data){
                         //console.log(data);
