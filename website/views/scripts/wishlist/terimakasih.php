@@ -34,3 +34,10 @@ document.write('<scr'+'ipt src="HTTP://bs.serving-sys.com/Serving/ActivityServer
 <noscript>
 <img width="1" height="1" style="border:0" src="HTTP://bs.serving-sys.com/Serving/ActivityServer.bs?cn=as&amp;ActivityID=650380&amp;ns=1"/>
 </noscript>
+
+<?php
+	if($this->document->getProperty('script')){
+		echo "<script>".$this->document->getProperty('script')."</script>";
+		echo '<noscript><img width="1" height="1" style="border:0" src="'.$this->document->getProperty('noscript').'" /></noscript>';
+	}
+?>
