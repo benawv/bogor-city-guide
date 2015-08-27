@@ -1058,7 +1058,7 @@ $(document).keyup(function(e){
                                                                         <td style="background: #e2e3e3;">Total Premium</td>
                                                                         <!-- <td></td>
                                                                         <td></td> -->
-                                                                        <td style="background: #e2e3e3;" class='totalPremium position-text2'></td>
+                                                                        <td style="background: #e2e3e3;" class='totalPremium2 position-text'></td>
                                                                     </tr>
                                                                 </tfoot>
                                                             </tbody>
