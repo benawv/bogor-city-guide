@@ -11,15 +11,4 @@
 <script src="/website/ajfc/js/zabuto_calendar.min.js"></script>
 <script src="/website/ajfc/js/javascripts.js"></script>
 
-<?php echo $this->areablock('halaman-ajfc', array('allowed' => array('sudah-submit','pendaftaran','daftar-peserta','thanks-page','expire-page','home-ajfc','table-text','table-li','proses-seleksi','galeri-ajfc','header-ajfc')))?>
-
-<?php echo $this->areablock('container-ajfc',  array('allowed' => array('tombol-ajfc','kalender-ajfc'))) ?>
-
-	<div class="wrapper-special clearfix">
-		<?php echo $this->areablock('socmed-feed', array(
-					"allowed" => array("socmed-ajfc")))?>
-		<div id="quicklinks">
-			<?php echo $this->areablock('update-news', array(
-					"allowed" => array("newsfeed-ajfc")))?>
-		</div>
-	</div><!-- .wrapper-special -->
+<?php echo $this->areablock('halaman-ajfc', array('allowed' => array('sudah-submit','pendaftaran','daftar-peserta','thanks-page','expire-page','home-ajfc','table-text','table-li','proses-seleksi','galeri-ajfc')))?>
