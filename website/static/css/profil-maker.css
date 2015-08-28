@@ -8,6 +8,13 @@
   height: 504px !important;
   max-height: 504px !important;
 }
+.w300{
+  width: 300px !important;
+  max-width: 300px !important;
+  height: 300px !important;
+  max-height: 300px !important;
+}
+
 label.error {
   padding: 5px 0;
   font-size: 13px;
@@ -526,6 +533,6 @@ section.profile-maker {
     section.profile-maker .page-maker--placeholdermain.fluid { height: 180px; }  
     .leftside { left: 10%; }
     .rightside { right: 10%; }
-    /*.ui-resizable-handle { display: block !important; }*/
+    .ui-resizable-handle { display: none !important; }
 
 }

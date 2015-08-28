@@ -87,7 +87,7 @@
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                 <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users" style="background:#5F259F;">
-                    <h4 style="font-size:18px"><small>Lokasi Agen</small></h4>
+                    <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                 </a>
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
@@ -206,7 +206,7 @@
     <div class="description">
 
         <div class="header-calc">
-            <h1>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
+            <h1><i class="fa fa-calculator" style="font-size:20px !important; padding-right: 10px !important;"></i>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
         </div><!--/ .header-calc -->
 
         <div class="content-calc">
@@ -281,17 +281,7 @@
                             </div><!--/ .col-md-4 -->
                         </div><!--/ .form-group -->
                         
-                        <div class="form-group">
-                            <div class="col-md-4">
-                                <label><strong>Kota</strong></label>
-                            </div><!--/ .col-md-4 -->
-                            <div class="col-md-4">
-                                <input type="email" class="form-control" id="kota" name="kota" placeholder="Kota Anda">
-                                <label id="notifkota" style="display:none; color: #f00;">
-                                    Mohon maaf kota yang Anda masukkan belum benar
-                                </label>
-                            </div><!--/ .col-md-4 -->
-                        </div><!--/ .form-group -->
+
                     
                         <?php
 
@@ -318,6 +308,23 @@
                                 </label>
                             </div><!--/ .col-md-4 -->
                         </div><!--/ .form-group -->
+                    
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label><strong>Kota</strong></label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <select class="form-control" name="kota" id="kota">
+                                    <option value = "pilih">-Pilih-</option>  
+                                </select>
+                                <label id="notifkota" style="display:none; color: #f00;">
+                                    Mohon maaf, kota yang Anda masukan belum sesuai dengan ketentuan ilustrasi
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
+                    
+                    
+                    
                         <?php
                             if($sessionTasbih->kat == "" || $sessionTasbih->kat == null || $sessionTasbih->kat == " ")
                             {
@@ -495,6 +502,8 @@
         /**
          * Calculator Pop-Up
          */
+        
+        
 
         if( $( 'a.calc-overlay-trigger' ).length > 0 )
         {
@@ -525,6 +534,41 @@
         /*
          * jQueryUI DatePicker
          */
+        
+$('#provinsi').change(function(){
+//        alert('test');
+        var prov = $('#provinsi option:Selected').html();
+//        alert(prov);
+        if(prov == "-Pilih-"){
+            document.getElementById('notifkota').style.display="block";
+        }else{
+//            alert('test');
+            document.getElementById('notifkota').style.display="none";
+
+            $.ajax({
+                    url      : '/getprovinsi/',
+                    type     : 'POST',
+                    data     : {
+                                'prov' : prov
+                                },
+                        success  : function(data){
+    //                        console.log(data);
+                            var entries = data;
+                            var listLoc = jQuery.parseJSON(entries);
+                            //console.log(listLoc);
+                            $('#kota option').remove();
+                            $('#kota').append('<option>-Pilih-</option>');
+                            $.each(listLoc, function(i, item){
+    //                            console.log(i+"  "+item);
+                                $("#kota").append('<option value='+item.Kota+'>'+item.Kota+'</option>');
+                            });
+                       
+                        }
+                    
+            });
+//            location.reload();
+        }
+    });        
 
         $('#Submit').click(function() {
             
@@ -539,13 +583,13 @@
             var nama = $('#nama').val();
             var email = $('#email').val();
             var nohp = $('#nohp').val();
-            var kota = $('#kota').val();
+            var kota = $('#kota option:Selected').html();
             var informasi = $('#informasi option:Selected').val();
             var provinsi = $('#provinsi option:Selected').html();
             
             //alert(informasi);
 
-            if( nama == '' ||email == '' || nohp == '' || nohp.length <= 8 || informasi == 'pilih' || provinsi == 'pilih' || kota == ''){
+            if( nama == '' ||email == '' || nohp == '' || nohp.length <= 8 || informasi == 'pilih' || provinsi == '-Pilih-' || kota == '-Pilih-'){
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
                     if( email == '' )
@@ -554,9 +598,9 @@
                         document.getElementById('notifNoHP').style.display='block';
                     if( informasi == 'pilih')
                         document.getElementById('notif-informasi').style.display='block';
-                    if( kota == '' )
+                    if( kota == '-Pilih-' )
                         document.getElementById('notifkota').style.display="block";
-                    if( provinsi == 'pilih')
+                    if( provinsi == '-Pilih-')
                         document.getElementById('notif-provinsi').style.display="block";
                     alert("Mohon Periksa Inputan Anda");
             }else{

@@ -75,6 +75,30 @@
             
         }*/
         
+        public function getprovAction(){
+
+            $prov = $_POST["prov"];
+//            $session = new Zend_Session_Namespace('provinsi');
+//            $session->prov = $prov;
+            $item = array();
+            $i =0;
+            $getProv=new Object_Kota_List();
+//          echo <pre>;
+            $getProv->setCondition("provinsi='".$prov."'");
+            $getProv->setOrderKey("kota");
+            $getProv->setOrder("asc");
+//            print_r($getProv);
+//            die();
+            foreach($getProv as $items){
+                $item[$i] = array(
+                                "Kota" => $items->kota
+                            );
+                $i++;
+            }
+            
+            echo json_encode($item);
+        }
+        
         public function sendemailAction(){
 			
             $nama = $_POST["nama"];
@@ -212,7 +236,7 @@
 			*/
 			$mail = new Pimcore_Mail();
 			$mail->setSubject("Konfirmasi Hasil Kalkulasi Ilustrasi Produk Allianz Tasbih");
-			$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+			$mail->setFrom("no-reply@allianz.co.id","Allianz Tasbih");
 			$mail->setDocument($document);
 			$mail->setParams($params);
 			$mail->addTo($email);

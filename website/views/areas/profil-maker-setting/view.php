@@ -202,7 +202,7 @@
                 </div> <!--/ #timelineContainer --> 
 
                 <div id="ava1" class="page-maker--placeholder" style="display: none">
-                    <div id="avatar1" class="avatar">
+                    <div id="avatar1" class="avatar w300">
                         <div id="avacapture1" class="avatar-caption">
                             <div class="avatar-caption--logo">
                                     <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
@@ -219,7 +219,7 @@
 
                 <!-- when mobile condition -->
                 <div id="ava1-m" class="page-maker--placeholder fluid" style="display: none">
-                    <div id="avatar1" class="avatar-m">
+                    <div id="avatar1" class="avatar-m w300">
                         <div id="avacapture1" class="avatar-caption">
                             <div class="avatar-caption--logo">
                                 <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
