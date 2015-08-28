@@ -423,7 +423,7 @@
                                                     <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td colspan="3"><p><center><strong>Total premi yang tertera belum disesuaikan dengan profil risiko Anda, silakan hubungi Agen untuk mendapatkan ilustrasi yang sesuai dengan profil risiko Anda. Klik tombol di bawah ini, jika Anda ingin mencari lokasi agen terdekat dari lokasi Anda.</strong></center></p></td>
+                                                    <td colspan="3"><p><center style="font-size:12px;">Total premi yang tertera belum disesuaikan dengan profil risiko Anda, silakan hubungi Agen untuk mendapatkan ilustrasi yang sesuai dengan profil risiko Anda. Klik tombol di bawah ini untuk mencari agen terdekat dari lokasi Anda.</center></p></td>
                                                 </tr>';
                                     $content.= "</table>";
                                 }

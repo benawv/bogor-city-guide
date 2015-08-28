@@ -88,7 +88,7 @@
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;  margin:auto; !important">
                     <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users" style="background:#5F259F;">
-                        <h4 style="font-size:18px"><small>Lokasi Agen</small></h4>
+                        <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
 
@@ -137,14 +137,15 @@
                                 ?>
                             
                             </strong></h3>
-                        <center><strong><h3 style=" color:black; text-align:center;"> Perhitungan ilustrasi produk Allianz Tasbih sudah dikirimkan ke alamat email Anda.</strong></h3></center>
-                        <h3 style=" color:black; text-align:center;"><strong>Total premi yang tertera belum disesuaikan dengan profil risiko Anda, silakan hubungi Agen untuk mendapatkan ilustrasi yang sesuai dengan profil risiko Anda. Klik tombol di bawah ini, jika Anda ingin mencari lokasi agen terdekat dari lokasi Anda.</strong></h3>
+                        <center style="font-size: 12px;"><h3 style=" color:black; text-align:center;margin-top: 7px;"> Perhitungan ilustrasi produk Allianz Tasbih sudah dikirimkan ke alamat email Anda.</h3>
+                        <h3 style=" color:black; text-align:center;">Total premi yang tertera belum disesuaikan dengan profil risiko Anda, silakan hubungi Agen untuk mendapatkan ilustrasi yang sesuai dengan profil risiko Anda. Klik tombol di bawah ini untuk mencari agen terdekat dari lokasi Anda.</h3>
+                        </center>
                         <center>
                             <!--
                             <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen">
                             -->
                             <br/>
-                            <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" style="background:#5F259F !important;"><i class="fa fa-users"></i> Lokasi Agen</button>
+                            <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" style="background:#5F259F !important;"><i class="fa fa-users"></i> Cari Agen</button>
                         </center>
                     </div>
 
