@@ -533,6 +533,6 @@ section.profile-maker {
     section.profile-maker .page-maker--placeholdermain.fluid { height: 180px; }  
     .leftside { left: 10%; }
     .rightside { right: 10%; }
-    /*.ui-resizable-handle { display: block !important; }*/
+    .ui-resizable-handle { display: none !important; }
 
 }
