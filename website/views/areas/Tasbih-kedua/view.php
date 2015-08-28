@@ -556,6 +556,8 @@ $('#provinsi').change(function(){
                             var entries = data;
                             var listLoc = jQuery.parseJSON(entries);
                             //console.log(listLoc);
+                            $('#kota option').remove();
+                            $('#kota').append('<option>-Pilih-</option>');
                             $.each(listLoc, function(i, item){
     //                            console.log(i+"  "+item);
                                 $("#kota").append('<option value='+item.Kota+'>'+item.Kota+'</option>');
