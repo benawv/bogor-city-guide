@@ -152,28 +152,83 @@ $(function(){
 			
 			<nav class="toolbar">
 				<ul class="clearfix">
-					<!--<li>
+					<li>
 						<a href="javascript:void(0);" class="icon-user cusLanguage">
-						<?php 
-							//$languages = new Object_Languages_List();
-							//if(($uri[1]<>"" and ((($uri[1])=="id") or (($uri[1])=="en"))) ){
-							//	foreach($languages as $language)
-							//	{
-							//	    if( $language->country_id == $uri[1]){
-							//		echo $language->country_name;
-							//	    }
-							//
-							//	}
-							//	
-							//}else{
-							//	echo "Indonesia";
-							//	
-							//}
-						?>
-						<img class="arrowDown" src='/website/static/images/arrow/bottom-arrow.png' alt="arrow" /></a>
-					</li>-->
+								<?php 
+									$languages = new Object_Languages_List();
+									if(($uri[1]<>"" and ((($uri[1])=="id") or (($uri[1])=="en"))) ){
+										foreach($languages as $language)
+										{
+											if( $language->country_id == $uri[1]){
+											echo $language->country_name;
+											}
+									
+										}
+										
+									}else{
+										echo "Indonesia";
+										
+									}
+								?>
+								<img class="arrowDown" src='/website/static/images/arrow/bottom-arrow.png' alt="arrow" />
+						</a>
+						<ul class="ulLanguage deactive">
+								<?php
+									$languages = new Object_Languages_List();
+									$count = count($uri);
+									$path = "";
+									
+									if(($uri[1]<>"" and ((($uri[1])=="id") or (($uri[1])=="en"))) ){
+			
+										foreach($languages as $language)
+										
+										{
+											$path = "/". $language->country_id ."/";
+											for($x = 2; $x < $count; $x++){
+												if($x == $count-1)
+													$path .= $uri[$x];
+												else
+													$path .= $uri[$x]."/";
+											}
+											echo '<li class="liLanguage"><a class="language" targetId="'.$language->o_id.'" targetCode="'.$language->country_id.'" href="'.$path.'">'. $language->country_name .'</a></li>';	
+				
+										}
+			
+									}else{
+										if(($uri[1]<>"")){
+											
+											foreach($languages as $language)
+											
+											{
+												$path = "/". $language->country_id ."/";
+												for($x = 1; $x < $count; $x++){
+													if($x == $count-1)
+														$path .= $uri[$x];
+													else
+														$path .= $uri[$x]."/";
+												}
+												echo '<li class="liLanguage"><a class="language" targetId="'.$language->o_id.'" targetCode="'.$language->country_id.'" href="'.$path.'">'. $language->country_name .'</a></li>';	
+					
+											}
+										}else{
+										echo '<li class="liLanguage"><a class="language" targetId="" targetCode="id" href="/en/home">English</a></li>';
+										echo '<li class="liLanguage"><a class="language" targetId="" targetCode="id" href="/id/home">Indonesia</a></li>';
+											
+										}
+										
+									}
+								?>
+							</ul>
+					</li>
 					<li>
 						<a href="javascript:void(0);" class="icon-user cusLogin">Portal Login <img class="arrowDown" src='/website/static/images/arrow/bottom-arrow.png' alt="arrow" /></a>
+						<ul class="ulCustomerOnline deactive">
+								<li class="liCustomerOnline"><a href="/asn/asn-login" target="_blank">Login ASN</a></li>
+								<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank">Asuransi Jiwa dan Kesehatan (Individu)</a></li>
+								<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Group/" target="_blank">Asuransi Kesehatan Kumpulan</a></li>
+								<li class="liCustomerOnline"><a style="border-color: #ccc !important;border-bottom: 1px solid;" href="https://www.allianzlife.co.id/ePolicy/general/frmHomeGeneral.aspx" target="_blank">Portal Status Klaim Mobil</a></li>
+								<li class="liCustomerOnline mobile deactive"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank" class="icon-mail hide-text">Registrasi</a></li>
+							</ul>
 					</li>
 					<li class="liMobileHide"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank" class="icon-mail hide-text">Registrasi</a></li>
 					<li class="liMobileHide"><a class="icon-mail hide-text">Bagikan : </a></li>
@@ -197,60 +252,60 @@ $(function(){
 					</li>
 				</ul>
 
-				<ul class="ulLanguage deactive">
+				<!--<ul class="ulLanguage deactive">
 					<?php
-						$languages = new Object_Languages_List();
-						$count = count($uri);
-						$path = "";
-						
-						if(($uri[1]<>"" and ((($uri[1])=="id") or (($uri[1])=="en"))) ){
-
-							foreach($languages as $language)
-							
-							{
-								$path = "/". $language->country_id ."/";
-								for($x = 2; $x < $count; $x++){
-									if($x == $count-1)
-										$path .= $uri[$x];
-									else
-										$path .= $uri[$x]."/";
-								}
-								echo '<li class="liLanguage"><a class="language" targetId="'.$language->o_id.'" targetCode="'.$language->country_id.'" href="'.$path.'">'. $language->country_name .'</a></li>';	
-	
-							}
-
-						}else{
-							if(($uri[1]<>"")){
-								
-								foreach($languages as $language)
-								
-								{
-									$path = "/". $language->country_id ."/";
-									for($x = 1; $x < $count; $x++){
-										if($x == $count-1)
-											$path .= $uri[$x];
-										else
-											$path .= $uri[$x]."/";
-									}
-									echo '<li class="liLanguage"><a class="language" targetId="'.$language->o_id.'" targetCode="'.$language->country_id.'" href="'.$path.'">'. $language->country_name .'</a></li>';	
-		
-								}
-							}else{
-							echo '<li class="liLanguage"><a class="language" targetId="" targetCode="id" href="/en/home">English</a></li>';
-							echo '<li class="liLanguage"><a class="language" targetId="" targetCode="id" href="/in/home">Indonesia</a></li>';
-								
-							}
-							
-						}
+						//$languages = new Object_Languages_List();
+						//$count = count($uri);
+						//$path = "";
+						//
+						//if(($uri[1]<>"" and ((($uri[1])=="id") or (($uri[1])=="en"))) ){
+						//
+						//	foreach($languages as $language)
+						//	
+						//	{
+						//		$path = "/". $language->country_id ."/";
+						//		for($x = 2; $x < $count; $x++){
+						//			if($x == $count-1)
+						//				$path .= $uri[$x];
+						//			else
+						//				$path .= $uri[$x]."/";
+						//		}
+						//		echo '<li class="liLanguage"><a class="language" targetId="'.$language->o_id.'" targetCode="'.$language->country_id.'" href="'.$path.'">'. $language->country_name .'</a></li>';	
+						//
+						//	}
+						//
+						//}else{
+						//	if(($uri[1]<>"")){
+						//		
+						//		foreach($languages as $language)
+						//		
+						//		{
+						//			$path = "/". $language->country_id ."/";
+						//			for($x = 1; $x < $count; $x++){
+						//				if($x == $count-1)
+						//					$path .= $uri[$x];
+						//				else
+						//					$path .= $uri[$x]."/";
+						//			}
+						//			echo '<li class="liLanguage"><a class="language" targetId="'.$language->o_id.'" targetCode="'.$language->country_id.'" href="'.$path.'">'. $language->country_name .'</a></li>';	
+						//
+						//		}
+						//	}else{
+						//	echo '<li class="liLanguage"><a class="language" targetId="" targetCode="id" href="/en/home">English</a></li>';
+						//	echo '<li class="liLanguage"><a class="language" targetId="" targetCode="id" href="/in/home">Indonesia</a></li>';
+						//		
+						//	}
+						//	
+						//}
 				    ?>
-				</ul>
-				<ul class="ulCustomerOnline deactive">
+				</ul>-->
+				<!--<ul class="ulCustomerOnline deactive">
 					<li class="liCustomerOnline"><a href="/asn/asn-login" target="_blank">Login ASN</a></li>
 					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank">Asuransi Jiwa dan Kesehatan (Individu)</a></li>
 					<li class="liCustomerOnline"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Group/" target="_blank">Asuransi Kesehatan Kumpulan</a></li>
 					<li class="liCustomerOnline"><a style="border-color: #ccc !important;border-bottom: 1px solid;" href="https://www.allianzlife.co.id/ePolicy/general/frmHomeGeneral.aspx" target="_blank">Portal Status Klaim Mobil</a></li>
 					<li class="liCustomerOnline mobile deactive"><a href="https://www.allianzlife.co.id/CustomerOnlinePortal/Individual/" target="_blank" class="icon-mail hide-text">Registrasi</a></li>
-				</ul>
+				</ul>-->
 				
 				<script type="text/javascript">
 						$(document).ready(function() {
@@ -288,6 +343,9 @@ $(function(){
 								$(this).find("img").attr("src" , "");
 								$(".ulCustomerOnline").show();
 								$(this).find("img").attr("src" , "/website/static/images/arrow/top-arrow.png");
+								
+								$(".ulLanguage").hide();
+								$(".cusLanguage").find("img").attr("src" , "/website/static/images/arrow/bottom-arrow.png");
 							}
 							else {
 								$(this).find("img").attr("src" , "");
@@ -302,6 +360,9 @@ $(function(){
 								$(this).find("img").attr("src" , "");
 								$(".ulLanguage").show();
 								$(this).find("img").attr("src" , "/website/static/images/arrow/top-arrow.png");
+								
+								$(".ulCustomerOnline").hide();
+								$(".cusLogin").find("img").attr("src" , "/website/static/images/arrow/bottom-arrow.png");
 							}
 							else {
 								$(this).find("img").attr("src" , "");

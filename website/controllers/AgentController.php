@@ -295,6 +295,8 @@ class AgentController extends Website_Controller_Action {
         $Kontribusi = $session->Kontribusi;
         $Calculation = $session->Calculation;
 		$idObject = $session->idObject;
+        $kota = $session->kota;
+        $provinsi = $session->provinsi;
 		
 		$ket = $_POST["keterangan"];
 
@@ -356,7 +358,9 @@ class AgentController extends Website_Controller_Action {
 						'nohp' => $nohp,
 						'ket' => $ket,
                         'per' => $per,
-                        'info' => $info
+                        'info' => $info,
+                        'kota' => $kota,
+                        'provinsi' => $provinsi
 						);
 		$bodyEmail = "Tanggal Perhitungan: ".$date_tglBuat1."<br>Nama: ".$nama."<br>
 		No Handphone: ".$nohp."<br>Email: ".$email."<br>Tanggal Lahir: ".$date_tglLahir1."<br>
@@ -397,7 +401,7 @@ class AgentController extends Website_Controller_Action {
 		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 		$mail->setDocument($document);
 		$mail->setParams($params);
-		$mail->addTo($email_agen);
+		$mail->addTo($email_agen); //$email_agen
         $mail->addBcc($emailBCC);
 		$mail->send();
 

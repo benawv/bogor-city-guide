@@ -386,6 +386,16 @@
                                                     <td> '.$jenis.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
+                                                    <td>Kota</td>
+                                                    <td>:</td>
+                                                    <td> '.$session->kota.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Provinsi</td>
+                                                    <td>:</td>
+                                                    <td> '.$session->provinsi.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
                                                     <td>Termin Pembayaran Anda</td>
                                                     <td>:</td>
                                                     <td> '.$session->Frekuensi.'</td>
@@ -411,6 +421,9 @@
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td colspan="3"><p><center style="font-size:12px;">Total premi yang tertera belum disesuaikan dengan profil risiko Anda, silakan hubungi Agen untuk mendapatkan ilustrasi yang sesuai dengan profil risiko Anda.</center></p></td>
                                                 </tr>';
                                     $content.= "</table>";
                                 }
