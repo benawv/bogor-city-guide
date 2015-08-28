@@ -401,8 +401,12 @@ class AgentController extends Website_Controller_Action {
 		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 		$mail->setDocument($document);
 		$mail->setParams($params);
-		$mail->addTo($email_agen); //$email_agen
-        $mail->addBcc($emailBCC);
+		$mail->addTo($email_agen);
+		
+		//sementara pake alamat email pengirim
+		$mail->addTo($from);
+		//$mail->addTo($email_agen); //$email_agen
+        //$mail->addBcc($emailBCC);
 		$mail->send();
 
 		Zend_Session::namespaceUnset('tasbih');
