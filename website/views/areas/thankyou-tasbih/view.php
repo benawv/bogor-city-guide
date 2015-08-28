@@ -109,7 +109,7 @@
           <div class="description">
 
               <div class="header-calc">
-                  <h1>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
+                  <h1><i class="fa fa-calculator" style="font-size:20px !important; padding-right: 10px !important;"></i>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
               </div><!--/ .header-calc -->
               
 <?php  $session = new Zend_Session_Namespace('tasbih'); ?>
