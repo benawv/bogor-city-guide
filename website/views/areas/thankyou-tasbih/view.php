@@ -109,7 +109,7 @@
           <div class="description">
 
               <div class="header-calc">
-                  <h1>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
+                  <h1><i class="fa fa-calculator" style="font-size:20px !important; padding-right: 10px !important;"></i>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
               </div><!--/ .header-calc -->
               
 <?php  $session = new Zend_Session_Namespace('tasbih'); ?>
@@ -137,7 +137,7 @@
                                 ?>
                             
                             </strong></h3>
-                        <center style="font-size: 12px;"><h3 style=" color:black; text-align:center;margin-top: 7px;"> Perhitungan ilustrasi produk Allianz Tasbih sudah dikirimkan ke alamat email Anda.</h3>
+                        <center style="font-size: 12px;"><h3 style=" color:black; text-align:center;margin-top: 12px;"> Perhitungan ilustrasi produk Allianz Tasbih sudah dikirimkan ke alamat email Anda.</h3>
                         <h3 style=" color:black; text-align:center;">Total premi yang tertera belum disesuaikan dengan profil risiko Anda, silakan hubungi Agen untuk mendapatkan ilustrasi yang sesuai dengan profil risiko Anda. Klik tombol di bawah ini untuk mencari agen terdekat dari lokasi Anda.</h3>
                         </center>
                         <center>

@@ -206,7 +206,7 @@
     <div class="description">
 
         <div class="header-calc">
-            <h1>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
+            <h1><i class="fa fa-calculator" style="font-size:20px !important; padding-right: 10px !important;"></i>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
         </div><!--/ .header-calc -->
 
         <div class="content-calc">
@@ -556,6 +556,8 @@ $('#provinsi').change(function(){
                             var entries = data;
                             var listLoc = jQuery.parseJSON(entries);
                             //console.log(listLoc);
+                            $('#kota option').remove();
+                            $('#kota').append('<option>-Pilih-</option>');
                             $.each(listLoc, function(i, item){
     //                            console.log(i+"  "+item);
                                 $("#kota").append('<option value='+item.Kota+'>'+item.Kota+'</option>');
