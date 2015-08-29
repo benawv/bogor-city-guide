@@ -95,6 +95,7 @@ class AgentController extends Website_Controller_Action {
 		$this->enableLayout();
 		$key = $this->_getParam('text');
 		$id = $this->_getParam('id');
+
 		
 		//$kantor = Object_Abstract::getById($id);
 		$kondisi1 = array("condition" => "o_id = '".$id."'",
@@ -103,7 +104,9 @@ class AgentController extends Website_Controller_Action {
 		
 		$kondisi2 = array("condition" => "kantor = ',".$id.",'",
 						 "limit" => 10);
+
 		$agent = Object_AgentLocatorData::getList($kondisi2);
+
 		if(count($kantor) == 0)
 		{
 			$this->redirect("/");
@@ -133,11 +136,16 @@ class AgentController extends Website_Controller_Action {
 		//$key = $this->_getParam('text');
 		$id = $this->_getParam('id');
 		$idKantor = $this->_getParam('id2');
+
 		
 		//$kantor = Object_Abstract::getById($id);
 		$kondisi1 = array("condition" => "o_id = '".$id."'",
 						 "limit" => 1);
 		$data = Object_AgentLocatorData::getList($kondisi1);
+
+        //echo $data;
+        //</pre>;
+        //die();
 		
 		$kondisi2 = array("condition" => "o_id = '".$idKantor."'",
 						 "limit" => 1);
@@ -222,19 +230,60 @@ class AgentController extends Website_Controller_Action {
 		die();
 	}
 
-	public function sendMailAgenTasbihAction(){
-
+	public function sendMailAgenTasbihAction(){        
+        
+        //echo 'TEST';
+        //die();
+        
 		$from = $_POST["from"];
         $keterangan = $_POST["keterangan"];
         $nama_agen = $_POST["nama_agen"];
         $lokasi_agen = $_POST["lokasi"];
-        $email_agen = $_POST["email_agen"];
+        $email_agen = $_POST["email"];
         $telp_agen = $_POST["telp"];
+        $emailLeaderBCC = $_POST["emailLeaderBCC"];
+        $emailTeamAsnBCC = $_POST["emailTeamAsnBCC_"];
+        $emailMmBCC = $_POST["emailMmBCC"];
+        $emailMmInaBCC = $_POST["emailMmInaBCC"];
+        
+        $Leader = strtolower($emailLeaderBCC);
+        $TeamAsn = strtolower($emailTeamAsnBCC);
+        $Mm = strtolower($emailMmBCC);
+        $MmIna = strtolower($emailMmInaBCC);
+        
+        $emailBCC = array($Leader, $TeamAsn, $Mm, $MmIna);
+        foreach ($emailBCC as $i=>$value) {
+            if ($value === "")
+                unset($emailBCC[$i]);
+        }
+        
+//        print_r($temp);
+//        die();
+        
+//
+//        if($Leader == NULL){
+//            $emailBCC = array($TeamAsn,$Mm, $MmIna);
+//        }else if($TeamAsn == NULL){
+//            $emailBCC = array($Leader, $Mm, $MmIna);
+//        }else if($Mm == NULL){
+//            $emailBCC = array($Leader,$TeamAsn,$MmIna);
+//        }else if($MmIna == NULL){
+//            $emailBCC = array($Leader,$TeamAsn,$Mm);
+//        }else if($Leader == NULL && $TeamAsn == NULL){
+//        }else if($Leader == NULL && $Mm == NULL){
+//        }else if($Leader == NULL && $MmIna == NULL){
+//        }else if($TeamAsn == NULL && $Mm == NULL){
+//        }else if($TeamAsn == NULL && $MmIna == NULL){
+//        }else if($MmIna ==)
+//        $emailBCC = array($Leader,$TeamAsn,$Mm,$MmIna);
+//        $emailBCC = array("","bastianrdp@gmail.com","putramahardiwanata24@gmail.com","");
 
 		// harusnya ini jadi  class Object_Abstract untuk email(sementara static harus cepet ganti !!!!!)
 		$session = new Zend_Session_Namespace('tasbih');
+		
         $nama = $session->nama;
         $email=$session->email ;
+        $info=$session->info;
         $nohp=$session->nohp ;
         $date_tglBuat = $session->date_tglBuat;
         $date_tglLahir = $session->date_tglLahir;
@@ -246,6 +295,8 @@ class AgentController extends Website_Controller_Action {
         $Kontribusi = $session->Kontribusi;
         $Calculation = $session->Calculation;
 		$idObject = $session->idObject;
+        $kota = $session->kota;
+        $provinsi = $session->provinsi;
 		
 		$ket = $_POST["keterangan"];
 
@@ -264,15 +315,31 @@ class AgentController extends Website_Controller_Action {
 			$JK = 'Wanita';
 		}
 	
-		if($Frekuensi == 1){
-			$frek = 'Tahunan';
-		}
-		else if($Frekuensi == 2){
-			$frek = 'Semesteran';
-		}
-		else{
-			$frek = 'Triwulan';
-		}
+		//if($Frekuensi == 1){
+		//	$frek = 'Tahunan';
+		//}
+		//else if($Frekuensi == 2){
+		//	$frek = 'Semesteran';
+		//}
+		//else{
+		//	$frek = 'Triwulan';
+		//}
+		$frek = $Frekuensi;
+        
+        if($Frekuensi == "Semesteran")
+        {
+				$nilai = $Calculation/2;
+				$per = "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per semester.";
+        }
+        elseif($Frekuensi == "Triwulan")
+        {
+				$nilai = $Calculation/4;
+				$per = "atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per triwulan.";
+        }
+        else
+        {
+				$per = ".";
+        }
 
 		$hasil = number_format($Calculation,0,",",".");
 		$document = '/email/email-agentasbih';
@@ -289,12 +356,16 @@ class AgentController extends Website_Controller_Action {
 						'frek' => $frek,
 						'JK' => $JK,
 						'nohp' => $nohp,
-						'ket' => $ket
+						'ket' => $ket,
+                        'per' => $per,
+                        'info' => $info,
+                        'kota' => $kota,
+                        'provinsi' => $provinsi
 						);
 		$bodyEmail = "Tanggal Perhitungan: ".$date_tglBuat1."<br>Nama: ".$nama."<br>
 		No Handphone: ".$nohp."<br>Email: ".$email."<br>Tanggal Lahir: ".$date_tglLahir1."<br>
 		Usia: ".$Usia."<br>Jenis Kelamin: ".$JK."<br>Frekuensi: ".$frek."<br>
-		Asuransi Jiwa: ".$AJ."<br>Massa Pembayaran Premi: ".$Kontribusi."<br>Kontirbusi Berkala/Tahun: ".$hasil."<br>";
+		Asuransi Jiwa: ".$AJ."<br>Massa Pembayaran Premi: ".$Kontribusi."<br>Kontribusi Berkala/Tahun: ".$hasil."<br>";
 		/*
 		$systemConfig = Pimcore_Config::getSystemConfig()->toArray();
 		$emailSettings = $systemConfig['email'];	
@@ -309,18 +380,32 @@ class AgentController extends Website_Controller_Action {
 						'bodyEmail' => $bodyEmail,
 						'DateSent' => strtotime(date("YmdHis")),
 						'email' => $email,
-						'nama'=> $nama
+						'nama'=> $nama,
+						'tglLahirCustomer' => $session->date_tglLahir,
+						'typeForm' => 'TasbihKalkulator'
 						);
+        /*$emailBCC = array(
+                        print_r(strtolower($emailMmInaBCC)),
+                        print_r(strtolower($emailMmBCC)),
+                        print_r(strtolower($emailTeamAsnBCC)),
+                        print_r(strtolower($emailLeaderBCC))
+                    );*/
+        
+
+        
 
 		$this->emailTracking($paramsLocator,$params);
 
 		$mail = new Pimcore_Mail();
 		$mail->setSubject("Permintaan $nama Calon Nasabah Produk Allianz Tasbih");
-		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+		$mail->setFrom("no-reply@allianz.co.id","Allianz Tasbih");
 		$mail->setDocument($document);
 		$mail->setParams($params);
-		$mail->addTo($email_agen);
-		$mail->addBcc(array("asn.tasbih@gmail.com","developer@dreamcube.co.id"));
+		
+		//sementara pake alamat email pengirim
+		//$mail->addTo("robbi@dreamcube.co.id");
+		$mail->addTo($email_agen); //$email_agen
+        $mail->addBcc($emailBCC);
 		$mail->send();
 
 		Zend_Session::namespaceUnset('tasbih');
@@ -341,8 +426,6 @@ class AgentController extends Website_Controller_Action {
 		$email = $session->email;
 		$objProv = $session->provinsi;
 		$pesan = $session->pesan;
-		
-		$email_agen = $_POST["email_agen"];
 		
 		$update = Object_TasbihInquiry::getById($idObject);
 		$update->setKeterangan($_POST["keterangan"]);
@@ -369,6 +452,24 @@ class AgentController extends Website_Controller_Action {
 						'propinsi' => $objProv,
 						'ket' => $_POST["keterangan"]
 						);
+		
+		$bodyEmail = "Nama: ".$nama."<br>
+		No Handphone: ".$tlp."<br>Email: ".$email."<br>Tanggal Lahir: ".$date_tglLahir1."<br>
+		Jenis Kelamin: ".$JK."<br>Pesan: ".$pesan."<br>Propinsi: ".$objProv."<br>"."<br>Keterangan: ".$_POST["keterangan"];
+		
+		$paramsLocator = array(
+						'email_agen' => $_POST["email_agen"],
+						'nama_agen' => $_POST["nama_agen"],
+						'telp_agen' => $_POST["telp"],
+						'lokasi_agen' => $_POST["lokasi"],
+						'bodyEmail' => $bodyEmail,
+						'tglLahirCustomer' => $date_tglLahir,
+						'typeForm' => 'TasbihInquiry'
+						);
+		
+		
+		$this->emailTracking($paramsLocator,$params);
+		
 		/*
 		$systemConfig = Pimcore_Config::getSystemConfig()->toArray();
 		$emailSettings = $systemConfig['email'];	
@@ -380,13 +481,92 @@ class AgentController extends Website_Controller_Action {
 		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 		$mail->setDocument($document);
 		$mail->setParams($params);
-		$mail->addTo($email_agen);
-		$mail->addBcc(array("asn.tasbih@gmail.com","developer@dreamcube.co.id"));
+		//$mail->addTo("robbi@dreamcube.co.id");
+		
+		$mail->addTo($email);
+		$mail->addBcc("asn.tasbih@gmail.com");
 		$mail->send();
 
 		Zend_Session::namespaceUnset('inquiry');
 
 		echo "Sukses Minta Informasi";
+		die();
+	}
+    
+    public function sendMailAgenLifeinsuranceAction(){
+    
+		// harusnya ini jadi  class Object_Abstract untuk email(sementara static harus cepet ganti !!!!!)
+		$session = new Zend_Session_Namespace('liveinsurance');
+        $nama = $session->nama;
+		$idObject = $session->ID;
+		$kelamin = $session->gender;
+		$bod = $session->tanggalLahir;
+		$tlp = $session->nohp;
+		$email = $session->email;
+		$usia = $session->usia;
+		$cia = $session->cia;
+        $up = $session->uangpertanggungan;
+        $premi = $session->premi;
+		
+		$update = Object_Liveinsurance::getById($idObject);
+		$update->setKeterangan($_POST["keterangan"]);
+		$update->save();
+
+        $date_tglLahir1 = date("d/m/Y",strtotime(new Pimcore_Date($bod)));
+
+		
+
+		$document = '/email/email-agenlifeinsurance';
+		$params = array(
+						'nama' => $nama,
+						'namaAgen' => $_POST["nama_agen"],
+						'email' => $email,
+						'jenisKelamin' => $kelamin,
+						'tgllahir' => $date_tglLahir1,
+						'nohp' => $tlp,
+                        'usia' => $usia,
+						'cia' => $cia,
+                        'up' => $up,
+                        'premi' => $premi,
+						'ket' => $_POST["keterangan"]
+						);
+		
+		$bodyEmail = "Nama: ".$nama."<br>
+		No Handphone: ".$tlp."<br>Email: ".$email."<br>Tanggal Lahir: ".$bod."<br>
+		Jenis Kelamin: ".$kelamin."<br>Usia: ".$usia."<br>CIA: ".$cia."<br>Uang Pertanggungan: ".$up."<br>Premi: ".$premi."<br>"."           <br>Keterangan: ".$_POST["keterangan"];
+		
+		$paramsLocator = array(
+						'email_agen' => $_POST["email_agen"],
+						'nama_agen' => $_POST["nama_agen"],
+						'telp_agen' => $_POST["telp"],
+						'lokasi_agen' => $_POST["lokasi"],
+						'bodyEmail' => $bodyEmail,
+						'tglLahirCustomer' => new Pimcore_Date($bod),
+						'typeForm' => 'LifeInsurance'
+						);
+		
+		
+		$this->emailTracking($paramsLocator,$params);
+		
+		/*
+		$systemConfig = Pimcore_Config::getSystemConfig()->toArray();
+		$emailSettings = $systemConfig['email'];	
+		print_r($emailSettings);
+		die();
+		*/
+		$mail = new Pimcore_Mail();
+		$mail->setSubject("Permintaan $nama Calon Nasabah Produk Allianz Life Insurance");
+		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+		$mail->setDocument($document);
+		$mail->setParams($params);
+		//$mail->addTo("robbi@dreamcube.co.id");
+		$mail->addTo($email);
+		$mail->addBcc("asn.tasbih@gmail.com");
+		$mail->send();
+
+		Zend_Session::namespaceUnset('liveinsurance');
+
+		echo "Sukses";
 		die();
 	}
 
@@ -403,13 +583,24 @@ class AgentController extends Website_Controller_Action {
 		$new->setFromEmail($params['email']);
 		$new->setFromName($params['nama']);
 		$new->setFromNoTelp($params['nohp']);
-		$new->setTglLahir(new Pimcore_Date($session->date_tglLahir));
-		$new->setTypeForm('TasbihKalkulator');
+		$new->setTglLahir($paramsLocator["tglLahirCustomer"]);
+		$new->setTypeForm($paramsLocator["typeForm"]);
 		$new->setKey(strtolower(str_replace(" ","-",$paramsLocator['nama_agen'])).'_'.strtolower(str_replace(" ","-",$params['nama'])).'_'.strtotime(date("Y/m/d,H.i.s")).'_'.strtotime(date("YmdHis")));
 		$new->setO_parentId($getId->o_id);
 		$new->setIndex(0);
 		$new->setPublished(1);
 		$new->save();
+	}
+	
+	public function renderletAction() {
+		$id = $this->_getParam("id");
+		$entries = Object_Abstract::getById($id);
+		if($this->getParam("type") == "object") {
+			$id = $this->_getParam("id");
+			$entries = Object_Abstract::getById($id);
+            $this->view->data = $entries;
+        }
+        $this->renderScript('/agent/renderlet.php');
 	}
 
 }

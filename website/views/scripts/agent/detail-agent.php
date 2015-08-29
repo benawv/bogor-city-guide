@@ -1,3 +1,4 @@
+
 <style>
 
     #profil{
@@ -128,27 +129,44 @@
         padding: 10px;
     }
 </style>
+
 <?php
+
     $kantor = $this->kantor;
+
     //echo 'test';
     $agent = $this->agent;
+
+
     //echo "<pre>";
     //print_r($agent);
     //die();
     foreach($agent as $row){
+
         $kodeAgent = $row->getkodeAgent();
+
         $namaAgent = $row->getnamaAgent();
+
         $emailAgent = strtolower($row->getemail());
+        
+        $emailLeaderBCC = $row->getbccDirectLeaderEmail();
+        $emailTeamAsnBCC = $row->getbccTeamAsn();
+        $emailMmBCC = $row->getbccMm();
+        $emailMmInaBCC = $row->getbccMmIna();
+
+
         $kantor = $row->getkantor();
-        $profilAgent = $row->getprofilAgent();
+
+        //$profilAgent = $row->getprofilAgent();
+
         $fotoAgent = $row->getfotoAgent()->path.$row->getfotoAgent()->filename;
-        $Facebook = $row->getURLFacebook();
-        $Artikel = $row->getArtikel();
+        //$Facebook = $row->getURLFacebook();
+        //$Artikel = $row->getArtikel();
         $telepon = $row->kantor[0]->nomorTelepon;
         $linkFB = $row->getLinkfacebook()->direct;
         $linkIN = $row->getLinklinkedin()->direct;
         $linkME = $row->getLinkaboutme()->direct;
-        
+
         if(isset($linkFB)){
             $linkFB = $linkFB;
         }
@@ -194,6 +212,12 @@
             &rsaquo; <a href="<?php echo $this->url(array($keyKantor ,$idKantor),"detail-kantor");?>"><span>Detail Kantor</span></a>
             &rsaquo; <span class='currentPage'>Detail Agen</span>
 		</h5>
+        <?php
+            $session = new Zend_Session_Namespace('thanksagen');
+            $session->idKantor = $idKantor;
+            $session->keyKantor = $keyKantor;
+            $session->kodeAgent = $kodeAgent;
+        ?>
         <span
         <div class="full-w bg-white custom-section">
             <h2>
@@ -222,38 +246,110 @@
                             $expTelp = explode("-",$telpKantor);
                             $fax = "(".$dataKantor->getKodeAreaFax().") ".$dataKantor->getNomorFax();
                             $x = count($dataKantor->getFotoGaleriKantor()->items);
-                            $email = strtolower($dataKantor->getEmailKantor());
+                            $emailkantor = strtolower($dataKantor->getEmailKantor());
                     ?>
                         <h2><?php echo $namaLokasi; ?></h2>
                         <p>
                             <?php
                                 echo "<span id='alamat_agen'>".$alamat."</span><br />";
+                                echo "Telp. ".$telp."<br />";
                                 echo "Fax. ".$fax."<br />";
-                                echo "Hubungi Admin Agen. ";
-                                $x = 1;
-                                foreach($expTelp as $key => $val){
-                                    if($x > 1){
-                                        echo "<span class='marginKantor'>(".$dataKantor->getKodeAreaTelepon().") ".$val."</span><br />";
-                                    }
-                                    else{
-                                        $callKantor = "(".$dataKantor->getKodeAreaTelepon().") ".$val;
-                                        echo "(".$dataKantor->getKodeAreaTelepon().") ".$val."<br />";
-                                    }
-                                    $x++;
-                                }
-                                //echo "Hubungi Agen. ".$telp."<br />";
-                                echo "Email Admin Agen. <span id='email_agen'>".$emailAgent."</span>";
+                                //echo "Hubungi Admin Agen. ";
+                                //$x = 1;
+                                //foreach($expTelp as $key => $val){
+                                //    if($x > 1){
+                                //        echo "<span class='marginKantor'>(".$dataKantor->getKodeAreaTelepon().") ".$val."</span><br />";
+                                //    }
+                                //    else{
+                                //        $callKantor = "(".$dataKantor->getKodeAreaTelepon().") ".$val;
+                                //        echo "(".$dataKantor->getKodeAreaTelepon().") ".$val."<br />";
+                                //    }
+                                //    $x++;
+                                //}
+                                ////echo "Hubungi Agen. ".$telp."<br />";
+                                //echo "Email Admin Agen. <span id='email_agen'>".$emailAgent."</span>";
                             ?>
                         </p>
                         <!-- <p> DI HIDE DULU YAA
                             Parameter dari tasbih: <br /> -->
 
-                            <?php
+                    
+                    <?php
+                        $sessionLive = new Zend_Session_Namespace('liveinsurance');
+                        $status = $sessionLive->status;
+                        $ID = $sessionLive->ID;
+        
+
+        
+                        if($sessionLive->smoking == 'Y'){
+                        $Rokok = 'Ya';}
+                        else if($sessionLive->smoking == 'N'){
+                        $Rokok = 'Tidak';}
+
+                        $content;
+                        if(isset($sessionLive->nama)){
+                            $content.="<table>";
+                            $content.='<tr class="tbl-email">
+                                                    <td>Nama Anda</td>
+                                                    <td>: '.$sessionLive->nama.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Email Anda </td>
+                                                    <td>: '.$sessionLive->email.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Nomor Handphone Anda</td>
+                                                    <td>: '.$sessionLive->nohp.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Tanggal Lahir Anda</td>
+                                                    <td>: '.date("d/m/Y",strtotime($sessionLive->tanggalLahir)).'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Jenis Kelamin Anda</td>
+                                                    <td>: '.$sessionLive->gender.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Uang Pertanggungan Anda</td>
+                                                    <td>: '.$sessionLive->uangpertanggungan.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>CIA</td>
+                                                    <td>: '.$sessionLive->cia.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Merokok</td>
+                                                    <td>: '.$Rokok.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Premi yang harus anda bayarkan pertahun</td>
+                                                    <td>: Rp '.$sessionLive->premi.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Keterangan tambahan</td>
+                                                    <td>: </td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
+                                                </tr>';
+                                    $content.= "</table>";
+                        }
+                    ?>
+
+                    <?php
 
                                 $session = new Zend_Session_Namespace('tasbih');
                                 $getStatus=$session->emailFrom;
                                 $idObject = $session->idObject;
                                 //echo $getStatus;
+                                if($session->Frekuensi == "Semesteran")
+                                {
+                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")." per tahun atau sebesar ".'<br/>Rp. '.number_format($session->Calculation/2,0,',','.')." per semester.";
+                                }
+                                elseif($session->Frekuensi == "Triwulan")
+                                {
+                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")." per tahun atau sebesar ".'<br/>Rp. '.number_format($session->Calculation/4,0,',','.')." per triwulan.";
+                                } else $nilai= ' Rp. '.number_format($session->Calculation,0,".",",")." per tahun.";
 
                                 if($session->JenisKelamin=="l"){
                                     $jenis = "Pria";
@@ -267,39 +363,58 @@
                                     $content.= "<table>";
                                     $content.='<tr class="tbl-email">
                                                     <td>Nama Anda</td>
-                                                    <td>: '.$session->nama.'</td>
+                                                    <td>:</td>
+                                                    <td> '.$session->nama.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Email Anda </td>
-                                                    <td>: '.$session->email.'</td>
+                                                    <td>:</td>
+                                                    <td> '.$session->email.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Nomor Handphone Anda</td>
-                                                    <td>: '.$session->nohp.'</td>
+                                                    <td>:</td>
+                                                    <td> '.$session->nohp.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Tanggal Lahir Anda</td>
-                                                    <td>: '.date("d/m/Y",strtotime($session->date_tglLahir)).'</td>
+                                                    <td>:</td>
+                                                    <td> '.date("d/m/Y",strtotime($session->date_tglLahir)).'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Jenis Kelamin Anda</td>
-                                                    <td>: '.$jenis.'</td>
+                                                    <td>:</td>
+                                                    <td> '.$jenis.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Kota</td>
+                                                    <td>:</td>
+                                                    <td> '.$session->kota.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Provinsi</td>
+                                                    <td>:</td>
+                                                    <td> '.$session->provinsi.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Termin Pembayaran Anda</td>
-                                                    <td>: '.$session->Frekuensi.'</td>
+                                                    <td>:</td>
+                                                    <td> '.$session->Frekuensi.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Uang Pertanggungan</td>
-                                                    <td>: '.$session->AJ.'</td>
+                                                    <td>:</td>
+                                                    <td> '.$session->AJ.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Massa Pembayaran Premi</td>
-                                                    <td>: '.$session->Kontribusi.' tahun</td>
+                                                    <td>:</td>
+                                                    <td> '.$session->Kontribusi.' tahun</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
-                                                    <td>Premi yang harus anda bayarkan pertahun</td>
-                                                    <td>: Rp '.number_format($session->Calculation,0,".",",").'</td>
+                                                    <td>Premi yang harus anda bayarkan</td>
+                                                    <td>:</td>
+                                                    <td>'. $nilai.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td>Keterangan tambahan</td>
@@ -307,6 +422,9 @@
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td colspan="3"><p><center style="font-size:12px;">Total premi yang tertera belum disesuaikan dengan profil risiko Anda, silakan hubungi Agen untuk mendapatkan ilustrasi yang sesuai dengan profil risiko Anda.</center></p></td>
                                                 </tr>';
                                     $content.= "</table>";
                                 }
@@ -367,7 +485,7 @@
                                     
                                 }
                                 
-                                if(!isset($session->date_tglBuat) && !isset($session1->nama)){
+                                if(!isset($session->date_tglBuat) && !isset($session1->nama) && !isset($sessionLive->nama)){
                                     $content.= "<table>";
                                     $content.= '<tr class="tbl-email">
                                                     <td>Keterangan tambahan</td>
@@ -383,9 +501,9 @@
                        
                     <?php }?>
                     <?php
-                        if(!isset($session->date_tglBuat) && !isset($session1->nama)){
+                        if(!isset($session->date_tglBuat) && !isset($session1->nama) && !isset($sessionLive->nama)){
                     ?>
-                        <a href="mailto:<?php echo $emailAgent;?>?Subject=Call%20Agen" target="_top" class="btn btn-sendmail">Kirim EMail</a>
+                        <a href="mailto:<?php echo $emailkantor;?>?Subject=Call%20Agen" target="_top" class="btn btn-sendmail" onclick="setTimeout(function(){window.location='/agent-locator/agen/thankyou-agent/'},5000);">Kirim EMail</a>
                     <?php } else{?>
                         <a href="javascript:void(0)" target="_top" class="btn btn-sendmail btn-email">Email Agen</a>&nbsp;
                     <?php }?>
@@ -485,13 +603,15 @@
     });
     
     $(".kirim-email").click(function(){
-        <?php 
-
-        if($getStatus=='tasbih_calc'){ ?>
+        <?php if($getStatus=='tasbih_calc'){ ?>
             var keterangan = $(".textareaForm").val();
+            var email = $('#email_agen').text();
+            if(email == ""){
+                email = '<?php echo $emailkantor; ?>';
+            }
 
             $.ajax({
-                url      : '/send-emailagentasbih/',
+                url      : '/send-email-agen-tasbih/',
                 type     : 'POST',
                 data     : {
                             'from' : 'agent_locator',
@@ -499,14 +619,21 @@
                             'nama_agen' : '<?php echo $namaAgent;?>',
                             'lokasi' : '<?php echo $namaLokasi;?>',
                             'telp' : '<?php echo $telepon;?>',
-                            'email_agen' : '<?php echo $emailAgent;?>',
-                            'email' : '<?php echo $email;?>'
+                            'email' : email,
+                            'emailLeaderBCC' : '<?php echo $emailLeaderBCC;?>',
+                            'emailTeamAsnBCC ' : '<?php echo $emailTeamAsnBCC;?>',
+                            'emailMmBCC' : '<?php echo $emailMmBCC;?>',
+                            'emailMmInaBCC' : '<?php echo $emailMmInaBCC;?>'
                             },
-                    success  : function(data){
-                    console.log(data);
-                    alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
+                success  : function(data){
+                    //console.log(data);
+                    //alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
+                    window.location = "/agent-locator/agen/thankyou-agent";
+                },
+                error: function (xhr, desc, err)
+                {
+                    console.log("error " + err);
                 }
-            
             });
 
         <?php }else{ ?>
@@ -518,22 +645,51 @@
             var keterangan = $(".textareaForm").val();
             
             $.ajax({
-                url      : '/send-emailageninquiry/',
+                url      : '/send-email-agen-inquiry/',
                 type     : 'POST',
                 data     : {
                             'keterangan' : keterangan,
+                            'nama_agen' : '<?php echo $namaAgent;?>',
                             'email_agen' : '<?php echo $emailAgent;?>',
-                            'nama_agen' : '<?php echo $namaAgent;?>'
+                            'telp' : '<?php echo $telepon;?>',
+                            'lokasi' : '<?php echo $namaLokasi;?>'
                             },
                     success  : function(data){
                     //console.log(data);
-                    alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
+                    //alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
+                    window.location = "/agent-locator/agen/thankyou-agent";
                 }
             
             
             });
 
         <?php }?>
+        
+        <?php if($status=='life_insurance'){ ?>
+            var keterangan = $(".textareaForm").val();
+            
+            $.ajax({
+                url      : '/send-email-agen-lifeinsurance/',
+                type     : 'POST',
+                data     : {
+                            'keterangan' : keterangan,
+                            'nama_agen' : '<?php echo $namaAgent;?>',
+                            'email_agen' : '<?php echo $emailAgent;?>',
+                            'telp' : '<?php echo $telepon;?>',
+                            'lokasi' : '<?php echo $namaLokasi;?>'
+                            },
+                    success  : function(data){
+                    //console.log(data);
+                    //alert('Permintaan Informasi Layanan Life Insurance Anda sudah kami kirim ke Agen Kami');  
+                     window.location = "/agent-locator/agen/thankyou-agent";
+                }
+            
+            
+            });
+
+        <?php }?>
+        
+        
         $('#modalEmail').modal('hide');
     });
 

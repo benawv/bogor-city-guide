@@ -60,6 +60,9 @@
 
       nav.main-navigation a.nav-item.blueA::before {
         background: #3122F9; }
+    
+    
+        nav.main-navigation a.nav-item.red::before {background: #780DEB;}
 </style>
 
     <nav class="main-navigation" style="max-width:1140px; margin:auto;">
@@ -83,8 +86,8 @@
                     </a>
                 </div><!--/ .col-xs-12 -->
 
-                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users">
+                <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px;  margin:auto; !important">
+                    <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users" style="background:#5F259F;">
                         <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
@@ -106,7 +109,7 @@
           <div class="description">
 
               <div class="header-calc">
-                  <h1>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
+                  <h1><i class="fa fa-calculator" style="font-size:20px !important; padding-right: 10px !important;"></i>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
               </div><!--/ .header-calc -->
               
 <?php  $session = new Zend_Session_Namespace('tasbih'); ?>
@@ -134,14 +137,15 @@
                                 ?>
                             
                             </strong></h3>
-                        <center><strong><h3 style=" color:black; text-align:center;"> Perhitungan ilustrasi produk Allianz Tasbih sudah dikirimkan ke alamat email Anda.</strong></h3></center>
-                        <h3 style=" color:black; text-align:center;"><strong>Temukan agen terdekat: </strong></h3>
-                       <br />
+                        <center style="font-size: 12px;"><h3 style=" color:black; text-align:center;margin-top: 12px;"> Perhitungan ilustrasi produk Allianz Tasbih sudah dikirimkan ke alamat email Anda.</h3>
+                        <h3 style=" color:black; text-align:center;">Total premi yang tertera belum disesuaikan dengan profil risiko Anda, silakan hubungi Agen untuk mendapatkan ilustrasi yang sesuai dengan profil risiko Anda. Klik tombol di bawah ini untuk mencari agen terdekat dari lokasi Anda.</h3>
+                        </center>
                         <center>
                             <!--
                             <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen">
                             -->
-                            <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next"><i class="fa fa-users"></i> Cari Agen</button>
+                            <br/>
+                            <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" style="background:#5F259F !important;"><i class="fa fa-users"></i> Cari Agen</button>
                         </center>
                     </div>
 
