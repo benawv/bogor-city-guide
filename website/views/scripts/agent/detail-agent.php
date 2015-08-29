@@ -252,6 +252,7 @@
                         <p>
                             <?php
                                 echo "<span id='alamat_agen'>".$alamat."</span><br />";
+                                echo "Telp. ".$telp."<br />";
                                 echo "Fax. ".$fax."<br />";
                                 //echo "Hubungi Admin Agen. ";
                                 //$x = 1;
