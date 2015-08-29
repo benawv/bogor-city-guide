@@ -23,6 +23,9 @@
             width:100%;
             height:auto;
         }
+        .slide .fixbox .edge{
+            height: 29px !important;
+        }
         nav.main-navigation a.nav-item
         {
             display: block;
@@ -109,6 +112,8 @@
         #calendar-wrapper{
             margin-bottom: 50px;
         }
+
+        nav.main-navigation a.nav-item.red::before {background: #780DEB;}
     </style>
 <div class="row">
      <div class="backg">
@@ -270,20 +275,14 @@
                     </a>
                 </div><!--/ .col-xs-12 -->
 
-                <!--<div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
+                <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
                     <a href="/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi" class="nav-item green sitemap">
                         <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
-                    </a>
-                </div>--><!--/ .col-xs-12 -->
-                
-                <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="/produk/asuransi-syariah/tasbih/info-produk#anchor5" class="nav-item green sitemap">
-                        <h4 style="font-size:18px"><small>Proyeksi Dana Naik Haji</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
 
                 <div class="col-xs-12 col-md-3" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users">
+                    <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users" style="background:#5F259F;">
                         <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->

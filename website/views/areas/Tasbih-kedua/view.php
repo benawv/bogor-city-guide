@@ -62,7 +62,8 @@
         }
         nav.main-navigation a.nav-item.blueA{ background: #003781; }
         nav.main-navigation a.nav-item.greenChat{ background: #B20065; }
-        nav.main-navigation a.nav-item.blueA::before { background: #3122F9; }
+        nav.main-navigation a.nav-item.blueA::before { background: #3122F9; }     
+        nav.main-navigation a.nav-item.red::before {background: #780DEB;}
         body { text-align: left !important; }
         input[type="radio"] { display: block; }
     </style>
@@ -85,7 +86,7 @@
                 </a>
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users">
+                <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users" style="background:#5F259F;">
                     <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                 </a>
             </div><!--/ .col-xs-12 -->
@@ -205,7 +206,7 @@
     <div class="description">
 
         <div class="header-calc">
-            <h1>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
+            <h1><i class="fa fa-calculator" style="font-size:20px !important; padding-right: 10px !important;"></i>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
         </div><!--/ .header-calc -->
 
         <div class="content-calc">
@@ -256,7 +257,74 @@
                             </div><!--/ .col-md-4 -->
                         </div><!--/ .form-group -->
 
+                    
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label><strong>Dari mana Anda mengetahui produk Allianz Tasbih?</strong></label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <select class="form-control" name="informasi" id="informasi">
+                                    <option value="pilih">- Pilih -</option>
+                                    <option value="Televisi">Televisi</option>
+                                    <option value="Billboard">Billboard</option>
+                                    <option value="Radio">Radio</option>
+                                    <option value="Koran">Koran</option>
+                                    <option value="Teman/kerabat">Teman/Kerabat</option>
+                                    <option value="Agen">Agen Asuransi</option>
+                                    <option value="Facebook">Facebook</option>
+                                    <option value="Google">Google</option>
+                                    <option value="Youtube">Youtube</option>
+                                </select>
+                                <label id="notif-informasi" style="display:none; color: #f00;">
+                                    Mohon maaf, informasi yang Anda masukan belum sesuai dengan ketentuan ilustrasi
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
                         
+
+                    
+                        <?php
+
+                                    $getProv=new Object_Provinsi_List();
+//                                    echo <pre>;
+                                    $getProv->setOrderKey("provinsi");
+                                    $getProv->setOrder("asc");?>
+                                    
+<!--                                    print_r($getProv);-->
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label><strong>Provinsi</strong></label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <select class="form-control" name="provinsi" id="provinsi">
+                                    <option value = "pilih">-Pilih-</option>  
+                                <?php foreach($getProv as $items){
+                                ?>
+                                    <option value= "<?php echo $items->o_id; ?> "><?php echo $items->provinsi; ?></option>
+                                <?php } ?>
+                                </select>
+                                <label id="notif-provinsi" style="display:none; color: #f00;">
+                                    Mohon maaf, provinsi yang Anda masukan belum sesuai dengan ketentuan ilustrasi
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
+                    
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label><strong>Kota</strong></label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <select class="form-control" name="kota" id="kota">
+                                    <option value = "pilih">-Pilih-</option>  
+                                </select>
+                                <label id="notifkota" style="display:none; color: #f00;">
+                                    Mohon maaf, kota yang Anda masukan belum sesuai dengan ketentuan ilustrasi
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
+                    
+                    
+                    
                         <?php
                             if($sessionTasbih->kat == "" || $sessionTasbih->kat == null || $sessionTasbih->kat == " ")
                             {
@@ -278,7 +346,7 @@
 
                                 
                                 <button type="button" class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next">
-                                    <i class="fa fa-envelope-o"></i> Kirim
+                                    <i class="fa fa-envelope-o"></i> Selanjutnya
                                 </button>
                             </div><!--/ .col-md-12 -->
                         </div><!--/ .form-group -->
@@ -434,6 +502,8 @@
         /**
          * Calculator Pop-Up
          */
+        
+        
 
         if( $( 'a.calc-overlay-trigger' ).length > 0 )
         {
@@ -464,6 +534,41 @@
         /*
          * jQueryUI DatePicker
          */
+        
+$('#provinsi').change(function(){
+//        alert('test');
+        var prov = $('#provinsi option:Selected').html();
+//        alert(prov);
+        if(prov == "-Pilih-"){
+            document.getElementById('notifkota').style.display="block";
+        }else{
+//            alert('test');
+            document.getElementById('notifkota').style.display="none";
+
+            $.ajax({
+                    url      : '/getprovinsi/',
+                    type     : 'POST',
+                    data     : {
+                                'prov' : prov
+                                },
+                        success  : function(data){
+    //                        console.log(data);
+                            var entries = data;
+                            var listLoc = jQuery.parseJSON(entries);
+                            //console.log(listLoc);
+                            $('#kota option').remove();
+                            $('#kota').append('<option>-Pilih-</option>');
+                            $.each(listLoc, function(i, item){
+    //                            console.log(i+"  "+item);
+                                $("#kota").append('<option value='+item.Kota+'>'+item.Kota+'</option>');
+                            });
+                       
+                        }
+                    
+            });
+//            location.reload();
+        }
+    });        
 
         $('#Submit').click(function() {
             
@@ -478,18 +583,28 @@
             var nama = $('#nama').val();
             var email = $('#email').val();
             var nohp = $('#nohp').val();
+            var kota = $('#kota option:Selected').html();
+            var informasi = $('#informasi option:Selected').val();
+            var provinsi = $('#provinsi option:Selected').html();
+            
+            //alert(informasi);
 
-
-            if( nama == '' ||email == '' || nohp == '' || nohp.length <= 8){
+            if( nama == '' ||email == '' || nohp == '' || nohp.length <= 8 || informasi == 'pilih' || provinsi == '-Pilih-' || kota == '-Pilih-'){
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
                     if( email == '' )
                         document.getElementById('notifemail').style.display= 'block';
-                    if( nohp.length <= 8 || no.hp == '')
+                    if( nohp.length < 8 || nohp == '')
                         document.getElementById('notifNoHP').style.display='block';
+                    if( informasi == 'pilih')
+                        document.getElementById('notif-informasi').style.display='block';
+                    if( kota == '-Pilih-' )
+                        document.getElementById('notifkota').style.display="block";
+                    if( provinsi == '-Pilih-')
+                        document.getElementById('notif-provinsi').style.display="block";
                     alert("Mohon Periksa Inputan Anda");
             }else{
-
+                $("body").prepend("<div id='dvLoading'></div>");
               $.ajax({
                   url      : '/tasbih-kedua/',
                   type     : 'POST',
@@ -497,7 +612,10 @@
                               'nama' : nama,
                               'email' : email,
                               'nohp' : nohp,
-                              'kategori' : '<?php echo $kat;?>'
+                              'kategori' : '<?php echo $kat;?>',
+                              'informasi' : informasi,
+                              'kota' :kota,
+                              'provinsi' : provinsi
                               },
                       success  : function(data){
                         //console.log(data);
@@ -520,6 +638,17 @@
         });
     });
 
+    $('#informasi').on('change',function(){
+        var informasi = $('#informasi option:Selected').val();
+        
+        if(informasi == 'pilih'){
+            document.getElementById('notif-informasi').style.display= 'block';
+        }
+        else{
+            document.getElementById('notif-informasi').style.display= 'none';
+        }
+    });
+    
     $(document).ready(function(){
 
 
