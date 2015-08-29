@@ -502,8 +502,15 @@
                     <?php }?>
                     <?php
                         if(!isset($session->date_tglBuat) && !isset($session1->nama) && !isset($sessionLive->nama)){
+                            if($emailAgent!="")
+                            {
+                                $mailTo = $emailAgent;
+                            }
+                            else{
+                                $mailTo = $emailkantor;
+                            }
                     ?>
-                        <a href="mailto:<?php echo $emailkantor;?>?Subject=Call%20Agen" target="_top" class="btn btn-sendmail" onclick="setTimeout(function(){window.location='/agent-locator/agen/thankyou-agent/'},5000);">Kirim EMail</a>
+                        <a href="mailto:<?php echo $mailTo;?>?Subject=Call%20Agen" target="_top" class="btn btn-sendmail" onclick="setTimeout(function(){window.location='/agent-locator/agen/thankyou-agent/'},5000);">Kirim EMail</a>
                     <?php } else{?>
                         <a href="javascript:void(0)" target="_top" class="btn btn-sendmail btn-email">Email Agen</a>&nbsp;
                     <?php }?>
