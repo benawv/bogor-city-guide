@@ -403,8 +403,8 @@ class AgentController extends Website_Controller_Action {
 		$mail->setParams($params);
 		
 		//sementara pake alamat email pengirim
-		//$mail->addTo("robbi@dreamcube.co.id");
-		$mail->addTo($email_agen); //$email_agen
+		$mail->addTo("robbi@dreamcube.co.id");
+		//$mail->addTo($email_agen); //$email_agen
         //$mail->addBcc($emailBCC);
 		$mail->send();
 

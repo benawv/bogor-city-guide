@@ -346,7 +346,7 @@
 
                                 
                                 <button type="button" class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next">
-                                    <i class="fa fa-envelope-o"></i> Kirim
+                                    <i class="fa fa-envelope-o"></i> Selanjutnya
                                 </button>
                             </div><!--/ .col-md-12 -->
                         </div><!--/ .form-group -->
@@ -604,7 +604,7 @@ $('#provinsi').change(function(){
                         document.getElementById('notif-provinsi').style.display="block";
                     alert("Mohon Periksa Inputan Anda");
             }else{
-
+                $("body").prepend("<div id='dvLoading'></div>");
               $.ajax({
                   url      : '/tasbih-kedua/',
                   type     : 'POST',
