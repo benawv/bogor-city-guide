@@ -57,16 +57,16 @@
                     <h4 style="font-size:18px"><small>Informasi produk</small></h4>
                 </a>
             </div><!--/ .col-xs-12 -->
-            <!--<div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                 <a href="/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi" class="nav-item green sitemap">
                     <h4 style="font-size:18px"><small>Ilustrasi</small></h4>
                 </a>
-            </div>-->
-            <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
+            </div>
+            <!--<div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                 <a href="/produk/asuransi-syariah/tasbih/info-produk#anchor5" class="nav-item green sitemap">
                     <h4 style="font-size:18px"><small>Proyeksi Dana</small></h4>
                 </a>
-            </div>
+            </div>-->
             <!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                 <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users">
