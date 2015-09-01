@@ -461,4 +461,9 @@ $(window).load(function () {
             itemSelector: '.item'
         });
     }
+    var cusQuick = $('#quicklinks .tab-button ul li a').height();
+    
+    if (cusQuick > 24) {
+        $('#quicklinks .tab-button ul li a').attr("style","padding:5px 0 !important");
+    }
 });
