@@ -185,6 +185,9 @@
 			
 			$session->idObject = $cookie->getO_id();
 			
+			$session2 = new Zend_Session_Namespace('homeAgen');
+            $session2->idUser = $cookie->getO_id();
+			
 			if($JenisKelamin == 'l') {
 				$JK = 'Pria';
 			}
@@ -245,5 +248,16 @@
 			echo "sukses";
             //Zend_Session::namespaceUnset('calculation');
         }
+		
+		public function updateUserTasbihAction(){
+			$session2 = new Zend_Session_Namespace('homeAgen');
+			$idObject = $session2->idUser;
+			
+			$update = Object_Tasbih::getById($idObject);
+			$update->setMasukAgen("Ya");
+			$update->save();
+			
+			Zend_Session::namespaceUnset('homeAgen');
+		}
     }
 ?>

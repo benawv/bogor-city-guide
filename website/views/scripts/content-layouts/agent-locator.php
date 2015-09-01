@@ -81,9 +81,9 @@
 		<?php echo $this->areablock('container-modal', array('allowed' => array('modal')))?>
 	</div>
 </div>
+<?php if(!$this->editmode) { ?>
 <script type="text/javascript">
 	$(document).ready(function(){
-		<?php if(!$this->editmode) { ?>
 		$('li.aktif .nav_menu div').css('display', 'none');
 		$('li .nav_menu .white_image').css('display', 'none');
 		$('li.aktif .nav_menu .white_image').css('display', 'block');
@@ -113,6 +113,24 @@
 				$('html, body').animate({scrollTop:$("#"+id[0]).offset().top-90}, 500);
 			}
 		});
-		<?php }?>
 	});
 </script>
+<?php
+	$session2 = new Zend_Session_Namespace('homeAgen');
+	if($session2->idUser != null) {
+?>
+<script type="text/javascript">
+		$.ajax({
+			url      : '/update-user-tasbih/',
+			type     : 'POST',
+			data     : {
+						'masuk_agen' : 'ya'
+						},
+			success  : function(data){
+				
+			}
+		});
+</script>
+<?php }
+}
+?>
