@@ -461,9 +461,17 @@ $(window).load(function () {
             itemSelector: '.item'
         });
     }
-    var cusQuick = $('#quicklinks .tab-button ul li a').height();
+    var cusQuick = $('#quicklinks .tab-button ul').height();
     
-    if (cusQuick > 24) {
-        $('#quicklinks .tab-button ul li a').attr("style","padding:5px 0 !important");
+    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    if (isChrome){
+        if (cusQuick > 35) {
+            $('#quicklinks .tab-button ul li a').attr("style","padding:5px 0 !important;min-height:35px !important;");
+        }
+    }
+    else{
+        if (cusQuick > 36) {
+            $('#quicklinks .tab-button ul li a').attr("style","padding:5px 0 !important;");
+        }
     }
 });
