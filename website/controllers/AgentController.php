@@ -398,11 +398,14 @@ class AgentController extends Website_Controller_Action {
 
 		$mail = new Pimcore_Mail();
 		$mail->setSubject("Permintaan $nama Calon Nasabah Produk Allianz Tasbih");
-		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+		$mail->setFrom("no-reply@allianz.co.id","Allianz Tasbih");
 		$mail->setDocument($document);
 		$mail->setParams($params);
-		$mail->addTo($email_agen); //$email_agen
-        $mail->addBcc($emailBCC);
+		
+		//sementara pake alamat email pengirim
+		$mail->addTo("robbi@dreamcube.co.id");
+		//$mail->addTo($email_agen); //$email_agen
+        //$mail->addBcc($emailBCC);
 		$mail->send();
 
 		Zend_Session::namespaceUnset('tasbih');
@@ -478,8 +481,11 @@ class AgentController extends Website_Controller_Action {
 		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 		$mail->setDocument($document);
 		$mail->setParams($params);
-		$mail->addTo($email);
-		$mail->addBcc("asn.tasbih@gmail.com");
+		$mail->addTo("robbi@dreamcube.co.id");
+		
+		//sementara
+		//$mail->addTo($email);
+		//$mail->addBcc("asn.tasbih@gmail.com");
 		$mail->send();
 
 		Zend_Session::namespaceUnset('inquiry');
@@ -554,8 +560,10 @@ class AgentController extends Website_Controller_Action {
 		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 		$mail->setDocument($document);
 		$mail->setParams($params);
-		$mail->addTo($email);
-		$mail->addBcc("asn.tasbih@gmail.com");
+		$mail->addTo("robbi@dreamcube.co.id");
+		//sementara
+		//$mail->addTo($email);
+		//$mail->addBcc("asn.tasbih@gmail.com");
 		$mail->send();
 
 		Zend_Session::namespaceUnset('liveinsurance');

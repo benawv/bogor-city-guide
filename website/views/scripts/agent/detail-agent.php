@@ -252,21 +252,22 @@
                         <p>
                             <?php
                                 echo "<span id='alamat_agen'>".$alamat."</span><br />";
+                                echo "Telp. ".$telp."<br />";
                                 echo "Fax. ".$fax."<br />";
-                                echo "Hubungi Admin Agen. ";
-                                $x = 1;
-                                foreach($expTelp as $key => $val){
-                                    if($x > 1){
-                                        echo "<span class='marginKantor'>(".$dataKantor->getKodeAreaTelepon().") ".$val."</span><br />";
-                                    }
-                                    else{
-                                        $callKantor = "(".$dataKantor->getKodeAreaTelepon().") ".$val;
-                                        echo "(".$dataKantor->getKodeAreaTelepon().") ".$val."<br />";
-                                    }
-                                    $x++;
-                                }
-                                //echo "Hubungi Agen. ".$telp."<br />";
-                                echo "Email Admin Agen. <span id='email_agen'>".$emailAgent."</span>";
+                                //echo "Hubungi Admin Agen. ";
+                                //$x = 1;
+                                //foreach($expTelp as $key => $val){
+                                //    if($x > 1){
+                                //        echo "<span class='marginKantor'>(".$dataKantor->getKodeAreaTelepon().") ".$val."</span><br />";
+                                //    }
+                                //    else{
+                                //        $callKantor = "(".$dataKantor->getKodeAreaTelepon().") ".$val;
+                                //        echo "(".$dataKantor->getKodeAreaTelepon().") ".$val."<br />";
+                                //    }
+                                //    $x++;
+                                //}
+                                ////echo "Hubungi Agen. ".$telp."<br />";
+                                //echo "Email Admin Agen. <span id='email_agen'>".$emailAgent."</span>";
                             ?>
                         </p>
                         <!-- <p> DI HIDE DULU YAA

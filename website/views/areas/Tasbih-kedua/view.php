@@ -1,10 +1,40 @@
 <?php
 //call session yang di buat di controller kalkulatortassbihControler function saveAction()
+if(!($this->editmode)){
   $session = new Zend_Session_Namespace('tasbih');
   $sessionTasbih = new Zend_Session_Namespace('tasbih');
+$sessionDup = new Zend_Session_Namespace('duplic_tasbih');
+            $date_tglBuat = $sessionDup->date_tglBuat;
+            $date_tglLahir = $sessionDup->date_tglLahir;
+            $JenisKelamin = $sessionDup->JenisKelamin;
+            $Usia = $sessionDup->Usia;
+            $frek = $sessionDup->Frekuensi;
+            $AsuransiJiwa = $sessionDup->AsuransiJiwa;
+            $AJ = $sessionDup->AJ;
+            $Kontribusi = $sessionDup->Kontribusi;
+            $Calculation = $sessionDup->Calculation;
+			$kat = $sessionDup->kat;
 ?>
 
+<script>
+    var Buat = "<?php echo $date_tglBuat; ?>";
+    var Lahir = "<?php echo $date_tglLahir; ?>";
+    var JK = "<?php echo $JenisKelamin; ?>";
+    var Usia = "<?php echo $Usia; ?>";
+    var frek = "<?php echo $frek; ?>";
+    var Asuransi = "<?php echo $AsuransiJiwa; ?>";
+    var AJ = "<?php echo $AJ; ?>";
+    var Kons = "<?php echo $Kontribusi; ?>";
+    var Calc = "<?php echo $Calculation; ?>";
+//    var Kat = "<?php echo $Calculation; ?>";
+    
+    if( Buat == "" || Lahir == "" || JK == "" || Usia == "" || frek == "" || Asuransi == "" || AJ == "" || Kons == "" ||Calc == ""){
+        document.location.href = "/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi";
+    }
 
+</script>
+
+<?php } ?>
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/bootstrap.min.css"  />
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
@@ -346,7 +376,7 @@
 
                                 
                                 <button type="button" class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next">
-                                    <i class="fa fa-envelope-o"></i> Kirim
+                                    <i class="fa fa-envelope-o"></i> Selanjutnya
                                 </button>
                             </div><!--/ .col-md-12 -->
                         </div><!--/ .form-group -->
@@ -586,13 +616,14 @@ $('#provinsi').change(function(){
             var kota = $('#kota option:Selected').html();
             var informasi = $('#informasi option:Selected').val();
             var provinsi = $('#provinsi option:Selected').html();
+            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
             
             //alert(informasi);
 
-            if( nama == '' ||email == '' || nohp == '' || nohp.length <= 8 || informasi == 'pilih' || provinsi == '-Pilih-' || kota == '-Pilih-'){
+            if( nama == '' ||email == '' || nohp == '' || nohp.length <= 8 || informasi == 'pilih' || provinsi == '-Pilih-' || kota == '-Pilih-' || !re.test(email)){
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
-                    if( email == '' )
+                    if( email == '' || !re.test(email))
                         document.getElementById('notifemail').style.display= 'block';
                     if( nohp.length < 8 || nohp == '')
                         document.getElementById('notifNoHP').style.display='block';
@@ -604,7 +635,7 @@ $('#provinsi').change(function(){
                         document.getElementById('notif-provinsi').style.display="block";
                     alert("Mohon Periksa Inputan Anda");
             }else{
-
+                $("body").prepend("<div id='dvLoading'></div>");
               $.ajax({
                   url      : '/tasbih-kedua/',
                   type     : 'POST',

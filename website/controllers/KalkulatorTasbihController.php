@@ -64,6 +64,18 @@
             $session->Kontribusi = $Kontribusi;
             $session->Calculation = $Calculation;
 			$session->kat = $kat;
+            
+            $sessionDup = new Zend_Session_Namespace('duplic_tasbih');
+            $sessionDup->date_tglBuat = $date_tglBuat;
+            $sessionDup->date_tglLahir = $date_tglLahir;
+            $sessionDup->JenisKelamin = $JenisKelamin;
+            $sessionDup->Usia = $Usia;
+            $sessionDup->Frekuensi = $frek;
+            $sessionDup->AsuransiJiwa = $AsuransiJiwa;
+            $sessionDup->AJ = $AJ;
+            $sessionDup->Kontribusi = $Kontribusi;
+            $sessionDup->Calculation = $Calculation;
+			$sessionDup->kat = $kat;
 
             echo $session->Calculation;//print result of calculation into form
 
@@ -185,6 +197,9 @@
 			
 			$session->idObject = $cookie->getO_id();
 			
+			$session2 = new Zend_Session_Namespace('homeAgen');
+            $session2->idUser = $cookie->getO_id();
+			
 			if($JenisKelamin == 'l') {
 				$JK = 'Pria';
 			}
@@ -234,16 +249,27 @@
 			print_r($emailSettings);
 			die();
 			*/
-			$mail = new Pimcore_Mail();
-			$mail->setSubject("Konfirmasi Hasil Kalkulasi Ilustrasi Produk Allianz Tasbih");
-			$mail->setFrom("no-reply@allianz.co.id","Allianz Tasbih");
-			$mail->setDocument($document);
-			$mail->setParams($params);
-			$mail->addTo($email);
-			$mail->send();
+//			$mail = new Pimcore_Mail();
+//			$mail->setSubject("Konfirmasi Hasil Kalkulasi Ilustrasi Produk Allianz Tasbih");
+//			$mail->setFrom("no-reply@allianz.co.id","Allianz Tasbih");
+//			$mail->setDocument($document);
+//			$mail->setParams($params);
+//			$mail->addTo($email);
+//			$mail->send();
             
 			echo "sukses";
             //Zend_Session::namespaceUnset('calculation');
         }
+		
+		public function updateUserTasbihAction(){
+			$session2 = new Zend_Session_Namespace('homeAgen');
+			$idObject = $session2->idUser;
+			
+			$update = Object_Tasbih::getById($idObject);
+			$update->setMasukAgen("Ya");
+			$update->save();
+			
+			Zend_Session::namespaceUnset('homeAgen');
+		}
     }
 ?>
