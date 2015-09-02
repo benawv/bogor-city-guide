@@ -249,13 +249,13 @@
 			print_r($emailSettings);
 			die();
 			*/
-			$mail = new Pimcore_Mail();
-			$mail->setSubject("Konfirmasi Hasil Kalkulasi Ilustrasi Produk Allianz Tasbih");
-			$mail->setFrom("no-reply@allianz.co.id","Allianz Tasbih");
-			$mail->setDocument($document);
-			$mail->setParams($params);
-			$mail->addTo($email);
-			$mail->send();
+//			$mail = new Pimcore_Mail();
+//			$mail->setSubject("Konfirmasi Hasil Kalkulasi Ilustrasi Produk Allianz Tasbih");
+//			$mail->setFrom("no-reply@allianz.co.id","Allianz Tasbih");
+//			$mail->setDocument($document);
+//			$mail->setParams($params);
+//			$mail->addTo($email);
+//			$mail->send();
             
 			echo "sukses";
             //Zend_Session::namespaceUnset('calculation');
