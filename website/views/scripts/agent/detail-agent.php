@@ -505,7 +505,7 @@
                     ?>
                         <a href="mailto:<?php echo $emailkantor;?>?Subject=Call%20Agen" target="_top" class="btn btn-sendmail" onclick="setTimeout(function(){window.location='/agent-locator/agen/thankyou-agent/'},5000);">Kirim EMail</a>
                     <?php } else{?>
-                        <a href="javascript:void(0)" target="_top" class="btn btn-sendmail btn-email">Email Agen</a>&nbsp;
+                        <a href="javascript:void(0)" id="sending" target="_top" class="btn btn-sendmail btn-email">Email Agen</a>&nbsp;
                     <?php }?>
                     <br />
                     <a href="tel:<?php echo $callKantor;?>" target="_top" class="btn btn-sendmail hide">Hubungi Agen</a>
@@ -598,8 +598,29 @@
 <script>
 
 
+
     $('.btn-email').click(function() {
+        <?php 
+            $sessionAgen = new Zend_Session_Namespace('namaAgen');
+            $idObject = $sessionAgen->idUser;
+            if($idObject != '') {
+        ?>
+        $.ajax({
+            url : '/add-agen-name/',
+            type : 'POST',
+            data :{
+                    'nama' : '<?php echo $namaAgent; ?>'
+                  },
+            success : function(data){
+                       //console.log(data);
+                $('#modalEmail').modal();
+            }
+            
+        });
+        <?php }else{ ?>
         $('#modalEmail').modal();
+        <?php } ?>
+             
     });
     
     $(".kirim-email").click(function(){
@@ -628,7 +649,7 @@
                 success  : function(data){
                     //console.log(data);
                     //alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
-                    window.location = "/agent-locator/agen/thankyou-agent";
+//                    window.location = "/agent-locator/agen/thankyou-agent";
                 },
                 error: function (xhr, desc, err)
                 {

@@ -198,7 +198,9 @@
 			$session->idObject = $cookie->getO_id();
 			
 			$session2 = new Zend_Session_Namespace('homeAgen');
+			$sessionAgen = new Zend_Session_Namespace('namaAgen');
             $session2->idUser = $cookie->getO_id();
+            $sessionAgen->idUser = $cookie->getO_id();
 			
 			if($JenisKelamin == 'l') {
 				$JK = 'Pria';

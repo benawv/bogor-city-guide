@@ -232,8 +232,8 @@ class AgentController extends Website_Controller_Action {
 
 	public function sendMailAgenTasbihAction(){        
         
-        //echo 'TEST';
-        //die();
+//        echo 'TEST';
+//        die();
         
 		$from = $_POST["from"];
         $keterangan = $_POST["keterangan"];
@@ -391,6 +391,32 @@ class AgentController extends Website_Controller_Action {
                         print_r(strtolower($emailLeaderBCC))
                     );*/
         
+        $document2 = '/email/email-tasbih';
+        			$params2 = array(
+							'tglhitung' => $date_tglBuat1,
+							'nama' => $nama,
+							'email' => $email,
+							'tgllahir' => $date_tglLahir1,
+							'usia'=> $Usia,
+							'kontribusi' => $Kontribusi,
+							'AJ' => $AJ,
+							'pembayaran' => $hasil,
+							'per' => $per,
+							'frek' => $Frekuensi,
+							'JK' => $JK,
+							'nohp' => $nohp,
+                            'info' => $info,
+                            'kota' => $kota,
+                            'provinsi' => $provinsi
+							);
+ 
+        $email2 = new Pimcore_Mail();
+        $email2->setSubject("Konfirmasi Hasil Kalkulasi Ilustrasi Produk Allianz Tasbih");
+        $email2->setFrom("no-reply@allianz.co.id","Allianz Tasbih");
+        $email2->setDocument($document2);
+        $email2->setParams($params2);
+        $email2->addTo($email);
+        $email2->send();
 
         
 
@@ -407,12 +433,27 @@ class AgentController extends Website_Controller_Action {
 		//$mail->addTo($email_agen); //$email_agen
         //$mail->addBcc($emailBCC);
 		$mail->send();
+        
+
 
 		Zend_Session::namespaceUnset('tasbih');
 
 		echo "Sukses $Calculation";
 		die();
 	}
+    
+    public function addAgentNameAction(){
+//            echo 'TEST';
+//            die();
+            $sessionAgen = new Zend_Session_Namespace('namaAgen');
+            $idObject = $sessionAgen->idUser;
+//			$idObject = 31471;
+			$update = Object_Tasbih::getById($idObject);
+			$update->setNamaAgen($_POST["nama"]);
+			$update->save();
+        
+            Zend_Session::namespaceUnset('namaAgen');
+    }
 	
 	public function sendMailAgenInquiryAction(){
 
