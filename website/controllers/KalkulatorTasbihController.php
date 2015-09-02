@@ -64,6 +64,18 @@
             $session->Kontribusi = $Kontribusi;
             $session->Calculation = $Calculation;
 			$session->kat = $kat;
+            
+            $sessionDup = new Zend_Session_Namespace('duplic_tasbih');
+            $sessionDup->date_tglBuat = $date_tglBuat;
+            $sessionDup->date_tglLahir = $date_tglLahir;
+            $sessionDup->JenisKelamin = $JenisKelamin;
+            $sessionDup->Usia = $Usia;
+            $sessionDup->Frekuensi = $frek;
+            $sessionDup->AsuransiJiwa = $AsuransiJiwa;
+            $sessionDup->AJ = $AJ;
+            $sessionDup->Kontribusi = $Kontribusi;
+            $sessionDup->Calculation = $Calculation;
+			$sessionDup->kat = $kat;
 
             echo $session->Calculation;//print result of calculation into form
 
