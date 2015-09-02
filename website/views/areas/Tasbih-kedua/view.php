@@ -586,13 +586,14 @@ $('#provinsi').change(function(){
             var kota = $('#kota option:Selected').html();
             var informasi = $('#informasi option:Selected').val();
             var provinsi = $('#provinsi option:Selected').html();
+            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
             
             //alert(informasi);
 
-            if( nama == '' ||email == '' || nohp == '' || nohp.length <= 8 || informasi == 'pilih' || provinsi == '-Pilih-' || kota == '-Pilih-'){
+            if( nama == '' ||email == '' || nohp == '' || nohp.length <= 8 || informasi == 'pilih' || provinsi == '-Pilih-' || kota == '-Pilih-' || !re.test(email)){
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
-                    if( email == '' )
+                    if( email == '' || !re.test(email))
                         document.getElementById('notifemail').style.display= 'block';
                     if( nohp.length < 8 || nohp == '')
                         document.getElementById('notifNoHP').style.display='block';
