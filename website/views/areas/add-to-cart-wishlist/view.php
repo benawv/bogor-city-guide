@@ -3,7 +3,7 @@
 	<link rel="stylesheet" href="/website/ajfc/css/main.css">
 <link rel="stylesheet" href="/website/ajfc/css/font-awesome.min.css">
 <style>
-.full-w p {
+.full-w p,.custom-width {
     width:100% !important;
 }
 </Style>
@@ -24,38 +24,42 @@
 		<?php endif; ?>
 	</h2>
 
-<!--	<div class="description width-66">-->
-        <div class="row" style="width:100%; margin-left:0px; margin-right:0px;">
+	<div class="description width-66"> <!-- teks-->
+        <!-- <div class="row" style="width:100%; margin-left:0px; margin-right:0px;"> -->
 		<?php if($this->editmode): ?>
 			<?php echo "anchor name: ".$this->input('anchor', array("width" => 250))?>
 		<?php endif;?>
-		<div class="col-xs-12 col-md-3">
-			<?php echo $this->image('image-kirirow', array(
-									'title' => 'Image Size 240x200',
-									'width' => 240,
-									'height' => 200
-									/*'thumbnail' => 'product'*/))?>
+		<div class="section-left-40">
+			<?php echo $this->image('image-kiri', array(
+									'title' => 'Image Size 225x200',
+									'width' => 225,
+									'height' => 200,
+                  'class' => 'custom-width',
+									'thumbnail' => 'product'))?>
 		</div>
-		<div class="col-xs-12 col-md-6">
-            <?php echo $this->wysiwyg('teks-tengah')?>
+		<div class="section-right-60">
+            <?php echo $this->wysiwyg('teks-kanan')?>
+            <p>
+              <button class="btn btn-primary template shop-smartlink"><i class="fa fa-shopping-cart"></i>  Berminat dengan produk ini</button>
+            </p>
 		</div>
+  </div> <!-- teks-->
 
-        <div class="col-xs-12 col-md-3">
-        	<?php if($this->editmode): ?>
-				Shop : <?php echo $this->image('icon-shop', array(
-									'title' 	=> 'Image Size 180x180',
-									'width' 	=> 180,
-									'height' 	=> 180,
-									'thumbnail'	=> 'icon-shop')) ?>
-			<?php else: ?>
-				<?php if($this->image('icon-shop')->getSrc()):?>
-					<a href="javascript:void(0);" class="shop-smartlink"><img src='<?php echo $this->image('icon-shop')->getSrc()?>'/></a>
+        <!-- <div class="col-xs-12 col-md-3">
+        	<?php //if($this->editmode): ?>
+				Shop : <?php //echo $this->image('icon-shop', array(
+									//'title' 	=> 'Image Size 180x180',
+									//'width' 	=> 180,
+									//'height' 	=> 180,
+									//'thumbnail'	=> 'icon-shop')) ?>
+			<?php //else: ?>
+				<?php //if($this->image('icon-shop')->getSrc()):?>
+					<a href="javascript:void(0);" class="shop-smartlink"><img src='<?php //echo $this->image('icon-shop')->getSrc()?>'/></a>
 					<!-- <div style="background-image: url('<?php //echo $this->image('asdfasdf')->getSrc()?>'); height: 31px; width: 31px; float: left; margin-right: 10px; "></div> -->
-				<?php endif;?>
-			<?php endif; ?>
+				<?php //endif;?>
+			<?php //endif; ?>
         	<!-- <a href="javascript:void(0);" class="shop-smartlink" style="font-size:180px !important;"><i class="fa fa-shopping-cart"></i></a> -->
-        </div>
-        </div>
+        <!-- </div> -->
 <!--	</div>-->
 </div>
 
