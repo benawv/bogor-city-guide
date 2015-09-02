@@ -1,5 +1,6 @@
 <?php
 //call session yang di buat di controller kalkulatortassbihControler function saveAction()
+if(!($this->editmode)){
   $session = new Zend_Session_Namespace('tasbih');
   $sessionTasbih = new Zend_Session_Namespace('tasbih');
 $sessionDup = new Zend_Session_Namespace('duplic_tasbih');
@@ -32,7 +33,7 @@ $sessionDup = new Zend_Session_Namespace('duplic_tasbih');
     }
 
 </script>
-
+<?php } ?>
 <?php Zend_Session::namespaceUnset('duplic_tasbih'); ?>
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/bootstrap.min.css"  />
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
