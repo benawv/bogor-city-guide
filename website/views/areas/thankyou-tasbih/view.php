@@ -155,6 +155,7 @@ $sessionDup = new Zend_Session_Namespace('duplic_tasbih');
 
                     <div class="form-box" id="notif-confirm">
                         <h1 style="text-align:center">TERIMA KASIH</h1>
+<!--
                         <h3  style=" color:black; text-align:center;"><strong> <a href="#" class="calc-overlay-trigger"  data-toggle="modal" data-target="#premi" style="color:#009a44">Premi</a> yang harus Anda bayarkan sebesar <?php echo 'Rp. '.number_format($session->Calculation,0,',','.').' per tahun'; ?> 
                             
                             <?php
@@ -174,14 +175,15 @@ $sessionDup = new Zend_Session_Namespace('duplic_tasbih');
                             
                             </strong></h3>
                         <center style="font-size: 12px;"><h3 style=" color:black; text-align:center;margin-top: 12px;"> Perhitungan ilustrasi produk Allianz Tasbih sudah dikirimkan ke alamat email Anda.</h3>
-                        <h3 style=" color:black; text-align:center;">Total premi yang tertera belum disesuaikan dengan profil risiko Anda, silakan hubungi Agen untuk mendapatkan ilustrasi yang sesuai dengan profil risiko Anda. Klik tombol di bawah ini untuk mencari agen terdekat dari lokasi Anda.</h3>
+-->
+                        <h3 style=" color:black; text-align:center;">Silahkan hubungi Agen untuk mendapatkan ilustrasi yang sesuai dengan profil risiko Anda. Klik tombol di bawah ini untuk mencari agen terdekat dari lokasi Anda.</h3>
                         </center>
                         <center>
                             <!--
                             <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen">
                             -->
                             <br/>
-                            <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" style="background:#5F259F !important;"><i class="fa fa-users"></i> Cari Agen</button>
+                            <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" style="background:#5F259F !important;"><i class="fa fa-users"></i> Hubungi Agen Terdekat</button>
                         </center>
                     </div>
 
