@@ -214,23 +214,24 @@
 			<span><a href="/">Home </a></span>
             &rsaquo; <a href="<?php echo $this->url(array($keyKantor ,$idKantor),"detail-kantor");?>"><span>Detail Kantor</span></a>
             &rsaquo; <a href="<?php echo $this->url(array($idKantor ,$kodeAgent),"detail-agent");?>"><span>Detail Agen</span></a>
-            &rsaquo; <span class='currentPage'>Thank You Page</span>
+            &rsaquo; <span class='currentPage'>Terima Kasih</span>
 		</h5>
         <span
         <div class="full-w bg-white custom-section">
             <h2>
-                <span class="judul_section"><center>THANK YOU PAGE</center></span>
+                <span class="judul_section"><center>&nbsp;</center></span>
             </h2>
             <div class="description">
                                 <div class="form-box" id="notif-confirm">
 <br/>
                                     <br/>
                     <h3  style=" color:black;"><center><strong>TERIMA KASIH</strong></center></h3>
-                    <h4><center><strong>Permintaan Informasi Layanan Anda sudah kami kirim ke Agen</strong></center></h4>
+                    <h4><center><strong>Perhitungan/Ilustrasi Anda telah kami kirim ke Agen Allianz yang Anda pilih.<br />Silahkan menunggu Agen kami untuk langsung menghubungi Anda.</strong></center></h4>
                     <br />
                     <center>
+                        <a href="/produk">
                          <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm" id="cari-agen" name="next" style ="background:#003781;">Selesai</button>
-                         <!--input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih " id="cari-agen" name="next" value="Cari Agen" -->
+                        </a><!--input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih " id="cari-agen" name="next" value="Cari Agen" -->
                     </center>
                                     <br/>
                                     <br/>

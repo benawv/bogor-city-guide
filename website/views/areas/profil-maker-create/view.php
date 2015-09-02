@@ -49,9 +49,14 @@ function checkfiles(){
 
                 <div class="profile-maker--uploader">
                     <p>
-                        Upload your files here. Supported formats: JPG and PNG,<br />
+                        <!--Upload your files here. Supported formats: JPG and PNG,<br />-->
+                        Upload fotomu disini, dengan format JPG atau PNG dengan resolusi minimal
                         <script>
-                        document.write(getCookie("keterangan"));
+                            document.write(getCookie("res"));
+                        </script>
+                        <br />
+                        <script>
+                            document.write(getCookie("keterangan"));
                         </script>
                     </p>
                     <form role="form" action="/upload-image/" method="post" enctype="multipart/form-data" onsubmit="return checkfiles();">
