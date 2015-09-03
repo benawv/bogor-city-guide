@@ -13,23 +13,40 @@
 	}
     @media ( max-width: 992px )
     {
-        #desktop-show {
+        .desktop-show {
             display : none;
         }
-        #mobile-show{
+        .mobile-show{
             display : block;
         }
     }
         @media ( min-width: 992px )
     {
-        #desktop-show {
+        .desktop-show {
             display : block;
         }
-        #mobile-show{
+        .mobile-show{
             display : none;
         }
     }
+    
+.multiSlide{margin-bottom:50px;position:relative;}
+.multiSlide > ul{margin:0;padding:0;list-style-type:none;}
+.multiSlide .slide{width:100%;height:400px;position:relative;}
+.multiSlide .slide .photo{}
+.multiSlide .slide .stickybox{width:251px;height:231px;position:absolute;right:60px;top:15px;}
+.multiSlide .slide h3{font-size:1.6em;font-weight:normal;}
+.multiSlidemultiSlide .slide p{font-size:12px;line-height:1.3em;}
+.multiSlide .slide .action{}
+.multiSlide .flex-direction-nav a{opacity:1 !important;}
+.multiSlide .flex-direction-nav .flex-prev{left:0 !important;top:150px;color:#fff;text-shadow:none;background:url('../images/arrows.png');background-position:0 0!important;text-align:center;height:115px;}
+.multiSlide .flex-direction-nav .flex-prev:before{font-size:20px;margin:115px 0px;display:block;}
+.multiSlide .flex-direction-nav .flex-next{right:0 !important;top:150px;color:#fff;text-shadow:none;background:url('../images/arrows.png');background-position:-86px 0!important;text-align:center;height:115px;}
+.multiSlide .flex-direction-nav .flex-next:before{font-size:20px;margin:115px 0px;display:block;}
+.multiSlide .flex-control-paging li a{background:#fff;border:1px solid #eee;}
+.multiSlide .flex-control-paging li a.flex-active{background:#1ba1e2;border:none;}
 </style>
+
 
 <section class="profile-maker full-w bg-white">
     <div class="container">
@@ -76,7 +93,7 @@
                 <h2><?php echo $this->input("heading");?></h2>
             </div>
         </div><!--/ .row -->
-<div id="desktop-show">
+<div class="desktop-show">
         <?php
         if(!$this->select("agent")->isEmpty())
             $agent = (int) $this->select("agent")->getData();
@@ -159,8 +176,8 @@
         endfor; ?>
         </div>
         
-<div id="mobile-show">
-            <div id="slideshow" class="clearfix">
+<div class="mobile-show">
+            <div class="clearfix multiSlide">
                 <ul class="slides">
         <?php
 if(!$this->editmode){
