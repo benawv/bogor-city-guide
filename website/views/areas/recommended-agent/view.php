@@ -11,7 +11,7 @@
 	.profile-maker.full-w.bg-white{
 		padding-left:0px;
 	}
-    @media ( max-width: 992px )
+    @media ( max-width: 768px )
     {
         .desktop-show {
             display : none;
@@ -20,7 +20,7 @@
             display : block;
         }
     }
-        @media ( min-width: 992px )
+        @media ( min-width: 768px )
     {
         .desktop-show {
             display : block;
@@ -36,7 +36,7 @@
 .multiSlide .slide .photo{}
 .multiSlide .slide .stickybox{width:251px;height:231px;position:absolute;right:60px;top:15px;}
 .multiSlide .slide h3{font-size:1.6em;font-weight:normal;}
-.multiSlidemultiSlide .slide p{font-size:12px;line-height:1.3em;}
+.multiSlide .slide p{font-size:12px;line-height:1.3em;}
 .multiSlide .slide .action{}
 .multiSlide .flex-direction-nav a{opacity:1 !important;}
 .multiSlide .flex-direction-nav .flex-prev{left:0 !important;top:150px;color:#fff;text-shadow:none;background:url('../images/arrows.png');background-position:0 0!important;text-align:center;height:115px;}
@@ -45,8 +45,8 @@
 .multiSlide .flex-direction-nav .flex-next:before{font-size:20px;margin:115px 0px;display:block;}
 .multiSlide .flex-control-paging li a{background:#fff;border:1px solid #eee;}
 .multiSlide .flex-control-paging li a.flex-active{background:#1ba1e2;border:none;}
+    
 </style>
-
 
 <section class="profile-maker full-w bg-white">
     <div class="container">
@@ -189,7 +189,7 @@ if(!$this->editmode){
     
     ?>
                      <li>
-                         <div class="slide">
+                         <div class="slide" style="height : 100% !important;">
                     <?php
             //if($i%5==0){
             //    echo "<div class='row'>";
