@@ -25,6 +25,10 @@ $(document).ready(function () {
     $('#slideshow').flexslider({
         animation: "slide"
     });
+    
+    $('.multiSlide').flexslider({
+        animation: "slide"
+    });
     $('#best-products').flexslider({
         animation: "slide",
         slideshowSpeed: 6000
