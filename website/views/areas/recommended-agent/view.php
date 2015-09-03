@@ -11,6 +11,24 @@
 	.profile-maker.full-w.bg-white{
 		padding-left:0px;
 	}
+    @media ( max-width: 992px )
+    {
+        #desktop-show {
+            display : none;
+        }
+        #mobile-show{
+            display : block;
+        }
+    }
+        @media ( min-width: 992px )
+    {
+        #desktop-show {
+            display : block;
+        }
+        #mobile-show{
+            display : none;
+        }
+    }
 </style>
 
 <section class="profile-maker full-w bg-white">
@@ -58,7 +76,7 @@
                 <h2><?php echo $this->input("heading");?></h2>
             </div>
         </div><!--/ .row -->
-
+<div id="desktop-show">
         <?php
         if(!$this->select("agent")->isEmpty())
             $agent = (int) $this->select("agent")->getData();
@@ -139,6 +157,104 @@
             //}
 
         endfor; ?>
+        </div>
+        
+<div id="mobile-show">
+            <div id="slideshow" class="clearfix">
+                <ul class="slides">
+        <?php
+if(!$this->editmode){
+        if(!$this->select("agent")->isEmpty())
+            $agent2 = (int) $this->select("agent")->getData();
+        else
+            $agent = 1;
+        for( $i = 1; $i <= $agent2; $i++ ):
+    
+    ?>
+                     <li>
+                         <div class="slide">
+                    <?php
+            //if($i%5==0){
+            //    echo "<div class='row'>";
+            //    $temp = "</div>";
+            //}else{
+                $link = "myLink-link".$i;
+                $class = "thumbnail thumbnail-popup id".$i;
+                $target = "#modalpdf".$i;
+                $gambar = "gambar-tahukah-anda".$i;
+                $class_gambar = "thumb1 clickPage".$i;
+                // echo '
+            ?>
+                 <div class="col-xs-12 col-md-20">
+                     <div class="profile-maker--box">
+                         <h4><?php
+                                if($this->editmode) {
+                                    echo $this->link($link,array("class" => $class));
+                                }else{
+                                    $id_agen = $this->link($link,array("class" => $class))->getHref();
+                                    if($id_agen != "" && $id_agen != " " && $id_agen != "#"){
+                                    $kondisi = array("condition" => "kodeAgent = ".$id_agen);;
+                                    $getID = Object_AgentLocatorData::getList($kondisi);
+                                    foreach($getID as $row)
+                                    {
+                                        $id = $row->getO_id();
+                                    }
+
+                                    $data = Object_AgentLocatorData::getById($id);
+                                    //echo "<pre>";//print_r($data->getO_id());//die();
+                                    //if($data->getKantor()[0]->o_id != ""){
+                            ?>
+                                        <a href="<?php echo '/detail-agent/'.$data->getKantor()[0]->o_id.'-'.$data->getO_id();?>" target="_blank"><?php echo $this->link($link)->getText();?></a>
+                            <?php
+                                    }
+                                    else{
+                            ?>
+                                        <a href="#"><?php echo $this->link($link)->getText();?></a>
+                            <?php
+                                    //}
+                                    }
+                                }
+                            ?>
+                            <?php
+                                /*echo $this->renderlet("artikel".$i, array(
+                                "controller" => "agent",
+                                "action" => "renderlet",
+                                "editmode" => $this->editmode,
+                                "title" => "Drag objek agen yang diinginkan."
+                                ));*/
+                            ?>
+                         </h4>
+                         <!--<img src="/website/static/images/profil.jpg" alt="Template Image" class="img-responsive">-->
+                        <?php
+                            echo $this->image($gambar, array("class" => $class_gambar,"title" => "Image Size 166x202","width" => 166,"height" => 202));
+                        ?>
+                     </div><!--/ .profile-maker-box -->
+                 </div><!--/ .col-xs-12 -->
+            <?php
+                // ';
+                //echo '
+                //<div class="col-xs-12 col-md-20">
+                //    <div class="profile-maker--box">
+                //        <h4>'.$this->link($link,array("class" => $class,
+                //                                         "data-target" => $target,
+                //                                         "data-toggle" => "modal")).'</h4>
+                //        '.$this->image($gambar, array("class" => $class_gambar,"title" => "Image Size 166x202","width" => 166,"height" => 202)).'
+                //
+                //    </div><!--/ .profile-maker-box -->
+                //</div><!--/ .col-xs-12 -->
+                //';
+                //echo $temp;
+                //$temp = "";
+            //}
+
+        endfor;
+}
+        ?>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
 
     </div><!--/ .container -->
