@@ -7,12 +7,26 @@
     </div>
 </div>
 -->
+                        <?php
+                                    $pt = $this->select('positionAJFC_')->getData();
+								    $ct = $this->select('colorAJFC_')->getData();
+                        ?>
 <style>
     .gmbr{
           width: 100%;
           height: auto;
           position: relative;
     }
+    
+    header .caption .box-dent::before, div.header .caption .box-dent::before{
+        
+        border-top-color : <?php echo $ct; ?> !important;
+    }
+    
+    header .caption .box-dent, div.header .caption .box-dent{
+        background : <?php echo $ct; ?> !important;
+    }
+
 </style>
 <header>
 
@@ -30,13 +44,11 @@
     <div class="caption">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-8 col-sm-offset-4 col-md-3 col-md-offset-9">
+
+                <div class="col-xs-12 col-sm-8 col-sm-offset-4 col-md-3 col-md-offset-<?php if($pt == 'left') echo 0; else echo 9; ?>">
                     <div class="box-dent mt32">
-                            <?php
-                                    $pt = $this->select('positionAJFC_')->getData();
-								    $ct = $this->select('colorAJFC_')->getData();
-                            ?>
-                        <div class="box-dent--inner <?php echo $pt; ?> <?php echo $ct; ?>">
+
+                        <div class="box-dent--inner">
                             <h2><?php echo $this->input("JudulAJFC"); ?></h2>
                             
                 <?php echo $this->wysiwyg('descriptAJFC')?>
@@ -64,8 +76,8 @@
 			                        		echo "Position: <br />";
 			                        		echo $this->select("positionAJFC_",array(
 											    "store" => array(
-											        //array("left", "Left"),
-											        //array("right", "Right")
+											        array("left", "Left"),
+											        array("right", "Right")
 											    ),
                                                 
 											    "reload" => true
@@ -77,12 +89,11 @@
 				                        	echo "Color: <br />";
 			                        		echo $this->select("colorAJFC_",array(
 											    "store" => array(
-											        //array("blue", "blue"),
-											        //array("yellow", "yellow"),
-											        //array("light-blue", "light-blue"),
-											        //array("red", "red"),
-											        //array("green", "green"),
-											        //array("purple", "purple")
+											        array("blue", "blue"),
+											        array("yellow", "yellow"),
+											        array("red", "red"),
+											        array("green", "green"),
+											        array("purple", "purple")
 											    ),
 											    "reload" => true
 											)); 
