@@ -46,9 +46,9 @@
 .multiSlide .slide p{font-size:12px;line-height:1.3em;}
 .multiSlide .slide .action{}
 .multiSlide .flex-direction-nav a{opacity:1 !important;}
-.multiSlide .flex-direction-nav .flex-prev{left:0 !important;top:150px;color:#fff;text-shadow:none;background:url('../images/arrows.png');background-position:0 0!important;text-align:center;height:115px;}
+.multiSlide .flex-direction-nav .flex-prev{left:0 !important;top:150px;color:#fff;text-shadow:none;background:url('../website/static/images/arrows.png');background-position:0 0!important;text-align:center;height:115px;}
 .multiSlide .flex-direction-nav .flex-prev:before{font-size:20px;margin:115px 0px;display:block;}
-.multiSlide .flex-direction-nav .flex-next{right:0 !important;top:150px;color:#fff;text-shadow:none;background:url('../images/arrows.png');background-position:-86px 0!important;text-align:center;height:115px;}
+.multiSlide .flex-direction-nav .flex-next{right:0 !important;top:150px;color:#fff;text-shadow:none;background:url('../website/static/images/arrows.png');background-position:-86px 0!important;text-align:center;height:115px;}
 .multiSlide .flex-direction-nav .flex-next:before{font-size:20px;margin:115px 0px;display:block;}
 .multiSlide .flex-control-paging li a{background:#fff;border:1px solid #eee;}
 .multiSlide .flex-control-paging li a.flex-active{background:#1ba1e2;border:none;}
