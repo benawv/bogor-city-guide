@@ -19,6 +19,11 @@
         .mobile-show{
             display : block;
         }
+        
+        h2{
+        font-size : 1.4em !important;
+        
+        }
     }
         @media ( min-width: 768px )
     {
@@ -29,6 +34,8 @@
             display : none;
         }
     }
+    
+
     
 .multiSlide{margin-bottom:50px;position:relative;}
 .multiSlide > ul{margin:0;padding:0;list-style-type:none;}
@@ -70,9 +77,7 @@
             </div><!--/ .col-xs-6 -->
         </div><!--/ .row -->
         <?php } ?>
-
-        <h2>
-            <?php if($this->editmode): ?>
+                    <?php if($this->editmode): ?>
                 Icon: <?php echo $this->image('icon_', array(
                                     'title' 	=> 'Image Size 31x31',
                                     'width' 	=> 100,
@@ -84,6 +89,8 @@
                 <?php endif;?>
 
             <?php endif; ?>
+
+        <h2>
             <?php echo $this->input("heading");?>
         </h2>
 
