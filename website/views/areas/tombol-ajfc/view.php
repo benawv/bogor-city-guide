@@ -51,7 +51,7 @@
                                     }
 				    ?>
                     <a href="<?php echo $link; ?>" class="nav-item <?php echo $col; ?> <?php echo $ic; ?>">
-                        <h4><small>0<?php echo $loop; ?></small><?php echo $this->input("btn-".$loop, array("width" => 125)); ?></h4>
+                        <h4>0<?php echo $loop; ?> <?php echo $this->input("btn-".$loop, array("width" => 125)); ?></h4>
                     </a>
                                     			             
 			                        	<?php 
