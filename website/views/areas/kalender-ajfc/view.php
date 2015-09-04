@@ -1,10 +1,21 @@
+<style>
+    @media ( max-width: 992px )
+    {
+        section#calendar-wrapper .row > div.pr0[class^="col-"]
+        {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+    }
+</style>
+
 <section id="calendar-wrapper">
-    <div class="container">
+    <div class="container" style="max-width: 960px;">
         <div class="row">
-            <div class="col-xs-12 col-md-6 pr0">
+            <div class="col-xs-12 col-md-6 pr0 pl0">
                 <div id="my-calendar"></div>
             </div><!--/ .col-xs-12 -->
-            <div class="col-xs-12 col-md-6 calendar-info pl0">
+            <div class="col-xs-12 col-md-6 calendar-info pl0 pr0">
                 <div class="calendar-info--inner">
                     <?php
                         $bulanInd = array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
@@ -29,7 +40,7 @@
                         }
                     ?>
                     <div class="header">
-                        <h2>Kalender Event</h2>
+                        <h2><strong>Kalender Event</strong></h2>
                     </div>
                     <div class="body">
                         <h2 id="calendar-title"><?php echo $title; ?></h2>
@@ -81,7 +92,7 @@
     $count = count($entries);
     $sisa = 8 - $count;
     //echo $count;
-    if($count >= 8){
+    if($count < 8){
         $n = 1;
     }else{
         $n = 2;
@@ -94,7 +105,7 @@
         }
         foreach ($entries as $key) {
             $img = (string)$key->fotoPeserta;
-            $ptg = limit_words(ucfirst(strtolower($key->satuTerpenting)),10);
+            $ptg = ucfirst(strtolower($key->satuTerpenting));
             $nama = ucwords(strtolower($key->namaLengkap));
             $tgll = date("Y", strtotime($key->tanggalLahir));
             $nyear = date("Y",time());
@@ -152,7 +163,7 @@
                      */
 
                     $month          = date( 'm' );
-                    $months         = array( '04', '05', '06', '07', '08' );
+                    $months         = array( '01','02','03','04', '05', '06', '07', '08', '09', '10', '11', '12');
                     $months_key     = array_search( $month, $months );
                     $months_diff    = count( $months ) - ( 1 * $months_key );
 
