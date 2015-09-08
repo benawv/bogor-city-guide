@@ -26,20 +26,28 @@
     header .caption .box-dent, div.header .caption .box-dent{
         background : <?php echo $ct; ?> !important;
     }
+    
+
 
 </style>
 <header>
 
 <div class="gmbr">
+    
+    <?php if($this->editmode){ ?>
                     <?php 
                         echo $this->image("gallery-carousel-landing", array(
-                                'title' 	=> 'Image Size 960x400',
-                                 "width" => 1349,
-								 "height" =>480,
+                                'title' 	=> 'Image Size 960x480',
+                                 "width" =>960,
+								 "height" => 480,
                                  "id" => "AJFCHead",
 								 "class" => "AJFCHead"
                         ));
                     ?>
+    <?php }else{ ?>
+            <img src="<?php echo $this->image("gallery-carousel-landing")->getSrc(); ?>" style="width:100% !important; height:auto !important;">
+    <?php } ?>
+
                 </div>
     <div class="caption">
         <div class="container">
