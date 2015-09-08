@@ -116,4 +116,10 @@ class DefaultController extends Website_Controller_Action {
 		//echo $_SESSION["loginCenter"];
 		//die();
 	}
+	
+	public function blankAction()
+	{
+		$this->enableLayout();
+		$this->setLayout('layout_blank');
+	}
 }
