@@ -1,7 +1,7 @@
-<link rel="stylesheet" href="/website/ajfc/css/bootstrap-custom-wcm/bootstrap.css">
+<!-- <link rel="stylesheet" href="/website/ajfc/css/bootstrap-custom-wcm/bootstrap.css">
 <link rel="stylesheet" href="/website/ajfc/css/style.css">
-	<link rel="stylesheet" href="/website/ajfc/css/main.css">
-<link rel="stylesheet" href="/website/ajfc/css/font-awesome.min.css">
+<link rel="stylesheet" href="/website/ajfc/css/main.css">
+<link rel="stylesheet" href="/website/ajfc/css/font-awesome.min.css"> -->
 <style>
 .full-w p,.custom-width {
     width:100% !important;
