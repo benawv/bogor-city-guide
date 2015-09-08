@@ -6,6 +6,15 @@
 .full-w p,.custom-width {
     width:100% !important;
 }
+.button-color{
+  background: linear-gradient(to bottom, #002654, #335176, #002654) !important;
+  border-color: white !important;
+}
+.button-color:hover{
+  /*background: linear-gradient(to bottom, #fff, #002654) !important;*/
+  background: #002654 !important;
+  border-color: #002654 !important;
+}
 </Style>
 <div id="<?php echo $this->input('anchor')->text?>" class="full-w bg-white">
 	<h2>
@@ -40,7 +49,7 @@
 		<div class="section-right-60">
             <?php echo $this->wysiwyg('teks-kanan')?>
             <p>
-              <button class="btn btn-primary template shop-smartlink"><i class="fa fa-shopping-cart"></i>  Berminat dengan produk ini</button>
+              <button class="btn button-color btn-primary template shop-smartlink"><i class="fa fa-shopping-cart"></i>  Berminat dengan produk ini</button>
             </p>
 		</div>
   </div> <!-- teks-->
