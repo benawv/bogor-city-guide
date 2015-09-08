@@ -34,7 +34,7 @@
                     <?php 
                         echo $this->image("gallery-carousel-landing", array(
                                 'title' 	=> 'Image Size 960x400',
-                                 "width" => "100%",
+                                 "width" => 1349,
 								 "height" =>480,
                                  "id" => "AJFCHead",
 								 "class" => "AJFCHead"
