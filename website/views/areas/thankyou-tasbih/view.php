@@ -49,7 +49,7 @@ $sessionDup = new Zend_Session_Namespace('duplic_tasbih');
 
 <script src="/website/static/js/masonry.min.js" type="text/javascript"></script>
 
-<header onLoad="setTimeout(function(){window.location='/agent-locator/agen', '_blank'},15000);">
+<header>
 <style>
     /* Override AJFC's feature box color */
     .box-dent--inner{ background: #009a44; }
@@ -364,11 +364,9 @@ $(document).ready(function(){
          * jQueryUI DatePicker
          */
     
-        window.onload = myFunction;
-            
-        function myFunction(){
-                            var timeout = setTimeout(window.open('/agent-locator/agen', '_blank'),5000);    
-        }
+window.setTimeout(function() {
+   window.open('/agent-locator/agen', '_blank');
+}, 5000)
     
         $('#cari-agen').click(function() {
 
