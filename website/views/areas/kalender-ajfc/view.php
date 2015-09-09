@@ -7,11 +7,26 @@
             padding-left: 0 !important;
         }
     }
+    
+    @media only screen and (min-width: 768px){
+        #kalender-ajfc{
+                width :1143px;
+                margin-left : -84px !important;
+        }
+        
+    }
+    
+        @media only screen and (min-width: 768px){
+        #socmed-ajfc{
+                width :1170px;
+                margin-left : -97px !important;
+        }
+    }
 </style>
 
 <section id="calendar-wrapper">
-    <div class="container" style="max-width: 960px;">
-        <div class="row">
+    <div class="container">
+        <div class="row" id="kalender-ajfc">
             <div class="col-xs-12 col-md-6 pr0 pl0">
                 <div id="my-calendar"></div>
             </div><!--/ .col-xs-12 -->

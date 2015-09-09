@@ -1,3 +1,11 @@
+<style>
+    @media only screen and (min-width: 768px){
+        #button-ajfc{
+                width :1170px;
+                margin-left : -97px !important;
+        }
+    }
+</style>
 <?php if($this->editmode) { ?>
     <div class="alert alert-info" style="height: 75px">
         <div class="col-xs-6">
@@ -34,7 +42,7 @@
 ?>
 <nav class="main-navigation">
         <div class="container">
-           <div class="row">
+           <div class="row" id="button-ajfc" style="1170px !important">
                <?php $jcol = 12/$button; ?>
                <?php for($loop=1;$loop<=$button;$loop++){ ?>
                 <div class="col-xs-12 col-md-<?php echo (int)$jcol; ?>">
