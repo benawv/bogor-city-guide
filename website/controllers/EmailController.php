@@ -154,4 +154,7 @@ class EmailController extends Website_Controller_Action {
             $mail->send();
             print_r('Terima Kasih');
     }
+	public function templateShareEmailAction(){
+		
+    }
 }

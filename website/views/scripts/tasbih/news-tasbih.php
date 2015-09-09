@@ -296,7 +296,7 @@
     padding-left: 15px;
 "><i class="fa fa-twitter"></i></a>
                                         <a href="javascript:void(0);" class="emailshare" data-toggle="modal" data-target="#myModal"><i class="fa fa-envelope" style="
-    padding-left: 15px;display: none;
+    padding-left: 15px;
 "></i></a>
 								</div>
                     </h5>
