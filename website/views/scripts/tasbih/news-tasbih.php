@@ -10,6 +10,23 @@
 <!--<script src="/website/ajfc/js/javascripts.js"></script> -->
 
 <style>
+    
+    @media (max-width : 480px)
+    .sck480{
+       display:inline-block !important;
+    }
+    .scl480{
+       display:none !important;
+    }
+
+    @media (min-width : 480px){
+    .sck480{
+       display:none !important;
+    }
+    .scl480{
+       display:inline-block !important;
+    }
+    }
 
     .page-wrapper-outer .sidebar
     {
@@ -47,6 +64,8 @@
     .form-control{ border-radius: 0; }
     nav.main-navigation a.nav-item.home::after { content: "\f015"; }
     nav.main-navigation a.nav-item.chat::after { content: "\f003  "; }
+    
+        nav.main-navigation a.nav-item.red::before {background: #780DEB;}
     nav.main-navigation a.nav-item
     {
         display: block;
@@ -118,12 +137,16 @@
           min-height: 737px !important;
     }
     
-    .fa-facebook, .fa-twitter{
+    .fa-facebook, .fa-twitter,fa-envelope{
         font-size:25px !important;
     }
     
     a.tw-share{
         font-size:26px !important;
+    }
+    
+    .fa{
+        font: normal normal normal 25px/1 FontAwesome !important;
     }
     
     @media screen and (max-width : 991px ){
@@ -156,10 +179,34 @@
 </style>
 <?php
      foreach($this->newsTasbih as $items){
+
         /*echo "<pre>";
         print_r($items);
         echo "</pre>";*/
 ?>
+<script>
+
+</script>
+<div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Silahkan Masukkan Email Anda</h4>
+                    </div>
+                    <div class="modal-body">
+                      <input type="email" class="form-control" placeholder="Alamat E-Mail" id="email" tabindex="6" maxlength="32">
+                        <label id="notif-email" style="display:none; color: #f00;">Maaf Anda Belum Memasukkan Email</label>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" id="sendingemail" class="btn btn-info" data-dismiss="modal" style="background-color:#23527c">Kirim</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
     <header style="/*margin-top: -20px;*/">
 
         <div class="background">
@@ -189,7 +236,7 @@
                 </div><!--/ .col-xs-12 -->
 
                 <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                    <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users">
+                    <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users" style="background:#5F259F;">
                         <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                     </a>
                 </div><!--/ .col-xs-12 -->
@@ -214,7 +261,7 @@
                 <div class="main-content">
 
                     <div class="main-content--header">
-                    <h1 class="mb12"><?php echo $items->title; ?></h1>
+                    <h1 class="mb12" id="judul"><?php echo $items->title; ?></h1>
                     <h5>
                         <span><a href="/tasbih">Home</a> / <a href="#">artikel</a></span>
                         <?php /*
@@ -243,18 +290,26 @@
                             */
                         ?>
                         <?php echo $this->navigation()->breadcrumbs()->setPartial(array('includes/tasbih/breadcrumb-partial.php', 'website'));?>
-                        <div class="community-btn" style="width:53.938px !important; height:29px !important; float:right !important; display: none !important;">
+                        <div class="community-btn" style="width:103.938px !important; height:29px !important; float:right !important;">
 										<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
-										<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
+										<a href="javascript:void(0);" class="twshare" style="
+    padding-left: 15px;
+"><i class="fa fa-twitter"></i></a>
+                                        <a href="javascript:void(0);" class="emailshare" data-toggle="modal" data-target="#myModal"><i class="fa fa-envelope" style="
+    padding-left: 15px;display: none;
+"></i></a>
 								</div>
                     </h5>
-                    <p class="meta">Posted on <?php echo $items->newsdate; ?></p>
+                        <font class="meta">Posted on<span id="date" style="display:block;"> <?php echo $items->newsdate; ?></span></font>
                                 
                     </div><!--/ .main-content--header -->
 
-                    <?php echo $items->content; ?>
+                    <div id="desc" style="display:block;"><?php echo $items->content; ?></div>
+                    <br/>
                     <p>Untuk informasi lebih lengkap mengenai produk allianz tasbih klik :</p>
                     <button class="btn btn-primary" onclick="location.href='/produk/asuransi-syariah/tasbih/info-produk';" type="button">Informasi Produk Allianz Tasbih</button>
+                    
+                    
                 </div><!--/ .main-content -->
 
                 </div><!--/ .col-xs-12 -->
@@ -287,8 +342,12 @@
         </section>
 
     </div><!--/ .page-wrapper-outer -->
+
+
 <?php } ?>
 <script type="text/javascript">
+    
+
     
         var getWidht=$( document ).width();
     var columnHeight=$( ".main-content" ).height(); 
@@ -313,36 +372,52 @@
 
     }else{
         columnHeight=columnHeight-88;
+        var maincontent=$(".main-content").height(); 
+        //alert(maincontent);
         $('.sidebar').css('height', columnHeight+135 + 'px');
-        $('.page-wrapper-outer').css('height', columnHeight + 'px');
-
+        $('.page-wrapper-outer').height(maincontent);
     }  
-    
 
 $( document ).ready(function(){
 
 //alert('TEST');
-    
-    var description;
-    var title;
-    var image;
-    var url = window.location.host+window.location.pathname;
-    image = document.getElementById("backart").src;
-    title = $('title').html();
-    if(document.getElementsByTagName('meta')[4].getAttribute("name") == "description"){
-        description = document.getElementsByTagName('meta')[4].getAttribute("content");
-    }
+    var description = $('div').find('p').text();
+    //var desc = $("div.desc").find('p');
+    //alert(desc);
+    var desc = description.substring(0,50)+"...";
+    var postDesc = description.substring(0,400)+"...";
+    var judul = $('#judul').html();
+    var title = judul.toLowerCase();
+    var image = document.getElementById("backart").src;
+    var link = window.location.pathname;
+    var url = window.location.hostname+window.location.pathname;
+    var tanggal = $('#date').html();
     //alert(url);
-	var metas = document.getElementsByTagName('meta');
-    if(title == "" || description == ""){
-        for (i=0; i<metas.length; i++) { 
-          if (metas[i].getAttribute("name") == "title") { 
-            title = metas[i].getAttribute("content"); 
-          }else if(metas[i].getAttribute("name") == "description"){
-            description = metas[i].getAttribute("content");
-          } 
-        } 
-    }
+        $('#sendingemail').click(function() {
+        var email = $('#email').val();
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        if(email == "" || (!re.test(email)) ){
+            document.getElementById('notif-email').style.display= 'block';
+            alert("Mohon Maaf Email Anda Tidak Valid");
+        }else{
+            $.ajax({
+                type: "POST",
+                url: "/share-email/",
+                data: {
+                    postImg : image,
+                    postTitle : judul,
+                    postDesc : postDesc,
+                    postTanggal : tanggal,
+                    postLink : link,
+                    email :email
+                },
+                success: function(data){
+                    alert(data);
+                }
+            });
+        }
+    });
+    
     		$('.community-btn .twshare').on("click",function(){
         
 	        
@@ -357,7 +432,8 @@ $( document ).ready(function(){
         //alert(url);
        //var url ="http://beta.allianz.co.id/produk/asuransi-syariah/tasbih/artikel/prioritas-keuangan-dalam-rencana-naik-haji-26386";
        // alert(description.substring(3,80)+"...");
-        var desc = description.substring(3,80)+"...";
+        //var desc = description.substring(0,80)+"...";
+        //alert(desc);
         var name = (title.replace(/[^a-zA-Z()]/g,''))+"-artikel-tasbih";
         var filename = name.replace(/\s/g,'-');
         //alert(filename);

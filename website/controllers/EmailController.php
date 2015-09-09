@@ -106,4 +106,52 @@ class EmailController extends Website_Controller_Action {
 	public function emailrasioAction(){
 		
 	}
+	public function shareEmailAction(){
+		$document = '/email/email-share';
+		$params = array('img' => $_POST["postImg"],
+				'title' => $_POST["postTitle"],
+				'deskripsi' => $_POST["postDesc"],
+				'tanggal' => $_POST["postTanggal"],
+				'link' => $_POST["postLink"]
+				);
+        $email = $_POST['email'];
+		$mail = new Pimcore_Mail();
+		$mail->setSubject("Share Email");
+		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+		$mail->setDocument($document);
+		$mail->setParams($params);
+		//$mail->addTo($_POST["postEmail"]);
+		$mail->addTo($email);
+		
+		$mail->send();
+        print_r("Terima Kasih");
+    }
+	public function shareartikelAction(){
+            //echo "TEST";
+        
+        $image = $_POST["image"];
+        $title = $_POST["title"];
+        $desc = $_POST["desc"];
+        $date = $_POST["date"];
+        $url = $_POST["url"];
+        $email = $_POST["email"];
+        
+        $params = array(
+                    img => $image,
+                    title => $title,
+                    desc => $desc,
+                    dateNews => $date,
+                    url => $url
+                );
+        
+            $document = '/email/email-artikel';
+            $mail = new Pimcore_Mail();
+            $mail->setSubject("Share Artikel");
+            $mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+            $mail->setDocument($document);
+            $mail->setParams($params);
+            $mail->addTo($email);
+            $mail->send();
+            print_r('Terima Kasih');
+    }
 }
