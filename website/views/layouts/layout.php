@@ -40,7 +40,7 @@
 	    }
 	    else{
 			
-		if($this->document->getProperty('script')){
+		if($this->document->getProperty('script') && $this->request->controller != 'wishlist'){
 			echo "<script>".$this->document->getProperty('script')."</script>";
 			echo '<noscript><img width="1" height="1" style="border:0" src="'.$this->document->getProperty('noscript').'" /></noscript>';
 		}
