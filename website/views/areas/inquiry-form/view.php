@@ -18,6 +18,7 @@
             height: 50px;
             background: #d31f42;
         }
+        nav.main-navigation a.nav-item.red::before {background: #780DEB;}
         nav.main-navigation a.nav-item::after {
             content: "";
             display: inline-block;
@@ -69,7 +70,7 @@
             </div>-->
             <!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
-                <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users">
+                <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users" style="background:#5F259F;">
                     <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                 </a>
             </div><!--/ .col-xs-12 -->
