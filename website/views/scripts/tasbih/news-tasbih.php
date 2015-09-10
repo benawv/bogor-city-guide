@@ -389,6 +389,7 @@ $( document ).ready(function(){
     var judul = $('#judul').html();
     var title = judul.toLowerCase();
     var image = document.getElementById("backart").src;
+    var image2 = "<?php echo $items->images->path.$items->images->filename; ?>";
     var link = window.location.pathname;
     var url = window.location.hostname+window.location.pathname;
     var tanggal = $('#date').html();
@@ -444,7 +445,7 @@ $( document ).ready(function(){
 					data: {
 						filename: filename,
 						title_fb : title,
-						image_name: image,
+						image_name: image2,
 						description: desc,
 						url: window.location.host,
 						link_in_fb : window.location.host+window.location.pathname
