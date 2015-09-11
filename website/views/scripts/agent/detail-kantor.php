@@ -85,7 +85,11 @@
         color: #666;
         line-height: 1.8;
     }
-
+    .maxImage{
+        max-height: 295px;
+        overflow: hidden;
+        min-height: 295px;
+    }
 </style>
 
 <div class="container boxes-view">
@@ -208,7 +212,9 @@
                         <!--Link-->
                     </div>
                 </div><!--/ .heading -->
-                <img src="<?php echo $ag->getFotoAgent();?>" width="304" />
+                <div class="maxImage">
+                    <img src="<?php echo $ag->getFotoAgent();?>" width="304" />
+                </div>
                 <div class="description">
                     <a href="<?php echo $this->url(array($o_Id ,$ag->getO_id()),"detail-agent");?>">&gt; Selengkapnya</a>
                 </div>
