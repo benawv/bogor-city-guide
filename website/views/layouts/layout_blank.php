@@ -74,6 +74,8 @@
 		<?php echo $this->layout()->content; ?>
 	</div>
 	<?php //echo $this->template("includes/footer.php"); ?>
+	<link rel="stylesheet" type="text/css" media="all" href="/website/static/css/css-ie8/isr.css">
+
 </body>
 
 <?php if(!$this->editmode) { ?>
