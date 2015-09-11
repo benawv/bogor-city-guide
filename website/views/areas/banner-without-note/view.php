@@ -1,7 +1,4 @@
-<div class="row">
-     <div class="backg">
-        <!--<img src="/website/ajfc/img/bg-home.jpg" alt="Home" class="img-responsive" />-->
-        <div id="slideshow" class="clearfix">
+<div id="best-products">
 <?php if($this->editmode) { ?>
     <div class="alert alert-info" style="height: 75px">
         <div class="col-xs-6">
@@ -9,13 +6,13 @@
 
             <?php
                 // prepare the store
-                $selectStore = [];
+                $selectStore1 = [];
                 for($i=2; $i<30; $i++) {
-                    $selectStore[] = [$i, $i];
+                    $selectStore1[] = [$i, $i];
                 }
             ?>
-                <?php echo $this->select("slides",[
-                    "store" => $selectStore,
+            <?php echo $this->select("slides",[
+                "store" => $selectStore1,
                 "reload" => true
             ]); ?>
         </div>
@@ -25,63 +22,24 @@
         .gallery .item {
             min-height: 377px;
         }
-        .place-bg-gallery{
-            height: 265px !important;
-        }
     </style>
 <?php } ?>
-<?php
-    $id = "gallery-carousel-".uniqid();
-    $slides = 2;
-    if(!$this->select("slides")->isEmpty()){
+<?php 
+	$id = "banner-".uniqid();
+	$slides = 2;
+	if(!$this->select("slides")->isEmpty()){
         $slides = (int) $this->select("slides")->getData();
     }
-    $seq = [];
-    for($a=1; $a<=$slides; $a++) {
-        $selectSeq[] = [$a, $a];
-    }
 ?>
-<ul class="slides">
-    <?php
-        for($z=0;$z<$slides;$z++) {
-            for($i=0;$i<$slides;$i++) {
-                $v = $this->select('seq_'.$i)->getData() ? $this->select('seq_'.$i)->getData() : 1;
-                $w = $z+1;
-                if($w == $v){
-?>
-                    <li>
-                        <?php
-                            if(!$this->editmode){
-                            if($i!=0){
-                                $hide = "hide";
-                            }
-                            else{
-                                $hide = "";
-                            }
-                            }
-                            else{
-                            $hide = "";
-                            }
-                        ?>
-                        <div class="slide <?php echo $hide;?>">
-                            <div class="foto">
-                                <?php echo $this->image("image_".$i, ["thumbnail" => "galleryCarousel", "dropClass" => $id . "-" . $i, "title" => "Image Size 1020x400", "width" => 635, "height" => 310])?>
-                            </div>
-
-                        </div>
-                    </li>
-
-    <?php 		}
-            }
-        }
-    ?>
-
-</ul>
+	<ul class="slides">
+		<?php for($i=0;$i<$slides;$i++) { ?>
+			<li>
+				<div class="product">
+					<div class="photo">
+						<?php echo $this->image("banner_".$i, ["thumbnail" => "banner", "dropClass" => $id . "-" . $i, "title" => "Image Size 635x310"])?>
+					</div>
+				</div>
+			</li>
+		<?php } ?>
+	</ul>
 </div>
-    </div><!--/ .background -->
-    </div>
-
-
-<script>
-    $('#slideshow').width(635);
-</script>
