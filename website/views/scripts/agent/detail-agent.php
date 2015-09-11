@@ -128,6 +128,11 @@
     .tbl-email td{
         padding: 10px;
     }
+    .maxImage{
+        max-height: 240px;
+        overflow: hidden;
+        min-height: 240px;
+    }
 </style>
 
 <?php
@@ -225,7 +230,9 @@
             </h2>
             <div class="description width-66">
                 <div class="section-left-40">
-                    <img src="<?php echo $fotoAgent; ?>" alt="<?php echo $namaAgent; ?>">
+                    <div class="maxImage">
+                        <img src="<?php echo $fotoAgent; ?>" alt="<?php echo $namaAgent; ?>">
+                    </div>
                     <div class="logo-icon" style="display: none;">
                         <a href="<?php echo $linkFB;?>" target="_blank" class="icon-fb"></a>
                         <a href="<?php echo $linkIN;?>" target="_blank" class="icon-in"></a>
