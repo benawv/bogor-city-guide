@@ -6,13 +6,13 @@
 
             <?php
                 // prepare the store
-                $selectStore1 = [];
+                $selectStore = [];
                 for($i=2; $i<30; $i++) {
-                    $selectStore1[] = [$i, $i];
+                    $selectStore[] = [$i, $i];
                 }
             ?>
             <?php echo $this->select("slides",[
-                "store" => $selectStore1,
+                "store" => $selectStore,
                 "reload" => true
             ]); ?>
         </div>
@@ -22,6 +22,9 @@
         .gallery .item {
             min-height: 377px;
         }
+	#best-products{
+	    height : auto !important;
+	}
     </style>
 <?php } ?>
 <?php 
@@ -34,9 +37,26 @@
 	<ul class="slides">
 		<?php for($i=0;$i<$slides;$i++) { ?>
 			<li>
-				<div class="product">
+				<?php
+				    if(!$this->editmode){
+					if($i!=0){
+					    $hide = "hide";
+					}
+					else{
+					    $hide = "";
+					}
+				    }
+				    else{
+					$hide = "";
+				    }
+				?>
+				<div class="product <?php echo $hide;?>">
 					<div class="photo">
-						<?php echo $this->image("banner_".$i, ["thumbnail" => "banner", "dropClass" => $id . "-" . $i, "title" => "Image Size 635x310"])?>
+                        <?php if($this->editmode){ ?>
+						<?php echo $this->image("banner_".$i, ["dropClass" => $id . "-" . $i, "title" => "Image Size 635x310", "width" => 635, "height" => 310])?>
+                        <?php }else{ ?>
+                        <img src="<?php echo $this->image("banner_".$i)->getSrc(); ?>" style="width:100% !important; min-height:100% !important;">
+                        <?php } ?>
 					</div>
 				</div>
 			</li>
