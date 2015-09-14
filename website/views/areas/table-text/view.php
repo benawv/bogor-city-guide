@@ -44,14 +44,13 @@
             font-size: 1.8em !important;
         }
     </style>
-<div class="row">
-     <div class="background">
+
+     <div class="backg ">
         <!--<img src="/website/ajfc/img/bg-home.jpg" alt="Home" class="img-responsive" />-->
-        <div id="slideshow" class="clearfix">
 
-<ul class="slides">
 
-						<div class="slide <?php echo $hide;?>">
+
+
 							<div class="foto">
                                 <?php if($this->editmode){ ?>
 								<?php echo $this->image("image_", ["thumbnail" => "galleryCarousel", "dropClass" => $id . "-" . $i, "title" => "Image Size 1020x400", "width" => 960, "height" => 480])?>
@@ -60,17 +59,14 @@
                                 <?php } ?>
 							</div>
 							
-								    </div>
-								</div>
-								<div class="edge e-<?php echo $color?>">
-									<?php echo $this->link("boxlink_".$i); ?>
-								</div>
-							
+								    
+
+
 	
-</ul>
-</div>
+
+
     </div><!--/ .background -->
-    </div>
+
 
     
 </header>
