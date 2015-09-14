@@ -344,7 +344,7 @@
     </div><!--/ .page-wrapper-outer -->
 
 
-<?php } ?>
+
 <script type="text/javascript">
     
 
@@ -389,6 +389,8 @@ $( document ).ready(function(){
     var judul = $('#judul').html();
     var title = judul.toLowerCase();
     var image = document.getElementById("backart").src;
+    var image2 = "<?php echo $items->images->path.$items->images->filename; ?>";
+    var img = image2.substring(1);
     var link = window.location.pathname;
     var url = window.location.hostname+window.location.pathname;
     var tanggal = $('#date').html();
@@ -444,7 +446,7 @@ $( document ).ready(function(){
 					data: {
 						filename: filename,
 						title_fb : title,
-						image_name: image,
+						image_name: img,
 						description: desc,
 						url: window.location.host,
 						link_in_fb : window.location.host+window.location.pathname
@@ -463,3 +465,4 @@ $( document ).ready(function(){
 
 
 </script>
+<?php } ?>
