@@ -40,7 +40,7 @@
             font-size: 2.2em !important;          
         }
             
-        a{
+        h5{
             font-size: 1.8em !important;
         }
     </style>
@@ -166,7 +166,7 @@
                             ?>
                             <ul>
                             <?php for($i=0;$i<$slides;$i++) { ?>
-                                <li><?php echo $this->link("linkedlist_".$i); ?></li>
+                                <li><h5 class="mb12"><?php echo $this->link("linkedlist_".$i); ?></h5></li>
                             <?php } ?>
 			                 </ul>
                         </div><!--/ .sidebar-item--content -->
