@@ -779,6 +779,282 @@ ul.ulLanguage li.liLanguage a:hover{color: #FFF;background: #414141;}
 
 .liCustomerOnline, .liLanguage{width: 100%;border-color: #CCC #CCC !important;border-width: 0px 1px !important;border-style: none solid !important;border-color: -moz-use-text-color #CCC float: none !important;background: #F5F6F6;/*background:#4A4A4A;-webkit-border-radius:0px;border-radius:0px;background:-webkit-gradient(linear,left top,left bottom,from(#676767),to(#414141));background:-moz-linear-gradient(top,#676767,#414141);background:-o-linear-gradient(top,#676767,#414141);background:-ms-linear-gradient(top,#676767,#414141);background:linear-gradient(top,#676767,#414141);*/}
 
+.show-mobile{
+	display:none
+}
+
+@media only screen and (max-width:640px){
+
+	.static-links.mobile.deactive.share{position: relative;right: 0;}
+	.show-mobile,footer.contentinfo .meta .static-links a{
+		display:block
+	}
+
+	.static-links.mobile.deactive.share,footer.contentinfo .meta .container .static-links{
+		float:left;
+		margin:9px auto
+	}
+
+	.static-links.mobile.deactive.share img{
+		float:right
+	}
+
+	footer.contentinfo .meta .static-links.mobile.deactive.share li{
+		margin-right:20px
+	}
+
+	.show-mobile{
+		clear:both
+	}
+
+	body{
+		font-size:90%
+	}
+
+	.banner .minibar{
+		display:none
+	}
+
+	.box-orange{
+		height:360px
+	}
+
+	#quicklinks{
+		float:none;
+		width:100%
+	}
+
+	.weblogo{
+		height:50px;
+		left:37px;
+		top:32px;
+		width:100px
+	}
+
+	#best-products{
+		float:none;
+		width:100%;
+		height:inherit
+	}
+
+	#best-products .product .photo img,#slideshow .slide .photo img{
+		height:auto
+	}
+
+	#best-products .product{
+		width:100%;
+		min-height:280px!important
+	}
+
+	#slideshow .slide{
+		background:#eee;
+		height:auto
+	}
+
+	#slideshow .slide .photo{
+		min-height:auto;
+		background:red
+	}
+
+	footer.contentinfo .meta .statement{
+		float:none;
+		margin-bottom:10px
+	}
+
+	footer.contentinfo .meta .static-links{
+		float:none
+	}
+
+	footer.contentinfo .meta .static-links li{
+		border:none;
+		padding:0;
+		margin-right:10px
+	}
+
+	footer.contentinfo .footer-links{
+		display:block;
+		font-size:1em
+	}
+
+	footer.contentinfo .footer-links>li{
+		border-left:none;
+		border-bottom:1px solid #5a5a5a;
+		padding-bottom:10px
+	}
+
+	footer.contentinfo .footer-links>li:last-child{
+		border:none
+	}
+
+	footer.contentinfo .footer-links ul a{
+		font-size:1em;
+		margin:10px 0
+	}
+
+	#social-media-activity{
+		width:100%
+	}
+
+	#social-media-activity .tintup{
+		width:100%!important;
+		overflow:scroll!important
+	}
+
+	.banner .search form .input-text{
+		width:100px
+	}
+
+	.menutitle{
+		display:block;
+		height:20px
+	}
+
+	#slideshow .slide .stickybox img{
+		min-height:280px!important;
+		width:auto!important
+	}
+
+	#slideshow .slide .stickybox .action .btn-orange{
+		left:0;
+		height:16px
+	}
+
+	#best-products .product .stickybox .action,#slideshow .slide .stickybox .action{
+		position:relative;
+		width:200px;
+		margin:15px 0;
+		height:20px;
+		left:auto
+	}
+
+	#slideshow .slide .stickybox{
+		padding:0;
+		font-size:.85em;
+		width:100%;
+		height:140px;
+		position:absolute;
+		bottom:0;
+		left:0!important;
+		top:auto
+	}
+
+	#best-products .product .fixbox,#best-products .product .stickybox{
+		padding:0;
+		font-size:.85em;
+		width:100%;
+		height:auto;
+		position:absolute;
+		bottom:0;
+		left:0!important;
+		top:auto
+	}
+
+	#best-products .product .stickybox:after,#slideshow .slide .stickybox::after{
+		bottom:0;
+		background:0 0;
+		z-index:-2
+	}
+
+	.boxes-view .item#item-left{
+		height:auto
+	}
+
+	#quicklinks h3{
+		font-size:17px
+	}
+
+	.breadcrumb{
+		font-size:14px
+	}
+
+	.heading p span{
+		font-weight:700;
+		font-size:22px
+	}
+
+	.boxes-view .items-container .item h2{
+		display:block;
+		padding:0;
+		margin:0;
+		color:#000;
+		font-size:1em;
+		font-weight:700
+	}
+
+	.active{
+		display:block!important
+	}
+
+	nav.primary .menu-level2>ul{
+		height:auto;
+		margin:15px 0
+	}
+
+	#videos,.button-mobile{
+		margin-top:10px
+	}
+
+	.boxes-view .items-container .item .description{
+		width:100%!important
+	}
+
+	#videos,div.search{
+		width:100%
+	}
+
+	.boxes-view #item-right.item,.boxes-view .items-container .item_visimisi{
+		max-width:580px
+	}
+
+	.visi_kanan img,.visi_kiri img{
+		padding-right:10px
+	}
+
+	.banner_products img{
+		height:auto
+	}
+
+	.full-w.bg-white .description .submit_whislist{
+		width:45%
+	}
+
+	.wishlist-content .logo img{
+		right:10px
+	}
+
+	.button-cart .btn-width{
+		width:140px
+	}
+
+	.mobile.deactive{
+		display:block
+	}
+
+	.banner .minibar.cusZindex,.banner .minibar.cusZindex.cusLogin{
+		display:block;
+		position:absolute;
+		right:0
+	}
+
+	.banner .minibar.cusZindex .liMobileHide{
+		display:none
+	}
+
+	.ulCustomerOnline.deactive{
+		position:absolute;
+		right:0
+	}
+
+	.button-mobile .cus_select{
+		margin-left:0
+	}
+
+	.button-mobile{
+		margin-bottom:10px
+	}
+
+}
+
 /* CSS login pop up Akbar */
 .popup-asn .modal-sm {
     width: 100%;
