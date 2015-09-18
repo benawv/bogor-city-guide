@@ -1,167 +1,3 @@
-<style>
-          img { max-width: none; }
-          .cropit-image-preview {
-            
-          }
-          .avatar-caption {
-            position: absolute;
-            right: 16px;
-            top: 16px;
-          }
-          .avatar-caption--footer {
-            background: #b4b4b4;
-            color: #3b579d;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 0 56px;
-            z-index: 1;
-            line-height: 52px;
-            min-height: 52px;
-          }
-          .cropit1 {
-            background-color: #f8f8f8;
-            background-size: cover;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            margin-top: 7px;
-            width: 851px;
-            height: 315px;
-            cursor: move;
-          }
-          .cropit-ava1 {
-            background-color: #f8f8f8;
-            background-size: cover;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            margin-top: 7px;
-            width: 300px;
-            height: 300px;
-            cursor: move;
-          }
-          .cropit-ava2 {
-            background-color: #f8f8f8;
-            background-size: cover;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            margin-top: 7px;
-            width: 472px;
-            height: 394px;
-            cursor: move;
-          }
-          .cropit-ava3 {
-            background-color: #f8f8f8;
-            background-size: cover;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            margin-top: 7px;
-            width: 504px;
-            height: 504px;
-            cursor: move;
-          }
-          #cropped-ava1 {
-            width: 300px;
-            height: 300px;
-            margin: 0 auto;
-          }
-          #cropped-ava2 {
-            width: 472px;
-            height: 394px;
-            margin: 0 auto;
-          }
-          #cropped-ava3 {
-            width: 504px;
-            height: 504px;
-            margin: 0 auto;
-          }
-
-          .cropit-image-background {
-            opacity: .2;
-            cursor: auto;
-          }
-          input[type=range] { 
-            -webkit-appearance: none;
-            display: inline;
-            margin: 20px; 
-          }
-          input[type=range]:focus {
-                outline: none;
-            }
-
-            input[type=range]:focus::-webkit-slider-runnable-track {
-                background: #ccc;
-            }
-          input[type=range]::-webkit-slider-runnable-track {
-            width: 300px;
-            height: 5px;
-            background: #ddd;
-            border: none;
-            border-radius: 3px;
-        }
-
-            input[type=range]::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                border: none;
-                height: 16px;
-                width: 16px;
-                border-radius: 50%;
-                background: #888;
-                margin-top: -5px;
-            }
-
-          .cropit-image-zoom-input {
-            display: inline;
-            width: 130px !important;
-            float: none;
-            margin: 0 auto;
-          }
-          .cropit-image-zoom-input, .cropit-image-input {
-            margin: 10px 0;
-          }
-
-          .image-size-label, .cropit-image-zoom-input {
-            width: 130px;
-            float: none;
-            margin: 20px auto;
-          }
-          .slider-wrapper { text-align: center; margin: 10px 0; }
-          .slider-wrapper .fa { color: #555; }
-          .slider-wrapper .fa-2x { font-size: 22px; }
-
-          input {
-            display: block;
-          }
-
-          .export { 
-            margin-top: 10px;
-          }
-
-        /*
-         * If the slider or anything else is covered by the background image,
-         * use relative or absolute position on it
-         */
-        input.cropit-image-zoom-input {
-          position: relative;
-        }
-
-        /* Limit the background image by adding overflow: hidden */
-        .image-editor {
-          overflow: hidden;
-        }
-        @media only screen and (max-width : 640px) { 
-            .cropit1 {
-                width: 100%;
-                background-position: 0px;
-            } 
-            section.profile-maker .timelineContainer {
-                width: 100%;
-                max-width: 100%;
-            }
-        }
-
-    </style>
-
 <script type="text/javascript">
            function setCookie(cname, cvalue) {
                 document.cookie = cname + "=" + cvalue;
@@ -180,7 +16,6 @@
             ///alert(<?php echo $_COOKIE["uploadImage"]?>);
 
 </script>
-
 
 <script src="/website/static/profil-maker/js/jquery.validate.min.js"></script>
 
@@ -202,54 +37,38 @@
 
             <script src="/website/static/profil-maker/js/jquery-ui-1.11.1.js"></script> 
             <script src="/website/static/profil-maker/js/jquery.cropbox.js"></script> 
-            <script src="/website/static/profil-maker/js/jquery.cropit.js"></script>
             
                 <div id="cover1" class="timelineContainer" style="display: none">
 
-                    <!-- <div id="timelineBackground" class="page-maker--placeholdermain">
-                        <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive">
+                    <div id="timelineBackground" class="page-maker--placeholdermain">
+                        <!-- <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive"> -->
                         <?php
                                  $session = new Zend_Session_Namespace('srcImage');
                         ?>
-                        <div id="images" style="display:inline-block;">
+                        <div id="draggableHelper" style="display:inline-block;">
                             <img src="<?php echo $session->src;?>" alt="Page Cover Landscaped Notepad" id="timelineBGload" class="headerimage ui-corner-all ui-draggable img-responsive" />
-                        </div>   
+                        </div>    
+                    </div><!--/ .page-maker--placeholder -->
 
-                    </div> --><!--/ .page-maker--placeholder -->
+                    <div id="place" class="landscape facebook-caption leftside">
+                        <div id="notepad" class="facebook-caption--inner landscape-bg bg-blue">
 
-                    <div id="image-cropper">
-                        <div id="cropped" class="cropit-image-preview-container">
-                            <div class="cropit-image-preview cropit1">
-                                <!-- <img src="website/static/images/profile-maker/banner2.jpg"> -->
-                            </div>
-                            <div id="place" class="landscape facebook-caption leftside">
-                                <div id="notepad" class="facebook-caption--inner landscape-bg bg-blue">
+                            <h3><span id="judul">&lt;Title&gt;</span></h3> <br />
 
-                                    <h3><span id="judul">&lt;Title&gt;</span></h3> <br />
+                            <span id="konten">
+                                &lt;Description&gt;
+                            </span> <br />
 
-                                    <span id="konten">
-                                        &lt;Description&gt;
-                                    </span> <br />
+                            <!-- <span id="nama">Akbar Fachriansyahasfsghsjsfsgsdgsdgrgdgdfgrhr</span> -->
 
-                                </div><!--/ .facebook-caption--inner -->
-                                <!-- <div class="facebook-caption-trapezoid"></div> -->
+                        </div><!--/ .facebook-caption--inner -->
+                        <!-- <div class="facebook-caption-trapezoid"></div> -->
 
-                                <div id="edge-note" class="edge e-blue">
-                                    <span id="nama">&lt;Name&gt;</span>
-                                </div> 
+                        <div id="edge-note" class="edge e-blue">
+                            <span id="nama">&lt;Name&gt;</span>
+                        </div> 
 
-                            </div> <!--/ .facebook-caption -->
-                        </div>
-                        
-                        <div class="slider-wrapper">
-                            <!-- <span class="icon icon-image small-image"></span> -->
-                            <i class="fa fa-file-image-o"></i>
-                                <input type="range" class="cropit-image-zoom-input custom" min="0" max="1" step="0.01">
-                            <i class="fa fa-file-image-o fa-2x"></i>    
-                            <!-- <span class="icon icon-image large-image"></span> -->
-                        </div>
-                                
-                    </div>
+                    </div> <!--/ .facebook-caption -->
 
                     <div class="shade" id="timelineShade">
                         <form id="bgimageform" name="newad" method="post" enctype="multipart/form-data" action="">
@@ -257,11 +76,18 @@
                         </form> <!--/ #bgimageform -->
                     </div> <!--/ #shade -->
 
+                    <!-- <div id="timelineProfilePic">
+                        <div style="padding:5px">
+                            <img src="/website/static/images/profile-maker/Allianz Agent Facebook Profile Picture.png" style="width:100%">
+                        </div>
+                    </div> --> <!--/ #timelineProfilePic -->
+
                 </div> <!--/ #timelineContainer --> 
 
                 <div id="cover2" class="timelineContainer" style="display: none">
 
                     <div id="timelineBackground" class="page-maker--placeholdermain">
+                        <!-- <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive"> -->
                         <?php
                                  $session = new Zend_Session_Namespace('srcImage');
                         ?>
@@ -375,28 +201,21 @@
 
                 </div> <!--/ #timelineContainer --> 
 
-                <!-- cropit avatar -->
-
-
-                 <div id="ava1" class="page-maker--placeholder" style="display: none">
-                        <div id="image-cropper-ava1">
-                            <div id="cropped-ava1" class="cropit-image-preview-container">
-                                <div class="cropit-image-preview cropit-ava1">
-                                    <div id="avacapture1" class="avatar-caption">
-                                        <div class="avatar-caption--logo">
-                                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class="slider-wrapper">
-                                <i class="fa fa-file-image-o"></i>
-                                    <input type="range" class="cropit-image-zoom-input custom" min="0" max="1" step="0.01">
-                                <i class="fa fa-file-image-o fa-2x"></i>    
-                            </div>             
-                        </div> 
-                </div> 
+                <div id="ava1" class="page-maker--placeholder" style="display: none">
+                    <div id="avatar1" class="avatar w300">
+                        <div id="avacapture1" class="avatar-caption">
+                            <div class="avatar-caption--logo">
+                                    <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
+                            </div><!--/ .avatar-caption--logo -->
+                        </div><!--/ .avatar-caption -->
+                        <?php
+                            $session = new Zend_Session_Namespace('srcImage');
+                        ?>
+                        <div id="draggableHelper3" class="override-width" style="display:inline-block;">
+                            <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
+                        </div>    
+                    </div><!--/ .facebook -->
+                </div><!--/ .page-maker--placeholder -->
 
                 <!-- when mobile condition -->
                 <div id="ava1-m" class="page-maker--placeholder fluid" style="display: none">
@@ -416,29 +235,25 @@
                 </div><!--/ .page-maker--placeholder -->
 
                 <div id="ava2" class="page-maker--placeholder" style="display: none">
-                    <div id="image-cropper-ava2">
-                            <div id="cropped-ava2" class="cropit-image-preview-container">
-                                <div class="cropit-image-preview cropit-ava2">
-                                    <div id="avacapture2" class="avatar-caption">
-                                        <div class="avatar-caption--logo">
-                                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="avatar-caption--footer">
-                                        <img src="/website/static/images/profile-maker/fb.png" alt="" style="position: absolute; width: 29px; left: 19px; top: 11px;">
-                                        <!-- <i class="fa fa-facebook-square fa-2x"></i> --> &nbsp;
-                                        <span>Allianz Indonesia</span>&nbsp;
-                                        <strong><span id="cname">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
-                                    </div><!--/ .avatar-caption-footer -->
-                                </div>
-                                
-                            </div>
-                            <div class="slider-wrapper">
-                                <i class="fa fa-file-image-o"></i>
-                                    <input type="range" class="cropit-image-zoom-input custom" min="0" max="1" step="0.01">
-                                <i class="fa fa-file-image-o fa-2x"></i>    
-                            </div>             
-                        </div> 
+                    <div id="avatar2" class="avatar">
+                        <div id="avacapture2" class="avatar-caption">
+                            <div class="avatar-caption--logo">
+                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
+                            </div><!--/ .avatar-caption--logo -->
+                            <div class="avatar-caption--footer">
+                                <img src="/website/static/images/profile-maker/fb.png" alt="" style="position: absolute; width: 29px; left: 19px; top: 11px;">
+                                <!-- <i class="fa fa-facebook-square fa-2x"></i> --> &nbsp;
+                                <span>Allianz Indonesia</span>&nbsp;
+                                <strong><span id="cname">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
+                            </div><!--/ .avatar-caption-footer -->
+                        </div><!--/ .avatar-caption -->
+                         <?php
+                            $session = new Zend_Session_Namespace('srcImage');
+                         ?>
+                         <div id="draggableHelper2" class="override-width" style="display:inline-block;">
+                            <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
+                         </div>
+                    </div><!--/ .facebook -->
                 </div><!--/ .page-maker--placeholder -->
 
                 <!-- when mobile condition -->
@@ -465,29 +280,25 @@
                 </div><!--/ .page-maker--placeholder -->
 
                 <div id="ava3" class="page-maker--placeholder" style="display: none">
-                    <div id="image-cropper-ava3">
-                            <div id="cropped-ava3" class="cropit-image-preview-container">
-                                <div class="cropit-image-preview cropit-ava3">
-                                    <div id="avacapture3" class="avatar-caption">
-                                        <div class="avatar-caption--logo">
-                                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="avatar-caption--footer">
-                                        <img src="/website/static/images/profile-maker/fb.png" alt="" style="position: absolute; width: 29px; left: 19px; top: 11px;">
-                                        <!-- <i class="fa fa-facebook-square fa-2x"></i> --> &nbsp;
-                                        <span>Allianz Indonesia</span>&nbsp;
-                                        <strong><span id="cname">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
-                                    </div><!--/ .avatar-caption-footer -->
-                                </div>
-                                
-                            </div>
-                            <div class="slider-wrapper">
-                                <i class="fa fa-file-image-o"></i>
-                                    <input type="range" class="cropit-image-zoom-input custom" min="0" max="1" step="0.01">
-                                <i class="fa fa-file-image-o fa-2x"></i>    
-                            </div>             
-                        </div> 
+                    <div id="avatar3" class="avatar w504">
+                        <div id="avacapture3" class="avatar-caption">
+                            <div class="avatar-caption--logo">
+                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
+                            </div><!--/ .avatar-caption--logo -->
+                            <div class="avatar-caption--footer">
+                                <img src="/website/static/images/profile-maker/fb.png" alt="" style="position: absolute; width: 29px; left: 19px; top: 11px;">
+                                <!-- <i class="fa fa-facebook-square fa-2x"></i> --> &nbsp;
+                                <span>Allianz Indonesia</span>&nbsp;
+                                <strong><span id="cname">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
+                            </div><!--/ .avatar-caption-footer -->
+                        </div><!--/ .avatar-caption -->
+                         <?php
+                            $session = new Zend_Session_Namespace('srcImage');
+                         ?>
+                         <div id="draggableHelper4" class="override-width-805" style="display:inline-block;">
+                            <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
+                         </div>
+                    </div><!--/ .facebook -->
                 </div><!--/ .page-maker--placeholder -->
 
                 <div id="ava3-m" class="page-maker--placeholder fluid" style="display: none">
@@ -760,9 +571,6 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
 
-<?php
-    $session = new Zend_Session_Namespace('srcImage');
-?>
 <script>
 
      //Draggable & Resizable option
@@ -794,32 +602,6 @@
             setCookie("keterangan", ket);
             setCookie("res", res);
         });
-
-        /* Resize with cropit */
-            $('#image-cropper, #image-cropper-ava1, #image-cropper-ava2, #image-cropper-ava3').cropit({ 
-                imageState: {
-                    src: '<?php echo $session->src ?>',
-                },
-                imageBackground: true,
-                imageBackfroundBorderWidth: 1 
-            });
-            var imageCropper = $('#image-cropper, #image-cropper-ava1, #image-cropper-ava2, #image-cropper-ava3');
-                imageCropper.cropit('imageSrc');
-
-            $('.export').click(function() {
-                var imageData = $('#image-cropper, #image-cropper-ava1, #image-cropper-ava2, #image-cropper-ava3').cropit('export');
-                    window.open(imageData);
-            });
-
-            if($(window).width() < 640) { 
-                //alert("a");
-                var imageData = $('#image-cropper').cropit('offset', {
-                                                      x: -18, y: -54
-                                                    });
-                $('.cropit-image-preview').val(imageData);
-
-            }
-
     });
                  
     function getId(obj) {
@@ -833,4 +615,3 @@
     }
                         
 </script>
-
