@@ -801,15 +801,27 @@
                     src: '<?php echo $session->src ?>',
                 },
                 imageBackground: true,
-                imageBackfroundBorderWidth: 1 
+                imageBackfroundBorderWidth: 1,
+                smallImage: 'allow',
+                freeMove: true,
+                onOffsetChange: function(offset) {
+                      //console.log(offset.x);
+                }
             });
+            
             var imageCropper = $('#image-cropper, #image-cropper-ava1, #image-cropper-ava2, #image-cropper-ava3');
                 imageCropper.cropit('imageSrc');
-
             $('.export').click(function() {
-                var imageData = $('#image-cropper, #image-cropper-ava1, #image-cropper-ava2, #image-cropper-ava3').cropit('export');
-                    window.open(imageData);
+                //var imageData = $('#image-cropper, #image-cropper-ava1, #image-cropper-ava2, #image-cropper-ava3').cropit('export');
+                //    window.open(imageData);
+                    
+                    var imageData2 = $('#image-cropper, #image-cropper-ava1, #image-cropper-ava2, #image-cropper-ava3').cropit('exportZoom',2);
+                    window.open(imageData2);
             });
+            
+           //$('body').on('click','#download',function(){
+           //           
+           //});
 
             if($(window).width() < 640) { 
                 //alert("a");
