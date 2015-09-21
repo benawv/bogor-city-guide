@@ -26,47 +26,10 @@
 ?>
 
 <?php if(!$this->editmode): ?>
-	<?php if($anchors < 6) { ?>
-	<?php 
-		$style = $this->editmode?'height: 250px':'';
-	?>
-		<ul id="membername" class="navi" style="<?php echo $style?>">
-			<?php for($i=0;$i<$anchors;$i++) { ?>
-				<?php $active = $i==0?'aktif':''?>
-				<li class="<?php echo $this->input('class_name_'.$i)->text?> <?php echo $active?>">
-					<div class="nav_menu" <?php if($this->editmode) { ?> style="color: #000;" <?php } ?> >
-						<?php echo $this->editmode?'<b>Anchor Name:</b> '. $this->input('class_name_'.$i, array('width' => '75')) : ''?>
-						
-						<?php if($this->editmode) { ?>
-							<b>Icon Inactive:</b> <?php echo $this->image('icon_'.$i, array(
-											'title' 	=> 'Image Size 26x26',
-											'width' 	=> 100,
-											'height' 	=> 100,
-											'thumbnail'	=> 'icon')) ?>
-						<?php } else { ?>
-							<div style="background-image: url('<?php echo $this->image('icon_'.$i)->getSrc()?>'); margin-bottom: 3px; width: 26px; height: 26px; background-repeat: no-repeat;"></div>
-						<?php } ?>
-						
-						<?php if($this->editmode) { ?>
-							<b>Icon Active:</b> <?php echo $this->image('icon_'.$i.'_'.$i, array(
-											'title' 	=> 'Image Size 26x26',
-											'width' 	=> 100,
-											'height' 	=> 100,
-											'thumbnail'	=> 'icon')) ?>
-						<?php } else { ?>
-							<div class="white_image" style="background-image: url('<?php echo $this->image('icon_'.$i.'_'.$i)->getSrc()?>'); margin-bottom: 3px; width: 26px; height: 26px; background-repeat: no-repeat;"></div>
-						<?php } ?>
-						
-						<span class="cus_anchor_<?php echo $i;?>"><?php echo $this->editmode?'Title: ':'' ?><?php echo $this->input('anchor_title_'.$i, array("width" => '75'))?></span>
-					</div>
-				</li>
-			<?php } ?>
-		</ul>
-	<?php } else { ?>
 	<?php 
 		$style = !$this->editmode?'float: left; position: absolute;':'height: 250px';
 	?>
-		<div id="membername" style="width: 580px; position:absolute;">
+		<div id="membername" style="width: 500px; position:absolute;">
 			<div class="slide prev"><span class="arrow"></span></div>
 			<div class="super_navi">
 				<ul id="navigate" class="navi" style="<?php echo $style?>">
@@ -104,7 +67,6 @@
 			</div>
 			<div class="slide next"></div>
 		</div>
-	<?php } ?>
 <?php else : ?>
 	<?php
 		if($anchors <= 6) {
@@ -194,6 +156,7 @@
 			$(this).find('.xicon').addClass('down')
 		}
 	});*/
+    
 	
 	$('.next').on('click',function(){
 		var me_left = $('.super_navi').scrollLeft();
@@ -206,5 +169,15 @@
 		$('.super_navi').scrollLeft(me_left - 100);
 		//console.log($('.super_navi').position().left);
 	});
+    
+    $(document).ready(function(){
+        var widthNavi = $('#navigate').width();
+        if(widthNavi < 500){
+            $('.slide').hide();
+        }else{
+            $('.slide').show();
+            $('.super_navi').width(470);
+        }
+    });
 	/* silde nav*/
 </script>
