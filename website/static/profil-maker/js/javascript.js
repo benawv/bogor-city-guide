@@ -195,7 +195,7 @@ $(document).ready(function()
 						//preview and save
 						if(form.valid()) {
 							//alert("all filled");
-							$("a#save").attr("href", "#ask");
+							$("a#save").attr("href", "#top");
 							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
 	                        $headline = $('#atas').val();
 	                        $konten = $('#tengah').val();
@@ -222,12 +222,17 @@ $(document).ready(function()
 
 	                //Back to fill form    
 	                $("#cancel").click(function(){
-	                $('#fillform').show();
-	                $('#ask').hide();      
+		                $('#fillform').show();
+		                $('#ask').hide();      
 	                });
 
+	                $("#tutup").click(function(){
+		                window.location.href = "/profil-maker/page1";
+		                    
+	                });
+	                
                     //Smooth scroll   
-                    $("#preview, #download, #square, #portrait, #landscape, #save, #ask, #fillform").click(function(event){
+                    $("#preview, #download, #square, #portrait, #landscape, #save, #ask, #fillform, #thankyou").click(function(event){
                     	//alert("scroll");
                         event.preventDefault();
 						$('html,body').animate({
@@ -295,7 +300,7 @@ $(document).ready(function()
 			    }
 			    else if(temp == "template4") {
 			        //alert("ava2");
-			        $("#ava2").css("display", "block");
+			        $("#ava21").css("display", "block");
 			        $("#input1, #input2, #input5, #input6").hide();
 			    }
 			    else if(temp == "template5") {
@@ -305,7 +310,7 @@ $(document).ready(function()
 			    }
 			    else if(temp == "template6") {
 			        //alert("ava1");
-			        $("#ava3").css("display", "block");
+			        $("#ava31").css("display", "block");
 			        $("#input1, #input2, #input5, #input6").hide();
 			    }
 
@@ -313,13 +318,13 @@ $(document).ready(function()
 			    if($(window).width() < 640) {
 			    	//alert("640 coy");
 			    	if(temp == "template1" || temp == "template2" || temp == "template3") {
-			    		//$("#cover1").hide();
+			    		//("#cover1").hide();
 			    		//$("#cover-m").show();
 			    	}
 			    	else if(temp == "template4") {
 			    		//alert("this is avatar 2 comin' up");
-			    		//$("#ava2").hide();
-			    		//$("#ava2-m").show();
+			    		$("#ava21").hide();
+			    		$("#ava2-m").show();
 			    	}
 			    	else if(temp == "template5") {
 			    		//alert("this is avatar 1 comin' up");
@@ -328,8 +333,8 @@ $(document).ready(function()
 			    	}
 			    	else if(temp == "template6") {
 			    		//alert("this is avatar 3 comin' up");
-			    		//$("#ava3").hide();
-			    		//$("#ava3-m").show();
+			    		$("#ava31").hide();
+			    		$("#ava3-m").show();
 			    	}
 			    }
 
@@ -345,6 +350,7 @@ $(document).ready(function()
 					//capture cover
 					if(temp == "template1" || temp == "template2" || temp == "template3") {
 
+						//$(".over-scroll").css("overflow", "initial");
 						//$("#cover-m").hide();
 	                    //$("#cover1").show();
 
@@ -354,6 +360,9 @@ $(document).ready(function()
 	                        	//$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
 
+	                            //$("a#download").attr("href", "#top");
+	                            window.location.href = "/profil-maker/profil-thankyou";
+
 	                           	// $('#imaged').append('<img id="resized" src="'+dataURL+'" />');
 	                         
 	                            //$('#imaged').html('Generating..');
@@ -361,6 +370,7 @@ $(document).ready(function()
 	                            //     $('#imaged').html(data);
 	                            //     //console.log(data);
 	                            // });
+
 
 								if($(window).width() < 640) {
 									//alert("after capture, back to cover1");
@@ -408,18 +418,21 @@ $(document).ready(function()
 					//capture avatar
 					else if(temp == "template4"){
 
-						//$("#ava2-m").hide();
-	                    //$("#ava2").show();
+						$("#ava2-m").hide();
+	                    $("#ava21").show();
 
-						html2canvas($('#cropped-ava2'), {
+						html2canvas($('#cropped-ava21'), {
 	                    onrendered: function(canvas) {
 	                        //$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
 
+	                            //$("a#download").attr("href", "#top");
+	                            window.location.href = "/profil-maker/profil-thankyou";
+
 	                            if($(window).width() < 640) {
 									//alert("after capture, back to ava2");
-									//$("#ava2-m").show();
-									//$("#ava2").hide();
+									$("#ava2-m").show();
+									$("#ava21").hide();
 								}
 
 	                			//Random filename after download
@@ -453,8 +466,10 @@ $(document).ready(function()
 									headline = "";
 									description = "";
 									saveNote(headline,description,firstName,lastName, tgl);
+									//console.log(dataURL);
 	                    	}
 	                	});
+						
 					}
 
 					//capture avatar
@@ -467,6 +482,9 @@ $(document).ready(function()
 	                    onrendered: function(canvas) {
 	                        	//$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
+
+	                            //$("a#download").attr("href", "#top");
+	                            window.location.href = "/profil-maker/profil-thankyou";
 
 	       						if($(window).width() < 640) {
 								//alert("after capture, back to ava1");
@@ -514,18 +532,21 @@ $(document).ready(function()
 					//capture avatar
 					else if(temp == "template6"){
 
-						//$("#ava3-m").hide();
-	                    //$("#ava3").show();
+						$("#ava3-m").hide();
+	                    $("#ava31").show();
 
-						html2canvas($('#cropped-ava3'), {
+						html2canvas($('#cropped-ava31'), {
 	                    onrendered: function(canvas) {
 	                        //$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
 
+	                            //$("a#download").attr("href", "#top");
+	                            window.location.href = "/profil-maker/profil-thankyou";
+
 	                            if($(window).width() < 640) {
 									//alert("after capture, back to ava2");
-									//$("#ava3-m").show();
-									//$("#ava3").hide();
+									$("#ava3-m").show();
+									$("#ava31").hide();
 								}
 
 	                			//Random filename after download
