@@ -29,7 +29,7 @@
 	<?php 
 		$style = !$this->editmode?'float: left; position: absolute;':'height: 250px';
 	?>
-		<div id="membername" style="width: 500px; position:absolute;">
+		<div id="membername" style="width: 507px; position:absolute;">
 			<div class="slide prev"><span class="arrow"></span></div>
 			<div class="super_navi">
 				<ul id="navigate" class="navi" style="<?php echo $style?>">
