@@ -222,12 +222,17 @@ $(document).ready(function()
 
 	                //Back to fill form    
 	                $("#cancel").click(function(){
-	                $('#fillform').show();
-	                $('#ask').hide();      
+		                $('#fillform').show();
+		                $('#ask').hide();      
+	                });
+
+	                //Close thankyou
+	                $("#tutup").click(function() {
+	                	$("#thankyou").hide();
 	                });
 
                     //Smooth scroll   
-                    $("#preview, #download, #square, #portrait, #landscape, #save, #ask, #fillform").click(function(event){
+                    $("#preview, #download, #square, #portrait, #landscape, #save, #ask, #fillform, #thankyou").click(function(event){
                     	//alert("scroll");
                         event.preventDefault();
 						$('html,body').animate({
@@ -318,8 +323,8 @@ $(document).ready(function()
 			    	}
 			    	else if(temp == "template4") {
 			    		//alert("this is avatar 2 comin' up");
-			    		//$("#ava2").hide();
-			    		//$("#ava2-m").show();
+			    		$("#ava2").hide();
+			    		$("#ava2-m").show();
 			    	}
 			    	else if(temp == "template5") {
 			    		//alert("this is avatar 1 comin' up");
@@ -328,8 +333,8 @@ $(document).ready(function()
 			    	}
 			    	else if(temp == "template6") {
 			    		//alert("this is avatar 3 comin' up");
-			    		//$("#ava3").hide();
-			    		//$("#ava3-m").show();
+			    		$("#ava3").hide();
+			    		$("#ava3-m").show();
 			    	}
 			    }
 
@@ -345,6 +350,7 @@ $(document).ready(function()
 					//capture cover
 					if(temp == "template1" || temp == "template2" || temp == "template3") {
 
+						//$(".over-scroll").css("overflow", "initial");
 						//$("#cover-m").hide();
 	                    //$("#cover1").show();
 
@@ -354,6 +360,8 @@ $(document).ready(function()
 	                        	//$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
 
+	                            $("a#download").attr("href", "#top");
+
 	                           	// $('#imaged').append('<img id="resized" src="'+dataURL+'" />');
 	                         
 	                            //$('#imaged').html('Generating..');
@@ -361,6 +369,7 @@ $(document).ready(function()
 	                            //     $('#imaged').html(data);
 	                            //     //console.log(data);
 	                            // });
+
 
 								if($(window).width() < 640) {
 									//alert("after capture, back to cover1");
@@ -408,18 +417,20 @@ $(document).ready(function()
 					//capture avatar
 					else if(temp == "template4"){
 
-						//$("#ava2-m").hide();
-	                    //$("#ava2").show();
+						$("#ava2-m").hide();
+	                    $("#ava2").show();
 
 						html2canvas($('#cropped-ava2'), {
 	                    onrendered: function(canvas) {
 	                        //$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
 
+	                            $("a#download").attr("href", "#top");
+
 	                            if($(window).width() < 640) {
 									//alert("after capture, back to ava2");
-									//$("#ava2-m").show();
-									//$("#ava2").hide();
+									$("#ava2-m").show();
+									$("#ava2").hide();
 								}
 
 	                			//Random filename after download
@@ -453,8 +464,10 @@ $(document).ready(function()
 									headline = "";
 									description = "";
 									saveNote(headline,description,firstName,lastName, tgl);
+									//console.log(dataURL);
 	                    	}
 	                	});
+						
 					}
 
 					//capture avatar
@@ -467,6 +480,8 @@ $(document).ready(function()
 	                    onrendered: function(canvas) {
 	                        	//$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
+
+	                            $("a#download").attr("href", "#top");
 
 	       						if($(window).width() < 640) {
 								//alert("after capture, back to ava1");
@@ -514,18 +529,20 @@ $(document).ready(function()
 					//capture avatar
 					else if(temp == "template6"){
 
-						//$("#ava3-m").hide();
-	                    //$("#ava3").show();
+						$("#ava3-m").hide();
+	                    $("#ava3").show();
 
 						html2canvas($('#cropped-ava3'), {
 	                    onrendered: function(canvas) {
 	                        //$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
 
+	                            $("a#download").attr("href", "#top");
+
 	                            if($(window).width() < 640) {
 									//alert("after capture, back to ava2");
-									//$("#ava3-m").show();
-									//$("#ava3").hide();
+									$("#ava3-m").show();
+									$("#ava3").hide();
 								}
 
 	                			//Random filename after download
