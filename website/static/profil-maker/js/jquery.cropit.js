@@ -508,6 +508,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 
 	      this.options.onOffsetChange(position);
+		  //console.log(position);
 	    }
 	  }, {
 	    key: 'fixOffset',

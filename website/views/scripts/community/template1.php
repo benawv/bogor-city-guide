@@ -61,9 +61,9 @@
 						<header class="s-ct">
 							<div class="art-box">
 								<div class="community-btn">
-										<a href="javascript:void(0);" class="fbshare"><i class="fa fa-facebook"></i></a>
-										<a href="javascript:void(0);" class="twshare"><i class="fa fa-twitter"></i></a>
-										<a href="javascript:void(0);" class="emailshare" data-toggle="modal" data-target="#myModal"><i class="fa fa-envelope"></i></a>
+										<a href="javascript:void(0)" class="fbshare"><i class="fa fa-facebook"></i></a>
+										<a href="javascript:void(0)" class="twshare"><i class="fa fa-twitter"></i></a>
+										<a href="javascript:void(0)" class="emailshare" data-toggle="modal" data-target="#myModal"><i class="fa fa-envelope"></i></a>
 								</div>
 								
 								<p class="custom-art art-inf tglShare">
@@ -248,6 +248,7 @@
 		$.ajax({
 			type: "POST",
 			url: "save-cookies",
+			async:false,
 			data: {cookies: <?php echo ($_COOKIE["user"]);?>, id: $(".id_art").val()},
 			success: function(data){
 				console.log(data);
@@ -264,7 +265,8 @@
 	        
 	        var tweet = title+" : "+isiText+url;
 	        var encodeTweet = encodeURIComponent(tweet);
-	        window.open('https://twitter.com/intent/tweet?text='+encodeTweet, 'sharer', 'width=626,height=436');
+	        // window.open('https://twitter.com/intent/tweet?text='+encodeTweet, 'sharer', 'width=626,height=436');
+	        window.open('https://twitter.com/intent/tweet?text='+encodeTweet, 'sharer');
 		});
 		
 		$('.community-btn .fbshare').on("click",function(){
@@ -317,6 +319,7 @@
 	        $.ajax({
 					type: 'POST',
 					url: loc,
+					async:false,
 					data: {
 						filename: filename,
 						title_fb : reTanya,
@@ -328,7 +331,8 @@
 					success: function(response)
 					{
 						var url = window.location.origin+'/website/static/fbshare/'+response;
-						window.open('http://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), 'sharer', 'width=626,height=436');
+						// window.open('http://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), 'sharer', 'width=626,height=436');
+						window.open('http://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), 'sharer');
 					}
 				});
 		});
