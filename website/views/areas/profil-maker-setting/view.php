@@ -852,7 +852,31 @@
                       $("#duplicate .cropit-image-preview").css("background-position",pos);
                       $("#duplicate .cropit-image-background").css("left",(offset.x*2)+"px");
                       $("#duplicate .cropit-image-background").css("top",(offset.y*2)+"px");
-                }
+                },
+                //onZoomChange:function(value){
+                //      var val_ava = $("#image-cropper-ava2 .cropit-image-preview").css("background-size");
+                //      var val_ava_left = $("#image-cropper-ava2 .cropit-image-background").css("left").split('px');
+                //      var val_ava_top = $("#image-cropper-ava2 .cropit-image-background").css("top").split('px');
+                //      var val_ava_height = $("#image-cropper-ava2 .cropit-image-background").css("height").split('px');
+                //      var val_ava_width = $("#image-cropper-ava2 .cropit-image-background").css("width").split('px');
+                //      //console.log(val_ava);
+                //      var result1 = val_ava.split(' ');
+                //      console.log(result1);
+                //      var result21 = result1[0].split('px');
+                //      var result22 = result1[1].split('px');
+                //      var size = (result21[0]*2)+"px "+(result22[0]*2)+"px";
+                //      $("#duplicate .cropit-image-preview").css("background-size",size);
+                //      console.log(val_ava_left[0]*2);
+                //      console.log(val_ava_top[0]*2);
+                //      $("#duplicate .cropit-image-background").css("left",(val_ava_left[0]*2)+"px");
+                //      $("#duplicate .cropit-image-background").css("top",(val_ava_top[0]*2)+"px");
+                //      $("#duplicate .cropit-image-background").css("height",(val_ava_height[0]*2)+"px");
+                //      $("#duplicate .cropit-image-background").css("width",(val_ava_width[0]*2)+"px");
+                //      //$("#duplicate .cropit-image-background").css("left",(result21[0]*2)+"px");
+                //      //$("#duplicate .cropit-image-background").css("top",(result22[0]*2)+"px");
+                //      //var val_ava2 = $("#duplicate .cropit-image-zoom-input.custom").val(val_ava);
+                //      //console.log(val_ava2);
+                //}
             });
             
             $('#duplicate').cropit({ 
