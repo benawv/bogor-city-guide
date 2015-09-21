@@ -46,6 +46,18 @@
             border: 1px solid #ccc;
             border-radius: 3px;
             margin-top: 7px;
+            /*width: 472px;
+            height: 394px;*/
+            width: 236px;
+            height: 197px;
+            cursor: move;
+          }
+          .cropit-ava21 {
+            background-color: #f8f8f8;
+            background-size: cover;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-top: 7px;
             width: 472px;
             height: 394px;
             cursor: move;
@@ -66,6 +78,11 @@
             margin: 0 auto;
           }
           #cropped-ava2 {
+            width: 236px;
+            height: 197px;
+            margin: 0 auto;
+          }
+          #cropped-ava21 {
             width: 472px;
             height: 394px;
             margin: 0 auto;
@@ -424,6 +441,30 @@
                                                 <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
                                         </div>
                                     </div>
+                                    <!--<div class="avatar-caption--footer">
+                                        <img src="/website/static/images/profile-maker/fb.png" alt="" style="position: absolute; width: 29px; left: 19px; top: 11px;">-->
+                                        <!-- <i class="fa fa-facebook-square fa-2x"></i> --> &nbsp;
+                                        <!--<span>Allianz Indonesia</span>&nbsp;
+                                        <strong><span id="cname">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
+                                    </div>--><!--/ .avatar-caption-footer -->
+                                </div>
+                                
+                            </div>
+                            <div class="slider-wrapper">
+                                <i class="fa fa-file-image-o"></i>
+                                    <input type="range" class="cropit-image-zoom-input custom" min="0" max="1" step="0.01">
+                                <i class="fa fa-file-image-o fa-2x"></i>    
+                            </div>             
+                        </div>
+                    
+                     <div id="duplicate">
+                            <div id="cropped-ava21" class="cropit-image-preview-container">
+                                <div class="cropit-image-preview cropit-ava21">
+                                    <div id="avacapture2" class="avatar-caption">
+                                        <div class="avatar-caption--logo">
+                                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
+                                        </div>
+                                    </div>
                                     <div class="avatar-caption--footer">
                                         <img src="/website/static/images/profile-maker/fb.png" alt="" style="position: absolute; width: 29px; left: 19px; top: 11px;">
                                         <!-- <i class="fa fa-facebook-square fa-2x"></i> --> &nbsp;
@@ -438,7 +479,7 @@
                                     <input type="range" class="cropit-image-zoom-input custom" min="0" max="1" step="0.01">
                                 <i class="fa fa-file-image-o fa-2x"></i>    
                             </div>             
-                        </div> 
+                        </div>
                 </div><!--/ .page-maker--placeholder -->
 
                 <!-- when mobile condition -->
@@ -797,6 +838,7 @@
 
         /* Resize with cropit */
             $('#image-cropper, #image-cropper-ava1, #image-cropper-ava2, #image-cropper-ava3').cropit({ 
+                exportZoom: 2,
                 imageState: {
                     src: '<?php echo $session->src ?>',
                 },
@@ -805,23 +847,36 @@
                 smallImage: 'allow',
                 freeMove: true,
                 onOffsetChange: function(offset) {
-                      //console.log(offset.x);
+                      
+                      var pos = (offset.x*2)+"px "+(offset.y*2)+"px";
+                      $("#duplicate .cropit-image-preview").css("background-position",pos);
+                      $("#duplicate .cropit-image-background").css("left",(offset.x*2)+"px");
+                      $("#duplicate .cropit-image-background").css("top",(offset.y*2)+"px");
                 }
+            });
+            
+            $('#duplicate').cropit({ 
+                imageState: {
+                    src: '<?php echo $session->src ?>',
+                },
+                imageBackground: true,
+                imageBackfroundBorderWidth: 1,
+                smallImage: 'allow',
+                freeMove: true
             });
             
             var imageCropper = $('#image-cropper, #image-cropper-ava1, #image-cropper-ava2, #image-cropper-ava3');
                 imageCropper.cropit('imageSrc');
-            $('.export').click(function() {
-                //var imageData = $('#image-cropper, #image-cropper-ava1, #image-cropper-ava2, #image-cropper-ava3').cropit('export');
-                //    window.open(imageData);
-                    
-                    var imageData2 = $('#image-cropper, #image-cropper-ava1, #image-cropper-ava2, #image-cropper-ava3').cropit('exportZoom',2);
-                    window.open(imageData2);
-            });
+            //$('body').on('click','#download',function(){
+            //          var imageData = $('#image-cropper-ava2').cropit('export');
+            //          console.log(imageData);
+            //          window.open(imageData);
+            //});
             
-           //$('body').on('click','#download',function(){
-           //           
-           //});
+            $('.export').click(function() {
+                var imageData = $('#image-cropper, #image-cropper-ava1, #image-cropper-ava2, #image-cropper-ava3').cropit('export');
+                    window.open(imageData);
+            });
 
             if($(window).width() < 640) { 
                 //alert("a");
