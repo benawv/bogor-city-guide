@@ -61,9 +61,9 @@
 						<header class="s-ct">
 							<div class="art-box">
 								<div class="community-btn">
-										<a href="#" class="fbshare"><i class="fa fa-facebook"></i></a>
-										<a href="#" class="twshare"><i class="fa fa-twitter"></i></a>
-										<a href="#" class="emailshare" data-toggle="modal" data-target="#myModal"><i class="fa fa-envelope"></i></a>
+										<a href="javascript:void(0)" class="fbshare"><i class="fa fa-facebook"></i></a>
+										<a href="javascript:void(0)" class="twshare"><i class="fa fa-twitter"></i></a>
+										<a href="javascript:void(0)" class="emailshare" data-toggle="modal" data-target="#myModal"><i class="fa fa-envelope"></i></a>
 								</div>
 								
 								<p class="custom-art art-inf tglShare">
