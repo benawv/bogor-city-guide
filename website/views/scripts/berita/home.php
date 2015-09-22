@@ -56,93 +56,11 @@
             </div>
 
 			<div class="quicklinksNews" id="quicklinks">
-				<script>
-					function changeHeader(object)
-					{
-						$("#accordion-header").html("");
-						$("#accordion-header").html(""+object.text);
-					}
-				</script>
-	                
-				<!-- Accordion -->
-			<div id="accordion-container">
-			    <h2 id="accordion-header" class="accordion-header">Layanan Kami</h2>
-			    <div class="accordion-content">
-				    <!-- Tablink -->
-				    <div class="tab-wrapper-short">
-					    <div class="tab-content" id="tab-umum" style="display: block;">
-						    <!-- <h3>Asuransi Kumpulan</h3> -->
-						    <ul class="nav">
-							    <li><a href="../klaim.php">Prosedur Klaim</a></li>
-								<li><a onclick="navigateMe('premi')" href="../customer-service.php#cs_premi">Info Cara Pembayaran Premi</a></li>
-								<li><a target="_blank" href="https://www.allianzlife.co.id/CustomerOnlinePortal/">Customer Online Portal</a></li>
-								<li><a onclick="navigateMe('cara-membeli')" href="../customer-service.php#cs_cara-membeli">Info Cara Membeli</a></li>
-								<li><a href="../investasi.php">Harga Unit</a></li>
-								<li><a target="_blank" href="https://www.allianzlife.co.id/eBancassurance/">BancAssurance Portal</a></li>
-								<li><a target="_blank" href="https://www.allianzlife.co.id/ePension/">e-Pension</a></li>
-								<li><a href="../allianz-platinum.php">Allianz Platinum</a></li>
-								<li><a href="../faq.php">FAQ</a></li>
-						    </ul>
-					    </div>		
-					    <div class="tab-content" id="tab-jiwa" style="display: none;">
-						    <!-- <h3>Asuransi Jiwa</h3> -->
-						    Asuransi Jiwa:
-						    <br>
-						    <br>
-							    <ul class="list-links">
-								    <li>Tel: +6221-2926 9999</li>
-								    <li>Fax: +6221-2926 8080</li>
-								    <li>contactus@allianz.co.id</li>
-							    </ul>
-						    
-						    Asuransi Umum:
-						    <br>
-						    <br>
-						    <ul class="list-links">
-							    <li>Tel: +6221-2926 9999</li>
-							    <li>Fax: +6221-2926 9090</li>
-							    <li>Feedback@allianz.co.id</li>
-						    </ul>
-						    
-					    </div>
-					    <div class="tab-content" data-header="Asuransi Kesehatan" id="tab-kesehatan" style="display: none;">
-						    <!-- <h3>Asuransi Kesehatan</h3> -->
-						    <ul class="nav">
-							    <li><a style="color:white" href="http://www.facebook.com/AllianzIndonesiaCommunity">Facebook:  AllianzIndonesiaCommunity </a></li>
-							    <li><a style="color:white" href="http://www.twitter.com/AllianzID">Twitter: AllianzID </a></li>
-							    <li><a style="color:white" href="http://instagram.com/allianzindonesia">Instagram: AllianzIndonesia</a></li>
-						    </ul>
-    
-					    </div>
-					    <div class="tab-content" id="tab-syariah" style="display: none;">
-						    <!-- <h3>Asuransi Syariah</h3> -->
-						    <ul class="nav">
-								    <li><a style="color:white" onclick="navigateMe('report')" href="../finansial.php#fin-report">Laporan Keuangan</a></li>
-								    <li><a style="color:white" onclick="navigateMe('unit-link')" href="../download.php#unit-link"> Laporan Perkembangan Unit Link Tahun 2013</a></li>
-								    <li><a style="color:white" onclick="navigateMe('rumah-sakit')" href="../customer-service.php#cs_rumah-sakit">Daftar Rekanan Rumah Sakit</a></li>
-								    <li><a style="color:white" onclick="navigateMe('asuransi-jiwa')" href="../download.php#asuransi-jiwa">Download Formulir-formulir Penting</a></li>
-								    <li><a style="color:white" onclick="navigateMe('newsletter-allianz')" href="../download.php#newsletter-allianz">Newsletter</a></li>
-						    </ul>
-					    </div>
-				    </div>
-				    <!-- Tablink -->
-			    </div>	
-			</div>
+
+                <?php echo $this->areablock('product-quicklinks', array('allowed' => array('product-quicklinks')))?>
 		<!-- Accordion -->
 		
-		<!--Tab gantung -->
-			<div class="tab-wrapper-hold">
-				<div class="tab-button">
-					<ul>
-						<li class="active"><a onclick="changeHeader(this)" class="accordion-tab inactive-header" href="#tab-umum">Layanan Kami</a></li>
-						<li><a onclick="changeHeader(this)" class="accordion-tab inactive-header" href="#tab-jiwa">Kontak</a></li>
-						<li><a onclick="changeHeader(this)" class="accordion-tab inactive-header" href="#tab-kesehatan">Media Sosial</a></li>
-						<li><a onclick="changeHeader(this)" class="accordion-tab inactive-header" href="#tab-syariah">Download</a></li>
-						
-					</ul>
-				</div>	
-			</div>	
-		<!--Tab gantung -->
+
 
 			</div> 
 		<!--Item -->
