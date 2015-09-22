@@ -211,6 +211,7 @@ img#timelineBGload:hover {
           .slider-wrapper { text-align: center; margin: 10px 0; }
           .slider-wrapper .fa { color: #555; }
           .slider-wrapper .fa-2x { font-size: 22px; }
+          .page-maker--form-inner .fa.fa-facebook-square { font-size: 22px; }
 
           input {
             display: block;
