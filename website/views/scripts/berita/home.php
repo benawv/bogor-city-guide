@@ -57,7 +57,7 @@
 
 			<div class="quicklinksNews" id="quicklinks">
 
-                <?php echo $this->areablock('product-quicklinks', array('allowed' => array('product-quicklinks')))?>
+                <?php echo $this->areablock('news-quicklinks', array('allowed' => array('blank-animation-quicklinks','quicklinks','product-quicklinks')))?>
 		<!-- Accordion -->
 		
 
