@@ -75,6 +75,7 @@ function checkfiles(){
                             <!--</a>-->
                             <a href="javascript:history.go(-1);" class="btn btn-default">Kembali</a>
                         </div><!--/ .form-group -->
+                        <p>Untuk mendapatkan hasil yang maksimal, mohon menggunakan PC atau Tablet Anda</p>
 
                     
                 </div><!--/ .profile-maker--uploader -->
