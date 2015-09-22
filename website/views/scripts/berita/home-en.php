@@ -57,7 +57,7 @@
 
 			<div class="quicklinksNews" id="quicklinks">
 
-                <?php echo $this->areablock('news-quicklinks', array('allowed' => array('blank-animation-quicklinks','quicklinks','product-quicklinks')))?>
+                <?php echo $this->areablock('product-quicklinks', array('allowed' => array('product-quicklinks')))?>
 		<!-- Accordion -->
 		
 
@@ -102,7 +102,7 @@
 									            	</div>
 									            </div>
 									            <div class="selengkapnya">
-									                <a href="<?php echo $entries[0]->path."".$entries[0]->key;?>">Selengkapnya</a>
+									                <a href="<?php echo $entries[0]->path."".$entries[0]->key;?>">Detail</a>
 									            </div>
 									    </div>
 									</div>
@@ -112,7 +112,7 @@
 						?>
 				</div>
                 <div class="btn_more">
-                    <a href="javascript:void(0)" class="button_more">Selanjutnya...</a>
+                    <a href="javascript:void(0)" class="button_more">Load More...</a>
                     <input type="hidden" value="3" class="offset" />
                 </div>
 			</div>
@@ -195,19 +195,21 @@
 			var year = $("#combo_year").val();
 			
 			$.ajax({
-				url: 'load-more',
+				url: 'load-more-en',
 				type: 'POST',
 				data: { 'offset': offset, 'created_at': year },
 				success: function(result) {
 					berita = $.parseJSON(result);
-					//console.log(berita);
+					// console.log(berita);
 					
 					if(berita.length != 0){
 						$.each(berita, function(i , val){
 							var a = arrayKeys(val[0].elements);
 							var match;
+							// console.log(val);
 							for(var z = 0; z < a.length; z++)
 							{
+								// console.log(a[z].substring(0,13));
 								if(a[z].substring(0,13)=="konten-berita")
 								{
 									match = a[z];
@@ -229,7 +231,7 @@
 							                		'</div>'+
 							            		'</div>'+
 								            	'<div class="selengkapnya">'+
-									               	'<a href="'+val[0].path+''+val[0].key+'">Selengkapnya</a>'+
+									               	'<a href="'+val[0].path+''+val[0].key+'">Detail</a>'+
 									            '</div>'+
 										    '</div>'+
 										'</div>'+
@@ -291,7 +293,7 @@
 						                '</div>'+
 						            '</div>'+
 						            '<div class="selengkapnya">'+
-						                '<a href="'+val[0].path+''+val[0].key+'">Selengkapnya</a>'+
+						                '<a href="'+val[0].path+''+val[0].key+'">Detail</a>'+
 						            '</div>'+
 								    '</div>'+
 								'</div>'+

@@ -18,7 +18,7 @@
                             
                          <div class="row">
                             <div class="col-xs-12 tac">
-                                <p>Anda telah menggunakan Allianz Profile Maker. <br /> Posting gambar atau ganti <i>profile picture</i> yang sudah Anda buat disini: <a href="http://www.facebook.com"><img src="/website/static/images/profile-maker/fb.png" alt="" style="width: 20px; vertical-align: initial;"></a></p>
+                                <p>Anda telah menggunakan Allianz Profile Maker. <br /> Posting gambar atau ganti <i>profile picture</i> yang sudah Anda buat disini: <a href="http://www.facebook.com" onClick="MyWindow=window.open('http://www.facebook.com','MyWindow'); return false;"><span class="fa fa-facebook-square"> </span></a></p>
                             </div><!--/ .col-xs-12 -->
                         </div><!--/ .row -->
                         <div class="row" style="margin-top: 16px;">
