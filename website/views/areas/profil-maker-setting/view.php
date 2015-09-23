@@ -21,12 +21,16 @@
             min-height: 52px;
           }
           #ava2-m .avatar-caption--footer, #ava3-m .avatar-caption--footer {
-            line-height: 20px;
+            line-height: 15px;
+            padding: 6px 45px;
             min-height: 41px;
             font-size: 9px;
           }
+          #ava2-m .avatar-caption, #ava3-m .avatar-caption { right: 11px; top: 11px; }
+          #ava2-m .avatar-caption--logo img, #ava3-m .avatar-caption--logo img { width: 37px; }
           #ava2-m .avatar-caption--footer img, #ava3-m .avatar-caption--footer img {
             width: 20px !important;
+            left: 15px !important;
           }
 
         @media only screen and (max-width : 640px) { 
@@ -39,6 +43,7 @@
                 max-width: 100%;
             }
         }
+        
 
     </style>
 
@@ -335,7 +340,7 @@
                                         <img src="/website/static/images/profile-maker/fb.png" alt="" style="position: absolute; width: 29px; left: 19px; top: 11px;">
                                         <!-- <i class="fa fa-facebook-square fa-2x"></i> --> &nbsp;
                                         <span>Allianz Indonesia</span>&nbsp;
-                                        <strong><span id="cname">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
+                                        <strong><span id="cname-m">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
                                     </div> <!--/ .avatar-caption-footer -->
                                 </div>
                                 
