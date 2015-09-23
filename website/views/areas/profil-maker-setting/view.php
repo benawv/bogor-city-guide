@@ -660,9 +660,12 @@
 	  var img = document.getElementById('imgid'); 
 						  var height =$(".cropit-ava2 ").height();
 						  var width = $(".cropit-ava2").width();
-						   
+						  var height_ava3 =$(".cropit-ava3 ").height();
+						  var width_ava3 = $(".cropit-ava3").width();
 						  var rasioX = 472/width;
 						  var rasioY = 394/height;
+						  var rasioX_ava3 = 504/width_ava3;
+						  var rasioY_ava3 = 504/height_ava3;
      //Draggable & Resizable option
     $(function() {
         $( "#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper4" ).resizable({
@@ -694,7 +697,7 @@
         });
 
         /* Resize with cropit */
-            $('#image-cropper, #image-cropper-ava1, #image-cropper-ava2, #image-cropper-ava3').cropit({ 
+            $('#image-cropper, #image-cropper-ava1, #image-cropper-ava2').cropit({ 
                 //exportZoom: 2,
                 imageState: {
                     src: '<?php echo $session->src ?>',
@@ -708,9 +711,18 @@
                       //$("#duplicate .cropit-image-preview").css("background-position",pos);
                       // $("# image-cropper-ava21.cropit-image-background").css("left",(offset.x*rasioX)+"px");
                       //$("#duplicate .cropit-image-background").css("top",(offset.y*2)+"px");
-$("#image-cropper-ava21 .cropit-image-preview, #image-cropper-ava31 .cropit-image-preview").css("background-position",pos);
-$("#image-cropper-ava21 .cropit-image-background, #image-cropper-ava31 .cropit-image-background").css("left",(offset.x*rasioX)+"px");
-$("#image-cropper-ava21 .cropit-image-background, #image-cropper-ava31 .cropit-image-background").css("top",(offset.y*rasioY)+"px");
+					$("#image-cropper-ava21 .cropit-image-preview").css("background-position",pos);
+					$("#image-cropper-ava21 .cropit-image-background").css("left",(offset.x*rasioX)+"px");
+					$("#image-cropper-ava21 .cropit-image-background").css("top",(offset.y*rasioY)+"px");
+                    
+                    var val_ava = $("#image-cropper-ava2 .cropit-image-preview").css("background-size");
+                     var result1 = val_ava.split(' ');
+                     // console.log(result1);
+                     var result21 = result1[0].split('px');
+                     var result22 = result1[1].split('px');
+                     var size = (result21[0]*rasioX)+"px "+(result22[0]*rasioY)+"px";
+                     $("#image-cropper-ava21 .cropit-image-preview").css("background-size",size);
+                    
                 },
                 onZoomChange:function(value){
                      var val_ava = $("#image-cropper-ava2 .cropit-image-preview").css("background-size");
@@ -731,6 +743,52 @@ $("#image-cropper-ava21 .cropit-image-background, #image-cropper-ava31 .cropit-i
                      $("#image-cropper-ava21 .cropit-image-background").css("top",(val_ava_top[0]*rasioY)+"px");
                      $("#image-cropper-ava21 .cropit-image-background").css("height",(val_ava_height[0]*rasioY)+"px");
                      $("#image-cropper-ava21 .cropit-image-background").css("width",(val_ava_width[0]*rasioX)+"px");
+					 // console.log(rasioX);
+                     //$("#duplicate .cropit-image-background").css("left",(result21[0]*2)+"px");
+                     //$("#duplicate .cropit-image-background").css("top",(result22[0]*2)+"px");
+                     //var val_ava2 = $("#duplicate .cropit-image-zoom-input.custom").val(val_ava);
+                     //console.log(val_ava2);
+                }
+            });
+ /* Resize with cropit */
+           $('#image-cropper, #image-cropper-ava1, #image-cropper-ava3').cropit({ 
+                //exportZoom: 2,
+                imageState: {
+                    src: '<?php echo $session->src ?>',
+                },
+                imageBackground: true,
+                imageBackfroundBorderWidth: 1,
+                smallImage: 'allow',
+                freeMove: true,
+                onOffsetChange: function(offset) {
+                      var pos = (offset.x*rasioX_ava3)+"px "+(offset.y*rasioY_ava3)+"px";
+                      //$("#duplicate .cropit-image-preview").css("background-position",pos);
+                      // $("# image-cropper-ava21.cropit-image-background").css("left",(offset.x*rasioX)+"px");
+                      //$("#duplicate .cropit-image-background").css("top",(offset.y*2)+"px");
+					$("#image-cropper-ava31 .cropit-image-preview").css("background-position",pos);
+					$("#image-cropper-ava31 .cropit-image-background").css("left",(offset.x*rasioX)+"px");
+					$("#image-cropper-ava31 .cropit-image-background").css("top",(offset.y*rasioY)+"px");
+                },
+                onZoomChange:function(value){
+                     var val_ava3 = $("#image-cropper-ava3 .cropit-image-preview").css("background-size");
+                     var val_ava3_left = $("#image-cropper-ava3 .cropit-image-background").css("left").split('px');
+                     var val_ava3_top = $("#image-cropper-ava3 .cropit-image-background").css("top").split('px');
+                     var val_ava3_height = $("#image-cropper-ava3 .cropit-image-background").css("height").split('px');
+                     var val_ava3_width = $("#image-cropper-ava3 .cropit-image-background").css("width").split('px');
+                     //console.log(val_ava);
+                     var result2 = val_ava3.split(' ');
+                    
+                     var result31 = result2[0].split('px');
+                     var result32 = result2[1].split('px');
+					 
+				    var size = (result31[0]*rasioX_ava3)+"px "+(result32[0]*rasioY_ava3)+"px";
+                     $("#image-cropper-ava31 .cropit-image-preview").css("background-size",size);
+                     // console.log(val_ava_left[0]*2);
+                     // console.log(val_ava_top[0]*2);
+                     $("#image-cropper-ava31 .cropit-image-background").css("left",(val_ava3_left[0]*rasioX_ava3)+"px");
+                     $("#image-cropper-ava31 .cropit-image-background").css("top",(val_ava3_top[0]*rasioY_ava3)+"px");
+                     $("#image-cropper-ava31 .cropit-image-background").css("height",(val_ava3_height[0]*rasioY_ava3)+"px");
+                     $("#image-cropper-ava31 .cropit-image-background").css("width",(val_ava3_width[0]*rasioX_ava3)+"px");
 					 // console.log(rasioX);
                      //$("#duplicate .cropit-image-background").css("left",(result21[0]*2)+"px");
                      //$("#duplicate .cropit-image-background").css("top",(result22[0]*2)+"px");

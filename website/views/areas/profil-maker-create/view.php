@@ -23,7 +23,7 @@ function checkfiles(){
         //var msg ="Tidak ada file yang dipilih";
         fup.focus();
         return false;
-    }else if (ext == "JPG" || ext == "PNG" || ext == "jpg" || ext == "png"){
+    }else if (ext == "JPG" || ext == "PNG" || ext == "jpg" || ext == "png" || ext == "jpeg" || ext == "JPEG"){
         return true;
     }else{
         document.getElementById('test').innerHTML = "File tidak di dukung";
