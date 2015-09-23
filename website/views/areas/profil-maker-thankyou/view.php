@@ -1,4 +1,8 @@
-
+<style>
+    @media only screen and (max-width: 480px) {
+        .page-maker--form-inner .col-xs-6 { width: 75% !important; }
+        }
+</style>
 
 <script src="/website/static/profil-maker/js/jquery.validate.min.js"></script>
 
