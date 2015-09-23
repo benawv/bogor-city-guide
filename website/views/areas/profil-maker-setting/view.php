@@ -709,6 +709,15 @@
 					$("#image-cropper-ava21 .cropit-image-preview").css("background-position",pos);
 					$("#image-cropper-ava21 .cropit-image-background").css("left",(offset.x*rasioX)+"px");
 					$("#image-cropper-ava21 .cropit-image-background").css("top",(offset.y*rasioY)+"px");
+                    
+                    var val_ava = $("#image-cropper-ava2 .cropit-image-preview").css("background-size");
+                     var result1 = val_ava.split(' ');
+                     // console.log(result1);
+                     var result21 = result1[0].split('px');
+                     var result22 = result1[1].split('px');
+                     var size = (result21[0]*rasioX)+"px "+(result22[0]*rasioY)+"px";
+                     $("#image-cropper-ava21 .cropit-image-preview").css("background-size",size);
+                    
                 },
                 onZoomChange:function(value){
                      var val_ava = $("#image-cropper-ava2 .cropit-image-preview").css("background-size");
