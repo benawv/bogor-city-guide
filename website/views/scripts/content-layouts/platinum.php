@@ -26,7 +26,7 @@
 		<div class="heading clearfix pagenav platinum_nav">
 			<?php echo $this->areablock('anchorarea', array('allowed' => array('anchor'))); ?>
 			<div id="quicklinks">
-			<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks', 'product-quicklinks')))?>
+			<?php echo $this->areablock('quicklinks', array('allowed' => array('quicklinks', 'product-quicklinks', "blank-animation-quicklinks","service-box-static","service-box-static-paragraph")))?>
 			</div>
 		</div>
 	</div>
@@ -59,23 +59,25 @@
 <div class="container boxes-view">
 	
 		<?php echo $this->areablock('container', array('allowed' => array(
-														'sections', 'sections-tab', 'teks-tabs',
-														'sections-video', 'sections-gallery', 
-														'sections-select', 'gallery-carousel',
+														'mobilku','tasbih','container-box2', 'community-tips2',
+														'sections', 'sections-box-full', 'sections-tab', 'teks-tabs',
+														'sections-video', 'sections-gallery', 'sections-popup-video',
+														'sections-select', 'gallery-carousel','tekskanan60-imagekiri40_wizard', 
 														'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
 														'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
 														'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
 														'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
 														'smartlink-factsheet', 'syariah-factsheet',
-														'pension-factsheet', 'saving-factsheet',
-														'smartwealth-factsheet', 'imagekiri-tabelkanan'))); ?>
+														'pension-factsheet', 'saving-factsheet','multi-video',
+														'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi', 'asn-center', 'gridlanding','artikelalanding','landing-informasi-produk',
+														'thankyou-mobilku','add-to-cart-wishlist'))); ?>
 		
 		<?php echo $this->areablock('container-modal', array('allowed' => array('modal')))?>
 </div>
 <div class="container boxes-view">
 	<div class="items-container">
 		<?php echo $this->areablock('container2', array('allowed' => array(
-										'container-box-static-platinum'))); ?>
+										'container-box-static-platinum',"container-box-static-section", "container-box-carousel-section", "container-box-carousel-text-section", 'jurnal-allianz','tahukah-anda'))); ?>
 	</div>
 </div>
 <div class="container boxes-view">
