@@ -355,6 +355,9 @@ $(document).ready(function()
 	                    //$("#cover1").show();
 
 	                	html2canvas($('#cropped'), {
+							useCORS: true,
+							allowTaint: true,
+							letterRendering: true,
 	                    onrendered: function(canvas) {
 	                    	
 	                        	//$('#imaged').html(canvas);
@@ -427,6 +430,9 @@ $(document).ready(function()
 	                    $("#ava21").show();
 
 						html2canvas($('#cropped-ava21'), {
+							useCORS: true,
+							allowTaint: true,
+							letterRendering: true,
 	                    onrendered: function(canvas) {
 	                        //$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
@@ -487,6 +493,9 @@ $(document).ready(function()
 						//$("#ava1").show();
 
 						html2canvas($('#cropped-ava1'), {
+							useCORS: true,
+							allowTaint: true,
+							letterRendering: true,
 	                    onrendered: function(canvas) {
 	                        	//$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
@@ -547,6 +556,9 @@ $(document).ready(function()
 	                    $("#ava31").show();
 
 						html2canvas($('#cropped-ava31'), {
+							useCORS: true,
+							allowTaint: true,
+							letterRendering: true,
 	                    onrendered: function(canvas) {
 	                        //$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
