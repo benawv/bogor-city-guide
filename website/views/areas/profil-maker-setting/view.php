@@ -566,7 +566,7 @@
                         <a href="/profil-maker/page3">
                             <input type="button" id="template4" res="472x394px" value="Pilih" class="btn btn-primary template"/>
                         </a>
-                        <span>Mobile Friendly</span>
+                        <span>(Mobile Friendly)</span>
                         <!--<a href="/profil-maker-create" class="btn btn-primary">Pilih</a>-->
                     </div><!--/ .pm-buttons -->
                 </div><!--/ .profile-maker-box -->
@@ -580,7 +580,7 @@
                         <a href="/profil-maker/page3">
                             <input type="button" id="template5" res="300x300px" value="Pilih" class="btn btn-primary template"/>
                         </a>
-                        <span>Mobile Friendly</span>
+                        <span>(Mobile Friendly)</span>
                         <!--<a href="/profil-maker/2" class="btn btn-primary">Pilih</a>-->
                     </div><!--/ .pm-buttons -->
                 </div><!--/ .profile-maker-box -->
@@ -594,7 +594,7 @@
                         <a href="/profil-maker/page3"> 
                             <input type="button" id="template6" res="504x504px" value="Pilih" class="btn btn-primary template"/>
                         </a>
-                        <span>Mobile Friendly</span>
+                        <span>(Mobile Friendly)</span>
                         <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
                     </div><!--/ .pm-buttons -->
                 </div><!--/ .profile-maker-box -->
@@ -608,7 +608,7 @@
                         <a href="/profil-maker/page3">
                             <input type="button" id="template1" res="851x315px" value="Pilih" class="btn btn-primary template"/>
                         </a>
-                        <span>Desktop Only</span>
+                        <span>(Desktop Only)</span>
                         <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
                     </div><!--/ .pm-buttons -->
                 </div><!--/ .profile-maker-box -->
@@ -622,7 +622,7 @@
                         <a href="/profil-maker/page3">
                             <input type="button" id="template2" res="851x315px" value="Pilih" class="btn btn-primary template"/>
                         </a>
-                        <span>Desktop Only</span>
+                        <span>(Desktop Only)</span>
                         <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
                     </div><!--/ .pm-buttons -->
                 </div><!--/ .profile-maker-box -->
@@ -636,7 +636,7 @@
                         <a href="/profil-maker/page3">
                             <input type="button" id="template3" res="851x315px" value="Pilih" class="btn btn-primary template"/>
                         </a>
-                        <span>Desktop Only</span>
+                        <span>(Desktop Only)</span>
                         <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
                     </div><!--/ .pm-buttons -->
                 </div><!--/ .profile-maker-box -->
