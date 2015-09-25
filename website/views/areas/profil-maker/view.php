@@ -5,6 +5,7 @@
         <div class="row profile-maker--title">
             <div class="col-xs-12">
                 <h2>Allianz Profile Maker</h2>
+                <h4>Kami sarankan untuk menggunakan aplikasi ini dengan Google Chrome atau Mozilla Firefox.</h4>
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
         <?php //$val = (int) $this->select("jumlah")->getData();

@@ -58,6 +58,7 @@ function checkfiles(){
                         <script>
                             document.write(getCookie("keterangan"));
                         </script>
+                        <h4>Kami sarankan untuk menggunakan aplikasi ini dengan Google Chrome atau Mozilla Firefox.</h4>
                     </p>
                     <form role="form" action="/upload-image/" method="post" enctype="multipart/form-data" onsubmit="return checkfiles();">
                         <div class="form-group">

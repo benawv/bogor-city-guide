@@ -79,6 +79,7 @@
                     var title = getCookie("keterangan");
                     document.write(title);
                 </script></h2>
+                <h4>Kami sarankan untuk menggunakan aplikasi ini dengan Google Chrome atau Mozilla Firefox.</h4>
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
 
