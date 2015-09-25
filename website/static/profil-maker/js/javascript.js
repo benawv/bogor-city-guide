@@ -359,7 +359,10 @@ $(document).ready(function()
 	                    	
 	                        	//$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
-
+								var ctx = canvas.getContext('2d');
+								ctx.webkitImageSmoothingEnabled = false;
+								ctx.mozImageSmoothingEnabled = false;
+								ctx.imageSmoothingEnabled = false;
 	                            //$("a#download").attr("href", "#top");
 	                            window.location.href = "/profil-maker/profil-thankyou";
 
@@ -391,6 +394,8 @@ $(document).ready(function()
 
 									//trying to save directory
 									var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+									// output = output.replace("image/png", "image/octet-stream");
+									
 									var output = encodeURIComponent(dataURL);
 									var cur_path = 'upload';
 									// console.log(output);
@@ -425,7 +430,10 @@ $(document).ready(function()
 	                    onrendered: function(canvas) {
 	                        //$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
-
+								var ctx = canvas.getContext('2d');
+								ctx.webkitImageSmoothingEnabled = false;
+								ctx.mozImageSmoothingEnabled = false;
+								ctx.imageSmoothingEnabled = false;
 	                            //$("a#download").attr("href", "#top");
 	                            window.location.href = "/profil-maker/profil-thankyou";
 
@@ -482,7 +490,10 @@ $(document).ready(function()
 	                    onrendered: function(canvas) {
 	                        	//$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
-
+								var ctx = canvas.getContext('2d');
+								ctx.webkitImageSmoothingEnabled = false;
+								ctx.mozImageSmoothingEnabled = false;
+								ctx.imageSmoothingEnabled = false;
 	                            //$("a#download").attr("href", "#top");
 	                            window.location.href = "/profil-maker/profil-thankyou";
 
@@ -539,7 +550,10 @@ $(document).ready(function()
 	                    onrendered: function(canvas) {
 	                        //$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
-
+								var ctx = canvas.getContext('2d');
+								ctx.webkitImageSmoothingEnabled = false;
+								ctx.mozImageSmoothingEnabled = false;
+								ctx.imageSmoothingEnabled = false;
 	                            //$("a#download").attr("href", "#top");
 	                            window.location.href = "/profil-maker/profil-thankyou";
 
