@@ -102,7 +102,7 @@ img#timelineBGload:hover {
 
 /* Cropit custom style */
           .col-centered { float: none; margin: 0 auto; }
-          .cropit1, .cropit-ava-1, .cropit-ava2, .cropit-ava21, .cropit-ava3, .cropit-ava31, .cropit-ava2-m, .cropit-ava3-m {
+          .cropit1, .cropit-ava1, .cropit-ava2, .cropit-ava21, .cropit-ava3, .cropit-ava31, .cropit-ava2-m, .cropit-ava3-m {
             background-color: #fff;
             background-size: cover;
             margin-top: 7px;

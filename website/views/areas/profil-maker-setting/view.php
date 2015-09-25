@@ -21,12 +21,16 @@
             min-height: 52px;
           }
           #ava2-m .avatar-caption--footer, #ava3-m .avatar-caption--footer {
-            line-height: 20px;
+            line-height: 15px;
+            padding: 6px 45px;
             min-height: 41px;
             font-size: 9px;
           }
+          #ava2-m .avatar-caption, #ava3-m .avatar-caption { right: 11px; top: 11px; }
+          #ava2-m .avatar-caption--logo img, #ava3-m .avatar-caption--logo img { width: 37px; }
           #ava2-m .avatar-caption--footer img, #ava3-m .avatar-caption--footer img {
             width: 20px !important;
+            left: 15px !important;
           }
 
         @media only screen and (max-width : 640px) { 
@@ -39,6 +43,7 @@
                 max-width: 100%;
             }
         }
+        
 
     </style>
 
@@ -335,7 +340,7 @@
                                         <img src="/website/static/images/profile-maker/fb.png" alt="" style="position: absolute; width: 29px; left: 19px; top: 11px;">
                                         <!-- <i class="fa fa-facebook-square fa-2x"></i> --> &nbsp;
                                         <span>Allianz Indonesia</span>&nbsp;
-                                        <strong><span id="cname">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
+                                        <strong><span id="cname-m">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
                                     </div> <!--/ .avatar-caption-footer -->
                                 </div>
                                 
@@ -698,7 +703,7 @@
         });
 
         /* Resize with cropit */
-            $('#image-cropper, #image-cropper-ava1, #image-cropper-ava2').cropit({ 
+            $('#image-cropper-ava2').cropit({ 
                 //exportZoom: 2,
                 imageState: {
                     src: '<?php echo $session->src ?>',
@@ -752,7 +757,7 @@
                 }
             });
  /* Resize with cropit */
-           $('#image-cropper, #image-cropper-ava1, #image-cropper-ava3').cropit({ 
+           $('#image-cropper-ava3').cropit({ 
                 //exportZoom: 2,
                 imageState: {
                     src: '<?php echo $session->src ?>',
@@ -769,6 +774,14 @@
 					$("#image-cropper-ava31 .cropit-image-preview").css("background-position",pos);
 					$("#image-cropper-ava31 .cropit-image-background").css("left",(offset.x*rasioX)+"px");
 					$("#image-cropper-ava31 .cropit-image-background").css("top",(offset.y*rasioY)+"px");
+					 var val_ava3 = $("#image-cropper-ava3 .cropit-image-preview").css("background-size");
+					 var result2 = val_ava3.split(' ');
+                    
+                     var result31 = result2[0].split('px');
+                     var result32 = result2[1].split('px');
+					 
+				    var size = (result31[0]*rasioX_ava3)+"px "+(result32[0]*rasioY_ava3)+"px";
+                     $("#image-cropper-ava31 .cropit-image-preview").css("background-size",size);
                 },
                 onZoomChange:function(value){
                      var val_ava3 = $("#image-cropper-ava3 .cropit-image-preview").css("background-size");
@@ -798,6 +811,17 @@
                 }
             });
             
+			$('#image-cropper, #image-cropper-ava1').cropit({ 
+                //exportZoom: 2,
+                imageState: {
+                    src: '<?php echo $session->src ?>',
+                },
+                imageBackground: true,
+                imageBackfroundBorderWidth: 1,
+                smallImage: 'allow',
+                freeMove: true,
+            });
+			
             $('#image-cropper-ava21, #image-cropper-ava31').cropit({ 
                 imageState: {
                     src: '<?php echo $session->src ?>',
