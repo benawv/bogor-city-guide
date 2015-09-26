@@ -23,7 +23,7 @@ function checkfiles(){
         //var msg ="Tidak ada file yang dipilih";
         fup.focus();
         return false;
-    }else if (ext == "JPG" || ext == "PNG" || ext == "jpg" || ext == "png"){
+    }else if (ext == "JPG" || ext == "PNG" || ext == "jpg" || ext == "png" || ext == "jpeg" || ext == "JPEG"){
         return true;
     }else{
         document.getElementById('test').innerHTML = "File tidak di dukung";
@@ -58,6 +58,7 @@ function checkfiles(){
                         <script>
                             document.write(getCookie("keterangan"));
                         </script>
+                        <h4>Kami sarankan untuk menggunakan aplikasi ini dengan Google Chrome Ver.45 atau Mozilla Firefox Ver.38 .</h4>
                     </p>
                     <form role="form" action="/upload-image/" method="post" enctype="multipart/form-data" onsubmit="return checkfiles();">
                         <div class="form-group">
@@ -75,6 +76,7 @@ function checkfiles(){
                             <!--</a>-->
                             <a href="javascript:history.go(-1);" class="btn btn-default">Kembali</a>
                         </div><!--/ .form-group -->
+                        <p>Untuk mendapatkan hasil yang maksimal, mohon menggunakan PC atau Tablet Anda</p>
 
                     
                 </div><!--/ .profile-maker--uploader -->

@@ -22,28 +22,28 @@ $(document).ready(function()
 
 
 			/* Banner position drag */
-			 // $("body").on('mouseover','.headerimage, .ava-img',function ()
-			 // {	
-			 // 	var y1 = $('#timelineBackground, #avacapture1, #avacapture2').height();
-			 // 	var y2 =  $('.headerimage, .ava-img').height();
-			 // 	$(this).draggable({
-			 // 		scroll: true,
-			 // 		axis: "y",
-			 // 		drag: function(event, ui) {
-			 // 			if(ui.position.top >= 0)
-			 // 				{
-			 // 					ui.position.top = 0;
-			 // 				}
-			 // 			else if(ui.position.top <= y1 - y2)
-			 // 				{
-			 // 					ui.position.top = y1 - y2;
-			 // 				}
-			 // 		},
-			 // 		stop: function(event, ui)
-			 // 			{
-			 // 			}
-			 // 	});
-			 // });
+			// $("body").on('mouseover','.headerimage, .ava-img',function ()
+			// {	
+			// 	var y1 = $('#timelineBackground, #avacapture1, #avacapture2').height();
+			// 	var y2 =  $('.headerimage, .ava-img').height();
+			// 	$(this).draggable({
+			// 		scroll: true,
+			// 		axis: "x,y",
+			// 		// drag: function(event, ui) {
+			// 		// 	if(ui.position.top >= 0)
+			// 		// 		{
+			// 		// 			ui.position.top = 0;
+			// 		// 		}
+			// 		// 	else if(ui.position.top <= y1 - y2)
+			// 		// 		{
+			// 		// 			ui.position.top = y1 - y2;
+			// 		// 		}
+			// 		//},
+			// 		stop: function(event, ui)
+			// 			{
+			// 			}
+			// 	});
+			// });
 			
 				
 			/* Banner Position Save*/
@@ -195,7 +195,7 @@ $(document).ready(function()
 						//preview and save
 						if(form.valid()) {
 							//alert("all filled");
-							$("a#save").attr("href", "#top");
+							$("a#save").attr("href", "#ask");
 							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
 	                        $headline = $('#atas').val();
 	                        $konten = $('#tengah').val();
@@ -222,17 +222,12 @@ $(document).ready(function()
 
 	                //Back to fill form    
 	                $("#cancel").click(function(){
-		                $('#fillform').show();
-		                $('#ask').hide();      
+	                $('#fillform').show();
+	                $('#ask').hide();      
 	                });
 
-	                $("#tutup").click(function(){
-		                window.location.href = "/profil-maker/page1";
-		                    
-	                });
-	                
                     //Smooth scroll   
-                    $("#preview, #download, #square, #portrait, #landscape, #save, #ask, #fillform, #thankyou").click(function(event){
+                    $("#preview, #download, #square, #portrait, #landscape, #save, #ask, #fillform").click(function(event){
                     	//alert("scroll");
                         event.preventDefault();
 						$('html,body').animate({
@@ -268,7 +263,6 @@ $(document).ready(function()
 			    if(temp == "template1") {
 			        //alert("landscape");
 			        $("#cover1").show();
-			        //$("#image-cropper").show();
 			        $("#place").prop('class', 'landscape facebook-caption leftside');
 			        $("#notepad").prop('class', 'facebook-caption--inner landscape-bg bg-blue');
 
@@ -279,7 +273,6 @@ $(document).ready(function()
 			    else if(temp == "template2") {
 			        //alert("portrait");
 			        $("#cover1").show();
-			        //$("#image-cropper").show();
 			        $("#place, #place-m").prop('class', 'portrait facebook-caption leftside');
 			        $("#notepad, #notepad-m").prop('class', 'facebook-caption--inner portrait-bg bg-blue');
 
@@ -290,7 +283,6 @@ $(document).ready(function()
 			    else if(temp == "template3") {
 			        //alert("square");
 			        $("#cover1").show();
-			        //$("#image-cropper").show();
 			        $("#place, #place-m").prop('class', 'square facebook-caption leftside');
 			        $("#notepad, #notepad-m").prop('class', 'facebook-caption--inner square-bg bg-blue');
 
@@ -300,7 +292,7 @@ $(document).ready(function()
 			    }
 			    else if(temp == "template4") {
 			        //alert("ava2");
-			        $("#ava21").css("display", "block");
+			        $("#ava2").css("display", "block");
 			        $("#input1, #input2, #input5, #input6").hide();
 			    }
 			    else if(temp == "template5") {
@@ -310,7 +302,7 @@ $(document).ready(function()
 			    }
 			    else if(temp == "template6") {
 			        //alert("ava1");
-			        $("#ava31").css("display", "block");
+			        $("#ava3").css("display", "block");
 			        $("#input1, #input2, #input5, #input6").hide();
 			    }
 
@@ -318,22 +310,22 @@ $(document).ready(function()
 			    if($(window).width() < 640) {
 			    	//alert("640 coy");
 			    	if(temp == "template1" || temp == "template2" || temp == "template3") {
-			    		//("#cover1").hide();
-			    		//$("#cover-m").show();
+			    		$("#cover1").hide();
+			    		$("#cover-m").show();
 			    	}
 			    	else if(temp == "template4") {
 			    		//alert("this is avatar 2 comin' up");
-			    		$("#ava21").hide();
+			    		$("#ava2").hide();
 			    		$("#ava2-m").show();
 			    	}
 			    	else if(temp == "template5") {
 			    		//alert("this is avatar 1 comin' up");
-			    		//$("#ava1").hide();
-			    		//$("#ava1-m").show();
+			    		$("#ava1").hide();
+			    		$("#ava1-m").show();
 			    	}
 			    	else if(temp == "template6") {
 			    		//alert("this is avatar 3 comin' up");
-			    		$("#ava31").hide();
+			    		$("#ava3").hide();
 			    		$("#ava3-m").show();
 			    	}
 			    }
@@ -350,24 +342,14 @@ $(document).ready(function()
 					//capture cover
 					if(temp == "template1" || temp == "template2" || temp == "template3") {
 
-						//$(".over-scroll").css("overflow", "initial");
-						//$("#cover-m").hide();
-	                    //$("#cover1").show();
+						$("#cover-m").hide();
+	                    $("#cover1").show();
 
-	                	html2canvas($('#cropped'), {
-							useCORS: true,
-							allowTaint: true,
-							letterRendering: true,
+	                	html2canvas($('#cover1'), {
 	                    onrendered: function(canvas) {
 	                    	
 	                        	//$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
-								var ctx = canvas.getContext('2d');
-								ctx.webkitImageSmoothingEnabled = false;
-								ctx.mozImageSmoothingEnabled = false;
-								ctx.imageSmoothingEnabled = false;
-	                            //$("a#download").attr("href", "#top");
-	                            window.location.href = "/profil-maker/profil-thankyou";
 
 	                           	// $('#imaged').append('<img id="resized" src="'+dataURL+'" />');
 	                         
@@ -377,11 +359,10 @@ $(document).ready(function()
 	                            //     //console.log(data);
 	                            // });
 
-
 								if($(window).width() < 640) {
 									//alert("after capture, back to cover1");
-									//$("#cover-m").show();
-									$("#cover1").show();
+									$("#cover-m").show();
+									$("#cover1").hide();
 								}
 
 	                			//Random filename after download
@@ -397,8 +378,6 @@ $(document).ready(function()
 
 									//trying to save directory
 									var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-									// output = output.replace("image/png", "image/octet-stream");
-									
 									var output = encodeURIComponent(dataURL);
 									var cur_path = 'upload';
 									// console.log(output);
@@ -427,26 +406,17 @@ $(document).ready(function()
 					else if(temp == "template4"){
 
 						$("#ava2-m").hide();
-	                    $("#ava21").show();
+	                    $("#ava2").show();
 
-						html2canvas($('#cropped-ava21'), {
-							useCORS: true,
-							allowTaint: true,
-							letterRendering: true,
+						html2canvas($('#avatar2'), {
 	                    onrendered: function(canvas) {
 	                        //$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
-								var ctx = canvas.getContext('2d');
-								ctx.webkitImageSmoothingEnabled = false;
-								ctx.mozImageSmoothingEnabled = false;
-								ctx.imageSmoothingEnabled = false;
-	                            //$("a#download").attr("href", "#top");
-	                            window.location.href = "/profil-maker/profil-thankyou";
 
 	                            if($(window).width() < 640) {
 									//alert("after capture, back to ava2");
 									$("#ava2-m").show();
-									$("#ava21").hide();
+									$("#ava2").hide();
 								}
 
 	                			//Random filename after download
@@ -480,36 +450,25 @@ $(document).ready(function()
 									headline = "";
 									description = "";
 									saveNote(headline,description,firstName,lastName, tgl);
-									//console.log(dataURL);
 	                    	}
 	                	});
-						
 					}
 
 					//capture avatar
 					else if(temp == "template5"){
 
-						//$("#ava1-m").hide();
-						//$("#ava1").show();
+						$("#ava1-m").hide();
+						$("#ava1").show();
 
-						html2canvas($('#cropped-ava1'), {
-							useCORS: true,
-							allowTaint: true,
-							letterRendering: true,
+						html2canvas($('#avatar1'), {
 	                    onrendered: function(canvas) {
 	                        	//$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
-								var ctx = canvas.getContext('2d');
-								ctx.webkitImageSmoothingEnabled = false;
-								ctx.mozImageSmoothingEnabled = false;
-								ctx.imageSmoothingEnabled = false;
-	                            //$("a#download").attr("href", "#top");
-	                            window.location.href = "/profil-maker/profil-thankyou";
 
 	       						if($(window).width() < 640) {
 								//alert("after capture, back to ava1");
-								//$("#ava1-m").show();
-								//$("#ava1").hide();
+								$("#ava1-m").show();
+								$("#ava1").hide();
 								}
 
 	                			//Random filename after download
@@ -553,26 +512,17 @@ $(document).ready(function()
 					else if(temp == "template6"){
 
 						$("#ava3-m").hide();
-	                    $("#ava31").show();
+	                    $("#ava3").show();
 
-						html2canvas($('#cropped-ava31'), {
-							useCORS: true,
-							allowTaint: true,
-							letterRendering: true,
+						html2canvas($('#avatar3'), {
 	                    onrendered: function(canvas) {
 	                        //$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
-								var ctx = canvas.getContext('2d');
-								ctx.webkitImageSmoothingEnabled = false;
-								ctx.mozImageSmoothingEnabled = false;
-								ctx.imageSmoothingEnabled = false;
-	                            //$("a#download").attr("href", "#top");
-	                            window.location.href = "/profil-maker/profil-thankyou";
 
 	                            if($(window).width() < 640) {
 									//alert("after capture, back to ava2");
 									$("#ava3-m").show();
-									$("#ava31").hide();
+									$("#ava3").hide();
 								}
 
 	                			//Random filename after download

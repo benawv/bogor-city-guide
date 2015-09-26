@@ -6,7 +6,7 @@
 
 
 <?php echo $this->areablock('container-profil-maker', array('allowed' => array(
-			'profil-maker','profil-maker-create','profil-maker-setting'))); ?>
+			'profil-maker','profil-maker-create','profil-maker-setting', 'profil-maker-thankyou'))); ?>
 			
 <!-- <script src="/website/static/profil-maker/js/jquery-ui.min.js"></script> -->
 <script src="/website/static/profil-maker/js/jquery.wallform.js"></script>
