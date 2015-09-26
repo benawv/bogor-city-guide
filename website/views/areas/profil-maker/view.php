@@ -105,7 +105,7 @@
 	                <ul>
 		                <li>Kami sarankan untuk menggunakan aplikasi ini dengan Google Chrome Minimal Ver.45 atau Mozilla Firefox Minimal Ver.38 .</li>
 		                <li>Untuk mendapatkan hasil yang maksimal, mohon menggunakan PC atau Tablet Anda</li>
-		                <li>Bagi Pengguna yang menggunakan iPad dan iPhone, silahkan download image dengan menekan hasil gambar dan tekan tombol "Save Image"</li>
+		                <li>Bagi Pengguna yang menggunakan iPad dan iPhone, silahkan download image yang dihasilkan setelah menekan tombol "simpan gambar" dengan menekan pada hasil gambar dan tekan tombol "Save Image"</li>
 		                
 	                </ul>
 		        </p>
