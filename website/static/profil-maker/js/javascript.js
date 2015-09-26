@@ -278,7 +278,7 @@ $(document).ready(function()
 			    }
 			    else if(temp == "template2") {
 			        //alert("portrait");
-			        $("#cover1").show();
+			        $("#cover2").show();
 			        //$("#image-cropper").show();
 			        $("#place, #place-m").prop('class', 'portrait facebook-caption leftside');
 			        $("#notepad, #notepad-m").prop('class', 'facebook-caption--inner portrait-bg bg-blue');
@@ -289,7 +289,7 @@ $(document).ready(function()
 			    }
 			    else if(temp == "template3") {
 			        //alert("square");
-			        $("#cover1").show();
+			        $("#cover3").show();
 			        //$("#image-cropper").show();
 			        $("#place, #place-m").prop('class', 'square facebook-caption leftside');
 			        $("#notepad, #notepad-m").prop('class', 'facebook-caption--inner square-bg bg-blue');
