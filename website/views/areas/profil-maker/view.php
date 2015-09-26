@@ -98,6 +98,20 @@
             </div><!--/ .col-xs-12 -->
 
         </div> <!--/.row -->
+        
+        <div class="row">
+            <div class="col-xs-12">
+	            <h4>Panduan Pengguna</h4>
+                <p>
+	                <ul>
+		                <li>Kami sarankan untuk menggunakan aplikasi ini dengan Google Chrome Minimal Ver.45 atau Mozilla Firefox Minimal Ver.38 .</li>
+		                <li>Untuk mendapatkan hasil yang maksimal, mohon menggunakan PC atau Tablet Anda</li>
+		                <li>Bagi Pengguna yang menggunakan iPad dan iPhone, silahkan download image dengan menekan hasil gambar dan tekan tombol "Save Image"</li>
+		                
+	                </ul>
+		        </p>
+            </div><!--/ .col-xs-12 -->
+        </div><!--/ .row -->
 
         <script type="text/javascript">
             function setCookie(cname, cvalue) {

@@ -58,7 +58,6 @@ function checkfiles(){
                         <script>
                             document.write(getCookie("keterangan"));
                         </script>
-                        <h4>Kami sarankan untuk menggunakan aplikasi ini dengan Google Chrome Ver.45 atau Mozilla Firefox Ver.38 .</h4>
                     </p>
                     <form role="form" action="/upload-image/" method="post" enctype="multipart/form-data" onsubmit="return checkfiles();">
                         <div class="form-group">
@@ -76,11 +75,24 @@ function checkfiles(){
                             <!--</a>-->
                             <a href="javascript:history.go(-1);" class="btn btn-default">Kembali</a>
                         </div><!--/ .form-group -->
-                        <p>Untuk mendapatkan hasil yang maksimal, mohon menggunakan PC atau Tablet Anda</p>
 
                     
                 </div><!--/ .profile-maker--uploader -->
 
+            </div><!--/ .col-xs-12 -->
+        </div><!--/ .row -->
+        
+        <div class="row">
+            <div class="col-xs-12">
+	            <h4>Panduan Pengguna</h4>
+                <p>
+	                <ul>
+		                <li>Kami sarankan untuk menggunakan aplikasi ini dengan Google Chrome Minimal Ver.45 atau Mozilla Firefox Minimal Ver.38 .</li>
+		                <li>Untuk mendapatkan hasil yang maksimal, mohon menggunakan PC atau Tablet Anda</li>
+		                <li>Bagi Pengguna yang menggunakan iPad dan iPhone, silahkan download image dengan menekan hasil gambar dan tekan tombol "Save Image"</li>
+		                
+	                </ul>
+		        </p>
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
 
