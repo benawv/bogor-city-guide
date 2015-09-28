@@ -440,18 +440,24 @@ $(document).ready(function()
 
 						$("#ava2-m").hide();
 	                    $("#ava21").show();
-
+	                    
+	                    Caman("#cropped-ava21", '/website/static/images/inkes.jpg', function(){
+		                    console.log('caman js');
+	                    });
+/*
+						
 						html2canvas($('#cropped-ava21'), {
 							useCORS: true,
 							allowTaint: true,
 							letterRendering: true,
 	                    onrendered: function(canvas) {
 	                        //$('#imaged').html(canvas);
-	                            var dataURL = canvas.toDataURL("image/png");
+	                    
 								var ctx = canvas.getContext('2d');
 								ctx.webkitImageSmoothingEnabled = false;
 								ctx.mozImageSmoothingEnabled = false;
 								ctx.imageSmoothingEnabled = false;
+	                            var dataURL = canvas.toDataURL("image/png");
 	                            //$("a#download").attr("href", "#top");
 	                            window.location.href = "/profil-maker/profil-thankyou";
 
@@ -495,6 +501,7 @@ $(document).ready(function()
 									//console.log(dataURL);
 	                    	}
 	                	});
+*/
 						
 					}
 
