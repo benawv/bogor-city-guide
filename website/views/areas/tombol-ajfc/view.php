@@ -1,3 +1,11 @@
+<style>
+    @media only screen and (min-width: 768px){
+        #button-ajfc{
+                width :1170px;
+                margin-left : -97px !important;
+        }
+    }
+</style>
 <?php if($this->editmode) { ?>
     <div class="alert alert-info" style="height: 75px">
         <div class="col-xs-6">
@@ -34,7 +42,7 @@
 ?>
 <nav class="main-navigation">
         <div class="container">
-           <div class="row">
+           <div class="row" id="button-ajfc" style="1170px !important">
                <?php $jcol = 12/$button; ?>
                <?php for($loop=1;$loop<=$button;$loop++){ ?>
                 <div class="col-xs-12 col-md-<?php echo (int)$jcol; ?>">
@@ -51,7 +59,10 @@
                                     }
 				    ?>
                     <a href="<?php echo $link; ?>" class="nav-item <?php echo $col; ?> <?php echo $ic; ?>">
-                        <h4><small>0<?php echo $loop; ?></small><?php echo $this->input("btn-".$loop, array("width" => 125)); ?></h4>
+
+                        <h4><small>0<?php echo $loop; ?></small><br/>
+                            <?php echo $this->input("btn-".$loop, array("width" => 125)); ?>
+                        </h4>
                     </a>
                                     			             
 			                        	<?php 
@@ -61,8 +72,7 @@
 											    "store" => array(
 											        array("question", "Question"),
 											        array("sitemap", "Sitemap"),
-											        array("chat", "Chat"),
-											        array("user", "User")
+											        array("users", "Users")
 											    ),
                                                 "reload" => true
 											)); 
@@ -73,12 +83,8 @@
 				                        	echo "Color: <br />";
 			                        		echo $this->select("color_".$loop,array(
 											    "store" => array(
-											         array("blue", "blue"),
-											        array("yellow", "yellow"),
-											        array("light-blue", "light-Blue"),
 											        array("red", "red"),
 											        array("green", "green"),
-											        array("purple", "purple"),
 											        array("orange", "orange")
 											    ),
 											    "reload" => true

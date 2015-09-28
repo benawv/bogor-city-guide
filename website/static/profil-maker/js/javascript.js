@@ -22,28 +22,28 @@ $(document).ready(function()
 
 
 			/* Banner position drag */
-			// $("body").on('mouseover','.headerimage, .ava-img',function ()
-			// {	
-			// 	var y1 = $('#timelineBackground, #avacapture1, #avacapture2').height();
-			// 	var y2 =  $('.headerimage, .ava-img').height();
-			// 	$(this).draggable({
-			// 		scroll: true,
-			// 		axis: "x,y",
-			// 		// drag: function(event, ui) {
-			// 		// 	if(ui.position.top >= 0)
-			// 		// 		{
-			// 		// 			ui.position.top = 0;
-			// 		// 		}
-			// 		// 	else if(ui.position.top <= y1 - y2)
-			// 		// 		{
-			// 		// 			ui.position.top = y1 - y2;
-			// 		// 		}
-			// 		//},
-			// 		stop: function(event, ui)
-			// 			{
-			// 			}
-			// 	});
-			// });
+			 // $("body").on('mouseover','.headerimage, .ava-img',function ()
+			 // {	
+			 // 	var y1 = $('#timelineBackground, #avacapture1, #avacapture2').height();
+			 // 	var y2 =  $('.headerimage, .ava-img').height();
+			 // 	$(this).draggable({
+			 // 		scroll: true,
+			 // 		axis: "y",
+			 // 		drag: function(event, ui) {
+			 // 			if(ui.position.top >= 0)
+			 // 				{
+			 // 					ui.position.top = 0;
+			 // 				}
+			 // 			else if(ui.position.top <= y1 - y2)
+			 // 				{
+			 // 					ui.position.top = y1 - y2;
+			 // 				}
+			 // 		},
+			 // 		stop: function(event, ui)
+			 // 			{
+			 // 			}
+			 // 	});
+			 // });
 			
 				
 			/* Banner Position Save*/
@@ -195,7 +195,7 @@ $(document).ready(function()
 						//preview and save
 						if(form.valid()) {
 							//alert("all filled");
-							$("a#save").attr("href", "#ask");
+							$("a#save").attr("href", "#top");
 							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
 	                        $headline = $('#atas').val();
 	                        $konten = $('#tengah').val();
@@ -222,12 +222,17 @@ $(document).ready(function()
 
 	                //Back to fill form    
 	                $("#cancel").click(function(){
-	                $('#fillform').show();
-	                $('#ask').hide();      
+		                $('#fillform').show();
+		                $('#ask').hide();      
 	                });
 
+	                $("#tutup").click(function(){
+		                window.location.href = "/profil-maker/page1";
+		                    
+	                });
+	                
                     //Smooth scroll   
-                    $("#preview, #download, #square, #portrait, #landscape, #save, #ask, #fillform").click(function(event){
+                    $("#preview, #download, #square, #portrait, #landscape, #save, #ask, #fillform, #thankyou").click(function(event){
                     	//alert("scroll");
                         event.preventDefault();
 						$('html,body').animate({
@@ -257,12 +262,13 @@ $(document).ready(function()
                 
                 //cek cookie
                 var temp = getCookie("template");
-    			//console.log(temp);
+    			console.log(temp);
 
     			//get template from cookie
 			    if(temp == "template1") {
 			        //alert("landscape");
 			        $("#cover1").show();
+			        //$("#image-cropper").show();
 			        $("#place").prop('class', 'landscape facebook-caption leftside');
 			        $("#notepad").prop('class', 'facebook-caption--inner landscape-bg bg-blue');
 
@@ -272,9 +278,10 @@ $(document).ready(function()
 			    }
 			    else if(temp == "template2") {
 			        //alert("portrait");
-			        $("#cover1").show();
-			        $("#place, #place-m").prop('class', 'portrait facebook-caption leftside');
-			        $("#notepad, #notepad-m").prop('class', 'facebook-caption--inner portrait-bg bg-blue');
+			        $("#cover2").show();
+			        //$("#image-cropper").show();
+			        $("#place").prop('class', 'portrait facebook-caption leftside');
+			        $("#notepad").prop('class', 'facebook-caption--inner portrait-bg bg-blue');
 
 			        //mobile looks like
 			        $("#place-m").prop('class', 'portrait-m facebook-caption leftside');
@@ -282,17 +289,18 @@ $(document).ready(function()
 			    }
 			    else if(temp == "template3") {
 			        //alert("square");
-			        $("#cover1").show();
-			        $("#place, #place-m").prop('class', 'square facebook-caption leftside');
-			        $("#notepad, #notepad-m").prop('class', 'facebook-caption--inner square-bg bg-blue');
+			        $("#cover3").show();
+			        //$("#image-cropper").show();
+			        $("#place").prop('class', 'square facebook-caption leftside');
+			        $("#notepad").prop('class', 'facebook-caption--inner square-bg bg-blue');
 
 			        //mobile looks like
 			        $("#place-m").prop('class', 'square-m facebook-caption leftside');
 			        $("#notepad-m").prop('class', 'facebook-caption--inner square-m-bg bg-blue');
 			    }
-			    else if(temp == "template4" || temp == "template6") {
+			    else if(temp == "template4") {
 			        //alert("ava2");
-			        $("#ava2").css("display", "block");
+			        $("#ava21").css("display", "block");
 			        $("#input1, #input2, #input5, #input6").hide();
 			    }
 			    else if(temp == "template5") {
@@ -300,23 +308,33 @@ $(document).ready(function()
 			        $("#ava1").css("display", "block");
 			        $("#input1, #input2, #input3, #input4, #input5, #input6").hide();
 			    }
+			    else if(temp == "template6") {
+			        //alert("ava1");
+			        $("#ava31").css("display", "block");
+			        $("#input1, #input2, #input5, #input6").hide();
+			    }
 
 			    //mobile condition
 			    if($(window).width() < 640) {
 			    	//alert("640 coy");
 			    	if(temp == "template1" || temp == "template2" || temp == "template3") {
-			    		$("#cover1").hide();
-			    		$("#cover-m").show();
+			    		//("#cover1").hide();
+			    		//$("#cover-m").show();
 			    	}
-			    	else if(temp == "template4" || temp == "template6") {
+			    	else if(temp == "template4") {
 			    		//alert("this is avatar 2 comin' up");
-			    		$("#ava2").hide();
+			    		$("#ava21").hide();
 			    		$("#ava2-m").show();
 			    	}
 			    	else if(temp == "template5") {
 			    		//alert("this is avatar 1 comin' up");
-			    		$("#ava1").hide();
-			    		$("#ava1-m").show();
+			    		//$("#ava1").hide();
+			    		//$("#ava1-m").show();
+			    	}
+			    	else if(temp == "template6") {
+			    		//alert("this is avatar 3 comin' up");
+			    		$("#ava31").hide();
+			    		$("#ava3-m").show();
 			    	}
 			    }
 
@@ -332,27 +350,50 @@ $(document).ready(function()
 					//capture cover
 					if(temp == "template1" || temp == "template2" || temp == "template3") {
 
-						$("#cover-m").hide();
-	                    $("#cover1").show();
-
-	                	html2canvas($('#cover1'), {
+						//$(".over-scroll").css("overflow", "initial");
+						//$("#cover-m").hide();
+	                    //$("#cover1").show();
+						cropped = "";
+						if(temp == "template1") {
+							cropped = $('#cropped-1');
+						}
+						else if(temp == "template2") {
+							cropped = $('#cropped-2');
+						}
+						else if(temp == "template3") {
+							cropped = $('#cropped-3');
+						}
+						else {
+							
+						}
+	                	html2canvas(cropped, {
+							useCORS: true,
+							allowTaint: true,
+							letterRendering: true,
 	                    onrendered: function(canvas) {
 	                    	
 	                        	//$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
+								var ctx = canvas.getContext('2d');
+								ctx.webkitImageSmoothingEnabled = false;
+								ctx.mozImageSmoothingEnabled = false;
+								ctx.imageSmoothingEnabled = false;
+	                            //$("a#download").attr("href", "#top");
+	                            window.location.href = "/profil-maker/profil-thankyou";
 
-	                           	//$('#imaged').append('<img src="'+dataURL+'" />');
-
+	                           	// $('#imaged').append('<img id="resized" src="'+dataURL+'" />');
+	                         
 	                            //$('#imaged').html('Generating..');
 	                            // $.post('image.php',{image: dataURL},function(data){
 	                            //     $('#imaged').html(data);
 	                            //     //console.log(data);
 	                            // });
 
+
 								if($(window).width() < 640) {
 									//alert("after capture, back to cover1");
-									$("#cover-m").show();
-									$("#cover1").hide();
+									//$("#cover-m").show();
+									$("#cover1").show();
 								}
 
 	                			//Random filename after download
@@ -368,6 +409,8 @@ $(document).ready(function()
 
 									//trying to save directory
 									var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+									// output = output.replace("image/png", "image/octet-stream");
+									
 									var output = encodeURIComponent(dataURL);
 									var cur_path = 'upload';
 									// console.log(output);
@@ -393,20 +436,29 @@ $(document).ready(function()
 						}
 
 					//capture avatar
-					else if(temp == "template4" || temp == "template6"){
+					else if(temp == "template4"){
 
 						$("#ava2-m").hide();
-	                    $("#ava2").show();
+	                    $("#ava21").show();
 
-						html2canvas($('#avatar2'), {
+						html2canvas($('#cropped-ava21'), {
+							useCORS: true,
+							allowTaint: true,
+							letterRendering: true,
 	                    onrendered: function(canvas) {
 	                        //$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
+								var ctx = canvas.getContext('2d');
+								ctx.webkitImageSmoothingEnabled = false;
+								ctx.mozImageSmoothingEnabled = false;
+								ctx.imageSmoothingEnabled = false;
+	                            //$("a#download").attr("href", "#top");
+	                            window.location.href = "/profil-maker/profil-thankyou";
 
 	                            if($(window).width() < 640) {
 									//alert("after capture, back to ava2");
 									$("#ava2-m").show();
-									$("#ava2").hide();
+									$("#ava21").hide();
 								}
 
 	                			//Random filename after download
@@ -440,25 +492,36 @@ $(document).ready(function()
 									headline = "";
 									description = "";
 									saveNote(headline,description,firstName,lastName, tgl);
+									//console.log(dataURL);
 	                    	}
 	                	});
+						
 					}
 
 					//capture avatar
 					else if(temp == "template5"){
 
-						$("#ava1-m").hide();
-						$("#ava1").show();
+						//$("#ava1-m").hide();
+						//$("#ava1").show();
 
-						html2canvas($('#avatar1'), {
+						html2canvas($('#cropped-ava1'), {
+							useCORS: true,
+							allowTaint: true,
+							letterRendering: true,
 	                    onrendered: function(canvas) {
 	                        	//$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
+								var ctx = canvas.getContext('2d');
+								ctx.webkitImageSmoothingEnabled = false;
+								ctx.mozImageSmoothingEnabled = false;
+								ctx.imageSmoothingEnabled = false;
+	                            //$("a#download").attr("href", "#top");
+	                            window.location.href = "/profil-maker/profil-thankyou";
 
 	       						if($(window).width() < 640) {
 								//alert("after capture, back to ava1");
-								$("#ava1-m").show();
-								$("#ava1").hide();
+								//$("#ava1-m").show();
+								//$("#ava1").hide();
 								}
 
 	                			//Random filename after download
@@ -493,6 +556,67 @@ $(document).ready(function()
 									description = "";
 									firstName = "";
 									lastName = "";
+									saveNote(headline,description,firstName,lastName, tgl);
+	                    	}
+	                	});
+					}
+
+					//capture avatar
+					else if(temp == "template6"){
+
+						$("#ava3-m").hide();
+	                    $("#ava31").show();
+
+						html2canvas($('#cropped-ava31'), {
+							useCORS: true,
+							allowTaint: true,
+							letterRendering: true,
+	                    onrendered: function(canvas) {
+	                        //$('#imaged').html(canvas);
+	                            var dataURL = canvas.toDataURL("image/png");
+								var ctx = canvas.getContext('2d');
+								ctx.webkitImageSmoothingEnabled = false;
+								ctx.mozImageSmoothingEnabled = false;
+								ctx.imageSmoothingEnabled = false;
+	                            //$("a#download").attr("href", "#top");
+	                            window.location.href = "/profil-maker/profil-thankyou";
+
+	                            if($(window).width() < 640) {
+									//alert("after capture, back to ava2");
+									$("#ava3-m").show();
+									$("#ava31").hide();
+								}
+
+	                			//Random filename after download
+	                			var filename = new Array(2).join().replace(/(.|$)/g, function(){return ((Math.random()*36)|0).toString(36);})
+
+	        						var link = document.createElement('a');
+									link.href = dataURL;
+									link.download = "Cover Profil Maker Allianz.png";
+									document.body.appendChild(link);
+									link.click();
+
+									//trying to save directory
+									var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+									var output = encodeURIComponent(dataURL);
+									var cur_path = 'upload';
+									//console.log(output);
+									//console.log(cur_path); 
+		                			var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
+								        $.ajax({
+								            type: "POST",
+								            url: "/website/var/assets/profil-maker/save.php",
+								            data: Parameters,
+								            success: function(data) {
+										        //alert(data);
+										        //console.log(data);
+										    },
+										    error: function(data){
+										    	//alert("fail");
+										    }
+								        });
+									headline = "";
+									description = "";
 									saveNote(headline,description,firstName,lastName, tgl);
 	                    	}
 	                	});

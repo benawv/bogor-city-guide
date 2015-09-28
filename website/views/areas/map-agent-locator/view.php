@@ -232,8 +232,8 @@
 
             var places = searchBox.getPlaces();
             $.each(places, function(i, item){
-                lat = item.geometry.location.A;
-                long = item.geometry.location.F;
+                lat = item.geometry.location.lat();
+                long = item.geometry.location.lng();
             });
             titikMarker = "search";
             var titik = radius(lat, long);

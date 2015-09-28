@@ -252,21 +252,22 @@
                         <p>
                             <?php
                                 echo "<span id='alamat_agen'>".$alamat."</span><br />";
+                                echo "Telp. ".$telp."<br />";
                                 echo "Fax. ".$fax."<br />";
-                                echo "Hubungi Admin Agen. ";
-                                $x = 1;
-                                foreach($expTelp as $key => $val){
-                                    if($x > 1){
-                                        echo "<span class='marginKantor'>(".$dataKantor->getKodeAreaTelepon().") ".$val."</span><br />";
-                                    }
-                                    else{
-                                        $callKantor = "(".$dataKantor->getKodeAreaTelepon().") ".$val;
-                                        echo "(".$dataKantor->getKodeAreaTelepon().") ".$val."<br />";
-                                    }
-                                    $x++;
-                                }
-                                //echo "Hubungi Agen. ".$telp."<br />";
-                                echo "Email Admin Agen. <span id='email_agen'>".$emailAgent."</span>";
+                                //echo "Hubungi Admin Agen. ";
+                                //$x = 1;
+                                //foreach($expTelp as $key => $val){
+                                //    if($x > 1){
+                                //        echo "<span class='marginKantor'>(".$dataKantor->getKodeAreaTelepon().") ".$val."</span><br />";
+                                //    }
+                                //    else{
+                                //        $callKantor = "(".$dataKantor->getKodeAreaTelepon().") ".$val;
+                                //        echo "(".$dataKantor->getKodeAreaTelepon().") ".$val."<br />";
+                                //    }
+                                //    $x++;
+                                //}
+                                ////echo "Hubungi Agen. ".$telp."<br />";
+                                //echo "Email Admin Agen. <span id='email_agen'>".$emailAgent."</span>";
                             ?>
                         </p>
                         <!-- <p> DI HIDE DULU YAA
@@ -386,6 +387,16 @@
                                                     <td> '.$jenis.'</td>
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
+                                                    <td>Kota</td>
+                                                    <td>:</td>
+                                                    <td> '.$session->kota.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td>Provinsi</td>
+                                                    <td>:</td>
+                                                    <td> '.$session->provinsi.'</td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
                                                     <td>Termin Pembayaran Anda</td>
                                                     <td>:</td>
                                                     <td> '.$session->Frekuensi.'</td>
@@ -411,6 +422,9 @@
                                                 </tr>';
                                     $content.='<tr class="tbl-email">
                                                     <td colspan="3"><textarea class="form-control textareaForm" rows="3"></textarea></td>
+                                                </tr>';
+                                    $content.='<tr class="tbl-email">
+                                                    <td colspan="3"><p><center style="font-size:12px;">Total premi yang tertera belum disesuaikan dengan profil risiko Anda, silakan hubungi Agen untuk mendapatkan ilustrasi yang sesuai dengan profil risiko Anda.</center></p></td>
                                                 </tr>';
                                     $content.= "</table>";
                                 }
@@ -491,7 +505,7 @@
                     ?>
                         <a href="mailto:<?php echo $emailkantor;?>?Subject=Call%20Agen" target="_top" class="btn btn-sendmail" onclick="setTimeout(function(){window.location='/agent-locator/agen/thankyou-agent/'},5000);">Kirim EMail</a>
                     <?php } else{?>
-                        <a href="javascript:void(0)" target="_top" class="btn btn-sendmail btn-email">Email Agen</a>&nbsp;
+                        <a href="javascript:void(0)" id="sending" target="_top" class="btn btn-sendmail btn-email">Email Agen</a>&nbsp;
                     <?php }?>
                     <br />
                     <a href="tel:<?php echo $callKantor;?>" target="_top" class="btn btn-sendmail hide">Hubungi Agen</a>
@@ -584,8 +598,29 @@
 <script>
 
 
+
     $('.btn-email').click(function() {
+        <?php 
+            $sessionAgen = new Zend_Session_Namespace('namaAgen');
+            $idObject = $sessionAgen->idUser;
+            if($idObject != '') {
+        ?>
+        $.ajax({
+            url : '/add-agen-name/',
+            type : 'POST',
+            data :{
+                    'nama' : '<?php echo $namaAgent; ?>'
+                  },
+            success : function(data){
+                       //console.log(data);
+                $('#modalEmail').modal();
+            }
+            
+        });
+        <?php }else{ ?>
         $('#modalEmail').modal();
+        <?php } ?>
+             
     });
     
     $(".kirim-email").click(function(){
@@ -614,7 +649,7 @@
                 success  : function(data){
                     //console.log(data);
                     //alert('Permintaan Informasi Layanan Tasbih Anda sudah kami kirim ke Agen Kami');    
-                    window.location = "/agent-locator/agen/thankyou-agent";
+//                    window.location = "/agent-locator/agen/thankyou-agent";
                 },
                 error: function (xhr, desc, err)
                 {

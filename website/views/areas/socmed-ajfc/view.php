@@ -1,6 +1,6 @@
 <section class="mt32 mb72">
     <div class="container">
-        <div class="row">
+        <div class="row" id="socmed-ajfc">
             <div class="col-xs-12 col-md-6 pl30 pr30">
 
                 <div class="row social-feeds row-eq-height">

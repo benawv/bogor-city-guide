@@ -1,10 +1,40 @@
 <?php
 //call session yang di buat di controller kalkulatortassbihControler function saveAction()
+if(!($this->editmode)){
   $session = new Zend_Session_Namespace('tasbih');
   $sessionTasbih = new Zend_Session_Namespace('tasbih');
+$sessionDup = new Zend_Session_Namespace('duplic_tasbih');
+            $date_tglBuat = $sessionDup->date_tglBuat;
+            $date_tglLahir = $sessionDup->date_tglLahir;
+            $JenisKelamin = $sessionDup->JenisKelamin;
+            $Usia = $sessionDup->Usia;
+            $frek = $sessionDup->Frekuensi;
+            $AsuransiJiwa = $sessionDup->AsuransiJiwa;
+            $AJ = $sessionDup->AJ;
+            $Kontribusi = $sessionDup->Kontribusi;
+            $Calculation = $sessionDup->Calculation;
+			$kat = $sessionDup->kat;
 ?>
 
+<script>
+    var Buat = "<?php echo $date_tglBuat; ?>";
+    var Lahir = "<?php echo $date_tglLahir; ?>";
+    var JK = "<?php echo $JenisKelamin; ?>";
+    var Usia = "<?php echo $Usia; ?>";
+    var frek = "<?php echo $frek; ?>";
+    var Asuransi = "<?php echo $AsuransiJiwa; ?>";
+    var AJ = "<?php echo $AJ; ?>";
+    var Kons = "<?php echo $Kontribusi; ?>";
+    var Calc = "<?php echo $Calculation; ?>";
+//    var Kat = "<?php echo $Calculation; ?>";
+    
+    if( Buat == "" || Lahir == "" || JK == "" || Usia == "" || frek == "" || Asuransi == "" || AJ == "" || Kons == "" ||Calc == ""){
+        document.location.href = "/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi";
+    }
 
+</script>
+
+<?php } ?>
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/mobilku/bootstrap.min.css"  />
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css/normalize.css">
 <link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="/website/static/css/screen.css">
@@ -87,7 +117,7 @@
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
                 <a href="http://agen.allianz.co.id" target="_blank" class="nav-item red users" style="background:#5F259F;">
-                    <h4 style="font-size:18px"><small>Lokasi Agen</small></h4>
+                    <h4 style="font-size:18px"><small>Cari Agen</small></h4>
                 </a>
             </div><!--/ .col-xs-12 -->
             <div class="col-xs-12 col-md-2" style="min-width:20%; min-height:50px; margin:auto; !important">
@@ -206,7 +236,7 @@
     <div class="description">
 
         <div class="header-calc">
-            <h1>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
+            <h1><i class="fa fa-calculator" style="font-size:20px !important; padding-right: 10px !important;"></i>ILUSTRASI PRODUK ALLIANZ TASBIH</h1>
         </div><!--/ .header-calc -->
 
         <div class="content-calc">
@@ -271,6 +301,9 @@
                                     <option value="Koran">Koran</option>
                                     <option value="Teman/kerabat">Teman/Kerabat</option>
                                     <option value="Agen">Agen Asuransi</option>
+                                    <option value="Facebook">Facebook</option>
+                                    <option value="Google">Google</option>
+                                    <option value="Youtube">Youtube</option>
                                 </select>
                                 <label id="notif-informasi" style="display:none; color: #f00;">
                                     Mohon maaf, informasi yang Anda masukan belum sesuai dengan ketentuan ilustrasi
@@ -278,6 +311,50 @@
                             </div><!--/ .col-md-4 -->
                         </div><!--/ .form-group -->
                         
+
+                    
+                        <?php
+
+                                    $getProv=new Object_Provinsi_List();
+//                                    echo <pre>;
+                                    $getProv->setOrderKey("provinsi");
+                                    $getProv->setOrder("asc");?>
+                                    
+<!--                                    print_r($getProv);-->
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label><strong>Provinsi</strong></label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <select class="form-control" name="provinsi" id="provinsi">
+                                    <option value = "pilih">-Pilih-</option>  
+                                <?php foreach($getProv as $items){
+                                ?>
+                                    <option value= "<?php echo $items->o_id; ?> "><?php echo $items->provinsi; ?></option>
+                                <?php } ?>
+                                </select>
+                                <label id="notif-provinsi" style="display:none; color: #f00;">
+                                    Mohon maaf, provinsi yang Anda masukan belum sesuai dengan ketentuan ilustrasi
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
+                    
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label><strong>Kota</strong></label>
+                            </div><!--/ .col-md-4 -->
+                            <div class="col-md-4">
+                                <select class="form-control" name="kota" id="kota">
+                                    <option value = "pilih">-Pilih-</option>  
+                                </select>
+                                <label id="notifkota" style="display:none; color: #f00;">
+                                    Mohon maaf, kota yang Anda masukan belum sesuai dengan ketentuan ilustrasi
+                                </label>
+                            </div><!--/ .col-md-4 -->
+                        </div><!--/ .form-group -->
+                    
+                    
+                    
                         <?php
                             if($sessionTasbih->kat == "" || $sessionTasbih->kat == null || $sessionTasbih->kat == " ")
                             {
@@ -299,7 +376,7 @@
 
                                 
                                 <button type="button" class="kalkulasi btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Submit" name="next">
-                                    <i class="fa fa-envelope-o"></i> Kirim
+                                    <i class="fa fa-envelope-o"></i> Selanjutnya
                                 </button>
                             </div><!--/ .col-md-12 -->
                         </div><!--/ .form-group -->
@@ -455,6 +532,8 @@
         /**
          * Calculator Pop-Up
          */
+        
+        
 
         if( $( 'a.calc-overlay-trigger' ).length > 0 )
         {
@@ -485,6 +564,41 @@
         /*
          * jQueryUI DatePicker
          */
+        
+$('#provinsi').change(function(){
+//        alert('test');
+        var prov = $('#provinsi option:Selected').html();
+//        alert(prov);
+        if(prov == "-Pilih-"){
+            document.getElementById('notifkota').style.display="block";
+        }else{
+//            alert('test');
+            document.getElementById('notifkota').style.display="none";
+
+            $.ajax({
+                    url      : '/getprovinsi/',
+                    type     : 'POST',
+                    data     : {
+                                'prov' : prov
+                                },
+                        success  : function(data){
+    //                        console.log(data);
+                            var entries = data;
+                            var listLoc = jQuery.parseJSON(entries);
+                            //console.log(listLoc);
+                            $('#kota option').remove();
+                            $('#kota').append('<option>-Pilih-</option>');
+                            $.each(listLoc, function(i, item){
+    //                            console.log(i+"  "+item);
+                                $("#kota").append('<option value='+item.Kota+'>'+item.Kota+'</option>');
+                            });
+                       
+                        }
+                    
+            });
+//            location.reload();
+        }
+    });        
 
         $('#Submit').click(function() {
             
@@ -499,22 +613,29 @@
             var nama = $('#nama').val();
             var email = $('#email').val();
             var nohp = $('#nohp').val();
+            var kota = $('#kota option:Selected').html();
             var informasi = $('#informasi option:Selected').val();
+            var provinsi = $('#provinsi option:Selected').html();
+            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
             
             //alert(informasi);
 
-            if( nama == '' ||email == '' || nohp == '' || nohp.length <= 8 || informasi == 'pilih'){
+            if( nama == '' ||email == '' || nohp == '' || nohp.length <= 8 || informasi == 'pilih' || provinsi == '-Pilih-' || kota == '-Pilih-' || !re.test(email)){
                     if( nama == ''  )
                         document.getElementById('notif-nama').style.display= 'block';
-                    if( email == '' )
+                    if( email == '' || !re.test(email))
                         document.getElementById('notifemail').style.display= 'block';
                     if( nohp.length < 8 || nohp == '')
                         document.getElementById('notifNoHP').style.display='block';
                     if( informasi == 'pilih')
                         document.getElementById('notif-informasi').style.display='block';
+                    if( kota == '-Pilih-' )
+                        document.getElementById('notifkota').style.display="block";
+                    if( provinsi == '-Pilih-')
+                        document.getElementById('notif-provinsi').style.display="block";
                     alert("Mohon Periksa Inputan Anda");
             }else{
-
+                $("body").prepend("<div id='dvLoading'></div>");
               $.ajax({
                   url      : '/tasbih-kedua/',
                   type     : 'POST',
@@ -523,7 +644,9 @@
                               'email' : email,
                               'nohp' : nohp,
                               'kategori' : '<?php echo $kat;?>',
-                              'informasi' : informasi
+                              'informasi' : informasi,
+                              'kota' :kota,
+                              'provinsi' : provinsi
                               },
                       success  : function(data){
                         //console.log(data);

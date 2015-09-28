@@ -52,8 +52,8 @@
 				?>
 				<div class="product <?php echo $hide;?>">
 					<div class="photo">
-						<?php echo $this->image("banner_".$i, ["thumbnail" => "banner", "dropClass" => $id . "-" . $i, "title" => "Image Size 635x310"])?>
-					</div>
+						<?php echo $this->image("banner_".$i, ["dropClass" => $id . "-" . $i, "title" => "Image Size 635x310", "width" => 635, "height" => 310])?>
+					</div>,
 					<?php
 						$extra = $this->image("banner_".$i)->getHotspots();
 						//$pos = $extra[0]['data'][0]['value'];

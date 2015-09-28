@@ -25,6 +25,10 @@ $(document).ready(function () {
     $('#slideshow').flexslider({
         animation: "slide"
     });
+    
+    $('.multiSlide').flexslider({
+        animation: "slide"
+    });
     $('#best-products').flexslider({
         animation: "slide",
         slideshowSpeed: 6000
@@ -154,6 +158,11 @@ $(document).ready(function () {
         var produk = href.split("/");
         var path = "/" + produk[1] + "/" + produk[2];
         var key = produk[3];
+        console.log("href :"+href);
+        console.log("nama :"+namaProduk);
+        console.log("produk :"+produk);
+        console.log("path :"+path);
+        console.log("key :"+key);
         $("body").prepend("<div id='dvLoading'></div>");
         $.ajax({
             url: "save-wishlist",
@@ -164,6 +173,44 @@ $(document).ready(function () {
                 "key": key,
                 "produk": namaProduk,
                 "asuransi": produk[2]
+            },
+            success: function (result) {
+                var hasil = $.parseJSON(result);
+                $('#dvLoading').fadeOut(2000);
+                $("#dvLoading").remove();
+                var z = 1;
+                if (hasil[0] == "saved") {
+                    $("#wishlistSuccess").find("li").remove();
+                    for (z; z < hasil.length; z++) {
+                        $("#wishlistSuccess").find("ul").append("<li><h3>" + hasil[z] + "</h3></li>");
+                    }
+                    $("#wishlistSuccess").modal("show");
+                } else {
+                    $("#wishlistFail").find("li").remove();
+                    for (z; z < hasil.length; z++) {
+                        $("#wishlistFail").find("ul").append("<li><h3>" + hasil[z] + "</h3></li>");
+                    }
+                    $("#wishlistFail").modal("show");
+                }
+            }
+        });
+    });
+    $(".shop-smartlink").on("click", function () {
+        var namaProduk = $('.title').text(); //get text by class
+        var url = $(location).attr('href');
+        var produk = url.split("/");
+        // console.log("nama :"+namaProduk);
+        // console.log("nama :"+url);
+        // console.log("nama :"+produk);
+        // console.log("nama :"+test);
+        $("body").prepend("<div id='dvLoading'></div>");
+        $.ajax({
+            url: "save-wishlist",
+            type: "POST",
+            data: {
+                "cookies": getCookie('userWishlist'),
+                "produk": namaProduk,
+                "asuransi": produk[4]
             },
             success: function (result) {
                 var hasil = $.parseJSON(result);

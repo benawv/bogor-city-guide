@@ -232,8 +232,8 @@ class AgentController extends Website_Controller_Action {
 
 	public function sendMailAgenTasbihAction(){        
         
-        //echo 'TEST';
-        //die();
+//        echo 'TEST';
+//        die();
         
 		$from = $_POST["from"];
         $keterangan = $_POST["keterangan"];
@@ -295,6 +295,8 @@ class AgentController extends Website_Controller_Action {
         $Kontribusi = $session->Kontribusi;
         $Calculation = $session->Calculation;
 		$idObject = $session->idObject;
+        $kota = $session->kota;
+        $provinsi = $session->provinsi;
 		
 		$ket = $_POST["keterangan"];
 
@@ -356,7 +358,9 @@ class AgentController extends Website_Controller_Action {
 						'nohp' => $nohp,
 						'ket' => $ket,
                         'per' => $per,
-                        'info' => $info
+                        'info' => $info,
+                        'kota' => $kota,
+                        'provinsi' => $provinsi
 						);
 		$bodyEmail = "Tanggal Perhitungan: ".$date_tglBuat1."<br>Nama: ".$nama."<br>
 		No Handphone: ".$nohp."<br>Email: ".$email."<br>Tanggal Lahir: ".$date_tglLahir1."<br>
@@ -387,6 +391,32 @@ class AgentController extends Website_Controller_Action {
                         print_r(strtolower($emailLeaderBCC))
                     );*/
         
+        $document2 = '/email/email-tasbih';
+        			$params2 = array(
+							'tglhitung' => $date_tglBuat1,
+							'nama' => $nama,
+							'email' => $email,
+							'tgllahir' => $date_tglLahir1,
+							'usia'=> $Usia,
+							'kontribusi' => $Kontribusi,
+							'AJ' => $AJ,
+							'pembayaran' => $hasil,
+							'per' => $per,
+							'frek' => $Frekuensi,
+							'JK' => $JK,
+							'nohp' => $nohp,
+                            'info' => $info,
+                            'kota' => $kota,
+                            'provinsi' => $provinsi
+							);
+ 
+        $email2 = new Pimcore_Mail();
+        $email2->setSubject("Konfirmasi Hasil Kalkulasi Ilustrasi Produk Allianz Tasbih");
+        $email2->setFrom("no-reply@allianz.co.id","Allianz Tasbih");
+        $email2->setDocument($document2);
+        $email2->setParams($params2);
+        $email2->addTo($email);
+        $email2->send();
 
         
 
@@ -394,18 +424,36 @@ class AgentController extends Website_Controller_Action {
 
 		$mail = new Pimcore_Mail();
 		$mail->setSubject("Permintaan $nama Calon Nasabah Produk Allianz Tasbih");
-		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+		$mail->setFrom("no-reply@allianz.co.id","Allianz Tasbih");
 		$mail->setDocument($document);
 		$mail->setParams($params);
-		$mail->addTo($email_agen);
-        $mail->addBcc($emailBCC);
+		
+		//sementara pake alamat email pengirim
+		$mail->addTo("robbi@dreamcube.co.id");
+		//$mail->addTo($email_agen); //$email_agen
+        //$mail->addBcc($emailBCC);
 		$mail->send();
+        
+
 
 		Zend_Session::namespaceUnset('tasbih');
 
 		echo "Sukses $Calculation";
 		die();
 	}
+    
+    public function addAgentNameAction(){
+//            echo 'TEST';
+//            die();
+            $sessionAgen = new Zend_Session_Namespace('namaAgen');
+            $idObject = $sessionAgen->idUser;
+//			$idObject = 31471;
+			$update = Object_Tasbih::getById($idObject);
+			$update->setNamaAgen($_POST["nama"]);
+			$update->save();
+        
+            Zend_Session::namespaceUnset('namaAgen');
+    }
 	
 	public function sendMailAgenInquiryAction(){
 
@@ -474,8 +522,11 @@ class AgentController extends Website_Controller_Action {
 		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 		$mail->setDocument($document);
 		$mail->setParams($params);
-		$mail->addTo($email);
-		$mail->addBcc("asn.tasbih@gmail.com");
+		$mail->addTo("robbi@dreamcube.co.id");
+		
+		//sementara
+		//$mail->addTo($email);
+		//$mail->addBcc("asn.tasbih@gmail.com");
 		$mail->send();
 
 		Zend_Session::namespaceUnset('inquiry');
@@ -550,8 +601,10 @@ class AgentController extends Website_Controller_Action {
 		$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
 		$mail->setDocument($document);
 		$mail->setParams($params);
-		$mail->addTo($email);
-		$mail->addBcc("asn.tasbih@gmail.com");
+		$mail->addTo("robbi@dreamcube.co.id");
+		//sementara
+		//$mail->addTo($email);
+		//$mail->addBcc("asn.tasbih@gmail.com");
 		$mail->send();
 
 		Zend_Session::namespaceUnset('liveinsurance');

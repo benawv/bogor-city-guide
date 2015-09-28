@@ -23,7 +23,7 @@ function checkfiles(){
         //var msg ="Tidak ada file yang dipilih";
         fup.focus();
         return false;
-    }else if (ext == "JPG" || ext == "PNG" || ext == "jpg" || ext == "png"){
+    }else if (ext == "JPG" || ext == "PNG" || ext == "jpg" || ext == "png" || ext == "jpeg" || ext == "JPEG"){
         return true;
     }else{
         document.getElementById('test').innerHTML = "File tidak di dukung";
@@ -49,9 +49,14 @@ function checkfiles(){
 
                 <div class="profile-maker--uploader">
                     <p>
-                        Upload your files here. Supported formats: JPG and PNG,<br />
+                        <!--Upload your files here. Supported formats: JPG and PNG,<br />-->
+                        Upload fotomu disini, dengan format JPG atau PNG dengan resolusi minimal
                         <script>
-                        document.write(getCookie("keterangan"));
+                            document.write(getCookie("res"));
+                        </script>
+                        <br />
+                        <script>
+                            document.write(getCookie("keterangan"));
                         </script>
                     </p>
                     <form role="form" action="/upload-image/" method="post" enctype="multipart/form-data" onsubmit="return checkfiles();">
@@ -74,6 +79,20 @@ function checkfiles(){
                     
                 </div><!--/ .profile-maker--uploader -->
 
+            </div><!--/ .col-xs-12 -->
+        </div><!--/ .row -->
+        
+        <div class="row">
+            <div class="col-xs-12">
+	            <h4><b>Panduan Pengguna</b></h4>
+                <p>
+	                <ul>
+		                <li>Kami sarankan untuk menggunakan aplikasi ini dengan Google Chrome Minimal Ver.45 atau Mozilla Firefox Minimal Ver.38.</li>
+		                <li>Untuk mendapatkan hasil yang maksimal, mohon menggunakan PC atau Tablet Anda.</li>
+		                <li>Bagi pengguna yang menggunakan iPad dan iPhone, silahkan download image yang dihasilkan setelah menekan tombol "simpan gambar" dengan menekan pada hasil gambar dan tekan tombol "Save Image".</li>
+		                
+	                </ul>
+		        </p>
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
 

@@ -61,7 +61,7 @@
 			'smartlink-factsheet', 'syariah-factsheet',
 			'pension-factsheet', 'saving-factsheet','multi-video',
 			'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi', 'asn-center', 'gridlanding','artikelalanding','landing-informasi-produk',
-			'thankyou-mobilku'))); ?>
+			'thankyou-mobilku','add-to-cart-wishlist'))); ?>
 		<div style="clear: both"></div>
 		<div class="items-container">
 			<?php echo $this->areablock('container2', array(
@@ -69,7 +69,7 @@
 		</div>
 		<!-- Map Location -->
 			<?php echo $this->areablock('maparea', array(
-						"allowed" => array("related-product-3-section","map")))?>
+						"allowed" => array("related-product-3-section","map","map-pemasaran")))?>
 		<!-- End Map Location -->
 		<?php echo $this->areablock('container-modal', array('allowed' => array('modal')))?>
 	</div>

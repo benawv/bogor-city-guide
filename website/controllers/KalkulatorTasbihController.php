@@ -64,6 +64,18 @@
             $session->Kontribusi = $Kontribusi;
             $session->Calculation = $Calculation;
 			$session->kat = $kat;
+            
+            $sessionDup = new Zend_Session_Namespace('duplic_tasbih');
+            $sessionDup->date_tglBuat = $date_tglBuat;
+            $sessionDup->date_tglLahir = $date_tglLahir;
+            $sessionDup->JenisKelamin = $JenisKelamin;
+            $sessionDup->Usia = $Usia;
+            $sessionDup->Frekuensi = $frek;
+            $sessionDup->AsuransiJiwa = $AsuransiJiwa;
+            $sessionDup->AJ = $AJ;
+            $sessionDup->Kontribusi = $Kontribusi;
+            $sessionDup->Calculation = $Calculation;
+			$sessionDup->kat = $kat;
 
             echo $session->Calculation;//print result of calculation into form
 
@@ -75,6 +87,30 @@
             
         }*/
         
+        public function getprovAction(){
+
+            $prov = $_POST["prov"];
+//            $session = new Zend_Session_Namespace('provinsi');
+//            $session->prov = $prov;
+            $item = array();
+            $i =0;
+            $getProv=new Object_Kota_List();
+//          echo <pre>;
+            $getProv->setCondition("provinsi='".$prov."'");
+            $getProv->setOrderKey("kota");
+            $getProv->setOrder("asc");
+//            print_r($getProv);
+//            die();
+            foreach($getProv as $items){
+                $item[$i] = array(
+                                "Kota" => $items->kota
+                            );
+                $i++;
+            }
+            
+            echo json_encode($item);
+        }
+        
         public function sendemailAction(){
 			
             $nama = $_POST["nama"];
@@ -82,6 +118,8 @@
             $nohp = $_POST["nohp"];
 			$kat = $_POST["kategori"];
             $info = $_POST["informasi"];
+            $kota = $_POST["kota"];
+            $provinsi = $_POST["provinsi"];
 
 
             $session = new Zend_Session_Namespace('tasbih');
@@ -89,6 +127,8 @@
             $session->email = $email;
             $session->nohp = $nohp;
             $session->info = $info;
+            $session->kota= $kota;
+            $session->provinsi = $provinsi;
             $session->emailFrom = "tasbih_calc";
             $session->setExpirationSeconds( 600, 'tasbih' );
 
@@ -145,6 +185,8 @@
 			$cookie->setMassaPembayaranKontribusi($Kontribusi);
 			$cookie->setKontribusiBerkala($Calculation);   
             $cookie->setInformasi($info);
+            $cookie->setKota($kota);
+            $cookie->setProvinsi($provinsi);
 			$cookie->setO_key('premium_tasbih_'.strtotime(date("YmdHis")));
 			$cookie->setO_parentId($getId->o_id);
 			$cookie->setO_index(0);
@@ -154,6 +196,11 @@
 			$cookie->save();
 			
 			$session->idObject = $cookie->getO_id();
+			
+			$session2 = new Zend_Session_Namespace('homeAgen');
+			$sessionAgen = new Zend_Session_Namespace('namaAgen');
+            $session2->idUser = $cookie->getO_id();
+            $sessionAgen->idUser = $cookie->getO_id();
 			
 			if($JenisKelamin == 'l') {
 				$JK = 'Pria';
@@ -194,7 +241,9 @@
 							'frek' => $Frekuensi,
 							'JK' => $JK,
 							'nohp' => $nohp,
-                            'info' => $info
+                            'info' => $info,
+                            'kota' => $kota,
+                            'provinsi' => $provinsi
 							);
 			/*
 			$systemConfig = Pimcore_Config::getSystemConfig()->toArray();
@@ -202,16 +251,27 @@
 			print_r($emailSettings);
 			die();
 			*/
-			$mail = new Pimcore_Mail();
-			$mail->setSubject("Konfirmasi Hasil Kalkulasi Ilustrasi Produk Allianz Tasbih");
-			$mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
-			$mail->setDocument($document);
-			$mail->setParams($params);
-			$mail->addTo($email);
-			$mail->send();
+//			$mail = new Pimcore_Mail();
+//			$mail->setSubject("Konfirmasi Hasil Kalkulasi Ilustrasi Produk Allianz Tasbih");
+//			$mail->setFrom("no-reply@allianz.co.id","Allianz Tasbih");
+//			$mail->setDocument($document);
+//			$mail->setParams($params);
+//			$mail->addTo($email);
+//			$mail->send();
             
 			echo "sukses";
             //Zend_Session::namespaceUnset('calculation');
         }
+		
+		public function updateUserTasbihAction(){
+			$session2 = new Zend_Session_Namespace('homeAgen');
+			$idObject = $session2->idUser;
+			
+			$update = Object_Tasbih::getById($idObject);
+			$update->setMasukAgen("Ya");
+			$update->save();
+			
+			Zend_Session::namespaceUnset('homeAgen');
+		}
     }
 ?>

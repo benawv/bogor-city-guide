@@ -1,3 +1,4 @@
+<script src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"async defer></script>
 <?php	
                 $id = '';
                 $jenis = Object_MarketingOfficeJenis::getList(array("orderKey" => array("jenis"), "order" => array("asc")));
@@ -182,7 +183,7 @@
 </div>
 
 
-<script type="text/javascript">
+<script type="text/javascript"> 
 	var map = new Object();
 	var map2 = new Object();
 	var markers = [];
@@ -226,10 +227,15 @@
 
 		
     }
+    
 	$.fn.MapLoad = function(){
-        var kant = "<?php echo $id; ?>";
-        var wil = "-2.6806246,115.8034375,5,";
-        MapLoad3(kant,wil);
+        var cekID = "<?php echo $getStatus; ?>";
+        if( cekID != ""){
+            initMap();
+        }
+        
+        
+        
 	    clearOverlays();
 		//console.log(k+"  "+w);
 		$.ajax({
@@ -239,7 +245,8 @@
 			"success" : function(responseData){
 			    var entries = responseData;
 			    var listLoc = jQuery.parseJSON(entries);
-			    var image = '/website/static/images/blue-with-shadow.png';
+                var img = '/website/static/images/blue-with-shadow.png';
+			    var image = '/website/static/images/pointer-blue.png';
 			    var marker = [];
 			    
 			    $.each(listLoc.objects, function(i, item){
@@ -267,7 +274,7 @@
 					    var marker = new google.maps.Marker({
 								    position: new google.maps.LatLng(item.latitude, item.longitude),
 								    draggable: false,
-								    icon: image,
+								    icon: img,
 								    map: map,
 								    html: data_content
 							    });
@@ -276,7 +283,7 @@
 					    var marker = new google.maps.Marker({
 								    position: new google.maps.LatLng(item.latitude, item.longitude),
 								    draggable: false,
-								    map: map,
+                                    map: map,
 								    html: data_content
 							    });
 				    }
@@ -357,7 +364,10 @@
 //			    }
 //			}
 //		});
-	function MapLoad3(k,w){
+	function MapLoad3(k,w,s,l1,l2){
+        
+        var imageCurrentMarker = '/website/static/images/map-pointer-green.png';
+        var image2 = '/website/static/images/allianz-map-marker-shadow_2.png';
 		clearOverlays();
 		//console.log(k+"  "+w);
 		$.ajax({
@@ -367,7 +377,8 @@
 			"success" : function(responseData){
 			    var entries = responseData;
 			    var listLoc = jQuery.parseJSON(entries);
-			    var image = '/website/static/images/blue-with-shadow.png';
+			    var image = '/website/static/images/pointer-blue.png';
+//                var imageSearchMarker = '/website/static/images/pointer-blue.png';
 			    var marker = [];
 			    
 			    $.each(listLoc.objects, function(i, item){
@@ -390,12 +401,15 @@
 				    catch(e){
 					var jenis = null;
 				    }
+                    
+
+                    
 				    if(item.o_key == "allianz-tower")
 				    {
 					    var marker = new google.maps.Marker({
 								    position: new google.maps.LatLng(item.latitude, item.longitude),
 								    draggable: false,
-								    icon: image,
+								    icon: image2,
 								    map: map2,
 								    html: data_content2
 							    });
@@ -404,23 +418,51 @@
 					    var marker = new google.maps.Marker({
 								    position: new google.maps.LatLng(item.latitude, item.longitude),
 								    draggable: false,
+								    icon: image2,
 								    map: map2,
 								    html: data_content2
 							    });
 				    }
 				    markers.push(marker);
 			    });
-			    
-			    for(x=0;x < markers.length;x++){
+                
+                for(x=0;x < markers.length;x++){
 				    var marker = markers[x];
 				    google.maps.event.addListener(marker, 'click', function () {
 					    infowindow2.setContent(this.html);
 					    infowindow2.open(map2, this);
 				    });
 			    }
+                
+                if (s == "found") {
+                    var marker2 = new google.maps.Marker({
+                        position: new google.maps.LatLng(l1, l2),
+                        draggable: false,
+                        icon: imageCurrentMarker,
+                        map: map2,
+                        html: "Lokasi Anda saat ini."
+                    });
+                    markers2.push(marker2);
+                }else if( s == "searched"){
+                    var marker2 = new google.maps.Marker({
+                        position: new google.maps.LatLng(l1, l2),
+                        draggable: false,
+                        icon: image,
+                        map: map2
+                    });
+                    markers2.push(marker2);
+                }
+			    
+                for(x=0;x < markers.length;x++){
+				    var marker = markers2[x];
+				    google.maps.event.addListener(marker, 'click', function () {
+//					    infowindow2.setContent(this.html);
+//					    infowindow2.open(map2, this);
+				    });
+			    }
 			}
 		})
-		
+
 	}
 
     
@@ -435,7 +477,7 @@
 			"success" : function(responseData){
 			    var entries = responseData;
 			    var listLoc = jQuery.parseJSON(entries);
-			    var image = '/website/static/images/blue-with-shadow.png';
+			    var image = '/website/static/images/pointer-blue.png';
 			    var marker = [];
 			    
 			    $.each(listLoc.objects, function(i, item){
@@ -463,7 +505,7 @@
 					    var marker = new google.maps.Marker({
 								    position: new google.maps.LatLng(item.latitude, item.longitude),
 								    draggable: false,
-								    icon: image,
+								    icon: img,
 								    map: map,
 								    html: data_content
 							    });
@@ -521,7 +563,10 @@
 			var longitude = null;
 			var addresscity=document.getElementById("search").value;
 			var geocoder = new google.maps.Geocoder();
-		 
+		    var options = {
+              types: ['(cities)'],
+              componentRestrictions: {country: 'fr'}
+            };
 			geocoder.geocode({ 'address': addresscity }, function (results, status) {
 				 
 				if (status == google.maps.GeocoderStatus.OK)
@@ -534,15 +579,17 @@
 					   center: new google.maps.LatLng(lat, long),
 					   zoom: 13
 				    };
+//                    alert(lat);
                     map2 = new google.maps.Map(document.getElementById("maparea2"),mapOptions);
 //					MapLoad(titik, lat, long, titikMarker);
+                    var st = "searched";    		
+                    var kant = "<?php echo $id; ?>";
+                    var wil = "-2.6806246,115.8034375,5,";
+                    MapLoad3(kant,wil,st,lat,long);
 				 }
 			});
         
-            		
-        var kant = "<?php echo $id; ?>";
-        var wil = "-2.6806246,115.8034375,5,";
-        MapLoad3(kant,wil);
+
 		}
 
     function radius(lat, lng){
@@ -550,4 +597,59 @@
 		var kordinat = (lat - degreeRadius) +"#"+ (lng - degreeRadius) +"#"+ (lat + degreeRadius) +"#"+ (lng + degreeRadius);
 		return kordinat;
 	}
+    
+    //Fungsi Share Current Location
+    
+    function initMap() {
+            var kant = "<?php echo $id; ?>";
+            var wil = "-2.6806246,115.8034375,5,";
+            MapLoad3(kant,wil);
+//            map2 = new google.maps.Map(document.getElementById('maparea2'));
+//            var infoWindow3 = new google.maps.InfoWindow({map: map2});
+
+              // Try HTML5 geolocation.
+              if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+              }
+
+            }
+
+//            function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+//              infoWindow.setPosition(pos);
+//              infoWindow.setContent(browserHasGeolocation ?
+//                                    'Error: The Geolocation service failed.' :
+//                                    'Error: Your browser doesn\'t support geolocation.');
+//    }
+
+    function showPosition(position) {
+    var l1 = position.coords.latitude; 
+    var l2 = position.coords.longitude;
+    
+//    alert(l1);
+    var mapOptions = {
+					   center: new google.maps.LatLng(l1, l2),
+					   zoom: 13
+    };
+//                    alert(lat);
+    map2 = new google.maps.Map(document.getElementById("maparea2"),mapOptions);
+    
+//    var datacont = '<font>Lokasi Anda Sekarang</font>';
+//    
+//    var marker = new google.maps.Marker({
+//				position: new google.maps.LatLng(l1, l2),
+//				draggable: false,
+//				map: map2,
+//				html: data_content2
+//    });
+//    
+//    markers.push(marker);
+        
+    
+    var stats = "found";    
+    var kant = "<?php echo $id; ?>";
+    var wil = "-2.6806246,115.8034375,5,";
+    MapLoad3(kant,wil,stats,l1,l2);
+}
+    
+//Akhir Fungsi Share Current Location
 </script>
