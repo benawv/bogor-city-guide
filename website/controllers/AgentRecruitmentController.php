@@ -103,7 +103,7 @@ class AgentRecruitmentController extends Website_Controller_Action {
 			$data = array(
 			     "IsSuccess" => "Yes",
 			     "CreatedAt" => "YYYY/MM/DD",
-			     "Message" => "Agent successfully signed up"
+			     "Message" => "Agent successfully signed up",
 			     "Agent" => array(
 			               "Name" => "NAME",
 			               "Email" => "EMAIL",
@@ -159,7 +159,7 @@ class AgentRecruitmentController extends Website_Controller_Action {
 			$data = array(
 			     "IsSuccess" => "Yes",
 			     "CreatedAt" => "YYYY/MM/DD",
-			     "Message" => "Agent successfully signed up"
+			     "Message" => "Agent successfully signed up",
 			     "Agent" => array(
 			               "Name" => "NAME",
 			               "Email" => "EMAIL",
