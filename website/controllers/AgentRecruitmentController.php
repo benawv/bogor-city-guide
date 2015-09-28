@@ -46,6 +46,7 @@ class AgentRecruitmentController extends Website_Controller_Action {
 			                      "FaxNumber" => "abcdefghij",
 			                      "LatLng" => "abcdefghij"
 			          )
+				)
 			);
 		}else{
 			$data = array(
