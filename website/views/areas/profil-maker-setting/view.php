@@ -103,7 +103,7 @@
                     </div> --><!--/ .page-maker--placeholder -->
 
                     <div id="image-cropper">
-                        <div id="cropped" class="cropit-image-preview-container">
+                        <div id="cropped-1" class="cropit-image-preview-container">
                             <div class="cropit-image-preview cropit1">
                                 <!-- <img src="website/static/images/profile-maker/banner2.jpg"> -->
                             </div>
@@ -146,32 +146,50 @@
 
                 <div id="cover2" class="timelineContainer" style="display: none">
 
-                    <div id="timelineBackground" class="page-maker--placeholdermain">
+					<!-- <div id="timelineBackground" class="page-maker--placeholdermain">
+                        <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive">
                         <?php
                                  $session = new Zend_Session_Namespace('srcImage');
                         ?>
-                       <img src="<?php echo $session->src;?>" alt="Page Cover Landscaped Notepad" id="timelineBGload" class="headerimage ui-corner-all ui-draggable img-responsive" />
+                        <div id="images" style="display:inline-block;">
+                            <img src="<?php echo $session->src;?>" alt="Page Cover Landscaped Notepad" id="timelineBGload" class="headerimage ui-corner-all ui-draggable img-responsive" />
+                        </div>   
 
-                    </div><!--/ .page-maker--placeholder -->
+                    </div> --><!--/ .page-maker--placeholder -->
 
-                    <div id="place" class="portrait facebook-caption rightside">
-                        <div id="notepad" class="facebook-caption--inner portrait-bg bg-orange">
+                    <div id="image-cropper">
+                        <div id="cropped-2" class="cropit-image-preview-container">
+                            <div class="cropit-image-preview cropit1">
+                                <!-- <img src="website/static/images/profile-maker/banner2.jpg"> -->
+                            </div>
+                            <div id="place" class="portrait facebook-caption leftside">
+                                <div id="notepad" class="facebook-caption--inner portrait-bg bg-blue" style="width: 80%;">
 
-                            <h3><span id="judul">Headline</span></h3> <br />
-                            <span id="konten">
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
-                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-                                Ut wisi enim ad minim veniam
-                            </span> <br />
-                            
-                        </div><!--/ .facebook-caption--inner -->
-                        <!-- <div class="facebook-caption-trapezoid"></div> -->
+                                    <h3><span id="judul">&lt;Title&gt;</span></h3> <br />
 
-                        <div id="edge-note" class="edge e-orange">
-                            <span id="nama">Robbi Nugraha</span>
-                        </div> 
+                                    <span id="konten">
+                                        &lt;Description&gt;
+                                    </span> <br />
 
-                    </div> <!--/ .facebook-caption -->
+                                </div><!--/ .facebook-caption--inner -->
+                                <!-- <div class="facebook-caption-trapezoid"></div> -->
+
+                                <div id="edge-note" class="edge e-blue" style="width: 80%;">
+                                    <span id="nama">&lt;Name&gt;</span>
+                                </div> 
+
+                            </div> <!--/ .facebook-caption -->
+                        </div>
+                        
+                        <div class="slider-wrapper">
+                            <!-- <span class="icon icon-image small-image"></span> -->
+                            <i class="fa fa-file-image-o"></i>
+                                <input type="range" class="cropit-image-zoom-input custom" min="0" max="1" step="0.01">
+                            <i class="fa fa-file-image-o fa-2x"></i>    
+                            <!-- <span class="icon icon-image large-image"></span> -->
+                        </div>
+                                
+                    </div>                  
 
                     <div class="shade" id="timelineShade">
                         <form id="bgimageform" name="newad" method="post" enctype="multipart/form-data" action="">
@@ -182,34 +200,51 @@
                 </div> <!--/ #timelineContainer -->
 
                 <div id="cover3" class="timelineContainer" style="display: none">
-
-                    <div id="timelineBackground" class="page-maker--placeholdermain">
-                        <!-- <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive"> -->
+				
+					<!-- <div id="timelineBackground" class="page-maker--placeholdermain">
+                        <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive">
                         <?php
                                  $session = new Zend_Session_Namespace('srcImage');
                         ?>
-                       <img src="<?php echo $session->src;?>" alt="Page Cover Landscaped Notepad" id="timelineBGload" class="headerimage ui-corner-all ui-draggable img-responsive" />
+                        <div id="images" style="display:inline-block;">
+                            <img src="<?php echo $session->src;?>" alt="Page Cover Landscaped Notepad" id="timelineBGload" class="headerimage ui-corner-all ui-draggable img-responsive" />
+                        </div>   
 
-                    </div><!--/ .page-maker--placeholder -->
+                    </div> --><!--/ .page-maker--placeholder -->
 
-                    <div id="place" class="square facebook-caption leftside">
-                        <div id="notepad" class="facebook-caption--inner square-bg bg-blue">
+                    <div id="image-cropper">
+                        <div id="cropped-3" class="cropit-image-preview-container">
+                            <div class="cropit-image-preview cropit1">
+                                <!-- <img src="website/static/images/profile-maker/banner2.jpg"> -->
+                            </div>
+                            <div id="place" class="square facebook-caption leftside">
+                                <div id="notepad" class="facebook-caption--inner square-bg bg-blue">
 
-                            <h3><span id="judul">Headline</span></h3> <br />
-                            <span id="konten">
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
-                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-                                Ut wisi enim ad minim veniam
-                            </span> <br />
-                            
-                        </div><!--/ .facebook-caption--inner -->
-                        <!-- <div class="facebook-caption-trapezoid"></div> -->
+                                    <h3><span id="judul">&lt;Title&gt;</span></h3> <br />
 
-                        <div id="edge-note" class="edge e-orange">
-                            <span id="nama">Robbi Nugraha</span>
-                        </div> 
+                                    <span id="konten">
+                                        &lt;Description&gt;
+                                    </span> <br />
 
-                    </div> <!--/ .facebook-caption -->
+                                </div><!--/ .facebook-caption--inner -->
+                                <!-- <div class="facebook-caption-trapezoid"></div> -->
+
+                                <div id="edge-note" class="edge e-blue">
+                                    <span id="nama">&lt;Name&gt;</span>
+                                </div> 
+
+                            </div> <!--/ .facebook-caption -->
+                        </div>
+                        
+                        <div class="slider-wrapper">
+                            <!-- <span class="icon icon-image small-image"></span> -->
+                            <i class="fa fa-file-image-o"></i>
+                                <input type="range" class="cropit-image-zoom-input custom" min="0" max="1" step="0.01">
+                            <i class="fa fa-file-image-o fa-2x"></i>    
+                            <!-- <span class="icon icon-image large-image"></span> -->
+                        </div>
+                                
+                    </div>
 
                     <div class="shade" id="timelineShade">
                         <form id="bgimageform" name="newad" method="post" enctype="multipart/form-data" action="">
@@ -645,6 +680,20 @@
         </div> <!--/.row -->
 
         <?php //endfor; ?>
+
+		<div class="row">
+            <div class="col-xs-12">
+	            <h4><b>Panduan Pengguna</b></h4>
+                <p>
+	                <ul>
+		                <li>Kami sarankan untuk menggunakan aplikasi ini dengan Google Chrome Minimal Ver.45 atau Mozilla Firefox Minimal Ver.38.</li>
+		                <li>Untuk mendapatkan hasil yang maksimal, mohon menggunakan PC atau Tablet Anda.</li>
+		                <li>Bagi pengguna yang menggunakan iPad dan iPhone, silahkan download image yang dihasilkan setelah menekan tombol "simpan gambar" dengan menekan pada hasil gambar dan tekan tombol "Save Image".</li>
+		                
+	                </ul>
+		        </p>
+            </div><!--/ .col-xs-12 -->
+        </div><!--/ .row -->
 
         <div class="row">
             <div class="col-xs-12">

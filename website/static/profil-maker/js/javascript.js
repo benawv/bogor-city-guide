@@ -278,10 +278,10 @@ $(document).ready(function()
 			    }
 			    else if(temp == "template2") {
 			        //alert("portrait");
-			        $("#cover1").show();
+			        $("#cover2").show();
 			        //$("#image-cropper").show();
-			        $("#place, #place-m").prop('class', 'portrait facebook-caption leftside');
-			        $("#notepad, #notepad-m").prop('class', 'facebook-caption--inner portrait-bg bg-blue');
+			        $("#place").prop('class', 'portrait facebook-caption leftside');
+			        $("#notepad").prop('class', 'facebook-caption--inner portrait-bg bg-blue');
 
 			        //mobile looks like
 			        $("#place-m").prop('class', 'portrait-m facebook-caption leftside');
@@ -289,10 +289,10 @@ $(document).ready(function()
 			    }
 			    else if(temp == "template3") {
 			        //alert("square");
-			        $("#cover1").show();
+			        $("#cover3").show();
 			        //$("#image-cropper").show();
-			        $("#place, #place-m").prop('class', 'square facebook-caption leftside');
-			        $("#notepad, #notepad-m").prop('class', 'facebook-caption--inner square-bg bg-blue');
+			        $("#place").prop('class', 'square facebook-caption leftside');
+			        $("#notepad").prop('class', 'facebook-caption--inner square-bg bg-blue');
 
 			        //mobile looks like
 			        $("#place-m").prop('class', 'square-m facebook-caption leftside');
@@ -353,8 +353,20 @@ $(document).ready(function()
 						//$(".over-scroll").css("overflow", "initial");
 						//$("#cover-m").hide();
 	                    //$("#cover1").show();
-
-	                	html2canvas($('#cropped'), {
+						cropped = "";
+						if(temp == "template1") {
+							cropped = $('#cropped-1');
+						}
+						else if(temp == "template2") {
+							cropped = $('#cropped-2');
+						}
+						else if(temp == "template3") {
+							cropped = $('#cropped-3');
+						}
+						else {
+							
+						}
+	                	html2canvas(cropped, {
 							useCORS: true,
 							allowTaint: true,
 							letterRendering: true,
