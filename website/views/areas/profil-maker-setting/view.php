@@ -12,13 +12,12 @@
             background: #b4b4b4;
             color: #3b579d;
             position: absolute;
-            bottom: 0;
-            left: 0;
             width: 100%;
             padding: 0 56px;
             z-index: 1;
             line-height: 52px;
             min-height: 52px;
+            top: 342px;
           }
           #ava2-m .avatar-caption--footer, #ava3-m .avatar-caption--footer {
             line-height: 15px;
@@ -336,28 +335,19 @@
                 </div><!--/ .page-maker--placeholder -->
 
                 <div id="ava21" class="page-maker--placeholder" style="display: none">
-                     <div id="image-cropper-ava21">
-                            <div id="cropped-ava21" class="cropit-image-preview-container">
-                                <div class="cropit-image-preview cropit-ava21">
-                                    <div id="avacapture2" class="avatar-caption">
-                                        <div class="avatar-caption--logo">
-                                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="avatar-caption--footer" id = "imgid">
-                                        <img src="/website/static/images/profile-maker/fb.png" alt=""  style="position: absolute; width: 29px; left: 19px; top: 11px;">
-                                        <!-- <i class="fa fa-facebook-square fa-2x"></i> --> &nbsp;
-                                        <span>Allianz Indonesia</span>&nbsp;
-                                        <strong><span id="cname">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
-                                    </div><!--/ .avatar-caption-footer -->
-                                </div>
-                                
-                            </div>
-                            <div class="slider-wrapper">
-                                <i class="fa fa-file-image-o"></i>
-                                    <input type="range" class="cropit-image-zoom-input custom" min="0" max="1" step="0.01">
-                                <i class="fa fa-file-image-o fa-2x"></i>    
-                            </div>             
+                     <div id="image-cropper-ava21">	 
+	                        <div id="cropped-ava21" class="cropit-image-preview cropit-ava21">               	
+		                        <canvas id="canvas-ava21" width="472" height="394" style="border:1px solid #ccc">
+		                        	
+		                        </canvas>
+		                        <!--
+                                <div class="avatar-caption--footer" id = "imgid">
+                                    <img src="/website/static/images/profile-maker/fb.png" alt=""  style="position: absolute; width: 29px; left: 19px; top: 11px;">
+                                    <!-- <i class="fa fa-facebook-square fa-2x"></i> &nbsp;
+                                    <span>Allianz Indonesia</span>&nbsp;
+                                    <strong><span id="cname">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
+                                </div><!--/ .avatar-caption-footer -->
+                        	</div>           
                         </div>
                 </div><!--/ .page-maker--placeholder -->
 
@@ -708,10 +698,111 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
 
+<!-- Call FabricJS File -->
+<script src="/website/static/profil-maker/js/fabric.min.js"></script>
+
 <?php
     $session = new Zend_Session_Namespace('srcImage');
 ?>
 <script>
+	
+	/*
+		Template 4 (News Feed Post Template) Profile maker using FabricJS
+		Added By Handri Pangestiaji
+		Created at Sept 28 2015
+	======================================================================	
+	*/
+	var temp = getCookie("template");
+	
+	var canvas = new fabric.Canvas('canvas-ava21', {
+		backgroundColor: 'white'
+	});
+	
+	cvsW = canvas.getWidth();
+	
+	// Add Grey Rectangle object bottom of canvas
+	var rect = new fabric.Rect({
+		width: cvsW,
+		height: 52,
+		fill: 'rgb(180, 180, 180)',
+		selectable: false,
+		top: 342,
+		originY: "top"
+	});
+	canvas.add(rect);
+	canvas.sendToBack(rect);
+	
+	// Add FB Icon bottom of canvas
+	fabric.Image.fromURL('/website/static/images/profile-maker/fb.png', function(img){
+		img.scaleToWidth(30);
+		canvas.add(img);
+	}, {
+		top: 352,
+		left: 20,
+		originY: 'top',
+		selectable: false
+	});
+	
+	//Add Text Allianz Indonesia on bottom of canvas
+	var text = new fabric.Text("Allianz Indonesia", {
+		fill: 'rgb(59, 87, 157)',
+		selectable: false,
+		fontFamily: 'Arial, Helvetica, sans-serif',
+		top: 358,
+		left: 65,
+		fontSize: 16
+	});
+	
+	canvas.add(text);
+	
+	// Add Allianz icon on top right of canvas
+	canvas.setOverlayImage('/website/static/images/profile-maker/allianz-logo.png', canvas.renderAll.bind(canvas), {
+		left: 410,
+		top: 10,
+		originX: 'left',
+		originY: 'top'
+	});
+	
+	// Add uploaded image in canvas
+	fabric.Image.fromURL('<?php echo $session->src?>', function(img){
+			canvas.add(img);
+			canvas.centerObject(img);
+			canvas.sendToBack(img);
+			canvas.setActiveObject(img);
+		}, 
+		{
+			lockUniScaling: true
+		}
+	);
+	
+	// Binding click for Pratinjau and Simpan Button
+	$('#preview, #save').click(function(){
+		nama1 = $('#bawah1').val();
+		nama2 = $('#bawah2').val();
+		
+		text.setText("Allianz Indonesia "+ nama1 + " " + nama2);
+		canvas.add(text);
+	});
+	
+	// Click Event on Ya button
+	$('body').on('click','#download',function(){
+		if(temp == "template4") {
+			
+			canvas.deactivateAll().renderAll();
+			
+			var dataURL = canvas.toDataURL({
+			  format: 'png'
+			});
+			
+			var link = document.createElement('a');
+			link.href = dataURL;
+			link.download = "Cover Profil Maker Allianz.png";
+			document.body.appendChild(link);
+			link.click();
+		}
+	});
+	//======================= End of template 4 ============================
+	
 	  var img = document.getElementById('imgid'); 
 						  var height =$(".cropit-ava2 ").height();
 						  var width = $(".cropit-ava2").width();
@@ -751,7 +842,7 @@
             setCookie("res", res);
         });
 
-        /* Resize with cropit */
+        /* Resize with cropit 
             $('#image-cropper-ava2').cropit({ 
                 //exportZoom: 2,
                 imageState: {
@@ -871,7 +962,7 @@
                 freeMove: true,
             });
 			
-            $('#image-cropper-ava21, #image-cropper-ava31').cropit({ 
+            $('#image-cropper-ava31').cropit({ 
                 imageState: {
                     src: '<?php echo $session->src ?>',
                 },
