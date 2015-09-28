@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="col-xs-9 visible-xs visible-md nopadding">
                         <div class="sidebar">
-                            <h1 class="sidebar__title"><a href="?p=dashboard">Agency Recruitment System</a></h1>
+                            <h1 class="sidebar__title"><a href="/agent-recruitment/dashboard">Agency Recruitment System</a></h1>
                             <nav class="sidebar__nav">
                                 <ul>
                                     <li><a href="#"><i class="fa fa-chevron-circle-right"></i> Dashboard</a></li>
