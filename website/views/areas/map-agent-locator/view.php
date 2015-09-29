@@ -31,6 +31,7 @@
         padding: 12px 24px;
         margin: 0 auto;
         line-height: 1.5;
+        float : left;
     }
 
     #agent-locator .searchbox > button.search-btn
