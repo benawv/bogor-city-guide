@@ -95,7 +95,10 @@
     <h3  style=" color:black; text-align:center;"><strong>Hasil ilustrasi produk Allianz Mobilku sudah dikirimkan ke alamat email Anda.</strong></h3>
     <!--<h3 style=" color:black; text-align:center;"><strong>Temukan agen terdekat: </strong></h3>-->
    <br />
-    <center><input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Kantor Pemasaran Allianz"></center>
+    <center>
+      <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="hitung-kembali" name="hitung" value="Hitung Kembali">
+      <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Kantor Pemasaran Allianz">
+    </center>
   </div>
 
      
@@ -146,7 +149,40 @@ $(document).ready(function(){
                       }
               });*/
                        
-              });            
+        });
+
+        $('#hitung-kembali').click(function() {
+            
+                            <?php $sessionCalc = new Zend_Session_Namespace(calc_mobilku); ?>
+                            <?php $sessionCalc->status ="mobilku"; ?>
+//                            alert("<?php echo $sessionCalc->status; ?>");
+                            window.open('/kalkulator/mobilku', '_blank');
+
+                          /*$.ajax({
+                              url      : '/v1/api/calculator',
+                              type     : 'POST',
+                              crossDomain: true,
+                              data     : {
+                                          'premi' : premi,
+                                          'nama' : nama,
+                                          'email' : email,
+                                          'nohp': nohp,
+                                          'gender': gender,
+                                          'cia': cia,
+                                          'uangpertanggungan': uangpertanggungan,
+                                          'smoking' :smoking,
+                                          'tanggallahir' : tanggallahir,
+                                          'usia' : usia
+                                          'source' :'Kalkulator Life Insurance User'
+                                          },
+                              complete  : function(data){
+                                     //console.log(data);
+                                      
+                                      //document.location.href='/agent-locator';
+                      }
+              });*/
+                       
+        });               
     });
 
   
