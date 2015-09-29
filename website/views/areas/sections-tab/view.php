@@ -78,7 +78,7 @@
 			<div class="menutab_dekstop">
 				<ul>
 					<?php for($x=0;$x<$tabs;$x++) { ?>
-						<li><a id="open_tab_<?php echo $i ?>_<?php echo $x."_".$unik ?>" class="<?php echo $x==0?'active':''?>" href="javascript:void(0);"><?php echo $this->input('title-tabs-'.$i.'-'.$x)?></a></li>
+						<li><a id="open_tab_<?php echo $i ?>_<?php echo $x ?>" class="<?php echo $x==0?'active':''?>" href="javascript:void(0);"><?php echo $this->input('title-tabs-'.$i.'-'.$x)?></a></li>
 					<?php } ?>
 				</ul>
 			</div>
@@ -87,8 +87,8 @@
 				<ul>
 					<?php for($x=0;$x<$tabs;$x++) { ?>
 						<li>
-							<a id="open_tab_<?php echo $i ?>_<?php echo $x."_".$unik?>_m" class="menumobile <?php echo $x==0?'active':''?>" href="javascript:void(0);"><?php echo $this->input('title-tabs-'.$i.'-'.$x)->text?></a>
-							<div id="tabcontent_<?php echo $i ?>_<?php echo $x."_".$unik ?>" class="content_show <?php if(!$this->editmode): echo ($x==0)?'showme':''; else: echo 'showme'; endif;?> show_<?php echo $i?>">
+							<a id="open_tab_<?php echo $i ?>_<?php echo $x ?>_m" class="menumobile <?php echo $x==0?'active':''?>" href="javascript:void(0);"><?php echo $this->input('title-tabs-'.$i.'-'.$x)->text?></a>
+							<div id="tabcontent_<?php echo $i ?>_<?php echo $x ?>" class="content_show <?php if(!$this->editmode): echo ($x==0)?'showme':''; else: echo 'showme'; endif;?> show_<?php echo $i?>">
 								<?php echo $this->wysiwyg('tabcontent-'.$i.'-'.$x)?>
 							</div>
 						</li>
@@ -105,21 +105,21 @@
 			
 			$(".unik"+unik+" .menutab_dekstop li").each(function(x){
 				
-				$(".unik"+unik+" #open_tab_"+i+"_"+x+"_"+unik).click(function(){
+				$(".unik"+unik+" #open_tab_"+i+"_"+x).click(function(){
 					
 					$(".unik"+unik+" .menutab_dekstop li a").removeClass();
-			    	$(".unik"+unik+" a#open_tab_"+i+"_"+x+"_"+unik).addClass("active");
+			    	$(".unik"+unik+" a#open_tab_"+i+"_"+x).addClass("active");
 			    	$(".unik"+unik+" .show_"+i).hide();
-			    	$(".unik"+unik+" #tabcontent_"+i+"_"+x+"_"+unik).show();
+			    	$(".unik"+unik+" #tabcontent_"+i+"_"+x).show();
 			    	
 				});
 				
-				$(".unik"+unik+" #open_tab_"+i+"_"+x+"_"+unik+"_m").click(function(){
+				$(".unik"+unik+" #open_tab_"+i+"_"+x+"_m").click(function(){
 
 			    	$(".unik"+unik+" #tabcontent_"+i+" li a").removeClass("active");
 			    	$(this).addClass("active");
 			    	$(".unik"+unik+" .show_"+i).hide();
-			    	$(".unik"+unik+" #tabcontent_"+i+"_"+x+"_"+unik).show();
+			    	$(".unik"+unik+" #tabcontent_"+i+"_"+x).show();
 			    	
 			    });
 				
