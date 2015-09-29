@@ -17,7 +17,10 @@
         </div>
     </div>
 <?php } ?>
-<?php 
+<?php
+	if($urutanTab==null || $urutanTab==""){
+		$urutanTab = 1;
+	}
 	$id = "gallery-carousel-".uniqid();
 	$boxes = 1;
 	if(!$this->select("boxes")->isEmpty()){
@@ -76,22 +79,32 @@
 			?>
 			<div class="menutab_dekstop">
 				<ul>
-					<?php for($x=0;$x<$tabs;$x++) { ?>
-						<li><a id="open_tab_<?php echo $i ?>_<?php echo $x ?>" class="<?php echo $x==0?'active':''?>" href="javascript:void(0);"><?php echo $this->input('title-tabs-'.$i.'-'.$x)?></a></li>
-					<?php } ?>
+					<?php
+						$urutanTab1 = $urutanTab;
+						for($x=0;$x<$tabs;$x++) { ?>
+						<li><a id="open_tab_<?php echo $i ?>_<?php echo $x."_".$urutanTab1; ?>" class="<?php echo $x==0?'active':''?>" href="javascript:void(0);"><?php echo $this->input('title-tabs-'.$i.'-'.$x)?></a></li>
+					<?php
+							$urutanTab1++;
+						}
+					?>
 				</ul>
 			</div>
 			
 			<div class="tabcontent" id="tabcontent_<?php echo $i ?>">
 				<ul>
-					<?php for($x=0;$x<$tabs;$x++) { ?>
+					<?php
+					$urutanTab2 = $urutanTab;
+						for($x=0;$x<$tabs;$x++) { ?>
 						<li>
-							<a id="open_tab_<?php echo $i ?>_<?php echo $x?>_m" class="menumobile <?php echo $x==0?'active':''?>" href="javascript:void(0);"><?php echo $this->input('title-tabs-'.$i.'-'.$x)->text?></a>
-							<div id="tabcontent_<?php echo $i ?>_<?php echo $x ?>" class="content_show <?php if(!$this->editmode): echo ($x==0)?'showme':''; else: echo 'showme'; endif;?> show_<?php echo $i?>">
+							<a id="open_tab_<?php echo $i ?>_<?php echo $x."_".$urutanTab2;?>_m" class="menumobile <?php echo $x==0?'active':''?>" href="javascript:void(0);"><?php echo $this->input('title-tabs-'.$i.'-'.$x)->text?></a>
+							<div id="tabcontent_<?php echo $i ?>_<?php echo $x."_".$urutanTab2; ?>" class="content_show <?php if(!$this->editmode): echo ($x==0)?'showme':''; else: echo 'showme'; endif;?> show_<?php echo $i?>">
 								<?php echo $this->wysiwyg('tabcontent-'.$i.'-'.$x)?>
 							</div>
 						</li>
-					<?php } ?>
+					<?php
+							$urutanTab2++;
+						}
+					?>
 				</ul>
 			</div>
 		</div>
@@ -99,28 +112,30 @@
 <?php } ?>
 <?php if(!$this->editmode) { ?>
 	<script type="text/javascript">
-		
+		var urutanTab = "<?php echo $urutanTab;?>";
+		if (urutanTab==null || urutanTab=="") {
+			urutanTab = 1;
+		}
 		$(".tabwrap").each(function(i){
 			
 			$(".menutab_dekstop li").each(function(x){
 				
-				$("#open_tab_"+i+"_"+x).click(function(){
+				$("#open_tab_"+i+"_"+x+"_"+urutanTab).click(function(){
 					
 					$(".menutab_dekstop li a").removeClass();
-			    	$("a#open_tab_"+i+"_"+x).addClass("active");
+			    	$("a#open_tab_"+i+"_"+x+"_"+urutanTab).addClass("active");
 			    	$(".show_"+i).hide();
-			    	$("#tabcontent_"+i+"_"+x).show();
-			    	
+			    	$("#tabcontent_"+i+"_"+x+"_"+urutanTab).show();
 				});
 				
-				$("#open_tab_"+i+"_"+x+"_m").click(function(){
+				$("#open_tab_"+i+"_"+x+"_"+urutanTab+"_m").click(function(){
 
 			    	$("#tabcontent_"+i+" li a").removeClass("active");
 			    	$(this).addClass("active");
 			    	$(".show_"+i).hide();
-			    	$("#tabcontent_"+i+"_"+x).show();
-			    	
+			    	$("#tabcontent_"+i+"_"+x+"_"+urutanTab).show();
 			    });
+				urutanTab++;
 				
 			});
 			
