@@ -103,23 +103,23 @@
 		var unik = "<?php echo $unik;?>";
 		$(".unik"+unik).each(function(i){
 			
-			$(".unik"+unik+" .menutab_dekstop li").each(function(x){
+			$(".unik<?php echo $unik;?> .menutab_dekstop li").each(function(x){
 				
-				$(".unik"+unik+" #open_tab_"+i+"_"+x).click(function(){
+				$(".unik<?php echo $unik;?> #open_tab_"+i+"_"+x).click(function(){
 					
-					$(".unik"+unik+" .menutab_dekstop li a").removeClass();
-			    	$(".unik"+unik+" a#open_tab_"+i+"_"+x).addClass("active");
-			    	$(".unik"+unik+" .show_"+i).hide();
-			    	$(".unik"+unik+" #tabcontent_"+i+"_"+x).show();
+					$(".unik<?php echo $unik;?> .menutab_dekstop li a").removeClass();
+			    	$(".unik<?php echo $unik;?> a#open_tab_"+i+"_"+x).addClass("active");
+			    	$(".unik<?php echo $unik;?> .show_"+i).hide();
+			    	$(".unik<?php echo $unik;?> #tabcontent_"+i+"_"+x).show();
 			    	
 				});
 				
-				$(".unik"+unik+" #open_tab_"+i+"_"+x+"_m").click(function(){
+				$(".unik<?php echo $unik;?> #open_tab_"+i+"_"+x+"_m").click(function(){
 
-			    	$(".unik"+unik+" #tabcontent_"+i+" li a").removeClass("active");
+			    	$(".unik<?php echo $unik;?> #tabcontent_"+i+" li a").removeClass("active");
 			    	$(this).addClass("active");
-			    	$(".unik"+unik+" .show_"+i).hide();
-			    	$(".unik"+unik+" #tabcontent_"+i+"_"+x).show();
+			    	$(".unik<?php echo $unik;?> .show_"+i).hide();
+			    	$(".unik<?php echo $unik;?> #tabcontent_"+i+"_"+x).show();
 			    	
 			    });
 				
