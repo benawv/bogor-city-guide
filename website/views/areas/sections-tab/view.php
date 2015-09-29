@@ -19,6 +19,7 @@
 <?php } ?>
 <?php 
 	$id = "gallery-carousel-".uniqid();
+	$unik = uniqid();
 	$boxes = 1;
 	if(!$this->select("boxes")->isEmpty()){
         $boxes = (int) $this->select("boxes")->getData();
@@ -47,7 +48,7 @@
 			<?php endif;?>
 			<?php echo $this->wysiwyg('description-'.$i)?>
 		</div>
-		<div class="tabwrap">
+		<div class="tabwrap unik<?php echo $unik;?>">
 			<?php if($this->editmode) { ?>
 				<div class="alert alert-info" style="height: 75px">
 			        <div class="col-xs-6">
@@ -77,7 +78,7 @@
 			<div class="menutab_dekstop">
 				<ul>
 					<?php for($x=0;$x<$tabs;$x++) { ?>
-						<li><a id="open_tab_<?php echo $i ?>_<?php echo $x ?>" class="<?php echo $x==0?'active':''?>" href="javascript:void(0);"><?php echo $this->input('title-tabs-'.$i.'-'.$x)?></a></li>
+						<li><a id="open_tab_<?php echo $i ?>_<?php echo $x."_".$unik ?>" class="<?php echo $x==0?'active':''?>" href="javascript:void(0);"><?php echo $this->input('title-tabs-'.$i.'-'.$x)?></a></li>
 					<?php } ?>
 				</ul>
 			</div>
@@ -86,8 +87,8 @@
 				<ul>
 					<?php for($x=0;$x<$tabs;$x++) { ?>
 						<li>
-							<a id="open_tab_<?php echo $i ?>_<?php echo $x?>_m" class="menumobile <?php echo $x==0?'active':''?>" href="javascript:void(0);"><?php echo $this->input('title-tabs-'.$i.'-'.$x)->text?></a>
-							<div id="tabcontent_<?php echo $i ?>_<?php echo $x ?>" class="content_show <?php if(!$this->editmode): echo ($x==0)?'showme':''; else: echo 'showme'; endif;?> show_<?php echo $i?>">
+							<a id="open_tab_<?php echo $i ?>_<?php echo $x."_".$unik?>_m" class="menumobile <?php echo $x==0?'active':''?>" href="javascript:void(0);"><?php echo $this->input('title-tabs-'.$i.'-'.$x)->text?></a>
+							<div id="tabcontent_<?php echo $i ?>_<?php echo $x."_".$unik ?>" class="content_show <?php if(!$this->editmode): echo ($x==0)?'showme':''; else: echo 'showme'; endif;?> show_<?php echo $i?>">
 								<?php echo $this->wysiwyg('tabcontent-'.$i.'-'.$x)?>
 							</div>
 						</li>
@@ -99,26 +100,26 @@
 <?php } ?>
 <?php if(!$this->editmode) { ?>
 	<script type="text/javascript">
-		
-		$(".tabwrap").each(function(i){
+		var unik = "<?php echo $unik;?>";
+		$(".unik"+unik).each(function(i){
 			
-			$(".menutab_dekstop li").each(function(x){
+			$(".unik"+unik+" .menutab_dekstop li").each(function(x){
 				
-				$("#open_tab_"+i+"_"+x).click(function(){
+				$(".unik"+unik+" #open_tab_"+i+"_"+x+"_"+unik).click(function(){
 					
-					$(".menutab_dekstop li a").removeClass();
-			    	$("a#open_tab_"+i+"_"+x).addClass("active");
-			    	$(".show_"+i).hide();
-			    	$("#tabcontent_"+i+"_"+x).show();
+					$(".unik"+unik+" .menutab_dekstop li a").removeClass();
+			    	$(".unik"+unik+" a#open_tab_"+i+"_"+x+"_"+unik).addClass("active");
+			    	$(".unik"+unik+" .show_"+i).hide();
+			    	$(".unik"+unik+" #tabcontent_"+i+"_"+x+"_"+unik).show();
 			    	
 				});
 				
-				$("#open_tab_"+i+"_"+x+"_m").click(function(){
+				$(".unik"+unik+" #open_tab_"+i+"_"+x+"_"+unik+"_m").click(function(){
 
-			    	$("#tabcontent_"+i+" li a").removeClass("active");
+			    	$(".unik"+unik+" #tabcontent_"+i+" li a").removeClass("active");
 			    	$(this).addClass("active");
-			    	$(".show_"+i).hide();
-			    	$("#tabcontent_"+i+"_"+x).show();
+			    	$(".unik"+unik+" .show_"+i).hide();
+			    	$(".unik"+unik+" #tabcontent_"+i+"_"+x+"_"+unik).show();
 			    	
 			    });
 				
