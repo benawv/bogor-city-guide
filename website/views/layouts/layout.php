@@ -43,7 +43,7 @@
 		$script = $this->document->getProperty('script')?$this->document->getProperty('script'):"";
 		
 		if( ($src_script != null || $script != null) && $this->request->controller != 'wishlist'){
-			echo "<script src=".$src_script."  type='text/javascript'></script>";
+			echo "<script src='".$src_script."'  type='text/javascript'></script>";
 			echo "<script>".$script."</script>";
 			echo '<noscript><img width="1" height="1" style="border:0" src="'.$this->document->getProperty('noscript').'" /></noscript>';
 		}

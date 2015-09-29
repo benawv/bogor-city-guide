@@ -100,8 +100,7 @@
 <?php } ?>
 <?php if(!$this->editmode) { ?>
 	<script type="text/javascript">
-		var unik = "<?php echo $unik;?>";
-		$(".unik"+unik).each(function(i){
+		$(".unik<?php echo $unik;?>").each(function(i){
 			
 			$(".unik<?php echo $unik;?> .menutab_dekstop li").each(function(x){
 				
