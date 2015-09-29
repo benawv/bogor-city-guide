@@ -17,11 +17,9 @@
         </div>
     </div>
 <?php } ?>
-<?php
-	if($urutanTab==null || $urutanTab==""){
-		$urutanTab = 1;
-	}
+<?php 
 	$id = "gallery-carousel-".uniqid();
+	$unik = uniqid();
 	$boxes = 1;
 	if(!$this->select("boxes")->isEmpty()){
         $boxes = (int) $this->select("boxes")->getData();
@@ -50,7 +48,7 @@
 			<?php endif;?>
 			<?php echo $this->wysiwyg('description-'.$i)?>
 		</div>
-		<div class="tabwrap">
+		<div class="tabwrap unik<?php echo $unik;?>">
 			<?php if($this->editmode) { ?>
 				<div class="alert alert-info" style="height: 75px">
 			        <div class="col-xs-6">
@@ -79,32 +77,22 @@
 			?>
 			<div class="menutab_dekstop">
 				<ul>
-					<?php
-						$urutanTab1 = $urutanTab;
-						for($x=0;$x<$tabs;$x++) { ?>
-						<li><a id="open_tab_<?php echo $i ?>_<?php echo $x."_".$urutanTab1; ?>" class="<?php echo $x==0?'active':''?>" href="javascript:void(0);"><?php echo $this->input('title-tabs-'.$i.'-'.$x)?></a></li>
-					<?php
-							$urutanTab1++;
-						}
-					?>
+					<?php for($x=0;$x<$tabs;$x++) { ?>
+						<li><a id="open_tab_<?php echo $i ?>_<?php echo $x."_".$unik ?>" class="<?php echo $x==0?'active':''?>" href="javascript:void(0);"><?php echo $this->input('title-tabs-'.$i.'-'.$x)?></a></li>
+					<?php } ?>
 				</ul>
 			</div>
 			
 			<div class="tabcontent" id="tabcontent_<?php echo $i ?>">
 				<ul>
-					<?php
-					$urutanTab2 = $urutanTab;
-						for($x=0;$x<$tabs;$x++) { ?>
+					<?php for($x=0;$x<$tabs;$x++) { ?>
 						<li>
-							<a id="open_tab_<?php echo $i ?>_<?php echo $x."_".$urutanTab2;?>_m" class="menumobile <?php echo $x==0?'active':''?>" href="javascript:void(0);"><?php echo $this->input('title-tabs-'.$i.'-'.$x)->text?></a>
-							<div id="tabcontent_<?php echo $i ?>_<?php echo $x."_".$urutanTab2; ?>" class="content_show <?php if(!$this->editmode): echo ($x==0)?'showme':''; else: echo 'showme'; endif;?> show_<?php echo $i?>">
+							<a id="open_tab_<?php echo $i ?>_<?php echo $x."_".$unik?>_m" class="menumobile <?php echo $x==0?'active':''?>" href="javascript:void(0);"><?php echo $this->input('title-tabs-'.$i.'-'.$x)->text?></a>
+							<div id="tabcontent_<?php echo $i ?>_<?php echo $x."_".$unik ?>" class="content_show <?php if(!$this->editmode): echo ($x==0)?'showme':''; else: echo 'showme'; endif;?> show_<?php echo $i?>">
 								<?php echo $this->wysiwyg('tabcontent-'.$i.'-'.$x)?>
 							</div>
 						</li>
-					<?php
-							$urutanTab2++;
-						}
-					?>
+					<?php } ?>
 				</ul>
 			</div>
 		</div>
@@ -112,30 +100,28 @@
 <?php } ?>
 <?php if(!$this->editmode) { ?>
 	<script type="text/javascript">
-		var urutanTab = "<?php echo $urutanTab;?>";
-		if (urutanTab==null || urutanTab=="") {
-			urutanTab = 1;
-		}
-		$(".tabwrap").each(function(i){
+		var unik = "<?php echo $unik;?>";
+		$(".unik"+unik).each(function(i){
 			
-			$(".menutab_dekstop li").each(function(x){
+			$(".unik"+unik+" .menutab_dekstop li").each(function(x){
 				
-				$("#open_tab_"+i+"_"+x+"_"+urutanTab).click(function(){
+				$(".unik"+unik+" #open_tab_"+i+"_"+x).click(function(){
 					
-					$(".menutab_dekstop li a").removeClass();
-			    	$("a#open_tab_"+i+"_"+x+"_"+urutanTab).addClass("active");
-			    	$(".show_"+i).hide();
-			    	$("#tabcontent_"+i+"_"+x+"_"+urutanTab).show();
+					$(".unik"+unik+" .menutab_dekstop li a").removeClass();
+			    	$(".unik"+unik+" a#open_tab_"+i+"_"+x).addClass("active");
+			    	$(".unik"+unik+" .show_"+i).hide();
+			    	$(".unik"+unik+" #tabcontent_"+i+"_"+x).show();
+			    	
 				});
 				
-				$("#open_tab_"+i+"_"+x+"_"+urutanTab+"_m").click(function(){
+				$(".unik"+unik+" #open_tab_"+i+"_"+x+"_m").click(function(){
 
-			    	$("#tabcontent_"+i+" li a").removeClass("active");
+			    	$(".unik"+unik+" #tabcontent_"+i+" li a").removeClass("active");
 			    	$(this).addClass("active");
-			    	$(".show_"+i).hide();
-			    	$("#tabcontent_"+i+"_"+x+"_"+urutanTab).show();
+			    	$(".unik"+unik+" .show_"+i).hide();
+			    	$(".unik"+unik+" #tabcontent_"+i+"_"+x).show();
+			    	
 			    });
-				urutanTab++;
 				
 			});
 			
