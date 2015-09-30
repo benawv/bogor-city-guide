@@ -616,7 +616,7 @@ $(document).keyup(function(e){
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-sm-3">
-                                            <label for="input3">Merk Mobil</label>
+                                            <label for="input3">Merek Mobil</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
                                             <select id="merk" class="form-control required" tabindex="4">
@@ -630,7 +630,7 @@ $(document).keyup(function(e){
                                                 ?>
                                             </select>
                                         <div class="col-sm-4">
-                                            <span id="tooltips2" class="tooltips">*Pilih merk mobil</span>
+                                            <span id="tooltips2" class="tooltips">*Pilih merek mobil</span>
                                         </div><!--/ .col-sm-4 -->
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
@@ -655,13 +655,13 @@ $(document).keyup(function(e){
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-sm-3">
-                                            <label for="input2">Registration No</label>
+                                            <label for="input2">No. Polis</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
                                             <input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="6">
                                             <!--<input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="5" onfocusout="this.value=validateVehicle(this.value)">-->
                                             <label id="notifRegno" style="display:none; color: #f00;">
-                                                Mohon maaf Registrasi Nomor yang Anda masukkan belum benar
+                                                Mohon maaf No Polis yang Anda masukkan belum benar
                                             </label>
                                         </div><!--/ .col-sm-4 -->
                                         <div class="col-sm-4">
@@ -1264,7 +1264,7 @@ $(document).keyup(function(e){
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
-                                                                        <input type="checkbox"  class="no_flood_is_calc" name="no_flood_is_calc" checked data-angka="0" data-target="no_flood_prem" disabled="disabled">
+                                                                        <input type="checkbox"  class="no_flood_is_calc" name="no_flood_is_calc" checked data-angka="0" data-target="no_flood_prem">
                                                                     </td>
                                                                     <td>Flood</td>
                                                                     <td class='no_flood_prem position-text'>-</td>
@@ -1273,7 +1273,7 @@ $(document).keyup(function(e){
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
-                                                                        <input type="checkbox" class="no_earthquake_is_calc" name="no_earthquake_is_calc" checked data-angka="0" data-target="no_earthquake_prem" disabled="disabled">
+                                                                        <input type="checkbox" class="no_earthquake_is_calc" name="no_earthquake_is_calc" checked data-angka="0" data-target="no_earthquake_prem">
                                                                     </td>
                                                                     <td>Earthquake</td>
                                                                     <td class='no_earthquake_prem position-text'>-</td>
@@ -1282,7 +1282,7 @@ $(document).keyup(function(e){
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
-                                                                        <input type="checkbox" class="no_riot_is_calc" name="no_tpl_is_calc" checked data-angka="0" data-target="no_riot_prem"  disabled="disabled">
+                                                                        <input type="checkbox" class="no_riot_is_calc" name="no_tpl_is_calc" checked data-angka="0" data-target="no_riot_prem">
                                                                     </td>
                                                                     <td>Strike, Riot, and Civil Commotion</td>
                                                                     <td class='no_riot_prem position-text'>-</td>
@@ -1291,7 +1291,7 @@ $(document).keyup(function(e){
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
-                                                                        <input type="checkbox" class="no_terror_is_calc" name="no_terror_is_calc" checked data-angka="0" data-target="no_terror_prem"  disabled="disabled">
+                                                                        <input type="checkbox" class="no_terror_is_calc" name="no_terror_is_calc" checked data-angka="0" data-target="no_terror_prem">
                                                                     </td>
                                                                     <td>Terrorist and Sabotage</td>
                                                                     <td class='no_terror_prem position-text'>-</td>
@@ -1334,7 +1334,7 @@ $(document).keyup(function(e){
                                                                     <tfoot>
                                                                         <tr>
                                                                             <td></td>
-                                                                            <td style="background: #e2e3e3;">Total Premium</td>
+                                                                            <td style="background: #e2e3e3;">Total Premium*</td>
                                                                             <td style="background: #e2e3e3;"class='no_totalPremium position-text'></td>
                                                                             <!-- <td></td>
                                                                             <td></td> -->
@@ -1343,6 +1343,7 @@ $(document).keyup(function(e){
                                                                 </tbody>
                                                             </table>
                                                         </div><!--/ .tabScroll -->
+                                                        * Total Premi Belum Termasuk Biaya Administrasi
                                                     </div><!--/ .content_show -->
                                                 </li>
                                             </ul>

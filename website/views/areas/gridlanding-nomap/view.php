@@ -1,5 +1,10 @@
-<style>
+<link rel="stylesheet" href="/website/static/css/bootstrap-grid-only.css">
+<link rel="stylesheet" href="/website/static/css/landing-tasbih.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
+
+
+<style>
     #agent-locator
     {
         position: relative;
@@ -14,7 +19,7 @@
         width: 100% !important;
         min-width: 100% !important;
         max-width: 100% !important;
-        height: 480px;
+        height: 328px !important;
     }
 
     #agent-locator .searchbox
@@ -27,27 +32,25 @@
     {
         width: 78%;
         border: solid 1px #ddd;
-        font-size: larger;
+        font-size: small;
         padding: 12px 24px;
         margin: 0 auto;
         line-height: 1.5;
-        float : left;
     }
 
-    #agent-locator .searchbox > button.search-btn
-    {
-        width: 20%;
-        margin: 0 auto;
-        font-size: larger;
-        padding: 12px 24px;
-        display: inline-block;
-        text-transform: uppercase;
-        background-color: #003781;
-        border: solid 1px #003781;
-        border-radius: 0;
-        color: white;
-        line-height: 1.5;
-        float: right;
+    #agent-locator .searchbox > button.search-btn {
+      width: 22%;
+      margin: 0 auto;
+      font-size: small;
+      padding: 14px 2px;
+      display: inline-block;
+      text-transform: uppercase;
+      background-color: #003781;
+      border: solid 1px #003781;
+      border-radius: 0;
+      color: white;
+      line-height: 0;
+      float: right;
     }
 
     /* Respsonsive */
@@ -68,24 +71,104 @@
             margin-top: 16px;
         }
     }
+    
 
 </style>
 
 
-<div class="wrapper clearfix">
+                	<?php if($this->editmode) { ?>
+	            How many box you want to show?
+	
+	            <?php
+	                // prepare the store
+	                $selectStore = [];
+	                for($i=2; $i<=8; $i++) {
+	                    $selectStore[] = [$i, $i];
+	                }
+	            ?>
+	            <?php echo $this->select("slides",[
+	                "store" => $selectStore,
+	                "reload" => true
+	            ]); ?>
 
-    <div id="agent-locator">
-        <div class="searchbox">
-            <input type="search" name="search" id="search" placeholder="Cari agen terdekat dari lokasi anda">
-            <button type="button" name="search-btn" id="search-btn" class="search-btn">
-                Cari Agen <i class="fa fa-search"></i>
-            </button>
-            <div class="clearfix"></div>
-        </div><!--/ .searchbox -->
-        <div id="maparea"></div>
-    </div><!--/ #agent-locator -->
+	<?php } ?>
+	<?php 
+		$id = "container-carousel-".uniqid();
+		$slides = 1;
+		if(!$this->select("slides")->isEmpty()){
+	        $slides = (int) $this->select("slides")->getData();
+	    }
+	?>
+<section class="landing-tasbih-grid">
+    <div class="container">
+        
+<!--
+        <div class="row">
+            <div class="col-xs-12 col-md-8 pr8">
+-->
 
-    
+                <div class="row">
+                    <?php for($i=1;$i<$slides+1;$i++) { ?>
+                    <?php
+								$color = $this->select('color_'.$i)->getData();
+                    ?>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="landing-tasbih-grid--item <?php echo $color;?>">
+                            <div class="landing-tasbih-grid--item-inner">
+                                        <?php echo $this->renderlet("artikel".$i, array(
+                                            "controller" => "landing",
+                                            "action" => "renderlet",
+											"editmode" => $this->editmode,
+                                            "title" => "Drag objek artikel",
+                                            "height" => 200,
+                                            "maxlength" => 10
+                                        )); ?>
+                                <!--<a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>-->
+                            </div><!--/ .landing-tasbih-grid--item-inner -->
+                            <?php if($this->editmode) { ?>
+			                        	
+			                        	<p>
+				                        <?php 
+				                        	echo "Color: <br />";
+			                        		echo $this->select("color_".$i,array(
+											    "store" => array(
+											        array("red", "Red"),
+											        array("lightgreen", "Light Green"),
+                                                    array("green", "Green"),
+											        array("purple", "Purple"),
+											        array("blue", "Blue"),
+											        array("orange", "Orange")
+											    ),
+											    "reload" => true
+											)); 
+										?>
+			                        	</p>
+			                        <?php } ?>
+                        </div><!--/ .landing-tasbih-grid--item -->
+                    </div><!--/ .col-xs-12 -->
+<?php }?>
+                    
+
+                </div><!--/ .row -->
+                                    
+
+<!--            </div>/ .col-xs-12 -->
+<!--                        <div class="col-xs-12 col-md-4 pl8">-->
+
+<!--                <div class="landing-tasbih-map" style="height:335px !important;">-->
+<!--                    <div id="agent-locator">-->
+<!--                        <div id="maparea"></div>-->
+<!--                    </div>/ #agent-locator -->
+<!--                    <div class="landing-tasbih-map--button">-->
+<!--                        <a href='http://agen.imkepo.com/' target="_blank"><i class="fa fa-search"></i> Temukan Agen</a>-->
+<!--                    </div>/ .landing-tasbih-map--button -->
+<!--                </div>/ .landing-tasbih-map -->
+
+<!--            </div>/ .col-xs-12 -->
+<!--        </div>/ .row -->
+        
+    </div><!--/ .container -->
+</section><!--/ .landing-tasbih-grid -->
 <script type="text/javascript">
     var map = new Object();
     var imageCurrentMarker = '/website/static/images/map-pointer-green.png';
@@ -233,8 +316,8 @@
 
             var places = searchBox.getPlaces();
             $.each(places, function(i, item){
-                lat = item.geometry.location.lat();
-                long = item.geometry.location.lng();
+                lat = item.geometry.location.A;
+                long = item.geometry.location.F;
             });
             titikMarker = "search";
             var titik = radius(lat, long);
@@ -246,7 +329,7 @@
             //	marker = new google.maps.Marker({
             //		position: new google.maps.LatLng(locations[i][1], locations[i][2]),
             //		map: map,
-            //		icon: 'http://agen.allianz.co.id/css/img/map-pointer-green.png',
+            //		icon: 'http://agen.imkepo.com//css/img/map-pointer-green.png',
             //		title: locations[i][3] + ' - ' + locations[i][4]
             //	});
             //
@@ -256,7 +339,7 @@
             //searchMarker = new google.maps.Marker({
             //			  position: mySearchLatlng,
             //			  map: map,
-            //			  icon: 'http://agen.allianz.co.id/css/img/pointer-blue.png'
+            //			  icon: 'http://agen.imkepo.com//css/img/pointer-blue.png'
             //			});
             //
             //if ( google.maps.geometry.poly.containsLocation(mySearchLatlng, jakartaPoly ) ) {
@@ -475,8 +558,7 @@
 								    position: new google.maps.LatLng(item.titikKordinat.latitude, item.titikKordinat.longitude),
 								    draggable: false,
 								    icon: image,
-								    map: map,
-								    html: data_content
+								    map: map
 							    });
 				    }
 				    else {
@@ -484,8 +566,7 @@
 								    position: new google.maps.LatLng(item.titikKordinat.latitude, item.titikKordinat.longitude),
 								    draggable: false,
 									icon: image2,
-								    map: map,
-								    html: data_content
+								    map: map
 							    });
 				    }
 				    markers.push(marker);
@@ -494,8 +575,10 @@
 			    for(x=0;x < markers.length;x++){
 				    var marker = markers[x];
 				    google.maps.event.addListener(marker, 'click', function () {
-					    infowindow.setContent(this.html);
-					    infowindow.open(map, this);
+					    //infowindow.setContent(this.html);
+					    //infowindow.open(map, this);
+						window.open('http://agen.imkepo.com/', '_blank');
+						//window.location.href = "http://agen.imkepo.com/";
 				    });
 			    }
                 
@@ -508,8 +591,9 @@
                         html: "Lokasi Anda saat ini."
                     });
                     google.maps.event.addListener(marker2, 'click', function () {
-                        infowindow.setContent(this.html);
-                        infowindow.open(map, this);
+                        //infowindow.setContent(this.html);
+                        //infowindow.open(map, this);
+						window.open('http://agen.imkepo.com/', '_blank');
                     });
                 }
                 
@@ -593,8 +677,9 @@
 			    for(x=0;x < markers.length;x++){
 				    var marker = markers[x];
 				    google.maps.event.addListener(marker, 'click', function () {
-					    infowindow.setContent(this.html);
-					    infowindow.open(map, this);
+					    //infowindow.setContent(this.html);
+					    //infowindow.open(map, this);
+						window.open('http://agen.imkepo.com/', '_blank');
 				    });
 			    }
 			}

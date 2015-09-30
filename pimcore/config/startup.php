@@ -116,3 +116,38 @@ register_shutdown_function(function () {
 
 // attach global shutdown event
 Pimcore::getEventManager()->attach("system.shutdown", array("Pimcore", "shutdown"), 9999);
+
+// startup module api
+if (!defined("WEBSITE_MODULE_PATH"))  define("WEBSITE_MODULE_PATH", PIMCORE_DOCUMENT_ROOT . "/modules");
+ 
+$front = Zend_Controller_Front::getInstance();
+$front->addModuleDirectory(PIMCORE_DOCUMENT_ROOT . "/modules");
+ 
+ 
+//------------------------------------------------------------------------------------------------------------- Api
+$autoloader = Zend_Loader_Autoloader::getInstance();
+$autoloader->registerNamespace('Api');
+ 
+set_include_path(implode(PATH_SEPARATOR, array(
+      WEBSITE_MODULE_PATH . '/Api/lib',
+      get_include_path(),
+)));
+ 
+$resourceLoader = new Zend_Application_Module_Autoloader(array(
+      'namespace' => 'Api',
+      'basePath' =>  WEBSITE_MODULE_PATH . "/api",
+));
+ 
+ 
+$router = $front->getRouter();
+ 
+$routeCompany = new Zend_Controller_Router_Route(
+    'api/:controller/:action/*',
+    array(
+         'module'       => 'api',
+         "controller"   => "default",
+         "action"       => "default"
+    )
+);
+ 
+$router->addRoute("company", $routeCompany);
