@@ -4,6 +4,7 @@
 		
         public function savingAction() {
 	
+
             $TanggalPembuatan = $_POST["tgl"];
 			$tglBuat_ = explode("/", $TanggalPembuatan);
             $tglBuat_[0]; //day
@@ -27,24 +28,28 @@
 			
 			if($Frekuensi == 1){
 				$frek = 'Tahunan';
+                $valFrek = 1;
 			}
 			else if($Frekuensi == 2){
 				$frek = 'Semesteran';
+                $valFrek = 0.52;
 			}
 			else{
 				$frek = 'Triwulan';
+                $valFrek = 0.27;
 			}
             
 			$kat = $_POST["kategori"];
             
 			$rates= new Object_TasbihRate_List();
 			$rates->setCondition("kelamin='".$JenisKelamin."' and frekuensi=$Kontribusi and usia=$Usia");
-			$rate='';
+            $rate='';
 			foreach($rates as $items){
 				$rate=$items->rate;
 			}
 		
-			$Calculation = ($rate*$AsuransiJiwa)/1000; //The Pattern of ALLIANZ
+			$Calculation = ($rate*$AsuransiJiwa)/1000*$valFrek; //The Pattern of ALLIANZ
+//            $Calculation = ((($rate+$rate2*($persen/100)+$mil)*$AsuransiJiwa)/1000)*$valFrek;
             //SetData
 	        
 			$tglBuat = strtotime($TanggalPembuatan);
