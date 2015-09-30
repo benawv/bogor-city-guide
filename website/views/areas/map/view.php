@@ -15,6 +15,32 @@
                 if( $isi != '') $getStatus = $isi;
                 else if($isi2 != '') $getStatus = $isi2;
 //                $getStatus = 'mobilku';
+                if ($getStatus != ''){
+
+
+?>
+					<script type="text/javascript">
+						$(document).ready(function(){
+							var masukpemasaran = 'ya';
+
+	                             $.ajax({
+	                                url      : '/kantor-pemasaran',
+	                                type     : 'POST',
+	                                crossDomain: true,
+	                                data     : {
+	                                            'masukpemasaran' : masukpemasaran
+	                                            },
+	                                complete  : function(sukses){
+	                                       // console.log(sukses);
+	                                       // alert(masukpemasaran)
+	                                       // window.open('/layanan/hubungi-kami/kantor-pemasaran-allianz', '_blank');
+	                                       //document.location.href='/agent-locator';
+	                                }
+	                            });
+                         });
+					</script>
+<?php
+				}
 ?>
 
 <style>

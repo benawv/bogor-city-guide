@@ -123,7 +123,22 @@ $(document).ready(function(){
                             <?php $sessionCalc = new Zend_Session_Namespace(calc_mobilku); ?>
                             <?php $sessionCalc->status ="mobilku"; ?>
 //                            alert("<?php echo $sessionCalc->status; ?>");
-                            window.open('/layanan/hubungi-kami/kantor-pemasaran-allianz', '_blank');
+                            // var masukpemasaran = 'ya';
+
+                            //  $.ajax({
+                            //     url      : '/kantor-pemasaran',
+                            //     type     : 'POST',
+                            //     crossDomain: true,
+                            //     data     : {
+                            //                 'masukpemasaran' : masukpemasaran
+                            //                 },
+                            //     complete  : function(sukses){
+                            //            // console.log(sukses);
+                            //            // alert(masukpemasaran)
+                            //            // window.open('/layanan/hubungi-kami/kantor-pemasaran-allianz', '_blank');
+                            //            //document.location.href='/agent-locator';
+                            //     }
+                            // });
 
                           /*$.ajax({
                               url      : '/v1/api/calculator',
@@ -156,7 +171,8 @@ $(document).ready(function(){
                             <?php $sessionCalc = new Zend_Session_Namespace(calc_mobilku); ?>
                             <?php $sessionCalc->status ="mobilku"; ?>
 //                            alert("<?php echo $sessionCalc->status; ?>");
-                            window.open('/kalkulator/mobilku', '_blank');
+                            window.open('/kalkulator/mobilku','_self');
+                            // document.location.href('/kalkulator/mobilku');
 
                           /*$.ajax({
                               url      : '/v1/api/calculator',

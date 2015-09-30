@@ -943,7 +943,7 @@ $(document).keyup(function(e){
                                                                 </tr>
                                                                 <tfoot>
                                                                     <tr>
-                                                                        <td style="background: #e2e3e3;">Total Premium</td>
+                                                                        <td style="background: #e2e3e3;">Total Premium*</td>
                                                                         <td style="background: #e2e3e3;" class='totalPremium position-text'></td>
                                                                         <!-- <td></td>
                                                                         <td></td> -->
@@ -1055,7 +1055,7 @@ $(document).keyup(function(e){
                                                                 </tr>
                                                                 <tfoot>
                                                                     <tr>
-                                                                        <td style="background: #e2e3e3;">Total Premium</td>
+                                                                        <td style="background: #e2e3e3;">Total Premium*</td>
                                                                         <!-- <td></td>
                                                                         <td></td> -->
                                                                         <td style="background: #e2e3e3;" class='totalPremium2 position-text'></td>
@@ -1169,7 +1169,7 @@ $(document).keyup(function(e){
                                                                     <tr>
                                                                         <!-- <td></td>
                                                                         <td></td> -->
-                                                                        <td style="background: #e2e3e3;">Total Premium</td>
+                                                                        <td style="background: #e2e3e3;">Total Premium*</td>
                                                                         <td style="background: #e2e3e3;" class='totalPremium3 position-text'></td>
                                                                     </tr>
                                                                 </tfoot>
@@ -1343,8 +1343,8 @@ $(document).keyup(function(e){
                                                                 </tbody>
                                                             </table>
                                                         </div><!--/ .tabScroll -->
-                                                        * Total Premi Belum Termasuk Biaya Administrasi
                                                     </div><!--/ .content_show -->
+                                                    * Total Premi Belum Termasuk Biaya Administrasi
                                                 </li>
                                             </ul>
                                         </div><!--/ .tabcontent -->
