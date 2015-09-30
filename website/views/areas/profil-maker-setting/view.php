@@ -17,7 +17,8 @@
             z-index: 1;
             line-height: 52px;
             min-height: 52px;
-            top: 342px;
+            /*top: 342px;*/
+            bottom: 0;
           }
           #ava2-m .avatar-caption--footer, #ava3-m .avatar-caption--footer {
             line-height: 15px;
@@ -31,15 +32,27 @@
             width: 20px !important;
             left: 15px !important;
           }
+          #ava21 img { display: none; }
 
-        @media only screen and (max-width : 640px) { 
+        @media only screen and (max-width : 480px) { 
             .cropit1 {
                 width: 100%;
                 background-position: 0px;
             } 
+            #cropped-ava21 {
+                width: 100%;
+                height: auto;
+            }
+            #canvas-ava21, .canvas-container, .upper-canvas {
+                width: 100% !important;
+                height: auto !important;
+            }
             section.profile-maker .timelineContainer {
                 width: 100%;
                 max-width: 100%;
+            }
+            section.profile-maker .page-maker--form {
+                margin: 105px auto 32px;
             }
         }
         
@@ -336,10 +349,11 @@
 
                 <div id="ava21" class="page-maker--placeholder" style="display: none">
                      <div id="image-cropper-ava21">	 
-	                        <div id="cropped-ava21" class="cropit-image-preview cropit-ava21">               	
+	                        <div id="cropped-ava21" class="cropit-image-preview cropit-ava21">     
+                                <?php $session = new Zend_Session_Namespace('srcImage'); ?> 
+
 		                        <canvas id="canvas-ava21" width="472" height="394" style="border:1px solid #ccc">
-		                        	
-		                        </canvas>
+                                <img src="<?php echo $session->src?>" id="myImg">
 		                        <!--
                                 <div class="avatar-caption--footer" id = "imgid">
                                     <img src="/website/static/images/profile-maker/fb.png" alt=""  style="position: absolute; width: 29px; left: 19px; top: 11px;">
@@ -717,8 +731,13 @@
 	var canvas = new fabric.Canvas('canvas-ava21', {
 		backgroundColor: 'white'
 	});
-	
+
+    //take img tag by id
+    imgElement = document.getElementById('myImg');
+
+    //get canvas size
 	cvsW = canvas.getWidth();
+    cvsH = canvas.getHeight();
 	
 	// Add Grey Rectangle object bottom of canvas
 	var rect = new fabric.Rect({
@@ -730,10 +749,11 @@
 		originY: "top"
 	});
 	canvas.add(rect);
-	canvas.sendToBack(rect);
+	//canvas.sendToBack(rect);
+    canvas.bringForward(rect);
 	
 	// Add FB Icon bottom of canvas
-	fabric.Image.fromURL('/website/static/images/profile-maker/fb.png', function(img){
+	var fb = new fabric.Image.fromURL('/website/static/images/profile-maker/fb.png', function(img){
 		img.scaleToWidth(30);
 		canvas.add(img);
 	}, {
@@ -756,25 +776,83 @@
 	canvas.add(text);
 	
 	// Add Allianz icon on top right of canvas
-	canvas.setOverlayImage('/website/static/images/profile-maker/allianz-logo.png', canvas.renderAll.bind(canvas), {
+	var logo = canvas.setOverlayImage('/website/static/images/profile-maker/allianz-logo.png', canvas.renderAll.bind(canvas), {
 		left: 410,
 		top: 10,
 		originX: 'left',
 		originY: 'top'
 	});
 	
-	// Add uploaded image in canvas
-	fabric.Image.fromURL('<?php echo $session->src?>', function(img){
-			canvas.add(img);
-			canvas.centerObject(img);
-			canvas.sendToBack(img);
-			canvas.setActiveObject(img);
-		}, 
-		{
-			lockUniScaling: true
-		}
-	);
-	
+	//Add uploaded image in canvas
+	// var imgInstance = new fabric.Image.fromURL('<?php echo $session->src?>', function(img){
+	// 		canvas.add(img);
+	// 		canvas.centerObject(img);
+	// 		canvas.sendToBack(img);
+	// 		canvas.setActiveObject(img);
+	// 	}, 
+	// 	{
+	// 		lockUniScaling: true
+	// 	}
+	// );
+    
+    //get original image size
+    ih = imgElement.naturalHeight;
+    iw = imgElement.naturalWidth;
+    // console.log(iw);
+    // console.log(ih);
+    // console.log(cvsW);
+    // console.log(cvsH);
+
+    //keep aspect ratio pas render image
+    width_ratio  = cvsW  / iw;
+    height_ratio = cvsH / ih;
+    if (width_ratio > height_ratio) {
+        fw = iw * width_ratio;
+        fh = ih * fw / iw;
+        //alert("if");
+    } else {
+        fh = ih * height_ratio;
+        fw = iw * fh / ih;
+        //alert("else");  
+    }
+
+    // //manggil image yang aspect ratio ke canvas
+    var imgInstance = new fabric.Image(imgElement);
+        imgInstance.set({
+        width: fw,
+        height: fh
+    });
+        
+    //set visibility resizer
+    imgInstance.setControlsVisibility ({
+        mt: false,
+        mr: false,
+        mb: false,
+        ml: false
+    });    
+    canvas.add(imgInstance);
+    canvas.centerObject(imgInstance);
+    canvas.sendToBack(imgInstance);
+	canvas.setActiveObject(imgInstance);
+    canvas.renderAll();
+
+    //grouping all object
+    // var medium = new fabric.Group([rect, text]);
+    // canvas.add(medium);
+    // canvas.renderAll();
+
+    //trying to cloning
+    // $('#clone').click(function() {
+    //     //cloning object canvas
+    //     var obj = canvas.getActiveObject();
+    //     var vobj = fabric.util.object.clone(obj);
+    //     vobj.clone(function(c) {
+    //         canvas.add(c);
+    //         console.log(vobj);
+    //         canvas.renderAll();
+    //     });
+    // });
+
 	// Binding click for Pratinjau and Simpan Button
 	$('#preview, #save').click(function(){
 		nama1 = $('#bawah1').val();
@@ -896,14 +974,14 @@
                      //console.log(val_ava2);
                 }
             });
- /* Resize with cropit */
+        /* Resize with cropit */
            $('#image-cropper-ava3').cropit({ 
                 //exportZoom: 2,
                 imageState: {
                     src: '<?php echo $session->src ?>',
                 },
                 imageBackground: true,
-                imageBackfroundBorderWidth: 1,
+                imageBackgroundBorderWidth: 1,
                 smallImage: 'allow',
                 freeMove: true,
                 onOffsetChange: function(offset) {
@@ -957,7 +1035,7 @@
                     src: '<?php echo $session->src ?>',
                 },
                 imageBackground: true,
-                imageBackfroundBorderWidth: 1,
+                imageBackgroundBorderWidth: 1,
                 smallImage: 'allow',
                 freeMove: true,
             });
@@ -967,7 +1045,7 @@
                     src: '<?php echo $session->src ?>',
                 },
                 imageBackground: true,
-                imageBackfroundBorderWidth: 1,
+                imageBackgroundBorderWidth: 1,
                 smallImage: 'allow',
                 freeMove: true
             });
@@ -996,6 +1074,7 @@
         //alert(x);
         //alert(id);
     }
-                        
+
+                      
 </script>
 

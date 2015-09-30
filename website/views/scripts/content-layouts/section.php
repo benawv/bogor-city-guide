@@ -60,7 +60,7 @@
 			'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
 			'smartlink-factsheet', 'syariah-factsheet',
 			'pension-factsheet', 'saving-factsheet','multi-video',
-			'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi', 'asn-center', 'gridlanding','artikelalanding','landing-informasi-produk',
+			'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 'brosur','kalkulator-investasi', 'asn-center', 'gridlanding','gridlanding-nomap','artikelalanding','landing-informasi-produk',
 			'thankyou-mobilku','add-to-cart-wishlist'))); ?>
 		<div style="clear: both"></div>
 		<div class="items-container">

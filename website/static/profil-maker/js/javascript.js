@@ -315,7 +315,7 @@ $(document).ready(function()
 			    }
 
 			    //mobile condition
-			    if($(window).width() < 640) {
+			    if($(window).width() < 480) {
 			    	//alert("640 coy");
 			    	if(temp == "template1" || temp == "template2" || temp == "template3") {
 			    		//("#cover1").hide();
@@ -323,8 +323,24 @@ $(document).ready(function()
 			    	}
 			    	else if(temp == "template4") {
 			    		//alert("this is avatar 2 comin' up");
-			    		$("#ava21").hide();
-			    		$("#ava2-m").show();
+
+			    		//keep ratio when mobile
+			    		function keepAspectRatio(id, width, height) {
+					        var aspectRatioDiv = document.getElementById("image-cropper-ava21");
+					        aspectRatioDiv.style.width = window.innerWidth;
+					        aspectRatioDiv.style.height = (window.innerWidth / (width / height)) + "px";
+					    }
+
+					    //run the function when the window loads
+					    keepAspectRatio("aspectRatio", 16, 9);
+
+					    //run the function every time the window is resized
+					    window.onresize = function (event) {
+					        keepAspectRatio("aspectRatio", 16, 9);
+					    }
+
+			    		//$("#ava21").hide();
+			    		//$("#ava2-m").show();
 			    	}
 			    	else if(temp == "template5") {
 			    		//alert("this is avatar 1 comin' up");
@@ -438,12 +454,12 @@ $(document).ready(function()
 					//capture avatar
 					else if(temp == "template4"){
 
-						$("#ava2-m").hide();
-	                    $("#ava21").show();
+						//$("#ava2-m").hide();
+	                    //$("#ava21").show();
 	                    
-	                    Caman("#cropped-ava21", '/website/static/images/inkes.jpg', function(){
-		                    console.log('caman js');
-	                    });
+	                    // Caman("#cropped-ava21", '/website/static/images/inkes.jpg', function(){
+		                   //  console.log('caman js');
+	                    // });
 /*
 						
 						html2canvas($('#cropped-ava21'), {
