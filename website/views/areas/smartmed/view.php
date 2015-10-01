@@ -272,6 +272,13 @@
 
 </style>
 
+<style>
+    i.cursor-help {
+       color: #4747FF;
+       cursor: help;
+    }
+</style>
+
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
 
     <div class="description">
@@ -283,8 +290,8 @@
         <div class="row custom-tab-nav">
             <div class="col-xs-12">
                 <ul>
-                    <li class="active"><a href="#first">Step 1</a></li><!--  DON'T REMOVE THIS COMMENT
-                    --><li><a href="#second">Step 2</a></li>
+                    <li class="active"><a href="#first">Langkah 1</a></li><!--  DON'T REMOVE THIS COMMENT
+                    --><li><a href="#second">Langkah 2</a></li>
                 </ul><!--/ .custom-tab -->
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
@@ -296,7 +303,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label><strong>Payment Methods</strong></label>
+                            <label><strong>Metode Pembayaran Premi</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="1" name="payment_methods" id="payment_methods">
@@ -313,31 +320,31 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Family Discount</label>
+                            <label>Family Discount <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#family"></i></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="2" id="family_discount">
-                                <option value="Y">Yes</option>
-                                <option value="N">No</option>
+                                <option value="Y">Ya</option>
+                                <option value="N">Tidak</option>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>No Claim Discount</label>
+                            <label>No Claim Discount <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#claim"></i></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="3" id="no_claim_discount">
-                                <option value="Y">Yes</option>
-                                <option value="N">No</option>
+                                <option value="Y">Ya</option>
+                                <option value="N">Tidak</option>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>IP</label>
+                            <label>Manfaat Rawat Inap <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#rawatInap"></i></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="4" id="ip">
@@ -350,7 +357,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>MAT</label>
+                            <label>Manfaat Melahirkan <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#melahirkan"></i></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="5" id="mat">
@@ -363,7 +370,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>OUT+DEN</label>
+                            <label>Manfaat Rawat Jalan & Rawat Gigi <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#rawatJalan"></i></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="6" id="out_den">
@@ -373,7 +380,7 @@
                     </div><!--/ .form-group -->
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>PLAN IP</label>
+                            <label>Pilihan Plan Manfaat Rawat Inap</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="6" id="planip">
@@ -381,7 +388,7 @@
                                     $cat = new Object_SmartmedPlanType_List();
                                     foreach($cat as $payment)
                                     {
-                                        echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."'>".$payment->getPlanname()."</option>";
+                                        echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."'>"."Plan"." ".$payment->getPlanname()."</option>";
                                     }
                                 ?>
                             </select>
@@ -390,7 +397,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>PLAN MAT</label>
+                            <label>Pilihan Plan Manfaat Melahirkan</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="6" id="planmat">
@@ -398,7 +405,7 @@
                                     $cat = new Object_SmartmedPlanType_List();
                                     foreach($cat as $payment)
                                     {
-                                        echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."'>".$payment->getPlanname()."</option>";
+                                        echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."'>"."Plan"." ".$payment->getPlanname()."</option>";
                                     }
                                 ?>
                             </select>
@@ -407,7 +414,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>PLAN OP+DEN</label>
+                            <label>Pilihan Plan Manfaat Rawat Jalan & rawat Gigi</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="6" id="planop_den">
@@ -415,7 +422,7 @@
                                     $cat = new Object_SmartmedPlanType_List();
                                     foreach($cat as $payment)
                                     {
-                                        echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."'>".$payment->getPlanname()."</option>";
+                                        echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."'>"."Plan"." ".$payment->getPlanname()."</option>";
                                     }
                                 ?>
                             </select>
@@ -457,7 +464,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label><strong>Name</strong></label>
+                            <label><strong>Nama</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="name" placeholder="Name" tabindex="1" required>
@@ -466,19 +473,19 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label><strong>Sex</strong></label>
+                            <label><strong>Jenis Kelamin</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="2" id="sex">
-                                <option value="m">Male</option>
-                                <option value="f">Female</option>
+                                <option value="m">Pria</option>
+                                <option value="f">Wanita</option>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label><strong>Date of Birth</strong></label>
+                            <label><strong>Tanggal Lahir</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control date" id="dob" placeholder="Date of Birth" tabindex="3" required>
@@ -487,7 +494,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label><strong>Calculation Date</strong></label>
+                            <label><strong>Tanggal Kalkulasi</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control date" id="cd" placeholder="Calculation Date" tabindex="4" required>
@@ -520,25 +527,25 @@
                     <table class="table table-bordered" cellspacing="0" cellpadding="0" border="0">
                         <thead>
                             <tr>
-                                <th rowspan="2">Actions</th>
-                                <th rowspan="2" width="">No.</th>
-                                <th rowspan="2" width="">Name</th>
-                                <th rowspan="2" width="">Sex</th>
-                                <th rowspan="2" width="">Date of Birth</th>
-                                <th rowspan="2" width="">Calculation Date</th>
-                                <th rowspan="2" width="">Age</th>
-                                <th rowspan="2" width="">Status Allowed</th>
-                                <th rowspan="2" width="">Plan IP</th>
-                                <th rowspan="2" width="">Plan MAT</th>
-                                <th rowspan="2" width="">Plan OP+DEN</th>
+                                <th rowspan="2">Pilihan</th>
+                                <th rowspan="2" width="">Nomor</th>
+                                <th rowspan="2" width="">Nama</th>
+                                <th rowspan="2" width="">Jenis Kelamin</th>
+                                <th rowspan="2" width="">Tanggal Lahir</th>
+                                <th rowspan="2" width="">Tanggal Kalkulasi</th>
+                                <th rowspan="2" width="">Usia</th>
+                                <th rowspan="2" width="">Status</th>
+                                <th rowspan="2" width="">Plan Rawat Inap</th>
+                                <th rowspan="2" width="">Plan Melahirkan</th>
+                                <th rowspan="2" width="">Plan Rawat Jalan & Rawat Gigi</th>
                                 <th rowspan="2" width="">UW Loading</th>
-                                <th colspan="3" class="text-center">Premium</th>
-                                <th rowspan="2" width="">Total Premium</th>
+                                <th colspan="3" class="text-center">Premi</th>
+                                <th rowspan="2" width="">Total Premi</th>
                             </tr>
                             <tr>
-                                <th>IP Premium</th>
-                                <th>MAT Premium</th>
-                                <th>OP+DEN Premium</th>
+                                <th>Premi Rawat Inap</th>
+                                <th>Premi Melahirkan</th>
+                                <th>Premi Rawat Jalan & Rawat Gigi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -548,11 +555,11 @@
                                 <td colspan="16" id="j_premium" class="text-right">0</td>
                             </tr>
                             <tr>
-                                <td colspan="15" class="text-right">Stamp duty</td>
+                                <td colspan="15" class="text-right">Biaya Materai</td>
                                 <td class="text-right">Rp000.000.000,0</td>
                             </tr>
                             <tr>
-                                <td colspan="15" class="text-right">Policy fee</td>
+                                <td colspan="15" class="text-right">Biaya Polis</td>
                                 <td class="text-right">Rp 30.000,0</td>
                             </tr>
                             <tr>
@@ -560,7 +567,7 @@
                                 <td class="text-right">Rp000.000.000,0</td>
                             </tr>
                             <tr>
-                                <td colspan="15" class="text-right">Total Amount to Pay</td>
+                                <td colspan="15" class="text-right">Total Jumlah yang Dibayarkan</td>
                                 <td class="text-right">Rp000.000.000,0</td>
                             </tr>
                         </tfoot>
@@ -573,6 +580,83 @@
 
     </div><!--/ .description -->
 </div><!--/ #newsletter-allianz -->
+
+<!-- help desk -->
+<div class="modal fade" id="family" tabindex="-1" role="dialog" aria-labelledby="familyLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="familyLabel">Family Discount</h4>
+      </div>
+      <div class="modal-body">
+        <!--h3>5 Risiko Kehidupan</h3-->
+        <p>Diskon Polis Keluarga berlaku untuk Polis Keluarga (Tertanggung, Suami/Istri & Anak).</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="claim" tabindex="-1" role="dialog" aria-labelledby="claimLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="claimLabel">No Claim Discount</h4>
+      </div>
+      <div class="modal-body">
+        <!--h3>5 Risiko Kehidupan</h3-->
+        <p>Potongan premi sebesar 20% saat polis diperpanjang yang didapatkan bila Anda dan/atau anggota keluarga tidak melakukan klaim selama 1 (satu) tahun polis penuh.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="rawatInap" tabindex="-1" role="dialog" aria-labelledby="rawatInapLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="rawatInapLabel">Manfaat Rawat Inap</h4>
+      </div>
+      <div class="modal-body">
+        <!--h3>5 Risiko Kehidupan</h3-->
+        <p>Besaran presentase co-share atau jumlah yang Anda perlu bayar untuk klaim Anda.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="melahirkan" tabindex="-1" role="dialog" aria-labelledby="melahirkanLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="melahirkanLabel">Manfaat Melahirkan</h4>
+      </div>
+      <div class="modal-body">
+        <!--h3>5 Risiko Kehidupan</h3-->
+        <p>Besaran presentase co-share atau jumlah yang Anda perlu bayar untuk klaim Anda.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="rawatJalan" tabindex="-1" role="dialog" aria-labelledby="rawatJalanLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="rawatJalanLabel">Manfaat Rawat Jalan & Rawat Gigi</h4>
+      </div>
+      <div class="modal-body">
+        <!--h3>5 Risiko Kehidupan</h3-->
+        <p>Besaran presentase co-share atau jumlah yang Anda perlu bayar untuk klaim Anda.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- help desk -->
 
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -799,13 +883,13 @@
     function form_sex(sex){
         if(sex == "m")
             sex_form = "<select id='sex' name='sex' class='form-control'>"+
-                            "<option selected value='m'>M</option>"+
-                            "<option value='f'>F</option>"+
+                            "<option selected value='m'>P</option>"+
+                            "<option value='f'>W</option>"+
                         "</select>";
         else
             sex_form = "<select id='sex' name='sex' class='form-control'>"+
-                            "<option value='m'>M</option>"+
-                            "<option selected value='f'>F</option>"+
+                            "<option value='m'>P</option>"+
+                            "<option selected value='f'>W</option>"+
                         "</select>";
         return sex_form;
     }
@@ -881,7 +965,7 @@
         var no = parseInt(rowCount)+1;
 
         $("table.table tbody").append("<tr>"+
-                "<td class='tabletd'><a data-id='"+no+"' onclick='edit(this)'>Edit</a> | <a data-id='"+no+"' onclick='delrow(this)'>Delete</a></td>"+
+                "<td class='tabletd'><a data-id='"+no+"' onclick='edit(this)'>Ubah</a> | <a data-id='"+no+"' onclick='delrow(this)'>Hapus</a></td>"+
                 "<td class='tabletd'>"+no+"</td>"+
                 "<td><input type='text' class='form-control' placeholder='Name' value='"+name+"' class='display'></td>"+
                 "<td>"+form_sex(sex)+"</td>"+
