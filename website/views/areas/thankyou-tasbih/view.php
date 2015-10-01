@@ -155,26 +155,28 @@ $sessionDup = new Zend_Session_Namespace('duplic_tasbih');
 
                     <div class="form-box" id="notif-confirm">
                         <h1 style="text-align:center">TERIMA KASIH</h1>
-<!--
-                        <h3  style=" color:black; text-align:center;"><strong> <a href="#" class="calc-overlay-trigger"  data-toggle="modal" data-target="#premi" style="color:#009a44">Premi</a> yang harus Anda bayarkan sebesar <?php echo 'Rp. '.number_format($session->Calculation,0,',','.').' per tahun'; ?> 
+
+                        <h3  style=" color:black; text-align:center;"><strong> <a href="#" class="calc-overlay-trigger"  data-toggle="modal" data-target="#premi" style="color:#009a44">Premi</a> yang harus Anda bayarkan sebesar <?php echo 'Rp. '.number_format($session->Calculation,0,',','.'); ?>
                             
                             <?php
                                     if($session->Frekuensi == "Semesteran")
                                     {
-                                        $nilai = $session->Calculation/2;
-                                        echo " atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per semester.";
+//                                        $nilai = $session->Calculation/2;
+//                                        echo " atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per semester.";
+                                          echo " per semesteran";
                                     }
                                     elseif($session->Frekuensi == "Triwulan")
                                     {
-                                        $nilai = $session->Calculation/4;
-                                        echo " atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per triwulan.";
+//                                        $nilai = $session->Calculation/4;
+//                                        echo " atau sebesar ".'Rp. '.number_format($nilai,0,',','.')." per triwulan.";
+                                          echo " per triwulan";
                                     }
-                                    else echo".";
+                                    else echo" per tahunan";
                                     
                                 ?>
                             
                             </strong></h3>
-                        <center style="font-size: 12px;"><h3 style=" color:black; text-align:center;margin-top: 12px;"> Perhitungan ilustrasi produk Allianz Tasbih sudah dikirimkan ke alamat email Anda.</h3>
+ <!--                       <center style="font-size: 12px;"><h3 style=" color:black; text-align:center;margin-top: 12px;"> Perhitungan ilustrasi produk Allianz Tasbih sudah dikirimkan ke alamat email Anda.</h3>
 -->
                         <h3 style=" color:black; text-align:center;">Silahkan hubungi Agen untuk mendapatkan ilustrasi yang sesuai dengan profil risiko Anda. Klik tombol di bawah ini untuk mencari agen terdekat dari lokasi Anda.</h3>
                         </center>
@@ -364,9 +366,9 @@ $(document).ready(function(){
          * jQueryUI DatePicker
          */
     
-window.setTimeout(function() {
-   window.open('/agent-locator/agen', '_blank');
-}, 5000)
+//window.setTimeout(function() {
+//   window.open('/agent-locator/agen', '_blank');
+//}, 5000)
     
         $('#cari-agen').click(function() {
 
