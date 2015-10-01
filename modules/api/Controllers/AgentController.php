@@ -89,7 +89,8 @@ class Api_AgentController extends Zend_Rest_Controller {
    public function loginAction(){
       //get email and password
       $email = $_GET["email"];
-      $password = md5($_GET["password"]);
+      //$password = md5($_GET["password"]);
+      $password = $_GET["password"];
 
       // $condition="email = ".$Email." AND password = ".$password;
       $condition="email LIKE '".$email."' AND pass LIKE '".$password."'";
