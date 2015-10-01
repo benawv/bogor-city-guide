@@ -68,12 +68,9 @@
             #ava31 #cropped-ava31
             {
                 position: relative;
-                width: 100%;
-                max-width: 100%;
-                min-width: 100%;
-                height: auto;
             }
 
+            #ava31 #cropped-ava31,
             #ava31 #cropped-ava31 .cropit-image-background-container
             {
                 width: 100%;
@@ -82,11 +79,25 @@
                 height: auto;
             }
 
-            #ava31 .cropit-ava31
+            #ava31 .cropit-ava31,
+            #ava31 #canvas-ava31
             {
                 min-width: 100%;
                 max-width: 100%;
                 width: 100%;
+            }
+
+            section.profile-maker .page-maker--form
+            {
+                margin-top: 120px;
+            }
+        }
+
+        @media (max-width:860px)
+        {
+            section.profile-maker .page-maker--form
+            {
+                margin-top: 48px;
             }
         }
 
@@ -113,14 +124,23 @@
     {
         var target_height = target.outerHeight();
         var target_width = target.outerWidth();
-        var img_bg = $('.cropit-image-background');
+        var img_bg = target.find('.cropit-image-background');
+        var canvas = target.find('.lower-canvas');
+
         target.css('height', target_width + 'px');
         img_bg.css('height', target_width + 'px');
+        canvas.css('height', target_width + 'px');
         console.log(target_width + '/' + target_height);
     }
 
     $(function(){
         ava_resize_square($('.cropit-ava31'));
+        /**
+         * canvas height fix
+         */
+        setTimeout(function(){
+            ava_resize_square($('.cropit-ava31'));
+        }, 400);
     });
 
     $(window).resize(function(){
@@ -462,14 +482,14 @@
                                         <strong><span id="cname">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
                                     </div><!--/ .avatar-caption-footer -->
                                 <!--</div>-->
-                                
+
                             </div>
                             <!--<div class="slider-wrapper">
                                 <i class="fa fa-file-image-o"></i>
                                     <input type="range" class="cropit-image-zoom-input custom" min="0" max="1" step="0.01">
-                                <i class="fa fa-file-image-o fa-2x"></i>    
-                            </div>-->             
-                    </div> 
+                                <i class="fa fa-file-image-o fa-2x"></i>
+                            </div>-->
+                    </div>
                 </div><!--/ .page-maker--placeholder -->
 
                 <div id="ava3-m" class="page-maker--placeholder" style="display: none">
@@ -773,18 +793,18 @@
     $session = new Zend_Session_Namespace('srcImage');
 ?>
 <script>
-	
-	/*
-		Template 4 (News Feed Post Template) Profile maker using FabricJS
-		Added By Handri Pangestiaji
-		Created at Sept 28 2015
-	======================================================================	
-	*/
-	var temp = getCookie("template");
-	if(temp == "template4") {
-	var canvas = new fabric.Canvas('canvas-ava21', {
-		backgroundColor: 'white'
-	});
+
+    /*
+        Template 4 (News Feed Post Template) Profile maker using FabricJS
+        Added By Handri Pangestiaji
+        Created at Sept 28 2015
+    ======================================================================
+    */
+    var temp = getCookie("template");
+    if(temp == "template4") {
+    var canvas = new fabric.Canvas('canvas-ava21', {
+        backgroundColor: 'white'
+    });
 
     //take img tag by id
     imgElement = document.getElementById('myImg');
@@ -907,110 +927,110 @@
     //     });
     // });
 
-	// Binding click for Pratinjau and Simpan Button
-	$('#preview, #save').click(function(){
-		nama1 = $('#bawah1').val();
-		nama2 = $('#bawah2').val();
-		
-		text.setText("Allianz Indonesia "+ nama1 + " " + nama2);
-		canvas.add(text);
-	});
-	
-	// Click Event on Ya button
-	$('body').on('click','#download',function(){
-		if(temp == "template4") {
-			
-			canvas.deactivateAll().renderAll();
-			
-			var dataURL = canvas.toDataURL({
-			  format: 'png'
-			});
-			
-			var link = document.createElement('a');
-			link.href = dataURL;
-			link.download = "Cover Profil Maker Allianz.png";
-			document.body.appendChild(link);
-			link.click();
-		}
-	});
+    // Binding click for Pratinjau and Simpan Button
+    $('#preview, #save').click(function(){
+        nama1 = $('#bawah1').val();
+        nama2 = $('#bawah2').val();
+
+        text.setText("Allianz Indonesia "+ nama1 + " " + nama2);
+        canvas.add(text);
+    });
+
+    // Click Event on Ya button
+    $('body').on('click','#download',function(){
+        if(temp == "template4") {
+
+            canvas.deactivateAll().renderAll();
+
+            var dataURL = canvas.toDataURL({
+              format: 'png'
+            });
+
+            var link = document.createElement('a');
+            link.href = dataURL;
+            link.download = "Cover Profil Maker Allianz.png";
+            document.body.appendChild(link);
+            link.click();
+        }
+    });
     }
-	//======================= End of template 4 ============================
-    
+    //======================= End of template 4 ============================
+
     /*
-		Template 6 (News Feed Post Template) Profile maker using FabricJS
-		Added By Robbi
-		Created at Oct 01 2015
-	======================================================================	
-	*/
+        Template 6 (News Feed Post Template) Profile maker using FabricJS
+        Added By Robbi
+        Created at Oct 01 2015
+    ======================================================================
+    */
     if(temp == "template6") {
-	
-	var canvas = new fabric.Canvas('canvas-ava31', {
-		backgroundColor: 'white'
-	});
+
+    var canvas = new fabric.Canvas('canvas-ava31', {
+        backgroundColor: 'white'
+    });
 
     //take img tag by id
     imgElement = document.getElementById('myImg31');
 
     //get canvas size
-	cvsW = canvas.getWidth();
+    cvsW = canvas.getWidth();
     cvsH = canvas.getHeight();
-	
-	// Add Grey Rectangle object bottom of canvas
-	var rect = new fabric.Rect({
-		width: cvsW,
-		height: 52,
-		fill: 'rgb(180, 180, 180)',
-		selectable: false,
-		top: 452,
-		originY: "top"
-	});
-	canvas.add(rect);
-	//canvas.sendToBack(rect);
+
+    // Add Grey Rectangle object bottom of canvas
+    var rect = new fabric.Rect({
+        width: cvsW,
+        height: 52,
+        fill: 'rgb(180, 180, 180)',
+        selectable: false,
+        top: 452,
+        originY: "top"
+    });
+    canvas.add(rect);
+    //canvas.sendToBack(rect);
     canvas.bringForward(rect);
-	
-	// Add FB Icon bottom of canvas
-	var fb = new fabric.Image.fromURL('/website/static/images/profile-maker/fb.png', function(img){
-		img.scaleToWidth(30);
-		canvas.add(img);
-	}, {
-		top: 462,
-		left: 20,
-		originY: 'top',
-		selectable: false
-	});
-	
-	//Add Text Allianz Indonesia on bottom of canvas
-	var text = new fabric.Text("Allianz Indonesia", {
-		fill: 'rgb(59, 87, 157)',
-		selectable: false,
-		fontFamily: 'Arial, Helvetica, sans-serif',
-		top: 468,
-		left: 65,
-		fontSize: 16
-	});
-	
-	canvas.add(text);
-	
-	// Add Allianz icon on top right of canvas
-	var logo = canvas.setOverlayImage('/website/static/images/profile-maker/allianz-logo.png', canvas.renderAll.bind(canvas), {
-		left: 440,
-		top: 10,
-		originX: 'left',
-		originY: 'top'
-	});
-	
-	//Add uploaded image in canvas
-	// var imgInstance = new fabric.Image.fromURL('<?php echo $session->src?>', function(img){
-	// 		canvas.add(img);
-	// 		canvas.centerObject(img);
-	// 		canvas.sendToBack(img);
-	// 		canvas.setActiveObject(img);
-	// 	}, 
-	// 	{
-	// 		lockUniScaling: true
-	// 	}
-	// );
-    
+
+    // Add FB Icon bottom of canvas
+    var fb = new fabric.Image.fromURL('/website/static/images/profile-maker/fb.png', function(img){
+        img.scaleToWidth(30);
+        canvas.add(img);
+    }, {
+        top: 462,
+        left: 20,
+        originY: 'top',
+        selectable: false
+    });
+
+    //Add Text Allianz Indonesia on bottom of canvas
+    var text = new fabric.Text("Allianz Indonesia", {
+        fill: 'rgb(59, 87, 157)',
+        selectable: false,
+        fontFamily: 'Arial, Helvetica, sans-serif',
+        top: 468,
+        left: 65,
+        fontSize: 16
+    });
+
+    canvas.add(text);
+
+    // Add Allianz icon on top right of canvas
+    var logo = canvas.setOverlayImage('/website/static/images/profile-maker/allianz-logo.png', canvas.renderAll.bind(canvas), {
+        left: 440,
+        top: 10,
+        originX: 'left',
+        originY: 'top'
+    });
+
+    //Add uploaded image in canvas
+    // var imgInstance = new fabric.Image.fromURL('<?php echo $session->src?>', function(img){
+    // 		canvas.add(img);
+    // 		canvas.centerObject(img);
+    // 		canvas.sendToBack(img);
+    // 		canvas.setActiveObject(img);
+    // 	},
+    // 	{
+    // 		lockUniScaling: true
+    // 	}
+    // );
+
     //get original image size
     ih = imgElement.naturalHeight;
     iw = imgElement.naturalWidth;
@@ -1029,7 +1049,7 @@
     } else {
         fh = ih * height_ratio;
         fw = iw * fh / ih;
-        //alert("else");  
+        //alert("else");
     }
 
     // //manggil image yang aspect ratio ke canvas
@@ -1038,18 +1058,18 @@
         width: fw,
         height: fh
     });
-        
+
     //set visibility resizer
     imgInstance.setControlsVisibility ({
         mt: false,
         mr: false,
         mb: false,
         ml: false
-    });    
+    });
     canvas.add(imgInstance);
     canvas.centerObject(imgInstance);
     canvas.sendToBack(imgInstance);
-	canvas.setActiveObject(imgInstance);
+    canvas.setActiveObject(imgInstance);
     canvas.renderAll();
 
     //grouping all object
@@ -1069,44 +1089,44 @@
     //     });
     // });
 
-	// Binding click for Pratinjau and Simpan Button
-	$('#preview, #save').click(function(){
-		nama1 = $('#bawah1').val();
-		nama2 = $('#bawah2').val();
-		
-		text.setText("Allianz Indonesia "+ nama1 + " " + nama2);
-		canvas.add(text);
-	});
-	
-	// Click Event on Ya button
-	$('body').on('click','#download',function(){
-		if(temp == "template6") {
-			
-			canvas.deactivateAll().renderAll();
-			
-			var dataURL = canvas.toDataURL({
-			  format: 'png'
-			});
-			
-			var link = document.createElement('a');
-			link.href = dataURL;
-			link.download = "Cover Profil Maker Allianz.png";
-			document.body.appendChild(link);
-			link.click();
-		}
-	});
+    // Binding click for Pratinjau and Simpan Button
+    $('#preview, #save').click(function(){
+        nama1 = $('#bawah1').val();
+        nama2 = $('#bawah2').val();
+
+        text.setText("Allianz Indonesia "+ nama1 + " " + nama2);
+        canvas.add(text);
+    });
+
+    // Click Event on Ya button
+    $('body').on('click','#download',function(){
+        if(temp == "template6") {
+
+            canvas.deactivateAll().renderAll();
+
+            var dataURL = canvas.toDataURL({
+              format: 'png'
+            });
+
+            var link = document.createElement('a');
+            link.href = dataURL;
+            link.download = "Cover Profil Maker Allianz.png";
+            document.body.appendChild(link);
+            link.click();
+        }
+    });
     }
-	//======================= End of template 6 ============================
-	
-	  var img = document.getElementById('imgid'); 
-						  var height =$(".cropit-ava2 ").height();
-						  var width = $(".cropit-ava2").width();
-						  var height_ava3 =$(".cropit-ava3 ").height();
-						  var width_ava3 = $(".cropit-ava3").width();
-						  var rasioX = 472/width;
-						  var rasioY = 394/height;
-						  var rasioX_ava3 = 504/width_ava3;
-						  var rasioY_ava3 = 504/height_ava3;
+    //======================= End of template 6 ============================
+
+      var img = document.getElementById('imgid');
+                          var height =$(".cropit-ava2 ").height();
+                          var width = $(".cropit-ava2").width();
+                          var height_ava3 =$(".cropit-ava3 ").height();
+                          var width_ava3 = $(".cropit-ava3").width();
+                          var rasioX = 472/width;
+                          var rasioY = 394/height;
+                          var rasioX_ava3 = 504/width_ava3;
+                          var rasioY_ava3 = 504/height_ava3;
      //Draggable & Resizable option
     $(function() {
         $( "#draggableHelper, #draggableHelper2, #draggableHelper3, #draggableHelper4" ).resizable({
@@ -1192,7 +1212,7 @@
                 }
             });
         /* Resize with cropit */
-//           $('#image-cropper-ava3').cropit({ 
+//           $('#image-cropper-ava3').cropit({
 //                //exportZoom: 2,
 //                imageState: {
 //                    src: '<?php echo $session->src ?>',
@@ -1211,10 +1231,10 @@
 //					$("#image-cropper-ava31 .cropit-image-background").css("top",(offset.y*rasioY)+"px");
 //					 var val_ava3 = $("#image-cropper-ava3 .cropit-image-preview").css("background-size");
 //					 var result2 = val_ava3.split(' ');
-//                    
+//
 //                     var result31 = result2[0].split('px');
 //                     var result32 = result2[1].split('px');
-//					 
+//
 //				    var size = (result31[0]*rasioX_ava3)+"px "+(result32[0]*rasioY_ava3)+"px";
 //                     $("#image-cropper-ava31 .cropit-image-preview").css("background-size",size);
 //                },
@@ -1226,10 +1246,10 @@
 //                     var val_ava3_width = $("#image-cropper-ava3 .cropit-image-background").css("width").split('px');
 //                     //console.log(val_ava);
 //                     var result2 = val_ava3.split(' ');
-//                    
+//
 //                     var result31 = result2[0].split('px');
 //                     var result32 = result2[1].split('px');
-//					 
+//
 //				    var size = (result31[0]*rasioX_ava3)+"px "+(result32[0]*rasioY_ava3)+"px";
 //                     $("#image-cropper-ava31 .cropit-image-preview").css("background-size",size);
 //                     // console.log(val_ava_left[0]*2);
@@ -1245,8 +1265,8 @@
 //                     //console.log(val_ava2);
 //                }
 //            });
-            
-			$('#image-cropper, #image-cropper-ava1').cropit({ 
+
+            $('#image-cropper, #image-cropper-ava1').cropit({
                 //exportZoom: 2,
                 imageState: {
                     src: '<?php echo $session->src ?>',
@@ -1256,8 +1276,8 @@
                 smallImage: 'allow',
                 freeMove: true,
             });
-			
-            //$('#image-cropper-ava31').cropit({ 
+
+            //$('#image-cropper-ava31').cropit({
             //    imageState: {
             //        src: '<?php echo $session->src ?>',
             //    },
@@ -1266,7 +1286,7 @@
             //    smallImage: 'allow',
             //    freeMove: true
             //});
-            
+
             var imageCropper = $('#image-cropper, #image-cropper-ava1, #image-cropper-ava2, #image-cropper-ava3');
                 imageCropper.cropit('imageSrc');
             //$('body').on('click','#download',function(){
