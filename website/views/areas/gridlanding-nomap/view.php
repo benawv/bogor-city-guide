@@ -112,7 +112,7 @@
                     <?php
 								$color = $this->select('color_'.$i)->getData();
                     ?>
-                    <div class="col-xs-12 col-md-4">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
                         <div class="landing-tasbih-grid--item <?php echo $color;?>">
                             <div class="landing-tasbih-grid--item-inner">
                                         <?php echo $this->renderlet("artikel".$i, array(
