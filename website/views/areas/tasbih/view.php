@@ -18,8 +18,6 @@
 <link rel="stylesheet" href="/website/static/mobilku/jquery-ui.css">
 
 
-
-
 <header>
     <style>
         /* Override AJFC's feature box color */
