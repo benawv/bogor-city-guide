@@ -394,28 +394,31 @@
 
                 <div id="ava31" class="page-maker--placeholder" style="display: none">
                     <div id="image-cropper-ava31">
-                            <div id="cropped-ava31" class="cropit-image-preview-container">
-                                <div class="cropit-image-preview cropit-ava31">
-                                    <div id="avacapture3" class="avatar-caption">
+                            <!--<div id="cropped-ava31" class="cropit-image-preview-container">-->
+                            <div id="cropped-ava31" class="cropit-image-preview cropit-ava31">
+                                        <canvas id="canvas-ava31" width="504" height="504" style="border:1px solid #ccc">
+                                        <img src="<?php echo $session->src?>" id="myImg31">
+                                <!--<div class="cropit-image-preview cropit-ava31">-->
+                                    <!--<div id="avacapture3" class="avatar-caption">
                                         <div class="avatar-caption--logo">
                                                 <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
                                         </div>
-                                    </div>
-                                    <div class="avatar-caption--footer">
-                                        <img src="/website/static/images/profile-maker/fb.png" alt="" style="position: absolute; width: 29px; left: 19px; top: 11px;">
-                                        <!-- <i class="fa fa-facebook-square fa-2x"></i> --> &nbsp;
+                                    </div>-->
+                                    <!--<div class="avatar-caption--footer">
+                                        <img src="/website/static/images/profile-maker/fb.png" alt="" style="position: absolute; width: 29px; left: 19px; top: 11px;">-->
+                                        <!-- <i class="fa fa-facebook-square fa-2x"></i> &nbsp;
                                         <span>Allianz Indonesia</span>&nbsp;
                                         <strong><span id="cname">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
                                     </div><!--/ .avatar-caption-footer -->
-                                </div>
+                                <!--</div>-->
                                 
                             </div>
-                            <div class="slider-wrapper">
+                            <!--<div class="slider-wrapper">
                                 <i class="fa fa-file-image-o"></i>
                                     <input type="range" class="cropit-image-zoom-input custom" min="0" max="1" step="0.01">
                                 <i class="fa fa-file-image-o fa-2x"></i>    
-                            </div>             
-                        </div> 
+                            </div>-->             
+                    </div> 
                 </div><!--/ .page-maker--placeholder -->
 
                 <div id="ava3-m" class="page-maker--placeholder" style="display: none">
@@ -727,7 +730,7 @@
 	======================================================================	
 	*/
 	var temp = getCookie("template");
-	
+	if(temp == "template4") {
 	var canvas = new fabric.Canvas('canvas-ava21', {
 		backgroundColor: 'white'
 	});
@@ -879,7 +882,170 @@
 			link.click();
 		}
 	});
+    }
 	//======================= End of template 4 ============================
+    
+    /*
+		Template 6 (News Feed Post Template) Profile maker using FabricJS
+		Added By Robbi
+		Created at Oct 01 2015
+	======================================================================	
+	*/
+    if(temp == "template6") {
+	
+	var canvas = new fabric.Canvas('canvas-ava31', {
+		backgroundColor: 'white'
+	});
+
+    //take img tag by id
+    imgElement = document.getElementById('myImg31');
+
+    //get canvas size
+	cvsW = canvas.getWidth();
+    cvsH = canvas.getHeight();
+	
+	// Add Grey Rectangle object bottom of canvas
+	var rect = new fabric.Rect({
+		width: cvsW,
+		height: 52,
+		fill: 'rgb(180, 180, 180)',
+		selectable: false,
+		top: 452,
+		originY: "top"
+	});
+	canvas.add(rect);
+	//canvas.sendToBack(rect);
+    canvas.bringForward(rect);
+	
+	// Add FB Icon bottom of canvas
+	var fb = new fabric.Image.fromURL('/website/static/images/profile-maker/fb.png', function(img){
+		img.scaleToWidth(30);
+		canvas.add(img);
+	}, {
+		top: 462,
+		left: 20,
+		originY: 'top',
+		selectable: false
+	});
+	
+	//Add Text Allianz Indonesia on bottom of canvas
+	var text = new fabric.Text("Allianz Indonesia", {
+		fill: 'rgb(59, 87, 157)',
+		selectable: false,
+		fontFamily: 'Arial, Helvetica, sans-serif',
+		top: 468,
+		left: 65,
+		fontSize: 16
+	});
+	
+	canvas.add(text);
+	
+	// Add Allianz icon on top right of canvas
+	var logo = canvas.setOverlayImage('/website/static/images/profile-maker/allianz-logo.png', canvas.renderAll.bind(canvas), {
+		left: 440,
+		top: 10,
+		originX: 'left',
+		originY: 'top'
+	});
+	
+	//Add uploaded image in canvas
+	// var imgInstance = new fabric.Image.fromURL('<?php echo $session->src?>', function(img){
+	// 		canvas.add(img);
+	// 		canvas.centerObject(img);
+	// 		canvas.sendToBack(img);
+	// 		canvas.setActiveObject(img);
+	// 	}, 
+	// 	{
+	// 		lockUniScaling: true
+	// 	}
+	// );
+    
+    //get original image size
+    ih = imgElement.naturalHeight;
+    iw = imgElement.naturalWidth;
+    // console.log(iw);
+    // console.log(ih);
+    // console.log(cvsW);
+    // console.log(cvsH);
+
+    //keep aspect ratio pas render image
+    width_ratio  = cvsW  / iw;
+    height_ratio = cvsH / ih;
+    if (width_ratio > height_ratio) {
+        fw = iw * width_ratio;
+        fh = ih * fw / iw;
+        //alert("if");
+    } else {
+        fh = ih * height_ratio;
+        fw = iw * fh / ih;
+        //alert("else");  
+    }
+
+    // //manggil image yang aspect ratio ke canvas
+    var imgInstance = new fabric.Image(imgElement);
+        imgInstance.set({
+        width: fw,
+        height: fh
+    });
+        
+    //set visibility resizer
+    imgInstance.setControlsVisibility ({
+        mt: false,
+        mr: false,
+        mb: false,
+        ml: false
+    });    
+    canvas.add(imgInstance);
+    canvas.centerObject(imgInstance);
+    canvas.sendToBack(imgInstance);
+	canvas.setActiveObject(imgInstance);
+    canvas.renderAll();
+
+    //grouping all object
+    // var medium = new fabric.Group([rect, text]);
+    // canvas.add(medium);
+    // canvas.renderAll();
+
+    //trying to cloning
+    // $('#clone').click(function() {
+    //     //cloning object canvas
+    //     var obj = canvas.getActiveObject();
+    //     var vobj = fabric.util.object.clone(obj);
+    //     vobj.clone(function(c) {
+    //         canvas.add(c);
+    //         console.log(vobj);
+    //         canvas.renderAll();
+    //     });
+    // });
+
+	// Binding click for Pratinjau and Simpan Button
+	$('#preview, #save').click(function(){
+		nama1 = $('#bawah1').val();
+		nama2 = $('#bawah2').val();
+		
+		text.setText("Allianz Indonesia "+ nama1 + " " + nama2);
+		canvas.add(text);
+	});
+	
+	// Click Event on Ya button
+	$('body').on('click','#download',function(){
+		if(temp == "template6") {
+			
+			canvas.deactivateAll().renderAll();
+			
+			var dataURL = canvas.toDataURL({
+			  format: 'png'
+			});
+			
+			var link = document.createElement('a');
+			link.href = dataURL;
+			link.download = "Cover Profil Maker Allianz.png";
+			document.body.appendChild(link);
+			link.click();
+		}
+	});
+    }
+	//======================= End of template 6 ============================
 	
 	  var img = document.getElementById('imgid'); 
 						  var height =$(".cropit-ava2 ").height();
@@ -975,59 +1141,59 @@
                 }
             });
         /* Resize with cropit */
-           $('#image-cropper-ava3').cropit({ 
-                //exportZoom: 2,
-                imageState: {
-                    src: '<?php echo $session->src ?>',
-                },
-                imageBackground: true,
-                imageBackgroundBorderWidth: 1,
-                smallImage: 'allow',
-                freeMove: true,
-                onOffsetChange: function(offset) {
-                      var pos = (offset.x*rasioX_ava3)+"px "+(offset.y*rasioY_ava3)+"px";
-                      //$("#duplicate .cropit-image-preview").css("background-position",pos);
-                      // $("# image-cropper-ava21.cropit-image-background").css("left",(offset.x*rasioX)+"px");
-                      //$("#duplicate .cropit-image-background").css("top",(offset.y*2)+"px");
-					$("#image-cropper-ava31 .cropit-image-preview").css("background-position",pos);
-					$("#image-cropper-ava31 .cropit-image-background").css("left",(offset.x*rasioX)+"px");
-					$("#image-cropper-ava31 .cropit-image-background").css("top",(offset.y*rasioY)+"px");
-					 var val_ava3 = $("#image-cropper-ava3 .cropit-image-preview").css("background-size");
-					 var result2 = val_ava3.split(' ');
-                    
-                     var result31 = result2[0].split('px');
-                     var result32 = result2[1].split('px');
-					 
-				    var size = (result31[0]*rasioX_ava3)+"px "+(result32[0]*rasioY_ava3)+"px";
-                     $("#image-cropper-ava31 .cropit-image-preview").css("background-size",size);
-                },
-                onZoomChange:function(value){
-                     var val_ava3 = $("#image-cropper-ava3 .cropit-image-preview").css("background-size");
-                     var val_ava3_left = $("#image-cropper-ava3 .cropit-image-background").css("left").split('px');
-                     var val_ava3_top = $("#image-cropper-ava3 .cropit-image-background").css("top").split('px');
-                     var val_ava3_height = $("#image-cropper-ava3 .cropit-image-background").css("height").split('px');
-                     var val_ava3_width = $("#image-cropper-ava3 .cropit-image-background").css("width").split('px');
-                     //console.log(val_ava);
-                     var result2 = val_ava3.split(' ');
-                    
-                     var result31 = result2[0].split('px');
-                     var result32 = result2[1].split('px');
-					 
-				    var size = (result31[0]*rasioX_ava3)+"px "+(result32[0]*rasioY_ava3)+"px";
-                     $("#image-cropper-ava31 .cropit-image-preview").css("background-size",size);
-                     // console.log(val_ava_left[0]*2);
-                     // console.log(val_ava_top[0]*2);
-                     $("#image-cropper-ava31 .cropit-image-background").css("left",(val_ava3_left[0]*rasioX_ava3)+"px");
-                     $("#image-cropper-ava31 .cropit-image-background").css("top",(val_ava3_top[0]*rasioY_ava3)+"px");
-                     $("#image-cropper-ava31 .cropit-image-background").css("height",(val_ava3_height[0]*rasioY_ava3)+"px");
-                     $("#image-cropper-ava31 .cropit-image-background").css("width",(val_ava3_width[0]*rasioX_ava3)+"px");
-					 // console.log(rasioX);
-                     //$("#duplicate .cropit-image-background").css("left",(result21[0]*2)+"px");
-                     //$("#duplicate .cropit-image-background").css("top",(result22[0]*2)+"px");
-                     //var val_ava2 = $("#duplicate .cropit-image-zoom-input.custom").val(val_ava);
-                     //console.log(val_ava2);
-                }
-            });
+//           $('#image-cropper-ava3').cropit({ 
+//                //exportZoom: 2,
+//                imageState: {
+//                    src: '<?php echo $session->src ?>',
+//                },
+//                imageBackground: true,
+//                imageBackgroundBorderWidth: 1,
+//                smallImage: 'allow',
+//                freeMove: true,
+//                onOffsetChange: function(offset) {
+//                      var pos = (offset.x*rasioX_ava3)+"px "+(offset.y*rasioY_ava3)+"px";
+//                      //$("#duplicate .cropit-image-preview").css("background-position",pos);
+//                      // $("# image-cropper-ava21.cropit-image-background").css("left",(offset.x*rasioX)+"px");
+//                      //$("#duplicate .cropit-image-background").css("top",(offset.y*2)+"px");
+//					$("#image-cropper-ava31 .cropit-image-preview").css("background-position",pos);
+//					$("#image-cropper-ava31 .cropit-image-background").css("left",(offset.x*rasioX)+"px");
+//					$("#image-cropper-ava31 .cropit-image-background").css("top",(offset.y*rasioY)+"px");
+//					 var val_ava3 = $("#image-cropper-ava3 .cropit-image-preview").css("background-size");
+//					 var result2 = val_ava3.split(' ');
+//                    
+//                     var result31 = result2[0].split('px');
+//                     var result32 = result2[1].split('px');
+//					 
+//				    var size = (result31[0]*rasioX_ava3)+"px "+(result32[0]*rasioY_ava3)+"px";
+//                     $("#image-cropper-ava31 .cropit-image-preview").css("background-size",size);
+//                },
+//                onZoomChange:function(value){
+//                     var val_ava3 = $("#image-cropper-ava3 .cropit-image-preview").css("background-size");
+//                     var val_ava3_left = $("#image-cropper-ava3 .cropit-image-background").css("left").split('px');
+//                     var val_ava3_top = $("#image-cropper-ava3 .cropit-image-background").css("top").split('px');
+//                     var val_ava3_height = $("#image-cropper-ava3 .cropit-image-background").css("height").split('px');
+//                     var val_ava3_width = $("#image-cropper-ava3 .cropit-image-background").css("width").split('px');
+//                     //console.log(val_ava);
+//                     var result2 = val_ava3.split(' ');
+//                    
+//                     var result31 = result2[0].split('px');
+//                     var result32 = result2[1].split('px');
+//					 
+//				    var size = (result31[0]*rasioX_ava3)+"px "+(result32[0]*rasioY_ava3)+"px";
+//                     $("#image-cropper-ava31 .cropit-image-preview").css("background-size",size);
+//                     // console.log(val_ava_left[0]*2);
+//                     // console.log(val_ava_top[0]*2);
+//                     $("#image-cropper-ava31 .cropit-image-background").css("left",(val_ava3_left[0]*rasioX_ava3)+"px");
+//                     $("#image-cropper-ava31 .cropit-image-background").css("top",(val_ava3_top[0]*rasioY_ava3)+"px");
+//                     $("#image-cropper-ava31 .cropit-image-background").css("height",(val_ava3_height[0]*rasioY_ava3)+"px");
+//                     $("#image-cropper-ava31 .cropit-image-background").css("width",(val_ava3_width[0]*rasioX_ava3)+"px");
+//					 // console.log(rasioX);
+//                     //$("#duplicate .cropit-image-background").css("left",(result21[0]*2)+"px");
+//                     //$("#duplicate .cropit-image-background").css("top",(result22[0]*2)+"px");
+//                     //var val_ava2 = $("#duplicate .cropit-image-zoom-input.custom").val(val_ava);
+//                     //console.log(val_ava2);
+//                }
+//            });
             
 			$('#image-cropper, #image-cropper-ava1').cropit({ 
                 //exportZoom: 2,
@@ -1040,15 +1206,15 @@
                 freeMove: true,
             });
 			
-            $('#image-cropper-ava31').cropit({ 
-                imageState: {
-                    src: '<?php echo $session->src ?>',
-                },
-                imageBackground: true,
-                imageBackgroundBorderWidth: 1,
-                smallImage: 'allow',
-                freeMove: true
-            });
+            //$('#image-cropper-ava31').cropit({ 
+            //    imageState: {
+            //        src: '<?php echo $session->src ?>',
+            //    },
+            //    imageBackground: true,
+            //    imageBackgroundBorderWidth: 1,
+            //    smallImage: 'allow',
+            //    freeMove: true
+            //});
             
             var imageCropper = $('#image-cropper, #image-cropper-ava1, #image-cropper-ava2, #image-cropper-ava3');
                 imageCropper.cropit('imageSrc');
