@@ -122,6 +122,7 @@ $(document).ready(function(){
             
                             <?php $sessionCalc = new Zend_Session_Namespace(calc_mobilku); ?>
                             <?php $sessionCalc->status ="mobilku"; ?>
+                            window.open('/layanan/hubungi-kami/kantor-pemasaran-allianz', '_blank');
 //                            alert("<?php echo $sessionCalc->status; ?>");
                             // var masukpemasaran = 'ya';
 
@@ -135,7 +136,6 @@ $(document).ready(function(){
                             //     complete  : function(sukses){
                             //            // console.log(sukses);
                             //            // alert(masukpemasaran)
-                            //            // window.open('/layanan/hubungi-kami/kantor-pemasaran-allianz', '_blank');
                             //            //document.location.href='/agent-locator';
                             //     }
                             // });
@@ -161,8 +161,8 @@ $(document).ready(function(){
                                      //console.log(data);
                                       
                                       //document.location.href='/agent-locator';
-                      }
-              });*/
+                            }
+                          });*/
                        
         });
 
