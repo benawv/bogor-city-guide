@@ -89,15 +89,17 @@
 
             section.profile-maker .page-maker--form
             {
-                margin-top: 120px;
+                /*
+                margin-top: 120px !important;
+                */
             }
         }
 
-        @media (max-width:860px)
+        @media (max-width: 480px)
         {
             section.profile-maker .page-maker--form
             {
-                margin-top: 48px;
+                margin: 0 auto 32px;
             }
         }
 
@@ -130,6 +132,7 @@
         target.css('height', target_width + 'px');
         img_bg.css('height', target_width + 'px');
         canvas.css('height', target_width + 'px');
+        target.parent().parent().css('height', target_width + 'px');
         console.log(target_width + '/' + target_height);
     }
 
