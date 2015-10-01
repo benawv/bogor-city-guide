@@ -366,9 +366,9 @@ $(document).ready(function(){
          * jQueryUI DatePicker
          */
     
-window.setTimeout(function() {
-   window.open('/agent-locator/agen', '_blank');
-}, 5000)
+//window.setTimeout(function() {
+//   window.open('/agent-locator/agen', '_blank');
+//}, 5000)
     
         $('#cari-agen').click(function() {
 
