@@ -8,7 +8,6 @@ class MobilkuController extends Website_Controller_Action {
 	}
 	
 	public function saveInsuraceAction(){
-		
 		$th=$_POST['tahun_pembuatan'];
 		$harga=$_POST['harga'];
 		$merk=$_POST['merk'];
@@ -163,6 +162,9 @@ class MobilkuController extends Website_Controller_Action {
 		$register->setIndex(0);
 		$register->setPublished(1);
 		$register->save();
+
+		$session_mobilku = new Zend_Session_Namespace('kantorPemasaran');
+		$session_mobilku->idUser = $register->getO_id();
        // }
        // catch(Exception $e){
         //    echo 'Message: ' .$e->getMessage();
@@ -175,14 +177,14 @@ class MobilkuController extends Website_Controller_Action {
                             'registrationnp' => $regno,
                             'periode' => $period,
                             'email' => $email,
-                            'nama' => $nama,
+                            'name' => $nama,
                             'telp' => $telp,
                             'insurancetype' => $radiof
                             );
             $bcc = array("irwan@dreamcube.co.id","robbi@dreamcube.co.id");
 
             $mail = new Pimcore_Mail();
-            $mail->setSubject("Hasil Ilustrasi Asuransi Mobilku");
+            $mail->setSubject("Hasil Ilustrasi Asuransi Allianz Mobilku");
             $mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
             $mail->setDocument($document);
             $mail->setParams($params);
@@ -193,7 +195,7 @@ class MobilkuController extends Website_Controller_Action {
 		    $at->type        = 'application/pdf';
 		    $at->disposition = Zend_Mime::DISPOSITION_INLINE;
 		    $at->encoding    = Zend_Mime::ENCODING_BASE64;
-		    $at->filename    = 'mobilku.pdf';
+		    $at->filename    = 'Hasil Ilustrasi Asuransi Allianz Mobilku.pdf';
 			$mail->addAttachment($at);
 			// $at = new Zend_Mime_Part(file_get_contents($namapdf));
 
@@ -203,6 +205,17 @@ class MobilkuController extends Website_Controller_Action {
 		// 	echo 'Message: ' .$e->getMessage();
 		// }
 		echo "sukses";
+	}
+
+	public function updateUserMobilkuAction(){
+		$session_mobilku = new Zend_Session_Namespace('kantorPemasaran');
+		$idObject = $session_mobilku->idUser;
+		$update = Object_MobilPersonalLines::getById($idObject);
+		$update->setMasukpemasaran("Ya");
+		$update->save();
+
+		Zend_Session::namespaceUnset('kantorPemasaran');
+		die();
 	}
     
 	public function sendemailAction(){
