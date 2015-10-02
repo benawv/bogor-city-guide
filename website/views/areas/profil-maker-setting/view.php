@@ -299,6 +299,11 @@
 
                  <div id="ava1" class="page-maker--placeholder" style="display: none">
                         <div id="image-cropper-ava1">
+	                        <div id="cropped-ava1" class="cropit-image-preview-container">
+		                        <canvas id="canvas-ava1" width="300" height="300" style="border: 1px solid #ccc">
+		                        </canvas>
+	                        </div>
+	                        <!--
                             <div id="cropped-ava1" class="cropit-image-preview-container">
                                 <div class="cropit-image-preview cropit-ava1">
                                     <div id="avacapture1" class="avatar-caption">
@@ -313,7 +318,8 @@
                                 <i class="fa fa-file-image-o"></i>
                                     <input type="range" class="cropit-image-zoom-input custom" min="0" max="1" step="0.01">
                                 <i class="fa fa-file-image-o fa-2x"></i>    
-                            </div>             
+                            </div>
+                            -->       
                         </div> 
                 </div> 
 
@@ -706,19 +712,91 @@
 ?>
 <script>
 	
+	var temp = getCookie("template");
+	
+	/* 
+		Template 5 (Profile Picture Template) Profile maker using FabricJS
+		Added By Handri Pangestiaji
+		Created at Sept 29 2015
+	======================================================================
+	*/
+	
+	// Create canvas profile picture
+	var cvAva1 = new fabric.Canvas('canvas-ava1', {
+		backgroundColor: 'white'
+	});
+	
+	ca1W = cvAva1.getWidth();
+	ca1H = cvAva1.getHeight();
+	
+	// Add Allianz icon on top right of canvas
+	cvAva1.setOverlayImage('/website/static/images/profile-maker/allianz-logo.png', cvAva1.renderAll.bind(cvAva1), {
+		left: 240,
+		top: 10,
+		originX: 'left',
+		originY: 'top'
+	});
+	
+	// Add uploaded image in canvas
+	fabric.Image.fromURL('<?php echo $session->src?>', function(img_ava1){
+			
+			//get original image size
+		    ih = img_ava1.height;
+		    iw = img_ava1.width;
+		    // console.log(iw);
+		    // console.log(ih);
+		    // console.log(cvsW);
+		    // console.log(cvsH);
+		    //keep aspect ratio pas render image
+		    width_ratio  = ca1W  / iw;
+		    height_ratio = ca1H / ih;
+		    if (width_ratio > height_ratio) {
+		        fw = iw * width_ratio;
+		        fh = ih * fw / iw;
+		        //alert("if");
+		    } else {
+		        fh = ih * height_ratio;
+		        fw = iw * fh / ih;
+		        //alert("else");  
+		    }
+		    
+		    img_ava1.set({
+		        width: fw,
+		        height: fh
+		    });
+		        
+		    //set visibility resizer
+		    
+		    img_ava1.setControlsVisibility ({
+		        mt: false,
+		        mr: false,
+		        mb: false,
+		        ml: false
+		    });
+		    
+			cvAva1.add(img_ava1);
+		    cvAva1.centerObject(img_ava1);
+		    cvAva1.sendToBack(img_ava1);
+			cvAva1.setActiveObject(img_ava1);
+		}, 
+		{
+			lockUniScaling: true
+		}
+	);
+	
 	/*
 		Template 4 (News Feed Post Template) Profile maker using FabricJS
 		Added By Handri Pangestiaji
 		Created at Sept 28 2015
 	======================================================================	
 	*/
-	var temp = getCookie("template");
 	
 	var canvas = new fabric.Canvas('canvas-ava21', {
 		backgroundColor: 'white'
 	});
 	
 	cvsW = canvas.getWidth();
+	
 	
 	// Add Grey Rectangle object bottom of canvas
 	var rect = new fabric.Rect({
@@ -786,6 +864,7 @@
 	
 	// Click Event on Ya button
 	$('body').on('click','#download',function(){
+		
 		if(temp == "template4") {
 			
 			canvas.deactivateAll().renderAll();
@@ -794,11 +873,27 @@
 			  format: 'png'
 			});
 			
+			
 			var link = document.createElement('a');
 			link.href = dataURL;
 			link.download = "Cover Profil Maker Allianz.png";
 			document.body.appendChild(link);
 			link.click();
+		}
+		else if(temp == "template5") {
+			cvAva1.deactivateAll().renderAll();
+			
+			var dataURL = cvAva1.toDataURL({
+				format: 'png'
+			});
+			
+			
+			var link = document.createElement('a');
+			link.href = dataURL;
+			link.download = "Cover Profil Maker Allianz.png";
+			document.body.appendChild(link);
+			link.click();
+			
 		}
 	});
 	//======================= End of template 4 ============================

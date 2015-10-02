@@ -440,10 +440,6 @@ $(document).ready(function()
 
 						$("#ava2-m").hide();
 	                    $("#ava21").show();
-	                    
-	                    Caman("#cropped-ava21", '/website/static/images/inkes.jpg', function(){
-		                    console.log('caman js');
-	                    });
 /*
 						
 						html2canvas($('#cropped-ava21'), {
@@ -510,6 +506,7 @@ $(document).ready(function()
 
 						//$("#ava1-m").hide();
 						//$("#ava1").show();
+						/*
 
 						html2canvas($('#cropped-ava1'), {
 							useCORS: true,
@@ -566,6 +563,7 @@ $(document).ready(function()
 									saveNote(headline,description,firstName,lastName, tgl);
 	                    	}
 	                	});
+	                	*/
 					}
 
 					//capture avatar
