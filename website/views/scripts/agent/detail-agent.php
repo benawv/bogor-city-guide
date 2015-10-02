@@ -344,11 +344,11 @@
                                 //echo $getStatus;
                                 if($session->Frekuensi == "Semesteran")
                                 {
-                                                        $nilai = ' Rp. '.number_format($session->Calculation*2,0,".",",")." per semester.";
+                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")." per semester.";
                                 }
                                 elseif($session->Frekuensi == "Triwulan")
                                 {
-                                                        $nilai = ' Rp. '.number_format($session->Calculation*4,0,".",",")." per triwulan.";
+                                                        $nilai = ' Rp. '.number_format($session->Calculation,0,".",",")." per triwulan.";
                                 } else $nilai= ' Rp. '.number_format($session->Calculation,0,".",",")." per tahun.";
 
                                 if($session->JenisKelamin=="l"){
