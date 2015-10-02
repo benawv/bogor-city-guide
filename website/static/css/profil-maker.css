@@ -147,6 +147,7 @@ img#timelineBGload:hover {
             width: 472px;
             height: 394px;
             margin: 0 auto;
+            position: relative;
           }
            #cropped-ava3 {
             width: 252px;
@@ -664,5 +665,4 @@ section.profile-maker {
     .leftside { left: 10%; }
     .rightside { right: 10%; }
     .ui-resizable-handle { display: none !important; }
-
 }
