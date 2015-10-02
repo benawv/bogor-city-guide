@@ -542,6 +542,7 @@ $(document).ready(function()
 
 						//$("#ava1-m").hide();
 						//$("#ava1").show();
+						/*
 
 						html2canvas($('#cropped-ava1'), {
 							useCORS: true,
@@ -598,6 +599,7 @@ $(document).ready(function()
 									saveNote(headline,description,firstName,lastName, tgl);
 	                    	}
 	                	});
+	                	*/
 					}
 
 					//capture avatar
