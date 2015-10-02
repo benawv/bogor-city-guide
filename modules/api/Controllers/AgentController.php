@@ -14,8 +14,14 @@ class Api_AgentController extends Zend_Rest_Controller {
                ->addActionContext('delete', 'json')
                ->initContext('json');
       $this->session = new Zend_Session_Namespace("Zend_Auth");
-      echo "<pre>";
    }
+     private function sendResponse($content) {
+		$this->getResponse()
+			->setHeader('Content-Type', 'json')
+			->setBody($content)
+			->sendResponse();
+		exit;
+	}
 
    public function indexAction () {
    }
@@ -161,7 +167,8 @@ class Api_AgentController extends Zend_Rest_Controller {
                                "PhoneNumber" => $office->nomorTelepon,
                                "FaxAreaCode" => $office->kodeAreaFax,
                                "FaxNumber" =>  $office->nomorFax,
-                               "LatLng" => $office->titikKordinat
+                               "Longitude" => (string) $office->titikKordinat->longitude,
+							   "Latitude" => (string) $office->titikKordinat->latitude
                  )
             )
          );
@@ -267,7 +274,7 @@ class Api_AgentController extends Zend_Rest_Controller {
             );
       }
 
-      echo json_encode($data);
+      echo Zend_Json::encode($data);
 
    }
 
@@ -335,7 +342,7 @@ class Api_AgentController extends Zend_Rest_Controller {
 		 $emailLead=$key->Lead[0]->Email;
 		 $nohpLead=$key->Lead[0]->Phone;
 		 $dobLead =$key->Lead[0]->DOB;
-		 echo $dobLead;die();
+		 // echo $dobLead;die();
          
          $this->session->user = $namaAgent;
          $this->session->email = $emailAgent;
@@ -364,11 +371,11 @@ class Api_AgentController extends Zend_Rest_Controller {
 								  "Points" =>  $points
                  ),
 				 "Leads" => array(
-					"Name" => "name",
-					"Email" => "email",
-					"Phone" => "0853xxxx",
-					"DOB" => "YYYY/MM/DD",
-					"AgentCode" => "111222333"
+					"Name" => $namaLead,
+					"Email" => $emailLead,
+					"Phone" => $nohpLead,
+					"DOB" => "1 oktober 2015",
+					"AgentCode" => $kodeAgent
 				 )
 
             )
