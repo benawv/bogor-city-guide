@@ -14,6 +14,15 @@ class Api_AgentController extends Zend_Rest_Controller {
                ->addActionContext('delete', 'json')
                ->initContext('json');
       $this->session = new Zend_Session_Namespace("Zend_Auth");
+      $uriPath = explode("/", strtolower($_SERVER['REQUEST_URI']));
+      if(empty($this->session->user)&&$uriPath[3]!="addleads"&&$uriPath[3]!="signup"){
+        $data = array(
+             "IsSuccess" => "No",
+             "Message" => "Error, Tidak ada agent yang login"
+         );
+        echo json_encode($data);
+        die();
+      }
       echo "<pre>";
    }
 
@@ -51,64 +60,7 @@ class Api_AgentController extends Zend_Rest_Controller {
    public function defaultAction () {
 
       // $mydata = json_decode($this->get_data('http://beta.allianz.co.id/webservice/rest/classes?apikey=591c3ff34e91e226dc58d3f087ea6e54c7769c6b38aafa83ec73831f15af7b1f'));
-	  $service_url = 'http://beta.allianz.co.id/webservice/rest/classes?apikey=591c3ff34e91e226dc58d3f087ea6e54c7769c6b38aafa83ec73831f15af7b1f';
-		
-		
-		//$url_api = 'http://beta.allianz.co.id/webservice/rest/classes'?apikey=591c3ff34e91e226dc58d3f087ea6e54c7769c6b38aafa83ec73831f15af7b1f;
-		$a=Website_GlobalFunction::CallAPI("get", $service_url);
-
-		print_r($a);
-		die();
-		
-		
-		$curl = curl_init($service_url);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-		$curl_response = curl_exec($curl);
-		$mydata = json_decode($curl_response);
-		print_r($mydata);die();
-		if ($curl_response === false) {
-			$info = curl_getinfo($curl);
-			curl_close($curl);
-			die('error occured during curl exec. Additioanl info: ' . var_export($info));
-		}
-		curl_close($curl);
-		$decoded = json_decode($curl_response);
-		if (isset($decoded->response->status) && $decoded->response->status == 'ERROR') {
-			die('error occured: ' . $decoded->response->errormessage);
-		}
-		echo 'response ok!';
-		var_export($decoded->response);
-      die();
-      $idUser = 100763;
-      $actor[] = json_decode($this->get_data('http://beta.allianz.co.id/webservice/rest/object/id/'.$idUser.'?apikey=591c3ff34e91e226dc58d3f087ea6e54c7769c6b38aafa83ec73831f15af7b1f',0))->data;
-      
-      print_r($actor); 
-      $fields = array(
-                  "Actor" => $actor,
-                  "TypeLog" => "LOGIN",
-                        "path" => "/agent-recruitment/log/",
-                        "creationDate" => 1388389170,
-                        "modificationDate" => 1388389170,
-                        "userModification" => 30,
-                        "className" => "log",
-                        "parentId" => 103592,
-                        "key" => "blog-api-test-2",
-                        "published" => true,
-                        "type" => "object",
-                        "userOwner" => 30,
-                        "properties" => null
-               );
-      print_r($this->get_data('http://beta.allianz.co.id/webservice/rest/object?apikey=591c3ff34e91e226dc58d3f087ea6e54c7769c6b38aafa83ec73831f15af7b1f',$fields));
-      die();
-      $mydata = json_decode($this->get_data('http://beta.allianz.co.id/webservice/rest/object?apikey=591c3ff34e91e226dc58d3f087ea6e54c7769c6b38aafa83ec73831f15af7b1f&',$fields));
-      echo "data<br>";
-      print_r($mydata);
-
-      die();
-      $session->user = "username";
-      Zend_Session:: namespaceUnset("Zend_Auth");
-      echo $session->user;
-      die();
+	  die();
       
       $this->enableLayout();
    }
@@ -167,7 +119,7 @@ class Api_AgentController extends Zend_Rest_Controller {
          );
          //log LOGIN
          //PAIR,EDITAGENT,AUTOMATION,LOGOUT,LOGIN,FOLLOWUP,NEWAGENT
-//         $this->log("LOGIN",$agentCode);
+        $this->log("LOGIN",$agentCode);
       }else{
          $data = array(
              "IsSuccess" => "No",
@@ -384,7 +336,6 @@ class Api_AgentController extends Zend_Rest_Controller {
 
    public function signupAction(){
     //this controller do, create new password for new agent recruitment. 
-
       // create object in pimcore ==============================================================
       $kodeAgent = $_GET["kodeAgent"];
       $email = $_GET["email"];
