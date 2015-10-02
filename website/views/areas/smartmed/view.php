@@ -383,15 +383,67 @@
                             <label>Pilihan Plan Manfaat Rawat Inap</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="6" id="planip">
+                            <select class="form-control" required tabindex="6" id="planip" onChange="checkData();">
                                 <?php
                                     $cat = new Object_SmartmedPlanType_List();
+                                    //echo "<option></option>";
                                     foreach($cat as $payment)
                                     {
                                         echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."'>"."Plan"." ".$payment->getPlanname()."</option>";
                                     }
                                 ?>
                             </select>
+                            <a id="file" style="visibility:hidden" target="_blank"></a>
+                            <script>
+                            function checkData(){
+                                var data = document.getElementById("planip");
+                                var val = data.options[data.selectedIndex].text;
+                                // alert(val);
+                                if (val == "Plan A"){
+                                    document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan A.pdf";
+                                    document.getElementById('file').style.visibility='visible';
+                                    document.getElementById('file').innerHTML='Tabel Manfaat Rawat Inap Plan A';
+                                }else if(val== "Plan B"){
+                                    document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan B.pdf";
+                                    document.getElementById('file').style.visibility='visible';
+                                    document.getElementById('file').innerHTML='Tabel Manfaat Rawat Inap Plan B';
+                                }else if(val== "Plan C"){
+                                    document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan c.pdf";
+                                    document.getElementById('file').style.visibility='visible';
+                                    document.getElementById('file').innerHTML='Tabel Manfaat Rawat Inap Plan C';
+                                }else if(val== "Plan D"){
+                                    document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan D.pdf";
+                                    document.getElementById('file').style.visibility='visible';
+                                    document.getElementById('file').innerHTML='Tabel Manfaat Rawat Inap Plan D';
+                                }else if(val== "Plan E"){
+                                    document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan E.pdf";
+                                    document.getElementById('file').style.visibility='visible';
+                                    document.getElementById('file').innerHTML='Tabel Manfaat Rawat Inap Plan E';
+                                }else if(val== "Plan F"){
+                                    document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan F.pdf";
+                                    document.getElementById('file').style.visibility='visible';
+                                    document.getElementById('file').innerHTML='Tabel Manfaat Rawat Inap Plan F';
+                                }else if(val== "Plan G"){
+                                    document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan G.pdf";
+                                    document.getElementById('file').style.visibility='visible';
+                                    document.getElementById('file').innerHTML='Tabel Manfaat Rawat Inap Plan G';
+                                }else if(val== "Plan H"){
+                                    document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan H.pdf";
+                                    document.getElementById('file').style.visibility='visible';
+                                    document.getElementById('file').innerHTML='Tabel Manfaat Rawat Inap Plan H';
+                                }else if(val== "Plan I"){
+                                    document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan I.pdf";
+                                    document.getElementById('file').style.visibility='visible';
+                                    document.getElementById('file').innerHTML='Tabel Manfaat Rawat Inap Plan I';
+                                }else if(val== "Plan J"){
+                                    document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan J.pdf";
+                                    document.getElementById('file').style.visibility='visible';
+                                    document.getElementById('file').innerHTML='Tabel Manfaat Rawat Inap Plan J';
+                                }else{
+                                    document.getElementById('file').style.visibility='hidden';
+                                }
+                            }
+                            </script>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -400,7 +452,7 @@
                             <label>Pilihan Plan Manfaat Melahirkan</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="6" id="planmat">
+                            <select class="form-control" required tabindex="6" id="planmat" onChange="checkData2();">
                                 <?php
                                     $cat = new Object_SmartmedPlanType_List();
                                     foreach($cat as $payment)
@@ -409,6 +461,57 @@
                                     }
                                 ?>
                             </select>
+                            <a id="file2" style="visibility:hidden" target="_blank"></a>
+                            <script>
+                            function checkData2(){
+                                var data = document.getElementById("planmat");
+                                var val = data.options[data.selectedIndex].text;
+                                // alert(val);
+                                if (val == "Plan A"){
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan A.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Tabel Manfaat Melahirkan Plan A';
+                                }else if(val== "Plan B"){
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan B.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Tabel Manfaat Melahirkan Plan B';
+                                }else if(val== "Plan C"){
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan c.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Tabel Manfaat Melahirkan Plan C';
+                                }else if(val== "Plan D"){
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan D.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Tabel Manfaat Melahirkan Plan D';
+                                }else if(val== "Plan E"){
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan E.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Tabel Manfaat Melahirkan Plan E';
+                                }else if(val== "Plan F"){
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan F.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Tabel Manfaat Melahirkan Plan F';
+                                }else if(val== "Plan G"){
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan G.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Tabel Manfaat Melahirkan Plan G';
+                                }else if(val== "Plan H"){
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan H.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Tabel Manfaat Melahirkan Plan H';
+                                }else if(val== "Plan I"){
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan I.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Tabel Manfaat Melahirkan Plan I';
+                                }else if(val== "Plan J"){
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan J.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Tabel Manfaat Melahirkan Plan J';
+                                }else{
+                                    document.getElementById('file2').style.visibility='hidden';
+                                }
+                            }
+                            </script>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -417,7 +520,7 @@
                             <label>Pilihan Plan Manfaat Rawat Jalan & rawat Gigi</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="6" id="planop_den">
+                            <select class="form-control" required tabindex="6" id="planop_den" onChange="checkData3();">
                                 <?php
                                     $cat = new Object_SmartmedPlanType_List();
                                     foreach($cat as $payment)
@@ -426,6 +529,57 @@
                                     }
                                 ?>
                             </select>
+                            <a id="file3" style="visibility:hidden" target="_blank"></a>
+                            <script>
+                            function checkData3(){
+                                var data = document.getElementById("planop_den");
+                                var val = data.options[data.selectedIndex].text;
+                                // alert(val);
+                                if (val == "Plan A"){
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan A.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Tabel Manfaat Rawat Jalan & Rawat Gigi Plan A';
+                                }else if(val== "Plan B"){
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan B.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Tabel Manfaat Rawat Jalan & Rawat Gigi Plan B';
+                                }else if(val== "Plan C"){
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan c.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Tabel Manfaat Rawat Jalan & Rawat Gigi Plan C';
+                                }else if(val== "Plan D"){
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan D.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Tabel Manfaat Rawat Jalan & Rawat Gigi Plan D';
+                                }else if(val== "Plan E"){
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan E.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Tabel Manfaat Rawat Jalan & Rawat Gigi Plan E';
+                                }else if(val== "Plan F"){
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan F.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Tabel Manfaat Rawat Jalan & Rawat Gigi Plan F';
+                                }else if(val== "Plan G"){
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan G.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Tabel Manfaat Rawat Jalan & Rawat Gigi Plan G';
+                                }else if(val== "Plan H"){
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan H.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Tabel Manfaat Rawat Jalan & Rawat Gigi Plan H';
+                                }else if(val== "Plan I"){
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan I.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Tabel Manfaat Rawat Jalan & Rawat Gigi Plan I';
+                                }else if(val== "Plan J"){
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan J.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Tabel Manfaat Rawat Jalan & Rawat Gigi Plan J';
+                                }else{
+                                    document.getElementById('file3').style.visibility='hidden';
+                                }
+                            }
+                            </script>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
