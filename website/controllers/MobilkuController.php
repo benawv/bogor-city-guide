@@ -8,7 +8,6 @@ class MobilkuController extends Website_Controller_Action {
 	}
 	
 	public function saveInsuraceAction(){
-		
 		$th=$_POST['tahun_pembuatan'];
 		$harga=$_POST['harga'];
 		$merk=$_POST['merk'];
@@ -163,6 +162,9 @@ class MobilkuController extends Website_Controller_Action {
 		$register->setIndex(0);
 		$register->setPublished(1);
 		$register->save();
+
+		$session_mobilku = new Zend_Session_Namespace('kantorPemasaran');
+		$session_mobilku->idUser = $register->getO_id();
        // }
        // catch(Exception $e){
         //    echo 'Message: ' .$e->getMessage();
@@ -203,6 +205,17 @@ class MobilkuController extends Website_Controller_Action {
 		// 	echo 'Message: ' .$e->getMessage();
 		// }
 		echo "sukses";
+	}
+
+	public function updateUserMobilkuAction(){
+		$session_mobilku = new Zend_Session_Namespace('kantorPemasaran');
+		$idObject = $session_mobilku->idUser;
+		$update = Object_MobilPersonalLines::getById($idObject);
+		$update->setMasukpemasaran("Ya");
+		$update->save();
+
+		Zend_Session::namespaceUnset('kantorPemasaran');
+		die();
 	}
     
 	public function sendemailAction(){

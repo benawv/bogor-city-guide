@@ -383,6 +383,7 @@ class Api_AgentController extends Zend_Rest_Controller {
    }
 
    public function signupAction(){
+    //this controller do, create new password for new agent recruitment. 
 
       // create object in pimcore ==============================================================
       $kodeAgent = $_GET["kodeAgent"];
@@ -486,48 +487,47 @@ class Api_AgentController extends Zend_Rest_Controller {
       return $getId->o_id;
    }
 
-   public function getAgentAction(){
-
-      $email = "";
+   public function getagentAction(){
+      $kodeAgent = "008";//$_GET["kodeAgent"];
+      $email = "ibnuisthi.handoko@allianzlife.co.id";
       $limit = "";
       $offset = "";
-      $condition="email = ".$Email;
-      $agent= new Object\Contest\Listing();
-      $agent->setOrderKey('oo_id');
-      $agent->setOrder('desc');
-      $agent->setLimit($limit);
-      $agent->setOffset($offset);
-      $agent->setCondition($condition);
+      $condition="email = '".$email."'";
+      $entries = Object_agentLocatorData::getList([
+         "condition" => $condition,
+         "limit" => 1
+         ]);
       $n = 0;
-      foreach ($agent as $key) {
-         $no++;
+      foreach ($entries as $key) {
+        $nama = $key->namaAgent;
+        $email = $key->email;
+        $phone = $key->noHp;
+        $kodeAgent = $key->kodeAgent;
+        $kantor = $key->kantor[0];
+        $createdAt = date("d-M-Y",$key->o_creationDate);
+        $no++;
       }
 
-      if($no==0){
-
-      }
-
-      if($no > 1){
+      if($no >= 1){
          $data = array(
               "IsSuccess" => "Yes",
-              "CreatedAt" => "YYYY/MM/DD",
+              "CreatedAt" => $createdAt,
               "Message" => "Agent successfully signed up",
               "Agent" => array(
-                        "Name" => "NAME",
-                        "Email" => "EMAIL",
-                        "Phone" => "081234234124",
-                        "DOB" => "YYYY/MM/DD",
-                        "AgentCode" => "112223333",
+                        "Name" => $nama,
+                        "Email" => $email,
+                        "Phone" => $phone,
+                        "AgentCode" => $kodeAgent,
                         "Office" => array(
-                               "LocationCode" => "abcdefghij",
-                               "LocationName" => "abcdefghij",
-                               "OfficeEmail" => "abcdefghij",
-                               "PostCode" => "abcdefghij",
-                               "PhoneAreaCode" => "abcdefghij",
-                               "PhoneNumber" => "abcdefghij",
-                               "FaxAreaCode" => "abcdefghij",
-                               "FaxNumber" => "abcdefghij",
-                               "LatLng" => "abcdefghij"
+                               "LocationCode" => $kantor->LocationCode,
+                               "LocationName" => $kantor->LocationName,
+                               "OfficeEmail" => $kantor->OfficeEmail,
+                               "PostCode" => $kantor->kodePos,
+                               "PhoneAreaCode" => $kantor->kodeAreaTelepon,
+                               "PhoneNumber" => $kantor->nomorTelepon,
+                               "FaxAreaCode" => $kantor->kodeAreaFax,
+                               "FaxNumber" => $kantor->nomorFax,
+                               "LatLng" => $kantor->titikKordinat
                    )
             )
          );
@@ -537,6 +537,8 @@ class Api_AgentController extends Zend_Rest_Controller {
              "Message" => "There is no agent with email provided"
          );
       }
+
+      echo json_encode($data);
    }
 
    public function logoutAction(){
