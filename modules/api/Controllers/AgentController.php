@@ -130,10 +130,10 @@ class Api_AgentController extends Zend_Rest_Controller {
    }
 
    public function addnotifAction(){
-      $code = "NEWLEADS";
-      $displayText = "You have new leads";
-      $kodeAgent = "008";
-      $object = "Nama object";
+      $code = $_GET["code"];//"NEWLEADS";
+      $displayText = $_GET["displayText"];//"You have new leads";
+      $kodeAgent = $_GET["kodeAgent"];//"008";
+      $object = $_GET["object"];//"Nama object string";
 
       //cek folder and create folder notif per agent 
       $folder = Object_Abstract::getByPath("/agent-recruitment/notif/".$kodeAgent)->o_id;
@@ -224,14 +224,15 @@ class Api_AgentController extends Zend_Rest_Controller {
    }
 
    public function addLeads(){
-		$name="";
-		$email="";
-		$phone="";
-		$dob="";
-		$address="";
-		$province="";
-		$city="";
-		$password="";
+		$name=$_GET["name"];
+		$email=$_GET["email"];
+		$phone=$_GET["phone"];
+		$dob=$_GET["dob"];
+		$address=$_GET["address"];
+		$province=$_GET["province"];
+		$city=$_GET["city"];
+		$password=$_GET["password"];
+
 		$namekey = str_replace(' ', '_', $name)."_".strtotime(date("YmdHis"));
 		$leads = new Object_Leads();
 		$leads->setname($name);
@@ -247,7 +248,29 @@ class Api_AgentController extends Zend_Rest_Controller {
 		$leads->setO_parentId('3');
 		$leads->setIndex(0);
 		$leads->setPublished(1);
-		$leads->save();
+		if($leads->save())
+      $data = array(
+                "IsSuccess" => "Yes",
+                "Message" => "Leads successfully created",
+                "CreatedAt" => date("d M Y"),
+                "Leads" => array(
+                     "name" => $name,
+                     "email" => $email,
+                     "phone" => $phone,
+                     "dob" => $dob,
+                     "address" => $address,
+                     "province" => $province,
+                     "city" => $city,
+              )
+         );
+    else
+      $data = array(
+                "IsSuccess" => "No",
+                "Message" => "Leads gagal ditambahkan",
+              )
+         );
+
+    echo json_encode($data);
 		
    }
    public function pairAction(){
@@ -339,78 +362,84 @@ class Api_AgentController extends Zend_Rest_Controller {
       // create object in pimcore ==============================================================
       $kodeAgent = $_GET["kodeAgent"];
       $email = $_GET["email"];
-      $name = "";
-      $phone = "";
-      $dob = "";
-      $agentCode = "";
-      $office = "";
-      // $idFolder=Object_Abstract::getByPath("/agent-locator-data")->o_id;//get folder id object
-
-      // $agent = new Object_AgentLocatorData();
-      // $agent->setname($name);
-      // $agent->setemail($email);
-      // $agent->setphone($phone);
-      // $agent->setdob($dob);
-      // $agent->setagentCode($agentCode);
-      // $agent->setoffice($office);
-      // $agent->setKey(strtolower(date("YmdHis")));
-      // $agent->setO_parentId($idFolder);
-      // $agent->setIndex(0);
-      // $agent->setPublished(1);
-
-      $condition="email LIKE '".$email."' AND kodeAgent LIKE '".$kodeAgent."'";
-      $entries = Object_agentLocatorData::getList([
-         "condition" => $condition,
-         "limit" => 1
-         ]);
-
-      $signupStatus = false;
-      // search object in pimcore ==============================================================
-      foreach ($entries as $key) {
-         $nama = $key->namaAgent;
-         $phone = $key->phone;
-         $dob = $key->dob;
-         $agentCode = $key->kodeAgent;
-         $office = $key->kantor[0];
-         $signupStatus = true;
-         $createdAt = date("d M Y",$key->o_creationDate);
-      }
-      if($signupStatus==true){
-         $newpass = str_shuffle($nama.$phone);
-         $idObject=Object_Abstract::getByPath("/agent-locator-data/".$kodeAgent)->o_id;//get folder id object
-         $update = Object_agentLocatorData::getById($idObject);
-         $update->setPass($newpass);
-         $update->save();
-         $data = array(
-              "IsSuccess" => "Yes",
-              // "CreatedAt" => "YYYY/MM/DD",
-              "Message" => "Agent successfully signed up",
-              "Agent" => array(
-                        "Name" => $nama,
-                        "Email" => $email,
-                        "Phone" => $phone,
-                        "AgentCode" => $agentCode,
-                        "newPassword" => $newpass,
-                        "Office" => array(
-                              "LocationCode" => $office->kodeLokasi,
-                              "LocationName" => $office->namaLokasi,
-                              "OfficeEmail" => $office->emailKantor,
-                              "PostCode" => $office->kodePos,
-                              "PhoneAreaCode" => $office->kodeAreaTelepon,
-                              "PhoneNumber" => $office->nomorTelepon,
-                              "FaxAreaCode" => $office->kodeAreaFax,
-                              "FaxNumber" =>  $office->nomorFax,
-                              "LatLng" => $office->titikKordinat
-                   )
-            )
-         );
+      if(empty($kodeAgent)||empty($email)){
+        $data = array(
+            "IsSuccess" => "No",
+            "Message" => "Field is required"
+        );
       }else{
-         $data = array(
-             "IsSuccess" => "No",
-             "Message" => "Field is required"
-         );
-      }
+        $name = "";
+        $phone = "";
+        $dob = "";
+        $agentCode = "";
+        $office = "";
+        // $idFolder=Object_Abstract::getByPath("/agent-locator-data")->o_id;//get folder id object
 
+        // $agent = new Object_AgentLocatorData();
+        // $agent->setname($name);
+        // $agent->setemail($email);
+        // $agent->setphone($phone);
+        // $agent->setdob($dob);
+        // $agent->setagentCode($agentCode);
+        // $agent->setoffice($office);
+        // $agent->setKey(strtolower(date("YmdHis")));
+        // $agent->setO_parentId($idFolder);
+        // $agent->setIndex(0);
+        // $agent->setPublished(1);
+
+        $condition="email LIKE '".$email."' AND kodeAgent LIKE '".$kodeAgent."'";
+        $entries = Object_agentLocatorData::getList([
+           "condition" => $condition,
+           "limit" => 1
+           ]);
+
+        $signupStatus = false;
+        // search object in pimcore ==============================================================
+        foreach ($entries as $key) {
+           $nama = $key->namaAgent;
+           $phone = $key->phone;
+           $dob = $key->dob;
+           $agentCode = $key->kodeAgent;
+           $office = $key->kantor[0];
+           $signupStatus = true;
+           $createdAt = date("d M Y",$key->o_creationDate);
+        }
+        if($signupStatus==true){
+           $newpass = str_shuffle($nama.$phone);
+           $idObject=Object_Abstract::getByPath("/agent-locator-data/".$kodeAgent)->o_id;//get folder id object
+           $update = Object_agentLocatorData::getById($idObject);
+           $update->setPass($newpass);
+           $update->save();
+           $data = array(
+                "IsSuccess" => "Yes",
+                // "CreatedAt" => "YYYY/MM/DD",
+                "Message" => "Agent successfully signed up",
+                "Agent" => array(
+                          "Name" => $nama,
+                          "Email" => $email,
+                          "Phone" => $phone,
+                          "AgentCode" => $agentCode,
+                          "newPassword" => $newpass,
+                          "Office" => array(
+                                "LocationCode" => $office->kodeLokasi,
+                                "LocationName" => $office->namaLokasi,
+                                "OfficeEmail" => $office->emailKantor,
+                                "PostCode" => $office->kodePos,
+                                "PhoneAreaCode" => $office->kodeAreaTelepon,
+                                "PhoneNumber" => $office->nomorTelepon,
+                                "FaxAreaCode" => $office->kodeAreaFax,
+                                "FaxNumber" =>  $office->nomorFax,
+                                "LatLng" => $office->titikKordinat
+                     )
+              )
+           );
+        }else{
+           $data = array(
+               "IsSuccess" => "No",
+               "Message" => "Tidak ada agent ditemukan"
+           );
+        }
+      }
       echo json_encode($data);
    }
 
