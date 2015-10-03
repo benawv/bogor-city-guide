@@ -21,6 +21,7 @@ class ProfilMakerController extends Website_Controller_Action {
 			echo 'ERROR: ',  $e->getMessage(), "\n";
 		}
 		//echo $_COOKIE["uploadImage"];
+		Zend_Session::namespaceUnset('srcImage');
 		$session = new Zend_Session_Namespace('srcImage');
 		$session->src = $src;
 		$this->redirect($urlRedirect);
