@@ -473,14 +473,14 @@
                                 <div class="col-xs-12 col-sm-3">
                                     <!-- <input type="button" id="gambar" class="btn btn-default btn-block" value="Ganti Gambar"> -->
                                     <!--<a id="gambar" href="/profil-maker/page2" class="btn btn-default btn-block">Ganti Gambar</a>-->
-                                    <a href="/profil-maker/page2" class="customHref">
+                                    <a href="javascript:history.go(-1);" class="customHref">
                                             <input type="button" class="btn btn-default btn-block" value="Ganti Gambar">
                                     </a>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
                                     <!-- <input type="button" id="pilih" class="btn btn-default btn-block" value="Pilih Template"> -->
                                     <!--<a id="pilih" href="/profil-maker/page1" class="btn btn-default btn-block">Pilih Template</a>-->
-                                    <a href="/profil-maker/page1" class="customHref">
+                                    <a href="javascript:history.go(-2);" class="customHref">
                                             <input type="button" class="btn btn-default btn-block" value="Pilih Template">
                                     </a>
                                 </div><!--/ .col-xs-12 -->
