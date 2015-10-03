@@ -524,13 +524,13 @@
                                     <a id="download" href="#top" class="btn btn-primary btn-block">Ya</a>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
-                                    <a href="/profil-maker/page2" class="customHref">
+                                    <a href="javascript:history.go(-1);" class="customHref">
                                             <input type="button" class="btn btn-default btn-block" value="Ganti Gambar">
                                     </a>
                                     <!--<input type="button" class="btn btn-default btn-block" value="Pilih Template">-->
                                 </div>
                                 <div class="col-xs-12 col-sm-3">
-                                    <a href="/profil-maker/page1" class="customHref">
+                                    <a href="javascript:history.go(-2);" class="customHref">
                                             <input type="button" class="btn btn-default btn-block" value="Pilih Template">
                                     </a>
                                     <!--<input type="button" class="btn btn-default btn-block" value="Pilih Template">-->
@@ -545,7 +545,7 @@
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
 
-        <?php //for( $i = 0; $i < 2; $i++ ): ?>
+        <?php if(1==0){ //for( $i = 0; $i < 2; $i++ ): ?>
 
         <div class="row">
 
@@ -635,7 +635,7 @@
 
         </div> <!--/.row -->
 
-        <?php //endfor; ?>
+        <?php }//endfor; ?>
 
         <div class="row">
             <div class="col-xs-12">
