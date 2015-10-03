@@ -4,7 +4,7 @@
 
         <div class="row profile-maker--title">
             <div class="col-xs-12">
-                <h2>Allianz Profile Maker</h2>
+                <h2>Allianz Template Maker</h2>
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
         <?php //$val = (int) $this->select("jumlah")->getData();
@@ -17,9 +17,13 @@
                     <h4 id="News Feed Post Template">News Feed Post Template</h4>
                     <img src="/website/static/images/profile-maker/Agent Facebook News Feed Post Template.png" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker/page2">
+	                    <?php if($this->editmode) { ?>
+	                    	<?php echo $this->link("link-template4"); ?>
+	                    <?php } else { ?>
+                        <a href="<?php echo $this->link("link-template4")->getHref(); ?>">
                             <input type="button" id="template4" res="472x394px" value="Pilih" class="btn btn-primary template"/>
                         </a>
+                        <?php } ?>
                         <span>(Mobile Friendly)</span>
                         <!--<a href="/profil-maker-create" class="btn btn-primary">Pilih</a>-->
                     </div><!--/ .pm-buttons -->
@@ -31,9 +35,13 @@
                     <h4>Profile Picture</h4>
                     <img src="/website/static/images/profile-maker/Allianz Agent Facebook Profile Picture.png" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker/page2">
+	                    <?php if($this->editmode) { ?>
+	                    	<?php echo $this->link("link-template5"); ?>
+	                    <?php } else { ?>
+                        <a href="<?php echo $this->link("link-template5")->getHref(); ?>">
                             <input type="button" id="template5" res="300x300px" value="Pilih" class="btn btn-primary template"/>
                         </a>
+                        <?php } ?>
                         <span>(Mobile Friendly)</span>
                         <!--<a href="/profil-maker/2" class="btn btn-primary">Pilih</a>-->
                     </div><!--/ .pm-buttons -->
@@ -45,9 +53,13 @@
                     <h4>Timeline Post Template</h4>
                     <img src="/website/static/images/profile-maker/Allianz Facebook Timeline Post Template.png" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker/page2"> 
+	                    <?php if($this->editmode) { ?>
+	                    	<?php echo $this->link("link-template6"); ?>
+	                    <?php } else { ?>
+                        <a href="<?php echo $this->link("link-template6")->getHref(); ?>"> 
                             <input type="button" id="template6" res="504x504px" value="Pilih" class="btn btn-primary template"/>
                         </a>
+                        <?php } ?>
                         <span>(Mobile Friendly)</span>
                         <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
                     </div><!--/ .pm-buttons -->
@@ -59,9 +71,13 @@
                     <h4>Page Cover Landscaped Notepad</h4>
                     <img src="/website/static/images/profile-maker/Allianz Agent Page Cover Landscaped Notepad.png" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker/page2">
+	                    <?php if($this->editmode) { ?>
+	                    	<?php echo $this->link("link-template1"); ?>
+	                    <?php } else { ?>
+                        <a href="<?php echo $this->link("link-template1")->getHref(); ?>">
                             <input type="button" id="template1" res="851x315px" value="Pilih" class="btn btn-primary template"/>
                         </a>
+                        <?php } ?>
                         <span>(Desktop Only)</span>
                         <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
                     </div><!--/ .pm-buttons -->
@@ -73,9 +89,13 @@
                     <h4>Page Cover Portrait Notepad</h4>
                     <img src="/website/static/images/profile-maker/Allianz Agent Page Cover Portrait Notepad.png" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker/page2">
+	                    <?php if($this->editmode) { ?>
+	                    	<?php echo $this->link("link-template2"); ?>
+	                    <?php } else { ?>
+                        <a href="<?php echo $this->link("link-template2")->getHref(); ?>">
                             <input type="button" id="template2" res="851x315px" value="Pilih" class="btn btn-primary template"/>
                         </a>
+                        <?php } ?>
                         <span>(Desktop Only)</span>
                         <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
                     </div><!--/ .pm-buttons -->
@@ -87,9 +107,13 @@
                     <h4>Page Cover Square Notepad</h4>
                     <img src="/website/static/images/profile-maker/Allianz Agent Page Cover Square Notepad.png" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker/page2">
+	                    <?php if($this->editmode) { ?>
+	                    	<?php echo $this->link("link-template3"); ?>
+	                    <?php } else { ?>
+                        <a href="<?php echo $this->link("link-template3")->getHref(); ?>">
                             <input type="button" id="template3" res="851x315px" value="Pilih" class="btn btn-primary template"/>
                         </a>
+                        <?php } ?>
                         <span>(Desktop Only)</span>
                         <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
                     </div><!--/ .pm-buttons -->

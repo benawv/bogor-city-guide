@@ -64,6 +64,7 @@ function checkfiles(){
                             <!--<img id="preview" src="#" alt="your image" width="100" height="100" />-->
                             
                             <input id="imgfile" type="file" name="uploadFoto" /> 
+                            <input id="redirect" type="hidden" name="urlRedirect" value="<?php echo $this->link("link-template")->getHref()?>"/>
                             <!--<input type="file" required>-->
                         </div><!--/ .form-group -->
                         <div style="color:red" id="test"></div>
@@ -74,6 +75,10 @@ function checkfiles(){
                     </form>
                             <!--</a>-->
                             <a href="javascript:history.go(-1);" class="btn btn-default">Kembali</a>
+                            <br />
+                            <?php if($this->editmode) { ?>
+                            	<?php echo $this->link("link-template")?>
+                            <?php } ?>
                         </div><!--/ .form-group -->
 
                     
