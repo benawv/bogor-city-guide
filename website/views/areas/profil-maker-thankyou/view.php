@@ -27,7 +27,7 @@
                         </div><!--/ .row -->
                         <div class="row" style="margin-top: 16px;">
                             <div class="col-xs-6 col-sm-3 col-centered">
-                                <a id="tutup" href="/profil-maker/page1" class="btn btn-primary btn-block">Kembali ke Profil Maker</a>
+                                <a id="tutup" href="/template-maker" class="btn btn-primary btn-block">Kembali ke Profil Maker</a>
                             </div><!--/ .col-xs-12 -->
                                         
                         </div><!--/ .row -->

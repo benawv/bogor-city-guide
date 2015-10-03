@@ -404,7 +404,7 @@
                         <form id="formx" role="form">
                             <div id="input1" class="row">
                                 <div class="col-xs-12 col-md-3">
-                                    <label>Headline</label>
+                                    <label>Title</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
                                     <input type="text" name="headline" id="atas" maxlength="30" class="form-control headlineCover" required>
@@ -880,7 +880,8 @@
               format: 'png'
             });
 
-            window.location.href = "/profil-maker/profil-thankyou";
+            //window.location.href = "/profil-maker/profil-thankyou";
+            window.location.href = "/template-maker/news-feed-post/thankyou";
 
             var link = document.createElement('a');
             link.href = dataURL;
@@ -895,7 +896,8 @@
 				format: 'png'
 			});
 			
-			window.location.href = "/profil-maker/profil-thankyou";
+			//window.location.href = "/profil-maker/profil-thankyou";
+            window.location.href = "/template-maker/profile-picture/thankyou";
 
 			var link = document.createElement('a');
 			link.href = dataURL;
@@ -1028,7 +1030,7 @@
               format: 'png'
             });
 
-            window.location.href = "/profil-maker/profil-thankyou";
+            window.location.href = "/template-maker/timeline-post/thankyou";
 
             var link = document.createElement('a');
             link.href = dataURL;
