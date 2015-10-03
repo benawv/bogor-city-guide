@@ -17,9 +17,13 @@
                     <h4 id="News Feed Post Template">News Feed Post Template</h4>
                     <img src="/website/static/images/profile-maker/Agent Facebook News Feed Post Template.png" alt="Template Image" class="img-responsive">
                     <div class="pm-buttons">
-                        <a href="/profil-maker/page2">
+	                    <?php if($this->editmode) { ?>
+	                    	<?php echo $this->link("link-template4"); ?>
+	                    <?php } else { ?>
+                        <a href="<?php echo $this->link("link-template4")->getHref(); ?>">
                             <input type="button" id="template4" res="472x394px" value="Pilih" class="btn btn-primary template"/>
                         </a>
+                        <?php } ?>
                         <span>(Mobile Friendly)</span>
                         <!--<a href="/profil-maker-create" class="btn btn-primary">Pilih</a>-->
                     </div><!--/ .pm-buttons -->
