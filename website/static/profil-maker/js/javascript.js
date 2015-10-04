@@ -226,10 +226,10 @@ $(document).ready(function()
 		                $('#ask').hide();      
 	                });
 
-	                $("#tutup").click(function(){
-		                window.location.href = "/profil-maker/page1";
-		                    
-	                });
+	//                $("#tutup").click(function(){
+	//	                window.location.href = "/profil-maker/page1";
+	//	                    
+	//                });
 	                
                     //Smooth scroll   
                     $("#preview, #download, #square, #portrait, #landscape, #save, #ask, #fillform, #thankyou").click(function(event){
