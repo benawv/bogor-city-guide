@@ -358,15 +358,15 @@ $(document).ready(function()
 						cropped = "";
 						if(temp == "template1") {
 							cropped = $('#cropped-1');
-							var template = "/template-maker/page-cover-landscape/thankyou";
+							var template = "/asn/allianz-social-media-for-sales/template-maker/page-cover-landscape/thankyou";
 						}
 						else if(temp == "template2") {
 							cropped = $('#cropped-2');
-							var template = "/template-maker/page-cover-portrait/thankyou";
+							var template = "/asn/allianz-social-media-for-sales/template-maker/page-cover-portrait/thankyou";
 						}
 						else if(temp == "template3") {
 							cropped = $('#cropped-3');
-							var template = "/template-maker/page-cover-square/thankyou";
+							var template = "/asn/allianz-social-media-for-sales/template-maker/page-cover-square/thankyou";
 						}
 						else {
 							
