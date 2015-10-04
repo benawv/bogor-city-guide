@@ -881,13 +881,14 @@
             });
 
             //window.location.href = "/profil-maker/profil-thankyou";
-            window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";
 
             var link = document.createElement('a');
             link.href = dataURL;
             link.download = "News Feed Post Allianz.png";
             document.body.appendChild(link);
             link.click();
+            
+            window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";
         }
 		else if(temp == "template5") {
 			cvAva1.deactivateAll().renderAll();
@@ -897,7 +898,6 @@
 			});
 			
 			//window.location.href = "/profil-maker/profil-thankyou";
-            window.location.href = "/asn/allianz-social-media-for-sales/template-maker/profile-picture/thankyou";
 
 			var link = document.createElement('a');
 			link.href = dataURL;
@@ -905,6 +905,7 @@
 			document.body.appendChild(link);
 			link.click();
 			
+            		window.location.href = "/asn/allianz-social-media-for-sales/template-maker/profile-picture/thankyou";
 		}
     });
     
@@ -1030,13 +1031,13 @@
               format: 'png'
             });
 
-            window.location.href = "/asn/allianz-social-media-for-sales/template-maker/timeline-post/thankyou";
-
             var link = document.createElement('a');
             link.href = dataURL;
             link.download = "Timeline Post Allianz.png";
             document.body.appendChild(link);
             link.click();
+            
+            window.location.href = "/asn/allianz-social-media-for-sales/template-maker/timeline-post/thankyou";
         }
     });
     }
