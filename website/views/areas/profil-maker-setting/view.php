@@ -885,7 +885,7 @@
 
             var link = document.createElement('a');
             link.href = dataURL;
-            link.download = "News Feed Post Template.png";
+            link.download = "News Feed Post Allianz.png";
             document.body.appendChild(link);
             link.click();
         }
@@ -901,7 +901,7 @@
 
 			var link = document.createElement('a');
 			link.href = dataURL;
-			link.download = "Cover Profil Maker Allianz.png";
+			link.download = "Profil Picture Allianz.png";
 			document.body.appendChild(link);
 			link.click();
 			
@@ -1034,7 +1034,7 @@
 
             var link = document.createElement('a');
             link.href = dataURL;
-            link.download = "Timeline Post Template.png";
+            link.download = "Timeline Post Allianz.png";
             document.body.appendChild(link);
             link.click();
         }
