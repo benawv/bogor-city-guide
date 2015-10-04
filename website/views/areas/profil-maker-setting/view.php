@@ -881,7 +881,7 @@
             });
 
             //window.location.href = "/profil-maker/profil-thankyou";
-            window.location.href = "/template-maker/news-feed-post/thankyou";
+            window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";
 
             var link = document.createElement('a');
             link.href = dataURL;
@@ -897,7 +897,7 @@
 			});
 			
 			//window.location.href = "/profil-maker/profil-thankyou";
-            window.location.href = "/template-maker/profile-picture/thankyou";
+            window.location.href = "/asn/allianz-social-media-for-sales/template-maker/profile-picture/thankyou";
 
 			var link = document.createElement('a');
 			link.href = dataURL;
@@ -1030,7 +1030,7 @@
               format: 'png'
             });
 
-            window.location.href = "/template-maker/timeline-post/thankyou";
+            window.location.href = "/asn/allianz-social-media-for-sales/template-maker/timeline-post/thankyou";
 
             var link = document.createElement('a');
             link.href = dataURL;
