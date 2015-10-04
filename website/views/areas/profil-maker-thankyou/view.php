@@ -26,7 +26,8 @@
                             </div><!--/ .col-xs-12 -->
                         </div><!--/ .row -->
                         <div class="row" style="margin-top: 16px;">
-                            <div class="col-xs-6 col-sm-3 col-centered">
+                            <!--<div class="col-xs-6 col-sm-4 col-centered">-->
+                            <div class="col-xs-12 col-sm-5 col-centered">
                                 <a id="tutup" href="/template-maker" class="btn btn-primary btn-block">Kembali ke Allianz Template Maker</a>
                             </div><!--/ .col-xs-12 -->
                                         
