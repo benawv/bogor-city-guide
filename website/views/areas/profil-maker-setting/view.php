@@ -679,6 +679,7 @@
 ?>
 <script>
 	var temp = getCookie("template");
+	var iOS = /iPad|iPhone|iPod/.test(navigator.platform);
 	
 	/* 
 		Template 5 (Profile Picture Template) Profile maker using FabricJS
@@ -888,7 +889,12 @@
             document.body.appendChild(link);
             link.click();
             
-            window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";
+            if(iOS == true) {
+            	
+            } else {
+            	window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";	
+            }
+            
         }
 		else if(temp == "template5") {
 			cvAva1.deactivateAll().renderAll();
@@ -905,7 +911,11 @@
 			document.body.appendChild(link);
 			link.click();
 			
-            		window.location.href = "/asn/allianz-social-media-for-sales/template-maker/profile-picture/thankyou";
+			if(iOS == true) {
+				
+			} else {
+            			window.location.href = "/asn/allianz-social-media-for-sales/template-maker/profile-picture/thankyou";
+			}
 		}
     });
     
@@ -1037,7 +1047,11 @@
             document.body.appendChild(link);
             link.click();
             
-            window.location.href = "/asn/allianz-social-media-for-sales/template-maker/timeline-post/thankyou";
+            if(iOS == true) {
+            	
+            } else {
+            	window.location.href = "/asn/allianz-social-media-for-sales/template-maker/timeline-post/thankyou";
+            }
         }
     });
     }
