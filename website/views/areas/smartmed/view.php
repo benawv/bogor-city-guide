@@ -311,13 +311,13 @@
                                 $cat = new Object_SmartmedPaymentType_List();
                                 foreach($cat as $payment)
                                 {
-                                    if ($payment->getPaymenttype() == "annually"){
+                                    if ($payment->getPaymenttype() == "Annually"){
                                         echo "<option value='".$payment->getPaymenttype()."'>Tahunan</option>";
                                     }else if ($payment->getPaymenttype() == "Semi-Annually"){
                                         echo "<option value='".$payment->getPaymenttype()."'>Enam Bulanan</option>";
-                                    }else if ($payment->getPaymenttype() == "quarterly"){
+                                    }else if ($payment->getPaymenttype() == "Quarterly"){
                                         echo "<option value='".$payment->getPaymenttype()."'>Tiga Bulanan</option>";
-                                    }else if ($payment->getPaymenttype() == "monthly"){
+                                    }else if ($payment->getPaymenttype() == "Monthly"){
                                         echo "<option value='".$payment->getPaymenttype()."'>Bulanan</option>";
                                     }
                                     // echo "<option value='".$payment->getPaymenttype()."'>".$payment->getPaymenttype()."</option>";
