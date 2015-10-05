@@ -402,6 +402,7 @@
                                     }
                                 ?>
                             </select>
+                            <label id="notif" style="display:none; color:red;">Manfaat Rawat Inap Harus diisi.</label>
                             <a id="file" style="visibility:hidden" target="_blank"></a>
                             <script>
                             function checkData(){
@@ -412,42 +413,52 @@
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan A.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan A';
+                                    document.getElementById('notif').style.display='none';
                                 }else if(val== "Plan B"){
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan B.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan B';
+                                    document.getElementById('notif').style.display='none';
                                 }else if(val== "Plan C"){
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan c.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan C';
+                                    document.getElementById('notif').style.display='none';
                                 }else if(val== "Plan D"){
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan D.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan D';
+                                    document.getElementById('notif').style.display='none';
                                 }else if(val== "Plan E"){
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan E.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan E';
+                                    document.getElementById('notif').style.display='none';
                                 }else if(val== "Plan F"){
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan F.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan F';
+                                    document.getElementById('notif').style.display='none';
                                 }else if(val== "Plan G"){
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan G.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan G';
+                                    document.getElementById('notif').style.display='none';
                                 }else if(val== "Plan H"){
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan H.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan H';
+                                    document.getElementById('notif').style.display='none';
                                 }else if(val== "Plan I"){
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan I.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan I';
+                                    document.getElementById('notif').style.display='none';
                                 }else if(val== "Plan J"){
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan J.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan J';
+                                    document.getElementById('notif').style.display='none';
                                 }else{
                                     document.getElementById('file').style.visibility='hidden';
                                 }
@@ -471,6 +482,7 @@
                                     }
                                 ?>
                             </select>
+                            <label id="notif2" style="display:none; color:red;">Manfaat Melahirkan Harus diisi.</label>
                             <a id="file2" style="visibility:hidden" target="_blank"></a>
                             <script>
                             function checkData2(){
@@ -481,42 +493,52 @@
                                     document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan A.pdf";
                                     document.getElementById('file2').style.visibility='visible';
                                     document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan A';
+                                    document.getElementById('notif2').style.display='none';
                                 }else if(val== "Plan B"){
                                     document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan B.pdf";
                                     document.getElementById('file2').style.visibility='visible';
                                     document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan B';
+                                    document.getElementById('notif2').style.display='none';
                                 }else if(val== "Plan C"){
                                     document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan c.pdf";
                                     document.getElementById('file2').style.visibility='visible';
                                     document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan C';
+                                    document.getElementById('notif2').style.display='none';
                                 }else if(val== "Plan D"){
                                     document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan D.pdf";
                                     document.getElementById('file2').style.visibility='visible';
                                     document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan D';
+                                    document.getElementById('notif2').style.display='none';
                                 }else if(val== "Plan E"){
                                     document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan E.pdf";
                                     document.getElementById('file2').style.visibility='visible';
                                     document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan E';
+                                    document.getElementById('notif2').style.display='none';
                                 }else if(val== "Plan F"){
                                     document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan F.pdf";
                                     document.getElementById('file2').style.visibility='visible';
                                     document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan F';
+                                    document.getElementById('notif2').style.display='none';
                                 }else if(val== "Plan G"){
                                     document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan G.pdf";
                                     document.getElementById('file2').style.visibility='visible';
                                     document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan G';
+                                    document.getElementById('notif2').style.display='none';
                                 }else if(val== "Plan H"){
                                     document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan H.pdf";
                                     document.getElementById('file2').style.visibility='visible';
                                     document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan H';
+                                    document.getElementById('notif2').style.display='none';
                                 }else if(val== "Plan I"){
                                     document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan I.pdf";
                                     document.getElementById('file2').style.visibility='visible';
                                     document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan I';
+                                    document.getElementById('notif2').style.display='none';
                                 }else if(val== "Plan J"){
                                     document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan J.pdf";
                                     document.getElementById('file2').style.visibility='visible';
                                     document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan J';
+                                    document.getElementById('notif2').style.display='none';
                                 }else{
                                     document.getElementById('file2').style.visibility='hidden';
                                 }
@@ -540,6 +562,7 @@
                                     }
                                 ?>
                             </select>
+                            <label id="notif3" style="display:none; color:red;">Manfaat Rawat Jalan & Rawat Gigi Harus diisi.</label>
                             <a id="file3" style="visibility:hidden" target="_blank"></a>
                             <script>
                             function checkData3(){
@@ -550,42 +573,52 @@
                                     document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan A.pdf";
                                     document.getElementById('file3').style.visibility='visible';
                                     document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan A';
+                                    document.getElementById('notif3').style.display='none';
                                 }else if(val== "Plan B"){
                                     document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan B.pdf";
                                     document.getElementById('file3').style.visibility='visible';
                                     document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan B';
+                                    document.getElementById('notif3').style.display='none';
                                 }else if(val== "Plan C"){
                                     document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan c.pdf";
                                     document.getElementById('file3').style.visibility='visible';
                                     document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan C';
+                                    document.getElementById('notif3').style.display='none';
                                 }else if(val== "Plan D"){
                                     document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan D.pdf";
                                     document.getElementById('file3').style.visibility='visible';
                                     document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan D';
+                                    document.getElementById('notif3').style.display='none';
                                 }else if(val== "Plan E"){
                                     document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan E.pdf";
                                     document.getElementById('file3').style.visibility='visible';
                                     document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan E';
+                                    document.getElementById('notif3').style.display='none';
                                 }else if(val== "Plan F"){
                                     document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan F.pdf";
                                     document.getElementById('file3').style.visibility='visible';
                                     document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan F';
+                                    document.getElementById('notif3').style.display='none';
                                 }else if(val== "Plan G"){
                                     document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan G.pdf";
                                     document.getElementById('file3').style.visibility='visible';
                                     document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan G';
+                                    document.getElementById('notif3').style.display='none';
                                 }else if(val== "Plan H"){
                                     document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan H.pdf";
                                     document.getElementById('file3').style.visibility='visible';
                                     document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan H';
+                                    document.getElementById('notif3').style.display='none';
                                 }else if(val== "Plan I"){
                                     document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan I.pdf";
                                     document.getElementById('file3').style.visibility='visible';
                                     document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan I';
+                                    document.getElementById('notif3').style.display='none';
                                 }else if(val== "Plan J"){
                                     document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan J.pdf";
                                     document.getElementById('file3').style.visibility='visible';
                                     document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan J';
+                                    document.getElementById('notif3').style.display='none';
                                 }else{
                                     document.getElementById('file3').style.visibility='hidden';
                                 }
@@ -631,7 +664,8 @@
                             <label><strong>Nama</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control required" id="name" tabindex="1" required>
+                            <input type="text" class="form-control" placeholder="Name" id="name" tabindex="1" required>
+                            <label id="notif4" style="display:none; color:red; font-weight:bold;">Nama Harus diisi.</label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -653,6 +687,7 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control date" id="dob" placeholder="Tanggal Lahir" tabindex="3" required>
+                            <label id="notif5" style="display:none; color:red; font-weight:bold;">Tanggal Lahir Harus diisi.</label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -662,6 +697,7 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="text" class="form-control date" id="cd" placeholder="Tanggal Kalkulasi" tabindex="4" required>
+                            <label id="notif6" style="display:none; color:red;">Tanggal Kalkulasi Harus diisi.</label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
                     <div class="form-group">
@@ -825,8 +861,6 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-<script src="/website/static/mobilku/jquery.validate.min.js"></script>
-
 
 <script>
     $(document).on('change',"#dob", function(){ //bind to all instances of class "date". 
@@ -931,11 +965,14 @@
                 // var method = $("#payment_methods").val();
                 // alert(method);
                 if(planip == 'pilih'){
-                    alert('Anda harus memilih Plan Manfaat Rawat Inap');
+                    document.getElementById('notif').style.display='block';
+                    document.getElementById("planip").focus();
                 }else if(planmat == 'pilih'){
-                    alert('Anda harus memilih Plan Manfaat Melahirkan');
+                    document.getElementById('notif2').style.display='block';
+                    document.getElementById("planmat").focus();
                 }else if(planop == 'pilih'){
-                    alert('Anda harus memilih Plan Manfaat Rawat Jalan & Rawat Gigi');
+                    document.getElementById('notif3').style.display='block';
+                    document.getElementById("planop_den").focus();
                 }else{
                 $( this ).attr( 'value', 'Loading...' );
                 $( this ).addClass( 'disabled' );
@@ -1096,6 +1133,20 @@
         var dob = $("#dob").val();
         var cd = $("#cd").val();
 
+        if (name == ""){
+            document.getElementById("notif4").style.display="block";
+            document.getElementById("name").focus();
+        }else if(dob == ""){
+            document.getElementById("notif5").style.display="block";
+            document.getElementById("dob").focus();
+        }else if (cd == ""){
+            document.getElementById("notif6").style.display="block";
+            document.getElementById("cd").focus();
+        }else{
+            document.getElementById("notif4").style.display="none";
+            document.getElementById("notif5").style.display="none";
+            document.getElementById("notif6").style.display="none";
+
         dist = parseInt(selisih(dob, cd));
         
         var age = Math.round(dist/(1000*60*60*24*365));
@@ -1162,6 +1213,7 @@
                 "<td style='display:none;' class='towithout'>"+totalwithout+"</td>"+
             "</tr>");
         jumlah();
+    }
     });
 
     
