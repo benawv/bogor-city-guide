@@ -404,7 +404,7 @@
                         <form id="formx" role="form">
                             <div id="input1" class="row">
                                 <div class="col-xs-12 col-md-3">
-                                    <label>Headline</label>
+                                    <label>Title</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
                                     <input type="text" name="headline" id="atas" maxlength="30" class="form-control headlineCover" required>
@@ -473,14 +473,17 @@
                                 <div class="col-xs-12 col-sm-3">
                                     <!-- <input type="button" id="gambar" class="btn btn-default btn-block" value="Ganti Gambar"> -->
                                     <!--<a id="gambar" href="/profil-maker/page2" class="btn btn-default btn-block">Ganti Gambar</a>-->
-                                    <a href="/profil-maker/page2" class="customHref">
+                                    <?php 
+	                                    $doc = Document::getById($this->document->getParentId());
+                                    ?>
+                                    <a href="<?php echo $doc->getFullPath()?>" class="customHref">
                                             <input type="button" class="btn btn-default btn-block" value="Ganti Gambar">
                                     </a>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
                                     <!-- <input type="button" id="pilih" class="btn btn-default btn-block" value="Pilih Template"> -->
                                     <!--<a id="pilih" href="/profil-maker/page1" class="btn btn-default btn-block">Pilih Template</a>-->
-                                    <a href="/profil-maker/page1" class="customHref">
+                                    <a href="/template-maker" class="customHref">
                                             <input type="button" class="btn btn-default btn-block" value="Pilih Template">
                                     </a>
                                 </div><!--/ .col-xs-12 -->
@@ -524,13 +527,16 @@
                                     <a id="download" href="#top" class="btn btn-primary btn-block">Ya</a>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
-                                    <a href="/profil-maker/page2" class="customHref">
+	                                <?php 
+	                                    $doc = Document::getById($this->document->getParentId());
+                                    ?>
+                                    <a href="<?php echo $doc->getFullPath()?>" class="customHref">
                                             <input type="button" class="btn btn-default btn-block" value="Ganti Gambar">
                                     </a>
                                     <!--<input type="button" class="btn btn-default btn-block" value="Pilih Template">-->
                                 </div>
                                 <div class="col-xs-12 col-sm-3">
-                                    <a href="/profil-maker/page1" class="customHref">
+                                    <a href="/template-maker" class="customHref">
                                             <input type="button" class="btn btn-default btn-block" value="Pilih Template">
                                     </a>
                                     <!--<input type="button" class="btn btn-default btn-block" value="Pilih Template">-->
@@ -546,7 +552,7 @@
         </div><!--/ .row -->
 
         <?php //for( $i = 0; $i < 2; $i++ ): ?>
-
+		<!--
         <div class="row">
 
            <div class="col-xs-12 col-md-4">
@@ -558,10 +564,10 @@
                             <input type="button" id="template4" res="472x394px" value="Pilih" class="btn btn-primary template"/>
                         </a>
                         <span>(Mobile Friendly)</span>
-                        <!--<a href="/profil-maker-create" class="btn btn-primary">Pilih</a>-->
-                    </div><!--/ .pm-buttons -->
-                </div><!--/ .profile-maker-box -->
-            </div><!--/ .col-xs-12 -->
+                        <!--<a href="/profil-maker-create" class="btn btn-primary">Pilih</a>
+                    </div><!--/ .pm-buttons
+                </div><!--/ .profile-maker-box 
+            </div><!--/ .col-xs-12 
 
             <div class="col-xs-12 col-md-4">
                 <div class="profile-maker--box">
@@ -572,10 +578,10 @@
                             <input type="button" id="template5" res="300x300px" value="Pilih" class="btn btn-primary template"/>
                         </a>
                         <span>(Mobile Friendly)</span>
-                        <!--<a href="/profil-maker/2" class="btn btn-primary">Pilih</a>-->
-                    </div><!--/ .pm-buttons -->
-                </div><!--/ .profile-maker-box -->
-            </div><!--/ .col-xs-12 -->
+                        <!--<a href="/profil-maker/2" class="btn btn-primary">Pilih</a>
+                    </div><!--/ .pm-buttons 
+                </div><!--/ .profile-maker-box 
+            </div><!--/ .col-xs-12 
 
             <div class="col-xs-12 col-md-4">
                 <div class="profile-maker--box">
@@ -586,10 +592,10 @@
                             <input type="button" id="template6" res="504x504px" value="Pilih" class="btn btn-primary template"/>
                         </a>
                         <span>(Mobile Friendly)</span>
-                        <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
-                    </div><!--/ .pm-buttons -->
-                </div><!--/ .profile-maker-box -->
-            </div><!--/ .col-xs-12 -->
+                        <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>
+                    </div><!--/ .pm-buttons 
+                </div><!--/ .profile-maker-box 
+            </div><!--/ .col-xs-12 
 
             <div class="col-xs-12 col-md-4">
                 <div class="profile-maker--box">
@@ -600,10 +606,10 @@
                             <input type="button" id="template1" res="851x315px" value="Pilih" class="btn btn-primary template"/>
                         </a>
                         <span>(Desktop Only)</span>
-                        <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
-                    </div><!--/ .pm-buttons -->
-                </div><!--/ .profile-maker-box -->
-            </div><!--/ .col-xs-12 -->
+                        <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>
+                    </div><!--/ .pm-buttons 
+                </div><!--/ .profile-maker-box 
+            </div><!--/ .col-xs-12
 
             <div class="col-xs-12 col-md-4">
                 <div class="profile-maker--box">
@@ -614,10 +620,10 @@
                             <input type="button" id="template2" res="851x315px" value="Pilih" class="btn btn-primary template"/>
                         </a>
                         <span>(Desktop Only)</span>
-                        <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
-                    </div><!--/ .pm-buttons -->
-                </div><!--/ .profile-maker-box -->
-            </div><!--/ .col-xs-12 -->
+                        <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>
+                    </div><!--/ .pm-buttons 
+                </div><!--/ .profile-maker-box 
+            </div><!--/ .col-xs-12 
 
             <div class="col-xs-12 col-md-4">
                 <div class="profile-maker--box">
@@ -628,12 +634,13 @@
                             <input type="button" id="template3" res="851x315px" value="Pilih" class="btn btn-primary template"/>
                         </a>
                         <span>(Desktop Only)</span>
-                        <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
-                    </div><!--/ .pm-buttons -->
-                </div><!--/ .profile-maker-box -->
-            </div><!--/ .col-xs-12 -->
+                        <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>
+                    </div><!--/ .pm-buttons 
+                </div><!--/ .profile-maker-box 
+            </div><!--/ .col-xs-12 
 
-        </div> <!--/.row -->
+        </div> <!--/.row 
+      	-->
 
         <?php //endfor; ?>
 
@@ -873,11 +880,12 @@
               format: 'png'
             });
 
-            window.location.href = "/profil-maker/profil-thankyou";
+            //window.location.href = "/profil-maker/profil-thankyou";
+            window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";
 
             var link = document.createElement('a');
             link.href = dataURL;
-            link.download = "Cover Profil Maker Allianz.png";
+            link.download = "News Feed Post Template.png";
             document.body.appendChild(link);
             link.click();
         }
@@ -888,7 +896,8 @@
 				format: 'png'
 			});
 			
-			window.location.href = "/profil-maker/profil-thankyou";
+			//window.location.href = "/profil-maker/profil-thankyou";
+            window.location.href = "/asn/allianz-social-media-for-sales/template-maker/profile-picture/thankyou";
 
 			var link = document.createElement('a');
 			link.href = dataURL;
@@ -1021,11 +1030,11 @@
               format: 'png'
             });
 
-            window.location.href = "/profil-maker/profil-thankyou";
+            window.location.href = "/asn/allianz-social-media-for-sales/template-maker/timeline-post/thankyou";
 
             var link = document.createElement('a');
             link.href = dataURL;
-            link.download = "Cover Profil Maker Allianz.png";
+            link.download = "Timeline Post Template.png";
             document.body.appendChild(link);
             link.click();
         }

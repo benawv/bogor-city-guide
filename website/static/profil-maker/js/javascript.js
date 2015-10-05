@@ -358,12 +358,15 @@ $(document).ready(function()
 						cropped = "";
 						if(temp == "template1") {
 							cropped = $('#cropped-1');
+							var template = "/asn/allianz-social-media-for-sales/template-maker/page-cover-landscape/thankyou";
 						}
 						else if(temp == "template2") {
 							cropped = $('#cropped-2');
+							var template = "/asn/allianz-social-media-for-sales/template-maker/page-cover-portrait/thankyou";
 						}
 						else if(temp == "template3") {
 							cropped = $('#cropped-3');
+							var template = "/asn/allianz-social-media-for-sales/template-maker/page-cover-square/thankyou";
 						}
 						else {
 							
@@ -382,7 +385,8 @@ $(document).ready(function()
 								ctx.imageSmoothingEnabled = false;
 	                            //$("a#download").attr("href", "#top");
 	                            
-	                            window.location.href = "/profil-maker/profil-thankyou";
+	                            //window.location.href = "/profil-maker/profil-thankyou";
+								window.location.href = template;
 
 								if($(window).width() < 640) {
 									//alert("after capture, back to cover1");
