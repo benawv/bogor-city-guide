@@ -62,7 +62,7 @@ $(document).ready(function(){
 						
 						if(z < obj.count_all)
 						{
-						    $("#div"+z).find("a").attr("href", "community-detail/"+link);
+						    $("#div"+z).find("a").attr("href", "/community-detail/"+link);
 						    $("#div"+z).find("img").attr("src", gmbr);
 						    $("#div"+z).find("img").attr("alt", alt);
 						    $("#div"+z).find("img").attr("title", titleImage);
@@ -141,7 +141,7 @@ $(document).ready(function(){
 						
 						if(z < obj.count_all)
 						{
-						    $("#div"+z).find("a").attr("href", "community-detail/"+link);
+						    $("#div"+z).find("a").attr("href", "/community-detail/"+link);
 						    $("#div"+z).find("img").attr("src", gmbr);
 						    $("#div"+z).find("img").attr("alt", alt);
 						    $("#div"+z).find("img").attr("title", titleImage);
@@ -220,7 +220,7 @@ $(document).ready(function(){
 						
 						if(z < obj.count_all)
 						{
-						    $("#div"+z).find("a").attr("href", "community-detail/"+link);
+						    $("#div"+z).find("a").attr("href", "/community-detail/"+link);
 						    $("#div"+z).find("img").attr("src", gmbr);
 						    $("#div"+z).find("img").attr("alt", alt);
 						    $("#div"+z).find("img").attr("title", titleImage);
@@ -298,7 +298,7 @@ $(document).ready(function(){
 						
 						if(z < obj.count_all)
 						{
-						    $("#div"+z).find("a").attr("href", "community-detail/"+link);
+						    $("#div"+z).find("a").attr("href", "/community-detail/"+link);
 						    $("#div"+z).find("img").attr("src", gmbr);
 						    $("#div"+z).find("img").attr("alt", alt);
 						    $("#div"+z).find("img").attr("title", titleImage);
