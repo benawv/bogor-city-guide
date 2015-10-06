@@ -227,7 +227,7 @@ $(document).ready(function()
 	                });
 
 	                $("#tutup").click(function(){
-		                window.location.href = "/profil-maker/page1";
+		                window.location.href = "/template-maker";
 		                    
 	                });
 	                
