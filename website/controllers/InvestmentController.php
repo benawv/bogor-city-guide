@@ -266,6 +266,21 @@ class InvestmentController extends Website_Controller_Action
     }
 
     public function calculatorAction(){}
+    public function hitungAction(){
+        
+        $biaya = $_POST['biaya'];
+        $asumsi = $_POST['asumsi'];
+        $waktu = $_POST['waktu'];
+        $result = $_POST['result'];
+        
+        $session = new Zend_Session_Namespace('HitInv');
+            $session->biaya = $biaya;
+            $session->asumsi = $asumsi;
+            $session->waktu = $waktu;
+            $session->result = $result;
+    }
+    public function calculatorinvestiframeresultAction(){}
+    public function calculatorinvestiframeAction(){}
     public function calculatorresultAction(){}
     public function calculator2Action(){}
     public function calculatorresult2Action(){}
