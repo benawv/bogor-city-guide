@@ -48,7 +48,7 @@ div.ui-slider-range{background-color:#113388;}
     
 
     
-<div role="main" class="main calc" style="height:650px !important;">
+<div role="main" class="main calc" style="height:700px !important;">
     <div class="container boxes-view">
        <div class="calc-wrap">
             <div class="calc-title">
@@ -152,29 +152,29 @@ div.ui-slider-range{background-color:#113388;}
 	    return "";
 	}
     
-            var biaya = getCookie('biayaInv',biaya,1);
-            var asumsi = getCookie('asumsiInv',asumsi,1);
-            var waktu = getCookie('waktuInv',waktu,1);
-            var result = getCookie('hasilInv',result,1);
+//            var biaya = getCookie('biayaInv',biaya,1);
+//            var asumsi = getCookie('asumsiInv',asumsi,1);
+//            var waktu = getCookie('waktuInv',waktu,1);
+//            var result = getCookie('hasilInv',result,1);
 
-    console.log(biaya);
-    console.log(asumsi);
-    console.log(waktu);
-    console.log(result);
-//	var result = getCookie('investment1_hasil');
-//    
-//	result = accounting.formatMoney(<?php echo $session->result; ?>,'Rp ',2,'.',',');
-//	$('#result').html(result);
-//	$('#investment1_hasil').html(result);
-//	
-//	var investment1_biaya = getCookie('investment1_biaya');
-//	$('#investment1_biaya').html(accounting.formatMoney(<?php echo $session->biaya; ?>,'Rp ',2,'.',','));
-//    
-//	var investment1_asumsi_inflasi = getCookie('investment1_asumsi_inflasi');
-//	$('#investment1_asumsi_inflasi').html(<?php echo $session->asumsi; ?> + ' %');
-//    
-//	var investment1_jangka_waktu = getCookie('investment1_jangka_waktu');
-//	$('#investment1_jangka_waktu').html(<?php echo $session->waktu; ?> + ' tahun');
+//    console.log(biaya);
+//    console.log(asumsi);
+//    console.log(waktu);
+//    console.log(result);
+	var result = getCookie('investment1_hasil');
+    
+	result = accounting.formatMoney(<?php echo $session->result; ?>,'Rp ',2,'.',',');
+	$('#result').html(result);
+	$('#investment1_hasil').html(result);
+	
+	var investment1_biaya = getCookie('investment1_biaya');
+	$('#investment1_biaya').html(accounting.formatMoney(<?php echo $session->biaya; ?>,'Rp ',2,'.',','));
+    
+	var investment1_asumsi_inflasi = getCookie('investment1_asumsi_inflasi');
+	$('#investment1_asumsi_inflasi').html(<?php echo $session->asumsi; ?> + ' %');
+    
+	var investment1_jangka_waktu = getCookie('investment1_jangka_waktu');
+	$('#investment1_jangka_waktu').html(<?php echo $session->waktu; ?> + ' tahun');
 //	console.log(result);
 //    console.log(investment1_biaya);
 //    console.log(investment1_asumsi_inflasi);
