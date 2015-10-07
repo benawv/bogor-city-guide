@@ -344,7 +344,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                     success  : function(data){
                     //console.log(data);
                         
-                       window.location.href = "/iframecalcinvres/";
+                       window.location.href = "/investasi-hasil/";
 
                 }
 
