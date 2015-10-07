@@ -622,8 +622,9 @@
             var j = age.toString().split(".")[0];
             var k = parseFloat(j)+0.5;
             var hitung = age - k;
-
-            if( hitung < 0.00278 ){
+            console.log(age);
+            console.log(j);
+            if( hitung < 0.00139 ){
                 var ageReal = (Math.floor(age));
             }else{
                 var ageReal = (Math.floor(age))+1;
