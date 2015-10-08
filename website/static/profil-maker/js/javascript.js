@@ -476,14 +476,30 @@ $(document).ready(function()
 				    
 				    $("#counter").html("Letters remaining: <span id='char'> " + (max - txt.length) + "</span>");
 				    $("#counter2").html("Letters remaining: <span id='char2'> " + (max2 - txt2.length) + "</span>");
-				    $("#preview, #save").attr("disabled", txt.length > max);
-				    $("#preview, #save").attr("disabled", txt2.length > max2);
-				    if(txt.length > max) {
-				    	//alert("over");
+				    //$("#preview, #save").attr("disabled", txt.length > max);
+				    //$("#preview, #save").attr("disabled", txt2.length > max2);
+				    // if(txt.length > max) {
+				    // 	//alert("over");
+				    // 	$("#char").css("color", "red");
+				    // }
+				    // if(txt2.length > max2) {
+				    // 	$("#char2").css("color", "red");
+				    // }
+				    if ( (txt.length > max) || (txt2.length > max2) ) {
+
+						$("#preview, #save").addClass("disabled");
+				    }
+				    else {
+				    	
+						$("#preview, #save").removeClass("disabled");
+				    }
+
+				    //text limit sign
+				    if (txt.length > max) {
 				    	$("#char").css("color", "red");
 				    }
 				    if(txt2.length > max2) {
-				    	$("#char2").css("color", "red");
+				    	$("#char2").css("color", "red");      
 				    }
 				    
 
