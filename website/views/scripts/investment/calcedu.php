@@ -490,7 +490,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
                     success  : function(data){
                     //console.log(data);
                         
-                       window.location.href = "/invresedu/";
+                       window.location.href = "/kalkulator-pendidikan-hasil/";
 
                 }
 

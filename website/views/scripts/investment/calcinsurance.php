@@ -415,7 +415,7 @@ var sliderCurrentValue = $( "#slider4" ).slider( "option", "value" );
                     success  : function(data){
                     //console.log(data);
                         
-                       window.location.href = "/invesinsres/";
+                       window.location.href = "/kalkulator-asuransi-hasil/";
 
                 }
 
