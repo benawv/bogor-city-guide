@@ -22,12 +22,13 @@
                             
                          <div class="row">
                             <div class="col-xs-12 tac">
-                                <p>Anda telah menggunakan Allianz Profile Maker. <br /> Posting gambar atau ganti <i>profile picture</i> yang sudah Anda buat disini: <a href="http://www.facebook.com" onClick="MyWindow=window.open('http://www.facebook.com','MyWindow'); return false;"><span class="fa fa-facebook-square"> </span></a></p>
+                                <p>Anda telah menggunakan Allianz Template Maker. <br /> Posting gambar atau ganti <i>profile picture</i> yang sudah Anda buat disini: <a href="http://www.facebook.com" onClick="MyWindow=window.open('http://www.facebook.com','MyWindow'); return false;"><span class="fa fa-facebook-square"> </span></a></p>
                             </div><!--/ .col-xs-12 -->
                         </div><!--/ .row -->
                         <div class="row" style="margin-top: 16px;">
-                            <div class="col-xs-6 col-sm-3 col-centered">
-                                <a id="tutup" href="/profil-maker/page1" class="btn btn-primary btn-block">Kembali ke Profil Maker</a>
+                            <!--<div class="col-xs-6 col-sm-4 col-centered">-->
+                            <div class="col-xs-12 col-sm-5 col-centered">
+                                <a id="tutup" href="/template-maker" class="btn btn-primary btn-block">Kembali ke Allianz Template Maker</a>
                             </div><!--/ .col-xs-12 -->
                                         
                         </div><!--/ .row -->

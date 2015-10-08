@@ -4,6 +4,7 @@ class ProfilMakerController extends Website_Controller_Action {
         
 	
 	public function uploadAction() {
+		$urlRedirect = $_POST['urlRedirect'];
 		$nameFoto = str_replace(" ","-",strtolower($_FILES["uploadFoto"]["name"]));
 		
 		$dateNow = strtotime(date('Y-m-d H:i:s'));
@@ -20,9 +21,11 @@ class ProfilMakerController extends Website_Controller_Action {
 			echo 'ERROR: ',  $e->getMessage(), "\n";
 		}
 		//echo $_COOKIE["uploadImage"];
+		new Zend_Session_Namespace('srcImage');
+		Zend_Session::namespaceUnset('srcImage');
 		$session = new Zend_Session_Namespace('srcImage');
 		$session->src = $src;
-		$this->redirect("/profil-maker/page3");
+		$this->redirect($urlRedirect);
 	}
 
 	public function saveAction(){

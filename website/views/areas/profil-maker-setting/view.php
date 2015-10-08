@@ -51,9 +51,6 @@
                 width: 100%;
                 max-width: 100%;
             }
-            section.profile-maker .page-maker--form {
-                margin: 105px auto 32px;
-            }
         }
 
         /**
@@ -133,7 +130,7 @@
         img_bg.css('height', target_width + 'px');
         canvas.css('height', target_width + 'px');
         target.parent().parent().css('height', target_width + 'px');
-        console.log(target_width + '/' + target_height);
+        //console.log(target_width + '/' + target_height);
     }
 
     $(function(){
@@ -154,7 +151,7 @@
 
 
 <script src="/website/static/profil-maker/js/jquery.validate.min.js"></script>
-
+<script src="/website/static/profil-maker/js/jquery.keep-ratio.js"></script>
 
 <section class="profile-maker">
     <div class="container">
@@ -232,17 +229,6 @@
 
                 <div id="cover2" class="timelineContainer" style="display: none">
 
-                    <!-- <div id="timelineBackground" class="page-maker--placeholdermain">
-                        <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive">
-                        <?php
-                                 $session = new Zend_Session_Namespace('srcImage');
-                        ?>
-                        <div id="images" style="display:inline-block;">
-                            <img src="<?php echo $session->src;?>" alt="Page Cover Landscaped Notepad" id="timelineBGload" class="headerimage ui-corner-all ui-draggable img-responsive" />
-                        </div>
-
-                    </div> --><!--/ .page-maker--placeholder -->
-
                     <div id="image-cropper">
                         <div id="cropped-2" class="cropit-image-preview-container">
                             <div class="cropit-image-preview cropit1">
@@ -286,17 +272,6 @@
                 </div> <!--/ #timelineContainer -->
 
                 <div id="cover3" class="timelineContainer" style="display: none">
-
-                    <!-- <div id="timelineBackground" class="page-maker--placeholdermain">
-                        <img src="http://placehold.it/851x315" alt="Page Cover Landscaped Notepad" class="img-responsive">
-                        <?php
-                                 $session = new Zend_Session_Namespace('srcImage');
-                        ?>
-                        <div id="images" style="display:inline-block;">
-                            <img src="<?php echo $session->src;?>" alt="Page Cover Landscaped Notepad" id="timelineBGload" class="headerimage ui-corner-all ui-draggable img-responsive" />
-                        </div>
-
-                    </div> --><!--/ .page-maker--placeholder -->
 
                     <div id="image-cropper">
                         <div id="cropped-3" class="cropit-image-preview-container">
@@ -386,46 +361,14 @@
 
                  <div id="ava1" class="page-maker--placeholder" style="display: none">
                         <div id="image-cropper-ava1">
+
 	                        <div id="cropped-ava1" class="cropit-image-preview-container">
 		                        <canvas id="canvas-ava1" width="300" height="300" style="border: 1px solid #ccc">
 		                        </canvas>
 	                        </div>
-	                        <!--
-                            <div id="cropped-ava1" class="cropit-image-preview-container">
-                                <div class="cropit-image-preview cropit-ava1">
-                                    <div id="avacapture1" class="avatar-caption">
-                                        <div class="avatar-caption--logo">
-                                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="slider-wrapper">
-                                <i class="fa fa-file-image-o"></i>
-                                    <input type="range" class="cropit-image-zoom-input custom" min="0" max="1" step="0.01">
-                                <i class="fa fa-file-image-o fa-2x"></i>    
-                            </div>
-                            -->       
+	                        
                         </div> 
                 </div> 
-
-                <!-- when mobile condition -->
-                <div id="ava1-m" class="page-maker--placeholder fluid" style="display: none">
-                    <div id="avatar1" class="avatar-m w300">
-                        <div id="avacapture1" class="avatar-caption">
-                            <div class="avatar-caption--logo">
-                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
-                            </div><!--/ .avatar-caption--logo -->
-                        </div><!--/ .avatar-caption -->
-                        <?php
-                            $session = new Zend_Session_Namespace('srcImage');
-                        ?>
-                        <div id="draggableHelper-ava1-m" style="display:inline-block;">
-                            <img src="<?php echo $session->src;?>" alt="Profile Picture" class="ava-img img-responsive">
-                        </div>
-                    </div><!--/ .facebook -->
-                </div><!--/ .page-maker--placeholder -->
 
                 <div id="ava21" class="page-maker--placeholder" style="display: none">
                      <div id="image-cropper-ava21">
@@ -434,98 +377,24 @@
 
                                 <canvas id="canvas-ava21" width="472" height="394" style="border:1px solid #ccc">
                                 <img src="<?php echo $session->src?>" id="myImg">
-                                <!--
-                                <div class="avatar-caption--footer" id = "imgid">
-                                    <img src="/website/static/images/profile-maker/fb.png" alt=""  style="position: absolute; width: 29px; left: 19px; top: 11px;">
-                                    <!-- <i class="fa fa-facebook-square fa-2x"></i> &nbsp;
-                                    <span>Allianz Indonesia</span>&nbsp;
-                                    <strong><span id="cname">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
-                                </div><!--/ .avatar-caption-footer -->
+                                
                             </div>
                         </div>
                 </div><!--/ .page-maker--placeholder -->
-
-                <!-- when mobile condition -->
-                <div id="ava2-m" class="page-maker--placeholder" style="display: none">
-                    <div id="image-cropper-ava2">
-                            <div id="cropped-ava2" class="cropit-image-preview-container">
-                                <div class="cropit-image-preview cropit-ava2">
-                                    <div id="avacapture2" class="avatar-caption">
-                                        <div class="avatar-caption--logo">
-                                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="avatar-caption--footer">
-                                        <img src="/website/static/images/profile-maker/fb.png" alt="" style="position: absolute; width: 29px; left: 19px; top: 11px;">
-                                        <!-- <i class="fa fa-facebook-square fa-2x"></i> --> &nbsp;
-                                        <span>Allianz Indonesia</span>&nbsp;
-                                        <strong><span id="cname-m">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
-                                    </div> <!--/ .avatar-caption-footer -->
-                                </div>
-
-                            </div>
-                            <div class="slider-wrapper">
-                                <i class="fa fa-file-image-o"></i>
-                                    <input type="range" class="cropit-image-zoom-input custom" min="0" max="1" step="0.01">
-                                <i class="fa fa-file-image-o fa-2x"></i>
-                            </div>
-                        </div>
-                </div>
 
                 <div id="ava31" class="page-maker--placeholder" style="display: none">
                     <div id="image-cropper-ava31">
                             <!--<div id="cropped-ava31" class="cropit-image-preview-container">-->
                             <div id="cropped-ava31" class="cropit-image-preview cropit-ava31">
-                                        <canvas id="canvas-ava31" width="504" height="504" style="border:1px solid #ccc">
-                                        <img src="<?php echo $session->src?>" id="myImg31">
-                                <!--<div class="cropit-image-preview cropit-ava31">-->
-                                    <!--<div id="avacapture3" class="avatar-caption">
-                                        <div class="avatar-caption--logo">
-                                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
-                                        </div>
-                                    </div>-->
-                                    <!--<div class="avatar-caption--footer">
-                                        <img src="/website/static/images/profile-maker/fb.png" alt="" style="position: absolute; width: 29px; left: 19px; top: 11px;">-->
-                                        <!-- <i class="fa fa-facebook-square fa-2x"></i> &nbsp;
-                                        <span>Allianz Indonesia</span>&nbsp;
-                                        <strong><span id="cname">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
-                                    </div><!--/ .avatar-caption-footer -->
-                                <!--</div>-->
+
+                                <canvas id="canvas-ava31" width="504" height="504" style="border:1px solid #ccc">
+                                <img src="<?php echo $session->src?>" id="myImg31">
+                                
 
                             </div>
-                            <!--<div class="slider-wrapper">
-                                <i class="fa fa-file-image-o"></i>
-                                    <input type="range" class="cropit-image-zoom-input custom" min="0" max="1" step="0.01">
-                                <i class="fa fa-file-image-o fa-2x"></i>
-                            </div>-->
+                            
                     </div>
                 </div><!--/ .page-maker--placeholder -->
-
-                <div id="ava3-m" class="page-maker--placeholder" style="display: none">
-                    <div id="image-cropper-ava3">
-                            <div id="cropped-ava3" class="cropit-image-preview-container">
-                                <div class="cropit-image-preview cropit-ava3">
-                                    <div id="avacapture3" class="avatar-caption">
-                                        <div class="avatar-caption--logo">
-                                                <img src="/website/static/images/profile-maker/allianz-logo.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="avatar-caption--footer">
-                                        <img src="/website/static/images/profile-maker/fb.png" alt="" style="position: absolute; width: 29px; left: 19px; top: 11px;">
-                                        <!-- <i class="fa fa-facebook-square fa-2x"></i> --> &nbsp;
-                                        <span>Allianz Indonesia</span>&nbsp;
-                                        <strong><span id="cname">&lt;First Name&gt; &lt;Last Name&gt;</span></strong>
-                                    </div> <!--/ .avatar-caption-footer -->
-                                </div>
-
-                            </div>
-                            <div class="slider-wrapper">
-                                <i class="fa fa-file-image-o"></i>
-                                    <input type="range" class="cropit-image-zoom-input custom" min="0" max="1" step="0.01">
-                                <i class="fa fa-file-image-o fa-2x"></i>
-                            </div>
-                        </div>
-                </div>
 
                 <div id="fillform" class="page-maker--form">
                     <div class="page-maker--form-title">
@@ -535,7 +404,7 @@
                         <form id="formx" role="form">
                             <div id="input1" class="row">
                                 <div class="col-xs-12 col-md-3">
-                                    <label>Headline</label>
+                                    <label>Title</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
                                     <input type="text" name="headline" id="atas" maxlength="30" class="form-control headlineCover" required>
@@ -604,14 +473,17 @@
                                 <div class="col-xs-12 col-sm-3">
                                     <!-- <input type="button" id="gambar" class="btn btn-default btn-block" value="Ganti Gambar"> -->
                                     <!--<a id="gambar" href="/profil-maker/page2" class="btn btn-default btn-block">Ganti Gambar</a>-->
-                                    <a href="/profil-maker/page2" class="customHref">
+                                    <?php 
+	                                    $doc = Document::getById($this->document->getParentId());
+                                    ?>
+                                    <a href="<?php echo $doc->getFullPath()?>" class="customHref">
                                             <input type="button" class="btn btn-default btn-block" value="Ganti Gambar">
                                     </a>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
                                     <!-- <input type="button" id="pilih" class="btn btn-default btn-block" value="Pilih Template"> -->
                                     <!--<a id="pilih" href="/profil-maker/page1" class="btn btn-default btn-block">Pilih Template</a>-->
-                                    <a href="/profil-maker/page1" class="customHref">
+                                    <a href="/template-maker" class="customHref">
                                             <input type="button" class="btn btn-default btn-block" value="Pilih Template">
                                     </a>
                                 </div><!--/ .col-xs-12 -->
@@ -655,13 +527,16 @@
                                     <a id="download" href="#top" class="btn btn-primary btn-block">Ya</a>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-sm-3">
-                                    <a href="/profil-maker/page2" class="customHref">
+	                                <?php 
+	                                    $doc = Document::getById($this->document->getParentId());
+                                    ?>
+                                    <a href="<?php echo $doc->getFullPath()?>" class="customHref">
                                             <input type="button" class="btn btn-default btn-block" value="Ganti Gambar">
                                     </a>
                                     <!--<input type="button" class="btn btn-default btn-block" value="Pilih Template">-->
                                 </div>
                                 <div class="col-xs-12 col-sm-3">
-                                    <a href="/profil-maker/page1" class="customHref">
+                                    <a href="/template-maker" class="customHref">
                                             <input type="button" class="btn btn-default btn-block" value="Pilih Template">
                                     </a>
                                     <!--<input type="button" class="btn btn-default btn-block" value="Pilih Template">-->
@@ -677,7 +552,7 @@
         </div><!--/ .row -->
 
         <?php //for( $i = 0; $i < 2; $i++ ): ?>
-
+		<!--
         <div class="row">
 
            <div class="col-xs-12 col-md-4">
@@ -689,10 +564,10 @@
                             <input type="button" id="template4" res="472x394px" value="Pilih" class="btn btn-primary template"/>
                         </a>
                         <span>(Mobile Friendly)</span>
-                        <!--<a href="/profil-maker-create" class="btn btn-primary">Pilih</a>-->
-                    </div><!--/ .pm-buttons -->
-                </div><!--/ .profile-maker-box -->
-            </div><!--/ .col-xs-12 -->
+                        <!--<a href="/profil-maker-create" class="btn btn-primary">Pilih</a>
+                    </div><!--/ .pm-buttons
+                </div><!--/ .profile-maker-box 
+            </div><!--/ .col-xs-12 
 
             <div class="col-xs-12 col-md-4">
                 <div class="profile-maker--box">
@@ -703,10 +578,10 @@
                             <input type="button" id="template5" res="300x300px" value="Pilih" class="btn btn-primary template"/>
                         </a>
                         <span>(Mobile Friendly)</span>
-                        <!--<a href="/profil-maker/2" class="btn btn-primary">Pilih</a>-->
-                    </div><!--/ .pm-buttons -->
-                </div><!--/ .profile-maker-box -->
-            </div><!--/ .col-xs-12 -->
+                        <!--<a href="/profil-maker/2" class="btn btn-primary">Pilih</a>
+                    </div><!--/ .pm-buttons 
+                </div><!--/ .profile-maker-box 
+            </div><!--/ .col-xs-12 
 
             <div class="col-xs-12 col-md-4">
                 <div class="profile-maker--box">
@@ -717,10 +592,10 @@
                             <input type="button" id="template6" res="504x504px" value="Pilih" class="btn btn-primary template"/>
                         </a>
                         <span>(Mobile Friendly)</span>
-                        <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
-                    </div><!--/ .pm-buttons -->
-                </div><!--/ .profile-maker-box -->
-            </div><!--/ .col-xs-12 -->
+                        <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>
+                    </div><!--/ .pm-buttons 
+                </div><!--/ .profile-maker-box 
+            </div><!--/ .col-xs-12 
 
             <div class="col-xs-12 col-md-4">
                 <div class="profile-maker--box">
@@ -731,10 +606,10 @@
                             <input type="button" id="template1" res="851x315px" value="Pilih" class="btn btn-primary template"/>
                         </a>
                         <span>(Desktop Only)</span>
-                        <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
-                    </div><!--/ .pm-buttons -->
-                </div><!--/ .profile-maker-box -->
-            </div><!--/ .col-xs-12 -->
+                        <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>
+                    </div><!--/ .pm-buttons 
+                </div><!--/ .profile-maker-box 
+            </div><!--/ .col-xs-12
 
             <div class="col-xs-12 col-md-4">
                 <div class="profile-maker--box">
@@ -745,10 +620,10 @@
                             <input type="button" id="template2" res="851x315px" value="Pilih" class="btn btn-primary template"/>
                         </a>
                         <span>(Desktop Only)</span>
-                        <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
-                    </div><!--/ .pm-buttons -->
-                </div><!--/ .profile-maker-box -->
-            </div><!--/ .col-xs-12 -->
+                        <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>
+                    </div><!--/ .pm-buttons 
+                </div><!--/ .profile-maker-box 
+            </div><!--/ .col-xs-12 
 
             <div class="col-xs-12 col-md-4">
                 <div class="profile-maker--box">
@@ -759,12 +634,13 @@
                             <input type="button" id="template3" res="851x315px" value="Pilih" class="btn btn-primary template"/>
                         </a>
                         <span>(Desktop Only)</span>
-                        <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>-->
-                    </div><!--/ .pm-buttons -->
-                </div><!--/ .profile-maker-box -->
-            </div><!--/ .col-xs-12 -->
+                        <!--a href="/profil-maker/2" id="template1" class="btn btn-primary">Pilih</a>
+                    </div><!--/ .pm-buttons 
+                </div><!--/ .profile-maker-box 
+            </div><!--/ .col-xs-12 
 
-        </div> <!--/.row -->
+        </div> <!--/.row 
+      	-->
 
         <?php //endfor; ?>
 
@@ -803,6 +679,7 @@
 ?>
 <script>
 	var temp = getCookie("template");
+	var iOS = /iPad|iPhone|iPod/.test(navigator.platform);
 	
 	/* 
 		Template 5 (Profile Picture Template) Profile maker using FabricJS
@@ -833,10 +710,7 @@
 			//get original image size
 		    ih = img_ava1.height;
 		    iw = img_ava1.width;
-		    // console.log(iw);
-		    // console.log(ih);
-		    // console.log(cvsW);
-		    // console.log(cvsH);
+		    
 		    //keep aspect ratio pas render image
 		    width_ratio  = ca1W  / iw;
 		    height_ratio = ca1H / ih;
@@ -851,8 +725,8 @@
 		    }
 		    
 		    img_ava1.set({
-		        width: fw,
-		        height: fh
+		        width: fw / 2,
+		        height: fh / 2
 		    });
 		        
 		    //set visibility resizer
@@ -874,7 +748,7 @@
 		}
 	);
 
-/*
+	/*
         Template 4 (News Feed Post Template) Profile maker using FabricJS
         Added By Handri Pangestiaji
         Created at Sept 28 2015
@@ -938,24 +812,52 @@
     });
 
     //Add uploaded image in canvas
-    // var imgInstance = new fabric.Image.fromURL('<?php echo $session->src?>', function(img){
-    // 		canvas.add(img);
-    // 		canvas.centerObject(img);
-    // 		canvas.sendToBack(img);
-    // 		canvas.setActiveObject(img);
-    // 	},
-    // 	{
-    // 		lockUniScaling: true
-    // 	}
-    // );
+    var imgInstance = new fabric.Image.fromURL('<?php echo $session->src?>', function(img){
+	    
+	    	//get original image size
+		    ih = img.height;
+		    iw = img.width;
+		
+		    //keep aspect ratio pas render image
+		    width_ratio  = cvsW  / iw;
+		    height_ratio = cvsH / ih;
+		    if (width_ratio > height_ratio) {
+		        fw = iw * width_ratio;
+		        fh = ih * fw / iw;
+		        //alert("if");
+		    } else {
+		        fh = ih * height_ratio;
+		        fw = iw * fh / ih;
+		        //alert("else");
+		    }
+			
+			img.set({
+				width: fw / 2,
+				height: fh / 2
+			})
+		
+		    //set visibility resizer
+		    img.setControlsVisibility ({
+		        mt: false,
+		        mr: false,
+		        mb: false,
+		        ml: false
+		    });
+	    	
+    		canvas.add(img);
+    		canvas.centerObject(img);
+    		canvas.sendToBack(img);
+    		canvas.setActiveObject(img);
+    	},
+    	{
+    		lockUniScaling: true
+    	}
+    );
 
+	/*
     //get original image size
     ih = imgElement.naturalHeight;
     iw = imgElement.naturalWidth;
-    // console.log(iw);
-    // console.log(ih);
-    // console.log(cvsW);
-    // console.log(cvsH);
 
     //keep aspect ratio pas render image
     width_ratio  = cvsW  / iw;
@@ -989,24 +891,8 @@
     canvas.sendToBack(imgInstance);
     canvas.setActiveObject(imgInstance);
     canvas.renderAll();
-
-    //grouping all object
-    // var medium = new fabric.Group([rect, text]);
-    // canvas.add(medium);
-    // canvas.renderAll();
-
-    //trying to cloning
-    // $('#clone').click(function() {
-    //     //cloning object canvas
-    //     var obj = canvas.getActiveObject();
-    //     var vobj = fabric.util.object.clone(obj);
-    //     vobj.clone(function(c) {
-    //         canvas.add(c);
-    //         console.log(vobj);
-    //         canvas.renderAll();
-    //     });
-    // });
-
+	*/
+	
     // Binding click for Pratinjau and Simpan Button
     $('#preview, #save').click(function(){
         nama1 = $('#bawah1').val();
@@ -1028,11 +914,20 @@
               format: 'png'
             });
 
+            //window.location.href = "/profil-maker/profil-thankyou";
+
             var link = document.createElement('a');
             link.href = dataURL;
-            link.download = "Cover Profil Maker Allianz.png";
+            link.download = "News Feed Post Allianz.png";
             document.body.appendChild(link);
             link.click();
+            
+            if(iOS == true) {
+            	
+            } else {
+            	window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";	
+            }
+            
         }
 		else if(temp == "template5") {
 			cvAva1.deactivateAll().renderAll();
@@ -1041,13 +936,19 @@
 				format: 'png'
 			});
 			
-			
+			//window.location.href = "/profil-maker/profil-thankyou";
+
 			var link = document.createElement('a');
 			link.href = dataURL;
-			link.download = "Cover Profil Maker Allianz.png";
+			link.download = "Profil Picture Allianz.png";
 			document.body.appendChild(link);
 			link.click();
 			
+			if(iOS == true) {
+				
+			} else {
+            			window.location.href = "/asn/allianz-social-media-for-sales/template-maker/profile-picture/thankyou";
+			}
 		}
     });
     
@@ -1116,25 +1017,53 @@
         originY: 'top'
     });
 
-    //Add uploaded image in canvas
-    // var imgInstance = new fabric.Image.fromURL('<?php echo $session->src?>', function(img){
-    // 		canvas.add(img);
-    // 		canvas.centerObject(img);
-    // 		canvas.sendToBack(img);
-    // 		canvas.setActiveObject(img);
-    // 	},
-    // 	{
-    // 		lockUniScaling: true
-    // 	}
-    // );
-
+	//Add uploaded image in canvas
+    var imgInstance = new fabric.Image.fromURL('<?php echo $session->src?>', function(img){
+	    
+	    	//get original image size
+		    ih = img.height;
+		    iw = img.width;
+		
+		    //keep aspect ratio pas render image
+		    width_ratio  = cvsW  / iw;
+		    height_ratio = cvsH / ih;
+		    if (width_ratio > height_ratio) {
+		        fw = iw * width_ratio;
+		        fh = ih * fw / iw;
+		        //alert("if");
+		    } else {
+		        fh = ih * height_ratio;
+		        fw = iw * fh / ih;
+		        //alert("else");
+		    }
+			
+			img.set({
+				width: fw / 2,
+				height: fh / 2
+			})
+		
+		    //set visibility resizer
+		    img.setControlsVisibility ({
+		        mt: false,
+		        mr: false,
+		        mb: false,
+		        ml: false
+		    });
+	    	
+    		canvas.add(img);
+    		canvas.centerObject(img);
+    		canvas.sendToBack(img);
+    		canvas.setActiveObject(img);
+    	},
+    	{
+    		lockUniScaling: true
+    	}
+    );
+	
+	/*
     //get original image size
     ih = imgElement.naturalHeight;
     iw = imgElement.naturalWidth;
-    // console.log(iw);
-    // console.log(ih);
-    // console.log(cvsW);
-    // console.log(cvsH);
 
     //keep aspect ratio pas render image
     width_ratio  = cvsW  / iw;
@@ -1168,24 +1097,8 @@
     canvas.sendToBack(imgInstance);
     canvas.setActiveObject(imgInstance);
     canvas.renderAll();
-
-    //grouping all object
-    // var medium = new fabric.Group([rect, text]);
-    // canvas.add(medium);
-    // canvas.renderAll();
-
-    //trying to cloning
-    // $('#clone').click(function() {
-    //     //cloning object canvas
-    //     var obj = canvas.getActiveObject();
-    //     var vobj = fabric.util.object.clone(obj);
-    //     vobj.clone(function(c) {
-    //         canvas.add(c);
-    //         console.log(vobj);
-    //         canvas.renderAll();
-    //     });
-    // });
-
+	*/
+	
     // Binding click for Pratinjau and Simpan Button
     $('#preview, #save').click(function(){
         nama1 = $('#bawah1').val();
@@ -1207,9 +1120,15 @@
 
             var link = document.createElement('a');
             link.href = dataURL;
-            link.download = "Cover Profil Maker Allianz.png";
+            link.download = "Timeline Post Allianz.png";
             document.body.appendChild(link);
             link.click();
+            
+            if(iOS == true) {
+            	
+            } else {
+            	window.location.href = "/asn/allianz-social-media-for-sales/template-maker/timeline-post/thankyou";
+            }
         }
     });
     }
@@ -1254,115 +1173,7 @@
             setCookie("res", res);
         });
 
-        /* Resize with cropit
-            $('#image-cropper-ava2').cropit({
-                //exportZoom: 2,
-                imageState: {
-                    src: '<?php echo $session->src ?>',
-                },
-                imageBackground: true,
-                imageBackfroundBorderWidth: 1,
-                smallImage: 'allow',
-                freeMove: true,
-                onOffsetChange: function(offset) {
-                      var pos = (offset.x*rasioX)+"px "+(offset.y*rasioY)+"px";
-                      //$("#duplicate .cropit-image-preview").css("background-position",pos);
-                      // $("# image-cropper-ava21.cropit-image-background").css("left",(offset.x*rasioX)+"px");
-                      //$("#duplicate .cropit-image-background").css("top",(offset.y*2)+"px");
-                    $("#image-cropper-ava21 .cropit-image-preview").css("background-position",pos);
-                    $("#image-cropper-ava21 .cropit-image-background").css("left",(offset.x*rasioX)+"px");
-                    $("#image-cropper-ava21 .cropit-image-background").css("top",(offset.y*rasioY)+"px");
-
-                    var val_ava = $("#image-cropper-ava2 .cropit-image-preview").css("background-size");
-                     var result1 = val_ava.split(' ');
-                     // console.log(result1);
-                     var result21 = result1[0].split('px');
-                     var result22 = result1[1].split('px');
-                     var size = (result21[0]*rasioX)+"px "+(result22[0]*rasioY)+"px";
-                     $("#image-cropper-ava21 .cropit-image-preview").css("background-size",size);
-
-                },
-                onZoomChange:function(value){
-                     var val_ava = $("#image-cropper-ava2 .cropit-image-preview").css("background-size");
-                     var val_ava_left = $("#image-cropper-ava2 .cropit-image-background").css("left").split('px');
-                     var val_ava_top = $("#image-cropper-ava2 .cropit-image-background").css("top").split('px');
-                     var val_ava_height = $("#image-cropper-ava2 .cropit-image-background").css("height").split('px');
-                     var val_ava_width = $("#image-cropper-ava2 .cropit-image-background").css("width").split('px');
-                     //console.log(val_ava);
-                     var result1 = val_ava.split(' ');
-                     // console.log(result1);
-                     var result21 = result1[0].split('px');
-                     var result22 = result1[1].split('px');
-                     var size = (result21[0]*rasioX)+"px "+(result22[0]*rasioY)+"px";
-                     $("#image-cropper-ava21 .cropit-image-preview").css("background-size",size);
-                     // console.log(val_ava_left[0]*2);
-                     // console.log(val_ava_top[0]*2);
-                     $("#image-cropper-ava21 .cropit-image-background").css("left",(val_ava_left[0]*rasioX)+"px");
-                     $("#image-cropper-ava21 .cropit-image-background").css("top",(val_ava_top[0]*rasioY)+"px");
-                     $("#image-cropper-ava21 .cropit-image-background").css("height",(val_ava_height[0]*rasioY)+"px");
-                     $("#image-cropper-ava21 .cropit-image-background").css("width",(val_ava_width[0]*rasioX)+"px");
-                     // console.log(rasioX);
-                     //$("#duplicate .cropit-image-background").css("left",(result21[0]*2)+"px");
-                     //$("#duplicate .cropit-image-background").css("top",(result22[0]*2)+"px");
-                     //var val_ava2 = $("#duplicate .cropit-image-zoom-input.custom").val(val_ava);
-                     //console.log(val_ava2);
-                }
-            });
-        /* Resize with cropit */
-//           $('#image-cropper-ava3').cropit({
-//                //exportZoom: 2,
-//                imageState: {
-//                    src: '<?php echo $session->src ?>',
-//                },
-//                imageBackground: true,
-//                imageBackgroundBorderWidth: 1,
-//                smallImage: 'allow',
-//                freeMove: true,
-//                onOffsetChange: function(offset) {
-//                      var pos = (offset.x*rasioX_ava3)+"px "+(offset.y*rasioY_ava3)+"px";
-//                      //$("#duplicate .cropit-image-preview").css("background-position",pos);
-//                      // $("# image-cropper-ava21.cropit-image-background").css("left",(offset.x*rasioX)+"px");
-//                      //$("#duplicate .cropit-image-background").css("top",(offset.y*2)+"px");
-//					$("#image-cropper-ava31 .cropit-image-preview").css("background-position",pos);
-//					$("#image-cropper-ava31 .cropit-image-background").css("left",(offset.x*rasioX)+"px");
-//					$("#image-cropper-ava31 .cropit-image-background").css("top",(offset.y*rasioY)+"px");
-//					 var val_ava3 = $("#image-cropper-ava3 .cropit-image-preview").css("background-size");
-//					 var result2 = val_ava3.split(' ');
-//
-//                     var result31 = result2[0].split('px');
-//                     var result32 = result2[1].split('px');
-//
-//				    var size = (result31[0]*rasioX_ava3)+"px "+(result32[0]*rasioY_ava3)+"px";
-//                     $("#image-cropper-ava31 .cropit-image-preview").css("background-size",size);
-//                },
-//                onZoomChange:function(value){
-//                     var val_ava3 = $("#image-cropper-ava3 .cropit-image-preview").css("background-size");
-//                     var val_ava3_left = $("#image-cropper-ava3 .cropit-image-background").css("left").split('px');
-//                     var val_ava3_top = $("#image-cropper-ava3 .cropit-image-background").css("top").split('px');
-//                     var val_ava3_height = $("#image-cropper-ava3 .cropit-image-background").css("height").split('px');
-//                     var val_ava3_width = $("#image-cropper-ava3 .cropit-image-background").css("width").split('px');
-//                     //console.log(val_ava);
-//                     var result2 = val_ava3.split(' ');
-//
-//                     var result31 = result2[0].split('px');
-//                     var result32 = result2[1].split('px');
-//
-//				    var size = (result31[0]*rasioX_ava3)+"px "+(result32[0]*rasioY_ava3)+"px";
-//                     $("#image-cropper-ava31 .cropit-image-preview").css("background-size",size);
-//                     // console.log(val_ava_left[0]*2);
-//                     // console.log(val_ava_top[0]*2);
-//                     $("#image-cropper-ava31 .cropit-image-background").css("left",(val_ava3_left[0]*rasioX_ava3)+"px");
-//                     $("#image-cropper-ava31 .cropit-image-background").css("top",(val_ava3_top[0]*rasioY_ava3)+"px");
-//                     $("#image-cropper-ava31 .cropit-image-background").css("height",(val_ava3_height[0]*rasioY_ava3)+"px");
-//                     $("#image-cropper-ava31 .cropit-image-background").css("width",(val_ava3_width[0]*rasioX_ava3)+"px");
-//					 // console.log(rasioX);
-//                     //$("#duplicate .cropit-image-background").css("left",(result21[0]*2)+"px");
-//                     //$("#duplicate .cropit-image-background").css("top",(result22[0]*2)+"px");
-//                     //var val_ava2 = $("#duplicate .cropit-image-zoom-input.custom").val(val_ava);
-//                     //console.log(val_ava2);
-//                }
-//            });
-
+     
             $('#image-cropper, #image-cropper-ava1').cropit({
                 //exportZoom: 2,
                 imageState: {
@@ -1386,16 +1197,6 @@
 
             var imageCropper = $('#image-cropper, #image-cropper-ava1, #image-cropper-ava2, #image-cropper-ava3');
                 imageCropper.cropit('imageSrc');
-            //$('body').on('click','#download',function(){
-            //          var imageData = $('#image-cropper-ava2').cropit('export');
-            //          console.log(imageData);
-            //          window.open(imageData);
-            //});
-
-            // $('.export').click(function() {
-            //     var imageData = $('#image-cropper, #image-cropper-ava1, #image-cropper-ava2, #image-cropper-ava3').cropit('export');
-            //         window.open(imageData);
-            // });
 
     });
 
@@ -1408,6 +1209,28 @@
         //alert(x);
         //alert(id);
     }
+
+    $(function(){
+          if(temp == "template4") {
+            if($(window).width() < 480) {
+
+                $('#cropped-ava21').keepRatio({ ratio: 4/3, calculate: 'height' });
+                $('section.profile-maker .page-maker--placeholder').css('margin-bottom', '45px');
+
+                setTimeout(function(){
+                    $('#cropped-ava21').keepRatio({ ratio: 4/3, calculate: 'height' });
+                }, 400);
+
+                
+            }
+            
+        }
+    });
+
+    $(window).resize(function(){
+        $('#cropped-ava21').keepRatio({ ratio: 4/3, calculate: 'height' });
+        $('section.profile-maker .page-maker--form').css('margin-top', '9%');
+    });
 
 
 </script>

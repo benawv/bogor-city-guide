@@ -329,12 +329,12 @@ class AgentController extends Website_Controller_Action {
         if($Frekuensi == "Semesteran")
         {
 //				$nilai = number_format($Calculation*2,0,",",".");
-				$per = number_format($Calculation*2,0,',','.')." per semester.";
+				$per = number_format($Calculation,0,',','.')." per semester.";
         }
         elseif($Frekuensi == "Triwulan")
         {
 //				$nilai = number_format($Calculation*4,0,",",".");
-				$per = number_format($Calculation*4,0,',','.')." per triwulan.";
+				$per = number_format($Calculation,0,',','.')." per triwulan.";
         }
         else
         {
@@ -401,9 +401,8 @@ class AgentController extends Website_Controller_Action {
 							'usia'=> $Usia,
 							'kontribusi' => $Kontribusi,
 							'AJ' => $AJ,
-							'pembayaran' => $nilai,
-							'per' => $per,
-							'frek' => $Frekuensi,
+							'pembayaran' => $per,
+                            'frek' => $Frekuensi,
 							'JK' => $JK,
 							'nohp' => $nohp,
                             'info' => $info,

@@ -8526,6 +8526,54 @@ iframe {
 .cntnt-grd-wrap .cntnt-grd .grd-cpy-wrp .grd-cpy {
     min-height: 18em;
 }
+.crmb {
+    display: block;
+}
+.crmb li {
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.8);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000, endColorstr=#CC000000);
+    zoom: 1;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    float: left;
+    width: 230px;
+    height: 230px;
+    display: table;
+    background-size: 230px 230px;
+    background-repeat: no-repeat;
+}
+.crmb li:hover {
+    background-color: transparent;
+    background-color: #000;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF000000, endColorstr=#FF000000);
+    zoom: 1;
+}
+.crmb h1, .crmb a {
+    font-family: "Josefin Sans";
+    font-size: 2.8rem;
+    line-height: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.crmb a {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px;
+}
+.crmb a:hover {
+    text-decoration: none;
+}
+.crmb h1 a {
+    display: inline-block;
+}
+.crmb ul {
+    margin-bottom: 40px;
+}
 }@media only screen and (min-width: 769px) {
     .s-ct {
     max-width: 688px;
