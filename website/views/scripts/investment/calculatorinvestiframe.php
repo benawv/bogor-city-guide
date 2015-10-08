@@ -240,7 +240,7 @@ var sliderCurrentValue = $( "#slider3" ).slider( "option", "value" );
            
            <div class="calc-machine">
                <div class="calc-submit bottom">
-                    <input class="orange-btn bg_fund" type="button" value="Hitung Biaya Kebutuhan Saya di Masa Depan">
+                    <input class="orange-btn bg_fund" type="button" value="Hitung Kebutuhan Masa Depan">
                 </div>   
            </div>   
                
