@@ -93,29 +93,30 @@ function checkfiles(){
     }else if (ext == "JPG" || ext == "PNG" || ext == "jpg" || ext == "png" || ext == "jpeg" || ext == "JPEG"){
 
         $('#test').hide();
-        $( "#progressbar" ).progressbar();
-        var progressbar = $( "#progressbar" ),
-            progressLabel = $( ".progress-label" );
-            progressLabel.show();
-            progressbar.progressbar({
-              value: false,
-              change: function() {
-                progressLabel.text( progressbar.progressbar( "value" ) + "%" );
-              },
-              complete: function() {
-                //progressLabel.text( "Complete!" );
-                //window.location="/profil-maker/page3";
-              }
-            });
+        $("body").prepend("<div id='dvLoading'></div>");
+        // $( "#progressbar" ).progressbar();
+        // var progressbar = $( "#progressbar" ),
+        //     progressLabel = $( ".progress-label" );
+        //     progressLabel.show();
+        //     progressbar.progressbar({
+        //       value: false,
+        //       change: function() {
+        //         progressLabel.text( progressbar.progressbar( "value" ) + "%" );
+        //       },
+        //       complete: function() {
+        //         //progressLabel.text( "Complete!" );
+        //         //window.location="<?php echo $this->link("link-template")->getHref()?>";
+        //       }
+        //     });
      
-            function progress() {
-              var val = progressbar.progressbar( "value" ) || 0;
-              progressbar.progressbar( "value", val + 1 );
-               if ( val < 99 ) {
-                    setTimeout( progress, 50 );
-               }
-            }
-            setTimeout( progress, 10 );
+        //     function progress() {
+        //       var val = progressbar.progressbar( "value" ) || 0;
+        //       progressbar.progressbar( "value", val + 1 );
+        //        if ( val < 99 ) {
+        //             setTimeout( progress, 50 );
+        //        }
+        //     }
+        //     setTimeout( progress, 10 );
 
         // var modal = $('.js-loading-bar'),
         //     bar = modal.find('.progress-bar');
