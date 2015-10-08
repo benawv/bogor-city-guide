@@ -130,7 +130,7 @@
         img_bg.css('height', target_width + 'px');
         canvas.css('height', target_width + 'px');
         target.parent().parent().css('height', target_width + 'px');
-        console.log(target_width + '/' + target_height);
+        //console.log(target_width + '/' + target_height);
     }
 
     $(function(){
@@ -725,8 +725,8 @@
 		    }
 		    
 		    img_ava1.set({
-		        width: fw,
-		        height: fh
+		        width: fw / 2,
+		        height: fh / 2
 		    });
 		        
 		    //set visibility resizer
@@ -748,7 +748,7 @@
 		}
 	);
 
-/*
+	/*
         Template 4 (News Feed Post Template) Profile maker using FabricJS
         Added By Handri Pangestiaji
         Created at Sept 28 2015
@@ -812,17 +812,49 @@
     });
 
     //Add uploaded image in canvas
-    // var imgInstance = new fabric.Image.fromURL('<?php echo $session->src?>', function(img){
-    // 		canvas.add(img);
-    // 		canvas.centerObject(img);
-    // 		canvas.sendToBack(img);
-    // 		canvas.setActiveObject(img);
-    // 	},
-    // 	{
-    // 		lockUniScaling: true
-    // 	}
-    // );
+    var imgInstance = new fabric.Image.fromURL('<?php echo $session->src?>', function(img){
+	    
+	    	//get original image size
+		    ih = img.height;
+		    iw = img.width;
+		
+		    //keep aspect ratio pas render image
+		    width_ratio  = cvsW  / iw;
+		    height_ratio = cvsH / ih;
+		    if (width_ratio > height_ratio) {
+		        fw = iw * width_ratio;
+		        fh = ih * fw / iw;
+		        //alert("if");
+		    } else {
+		        fh = ih * height_ratio;
+		        fw = iw * fh / ih;
+		        //alert("else");
+		    }
+			
+			img.set({
+				width: fw / 2,
+				height: fh / 2
+			})
+		
+		    //set visibility resizer
+		    img.setControlsVisibility ({
+		        mt: false,
+		        mr: false,
+		        mb: false,
+		        ml: false
+		    });
+	    	
+    		canvas.add(img);
+    		canvas.centerObject(img);
+    		canvas.sendToBack(img);
+    		canvas.setActiveObject(img);
+    	},
+    	{
+    		lockUniScaling: true
+    	}
+    );
 
+	/*
     //get original image size
     ih = imgElement.naturalHeight;
     iw = imgElement.naturalWidth;
@@ -859,7 +891,8 @@
     canvas.sendToBack(imgInstance);
     canvas.setActiveObject(imgInstance);
     canvas.renderAll();
-
+	*/
+	
     // Binding click for Pratinjau and Simpan Button
     $('#preview, #save').click(function(){
         nama1 = $('#bawah1').val();
@@ -984,7 +1017,50 @@
         originY: 'top'
     });
 
-
+	//Add uploaded image in canvas
+    var imgInstance = new fabric.Image.fromURL('<?php echo $session->src?>', function(img){
+	    
+	    	//get original image size
+		    ih = img.height;
+		    iw = img.width;
+		
+		    //keep aspect ratio pas render image
+		    width_ratio  = cvsW  / iw;
+		    height_ratio = cvsH / ih;
+		    if (width_ratio > height_ratio) {
+		        fw = iw * width_ratio;
+		        fh = ih * fw / iw;
+		        //alert("if");
+		    } else {
+		        fh = ih * height_ratio;
+		        fw = iw * fh / ih;
+		        //alert("else");
+		    }
+			
+			img.set({
+				width: fw / 2,
+				height: fh / 2
+			})
+		
+		    //set visibility resizer
+		    img.setControlsVisibility ({
+		        mt: false,
+		        mr: false,
+		        mb: false,
+		        ml: false
+		    });
+	    	
+    		canvas.add(img);
+    		canvas.centerObject(img);
+    		canvas.sendToBack(img);
+    		canvas.setActiveObject(img);
+    	},
+    	{
+    		lockUniScaling: true
+    	}
+    );
+	
+	/*
     //get original image size
     ih = imgElement.naturalHeight;
     iw = imgElement.naturalWidth;
@@ -1021,7 +1097,8 @@
     canvas.sendToBack(imgInstance);
     canvas.setActiveObject(imgInstance);
     canvas.renderAll();
-
+	*/
+	
     // Binding click for Pratinjau and Simpan Button
     $('#preview, #save').click(function(){
         nama1 = $('#bawah1').val();
