@@ -279,6 +279,36 @@ class InvestmentController extends Website_Controller_Action
             $session->waktu = $waktu;
             $session->result = $result;
     }
+    
+    public function asuransiAction(){
+        
+        $biaya = $_POST['biaya'];
+        $asumsiinflasi = $_POST['asumsiinflasi'];
+        $asumsiimbal = $_POST['asumsiimbal'];
+        $waktu = $_POST['waktu'];
+        $result = $_POST['result'];
+        
+        $session = new Zend_Session_Namespace('HitIns');
+            $session->biaya = $biaya;
+            $session->asumsiimbal = $asumsiimbal;
+            $session->asumsiinflasi = $asumsiinflasi;
+            $session->waktu = $waktu;
+            $session->result = $result;
+    }
+    
+    public function pendidikanAction(){
+        
+        $biaya = $_POST['biaya'];
+        $asumsi = $_POST['asumsi'];
+        $waktu = $_POST['waktu'];
+        $result = $_POST['result'];
+        
+        $session = new Zend_Session_Namespace('HitEdu');
+            $session->biaya = $biaya;
+            $session->asumsi = $asumsi;
+            $session->waktu = $waktu;
+            $session->result = $result;
+    }
     public function calculatorinvestiframeresultAction(){}
     public function calculatorinvestiframeAction(){}
     public function calculatorresultAction(){}
@@ -299,6 +329,10 @@ class InvestmentController extends Website_Controller_Action
     public function calculatorretirement2resulAction(){}
     public function calculatorretirement3Action(){}
     public function calculatorretirement3resulAction(){}
+    public function calceduAction(){}
+    public function calceduresultAction(){}
+    public function calcinsuranceAction(){}
+    public function calcinsuranceresAction(){}
     
     public function acuanAction(){}
     
