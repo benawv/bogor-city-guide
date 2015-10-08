@@ -159,10 +159,10 @@ function setCookie(cname, cvalue, exdays) {
 	$('#edu1_biaya_bulanan').html(edu1_biaya_bulanan);
 	
 	var edu1_asumsi_inflasi = getCookie('edu1_asumsi_inflasi') + '%';
-	$('#edu1_asumsi_inflasi').html(<?php echo $session->asumsi; ?>);
+	$('#edu1_asumsi_inflasi').html(<?php echo $session->asumsi.' %'; ?>);
 	
 	var edu1_jangka_waktu = getCookie('edu1_jangka_waktu') + ' tahun';
-	$('#edu1_jangka_waktu').html(<?php echo $session->waktu; ?>);
+	$('#edu1_jangka_waktu').html(<?php echo $session->waktu.' tahun'; ?>);
 	
 	$("#edu2").click(function(){
 	    window.location.href = "/kalkulator/financial-calculators/calculator-education2";

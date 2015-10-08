@@ -184,7 +184,7 @@ div.ui-slider-range{background-color:#113388;}
 	var resp1_asumsi_inflasi = getCookie('resp1_asumsi_inflasi');
 	$('#resp1_asumsi_inflasi').html(<?php echo $session->asumsiinflasi; ?> + '%');
 	var resp1_jangka_waktu = getCookie('resp1_jangka_waktu');
-	$('#resp1_jangka_waktu').html(<?php echo $waktu; ?> + ' tahun');
+	$('#resp1_jangka_waktu').html(<?php echo $session->waktu; ?> + ' tahun');
 	
      $("#fund_allianz").click(function(){
 	    window.location.href = "/allianz-fund";
