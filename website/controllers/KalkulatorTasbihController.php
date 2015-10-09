@@ -4,6 +4,7 @@
 		
         public function savingAction() {
 	
+
             $TanggalPembuatan = $_POST["tgl"];
 			$tglBuat_ = explode("/", $TanggalPembuatan);
             $tglBuat_[0]; //day
@@ -27,24 +28,28 @@
 			
 			if($Frekuensi == 1){
 				$frek = 'Tahunan';
+                $valFrek = 1;
 			}
 			else if($Frekuensi == 2){
 				$frek = 'Semesteran';
+                $valFrek = 0.52;
 			}
 			else{
 				$frek = 'Triwulan';
+                $valFrek = 0.27;
 			}
             
 			$kat = $_POST["kategori"];
             
 			$rates= new Object_TasbihRate_List();
 			$rates->setCondition("kelamin='".$JenisKelamin."' and frekuensi=$Kontribusi and usia=$Usia");
-			$rate='';
+            $rate='';
 			foreach($rates as $items){
 				$rate=$items->rate;
 			}
 		
-			$Calculation = ($rate*$AsuransiJiwa)/1000; //The Pattern of ALLIANZ
+			$Calculation = ($rate*$AsuransiJiwa)/1000*$valFrek; //The Pattern of ALLIANZ
+//            $Calculation = ((($rate+$rate2*($persen/100)+$mil)*$AsuransiJiwa)/1000)*$valFrek;
             //SetData
 	        
 			$tglBuat = strtotime($TanggalPembuatan);
@@ -64,6 +69,18 @@
             $session->Kontribusi = $Kontribusi;
             $session->Calculation = $Calculation;
 			$session->kat = $kat;
+            
+            $sessionDup = new Zend_Session_Namespace('duplic_tasbih');
+            $sessionDup->date_tglBuat = $date_tglBuat;
+            $sessionDup->date_tglLahir = $date_tglLahir;
+            $sessionDup->JenisKelamin = $JenisKelamin;
+            $sessionDup->Usia = $Usia;
+            $sessionDup->Frekuensi = $frek;
+            $sessionDup->AsuransiJiwa = $AsuransiJiwa;
+            $sessionDup->AJ = $AJ;
+            $sessionDup->Kontribusi = $Kontribusi;
+            $sessionDup->Calculation = $Calculation;
+			$sessionDup->kat = $kat;
 
             echo $session->Calculation;//print result of calculation into form
 
@@ -186,7 +203,9 @@
 			$session->idObject = $cookie->getO_id();
 			
 			$session2 = new Zend_Session_Namespace('homeAgen');
+			$sessionAgen = new Zend_Session_Namespace('namaAgen');
             $session2->idUser = $cookie->getO_id();
+            $sessionAgen->idUser = $cookie->getO_id();
 			
 			if($JenisKelamin == 'l') {
 				$JK = 'Pria';
