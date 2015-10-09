@@ -617,9 +617,28 @@
 
             var dob = new Date(this.value);
             var today = new Date();
-            var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+            //var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+            //if(age >= 1) {
+            //    $('#usia').val(age);
+            //   document.getElementById('notif-tgllahir').style.display= 'none';
+            //}else{
+            //    document.getElementById('notif-tgllahir').style.display= 'block';
+            //    $('#usia').val('Umur Anda dibawah 1 tahun');
+            //}
+            var age = (today-dob) / (365.25 * 24 * 60 * 60 * 1000);
+
+            var j = age.toString().split(".")[0];
+            var k = parseFloat(j)+0.5;
+            var hitung = age - k;
+            console.log(age);
+            console.log(j);
+            if( hitung < 0.00139 ){
+                var ageReal = (Math.floor(age));
+            }else{
+                var ageReal = (Math.floor(age))+1;
+            }
             if(age >= 1) {
-                $('#usia').val(age);
+                $('#usia').val(ageReal);
                document.getElementById('notif-tgllahir').style.display= 'none';
             }else{
                 document.getElementById('notif-tgllahir').style.display= 'block';
