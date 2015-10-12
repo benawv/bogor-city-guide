@@ -18,6 +18,8 @@ class TasbihController extends Website_Controller_Action {
 	}
 	
     public function inquriyFormAction(){
+        
+
             
             $nama = $_POST["nama"];
 	    $kelamin = $_POST["kelamin"];
