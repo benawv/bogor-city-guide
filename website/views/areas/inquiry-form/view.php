@@ -434,7 +434,7 @@
             var bod=$('#DOB').val();
             var email=$('#email').val();
             var nohp=$('#nohp').val();
-            var prov=$('#provinsi_id').val();
+            var prov=$('#provinsi_id option:Selected').html();
             var pesan=$('#pesan').val();
             
 
