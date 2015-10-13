@@ -547,7 +547,7 @@
                         document.getElementById('notif-asuransijiwa').style.display= 'block';
                     if( tanggalpembuatan == '')
                         document.getElementById('notif-tglhitung').style.display= 'block';
-                    if( tanggallahir == '' )
+                    if( tanggallahir > 55 && tanggallahir < 1 )
                         document.getElementById('notif-tgllahir').style.display= 'block';
                     if( sex == null )
                         document.getElementById('notif-jeniskelamin').style.display= 'block';
@@ -629,9 +629,12 @@
             }else{
                 var ageReal = (Math.floor(age))+1;
             }
-            if(age >= 1) {
+            if(ageReal >= 1 && ageReal <= 55) {
                 $('#usia').val(ageReal);
                document.getElementById('notif-tgllahir').style.display= 'none';
+            }else if(ageReal >= 56){
+                $('#usia').val('Umur Anda diatas 55 tahun');
+                document.getElementById('notif-tgllahir').style.display= 'block';
             }else{
                 document.getElementById('notif-tgllahir').style.display= 'block';
                 $('#usia').val('Umur Anda dibawah 1 tahun');
