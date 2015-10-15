@@ -1198,8 +1198,8 @@
                 "<td class='tabletd'>"+no+"</td>"+
                 "<td><input type='text' class='form-control' placeholder='Nama' value='"+name+"' class='display'></td>"+
                 "<td>"+form_sex(sex)+"</td>"+
-                "<td><input class='date' type='text' placeholder='Tanggal Lahir' name='dob2' id='dob2' value='"+dob+"'></td>"+
-                "<td><input class='date' type='text' placeholder='Tanggal Kalkulasi' name='cd2' id='cd2' value='"+cd+"'></td>"+
+                "<td><input class='date dob2' type='text' placeholder='Tanggal Lahir' name='dob"+no+"' id='dob"+no+"' value='"+dob+"'></td>"+
+                "<td><input class='date cd2' type='text' placeholder='Tanggal Kalkulasi' name='cd"+no+"' id='cd"+no+"' value='"+cd+"'></td>"+
                 "<td class='tabletd age'>"+age+"</td>"+
                 "<td class='tabletd'>NEW BUSINESS</td>"+
                 "<td class='tabletd'>"+planipval.split("_")[1]+"</td>"+
@@ -1229,8 +1229,8 @@
             console.log("index"+index);
             var uwl = $( this ).find(".uwl").val()
 
-            var dob = $( this ).find("#dob2").val();
-            var cd = $( this ).find("#cd2").val();
+            var dob = $( this ).find(".dob2").val();
+            var cd = $( this ).find(".cd2").val();
             var sex = $( this ).find("#sex").val();
             dist = parseInt(selisih(dob, cd));
             var age = dist;//Math.round(dist/(1000*60*60*24*365));
