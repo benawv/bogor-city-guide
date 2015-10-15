@@ -1261,6 +1261,7 @@
             console.log( index + ": " + $( this ).find("#dob2").val() );
             console.log("ipp1="+ipp1+" matp1="+matp1+" opdenp1="+opdenp1+" dob="+dob+" uwl="+uwl);
             console.log("ipp0="+ipp0+" matp0="+matp0+" opdenp0="+opdenp0+" cd"+ cd);
+            console.log("totalwithout="+totalwithout);
             
             // return true;
             if(payment != "Annually"){
@@ -1283,7 +1284,7 @@
             $( this ).find(".ipp").html(ipp);
             $( this ).find(".matp").html(matp);
             $( this ).find(".opdenp").html(opdenp);
-            $( this ).find(".to").html(totalwithout);
+            $( this ).find(".to").html(total);
             $( this ).find(".towithout").html(totalwithout);
             jumlah();
         });
