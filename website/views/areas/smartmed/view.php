@@ -1125,7 +1125,7 @@
         var uwl = $("#uwl").val();
         var fd = $("#family_discount").val();
         var uwl = $("#uwl").val();
-        var sts_allowed = "NEW BUSINESS ";
+        var sts_allowed = "NEW BUSINESS";
         var name = $("#name").val();
         var dob = $("#dob").val();
         var cd = $("#cd").val();
@@ -1226,14 +1226,14 @@
         // console.log(rowCount);
         //console.log($(this).parent().html());
         $('table.table tbody tr').each(function(index){
-
+            console.log("index"+index);
             var uwl = $( this ).find(".uwl").val()
 
             var dob = $( this ).find("#dob2").val();
             var cd = $( this ).find("#cd2").val();
             var sex = $( this ).find("#sex").val();
             dist = parseInt(selisih(dob, cd));
-            var age = Math.round(dist/(1000*60*60*24*365));
+            var age = dist;//Math.round(dist/(1000*60*60*24*365));
             $( this ).find(".age").html(age);
 
             var ip = $("#ip").val();
@@ -1242,7 +1242,6 @@
             var planipval = $("#planip").val();
             var planmatval = $("#planmat").val();
             var planop_denval = $("#planop_den").val();
-            console.log( index + ": " + $( this ).find("#dob2").val() );
 
             planip = planipval.split("_")[0];
             planmat = planmatval.split("_")[0];
@@ -1258,7 +1257,12 @@
             matp0 = kalk(age,sex,"ma",mat,0,planmat);
             opdenp0 = kalk(age,sex,"od",outden,0,planop_den);
             totalwithout = parseInt(ipp0)+parseInt(matp0)+parseInt(opdenp0);
+
+            console.log( index + ": " + $( this ).find("#dob2").val() );
+            console.log("ipp1="+ipp1+" matp1="+matp1+" opdenp1="+opdenp1+" dob="+dob);
+            console.log("ipp0="+ipp0+" matp0="+matp0+" opdenp0="+opdenp0+" cd"+ cd);
             
+            // return true;
             if(payment != "Annually"){
                 matp = 0;
                 opdenp = 0;
