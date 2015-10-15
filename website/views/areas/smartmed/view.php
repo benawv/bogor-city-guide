@@ -1227,7 +1227,7 @@
         //console.log($(this).parent().html());
         $('table.table tbody tr').each(function(index){
             console.log("index"+index);
-            var uwl = $( this ).find(".uwl").val()
+            var uwl = $( this ).find("#uwl").val()
 
             var dob = $( this ).find(".dob2").val();
             var cd = $( this ).find(".cd2").val();
@@ -1259,7 +1259,7 @@
             totalwithout = parseInt(ipp0)+parseInt(matp0)+parseInt(opdenp0);
 
             console.log( index + ": " + $( this ).find("#dob2").val() );
-            console.log("ipp1="+ipp1+" matp1="+matp1+" opdenp1="+opdenp1+" dob="+dob);
+            console.log("ipp1="+ipp1+" matp1="+matp1+" opdenp1="+opdenp1+" dob="+dob+" uwl="+uwl);
             console.log("ipp0="+ipp0+" matp0="+matp0+" opdenp0="+opdenp0+" cd"+ cd);
             
             // return true;
