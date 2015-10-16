@@ -1216,7 +1216,7 @@
         var fd = $("#family_discount").val();
         if(rowCount>1&&fd=="Y"){
             $('table.table tbody tr').each(function(index){
-                total += parseInt($(this).find(".tohidden").html());
+                total += parseInt($(this).find(".tohidden").val());
                 console.log("tohidden="+total);
             });
             total *= 0.05;
