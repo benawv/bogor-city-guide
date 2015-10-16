@@ -1182,9 +1182,9 @@
             opdenp = 0;
             if(uwl > 0) ipp = ipp1;
             else ipp = ipp0;
-            totalwithout = parseInt(ipp0);
+            totalwithout = parseFloat(ipp0);
         }else{
-            totalwithout = parseInt(ipp0)+parseInt(matp0)+parseInt(opdenp0);
+            totalwithout = parseFloat(ipp0)+parseFloat(matp0)+parseFloat(opdenp0);
             if(uwl > 0) {
                 ipp = ipp1;
                 matp = matp1;
@@ -1195,7 +1195,7 @@
                 opdenp = opdenp0;
             }
         }
-        total = parseInt(ipp)+parseInt(matp)+parseInt(opdenp);
+        total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
         var rowCount = $('table.table tbody tr').length;
         var no = parseInt(rowCount)+1;
 
@@ -1287,9 +1287,9 @@
                 opdenp = 0;
                 if(uwl > 0) ipp = ipp1;
                 else ipp = ipp0;
-                totalwithout = parseInt(ipp0);
+                totalwithout = parseFloat(ipp0);
             }else{
-                totalwithout = parseInt(ipp0)+parseInt(matp0)+parseInt(opdenp0);
+                totalwithout = parseFloat(ipp0)+parseFloat(matp0)+parseFloat(opdenp0);
                 if(uwl > 0) {
                     ipp = ipp1;
                     matp = matp1;
@@ -1302,7 +1302,7 @@
             }
             console.log("totalwithout="+totalwithout);
 
-            total = parseInt(ipp)+parseInt(matp)+parseInt(opdenp);
+            total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
             $( this ).find(".ipp").html(currency(ipp));
             $( this ).find(".matp").html(currency(matp));
             $( this ).find(".opdenp").html(currency(opdenp));
