@@ -1056,41 +1056,37 @@
     function jumlah(){
         var rowCount = $('table.table tbody tr').length;
         var total = stamp = totfd = jml = totalwithoutuwl = 0;
-        var fd = $("#family_discount").val();
-        var dob = $("#dob").val();
-        var cd = $("#cd").val();
-        console.log(rowCount);
         for(var i = 0; i < rowCount; i++){
-            total += parseInt($('table.table tbody').children()[i].children[15].innerHTML);
-            totalwithoutuwl += parseInt($('table.table tbody').children()[0].children[16].innerHTML);
-            console.log("total"+parseInt($('table.table tbody').children()[i].children[15].innerHTML));
+            total += parseInt($('table.table tbody').children()[i].children[15].children[0].value);
+            // totalwithoutuwl += parseInt($('table.table tbody').children()[0].children[16].innerHTML);
+            // console.log("total"+parseInt($('table.table tbody').children()[i].children[15].innerHTML));
         }
-        $('table.table tfoot tr:first').children()[0].innerHTML = total;
+
+        $('table.table tfoot tr:first').children()[0].innerHTML = 'Rp. ' + total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';
         if(total>=250000 && total<1000000) stamp = 3000;
         else if(total>=1000000) stamp = 6000;
-        $('table.table tfoot').children()[1].children[1].innerHTML = stamp;//stamp duty
+        $('table.table tfoot').children()[1].children[1].innerHTML = 'Rp. ' + stamp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';//stamp duty
 
-        if(fd == "Y" && rowCount > 1) totfd = 0.05 * total;
-        else totfd = 0;
+        totfd = cekFamilyDiskon();
 
-        $('table.table tfoot').children()[3].children[1].innerHTML = totfd;//family discount
+        $('table.table tfoot').children()[3].children[1].innerHTML = 'Rp. ' + totfd.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';//family discount
 
         jml = stamp + total + 30000 - totfd;
-        $('table.table tfoot').children()[4].children[1].innerHTML = 'Rp. ' + jml + ',0';
+        $('table.table tfoot').children()[4].children[1].innerHTML = 'Rp. ' + jml.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';
         return total;
     }
     
-    function update(){
-        var rowCount = $('table.table tbody tr').length;
-        var total = 0;
-        for(var i = 0; i<rowCount; i++){
-            total += parseInt($('table.table tbody').children()[0].children[15].innerHTML);
-        }
-        console.log(total);
-        $('table.table tfoot tr:first').children()[0].innerHTML = total;
-        console.log($('table.table tfoot tr:first').children()[0].innerHTML);
-        return 0;
-    }
+    // function update(){
+    //     var rowCount = $('table.table tbody tr').length;
+    //     var total = 0;
+    //     for(var i = 0; i<rowCount; i++){
+    //         total += parseInt($('table.table tbody').children()[0].children[15].innerHTML);
+    //     }
+    //     console.log(total);
+    //     $('table.table tfoot tr:first').children()[0].innerHTML = 'Rp. ' + total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';;
+    //     console.log($('table.table tfoot tr:first').children()[0].innerHTML);
+    //     return 0;
+    // }
 
     function form_sex(sex){
         if(sex == "m")
@@ -1122,8 +1118,6 @@
 
     $("#Add").click(function(){
         var payment = $("#payment_methods").val();
-        var uwl = $("#uwl").val();
-        var fd = $("#family_discount").val();
         var uwl = $("#uwl").val();
         var sts_allowed = "NEW BUSINESS";
         var name = $("#name").val();
@@ -1206,15 +1200,29 @@
                 "<td class='tabletd'>"+planmatval.split("_")[1]+"</td>"+
                 "<td class='tabletd'>"+planop_denval.split("_")[1]+"</td>"+
                 "<td class='uwl'>"+form_uwl(uwl)+"</td>"+
-                "<td class='tabletd ipp'>"+ipp+"</td>"+
-                "<td class='tabletd matp'>"+matp+"</td>"+
-                "<td class='tabletd opdenp'>"+opdenp+"</td>"+
-                "<td class='tabletd to'>"+total+"</td>"+
+                "<td class='tabletd ipp'>"+'Rp. ' + ipp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0'+"</td>"+
+                "<td class='tabletd matp'>"+'Rp. ' + matp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0'+"</td>"+
+                "<td class='tabletd opdenp'>"+'Rp. ' + opdenp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0'+"</td>"+
+                "<td class='tabletd to'><input type='hidden' name='tohidden' value='"+total+"'><span class='toshow'>"+'Rp. ' + total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")+"</span></td>"+
                 "<td style='display:none;' class='towithout'>"+totalwithout+"</td>"+
             "</tr>");
         jumlah();
     }
     });
+
+    function cekFamilyDiskon(){
+        var rowCount = $('table.table tbody tr').length;
+        var total = 0;
+        var fd = $("#family_discount").val();
+        if(rowCount>1&&fd=="Y"){
+            $('table.table tbody tr').each(function(index){
+                total += parseInt($(this).find(".towithout").html());
+                console.log("towithout="+total);
+            });
+            total *= 0.05;
+        }
+        return total;
+    }
 
     
     
@@ -1281,10 +1289,11 @@
                 }
             }
             total = parseInt(ipp)+parseInt(matp)+parseInt(opdenp);
-            $( this ).find(".ipp").html(ipp);
-            $( this ).find(".matp").html(matp);
-            $( this ).find(".opdenp").html(opdenp);
-            $( this ).find(".to").html(total);
+            $( this ).find(".ipp").html('Rp. ' + ipp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0');
+            $( this ).find(".matp").html('Rp. ' + matp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0');
+            $( this ).find(".opdenp").html('Rp. ' + opdenp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0');
+            $( this ).find(".tohidden").html('Rp. ' + total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."));
+            $( this ).find(".toshow").val(total);
             $( this ).find(".towithout").html(totalwithout);
             jumlah();
         });
