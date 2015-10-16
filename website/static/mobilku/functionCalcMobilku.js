@@ -1790,6 +1790,73 @@ $(document).ready(function(){
             adjustTable();
         }
     });
+
+    function sendEmailFinish(){
+        var tahun_pembuatan=$('#tahun_pembuatan').val();
+        var harga=$('#harga').val();
+        var merk=$('#merk').val();
+        var merk_html=$('#merk option:selected').html().toLowerCase();
+        // var merk_html = 'Alfa Romeo';
+        var model=$('#model').val();
+        var regno=$('#regno').val();
+        var periode=$('#periode').val();
+        var email=$('#email').val();
+        var nama=$('#nama').val();
+        var telp=$('#telp').val();
+        var hargaKonv=clearFormat($('#harga').val());
+        var model_html=$('#model option:selected').html().toLowerCase();
+        
+        var radio1=$('#radio01').val();
+        var radio2=$('#radio02').val();
+        $('#radio01').checked
+        if($('#radio01').is(":checked") == true){
+            var radio = $('#radio01').val();
+        }else{
+            var radio = $('#radio02').val();
+        }
+
+        // if($('#paket1').prop('checked',true)){
+        //   var label = "Mobilku Basic";
+        //   var result = calc_result();
+        // }else if($('#paket2').prop('checked',true)){
+        //   var label = "Mobilku Standar";
+        //   var result = calc_resultstandard();
+        // }else if($('#paket3').prop('checked',true)){
+        //   var label = "Mobilku Premier";
+        //   var result = calc_resultpremier();
+        // }
+
+        var a = $('.content_show').val();
+
+        // console.log(a);
+        console.log(tahun_pembuatan+'-'+harga+'-'+model+'-'+regno+'-'+periode+'-'+email+'-'+nama+'-'+telp)
+        $.ajax({
+            "url" : "/save/",
+            "type" : "POST",
+            "async" : false,
+            "data" : "tahun_pembuatan=" + tahun_pembuatan +"&harga="+harga+"&merk="+merk+"&model="+model+"&regno="+regno+"&periode="+periode+"&email="+email+"&nama="+nama+"&telp="+telp+"&radio="+radio+"&hargaKonv="+hargaKonv+"&merk_html="+merk_html+"&model_html="+model_html+"&result=" + result+"&label=" + label,
+            "success" : function(){
+              window.open('/kalkulator/thankyou-mobilku','_self');
+              // console.log(data);
+                //var getResult=JSON.parse(response);
+                //console.log(response);
+            }
+            // console.log(data);
+        });
+   }
+
+    $(".btn-finish").on('click', function(){
+        sendEmailFinish();
+    });
+
+   // $(this).on('click','.btn-finish',function(){
+        
+   //      var email='stmardiah3@gmail.com';
+   //      if (email != '') {
+   //          sendEmailFinish();
+   //          adjustTable();
+   //      }
+   //  });
          
     /*$('#myTable2,#myTable3,#myTable4,#myTable5').dataTable( {
         "searching": false,
