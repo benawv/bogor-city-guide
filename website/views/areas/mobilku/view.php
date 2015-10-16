@@ -1320,6 +1320,7 @@ $(document).keyup(function(e){
                                                                             <tr>
                                                                                 <th class="">Pilih</th>
                                                                                 <th class="">Cakupan</th>
+                                                                                <th class="">Insured Value</th>
                                                                                 <th class="position-text">Premi</th>
                                                                                 <!-- <th class="">Insured Value</th>
                                                                                 <th class="">Rate</th> -->
@@ -1331,6 +1332,7 @@ $(document).keyup(function(e){
                                                                                     <input type="checkbox" class='no_compre_is_calc' name="no_compre_is_calc" checked data-angka="0" data-target="no_compre_prem" disabled="disabled">
                                                                                 </td>
                                                                                 <td id="nojenisasuransi">Komprehensif</td>
+                                                                                <td></td>
                                                                                 <td class='no_compre_prem position-text'>-</td>
                                                                                 <!-- <td class='no_compre_val'>-</td>
                                                                                 <td class='no_compre_persen'>-</td> -->
@@ -1340,6 +1342,7 @@ $(document).keyup(function(e){
                                                                                     <input type="checkbox" class='no_tpl_is_calc' id="no_tpl_is_calc" name="no_tpl_is_calc" checked data-insured="no_tpl_val" data-angka="0" data-target="no_tpl_prem">
                                                                                 </td>
                                                                                 <td>Tanggung Jawab Hukum Pihak Ketiga</td>
+                                                                                <td></td>
                                                                                 <td class='no_tpl_prem position-text' id="no_tpl_prem">-</td>
                                                                                 <!-- <td class=''>
                                                                                     <input type="text" name="no_tpl_val" class="no_tpl_val" id="notplval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
@@ -1352,16 +1355,16 @@ $(document).keyup(function(e){
                                                                                 </td>
 
                                                                                 <td>Tanggung Jawab Hukum Terhadap Penumpang</td>
-<td>
-																	<select  id="no_pll" onchange="pllVals();" class="form-control" tabindex="2">
-																		  <option value="1">10000000</option>
-																		  <option value="2">20000000</option>
-																		  <option value="3">30000000</option>
-																		  <option value="4">40000000</option>
-																		  <option value="5">50000000</option>
-																		</select>
-																		<input type="hidden" id ="no_pll_hidden" value="">
-																	</td>
+                                                                                <td>
+            																	<select  id="no_pll" onchange="pllVals();" class="form-control" tabindex="2">
+            																		  <option value="1">10000000</option>
+            																		  <option value="2">20000000</option>
+            																		  <option value="3">30000000</option>
+            																		  <option value="4">40000000</option>
+            																		  <option value="5">50000000</option>
+            																		</select>
+            																		<input type="hidden" id ="no_pll_hidden" value="">
+            																	</td>
                                                                                 <td id="no_pll_prem" class='no_pll_prem position-text'>-</td>
                                                                                 <!-- <td class=''>
                                                                                     <input type="text" name="no_pll_val" class="no_pll_val" id="nopllval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
@@ -1373,16 +1376,16 @@ $(document).keyup(function(e){
                                                                                     <input type="checkbox" class="no_med_ex_is_calc" id="no_med_ex_is_calc" name="no_med_ex_is_calc" checked data-insured="no_med_ex_val" data-angka="0" data-target="no_med_ex_prem">
                                                                                 </td>
                                                                                 <td>Biaya Pengobatan</td>
-<td>
-																	<select  id="med_ex" onchange="medExVals();" class="form-control" tabindex="2">
-																		  <option value="1">1000000</option>
-																		  <option value="2">2000000</option>
-																		  <option value="3">3000000</option>
-																		  <option value="4">4000000</option>
-																		  <option value="5">5000000</option>
-																		</select>
-																		<input type="hidden" id ="med_ex_hidden" value="">
-																	</td>
+                                                                                <td>
+            																	<select  id="med_ex" onchange="medExVals();" class="form-control" tabindex="2">
+            																		  <option value="1">1000000</option>
+            																		  <option value="2">2000000</option>
+            																		  <option value="3">3000000</option>
+            																		  <option value="4">4000000</option>
+            																		  <option value="5">5000000</option>
+            																		</select>
+            																		<input type="hidden" id ="med_ex_hidden" value="">
+            																	</td>
                                                                                 <td id="med_ex_prem" class='no_med_ex_prem position-text'>-</td>
                                                                                 <!-- <td class=''>
                                                                                     <input type="text" name="no_med_ex_val" class="no_med_ex_val" id="nomedexval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;"></td>
@@ -1393,6 +1396,7 @@ $(document).keyup(function(e){
                                                                                     <input type="checkbox"  class="no_flood_is_calc" name="no_flood_is_calc" checked data-angka="0" data-target="no_flood_prem">
                                                                                 </td>
                                                                                 <td>Banjir</td>
+                                                                                <td></td>
                                                                                 <td class='no_flood_prem position-text'>-</td>
                                                                                 <!-- <td class='no_flood_val'>-</td>
                                                                                 <td class='no_flood_persen'>-</td> -->
@@ -1402,6 +1406,7 @@ $(document).keyup(function(e){
                                                                                     <input type="checkbox" class="no_earthquake_is_calc" name="no_earthquake_is_calc" checked data-angka="0" data-target="no_earthquake_prem">
                                                                                 </td>
                                                                                 <td>Gempa Bumi</td>
+                                                                                <td></td>
                                                                                 <td class='no_earthquake_prem position-text'>-</td>
                                                                                 <!-- <td class='no_earthquake_val'>-</td>
                                                                                 <td class='no_earthquake_presen'>-</td> -->
@@ -1411,6 +1416,7 @@ $(document).keyup(function(e){
                                                                                     <input type="checkbox" class="no_riot_is_calc" name="no_tpl_is_calc" checked data-angka="0" data-target="no_riot_prem">
                                                                                 </td>
                                                                                 <td>Pemogokan, Kerusuhan dan Huruhara</td>
+                                                                                <td></td>
                                                                                 <td class='no_riot_prem position-text'>-</td>
                                                                                 <!-- <td class='no_riot_val'>-</td>
                                                                                 <td class='no_riot_persen'>-</td> -->
@@ -1420,83 +1426,84 @@ $(document).keyup(function(e){
                                                                                     <input type="checkbox" class="no_terror_is_calc" name="no_terror_is_calc" checked data-angka="0" data-target="no_terror_prem">
                                                                                 </td>
                                                                                 <td>Terorisme dan Sabotase</td>
+                                                                                <td></td>
                                                                                 <td class='no_terror_prem position-text'>-</td>
                                                                                 <!-- <td class='no_terror_val'>-</td>
                                                                                 <td class='no_terror_persen'>-</td> -->
                                                                                 </tr>
-                                                                                <tr>
-                                                                                    <td>
-                                                                                        <input type="checkbox" class="no_passenger_is_calc" name="no_passenger_is_calc" checked data-insured="no_passenger_val" data-angka="0" data-target="no_passenger_prem">
-                                                                                        <?php
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <input type="checkbox" class="no_passenger_is_calc" name="no_passenger_is_calc" checked data-insured="no_passenger_val" data-angka="0" data-target="no_passenger_prem">
+                                                                                    <?php
 
-                                                                            ?>
-                                                                        </td>
-                                                                        <td>PA Passenger</td>
-<td>
-																			<select  id="no_passenger" onchange="passengerVals();" class="form-control" tabindex="2">
-																				  <option value="1">10000000</option>
-																				  <option value="2">20000000</option>
-																				  <option value="3">30000000</option>
-																				  <option value="4">40000000</option>
-																				  <option value="5">50000000</option>
-																				</select>
-																				<input type="hidden" id ="no_passenger_hidden" value="">
-																			</td>
-                                                                        <td id="no_passenger_prem" class='no_passenger_prem position-text'>-</td>
-                                                                        <!-- <td class=''><input type="text" name="no_passenger_val" class="no_passenger_val" id="nopassengerval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
-                                                                        </td>
-                                                                        <td class='no_passenger_persen'>-</td> -->
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <input type="checkbox" class="no_pa_is_calc" name="no_pa_is_calc" checked data-insured="no_pa_val" data-angka="0" data-target="no_pa_prem">
-                                                                        </td>
-                                                                        <td>PA Driver</td>
-<td>
-																			<select  id="no_pa" onchange="paVals();" class="form-control" tabindex="2">
-																				  <option value="1">10000000</option>
-																				  <option value="2">20000000</option>
-																				  <option value="3">30000000</option>
-																				  <option value="4">40000000</option>
-																				  <option value="5">50000000</option>
-																				</select>
-																				<input type="hidden" id ="no_pa_hidden" value="">
-																			</td>
-                                                                        <td id="no_pa_prem" class='no_pa_prem position-text'>-</td>
-                                                                        <!-- <td class=''>
-                                                                            <input type="text" name="no_pa_val" class="no_pa_val" id="nopaval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
-                                                                        </td>
-                                                                        <td class='no_pa_persen'>-</td> -->
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <input type="checkbox" class="no_workshop_is_calc" name="no_workshop_is_calc" checked data-angka="0" data-target="no_workshop_prem" value="FALSE">
-                                                                        </td>
-                                                                        <td>Authorized Workshop</td>
-<td></td>
-                                                                        <td class='no_workshop_prem position-text'>-</td>
-                                                                        <!-- <td class='no_workshop_val'>-</td>
-                                                                        <td class='no_workshop_persen'>-</td> -->
-                                                                    </tr>
-                                                                    <tfoot>
-                                                                        <tr>
-                                                                            <td></td>
-                                                                            <td style="background: #e2e3e3;">Total Premium*</td>
-<td style="background: #e2e3e3;"></td>
-                                                                            <td style="background: #e2e3e3;"class='no_totalPremium position-text'></td>
-                                                                            <!-- <td></td>
-                                                                            <td></td> -->
-                                                                        </tr>
-                                                                    </tfoot>
-                                                                </tbody>
-                                                            </table>
-                                                        </div><!--/ .tabScroll -->
-                                                    </div><!--/ .content_show -->
-                                                    * Total premi yang tercantum belum termasuk biaya administrasi maksimal sebesar Rp. 32.000,- (harga disesuaikan dengan premi yang di ambil)
-                                                </li>
-                                            </ul>
-                                        </div><!--/ .tabcontent -->
-                                    </div><!--/ .tabwrap -->
+                                                                                    ?>
+                                                                                </td>
+                                                                                <td>PA Passenger</td>
+                                                                                <td>
+    																			<select  id="no_passenger" onchange="passengerVals();" class="form-control" tabindex="2">
+    																				  <option value="1">10000000</option>
+    																				  <option value="2">20000000</option>
+    																				  <option value="3">30000000</option>
+    																				  <option value="4">40000000</option>
+    																				  <option value="5">50000000</option>
+    																				</select>
+    																				<input type="hidden" id ="no_passenger_hidden" value="">
+    																			</td>
+                                                                                <td id="no_passenger_prem" class='no_passenger_prem position-text'>-</td>
+                                                                                <!-- <td class=''><input type="text" name="no_passenger_val" class="no_passenger_val" id="nopassengerval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
+                                                                                </td>
+                                                                                <td class='no_passenger_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <input type="checkbox" class="no_pa_is_calc" name="no_pa_is_calc" checked data-insured="no_pa_val" data-angka="0" data-target="no_pa_prem">
+                                                                                </td>
+                                                                                <td>PA Driver</td>
+                                                                                    <td>
+        																			<select  id="no_pa" onchange="paVals();" class="form-control" tabindex="2">
+        																				  <option value="1">10000000</option>
+        																				  <option value="2">20000000</option>
+        																				  <option value="3">30000000</option>
+        																				  <option value="4">40000000</option>
+        																				  <option value="5">50000000</option>
+        																				</select>
+        																				<input type="hidden" id ="no_pa_hidden" value="">
+        																			</td>
+                                                                                <td id="no_pa_prem" class='no_pa_prem position-text'>-</td>
+                                                                                <!-- <td class=''>
+                                                                                    <input type="text" name="no_pa_val" class="no_pa_val" id="nopaval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
+                                                                                </td>
+                                                                                <td class='no_pa_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <input type="checkbox" class="no_workshop_is_calc" name="no_workshop_is_calc" checked data-angka="0" data-target="no_workshop_prem" value="FALSE">
+                                                                                </td>
+                                                                                <td>Authorized Workshop</td>
+                                                                                <td></td>
+                                                                                <td class='no_workshop_prem position-text'>-</td>
+                                                                                <!-- <td class='no_workshop_val'>-</td>
+                                                                                <td class='no_workshop_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tfoot>
+                                                                                <tr>
+                                                                                    <td></td>
+                                                                                    <td style="background: #e2e3e3;">Total Premi*</td>
+                                                                                    <td style="background: #e2e3e3;"></td>
+                                                                                    <td style="background: #e2e3e3;"class='no_totalPremium position-text'></td>
+                                                                                    <!-- <td></td>
+                                                                                    <td></td> -->
+                                                                                </tr>
+                                                                            </tfoot>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div><!--/ .tabScroll -->
+                                                            </div><!--/ .content_show -->
+                                                            * Total premi yang tercantum belum termasuk biaya administrasi maksimal sebesar Rp. 32.000,- (harga disesuaikan dengan premi yang di ambil)
+                                                        </li>
+                                                    </ul>
+                                                </div><!--/ .tabcontent -->
+                                            </div><!--/ .tabwrap -->
 
                                             </div><!--/ .col-sm-12 -->
                                         </div><!--/ .row -->
