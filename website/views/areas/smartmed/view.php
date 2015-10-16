@@ -1057,15 +1057,15 @@
         var rowCount = $('table.table tbody tr').length;
         var total = stamp = totfd = jml = totalwithoutuwl = 0;
         for(var i = 0; i < rowCount; i++){
-            total += parseInt($('table.table tbody').children()[i].children[15].children[0].value);
+            total += parseFloat($('table.table tbody').children()[i].children[15].children[0].value);
             // totalwithoutuwl += parseInt($('table.table tbody').children()[0].children[16].innerHTML);
             // console.log("total"+parseInt($('table.table tbody').children()[i].children[15].innerHTML));
         }
 
-        $('table.table tfoot tr:first').children()[0].innerHTML = 'Rp. ' + total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';
+        $('table.table tfoot tr:first').children()[0].innerHTML = currency(total);
         if(total>=250000 && total<1000000) stamp = 3000;
         else if(total>=1000000) stamp = 6000;
-        $('table.table tfoot').children()[1].children[1].innerHTML = 'Rp. ' + stamp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';//stamp duty
+        $('table.table tfoot').children()[1].children[1].innerHTML = currency(stamp);//stamp duty
 
         totfd = cekFamilyDiskon();
 
