@@ -80,11 +80,13 @@
             margin-right: 20px;
             width: 100% !important;
             margin-bottom: 20px !important;
+            background: none !important; 
         }
 
         .menutab_dekstop > ul > li > a
         {
             width: 100% !important;
+            background: none !important; 
         }
 
         .tabScroll > table
@@ -121,15 +123,18 @@
             width: 30%;*/
             position: relative;
             width: 20%;
+            background: none !important; 
         }
 
         .menutab_dekstop > ul
         {
             position: relative;
+            background: none !important; 
         }
 
         .menutab_dekstop > ul > li
         {
+            background: none !important; 
             list-style: none;
             display: block;
             position: relative;
@@ -139,6 +144,7 @@
         {
             display: block;
             width: 100%;
+            background: none !important; 
         }
     }
 
@@ -263,6 +269,87 @@
 <script src="/website/static/mobilku/jquery.validate.min.js"></script>
 <script src="/website/static/mobilku/jquery-ui.js"></script>
 <!-- <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
+
+<script>
+    // $(function() {
+    //     $( "#accordion" ).accordion({
+    //       collapsible: true
+    //     });
+    // });
+
+    $(document).ready(function() {
+    function close_accordion_section() {
+        $('.accordion .accordion-section-title').removeClass('active');
+        $('.accordion .accordion-section-content').slideUp(300).removeClass('open');
+    }
+ 
+    $('.accordion-section-title').click(function(e) {
+        // Grab current anchor value
+        var currentAttrValue = $(this).attr('href');
+ 
+        if($(e.target).is('.active')) {
+            close_accordion_section();
+        }else {
+            close_accordion_section();
+ 
+            // Add active class to section title
+            $(this).addClass('active');
+            // Open up the hidden content panel
+            $('.accordion ' + currentAttrValue).slideDown(300).addClass('open'); 
+        }
+ 
+        e.preventDefault();
+    });
+});
+</script>
+
+<style type="text/css">
+/*----- Accordion -----*/
+.accordion, .accordion * {
+    -webkit-box-sizing:border-box; 
+    -moz-box-sizing:border-box; 
+    box-sizing:border-box;
+}
+ 
+.accordion {
+    overflow:hidden;
+    box-shadow:0px 1px 3px rgba(0,0,0,0.25);
+    border-radius:3px;
+    background:#f7f7f7;
+}
+ 
+/*----- Section Titles -----*/
+.accordion-section-title {
+    width:100%;
+    padding:15px;
+    display:inline-block;
+    border-bottom:1px solid #1a1a1a;
+    background:#eee;
+    transition:all linear 0.15s;
+    /* Type */
+    font-size:1.200em;
+    text-shadow:0px 1px 0px #1a1a1a;
+    color:#1a1a1a;
+}
+ 
+.accordion-section-title.active, .accordion-section-title:hover {
+    background:#003781;
+    /* Type */
+    color:#fff;
+    text-decoration:none;
+}
+ 
+.accordion-section:last-child .accordion-section-title {
+    border-bottom:none;
+}
+ 
+/*----- Section Content -----*/
+.accordion-section-content {
+    padding:15px;
+    display:none;
+}
+</style>
+
 <style type="text/css">
 .ui-autocomplete {
     max-height: 300px;
@@ -655,13 +742,13 @@ $(document).keyup(function(e){
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-sm-3">
-                                            <label for="input2">No. Polis</label>
+                                            <label for="input2">No. Polisi</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
                                             <input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="6">
                                             <!--<input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="5" onfocusout="this.value=validateVehicle(this.value)">-->
                                             <label id="notifRegno" style="display:none; color: #f00;">
-                                                Mohon maaf No Polis yang Anda masukkan belum benar
+                                                Mohon maaf No Polisi yang Anda masukkan belum benar
                                             </label>
                                         </div><!--/ .col-sm-4 -->
                                         <div class="col-sm-4">
@@ -833,534 +920,556 @@ $(document).keyup(function(e){
                     </div><!--/ .tab-pane#jenis-asuransi -->
 
                     <div class="tab-pane" id="hasil-kalkulasi">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="paket">Paket</div>
 
-                                <div class="tabwrap">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-1">Paket</a>
+                                 
+                                <div id="accordion-1" class="accordion-section-content">
+                                    <!-- <p>Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p> -->
+                                    <div class="row">
+                                        <div class="col-sm-12" id="accordion">
+                                            <!-- <div class="paket" id="paket" href="javascript:void(0);">Paket</div> -->
 
-                                    <div class="menutab_dekstop">
-                                        <ul>
-                                            <li><a id="open_tab_1_1" class="active" href="javascript:void(0);">Mobilku Basic</a></li>
-                                            <li><a id="open_tab_1_2" href="javascript:void(0);">Mobilku Standar</a></li>
-                                            <li><a id="open_tab_1_3" href="javascript:void(0);">Mobilku Premier</a></li>
-                                        </ul>
-                                    </div><!--/ .menutab_desktop -->
+                                            <div class="tabwrap" id="row1">
 
-                                    <div class="tabcontent" id="tabcontent_2">
-                                        <ul>
-                                            <li>
-                                                <a id="open_tab_1_1_m" class="menumobile active" href="javascript:void(0);">Example</a>
-                                                <div id="tabcontent_1_1" class="content_show showme show_1">
-                                                    <div class="tabScroll">
-                                                        <table id="myTable2" class="display" cellspacing="0" width="100%">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th class="">Coverage</th>
-                                                                    <th class="position-text">Premium</th>
-                                                                    <!-- <th class="">Insured Value</th>
-                                                                    <th class="">Rate</th> -->
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td id="jenisasuransi">Comprehensive</td>
-                                                                    <td class='compre_prem position-text'>-</td>
-                                                                    <!-- <td class='compre_val'>-</td>
-                                                                    <td class='compre_persen'>-</td> -->
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>TPL</td>
-                                                                    <td class='tpl_prem position-text'>-</td>
-                                                                    <!-- <td class='tpl_val'>-</td>
-                                                                    <td class='tpl_persen'>-</td> -->
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Medical Expense</td>
-                                                                    <td class='med_ex_prem position-text'>-</td>
-                                                                    <!-- <td class='med_ex_val'>-</td>
-                                                                    <td class='med_ex_persen'>-</td> -->
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>PLL</td>
-                                                                    <td class='pll_prem position-text'>-</td>
-                                                                    <!-- <td class='pll_val'>-</td>
-                                                                    <td class='pll_persen'>-</td> -->
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Personal Effect</td>
-                                                                    <td class='personal_ef_prem position-text'>-</td>
-                                                                    <!-- <td class='personal_ef_val'>-</td>
-                                                                    <td class='personal_ef_persen'>-</td> -->
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Flood</td>
-                                                                    <td class='flood_prem position-text'>-</td>
-                                                                    <!-- <td class='flood_val'>-</td>
-                                                                    <td class='flood_persen'>-</td> -->
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Earthquake</td>
-                                                                    <td class='earthquake_prem position-text'>-</td>
-                                                                    <!-- <td class='earthquake_val'>-</td>
-                                                                    <td class='earthquake_presen'>-</td> -->
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Strike, Riot, and Civil Commotion</td>
-                                                                    <td class='riot_prem position-text'>-</td>
-                                                                    <!-- <td class='riot_val'>-</td>
-                                                                    <td class='riot_persen'>-</td> -->
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Terrorist and Sabotage</td>
-                                                                    <td class='terror_prem position-text'>-</td>
-                                                                    <!-- <td class='terror_val'>-</td>
-                                                                    <td class='terror_persen'>-</td> -->
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>PA Passenger</td>
-                                                                    <td class='passenger_prem position-text'>-</td>
-                                                                    <!-- <td class='passenger_val'>-</td>
-                                                                    <td class='passenger_persen'>-</td> -->
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>PA Driver</td>
-                                                                    <td class='pa_prem position-text'>-</td>
-                                                                    <!-- <td class='pa_val'>-</td>
-                                                                    <td class='pa_persen'>-</t -->
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>ERA</td>
-                                                                    <td class='era_prem position-text'>-</td>
-                                                                    <!-- <td class='era_val'>-</td>
-                                                                    <td class='era_persen'>-</td> -->
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Authorized Workshop</td>
-                                                                    <td class='workshop_prem position-text'>-</td>
-                                                                    <!-- <td class='workshop_val'>-</td>
-                                                                    <td class='workshop_persen'>-</td> -->
-                                                                </tr>
-                                                                <tfoot>
-                                                                    <tr>
-                                                                        <td style="background: #e2e3e3;">Total Premium*</td>
-                                                                        <td style="background: #e2e3e3;" class='totalPremium position-text'></td>
-                                                                        <!-- <td></td>
-                                                                        <td></td> -->
-                                                                    </tr>
-                                                                </tfoot>
-                                                            </tbody>
-                                                        </table>
+                                                <div class="menutab_dekstop">
+                                                    <ul>
+                                                        <li><a id="open_tab_1_1" href="javascript:void(0);">Mobilku Basic <input name="paket" id="paket_1_1" type="checkbox" class="paketchecked" style="float:right;"></a></li>
+                                                        <li><a id="open_tab_1_2" href="javascript:void(0);">Mobilku Standar <input name="paket" id="paket_1_2" type="checkbox" class="paketchecked" style="float:right;"></a></li>
+                                                        <li><a id="open_tab_1_3" href="javascript:void(0);">Mobilku Premier <input name="paket" id="paket_1_3" type="checkbox" class="paketchecked" style="float:right;"></a></li>
+                                                    </ul> 
+                                                </div><!--/ .menutab_desktop -->
 
-                                                        <!--
-                                                        <div class="total_premium_p_standar">
-                                                        <span>Total Premium (excl. Admin Cost)</span>  7.978.625,00
-                                                        </div>
-                                                        -->
+                                                <div class="tabcontent" id="tabcontent_2">
+                                                    <ul>
+                                                        <li>
+                                                            <a id="open_tab_1_1_m" class="menumobile active" href="javascript:void(0);">Example</a>
+                                                            <div id="tabcontent_1_1" class="content_show showme show_1">
+                                                                <div class="tabScroll">
+                                                                    <table id="myTable2" class="display" cellspacing="0" width="100%">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="">Cakupan</th>
+                                                                                <th class="position-text">Premi</th>
+                                                                                <!-- <th class="">Insured Value</th>
+                                                                                <th class="">Rate</th> -->
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td id="jenisasuransi">Komprehensif</td>
+                                                                                <td class='compre_prem position-text'>-</td>
+                                                                                <!-- <td class='compre_val'>-</td>
+                                                                                <td class='compre_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Tanggung Jawab Hukum Pihak Ketiga</td>
+                                                                                <td class='tpl_prem position-text'>-</td>
+                                                                                <!-- <td class='tpl_val'>-</td>
+                                                                                <td class='tpl_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Biaya Pengobatan</td>
+                                                                                <td class='med_ex_prem position-text'>-</td>
+                                                                                <!-- <td class='med_ex_val'>-</td>
+                                                                                <td class='med_ex_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Tanggung Jawab Hukum Terhadap Penumpang</td>
+                                                                                <td class='pll_prem position-text'>-</td>
+                                                                                <!-- <td class='pll_val'>-</td>
+                                                                                <td class='pll_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Personal Effect</td>
+                                                                                <td class='personal_ef_prem position-text'>-</td>
+                                                                                <!-- <td class='personal_ef_val'>-</td>
+                                                                                <td class='personal_ef_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Banjir</td>
+                                                                                <td class='flood_prem position-text'>-</td>
+                                                                                <!-- <td class='flood_val'>-</td>
+                                                                                <td class='flood_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Gempa Bumi</td>
+                                                                                <td class='earthquake_prem position-text'>-</td>
+                                                                                <!-- <td class='earthquake_val'>-</td>
+                                                                                <td class='earthquake_presen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Pemogokan, Kerusuhan dan Huruhara</td>
+                                                                                <td class='riot_prem position-text'>-</td>
+                                                                                <!-- <td class='riot_val'>-</td>
+                                                                                <td class='riot_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Terorisme dan Sabotase</td>
+                                                                                <td class='terror_prem position-text'>-</td>
+                                                                                <!-- <td class='terror_val'>-</td>
+                                                                                <td class='terror_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Kecelakaan Diri Penumpang</td>
+                                                                                <td class='passenger_prem position-text'>-</td>
+                                                                                <!-- <td class='passenger_val'>-</td>
+                                                                                <td class='passenger_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Kecelakaan Diri Pengendara</td>
+                                                                                <td class='pa_prem position-text'>-</td>
+                                                                                <!-- <td class='pa_val'>-</td>
+                                                                                <td class='pa_persen'>-</t -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Emergency Roadside Assistance (ERA)</td>
+                                                                                <td class='era_prem position-text'>-</td>
+                                                                                <!-- <td class='era_val'>-</td>
+                                                                                <td class='era_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Bengkel Rekanan</td>
+                                                                                <td class='workshop_prem position-text'>-</td>
+                                                                                <!-- <td class='workshop_val'>-</td>
+                                                                                <td class='workshop_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tfoot>
+                                                                                <tr>
+                                                                                    <td style="background: #e2e3e3;">Total Premi*</td>
+                                                                                    <td style="background: #e2e3e3;" class='totalPremium position-text'></td>
+                                                                                    <!-- <td></td>
+                                                                                    <td></td> -->
+                                                                                </tr>
+                                                                            </tfoot>
+                                                                        </tbody>
+                                                                    </table>
 
-                                                    </div><!--/ .tabScroll -->
-                                                </div><!--/ .content_show -->
-                                            </li>
-                                            <li>
-                                                <a id="open_tab_1_2_m" class="menumobile" href="javascript:void(0);">Example</a>
-                                                <div id="tabcontent_1_2" class="content_show show_1">
-                                                    <div class="tabScroll">
-                                                        <table id="myTable3" class="display" cellspacing="0" width="100%">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th class="">Coverage</th>
-                                                                    <!-- <th class="">Insured Value</th>
-                                                                    <th class="">Rate</th> -->
-                                                                    <th class="position-text">Premium</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td id="jenisasuransi2">Comprehensive</td>
-                                                                    <!-- <td class='compre_val2'>-</td>
-                                                                    <td class='compre_persen2'>-</td> -->
-                                                                    <td class='compre_prem2 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>TPL</td>
-                                                                    <!-- <td class='tpl_val2'>-</td>
-                                                                    <td class='tpl_persen2'>-</td> -->
-                                                                    <td class='tpl_prem2 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Medical Expense</td>
-                                                                    <!-- <td class='med_ex_val2'>-</td>
-                                                                    <td class='med_ex_persen2'>-</td> -->
-                                                                    <td class='med_ex_prem2 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>PLL</td>
-                                                                    <!-- <td class='pll_val2'>-</td>
-                                                                    <td class='pll_persen2'>-</td> -->
-                                                                    <td class='pll_prem2 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Personal Effect</td>
-                                                                    <!-- <td class='personal_ef_val2'>-</td>
-                                                                    <td class='personal_ef_persen2'>-</td> -->
-                                                                    <td class='personal_ef_prem2 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Flood</td>
-                                                                    <!-- <td class='flood_val2'>-</td>
-                                                                    <td class='flood_persen2'>-</td> -->
-                                                                    <td class='flood_prem2 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Earthquake</td>
-                                                                    <!-- <td class='earthquake_val2'>-</td>
-                                                                    <td class='earthquake_presen2'>-</td> -->
-                                                                    <td class='earthquake_prem2 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Strike, Riot, and Civil Commotion</td>
-                                                                    <!-- <td class='riot_val2'>-</td>
-                                                                    <td class='riot_persen2'>-</td> -->
-                                                                    <td class='riot_prem2 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Terrorist and Sabotage</td>
-                                                                    <!-- <td class='terror_val2'>-</td>
-                                                                    <td class='terror_persen2'>-</td> -->
-                                                                    <td class='terror_prem2 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>PA Passenger</td>
-                                                                    <!-- <td class='passenger_val2'>-</td>
-                                                                    <td class='passenger_persen2'>-</td> -->
-                                                                    <td class='passenger_prem2 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>PA Driver</td>
-                                                                    <!-- <td class='pa_val2'>-</td>
-                                                                    <td class='pa_persen2'>-</td> -->
-                                                                    <td class='pa_prem2 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>ERA</td>
-                                                                    <!-- <td class='era_val2'>-</td>
-                                                                    <td class='era_persen2'>-</td> -->
-                                                                    <td class='era_prem2 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Authorized Workshop</td>
-                                                                    <!-- <td class='workshop_val2'>-</td>
-                                                                    <td class='workshop_persen2'>-</td> -->
-                                                                    <td class='workshop_prem2 position-text'>-</td>
-                                                                </tr>
-                                                                <tfoot>
-                                                                    <tr>
-                                                                        <td style="background: #e2e3e3;">Total Premium*</td>
-                                                                        <!-- <td></td>
-                                                                        <td></td> -->
-                                                                        <td style="background: #e2e3e3;" class='totalPremium2 position-text'></td>
-                                                                    </tr>
-                                                                </tfoot>
-                                                            </tbody>
-                                                        </table>
+                                                                    <!--
+                                                                    <div class="total_premium_p_standar">
+                                                                    <span>Total Premium (excl. Admin Cost)</span>  7.978.625,00
+                                                                    </div>
+                                                                    -->
 
-                                                        <!--
-                                                        <div class="total_premium_p_standar2">
-                                                        <span>Total Premium (excl. Admin Cost)</span>  7.978.625,00
-                                                        </div>
-                                                        -->
+                                                                </div><!--/ .tabScroll -->
+                                                            </div><!--/ .content_show -->
+                                                        </li>
+                                                        <li>
+                                                            <a id="open_tab_1_2_m" class="menumobile" href="javascript:void(0);">Example</a>
+                                                            <div id="tabcontent_1_2" class="content_show show_1">
+                                                                <div class="tabScroll">
+                                                                    <table id="myTable3" class="display" cellspacing="0" width="100%">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="">Cakupan</th>
+                                                                                <!-- <th class="">Insured Value</th>
+                                                                                <th class="">Rate</th> -->
+                                                                                <th class="position-text">Premi</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td id="jenisasuransi2">Komprehensif</td>
+                                                                                <!-- <td class='compre_val2'>-</td>
+                                                                                <td class='compre_persen2'>-</td> -->
+                                                                                <td class='compre_prem2 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Tanggung Jawab Hukum Pihak Ketiga</td>
+                                                                                <!-- <td class='tpl_val2'>-</td>
+                                                                                <td class='tpl_persen2'>-</td> -->
+                                                                                <td class='tpl_prem2 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Biaya Pengobatan</td>
+                                                                                <!-- <td class='med_ex_val2'>-</td>
+                                                                                <td class='med_ex_persen2'>-</td> -->
+                                                                                <td class='med_ex_prem2 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Tanggung Jawab Hukum Terhadap Penumpang</td>
+                                                                                <!-- <td class='pll_val2'>-</td>
+                                                                                <td class='pll_persen2'>-</td> -->
+                                                                                <td class='pll_prem2 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Personal Effect</td>
+                                                                                <!-- <td class='personal_ef_val2'>-</td>
+                                                                                <td class='personal_ef_persen2'>-</td> -->
+                                                                                <td class='personal_ef_prem2 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Banjir</td>
+                                                                                <!-- <td class='flood_val2'>-</td>
+                                                                                <td class='flood_persen2'>-</td> -->
+                                                                                <td class='flood_prem2 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Gempa Bumi</td>
+                                                                                <!-- <td class='earthquake_val2'>-</td>
+                                                                                <td class='earthquake_presen2'>-</td> -->
+                                                                                <td class='earthquake_prem2 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Pemogokan, Kerusuhan dan Huruhara</td>
+                                                                                <!-- <td class='riot_val2'>-</td>
+                                                                                <td class='riot_persen2'>-</td> -->
+                                                                                <td class='riot_prem2 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Terorisme dan Sabotase</td>
+                                                                                <!-- <td class='terror_val2'>-</td>
+                                                                                <td class='terror_persen2'>-</td> -->
+                                                                                <td class='terror_prem2 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Kecelakaan Diri Penumpang</td>
+                                                                                <!-- <td class='passenger_val2'>-</td>
+                                                                                <td class='passenger_persen2'>-</td> -->
+                                                                                <td class='passenger_prem2 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Kecelakaan Diri Pengendara</td>
+                                                                                <!-- <td class='pa_val2'>-</td>
+                                                                                <td class='pa_persen2'>-</td> -->
+                                                                                <td class='pa_prem2 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Emergency Roadside Assistance (ERA)</td>
+                                                                                <!-- <td class='era_val2'>-</td>
+                                                                                <td class='era_persen2'>-</td> -->
+                                                                                <td class='era_prem2 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Bengkel Rekanan</td>
+                                                                                <!-- <td class='workshop_val2'>-</td>
+                                                                                <td class='workshop_persen2'>-</td> -->
+                                                                                <td class='workshop_prem2 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tfoot>
+                                                                                <tr>
+                                                                                    <td style="background: #e2e3e3;">Total Premi*</td>
+                                                                                    <!-- <td></td>
+                                                                                    <td></td> -->
+                                                                                    <td style="background: #e2e3e3;" class='totalPremium2 position-text'></td>
+                                                                                </tr>
+                                                                            </tfoot>
+                                                                        </tbody>
+                                                                    </table>
 
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <a id="open_tab_1_3_m" class="menumobile" href="javascript:void(0);">Example</a>
-                                                <div id="tabcontent_1_3" class="content_show show_1">
-                                                    <div class="tabScroll">
-                                                        <table id="myTable4" class="display" cellspacing="0" width="100%">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th class="">Coverage</th>
-                                                                    <!-- <th class="">Insured Value</th>
-                                                                    <th class="">Rate</th> -->
-                                                                    <th class="position-text">Premium</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td id="jenisasuransi3">Comprehensive</td>
-                                                                    <!-- <td class='compre_val'>-</td>
-                                                                    <td class='compre_persen'>-</td> -->
-                                                                    <td class='compre_prem position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>TPL</td>
-                                                                    <!-- <td class='tpl_val3'>-</td>
-                                                                    <td class='tpl_persen3'>-</td> -->
-                                                                    <td class='tpl_prem3 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Medical Expense</td>
-                                                                    <!-- <td class='med_ex_val3'>-</td>
-                                                                    <td class='med_ex_persen3'>-</td> -->
-                                                                    <td class='med_ex_prem3 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>PLL</td>
-                                                                    <!-- <td class='pll_val3'>-</td>
-                                                                    <td class='pll_persen3'>-</td> -->
-                                                                    <td class='pll_prem3 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Personal Effect</td>
-                                                                    <!-- <td class='personal_ef_val3'>-</td>
-                                                                    <td class='personal_ef_persen3'>-</td> -->
-                                                                    <td class='personal_ef_prem3 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Flood</td>
-                                                                    <!-- <td class='flood_val3'>-</td>
-                                                                    <td class='flood_persen3'>-</td> -->
-                                                                    <td class='flood_prem3 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Earthquake</td>
-                                                                    <!-- <td class='earthquake_val3'>-</td>
-                                                                    <td class='earthquake_presen3'>-</td> -->
-                                                                    <td class='earthquake_prem3 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Strike, Riot, and Civil Commotion</td>
-                                                                    <!-- <td class='riot_val3'>-</td>
-                                                                    <td class='riot_persen3'>-</td> -->
-                                                                    <td class='riot_prem3 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Terrorist and Sabotage</td>
-                                                                    <!-- <td class='terror_val3'>-</td>
-                                                                    <td class='terror_persen3'>-</td> -->
-                                                                    <td class='terror_prem3 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>PA Passenger</td>
-                                                                    <!-- <td class='passenger_val3'>-</td>
-                                                                    <td class='passenger_persen3'>-</td> -->
-                                                                    <td class='passenger_prem3 position-text'>-</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>PA Driver</td>
-                                                                    <!-- <td class='pa_val3'>-</td>
-                                                                    <td class='pa_persen3'>-</td> -->
-                                                                    <td class='pa_prem3 position-text'>-</td>
-                                                                </tr>
-                                                                 <tr>
-                                                                    <td>ERA</td>
-                                                                    <!-- <td class='era_val3'>-</td>
-                                                                    <td class='era_persen3'>-</td> -->
-                                                                    <td class='era_prem3 position-text'>-</td>
-                                                                </tr>
-                                                                 <tr>
-                                                                    <td>Authorized Workshop</td>
-                                                                    <!-- <td class='workshop_val3'>-</td>
-                                                                    <td class='workshop_persen3'>-</td> -->
-                                                                    <td class='workshop_prem3 position-text'>-</td>
-                                                                </tr>
-                                                                <tfoot>
-                                                                    <tr>
-                                                                        <!-- <td></td>
-                                                                        <td></td> -->
-                                                                        <td style="background: #e2e3e3;">Total Premium*</td>
-                                                                        <td style="background: #e2e3e3;" class='totalPremium3 position-text'></td>
-                                                                    </tr>
-                                                                </tfoot>
-                                                            </tbody>
-                                                        </table>
+                                                                    <!--
+                                                                    <div class="total_premium_p_standar2">
+                                                                    <span>Total Premium (excl. Admin Cost)</span>  7.978.625,00
+                                                                    </div>
+                                                                    -->
 
-                                                        <!--
-                                                        <div class="total_premium_p_standar3">
-                                                            <span>Total Premium (excl. Admin Cost)</span>  7.978.625,00
-                                                        </div>
-                                                        -->
-                                                    </div><!--/ .tabScroll -->
-                                                </div><!--/ .content_show -->
-                                            </li>
-                                        </ul>
-                                    </div><!--/ .tabcontent -->
-                                </div><!--/ .tabwrap -->
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <a id="open_tab_1_3_m" class="menumobile" href="javascript:void(0);">Example</a>
+                                                            <div id="tabcontent_1_3" class="content_show show_1">
+                                                                <div class="tabScroll">
+                                                                    <table id="myTable4" class="display" cellspacing="0" width="100%">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="">Cakupan</th>
+                                                                                <!-- <th class="">Insured Value</th>
+                                                                                <th class="">Rate</th> -->
+                                                                                <th class="position-text">Premi</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td id="jenisasuransi3">Komprehensif</td>
+                                                                                <!-- <td class='compre_val'>-</td>
+                                                                                <td class='compre_persen'>-</td> -->
+                                                                                <td class='compre_prem position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Tanggung Jawab Hukum Pihak Ketiga</td>
+                                                                                <!-- <td class='tpl_val3'>-</td>
+                                                                                <td class='tpl_persen3'>-</td> -->
+                                                                                <td class='tpl_prem3 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Biaya Pengobatan</td>
+                                                                                <!-- <td class='med_ex_val3'>-</td>
+                                                                                <td class='med_ex_persen3'>-</td> -->
+                                                                                <td class='med_ex_prem3 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Tanggung Jawab Hukum Terhadap Penumpang</td>
+                                                                                <!-- <td class='pll_val3'>-</td>
+                                                                                <td class='pll_persen3'>-</td> -->
+                                                                                <td class='pll_prem3 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Personal Effect</td>
+                                                                                <!-- <td class='personal_ef_val3'>-</td>
+                                                                                <td class='personal_ef_persen3'>-</td> -->
+                                                                                <td class='personal_ef_prem3 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Banjir</td>
+                                                                                <!-- <td class='flood_val3'>-</td>
+                                                                                <td class='flood_persen3'>-</td> -->
+                                                                                <td class='flood_prem3 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Gempa Bumi</td>
+                                                                                <!-- <td class='earthquake_val3'>-</td>
+                                                                                <td class='earthquake_presen3'>-</td> -->
+                                                                                <td class='earthquake_prem3 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Pemogokan, Kerusuhan dan Huruhara</td>
+                                                                                <!-- <td class='riot_val3'>-</td>
+                                                                                <td class='riot_persen3'>-</td> -->
+                                                                                <td class='riot_prem3 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Terorisme dan Sabotase</td>
+                                                                                <!-- <td class='terror_val3'>-</td>
+                                                                                <td class='terror_persen3'>-</td> -->
+                                                                                <td class='terror_prem3 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Kecelakaan Diri Penumpang</td>
+                                                                                <!-- <td class='passenger_val3'>-</td>
+                                                                                <td class='passenger_persen3'>-</td> -->
+                                                                                <td class='passenger_prem3 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Kecelakaan Diri Pengendara</td>
+                                                                                <!-- <td class='pa_val3'>-</td>
+                                                                                <td class='pa_persen3'>-</td> -->
+                                                                                <td class='pa_prem3 position-text'>-</td>
+                                                                            </tr>
+                                                                             <tr>
+                                                                                <td>Emergency Roadside Assistance (ERA)</td>
+                                                                                <!-- <td class='era_val3'>-</td>
+                                                                                <td class='era_persen3'>-</td> -->
+                                                                                <td class='era_prem3 position-text'>-</td>
+                                                                            </tr>
+                                                                             <tr>
+                                                                                <td>Bengkel Rekanan</td>
+                                                                                <!-- <td class='workshop_val3'>-</td>
+                                                                                <td class='workshop_persen3'>-</td> -->
+                                                                                <td class='workshop_prem3 position-text'>-</td>
+                                                                            </tr>
+                                                                            <tfoot>
+                                                                                <tr>
+                                                                                    <!-- <td></td>
+                                                                                    <td></td> -->
+                                                                                    <td style="background: #e2e3e3;">Total Premi*</td>
+                                                                                    <td style="background: #e2e3e3;" class='totalPremium3 position-text'></td>
+                                                                                </tr>
+                                                                            </tfoot>
+                                                                        </tbody>
+                                                                    </table>
 
-                            </div><!--/ .col-sm-12 -->
-                        </div><!--/ .row -->
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="paket">Non - Paket</div>
-                                <div class="tabwrap">
+                                                                    <!--
+                                                                    <div class="total_premium_p_standar3">
+                                                                        <span>Total Premium (excl. Admin Cost)</span>  7.978.625,00
+                                                                    </div>
+                                                                    -->
+                                                                </div><!--/ .tabScroll -->  
+                                                            </div><!--/ .content_show -->
+                                                            * Total premi yang tercantum belum termasuk biaya administrasi maksimal sebesar Rp. 32.000,- (harga disesuaikan dengan premi yang di ambil)
+                                                        </li>
+                                                    </ul>
+                                                </div><!--/ .tabcontent -->
+                                            </div><!--/ .tabwrap -->
+                                        </div><!--/ .col-sm-12 -->
+                                    </div><!--/ .row -->
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+                        </div><!--end .accordion-->
+                        &nbsp
 
-                                    <div class="menutab_dekstop">
-                                        <ul>
-                                            <li>
-                                                <a id="open_tab_2_1" class="active" href="javascript:void(0);">Customized</a>
-                                            </li>
-                                        </ul>
-                                    </div><!--/ .menutab_dekstop -->
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-2">Non Paket</a>
+                                 
+                                <div id="accordion-2" class="accordion-section-content">
+                                    <!-- <p>Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p> -->
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <!-- <div class="paket">Non - Paket</div> -->
+                                            <div class="tabwrap">
 
-                                    <div class="tabcontent" id="tabcontent_2">
+                                                <div class="menutab_dekstop">
+                                                    <ul>
+                                                        <li>
+                                                            <a id="open_tab_2_1" href="javascript:void(0);">Customized <input name="paket" id="paket_2_1" type="checkbox" class="paketchecked" style="float:right;"></a>
+                                                        </li>
+                                                    </ul>
+                                                </div><!--/ .menutab_dekstop -->
 
-                                        <ul>
-                                            <li>
-                                                <a id="open_tab_2_1_m" class="menumobile active" href="javascript:void(0);">Customized</a>
-                                                <div id="tabcontent_2_1" class="content_show showme show_2">
-                                                    <div class="tabScroll">
-                                                        <table id="myTable5" class="display tbl_ck" cellspacing="0" width="100%">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th class="">Checklist</th>
-                                                                    <th class="">Coverage</th>
-                                                                    <th class="position-text">Premium</th>
-                                                                    <!-- <th class="">Insured Value</th>
-                                                                    <th class="">Rate</th> -->
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>
-                                                                        <input type="checkbox" class='no_compre_is_calc' name="no_compre_is_calc" checked data-angka="0" data-target="no_compre_prem" disabled="disabled">
-                                                                    </td>
-                                                                    <td id="nojenisasuransi">Comprehensive</td>
-                                                                    <td class='no_compre_prem position-text'>-</td>
-                                                                    <!-- <td class='no_compre_val'>-</td>
-                                                                    <td class='no_compre_persen'>-</td> -->
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <input type="checkbox" class='no_tpl_is_calc' id="no_tpl_is_calc" name="no_tpl_is_calc" checked data-insured="no_tpl_val" data-angka="0" data-target="no_tpl_prem">
-                                                                    </td>
-                                                                    <td>TPL</td>
-                                                                    <td class='no_tpl_prem position-text'>-</td>
-                                                                    <!-- <td class=''>
-                                                                        <input type="text" name="no_tpl_val" class="no_tpl_val" id="notplval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
-                                                                    </td>
-                                                                    <td class='no_tpl_persen'>-</td> -->
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <input type="checkbox" class="no_pll_is_calc" name="no_pll_prem_is_calc" checked data-insured="no_pll_val" data-angka="0" data-target="no_pll_prem">
-                                                                    </td>
-                                                                    <td>PLL</td>
-                                                                    <td class='no_pll_prem position-text'>-</td>
-                                                                    <!-- <td class=''>
-                                                                        <input type="text" name="no_pll_val" class="no_pll_val" id="nopllval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
-                                                                    </td>
-                                                                    <td class='no_pll_persen'>-</td> -->
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <input type="checkbox" class="no_med_ex_is_calc" id="no_med_ex_is_calc" name="no_med_ex_is_calc" checked data-insured="no_med_ex_val" data-angka="0" data-target="no_med_ex_prem">
-                                                                    </td>
-                                                                    <td>Medical Expense</td>
-                                                                    <td class='no_med_ex_prem position-text'>-</td>
-                                                                    <!-- <td class=''>
-                                                                        <input type="text" name="no_med_ex_val" class="no_med_ex_val" id="nomedexval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;"></td>
-                                                                    <td class='no_med_ex_persen'>-</td> -->
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <input type="checkbox"  class="no_flood_is_calc" name="no_flood_is_calc" checked data-angka="0" data-target="no_flood_prem">
-                                                                    </td>
-                                                                    <td>Flood</td>
-                                                                    <td class='no_flood_prem position-text'>-</td>
-                                                                    <!-- <td class='no_flood_val'>-</td>
-                                                                    <td class='no_flood_persen'>-</td> -->
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <input type="checkbox" class="no_earthquake_is_calc" name="no_earthquake_is_calc" checked data-angka="0" data-target="no_earthquake_prem">
-                                                                    </td>
-                                                                    <td>Earthquake</td>
-                                                                    <td class='no_earthquake_prem position-text'>-</td>
-                                                                    <!-- <td class='no_earthquake_val'>-</td>
-                                                                    <td class='no_earthquake_presen'>-</td> -->
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <input type="checkbox" class="no_riot_is_calc" name="no_tpl_is_calc" checked data-angka="0" data-target="no_riot_prem">
-                                                                    </td>
-                                                                    <td>Strike, Riot, and Civil Commotion</td>
-                                                                    <td class='no_riot_prem position-text'>-</td>
-                                                                    <!-- <td class='no_riot_val'>-</td>
-                                                                    <td class='no_riot_persen'>-</td> -->
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <input type="checkbox" class="no_terror_is_calc" name="no_terror_is_calc" checked data-angka="0" data-target="no_terror_prem">
-                                                                    </td>
-                                                                    <td>Terrorist and Sabotage</td>
-                                                                    <td class='no_terror_prem position-text'>-</td>
-                                                                    <!-- <td class='no_terror_val'>-</td>
-                                                                    <td class='no_terror_persen'>-</td> -->
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <input type="checkbox" class="no_passenger_is_calc" name="no_passenger_is_calc" checked data-insured="no_passenger_val" data-angka="0" data-target="no_passenger_prem">
-                                                                            <?php
+                                                <div class="tabcontent" id="tabcontent_2">
 
-                                                                            ?>
-                                                                        </td>
-                                                                        <td>PA Passenger</td>
-                                                                        <td class='no_passenger_prem position-text'>-</td>
-                                                                        <!-- <td class=''><input type="text" name="no_passenger_val" class="no_passenger_val" id="nopassengerval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
-                                                                        </td>
-                                                                        <td class='no_passenger_persen'>-</td> -->
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <input type="checkbox" class="no_pa_is_calc" name="no_pa_is_calc" checked data-insured="no_pa_val" data-angka="0" data-target="no_pa_prem">
-                                                                        </td>
-                                                                        <td>PA Driver</td>
-                                                                        <td class='no_pa_prem position-text'>-</td>
-                                                                        <!-- <td class=''>
-                                                                            <input type="text" name="no_pa_val" class="no_pa_val" id="nopaval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
-                                                                        </td>
-                                                                        <td class='no_pa_persen'>-</td> -->
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <input type="checkbox" class="no_workshop_is_calc" name="no_workshop_is_calc" checked data-angka="0" data-target="no_workshop_prem" value="FALSE">
-                                                                        </td>
-                                                                        <td>Authorized Workshop</td>
-                                                                        <td class='no_workshop_prem position-text'>-</td>
-                                                                        <!-- <td class='no_workshop_val'>-</td>
-                                                                        <td class='no_workshop_persen'>-</td> -->
-                                                                    </tr>
-                                                                    <tfoot>
-                                                                        <tr>
-                                                                            <td></td>
-                                                                            <td style="background: #e2e3e3;">Total Premium*</td>
-                                                                            <td style="background: #e2e3e3;"class='no_totalPremium position-text'></td>
-                                                                            <!-- <td></td>
-                                                                            <td></td> -->
-                                                                        </tr>
-                                                                    </tfoot>
-                                                                </tbody>
-                                                            </table>
-                                                        </div><!--/ .tabScroll -->
-                                                    </div><!--/ .content_show -->
-                                                    * Total Premi Belum Termasuk Biaya Administrasi
-                                                </li>
-                                            </ul>
-                                        </div><!--/ .tabcontent -->
-                                    </div><!--/ .tabwrap -->
+                                                    <ul>
+                                                        <li>
+                                                            <a id="open_tab_2_1_m" class="menumobile active" href="javascript:void(0);">Customized</a>
+                                                            <div id="tabcontent_2_1" class="content_show showme show_2">
+                                                                <div class="tabScroll">
+                                                                    <table id="myTable5" class="display tbl_ck" cellspacing="0" width="100%">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="">Pilih</th>
+                                                                                <th class="">Cakupan</th>
+                                                                                <th class="position-text">Premi</th>
+                                                                                <!-- <th class="">Insured Value</th>
+                                                                                <th class="">Rate</th> -->
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <input type="checkbox" class='no_compre_is_calc' name="no_compre_is_calc" checked data-angka="0" data-target="no_compre_prem" disabled="disabled">
+                                                                                </td>
+                                                                                <td id="nojenisasuransi">Komprehensif</td>
+                                                                                <td class='no_compre_prem position-text'>-</td>
+                                                                                <!-- <td class='no_compre_val'>-</td>
+                                                                                <td class='no_compre_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <input type="checkbox" class='no_tpl_is_calc' id="no_tpl_is_calc" name="no_tpl_is_calc" checked data-insured="no_tpl_val" data-angka="0" data-target="no_tpl_prem">
+                                                                                </td>
+                                                                                <td>Tanggung Jawab Hukum Pihak Ketiga</td>
+                                                                                <td class='no_tpl_prem position-text'>-</td>
+                                                                                <!-- <td class=''>
+                                                                                    <input type="text" name="no_tpl_val" class="no_tpl_val" id="notplval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
+                                                                                </td>
+                                                                                <td class='no_tpl_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <input type="checkbox" class="no_pll_is_calc" name="no_pll_prem_is_calc" checked data-insured="no_pll_val" data-angka="0" data-target="no_pll_prem">
+                                                                                </td>
+                                                                                <td>Tanggung Jawab Hukum Terhadap Penumpang</td>
+                                                                                <td class='no_pll_prem position-text'>-</td>
+                                                                                <!-- <td class=''>
+                                                                                    <input type="text" name="no_pll_val" class="no_pll_val" id="nopllval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
+                                                                                </td>
+                                                                                <td class='no_pll_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <input type="checkbox" class="no_med_ex_is_calc" id="no_med_ex_is_calc" name="no_med_ex_is_calc" checked data-insured="no_med_ex_val" data-angka="0" data-target="no_med_ex_prem">
+                                                                                </td>
+                                                                                <td>Biaya Pengobatan</td>
+                                                                                <td class='no_med_ex_prem position-text'>-</td>
+                                                                                <!-- <td class=''>
+                                                                                    <input type="text" name="no_med_ex_val" class="no_med_ex_val" id="nomedexval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;"></td>
+                                                                                <td class='no_med_ex_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <input type="checkbox"  class="no_flood_is_calc" name="no_flood_is_calc" checked data-angka="0" data-target="no_flood_prem">
+                                                                                </td>
+                                                                                <td>Banjir</td>
+                                                                                <td class='no_flood_prem position-text'>-</td>
+                                                                                <!-- <td class='no_flood_val'>-</td>
+                                                                                <td class='no_flood_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <input type="checkbox" class="no_earthquake_is_calc" name="no_earthquake_is_calc" checked data-angka="0" data-target="no_earthquake_prem">
+                                                                                </td>
+                                                                                <td>Gempa Bumi</td>
+                                                                                <td class='no_earthquake_prem position-text'>-</td>
+                                                                                <!-- <td class='no_earthquake_val'>-</td>
+                                                                                <td class='no_earthquake_presen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <input type="checkbox" class="no_riot_is_calc" name="no_tpl_is_calc" checked data-angka="0" data-target="no_riot_prem">
+                                                                                </td>
+                                                                                <td>Pemogokan, Kerusuhan dan Huruhara</td>
+                                                                                <td class='no_riot_prem position-text'>-</td>
+                                                                                <!-- <td class='no_riot_val'>-</td>
+                                                                                <td class='no_riot_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <input type="checkbox" class="no_terror_is_calc" name="no_terror_is_calc" checked data-angka="0" data-target="no_terror_prem">
+                                                                                </td>
+                                                                                <td>Terorisme dan Sabotase</td>
+                                                                                <td class='no_terror_prem position-text'>-</td>
+                                                                                <!-- <td class='no_terror_val'>-</td>
+                                                                                <td class='no_terror_persen'>-</td> -->
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <input type="checkbox" class="no_passenger_is_calc" name="no_passenger_is_calc" checked data-insured="no_passenger_val" data-angka="0" data-target="no_passenger_prem">
+                                                                                        <?php
 
-                                </div><!--/ .col-sm-12 -->
-                            </div><!--/ .row -->
+                                                                                        ?>
+                                                                                    </td>
+                                                                                    <td>Kecelakaan Diri Penumpang</td>
+                                                                                    <td class='no_passenger_prem position-text'>-</td>
+                                                                                    <!-- <td class=''><input type="text" name="no_passenger_val" class="no_passenger_val" id="nopassengerval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
+                                                                                    </td>
+                                                                                    <td class='no_passenger_persen'>-</td> -->
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <input type="checkbox" class="no_pa_is_calc" name="no_pa_is_calc" checked data-insured="no_pa_val" data-angka="0" data-target="no_pa_prem">
+                                                                                    </td>
+                                                                                    <td>Kecelakaan Diri Pengendara</td>
+                                                                                    <td class='no_pa_prem position-text'>-</td>
+                                                                                    <!-- <td class=''>
+                                                                                        <input type="text" name="no_pa_val" class="no_pa_val" id="nopaval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
+                                                                                    </td>
+                                                                                    <td class='no_pa_persen'>-</td> -->
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <input type="checkbox" class="no_workshop_is_calc" name="no_workshop_is_calc" checked data-angka="0" data-target="no_workshop_prem" value="FALSE">
+                                                                                    </td>
+                                                                                    <td>Bengkel Rekanan</td>
+                                                                                    <td class='no_workshop_prem position-text'>-</td>
+                                                                                    <!-- <td class='no_workshop_val'>-</td>
+                                                                                    <td class='no_workshop_persen'>-</td> -->
+                                                                                </tr>
+                                                                                <tfoot>
+                                                                                    <tr>
+                                                                                        <td></td>
+                                                                                        <td style="background: #e2e3e3;">Total Premi*</td>
+                                                                                        <td style="background: #e2e3e3;"class='no_totalPremium position-text'></td>
+                                                                                        <!-- <td></td>
+                                                                                        <td></td> -->
+                                                                                    </tr>
+                                                                                </tfoot>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div><!--/ .tabScroll -->
+                                                                </div><!--/ .content_show -->
+                                                                * Total premi yang tercantum belum termasuk biaya administrasi maksimal sebesar Rp. 32.000,- (harga disesuaikan dengan premi yang di ambil)
+                                                            </li>
+                                                        </ul>
+                                                    </div><!--/ .tabcontent -->
+                                                </div><!--/ .tabwrap -->
+
+                                            </div><!--/ .col-sm-12 -->
+                                        </div><!--/ .row -->
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+                        </div><!--end .accordion-->
+
                         </div><!--/ .tab-pane# -->
                     </div><!--/ .tab-content -->
 
                     <div class="wizard-footer">
                         <div class="pull-right">
                             <input type='button' id="next" class='btn btn-next btn-fill btn-warning btn-wd btn-sm next-form' name='next' value='Lanjut' tabindex="7" />
-                            <a href="/kalkulator/thankyou-mobilku">
+                            <!-- <a href="/kalkulator/thankyou-mobilku"> -->
                                 <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish' id='finish-btn'/>
-                            </a>
+                            <!-- </a> -->
                         </div><!--/ .pull-right -->
                         <div class="pull-left">
                             <input type='button' class='btn btn-previous btn-fill btn-warning btn-wd btn-sm' name='previous' value='Kembali' />
@@ -1399,6 +1508,8 @@ $(document).keyup(function(e){
 </script>
 
 <script type="text/javascript">
+    
+    // $("#tabcontent_1_1").hide();
 
     <?php
     $i = 1;
@@ -1408,11 +1519,18 @@ $(document).keyup(function(e){
         for ( $j=1; $j <= 6 ; $j++ ){
     ?>
 
+    $("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").hide();
+
     $("#open_tab_<?php echo $i ?>_<?php echo $j ?>").click(function(){
+        $(".content_show").removeClass("rincian");
+        $('.paketchecked').prop('checked',false);
+        $("#paket_<?php echo $i ?>_<?php echo $j ?>").prop("checked",true);
         $(".menutab_dekstop li a").removeClass();
         $("a#open_tab_<?php echo $i ?>_<?php echo $j ?>").addClass("active");
         $(".show_<?php echo $i ?>").hide();
         $("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").show();
+        $("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").addClass("rincian");
+        $(".position-text").addClass("data");
         adjustTable();
     });
 
@@ -1449,6 +1567,12 @@ $(document).keyup(function(e){
 <script src="/website/static/mobilku/functionCalcMobilku.js" type="text/javascript"></script>
 
 <script type="text/javascript">
+
+    // $('#paket').click(function(){
+    //     $('#row1').show();
+    // });
+
+    // $('#row1').hide();
     
     $('#telp').bind("input", function(){
        var re = /^[0-9]*$/; 
@@ -1485,6 +1609,8 @@ $(document).keyup(function(e){
             $("#notplval").prop("disabled",true);
         }
     });*/
+
+    
 
 
     function validateNumber(value){
@@ -1721,6 +1847,12 @@ $(document).keyup(function(e){
         $("input[name='next']").on('click',function(){
             $("#model").focus();
             $("#model").focusout();
-        })
+        });
+
+        $('.paketchecked').on("click", function(){
+            $('.paketchecked').prop('checked',false);
+            $(this).prop('checked',true);
+
+        });
     });
 </script>
