@@ -1089,13 +1089,13 @@
     // }
 
     function currency(val){
-        val.toFixed(1);
-        splitcurr = val.split(".");
+        value = val.toFixed(1);
+        splitcurr = value.split(".");
         if(splitcurr.length>1)
-            val = 'Rp. ' + splitcurr[0].toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',' +splitcurr[1];
+            value = 'Rp. ' + splitcurr[0].toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',' +splitcurr[1];
         else
-            val = 'Rp. ' + val.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';
-        return val
+            value = 'Rp. ' + value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';
+        return value
     }
 
     function form_sex(sex){
