@@ -1054,13 +1054,13 @@ $(document).ready(function(){
         //=========================perhitungan basic======================================//
         var val_tlo=harga*1; //harga dikali tahun pertama (1), tahun kedua dikali 2 dst.
         var cleanVarTlo=parseInt(val_tlo); //get clean tlo
-        var med_ex_val=5000000;
+        var med_ex_val=1000000;
         var cleanMed_ex_val=parseInt(med_ex_val); //get clean tlo
         var pa_val=10000000;
         var cleanPa_val=parseInt(pa_val); //get clean tlo
         var passenger_val=10000000;
         var cleanPassenger_val=parseInt(passenger_val); //get clean tlo
-        var tpl_val=50000000;
+        var tpl_val=10000000;
         var cleanTpl_val=parseInt(tpl_val); //get clean tlo
         var pll_val=0;
         var cleanPll_val=parseInt(pll_val);
@@ -1290,6 +1290,11 @@ $(document).ready(function(){
 		$('#med_ex_hidden').val(med_ex_prem);
 		$('#no_passenger_hidden').val(passenger_prem);
 		$('#no_pa_hidden').val(pa_prem);
+		$('#no_tpl_temp').val(tpl_prem);
+		$('#no_pll_temp').val(pll_prem);
+		$('#med_ex_temp').val(med_ex_prem);
+		$('#no_passenger_temp').val(passenger_prem);
+		$('#no_pa_temp').val(pa_prem);
         //$('.no_totalPremium').append(accounting.formatMoney(parseInt(totalPremium-era_prem),'',2,'.',','));
 
                 $('.no_compre_is_calc').attr('data-angka',accounting.formatMoney(compre_prem,'',2,'.',','));
@@ -1345,6 +1350,7 @@ $(document).ready(function(){
         console.log("workshop : "+no_workshop_prem);
         $('.no_totalPremium').html('');
         $('.no_totalPremium').append(accounting.formatMoney(no_totalPremium,'',2,'.',','));
+		$("#no_totalPremium_hidden").val(no_totalPremium);
         return no_totalPremium;
 
     }
