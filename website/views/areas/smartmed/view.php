@@ -1203,7 +1203,7 @@
                 "<td class='tabletd ipp'>"+'Rp. ' + ipp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0'+"</td>"+
                 "<td class='tabletd matp'>"+'Rp. ' + matp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0'+"</td>"+
                 "<td class='tabletd opdenp'>"+'Rp. ' + opdenp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0'+"</td>"+
-                "<td class='tabletd to'><input type='hidden' name='tohidden' value='"+total+"'><span class='toshow'>"+'Rp. ' + total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")+"</span></td>"+
+                "<td class='tabletd to'><input type='hidden' name='tohidden' class='tohidden' value='"+total+"'><span class='toshow'>"+'Rp. ' + total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")+"</span></td>"+
                 "<td style='display:none;' class='towithout'>"+totalwithout+"</td>"+
             "</tr>");
         jumlah();
@@ -1216,8 +1216,8 @@
         var fd = $("#family_discount").val();
         if(rowCount>1&&fd=="Y"){
             $('table.table tbody tr').each(function(index){
-                total += parseInt($(this).find(".towithout").html());
-                console.log("towithout="+total);
+                total += parseInt($(this).find(".tohidden").html());
+                console.log("tohidden="+total);
             });
             total *= 0.05;
         }
