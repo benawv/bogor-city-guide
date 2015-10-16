@@ -1067,9 +1067,14 @@
         else if(total>=1000000) stamp = 6000;
         $('table.table tfoot').children()[1].children[1].innerHTML = 'Rp. ' + stamp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';//stamp duty
 
-        totfd = cekFamilyDiskon();
+        totfd = cekFamilyDiskon().toFixed(1);
+        splitcurr = totfd.split(".");
+        if(splitcurr.length>1)
+            totfd = 'Rp. ' + splitcurr[0].toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',' +splitcurr[1];
+        else
+            totfd = 'Rp. ' + totfd.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';
 
-        $('table.table tfoot').children()[3].children[1].innerHTML = 'Rp. ' + totfd.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';//family discount
+        $('table.table tfoot').children()[3].children[1].innerHTML = totfd;//family discount
 
         jml = stamp + total + 30000 - totfd;
         $('table.table tfoot').children()[4].children[1].innerHTML = 'Rp. ' + jml.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';
@@ -1162,7 +1167,7 @@
         ipp0 = kalk(age,sex,"ip",ip,0,planip);
         matp0 = kalk(age,sex,"ma",mat,0,planmat);
         opdenp0 = kalk(age,sex,"od",outden,0,planop_den);
-        totalwithout = parseInt(ipp0)+parseInt(matp0)+parseInt(opdenp0);
+        
 
         console.log("ipp1="+ipp1+" matp1="+matp1+" opdenp1="+opdenp1);
         console.log("ipp0="+ipp0+" matp0="+matp0+" opdenp0="+opdenp0);
@@ -1172,7 +1177,9 @@
             opdenp = 0;
             if(uwl > 0) ipp = ipp1;
             else ipp = ipp0;
+            totalwithout = parseInt(ipp0);
         }else{
+            totalwithout = parseInt(ipp0)+parseInt(matp0)+parseInt(opdenp0);
             if(uwl > 0) {
                 ipp = ipp1;
                 matp = matp1;
@@ -1216,8 +1223,8 @@
         var fd = $("#family_discount").val();
         if(rowCount>1&&fd=="Y"){
             $('table.table tbody tr').each(function(index){
-                total += parseInt($(this).find(".tohidden").val());
-                console.log("tohidden="+total);
+                total += parseInt($(this).find(".towithout").html());
+                console.log("towithout="+total);
             });
             total *= 0.05;
         }
@@ -1264,12 +1271,10 @@
             ipp0 = kalk(age,sex,"ip",ip,0,planip);
             matp0 = kalk(age,sex,"ma",mat,0,planmat);
             opdenp0 = kalk(age,sex,"od",outden,0,planop_den);
-            totalwithout = parseInt(ipp0)+parseInt(matp0)+parseInt(opdenp0);
 
             console.log( index + ": " + $( this ).find("#dob2").val() );
             console.log("ipp1="+ipp1+" matp1="+matp1+" opdenp1="+opdenp1+" dob="+dob+" uwl="+uwl);
             console.log("ipp0="+ipp0+" matp0="+matp0+" opdenp0="+opdenp0+" cd"+ cd);
-            console.log("totalwithout="+totalwithout);
             
             // return true;
             if(payment != "Annually"){
@@ -1277,7 +1282,9 @@
                 opdenp = 0;
                 if(uwl > 0) ipp = ipp1;
                 else ipp = ipp0;
+                totalwithout = parseInt(ipp0);
             }else{
+                totalwithout = parseInt(ipp0)+parseInt(matp0)+parseInt(opdenp0);
                 if(uwl > 0) {
                     ipp = ipp1;
                     matp = matp1;
@@ -1288,6 +1295,8 @@
                     opdenp = opdenp0;
                 }
             }
+            console.log("totalwithout="+totalwithout);
+
             total = parseInt(ipp)+parseInt(matp)+parseInt(opdenp);
             $( this ).find(".ipp").html('Rp. ' + ipp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0');
             $( this ).find(".matp").html('Rp. ' + matp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0');
