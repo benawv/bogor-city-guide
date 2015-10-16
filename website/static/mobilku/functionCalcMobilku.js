@@ -1285,6 +1285,11 @@ $(document).ready(function(){
         $('.no_riot_prem').append(accounting.formatMoney(riot_prem,'',2,'.',','));
         $('.no_terror_prem').append(accounting.formatMoney(terror_prem,'',2,'.',','));
         $('.no_tpl_prem').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
+		$('#no_tpl_hidden').val(tpl_prem);
+		$('#no_pll_hidden').val(pll_prem);
+		$('#med_ex_hidden').val(med_ex_prem);
+		$('#no_passenger_hidden').val(passenger_prem);
+		$('#no_pa_hidden').val(pa_prem);
         //$('.no_totalPremium').append(accounting.formatMoney(parseInt(totalPremium-era_prem),'',2,'.',','));
 
                 $('.no_compre_is_calc').attr('data-angka',accounting.formatMoney(compre_prem,'',2,'.',','));

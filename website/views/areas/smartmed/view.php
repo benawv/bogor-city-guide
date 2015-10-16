@@ -996,20 +996,17 @@
     });
 
     function selisih(dob, cd){
-        var date = dob.split('/');
-        var y1 = date[2];
-        var d1 = date[1];
-        var m1 = date[0];
+        // varibel miliday sebagai pembagi untuk menghasilkan hari
+        var miliday = 24 * 60 * 60 * 1000 * 365;
+        //buat object Date
+        var tanggal1 = new Date(dob);
+        var tanggal2 = new Date(cd);
+        // Date.parse akan menghasilkan nilai bernilai integer dalam bentuk milisecond
+        var tglPertama = Date.parse(tanggal1);
+        var tglKedua = Date.parse(tanggal2);
+        var selisih = (tglKedua - tglPertama) / miliday;
 
-        var date2 = cd.split('/');
-        var y2 = date2[2];
-        var d2 = date2[1];
-        var m2 = date2[0];
-
-        var start = new Date(y1,m1,d1);
-        var end = new Date(y2,m2,d2);
-        var selisih = Date.parse(end.toGMTString()) - Date.parse(start.toGMTString());
-        // console.log("selisih"+selisih);
+        // console.log("selisih="+tglPertama+"-"+tglKedua);
         return selisih;
     }
 
@@ -1041,7 +1038,7 @@
                 },
                 success: function(msg){
                     // console.log(plan+" "+msg);
-                    console.log("XxX="+payment+"_"+fd+"_"+ncd+"_"+age+"_"+sex+"_"+code+"_"+coshare+"_"+uwl+"_"+plan+"|msg="+msg);
+                    console.log("log:Paymen="+payment+"_FD="+fd+"_NCD="+ncd+"_AGE="+age+"_SEX="+sex+"_CODE="+code+"_COSHARE="+coshare+"_UWL="+uwl+"_PLAN="+plan+"|msg="+msg);
                     if(msg=="")
                         value = 0;
                     else
@@ -1128,7 +1125,7 @@
         var uwl = $("#uwl").val();
         var fd = $("#family_discount").val();
         var uwl = $("#uwl").val();
-        var sts_allowed = "NEW BUSINESS ";
+        var sts_allowed = "NEW BUSINESS";
         var name = $("#name").val();
         var dob = $("#dob").val();
         var cd = $("#cd").val();
@@ -1149,7 +1146,7 @@
 
         dist = parseInt(selisih(dob, cd));
         
-        var age = Math.round(dist/(1000*60*60*24*365));
+        var age = dist;//Math.round(dist/(1000*60*60*24*365));
         var sex = $("#sex").val();
         var ip = $("#ip").val();
         var mat = $("#mat").val();
@@ -1172,6 +1169,9 @@
         matp0 = kalk(age,sex,"ma",mat,0,planmat);
         opdenp0 = kalk(age,sex,"od",outden,0,planop_den);
         totalwithout = parseInt(ipp0)+parseInt(matp0)+parseInt(opdenp0);
+
+        console.log("ipp1="+ipp1+" matp1="+matp1+" opdenp1="+opdenp1);
+        console.log("ipp0="+ipp0+" matp0="+matp0+" opdenp0="+opdenp0);
         
         if(payment != "Annually"){
             matp = 0;
@@ -1198,8 +1198,8 @@
                 "<td class='tabletd'>"+no+"</td>"+
                 "<td><input type='text' class='form-control' placeholder='Nama' value='"+name+"' class='display'></td>"+
                 "<td>"+form_sex(sex)+"</td>"+
-                "<td><input class='date' type='text' placeholder='Tanggal Lahir' name='dob2' id='dob2' value='"+dob+"'></td>"+
-                "<td><input class='date' type='text' placeholder='Tanggal Kalkulasi' name='cd2' id='cd2' value='"+cd+"'></td>"+
+                "<td><input class='date dob2' type='text' placeholder='Tanggal Lahir' name='dob"+no+"' id='dob"+no+"' value='"+dob+"'></td>"+
+                "<td><input class='date cd2' type='text' placeholder='Tanggal Kalkulasi' name='cd"+no+"' id='cd"+no+"' value='"+cd+"'></td>"+
                 "<td class='tabletd age'>"+age+"</td>"+
                 "<td class='tabletd'>NEW BUSINESS</td>"+
                 "<td class='tabletd'>"+planipval.split("_")[1]+"</td>"+
@@ -1226,14 +1226,14 @@
         // console.log(rowCount);
         //console.log($(this).parent().html());
         $('table.table tbody tr').each(function(index){
+            console.log("index"+index);
+            var uwl = $( this ).find("#uwl").val()
 
-            var uwl = $( this ).find(".uwl").val()
-
-            var dob = $( this ).find("#dob2").val();
-            var cd = $( this ).find("#cd2").val();
+            var dob = $( this ).find(".dob2").val();
+            var cd = $( this ).find(".cd2").val();
             var sex = $( this ).find("#sex").val();
             dist = parseInt(selisih(dob, cd));
-            var age = Math.round(dist/(1000*60*60*24*365));
+            var age = dist;//Math.round(dist/(1000*60*60*24*365));
             $( this ).find(".age").html(age);
 
             var ip = $("#ip").val();
@@ -1242,7 +1242,6 @@
             var planipval = $("#planip").val();
             var planmatval = $("#planmat").val();
             var planop_denval = $("#planop_den").val();
-            console.log( index + ": " + $( this ).find("#dob2").val() );
 
             planip = planipval.split("_")[0];
             planmat = planmatval.split("_")[0];
@@ -1258,7 +1257,13 @@
             matp0 = kalk(age,sex,"ma",mat,0,planmat);
             opdenp0 = kalk(age,sex,"od",outden,0,planop_den);
             totalwithout = parseInt(ipp0)+parseInt(matp0)+parseInt(opdenp0);
+
+            console.log( index + ": " + $( this ).find("#dob2").val() );
+            console.log("ipp1="+ipp1+" matp1="+matp1+" opdenp1="+opdenp1+" dob="+dob+" uwl="+uwl);
+            console.log("ipp0="+ipp0+" matp0="+matp0+" opdenp0="+opdenp0+" cd"+ cd);
+            console.log("totalwithout="+totalwithout);
             
+            // return true;
             if(payment != "Annually"){
                 matp = 0;
                 opdenp = 0;
@@ -1279,7 +1284,7 @@
             $( this ).find(".ipp").html(ipp);
             $( this ).find(".matp").html(matp);
             $( this ).find(".opdenp").html(opdenp);
-            $( this ).find(".to").html(totalwithout);
+            $( this ).find(".to").html(total);
             $( this ).find(".towithout").html(totalwithout);
             jumlah();
         });
