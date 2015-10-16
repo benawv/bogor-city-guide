@@ -1067,17 +1067,12 @@
         else if(total>=1000000) stamp = 6000;
         $('table.table tfoot').children()[1].children[1].innerHTML = 'Rp. ' + stamp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';//stamp duty
 
-        totfd = cekFamilyDiskon().toFixed(1);
-        splitcurr = totfd.split(".");
-        if(splitcurr.length>1)
-            totfd = 'Rp. ' + splitcurr[0].toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',' +splitcurr[1];
-        else
-            totfd = 'Rp. ' + totfd.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';
+        totfd = cekFamilyDiskon();
 
-        $('table.table tfoot').children()[3].children[1].innerHTML = totfd;//family discount
+        $('table.table tfoot').children()[3].children[1].innerHTML = currency(totfd);//family discount
 
         jml = stamp + total + 30000 - totfd;
-        $('table.table tfoot').children()[4].children[1].innerHTML = 'Rp. ' + jml.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';
+        $('table.table tfoot').children()[4].children[1].innerHTML = currency(jml);
         return total;
     }
     
@@ -1092,6 +1087,16 @@
     //     console.log($('table.table tfoot tr:first').children()[0].innerHTML);
     //     return 0;
     // }
+
+    function currency(val){
+        val.toFixed(1);
+        splitcurr = val.split(".");
+        if(splitcurr.length>1)
+            val = 'Rp. ' + splitcurr[0].toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',' +splitcurr[1];
+        else
+            val = 'Rp. ' + val.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';
+        return val
+    }
 
     function form_sex(sex){
         if(sex == "m")
