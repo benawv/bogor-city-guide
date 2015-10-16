@@ -25,7 +25,17 @@ class CalcSmartmedController extends Website_Controller_Action {
 		
 		// print_r($entries);
 		foreach ($entries as $row){
-			echo $row->getPremium();
+			$value = $row->getPremium();
 		}
+
+		if($payment=="Annually")
+			echo $value;
+		elseif($payment=="Semi-Annually")
+			echo $value*0.52;
+		elseif($payment=="Quarterly")
+			echo $value*0.27;
+		else
+			echo $value*0.10;
+
 	}
 }

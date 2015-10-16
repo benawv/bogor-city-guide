@@ -1056,41 +1056,37 @@
     function jumlah(){
         var rowCount = $('table.table tbody tr').length;
         var total = stamp = totfd = jml = totalwithoutuwl = 0;
-        var fd = $("#family_discount").val();
-        var dob = $("#dob").val();
-        var cd = $("#cd").val();
-        console.log(rowCount);
         for(var i = 0; i < rowCount; i++){
-            total += parseInt($('table.table tbody').children()[i].children[15].innerHTML);
-            totalwithoutuwl += parseInt($('table.table tbody').children()[0].children[16].innerHTML);
-            console.log("total"+parseInt($('table.table tbody').children()[i].children[15].innerHTML));
+            total += parseInt($('table.table tbody').children()[i].children[15].children[0].value);
+            // totalwithoutuwl += parseInt($('table.table tbody').children()[0].children[16].innerHTML);
+            // console.log("total"+parseInt($('table.table tbody').children()[i].children[15].innerHTML));
         }
-        $('table.table tfoot tr:first').children()[0].innerHTML = total;
+
+        $('table.table tfoot tr:first').children()[0].innerHTML = 'Rp. ' + total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';
         if(total>=250000 && total<1000000) stamp = 3000;
         else if(total>=1000000) stamp = 6000;
-        $('table.table tfoot').children()[1].children[1].innerHTML = stamp;//stamp duty
+        $('table.table tfoot').children()[1].children[1].innerHTML = 'Rp. ' + stamp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';//stamp duty
 
-        if(fd == "Y" && rowCount > 1) totfd = 0.05 * total;
-        else totfd = 0;
+        totfd = cekFamilyDiskon();
 
-        $('table.table tfoot').children()[3].children[1].innerHTML = totfd;//family discount
+        $('table.table tfoot').children()[3].children[1].innerHTML = 'Rp. ' + totfd.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';//family discount
 
         jml = stamp + total + 30000 - totfd;
-        $('table.table tfoot').children()[4].children[1].innerHTML = 'Rp. ' + jml + ',0';
+        $('table.table tfoot').children()[4].children[1].innerHTML = 'Rp. ' + jml.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';
         return total;
     }
     
-    function update(){
-        var rowCount = $('table.table tbody tr').length;
-        var total = 0;
-        for(var i = 0; i<rowCount; i++){
-            total += parseInt($('table.table tbody').children()[0].children[15].innerHTML);
-        }
-        console.log(total);
-        $('table.table tfoot tr:first').children()[0].innerHTML = total;
-        console.log($('table.table tfoot tr:first').children()[0].innerHTML);
-        return 0;
-    }
+    // function update(){
+    //     var rowCount = $('table.table tbody tr').length;
+    //     var total = 0;
+    //     for(var i = 0; i<rowCount; i++){
+    //         total += parseInt($('table.table tbody').children()[0].children[15].innerHTML);
+    //     }
+    //     console.log(total);
+    //     $('table.table tfoot tr:first').children()[0].innerHTML = 'Rp. ' + total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';;
+    //     console.log($('table.table tfoot tr:first').children()[0].innerHTML);
+    //     return 0;
+    // }
 
     function form_sex(sex){
         if(sex == "m")
@@ -1123,9 +1119,7 @@
     $("#Add").click(function(){
         var payment = $("#payment_methods").val();
         var uwl = $("#uwl").val();
-        var fd = $("#family_discount").val();
-        var uwl = $("#uwl").val();
-        var sts_allowed = "NEW BUSINESS ";
+        var sts_allowed = "NEW BUSINESS";
         var name = $("#name").val();
         var dob = $("#dob").val();
         var cd = $("#cd").val();
@@ -1198,23 +1192,37 @@
                 "<td class='tabletd'>"+no+"</td>"+
                 "<td><input type='text' class='form-control' placeholder='Nama' value='"+name+"' class='display'></td>"+
                 "<td>"+form_sex(sex)+"</td>"+
-                "<td><input class='date' type='text' placeholder='Tanggal Lahir' name='dob2' id='dob2' value='"+dob+"'></td>"+
-                "<td><input class='date' type='text' placeholder='Tanggal Kalkulasi' name='cd2' id='cd2' value='"+cd+"'></td>"+
+                "<td><input class='date dob2' type='text' placeholder='Tanggal Lahir' name='dob"+no+"' id='dob"+no+"' value='"+dob+"'></td>"+
+                "<td><input class='date cd2' type='text' placeholder='Tanggal Kalkulasi' name='cd"+no+"' id='cd"+no+"' value='"+cd+"'></td>"+
                 "<td class='tabletd age'>"+age+"</td>"+
                 "<td class='tabletd'>NEW BUSINESS</td>"+
                 "<td class='tabletd'>"+planipval.split("_")[1]+"</td>"+
                 "<td class='tabletd'>"+planmatval.split("_")[1]+"</td>"+
                 "<td class='tabletd'>"+planop_denval.split("_")[1]+"</td>"+
                 "<td class='uwl'>"+form_uwl(uwl)+"</td>"+
-                "<td class='tabletd ipp'>"+ipp+"</td>"+
-                "<td class='tabletd matp'>"+matp+"</td>"+
-                "<td class='tabletd opdenp'>"+opdenp+"</td>"+
-                "<td class='tabletd to'>"+total+"</td>"+
+                "<td class='tabletd ipp'>"+'Rp. ' + ipp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0'+"</td>"+
+                "<td class='tabletd matp'>"+'Rp. ' + matp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0'+"</td>"+
+                "<td class='tabletd opdenp'>"+'Rp. ' + opdenp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0'+"</td>"+
+                "<td class='tabletd to'><input type='hidden' name='tohidden' class='tohidden' value='"+total+"'><span class='toshow'>"+'Rp. ' + total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")+"</span></td>"+
                 "<td style='display:none;' class='towithout'>"+totalwithout+"</td>"+
             "</tr>");
         jumlah();
     }
     });
+
+    function cekFamilyDiskon(){
+        var rowCount = $('table.table tbody tr').length;
+        var total = 0;
+        var fd = $("#family_discount").val();
+        if(rowCount>1&&fd=="Y"){
+            $('table.table tbody tr').each(function(index){
+                total += parseInt($(this).find(".tohidden").val());
+                console.log("tohidden="+total);
+            });
+            total *= 0.05;
+        }
+        return total;
+    }
 
     
     
@@ -1226,14 +1234,14 @@
         // console.log(rowCount);
         //console.log($(this).parent().html());
         $('table.table tbody tr').each(function(index){
+            console.log("index"+index);
+            var uwl = $( this ).find("#uwl").val()
 
-            var uwl = $( this ).find(".uwl").val()
-
-            var dob = $( this ).find("#dob2").val();
-            var cd = $( this ).find("#cd2").val();
+            var dob = $( this ).find(".dob2").val();
+            var cd = $( this ).find(".cd2").val();
             var sex = $( this ).find("#sex").val();
             dist = parseInt(selisih(dob, cd));
-            var age = Math.round(dist/(1000*60*60*24*365));
+            var age = dist;//Math.round(dist/(1000*60*60*24*365));
             $( this ).find(".age").html(age);
 
             var ip = $("#ip").val();
@@ -1242,7 +1250,6 @@
             var planipval = $("#planip").val();
             var planmatval = $("#planmat").val();
             var planop_denval = $("#planop_den").val();
-            console.log( index + ": " + $( this ).find("#dob2").val() );
 
             planip = planipval.split("_")[0];
             planmat = planmatval.split("_")[0];
@@ -1258,7 +1265,13 @@
             matp0 = kalk(age,sex,"ma",mat,0,planmat);
             opdenp0 = kalk(age,sex,"od",outden,0,planop_den);
             totalwithout = parseInt(ipp0)+parseInt(matp0)+parseInt(opdenp0);
+
+            console.log( index + ": " + $( this ).find("#dob2").val() );
+            console.log("ipp1="+ipp1+" matp1="+matp1+" opdenp1="+opdenp1+" dob="+dob+" uwl="+uwl);
+            console.log("ipp0="+ipp0+" matp0="+matp0+" opdenp0="+opdenp0+" cd"+ cd);
+            console.log("totalwithout="+totalwithout);
             
+            // return true;
             if(payment != "Annually"){
                 matp = 0;
                 opdenp = 0;
@@ -1276,10 +1289,11 @@
                 }
             }
             total = parseInt(ipp)+parseInt(matp)+parseInt(opdenp);
-            $( this ).find(".ipp").html(ipp);
-            $( this ).find(".matp").html(matp);
-            $( this ).find(".opdenp").html(opdenp);
-            $( this ).find(".to").html(totalwithout);
+            $( this ).find(".ipp").html('Rp. ' + ipp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0');
+            $( this ).find(".matp").html('Rp. ' + matp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0');
+            $( this ).find(".opdenp").html('Rp. ' + opdenp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0');
+            $( this ).find(".tohidden").html('Rp. ' + total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."));
+            $( this ).find(".toshow").val(total);
             $( this ).find(".towithout").html(totalwithout);
             jumlah();
         });
