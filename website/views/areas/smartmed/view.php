@@ -1212,10 +1212,10 @@
                 "<td class='tabletd'>"+planmatval.split("_")[1]+"</td>"+
                 "<td class='tabletd'>"+planop_denval.split("_")[1]+"</td>"+
                 "<td class='uwl'>"+form_uwl(uwl)+"</td>"+
-                "<td class='tabletd ipp'>"+'Rp. ' + ipp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0'+"</td>"+
-                "<td class='tabletd matp'>"+'Rp. ' + matp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0'+"</td>"+
-                "<td class='tabletd opdenp'>"+'Rp. ' + opdenp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0'+"</td>"+
-                "<td class='tabletd to'><input type='hidden' name='tohidden' class='tohidden' value='"+total+"'><span class='toshow'>"+'Rp. ' + total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")+"</span></td>"+
+                "<td class='tabletd ipp'>"+ currency(ipp)+"</td>"+
+                "<td class='tabletd matp'>"+ currency(matp)+"</td>"+
+                "<td class='tabletd opdenp'>"+ currency(opdenp)+"</td>"+
+                "<td class='tabletd to'><input type='hidden' name='tohidden' class='tohidden' value='"+total+"'><span class='toshow'>"+ currency(total)+"</span></td>"+
                 "<td style='display:none;' class='towithout'>"+totalwithout+"</td>"+
             "</tr>");
         jumlah();
@@ -1303,10 +1303,10 @@
             console.log("totalwithout="+totalwithout);
 
             total = parseInt(ipp)+parseInt(matp)+parseInt(opdenp);
-            $( this ).find(".ipp").html('Rp. ' + ipp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0');
-            $( this ).find(".matp").html('Rp. ' + matp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0');
-            $( this ).find(".opdenp").html('Rp. ' + opdenp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0');
-            $( this ).find(".tohidden").html('Rp. ' + total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."));
+            $( this ).find(".ipp").html(currency(ipp));
+            $( this ).find(".matp").html(currency(matp));
+            $( this ).find(".opdenp").html(currency(opdenp));
+            $( this ).find(".tohidden").html(currency(total));
             $( this ).find(".toshow").val(total);
             $( this ).find(".towithout").html(totalwithout);
             jumlah();
