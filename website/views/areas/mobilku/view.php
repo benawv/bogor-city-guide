@@ -1342,7 +1342,16 @@ $(document).keyup(function(e){
                                                                                     <input type="checkbox" class='no_tpl_is_calc' id="no_tpl_is_calc" name="no_tpl_is_calc" checked data-insured="no_tpl_val" data-angka="0" data-target="no_tpl_prem">
                                                                                 </td>
                                                                                 <td>Tanggung Jawab Hukum Pihak Ketiga</td>
-                                                                                <td></td>
+                                                                                <td style="width:50%;"><select  id="no_tpl" onchange="tplVals();" class="form-control" tabindex="2">
+																							  <option value="1">10.000.000,00</option>
+																							  <option value="2">20.000.000,00</option>
+																							  <option value="3">30.000.000,00</option>
+																							  <option value="4">40.000.000,00</option>
+																							  <option value="5">50.000.000,00</option>
+																							</select>
+																							<input type="hidden" id ="no_tpl_hidden" value="">
+																							<input type="hidden" id ="no_tpl_temp" value="">
+																						</td>
                                                                                 <td class='no_tpl_prem position-text' id="no_tpl_prem">-</td>
                                                                                 <!-- <td class=''>
                                                                                     <input type="text" name="no_tpl_val" class="no_tpl_val" id="notplval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
@@ -1351,19 +1360,20 @@ $(document).keyup(function(e){
                                                                             </tr>
                                                                             <tr>
                                                                                 <td>
-                                                                                    <input type="checkbox" class="no_pll_is_calc" name="no_pll_prem_is_calc" checked data-insured="no_pll_val" data-angka="0" data-target="no_pll_prem">
+                                                                                    <input type="checkbox" class="no_pll_is_calc" id="no_pll_is_calc" name="no_pll_prem_is_calc" checked data-insured="no_pll_val" data-angka="0" data-target="no_pll_prem">
                                                                                 </td>
 
                                                                                 <td>Tanggung Jawab Hukum Terhadap Penumpang</td>
                                                                                 <td>
             																	<select  id="no_pll" onchange="pllVals();" class="form-control" tabindex="2">
-            																		  <option value="1">10000000</option>
-            																		  <option value="2">20000000</option>
-            																		  <option value="3">30000000</option>
-            																		  <option value="4">40000000</option>
-            																		  <option value="5">50000000</option>
+																					  <option value="1">10.000.000,00</option>
+																					  <option value="2">20.000.000,00</option>
+																					  <option value="3">30.000.000,00</option>
+																					  <option value="4">40.000.000,00</option>
+																					  <option value="5">50.000.000,00</option>
             																		</select>
             																		<input type="hidden" id ="no_pll_hidden" value="">
+																					<input type="hidden" id ="no_pll_temp" value="">
             																	</td>
                                                                                 <td id="no_pll_prem" class='no_pll_prem position-text'>-</td>
                                                                                 <!-- <td class=''>
@@ -1378,13 +1388,14 @@ $(document).keyup(function(e){
                                                                                 <td>Biaya Pengobatan</td>
                                                                                 <td>
             																	<select  id="med_ex" onchange="medExVals();" class="form-control" tabindex="2">
-            																		  <option value="1">1000000</option>
-            																		  <option value="2">2000000</option>
-            																		  <option value="3">3000000</option>
-            																		  <option value="4">4000000</option>
-            																		  <option value="5">5000000</option>
+            																		  <option value="1">1.000.000,00</option>
+            																		  <option value="2">2.000.000,00</option>
+            																		  <option value="3">3.000.000,00</option>
+            																		  <option value="4">4.000.000,00</option>
+            																		  <option value="5">5.000.000,00</option>
             																		</select>
             																		<input type="hidden" id ="med_ex_hidden" value="">
+																					<input type="hidden" id ="med_ex_temp" value="">
             																	</td>
                                                                                 <td id="med_ex_prem" class='no_med_ex_prem position-text'>-</td>
                                                                                 <!-- <td class=''>
@@ -1433,7 +1444,7 @@ $(document).keyup(function(e){
                                                                                 </tr>
                                                                             <tr>
                                                                                 <td>
-                                                                                    <input type="checkbox" class="no_passenger_is_calc" name="no_passenger_is_calc" checked data-insured="no_passenger_val" data-angka="0" data-target="no_passenger_prem">
+                                                                                    <input type="checkbox" class="no_passenger_is_calc" id="no_passenger_is_calc" name="no_passenger_is_calc" checked data-insured="no_passenger_val" data-angka="0" data-target="no_passenger_prem">
                                                                                     <?php
 
                                                                             ?>
