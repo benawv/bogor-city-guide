@@ -95,10 +95,9 @@
 			
 			var data = $(this).attr('class');
 			var id = data.split(' ');
-			//alert($(".heading").offset().top);
-			if(Math.floor( $(".heading").offset().top)<=212)
+			if(Math.floor( $(".heading").offset().top)<=220)
 			{
-				$('html, body').animate({scrollTop:$("#"+id[0]).offset().top-190}, 500);
+				$('html, body').animate({scrollTop:$("#"+id[0]).offset().top-200}, 500);
 			}
 			else
 			{

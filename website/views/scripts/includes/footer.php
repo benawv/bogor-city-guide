@@ -264,9 +264,9 @@
 	$(window).bind("load", function() {
 		var hash = document.URL.substr(document.URL.indexOf('#')+1);
 		
-		if(Math.floor( $(".heading").offset().top)<=212)
+		if(Math.floor( $(".heading").offset().top)<=220)
 		{
-			$('html, body').animate({scrollTop:$("#"+hash).offset().top-190}, 500);
+			$('html, body').animate({scrollTop:$("#"+hash).offset().top-200}, 500);
 		}
 		else
 		{
