@@ -1306,8 +1306,8 @@
             $( this ).find(".ipp").html(currency(ipp));
             $( this ).find(".matp").html(currency(matp));
             $( this ).find(".opdenp").html(currency(opdenp));
-            $( this ).find(".tohidden").html(currency(total));
-            $( this ).find(".toshow").val(total);
+            $( this ).find(".tohidden").val(total);
+            $( this ).find(".toshow").html(currency(total));
             $( this ).find(".towithout").html(totalwithout);
             jumlah();
         });
