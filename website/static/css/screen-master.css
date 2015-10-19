@@ -678,7 +678,8 @@ header.banner{background:url("../images/banner-header.png") repeat-x scroll 0 0 
 }
 @media only screen and (max-width:768px) and (min-width:361px){.tips-item-kanan{margin-left:0px;}
 .social-ss{width:45% !important;}
-.kat-desc{width:50% !important;float:left;}
+/*.kat-desc{width:50% !important;float:left;}*/
+.kat-desc{width:100% !important;float:left;}
 .terimaKasih .kata_kata{left:170px;}
 }
 @media only screen and (max-width:360px){.boxes-view .items-container .tips-item-kiri{width:100%;}
