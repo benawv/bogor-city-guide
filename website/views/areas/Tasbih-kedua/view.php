@@ -341,7 +341,7 @@ $sessionDup = new Zend_Session_Namespace('duplic_tasbih');
                     
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label><strong>Kota</strong></label>
+                                <label><strong>Kota/Kabupaten</strong></label>
                             </div><!--/ .col-md-4 -->
                             <div class="col-md-4">
                                 <select class="form-control" name="kota" id="kota">
@@ -564,6 +564,7 @@ $sessionDup = new Zend_Session_Namespace('duplic_tasbih');
         /*
          * jQueryUI DatePicker
          */
+//        alert(<?php echo $Calculation; ?>);
         
 $('#provinsi').change(function(){
 //        alert('test');
@@ -589,8 +590,15 @@ $('#provinsi').change(function(){
                             $('#kota option').remove();
                             $('#kota').append('<option>-Pilih-</option>');
                             $.each(listLoc, function(i, item){
-    //                            console.log(i+"  "+item);
-                                $("#kota").append('<option value='+item.Kota+'>'+item.Kota+'</option>');
+//                                console.log(item.Status);
+//                                var status='"'+item.Status+'"';s
+////                                alert(+item.Status+);
+                                if(item.Status == 'kota'){
+                                    $("#kota").append('<option value='+item.Kota+'>Kota '+item.Kota+'</option>');
+                                }else if(item.Status == 'kabupaten'){
+                                    $("#kota").append('<option value='+item.Kota+'>Kab. '+item.Kota+'</option>');
+
+                                }
                             });
                        
                         }
