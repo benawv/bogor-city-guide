@@ -789,11 +789,11 @@ $(document).keyup(function(e){
                         <div class="pull-right">
                             <input type='button' id="next" class='btn btn-next btn-fill btn-warning btn-wd btn-sm next-form' name='next' value='Lanjut' tabindex="7" />
                             <!-- <a href="/kalkulator/thankyou-mobilku"> -->
-                                <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish' id='finish-btn'/>
+<!--                                <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish' id='finish-btn'/>-->
                             <!-- </a> -->
                         </div><!--/ .pull-right -->
                         <div class="pull-left">
-                            <input type='button' class='btn btn-previous btn-fill btn-warning btn-wd btn-sm' name='previous' value='Kembali' />
+                            <input type='button' id="kembali1" class='btn btn-previous btn-fill btn-warning btn-wd btn-sm' name='previous' value='Kembali' />
                         </div><!--/ .pull-left -->
                         <div class="clearfix"></div>
                     </div><!--/ .wizard-footer -->
@@ -1421,4 +1421,24 @@ $(document).keyup(function(e){
         }
         return "";
     }
+    
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+    }
+        
+    function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1);
+                if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+            }
+            return "";
+    }
+    
+    
 </script>
