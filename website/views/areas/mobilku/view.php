@@ -745,7 +745,7 @@ $(document).keyup(function(e){
                                             <label for="input2">No. Polisi</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="6">
+                                            <input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="6" value="">
                                             <!--<input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="5" onfocusout="this.value=validateVehicle(this.value)">-->
                                             <label id="notifRegno" style="display:none; color: #f00;">
                                                 Mohon maaf No Polisi yang Anda masukkan belum benar
@@ -813,7 +813,7 @@ $(document).keyup(function(e){
                                             <label for="inputEmail">Nama</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="text" name="nama" class="form-control required" id="nama" placeholder="" tabindex="8" >
+                                            <input type="text" name="nama" class="form-control required" id="nama" placeholder="" tabindex="8" value="">
 
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
@@ -908,7 +908,7 @@ $(document).keyup(function(e){
                                             <label for="inputEmail">Email Anda</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <input type="email" name="email" class="form-control required" id="email" placeholder="" tabindex="14" >
+                                            <input type="email" name="email" class="form-control required" id="email" placeholder="" tabindex="14" value="">
                                 
                             </label>
                                         </div><!--/ .col-sm-4 -->
@@ -1344,8 +1344,17 @@ $(document).keyup(function(e){
                                                                                     <input type="checkbox" class='no_tpl_is_calc' id="no_tpl_is_calc" name="no_tpl_is_calc" checked data-insured="no_tpl_val" data-angka="0" data-target="no_tpl_prem">
                                                                                 </td>
                                                                                 <td>Tanggung Jawab Hukum Pihak Ketiga</td>
-                                                                                <td></td>
-                                                                                <td class='no_tpl_prem position-text no_pack' id="no_tpl_prem">-</td>
+                                                                                <td style="width:50%;"><select  id="no_tpl" onchange="tplVals();" class="form-control" tabindex="2">
+																							  <option value="1">10.000.000,00</option>
+																							  <option value="2">20.000.000,00</option>
+																							  <option value="3">30.000.000,00</option>
+																							  <option value="4">40.000.000,00</option>
+																							  <option value="5">50.000.000,00</option>
+																							</select>
+																							<input type="hidden" id ="no_tpl_hidden" value="">
+																							<input type="hidden" id ="no_tpl_temp" value="">
+																						</td>
+                                                                                <td class='no_tpl_prem position-text' id="no_tpl_prem">-</td>
                                                                                 <!-- <td class=''>
                                                                                     <input type="text" name="no_tpl_val" class="no_tpl_val" id="notplval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
                                                                                 </td>
@@ -1353,19 +1362,20 @@ $(document).keyup(function(e){
                                                                             </tr>
                                                                             <tr>
                                                                                 <td>
-                                                                                    <input type="checkbox" class="no_pll_is_calc" name="no_pll_prem_is_calc" checked data-insured="no_pll_val" data-angka="0" data-target="no_pll_prem">
+                                                                                    <input type="checkbox" class="no_pll_is_calc" id="no_pll_is_calc" name="no_pll_prem_is_calc" checked data-insured="no_pll_val" data-angka="0" data-target="no_pll_prem">
                                                                                 </td>
 
                                                                                 <td>Tanggung Jawab Hukum Terhadap Penumpang</td>
                                                                                 <td>
             																	<select  id="no_pll" onchange="pllVals();" class="form-control" tabindex="2">
-            																		  <option value="1">10000000</option>
-            																		  <option value="2">20000000</option>
-            																		  <option value="3">30000000</option>
-            																		  <option value="4">40000000</option>
-            																		  <option value="5">50000000</option>
+																					  <option value="1">10.000.000,00</option>
+																					  <option value="2">20.000.000,00</option>
+																					  <option value="3">30.000.000,00</option>
+																					  <option value="4">40.000.000,00</option>
+																					  <option value="5">50.000.000,00</option>
             																		</select>
             																		<input type="hidden" id ="no_pll_hidden" value="">
+																					<input type="hidden" id ="no_pll_temp" value="">
             																	</td>
                                                                                 <td id="no_pll_prem" class='no_pll_prem position-text no_pack'>-</td>
                                                                                 <!-- <td class=''>
@@ -1380,13 +1390,14 @@ $(document).keyup(function(e){
                                                                                 <td>Biaya Pengobatan</td>
                                                                                 <td>
             																	<select  id="med_ex" onchange="medExVals();" class="form-control" tabindex="2">
-            																		  <option value="1">1000000</option>
-            																		  <option value="2">2000000</option>
-            																		  <option value="3">3000000</option>
-            																		  <option value="4">4000000</option>
-            																		  <option value="5">5000000</option>
+            																		  <option value="1">1.000.000,00</option>
+            																		  <option value="2">2.000.000,00</option>
+            																		  <option value="3">3.000.000,00</option>
+            																		  <option value="4">4.000.000,00</option>
+            																		  <option value="5">5.000.000,00</option>
             																		</select>
             																		<input type="hidden" id ="med_ex_hidden" value="">
+																					<input type="hidden" id ="med_ex_temp" value="">
             																	</td>
                                                                                 <td id="med_ex_prem" class='no_med_ex_prem position-text no_pack'>-</td>
                                                                                 <!-- <td class=''>
@@ -1435,79 +1446,79 @@ $(document).keyup(function(e){
                                                                                 </tr>
                                                                             <tr>
                                                                                 <td>
-                                                                                    <input type="checkbox" class="no_passenger_is_calc" name="no_passenger_is_calc" checked data-insured="no_passenger_val" data-angka="0" data-target="no_passenger_prem">
+                                                                                    <input type="checkbox" class="no_passenger_is_calc" id="no_passenger_is_calc" name="no_passenger_is_calc" checked data-insured="no_passenger_val" data-angka="0" data-target="no_passenger_prem">
                                                                                     <?php
 
-                                                                                    ?>
-                                                                                </td>
-                                                                                <td>PA Passenger</td>
-                                                                                <td>
-    																			<select  id="no_passenger" onchange="passengerVals();" class="form-control" tabindex="2">
-    																				  <option value="1">10000000</option>
-    																				  <option value="2">20000000</option>
-    																				  <option value="3">30000000</option>
-    																				  <option value="4">40000000</option>
-    																				  <option value="5">50000000</option>
-    																				</select>
-    																				<input type="hidden" id ="no_passenger_hidden" value="">
-    																			</td>
-                                                                                <td id="no_passenger_prem" class='no_passenger_prem position-text no_pack'>-</td>
-                                                                                <!-- <td class=''><input type="text" name="no_passenger_val" class="no_passenger_val" id="nopassengerval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
-                                                                                </td>
-                                                                                <td class='no_passenger_persen'>-</td> -->
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <input type="checkbox" class="no_pa_is_calc" name="no_pa_is_calc" checked data-insured="no_pa_val" data-angka="0" data-target="no_pa_prem">
-                                                                                </td>
-                                                                                <td>PA Driver</td>
-                                                                                    <td>
-        																			<select  id="no_pa" onchange="paVals();" class="form-control" tabindex="2">
-        																				  <option value="1">10000000</option>
-        																				  <option value="2">20000000</option>
-        																				  <option value="3">30000000</option>
-        																				  <option value="4">40000000</option>
-        																				  <option value="5">50000000</option>
-        																				</select>
-        																				<input type="hidden" id ="no_pa_hidden" value="">
-        																			</td>
-                                                                                <td id="no_pa_prem" class='no_pa_prem position-text no_pack'>-</td>
-                                                                                <!-- <td class=''>
-                                                                                    <input type="text" name="no_pa_val" class="no_pa_val" id="nopaval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
-                                                                                </td>
-                                                                                <td class='no_pa_persen'>-</td> -->
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <input type="checkbox" class="no_workshop_is_calc" name="no_workshop_is_calc" checked data-angka="0" data-target="no_workshop_prem" value="FALSE">
-                                                                                </td>
-                                                                                <td>Authorized Workshop</td>
-                                                                                <td></td>
-                                                                                <td id="no_workshop" class='no_workshop_prem position-text no_pack'>-</td>
-                                                                                <!-- <td class='no_workshop_val'>-</td>
-                                                                                <td class='no_workshop_persen'>-</td> -->
-                                                                            </tr>
-                                                                            <tfoot>
-                                                                                <tr>
-                                                                                    <td></td>
-                                                                                    <td style="background: #e2e3e3;">Total Premi*</td>
-                                                                                    <td style="background: #e2e3e3;"></td>
-                                                                                    <td style="background: #e2e3e3;" id="no_totalpremium" class='no_totalPremium position-text no_pack'></td>
-                                                                                    <!-- <td></td>
-                                                                                    <td></td> -->
-                                                                                </tr>
-                                                                            </tfoot>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div><!--/ .tabScroll -->
-                                                            </div><!--/ .content_show -->
-                                                            <div id="note_2">
-                                                            * Total premi yang tercantum belum termasuk biaya administrasi maksimal sebesar Rp. 32.000,- (harga disesuaikan dengan premi yang di ambil)
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div><!--/ .tabcontent -->
-                                            </div><!--/ .tabwrap -->
+                                                                            ?>
+                                                                        </td>
+                                                                        <td>PA Passenger</td>
+																		<td>
+																			<select  id="no_passenger" onchange="passengerVals();" class="form-control" tabindex="2">
+																				 <option value="1">10.000.000,00</option>
+																				  <option value="2">20.000.000,00</option>
+																				  <option value="3">30.000.000,00</option>
+																				  <option value="4">40.000.000,00</option>
+																				  <option value="5">50.000.000,00</option>
+																				</select>
+																				<input type="hidden" id ="no_passenger_hidden" value="">
+																				<input type="hidden" id ="no_passenger_temp" value="">
+																			</td>
+                                                                        <td id="no_passenger_prem" class='no_passenger_prem position-text'>-</td>
+                                                                        <!-- <td class=''><input type="text" name="no_passenger_val" class="no_passenger_val" id="nopassengerval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
+                                                                        </td>
+                                                                        <td class='no_passenger_persen'>-</td> -->
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <input type="checkbox" class="no_pa_is_calc" id="no_pa_is_calc" name="no_pa_is_calc" checked data-insured="no_pa_val" data-angka="0" data-target="no_pa_prem">
+                                                                        </td>
+                                                                        <td>PA Driver</td>
+																		<td>
+																			<select  id="no_pa" onchange="paVals();" class="form-control" tabindex="2">
+																				  <option value="1">10.000.000,00</option>
+																				  <option value="2">20.000.000,00</option>
+																				  <option value="3">30.000.000,00</option>
+																				  <option value="4">40.000.000,00</option>
+																				  <option value="5">50.000.000,00</option>
+																				</select>
+																				<input type="hidden" id ="no_pa_hidden" value="">
+																				<input type="hidden" id ="no_pa_temp" value="">
+																			</td>
+                                                                        <td id="no_pa_prem" class='no_pa_prem position-text'>-</td>
+                                                                        <!-- <td class=''>
+                                                                            <input type="text" name="no_pa_val" class="no_pa_val" id="nopaval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
+                                                                        </td>
+                                                                        <td class='no_pa_persen'>-</td> -->
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <input type="checkbox" class="no_workshop_is_calc" name="no_workshop_is_calc" checked data-angka="0" data-target="no_workshop_prem" value="FALSE">
+                                                                        </td>
+                                                                        <td>Authorized Workshop</td>
+																		<td></td>
+                                                                        <td class='no_workshop_prem position-text'>-</td>
+                                                                        <!-- <td class='no_workshop_val'>-</td>
+                                                                        <td class='no_workshop_persen'>-</td> -->
+                                                                    </tr>
+                                                                    <tfoot>
+                                                                        <tr>
+                                                                            <td></td>
+                                                                            <td style="background: #e2e3e3;">Total Premium*</td>
+																			<td style="background: #e2e3e3;"><input type="hidden" id ="no_totalPremium_hidden" value=""></td>
+                                                                            <td style="background: #e2e3e3;"id="no_totalPremium" class='no_totalPremium position-text'></td>
+                                                                            <!-- <td></td>
+                                                                            <td></td> -->
+                                                                        </tr>
+                                                                    </tfoot>
+                                                                </tbody>
+                                                            </table>
+                                                        </div><!--/ .tabScroll -->
+                                                    </div><!--/ .content_show -->
+                                                    * Total premi yang tercantum belum termasuk biaya administrasi maksimal sebesar Rp. 32.000,- (harga disesuaikan dengan premi yang di ambil)
+                                                </li>
+                                            </ul>
+                                        </div><!--/ .tabcontent -->
+                                    </div><!--/ .tabwrap -->
 
                                             </div><!--/ .col-sm-12 -->
                                         </div><!--/ .row -->
@@ -1650,77 +1661,209 @@ $(document).keyup(function(e){
 
 <script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 <script src="/website/static/mobilku/functionCalcMobilku.js" type="text/javascript"></script>
+
 <script>
 
+	$(document).ready(function() {    
+		$('#no_tpl_is_calc').click(function() {
+			if($(this).is(":checked"))
+			{
+				document.getElementById("no_tpl").disabled = false;
+				$('#no_tpl option[value=1]').attr('selected','selected');
+				
+			} else {
+				document.getElementById("no_tpl").disabled = true;
+			}
+		});
+		$('#no_pll_is_calc').click(function() {
+			if($(this).is(":checked"))
+			{
+				document.getElementById("no_pll").disabled = false;
+				$('#no_pll option[value=1]').attr('selected','selected');
+				
+			} else {
+				document.getElementById("no_pll").disabled = true;
+			}
+		});
+		$('#no_med_ex_is_calc').click(function() {
+			if($(this).is(":checked"))
+			{
+				document.getElementById("med_ex").disabled = false;
+				$('#med_ex option[value=1]').attr('selected','selected');
+				
+			} else {
+				document.getElementById("med_ex").disabled = true;
+			}
+		});
+		$('#no_passenger_is_calc').click(function() {
+			if($(this).is(":checked"))
+			{
+				document.getElementById("no_passenger").disabled = false;
+				$('#no_passenger option[value=1]').attr('selected','selected');
+				
+			} else {
+				document.getElementById("no_passenger").disabled = true;
+			}
+		});
+		$('#no_pa_is_calc').click(function() {
+			if($(this).is(":checked"))
+			{
+				document.getElementById("no_pa").disabled = false;
+				$('#no_pa option[value=1]').attr('selected','selected');
+			} else {
+				document.getElementById("no_pa").disabled = true;
+			}
+		});
+	});
 	function tplVals() {
-	  // var str = $("#no_tpl_prem").text();
-	  // var temp = str.replace(",00","");
-	  // var no_tpl = parseInt(temp.replace(".",""));
-	  var defaultVals = $("#no_tpl_hidden").val();
-	  var tpl = parseInt($("#no_tpl option:selected" ).text());
-	  var hasil = parseFloat(defaultVals/50000000*tpl);
-	  console.log(defaultVals);
-	  $( ".no_tpl_prem" ).empty();
-	  $(".no_tpl_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+		var str = $("#no_totalPremium").text();
+		console.log(str);
+		var temp = str.replace(",00","");
+		console.log(temp);
+		var Totals = parseInt(temp.split(".").join(""));
+		var defaultVals = parseInt($("#no_tpl_hidden").val());
+		var tempVals = parseInt($("#no_tpl_temp").val());
+		// var defaultTotal = parseInt($("#no_totalPremium_hidden").val());
+		var tpl = parseInt($("#no_tpl option:selected").text().split(".").join(""));
+	 
+	  if (tpl < 30000000) {
+		var hasil = parseFloat(defaultVals/10000000*tpl);
+		var selisih = parseFloat(hasil-tempVals);		   
+		var total = parseFloat(selisih + Totals);
+		var newVals = parseInt($("#no_tpl_temp").val(hasil));
+		console.log(Totals);
+		console.log(hasil);
+		console.log(defaultVals);
+		console.log(selisih);
+		console.log(total);
+		$( ".no_tpl_prem" ).empty();
+		$(".no_tpl_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+		$( ".no_totalPremium" ).empty();
+		$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
+	  }
+	  else {
+		var hasil = parseFloat(defaultVals/10000000*tpl*3/4);
+		var selisih = parseFloat(hasil-tempVals);
+		var total = parseFloat(selisih + Totals);
+		var newVals = parseInt($("#no_tpl_temp").val(hasil));
+		console.log(hasil);
+		console.log(defaultVals);
+		console.log(selisih);
+		console.log(Totals);
+		console.log(total);
+		$( ".no_tpl_prem" ).empty();
+		$(".no_tpl_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+		$( ".no_totalPremium" ).empty();
+		$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
+	  }
+	  
 	}
 	function pllVals() {
-	  // var str = $("#no_pll_prem").text();
-	  // var temp = str.replace(",00","");
-	  // var no_pll = parseInt(temp.replace(".",""));
-	  var defaultVals = $("#no_pll_hidden").val();
-	  var pll = parseInt($( "#no_pll option:selected" ).text());
-	  var hasil = parseFloat(defaultVals/50000000*pll);
-	  console.log(defaultVals);
-	  $( ".no_pll_prem" ).empty();
-	  $(".no_pll_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+		var str = $("#no_totalPremium").text();
+		console.log(str);
+		var temp = str.replace(",00","");
+		console.log(temp);
+		var Totals = parseInt(temp.split(".").join(""));
+		var defaultVals = parseInt($("#no_pll_hidden").val());
+		var tempVals = parseInt($("#no_pll_temp").val());
+		var defaultTotal = parseInt($("#no_totalPremium_hidden").val());
+		var pll = parseInt($( "#no_pll option:selected" ).text().split(".").join(""));
+		if (pll < 30000000) {
+			var hasil = parseFloat(defaultVals/10000000*pll);
+			var selisih = parseFloat(hasil-tempVals);		   
+			var total = parseFloat(selisih + Totals);
+			var newVals = parseInt($("#no_pll_temp").val(hasil));
+			console.log(defaultVals);
+			$( ".no_pll_prem" ).empty();
+			$(".no_pll_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+			$( ".no_totalPremium" ).empty();
+			$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
+		}
+	  else {
+			var hasil = parseFloat(defaultVals/10000000*pll*375/500);
+			var selisih = parseFloat(hasil-tempVals);		   
+			var total = parseFloat(selisih + Totals);
+			var newVals = parseInt($("#no_pll_temp").val(hasil));
+			console.log(defaultVals);
+			$( ".no_pll_prem" ).empty();
+			$(".no_pll_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+			$( ".no_totalPremium" ).empty();
+			$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
+	  }
 	}
 	function medExVals() {
-	  // var str = $("#med_ex_prem").text();
-	  // var temp = str.replace(",00","");
-	  // var no_med_ex = parseInt(temp.replace(".",""));
-	  var defaultVals = $("#med_ex_hidden").val();
-	  var med_ex = parseInt($( "#med_ex option:selected").text());
-	  var hasil = parseFloat(defaultVals/5000000*med_ex);
-	  console.log(defaultVals);
-	  $( ".no_med_ex_prem" ).empty();
-	  $(".no_med_ex_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+		var str = $("#no_totalPremium").text();
+		console.log(str);
+		var temp = str.replace(",00","");
+		console.log(temp);
+		var Totals = parseInt(temp.split(".").join(""));
+		var defaultVals = parseInt($("#med_ex_hidden").val());
+		var tempVals = parseInt($("#med_ex_temp").val());
+		var med_ex = parseInt($( "#med_ex option:selected").text().split(".").join(""));
+		if(med_ex < 3000000) {
+			var hasil = parseFloat(defaultVals/1000000*med_ex);
+			var selisih = parseFloat(hasil-tempVals);		   
+			var total = parseFloat(selisih + Totals);
+			var newVals = parseInt($("#med_ex_temp").val(hasil));
+			console.log(defaultVals);
+			$( ".no_med_ex_prem" ).empty();
+			$(".no_med_ex_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+			$( ".no_totalPremium" ).empty();
+			$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
+		}
+	  else {
+			var hasil = parseFloat(defaultVals/1000000*med_ex*30/35);
+			var selisih = parseFloat(hasil-tempVals);		   
+			var total = parseFloat(selisih + Totals);
+			var newVals = parseInt($("#med_ex_temp").val(hasil));
+			console.log(defaultVals);
+			$( ".no_med_ex_prem" ).empty();
+			$(".no_med_ex_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+			$( ".no_totalPremium" ).empty();
+			$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
+	  }
 	}
 	function passengerVals() {
-	  // var str = $("#no_passenger_prem").text();
-	  // var temp = str.replace(",00","");
-	  // var no_passenger = parseInt(temp.replace(".",""));
-	  var defaultVals = $("#no_passenger_hidden").val();
-	  var passenger = parseInt($( "#no_passenger option:selected" ).text());
-	  var hasil = parseFloat(defaultVals/50000000*passenger);
-	  console.log(defaultVals);
-	  // console.log(passenger);
-	  // console.log(hasil);
-	  $( ".no_passenger_prem" ).empty();
-	  $(".no_passenger_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+		var str = $("#no_totalPremium").text();
+		console.log(str);
+		var temp = str.replace(",00","");
+		console.log(temp);
+		var Totals = parseInt(temp.split(".").join(""));
+		var defaultVals = parseInt($("#no_passenger_hidden").val());
+		var tempVals = parseInt($("#no_passenger_temp").val());
+		var passenger = parseInt($( "#no_passenger option:selected" ).text().split(".").join(""));
+		var hasil = parseFloat(defaultVals/10000000*passenger);
+		var selisih = parseFloat(hasil - tempVals);		   
+		var total = parseFloat(selisih + Totals);
+		var newVals = parseInt($("#no_passenger_temp").val(hasil));
+		console.log(defaultVals);
+		// console.log(passenger);
+		// console.log(hasil);
+		$( ".no_passenger_prem" ).empty();
+		$(".no_passenger_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+		$( ".no_totalPremium" ).empty();
+		$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
 	}
 	function paVals() {
-	  // var str = $("#no_pa_prem").text();
-	  // var temp = str.replace(",00","");
-	  // var no_pa = parseInt(temp.replace(".",""));
-	  var defaultVals = $("#no_pa_hidden").val();
-	  var pa = parseInt($( "#no_pa option:selected" ).text());
-	  var hasil = parseFloat(defaultVals/50000000*pa);
-	  console.log(defaultVals);
-	  $( ".no_pa_prem" ).empty();
-	  $(".no_pa_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+		var str = $("#no_totalPremium").text();
+		console.log(str);
+		var temp = str.replace(",00","");
+		console.log(temp);
+		var Totals = parseInt(temp.split(".").join(""));
+		var defaultVals = parseInt($("#no_pa_hidden").val());
+		var tempVals = parseInt($("#no_pa_temp").val());
+		var pa = parseInt($( "#no_pa option:selected" ).text().split(".").join(""));
+		var hasil = parseFloat(defaultVals/10000000*pa);
+		var selisih = parseFloat(hasil-tempVals);		   
+		var total = parseFloat(selisih + Totals);
+		var newVals = parseInt($("#no_pa_temp").val(hasil));
+		console.log(defaultVals);
+		$( ".no_pa_prem" ).empty();
+		$(".no_pa_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+		$( ".no_totalPremium" ).empty();
+		$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
 	}
 	 
-	// $( "select" ).change( tplVals );
-	// $( "select" ).change( pllVals );
-	// $( "select" ).change( medExVals );
-	// $( "select" ).change( paVals );
-	// $( "select" ).change( passengerVals );
-	
-	// tplVals();
-	// pllVals();
-	// medExVals();
-	// paVals();
-	// passengerVals();
 </script>
 <script type="text/javascript">
 
