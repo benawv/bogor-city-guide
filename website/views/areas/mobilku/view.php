@@ -1514,7 +1514,9 @@ $(document).keyup(function(e){
                                                             </table>
                                                         </div><!--/ .tabScroll -->
                                                     </div><!--/ .content_show -->
-                                                    * Total premi yang tercantum belum termasuk biaya administrasi maksimal sebesar Rp. 32.000,- (harga disesuaikan dengan premi yang di ambil)
+                                                    <div id="note_2">
+                                                        * Total premi yang tercantum belum termasuk biaya administrasi maksimal sebesar Rp. 32.000,- (harga disesuaikan dengan premi yang di ambil)
+                                                    </div>
                                                 </li>
                                             </ul>
                                         </div><!--/ .tabcontent -->

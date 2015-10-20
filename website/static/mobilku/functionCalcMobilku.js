@@ -406,13 +406,13 @@ $(document).ready(function(){
         //console.log("compre "+compre_tlo_persen);
         // if (tlo= 5+wilayah) else (1+wilayah)
         if (jenisasuransi=='tlo') {
-			var add_rate = 25/122;
-			var rate_workshop = 125/610;
+      			// var add_rate = 25/122;
+      			// var rate_workshop = 125/610;
             getColom=wilayah+5;
         }else{
             getColom=wilayah+1;
-			var add_rate = 1;
-			var rate_workshop = 1;
+			     // var add_rate = 1;
+			     // var rate_workshop = 1;
         }
 		
         if (getColom==2) {
@@ -533,8 +533,8 @@ $(document).ready(function(){
         //=====================premium=================================================================
         var workshop_prem, compre_prem, earthquake_prem, era_prem, flood_prem, med_ex_prem, pa_prem, passenger_prem, personal_ef_prem, pll_prem, riot_prem, terror_prem, tpl_prem;
     
-        workshop_prem=(((1*(cleanVarTlo*workshop_persen)/100)*day)/day)*rate_workshop;
-        compre_prem=(((1*(cleanVarTlo*compre_tlo_persen)/100)*day)/day)*add_rate;
+        workshop_prem=(((1*(cleanVarTlo*workshop_persen)/100)*day)/day);
+        compre_prem=(((1*(cleanVarTlo*compre_tlo_persen)/100)*day)/day);
         earthquake_prem=(((1*(cleanVarTlo*earthquake_presen)/100)*day)/day);
         era_prem=(((1*(cleanVarTlo*era_persen)/100)*day)/day);
         flood_prem=(((1*(cleanVarTlo*flood_persen)/100)*day)/day);
@@ -649,13 +649,13 @@ $(document).ready(function(){
 
         // if (tlo= 5+wilayah) else (1+wilayah)
         if (jenisasuransi=='tlo') {
-			var add_rate = 25/122;
-			var rate_workshop = 125/610;
+			// var add_rate = 25/122;
+			// var rate_workshop = 125/610;
             getColom=wilayah+5;
         }else{
             getColom=wilayah+1;
-			var add_rate = 1;
-			var rate_workshop = 1;
+			// var add_rate = 1;
+			// var rate_workshop = 1;
         }
         
         if (getColom==2) {
@@ -776,9 +776,9 @@ $(document).ready(function(){
         //=====================premium=================================================================
         var workshop_prem, compre_prem, earthquake_prem, era_prem, flood_prem, med_ex_prem, pa_prem, passenger_prem, personal_ef_prem, pll_prem, riot_prem, terror_prem, tpl_prem;
     
-        workshop_prem=(((1*(cleanVarTlo*workshop_persen)/100)*day)/day)*rate_workshop;
+        workshop_prem=(((1*(cleanVarTlo*workshop_persen)/100)*day)/day);
 		console.log(workshop_prem);
-        compre_prem=(((1*(cleanVarTlo*compre_tlo_persen)/100)*day)/day)*add_rate;
+        compre_prem=(((1*(cleanVarTlo*compre_tlo_persen)/100)*day)/day);
 		console.log(compre_prem);
         earthquake_prem=(((1*(cleanVarTlo*earthquake_presen)/100)*day)/day);
 		console.log(earthquake_prem);
@@ -909,13 +909,13 @@ $(document).ready(function(){
         
         // if (tlo= 5+wilayah) else (1+wilayah)
         if (jenisasuransi=='tlo') {
-			var add_rate = 25/122;
-			var rate_workshop = 125/610;
+			// var add_rate = 25/122;
+			// var rate_workshop = 125/610;
             getColom=wilayah+5;
         }else{
             getColom=wilayah+1;
-			var add_rate = 1;
-			var rate_workshop = 1;
+			// var add_rate = 1;
+			// var rate_workshop = 1;
         }
         
         if (getColom==2) {
@@ -1033,8 +1033,8 @@ $(document).ready(function(){
         //=====================premium=================================================================
         var workshop_prem, compre_prem, earthquake_prem, era_prem, flood_prem, med_ex_prem, pa_prem, passenger_prem, personal_ef_prem, pll_prem, riot_prem, terror_prem, tpl_prem;
     
-        workshop_prem=(((1*(cleanVarTlo*workshop_persen)/100)*day)/day)*rate_workshop;
-        compre_prem=(((1*(cleanVarTlo*compre_tlo_persen)/100)*day)/day)*add_rate;
+        workshop_prem=(((1*(cleanVarTlo*workshop_persen)/100)*day)/day);
+        compre_prem=(((1*(cleanVarTlo*compre_tlo_persen)/100)*day)/day);
         earthquake_prem=(((1*(cleanVarTlo*earthquake_presen)/100)*day)/day);
         era_prem=(((1*(cleanVarTlo*era_persen)/100)*day)/day);
         flood_prem=(((1*(cleanVarTlo*flood_persen)/100)*day)/day);
@@ -1149,11 +1149,11 @@ $(document).ready(function(){
         
         // if (tlo= 5+wilayah) else (1+wilayah)
         if (jenisasuransi=='tlo') {
-			var add_rate = 25/122;
+			// var add_rate = 25/122;
             getColom=wilayah+5;
         }else{
             getColom=wilayah+1;
-			var add_rate = 1;
+			// var add_rate = 1;
         }
         
         if (getColom==2) {
@@ -1298,7 +1298,7 @@ $(document).ready(function(){
         var workshop_prem, compre_prem, earthquake_prem, era_prem, flood_prem, med_ex_prem, pa_prem, passenger_prem, pll_prem, riot_prem, terror_prem, tpl_prem;
     
         workshop_prem=(((1*(cleanVarTlo*workshop_persen)/100)*day)/day);
-        compre_prem=(((1*(cleanVarTlo*compre_tlo_persen)/100)*day)/day)*add_rate;
+        compre_prem=(((1*(cleanVarTlo*compre_tlo_persen)/100)*day)/day);
         earthquake_prem=(((1*(cleanVarTlo*earthquake_presen)/100)*day)/day);
         era_prem=(((1*(cleanVarTlo*era_persen)/100)*day)/day);
         flood_prem=(((1*(cleanVarTlo*flood_persen)/100)*day)/day);
@@ -1839,46 +1839,48 @@ $(document).ready(function(){
         }
     });
 
-    function sendEmailFinish(){
-      if(document.getElementById("paket_2_1").checked){
-        var compre = $('.no_compre_prem.data').html();
-        var tpl = $('.no_tpl_prem.data').html();
-        var pll = $('.no_pll_prem.data').html();
-        var med = $('.no_med_ex_prem.data').html();
-        var flood = $('.no_flood_prem.data').html();
-        var earthquake = $('.no_earthquake_prem.data').html();
-        var riot = $('.no_riot_prem.data').html();
-        var terror = $('.no_terror_prem.data').html();
-        var passenger = $('.no_passenger_prem.data').html();
-        var pa = $('.no_pa_prem.data').html();
-        var workshop = $('.no_workshop_prem.data').html();
-        var total = $('.no_totalPremium.data').html();
-        var label = $('.no_pack.data').html();
-        var email=$('#email').val();
-        console.log(compre+' - '+tpl+' - '+pll+' - '+med+' - '+flood+' - '+earthquake+' - '+riot+' - '+terror+' - '+passenger+' - '+pa+' - '+workshop+' - '+total+' - '+label+' - '+email);
-        $.ajax({
-            "url" : "/send-email-finish/",
-            "type" : "POST",
-            "async" : false,
-            "data" : "compre="+compre+"&tpl="+tpl+"&pll="+pll+"&med="+med+"&flood="+flood+"&earthquake="+earthquake+"&riot="+riot+"&terror="+terror+"&passenger="+passenger+"&pa="+pa+"&workshop="+workshop+"&total="+total+"&label="+label+"&email="+email,
-            "success" : function(){
-              window.open('/kalkulator/thankyou-mobilku','_self');
-              console.log(data);
-                //var getResult=JSON.parse(response);
-                //console.log(response);
-            }
-            // console.log(data);
-        });
-        // console.log(compre+'-'+tpl+'-'+pll+'-'+med+'-'+flood+'-'+earthquake+'-'+riot+'-'+terror+'-'+passenger+'-'+pa+'-'+workshop+'-'+total);
-      }else{
-        window.open('/kalkulator/thankyou-mobilku','_self');
-      }
-       
-   }
+   //  function sendEmailFinish(){
+   //    if(document.getElementById("paket_2_1").checked){
+   //      var compre = $('.no_compre_prem.data').html();
+   //      var tpl = $('.no_tpl_prem.data').html();
+   //      var pll = $('.no_pll_prem.data').html();
+   //      var med = $('.no_med_ex_prem.data').html();
+   //      var flood = $('.no_flood_prem.data').html();
+   //      var earthquake = $('.no_earthquake_prem.data').html();
+   //      var riot = $('.no_riot_prem.data').html();
+   //      var terror = $('.no_terror_prem.data').html();
+   //      var passenger = $('.no_passenger_prem.data').html();
+   //      var pa = $('.no_pa_prem.data').html();
+   //      var workshop = $('.no_workshop_prem.data').html();
+   //      var total = $('.no_totalPremium.data').html();
+   //      var label = $('.no_pack.data').html();
+   //      var email=$('#email').val();
 
-    $("#finish-btn").on('click', function(){
-        sendEmailFinish();
-    });
+   //      // console.log(compre);
+   //      // console.log(compre+' - '+tpl+' - '+pll+' - '+med+' - '+flood+' - '+earthquake+' - '+riot+' - '+terror+' - '+passenger+' - '+pa+' - '+workshop+' - '+total+' - '+label+' - '+email);
+   //      $.ajax({
+   //          "url" : "/send-email-finish/",
+   //          "type" : "POST",
+   //          "async" : false,
+   //          "data" : "compre="+compre+"&tpl="+tpl+"&pll="+pll+"&med="+med+"&flood="+flood+"&earthquake="+earthquake+"&riot="+riot+"&terror="+terror+"&passenger="+passenger+"&pa="+pa+"&workshop="+workshop+"&total="+total+"&label="+label+"&email="+email,
+   //          "success" : function(){
+   //            window.open('/kalkulator/thankyou-mobilku','_self');
+   //            console.log(data);
+   //              //var getResult=JSON.parse(response);
+   //              //console.log(response);
+   //          }
+   //          // console.log(data);
+   //      });
+   //      // console.log(compre+'-'+tpl+'-'+pll+'-'+med+'-'+flood+'-'+earthquake+'-'+riot+'-'+terror+'-'+passenger+'-'+pa+'-'+workshop+'-'+total);
+   //    }else{
+   //      window.open('/kalkulator/thankyou-mobilku','_self');
+   //    }
+       
+   // }
+
+   //  $("#finish-btn").on('click', function(){
+   //      sendEmailFinish();
+   //  });
          
     /*$('#myTable2,#myTable3,#myTable4,#myTable5').dataTable( {
         "searching": false,
