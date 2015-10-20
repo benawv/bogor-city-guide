@@ -102,15 +102,17 @@
             $getProv=new Object_Kota_List();
 //          echo <pre>;
             $getProv->setCondition("provinsi='".$prov."'");
-            $getProv->setOrderKey("kota");
+//            $getProv->setOrderKey("kota");
             $getProv->setOrder("asc");
-//            print_r($getProv);
-//            die();
+
             foreach($getProv as $items){
                 $item[$i] = array(
-                                "Kota" => $items->kota
+                                "Kota" => $items->kota,
+                                "Status" => $items->status
                             );
                 $i++;
+            
+           
             }
             
             echo json_encode($item);
