@@ -1354,7 +1354,7 @@ $(document).keyup(function(e){
 																							<input type="hidden" id ="no_tpl_hidden" value="">
 																							<input type="hidden" id ="no_tpl_temp" value="">
 																						</td>
-                                                                                <td class='no_tpl_prem position-text' id="no_tpl_prem">-</td>
+                                                                                <td class='no_tpl_prem position-text no_pack' id="no_tpl_prem">-</td>
                                                                                 <!-- <td class=''>
                                                                                     <input type="text" name="no_tpl_val" class="no_tpl_val" id="notplval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
                                                                                 </td>
@@ -1463,7 +1463,7 @@ $(document).keyup(function(e){
 																				<input type="hidden" id ="no_passenger_hidden" value="">
 																				<input type="hidden" id ="no_passenger_temp" value="">
 																			</td>
-                                                                        <td id="no_passenger_prem" class='no_passenger_prem position-text'>-</td>
+                                                                        <td id="no_passenger_prem" class='no_passenger_prem position-text no_pack'>-</td>
                                                                         <!-- <td class=''><input type="text" name="no_passenger_val" class="no_passenger_val" id="nopassengerval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
                                                                         </td>
                                                                         <td class='no_passenger_persen'>-</td> -->
@@ -1484,7 +1484,7 @@ $(document).keyup(function(e){
 																				<input type="hidden" id ="no_pa_hidden" value="">
 																				<input type="hidden" id ="no_pa_temp" value="">
 																			</td>
-                                                                        <td id="no_pa_prem" class='no_pa_prem position-text'>-</td>
+                                                                        <td id="no_pa_prem" class='no_pa_prem position-text no_pack'>-</td>
                                                                         <!-- <td class=''>
                                                                             <input type="text" name="no_pa_val" class="no_pa_val" id="nopaval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
                                                                         </td>
@@ -1496,7 +1496,7 @@ $(document).keyup(function(e){
                                                                         </td>
                                                                         <td>Authorized Workshop</td>
 																		<td></td>
-                                                                        <td class='no_workshop_prem position-text'>-</td>
+                                                                        <td class='no_workshop_prem position-text no_pack'>-</td>
                                                                         <!-- <td class='no_workshop_val'>-</td>
                                                                         <td class='no_workshop_persen'>-</td> -->
                                                                     </tr>
@@ -1505,7 +1505,7 @@ $(document).keyup(function(e){
                                                                             <td></td>
                                                                             <td style="background: #e2e3e3;">Total Premium*</td>
 																			<td style="background: #e2e3e3;"><input type="hidden" id ="no_totalPremium_hidden" value=""></td>
-                                                                            <td style="background: #e2e3e3;"id="no_totalPremium" class='no_totalPremium position-text'></td>
+                                                                            <td style="background: #e2e3e3;"id="no_totalPremium" class='no_totalPremium position-text no_pack'></td>
                                                                             <!-- <td></td>
                                                                             <td></td> -->
                                                                         </tr>
@@ -1539,7 +1539,7 @@ $(document).keyup(function(e){
                             <!-- </a> -->
                         </div><!--/ .pull-right -->
                         <div class="pull-left">
-                            <input type='button' class='btn btn-previous btn-fill btn-warning btn-wd btn-sm' name='previous' value='Kembali' />
+                            <input type='button' href="javascript:void(0);" class='btn btn-previous btn-fill btn-warning btn-wd btn-sm' name='previous' value='Kembali' />
                         </div><!--/ .pull-left -->
                         <div class="clearfix"></div>
                     </div><!--/ .wizard-footer -->
