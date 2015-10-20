@@ -1791,21 +1791,38 @@ $(document).ready(function(){
     // });
     
     //pindah ke sini
+    function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1);
+                if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+            }
+            return "";
+    }
+    
+    function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+    }
   
    function sendEmail(basic, standar, premier, non){
-        var tahun_pembuatan=$('#tahun_pembuatan').val();
-        var harga=$('#harga').val();
-        var merk=$('#merk').val();
-        var merk_html=$('#merk option:selected').html().toLowerCase();
+        var tahun_pembuatan=getCookie('tahun_buat');
+        var harga=getCookie('harga');
+        var merk=getCookie('merk');
+        var merk_html=getCookie('merk').toLowerCase();
         // var merk_html = 'Alfa Romeo';
-        var model=$('#model').val();
-        var regno=$('#regno').val();
+        var model=getCookie('model');
+        var regno=getCookie('regno');
         var periode=$('#periode').val();
         var email=$('#email').val();
         var nama=$('#nama').val();
         var telp=$('#telp').val();
         var hargaKonv=clearFormat($('#harga').val());
-        var model_html=$('#model option:selected').html().toLowerCase();
+        var model_html=getCookie('model').toLowerCase();
         
         var radio1=$('#radio01').val();
         var radio2=$('#radio02').val();
@@ -1815,6 +1832,12 @@ $(document).ready(function(){
         }else{
             var radio = $('#radio02').val();
         }
+       
+        setCookie('nama', nama,1);
+        setCookie('telp', telp,1);
+        setCookie('periode', periode,1);
+        setCookie('periode_last', periode_last,1);
+        setCookie('radio', radio,1);
         
         //console.log(tahun_pembuatan+'-'+harga+'-'+model+'-'+regno+'-'+periode+'-'+email+'-'+nama+'-'+telp)
         $.ajax({
