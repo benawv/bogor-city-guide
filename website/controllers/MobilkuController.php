@@ -204,10 +204,10 @@ class MobilkuController extends Website_Controller_Action {
 		// catch(Exception $e){
 		// 	echo 'Message: ' .$e->getMessage();
 		// }
-		echo "sukses";
+		echo "sukseeeees";
 	}
 
-	public function saveAction(){
+	public function sendEmailFinishAction(){
 		$compre=$_POST['compre'];
 		$tpl=$_POST['tpl'];
 		$pll=$_POST['pll'];
@@ -253,7 +253,7 @@ class MobilkuController extends Website_Controller_Action {
 		// catch(Exception $e){
 		// 	echo 'Message: ' .$e->getMessage();
 		// }
-		echo "sukses";
+		echo "suksess";
 	}
 
 	public function updateUserMobilkuAction(){

@@ -1815,7 +1815,7 @@ $(document).ready(function(){
         var email=$('#email').val();
         console.log(compre+' - '+tpl+' - '+pll+' - '+med+' - '+flood+' - '+earthquake+' - '+riot+' - '+terror+' - '+passenger+' - '+pa+' - '+workshop+' - '+total+' - '+label+' - '+email);
         $.ajax({
-            "url" : "/save/",
+            "url" : "/send-email-finish/",
             "type" : "POST",
             "async" : false,
             "data" : "compre="+compre+"&tpl="+tpl+"&pll="+pll+"&med="+med+"&flood="+flood+"&earthquake="+earthquake+"&riot="+riot+"&terror="+terror+"&passenger="+passenger+"&pa="+pa+"&workshop="+workshop+"&total="+total+"&label="+label+"&email="+email,
