@@ -34,7 +34,7 @@
 	
 	<div class="wrapper-special clearfix">
 		<?php echo $this->areablock('banner', array(
-					"allowed" => array("banner", "static-banner", "banner-without-note",'gallery-carousel-landing')))?>
+					"allowed" => array("banner", "static-banner", "banner-without-note",'gallery-carousel-landing','gallery-carousel')))?>
 		<div id="quicklinks">
 			<?php echo $this->areablock('quicklinks-wrapper', array(
 					"allowed" => array("tile-quicklinks", "layanankami-quicklinks", "quicklinks","blank-tile-quicklinks-static", "product-quicklinks", "blank-animation-quicklinks","service-box-static","service-box-static-paragraph")))?>

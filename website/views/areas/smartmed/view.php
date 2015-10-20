@@ -332,7 +332,7 @@
                             <label>Family Discount <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#family"></i></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="2" id="family_discount">
+                            <select class="form-control" required tabindex="1" id="family_discount">
                                 <option value="Y">Ya</option>
                                 <option value="N">Tidak</option>
                             </select>
@@ -344,7 +344,7 @@
                             <label>No Claim Discount <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#claim"></i></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="3" id="no_claim_discount">
+                            <select class="form-control" required tabindex="1" id="no_claim_discount">
                                 <option value="Y">Ya</option>
                                 <option value="N">Tidak</option>
                             </select>
@@ -356,7 +356,7 @@
                             <label>Manfaat Rawat Inap <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#rawatInap"></i></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="4" id="ip">
+                            <select class="form-control" required tabindex="1" id="ip">
                                 <option value="0">0%</option>
                                 <option value="10">10%</option>
                                 <option value="20">20%</option>
@@ -369,7 +369,7 @@
                             <label>Manfaat Melahirkan <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#melahirkan"></i></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="5" id="mat">
+                            <select class="form-control" required tabindex="1" id="mat">
                                 <option value="0">0%</option>
                                 <option value="10">10%</option>
                                 <option value="20">20%</option>
@@ -382,7 +382,7 @@
                             <label>Manfaat Rawat Jalan & Rawat Gigi <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#rawatJalan"></i></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="6" id="out_den">
+                            <select class="form-control" required tabindex="1" id="out_den">
                                 <option value="20">20%</option>
                             </select>
                         </div><!--/ .col-md-4 -->
@@ -392,7 +392,7 @@
                             <label>Pilihan Plan Manfaat Rawat Inap</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="6" id="planip" onChange="checkData();">
+                            <select class="form-control" required tabindex="1" id="planip" onChange="checkData();">
                                 <?php
                                     $cat = new Object_SmartmedPlanType_List();
                                     echo "<option value='pilih'>Pilih</option>";
@@ -472,7 +472,7 @@
                             <label>Pilihan Plan Manfaat Melahirkan</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="6" id="planmat" onChange="checkData2();">
+                            <select class="form-control" required tabindex="1" id="planmat" onChange="checkData2();">
                                 <?php
                                     echo "<option value='pilih'>Pilih</option>";
                                     $cat = new Object_SmartmedPlanType_List();
@@ -552,7 +552,7 @@
                             <label>Pilihan Plan Manfaat Rawat Jalan & rawat Gigi</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="6" id="planop_den" onChange="checkData3();">
+                            <select class="form-control" required tabindex="1" id="planop_den" onChange="checkData3();">
                                 <?php
                                     $cat = new Object_SmartmedPlanType_List();
                                     echo "<option value='pilih'>Pilih</option>";
@@ -629,7 +629,7 @@
 
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
-                            <input type="submit" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next"  value="Kalkulasi">
+                            <input type="submit" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next"  value="Kalkulasi" tabindex="1">
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
 
@@ -674,7 +674,7 @@
                             <label><strong>Jenis Kelamin</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="2" id="sex">
+                            <select class="form-control" required tabindex="1" id="sex">
                                 <option value="m">Pria</option>
                                 <option value="f">Wanita</option>
                             </select>
@@ -686,7 +686,7 @@
                             <label><strong>Tanggal Lahir</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control date" id="dob" placeholder="Tanggal Lahir" tabindex="3" required>
+                            <input type="text" class="form-control date" id="dob" placeholder="Tanggal Lahir" tabindex="1" required>
                             <label id="notif5" style="display:none; color:red; font-weight:bold;">Tanggal Lahir Harus diisi.</label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -696,7 +696,7 @@
                             <label><strong>Tanggal Kalkulasi</strong></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <input type="text" class="form-control date" id="cd" placeholder="Tanggal Kalkulasi" tabindex="4" required>
+                            <input type="text" class="form-control date" id="cd" placeholder="Tanggal Kalkulasi" tabindex="1" required>
                             <label id="notif6" style="display:none; color:red;">Tanggal Kalkulasi Harus diisi.</label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -705,7 +705,7 @@
                             <label>UW Loading</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="7" id="uwl">
+                            <select class="form-control" required tabindex="1" id="uwl">
                                 <option value="0">0%</option>
                                 <option value="25">25%</option>
                             </select>
@@ -713,7 +713,7 @@
                     </div><!--/ .form-group -->
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
-                            <input type="submit" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Add" name="next" value="Add">
+                            <input type="submit" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Add" name="next" value="Add" tabindex="1">
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
 
@@ -1011,11 +1011,11 @@
     }
 
     
-    function kalk(age,sex,code,coshare,withval,plan){
+    function kalk(age,sex,code,coshare,withval,plan,uwl){
         var payment = $("#payment_methods").val();
         var fd = $("#family_discount").val();
         var ncd = $("#no_claim_discount").val();
-        var uwl = $("#uwl").val();
+        // var uwl = $("#uwl").val();
         var value = 0;
         var form_data = {
                 payment: payment,
@@ -1057,22 +1057,22 @@
         var rowCount = $('table.table tbody tr').length;
         var total = stamp = totfd = jml = totalwithoutuwl = 0;
         for(var i = 0; i < rowCount; i++){
-            total += parseInt($('table.table tbody').children()[i].children[15].children[0].value);
+            total += parseFloat($('table.table tbody').children()[i].children[15].children[0].value);
             // totalwithoutuwl += parseInt($('table.table tbody').children()[0].children[16].innerHTML);
             // console.log("total"+parseInt($('table.table tbody').children()[i].children[15].innerHTML));
         }
 
-        $('table.table tfoot tr:first').children()[0].innerHTML = 'Rp. ' + total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';
+        $('table.table tfoot tr:first').children()[0].innerHTML = currency(total);
         if(total>=250000 && total<1000000) stamp = 3000;
         else if(total>=1000000) stamp = 6000;
-        $('table.table tfoot').children()[1].children[1].innerHTML = 'Rp. ' + stamp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';//stamp duty
+        $('table.table tfoot').children()[1].children[1].innerHTML = currency(stamp);//stamp duty
 
         totfd = cekFamilyDiskon();
 
-        $('table.table tfoot').children()[3].children[1].innerHTML = 'Rp. ' + totfd.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';//family discount
+        $('table.table tfoot').children()[3].children[1].innerHTML = currency(totfd);//family discount
 
         jml = stamp + total + 30000 - totfd;
-        $('table.table tfoot').children()[4].children[1].innerHTML = 'Rp. ' + jml.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';
+        $('table.table tfoot').children()[4].children[1].innerHTML = currency(jml);
         return total;
     }
     
@@ -1087,6 +1087,16 @@
     //     console.log($('table.table tfoot tr:first').children()[0].innerHTML);
     //     return 0;
     // }
+
+    function currency(val){
+        value = val.toFixed(1);
+        splitcurr = value.split(".");
+        if(splitcurr.length>1)
+            value = 'Rp. ' + splitcurr[0].toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',' +splitcurr[1];
+        else
+            value = 'Rp. ' + value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0';
+        return value
+    }
 
     function form_sex(sex){
         if(sex == "m")
@@ -1154,15 +1164,15 @@
         planop_den = planop_denval.split("_")[0];
 
         //with premium
-        ipp1 = kalk(age,sex,"ip",ip,1,planip);
-        matp1 = kalk(age,sex,"ma",mat,1,planmat);
-        opdenp1 = kalk(age,sex,"od",outden,1,planop_den);
+        ipp1 = kalk(age,sex,"ip",ip,1,planip,uwl);
+        matp1 = kalk(age,sex,"ma",mat,1,planmat,uwl);
+        opdenp1 = kalk(age,sex,"od",outden,1,planop_den,uwl);
         
         //with no premium
-        ipp0 = kalk(age,sex,"ip",ip,0,planip);
-        matp0 = kalk(age,sex,"ma",mat,0,planmat);
-        opdenp0 = kalk(age,sex,"od",outden,0,planop_den);
-        totalwithout = parseInt(ipp0)+parseInt(matp0)+parseInt(opdenp0);
+        ipp0 = kalk(age,sex,"ip",ip,0,planip,uwl);
+        matp0 = kalk(age,sex,"ma",mat,0,planmat,uwl);
+        opdenp0 = kalk(age,sex,"od",outden,0,planop_den,uwl);
+        
 
         console.log("ipp1="+ipp1+" matp1="+matp1+" opdenp1="+opdenp1);
         console.log("ipp0="+ipp0+" matp0="+matp0+" opdenp0="+opdenp0);
@@ -1172,7 +1182,9 @@
             opdenp = 0;
             if(uwl > 0) ipp = ipp1;
             else ipp = ipp0;
+            totalwithout = parseFloat(ipp0);
         }else{
+            totalwithout = parseFloat(ipp0)+parseFloat(matp0)+parseFloat(opdenp0);
             if(uwl > 0) {
                 ipp = ipp1;
                 matp = matp1;
@@ -1183,7 +1195,7 @@
                 opdenp = opdenp0;
             }
         }
-        total = parseInt(ipp)+parseInt(matp)+parseInt(opdenp);
+        total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
         var rowCount = $('table.table tbody tr').length;
         var no = parseInt(rowCount)+1;
 
@@ -1200,10 +1212,10 @@
                 "<td class='tabletd'>"+planmatval.split("_")[1]+"</td>"+
                 "<td class='tabletd'>"+planop_denval.split("_")[1]+"</td>"+
                 "<td class='uwl'>"+form_uwl(uwl)+"</td>"+
-                "<td class='tabletd ipp'>"+'Rp. ' + ipp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0'+"</td>"+
-                "<td class='tabletd matp'>"+'Rp. ' + matp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0'+"</td>"+
-                "<td class='tabletd opdenp'>"+'Rp. ' + opdenp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0'+"</td>"+
-                "<td class='tabletd to'><input type='hidden' name='tohidden' value='"+total+"'><span class='toshow'>"+'Rp. ' + total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")+"</span></td>"+
+                "<td class='tabletd ipp'>"+ currency(ipp)+"</td>"+
+                "<td class='tabletd matp'>"+ currency(matp)+"</td>"+
+                "<td class='tabletd opdenp'>"+ currency(opdenp)+"</td>"+
+                "<td class='tabletd to'><input type='hidden' name='tohidden' class='tohidden' value='"+total+"'><span class='toshow'>"+ currency(total)+"</span></td>"+
                 "<td style='display:none;' class='towithout'>"+totalwithout+"</td>"+
             "</tr>");
         jumlah();
@@ -1234,8 +1246,8 @@
         // console.log(rowCount);
         //console.log($(this).parent().html());
         $('table.table tbody tr').each(function(index){
-            console.log("index"+index);
-            var uwl = $( this ).find("#uwl").val()
+            var uwl = $( this ).find("#uwl").val();
+            console.log("index"+index+" uwl="+uwl);
 
             var dob = $( this ).find(".dob2").val();
             var cd = $( this ).find(".cd2").val();
@@ -1256,20 +1268,18 @@
             planop_den = planop_denval.split("_")[0];
 
             //with premium
-            ipp1 = kalk(age,sex,"ip",ip,1,planip);
-            matp1 = kalk(age,sex,"ma",mat,1,planmat);
-            opdenp1 = kalk(age,sex,"od",outden,1,planop_den);
+            ipp1 = kalk(age,sex,"ip",ip,1,planip,uwl);
+            matp1 = kalk(age,sex,"ma",mat,1,planmat,uwl);
+            opdenp1 = kalk(age,sex,"od",outden,1,planop_den,uwl);
             
             //with no premium
-            ipp0 = kalk(age,sex,"ip",ip,0,planip);
-            matp0 = kalk(age,sex,"ma",mat,0,planmat);
-            opdenp0 = kalk(age,sex,"od",outden,0,planop_den);
-            totalwithout = parseInt(ipp0)+parseInt(matp0)+parseInt(opdenp0);
+            ipp0 = kalk(age,sex,"ip",ip,0,planip,uwl);
+            matp0 = kalk(age,sex,"ma",mat,0,planmat,uwl);
+            opdenp0 = kalk(age,sex,"od",outden,0,planop_den,uwl);
 
             console.log( index + ": " + $( this ).find("#dob2").val() );
             console.log("ipp1="+ipp1+" matp1="+matp1+" opdenp1="+opdenp1+" dob="+dob+" uwl="+uwl);
             console.log("ipp0="+ipp0+" matp0="+matp0+" opdenp0="+opdenp0+" cd"+ cd);
-            console.log("totalwithout="+totalwithout);
             
             // return true;
             if(payment != "Annually"){
@@ -1277,7 +1287,9 @@
                 opdenp = 0;
                 if(uwl > 0) ipp = ipp1;
                 else ipp = ipp0;
+                totalwithout = parseFloat(ipp0);
             }else{
+                totalwithout = parseFloat(ipp0)+parseFloat(matp0)+parseFloat(opdenp0);
                 if(uwl > 0) {
                     ipp = ipp1;
                     matp = matp1;
@@ -1288,12 +1300,14 @@
                     opdenp = opdenp0;
                 }
             }
-            total = parseInt(ipp)+parseInt(matp)+parseInt(opdenp);
-            $( this ).find(".ipp").html('Rp. ' + ipp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0');
-            $( this ).find(".matp").html('Rp. ' + matp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0');
-            $( this ).find(".opdenp").html('Rp. ' + opdenp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + ',0');
-            $( this ).find(".tohidden").html('Rp. ' + total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."));
-            $( this ).find(".toshow").val(total);
+            console.log("totalwithout="+totalwithout);
+
+            total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
+            $( this ).find(".ipp").html(currency(ipp));
+            $( this ).find(".matp").html(currency(matp));
+            $( this ).find(".opdenp").html(currency(opdenp));
+            $( this ).find(".tohidden").val(total);
+            $( this ).find(".toshow").html(currency(total));
             $( this ).find(".towithout").html(totalwithout);
             jumlah();
         });

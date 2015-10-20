@@ -271,7 +271,7 @@ class InvestmentController extends Website_Controller_Action
     public function calculatorpertanggunanAction(){}
     public function calculatorresultpertanggunganAction(){}
 
-    public function calculatorinvestAction(){}
+    public function calculatorinvestAction(){die("asd");}
     public function calculatorinvestresulAction(){}
     public function calculatorinvest2Action(){}
     public function calculatorinvest2resulAction(){}
