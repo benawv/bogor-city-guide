@@ -221,7 +221,21 @@ class MobilkuController extends Website_Controller_Action {
 		$workshop=$_POST['workshop'];
 		$total=$_POST['total'];
 		$label=$_POST['label'];
+
+		$tahun_pembuatan=$_POST['tahun_pembuatan'];
+		$harga=$_POST['harga'];
+		$merk=$_POST['merk'];
+		$merk_html=$_POST['merk_html'];
+		$model=$_POST['model'];
+		$regno=$_POST['regno'];
+		$tipe=$_POST['tipe'];
+		$kapasitas=$_POST['kapasitas'];
+		$nama=$_POST['nama'];
+		$telp=$_POST['telp'];
+		$periode=$_POST['periode'];
 		$email=$_POST['email'];
+		$hargaKonv=$_POST['hargaKonv'];
+		$model_html=$_POST['model_html'];
 
 
             $document = '/email/email-mobilku-nonpaket';
@@ -237,7 +251,19 @@ class MobilkuController extends Website_Controller_Action {
                             'passenger' => $passenger,
                             'pa' => $pa,
                             'workshop' => $workshop,
-                            'total' => $total
+                            'total' => $total,
+                            'year' => $tahun_pembuatan,
+                            'price' => $harga,
+                            'merk' => $merk_html,
+                            'model' => $model_html,
+                            'registrationnp' => $regno,
+                            'tipe' => $tipe,
+                            'kapasitas' => $kapasitas,
+                            'telp' => $telp,
+                            'periode' => $periode,
+                            'insurancetype' => $label,
+                            'email' => $email,
+                            'name' => $nama
                             );
             $bcc = array("diah@dreamcube.co.id","robbi@dreamcube.co.id");
 
