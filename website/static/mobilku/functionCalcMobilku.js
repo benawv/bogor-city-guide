@@ -1706,7 +1706,7 @@ $(document).ready(function(){
         $(this).val(text3);
     });*/
     
-    $(this).on('click','#finish-btn',function(){
+    // $(this).on('click','#finish-btn',function(){
 //alert("alert3");
         // var tahun_pembuatan=$('#tahun_pembuatan').val();
         // var harga=$('#harga').val();
@@ -1740,8 +1740,8 @@ $(document).ready(function(){
         //         //console.log(response);
         //     }
         // });
-        window.history.go('/kalkulator/tasbih');
-    });
+    //     window.history.go('/kalkulator/tasbih');
+    // });
 
 //edit by diah 20 Agustus 2015
     
@@ -1839,48 +1839,58 @@ $(document).ready(function(){
         }
     });
 
-   //  function sendEmailFinish(){
-   //    if(document.getElementById("paket_2_1").checked){
-   //      var compre = $('.no_compre_prem.data').html();
-   //      var tpl = $('.no_tpl_prem.data').html();
-   //      var pll = $('.no_pll_prem.data').html();
-   //      var med = $('.no_med_ex_prem.data').html();
-   //      var flood = $('.no_flood_prem.data').html();
-   //      var earthquake = $('.no_earthquake_prem.data').html();
-   //      var riot = $('.no_riot_prem.data').html();
-   //      var terror = $('.no_terror_prem.data').html();
-   //      var passenger = $('.no_passenger_prem.data').html();
-   //      var pa = $('.no_pa_prem.data').html();
-   //      var workshop = $('.no_workshop_prem.data').html();
-   //      var total = $('.no_totalPremium.data').html();
-   //      var label = $('.no_pack.data').html();
-   //      var email=$('#email').val();
+    function sendEmailFinish(){
+      if(document.getElementById("paket_2_1").checked){
+        var compre = $('.no_compre_prem.data').html();
+        var tpl = $('.no_tpl_prem.data').html();
+        var pll = $('.no_pll_prem.data').html();
+        var med = $('.no_med_ex_prem.data').html();
+        var flood = $('.no_flood_prem.data').html();
+        var earthquake = $('.no_earthquake_prem.data').html();
+        var riot = $('.no_riot_prem.data').html();
+        var terror = $('.no_terror_prem.data').html();
+        var passenger = $('.no_passenger_prem.data').html();
+        var pa = $('.no_pa_prem.data').html();
+        var workshop = $('.no_workshop_prem.data').html();
+        var total = $('.no_totalPremium.data').html();
+        var label = $('.no_pack.data').html();
 
-   //      // console.log(compre);
-   //      // console.log(compre+' - '+tpl+' - '+pll+' - '+med+' - '+flood+' - '+earthquake+' - '+riot+' - '+terror+' - '+passenger+' - '+pa+' - '+workshop+' - '+total+' - '+label+' - '+email);
-   //      $.ajax({
-   //          "url" : "/send-email-finish/",
-   //          "type" : "POST",
-   //          "async" : false,
-   //          "data" : "compre="+compre+"&tpl="+tpl+"&pll="+pll+"&med="+med+"&flood="+flood+"&earthquake="+earthquake+"&riot="+riot+"&terror="+terror+"&passenger="+passenger+"&pa="+pa+"&workshop="+workshop+"&total="+total+"&label="+label+"&email="+email,
-   //          "success" : function(){
-   //            window.open('/kalkulator/thankyou-mobilku','_self');
-   //            console.log(data);
-   //              //var getResult=JSON.parse(response);
-   //              //console.log(response);
-   //          }
-   //          // console.log(data);
-   //      });
-   //      // console.log(compre+'-'+tpl+'-'+pll+'-'+med+'-'+flood+'-'+earthquake+'-'+riot+'-'+terror+'-'+passenger+'-'+pa+'-'+workshop+'-'+total);
-   //    }else{
-   //      window.open('/kalkulator/thankyou-mobilku','_self');
-   //    }
+        var email=$('#email').val();
+        var tahun_pembuatan=$('#tahun_pembuatan').val();
+        var harga=$('#harga').val();
+        var merk=$('#merk').val();
+        var merk_html=$('#merk option:selected').html().toLowerCase();
+        var model=$('#model').val();
+        var regno=$('#regno').val();
+        var periode=$('#periode').val();
+        var nama=$('#nama').val();
+        var telp=$('#telp').val();
+        var hargaKonv=clearFormat($('#harga').val());
+        var model_html=$('#model option:selected').html().toLowerCase();
+
+        // console.log(compre+' - '+tpl+' - '+pll+' - '+med+' - '+flood+' - '+earthquake+' - '+riot+' - '+terror+' - '+passenger+' - '+pa+' - '+workshop+' - '+total+' - '+label+' - '+email);
+        $.ajax({
+            "url" : "/send-email-finish/",
+            "type" : "POST",
+            "async" : false,
+            "data" : "compre="+compre+"&tpl="+tpl+"&pll="+pll+"&med="+med+"&flood="+flood+"&earthquake="+earthquake+"&riot="+riot+"&terror="+terror+"&passenger="+passenger+"&pa="+pa+"&workshop="+workshop+"&total="+total+"&label="+label+"&email="+email,
+            "tahun_pembuatan"+tahun_pembuatan+"harga"+harga+"merk"+merk+"merk_html"+merk_html+"model"+model+"regno"+regno+"periode"+"nama"+nama+"telp"+telp+"hargaKonv"+hargaKonv+"model_html"+model_html,
+            "success" : function(){
+                 window.location.replace('/kalkulator/thankyou-mobilku');
+                //var getResult=JSON.parse(response);
+                //console.log(response);
+            }
+        });
+        // console.log(compre+'-'+tpl+'-'+pll+'-'+med+'-'+flood+'-'+earthquake+'-'+riot+'-'+terror+'-'+passenger+'-'+pa+'-'+workshop+'-'+total);
+      }else{
+        // window.open('/kalkulator/thankyou-mobilku');
+      }
        
-   // }
+   }
 
-   //  $("#finish-btn").on('click', function(){
-   //      sendEmailFinish();
-   //  });
+    $(".btn-finish ").on('click', function(){
+        sendEmailFinish();
+    });
          
     /*$('#myTable2,#myTable3,#myTable4,#myTable5').dataTable( {
         "searching": false,

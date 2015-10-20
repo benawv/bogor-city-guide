@@ -207,54 +207,54 @@ class MobilkuController extends Website_Controller_Action {
 		echo "sukseeeees";
 	}
 
-	// public function sendEmailFinishAction(){
-	// 	$compre=$_POST['compre'];
-	// 	$tpl=$_POST['tpl'];
-	// 	$pll=$_POST['pll'];
-	// 	$med=$_POST['med'];
-	// 	$flood=$_POST['flood'];
-	// 	$earthquake=$_POST['earthquake'];
-	// 	$riot=$_POST['riot'];
-	// 	$terror=$_POST['terror'];
-	// 	$passenger=$_POST['passenger'];
-	// 	$pa=$_POST['pa'];
-	// 	$workshop=$_POST['workshop'];
-	// 	$total=$_POST['total'];
-	// 	$label=$_POST['label'];
-	// 	$email=$_POST['email'];
+	public function sendEmailFinishAction(){
+		$compre=$_POST['compre'];
+		$tpl=$_POST['tpl'];
+		$pll=$_POST['pll'];
+		$med=$_POST['med'];
+		$flood=$_POST['flood'];
+		$earthquake=$_POST['earthquake'];
+		$riot=$_POST['riot'];
+		$terror=$_POST['terror'];
+		$passenger=$_POST['passenger'];
+		$pa=$_POST['pa'];
+		$workshop=$_POST['workshop'];
+		$total=$_POST['total'];
+		$label=$_POST['label'];
+		$email=$_POST['email'];
 
 
- //            $document = '/email/email-mobilku-nonpaket';
- //            $params = array('label' => $label,
- //                            'compre' => $compre,
- //                            'tpl' => $tpl,
- //                            'pll' => $pll,
- //                            'med' => $med,
- //                            'flood' => $flood,
- //                            'earthquake' => $earthquake,
- //                            'riot' => $riot,
- //                            'terror' => $terror,
- //                            'passenger' => $passenger,
- //                            'pa' => $pa,
- //                            'workshop' => $workshop,
- //                            'total' => $total
- //                            );
- //            $bcc = array("diah@dreamcube.co.id","robbi@dreamcube.co.id");
+            $document = '/email/email-mobilku-nonpaket';
+            $params = array('label' => $label,
+                            'compre' => $compre,
+                            'tpl' => $tpl,
+                            'pll' => $pll,
+                            'med' => $med,
+                            'flood' => $flood,
+                            'earthquake' => $earthquake,
+                            'riot' => $riot,
+                            'terror' => $terror,
+                            'passenger' => $passenger,
+                            'pa' => $pa,
+                            'workshop' => $workshop,
+                            'total' => $total
+                            );
+            $bcc = array("diah@dreamcube.co.id","robbi@dreamcube.co.id");
 
- //            $mail = new Pimcore_Mail();
- //            $mail->setSubject("Hasil Ilustrasi Asuransi Allianz Mobilku Non Paket");
- //            $mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
- //            $mail->setDocument($document);
- //            $mail->setParams($params);
- //            $mail->addTo($email);
+            $mail = new Pimcore_Mail();
+            $mail->setSubject("Hasil Ilustrasi Asuransi Allianz Mobilku Non Paket");
+            $mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+            $mail->setDocument($document);
+            $mail->setParams($params);
+            $mail->addTo($email);
 
- //            $mail->send();
-	// 	// }
-	// 	// catch(Exception $e){
-	// 	// 	echo 'Message: ' .$e->getMessage();
-	// 	// }
-	// 	echo "suksess";
-	// }
+            $mail->send();
+		// }
+		// catch(Exception $e){
+		// 	echo 'Message: ' .$e->getMessage();
+		// }
+		echo "suksess";
+	}
 
 	public function updateUserMobilkuAction(){
 		$session_mobilku = new Zend_Session_Namespace('kantorPemasaran');
