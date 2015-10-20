@@ -1238,26 +1238,26 @@ $(document).keyup(function(e){
                                                                             <tr>
                                                                                 <td>Kecelakaan Diri Penumpang</td>
                                                                                 <!-- <td class='passenger_val3'>-</td>
-                                                                                <td class='passenger_persen3'>-</td> -->
-                                                                                <td class='passenger_prem3 position-text'>-</td>
+                                                                                <td class='passenger_ id="earthquake_1_3"persen3'>-</td> -->
+                                                                                 <td class='passenger_prem3 position-text'>-</td>
                                                                             </tr>
                                                                             <tr>
                                                                                 <td>Kecelakaan Diri Pengendara</td>
                                                                                 <!-- <td class='pa_val3'>-</td>
-                                                                                <td class='pa_persen3'>-</td> -->
+                                                                                <td class='pa_persen3'> id="riot_1_3"-</td> -->
                                                                                 <td class='pa_prem3 position-text'>-</td>
                                                                             </tr>
                                                                              <tr>
                                                                                 <td>Emergency Roadside Assistance (ERA)</td>
                                                                                 <!-- <td class='era_val3'>-</td>
                                                                                 <td class='era_persen3'>-</td> -->
-                                                                                <td class='era_prem3 position-text'>-</td>
+                                                                                <td class='era_prem3 position-text '>-</td>
                                                                             </tr>
                                                                              <tr>
                                                                                 <td>Bengkel Rekanan</td>
                                                                                 <!-- <td class='workshop_val3'>-</td>
                                                                                 <td class='workshop_persen3'>-</td> -->
-                                                                                <td class='workshop_prem3 position-text'>-</td>
+                                                                                <td class='workshop_prem3 position-text '>-</td>
                                                                             </tr>
                                                                             <tfoot>
                                                                                 <tr>
@@ -1277,7 +1277,9 @@ $(document).keyup(function(e){
                                                                     -->
                                                                 </div><!--/ .tabScroll -->  
                                                             </div><!--/ .content_show -->
+                                                        <div id="note_1">
                                                             * Total premi yang tercantum belum termasuk biaya administrasi maksimal sebesar Rp. 32.000,- (harga disesuaikan dengan premi yang di ambil)
+                                                        </div>
                                                         </li>
                                                     </ul>
                                                 </div><!--/ .tabcontent -->
@@ -1331,9 +1333,9 @@ $(document).keyup(function(e){
                                                                                 <td>
                                                                                     <input type="checkbox" class='no_compre_is_calc' name="no_compre_is_calc" checked data-angka="0" data-target="no_compre_prem" disabled="disabled">
                                                                                 </td>
-                                                                                <td id="nojenisasuransi">Komprehensif</td>
+                                                                                <td id="nojenisasuransi" class="no_pack">Komprehensif</td>
                                                                                 <td></td>
-                                                                                <td class='no_compre_prem position-text'>-</td>
+                                                                                <td id="no_compre" class='no_compre_prem position-text no_pack'>-</td>
                                                                                 <!-- <td class='no_compre_val'>-</td>
                                                                                 <td class='no_compre_persen'>-</td> -->
                                                                             </tr>
@@ -1343,7 +1345,7 @@ $(document).keyup(function(e){
                                                                                 </td>
                                                                                 <td>Tanggung Jawab Hukum Pihak Ketiga</td>
                                                                                 <td></td>
-                                                                                <td class='no_tpl_prem position-text' id="no_tpl_prem">-</td>
+                                                                                <td class='no_tpl_prem position-text no_pack' id="no_tpl_prem">-</td>
                                                                                 <!-- <td class=''>
                                                                                     <input type="text" name="no_tpl_val" class="no_tpl_val" id="notplval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
                                                                                 </td>
@@ -1365,7 +1367,7 @@ $(document).keyup(function(e){
             																		</select>
             																		<input type="hidden" id ="no_pll_hidden" value="">
             																	</td>
-                                                                                <td id="no_pll_prem" class='no_pll_prem position-text'>-</td>
+                                                                                <td id="no_pll_prem" class='no_pll_prem position-text no_pack'>-</td>
                                                                                 <!-- <td class=''>
                                                                                     <input type="text" name="no_pll_val" class="no_pll_val" id="nopllval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
                                                                                 </td>
@@ -1386,7 +1388,7 @@ $(document).keyup(function(e){
             																		</select>
             																		<input type="hidden" id ="med_ex_hidden" value="">
             																	</td>
-                                                                                <td id="med_ex_prem" class='no_med_ex_prem position-text'>-</td>
+                                                                                <td id="med_ex_prem" class='no_med_ex_prem position-text no_pack'>-</td>
                                                                                 <!-- <td class=''>
                                                                                     <input type="text" name="no_med_ex_val" class="no_med_ex_val" id="nomedexval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;"></td>
                                                                                 <td class='no_med_ex_persen'>-</td> -->
@@ -1397,7 +1399,7 @@ $(document).keyup(function(e){
                                                                                 </td>
                                                                                 <td>Banjir</td>
                                                                                 <td></td>
-                                                                                <td class='no_flood_prem position-text'>-</td>
+                                                                                <td id="no_flood" class='no_flood_prem position-text no_pack'>-</td>
                                                                                 <!-- <td class='no_flood_val'>-</td>
                                                                                 <td class='no_flood_persen'>-</td> -->
                                                                             </tr>
@@ -1407,7 +1409,7 @@ $(document).keyup(function(e){
                                                                                 </td>
                                                                                 <td>Gempa Bumi</td>
                                                                                 <td></td>
-                                                                                <td class='no_earthquake_prem position-text'>-</td>
+                                                                                <td id="no_earthquake" class='no_earthquake_prem position-text no_pack'>-</td>
                                                                                 <!-- <td class='no_earthquake_val'>-</td>
                                                                                 <td class='no_earthquake_presen'>-</td> -->
                                                                             </tr>
@@ -1417,7 +1419,7 @@ $(document).keyup(function(e){
                                                                                 </td>
                                                                                 <td>Pemogokan, Kerusuhan dan Huruhara</td>
                                                                                 <td></td>
-                                                                                <td class='no_riot_prem position-text'>-</td>
+                                                                                <td id="no_riot" class='no_riot_prem position-text no_pack'>-</td>
                                                                                 <!-- <td class='no_riot_val'>-</td>
                                                                                 <td class='no_riot_persen'>-</td> -->
                                                                             </tr>
@@ -1427,7 +1429,7 @@ $(document).keyup(function(e){
                                                                                 </td>
                                                                                 <td>Terorisme dan Sabotase</td>
                                                                                 <td></td>
-                                                                                <td class='no_terror_prem position-text'>-</td>
+                                                                                <td id="no_terror" class='no_terror_prem position-text no_pack'>-</td>
                                                                                 <!-- <td class='no_terror_val'>-</td>
                                                                                 <td class='no_terror_persen'>-</td> -->
                                                                                 </tr>
@@ -1449,7 +1451,7 @@ $(document).keyup(function(e){
     																				</select>
     																				<input type="hidden" id ="no_passenger_hidden" value="">
     																			</td>
-                                                                                <td id="no_passenger_prem" class='no_passenger_prem position-text'>-</td>
+                                                                                <td id="no_passenger_prem" class='no_passenger_prem position-text no_pack'>-</td>
                                                                                 <!-- <td class=''><input type="text" name="no_passenger_val" class="no_passenger_val" id="nopassengerval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
                                                                                 </td>
                                                                                 <td class='no_passenger_persen'>-</td> -->
@@ -1469,7 +1471,7 @@ $(document).keyup(function(e){
         																				</select>
         																				<input type="hidden" id ="no_pa_hidden" value="">
         																			</td>
-                                                                                <td id="no_pa_prem" class='no_pa_prem position-text'>-</td>
+                                                                                <td id="no_pa_prem" class='no_pa_prem position-text no_pack'>-</td>
                                                                                 <!-- <td class=''>
                                                                                     <input type="text" name="no_pa_val" class="no_pa_val" id="nopaval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
                                                                                 </td>
@@ -1481,7 +1483,7 @@ $(document).keyup(function(e){
                                                                                 </td>
                                                                                 <td>Authorized Workshop</td>
                                                                                 <td></td>
-                                                                                <td class='no_workshop_prem position-text'>-</td>
+                                                                                <td id="no_workshop" class='no_workshop_prem position-text no_pack'>-</td>
                                                                                 <!-- <td class='no_workshop_val'>-</td>
                                                                                 <td class='no_workshop_persen'>-</td> -->
                                                                             </tr>
@@ -1490,7 +1492,7 @@ $(document).keyup(function(e){
                                                                                     <td></td>
                                                                                     <td style="background: #e2e3e3;">Total Premi*</td>
                                                                                     <td style="background: #e2e3e3;"></td>
-                                                                                    <td style="background: #e2e3e3;"class='no_totalPremium position-text'></td>
+                                                                                    <td style="background: #e2e3e3;" id="no_totalpremium" class='no_totalPremium position-text no_pack'></td>
                                                                                     <!-- <td></td>
                                                                                     <td></td> -->
                                                                                 </tr>
@@ -1499,7 +1501,9 @@ $(document).keyup(function(e){
                                                                     </table>
                                                                 </div><!--/ .tabScroll -->
                                                             </div><!--/ .content_show -->
+                                                            <div id="note_2">
                                                             * Total premi yang tercantum belum termasuk biaya administrasi maksimal sebesar Rp. 32.000,- (harga disesuaikan dengan premi yang di ambil)
+                                                            </div>
                                                         </li>
                                                     </ul>
                                                 </div><!--/ .tabcontent -->
@@ -1561,32 +1565,63 @@ $(document).keyup(function(e){
     
     // $("#tabcontent_1_1").hide();
 
+    // Paket
+
     <?php
     $i = 1;
     $j = 1;
 
-    for ( $i=1; $i <= 2 ; $i++ ){
+    // for ( $i=1; $i <= 2 ; $i++ ){
         for ( $j=1; $j <= 6 ; $j++ ){
     ?>
 
     $("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").hide();
+    $("#note_<?php echo $i ?>").hide();
 
     $("#open_tab_<?php echo $i ?>_<?php echo $j ?>").click(function(){
+        $("#note_<?php echo $i ?>").show();
         $(".content_show").removeClass("rincian");
+        $(".no_pack").removeClass("data");
         $('.paketchecked').prop('checked',false);
         $("#paket_<?php echo $i ?>_<?php echo $j ?>").prop("checked",true);
         $(".menutab_dekstop li a").removeClass();
         $("a#open_tab_<?php echo $i ?>_<?php echo $j ?>").addClass("active");
         $(".show_<?php echo $i ?>").hide();
         $("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").show();
-        $("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").addClass("rincian");
-        $(".position-text").addClass("data");
         adjustTable();
     });
 
     <?php
             }
-        }
+        // }
+    ?>
+
+    // Non Paket
+
+    <?php
+    $a = 2;
+    $b = 1;
+
+    for($b=1; $b <= 2 ; $b++ ){
+    ?>
+
+    $("#tabcontent_<?php echo $a ?>_<?php echo $b ?>").hide();
+    $("#note_<?php echo $a ?>").hide();
+
+    $("#open_tab_<?php echo $a ?>_<?php echo $b ?>").click(function(){
+        $("#note_<?php echo $a ?>").show();
+        $('.paketchecked').prop('checked',false);
+        $("#paket_<?php echo $a ?>_<?php echo $b ?>").prop("checked",true);
+        $(".menutab_dekstop li a").removeClass();
+        $("a#open_tab_<?php echo $a ?>_<?php echo $b ?>").addClass("active");
+        $(".show_<?php echo $a ?>").hide();
+        $("#tabcontent_<?php echo $a ?>_<?php echo $b ?>").show();
+        $(".no_pack").addClass("data");
+        adjustTable();
+    });
+
+    <?php
+    }
     ?>
 
     // for mobile
