@@ -593,12 +593,12 @@ $('#provinsi').change(function(){
 //                                console.log(item.Status);
 //                                var status='"'+item.Status+'"';s
 ////                                alert(+item.Status+);
-                                if(item.Status == 'kota'){
-                                    $("#kota").append('<option value='+item.Kota+'>Kota '+item.Kota+'</option>');
-                                }else if(item.Status == 'kabupaten'){
-                                    $("#kota").append('<option value='+item.Kota+'>Kab. '+item.Kota+'</option>');
-
-                                }
+//                                if(item.Status == 'kota'){
+                                    $("#kota").append('<option value='+item.Kota+'>'+item.Kota+'</option>');
+//                                }else if(item.Status == 'kabupaten'){
+//                                    $("#kota").append('<option value='+item.Kota+'>Kab. '+item.Kota+'</option>');
+//
+//                                }
                             });
                        
                         }
