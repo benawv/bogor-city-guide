@@ -410,57 +410,212 @@
                                 var val = data.options[data.selectedIndex].text;
                                 // alert(val);
                                 if (val == "Plan A"){
+                                    //Pilihan Plan Manfaat Rawat Inap
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan A.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan A';
                                     document.getElementById('notif').style.display='none';
+                                    
+                                    
+                                    //Pilihan Plan Manfaat Melahirkan
+                                    $("select#planmat").prop('selectedIndex', 1);
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan A.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan A';
+                                    document.getElementById('notif2').style.display='none';
+                                    
+                                    //Pilihan Plan Manfaat Rawat Jalan & rawat Gigi
+                                    $("select#planop_den").prop('selectedIndex', 1);
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan A.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan A';
+                                    document.getElementById('notif3').style.display='none';
+                                    
                                 }else if(val== "Plan B"){
+                                    //Pilihan Plan Manfaat Rawat Inap
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan B.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan B';
                                     document.getElementById('notif').style.display='none';
+                                    
+                                    //Pilihan Plan Manfaat Melahirkan
+                                    $("select#planmat").prop('selectedIndex', 2);
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan B.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan B';
+                                    document.getElementById('notif2').style.display='none';
+                                    
+                                    //Pilihan Plan Manfaat Rawat Jalan & rawat Gigi
+                                    $("select#planop_den").prop('selectedIndex', 2);
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan B.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan B';
+                                    document.getElementById('notif3').style.display='none';
+                                    
+                                    
                                 }else if(val== "Plan C"){
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan c.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan C';
                                     document.getElementById('notif').style.display='none';
+                                    
+                                    //Pilihan Plan Manfaat Melahirkan
+                                    $("select#planmat").prop('selectedIndex', 3);
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan c.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan C';
+                                    document.getElementById('notif2').style.display='none';
+                                    
+                                    //Pilihan Plan Manfaat Rawat Jalan & rawat Gigi
+                                    $("select#planop_den").prop('selectedIndex', 3);
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan c.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan C';
+                                    document.getElementById('notif3').style.display='none';
+                                    
                                 }else if(val== "Plan D"){
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan D.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan D';
                                     document.getElementById('notif').style.display='none';
+                                    
+                                    //Pilihan Plan Manfaat Melahirkan
+                                    $("select#planmat").prop('selectedIndex', 4);
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan D.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan D';
+                                    document.getElementById('notif2').style.display='none';
+                                    
+                                    //Pilihan Plan Manfaat Rawat Jalan & rawat Gigi
+                                    $("select#planop_den").prop('selectedIndex', 4);
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan D.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan D';
+                                    document.getElementById('notif3').style.display='none';
+                                    
                                 }else if(val== "Plan E"){
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan E.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan E';
                                     document.getElementById('notif').style.display='none';
+                                    
+                                    //Pilihan Plan Manfaat Melahirkan
+                                    $("select#planmat").prop('selectedIndex', 5);
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan E.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan E';
+                                    document.getElementById('notif2').style.display='none';
+                                    
+                                    //Pilihan Plan Manfaat Rawat Jalan & rawat Gigi
+                                    $("select#planop_den").prop('selectedIndex', 5);
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan E.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan E';
+                                    document.getElementById('notif3').style.display='none';
                                 }else if(val== "Plan F"){
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan F.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan F';
                                     document.getElementById('notif').style.display='none';
+                                    
+                                    //Pilihan Plan Manfaat Melahirkan
+                                    $("select#planmat").prop('selectedIndex', 6);
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan F.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan F';
+                                    document.getElementById('notif2').style.display='none';
+                                    
+                                    //Pilihan Plan Manfaat Rawat Jalan & rawat Gigi
+                                    $("select#planop_den").prop('selectedIndex', 6);
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan F.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan F';
+                                    document.getElementById('notif3').style.display='none';
                                 }else if(val== "Plan G"){
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan G.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan G';
                                     document.getElementById('notif').style.display='none';
+                                    
+                                    //Pilihan Plan Manfaat Melahirkan
+                                    $("select#planmat").prop('selectedIndex', 7);
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan G.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan G';
+                                    document.getElementById('notif2').style.display='none';
+                                    
+                                    //Pilihan Plan Manfaat Rawat Jalan & rawat Gigi
+                                    $("select#planop_den").prop('selectedIndex', 7);
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan G.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan G';
+                                    document.getElementById('notif3').style.display='none';
                                 }else if(val== "Plan H"){
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan H.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan H';
                                     document.getElementById('notif').style.display='none';
+                                    
+                                    //Pilihan Plan Manfaat Melahirkan
+                                    $("select#planmat").prop('selectedIndex', 8);
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan H.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan H';
+                                    document.getElementById('notif2').style.display='none';
+                                    
+                                    //Pilihan Plan Manfaat Rawat Jalan & rawat Gigi
+                                    $("select#planop_den").prop('selectedIndex', 8);
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan H.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan H';
+                                    document.getElementById('notif3').style.display='none';
                                 }else if(val== "Plan I"){
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan I.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan I';
                                     document.getElementById('notif').style.display='none';
+                                    
+                                    //Pilihan Plan Manfaat Melahirkan
+                                    $("select#planmat").prop('selectedIndex', 9);
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan I.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan I';
+                                    document.getElementById('notif2').style.display='none';
+                                    
+                                    //Pilihan Plan Manfaat Rawat Jalan & rawat Gigi
+                                    $("select#planop_den").prop('selectedIndex', 9);
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan I.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan I';
+                                    document.getElementById('notif3').style.display='none';
                                 }else if(val== "Plan J"){
                                     document.getElementById('file').href="/website/static/pdf-smartmed/Rawat Inap - Plan J.pdf";
                                     document.getElementById('file').style.visibility='visible';
                                     document.getElementById('file').innerHTML='Detail Manfaat Rawat Inap Plan J';
                                     document.getElementById('notif').style.display='none';
+                                    
+                                    //Pilihan Plan Manfaat Melahirkan
+                                    $("select#planmat").prop('selectedIndex', 10);
+                                    document.getElementById('file2').href="/website/static/pdf-smartmed/Melahirkan - Plan J.pdf";
+                                    document.getElementById('file2').style.visibility='visible';
+                                    document.getElementById('file2').innerHTML='Detail Manfaat Melahirkan Plan J';
+                                    document.getElementById('notif2').style.display='none';
+                                    
+                                    //Pilihan Plan Manfaat Rawat Jalan & rawat Gigi
+                                    $("select#planop_den").prop('selectedIndex', 10);
+                                    document.getElementById('file3').href="/website/static/pdf-smartmed/Rawat Jalan & Rawat Gigi - Plan J.pdf";
+                                    document.getElementById('file3').style.visibility='visible';
+                                    document.getElementById('file3').innerHTML='Detail Manfaat Rawat Jalan & Rawat Gigi Plan J';
+                                    document.getElementById('notif3').style.display='none';
                                 }else{
                                     document.getElementById('file').style.visibility='hidden';
+                                    document.getElementById('file3').style.visibility='hidden';
+                                    document.getElementById('file2').style.visibility='hidden';
+                                    
+                                     //Pilihan Plan Manfaat Melahirkan
+                                    $("select#planmat").prop('selectedIndex', 0);
+                                    //Pilihan Plan Manfaat Rawat Jalan & rawat Gigi
+                                    $("select#planop_den").prop('selectedIndex', 0);
                                 }
                             }
                             </script>
@@ -472,7 +627,8 @@
                             <label>Pilihan Plan Manfaat Melahirkan</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="1" id="planmat" onChange="checkData2();">
+                            <!--<select class="form-control" required tabindex="1" id="planmat" onChange="checkData2();">-->
+                            <select class="form-control" required tabindex="1" id="planmat" disabled="disabled">
                                 <?php
                                     echo "<option value='pilih'>Pilih</option>";
                                     $cat = new Object_SmartmedPlanType_List();
@@ -552,7 +708,8 @@
                             <label>Pilihan Plan Manfaat Rawat Jalan & rawat Gigi</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="1" id="planop_den" onChange="checkData3();">
+                            <!--<select class="form-control" required tabindex="1" id="planop_den" onChange="checkData3();">-->
+                            <select class="form-control" required tabindex="1" id="planop_den" disabled="disabled">
                                 <?php
                                     $cat = new Object_SmartmedPlanType_List();
                                     echo "<option value='pilih'>Pilih</option>";
