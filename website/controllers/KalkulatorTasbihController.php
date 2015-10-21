@@ -93,27 +93,41 @@
         }*/
         
         public function getprovAction(){
-
             $prov = $_POST["prov"];
 //            $session = new Zend_Session_Namespace('provinsi');
 //            $session->prov = $prov;
             $item = array();
             $i =0;
             $getProv=new Object_Kota_List();
-//          echo <pre>;
-            $getProv->setCondition("provinsi='".$prov."'");
+            $getProv->setCondition("provinsi='".$prov."' and status='kota'");
             $getProv->setOrderKey("kota");
             $getProv->setOrder("asc");
-//            print_r($getProv);
-//            die();
+            
             foreach($getProv as $items){
                 $item[$i] = array(
-                                "Kota" => $items->kota
+                                "Kota" => 'Kota '.$items->kota
                             );
                 $i++;
+            
+           
             }
             
+            $getProv2=new Object_Kota_List();
+            $getProv2->setCondition("provinsi='".$prov."' and status='kabupaten'");
+            $getProv2->setOrderKey("kota");
+            $getProv2->setOrder("asc");
+
+            foreach($getProv2 as $items2){
+                $item[$i] = array(
+                                "Kota" => 'Kab. '.$items2->kota
+                            );
+                $i++;
+            
+            }
+
             echo json_encode($item);
+
+            
         }
         
         public function sendemailAction(){
