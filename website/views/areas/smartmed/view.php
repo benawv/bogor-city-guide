@@ -269,6 +269,16 @@
         text-align: center;
         padding-top: 15px;
     }
+    #planmelahirkan{
+        position: absolute;
+        right: -166px;
+        top: -3px;
+    }
+    #planrawatjalan{
+        position: absolute;
+        right: -166px;
+        top: -3px;
+    }
 
 </style>
 
@@ -354,42 +364,6 @@
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Manfaat Rawat Inap <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#rawatInap"></i></label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <select class="form-control" required tabindex="1" id="ip">
-                                <option value="0">0%</option>
-                                <option value="10">10%</option>
-                                <option value="20">20%</option>
-                            </select>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Manfaat Melahirkan <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#melahirkan"></i></label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <select class="form-control" required tabindex="1" id="mat">
-                                <option value="0">0%</option>
-                                <option value="10">10%</option>
-                                <option value="20">20%</option>
-                            </select>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Manfaat Rawat Jalan & Rawat Gigi <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#rawatJalan"></i></label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <select class="form-control" required tabindex="1" id="out_den">
-                                <option value="20">20%</option>
-                            </select>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
                     <div class="form-group">
                         <div class="col-md-4">
                             <label>Pilihan Plan Manfaat Rawat Inap</label>
@@ -627,6 +601,19 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
+                            <label>Manfaat Rawat Inap <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#rawatInap"></i></label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <select class="form-control" required tabindex="1" id="ip">
+                                <option value="0">0%</option>
+                                <option value="10">10%</option>
+                                <option value="20">20%</option>
+                            </select>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+
+                    <div class="form-group">
+                        <div class="col-md-4">
                             <label>Pilihan Plan Manfaat Melahirkan</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
@@ -641,6 +628,7 @@
                                     }
                                 ?>
                             </select>
+                            <input class="form-control" type="checkbox" name="planmelahirkan" id="planmelahirkan">
                             <label id="notif2" style="display:none; color:red;">Manfaat Melahirkan Harus diisi.</label>
                             <a id="file2" style="visibility:hidden" target="_blank"></a>
                             <script>
@@ -708,6 +696,19 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
+                            <label>Manfaat Melahirkan <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#melahirkan"></i></label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <select class="form-control" required tabindex="1" id="mat">
+                                <option value="0">0%</option>
+                                <option value="10">10%</option>
+                                <option value="20">20%</option>
+                            </select>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+
+                    <div class="form-group">
+                        <div class="col-md-4">
                             <label>Pilihan Plan Manfaat Rawat Jalan & rawat Gigi</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
@@ -722,6 +723,7 @@
                                     }
                                 ?>
                             </select>
+                            <input class="form-control" type="checkbox" name="planrawatjalan" id="planrawatjalan">
                             <label id="notif3" style="display:none; color:red;">Manfaat Rawat Jalan & Rawat Gigi Harus diisi.</label>
                             <a id="file3" style="visibility:hidden" target="_blank"></a>
                             <script>
@@ -784,6 +786,17 @@
                                 }
                             }
                             </script>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>Manfaat Rawat Jalan & Rawat Gigi <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#rawatJalan"></i></label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <select class="form-control" required tabindex="1" id="out_den">
+                                <option value="20">20%</option>
+                            </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -1293,6 +1306,10 @@
         var name = $("#name").val();
         var dob = $("#dob").val();
         var cd = $("#cd").val();
+        var planmelahirkan = $("#planmelahirkan").is(":checked");
+        var planrawatjalan = $("#planrawatjalan").is(":checked");
+        console.log("plan="+planmelahirkan);
+        console.log("plan="+planrawatjalan);
 
         if (name == ""){
             document.getElementById("notif4").style.display="block";
@@ -1344,7 +1361,15 @@
             else ipp = ipp0;
             totalwithout = parseFloat(ipp0);
         }else{
-            totalwithout = parseFloat(ipp0)+parseFloat(matp0)+parseFloat(opdenp0);
+            if(planmelahirkan==true&&planrawatjalan==true){
+                totalwithout = parseFloat(ipp0)+parseFloat(matp0)+parseFloat(opdenp0);
+            }else if(planmelahirkan==true&&planrawatjalan==false){
+                totalwithout = parseFloat(ipp0)+parseFloat(matp0);
+            }else if(planmelahirkan==false&&planrawatjalan==true){
+                totalwithout = parseFloat(ipp0)+parseFloat(opdenp0);
+            }else{
+                totalwithout = parseFloat(ipp0);
+            }
             if(uwl > 0) {
                 ipp = ipp1;
                 matp = matp1;
@@ -1355,7 +1380,20 @@
                 opdenp = opdenp0;
             }
         }
-        total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
+
+        if(planmelahirkan==true&&planrawatjalan==true){
+            total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
+        }else if(planmelahirkan==true&&planrawatjalan==false){
+            total = parseFloat(ipp)+parseFloat(matp);
+            opdenp = 0;
+        }else if(planmelahirkan==false&&planrawatjalan==true){
+            total = parseFloat(ipp)+parseFloat(opdenp);
+            ipp = 0;
+        }else{
+            total = parseFloat(ipp);
+            ipp = 0;opdenp = 0;
+        }
+        // total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
         var rowCount = $('table.table tbody tr').length;
         var no = parseInt(rowCount)+1;
 
@@ -1449,7 +1487,15 @@
                 else ipp = ipp0;
                 totalwithout = parseFloat(ipp0);
             }else{
-                totalwithout = parseFloat(ipp0)+parseFloat(matp0)+parseFloat(opdenp0);
+                if(planmelahirkan==true&&planrawatjalan==true){
+                    totalwithout = parseFloat(ipp0)+parseFloat(matp0)+parseFloat(opdenp0);
+                }else if(planmelahirkan==true&&planrawatjalan==false){
+                    totalwithout = parseFloat(ipp0)+parseFloat(matp0);
+                }else if(planmelahirkan==false&&planrawatjalan==true){
+                    totalwithout = parseFloat(ipp0)+parseFloat(opdenp0);
+                }else{
+                    totalwithout = parseFloat(ipp0);
+                }
                 if(uwl > 0) {
                     ipp = ipp1;
                     matp = matp1;
@@ -1462,7 +1508,19 @@
             }
             console.log("totalwithout="+totalwithout);
 
-            total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
+            if(planmelahirkan==true&&planrawatjalan==true){
+                total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
+            }else if(planmelahirkan==true&&planrawatjalan==false){
+                total = parseFloat(ipp)+parseFloat(matp);
+                opdenp = 0;
+            }else if(planmelahirkan==false&&planrawatjalan==true){
+                total = parseFloat(ipp)+parseFloat(opdenp);
+                ipp = 0;
+            }else{
+                total = parseFloat(ipp);
+                ipp = 0;opdenp = 0;
+            }
+            // total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
             $( this ).find(".ipp").html(currency(ipp));
             $( this ).find(".matp").html(currency(matp));
             $( this ).find(".opdenp").html(currency(opdenp));
