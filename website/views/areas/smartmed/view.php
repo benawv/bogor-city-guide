@@ -289,6 +289,9 @@
 
         <div class="row custom-tab-nav">
             <div class="col-xs-12">
+                <p>
+                    Kalkulator Asuransi SmartMed Premier akan membantu Anda mengetahui perkiraan jumlah premi yang akan dibayarkan. Silakan isi kolom yang tersedia sesuai kebutuhan Anda.
+                </p>
                 <ul>
                     <li class="active"><a href="#first">Langkah 1</a></li><!--  DON'T REMOVE THIS COMMENT
                     --><li><a href="#second">Langkah 2</a></li>
@@ -948,7 +951,7 @@
       </div>
       <div class="modal-body">
         <!--h3>5 Risiko Kehidupan</h3-->
-        <p>Diskon Polis Keluarga berlaku untuk Polis Keluarga (Tertanggung, Suami/Istri & Anak).</p>
+        <p>Fasilitas Family Discount adalah potongan/diskon premi per keluarga yang didapatkan bila Anda menyertakan keluarga (suami, istri, dan anak) dalam pembelian polis.</p>
       </div>
     </div>
   </div>
@@ -959,11 +962,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="claimLabel">No Claim Discount</h4>
+        <h4 class="modal-title" id="claimLabel">No Claim Bonus</h4>
       </div>
       <div class="modal-body">
         <!--h3>5 Risiko Kehidupan</h3-->
-        <p>Potongan premi sebesar 20% saat polis diperpanjang yang didapatkan bila Anda dan/atau anggota keluarga tidak melakukan klaim selama 1 (satu) tahun polis penuh.</p>
+        <p>Fasilitas No Claim Bonus adalah potongan/diskon premi sebesar 20% saat polis diperpanjang dan berlaku bila Anda dan/atau anggota keluarga tidak ada catatan melakukan klaim selama 1 (satu) tahun polis.</p>
       </div>
     </div>
   </div>
@@ -974,11 +977,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="rawatInapLabel">Manfaat Rawat Inap</h4>
+        <h4 class="modal-title" id="rawatInapLabel">Pilihan Persentase Co-Share Manfaat Rawat Inap</h4>
       </div>
       <div class="modal-body">
         <!--h3>5 Risiko Kehidupan</h3-->
-        <p>Besaran presentase co-share atau jumlah yang Anda perlu bayar untuk klaim Anda.</p>
+        <p>Jumlah persentase pada co-share yang dipilih akan menjadi bagian Anda dalam setiap pengajuan klaim. Misalnya, bila Anda memilih co-share 10%, maka Allianz akan membayar biaya rawat inap sebesar 90% dan Anda membayar 10%.</p>
       </div>
     </div>
   </div>
@@ -989,11 +992,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="melahirkanLabel">Manfaat Melahirkan</h4>
+        <h4 class="modal-title" id="melahirkanLabel">Pilihan Persentase Co-Share Manfaat Melahirkan</h4>
       </div>
       <div class="modal-body">
         <!--h3>5 Risiko Kehidupan</h3-->
-        <p>Besaran presentase co-share atau jumlah yang Anda perlu bayar untuk klaim Anda.</p>
+        <p>Jumlah persentase pada co-share yang dipilih akan menjadi bagian Anda dalam setiap pengajuan klaim. Misalnya, bila Anda memilih co-share 10%, maka Allianz akan membayar biaya melahirkan sebesar 90% dan Anda membayar 10%.</p>
       </div>
     </div>
   </div>
@@ -1004,11 +1007,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="rawatJalanLabel">Manfaat Rawat Jalan & Rawat Gigi</h4>
+        <h4 class="modal-title" id="rawatJalanLabel">Pilihan Persentase Co-Share Rawat Jalan & Rawat Gigi</h4>
       </div>
       <div class="modal-body">
         <!--h3>5 Risiko Kehidupan</h3-->
-        <p>Besaran presentase co-share atau jumlah yang Anda perlu bayar untuk klaim Anda.</p>
+        <p>Jumlah persentase pada co-share yang dipilih akan menjadi bagian Anda dalam setiap pengajuan klaim. Misalnya, bila Anda memilih co-share 10%, maka Allianz akan membayar biaya rawat jalan atau rawat gigi sebesar 90% dan Anda membayar 10%.</p>
       </div>
     </div>
   </div>
