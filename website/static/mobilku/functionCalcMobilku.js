@@ -1840,7 +1840,7 @@ $(document).ready(function(){
     });
 
     function sendEmailFinish(){
-      if(document.getElementById("paket_2_1").checked){
+     if(document.getElementById("paket_2_1").checked){
         var compre = $('.no_compre_prem.data').html();
         var tpl = $('.no_tpl_prem.data').html();
         var pll = $('.no_pll_prem.data').html();
@@ -1855,26 +1855,30 @@ $(document).ready(function(){
         var total = $('.no_totalPremium.data').html();
         var label = $('.no_pack.data').html();
 
-        var email=$('#email').val();
         var tahun_pembuatan=$('#tahun_pembuatan').val();
         var harga=$('#harga').val();
         var merk=$('#merk').val();
         var merk_html=$('#merk option:selected').html().toLowerCase();
         var model=$('#model').val();
         var regno=$('#regno').val();
-        var periode=$('#periode').val();
+        var tipe=$('#tipe').val();
+        var kapasitas=$('#kapasitas').val();
         var nama=$('#nama').val();
         var telp=$('#telp').val();
+        var periode=$('#periode').val();
+        var email=$('#email').val();
         var hargaKonv=clearFormat($('#harga').val());
         var model_html=$('#model option:selected').html().toLowerCase();
 
         // console.log(compre+' - '+tpl+' - '+pll+' - '+med+' - '+flood+' - '+earthquake+' - '+riot+' - '+terror+' - '+passenger+' - '+pa+' - '+workshop+' - '+total+' - '+label+' - '+email);
+        console.log('tahun_pembuatan '+tahun_pembuatan+' - '+'harga '+harga+' - '+'merk '+merk+' - '+'merk_html '+merk_html+' - '+'model '+model+' - '+'regno '+regno+' - '+'tipe '+tipe+' - '+
+          'kapasitas '+kapasitas+' - '+'nama '+nama+' - '+'telp '+telp+' - '+'periode '+periode+' - '+'email '+email+' - '+'hargaKonv '+hargaKonv+' - '+'model_html '+model_html);
         $.ajax({
             "url" : "/send-email-finish/",
             "type" : "POST",
             "async" : false,
-            "data" : "compre="+compre+"&tpl="+tpl+"&pll="+pll+"&med="+med+"&flood="+flood+"&earthquake="+earthquake+"&riot="+riot+"&terror="+terror+"&passenger="+passenger+"&pa="+pa+"&workshop="+workshop+"&total="+total+"&label="+label+"&email="+email,
-            "tahun_pembuatan"+tahun_pembuatan+"harga"+harga+"merk"+merk+"merk_html"+merk_html+"model"+model+"regno"+regno+"periode"+"nama"+nama+"telp"+telp+"hargaKonv"+hargaKonv+"model_html"+model_html,
+            "data" : "compre="+compre+"&tpl="+tpl+"&pll="+pll+"&med="+med+"&flood="+flood+"&earthquake="+earthquake+"&riot="+riot+"&terror="+terror+"&passenger="+passenger+"&pa="+pa+"&workshop="+workshop+"&total="+total+"&label="+label+"&email="+email+
+            "&tahun_pembuatan="+tahun_pembuatan+"&harga="+harga+"&merk="+merk+"&merk_html="+merk_html+"&model="+model+"&regno="+regno+"&tipe="+tipe+"&kapasitas="+kapasitas+"&periode="+periode+"&nama="+nama+"&telp="+telp+"&hargaKonv="+hargaKonv+"&model_html="+model_html,
             "success" : function(){
                  window.location.replace('/kalkulator/thankyou-mobilku');
                 //var getResult=JSON.parse(response);
@@ -1882,8 +1886,127 @@ $(document).ready(function(){
             }
         });
         // console.log(compre+'-'+tpl+'-'+pll+'-'+med+'-'+flood+'-'+earthquake+'-'+riot+'-'+terror+'-'+passenger+'-'+pa+'-'+workshop+'-'+total);
-      }else{
-        // window.open('/kalkulator/thankyou-mobilku');
+      }
+	  else{
+			if(document.getElementById("paket_1_1").checked){
+				var paket = "Basic";
+				var total = accounting.formatMoney(calc_result(),'',2,'.',',');
+				// var label = $('.no_pack.data').html();
+				var radio1=$('#radio01').val();
+				var radio2=$('#radio02').val();
+				$('#radio01').checked
+				if($('#radio01').is(":checked") == true){
+					var label = $('#radio01').val();
+				}else{
+					var label= $('#radio02').val();
+				}
+				var tahun_pembuatan=$('#tahun_pembuatan').val();
+				var harga=$('#harga').val();
+				var merk=$('#merk').val();
+				var merk_html=$('#merk option:selected').html().toLowerCase();
+				var model=$('#model').val();
+				var regno=$('#regno').val();
+				var tipe=$('#tipe').val();
+				var kapasitas=$('#kapasitas').val();
+				var nama=$('#nama').val();
+				var telp=$('#telp').val();
+				var periode=$('#periode').val();
+				var email=$('#email').val();
+				var hargaKonv=clearFormat($('#harga').val());
+				var model_html=$('#model option:selected').html().toLowerCase();
+				
+				$.ajax({
+					"url" : "/send-email-basic/",
+					"type" : "POST",
+					"async" : false,
+					"data" : "total="+total+"&paket="+paket+"&label="+label+"&email="+email+
+					"&tahun_pembuatan="+tahun_pembuatan+"&harga="+harga+"&merk="+merk+"&merk_html="+merk_html+"&model="+model+"&regno="+regno+"&tipe="+tipe+"&kapasitas="+kapasitas+"&periode="+periode+"&nama="+nama+"&telp="+telp+"&hargaKonv="+hargaKonv+"&model_html="+model_html,
+					"success" : function(){
+						 window.location.replace('/kalkulator/thankyou-mobilku');
+						//var getResult=JSON.parse(response);
+						//console.log(response);
+					}
+				});							
+				
+			}
+			else if(document.getElementById("paket_1_2").checked){
+				var paket = "Standart";
+				var total = accounting.formatMoney(calc_resultstandard(),'',2,'.',',');
+				var radio1=$('#radio01').val();
+				var radio2=$('#radio02').val();
+				$('#radio01').checked
+				if($('#radio01').is(":checked") == true){
+					var label = $('#radio01').val();
+				}else{
+					var label= $('#radio02').val();
+				}
+				var tahun_pembuatan=$('#tahun_pembuatan').val();
+				var harga=$('#harga').val();
+				var merk=$('#merk').val();
+				var merk_html=$('#merk option:selected').html().toLowerCase();
+				var model=$('#model').val();
+				var regno=$('#regno').val();
+				var tipe=$('#tipe').val();
+				var kapasitas=$('#kapasitas').val();
+				var nama=$('#nama').val();
+				var telp=$('#telp').val();
+				var periode=$('#periode').val();
+				var email=$('#email').val();
+				var hargaKonv=clearFormat($('#harga').val());
+				var model_html=$('#model option:selected').html().toLowerCase();
+				
+				$.ajax({
+					"url" : "/send-email-standart/",
+					"type" : "POST",
+					"async" : false,
+					"data" : "total="+total+"&paket="+paket+"&label="+label+"&email="+email+
+					"&tahun_pembuatan="+tahun_pembuatan+"&harga="+harga+"&merk="+merk+"&merk_html="+merk_html+"&model="+model+"&regno="+regno+"&tipe="+tipe+"&kapasitas="+kapasitas+"&periode="+periode+"&nama="+nama+"&telp="+telp+"&hargaKonv="+hargaKonv+"&model_html="+model_html,
+					"success" : function(){
+						 window.location.replace('/kalkulator/thankyou-mobilku');
+						//var getResult=JSON.parse(response);
+						//console.log(response);
+					}
+				});				
+			}
+			else if(document.getElementById("paket_1_3").checked){
+				var paket = "Premier";
+				var total = accounting.formatMoney(calc_resultpremier(),'',2,'.',',');
+				var radio1=$('#radio01').val();
+				var radio2=$('#radio02').val();
+				$('#radio01').checked
+				if($('#radio01').is(":checked") == true){
+					var label = $('#radio01').val();
+				}else{
+					var label= $('#radio02').val();
+				}
+				var tahun_pembuatan=$('#tahun_pembuatan').val();
+				var harga=$('#harga').val();
+				var merk=$('#merk').val();
+				var merk_html=$('#merk option:selected').html().toLowerCase();
+				var model=$('#model').val();
+				var regno=$('#regno').val();
+				var tipe=$('#tipe').val();
+				var kapasitas=$('#kapasitas').val();
+				var nama=$('#nama').val();
+				var telp=$('#telp').val();
+				var periode=$('#periode').val();
+				var email=$('#email').val();
+				var hargaKonv=clearFormat($('#harga').val());
+				var model_html=$('#model option:selected').html().toLowerCase();
+				
+				$.ajax({
+					"url" : "/send-email-premier/",
+					"type" : "POST",
+					"async" : false,
+					"data" : "total="+total+"&paket="+paket+"&label="+label+"&email="+email+
+					"&tahun_pembuatan="+tahun_pembuatan+"&harga="+harga+"&merk="+merk+"&merk_html="+merk_html+"&model="+model+"&regno="+regno+"&tipe="+tipe+"&kapasitas="+kapasitas+"&periode="+periode+"&nama="+nama+"&telp="+telp+"&hargaKonv="+hargaKonv+"&model_html="+model_html,
+					"success" : function(){
+						 window.location.replace('/kalkulator/thankyou-mobilku');
+						//var getResult=JSON.parse(response);
+						//console.log(response);
+					}
+				});				
+			}      
       }
        
    }

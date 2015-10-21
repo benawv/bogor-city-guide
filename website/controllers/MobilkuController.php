@@ -206,7 +206,160 @@ class MobilkuController extends Website_Controller_Action {
 		// }
 		echo "sukseeeees";
 	}
+	public function sendEmailBasicAction(){
+		
+		$tahun_pembuatan=$_POST['tahun_pembuatan'];
+		$harga=$_POST['harga'];
+		$merk=$_POST['merk'];
+		$merk_html=$_POST['merk_html'];
+		$model=$_POST['model'];
+		$regno=$_POST['regno'];
+		$tipe=$_POST['tipe'];
+		$kapasitas=$_POST['kapasitas'];
+		$nama=$_POST['nama'];
+		$telp=$_POST['telp'];
+		$periode=$_POST['periode'];
+		$email=$_POST['email'];
+		$hargaKonv=$_POST['hargaKonv'];
+		$model_html=$_POST['model_html'];
+		$total=$_POST['total'];
+		$paket =$_POST['paket'];
+		$label=$_POST['label'];
 
+		$bulan_indo = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+		$bulan = substr($periode, 0, 2);
+		$tanggal = substr($periode, 3, 2);
+		$tahun = substr($periode, 6, 4);
+		$periode_indo = $tanggal. " " . $bulan_indo[(int)$bulan-1]. " " .$tahun;
+
+            $document = '/email/email-mobilku';
+            $params = array( 'year' => $tahun_pembuatan,
+                            'price' => $harga,
+                            'merk' => $merk_html,
+                            'model' => $model_html,
+                            'registrationnp' => $regno,
+                            'tipe' => $tipe,
+                            'kapasitas' => $kapasitas,
+                            'telp' => $telp,
+                            'periode' => $periode_indo,
+                            'insurancetype' => $label,
+                            'email' => $email,
+                            'name' => $nama,
+							'paket' => $paket,
+                            'total' => $total
+                            );
+            $bcc = array("diah@dreamcube.co.id","robbi@dreamcube.co.id");
+
+            $mail = new Pimcore_Mail();
+            $mail->setSubject("Hasil Ilustrasi Asuransi Allianz Mobilku Paket Basic");
+            $mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+            $mail->setDocument($document);
+            $mail->setParams($params);
+            $mail->addTo($email);
+            $mail->send();
+	}
+	public function sendEmailStandartAction(){
+		$tahun_pembuatan=$_POST['tahun_pembuatan'];
+		$harga=$_POST['harga'];
+		$merk=$_POST['merk'];
+		$merk_html=$_POST['merk_html'];
+		$model=$_POST['model'];
+		$regno=$_POST['regno'];
+		$tipe=$_POST['tipe'];
+		$kapasitas=$_POST['kapasitas'];
+		$nama=$_POST['nama'];
+		$telp=$_POST['telp'];
+		$periode=$_POST['periode'];
+		$email=$_POST['email'];
+		$hargaKonv=$_POST['hargaKonv'];
+		$model_html=$_POST['model_html'];
+		$total=$_POST['total'];
+		$label=$_POST['label'];
+		$paket =$_POST['paket'];
+
+		$bulan_indo = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+		$bulan = substr($periode, 0, 2);
+		$tanggal = substr($periode, 3, 2);
+		$tahun = substr($periode, 6, 4);
+		$periode_indo = $tanggal. " " . $bulan_indo[(int)$bulan-1]. " " .$tahun;
+
+            $document = '/email/email-mobilku';
+            $params = array('year' => $tahun_pembuatan,
+                            'price' => $harga,
+                            'merk' => $merk_html,
+                            'model' => $model_html,
+                            'registrationnp' => $regno,
+                            'tipe' => $tipe,
+                            'kapasitas' => $kapasitas,
+                            'telp' => $telp,
+                            'periode' => $periode_indo,
+                            'insurancetype' => $label,
+                            'email' => $email,
+                            'name' => $nama,
+							'paket' => $paket,
+                            'total' => $total
+                            );
+            $bcc = array("diah@dreamcube.co.id","robbi@dreamcube.co.id");
+
+            $mail = new Pimcore_Mail();
+            $mail->setSubject("Hasil Ilustrasi Asuransi Allianz Mobilku Paket Standart");
+            $mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+            $mail->setDocument($document);
+            $mail->setParams($params);
+            $mail->addTo($email);
+            $mail->send();
+	}
+	public function sendEmailPremierAction(){
+		$tahun_pembuatan=$_POST['tahun_pembuatan'];
+		$harga=$_POST['harga'];
+		$merk=$_POST['merk'];
+		$merk_html=$_POST['merk_html'];
+		$model=$_POST['model'];
+		$regno=$_POST['regno'];
+		$tipe=$_POST['tipe'];
+		$kapasitas=$_POST['kapasitas'];
+		$nama=$_POST['nama'];
+		$telp=$_POST['telp'];
+		$periode=$_POST['periode'];
+		$email=$_POST['email'];
+		$hargaKonv=$_POST['hargaKonv'];
+		$model_html=$_POST['model_html'];
+		$total=$_POST['total'];
+		$label=$_POST['label'];
+		$paket =$_POST['paket'];
+
+		$bulan_indo = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+		$bulan = substr($periode, 0, 2);
+		$tanggal = substr($periode, 3, 2);
+		$tahun = substr($periode, 6, 4);
+		$periode_indo = $tanggal. " " . $bulan_indo[(int)$bulan-1]. " " .$tahun;
+
+            $document = '/email/email-mobilku';
+            $params = array('year' => $tahun_pembuatan,
+                            'price' => $harga,
+                            'merk' => $merk_html,
+                            'model' => $model_html,
+                            'registrationnp' => $regno,
+                            'tipe' => $tipe,
+                            'kapasitas' => $kapasitas,
+                            'telp' => $telp,
+                            'periode' => $periode_indo,
+                            'insurancetype' => $label,
+                            'email' => $email,
+                            'name' => $nama,
+							'paket'=>$paket,
+                            'total' => $total
+                            );
+            $bcc = array("diah@dreamcube.co.id","robbi@dreamcube.co.id");
+
+            $mail = new Pimcore_Mail();
+            $mail->setSubject("Hasil Ilustrasi Asuransi Allianz Mobilku Paket");
+            $mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
+            $mail->setDocument($document);
+            $mail->setParams($params);
+            $mail->addTo($email);
+            $mail->send();
+	}
 	public function sendEmailFinishAction(){
 		$compre=$_POST['compre'];
 		$tpl=$_POST['tpl'];
@@ -221,8 +374,27 @@ class MobilkuController extends Website_Controller_Action {
 		$workshop=$_POST['workshop'];
 		$total=$_POST['total'];
 		$label=$_POST['label'];
-		$email=$_POST['email'];
 
+		$tahun_pembuatan=$_POST['tahun_pembuatan'];
+		$harga=$_POST['harga'];
+		$merk=$_POST['merk'];
+		$merk_html=$_POST['merk_html'];
+		$model=$_POST['model'];
+		$regno=$_POST['regno'];
+		$tipe=$_POST['tipe'];
+		$kapasitas=$_POST['kapasitas'];
+		$nama=$_POST['nama'];
+		$telp=$_POST['telp'];
+		$periode=$_POST['periode'];
+		$email=$_POST['email'];
+		$hargaKonv=$_POST['hargaKonv'];
+		$model_html=$_POST['model_html'];
+
+		$bulan_indo = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+		$bulan = substr($periode, 0, 2);
+		$tanggal = substr($periode, 3, 2);
+		$tahun = substr($periode, 6, 4);
+		$periode_indo = $tanggal. " " . $bulan_indo[(int)$bulan-1]. " " .$tahun;
 
             $document = '/email/email-mobilku-nonpaket';
             $params = array('label' => $label,
@@ -237,7 +409,19 @@ class MobilkuController extends Website_Controller_Action {
                             'passenger' => $passenger,
                             'pa' => $pa,
                             'workshop' => $workshop,
-                            'total' => $total
+                            'total' => $total,
+                            'year' => $tahun_pembuatan,
+                            'price' => $harga,
+                            'merk' => $merk_html,
+                            'model' => $model_html,
+                            'registrationnp' => $regno,
+                            'tipe' => $tipe,
+                            'kapasitas' => $kapasitas,
+                            'telp' => $telp,
+                            'periode' => $periode_indo,
+                            'insurancetype' => $label,
+                            'email' => $email,
+                            'name' => $nama
                             );
             $bcc = array("diah@dreamcube.co.id","robbi@dreamcube.co.id");
 
