@@ -1441,6 +1441,9 @@
         var total = stamp = totfd = jml = totalwithoutuwl = 0;
         var fd = $("#family_discount").val();
         var payment = $("#payment_methods").val();
+
+        var planmelahirkan = $("#planmelahirkan").is(":checked");
+        var planrawatjalan = $("#planrawatjalan").is(":checked");
         // console.log(rowCount);
         //console.log($(this).parent().html());
         $('table.table tbody tr').each(function(index){
@@ -1515,10 +1518,10 @@
                 opdenp = 0;
             }else if(planmelahirkan==false&&planrawatjalan==true){
                 total = parseFloat(ipp)+parseFloat(opdenp);
-                ipp = 0;
+                matp = 0;
             }else{
                 total = parseFloat(ipp);
-                ipp = 0;opdenp = 0;
+                matp = 0;opdenp = 0;
             }
             // total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
             $( this ).find(".ipp").html(currency(ipp));
