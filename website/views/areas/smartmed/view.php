@@ -1388,10 +1388,10 @@
             opdenp = 0;
         }else if(planmelahirkan==false&&planrawatjalan==true){
             total = parseFloat(ipp)+parseFloat(opdenp);
-            ipp = 0;
+            matp = 0;
         }else{
             total = parseFloat(ipp);
-            ipp = 0;opdenp = 0;
+            matp = 0;opdenp = 0;
         }
         // total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
         var rowCount = $('table.table tbody tr').length;
