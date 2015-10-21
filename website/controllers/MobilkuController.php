@@ -389,6 +389,7 @@ class MobilkuController extends Website_Controller_Action {
 		$email=$_POST['email'];
 		$hargaKonv=$_POST['hargaKonv'];
 		$model_html=$_POST['model_html'];
+		$radio =$_POST['radio'];
 
 		$bulan_indo = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
 		$bulan = substr($periode, 0, 2);

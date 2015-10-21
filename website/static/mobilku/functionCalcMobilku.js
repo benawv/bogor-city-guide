@@ -1839,8 +1839,8 @@ $(document).ready(function(){
         }
     });
 
-    function sendEmailFinish(){
-     if(document.getElementById("paket_2_1").checked){
+   function sendEmailFinish(){
+      if(document.getElementById("paket_2_1").checked){
         var compre = $('.no_compre_prem.data').html();
         var tpl = $('.no_tpl_prem.data').html();
         var pll = $('.no_pll_prem.data').html();
@@ -1870,15 +1870,27 @@ $(document).ready(function(){
         var hargaKonv=clearFormat($('#harga').val());
         var model_html=$('#model option:selected').html().toLowerCase();
 
+        var radio1=$('#radio01').val();
+        var radio2=$('#radio02').val();
+        $('#radio01').checked
+        if($('#radio01').is(":checked") == true){
+            var radio = $('#radio01').val();
+        }else{
+            var radio = $('#radio02').val();
+        }
+
+        console.log(radio);
+
         // console.log(compre+' - '+tpl+' - '+pll+' - '+med+' - '+flood+' - '+earthquake+' - '+riot+' - '+terror+' - '+passenger+' - '+pa+' - '+workshop+' - '+total+' - '+label+' - '+email);
-        console.log('tahun_pembuatan '+tahun_pembuatan+' - '+'harga '+harga+' - '+'merk '+merk+' - '+'merk_html '+merk_html+' - '+'model '+model+' - '+'regno '+regno+' - '+'tipe '+tipe+' - '+
-          'kapasitas '+kapasitas+' - '+'nama '+nama+' - '+'telp '+telp+' - '+'periode '+periode+' - '+'email '+email+' - '+'hargaKonv '+hargaKonv+' - '+'model_html '+model_html);
+        // console.log('tahun_pembuatan '+tahun_pembuatan+' - '+'harga '+harga+' - '+'merk '+merk+' - '+'merk_html '+merk_html+' - '+'model '+model+' - '+'regno '+regno+' - '+'tipe '+tipe+' - '+
+        //   'kapasitas '+kapasitas+' - '+'nama '+nama+' - '+'telp '+telp+' - '+'periode '+periode+' - '+'email '+email+' - '+'hargaKonv '+hargaKonv+' - '+'model_html '+model_html);
         $.ajax({
             "url" : "/send-email-finish/",
             "type" : "POST",
             "async" : false,
             "data" : "compre="+compre+"&tpl="+tpl+"&pll="+pll+"&med="+med+"&flood="+flood+"&earthquake="+earthquake+"&riot="+riot+"&terror="+terror+"&passenger="+passenger+"&pa="+pa+"&workshop="+workshop+"&total="+total+"&label="+label+"&email="+email+
-            "&tahun_pembuatan="+tahun_pembuatan+"&harga="+harga+"&merk="+merk+"&merk_html="+merk_html+"&model="+model+"&regno="+regno+"&tipe="+tipe+"&kapasitas="+kapasitas+"&periode="+periode+"&nama="+nama+"&telp="+telp+"&hargaKonv="+hargaKonv+"&model_html="+model_html,
+            "&tahun_pembuatan="+tahun_pembuatan+"&harga="+harga+"&merk="+merk+"&merk_html="+merk_html+"&model="+model+"&regno="+regno+"&tipe="+tipe+"&kapasitas="+kapasitas+"&periode="+periode+"&nama="+nama+"&telp="+telp+"&hargaKonv="+hargaKonv+"&model_html="+model_html+
+            "&radio="+radio,
             "success" : function(){
                  window.location.replace('/kalkulator/thankyou-mobilku');
                 //var getResult=JSON.parse(response);

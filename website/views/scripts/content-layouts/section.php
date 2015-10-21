@@ -50,7 +50,7 @@
 			}
 		?>
 		<?php echo $this->areablock('container', array('allowed' => array(
-			'mobilku','tasbih','container-box2', 'community-tips2',
+			'mobilku','mobil-data','mobil-jenis-asuransi','mobil-hasil-kalkulasi','tasbih','container-box2', 'community-tips2',
 			'sections', 'sections-box-full', 'sections-tab', 'teks-tabs',
 			'sections-video', 'sections-gallery', 'sections-popup-video',
 			'sections-select', 'tekskanan60-imagekiri40_wizard', 
