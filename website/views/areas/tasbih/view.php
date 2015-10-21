@@ -617,15 +617,9 @@
 
             var dob = new Date(this.value);
             var today = new Date();
-            //var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
-            //if(age >= 1) {
-            //    $('#usia').val(age);
-            //   document.getElementById('notif-tgllahir').style.display= 'none';
-            //}else{
-            //    document.getElementById('notif-tgllahir').style.display= 'block';
-            //    $('#usia').val('Umur Anda dibawah 1 tahun');
-            //}
             var age = (today-dob) / (365.25 * 24 * 60 * 60 * 1000);
+            // alert(age.toString().split(".")[1]);
+            // var ageReal = 0;
 
             var j = age.toString().split(".")[0];
             var k = parseFloat(j)+0.5;
@@ -637,9 +631,12 @@
             }else{
                 var ageReal = (Math.floor(age))+1;
             }
-            if(age >= 1) {
+            if(ageReal >= 1 && ageReal <= 55) {
                 $('#usia').val(ageReal);
                document.getElementById('notif-tgllahir').style.display= 'none';
+            }else if(ageReal >= 56){
+                $('#usia').val('Umur Anda diatas 55 tahun');
+                document.getElementById('notif-tgllahir').style.display= 'block';
             }else{
                 document.getElementById('notif-tgllahir').style.display= 'block';
                 $('#usia').val('Umur Anda dibawah 1 tahun');
