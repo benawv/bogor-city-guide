@@ -185,9 +185,9 @@ if(!($this->editmode)){
                             -->
                             <br/>
                             <a href="/produk/asuransi-syariah/tasbih/kalkulator/ilustrasi">
-                              <button style="background:#5F259F !important; margin-right:15px; margin-bottom:10px;" class="btn btn-next btn-fill btn-warning btn-wd btn-sm" type="button">Hitung Kembali</button>
+                              <button style="background:#003781 !important; margin-right:15px; margin-bottom:10px;" class="btn btn-next btn-fill btn-warning btn-wd btn-sm" type="button">Hitung Kembali</button>
                             </a>
-                            <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" style="background:#5F259F !important; margin-bottom:10px;"><i class="fa fa-users"></i> Cari Agen</button>
+                            <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" style="background:#003781 !important; margin-bottom:10px;"><i class="fa fa-users"></i> Cari Agen</button>
                         </center>
                     </div>
 
