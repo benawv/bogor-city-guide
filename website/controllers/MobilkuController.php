@@ -236,7 +236,13 @@ class MobilkuController extends Website_Controller_Action {
 		$email=$_POST['email'];
 		$hargaKonv=$_POST['hargaKonv'];
 		$model_html=$_POST['model_html'];
+		$radio =$_POST['radio'];
 
+		$bulan_indo = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+		$bulan = substr($periode, 0, 2);
+		$tanggal = substr($periode, 3, 2);
+		$tahun = substr($periode, 6, 4);
+		$periode_indo = $tanggal. " " . $bulan_indo[(int)$bulan-1]. " " .$tahun;
 
             $document = '/email/email-mobilku-nonpaket';
             $params = array('label' => $label,
@@ -260,7 +266,7 @@ class MobilkuController extends Website_Controller_Action {
                             'tipe' => $tipe,
                             'kapasitas' => $kapasitas,
                             'telp' => $telp,
-                            'periode' => $periode,
+                            'periode' => $periode_indo,
                             'insurancetype' => $label,
                             'email' => $email,
                             'name' => $nama
