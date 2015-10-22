@@ -855,6 +855,7 @@ $(document).keyup(function(e){
         $("a#open_tab_<?php echo $i ?>_<?php echo $j ?>").addClass("active");
         $(".show_<?php echo $i ?>").hide();
         $("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").show();
+        alert(getCookie('workshop_compre'));
         adjustTable();
     });
 
@@ -1412,11 +1413,11 @@ $(document).keyup(function(e){
 //    console.log(getCookie(tahun_pembuatan));
 
     
-        function setCookie(cname, cvalue, exdays) {
-            var d = new Date();
-            d.setTime(d.getTime() + (exdays*24*60*60*1000));
-            var expires = "expires="+d.toUTCString();
-            document.cookie = cname + "=" + cvalue + "; " + expires;
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires="+d.toUTCString();
+        document.cookie = cname + "=" + cvalue + "; " + expires;
     }
         
     function getCookie(cname) {
@@ -1452,6 +1453,7 @@ $(document).keyup(function(e){
 //        setCookie('periode_last', periode_last,1);
         setCookie('radio', radio,1);
         
+
         document.location.href='/kalkulator/mobilku/mobil-hasil-kalkulasi';
 
     });

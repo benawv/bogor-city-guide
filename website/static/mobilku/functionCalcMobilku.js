@@ -1,4 +1,24 @@
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+      
+
+function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1);
+            if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+        }
+        return "";
+}
+
 $(document).ready(function(){
+    
     
     function clearFormat(value) {
 
@@ -8,12 +28,12 @@ $(document).ready(function(){
         return value;
     }
 
-    var jenisasuransi;
-    $("input:radio[name=radio]").click(function() {
-         jenisasuransi = $(this).val();
-         $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3, #nojenisasuransi").html("");
-         $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3, #nojenisasuransi").append(jenisasuransi.toUpperCase());
-    });
+    var jenisasuransi = getCookie('radio');
+    // $("input:radio[name=radio]").click(function() {
+    //      jenisasuransi = $(this).val();
+    //      $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3, #nojenisasuransi").html("");
+    //      $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3, #nojenisasuransi").append(jenisasuransi.toUpperCase());
+    // });
 
     function getBand(price) {
          var si_band;
@@ -38,25 +58,29 @@ $(document).ready(function(){
     function getTlo(tipe,map,type_mobil,paket) {
         //code
              var rate;
-             var tahun_pembuatan=$('#tahun_pembuatan').val();
-             var harga=$('#harga').val();
-             var merk=$('#merk').val();
-             var merk_html=$('#merk option:selected').html().toLowerCase();
-             var model=$('#model').val();
-             var regno=$('#regno').val();
-             var wilayah=$('#wilayah').val();
-             var periode=$('#periode').val();
-             var nama=$('#nama').val();
-             var telp=$('#telp').val();
-             var hargaKonv=clearFormat($('#harga').val());
-             var model_html=$('#model option:selected').html().toLowerCase();
+             // var tahun_pembuatan=$('#tahun_pembuatan').val();
+             var tahun_pembuatan= getCookie('tahun_buat');
+             var harga= getCookie('harga');
+             var merk= getCookie('merk');
+             var merk_html= getCookie('merk_html');
+             var model= getCookie('model');
+             var regno= getCookie('regno');
+             var wilayah= getCookie('wilayah');
+             var periode= getCookie('periode');
+             var nama= getCookie('nama');
+             var telp= getCookie('telp');
+             var hargaKonv= clearFormat(getCookie('harga'));
+             var model_html= getCookie('model_html');
+             var radio= getCookie('radio');
+
+             
             //alert($('#radio01').is(":checked"));         
              //if($('#radio01').checked == true){
-              if($('#radio01').is(":checked") == true){
-                   var radio = $('#radio01').val();
-             }else{
-                   var radio = $('#radio02').val();
-             }
+             //  if($('#radio01').is(":checked") == true){
+             //       var radio = $('#radio01').val();
+             // }else{
+             //       var radio = $('#radio02').val();
+             // }
                         
                        
 
@@ -195,6 +219,7 @@ $(document).ready(function(){
             }
         }else{*/
         // console.log('#='+tahun_pembuatan+'-'+harga+'-'+model+'-'+periode+'-'+wilayah+'-'+radio+'-'+hargaKonv+'-'+paket);
+       // alert(tahun_pembuatan+' - '+harga+' - '+merk+' - '+merk_html+' - '+model+' - '+regno+' - '+wilayah+' - '+periode+' - '+nama+' - '+telp+' - '+hargaKonv+' - '+model_html+' - '+radio);
            $.ajax({
                   "url" : "/mobilkucalc/",
                   "async": false,
@@ -265,7 +290,7 @@ $(document).ready(function(){
                 workshop_rate='10'
             }
         }
-        //console.log("workshop_rate:"+workshop_rate);
+        console.log("workshop_rate:"+workshop_rate);
         return workshop_rate;
 
     }
@@ -323,25 +348,26 @@ $(document).ready(function(){
         }else{
                workshop_rate=0;
         }
-        //console.log("workshop_rate:"+workshop_rate);
+        console.log("workshop_rate:"+workshop_rate);
         return workshop_rate;
 
     }
 
+    var getColom;
+    var harga= clearFormat(getCookie('harga'));
+    var tahun_pembuatan;
+    var model;
+    var regno;
+    var periode;
+    var radio01;
+    var merk= getCookie('merk');
+    var merk_html= getCookie('merk_html');
+    var tipe= getCookie('tipe');
+    var wilayah=getCookie('wilayah');
+    var kapasitas=getCookie('kapasitas');
+
     function calc_result(paket) {
-        var getColom;
-        var harga=clearFormat($('#harga').val());
-        var tahun_pembuatan;
-        var model;
-        var regno;
-        var periode;
-        var radio01;
-        var merk=$('#merk').val();
-        var merk_html=$('#merk option:selected').html().toLowerCase();
-        var tipe=$('#tipe').val().toLowerCase();
-        var wilayah=parseInt($('#wilayah').val());
-        var kapasitas=parseInt($('#kapasitas').val());
-        //console.log(merk_html);
+        // console.log('harga '+harga+'merk '+merk+'merk_html '+merk_html+'tipe '+tipe+'wilayah '+wilayah+'kapasitas '+kapasitas);
         
         //=========================perhitungan basic======================================//
         var val_tlo=harga*1; //harga dikali tahun pertama (1), tahun kedua dikali 2 dst.
@@ -373,15 +399,23 @@ $(document).ready(function(){
         tpl_val=accounting.formatMoney(tpl_val,'',2,'.',',');
         personal_ef_val=accounting.formatMoney(personal_ef_val,'',2,'.',',');
         pll_val=accounting.formatMoney(pll_val,'',2,'.',',');
+
+        setCookie('val_tlo', val_tlo, 1);
+        setCookie('med_ex_val', med_ex_val, 1);
+        setCookie('pa_val', pa_val, 1);
+        setCookie('passenger_val', passenger_val, 1);
+        setCookie('personal_ef_val', personal_ef_val, 1);
+        setCookie('pll_val', pll_val, 1);
+        setCookie('tpl_val', tpl_val, 1);
                 
         //INSER INTO FORM paket
         $('.workshop_val, .compre_val, .earthquake_val, .era_val, .flood_val, .riot_val, .terror_val').html("");
-        $('.workshop_val, .compre_val, .earthquake_val, .era_val, .flood_val, .riot_val, .terror_val').append(val_tlo);
+        $('.workshop_val, .compre_val, .earthquake_val, .era_val, .flood_val, .riot_val, .terror_val').append(getCookie('val_tlo'));
         $('.med_ex_val, .pa_val, .passenger_val, .tpl_val, .personal_ef_val, .pll_val').html("");
-        $('.med_ex_val').append(med_ex_val);
-        $('.pa_val').append(pa_val);
-        $('.passenger_val').append(passenger_val);
-        $('.tpl_val').append(tpl_val);
+        $('.med_ex_val').append(getCookie('med_ex_val'));
+        $('.pa_val').append(getCookie('pa_val'));
+        $('.passenger_val').append(getCookie('passenger_val'));
+        $('.tpl_val').append(getCookie('tpl_val'));
         //$('.personal_ef_val').append(personal_ef_val);
         //$('.pll_val').append(pll_val);
         $('.personal_ef_val').append("-");
@@ -396,24 +430,27 @@ $(document).ready(function(){
 
         var tlo=getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html,1);
         compre_tlo_persen=localStorage.getItem("gettlo");
+
         hitung = parseFloat(getWorkshop(merk_html,1))*(compre_tlo_persen)/100;
         workshop_persen = hitung.toFixed(4);
 
         // console.log("compre_tlo_persen : "+(compre_tlo_persen));
         // console.log("getWorkshop parsefloat: "+parseFloat(getWorkshop(merk_html,1)));
         //console.log("Workshop %:"+compre_tlo_persen*(parseFloat(getWorkshop(merk,1))/100));
-        console.log("workshop_persen:"+workshop_persen);
+        // console.log("workshop_persen:"+workshop_persen);
         //console.log("compre "+compre_tlo_persen);
         // if (tlo= 5+wilayah) else (1+wilayah)
         if (jenisasuransi=='tlo') {
       			// var add_rate = 25/122;
       			// var rate_workshop = 125/610;
-            getColom=wilayah+5;
+            getColom=parseInt(wilayah)+5;
         }else{
-            getColom=wilayah+1;
+            getColom=parseInt(wilayah)+1;
 			     // var add_rate = 1;
 			     // var rate_workshop = 1;
         }
+
+        // alert('GETCOLOM = '+getColom);
 		
         if (getColom==2) {
             earthquake_presen=parseFloat(0.1200);
@@ -479,18 +516,24 @@ $(document).ready(function(){
             pa_persen=0;
             passenger_persen=0;
         }
-        
+
+        // alert('EARTHQUAKE = '+earthquake_presen);
+
+
         //medical expanse
         var med_ex_pers;
-        if (tipe=='sedan' || tipe=='minibus' ) {
+        if (tipe=='Sedan' || tipe=='Minibus' ) {
             med_ex_pers=parseFloat(0.0300);
-        }else if(tipe=='motor'){
+        }else if(tipe=='Motor'){
             med_ex_pers=parseFloat(0.1250);
-        }else if(tipe=='truck'){
+        }else if(tipe=='Truck'){
             med_ex_pers=parseFloat(0.2000);
         }else{
             med_ex_pers=0;
         }
+
+        // alert('TIPE = '+tipe);
+        // alert('MED = '+med_ex_pers);
         
         era_persen=parseFloat(0.0005);
         personal_ef_persen=parseFloat(1.0000);
@@ -547,49 +590,64 @@ $(document).ready(function(){
         terror_prem=(((1*(cleanVarTlo*terror_persen)/100)*day)/day);
         tpl_prem=(((1*(cleanTpl_val*tpl_persen)/100)*day)/day);
         totalPremium= workshop_prem + compre_prem + earthquake_prem + era_prem + flood_prem + med_ex_prem + pa_prem + passenger_prem + personal_ef_prem + pll_prem + riot_prem + terror_prem + tpl_prem;
+
+        setCookie('workshop_prem',workshop_prem,1);
+        setCookie('compre_prem',compre_prem,1);
+        setCookie('earthquake_prem',earthquake_prem,1);
+        setCookie('era_prem',era_prem,1);
+        setCookie('flood_prem',flood_prem,1);
+        setCookie('med_ex_prem',med_ex_prem,1);
+        setCookie('pa_prem',pa_prem,1);
+        setCookie('passenger_prem',passenger_prem,1);
+        setCookie('personal_ef_prem',personal_ef_prem,1);
+        setCookie('pll_prem',pll_prem,1);
+        setCookie('riot_prem',riot_prem,1);
+        setCookie('terror_prem',terror_prem,1);
+        setCookie('tpl_prem',tpl_prem,1);
+        setCookie('totalPremium',totalPremium,1);
 		
         
                     //form paket
-        $('.workshop_prem, .compre_prem, .earthquake_prem, .era_prem, .flood_prem, .med_ex_prem, .pa_prem, .passenger_prem, .personal_ef_prem, .pll_prem, .riot_prem, .terror_prem, .tpl_prem').html("");
-        $('.workshop_prem').append(accounting.formatMoney(workshop_prem,'',2,'.',','));
-        $('.compre_prem').append(accounting.formatMoney(compre_prem,'',2,'.',','));
-        $('.earthquake_prem').append(accounting.formatMoney(earthquake_prem,'',2,'.',','));
-        $('.era_prem').append(accounting.formatMoney(era_prem,'',2,'.',','));
-        $('.flood_prem').append(accounting.formatMoney(flood_prem,'',2,'.',','));
-        $('.med_ex_prem').append(accounting.formatMoney(med_ex_prem,'',2,'.',','));
-        $('.pa_prem').append(accounting.formatMoney(pa_prem,'',2,'.',','));
-        $('.passenger_prem').append(accounting.formatMoney(passenger_prem,'',2,'.',','));
-        //$('.personal_ef_prem').append(accounting.formatMoney(personal_ef_prem,'',2,'.',','));
-        //$('.pll_prem').append(accounting.formatMoney(pll_prem,'',2,'.',','));
-        $('.personal_ef_prem').append("-");
-        $('.pll_prem').append("-");
-        $('.riot_prem').append(accounting.formatMoney(riot_prem,'',2,'.',','));
-        $('.terror_prem').append(accounting.formatMoney(terror_prem,'',2,'.',','));
-        $('.tpl_prem').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
-        $('.totalPremium').append(accounting.formatMoney(totalPremium,'',2,'.',','));
+        // $('.workshop_prem, .compre_prem, .earthquake_prem, .era_prem, .flood_prem, .med_ex_prem, .pa_prem, .passenger_prem, .personal_ef_prem, .pll_prem, .riot_prem, .terror_prem, .tpl_prem').html("");
+        // $('.workshop_prem').append(accounting.formatMoney(getCookie('workshop_prem'),'',2,'.',','));
+        // $('.compre_prem').append(accounting.formatMoney(compre_prem,'',2,'.',','));
+        // $('.earthquake_prem').append(accounting.formatMoney(earthquake_prem,'',2,'.',','));
+        // $('.era_prem').append(accounting.formatMoney(era_prem,'',2,'.',','));
+        // $('.flood_prem').append(accounting.formatMoney(flood_prem,'',2,'.',','));
+        // $('.med_ex_prem').append(accounting.formatMoney(med_ex_prem,'',2,'.',','));
+        // $('.pa_prem').append(accounting.formatMoney(pa_prem,'',2,'.',','));
+        // $('.passenger_prem').append(accounting.formatMoney(passenger_prem,'',2,'.',','));
+        // //$('.personal_ef_prem').append(accounting.formatMoney(personal_ef_prem,'',2,'.',','));
+        // //$('.pll_prem').append(accounting.formatMoney(pll_prem,'',2,'.',','));
+        // $('.personal_ef_prem').append("-");
+        // $('.pll_prem').append("-");
+        // $('.riot_prem').append(accounting.formatMoney(riot_prem,'',2,'.',','));
+        // $('.terror_prem').append(accounting.formatMoney(terror_prem,'',2,'.',','));
+        // $('.tpl_prem').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
+        // $('.totalPremium').append(accounting.formatMoney(totalPremium,'',2,'.',','));
 
-        return totalPremium;
+        // return totalPremium;
     }//end of function calc_result
 
 
     function calc_resultstandard(paket) {
       //alert("alert2");
-        var getColom;
-        var harga=clearFormat($('#harga').val());
-        var tahun_pembuatan;
-        var model;
-        var regno;
-        var periode;
-        var radio01;
-        var merk=$('#merk').val();
-        var merk_html=$('#merk option:selected').html().toLowerCase();
-        var tipe=$('#tipe').val().toLowerCase();
-        var wilayah=parseInt($('#wilayah').val());
-        var kapasitas=parseInt($('#kapasitas').val());
-        if($("input[type='radio']#radio01").is(':checked') == true)
-          var jenisasuransi = 'comprehensive';
-        else
-          var jenisasuransi = 'tlo';
+        // var getColom;
+        // var harga=clearFormat($('#harga').val());
+        // var tahun_pembuatan;
+        // var model;
+        // var regno;
+        // var periode;
+        // var radio01;
+        // var merk=$('#merk').val();
+        // var merk_html=$('#merk option:selected').html().toLowerCase();
+        // var tipe=$('#tipe').val().toLowerCase();
+        // var wilayah=parseInt($('#wilayah').val());
+        // var kapasitas=parseInt($('#kapasitas').val());
+        // if($("input[type='radio']#radio01").is(':checked') == true)
+        //   var jenisasuransi = 'comprehensive';
+        // else
+        //   var jenisasuransi = 'tlo';
 
         //=========================perhitungan standar======================================//
         var val_tlo=harga*1; //harga dikali tahun pertama (1), tahun kedua dikali 2 dst.
@@ -621,15 +679,23 @@ $(document).ready(function(){
         tpl_val=accounting.formatMoney(tpl_val,'',2,'.',',');
         personal_ef_val=accounting.formatMoney(personal_ef_val,'',2,'.',',');
         pll_val=accounting.formatMoney(pll_val,'',2,'.',',');
+
+        setCookie('val_tlo2', val_tlo, 1);
+        setCookie('med_ex_val2', med_ex_val, 1);
+        setCookie('pa_val2', pa_val, 1);
+        setCookie('passenger_val2', passenger_val, 1);
+        setCookie('personal_ef_val2', personal_ef_val, 1);
+        setCookie('pll_val2', pll_val, 1);
+        setCookie('tpl_val2', tpl_val, 1);
                 
         //INSER INTO FORM
         $('.workshop_val2, .compre_val2, .earthquake_val2, .era_val2, .flood_val2, .riot_val2, .terror_val2').html("");
-        $('.workshop_val2, .compre_val2, .earthquake_val2, .era_val2, .flood_val2, .riot_val2, .terror_val2').append(val_tlo);
+        $('.workshop_val2, .compre_val2, .earthquake_val2, .era_val2, .flood_val2, .riot_val2, .terror_val2').append(getCookie('val_tlo2'));
         $('.med_ex_val2, .pa_val2, .passenger_val2, .tpl_val2, .personal_ef_val2, .pll_val2').html("");
-        $('.med_ex_val2').append(med_ex_val);
-        $('.pa_val2').append(pa_val);
-        $('.passenger_val2').append(passenger_val);
-        $('.tpl_val2').append(tpl_val);
+        $('.med_ex_val2').append(getCookie('med_ex_val2'));
+        $('.pa_val2').append(getCookie('pa_val2'));
+        $('.passenger_val2').append(getCookie('passenger_val2'));
+        $('.tpl_val2').append(getCookie('tpl_val2'));
         //$('.personal_ef_val2').append(personal_ef_val);
         //$('.pll_val2').append(pll_val);
         $('.personal_ef_val2').append("-");
@@ -643,17 +709,17 @@ $(document).ready(function(){
 
         var tlo=getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html,1);
         compre_tlo_persen=localStorage.getItem("gettlo");
-		 hitung = parseFloat(getWorkshop(merk_html,2))*(compre_tlo_persen)/100;
-        workshop_persen = hitung.toFixed(4);
+		    hitung = parseFloat(getWorkshop(merk_html,2))*(compre_tlo_persen)/100;
+        workshop_persen = hitung.toFixed(6);
         // workshop_persen=parseFloat(getWorkshop(merk_html,2))*(getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html,1)/100);
 
         // if (tlo= 5+wilayah) else (1+wilayah)
         if (jenisasuransi=='tlo') {
 			// var add_rate = 25/122;
 			// var rate_workshop = 125/610;
-            getColom=wilayah+5;
+            getColom=parseInt(wilayah)+5;
         }else{
-            getColom=wilayah+1;
+            getColom=parseInt(wilayah)+1;
 			// var add_rate = 1;
 			// var rate_workshop = 1;
         }
@@ -725,11 +791,11 @@ $(document).ready(function(){
         
         //medical expanse
         var med_ex_pers;
-        if (tipe=='sedan' || tipe=='minibus' ) {
+        if (tipe=='Sedan' || tipe=='Minibus' ) {
             med_ex_pers=parseFloat(0.0250);
-        }else if(tipe=='motor'){
+        }else if(tipe=='Motor'){
             med_ex_pers=parseFloat(0.1250);
-        }else if(tipe=='truck'){
+        }else if(tipe=='Truck'){
             med_ex_pers=parseFloat(0.1750);
         }else{
             med_ex_pers=0;
@@ -777,71 +843,74 @@ $(document).ready(function(){
         var workshop_prem, compre_prem, earthquake_prem, era_prem, flood_prem, med_ex_prem, pa_prem, passenger_prem, personal_ef_prem, pll_prem, riot_prem, terror_prem, tpl_prem;
     
         workshop_prem=(((1*(cleanVarTlo*workshop_persen)/100)*day)/day);
-		console.log(workshop_prem);
         compre_prem=(((1*(cleanVarTlo*compre_tlo_persen)/100)*day)/day);
-		console.log(compre_prem);
         earthquake_prem=(((1*(cleanVarTlo*earthquake_presen)/100)*day)/day);
-		console.log(earthquake_prem);
         era_prem=(((1*(cleanVarTlo*era_persen)/100)*day)/day);
-		console.log(era_prem);
         flood_prem=(((1*(cleanVarTlo*flood_persen)/100)*day)/day);
-		console.log(flood_prem);
         med_ex_prem=(((1*(cleanMed_ex_val*med_ex_pers)/100)*day)/day);
-		console.log(med_ex_prem);
         pa_prem=(((1*(cleanPa_val*pa_persen)/100)*day)/day);
-		console.log(pa_prem);
         passenger_prem=(((1*((parseInt(kapasitas)-1)*cleanPassenger_val*passenger_persen)/100)*day)/day);
-		console.log(passenger_prem);
         personal_ef_prem=(((1*(cleanPersonal_ef_val*personal_ef_persen)/100)*day)/day);
-		console.log(personal_ef_prem);
         pll_prem=(((1*(cleanPll_val*pll_persen)/100)*day)/day);
-		console.log(pll_prem);
         riot_prem=(((1*(cleanVarTlo*riot_persen)/100)*day)/day);
-		console.log(riot_prem);
         terror_prem=(((1*(cleanVarTlo*terror_persen)/100)*day)/day);
-		console.log(terror_prem);
         tpl_prem=(((1*(cleanTpl_val*tpl_persen)/100)*day)/day);
-		console.log(tpl_prem);
         totalPremium= workshop_prem + compre_prem + earthquake_prem + era_prem + flood_prem + med_ex_prem + pa_prem + passenger_prem + personal_ef_prem + pll_prem + riot_prem + terror_prem + tpl_prem;
-		console.log('totalPremium = '+ totalPremium);
-        
-        $('.workshop_prem2, .compre_prem2, .earthquake_prem2, .era_prem2, .flood_prem2, .med_ex_prem2, .pa_prem2, .passenger_prem2, .personal_ef_prem2, .pll_prem2, .riot_prem2, .terror_prem2, .tpl_prem2').html("");
-        $('.workshop_prem2').append(accounting.formatMoney(workshop_prem,'',2,'.',','));
-        $('.compre_prem2').append(accounting.formatMoney(compre_prem,'',2,'.',','));
-        $('.earthquake_prem2').append(accounting.formatMoney(earthquake_prem,'',2,'.',','));
-        $('.era_prem2').append(accounting.formatMoney(era_prem,'',2,'.',','));
-        $('.flood_prem2').append(accounting.formatMoney(flood_prem,'',2,'.',','));
-        $('.med_ex_prem2').append(accounting.formatMoney(med_ex_prem,'',2,'.',','));
-        $('.pa_prem2').append(accounting.formatMoney(pa_prem,'',2,'.',','));
-        $('.passenger_prem2').append(accounting.formatMoney(passenger_prem,'',2,'.',','));
-        //$('.personal_ef_prem2').append(accounting.formatMoney(personal_ef_prem,'',2,'.',','));
-        //$('.pll_prem2').append(accounting.formatMoney(pll_prem,'',2,'.',','));
-        $('.personal_ef_prem2').append("-");
-        $('.pll_prem2').append("-");
-        $('.riot_prem2').append(accounting.formatMoney(riot_prem,'',2,'.',','));
-        $('.terror_prem2').append(accounting.formatMoney(terror_prem,'',2,'.',','));
-        $('.tpl_prem2').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
-        $('.totalPremium2').append(accounting.formatMoney(totalPremium,'',2,'.',','));
 
-        return totalPremium;
+
+
+        setCookie('workshop_prem2',workshop_prem,1);
+        setCookie('compre_prem2',compre_prem,1);
+        setCookie('earthquake_prem2',earthquake_prem,1);
+        setCookie('era_prem2',era_prem,1);
+        setCookie('flood_prem2',flood_prem,1);
+        setCookie('med_ex_prem2',med_ex_prem,1);
+        setCookie('pa_prem2',pa_prem,1);
+        setCookie('passenger_prem2',passenger_prem,1);
+        setCookie('personal_ef_prem2',personal_ef_prem,1);
+        setCookie('pll_prem2',pll_prem,1);
+        setCookie('riot_prem2',riot_prem,1);
+        setCookie('terror_prem2',terror_prem,1);
+        setCookie('tpl_prem2',tpl_prem,1);
+        setCookie('totalPremium2',totalPremium,1);
+        
+        // $('.workshop_prem2, .compre_prem2, .earthquake_prem2, .era_prem2, .flood_prem2, .med_ex_prem2, .pa_prem2, .passenger_prem2, .personal_ef_prem2, .pll_prem2, .riot_prem2, .terror_prem2, .tpl_prem2').html("");
+        // $('.workshop_prem2').append(accounting.formatMoney(workshop_prem,'',2,'.',','));
+        // $('.compre_prem2').append(accounting.formatMoney(compre_prem,'',2,'.',','));
+        // $('.earthquake_prem2').append(accounting.formatMoney(earthquake_prem,'',2,'.',','));
+        // $('.era_prem2').append(accounting.formatMoney(era_prem,'',2,'.',','));
+        // $('.flood_prem2').append(accounting.formatMoney(flood_prem,'',2,'.',','));
+        // $('.med_ex_prem2').append(accounting.formatMoney(med_ex_prem,'',2,'.',','));
+        // $('.pa_prem2').append(accounting.formatMoney(pa_prem,'',2,'.',','));
+        // $('.passenger_prem2').append(accounting.formatMoney(passenger_prem,'',2,'.',','));
+        // //$('.personal_ef_prem2').append(accounting.formatMoney(personal_ef_prem,'',2,'.',','));
+        // //$('.pll_prem2').append(accounting.formatMoney(pll_prem,'',2,'.',','));
+        // $('.personal_ef_prem2').append("-");
+        // $('.pll_prem2').append("-");
+        // $('.riot_prem2').append(accounting.formatMoney(riot_prem,'',2,'.',','));
+        // $('.terror_prem2').append(accounting.formatMoney(terror_prem,'',2,'.',','));
+        // $('.tpl_prem2').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
+        // $('.totalPremium2').append(accounting.formatMoney(totalPremium,'',2,'.',','));
+
+        // return totalPremium;
         
     }//end of function calc_standard
 
     function calc_resultpremier(paket) {
         
-        var getColom;
-        var harga=clearFormat($('#harga').val());
-        var tahun_pembuatan;
-        var model;
-        var regno;
-        var periode;
-        var radio01;
-        var merk=$('#merk').val();
-        var merk_html=$('#merk option:selected').html().toLowerCase();
+        // var getColom;
+        // var harga=clearFormat($('#harga').val());
+        // var tahun_pembuatan;
+        // var model;
+        // var regno;
+        // var periode;
+        // var radio01;
+        // var merk=$('#merk').val();
+        // var merk_html=$('#merk option:selected').html().toLowerCase();
 
-        var tipe=$('#tipe').val().toLowerCase();
-        var wilayah=parseInt($('#wilayah').val());
-        var kapasitas=parseInt($('#kapasitas').val());
+        // var tipe=$('#tipe').val().toLowerCase();
+        // var wilayah=parseInt($('#wilayah').val());
+        // var kapasitas=parseInt($('#kapasitas').val());
         
         
         //=========================perhitungan premier======================================//
@@ -875,17 +944,25 @@ $(document).ready(function(){
         tpl_val=accounting.formatMoney(tpl_val,'',2,'.',',');
         personal_ef_val=accounting.formatMoney(personal_ef_val,'',2,'.',',');
         pll_val=accounting.formatMoney(pll_val,'',2,'.',',');
+
+        setCookie('val_tlo3', val_tlo, 1);
+        setCookie('med_ex_val3', med_ex_val, 1);
+        setCookie('pa_val3', pa_val, 1);
+        setCookie('passenger_val3', passenger_val, 1);
+        setCookie('personal_ef_val3', personal_ef_val, 1);
+        setCookie('pll_val3', pll_val, 1);
+        setCookie('tpl_val3', tpl_val, 1);
                 
         //INSER INTO FORM
         $('.workshop_val3, .compre_val3, .earthquake_val3, .era_val3, .flood_val3, .riot_val3, .terror_val3').html("");
-        $('.workshop_val3, .compre_val3, .earthquake_val3, .era_val3, .flood_val3, .riot_val3, .terror_val3').append(val_tlo);
+        $('.workshop_val3, .compre_val3, .earthquake_val3, .era_val3, .flood_val3, .riot_val3, .terror_val3').append(getCookie('val_tlo3'));
         $('.med_ex_val3, .pa_val3, .passenger_val3, .tpl_val3, .personal_ef_val3, .pll_val3').html("");
-        $('.med_ex_val3').append(med_ex_val);
-        $('.pa_val3').append(pa_val);
-        $('.passenger_val3').append(passenger_val);
-        $('.tpl_val3').append(tpl_val);
-        $('.personal_ef_val3').append(personal_ef_val);
-        $('.pll_val3').append(pll_val);
+        $('.med_ex_val3').append(getCookie('med_ex_val3'));
+        $('.pa_val3').append(getCookie('pa_val3'));
+        $('.passenger_val3').append(getCookie('passenger_val3'));
+        $('.tpl_val3').append(getCookie('tpl_val3'));
+        $('.personal_ef_val3').append(getCookie('personal_ef_val3'));
+        $('.pll_val3').append(getCookie('pll_val3'));
         //========================= END perhitungan premier======================================//
         
         
@@ -911,9 +988,9 @@ $(document).ready(function(){
         if (jenisasuransi=='tlo') {
 			// var add_rate = 25/122;
 			// var rate_workshop = 125/610;
-            getColom=wilayah+5;
+            getColom=parseInt(wilayah)+5;
         }else{
-            getColom=wilayah+1;
+            getColom=parseInt(wilayah)+1;
 			// var add_rate = 1;
 			// var rate_workshop = 1;
         }
@@ -985,11 +1062,11 @@ $(document).ready(function(){
         
         //medical expanse
         var med_ex_pers;
-        if (tipe=='sedan' || tipe=='minibus' ) {
+        if (tipe=='Sedan' || tipe=='Minibus' ) {
             med_ex_pers=parseFloat(0.0250);
-        }else if(tipe=='motor'){
+        }else if(tipe=='Motor'){
             med_ex_pers=parseFloat(0.1250);
-        }else if(tipe=='truck'){
+        }else if(tipe=='Truck'){
             med_ex_pers=parseFloat(0.1750);
         }else{
             med_ex_pers=0;
@@ -1047,23 +1124,38 @@ $(document).ready(function(){
         terror_prem=(((1*(cleanVarTlo*terror_persen)/100)*day)/day);
         tpl_prem=(((1*(cleanTpl_val*tpl_persen)/100)*day)/day);
         totalPremium= workshop_prem + compre_prem + earthquake_prem + era_prem + flood_prem + med_ex_prem + pa_prem + passenger_prem + personal_ef_prem + pll_prem + riot_prem + terror_prem + tpl_prem;
+
+        setCookie('workshop_prem3',workshop_prem,1);
+        setCookie('compre_prem3',compre_prem,1);
+        setCookie('earthquake_prem3',earthquake_prem,1);
+        setCookie('era_prem3',era_prem,1);
+        setCookie('flood_prem3',flood_prem,1);
+        setCookie('med_ex_prem3',med_ex_prem,1);
+        setCookie('pa_prem3',pa_prem,1);
+        setCookie('passenger_prem3',passenger_prem,1);
+        setCookie('personal_ef_prem3',personal_ef_prem,1);
+        setCookie('pll_prem3',pll_prem,1);
+        setCookie('riot_prem3',riot_prem,1);
+        setCookie('terror_prem3',terror_prem,1);
+        setCookie('tpl_prem3',tpl_prem,1);
+        setCookie('totalPremium3',totalPremium,1);
         
-        $('.workshop_prem3, .compre_prem3, .earthquake_prem3, .era_prem3, .flood_prem3, .med_ex_prem3, .pa_prem3, .passenger_prem3, .personal_ef_prem3, .pll_prem3, .riot_prem3, .terror_prem3, .tpl_prem3').html("");
-        $('.workshop_prem3').append(accounting.formatMoney(workshop_prem,'',2,'.',','));
-        $('.compre_prem3').append(accounting.formatMoney(compre_prem,'',2,'.',','));
-        $('.earthquake_prem3').append(accounting.formatMoney(earthquake_prem,'',2,'.',','));
-        $('.era_prem3').append(accounting.formatMoney(era_prem,'',2,'.',','));
-        $('.flood_prem3').append(accounting.formatMoney(flood_prem,'',2,'.',','));
-        $('.med_ex_prem3').append(accounting.formatMoney(med_ex_prem,'',2,'.',','));
-        $('.pa_prem3').append(accounting.formatMoney(pa_prem,'',2,'.',','));
-        $('.passenger_prem3').append(accounting.formatMoney(passenger_prem,'',2,'.',','));
-        $('.personal_ef_prem3').append(accounting.formatMoney(personal_ef_prem,'',2,'.',','));
-        $('.pll_prem3').append(accounting.formatMoney(pll_prem,'',2,'.',','));
-        $('.riot_prem3').append(accounting.formatMoney(riot_prem,'',2,'.',','));
-        $('.terror_prem3').append(accounting.formatMoney(terror_prem,'',2,'.',','));
-        $('.tpl_prem3').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
-        $('.totalPremium3').append(accounting.formatMoney(totalPremium,'',2,'.',','));
-        return totalPremium;
+        // $('.workshop_prem3, .compre_prem3, .earthquake_prem3, .era_prem3, .flood_prem3, .med_ex_prem3, .pa_prem3, .passenger_prem3, .personal_ef_prem3, .pll_prem3, .riot_prem3, .terror_prem3, .tpl_prem3').html("");
+        // $('.workshop_prem3').append(accounting.formatMoney(workshop_prem,'',2,'.',','));
+        // $('.compre_prem3').append(accounting.formatMoney(compre_prem,'',2,'.',','));
+        // $('.earthquake_prem3').append(accounting.formatMoney(earthquake_prem,'',2,'.',','));
+        // $('.era_prem3').append(accounting.formatMoney(era_prem,'',2,'.',','));
+        // $('.flood_prem3').append(accounting.formatMoney(flood_prem,'',2,'.',','));
+        // $('.med_ex_prem3').append(accounting.formatMoney(med_ex_prem,'',2,'.',','));
+        // $('.pa_prem3').append(accounting.formatMoney(pa_prem,'',2,'.',','));
+        // $('.passenger_prem3').append(accounting.formatMoney(passenger_prem,'',2,'.',','));
+        // $('.personal_ef_prem3').append(accounting.formatMoney(personal_ef_prem,'',2,'.',','));
+        // $('.pll_prem3').append(accounting.formatMoney(pll_prem,'',2,'.',','));
+        // $('.riot_prem3').append(accounting.formatMoney(riot_prem,'',2,'.',','));
+        // $('.terror_prem3').append(accounting.formatMoney(terror_prem,'',2,'.',','));
+        // $('.tpl_prem3').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
+        // $('.totalPremium3').append(accounting.formatMoney(totalPremium,'',2,'.',','));
+        // return totalPremium;
     }//end of function calc_resultpremier
 
     function recalc_custome(){
