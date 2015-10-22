@@ -626,7 +626,7 @@ $(document).ready(function(){
         // $('.tpl_prem').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
         // $('.totalPremium').append(accounting.formatMoney(totalPremium,'',2,'.',','));
 
-        // return totalPremium;
+        return totalPremium;
     }//end of function calc_result
 
 
@@ -892,7 +892,7 @@ $(document).ready(function(){
         // $('.tpl_prem2').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
         // $('.totalPremium2').append(accounting.formatMoney(totalPremium,'',2,'.',','));
 
-        // return totalPremium;
+        return totalPremium;
         
     }//end of function calc_standard
 
@@ -1155,7 +1155,7 @@ $(document).ready(function(){
         // $('.terror_prem3').append(accounting.formatMoney(terror_prem,'',2,'.',','));
         // $('.tpl_prem3').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
         // $('.totalPremium3').append(accounting.formatMoney(totalPremium,'',2,'.',','));
-        // return totalPremium;
+        return totalPremium;
     }//end of function calc_resultpremier
 
     function recalc_custome(){
