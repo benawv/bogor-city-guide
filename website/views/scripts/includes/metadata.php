@@ -4,7 +4,8 @@
 <![endif]-->
 
 <!-- icons & favicon -->
-<link rel="shortcut icon" href="https://www.allianz.com/v_207002904/system/master/images/favicon.ico" type="image/x-icon">
+<!--<link rel="shortcut icon" href="https://www.allianz.com/v_207002904/system/master/images/favicon.ico" type="image/x-icon">-->
+<link rel="shortcut icon" href="/website/static/images/favicon.ico" type="image/x-icon">
 
 
 <!-- css -->
