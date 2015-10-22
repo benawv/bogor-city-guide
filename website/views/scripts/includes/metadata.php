@@ -6,7 +6,7 @@
 <!-- icons & favicon -->
 <!--<link rel="shortcut icon" href="https://www.allianz.com/v_207002904/system/master/images/favicon.ico" type="image/x-icon">-->
 <!--<link rel="shortcut icon" href="/website/static/images/favicon.ico" type="image/x-icon">-->
-<link rel="shortcut icon" href="/website/static/images/favicon/favicon.ico" type="image/x-icon" />
+<!--<link rel="shortcut icon" href="/website/static/images/favicon/favicon.ico" type="image/x-icon" />
 <link rel="apple-touch-icon" sizes="57x57" href="/website/static/images/favicon/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/website/static/images/favicon/apple-touch-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="/website/static/images/favicon/apple-touch-icon-72x72.png">
@@ -23,7 +23,7 @@
 <meta name="msapplication-square70x70logo" content="/website/static/images/favicon/smalltile.png" />
 <meta name="msapplication-square150x150logo" content="/website/static/images/favicon/mediumtile.png" />
 <meta name="msapplication-wide310x150logo" content="/website/static/images/favicon/widetile.png" />
-<meta name="msapplication-square310x310logo" content="/website/static/images/favicon/largetile.png" />
+<meta name="msapplication-square310x310logo" content="/website/static/images/favicon/largetile.png" />-->
 
 
 
