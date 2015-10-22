@@ -1457,4 +1457,10 @@ $(document).keyup(function(e){
         document.location.href='/kalkulator/mobilku/mobil-hasil-kalkulasi';
 
     });
+    
+    $('#kembali1').click(function(){
+        document.location.href='/kalkulator/mobilku/mobil-data'
+    });
+    
+    
 </script>

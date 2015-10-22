@@ -185,8 +185,8 @@ $sessionDup = new Zend_Session_Namespace('duplic_tasbih');
                             <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen">
                             -->
                             <br/>
-                            <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="hitung-kembali" name="next" style="background:#5F259F !important;"> Hitung Kembali</button>
-                            <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" style="background:#5F259F !important;"><i class="fa fa-users"></i> Cari Agen</button>
+                            <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="hitung-kembali" name="next" style="background:#003781 !important;"> Hitung Kembali</button>
+                            <button type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" style="background:#003781 !important;"><i class="fa fa-users"></i> Cari Agen</button>
 
                         </center>
                     </div>

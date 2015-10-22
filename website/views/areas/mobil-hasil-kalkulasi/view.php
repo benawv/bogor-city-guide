@@ -1284,7 +1284,7 @@ $(document).keyup(function(e){
                             <!-- </a> -->
                         </div><!--/ .pull-right -->
                         <div class="pull-left">
-                            <input type='button' class='btn btn-previous btn-fill btn-warning btn-wd btn-sm' name='previous' value='Kembali' />
+                            <input type='button' id="kembali1" class='btn btn-previous btn-fill btn-warning btn-wd btn-sm' name='previous' value='Kembali' />
                         </div><!--/ .pull-left -->
                         <div class="clearfix"></div>
                     </div><!--/ .wizard-footer -->
@@ -1973,5 +1973,9 @@ $(document).keyup(function(e){
             $(this).prop('checked',true);
 
         });
+    });
+    
+    $('#kembali1').click(function(){
+        document.location.href='/kalkulator/mobilku/mobil-jenis-asuransi'
     });
 </script>
