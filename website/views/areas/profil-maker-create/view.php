@@ -48,7 +48,7 @@
         -moz-transition: width 0.6s ease;
         -o-transition: width 0.6s ease;
         transition: width 0.6s ease;
-    } 
+    }
     .ui-progressbar {
         position: relative;
         overflow: hidden;
@@ -108,7 +108,7 @@ function checkfiles(){
         //         //window.location="<?php echo $this->link("link-template")->getHref()?>";
         //       }
         //     });
-     
+
         //     function progress() {
         //       var val = progressbar.progressbar( "value" ) || 0;
         //       progressbar.progressbar( "value", val + 1 );
@@ -120,7 +120,7 @@ function checkfiles(){
 
         // var modal = $('.js-loading-bar'),
         //     bar = modal.find('.progress-bar');
-              
+
         //     modal.modal('show');
         //     bar.addClass('animate');
 
@@ -128,8 +128,8 @@ function checkfiles(){
         //         bar.removeClass('animate');
         //         modal.modal('hide');
         //     }, 2000);
-            
-           //Interval  
+
+           //Interval
         // var progress = setInterval(function () {
         //     var bar = $('.bar');
         //     var barwidth = $('.progress');
@@ -156,6 +156,15 @@ function checkfiles(){
 </script>
 
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.js"></script>
+
+<!-- http://gregpike.net/demos/bootstrap-file-input/ -->
+<script src="/website/static/js/bootstrap.file-input.js"></script>
+<script>
+    $(function(){
+        $('input[type=file]').bootstrapFileInput();
+        $('.file-input-wrapper').addClass('btn-block');
+    });
+</script>
 
 <section class="profile-maker">
     <div class="container">
@@ -187,8 +196,8 @@ function checkfiles(){
                     <form role="form" action="/upload-image/" method="post" enctype="multipart/form-data" onsubmit="return checkfiles();">
                         <div class="form-group">
                             <!--<img id="preview" src="#" alt="your image" width="100" height="100" />-->
-                            
-                            <input id="imgfile" type="file" name="uploadFoto" /> 
+
+                            <input id="imgfile" type="file" name="uploadFoto" data-filename-placement="inside" title="Pilih Gambar" />
                             <input id="redirect" type="hidden" name="urlRedirect" value="<?php echo $this->link("link-template")->getHref()?>"/>
                             <!--<input type="file" required>-->
                         </div><!--/ .form-group -->
@@ -226,13 +235,13 @@ function checkfiles(){
                             <?php } ?>
                         </div><!--/ .form-group -->
 
-                        
-                    
+
+
                 </div><!--/ .profile-maker--uploader -->
 
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
-        
+
         <div class="row">
             <div class="col-xs-12">
                 <h4><b>Panduan Pengguna</b></h4>
@@ -241,7 +250,7 @@ function checkfiles(){
                         <li>Kami sarankan untuk menggunakan aplikasi ini dengan Google Chrome Minimal Ver.45 atau Mozilla Firefox Minimal Ver.38.</li>
                         <li>Untuk mendapatkan hasil yang maksimal, mohon menggunakan PC atau Tablet Anda.</li>
                         <li>Bagi pengguna yang menggunakan iPad dan iPhone, silahkan download image yang dihasilkan setelah menekan tombol "simpan gambar" dengan menekan pada hasil gambar dan tekan tombol "Save Image".</li>
-                        
+
                     </ul>
                 </p>
             </div><!--/ .col-xs-12 -->
