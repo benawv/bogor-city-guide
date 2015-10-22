@@ -1464,6 +1464,48 @@ $(document).keyup(function(e){
     $('.terror_prem3').append(accounting.formatMoney(getCookie('terror_prem3'),'',2,'.',','));
     $('.tpl_prem3').append(accounting.formatMoney(getCookie('tpl_prem3'),'',2,'.',','));
     $('.totalPremium3').append(accounting.formatMoney(getCookie('totalPremium3'),'',2,'.',','));
+
+
+    
+
+    $('.no_workshop_prem, .no_compre_prem, .no_earthquake_prem, .no_flood_prem, .no_med_ex_prem, .no_pa_prem, .no_passenger_prem, .no_pll_prem, .no_riot_prem, .no_terror_prem, .no_tpl_prem').html("");
+    $('.no_workshop_prem').append(accounting.formatMoney(no_workshop_persen,'',2,'.',','));
+    $('.no_compre_prem').append(accounting.formatMoney(no_compre_persen,'',2,'.',','));
+    // console.log("compre_prem="+compre_prem+"*"+compre_tlo_persen);
+    $('.no_earthquake_prem').append(accounting.formatMoney(no_earthquake_presen,'',2,'.',','));
+    $('.no_flood_prem').append(accounting.formatMoney(no_flood_persen,'',2,'.',','));
+    $('.no_med_ex_prem').append(accounting.formatMoney(no_med_ex_persen,'',2,'.',','));
+    $('.no_pa_prem').append(accounting.formatMoney(no_pa_persen,'',2,'.',','));
+    $('.no_passenger_prem').append(accounting.formatMoney(no_passenger_persen,'',2,'.',','));
+    //$('.no_personal_ef_prem').append(accounting.formatMoney(personal_ef_prem,'',2,'.',','));
+    $('.no_pll_prem').append(accounting.formatMoney(no_pll_persen,'',2,'.',','));
+    $('.no_riot_prem').append(accounting.formatMoney(no_riot_persen,'',2,'.',','));
+    $('.no_terror_prem').append(accounting.formatMoney(no_terror_persen,'',2,'.',','));
+    $('.no_tpl_prem').append(accounting.formatMoney(no_tpl_prem,'',2,'.',','));
+    $('#no_tpl_hidden').val(tpl_prem);
+    $('#no_pll_hidden').val(pll_prem);
+    $('#med_ex_hidden').val(med_ex_prem);
+    $('#no_passenger_hidden').val(passenger_prem);
+    $('#no_pa_hidden').val(pa_prem);
+    $('#no_tpl_temp').val(tpl_prem);
+    $('#no_pll_temp').val(pll_prem);
+    $('#med_ex_temp').val(med_ex_prem);
+    $('#no_passenger_temp').val(passenger_prem);
+    $('#no_pa_temp').val(pa_prem);
+    //$('.no_totalPremium').append(accounting.formatMoney(parseInt(totalPremium-era_prem),'',2,'.',','));
+
+    $('.no_compre_is_calc').attr('data-angka',accounting.formatMoney(compre_prem,'',2,'.',','));
+    $('.no_earthquake_is_calc').attr('data-angka',accounting.formatMoney(earthquake_prem,'',2,'.',','));
+    $('.no_flood_is_calc').attr('data-angka',accounting.formatMoney(flood_prem,'',2,'.',','));
+    $('.no_med_ex_is_calc').attr('data-angka',accounting.formatMoney(med_ex_prem,'',2,'.',','));
+    $('.no_pa_is_calc').attr('data-angka',accounting.formatMoney(pa_prem,'',2,'.',','));
+    $('.no_passenger_is_calc').attr('data-angka',accounting.formatMoney(passenger_prem,'',2,'.',','));
+    //$('.no_personal_ef_prem').append(accounting.formatMoney(personal_ef_prem,'',2,'.',','));
+    //$('.no_pll_prem').append(accounting.formatMoney(pll_prem,'',2,'.',','));
+    $('.no_riot_is_calc').attr('data-angka',accounting.formatMoney(riot_prem,'',2,'.',','));
+    $('.no_terror_is_calc').attr('data-angka',accounting.formatMoney(terror_prem,'',2,'.',','));
+    $('.no_tpl_is_calc').attr('data-angka',accounting.formatMoney(tpl_prem,'',2,'.',','));
+    $('.no_workshop_is_calc').attr('data-angka',accounting.formatMoney(workshop_prem,'',2,'.',','));
     
     function setCookie(cname, cvalue, exdays) {
             var d = new Date();

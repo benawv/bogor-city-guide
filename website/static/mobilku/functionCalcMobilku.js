@@ -1996,28 +1996,29 @@ $(document).ready(function(){
 				var paket = "Basic";
 				var total = accounting.formatMoney(calc_result(),'',2,'.',',');
 				// var label = $('.no_pack.data').html();
-				var radio1=$('#radio01').val();
-				var radio2=$('#radio02').val();
-				$('#radio01').checked
-				if($('#radio01').is(":checked") == true){
-					var label = $('#radio01').val();
-				}else{
-					var label= $('#radio02').val();
-				}
-				var tahun_pembuatan=$('#tahun_pembuatan').val();
-				var harga=$('#harga').val();
-				var merk=$('#merk').val();
-				var merk_html=$('#merk option:selected').html().toLowerCase();
-				var model=$('#model').val();
-				var regno=$('#regno').val();
-				var tipe=$('#tipe').val();
-				var kapasitas=$('#kapasitas').val();
-				var nama=$('#nama').val();
-				var telp=$('#telp').val();
-				var periode=$('#periode').val();
-				var email=$('#email').val();
-				var hargaKonv=clearFormat($('#harga').val());
-				var model_html=$('#model option:selected').html().toLowerCase();
+				// var radio1=$('#radio01').val();
+				// var radio2=$('#radio02').val();
+				// $('#radio01').checked
+				// if($('#radio01').is(":checked") == true){
+				// 	var label = $('#radio01').val();
+				// }else{
+				// 	var label= $('#radio02').val();
+				// }
+        var label=getCookie('radio');
+				var tahun_pembuatan=getCookie('tahun_buat');
+				var harga=getCookie('harga');
+				var merk=getCookie('merk');
+				var merk_html=getCookie('merk_html');
+				var model=getCookie('model');
+				var regno=getCookie('regno');
+				var tipe=getCookie('tipe');
+				var kapasitas=getCookie('kapasitas');
+				var nama=getCookie('nama');
+				var telp=getCookie('telp');
+				var periode=getCookie('periode');
+				var email=getCookie('email');
+				var hargaKonv=clearFormat(getCookie('harga'));
+				var model_html=getCookie('model_html');
 				
 				$.ajax({
 					"url" : "/send-email-basic/",
@@ -2036,28 +2037,30 @@ $(document).ready(function(){
 			else if(document.getElementById("paket_1_2").checked){
 				var paket = "Standart";
 				var total = accounting.formatMoney(calc_resultstandard(),'',2,'.',',');
-				var radio1=$('#radio01').val();
-				var radio2=$('#radio02').val();
-				$('#radio01').checked
-				if($('#radio01').is(":checked") == true){
-					var label = $('#radio01').val();
-				}else{
-					var label= $('#radio02').val();
-				}
-				var tahun_pembuatan=$('#tahun_pembuatan').val();
-				var harga=$('#harga').val();
-				var merk=$('#merk').val();
-				var merk_html=$('#merk option:selected').html().toLowerCase();
-				var model=$('#model').val();
-				var regno=$('#regno').val();
-				var tipe=$('#tipe').val();
-				var kapasitas=$('#kapasitas').val();
-				var nama=$('#nama').val();
-				var telp=$('#telp').val();
-				var periode=$('#periode').val();
-				var email=$('#email').val();
-				var hargaKonv=clearFormat($('#harga').val());
-				var model_html=$('#model option:selected').html().toLowerCase();
+				// var label = $('.no_pack.data').html();
+        // var radio1=$('#radio01').val();
+        // var radio2=$('#radio02').val();
+        // $('#radio01').checked
+        // if($('#radio01').is(":checked") == true){
+        //  var label = $('#radio01').val();
+        // }else{
+        //  var label= $('#radio02').val();
+        // }
+        var label=getCookie('radio');
+        var tahun_pembuatan=getCookie('tahun_buat');
+        var harga=getCookie('harga');
+        var merk=getCookie('merk');
+        var merk_html=getCookie('merk_html');
+        var model=getCookie('model');
+        var regno=getCookie('regno');
+        var tipe=getCookie('tipe');
+        var kapasitas=getCookie('kapasitas');
+        var nama=getCookie('nama');
+        var telp=getCookie('telp');
+        var periode=getCookie('periode');
+        var email=getCookie('email');
+        var hargaKonv=clearFormat(getCookie('harga'));
+        var model_html=getCookie('model_html');
 				
 				$.ajax({
 					"url" : "/send-email-standart/",
@@ -2075,28 +2078,30 @@ $(document).ready(function(){
 			else if(document.getElementById("paket_1_3").checked){
 				var paket = "Premier";
 				var total = accounting.formatMoney(calc_resultpremier(),'',2,'.',',');
-				var radio1=$('#radio01').val();
-				var radio2=$('#radio02').val();
-				$('#radio01').checked
-				if($('#radio01').is(":checked") == true){
-					var label = $('#radio01').val();
-				}else{
-					var label= $('#radio02').val();
-				}
-				var tahun_pembuatan=$('#tahun_pembuatan').val();
-				var harga=$('#harga').val();
-				var merk=$('#merk').val();
-				var merk_html=$('#merk option:selected').html().toLowerCase();
-				var model=$('#model').val();
-				var regno=$('#regno').val();
-				var tipe=$('#tipe').val();
-				var kapasitas=$('#kapasitas').val();
-				var nama=$('#nama').val();
-				var telp=$('#telp').val();
-				var periode=$('#periode').val();
-				var email=$('#email').val();
-				var hargaKonv=clearFormat($('#harga').val());
-				var model_html=$('#model option:selected').html().toLowerCase();
+				// var label = $('.no_pack.data').html();
+        // var radio1=$('#radio01').val();
+        // var radio2=$('#radio02').val();
+        // $('#radio01').checked
+        // if($('#radio01').is(":checked") == true){
+        //  var label = $('#radio01').val();
+        // }else{
+        //  var label= $('#radio02').val();
+        // }
+        var label=getCookie('radio');
+        var tahun_pembuatan=getCookie('tahun_buat');
+        var harga=getCookie('harga');
+        var merk=getCookie('merk');
+        var merk_html=getCookie('merk_html');
+        var model=getCookie('model');
+        var regno=getCookie('regno');
+        var tipe=getCookie('tipe');
+        var kapasitas=getCookie('kapasitas');
+        var nama=getCookie('nama');
+        var telp=getCookie('telp');
+        var periode=getCookie('periode');
+        var email=getCookie('email');
+        var hargaKonv=clearFormat(getCookie('harga'));
+        var model_html=getCookie('model_html');
 				
 				$.ajax({
 					"url" : "/send-email-premier/",
