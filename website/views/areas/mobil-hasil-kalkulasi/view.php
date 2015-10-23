@@ -1414,7 +1414,7 @@ $(document).keyup(function(e){
 <script>
 
     $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3, #nojenisasuransi").html("");
-    $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3, #nojenisasuransi").append(getCookie('radio'));
+    $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3, #nojenisasuransi").append(getCookie('label_view_hasil'));
 	//PAKET BASIC
     $('.workshop_prem, .compre_prem, .earthquake_prem, .era_prem, .flood_prem, .med_ex_prem, .pa_prem, .passenger_prem, .personal_ef_prem, .pll_prem, .riot_prem, .terror_prem, .tpl_prem').html("");
     $('.workshop_prem').append(accounting.formatMoney(getCookie('workshop_prem'),'',2,'.',','));
