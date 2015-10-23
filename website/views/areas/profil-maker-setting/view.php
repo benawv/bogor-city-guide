@@ -404,27 +404,27 @@
                         <form id="formx" role="form">
                             <div id="input1" class="row">
                                 <div class="col-xs-12 col-md-3">
-                                    <label>Title</label>
+                                    <label>Judul</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
                                     <input type="text" name="headline" id="atas" maxlength="30" class="form-control headlineCover" required>
-                                    <div id="counter2">Letters remaining: <span id="char2">20</span></div>
+                                    <div id="counter2">Sisa Huruf: <span id="char2">20</span></div>
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div id="input2" class="row">
                                 <div class="col-xs-12 col-md-3">
-                                    <label>Description</label>
+                                    <label>Deskripsi</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
                                     <!-- <div class="highlighter" id="overflowText"></div> -->
                                     <textarea class="form-control contentCover" name="content" id="tengah" maxlength="200" rows="5" required></textarea>
-                                    <div id="counter">Letters remaining: <span id="char">180</span></div>
+                                    <div id="counter">Sisa Huruf: <span id="char">180</span></div>
 
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div id="input3" class="row">
                                 <div class="col-xs-12 col-md-3">
-                                    <label>First Name</label>
+                                    <label>Nama Depan</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
                                     <input type="text" name="first_name" id="bawah1" class="form-control nama1Cover" required>
@@ -433,7 +433,7 @@
                             </div><!--/ .row -->
                             <div id="input4" class="row">
                                 <div class="col-xs-12 col-md-3">
-                                    <label>Last Name</label>
+                                    <label>Nama Belakang</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
                                     <input type="text" name="last_name" id="bawah2" class="form-control nama2Cover" required>
@@ -442,24 +442,24 @@
                             </div><!--/ .row -->
                             <div id="input5" class="row">
                                 <div class="col-xs-12 col-md-3">
-                                    <label>Notepad Color</label>
+                                    <label>Warna Notepad</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
                                     <select id="color" class="form-control" required>
-                                        <option value"blue" selected> Blue </option>
+                                        <option value"blue" selected> Biru </option>
                                         <option value"orange"> Orange </option>
-                                        <option value"red"> Red </option>
+                                        <option value"red"> Merah </option>
                                     </select>
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div id="input6" class="row">
                                 <div class="col-xs-12 col-md-3">
-                                    <label>Notepad Position</label>
+                                    <label>Posisi Notepad</label>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-12 col-md-9">
                                     <select id="position" class="form-control" required>
-                                        <option value"left" selected> Left </option>
-                                        <option value"right"> Right </option>
+                                        <option value"left" selected> Kiri </option>
+                                        <option value"right"> Kanan </option>
                                     </select>
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
