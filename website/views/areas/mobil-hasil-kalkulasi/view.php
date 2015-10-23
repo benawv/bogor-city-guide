@@ -1286,7 +1286,7 @@ $(document).keyup(function(e){
                             <!-- </a> -->
                         </div><!--/ .pull-right -->
                         <div class="pull-left">
-                            <input type='button' id="kembali1" class='btn btn-previous btn-fill btn-warning btn-wd btn-sm' name='previous' value='Kembali' />
+                            <input type='button' id="kembali2" class='btn btn-previous btn-fill btn-warning btn-wd btn-sm' name='previous' value='Kembali' />
                         </div><!--/ .pull-left -->
                         <div class="clearfix"></div>
                     </div><!--/ .wizard-footer -->
@@ -1412,6 +1412,9 @@ $(document).keyup(function(e){
 <script src="/website/static/mobilku/functionCalcMobilku.js" type="text/javascript"></script>
 
 <script>
+
+    $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3, #nojenisasuransi").html("");
+    $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3, #nojenisasuransi").append(getCookie('radio'));
 	//PAKET BASIC
     $('.workshop_prem, .compre_prem, .earthquake_prem, .era_prem, .flood_prem, .med_ex_prem, .pa_prem, .passenger_prem, .personal_ef_prem, .pll_prem, .riot_prem, .terror_prem, .tpl_prem').html("");
     $('.workshop_prem').append(accounting.formatMoney(getCookie('workshop_prem'),'',2,'.',','));
@@ -2095,7 +2098,7 @@ $(document).keyup(function(e){
         });
     });
     
-    $('#kembali1').click(function(){
+    $('#kembali2').click(function(){
         document.location.href='/kalkulator/mobilku/mobil-jenis-asuransi'
     });
 </script>

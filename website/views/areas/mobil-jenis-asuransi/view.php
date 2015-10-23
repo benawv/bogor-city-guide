@@ -793,7 +793,7 @@ $(document).keyup(function(e){
                             <!-- </a> -->
                         </div><!--/ .pull-right -->
                         <div class="pull-left">
-                            <input type='button' id="kembali1" class='btn btn-previous btn-fill btn-warning btn-wd btn-sm' name='previous' value='Kembali' />
+                            <input type='button' id="kembali1" class='btn btn-fill btn-warning btn-wd btn-sm' name='previous' value='Kembali' />
                         </div><!--/ .pull-left -->
                         <div class="clearfix"></div>
                     </div><!--/ .wizard-footer -->
@@ -1441,9 +1441,11 @@ $(document).keyup(function(e){
         var radio2=$('#radio02').val();
         $('#radio01').checked
         if($('#radio01').is(":checked") == true){
-            var radio = $('#radio01').val();
+            // var radio = $('#radio01').val();
+            var radio = 'Komprehensif';
         }else{
-            var radio = $('#radio02').val();
+            var radio = 'TLO';
+            // var radio = $('#radio02').val();
         }
        
         setCookie('nama', nama,1);
@@ -1452,9 +1454,10 @@ $(document).keyup(function(e){
         setCookie('email', email,1);
 //        setCookie('periode_last', periode_last,1);
         setCookie('radio', radio,1);
-        
-
         document.location.href='/kalkulator/mobilku/mobil-hasil-kalkulasi';
-
     });
+
+    $('#kembali1').click(function(){
+        document.location.href= '/kalkulator/mobilku/mobil-data'
+    })
 </script>
