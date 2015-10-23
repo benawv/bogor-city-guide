@@ -28,7 +28,7 @@ $(document).ready(function(){
         return value;
     }
 
-    var jenisasuransi = getCookie('radio');
+    var jenisasuransi = "";
     // $("input:radio[name=radio]").click(function() {
     //      jenisasuransi = $(this).val();
     //      $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3, #nojenisasuransi").html("");
@@ -1945,7 +1945,7 @@ $(document).ready(function(){
 
     
     $(this).on('click','.btn-next',function(){
-        
+        jenisasuransi = getCookie('radio'); 
         var email=$('#email').val();
         if (email != '') {
             sendEmail(calc_result(),calc_resultstandard(),calc_resultpremier(),recalc_custome());
