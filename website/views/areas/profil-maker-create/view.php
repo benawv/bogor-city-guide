@@ -66,179 +66,182 @@
         border-radius: 0;
         margin: 0;
     }
+
+    /**
+     * Progress Bar Styling
+     * http://www.sanwebe.com/2012/05/ajax-image-upload-with-progressbar-with-jquery-and-php
+     */
+
+    #progressbox
+    {
+        border: solid 1px #00397D;
+        border-radius: 0;
+        margin: 0 auto 16px;
+        padding: 0;
+        width: 100%;
+        height: 32px;
+        position: relative;
+        display: none;
+    }
+
+    #progressbar
+    {
+        background-color: #00397D;
+        width: 1%;
+        height: 100%;
+    }
+
+    #statustxt
+    {
+        top: 0;
+        left: 0;
+        width: 100%;
+        position: absolute;
+        display: block;
+        color: #999;
+        margin: 0 auto;
+        padding: 0;
+        line-height: 32px;
+        text-align: center;
+    }
+
+    #output
+    {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+    }
 </style>
 
 <script type="text/javascript">
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            document.getElementById('preview').src=e.target.result;
+
+    function readURL(input)
+    {
+        if (input.files && input.files[0])
+        {
+            var reader = new FileReader();
+            reader.onload = function(e)
+            {
+                document.getElementById('preview').src=e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
         }
-        reader.readAsDataURL(input.files[0]);
     }
-}
 
+    function checkfiles()
+    {
+        var fup = document.getElementById('imgfile');
+        var fileName = fup.value;
+        var ext = fileName.substring(fileName.lastIndexOf('.')+1);
 
-function checkfiles(){
-    var fup = document.getElementById('imgfile');
-    var fileName = fup.value;
-    var ext = fileName.substring(fileName.lastIndexOf('.')+1);
-
-    if (ext == ""){
-        document.getElementById('test').innerHTML = "Tidak ada file yang dipilih";
-        //var msg ="Tidak ada file yang dipilih";
-        fup.focus();
-        return false;
-    }else if (ext == "JPG" || ext == "PNG" || ext == "jpg" || ext == "png" || ext == "jpeg" || ext == "JPEG"){
-
-        $('#test').hide();
-        $("body").prepend("<div id='dvLoading'></div>");
-        // $( "#progressbar" ).progressbar();
-        // var progressbar = $( "#progressbar" ),
-        //     progressLabel = $( ".progress-label" );
-        //     progressLabel.show();
-        //     progressbar.progressbar({
-        //       value: false,
-        //       change: function() {
-        //         progressLabel.text( progressbar.progressbar( "value" ) + "%" );
-        //       },
-        //       complete: function() {
-        //         //progressLabel.text( "Complete!" );
-        //         //window.location="<?php echo $this->link("link-template")->getHref()?>";
-        //       }
-        //     });
-
-        //     function progress() {
-        //       var val = progressbar.progressbar( "value" ) || 0;
-        //       progressbar.progressbar( "value", val + 1 );
-        //        if ( val < 99 ) {
-        //             setTimeout( progress, 50 );
-        //        }
-        //     }
-        //     setTimeout( progress, 10 );
-
-        // var modal = $('.js-loading-bar'),
-        //     bar = modal.find('.progress-bar');
-
-        //     modal.modal('show');
-        //     bar.addClass('animate');
-
-        //     setTimeout(function() {
-        //         bar.removeClass('animate');
-        //         modal.modal('hide');
-        //     }, 2000);
-
-           //Interval
-        // var progress = setInterval(function () {
-        //     var bar = $('.bar');
-        //     var barwidth = $('.progress');
-        //     console.log(barwidth.width());
-
-        //     if ( bar.width() >= barwidth.width() ) {
-        //         clearInterval(progress);
-        //         $('.progress').removeClass('active');
-        //     } else {
-        //         bar.width(bar.width() + 40);
-        //     }
-        //     bar.text(bar.width() / 4 + "%");
-        // }, 800);
-
-        return true;
-
-    }else{
-        document.getElementById('test').innerHTML = "File tidak di dukung";
-        //var msg ="Tidak ada file yang dipilih";
-        fup.focus();
-        return false;
+        if(ext == "")
+        {
+            document.getElementById('test').innerHTML = "Tidak ada file yang dipilih";
+            //var msg ="Tidak ada file yang dipilih";
+            fup.focus();
+            return false;
+        }
+        else if (ext == "JPG" || ext == "PNG" || ext == "jpg" || ext == "png" || ext == "jpeg" || ext == "JPEG")
+        {
+            // $('#test').hide();
+            // $("body").prepend("<div id='dvLoading'></div>");
+            return true;
+        }
+        else
+        {
+            document.getElementById('test').innerHTML = "File tidak di dukung";
+            //var msg ="Tidak ada file yang dipilih";
+            fup.focus();
+            return false;
+        }
     }
-}
-</script>
 
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.js"></script>
+    function setCookie(cname, cvalue)
+    {
+        document.cookie = cname + "=" + cvalue + "; ";
+    }
 
-<!-- http://gregpike.net/demos/bootstrap-file-input/ -->
-<script src="/website/static/js/bootstrap.file-input.js"></script>
-<script>
-    $(function(){
-        $('input[type=file]').bootstrapFileInput();
-        $('.file-input-wrapper').addClass('btn-block');
+    function getCookie(cname)
+    {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++)
+        {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+        }
+        return "";
+    }
+
+    getCookie("template");
+
+    /*
+    this.$('.js-loading-bar').modal({
+        backdrop: 'static',
+        show: false
     });
+    */
+
 </script>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.js" async></script>
 
 <section class="profile-maker">
     <div class="container">
 
         <div class="row profile-maker--title">
             <div class="col-xs-12">
-                <h2><script>
-                document.write(getCookie("keterangan"));
-            </script></h2>
+                <h2><script>document.write(getCookie("keterangan"));</script></h2>
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
 
         <div class="row">
             <div class="col-xs-12">
-
                 <div class="profile-maker--uploader">
                     <p>
                         <!--Upload your files here. Supported formats: JPG and PNG,<br />-->
                         Upload fotomu disini, dengan format JPG atau PNG dengan resolusi minimal
-                        <script>
-                            document.write(getCookie("res"));
-                        </script>
+                        <script>document.write(getCookie("res"));</script>
                         <br />
-                        <script>
-                            document.write(getCookie("keterangan"));
-                        </script>
+                        <script>document.write(getCookie("keterangan"));</script>
                     </p>
 
-                    <form role="form" action="/upload-image/" method="post" enctype="multipart/form-data" onsubmit="return checkfiles();">
+                    <!--
+                    <form role="form" action="/upload-image/" method="post" enctype="multipart/form-data" id="profilMakerForm" onsubmit="return checkfiles();">
+                    -->
+
+                    <form role="form" action="/upload-image/" method="post" enctype="multipart/form-data" id="profilMakerForm">
+
                         <div class="form-group">
                             <!--<img id="preview" src="#" alt="your image" width="100" height="100" />-->
-
-                            <input id="imgfile" type="file" name="uploadFoto" data-filename-placement="inside" title="Pilih Gambar" />
+                            <input id="imgfile" type="file" name="uploadFoto" data-filename-placement="inside" required title="Pilih Gambar" />
                             <input id="redirect" type="hidden" name="urlRedirect" value="<?php echo $this->link("link-template")->getHref()?>"/>
                             <!--<input type="file" required>-->
                         </div><!--/ .form-group -->
+
                         <div style="color:red" id="test"></div>
+
+                        <!--
                         <p></p>
-
-                        <!-- Modal Progressbar -->
-                        <!-- <div class="modal js-loading-bar">
-                         <div class="modal-dialog">
-                           <div class="modal-content">
-                             <div class="modal-body">
-                               <div class="progress progress-popup">
-                                <div class="progress-bar"></div>
-                               </div>
-                             </div>
-                           </div>
-                         </div>
-                        </div> -->
-
-                        <!-- <div class="progress progress-striped active">
-                            <div class="bar" style="width: 0%;"></div>
-                        </div> -->
-
                         <div id="progressbar"><div class="progress-label">Loading...</div></div>
+                        -->
+
+                        <div id="progressbox"><div id="progressbar"></div ><div id="statustxt">0%</div></div>
+                        <div id="output"></div>
 
                         <div class="form-group" id="test">
-                            <!--<a href="/profil-maker/page3" class="btn btn-primary">-->
-                                <input id="bar" type="submit" name="submit" value="Unggah" class="btn btn-primary" />
-                    </form>
-                            <!--</a>-->
+                            <input id="bar" type="submit" name="submit" value="Unggah" class="btn btn-primary" />
+                            <!--<a href="/profil-maker/page3" class="btn btn-primary"></a>-->
                             <a href="javascript:history.go(-1);" class="btn btn-default">Kembali</a>
                             <br />
                             <?php if($this->editmode) { ?>
                                 <?php echo $this->link("link-template")?>
                             <?php } ?>
                         </div><!--/ .form-group -->
-
-
+                    </form>
 
                 </div><!--/ .profile-maker--uploader -->
-
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
 
@@ -256,41 +259,58 @@ function checkfiles(){
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
 
-        <script type="text/javascript">
-            function setCookie(cname, cvalue) {
-                document.cookie = cname + "=" + cvalue + "; ";
-            }
-
-            function getCookie(cname) {
-                var name = cname + "=";
-                var ca = document.cookie.split(';');
-                for(var i=0; i<ca.length; i++) {
-                    var c = ca[i];
-                    while (c.charAt(0)==' ') c = c.substring(1);
-                    if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
-                }
-                return "";
-            }
-            /*function getId(obj) {
-                var id=obj;
-                alert("idnya"+id);
-                setCookie("image", id);
-            }*/
-
-           //function myImg(){
-           // var preview = document.getElementById("preview").src;
-           // setCookie("preview", preview);
-           //}
-            //alert("preview : "+preview);
-            getCookie("template");
-
-            // Setup
-            this.$('.js-loading-bar').modal({
-              backdrop: 'static',
-              show: false
-            });
-
-        </script>
-
     </div><!--/ .container -->
 </section><!--/ .profile-maker -->
+
+
+<script src="/website/static/js/bootstrap.file-input.js"></script>
+<script src="/website/static/js/jquery.form.js" async></script>
+<script>
+    $(function(){
+
+        /**
+         * Bootstrap File Input
+         * http://gregpike.net/demos/bootstrap-file-input/
+         */
+        $('input[type=file]').bootstrapFileInput();
+        $('.file-input-wrapper').addClass('btn-block');
+
+        /**
+         * jQuery Form Plugin
+         * http://malsup.com/jquery/form/#file-upload
+         * http://stackoverflow.com/questions/15410265/file-upload-progress-bar-with-jquery
+         */
+        $('form#profilMakerForm').submit(function(e){
+            e.preventDefault();
+            if(checkfiles() === true)
+            {
+                $(this).ajaxSubmit({
+                    target: '#output',
+                    beforeSubmit: function(){
+                        $('#progressbox').stop().slideDown('fast');
+                    },
+                    uploadProgress: OnProgress, //upload progress callback
+                    success:function(){
+                        alert('Done, now reidrect.'); // change this line
+                        document.location.href = 'http://www.nyan.cat/'; // change the url
+                    },
+                    resetForm: true
+                });
+            }
+            return false;
+        });
+
+        function OnProgress(event, position, total, percentComplete)
+        {
+            //Progress bar
+            $('#progressbar').css('width', percentComplete + '%'); //update progressbar percent complete
+            $('#statustxt').html(percentComplete + '%'); //update status text
+            if(percentComplete>50)
+            {
+                $('#statustxt').css('color','#fff'); //change status text to white after 50%
+            }
+            console.log('Uploading: ' + percentComplete + '%');
+        }
+
+    });
+</script>
