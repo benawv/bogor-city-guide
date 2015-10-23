@@ -18,7 +18,7 @@ class CalcSmartmedController extends Website_Controller_Action {
 		
 		//$this->enableLayout();
 		// echo $nbc."-".$sex."-".$ncd."-".$age."-".$sex."-".$coshare."-".$code."-".$plan."-".$uwl;
-		//ALL
+		//ALL premium_new
 		$entries = new Object_SmartmedPremium_List();
 		$entries->setLimit(1);
 		$entries->setCondition("o_path LIKE '/kalkulator-smartmed/premium_new/' AND nbc LIKE '".$nbc."' AND sex LIKE '".$sex."' AND age LIKE '".$age."' AND coshare LIKE '".$coshare."' AND kode LIKE '".$code."' AND plantype__id LIKE '".$plan."'");
@@ -27,7 +27,7 @@ class CalcSmartmedController extends Website_Controller_Action {
 		foreach ($entries as $row){
 			$value = $row->getPremium();
 		}
-
+		
 		if($payment=="Annually")
 			echo $value;
 		elseif($payment=="Semi-Annually")
@@ -37,5 +37,8 @@ class CalcSmartmedController extends Website_Controller_Action {
 		else
 			echo $value*0.10;
 
+	}
+	public function emailAction(){
+		$this->_redirect("/kalkulator/smartmed/langkah5");
 	}
 }

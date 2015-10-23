@@ -122,6 +122,11 @@
 <script src="/website/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script>
     $(function(){
-
+        $("#hitung-kembali").click(function(){
+            window.location = "/kalkulator/smartmed/langkah1";
+        });
+        $("#cari-agen").click(function(){
+            window.location = "/kalkulator/smartmed/langkah5";
+        });
     });
 </script>

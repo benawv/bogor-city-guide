@@ -55,7 +55,7 @@
         ?>
 
         <?php echo $this->areablock('container', array('allowed' => array(
-            'mobilku','tasbih', 'tasbih-news', 'payment','smartmed','liveinsurance','thanksyou-liveinsurance'.'container-box2', 'community-tips2',
+            'mobilku','tasbih', 'tasbih-news', 'payment','smartmed','smartmedlangkah1','liveinsurance','thanksyou-liveinsurance'.'container-box2', 'community-tips2',
             'sections', 'sections-box-full', 'sections-tab', 'teks-tabs',
             'sections-video', 'sections-gallery',
             'sections-select', 'tekskanan60-imagekiri40_wizard',
