@@ -1153,7 +1153,7 @@ $(document).keyup(function(e){
                                                                             </tr>
                                                                             <tr>
                                                                                 <td>
-                                                                                    <input type="checkbox"  class="no_flood_is_calc" name="no_flood_is_calc" checked data-angka="0" data-target="no_flood_prem">
+                                                                                    <input type="checkbox"  class="no_flood_is_calc" id="no_flood_is_calc"name="no_flood_is_calc" checked data-angka="0" data-target="no_flood_prem">
                                                                                 </td>
                                                                                 <td>Banjir</td>
                                                                                 <td></td>
@@ -1163,17 +1163,17 @@ $(document).keyup(function(e){
                                                                             </tr>
                                                                             <tr>
                                                                                 <td>
-                                                                                    <input type="checkbox" class="no_earthquake_is_calc" name="no_earthquake_is_calc" checked data-angka="0" data-target="no_earthquake_prem">
+                                                                                    <input type="checkbox" class="no_earthquake_is_calc" id="no_earthquake_is_calc"name="no_earthquake_is_calc" checked data-angka="0" data-target="no_earthquake_prem">
                                                                                 </td>
                                                                                 <td>Gempa Bumi</td>
                                                                                 <td></td>
-                                                                                <td id="no_earthquake" class='no_earthquake_prem position-text no_pack'>-</td>
+                                                                                <td id="no_earthquake" class='no_earthquake_prem position-text no_pack' >-</td>
                                                                                 <!-- <td class='no_earthquake_val'>-</td>
                                                                                 <td class='no_earthquake_presen'>-</td> -->
                                                                             </tr>
                                                                             <tr>
                                                                                 <td>
-                                                                                    <input type="checkbox" class="no_riot_is_calc" name="no_tpl_is_calc" checked data-angka="0" data-target="no_riot_prem">
+                                                                                    <input type="checkbox" class="no_riot_is_calc" id="no_riot_is_calc" name="no_tpl_is_calc" checked data-angka="0" data-target="no_riot_prem">
                                                                                 </td>
                                                                                 <td>Pemogokan, Kerusuhan dan Huruhara</td>
                                                                                 <td></td>
@@ -1183,7 +1183,7 @@ $(document).keyup(function(e){
                                                                             </tr>
                                                                             <tr>
                                                                                 <td>
-                                                                                    <input type="checkbox" class="no_terror_is_calc" name="no_terror_is_calc" checked data-angka="0" data-target="no_terror_prem">
+                                                                                    <input type="checkbox" class="no_terror_is_calc" id="no_terror_is_calc" name="no_terror_is_calc" checked data-angka="0" data-target="no_terror_prem">
                                                                                 </td>
                                                                                 <td>Terorisme dan Sabotase</td>
                                                                                 <td></td>
@@ -1410,9 +1410,7 @@ $(document).keyup(function(e){
 <script src="/website/static/mobilku/functionCalcMobilku.js" type="text/javascript"></script>
 
 <script>
-    
-    
-
+	//PAKET BASIC
     $('.workshop_prem, .compre_prem, .earthquake_prem, .era_prem, .flood_prem, .med_ex_prem, .pa_prem, .passenger_prem, .personal_ef_prem, .pll_prem, .riot_prem, .terror_prem, .tpl_prem').html("");
     $('.workshop_prem').append(accounting.formatMoney(getCookie('workshop_prem'),'',2,'.',','));
     $('.compre_prem').append(accounting.formatMoney(getCookie('compre_prem'),'',2,'.',','));
@@ -1431,6 +1429,7 @@ $(document).keyup(function(e){
     $('.tpl_prem').append(accounting.formatMoney(getCookie('tpl_prem'),'',2,'.',','));
     $('.totalPremium').append(accounting.formatMoney(getCookie('totalPremium'),'',2,'.',','));
 
+	//PAKET STANDART
     $('.workshop_prem2, .compre_prem2, .earthquake_prem2, .era_prem2, .flood_prem2, .med_ex_prem2, .pa_prem2, .passenger_prem2, .personal_ef_prem2, .pll_prem2, .riot_prem2, .terror_prem2, .tpl_prem2').html("");
     $('.workshop_prem2').append(accounting.formatMoney(getCookie('workshop_prem2'),'',2,'.',','));
     $('.compre_prem2').append(accounting.formatMoney(getCookie('compre_prem2'),'',2,'.',','));
@@ -1449,6 +1448,7 @@ $(document).keyup(function(e){
     $('.tpl_prem2').append(accounting.formatMoney(getCookie('tpl_prem2'),'',2,'.',','));
     $('.totalPremium2').append(accounting.formatMoney(getCookie('totalPremium2'),'',2,'.',','));
 
+	//PAKET PREMIER
     $('.workshop_prem3, .compre_prem3, .earthquake_prem3, .era_prem3, .flood_prem3, .med_ex_prem3, .pa_prem3, .passenger_prem3, .personal_ef_prem3, .pll_prem3, .riot_prem3, .terror_prem3, .tpl_prem3').html("");
     $('.workshop_prem3').append(accounting.formatMoney(getCookie('workshop_prem3'),'',2,'.',','));
     $('.compre_prem3').append(accounting.formatMoney(getCookie('compre_prem3'),'',2,'.',','));
@@ -1464,7 +1464,50 @@ $(document).keyup(function(e){
     $('.terror_prem3').append(accounting.formatMoney(getCookie('terror_prem3'),'',2,'.',','));
     $('.tpl_prem3').append(accounting.formatMoney(getCookie('tpl_prem3'),'',2,'.',','));
     $('.totalPremium3').append(accounting.formatMoney(getCookie('totalPremium3'),'',2,'.',','));
-    
+	
+	//NON PAKET
+	$('.no_workshop_prem, .no_compre_prem, .no_earthquake_prem, .no_flood_prem, .no_med_ex_prem, .no_pa_prem, .no_passenger_prem, .no_pll_prem, .no_riot_prem, .no_terror_prem, .no_tpl_prem, .no_totalPremium').html("");
+	$('.no_workshop_prem').append(accounting.formatMoney(getCookie('no_workshop_prem'),'',2,'.',','));
+	$('.no_compre_prem').append(accounting.formatMoney(getCookie('no_compre_prem'),'',2,'.',','));
+	$('.no_earthquake_prem').append(accounting.formatMoney(getCookie('no_earthquake_prem'),'',2,'.',','));
+	$('.no_flood_prem').append(accounting.formatMoney(getCookie('no_flood_prem'),'',2,'.',','));
+	
+	$('.no_med_ex_prem').append(accounting.formatMoney(getCookie('no_med_ex_prem'),'',2,'.',','));
+	$('.no_pa_prem').append(accounting.formatMoney(getCookie('no_pa_prem'),'',2,'.',','));
+	$('.no_passenger_prem').append(accounting.formatMoney(getCookie('no_passenger_prem'),'',2,'.',','));
+	$('.no_pll_prem').append(accounting.formatMoney(getCookie('no_pll_prem'),'',2,'.',','));
+	$('.no_riot_prem').append(accounting.formatMoney(getCookie('no_riot_prem'),'',2,'.',','));
+	$('.no_terror_prem').append(accounting.formatMoney(getCookie('no_terror_prem'),'',2,'.',','));
+	$('.no_tpl_prem').append(accounting.formatMoney(getCookie('no_tpl_prem'),'',2,'.',','));
+	$('.no_totalPremium').append(accounting.formatMoney(getCookie('no_totalPremium'),'',2,'.',','));
+	
+	
+	$('#no_tpl_hidden').val(getCookie('no_tpl_prem'));
+	$('#no_pll_hidden').val(getCookie('no_pll_prem'));
+	$('#med_ex_hidden').val(getCookie('no_med_ex_prem'));
+	$('#no_passenger_hidden').val(getCookie('no_passenger_prem'));
+	$('#no_pa_hidden').val(getCookie('no_pa_prem'));
+	$('#no_tpl_temp').val(getCookie('no_tpl_prem'));
+	$('#no_pll_temp').val(getCookie('no_pll_prem'));
+	$('#med_ex_temp').val(getCookie('no_med_ex_prem'));
+	$('#no_passenger_temp').val(getCookie('no_passenger_prem'));
+	$('#no_pa_temp').val(getCookie('no_pa_prem'));
+	 $("#no_totalPremium_hidden").val(getCookie('no_totalPremium'));
+
+	$('.no_compre_is_calc').attr('data-angka',accounting.formatMoney(getCookie('no_compre_prem'),'',2,'.',','));
+	$('.no_earthquake_is_calc').attr('data-angka',accounting.formatMoney(getCookie('no_earthquake_prem'),'',2,'.',','));
+	$('.no_flood_is_calc').attr('data-angka',accounting.formatMoney(getCookie('no_flood_prem'),'',2,'.',','));
+	$('.no_med_ex_is_calc').attr('data-angka',accounting.formatMoney(getCookie('no_med_ex_prem'),'',2,'.',','));
+	$('.no_pa_is_calc').attr('data-angka',accounting.formatMoney(getCookie('no_pa_prem'),'',2,'.',','));
+	$('.no_passenger_is_calc').attr('data-angka',accounting.formatMoney(getCookie('no_passenger_prem'),'',2,'.',','));
+	
+	$('.no_riot_is_calc').attr('data-angka',accounting.formatMoney(getCookie('no_riot_prem'),'',2,'.',','));
+	$('.no_terror_is_calc').attr('data-angka',accounting.formatMoney(getCookie('no_terror_prem'),'',2,'.',','));
+	$('.no_tpl_is_calc').attr('data-angka',accounting.formatMoney(getCookie('no_tpl_prem'),'',2,'.',','));
+	$('.no_workshop_is_calc').attr('data-angka',accounting.formatMoney(getCookie('no_workshop_prem'),'',2,'.',','));
+	$('.no_pll_is_calc').attr('data-angka',accounting.formatMoney(getCookie('no_pll_prem'),'',2,'.',','));
+	
+	
     function setCookie(cname, cvalue, exdays) {
             var d = new Date();
             d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -1486,15 +1529,61 @@ $(document).keyup(function(e){
     // alert(getCookie('workshop_prem'));
 // getCookie('namaCookie');
 
-	$(document).ready(function() {    
+	$(document).ready(function() {  
+		$('#no_flood_is_calc').click(function() {
+			if($(this).is(":checked"))
+			{						
+				recalc();
+			} else {
+				recalc();	
+			}
+		});
+		$('#no_earthquake_is_calc').click(function() {
+			if($(this).is(":checked"))
+			{						
+				recalc();
+			} else {
+				recalc();
+			}
+		});
+		$('#no_riot_is_calc').click(function() {
+			if($(this).is(":checked"))
+			{						
+				recalc();
+			} else {
+				recalc();	
+			}
+		});
+		$('#no_terror_is_calc').click(function() {
+			if($(this).is(":checked"))
+			{						
+				recalc();
+			} else {
+				recalc();	
+			}
+		});
+		$('#no_workshop_is_calc').click(function() {
+			if($(this).is(":checked"))
+			{						
+				recalc();
+			} else {
+				recalc();	
+			}
+		});
+		
 		$('#no_tpl_is_calc').click(function() {
 			if($(this).is(":checked"))
 			{
 				document.getElementById("no_tpl").disabled = false;
 				$('#no_tpl option[value=1]').attr('selected','selected');
+						
+				recalc();
 				
 			} else {
 				document.getElementById("no_tpl").disabled = true;
+				
+				recalc();
+				
 			}
 		});
 		$('#no_pll_is_calc').click(function() {
@@ -1502,9 +1591,11 @@ $(document).keyup(function(e){
 			{
 				document.getElementById("no_pll").disabled = false;
 				$('#no_pll option[value=1]').attr('selected','selected');
+				recalc();
 				
 			} else {
 				document.getElementById("no_pll").disabled = true;
+				recalc();
 			}
 		});
 		$('#no_med_ex_is_calc').click(function() {
@@ -1512,9 +1603,11 @@ $(document).keyup(function(e){
 			{
 				document.getElementById("med_ex").disabled = false;
 				$('#med_ex option[value=1]').attr('selected','selected');
+				recalc();
 				
 			} else {
 				document.getElementById("med_ex").disabled = true;
+				recalc();
 			}
 		});
 		$('#no_passenger_is_calc').click(function() {
@@ -1522,9 +1615,11 @@ $(document).keyup(function(e){
 			{
 				document.getElementById("no_passenger").disabled = false;
 				$('#no_passenger option[value=1]').attr('selected','selected');
+				recalc();
 				
 			} else {
 				document.getElementById("no_passenger").disabled = true;
+				recalc();
 			}
 		});
 		$('#no_pa_is_calc').click(function() {
@@ -1532,8 +1627,10 @@ $(document).keyup(function(e){
 			{
 				document.getElementById("no_pa").disabled = false;
 				$('#no_pa option[value=1]').attr('selected','selected');
+				recalc();
 			} else {
 				document.getElementById("no_pa").disabled = true;
+				recalc();
 			}
 		});
 	});
@@ -1547,6 +1644,7 @@ $(document).keyup(function(e){
 		var tempVals = parseInt($("#no_tpl_temp").val());
 		// var defaultTotal = parseInt($("#no_totalPremium_hidden").val());
 		var tpl = parseInt($("#no_tpl option:selected").text().split(".").join(""));
+		
 	 
 	  if (tpl < 30000000) {
 		var hasil = parseFloat(defaultVals/10000000*tpl);
@@ -1588,7 +1686,7 @@ $(document).keyup(function(e){
 		var Totals = parseInt(temp.split(".").join(""));
 		var defaultVals = parseInt($("#no_pll_hidden").val());
 		var tempVals = parseInt($("#no_pll_temp").val());
-		var defaultTotal = parseInt($("#no_totalPremium_hidden").val());
+		// var defaultTotal = parseInt($("#no_totalPremium_hidden").val());
 		var pll = parseInt($( "#no_pll option:selected" ).text().split(".").join(""));
 		if (pll < 30000000) {
 			var hasil = parseFloat(defaultVals/10000000*pll);
@@ -1684,6 +1782,26 @@ $(document).keyup(function(e){
 		$(".no_pa_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
 		$( ".no_totalPremium" ).empty();
 		$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
+	}
+	
+	function recalc() {
+		var no_workshop_prem=(parseFloat(($('.no_workshop_prem').html().split('.').join("")).replace(",",".")));
+        var no_compre_prem=(parseFloat(($('.no_compre_prem').html().split('.').join("")).replace(",",".")));
+        var no_earthquake_prem=(parseFloat(($('.no_earthquake_prem').html().split('.').join("")).replace(",",".")));
+        var no_flood_prem=(parseFloat(($('.no_flood_prem').html().split('.').join("")).replace(",",".")));
+        var no_med_ex_prem=(parseFloat(($('.no_med_ex_prem').html().split('.').join("")).replace(",",".")));
+        var no_pa_prem=(parseFloat(($('.no_pa_prem').html().split('.').join("")).replace(",",".")));
+        var no_passenger_prem=(parseFloat(($('.no_passenger_prem').html().split('.').join("")).replace(",",".")));
+        var no_pll_prem=(parseFloat(($('.no_pll_prem').html().split('.').join("")).replace(",",".")));
+        var no_riot_prem=(parseFloat(($('.no_riot_prem').html().split('.').join("")).replace(",",".")));
+        var no_terror_prem=(parseFloat(($('.no_terror_prem').html().split('.').join("")).replace(",",".")));
+        var no_tpl_prem=(parseFloat(($('.no_tpl_prem').html().split('.').join("")).replace(",",".")));
+		
+		var no_totalPremium=parseFloat(no_workshop_prem+no_compre_prem+no_earthquake_prem+no_flood_prem+no_med_ex_prem+no_pa_prem+no_passenger_prem+no_riot_prem+no_terror_prem+no_tpl_prem+no_pll_prem);
+		$('.no_totalPremium').html('');
+		$('.no_totalPremium').append(accounting.formatMoney(no_totalPremium,'',2,'.',','));
+		
+		return no_totalPremium;
 	}
 	 
 </script>

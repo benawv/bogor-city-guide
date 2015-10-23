@@ -1161,22 +1161,22 @@ $(document).ready(function(){
     function recalc_custome(){
         
         var getColom;
-        var harga=clearFormat($('#harga').val());
-        var tahun_pembuatan=($('#tahun_pembuatan').val());
-        var periode=($('#periode').val());
+        // var harga=clearFormat($('#harga').val());
+        // var tahun_pembuatan=($('#tahun_pembuatan').val());
+        var periode=getCookie('periode');
         var piece_periode = periode.split('/');
         var d = piece_periode[2];
         var n = d;
-        var ages=n-parseInt(tahun_pembuatan);
-        var model;
-        var regno;
-        var periode;
-        var radio01;
-        var tipe=$('#tipe').val().toLowerCase();
-        var wilayah=parseInt($('#wilayah').val());
-        var kapasitas=parseInt($('#kapasitas').val());
-        var merk=$('#merk').val();
-        var merk_html=$('#merk option:selected').html().toLowerCase();
+        var ages=n-parseInt(getCookie('tahun_buat'));
+        // var model;
+        // var regno;
+        // var periode;
+        // var radio01;
+        // var tipe=$('#tipe').val().toLowerCase();
+        // var wilayah=parseInt($('#wilayah').val());
+        // var kapasitas=parseInt($('#kapasitas').val());
+        // var merk=$('#merk').val();
+        // var merk_html=$('#merk option:selected').html().toLowerCase();
         
         
         //=========================perhitungan basic======================================//
@@ -1208,15 +1208,22 @@ $(document).ready(function(){
         tpl_val=accounting.formatMoney(tpl_val,'',2,'.',',');
         pll_val=accounting.formatMoney(pll_val,'',2,'.',',');
 
+		setCookie('no_val_tlo', val_tlo, 1);
+        setCookie('no_med_ex_val', med_ex_val, 1);
+        setCookie('no_pa_val', pa_val, 1);
+        setCookie('no_passenger_val', passenger_val, 1);
+        setCookie('no_pll_val', pll_val, 1);
+        setCookie('no_tpl_val', tpl_val, 1);
+		
         //INSER INTO FORM NON-paket
         $('.no_workshop_val, .no_compre_val, .no_earthquake_val, .no_flood_val, .no_riot_val, .no_terror_val').html("");
-        $('.no_workshop_val, .no_compre_val, .no_earthquake_val, .no_flood_val, .no_riot_val, .no_terror_val').append(val_tlo);
+        $('.no_workshop_val, .no_compre_val, .no_earthquake_val, .no_flood_val, .no_riot_val, .no_terror_val').append(getCookie('no_val_tlo'));
                 $('.no_med_ex_val, .no_pa_val, .no_passenger_val, .no_pll_val').html("");
-        $('#nopaval').val(pa_val);
-        $('#nopassengerval').val(passenger_val);
-        $('#notplval').val(tpl_val);
-        $('#nomedexval').val(med_ex_val);
-        $('#nopllval').val(pll_val);
+        $('#nopaval').val(getCookie('no_pa_val '));
+        $('#nopassengerval').val(getCookie(' no_passenger_val'));
+        $('#notplval').val(getCookie('no_tpl_val '));
+        $('#nomedexval').val(getCookie('no_med_ex_val '));
+        $('#nopllval').val(getCookie('no_pll_val '));
 
         
         //========================= END perhitungan basic======================================//
@@ -1225,29 +1232,31 @@ $(document).ready(function(){
         //=========================//perhitungan rate/persen======================================//
         var workshop_persen_show, calc, calc2, workshop_persen, compre_persen, earthquake_presen, era_persen, flood_persen, med_ex_persen, pa_persen, passenger_persen, pll_persen, riot_persen, terror_persen, tpl_persen;
 		var band_id=getBand(cleanVarTlo);
-
         var tlo=getTlo(jenisasuransi,'PK_R2_'+band_id+'_Sedan',merk_html,2);
         compre_tlo_persen=localStorage.getItem("gettlo");
         //compre_tlo_persen=getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2);//jenisasuransi, type *ga perlu,merk_html,jenis paket)
         //console.log(parseFloat(getWorkshopNonPack(merk,ages)));
         //console.log(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
         //calc =parseFloat(getWorkshopNonPack(merk_html,ages));
-        calc =parseFloat(getWorkshopNonPack(merk_html,ages))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2)/100);
+		hitung = parseFloat(getWorkshop(merk_html,ages))*(compre_tlo_persen)/100;
+        workshop_persen = hitung.toFixed(6);
+        workshop_persen_show = hitung.toFixed(4);
+		//calc =parseFloat(getWorkshopNonPack(merk_html,ages))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2)/100);
         // console.log("merk_html="+merk_html+"|"+ages);
         // console.log("1==>"+parseFloat(getWorkshopNonPack(merk_html,ages)));
         // console.log("2==>"+(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2)/100));
-        workshop_persen_show = calc.toFixed(4);
-        workshop_persen = calc.toFixed(6);
-        
+        //workshop_persen_show = calc.toFixed(4);
+        //workshop_persen = calc.toFixed(6);
         // if (tlo= 5+wilayah) else (1+wilayah)
         if (jenisasuransi=='tlo') {
 			// var add_rate = 25/122;
-            getColom=wilayah+5;
+			// var rate_workshop = 125/610;
+            getColom=parseInt(wilayah)+5;
         }else{
-            getColom=wilayah+1;
+            getColom=parseInt(wilayah)+1;
 			// var add_rate = 1;
+			// var rate_workshop = 1;
         }
-        
         if (getColom==2) {
             earthquake_presen=parseFloat(0.1200);
             flood_persen=parseFloat(0.0750);
@@ -1312,19 +1321,17 @@ $(document).ready(function(){
             pa_persen=0;
             passenger_persen=0;
         }
-        
         //medical expanse
         var med_ex_pers;
-        if (tipe=='sedan' || tipe=='minibus' ) {
+        if (tipe=='Sedan' || tipe=='Minibus' ) {
             med_ex_pers=parseFloat(0.0350);
-        }else if(tipe=='motor'){
+        }else if(tipe=='Motor'){
             med_ex_pers=parseFloat(0.1250);
-        }else if(tipe=='truck'){
+        }else if(tipe=='Truck'){
             med_ex_pers=parseFloat(0.2000);
         }else{
             med_ex_pers=0;
         }
-        
         era_persen=parseFloat(0.0005);
         personal_ef_persen=parseFloat(1.0000);
         
@@ -1341,7 +1348,6 @@ $(document).ready(function(){
         }else{
             pll_persen=0;
         }
-        
         if (cleanTpl_val >= parseInt(100000000000)){
             tpl_persen=parseFloat(0.4000);
         }else if (cleanTpl_val > parseInt(100000001) && cleanTpl_val < parseInt(100000000000)){
@@ -1353,7 +1359,6 @@ $(document).ready(function(){
         }else{
             tpl_persen=parseFloat(1.0000);
         }
-
         var no_tpl_persen;
         if (cleanTpl_val >= parseInt(100000000000)){
             no_tpl_persen=parseFloat(0.4000);
@@ -1366,7 +1371,6 @@ $(document).ready(function(){
         }else{
             no_tpl_persen=parseFloat(1.0000);
         }
-        
         //INSERT INTO FORM NON PAKT
         $('.no_workshop_persen, .no_compre_persen, .no_earthquake_presen, .no_flood_persen, .no_med_ex_persen, .no_pa_persen, .no_passenger_persen, .no_pll_persen, .no_riot_persen, .no_terror_persen, .no_tpl_persen').html("");
         $('.no_workshop_persen').append(workshop_persen_show+"%");
@@ -1382,13 +1386,13 @@ $(document).ready(function(){
         $('.no_riot_persen').append(riot_persen+"%");
         $('.no_terror_persen').append(terror_persen+"%");
         $('.no_tpl_persen').append(no_tpl_persen+"%");
+		
         //=========================//END perhitungan rate/persen======================================//
         
         
-        
+       
         //=====================premium=================================================================
         var workshop_prem, compre_prem, earthquake_prem, era_prem, flood_prem, med_ex_prem, pa_prem, passenger_prem, pll_prem, riot_prem, terror_prem, tpl_prem;
-    
         workshop_prem=(((1*(cleanVarTlo*workshop_persen)/100)*day)/day);
         compre_prem=(((1*(cleanVarTlo*compre_tlo_persen)/100)*day)/day);
         earthquake_prem=(((1*(cleanVarTlo*earthquake_presen)/100)*day)/day);
@@ -1402,49 +1406,65 @@ $(document).ready(function(){
         terror_prem=(((1*(cleanVarTlo*terror_persen)/100)*day)/day);
         tpl_prem=(((1*(cleanTpl_val*tpl_persen)/100)*day)/day);
         no_tpl_prem=(((1*(cleanTpl_val*no_tpl_persen)/100)*day)/day);
+		var no_totalPremium= workshop_prem + compre_prem + earthquake_prem + era_prem + flood_prem + med_ex_prem + pa_prem + passenger_prem  + pll_prem + riot_prem + terror_prem + tpl_prem;
+		setCookie('no_totalPremium',no_totalPremium,1);	
+		
         //totalPremium= workshop_prem + compre_prem + earthquake_prem + era_prem + flood_prem + med_ex_prem + pa_prem + passenger_prem  + pll_prem + riot_prem + terror_prem + tpl_prem;
-        
+		setCookie('no_workshop_prem',workshop_prem,1);
+        setCookie('no_compre_prem',compre_prem,1);
+        setCookie('no_earthquake_prem',earthquake_prem,1);
+        setCookie('no_era_prem',era_prem,1);
+        setCookie('no_flood_prem',flood_prem,1);
+        setCookie('no_med_ex_prem',med_ex_prem,1);
+        setCookie('no_pa_prem',pa_prem,1);
+        setCookie('no_passenger_prem',passenger_prem,1);
+        setCookie('no_pll_prem',pll_prem,1);
+        setCookie('no_riot_prem',riot_prem,1);
+        setCookie('no_terror_prem',terror_prem,1);
+        setCookie('no_tpl_prem',tpl_prem,1);		
+		
         //form NON Paket
-        $('.no_workshop_prem, .no_compre_prem, .no_earthquake_prem, .no_flood_prem, .no_med_ex_prem, .no_pa_prem, .no_passenger_prem, .no_pll_prem, .no_riot_prem, .no_terror_prem, .no_tpl_prem').html("");
-        $('.no_workshop_prem').append(accounting.formatMoney(workshop_prem,'',2,'.',','));
-        $('.no_compre_prem').append(accounting.formatMoney(compre_prem,'',2,'.',','));
-        // console.log("compre_prem="+compre_prem+"*"+compre_tlo_persen);
-        $('.no_earthquake_prem').append(accounting.formatMoney(earthquake_prem,'',2,'.',','));
-        $('.no_flood_prem').append(accounting.formatMoney(flood_prem,'',2,'.',','));
-        $('.no_med_ex_prem').append(accounting.formatMoney(med_ex_prem,'',2,'.',','));
-        $('.no_pa_prem').append(accounting.formatMoney(pa_prem,'',2,'.',','));
-        $('.no_passenger_prem').append(accounting.formatMoney(passenger_prem,'',2,'.',','));
-        //$('.no_personal_ef_prem').append(accounting.formatMoney(personal_ef_prem,'',2,'.',','));
-        $('.no_pll_prem').append(accounting.formatMoney(pll_prem,'',2,'.',','));
-        $('.no_riot_prem').append(accounting.formatMoney(riot_prem,'',2,'.',','));
-        $('.no_terror_prem').append(accounting.formatMoney(terror_prem,'',2,'.',','));
-        $('.no_tpl_prem').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
-		$('#no_tpl_hidden').val(tpl_prem);
-		$('#no_pll_hidden').val(pll_prem);
-		$('#med_ex_hidden').val(med_ex_prem);
-		$('#no_passenger_hidden').val(passenger_prem);
-		$('#no_pa_hidden').val(pa_prem);
-		$('#no_tpl_temp').val(tpl_prem);
-		$('#no_pll_temp').val(pll_prem);
-		$('#med_ex_temp').val(med_ex_prem);
-		$('#no_passenger_temp').val(passenger_prem);
-		$('#no_pa_temp').val(pa_prem);
-        //$('.no_totalPremium').append(accounting.formatMoney(parseInt(totalPremium-era_prem),'',2,'.',','));
-
-                $('.no_compre_is_calc').attr('data-angka',accounting.formatMoney(compre_prem,'',2,'.',','));
-                $('.no_earthquake_is_calc').attr('data-angka',accounting.formatMoney(earthquake_prem,'',2,'.',','));
-        $('.no_flood_is_calc').attr('data-angka',accounting.formatMoney(flood_prem,'',2,'.',','));
-        $('.no_med_ex_is_calc').attr('data-angka',accounting.formatMoney(med_ex_prem,'',2,'.',','));
-        $('.no_pa_is_calc').attr('data-angka',accounting.formatMoney(pa_prem,'',2,'.',','));
-        $('.no_passenger_is_calc').attr('data-angka',accounting.formatMoney(passenger_prem,'',2,'.',','));
-        //$('.no_personal_ef_prem').append(accounting.formatMoney(personal_ef_prem,'',2,'.',','));
-        //$('.no_pll_prem').append(accounting.formatMoney(pll_prem,'',2,'.',','));
-        $('.no_riot_is_calc').attr('data-angka',accounting.formatMoney(riot_prem,'',2,'.',','));
-        $('.no_terror_is_calc').attr('data-angka',accounting.formatMoney(terror_prem,'',2,'.',','));
-        $('.no_tpl_is_calc').attr('data-angka',accounting.formatMoney(tpl_prem,'',2,'.',','));
-                $('.no_workshop_is_calc').attr('data-angka',accounting.formatMoney(workshop_prem,'',2,'.',','));
-
-      return totalrecalc_custome(); 
+        // $('.no_workshop_prem, .no_compre_prem, .no_earthquake_prem, .no_flood_prem, .no_med_ex_prem, .no_pa_prem, .no_passenger_prem, .no_pll_prem, .no_riot_prem, .no_terror_prem, .no_tpl_prem').html("");
+        // $('.no_workshop_prem').append(accounting.formatMoney(workshop_prem,'',2,'.',','));
+        // $('.no_compre_prem').append(accounting.formatMoney(compre_prem,'',2,'.',','));
+        // $('.no_earthquake_prem').append(accounting.formatMoney(earthquake_prem,'',2,'.',','));
+        // $('.no_flood_prem').append(accounting.formatMoney(flood_prem,'',2,'.',','));
+        // $('.no_med_ex_prem').append(accounting.formatMoney(med_ex_prem,'',2,'.',','));
+        // $('.no_pa_prem').append(accounting.formatMoney(pa_prem,'',2,'.',','));
+        // $('.no_passenger_prem').append(accounting.formatMoney(passenger_prem,'',2,'.',','));
+       // $('.no_pll_prem').append(accounting.formatMoney(pll_prem,'',2,'.',','));
+        // $('.no_riot_prem').append(accounting.formatMoney(riot_prem,'',2,'.',','));
+        // $('.no_terror_prem').append(accounting.formatMoney(terror_prem,'',2,'.',','));
+        // $('.no_tpl_prem').append(accounting.formatMoney(tpl_prem,'',2,'.',','));
+		// $('#no_tpl_hidden').val(tpl_prem);
+		// $('#no_pll_hidden').val(pll_prem);
+		// $('#med_ex_hidden').val(med_ex_prem);
+		// $('#no_passenger_hidden').val(passenger_prem);
+		// $('#no_pa_hidden').val(pa_prem);
+		// $('#no_tpl_temp').val(tpl_prem);
+		// $('#no_pll_temp').val(pll_prem);
+		// $('#med_ex_temp').val(med_ex_prem);
+		// $('#no_passenger_temp').val(passenger_prem);
+		// $('#no_pa_temp').val(pa_prem);
+        
+		// $('.no_compre_is_calc').attr('data-angka',accounting.formatMoney(compre_prem,'',2,'.',','));
+		// $('.no_earthquake_is_calc').attr('data-angka',accounting.formatMoney(earthquake_prem,'',2,'.',','));
+        // $('.no_flood_is_calc').attr('data-angka',accounting.formatMoney(flood_prem,'',2,'.',','));
+        // $('.no_med_ex_is_calc').attr('data-angka',accounting.formatMoney(med_ex_prem,'',2,'.',','));
+        // $('.no_pa_is_calc').attr('data-angka',accounting.formatMoney(pa_prem,'',2,'.',','));
+        // $('.no_passenger_is_calc').attr('data-angka',accounting.formatMoney(passenger_prem,'',2,'.',','));
+        // $('.no_riot_is_calc').attr('data-angka',accounting.formatMoney(riot_prem,'',2,'.',','));
+        // $('.no_terror_is_calc').attr('data-angka',accounting.formatMoney(terror_prem,'',2,'.',','));
+        // $('.no_tpl_is_calc').attr('data-angka',accounting.formatMoney(tpl_prem,'',2,'.',','));
+		// $('.no_workshop_is_calc').attr('data-angka',accounting.formatMoney(workshop_prem,'',2,'.',','));
+	
+		
+        // console.log($('.no_workshop_prem').html()+$('.no_compre_prem').html()+$('.no_earthquake_prem').html()+$('.no_flood_prem').html()+$('.no_med_ex_prem').html()+$('.no_pa_prem').html()+$('.no_passenger_prem').html()+$('.no_pll_prem').html()+$('.no_riot_prem').html()+$('.no_terror_prem').html()+$('.no_tpl_prem').html());
+        // $('.no_totalPremium').html('');
+        // $('.no_totalPremium').append(accounting.formatMoney(no_totalPremium,'',2,'.',','));
+		// $("#no_totalPremium_hidden").val(no_totalPremium);
+        return no_totalPremium;
+      // return totalrecalc_custome(); 
     }
     
       function totalrecalc_custome(){
@@ -1473,18 +1493,20 @@ $(document).ready(function(){
         var no_riot_prem=(parseFloat(($('.no_riot_prem').html().split('.').join("")).replace(",",".")));
         var no_terror_prem=(parseFloat(($('.no_terror_prem').html().split('.').join("")).replace(",",".")));
         var no_tpl_prem=(parseFloat(($('.no_tpl_prem').html().split('.').join("")).replace(",",".")));
+		
         // console.log(parseInt(clearFormat($('.no_workshop_prem').html().replace(',00',''))));
         // console.log(parseInt(clearFormat($('.no_compre_prem').html().replace(',00',''))));
         // console.log(parseInt(clearFormat($('.no_earthquake_prem').html().replace(',00',''))));
         // console.log(parseInt(clearFormat($('.no_flood_prem').html().replace(',00',''))));
         // console.log(parseInt(clearFormat($('.no_med_ex_prem').html().replace(',00',''))));
+	
         var no_totalPremium=parseFloat(no_workshop_prem+no_compre_prem+no_earthquake_prem+no_flood_prem+no_med_ex_prem+no_pa_prem+no_passenger_prem+no_riot_prem+no_terror_prem+no_tpl_prem+no_pll_prem);
-        console.log($('.no_workshop_prem').html()+$('.no_compre_prem').html()+$('.no_earthquake_prem').html()+$('.no_flood_prem').html()+$('.no_med_ex_prem').html()+$('.no_pa_prem').html()+$('.no_passenger_prem').html()+$('.no_pll_prem').html()+$('.no_riot_prem').html()+$('.no_terror_prem').html()+$('.no_tpl_prem').html());
-        console.log(no_workshop_prem);
-        console.log("workshop : "+no_workshop_prem);
-        $('.no_totalPremium').html('');
-        $('.no_totalPremium').append(accounting.formatMoney(no_totalPremium,'',2,'.',','));
-		$("#no_totalPremium_hidden").val(no_totalPremium);
+		// setCookie('no_totalPremium',no_totalPremium,1);		
+		// alert('hehe');
+        // console.log($('.no_workshop_prem').html()+$('.no_compre_prem').html()+$('.no_earthquake_prem').html()+$('.no_flood_prem').html()+$('.no_med_ex_prem').html()+$('.no_pa_prem').html()+$('.no_passenger_prem').html()+$('.no_pll_prem').html()+$('.no_riot_prem').html()+$('.no_terror_prem').html()+$('.no_tpl_prem').html());
+        // $('.no_totalPremium').html('');
+        // $('.no_totalPremium').append(accounting.formatMoney(no_totalPremium,'',2,'.',','));
+		// $("#no_totalPremium_hidden").val(no_totalPremium);
         return no_totalPremium;
 
     }
