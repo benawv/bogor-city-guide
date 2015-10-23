@@ -1567,9 +1567,10 @@ $(document).keyup(function(e){
 				recalc();	
 			}
 		});
-		$('#no_workshop_is_calc').click(function() {
+
+		$('.no_workshop_is_calc').click(function() {
 			if($(this).is(":checked"))
-			{						
+			{
 				recalc();
 			} else {
 				recalc();	
