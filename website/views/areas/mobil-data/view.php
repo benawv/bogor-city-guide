@@ -808,7 +808,7 @@ $(document).keyup(function(e){
 
                     <div class="wizard-footer">
                         <div class="pull-right">
-                            <input type='button' id="lanjut" class='btn btn-next btn-fill btn-warning btn-wd btn-sm next-form' name='next' value='Lanjut' tabindex="7" />
+                            <input type='button' id="lanjut" class='btn btn-next btn-fill btn-warning btn-wd btn-sm next-form' name='next' value='Lanjut' tabindex="7"/>
                             <!-- <a href="/kalkulator/thankyou-mobilku"> -->
                                 <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish' id='finish-btn'/>
                             <!-- </a> -->
@@ -943,205 +943,205 @@ $(document).keyup(function(e){
 
 <script>
 
-	$(document).ready(function() {    
-		$('#no_tpl_is_calc').click(function() {
-			if($(this).is(":checked"))
-			{
-				document.getElementById("no_tpl").disabled = false;
-				$('#no_tpl option[value=1]').attr('selected','selected');
+	// $(document).ready(function() {    
+	// 	$('#no_tpl_is_calc').click(function() {
+	// 		if($(this).is(":checked"))
+	// 		{
+	// 			document.getElementById("no_tpl").disabled = false;
+	// 			$('#no_tpl option[value=1]').attr('selected','selected');
 				
-			} else {
-				document.getElementById("no_tpl").disabled = true;
-			}
-		});
-		$('#no_pll_is_calc').click(function() {
-			if($(this).is(":checked"))
-			{
-				document.getElementById("no_pll").disabled = false;
-				$('#no_pll option[value=1]').attr('selected','selected');
+	// 		} else {
+	// 			document.getElementById("no_tpl").disabled = true;
+	// 		}
+	// 	});
+	// 	$('#no_pll_is_calc').click(function() {
+	// 		if($(this).is(":checked"))
+	// 		{
+	// 			document.getElementById("no_pll").disabled = false;
+	// 			$('#no_pll option[value=1]').attr('selected','selected');
 				
-			} else {
-				document.getElementById("no_pll").disabled = true;
-			}
-		});
-		$('#no_med_ex_is_calc').click(function() {
-			if($(this).is(":checked"))
-			{
-				document.getElementById("med_ex").disabled = false;
-				$('#med_ex option[value=1]').attr('selected','selected');
+	// 		} else {
+	// 			document.getElementById("no_pll").disabled = true;
+	// 		}
+	// 	});
+	// 	$('#no_med_ex_is_calc').click(function() {
+	// 		if($(this).is(":checked"))
+	// 		{
+	// 			document.getElementById("med_ex").disabled = false;
+	// 			$('#med_ex option[value=1]').attr('selected','selected');
 				
-			} else {
-				document.getElementById("med_ex").disabled = true;
-			}
-		});
-		$('#no_passenger_is_calc').click(function() {
-			if($(this).is(":checked"))
-			{
-				document.getElementById("no_passenger").disabled = false;
-				$('#no_passenger option[value=1]').attr('selected','selected');
+	// 		} else {
+	// 			document.getElementById("med_ex").disabled = true;
+	// 		}
+	// 	});
+	// 	$('#no_passenger_is_calc').click(function() {
+	// 		if($(this).is(":checked"))
+	// 		{
+	// 			document.getElementById("no_passenger").disabled = false;
+	// 			$('#no_passenger option[value=1]').attr('selected','selected');
 				
-			} else {
-				document.getElementById("no_passenger").disabled = true;
-			}
-		});
-		$('#no_pa_is_calc').click(function() {
-			if($(this).is(":checked"))
-			{
-				document.getElementById("no_pa").disabled = false;
-				$('#no_pa option[value=1]').attr('selected','selected');
-			} else {
-				document.getElementById("no_pa").disabled = true;
-			}
-		});
-	});
-	function tplVals() {
-		var str = $("#no_totalPremium").text();
-		console.log(str);
-		var temp = str.replace(",00","");
-		console.log(temp);
-		var Totals = parseInt(temp.split(".").join(""));
-		var defaultVals = parseInt($("#no_tpl_hidden").val());
-		var tempVals = parseInt($("#no_tpl_temp").val());
-		// var defaultTotal = parseInt($("#no_totalPremium_hidden").val());
-		var tpl = parseInt($("#no_tpl option:selected").text().split(".").join(""));
+	// 		} else {
+	// 			document.getElementById("no_passenger").disabled = true;
+	// 		}
+	// 	});
+	// 	$('#no_pa_is_calc').click(function() {
+	// 		if($(this).is(":checked"))
+	// 		{
+	// 			document.getElementById("no_pa").disabled = false;
+	// 			$('#no_pa option[value=1]').attr('selected','selected');
+	// 		} else {
+	// 			document.getElementById("no_pa").disabled = true;
+	// 		}
+	// 	});
+	// });
+	// function tplVals() {
+	// 	var str = $("#no_totalPremium").text();
+	// 	console.log(str);
+	// 	var temp = str.replace(",00","");
+	// 	console.log(temp);
+	// 	var Totals = parseInt(temp.split(".").join(""));
+	// 	var defaultVals = parseInt($("#no_tpl_hidden").val());
+	// 	var tempVals = parseInt($("#no_tpl_temp").val());
+	// 	// var defaultTotal = parseInt($("#no_totalPremium_hidden").val());
+	// 	var tpl = parseInt($("#no_tpl option:selected").text().split(".").join(""));
 	 
-	  if (tpl < 30000000) {
-		var hasil = parseFloat(defaultVals/10000000*tpl);
-		var selisih = parseFloat(hasil-tempVals);		   
-		var total = parseFloat(selisih + Totals);
-		var newVals = parseInt($("#no_tpl_temp").val(hasil));
-		console.log(Totals);
-		console.log(hasil);
-		console.log(defaultVals);
-		console.log(selisih);
-		console.log(total);
-		$( ".no_tpl_prem" ).empty();
-		$(".no_tpl_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
-		$( ".no_totalPremium" ).empty();
-		$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
-	  }
-	  else {
-		var hasil = parseFloat(defaultVals/10000000*tpl*3/4);
-		var selisih = parseFloat(hasil-tempVals);
-		var total = parseFloat(selisih + Totals);
-		var newVals = parseInt($("#no_tpl_temp").val(hasil));
-		console.log(hasil);
-		console.log(defaultVals);
-		console.log(selisih);
-		console.log(Totals);
-		console.log(total);
-		$( ".no_tpl_prem" ).empty();
-		$(".no_tpl_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
-		$( ".no_totalPremium" ).empty();
-		$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
-	  }
+	//   if (tpl < 30000000) {
+	// 	var hasil = parseFloat(defaultVals/10000000*tpl);
+	// 	var selisih = parseFloat(hasil-tempVals);		   
+	// 	var total = parseFloat(selisih + Totals);
+	// 	var newVals = parseInt($("#no_tpl_temp").val(hasil));
+	// 	console.log(Totals);
+	// 	console.log(hasil);
+	// 	console.log(defaultVals);
+	// 	console.log(selisih);
+	// 	console.log(total);
+	// 	$( ".no_tpl_prem" ).empty();
+	// 	$(".no_tpl_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+	// 	$( ".no_totalPremium" ).empty();
+	// 	$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
+	//   }
+	//   else {
+	// 	var hasil = parseFloat(defaultVals/10000000*tpl*3/4);
+	// 	var selisih = parseFloat(hasil-tempVals);
+	// 	var total = parseFloat(selisih + Totals);
+	// 	var newVals = parseInt($("#no_tpl_temp").val(hasil));
+	// 	console.log(hasil);
+	// 	console.log(defaultVals);
+	// 	console.log(selisih);
+	// 	console.log(Totals);
+	// 	console.log(total);
+	// 	$( ".no_tpl_prem" ).empty();
+	// 	$(".no_tpl_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+	// 	$( ".no_totalPremium" ).empty();
+	// 	$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
+	//   }
 	  
-	}
-	function pllVals() {
-		var str = $("#no_totalPremium").text();
-		console.log(str);
-		var temp = str.replace(",00","");
-		console.log(temp);
-		var Totals = parseInt(temp.split(".").join(""));
-		var defaultVals = parseInt($("#no_pll_hidden").val());
-		var tempVals = parseInt($("#no_pll_temp").val());
-		var defaultTotal = parseInt($("#no_totalPremium_hidden").val());
-		var pll = parseInt($( "#no_pll option:selected" ).text().split(".").join(""));
-		if (pll < 30000000) {
-			var hasil = parseFloat(defaultVals/10000000*pll);
-			var selisih = parseFloat(hasil-tempVals);		   
-			var total = parseFloat(selisih + Totals);
-			var newVals = parseInt($("#no_pll_temp").val(hasil));
-			console.log(defaultVals);
-			$( ".no_pll_prem" ).empty();
-			$(".no_pll_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
-			$( ".no_totalPremium" ).empty();
-			$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
-		}
-	  else {
-			var hasil = parseFloat(defaultVals/10000000*pll*375/500);
-			var selisih = parseFloat(hasil-tempVals);		   
-			var total = parseFloat(selisih + Totals);
-			var newVals = parseInt($("#no_pll_temp").val(hasil));
-			console.log(defaultVals);
-			$( ".no_pll_prem" ).empty();
-			$(".no_pll_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
-			$( ".no_totalPremium" ).empty();
-			$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
-	  }
-	}
-	function medExVals() {
-		var str = $("#no_totalPremium").text();
-		console.log(str);
-		var temp = str.replace(",00","");
-		console.log(temp);
-		var Totals = parseInt(temp.split(".").join(""));
-		var defaultVals = parseInt($("#med_ex_hidden").val());
-		var tempVals = parseInt($("#med_ex_temp").val());
-		var med_ex = parseInt($( "#med_ex option:selected").text().split(".").join(""));
-		if(med_ex < 3000000) {
-			var hasil = parseFloat(defaultVals/1000000*med_ex);
-			var selisih = parseFloat(hasil-tempVals);		   
-			var total = parseFloat(selisih + Totals);
-			var newVals = parseInt($("#med_ex_temp").val(hasil));
-			console.log(defaultVals);
-			$( ".no_med_ex_prem" ).empty();
-			$(".no_med_ex_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
-			$( ".no_totalPremium" ).empty();
-			$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
-		}
-	  else {
-			var hasil = parseFloat(defaultVals/1000000*med_ex*30/35);
-			var selisih = parseFloat(hasil-tempVals);		   
-			var total = parseFloat(selisih + Totals);
-			var newVals = parseInt($("#med_ex_temp").val(hasil));
-			console.log(defaultVals);
-			$( ".no_med_ex_prem" ).empty();
-			$(".no_med_ex_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
-			$( ".no_totalPremium" ).empty();
-			$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
-	  }
-	}
-	function passengerVals() {
-		var str = $("#no_totalPremium").text();
-		console.log(str);
-		var temp = str.replace(",00","");
-		console.log(temp);
-		var Totals = parseInt(temp.split(".").join(""));
-		var defaultVals = parseInt($("#no_passenger_hidden").val());
-		var tempVals = parseInt($("#no_passenger_temp").val());
-		var passenger = parseInt($( "#no_passenger option:selected" ).text().split(".").join(""));
-		var hasil = parseFloat(defaultVals/10000000*passenger);
-		var selisih = parseFloat(hasil - tempVals);		   
-		var total = parseFloat(selisih + Totals);
-		var newVals = parseInt($("#no_passenger_temp").val(hasil));
-		console.log(defaultVals);
-		// console.log(passenger);
-		// console.log(hasil);
-		$( ".no_passenger_prem" ).empty();
-		$(".no_passenger_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
-		$( ".no_totalPremium" ).empty();
-		$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
-	}
-	function paVals() {
-		var str = $("#no_totalPremium").text();
-		console.log(str);
-		var temp = str.replace(",00","");
-		console.log(temp);
-		var Totals = parseInt(temp.split(".").join(""));
-		var defaultVals = parseInt($("#no_pa_hidden").val());
-		var tempVals = parseInt($("#no_pa_temp").val());
-		var pa = parseInt($( "#no_pa option:selected" ).text().split(".").join(""));
-		var hasil = parseFloat(defaultVals/10000000*pa);
-		var selisih = parseFloat(hasil-tempVals);		   
-		var total = parseFloat(selisih + Totals);
-		var newVals = parseInt($("#no_pa_temp").val(hasil));
-		console.log(defaultVals);
-		$( ".no_pa_prem" ).empty();
-		$(".no_pa_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
-		$( ".no_totalPremium" ).empty();
-		$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
-	}
+	// }
+	// function pllVals() {
+	// 	var str = $("#no_totalPremium").text();
+	// 	console.log(str);
+	// 	var temp = str.replace(",00","");
+	// 	console.log(temp);
+	// 	var Totals = parseInt(temp.split(".").join(""));
+	// 	var defaultVals = parseInt($("#no_pll_hidden").val());
+	// 	var tempVals = parseInt($("#no_pll_temp").val());
+	// 	var defaultTotal = parseInt($("#no_totalPremium_hidden").val());
+	// 	var pll = parseInt($( "#no_pll option:selected" ).text().split(".").join(""));
+	// 	if (pll < 30000000) {
+	// 		var hasil = parseFloat(defaultVals/10000000*pll);
+	// 		var selisih = parseFloat(hasil-tempVals);		   
+	// 		var total = parseFloat(selisih + Totals);
+	// 		var newVals = parseInt($("#no_pll_temp").val(hasil));
+	// 		console.log(defaultVals);
+	// 		$( ".no_pll_prem" ).empty();
+	// 		$(".no_pll_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+	// 		$( ".no_totalPremium" ).empty();
+	// 		$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
+	// 	}
+	//   else {
+	// 		var hasil = parseFloat(defaultVals/10000000*pll*375/500);
+	// 		var selisih = parseFloat(hasil-tempVals);		   
+	// 		var total = parseFloat(selisih + Totals);
+	// 		var newVals = parseInt($("#no_pll_temp").val(hasil));
+	// 		console.log(defaultVals);
+	// 		$( ".no_pll_prem" ).empty();
+	// 		$(".no_pll_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+	// 		$( ".no_totalPremium" ).empty();
+	// 		$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
+	//   }
+	// }
+	// function medExVals() {
+	// 	var str = $("#no_totalPremium").text();
+	// 	console.log(str);
+	// 	var temp = str.replace(",00","");
+	// 	console.log(temp);
+	// 	var Totals = parseInt(temp.split(".").join(""));
+	// 	var defaultVals = parseInt($("#med_ex_hidden").val());
+	// 	var tempVals = parseInt($("#med_ex_temp").val());
+	// 	var med_ex = parseInt($( "#med_ex option:selected").text().split(".").join(""));
+	// 	if(med_ex < 3000000) {
+	// 		var hasil = parseFloat(defaultVals/1000000*med_ex);
+	// 		var selisih = parseFloat(hasil-tempVals);		   
+	// 		var total = parseFloat(selisih + Totals);
+	// 		var newVals = parseInt($("#med_ex_temp").val(hasil));
+	// 		console.log(defaultVals);
+	// 		$( ".no_med_ex_prem" ).empty();
+	// 		$(".no_med_ex_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+	// 		$( ".no_totalPremium" ).empty();
+	// 		$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
+	// 	}
+	//   else {
+	// 		var hasil = parseFloat(defaultVals/1000000*med_ex*30/35);
+	// 		var selisih = parseFloat(hasil-tempVals);		   
+	// 		var total = parseFloat(selisih + Totals);
+	// 		var newVals = parseInt($("#med_ex_temp").val(hasil));
+	// 		console.log(defaultVals);
+	// 		$( ".no_med_ex_prem" ).empty();
+	// 		$(".no_med_ex_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+	// 		$( ".no_totalPremium" ).empty();
+	// 		$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
+	//   }
+	// }
+	// function passengerVals() {
+	// 	var str = $("#no_totalPremium").text();
+	// 	console.log(str);
+	// 	var temp = str.replace(",00","");
+	// 	console.log(temp);
+	// 	var Totals = parseInt(temp.split(".").join(""));
+	// 	var defaultVals = parseInt($("#no_passenger_hidden").val());
+	// 	var tempVals = parseInt($("#no_passenger_temp").val());
+	// 	var passenger = parseInt($( "#no_passenger option:selected" ).text().split(".").join(""));
+	// 	var hasil = parseFloat(defaultVals/10000000*passenger);
+	// 	var selisih = parseFloat(hasil - tempVals);		   
+	// 	var total = parseFloat(selisih + Totals);
+	// 	var newVals = parseInt($("#no_passenger_temp").val(hasil));
+	// 	console.log(defaultVals);
+	// 	// console.log(passenger);
+	// 	// console.log(hasil);
+	// 	$( ".no_passenger_prem" ).empty();
+	// 	$(".no_passenger_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+	// 	$( ".no_totalPremium" ).empty();
+	// 	$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
+	// }
+	// function paVals() {
+	// 	var str = $("#no_totalPremium").text();
+	// 	console.log(str);
+	// 	var temp = str.replace(",00","");
+	// 	console.log(temp);
+	// 	var Totals = parseInt(temp.split(".").join(""));
+	// 	var defaultVals = parseInt($("#no_pa_hidden").val());
+	// 	var tempVals = parseInt($("#no_pa_temp").val());
+	// 	var pa = parseInt($( "#no_pa option:selected" ).text().split(".").join(""));
+	// 	var hasil = parseFloat(defaultVals/10000000*pa);
+	// 	var selisih = parseFloat(hasil-tempVals);		   
+	// 	var total = parseFloat(selisih + Totals);
+	// 	var newVals = parseInt($("#no_pa_temp").val(hasil));
+	// 	console.log(defaultVals);
+	// 	$( ".no_pa_prem" ).empty();
+	// 	$(".no_pa_prem" ).append(accounting.formatMoney(hasil,'',2,'.',','));
+	// 	$( ".no_totalPremium" ).empty();
+	// 	$(".no_totalPremium" ).append(accounting.formatMoney(total,'',2,'.',','));
+	// }
 	 
 </script>
 <script type="text/javascript">
@@ -1186,6 +1186,8 @@ $(document).keyup(function(e){
         var tipe = $('#tipe').val();
         var wilayah = $('#wilayah').val();
         var kapasitas = $('#kapasitas').val();
+        var merk_html = $('#merk option:selected').html().toLowerCase();
+        var model_html = $('#model option:selected').html().toLowerCase();
         
         setCookie('tahun_buat', tahun_buat,1);
         setCookie('harga', harga,1);
@@ -1195,6 +1197,8 @@ $(document).keyup(function(e){
         setCookie('tipe', tipe,1);
         setCookie('wilayah', wilayah,1);
         setCookie('kapasitas', kapasitas,1);
+        setCookie('merk_html', merk_html,1);
+        setCookie('model_html', model_html,1);
         
         
         document.location.href='/kalkulator/mobilku/mobil-jenis-asuransi';
@@ -1325,11 +1329,14 @@ $(document).keyup(function(e){
                         success  : function(data){
                         //console.log(data);
                         //alert(data);
+                        // document.getElementById('lanjut').disabled= false;
                         if(data == ''){
                             document.getElementById('notifRegno').style.display= 'block';
+                            // document.getElementById('lanjut').disabled= true;
                              $('#wilayah').val('');
                         }else{
                             document.getElementById('notifRegno').style.display= 'none';
+                            // document.getElementById('lanjut').disabled= false;
                             $('#wilayah').val(data);
                         }
                         

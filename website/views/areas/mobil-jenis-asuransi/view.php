@@ -787,7 +787,7 @@ $(document).keyup(function(e){
 
                     <div class="wizard-footer">
                         <div class="pull-right">
-                            <input type='button' id="next" class='btn btn-next btn-fill btn-warning btn-wd btn-sm next-form' name='next' value='Lanjut' tabindex="7" />
+                            <input type='button' id="lanjut" class='btn btn-next btn-fill btn-warning btn-wd btn-sm next-form' name='next' value='Lanjut' tabindex="15" />
                             <!-- <a href="/kalkulator/thankyou-mobilku"> -->
 <!--                                <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish' id='finish-btn'/>-->
                             <!-- </a> -->
@@ -855,6 +855,7 @@ $(document).keyup(function(e){
         $("a#open_tab_<?php echo $i ?>_<?php echo $j ?>").addClass("active");
         $(".show_<?php echo $i ?>").hide();
         $("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").show();
+        alert(getCookie('workshop_compre'));
         adjustTable();
     });
 
@@ -1311,7 +1312,11 @@ $(document).keyup(function(e){
             var a=new Date(date);
             var year1=a.setDate(a.getDate() - 1);
             var newdate=new Date(year1);
-            $( "#periode-last" ).val((newdate.getMonth() + 1)+'/'+newdate.getDate()+'/'+(newdate.getFullYear()+1));
+            if(newdate.getFullYear()%4==0){
+                $( "#periode-last" ).val((newdate.getMonth() + 1)+'/'+(newdate.getDate()+1)+'/'+(newdate.getFullYear()+1));
+            }else{
+                $( "#periode-last" ).val((newdate.getMonth() + 1)+'/'+newdate.getDate()+'/'+(newdate.getFullYear()+1));
+            }
           }
         });
 
@@ -1411,22 +1416,12 @@ $(document).keyup(function(e){
     
 //    console.log(getCookie(tahun_pembuatan));
 
-    function getCookie(cname) {
-        var name = cname + "=";
-        var ca = document.cookie.split(';');
-        for(var i=0; i<ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0)==' ') c = c.substring(1);
-            if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
-        }
-        return "";
-    }
     
-        function setCookie(cname, cvalue, exdays) {
-            var d = new Date();
-            d.setTime(d.getTime() + (exdays*24*60*60*1000));
-            var expires = "expires="+d.toUTCString();
-            document.cookie = cname + "=" + cvalue + "; " + expires;
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires="+d.toUTCString();
+        document.cookie = cname + "=" + cvalue + "; " + expires;
     }
         
     function getCookie(cname) {
@@ -1440,5 +1435,30 @@ $(document).keyup(function(e){
             return "";
     }
     
-    
+    $('#lanjut').click(function(){
+        var periode=$('#periode').val();
+        var email=$('#email').val();
+        var nama=$('#nama').val();
+        var telp=$('#telp').val();
+        
+        var radio1=$('#radio01').val();
+        var radio2=$('#radio02').val();
+        $('#radio01').checked
+        if($('#radio01').is(":checked") == true){
+            var radio = $('#radio01').val();
+        }else{
+            var radio = $('#radio02').val();
+        }
+       
+        setCookie('nama', nama,1);
+        setCookie('telp', telp,1);
+        setCookie('periode', periode,1);
+        setCookie('email', email,1);
+//        setCookie('periode_last', periode_last,1);
+        setCookie('radio', radio,1);
+        
+
+        document.location.href='/kalkulator/mobilku/mobil-hasil-kalkulasi';
+
+    });
 </script>

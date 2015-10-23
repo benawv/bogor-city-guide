@@ -269,6 +269,16 @@
         text-align: center;
         padding-top: 15px;
     }
+    #planmelahirkan{
+        position: absolute;
+        right: -166px;
+        top: -3px;
+    }
+    #planrawatjalan{
+        position: absolute;
+        right: -166px;
+        top: -3px;
+    }
 
 </style>
 
@@ -289,6 +299,9 @@
 
         <div class="row custom-tab-nav">
             <div class="col-xs-12">
+                <p>
+                    Kalkulator Asuransi SmartMed Premier akan membantu Anda mengetahui perkiraan jumlah premi yang akan dibayarkan. Silakan isi kolom yang tersedia sesuai kebutuhan Anda.
+                </p>
                 <ul>
                     <li class="active"><a href="#first">Langkah 1</a></li><!--  DON'T REMOVE THIS COMMENT
                     --><li><a href="#second">Langkah 2</a></li>
@@ -351,42 +364,6 @@
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Manfaat Rawat Inap <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#rawatInap"></i></label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <select class="form-control" required tabindex="1" id="ip">
-                                <option value="0">0%</option>
-                                <option value="10">10%</option>
-                                <option value="20">20%</option>
-                            </select>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Manfaat Melahirkan <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#melahirkan"></i></label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <select class="form-control" required tabindex="1" id="mat">
-                                <option value="0">0%</option>
-                                <option value="10">10%</option>
-                                <option value="20">20%</option>
-                            </select>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label>Manfaat Rawat Jalan & Rawat Gigi <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#rawatJalan"></i></label>
-                        </div><!--/ .col-md-4 -->
-                        <div class="col-md-4">
-                            <select class="form-control" required tabindex="1" id="out_den">
-                                <option value="20">20%</option>
-                            </select>
-                        </div><!--/ .col-md-4 -->
-                    </div><!--/ .form-group -->
                     <div class="form-group">
                         <div class="col-md-4">
                             <label>Pilihan Plan Manfaat Rawat Inap</label>
@@ -624,6 +601,19 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
+                            <label>Manfaat Rawat Inap <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#rawatInap"></i></label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <select class="form-control" required tabindex="1" id="ip">
+                                <option value="0">0%</option>
+                                <option value="10">10%</option>
+                                <option value="20">20%</option>
+                            </select>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+
+                    <div class="form-group">
+                        <div class="col-md-4">
                             <label>Pilihan Plan Manfaat Melahirkan</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
@@ -638,6 +628,7 @@
                                     }
                                 ?>
                             </select>
+                            <input class="form-control" type="checkbox" name="planmelahirkan" id="planmelahirkan">
                             <label id="notif2" style="display:none; color:red;">Manfaat Melahirkan Harus diisi.</label>
                             <a id="file2" style="visibility:hidden" target="_blank"></a>
                             <script>
@@ -705,6 +696,19 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
+                            <label>Manfaat Melahirkan <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#melahirkan"></i></label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <select class="form-control" required tabindex="1" id="mat">
+                                <option value="0">0%</option>
+                                <option value="10">10%</option>
+                                <option value="20">20%</option>
+                            </select>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+
+                    <div class="form-group">
+                        <div class="col-md-4">
                             <label>Pilihan Plan Manfaat Rawat Jalan & rawat Gigi</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
@@ -719,6 +723,7 @@
                                     }
                                 ?>
                             </select>
+                            <input class="form-control" type="checkbox" name="planrawatjalan" id="planrawatjalan">
                             <label id="notif3" style="display:none; color:red;">Manfaat Rawat Jalan & Rawat Gigi Harus diisi.</label>
                             <a id="file3" style="visibility:hidden" target="_blank"></a>
                             <script>
@@ -781,6 +786,17 @@
                                 }
                             }
                             </script>
+                        </div><!--/ .col-md-4 -->
+                    </div><!--/ .form-group -->
+
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label>Manfaat Rawat Jalan & Rawat Gigi <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#rawatJalan"></i></label>
+                        </div><!--/ .col-md-4 -->
+                        <div class="col-md-4">
+                            <select class="form-control" required tabindex="1" id="out_den">
+                                <option value="20">20%</option>
+                            </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -948,7 +964,7 @@
       </div>
       <div class="modal-body">
         <!--h3>5 Risiko Kehidupan</h3-->
-        <p>Diskon Polis Keluarga berlaku untuk Polis Keluarga (Tertanggung, Suami/Istri & Anak).</p>
+        <p>Fasilitas Family Discount adalah potongan/diskon premi per keluarga yang didapatkan bila Anda menyertakan keluarga (suami, istri, dan anak) dalam pembelian polis.</p>
       </div>
     </div>
   </div>
@@ -959,11 +975,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="claimLabel">No Claim Discount</h4>
+        <h4 class="modal-title" id="claimLabel">No Claim Bonus</h4>
       </div>
       <div class="modal-body">
         <!--h3>5 Risiko Kehidupan</h3-->
-        <p>Potongan premi sebesar 20% saat polis diperpanjang yang didapatkan bila Anda dan/atau anggota keluarga tidak melakukan klaim selama 1 (satu) tahun polis penuh.</p>
+        <p>Fasilitas No Claim Bonus adalah potongan/diskon premi sebesar 20% saat polis diperpanjang dan berlaku bila Anda dan/atau anggota keluarga tidak ada catatan melakukan klaim selama 1 (satu) tahun polis.</p>
       </div>
     </div>
   </div>
@@ -974,11 +990,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="rawatInapLabel">Manfaat Rawat Inap</h4>
+        <h4 class="modal-title" id="rawatInapLabel">Pilihan Persentase Co-Share Manfaat Rawat Inap</h4>
       </div>
       <div class="modal-body">
         <!--h3>5 Risiko Kehidupan</h3-->
-        <p>Besaran presentase co-share atau jumlah yang Anda perlu bayar untuk klaim Anda.</p>
+        <p>Jumlah persentase pada co-share yang dipilih akan menjadi bagian Anda dalam setiap pengajuan klaim. Misalnya, bila Anda memilih co-share 10%, maka Allianz akan membayar biaya rawat inap sebesar 90% dan Anda membayar 10%.</p>
       </div>
     </div>
   </div>
@@ -989,11 +1005,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="melahirkanLabel">Manfaat Melahirkan</h4>
+        <h4 class="modal-title" id="melahirkanLabel">Pilihan Persentase Co-Share Manfaat Melahirkan</h4>
       </div>
       <div class="modal-body">
         <!--h3>5 Risiko Kehidupan</h3-->
-        <p>Besaran presentase co-share atau jumlah yang Anda perlu bayar untuk klaim Anda.</p>
+        <p>Jumlah persentase pada co-share yang dipilih akan menjadi bagian Anda dalam setiap pengajuan klaim. Misalnya, bila Anda memilih co-share 10%, maka Allianz akan membayar biaya melahirkan sebesar 90% dan Anda membayar 10%.</p>
       </div>
     </div>
   </div>
@@ -1004,11 +1020,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="rawatJalanLabel">Manfaat Rawat Jalan & Rawat Gigi</h4>
+        <h4 class="modal-title" id="rawatJalanLabel">Pilihan Persentase Co-Share Rawat Jalan & Rawat Gigi</h4>
       </div>
       <div class="modal-body">
         <!--h3>5 Risiko Kehidupan</h3-->
-        <p>Besaran presentase co-share atau jumlah yang Anda perlu bayar untuk klaim Anda.</p>
+        <p>Jumlah persentase pada co-share yang dipilih akan menjadi bagian Anda dalam setiap pengajuan klaim. Misalnya, bila Anda memilih co-share 10%, maka Allianz akan membayar biaya rawat jalan atau rawat gigi sebesar 90% dan Anda membayar 10%.</p>
       </div>
     </div>
   </div>
@@ -1290,6 +1306,10 @@
         var name = $("#name").val();
         var dob = $("#dob").val();
         var cd = $("#cd").val();
+        var planmelahirkan = $("#planmelahirkan").is(":checked");
+        var planrawatjalan = $("#planrawatjalan").is(":checked");
+        console.log("plan="+planmelahirkan);
+        console.log("plan="+planrawatjalan);
 
         if (name == ""){
             document.getElementById("notif4").style.display="block";
@@ -1341,7 +1361,15 @@
             else ipp = ipp0;
             totalwithout = parseFloat(ipp0);
         }else{
-            totalwithout = parseFloat(ipp0)+parseFloat(matp0)+parseFloat(opdenp0);
+            if(planmelahirkan==true&&planrawatjalan==true){
+                totalwithout = parseFloat(ipp0)+parseFloat(matp0)+parseFloat(opdenp0);
+            }else if(planmelahirkan==true&&planrawatjalan==false){
+                totalwithout = parseFloat(ipp0)+parseFloat(matp0);
+            }else if(planmelahirkan==false&&planrawatjalan==true){
+                totalwithout = parseFloat(ipp0)+parseFloat(opdenp0);
+            }else{
+                totalwithout = parseFloat(ipp0);
+            }
             if(uwl > 0) {
                 ipp = ipp1;
                 matp = matp1;
@@ -1352,7 +1380,20 @@
                 opdenp = opdenp0;
             }
         }
-        total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
+
+        if(planmelahirkan==true&&planrawatjalan==true){
+            total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
+        }else if(planmelahirkan==true&&planrawatjalan==false){
+            total = parseFloat(ipp)+parseFloat(matp);
+            opdenp = 0;
+        }else if(planmelahirkan==false&&planrawatjalan==true){
+            total = parseFloat(ipp)+parseFloat(opdenp);
+            matp = 0;
+        }else{
+            total = parseFloat(ipp);
+            matp = 0;opdenp = 0;
+        }
+        // total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
         var rowCount = $('table.table tbody tr').length;
         var no = parseInt(rowCount)+1;
 
@@ -1400,6 +1441,9 @@
         var total = stamp = totfd = jml = totalwithoutuwl = 0;
         var fd = $("#family_discount").val();
         var payment = $("#payment_methods").val();
+
+        var planmelahirkan = $("#planmelahirkan").is(":checked");
+        var planrawatjalan = $("#planrawatjalan").is(":checked");
         // console.log(rowCount);
         //console.log($(this).parent().html());
         $('table.table tbody tr').each(function(index){
@@ -1446,7 +1490,15 @@
                 else ipp = ipp0;
                 totalwithout = parseFloat(ipp0);
             }else{
-                totalwithout = parseFloat(ipp0)+parseFloat(matp0)+parseFloat(opdenp0);
+                if(planmelahirkan==true&&planrawatjalan==true){
+                    totalwithout = parseFloat(ipp0)+parseFloat(matp0)+parseFloat(opdenp0);
+                }else if(planmelahirkan==true&&planrawatjalan==false){
+                    totalwithout = parseFloat(ipp0)+parseFloat(matp0);
+                }else if(planmelahirkan==false&&planrawatjalan==true){
+                    totalwithout = parseFloat(ipp0)+parseFloat(opdenp0);
+                }else{
+                    totalwithout = parseFloat(ipp0);
+                }
                 if(uwl > 0) {
                     ipp = ipp1;
                     matp = matp1;
@@ -1459,7 +1511,19 @@
             }
             console.log("totalwithout="+totalwithout);
 
-            total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
+            if(planmelahirkan==true&&planrawatjalan==true){
+                total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
+            }else if(planmelahirkan==true&&planrawatjalan==false){
+                total = parseFloat(ipp)+parseFloat(matp);
+                opdenp = 0;
+            }else if(planmelahirkan==false&&planrawatjalan==true){
+                total = parseFloat(ipp)+parseFloat(opdenp);
+                matp = 0;
+            }else{
+                total = parseFloat(ipp);
+                matp = 0;opdenp = 0;
+            }
+            // total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
             $( this ).find(".ipp").html(currency(ipp));
             $( this ).find(".matp").html(currency(matp));
             $( this ).find(".opdenp").html(currency(opdenp));

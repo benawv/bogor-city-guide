@@ -171,7 +171,7 @@ $(document).ready(function(){
                             <?php $sessionCalc = new Zend_Session_Namespace(calc_mobilku); ?>
                             <?php $sessionCalc->status ="mobilku"; ?>
 //                            alert("<?php echo $sessionCalc->status; ?>");
-                            window.open('/kalkulator/mobilku','_self');
+                            window.open('/kalkulator/mobilku/mobil-data','_self');
                             // document.location.href('/kalkulator/mobilku');
 
                           /*$.ajax({
