@@ -1312,7 +1312,11 @@ $(document).keyup(function(e){
             var a=new Date(date);
             var year1=a.setDate(a.getDate() - 1);
             var newdate=new Date(year1);
-            $( "#periode-last" ).val((newdate.getMonth() + 1)+'/'+newdate.getDate()+'/'+(newdate.getFullYear()+1));
+            if(newdate.getFullYear()%4==0){
+                $( "#periode-last" ).val((newdate.getMonth() + 1)+'/'+(newdate.getDate()+1)+'/'+(newdate.getFullYear()+1));
+            }else{
+                $( "#periode-last" ).val((newdate.getMonth() + 1)+'/'+newdate.getDate()+'/'+(newdate.getFullYear()+1));
+            }
           }
         });
 
