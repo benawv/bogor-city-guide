@@ -1464,5 +1464,5 @@ $(document).keyup(function(e){
 
     $('#kembali1').click(function(){
         document.location.href= '/kalkulator/mobilku/mobil-data';
-    })
+    });
 </script>
