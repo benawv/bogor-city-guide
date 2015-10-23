@@ -144,8 +144,22 @@
         z-index: 4;
         font-weight: normal;
         pointer-events: none;
+        text-align: center;
     }
-
+    /*
+    .stoop-upload .stoop-upload__label span
+    {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        min-width 100% !important;
+        height: 100%;
+        background: red;
+        margin: 0 auto;
+        z-index: 3;
+    }
+    */
     .stoop-upload .stoop-upload__filename
     {
         border-radius: 0;
@@ -168,6 +182,19 @@
         z-index: 5;
         opacity: 0;
         cursor: pointer;
+    }
+
+    @media (max-width: 767px)
+    {
+        .stoop-upload
+        {
+        }
+
+        .stoop-upload .stoop-upload__label
+        {
+            width: 100%;
+            text-align: center;
+        }
     }
 
 </style>
@@ -271,7 +298,7 @@
                         <div class="form-group">
                             <!--<img id="preview" src="#" alt="your image" width="100" height="100" />-->
                             <div class="stoop-upload">
-                                <label class="stoop-upload__label">Pilih Gambar</label>
+                                <label class="stoop-upload__label" id="imglabel">Pilih Gambar</label>
                                 <input type="text" id="imgname" class="form-control disabled stoop-upload__filename" readonly value="Belum ada gambar terpilih">
                                 <input id="imgfile" type="file" name="uploadFoto" required/>
                             </div><!--/ .stoop-upload -->
@@ -362,6 +389,7 @@
         $('#imgfile').change(function(){
             console.log('file input changed');
             $('#imgname').val($('#imgfile').val());
+            //$('#imglabel').html($('#imgfile').val());
         });
 
     });
