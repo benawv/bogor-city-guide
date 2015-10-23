@@ -74,9 +74,10 @@
 
     #progressbox
     {
-        border: solid 1px #00397D;
+        border: solid 1px #ddd; /*#00397D;*/
+        border-top: none;
         border-radius: 0;
-        margin: 0 auto 16px;
+        margin: -16px auto 16px;
         padding: 0;
         width: 100%;
         height: 32px;
@@ -111,6 +112,64 @@
         visibility: hidden;
         opacity: 0;
     }
+
+    /**
+     * stoop-upload
+     * World's best file input
+     */
+
+    .stoop-upload
+    {
+        position: relative;
+        border: solid 1px #ccc;
+        min-height: 48px;
+    }
+
+    .stoop-upload:hover .stoop-upload__label
+    {
+        background: #002654;
+    }
+
+    .stoop-upload .stoop-upload__label
+    {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 100%;
+        line-height: 48px;
+        padding: 0 32px;
+        text-transform: uppercase;
+        background: #00397D;
+        color: white;
+        z-index: 4;
+        font-weight: normal;
+        pointer-events: none;
+    }
+
+    .stoop-upload .stoop-upload__filename
+    {
+        border-radius: 0;
+        box-shadow: 0 0 0 transparent;
+        border: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0 32px;
+        pointer-events: none;
+        cursor: default;
+    }
+
+    .stoop-upload input[type="file"]
+    {
+        width: 100%;
+        height: 48px;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+    }
+
 </style>
 
 <script type="text/javascript">
@@ -207,25 +266,19 @@
                         <script>document.write(getCookie("keterangan"));</script>
                     </p>
 
-                    <!--
-                    <form role="form" action="/upload-image/" method="post" enctype="multipart/form-data" id="profilMakerForm" onsubmit="return checkfiles();">
-                    -->
-
                     <form role="form" action="/upload-image/" method="post" enctype="multipart/form-data" id="profilMakerForm">
 
                         <div class="form-group">
                             <!--<img id="preview" src="#" alt="your image" width="100" height="100" />-->
-                            <input id="imgfile" type="file" name="uploadFoto" data-filename-placement="inside" required title="Pilih Gambar" />
+                            <div class="stoop-upload">
+                                <label class="stoop-upload__label">Pilih Gambar</label>
+                                <input type="text" id="imgname" class="form-control disabled stoop-upload__filename" readonly value="Belum ada gambar terpilih">
+                                <input id="imgfile" type="file" name="uploadFoto" required/>
+                            </div><!--/ .stoop-upload -->
                             <input id="redirect" type="hidden" name="urlRedirect" value="<?php echo $this->link("link-template")->getHref()?>"/>
-                            <!--<input type="file" required>-->
                         </div><!--/ .form-group -->
 
                         <div style="color:red" id="test"></div>
-
-                        <!--
-                        <p></p>
-                        <div id="progressbar"><div class="progress-label">Loading...</div></div>
-                        -->
 
                         <div id="progressbox"><div id="progressbar"></div ><div id="statustxt">0%</div></div>
                         <div id="output"></div>
@@ -262,18 +315,9 @@
     </div><!--/ .container -->
 </section><!--/ .profile-maker -->
 
-
-<script src="/website/static/js/bootstrap.file-input.js"></script>
 <script src="/website/static/js/jquery.form.js" async></script>
 <script>
     $(function(){
-
-        /**
-         * Bootstrap File Input
-         * http://gregpike.net/demos/bootstrap-file-input/
-         */
-        $('input[type=file]').bootstrapFileInput();
-        $('.file-input-wrapper').addClass('btn-block');
 
         /**
          * jQuery Form Plugin
@@ -311,6 +355,14 @@
             }
             console.log('Uploading: ' + percentComplete + '%');
         }
+
+        /**
+         * Get tmp_name when file input changed
+         */
+        $('#imgfile').change(function(){
+            console.log('file input changed');
+            $('#imgname').val($('#imgfile').val());
+        });
 
     });
 </script>
