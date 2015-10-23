@@ -1947,31 +1947,30 @@ $(document).ready(function(){
         var total = $('.no_totalPremium.data').html();
         var label = $('.no_pack.data').html();
 
-        var tahun_pembuatan=$('#tahun_pembuatan').val();
-        var harga=$('#harga').val();
-        var merk=$('#merk').val();
-        var merk_html=$('#merk option:selected').html().toLowerCase();
-        var model=$('#model').val();
-        var regno=$('#regno').val();
-        var tipe=$('#tipe').val();
-        var kapasitas=$('#kapasitas').val();
-        var nama=$('#nama').val();
-        var telp=$('#telp').val();
-        var periode=$('#periode').val();
-        var email=$('#email').val();
-        var hargaKonv=clearFormat($('#harga').val());
-        var model_html=$('#model option:selected').html().toLowerCase();
+        var tahun_pembuatan=getCookie('tahun_buat');
+        var harga=getCookie('harga');
+        var merk=getCookie('merk');
+        var merk_html=getCookie('merk_html').toLowerCase();
+        var model=getCookie('model');
+        var regno=getCookie('regno');
+        var tipe=getCookie('tipe');
+        var kapasitas=getCookie('kapasitas');
+        var nama=getCookie('nama');
+        var telp=getCookie('telp');
+        var periode=getCookie('periode');
+        var email=getCookie('email');
+        var hargaKonv=clearFormat(getCookie('harga'));
+        var model_html=getCookie('model_html').toLowerCase();
+        var radio = getCookie('radio');
 
-        var radio1=$('#radio01').val();
-        var radio2=$('#radio02').val();
-        $('#radio01').checked
-        if($('#radio01').is(":checked") == true){
-            var radio = $('#radio01').val();
-        }else{
-            var radio = $('#radio02').val();
-        }
-
-        console.log(radio);
+        // var radio1=$('#radio01').val();
+        // var radio2=$('#radio02').val();
+        // $('#radio01').checked
+        // if($('#radio01').is(":checked") == true){
+        //     var radio = $('#radio01').val();
+        // }else{
+        //     var radio = $('#radio02').val();
+        // }
 
         // console.log(compre+' - '+tpl+' - '+pll+' - '+med+' - '+flood+' - '+earthquake+' - '+riot+' - '+terror+' - '+passenger+' - '+pa+' - '+workshop+' - '+total+' - '+label+' - '+email);
         // console.log('tahun_pembuatan '+tahun_pembuatan+' - '+'harga '+harga+' - '+'merk '+merk+' - '+'merk_html '+merk_html+' - '+'model '+model+' - '+'regno '+regno+' - '+'tipe '+tipe+' - '+

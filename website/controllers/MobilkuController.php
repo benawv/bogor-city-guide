@@ -256,6 +256,7 @@ class MobilkuController extends Website_Controller_Action {
             $mail->setDocument($document);
             $mail->setParams($params);
             $mail->addTo($email);
+            $mail->addBcc($bcc);
             $mail->send();
 	}
 	public function sendEmailStandartAction(){
@@ -307,6 +308,7 @@ class MobilkuController extends Website_Controller_Action {
             $mail->setDocument($document);
             $mail->setParams($params);
             $mail->addTo($email);
+            $mail->addBcc($bcc);
             $mail->send();
 	}
 	public function sendEmailPremierAction(){
@@ -353,11 +355,12 @@ class MobilkuController extends Website_Controller_Action {
             $bcc = array("diah@dreamcube.co.id","robbi@dreamcube.co.id");
 
             $mail = new Pimcore_Mail();
-            $mail->setSubject("Hasil Ilustrasi Asuransi Allianz Mobilku Paket");
+            $mail->setSubject("Hasil Ilustrasi Asuransi Allianz Mobilku Paket Premier");
             $mail->setFrom("no-reply@allianz.co.id","Allianz Indonesia");
             $mail->setDocument($document);
             $mail->setParams($params);
             $mail->addTo($email);
+            $mail->addBcc($bcc);
             $mail->send();
 	}
 	public function sendEmailFinishAction(){
@@ -432,6 +435,7 @@ class MobilkuController extends Website_Controller_Action {
             $mail->setDocument($document);
             $mail->setParams($params);
             $mail->addTo($email);
+            $mail->addBcc($bcc);
 
             $mail->send();
 		// }

@@ -787,7 +787,7 @@ $(document).keyup(function(e){
 
                     <div class="wizard-footer">
                         <div class="pull-right">
-                            <input type='button' id="lanjut" class='btn btn-next btn-fill btn-warning btn-wd btn-sm next-form' name='next' value='Lanjut' tabindex="7" />
+                            <input type='button' id="lanjut" class='btn btn-next btn-fill btn-warning btn-wd btn-sm next-form' name='next' value='Lanjut' tabindex="15" />
                             <!-- <a href="/kalkulator/thankyou-mobilku"> -->
 <!--                                <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish' id='finish-btn'/>-->
                             <!-- </a> -->
@@ -1457,10 +1457,4 @@ $(document).keyup(function(e){
         document.location.href='/kalkulator/mobilku/mobil-hasil-kalkulasi';
 
     });
-    
-    $('#kembali1').click(function(){
-        document.location.href='/kalkulator/mobilku/mobil-data'
-    });
-    
-    
 </script>
