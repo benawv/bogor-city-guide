@@ -1238,7 +1238,7 @@ $(document).ready(function(){
         //console.log(parseFloat(getWorkshopNonPack(merk,ages)));
         //console.log(getTlo(jenisasuransi,'PK_R2_S5_Sedan')/100);
         //calc =parseFloat(getWorkshopNonPack(merk_html,ages));
-		hitung = parseFloat(getWorkshop(merk_html,ages))*(compre_tlo_persen)/100;
+		hitung = parseFloat(getWorkshopNonPack(merk_html,ages))*(compre_tlo_persen)/100;
         workshop_persen = hitung.toFixed(6);
         workshop_persen_show = hitung.toFixed(4);
 		//calc =parseFloat(getWorkshopNonPack(merk_html,ages))*(getTlo(jenisasuransi,'PK_R2_S5_Sedan',merk_html,2)/100);
@@ -1406,14 +1406,14 @@ $(document).ready(function(){
         terror_prem=(((1*(cleanVarTlo*terror_persen)/100)*day)/day);
         tpl_prem=(((1*(cleanTpl_val*tpl_persen)/100)*day)/day);
         no_tpl_prem=(((1*(cleanTpl_val*no_tpl_persen)/100)*day)/day);
-		var no_totalPremium= workshop_prem + compre_prem + earthquake_prem + era_prem + flood_prem + med_ex_prem + pa_prem + passenger_prem  + pll_prem + riot_prem + terror_prem + tpl_prem;
+		var no_totalPremium= workshop_prem + compre_prem + earthquake_prem + flood_prem + med_ex_prem + pa_prem + passenger_prem  + pll_prem + riot_prem + terror_prem + tpl_prem;
 		setCookie('no_totalPremium',no_totalPremium,1);	
 		
         //totalPremium= workshop_prem + compre_prem + earthquake_prem + era_prem + flood_prem + med_ex_prem + pa_prem + passenger_prem  + pll_prem + riot_prem + terror_prem + tpl_prem;
 		setCookie('no_workshop_prem',workshop_prem,1);
         setCookie('no_compre_prem',compre_prem,1);
         setCookie('no_earthquake_prem',earthquake_prem,1);
-        setCookie('no_era_prem',era_prem,1);
+        //setCookie('no_era_prem',era_prem,1);
         setCookie('no_flood_prem',flood_prem,1);
         setCookie('no_med_ex_prem',med_ex_prem,1);
         setCookie('no_pa_prem',pa_prem,1);

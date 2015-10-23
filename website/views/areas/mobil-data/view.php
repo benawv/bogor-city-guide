@@ -808,7 +808,7 @@ $(document).keyup(function(e){
 
                     <div class="wizard-footer">
                         <div class="pull-right">
-                            <input type='button' id="lanjut" class='btn btn-next btn-fill btn-warning btn-wd btn-sm next-form' name='next' value='Lanjut' tabindex="7" disabled/>
+                            <input type='button' id="lanjut" class='btn btn-next btn-fill btn-warning btn-wd btn-sm next-form' name='next' value='Lanjut' tabindex="7"/>
                             <!-- <a href="/kalkulator/thankyou-mobilku"> -->
                                 <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish' id='finish-btn'/>
                             <!-- </a> -->
@@ -1329,14 +1329,14 @@ $(document).keyup(function(e){
                         success  : function(data){
                         //console.log(data);
                         //alert(data);
-                        document.getElementById('lanjut').disabled= false;
+                        // document.getElementById('lanjut').disabled= false;
                         if(data == ''){
                             document.getElementById('notifRegno').style.display= 'block';
-                            document.getElementById('lanjut').disabled= true;
+                            // document.getElementById('lanjut').disabled= true;
                              $('#wilayah').val('');
                         }else{
                             document.getElementById('notifRegno').style.display= 'none';
-                            document.getElementById('lanjut').disabled= false;
+                            // document.getElementById('lanjut').disabled= false;
                             $('#wilayah').val(data);
                         }
                         
