@@ -691,7 +691,7 @@ $(document).keyup(function(e){
                                                 <div class="tabcontent" id="tabcontent_2">
                                                     <ul>
                                                         <li>
-                                                            <a id="open_tab_1_1_m" class="menumobile active" href="javascript:void(0);">Example</a>
+                                                            <a id="open_tab_1_1_m" class="menumobile active" href="javascript:void(0);">Mobilku Basic <input name="paket" id="paket_1_1" type="checkbox" class="paketchecked" style="float:right;"></a>
                                                             <div id="tabcontent_1_1" class="content_show showme show_1">
                                                                 <div class="tabScroll">
                                                                     <table id="myTable2" class="display" cellspacing="0" width="100%">
@@ -803,7 +803,7 @@ $(document).keyup(function(e){
                                                             </div><!--/ .content_show -->
                                                         </li>
                                                         <li>
-                                                            <a id="open_tab_1_2_m" class="menumobile" href="javascript:void(0);">Example</a>
+                                                            <a id="open_tab_1_2_m" class="menumobile" href="javascript:void(0);">Mobilku Standar <input name="paket" id="paket_1_2" type="checkbox" class="paketchecked" style="float:right;"></a>
                                                             <div id="tabcontent_1_2" class="content_show show_1">
                                                                 <div class="tabScroll">
                                                                     <table id="myTable3" class="display" cellspacing="0" width="100%">
@@ -915,7 +915,7 @@ $(document).keyup(function(e){
                                                             </div>
                                                         </li>
                                                         <li>
-                                                            <a id="open_tab_1_3_m" class="menumobile" href="javascript:void(0);">Example</a>
+                                                            <a id="open_tab_1_3_m" class="menumobile" href="javascript:void(0);">Mobilku Premier <input name="paket" id="paket_1_3" type="checkbox" class="paketchecked" style="float:right;"></a>
                                                             <div id="tabcontent_1_3" class="content_show show_1">
                                                                 <div class="tabScroll">
                                                                     <table id="myTable4" class="display" cellspacing="0" width="100%">
@@ -1052,7 +1052,7 @@ $(document).keyup(function(e){
                                                 <div class="menutab_dekstop">
                                                     <ul>
                                                         <li>
-                                                            <a id="open_tab_2_1" href="javascript:void(0);">Customized <input name="paket" id="paket_2_1" type="checkbox" class="paketchecked" style="float:right;"></a>
+                                                            <a id="open_tab_2_1" href="javascript:void(0);">Non Paket <input name="paket" id="paket_2_1" type="checkbox" class="paketchecked" style="float:right;"></a>
                                                         </li>
                                                     </ul>
                                                 </div><!--/ .menutab_dekstop -->
@@ -1061,7 +1061,7 @@ $(document).keyup(function(e){
 
                                                     <ul>
                                                         <li>
-                                                            <a id="open_tab_2_1_m" class="menumobile active" href="javascript:void(0);">Customized</a>
+                                                            <a id="open_tab_2_1_m" class="menumobile active" href="javascript:void(0);">Non Paket <input name="paket" id="paket_2_1" type="checkbox" class="paketchecked" style="float:right;"></a>
                                                             <div id="tabcontent_2_1" class="content_show showme show_2">
                                                                 <div class="tabScroll">
                                                                     <table id="myTable5" class="display tbl_ck" cellspacing="0" width="100%">
