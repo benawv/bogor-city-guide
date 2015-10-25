@@ -770,6 +770,7 @@
             });
         }
         //seluruh data di set cookie agar nanti tidak buat perhitungan ulang lagi
+        //ini tabel tbody, jumlah anggota nya. berbentuk array
         setCookie('nama', JSON.stringify(nama),5);
         setCookie('sex', JSON.stringify(sex),5);
         setCookie('dob', JSON.stringify(dob),5);
@@ -779,6 +780,12 @@
         setCookie('matp', JSON.stringify(matp),5);
         setCookie('opdenp', JSON.stringify(opdenp),5);
         setCookie('totalimo', JSON.stringify(totalimo),5);
+
+        //total nya yg tfoot
+        setCookie('total', total,5);
+        setCookie('bmaterai', bmaterai,5);
+        setCookie('fd', fd,5);
+        setCookie('totalseluruh', totalseluruh,5);
 
         // var storedAry = JSON.parse(getCookie('nama'));// to store array
         // console.log(storedAry);
