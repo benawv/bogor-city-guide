@@ -28,7 +28,7 @@ $(document).ready(function(){
         return value;
     }
 
-    var jenisasuransi = getCookie('radio');
+    var jenisasuransi = "";
     // $("input:radio[name=radio]").click(function() {
     //      jenisasuransi = $(this).val();
     //      $("#jenisasuransi, #jenisasuransi2, #jenisasuransi3, #nojenisasuransi").html("");
@@ -1948,6 +1948,18 @@ $(document).ready(function(){
         
         var email=$('#email').val();
         if (email != '') {
+            var radio1=$('#radio01').val();
+            var radio2=$('#radio02').val();
+            if($('#radio01').is(":checked") == true){
+                var radio = $('#radio01').val();
+                var label_view_hasil = 'Komprehensif';
+            }else{
+                var radio = $('#radio02').val();
+                var label_view_hasil = 'TLO';
+            }
+            setCookie('radio', radio,1);
+            
+            jenisasuransi = getCookie('radio'); 
             sendEmail(calc_result(),calc_resultstandard(),calc_resultpremier(),recalc_custome());
             adjustTable();
         }

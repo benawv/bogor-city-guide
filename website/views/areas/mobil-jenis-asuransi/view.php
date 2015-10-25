@@ -1443,13 +1443,13 @@ $(document).keyup(function(e){
         
         var radio1=$('#radio01').val();
         var radio2=$('#radio02').val();
-        $('#radio01').checked
+        //$('#radio01').checked
         if($('#radio01').is(":checked") == true){
-            // var radio = $('#radio01').val();
-            var radio = 'Komprehensif';
+            var radio = $('#radio01').val();
+            var label_view_hasil = 'Komprehensif';
         }else{
-            var radio = 'TLO';
-            // var radio = $('#radio02').val();
+            var radio = $('#radio02').val();
+            var label_view_hasil = 'TLO';
         }
        
         setCookie('nama', nama,1);
@@ -1458,10 +1458,11 @@ $(document).keyup(function(e){
         setCookie('email', email,1);
 //        setCookie('periode_last', periode_last,1);
         setCookie('radio', radio,1);
+        setCookie('label_view_hasil', label_view_hasil,1);
         document.location.href='/kalkulator/mobilku/mobil-hasil-kalkulasi';
     });
 
     $('#kembali1').click(function(){
-        document.location.href= '/kalkulator/mobilku/mobil-data'
-    })
+        document.location.href= '/kalkulator/mobilku/mobil-data';
+    });
 </script>
