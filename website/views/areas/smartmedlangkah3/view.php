@@ -475,11 +475,6 @@
     });
 
     $(document).ready(function(){
-        if(!getCookie("planip")){
-            window.location = "langkah1";
-        }else if(!getCookie("planrawatjalan")){
-            window.location = "langkah2";
-        }
 
         $("#cd").datepicker({
             changeMonth: true,
@@ -492,6 +487,15 @@
             yearRange: "-100:+0",
             maxDate: new Date()
         });
+    });
+
+    $(document).ready(function(){
+        
+        if(!getCookie("planip")){
+            window.location = "langkah1";
+        }else if(!getCookie("planrawatjalan")){
+            window.location = "langkah2";
+        }
     });
 
     $(function(){
