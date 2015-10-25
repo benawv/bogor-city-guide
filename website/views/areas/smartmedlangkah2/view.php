@@ -873,7 +873,7 @@
 
 <script>
     $(document).ready(function(){
-        if(!getCookie("payment_methods")){
+        if(!getCookie("pembayaran")){
             window.location = "langkah1";
         }
     });
