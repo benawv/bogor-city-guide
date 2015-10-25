@@ -305,11 +305,11 @@
                     Kalkulator Asuransi SmartMed Premier akan membantu Anda mengetahui perkiraan jumlah premi yang akan dibayarkan. Silakan isi kolom yang tersedia sesuai kebutuhan Anda.
                 </p>
                 <ul>
-                    <li><a href="#first">Langkah 1</a></li><!--  DON'T REMOVE THIS COMMENT
+                    <li><a href="#first" style="font-size:10px;">Pembayaran dan Diskon</a></li><!--  DON'T REMOVE THIS COMMENT
                     -->
-                    <li><a href="#second">Langkah 2</a></li>
-                    <li class="active"><a href="#third">Langkah 3</a></li>
-                    <li><a href="#fourth">Langkah 4</a></
+                    <li><a href="#second">Pilih Manfaat</a></li>
+                    <li class="active"><a href="#third">Data Anggota</a></li>
+                    <li><a href="#fourth">Data Diri</a></
                 </ul><!--/ .custom-tab -->
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
@@ -490,7 +490,7 @@
     });
 
     $(document).ready(function(){
-        
+
         if(!getCookie("planip")){
             window.location = "langkah1";
         }else if(!getCookie("planrawatjalan")){
@@ -763,14 +763,14 @@
             $('table.table tbody tr').each(function(index){
                 no++;
                 nama.push($(this).find("input[name='nama']").val());
-                sex.push($(this).find("input[name='sex']").val());
+                sex.push($(this).find("#sex").val());
                 dob.push($(this).find("input[name='dob"+no+"']").val());
                 cd.push($(this).find("input[name='cd"+no+"']").val());
 
                 ipp.push($(this).find(".ipp").html());
                 matp.push($(this).find(".matp").html());
                 opdenp.push($(this).find(".opdenp").html());
-                totalimo.push($(this).find(".tohidden").html());
+                totalimo.push($(this).find(".tohidden").val());
             });
         }
         //seluruh data di set cookie agar nanti tidak buat perhitungan ulang lagi
