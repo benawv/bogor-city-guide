@@ -770,7 +770,7 @@
                 ipp.push($(this).find(".ipp").html());
                 matp.push($(this).find(".matp").html());
                 opdenp.push($(this).find(".opdenp").html());
-                totalimo.push($(this).find(".tohidden").html());
+                totalimo.push($(this).find(".tohidden").val());
             });
         }
         //seluruh data di set cookie agar nanti tidak buat perhitungan ulang lagi
