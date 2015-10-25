@@ -315,7 +315,7 @@
         <div class="content-calc custom-tab-item active" id="first">
             <div class="col-md-12">
 
-                <form class="form-horizontal" role="form" METHOD="POST" action="/smartmed-email">
+                <form class="form-horizontal" role="form" METHOD="POST" action="smartmed-email">
 
                     <div class="form-group">
                         <div class="col-md-8">
