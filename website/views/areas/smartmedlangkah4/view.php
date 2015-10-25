@@ -472,7 +472,7 @@
                             var listLoc = jQuery.parseJSON(entries);
                             //console.log(listLoc);
                             $('#kota option').remove();
-                            $('#kota').append('<option>-Pilih-</option>');
+                            $('#kota').append('<option value="">-Pilih-</option>');
                             $.each(listLoc, function(i, item){
 //                                console.log(item.Status);
 //                                var status='"'+item.Status+'"';s
