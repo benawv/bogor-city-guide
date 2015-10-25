@@ -475,6 +475,12 @@
     });
 
     $(document).ready(function(){
+        if(!getCookie("planip")){
+            window.location = "langkah1";
+        }else if(!getCookie("planrawatjalan")){
+            window.location = "langkah2";
+        }
+
         $("#cd").datepicker({
             changeMonth: true,
             changeYear: true,

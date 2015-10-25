@@ -339,6 +339,9 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="input" class="form-control" required tabindex="1" name="noHP" id="noHP" placeholder="No Ponsel">
+                            <label id="notifNoHP" style="display:none; color: #f00;">
+                                Mohon maaf No HP yang Anda masukkan belum benar
+                            </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -348,6 +351,9 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <input type="input" class="form-control" required tabindex="1" name="email" id="email" placeholder="Email">
+                            <label id="notifemail" style="display:none; color: #f00;">
+                                Mohon maaf email yang Anda masukkan tidak valid
+                            </label>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
@@ -356,7 +362,7 @@
                             <label>Provinsi</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required tabindex="1" name="provinsi" id="provinsi">
+                            <select class="form-control" required name="provinsi" id="provinsi">
                                 <option value="">Pilih provinsi</option>
                                 <?php
                                     $getProv=new Object_Provinsi_List();
@@ -376,8 +382,8 @@
                             <label>Kota/Kab.</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" name="kota" id="kota">
-                                <option value = "pilih">-Pilih-</option>  
+                            <select class="form-control" required tabindex="1" name="kota" id="kota">
+                                <option value ="">-Pilih-</option>  
                             </select>
                             <label id="notifkota" style="display:none; color: #f00;">
                                 Mohon maaf, kota yang Anda masukan belum sesuai dengan ketentuan ilustrasi
@@ -404,14 +410,54 @@
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 <script>
+    $(document).ready(function(){
+        if(!getCookie("planip")){
+            window.location = "langkah1";
+        }else if(!getCookie("planrawatjalan")){
+            window.location = "langkah2";
+        }else if(!getCookie("ipp")){
+            window.location = "langkah3";
+        }
+    });
+    
+    $("#kirim").on("click",function(){
+        surat = $("input[name='email']").val();
+        var re = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
+        if(!re.test(surat))
+        {
+            document.getElementById('notifemail').style.display= 'block';
+            return false;
+        }
+        else
+        {
+            document.getElementById('notifemail').style.display= 'none';
+            return true;
+        }
+
+    });
+ 
+
+    $('#noHP').bind("input", function(){
+       var re = /^[0-9]*$/; 
+        
+        var value = $('#noHP').val();
+        $(this).val(value);
+        if(!re.test(value)){
+            document.getElementById('notifNoHP').style.display= 'block';
+            $('#noHP').val('');
+        }else{
+            document.getElementById('notifNoHP').style.display= 'none';
+        }
+        
+    });
    $('#provinsi').change(function(){
-//        alert('test');
+        //alert('test');
         var prov = $('#provinsi option:Selected').html();
-//        alert(prov);
+        //alert(prov);
         if(prov == "-Pilih-"){
             document.getElementById('notifkota').style.display="block";
         }else{
-//            alert('test');
+        //alert('test');
             document.getElementById('notifkota').style.display="none";
 
             $.ajax({
@@ -421,7 +467,7 @@
                                 'prov' : prov
                                 },
                         success  : function(data){
-    //                        console.log(data);
+                            //console.log(data);
                             var entries = data;
                             var listLoc = jQuery.parseJSON(entries);
                             //console.log(listLoc);
@@ -431,7 +477,7 @@
 //                                console.log(item.Status);
 //                                var status='"'+item.Status+'"';s
 ////                                alert(+item.Status+);
-//                                if(item.Status == 'kota'){
+                                //if(item.Status == 'kota'){
                                     $("#kota").append('<option value='+item.Kota+'>'+item.Kota+'</option>');
 //                                }else if(item.Status == 'kabupaten'){
 //                                    $("#kota").append('<option value='+item.Kota+'>Kab. '+item.Kota+'</option>');
@@ -444,6 +490,7 @@
             });
 //            location.reload();
         }
-    });   
+    });
+
 </script>
 

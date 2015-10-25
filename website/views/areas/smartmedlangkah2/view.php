@@ -872,6 +872,11 @@
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 <script>
+    $(document).ready(function(){
+        if(!getCookie("planip")){
+            window.location = "langkah1";
+        }
+    });
 
     /*GET COOKIE*/
     function getCookie(cname) {
