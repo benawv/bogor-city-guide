@@ -873,7 +873,7 @@
 
 <script>
     $(document).ready(function(){
-        if(!getCookie("planip")){
+        if(!getCookie("payment_methods")){
             window.location = "langkah1";
         }
     });
