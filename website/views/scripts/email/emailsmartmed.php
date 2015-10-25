@@ -15,6 +15,8 @@
 <!-- Meta Tags -->
 <meta charset="utf-8">
     
+
+    
 <style>
      .table-responsive
     {
@@ -85,7 +87,7 @@
 
     .table-responsive > table > thead > tr > th
     {
-        text-align: center;
+        text-align: left;
         font-weight: bold !important;
         vertical-align: middle !important;
     }
@@ -97,38 +99,20 @@
 
     .table-responsive > table > tbody > tr > td:first-child
     {
-        text-align: center;
+        text-align: left;
     }
 </style>
-    
-
 </head>
 <body style="font-size: 100%;background: none repeat scroll 0 0 #f5f6f6;color: #111;
     font-family: Arial,Helvetica,sans-serif;text-align: center;">
-<?php if($this->editmode) { ?>
-			                        	<p style="font-size:14px; position:'left';">
-			                        	<?php 
-			                        		echo "Apakah ingin memunculkan gambar?";
-			                        		echo $this->select("pilihan_",array(
-											    "store" => array(
-											        array("Ya", "Ya"),
-											        array("Tidak", "Tidak")
-											    ),
-												"reload" => true
-											)); 
-										?>
-			                        	</p>
-<?php } ?>
 <div role="main" class="main no-gutter" style="clear: both;padding: 20px 0 0 10px;width: 100%;padding: 0 !important;">
 	<div class="blast-container" style="margin: 0 auto;padding: 0 15px;position: relative;text-align: left;width: 600px;">
-		<?php
-                                    $pilihan = $this->select('pilihan_')->getData();
-            ?>
+		
 		<!--jurnal -->
 		
 		<div id="community no-gutter no-margin" class="clearfix">
 			
-			<div class="blast-img" style="height: auto; display:<?php if($pilihan == 'Ya') echo 'Block'; else echo 'none'; ?>">
+			<div class="blast-img" style="height: auto;">
                    <!-- <img src="_assets/css/bootstrap/edwin.jpg" /> -->
                    <?php echo $this->image('imgEmail', array(
 									'title' 	=> 'Image Size 600px X 400px',
@@ -140,7 +124,79 @@
 		
 		<div id="community" class="clearfix padding no-margin" style="background: none repeat scroll 0 0 #fff;clear: both;margin-bottom: 20px;padding: 15px;padding: 15px 34px !important;margin: 0 !important;">
             <?php echo $this->wysiwyg('description')?>
-         
+            <div class="table-responsive" style="margin: 0 auto;">
+<table border="0" cellpadding="0" cellspacing="0" class="table table-bordered">
+		<tr>
+			<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Nomor</span></font></strong></strong></td>
+			<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;"></span></font></strong></strong></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Nama</span></font></strong></strong></td>
+			<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;"></span></font></strong></strong></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Jenis Kelamin</span></font></strong></strong></td>
+			<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;"></span></font></strong></strong></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Tanggal Lahir</span></font></strong></strong></td>
+			<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;"></span></font></strong></strong></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Tanggal Hitung</span></font></strong></strong></td>
+			<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;"></span></font></strong></strong></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Plan Rawat Inap</span></font></strong></strong></td>
+			<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;"></span></font></strong></strong></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Plan Melahirkan</span></font></strong></strong></td>
+			<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;"></span></font></strong></strong></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Plan Rawat Jalan dan Rawat Gigi</span></font></strong></strong></td>
+			<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;"></span></font></strong></strong></td>
+		</tr>
+		<tr>
+			<td rowspan="4" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Premi</span></font></strong></strong></td>
+        </tr>
+        <tr>
+			<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Premi Rawat Inap</span></font></strong></strong></td>
+			<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;"></span></font></strong></strong></td>
+        </tr>
+        <tr>
+			<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Premi Melahirkan</span></font></strong></strong></td>
+			<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;"></span></font></strong></strong></td>
+        </tr>
+			<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Premi Rawat Jalan dan Rawat Gigi</span></font></strong></strong></td>
+			<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;"></span></font></strong></strong></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Total Premi</span></font></strong></strong></td>
+			<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;"></span></font></strong></strong></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="text-left"><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; line-height: 18px;">Biaya Materai</span></font></strong></td>
+			<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;"></span></font></strong></strong></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Biaya Polis</span></font></strong></strong></td>
+			<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp 30.000</span></font></strong></strong></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Family Discount</span></font></strong></strong></td>
+			<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;"></span></font></strong></strong></td>
+		</tr>		
+        <tr>
+			<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Total Jumlah yang Dibayarkan</span></font></strong></strong></td>
+			<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;"></span></font></strong></strong></td>
+		</tr>
+</table>
+</div>
+
+                        <?php echo $this->wysiwyg('description2')?>
+
 		</div> <!--Community-->
         <img src="/website/static/images/allianz-footer-logo.jpg" />
 	</div>

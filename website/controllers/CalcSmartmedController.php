@@ -39,6 +39,29 @@ class CalcSmartmedController extends Website_Controller_Action {
 
 	}
 	public function emailAction(){
+//        $nama = $_COOKIE["nama"];
+//        $pembayaran = $_COOKIE["pembayaran"];
+//        $No_Claim = $_COOKIE["ncd"];
+//        $sex = $_COOKIE["sex"];
+//        $dob = $_COOKIE["dob"];
+//        $tgl_hitung = $_COOKIE["cd"];
+//        $tgl_hitung = $_COOKIE["cd"];
+//        $premi_ip = $_COOKIE["ipp"];
+//        $premi_mat = $_COOKIE["mat"];
+        
+        
+            $document = '/email/email-smartmed';
+        
+            $mail = new Pimcore_Mail();
+			$mail->setSubject("Konfirmasi Hasil Kalkulasi Ilustrasi Produk Allianz Smartmed Primer");
+			$mail->setFrom("no-reply@allianz.co.id","Allianz Smartmed");
+			$mail->setDocument($document);
+//			$mail->setParams($params);
+			$mail->addTo($email);
+			$mail->send();
+        
+
+        
 		$this->_redirect("/kalkulator/smartmed/langkah5");
 	}
 }
