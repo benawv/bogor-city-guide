@@ -490,7 +490,7 @@
     });
 
     $(document).ready(function(){
-        
+
         if(!getCookie("planip")){
             window.location = "langkah1";
         }else if(!getCookie("planrawatjalan")){
@@ -763,7 +763,7 @@
             $('table.table tbody tr').each(function(index){
                 no++;
                 nama.push($(this).find("input[name='nama']").val());
-                sex.push($(this).find("input[name='sex']").val());
+                sex.push($(this).find("#sex").val());
                 dob.push($(this).find("input[name='dob"+no+"']").val());
                 cd.push($(this).find("input[name='cd"+no+"']").val());
 
