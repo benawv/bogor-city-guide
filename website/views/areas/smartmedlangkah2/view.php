@@ -298,11 +298,11 @@
                     Kalkulator Asuransi SmartMed Premier akan membantu Anda mengetahui perkiraan jumlah premi yang akan dibayarkan. Silakan isi kolom yang tersedia sesuai kebutuhan Anda.
                 </p>
                 <ul>
-                    <li><a href="#first">Langkah 1</a></li><!--  DON'T REMOVE THIS COMMENT
+                    <li><a href="#first" style="font-size:10px;">Pembayaran dan Diskon</a></li><!--  DON'T REMOVE THIS COMMENT
                     -->
-                    <li class="active"><a href="#second">Langkah 2</a></li>
-                    <li><a href="#third">Langkah 3</a></li>
-                    <li><a href="#fourth">Langkah 4</a></
+                    <li class="active"><a href="#second">Pilih Manfaat</a></li>
+                    <li><a href="#third">Data Anggota</a></li>
+                    <li><a href="#fourth">Data Diri</a></
                 </ul><!--/ .custom-tab -->
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->

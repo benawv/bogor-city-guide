@@ -303,11 +303,11 @@
                     Kalkulator Asuransi SmartMed Premier akan membantu Anda mengetahui perkiraan jumlah premi yang akan dibayarkan. Silakan isi kolom yang tersedia sesuai kebutuhan Anda.
                 </p>
                 <ul>
-                    <li class="active"><a href="#first">Langkah 1</a></li><!--  DON'T REMOVE THIS COMMENT
+                    <li class="active"><a href="#first" style="font-size:10px;">Pembayaran dan Diskon</a></li><!--  DON'T REMOVE THIS COMMENT
                     -->
-                    <li><a href="#second">Langkah 2</a></li>
-                    <li><a href="#third">Langkah 3</a></li>
-                    <li><a href="#fourth">Langkah 4</a></li>
+                    <li><a href="#second">Pilih Manfaat</a></li>
+                    <li><a href="#third">Data Anggota</a></li>
+                    <li><a href="#fourth">Data Diri</a></li>
                 </ul><!--/ .custom-tab -->
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
@@ -318,7 +318,7 @@
                 <form class="form-horizontal" action="langkah2">
                     <div class="form-group">
                         <div class="col-md-8">
-                            <label class="title"><strong>Metode Pembayaran dan Discount</strong></label>
+                            <label class="title"><strong>Metode Pembayaran dan Diskon</strong></label>
                         </div><!--/ .col-md-4 -->
                     </div>
                     <div class="form-group">
@@ -349,7 +349,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Family Discount <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#family"></i></label>
+                            <label>Family Diskon <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#family"></i></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="1" id="family_discount">
@@ -361,7 +361,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>No Claim Discount <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#claim"></i></label>
+                            <label>No Claim Diskon <i class="fa fa-question-circle cursor-help" data-toggle="modal"  data-target="#claim"></i></label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="1" id="no_claim_discount">
