@@ -107,7 +107,7 @@
                 <div class="form-box" id="notif-confirm">
                     <h1 style="text-align:center">Terima kasih telah menggunakan kalkulator SmartMed</h1>
                     <h3  style=" color:black; text-align:center;"><strong>Perhitungan ilustrasi produk SmartMed sudah dikirimkan ke alamat email Anda.</strong></h3>
-                    <h3  style=" color:black; text-align:center;"><strong>Total premi yang tertera belum disesuaikan dengan profil risiko Anda, silakan hubungi Agen untuk mendapatkan ilustrasi yang sesuai dengan profil risiko Anda. Klik tombol di bawah ini untuk mencari agen terdekat dari lokasi Anda.</strong></h3></br>
+                    <h3  style=" color:black; text-align:center;">Total premi yang tertera belum disesuaikan dengan profil risiko Anda, silakan hubungi Agen untuk mendapatkan ilustrasi yang sesuai dengan profil risiko Anda. Klik tombol di bawah ini untuk mencari agen terdekat dari lokasi Anda.</h3></br>
                     <br />
                     <center>
                         <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="hitung-kembali" name="hitung" value="Hitung Kembali">
@@ -130,7 +130,7 @@
             
                             <?php $sessionCalc = new Zend_Session_Namespace(calc_smartmed); ?>
                             <?php $sessionCalc->status ="smartmed"; ?>
-                            window.open('/layanan/hubungi-kami/kantor-pemasaran-allianz', '_blank');
+                            window.open('http://beta.allianz.co.id/agent-locator/agen', '_blank');
 //                            alert("<?php echo $sessionCalc->status; ?>");
                             // var masukpemasaran = 'ya';
 
