@@ -701,16 +701,16 @@ $(document).keyup(function(e){
 
                                                 <div class="menutab_dekstop">
                                                     <ul>
-                                                        <li><a id="open_tab_1_1" href="javascript:void(0);">Mobilku Basic <input name="paket" id="paket_1_1" type="checkbox" class="paketchecked" style="float:right;"></a></li>
-                                                        <li><a id="open_tab_1_2" href="javascript:void(0);">Mobilku Standar <input name="paket" id="paket_1_2" type="checkbox" class="paketchecked" style="float:right;"></a></li>
-                                                        <li><a id="open_tab_1_3" href="javascript:void(0);">Mobilku Premier <input name="paket" id="paket_1_3" type="checkbox" class="paketchecked" style="float:right;"></a></li>
+                                                        <li><a id="open_tab_1_1" href="javascript:void(0);">Mobilku Basic <input name="paket" id="paket_1_1" type="checkbox" class="paketchecked check_1_1" style="float:right;"></a></li>
+                                                        <li><a id="open_tab_1_2" href="javascript:void(0);">Mobilku Standar <input name="paket" id="paket_1_2" type="checkbox" class="paketchecked check_1_2" style="float:right;"></a></li>
+                                                        <li><a id="open_tab_1_3" href="javascript:void(0);">Mobilku Premier <input name="paket" id="paket_1_3" type="checkbox" class="paketchecked check_1_3" style="float:right;"></a></li>
                                                     </ul> 
                                                 </div><!--/ .menutab_desktop -->
 
                                                 <div class="tabcontent" id="tabcontent_2">
                                                     <ul>
                                                         <li>
-                                                            <a id="open_tab_1_1_m" class="menumobile active" href="javascript:void(0);">Mobilku Basic <input name="paket" id="paket_1_1" type="checkbox" class="paketchecked" style="float:right;"></a>
+                                                            <a id="open_tab_1_1_m" class="menumobile active" href="javascript:void(0);">Mobilku Basic <input name="paket" id="paket_1_1" type="checkbox" class="paketchecked check_1_1" style="float:right;"></a>
                                                             <div id="tabcontent_1_1" class="content_show showme show_1">
                                                                 <div class="tabScroll">
                                                                     <table id="myTable2" class="display" cellspacing="0" width="100%">
@@ -822,7 +822,7 @@ $(document).keyup(function(e){
                                                             </div><!--/ .content_show -->
                                                         </li>
                                                         <li>
-                                                            <a id="open_tab_1_2_m" class="menumobile" href="javascript:void(0);">Mobilku Standar <input name="paket" id="paket_1_2" type="checkbox" class="paketchecked" style="float:right;"></a>
+                                                            <a id="open_tab_1_2_m" class="menumobile" href="javascript:void(0);">Mobilku Standar <input name="paket" id="paket_1_2" type="checkbox" class="paketchecked check_1_2" style="float:right;"></a>
                                                             <div id="tabcontent_1_2" class="content_show show_1">
                                                                 <div class="tabScroll">
                                                                     <table id="myTable3" class="display" cellspacing="0" width="100%">
@@ -934,7 +934,7 @@ $(document).keyup(function(e){
                                                             </div>
                                                         </li>
                                                         <li>
-                                                            <a id="open_tab_1_3_m" class="menumobile" href="javascript:void(0);">Mobilku Premier <input name="paket" id="paket_1_3" type="checkbox" class="paketchecked" style="float:right;"></a>
+                                                            <a id="open_tab_1_3_m" class="menumobile" href="javascript:void(0);">Mobilku Premier <input name="paket" id="paket_1_3" type="checkbox" class="paketchecked check_1_3" style="float:right;"></a>
                                                             <div id="tabcontent_1_3" class="content_show show_1">
                                                                 <div class="tabScroll">
                                                                     <table id="myTable4" class="display" cellspacing="0" width="100%">
@@ -1080,7 +1080,7 @@ $(document).keyup(function(e){
 
                                                     <ul>
                                                         <li>
-                                                            <a id="open_tab_2_1_m" class="menumobile active" href="javascript:void(0);">Non Paket <input name="paket" id="paket_2_1" type="checkbox" class="paketchecked" style="float:right;"></a>
+                                                            <a id="open_tab_2_1_m" class="menumobile active" href="javascript:void(0);">Non Paket <input name="paket" id="paket_2_1" type="checkbox" class="paketchecked check_2_1" style="float:right;"></a>
                                                             <div id="tabcontent_2_1" class="content_show showme show_2">
                                                                 <div class="tabScroll">
                                                                     <table id="myTable5" class="display tbl_ck" cellspacing="0" width="100%">
@@ -1408,12 +1408,17 @@ $(document).keyup(function(e){
         $i = 1;
         $j = 1;
 
-        for ( $i=1; $i <=2 ; $i++ ){
+        // for ( $i=1; $i <=2 ; $i++ ){
             for ( $j=1; $j <=6 ; $j++ ){
     ?>
 
+    $("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").hide();
+
     $("#open_tab_<?php echo $i ?>_<?php echo $j ?>_m").click(function(){
+        $(".no_pack").removeClass("data");
+        $('.paketchecked').prop('checked',false);
         $("#tabcontent_<?php echo $i ?> li a").removeClass("active");
+        $(".check_<?php echo $i ?>_<?php echo $j ?>").prop("checked",true);
         $(this).addClass("active");
         $(".show_<?php echo $i ?>").hide();
         $("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").show();
@@ -1422,6 +1427,30 @@ $(document).keyup(function(e){
 
     <?php
             }
+        // }
+    ?>
+
+    <?php
+        $i = 2;
+        $j = 1;
+
+        for ( $j=1; $j <=2 ; $j++ ){
+    ?>
+
+    $("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").hide();
+
+    $("#open_tab_<?php echo $i ?>_<?php echo $j ?>_m").click(function(){
+        $(".no_pack").addClass("data");
+        $('.paketchecked').prop('checked',false);
+        $("#tabcontent_<?php echo $i ?> li a").removeClass("active");
+        $(".check_<?php echo $i ?>_<?php echo $j ?>").prop("checked",true);
+        $(this).addClass("active");
+        $(".show_<?php echo $i ?>").hide();
+        $("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").show();
+        adjustTable();
+    });
+
+    <?php
         }
     ?>
 
