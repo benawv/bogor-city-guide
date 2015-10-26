@@ -105,12 +105,13 @@
             <div class="col-md-12">
 
                 <div class="form-box" id="notif-confirm">
-                    <h1 style="text-align:center">TERIMA KASIH</h1>
-                    <h3  style=" color:black; text-align:center;"><strong>Hasil ilustrasi produk Allianz Mobilku sudah dikirimkan ke alamat email Anda.</strong></h3>
+                    <h1 style="text-align:center">Terima kasih telah menggunakan kalkulator SmartMed</h1>
+                    <h3  style=" color:black; text-align:center;"><strong>Perhitungan ilustrasi produk SmartMed sudah dikirimkan ke alamat email Anda.</strong></h3>
+                    <h3  style=" color:black; text-align:center;"><strong>Total premi yang tertera belum disesuaikan dengan profil risiko Anda, silakan hubungi Agen untuk mendapatkan ilustrasi yang sesuai dengan profil risiko Anda. Klik tombol di bawah ini untuk mencari agen terdekat dari lokasi Anda.</strong></h3></br>
                     <br />
                     <center>
                         <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="hitung-kembali" name="hitung" value="Hitung Kembali">
-                        <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Kantor Pemasaran Allianz">
+                        <input type="button" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="cari-agen" name="next" value="Cari Agen">
                     </center>
                 </div><!--/ .form-box -->
 
