@@ -703,10 +703,28 @@ $(document).keyup(function(e){
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-sm-3">
+                                            <label for="input2">No. Polisi</label>
+                                        </div><!--/ .col-sm-3 -->
+                                        <div class="col-sm-4">
+                                            <input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="4" value="">
+                                            <!--<input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="5" onfocusout="this.value=validateVehicle(this.value)">-->
+                                            <label id="notifRegno" style="display:none; color: #f00;">
+                                                Mohon maaf No Polisi yang Anda masukkan belum benar
+                                            </label>
+                                        </div><!--/ .col-sm-4 -->
+                                        <div class="col-sm-4">
+                                            <span id="tooltips2" class="tooltips">*No kendaraan</span>
+                                        </div><!--/ .col-sm-4 -->
+                                    </div><!--/ .form-group -->
+                                </div><!--/ .row -->
+
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-sm-3">
                                             <label for="input3">Merek Mobil</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
-                                            <select id="merk" class="form-control required" tabindex="4">
+                                            <select id="merk" class="form-control required" tabindex="5">
                                                 <option value="">Silahkan pilih</option>
                                                 <?php
                                                     $merk = new Object_MobilBrandName_List();
@@ -729,30 +747,12 @@ $(document).keyup(function(e){
                                             <label for="input4">Model Mobil</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4" >
-                                            <select id="model" class="form-control model-form required" tabindex="5">
+                                            <select id="model" class="form-control model-form required" tabindex="6">
                                                 <option value="">Silahkan pilih</option>
                                             </select>
                                         </div><!--/ .col-sm-4 -->
                                         <div class="col-sm-4">
                                             <span id="tooltips2" class="tooltips">*Pilih model mobil</span>
-                                        </div><!--/ .col-sm-4 -->
-                                    </div><!--/ .form-group -->
-                                </div><!--/ .row -->
-
-                                <div class="row">
-                                    <div class="form-group">
-                                        <div class="col-sm-3">
-                                            <label for="input2">No. Polisi</label>
-                                        </div><!--/ .col-sm-3 -->
-                                        <div class="col-sm-4">
-                                            <input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="6" value="">
-                                            <!--<input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="5" onfocusout="this.value=validateVehicle(this.value)">-->
-                                            <label id="notifRegno" style="display:none; color: #f00;">
-                                                Mohon maaf No Polisi yang Anda masukkan belum benar
-                                            </label>
-                                        </div><!--/ .col-sm-4 -->
-                                        <div class="col-sm-4">
-                                            <span id="tooltips2" class="tooltips">*No kendaraan</span>
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
                                 </div><!--/ .row -->
