@@ -305,11 +305,11 @@
                     Kalkulator Asuransi SmartMed Premier akan membantu Anda mengetahui perkiraan jumlah premi yang akan dibayarkan. Silakan isi kolom yang tersedia sesuai kebutuhan Anda.
                 </p>
                 <ul>
-                    <li><a href="#first">Langkah 1</a></li><!--  DON'T REMOVE THIS COMMENT
+                    <li><a href="#first" style="font-size:10px;">Pembayaran dan Diskon</a></li><!--  DON'T REMOVE THIS COMMENT
                     -->
-                    <li><a href="#second">Langkah 2</a></li>
-                    <li class="active"><a href="#third">Langkah 3</a></li>
-                    <li><a href="#fourth">Langkah 4</a></
+                    <li><a href="#second">Pilih Manfaat</a></li>
+                    <li class="active"><a href="#third">Data Anggota</a></li>
+                    <li><a href="#fourth">Data Diri</a></
                 </ul><!--/ .custom-tab -->
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
@@ -475,6 +475,7 @@
     });
 
     $(document).ready(function(){
+
         $("#cd").datepicker({
             changeMonth: true,
             changeYear: true,
@@ -486,6 +487,15 @@
             yearRange: "-100:+0",
             maxDate: new Date()
         });
+    });
+
+    $(document).ready(function(){
+
+        if(!getCookie("planip")){
+            window.location = "langkah1";
+        }else if(!getCookie("planrawatjalan")){
+            window.location = "langkah2";
+        }
     });
 
     $(function(){
@@ -753,17 +763,18 @@
             $('table.table tbody tr').each(function(index){
                 no++;
                 nama.push($(this).find("input[name='nama']").val());
-                sex.push($(this).find("input[name='sex']").val());
+                sex.push($(this).find("#sex").val());
                 dob.push($(this).find("input[name='dob"+no+"']").val());
                 cd.push($(this).find("input[name='cd"+no+"']").val());
 
                 ipp.push($(this).find(".ipp").html());
                 matp.push($(this).find(".matp").html());
                 opdenp.push($(this).find(".opdenp").html());
-                totalimo.push($(this).find(".tohidden").html());
+                totalimo.push($(this).find(".tohidden").val());
             });
         }
         //seluruh data di set cookie agar nanti tidak buat perhitungan ulang lagi
+        //ini tabel tbody, jumlah anggota nya. berbentuk array
         setCookie('nama', JSON.stringify(nama),5);
         setCookie('sex', JSON.stringify(sex),5);
         setCookie('dob', JSON.stringify(dob),5);
@@ -773,6 +784,12 @@
         setCookie('matp', JSON.stringify(matp),5);
         setCookie('opdenp', JSON.stringify(opdenp),5);
         setCookie('totalimo', JSON.stringify(totalimo),5);
+
+        //total nya yg tfoot
+        setCookie('total', total,5);
+        setCookie('bmaterai', bmaterai,5);
+        setCookie('fd', fd,5);
+        setCookie('totalseluruh', totalseluruh,5);
 
         // var storedAry = JSON.parse(getCookie('nama'));// to store array
         // console.log(storedAry);

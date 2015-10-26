@@ -125,8 +125,52 @@
         $("#hitung-kembali").click(function(){
             window.location = "/kalkulator/smartmed/langkah1";
         });
-        $("#cari-agen").click(function(){
-            window.location = "/kalkulator/smartmed/langkah5";
+        $('#cari-agen').click(function() {
+            
+                            <?php $sessionCalc = new Zend_Session_Namespace(calc_smartmed); ?>
+                            <?php $sessionCalc->status ="smartmed"; ?>
+                            window.open('/layanan/hubungi-kami/kantor-pemasaran-allianz', '_blank');
+//                            alert("<?php echo $sessionCalc->status; ?>");
+                            // var masukpemasaran = 'ya';
+
+                            //  $.ajax({
+                            //     url      : '/kantor-pemasaran',
+                            //     type     : 'POST',
+                            //     crossDomain: true,
+                            //     data     : {
+                            //                 'masukpemasaran' : masukpemasaran
+                            //                 },
+                            //     complete  : function(sukses){
+                            //            // console.log(sukses);
+                            //            // alert(masukpemasaran)
+                            //            //document.location.href='/agent-locator';
+                            //     }
+                            // });
+
+                          /*$.ajax({
+                              url      : '/v1/api/calculator',
+                              type     : 'POST',
+                              crossDomain: true,
+                              data     : {
+                                          'premi' : premi,
+                                          'nama' : nama,
+                                          'email' : email,
+                                          'nohp': nohp,
+                                          'gender': gender,
+                                          'cia': cia,
+                                          'uangpertanggungan': uangpertanggungan,
+                                          'smoking' :smoking,
+                                          'tanggallahir' : tanggallahir,
+                                          'usia' : usia
+                                          'source' :'Kalkulator Life Insurance User'
+                                          },
+                              complete  : function(data){
+                                     //console.log(data);
+                                      
+                                      //document.location.href='/agent-locator';
+                            }
+                          });*/
+                       
         });
     });
 </script>

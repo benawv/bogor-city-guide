@@ -49,6 +49,9 @@ class EmailController extends Website_Controller_Action {
 	public function emailtasbihAction(){
 
 	}
+	public function emailsmartmedAction(){
+
+	}
 	
 	public function sendemailAction(){
 		/* $doc = new Document_List();

@@ -1443,7 +1443,7 @@ $(document).keyup(function(e){
         
         var radio1=$('#radio01').val();
         var radio2=$('#radio02').val();
-        $('#radio01').checked
+        //$('#radio01').checked
         if($('#radio01').is(":checked") == true){
             var radio = $('#radio01').val();
             var label_view_hasil = 'Komprehensif';
