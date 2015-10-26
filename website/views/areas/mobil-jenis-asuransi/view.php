@@ -855,7 +855,7 @@ $(document).keyup(function(e){
         $("a#open_tab_<?php echo $i ?>_<?php echo $j ?>").addClass("active");
         $(".show_<?php echo $i ?>").hide();
         $("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").show();
-        alert(getCookie('workshop_compre'));
+        // alert(getCookie('workshop_compre'));
         adjustTable();
     });
 

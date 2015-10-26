@@ -44,6 +44,16 @@
             min-height: 73px !important;
             line-height: 73px !important;
             padding: 0 16px !important;
+            background: none !important; 
+        }
+
+        .tabcontent li a.menumobile, .tabcontent li a.active{
+            background: none !important;
+        }
+
+
+        .tabcontent li a.menumobile:hover, .tabcontent li a.active{
+            background: none !important;
         }
     }
 
@@ -59,6 +69,15 @@
         .tabScroll > table
         {
             margin-left: 100px !important; /* 120px !important; */
+        }
+
+        .tabcontent li a.menumobile, .tabcontent li a.active{
+            background: none !important;
+        }
+
+
+        .tabcontent li a.menumobile:hover, .tabcontent li a.active{
+            background: none !important;
         }
     }
 
@@ -1282,7 +1301,7 @@ $(document).keyup(function(e){
                         <div class="pull-right">
                             <input type='button' id="next" class='btn btn-next btn-fill btn-warning btn-wd btn-sm next-form' name='next' value='Lanjut' tabindex="7" />
                             <!-- <a href="/kalkulator/thankyou-mobilku"> -->
-                                <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish' id='finish-btn'/>
+                                <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Kirim Email' id='finish-btn'/>
                             <!-- </a> -->
                         </div><!--/ .pull-right -->
                         <div class="pull-left">
