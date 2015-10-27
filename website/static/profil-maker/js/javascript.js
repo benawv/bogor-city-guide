@@ -84,7 +84,7 @@ $(document).ready(function()
 			// Choose notepad color detail
 		    $(document).ready(function() {
 		        $("#color").change(function() {
-		            if($(this).val() == "Blue"){
+		            if($(this).val() == "Biru"){
 
 		            	//alert('blue');
 		    			var lastClass = $('#notepad, #notepad-m').attr('class').split(' ').pop();
@@ -96,7 +96,31 @@ $(document).ready(function()
                         
 		            } 
 
-		            if($(this).val() == "Orange"){
+		            if($(this).val() == "Hijau"){
+
+		            	//alert('red');
+		            	var lastClass = $('#notepad, #notepad-m').attr('class').split(' ').pop();
+						$("#notepad, #notepad-m").removeClass(lastClass).addClass('bg-lightgreen');
+
+						var lastClass = $('#edge-note, #edge-note-m').attr('class').split(' ').pop();
+						$("#edge-note, #edge-note-m").removeClass(lastClass).addClass('e-lightgreen'); 
+						//console.log(lastClass);
+		               
+		            } 
+
+		             if($(this).val() == "Ungu"){
+
+		            	//alert('red');
+		            	var lastClass = $('#notepad, #notepad-m').attr('class').split(' ').pop();
+						$("#notepad, #notepad-m").removeClass(lastClass).addClass('bg-purple');
+
+						var lastClass = $('#edge-note, #edge-note-m').attr('class').split(' ').pop();
+						$("#edge-note, #edge-note-m").removeClass(lastClass).addClass('e-purple'); 
+						//console.log(lastClass);
+		               
+		            }
+
+		            if($(this).val() == "Oranye"){
 
 		            	//alert('orange');
 		            	var lastClass = $('#notepad, #notepad-m').attr('class').split(' ').pop();
@@ -108,7 +132,7 @@ $(document).ready(function()
 		            	
 		            } 
 
-		            if($(this).val() == "Red"){
+		            if($(this).val() == "Merah"){
 
 		            	//alert('red');
 		            	var lastClass = $('#notepad, #notepad-m').attr('class').split(' ').pop();
@@ -181,11 +205,14 @@ $(document).ready(function()
 							setCookie("konten",$konten);
 							setCookie("nama1",$nama1);
 							setCookie("nama2",$nama2);
+							$('#fillform').hide();
+                			$('#ask').show(); 
 						}
 						else {
 							//alert("no filled");
 							$("a#preview").attr("href", "#fillform");
 							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
+							$("#off-change").hide();
 						}
                         
                 	});
@@ -271,10 +298,12 @@ $(document).ready(function()
 			        //$("#image-cropper").show();
 			        $("#place").prop('class', 'landscape facebook-caption leftside');
 			        $("#notepad").prop('class', 'facebook-caption--inner landscape-bg bg-blue');
+			        $("#fillform").show();
 
 			        //mobile looks like
 			        $("#place-m").prop('class', 'landscape-m facebook-caption leftside');
 			        $("#notepad-m").prop('class', 'facebook-caption--inner landscape-m-bg bg-blue');
+			        $("#fillform").show();
 			    }
 			    else if(temp == "template2") {
 			        //alert("portrait");
@@ -282,10 +311,12 @@ $(document).ready(function()
 			        //$("#image-cropper").show();
 			        $("#place").prop('class', 'portrait facebook-caption leftside');
 			        $("#notepad").prop('class', 'facebook-caption--inner portrait-bg bg-blue');
+			       $("#fillform").show();
 
 			        //mobile looks like
 			        $("#place-m").prop('class', 'portrait-m facebook-caption leftside');
 			        $("#notepad-m").prop('class', 'facebook-caption--inner portrait-m-bg bg-blue');
+			        $("#fillform").show();
 			    }
 			    else if(temp == "template3") {
 			        //alert("square");
@@ -293,25 +324,31 @@ $(document).ready(function()
 			        //$("#image-cropper").show();
 			        $("#place").prop('class', 'square facebook-caption leftside');
 			        $("#notepad").prop('class', 'facebook-caption--inner square-bg bg-blue');
+			       $("#fillform").show();
 
 			        //mobile looks like
 			        $("#place-m").prop('class', 'square-m facebook-caption leftside');
 			        $("#notepad-m").prop('class', 'facebook-caption--inner square-m-bg bg-blue');
+			        $("#fillform").show();
 			    }
 			    else if(temp == "template4") {
 			        //alert("ava2");
 			        $("#ava21").css("display", "block");
 			        $("#input1, #input2, #input5, #input6").hide();
+			        $("#fillform").show();
 			    }
 			    else if(temp == "template5") {
 			        //alert("ava1");
 			        $("#ava1").css("display", "block");
-			        $("#input1, #input2, #input3, #input4, #input5, #input6").hide();
+			        $("#input1, #input2, #input3, #input4, #input5, #input6").css("display", "none");
+			        $("#fillform").show();
+			        $("#off-preview").hide();
 			    }
 			    else if(temp == "template6") {
 			        //alert("ava1");
 			        $("#ava31").css("display", "block");
 			        $("#input1, #input2, #input5, #input6").hide();
+			        $("#fillform").show();
 			    }
 
 			    //mobile condition
@@ -474,8 +511,8 @@ $(document).ready(function()
 				    var txt = $("#tengah").val();
 				    var txt2 = $("#atas").val();
 				    
-				    $("#counter").html("Letters remaining: <span id='char'> " + (max - txt.length) + "</span>");
-				    $("#counter2").html("Letters remaining: <span id='char2'> " + (max2 - txt2.length) + "</span>");
+				    $("#counter").html("Sisa Huruf: <span id='char'> " + (max - txt.length) + "</span>");
+				    $("#counter2").html("Sisa Huruf: <span id='char2'> " + (max2 - txt2.length) + "</span>");
 				    //$("#preview, #save").attr("disabled", txt.length > max);
 				    //$("#preview, #save").attr("disabled", txt2.length > max2);
 				    // if(txt.length > max) {
