@@ -125,6 +125,15 @@
             top: auto;
             /* border: solid 1px red; */
         }
+
+        .tabcontent li a.menumobile, .tabcontent li a.active{
+            background: none !important;
+        }
+
+
+        .tabcontent li a.menumobile:hover, .tabcontent li a.active{
+            background: none !important;
+        }
     }
 
     @media ( min-width: 992px )
@@ -164,6 +173,16 @@
             display: block;
             width: 100%;
             background: none !important; 
+        }
+        
+
+        .tabcontent li a.menumobile, .tabcontent li a.active{
+            background: none !important;
+        }
+
+
+        .tabcontent li a.menumobile:hover, .tabcontent li a.active{
+            background: none !important;
         }
     }
 
@@ -256,6 +275,15 @@
         color: rgb(213, 14, 44);
         font-weight: bold;
     }
+
+        .tabcontent li a.menumobile, .tabcontent li a.active{
+            background: none !important;
+        }
+
+
+        .tabcontent li a.menumobile:hover, .tabcontent li a.active{
+            background: none !important;
+        }
 </style>
 
 <script>
