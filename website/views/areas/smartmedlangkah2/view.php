@@ -902,6 +902,7 @@
         planip = $("#planip").val();
         planmat = $("#planmat").val();
         planop_den = $("#planop_den").val();
+        var planning = $('#planmat').html();
         ip = $("#ip").val();
         mat = $("#mat").val();
         op_den = $("#out_den").val();
@@ -922,6 +923,7 @@
         setCookie("op_den",op_den,5);
         setCookie("planmelahirkan",planmelahirkan,5);
         setCookie("planrawatjalan",planrawatjalan,5);
+        setCookie("planning",plannig,5);
         console.log("fd="+getCookie("fd")+"-planip="+getCookie("planip")+"-op_den="+getCookie("op_den")+"-planmelahirkan="+getCookie("planrawatjalan"));
     });
 
