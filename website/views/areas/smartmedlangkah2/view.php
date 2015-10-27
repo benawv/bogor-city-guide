@@ -902,13 +902,13 @@
         planip = $("#planip").val();
         planmat = $("#planmat").val();
         planop_den = $("#planop_den").val();
-        var planning = $('#planmat').html();
+        var planning = $('#planmat option:selected').html();
         ip = $("#ip").val();
         mat = $("#mat").val();
         op_den = $("#out_den").val();
         planmelahirkan = $("#planmelahirkan").is(":checked");
         planrawatjalan = $("#planrawatjalan").is(":checked");
-
+        alert(planning);
         /*set EXPIRED cookie*/
         var d = new Date();
         var exdays = 5;//set expired 5 days
@@ -923,7 +923,7 @@
         setCookie("op_den",op_den,5);
         setCookie("planmelahirkan",planmelahirkan,5);
         setCookie("planrawatjalan",planrawatjalan,5);
-        setCookie("planning",plannig,5);
+        setCookie("planning",planning,5);
         console.log("fd="+getCookie("fd")+"-planip="+getCookie("planip")+"-op_den="+getCookie("op_den")+"-planmelahirkan="+getCookie("planrawatjalan"));
     });
 
