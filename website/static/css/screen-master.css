@@ -115,9 +115,9 @@ a.button.goto.prime{background:#1f539a;background:-webkit-gradient(linear,left t
 .platinum ul li{padding-bottom:10px;}
 .platinum ul li h4{font-weight:bold !important;}
 .platinum_slider .flex-viewport{width:100% !important;}
-.backgroundBatik{background:url("../images/backBatik.jpg") !important;background-repeat:repeat-x;background-repeat:repeat-y;width:100%;position:relative !important;margin-top:-20px;padding-top:20px;}
+.backgroundBatik{background:url("../images/backBatik.jpg") !important;background-repeat:repeat !important;width:100%;position:relative !important;margin-top:-20px;padding-top:20px;}
 .backgroundBatik #quicklinks{position:absolute !important;right:0 !important;}
-.platinum_nav{background:url("../images/backBatik.jpg") !important;background-repeat:repeat-x;background-repeat:repeat-y;}
+.platinum_nav{background:url("../images/backBatik.jpg") !important;background-repeat:repeat !important;}
 .forward_full h2{max-width:100% !important;}
 .forward_full .btn_tengah{margin:0px auto;width:110px;}
 .forward_full a.button.goto.prime:hover{background:#104080;background:-webkit-gradient(linear,left top,left bottom,from(#2058a5),to(#00275b));background:-moz-linear-gradient(top,#2058a5,#00275b);background:-o-linear-gradient(top,#2058a5,#00275b);background:-ms-linear-gradient(top,#2058a5,#00275b);background:linear-gradient(top,#2058a5,#00275b);}
