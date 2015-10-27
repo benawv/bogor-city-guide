@@ -132,9 +132,6 @@ class CalcSmartmedController extends Website_Controller_Action {
 		$obj->setPublished(1);
 		$obj->save();
 		/*end save*/
-
-		echo "idfolder=".$idFolder."namaDiri=".$namaDiri;
-		die();
         
         for($i=1;$i<=$jumlah_anggota;$i++){
         	if($sex[$i]=="m")
