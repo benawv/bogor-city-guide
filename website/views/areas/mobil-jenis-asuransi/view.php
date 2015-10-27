@@ -1461,7 +1461,7 @@ $(document).keyup(function(e){
 //        setCookie('periode_last', periode_last,1);
         setCookie('radio', radio,1);
         setCookie('label_view_hasil', label_view_hasil,1);
-			window.open("/kalkulator/mobilku/mobil-hasil-asuransi","_self")
+			window.open("/kalkulator/mobilku/mobil-hasil-kalkulasi","_self");
 			// document.location.href='/kalkulator/mobilku/mobil-hasil-kalkulasi';
 		}
         // document.location.href='/kalkulator/mobilku/mobil-hasil-kalkulasi';
