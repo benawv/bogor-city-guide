@@ -908,7 +908,7 @@
         op_den = $("#out_den").val();
         planmelahirkan = $("#planmelahirkan").is(":checked");
         planrawatjalan = $("#planrawatjalan").is(":checked");
-        alert(planning);
+//        alert(planning);
         /*set EXPIRED cookie*/
         var d = new Date();
         var exdays = 5;//set expired 5 days

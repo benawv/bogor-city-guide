@@ -763,8 +763,13 @@
 
             $('table.table tbody tr').each(function(index){
                 no++;
+                if($(this).find("#sex").val() == "m"){
+                    var JK = "Laki-laki";
+                }else{
+                    var JK = "Perempuan";
+                }
                 nama.push($(this).find("input[name='nama']").val());
-                sex.push($(this).find("#sex").val());
+                sex.push(JK);
                 dob.push($(this).find("input[name='dob"+no+"']").val());
                 cd.push($(this).find("input[name='cd"+no+"']").val());
 
