@@ -32,7 +32,9 @@
             width: 20px !important;
             left: 15px !important;
           }
-          #ava21 img { display: none; }
+          #ava21 img, #off-change, #fillform { display: none; }
+
+          label.valid { display: none !important; } 
 
         @media only screen and (max-width : 480px) {
             .cropit1 {
@@ -281,17 +283,17 @@
                             <div id="place" class="square facebook-caption leftside">
                                 <div id="notepad" class="facebook-caption--inner square-bg bg-blue">
 
-                                    <h3><span id="judul">&lt;Title&gt;</span></h3> <br />
+                                    <h3><span id="judul">&lt;Judul&gt;</span></h3> <br />
 
                                     <span id="konten">
-                                        &lt;Description&gt;
+                                        &lt;Deskripsi&gt;
                                     </span> <br />
 
                                 </div><!--/ .facebook-caption--inner -->
                                 <!-- <div class="facebook-caption-trapezoid"></div> -->
 
                                 <div id="edge-note" class="edge e-blue">
-                                    <span id="nama">&lt;Name&gt;</span>
+                                    <span id="nama">&lt;Nama&gt;</span>
                                 </div>
 
                             </div> <!--/ .facebook-caption -->
@@ -447,7 +449,9 @@
                                 <div class="col-xs-12 col-md-9">
                                     <select id="color" class="form-control" required>
                                         <option value"blue" selected> Biru </option>
-                                        <option value"orange"> Orange </option>
+                                        <option value"lightgreen"> Hijau </option>
+                                        <option value"purple"> Ungu </option>
+                                        <option value"orange"> Oranye </option>
                                         <option value"red"> Merah </option>
                                     </select>
                                 </div><!--/ .col-xs-12 -->
@@ -464,13 +468,13 @@
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div class="row" style="margin-top: 16px;">
-                                <div class="col-xs-6 col-sm-3">
+                                <div id="off-preview" class="col-xs-6 col-sm-3 off-prev">
                                     <a id="preview" href="#top" class="btn btn-default btn-block">Pratinjau</a>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-6 col-sm-3">
-                                    <a id="save" href="#ask" class="btn btn-primary btn-block">Simpan</a>
+                                    <a id="save" href="#ask" class="btn btn-primary btn-block">Simpan Gambar</a>
                                 </div><!--/ .col-xs-12 -->
-                                <div class="col-xs-12 col-sm-3">
+                                <div id="off-change" class="col-xs-12 col-sm-3 off-ganti">
                                     <!-- <input type="button" id="gambar" class="btn btn-default btn-block" value="Ganti Gambar"> -->
                                     <!--<a id="gambar" href="/profil-maker/page2" class="btn btn-default btn-block">Ganti Gambar</a>-->
                                     <?php 
@@ -493,13 +497,27 @@
                             <script>
                             // just for the demos, avoids form submit
                                 jQuery.validator.setDefaults({
-                                  debug: true,
+                                  //debug: true,
                                   success: "valid"
                                 });
                                 var form = $( "#formx" );
                                 form.validate();
                                 $( "#preview" ).click(function() {
                                   form.valid();
+                                });
+
+                                //setting data-error
+                               $().ready(function() {
+                                    
+                                    // validate signup form on keyup and submit
+                                    $("#formx").validate({
+                                        rules: {
+                                            headline: "required"
+                                        },
+                                        messages: {
+                                            headline: "Please enter your headline"
+                                        }
+                                    });
                                 });
                             </script>
 
@@ -521,7 +539,7 @@
                             </div><!--/ .row -->
                             <div class="row" style="margin-top: 16px;">
                                 <div class="col-xs-6 col-sm-3">
-                                    <a id="cancel" href="#fillform" class="btn btn-default btn-block">Tidak</a>
+                                    <a id="cancel" href="#fillform" class="btn btn-default btn-block">Ubah Konten</a>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-6 col-sm-3">
                                     <a id="download" href="#top" class="btn btn-primary btn-block">Ya</a>

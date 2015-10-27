@@ -474,11 +474,12 @@
                             $('#kota option').remove();
                             $('#kota').append('<option value="">-Pilih-</option>');
                             $.each(listLoc, function(i, item){
+                                // console.log(item);
 //                                console.log(item.Status);
 //                                var status='"'+item.Status+'"';s
 ////                                alert(+item.Status+);
                                 //if(item.Status == 'kota'){
-                                    $("#kota").append('<option value='+item.Kota+'>'+item.Kota+'</option>');
+                                    $("#kota").append('<option value='+item.id+'>'+item.Kota+'</option>');
 //                                }else if(item.Status == 'kabupaten'){
 //                                    $("#kota").append('<option value='+item.Kota+'>Kab. '+item.Kota+'</option>');
 //

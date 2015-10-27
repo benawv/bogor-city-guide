@@ -318,7 +318,7 @@
 
             <div class="col-md-12">
 
-                <form class="form-horizontal" role="form">
+                <form class="form-horizontal" METHOD="POST" role="form">
 
                     <div class="form-group">
                         <div class="col-md-8">
@@ -747,7 +747,7 @@
         var ipp = [""];
         var matp = [""];
         var opdenp = [""];
-        var bpolis = 30000;
+        var bpolish = 30000;
         var totalimo = [""];
         
         var no = 0;
@@ -763,13 +763,8 @@
 
             $('table.table tbody tr').each(function(index){
                 no++;
-                if($(this).find("#sex").val() == "m"){
-                    var JK = "Laki-laki";
-                }else{
-                    var JK = "Perempuan";
-                }
                 nama.push($(this).find("input[name='nama']").val());
-                sex.push(JK);
+                sex.push($(this).find("#sex").val());
                 dob.push($(this).find("input[name='dob"+no+"']").val());
                 cd.push($(this).find("input[name='cd"+no+"']").val());
 
@@ -793,6 +788,7 @@
 
         //total nya yg tfoot
         setCookie('total', total,5);
+        setCookie('bpolish', bpolish,5);
         setCookie('bmaterai', bmaterai,5);
         setCookie('fd', fd,5);
         setCookie('totalseluruh', totalseluruh,5);
