@@ -78,7 +78,9 @@
 	else
 	{
 ?>
-		<?php foreach($this->container as $page): ?>
+		<?php foreach($this->container as $page):
+				if($page->getDocument()->getProperty('navigation_title') != "" && $page->getDocument()->getProperty('navigation_title') != " "){
+		?>
 			<li>
 				<a href="<?php echo $page->getUri()?>"><?php echo $page->getDocument()->getProperty('navigation_title');?></a>
 				<div class="menu-level2">
@@ -137,6 +139,6 @@
 					
 				</div>
 			</li>
-		<?php endforeach;?>
+		<?php } endforeach;?>
 <?php 	}?>
 </ul>
