@@ -76,6 +76,7 @@ class CalcSmartmedController extends Website_Controller_Action {
         $jumlah_anggota = $_COOKIE["lengthAnggota"];
         $totalpremi = json_decode($_COOKIE["totalimo"]);
         $totalseluruh = $_COOKIE["totalseluruh"];
+        $total = $_COOKIE["total"];
         $planning = $_COOKIE["planning"];
         $materai = $_COOKIE["bmaterai"];
         $nama = json_decode($_COOKIE["nama"]);
@@ -98,8 +99,7 @@ class CalcSmartmedController extends Website_Controller_Action {
         
 
         
-        $tabler = '<html>'
-                 .' <div class="table-responsive" style="margin: 0 auto;">'
+        $tabler = '<div class="table-responsive" style="margin: 0 auto;">'
                  .'<table border="0" cellpadding="0" cellspacing="0" class="table table-bordered">'
                  .'<tr>'
                  .'<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Nomor</span></font></strong></strong></td>'
@@ -147,6 +147,10 @@ class CalcSmartmedController extends Website_Controller_Action {
                  .'<tr>'
                  .'<td colspan="2" class="text-left"><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; line-height: 18px;">Biaya Materai</span></font></strong></td>'
                  .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.$materai.'</span></font></strong></strong></td>'
+                 .'</tr>'                 
+                 .'<tr>'
+                 .'<td colspan="2" class="text-left"><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; line-height: 18px;">Jumlah Total Premi</span></font></strong></td>'
+                 .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.$total.'</span></font></strong></strong></td>'
                  .'</tr>'
                  .'<tr>'
                  .'<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Biaya Polis</span></font></strong></strong></td>'
@@ -161,9 +165,8 @@ class CalcSmartmedController extends Website_Controller_Action {
                  .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.$totalseluruh.'</span></font></strong></strong></td>'
                  .'</tr>'
                  .'</table>'
-                 .'</div>'
-                 .'</html>';
-        
+                 .'</div>';
+            
  
             $document = '/email/email-smartmed';
             $params = array('tabler' => $tabler);
