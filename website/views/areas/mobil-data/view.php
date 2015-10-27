@@ -703,24 +703,6 @@ $(document).keyup(function(e){
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-sm-3">
-                                            <label for="input2">No. Polisi</label>
-                                        </div><!--/ .col-sm-3 -->
-                                        <div class="col-sm-4">
-                                            <input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="4" value="">
-                                            <!--<input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="5" onfocusout="this.value=validateVehicle(this.value)">-->
-                                            <label id="notifRegno" style="display:none; color: #f00;">
-                                                Mohon maaf No Polisi yang Anda masukkan belum benar
-                                            </label>
-                                        </div><!--/ .col-sm-4 -->
-                                        <div class="col-sm-4">
-                                            <span id="tooltips2" class="tooltips">*No kendaraan</span>
-                                        </div><!--/ .col-sm-4 -->
-                                    </div><!--/ .form-group -->
-                                </div><!--/ .row -->
-
-                                <div class="row">
-                                    <div class="form-group">
-                                        <div class="col-sm-3">
                                             <label for="input3">Merek Mobil</label>
                                         </div><!--/ .col-sm-3 -->
                                         <div class="col-sm-4">
@@ -753,6 +735,24 @@ $(document).keyup(function(e){
                                         </div><!--/ .col-sm-4 -->
                                         <div class="col-sm-4">
                                             <span id="tooltips2" class="tooltips">*Pilih model mobil</span>
+                                        </div><!--/ .col-sm-4 -->
+                                    </div><!--/ .form-group -->
+                                </div><!--/ .row -->
+								
+								 <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-sm-3">
+                                            <label for="input2">No. Polisi</label>
+                                        </div><!--/ .col-sm-3 -->
+                                        <div class="col-sm-4">
+                                            <input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="4" value="">
+                                            <!--<input type="text" name="regno" class="form-control required" id="regno" placeholder="B1234FD" tabindex="5" onfocusout="this.value=validateVehicle(this.value)">-->
+                                            <label id="notifRegno" style="display:none; color: #f00;">
+                                                Mohon maaf No Polisi yang Anda masukkan belum benar
+                                            </label>
+                                        </div><!--/ .col-sm-4 -->
+                                        <div class="col-sm-4">
+                                            <span id="tooltips2" class="tooltips">*No kendaraan</span>
                                         </div><!--/ .col-sm-4 -->
                                     </div><!--/ .form-group -->
                                 </div><!--/ .row -->
@@ -1177,31 +1177,36 @@ $(document).keyup(function(e){
 //        document.cookie = "regno='"$('#regno').value()"'";
 //        document.cookie = "tipe='"$('#tipe').value()"'";
 //        document.cookie = "wilayah='"$('#wilayah').value()"'";
-//        document.cookie = "kapasitas='"$('#kapasitas').value()"'";
-        var tahun_buat = $('#tahun_pembuatan').val();
-        var harga = $('#harga').val();
-        var merk = $('#merk').val();
-        var model = $('#model').val();
-        var regno = $('#regno').val();
-        var tipe = $('#tipe').val();
-        var wilayah = $('#wilayah').val();
-        var kapasitas = $('#kapasitas').val();
-        var merk_html = $('#merk option:selected').html().toLowerCase();
-        var model_html = $('#model option:selected').html().toLowerCase();
-        
-        setCookie('tahun_buat', tahun_buat,1);
-        setCookie('harga', harga,1);
-        setCookie('merk', merk,1);
-        setCookie('model', model,1);
-        setCookie('regno', regno,1);
-        setCookie('tipe', tipe,1);
-        setCookie('wilayah', wilayah,1);
-        setCookie('kapasitas', kapasitas,1);
-        setCookie('merk_html', merk_html,1);
-        setCookie('model_html', model_html,1);
-        
-        
-        document.location.href='/kalkulator/mobilku/mobil-jenis-asuransi';
+//        document.cookie = "kapasitas='"$('#kapasitas').value()"'";    
+
+		if($("#harga").val() =="" || $("#regno").val() == "" || $("#merk").val() == "" || $("#mobil").val() == ""){
+		}
+		else {
+			var tahun_buat = $('#tahun_pembuatan').val();
+			var harga = $('#harga').val();
+			var merk = $('#merk').val();
+			var model = $('#model').val();
+			var regno = $('#regno').val();
+			var tipe = $('#tipe').val();
+			var wilayah = $('#wilayah').val();
+			var kapasitas = $('#kapasitas').val();
+			var merk_html = $('#merk option:selected').html().toLowerCase();
+			var model_html = $('#model option:selected').html().toLowerCase();
+			
+			setCookie('tahun_buat', tahun_buat,1);
+			setCookie('harga', harga,1);
+			setCookie('merk', merk,1);
+			setCookie('model', model,1);
+			setCookie('regno', regno,1);
+			setCookie('tipe', tipe,1);
+			setCookie('wilayah', wilayah,1);
+			setCookie('kapasitas', kapasitas,1);
+			setCookie('merk_html', merk_html,1);
+			setCookie('model_html', model_html,1);
+		
+			window.open("/kalkulator/mobilku/mobil-jenis-asuransi","_self");
+		}
+        // document.location.href='/kalkulator/mobilku/mobil-jenis-asuransi';
     });
     
     $('#telp').bind("input", function(){

@@ -105,6 +105,7 @@
             
             foreach($getProv as $items){
                 $item[$i] = array(
+                				"id" => $items->o_id,
                                 "Kota" => 'Kota '.$items->kota
                             );
                 $i++;
@@ -119,6 +120,7 @@
 
             foreach($getProv2 as $items2){
                 $item[$i] = array(
+                				"id" => $items->o_id,
                                 "Kota" => 'Kab. '.$items2->kota
                             );
                 $i++;

@@ -310,7 +310,7 @@
         <div class="content-calc custom-tab-item active" id="first">
             <div class="col-md-12">
 
-                <form class="form-horizontal" role="form" action="data-anggota">
+                <form class="form-horizontal" METHOD="POST" role="form" action="data-anggota">
 
                     <div class="form-group">
                         <div class="col-md-8">
@@ -908,7 +908,7 @@
         op_den = $("#out_den").val();
         planmelahirkan = $("#planmelahirkan").is(":checked");
         planrawatjalan = $("#planrawatjalan").is(":checked");
-        alert(planning);
+//        alert(planning);
         /*set EXPIRED cookie*/
         var d = new Date();
         var exdays = 5;//set expired 5 days

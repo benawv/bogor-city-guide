@@ -1438,30 +1438,30 @@ $(document).keyup(function(e){
     $('#lanjut').click(function(){
 		
 		if($('#nama').val()!="" && $('#telp').val()!="" && $('#email').val()!=""){
-			 var periode=$('#periode').val();
-        var email=$('#email').val();
-        var nama=$('#nama').val();
-        var telp=$('#telp').val();
-        
-        var radio1=$('#radio01').val();
-        var radio2=$('#radio02').val();
-        //$('#radio01').checked
-        if($('#radio01').is(":checked") == true){
-            var radio = $('#radio01').val();
-            var label_view_hasil = 'Komprehensif';
-        }else{
-            var radio = $('#radio02').val();
-            var label_view_hasil = 'TLO';
-        }
-       
-        setCookie('nama', nama,1);
-        setCookie('telp', telp,1);
-        setCookie('periode', periode,1);
-        setCookie('email', email,1);
-//        setCookie('periode_last', periode_last,1);
-        setCookie('radio', radio,1);
-        setCookie('label_view_hasil', label_view_hasil,1);
-			window.open("/kalkulator/mobilku/mobil-hasil-asuransi","_self")
+			var periode=$('#periode').val();
+			var email=$('#email').val();
+			var nama=$('#nama').val();
+			var telp=$('#telp').val();
+			
+			var radio1=$('#radio01').val();
+			var radio2=$('#radio02').val();
+			//$('#radio01').checked
+			if($('#radio01').is(":checked") == true){
+				var radio = $('#radio01').val();
+				var label_view_hasil = 'Komprehensif';
+			}else{
+				var radio = $('#radio02').val();
+				var label_view_hasil = 'TLO';
+			}
+		   
+			setCookie('nama', nama,1);
+			setCookie('telp', telp,1);
+			setCookie('periode', periode,1);
+			setCookie('email', email,1);
+	//        setCookie('periode_last', periode_last,1);
+			setCookie('radio', radio,1);
+			setCookie('label_view_hasil', label_view_hasil,1);
+			window.open("/kalkulator/mobilku/mobil-hasil-kalkulasi","_self");
 			// document.location.href='/kalkulator/mobilku/mobil-hasil-kalkulasi';
 		}
         // document.location.href='/kalkulator/mobilku/mobil-hasil-kalkulasi';
