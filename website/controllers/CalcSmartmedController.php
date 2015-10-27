@@ -21,7 +21,7 @@ class CalcSmartmedController extends Website_Controller_Action {
 		//ALL premium_new
 		$entries = new Object_SmartmedPremium_List();
 		$entries->setLimit(1);
-		$entries->setCondition("o_path LIKE '/kalkulator-smartmed/premium_new/' AND nbc LIKE '".$nbc."' AND sex LIKE '".$sex."' AND age LIKE '".$age."' AND coshare LIKE '".$coshare."' AND kode LIKE '".$code."' AND plantype__id LIKE '".$plan."'");
+		$entries->setCondition("o_path LIKE '/kalkulator-smartmed/premium/' AND nbc LIKE '".$nbc."' AND sex LIKE '".$sex."' AND age LIKE '".$age."' AND coshare LIKE '".$coshare."' AND kode LIKE '".$code."' AND plantype__id LIKE '".$plan."'");
 		
 		// print_r($entries);
 		foreach ($entries as $row){
@@ -63,10 +63,13 @@ class CalcSmartmedController extends Website_Controller_Action {
 //        $this->view->planning = $_COOKIE["planning"];
 //        $this->view->materai = $_COOKIE["bmaterai"];
         
-        $namaDiri = $_POST["Nama"];
+        $namaDiri = $_POST["namaPengirim"];
         $email = $_POST["email"];
         $pembayaran = $_COOKIE["pembayaran"];
         $no_claim = $_COOKIE["ncd"];
+        $nope = $_POST["noHP"];
+        $prov = Object_Abstract::getById($_POST["provinsi"]);
+        $kota = Object_Abstract::getById($_POST["kota"]);
         $sex = json_decode($_COOKIE["sex"]);
         $dob = json_decode($_COOKIE["dob"]);
         $tgl_hitung = json_decode($_COOKIE["cd"]);
@@ -79,16 +82,66 @@ class CalcSmartmedController extends Website_Controller_Action {
         $total = $_COOKIE["total"];
         $planning = $_COOKIE["planning"];
         $materai = $_COOKIE["bmaterai"];
+        $polish = $_COOKIE["bpolish"];
         $nama = json_decode($_COOKIE["nama"]);
-        $planning = $_COOKIE["planning"];
         $familydiscount = $_COOKIE["fd"];
 
 
+
+        /*SAVE to object*/
+        $key = $namaDiri.date("dmYHis");
+	    $idFolder=Object_Abstract::getByPath("/kalkulator-smartmed/data-kalkulasi")->o_id;//get folder id object
+	    $date = new Zend_Date(date("m/d/Y"));
+	    // echo "4=".$this->user;
+	    $obj = new Object_SmartmedHasilKalkulasi();
+
+		$obj->setnama($namaDiri);
+		$obj->setnope($nope);
+		$obj->setemail($email); 
+		$obj->setprov($prov);
+		$obj->setkab($kota);
+		$obj->settotal($total);
+		$obj->setbmaterai($materai);
+		$obj->setbpolish($polish);//$polish
+		$obj->setfd($familydiscount);
+		$obj->settotalseluruh($totalseluruh);
+
+
+		//add img field collection
+		$items = new Object_Fieldcollection();
+		for($i=1;$i<=$jumlah_anggota;$i++){
+			$date1 = new Zend_Date($dob[$i]);
+			$date2 = new Zend_Date($cd[$i]);
+				$item = new Object_Fieldcollection_Data_smartmedDataKalkulasi();
+			    $item->setnama($nama[$i]);
+			    $item->setsex($sex[$i]);
+			    $item->setdob($date1);
+			    $item->setcd($date2);
+			    $item->setip($premi_ip[$i]);
+			    $item->setmat($premi_mat[$i]);
+			    $item->setop($premi_opden[$i]);
+			    $item->settotalimo($totalpremi[$i]);
+		    $items->add($item);
+		    // die();
+		};
+		$obj->setdataAnggota($items);
+
+		$obj->setKey($key);
+		$obj->setO_parentId($idFolder);
+		$obj->setIndex(0);
+		$obj->setPublished(1);
+		$obj->save();
+		/*end save*/
+
         
         for($i=1;$i<=$jumlah_anggota;$i++){
+        	if($sex[$i]=="m")
+        		$JK = "Laki-laki";
+        	else
+        		$JK = "Perempuan";
                     $nomor .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$i.'</span></font></strong></strong></td>';
                     $name .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$nama[$i].'</span></font></strong></strong></td>';
-                    $JK .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$sex[$i].'</span></font></strong></strong></td>';
+                    $JK .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$JK.'</span></font></strong></strong></td>';
                     $TTL .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$dob[$i].'</span></font></strong></strong></td>';
                     $TH .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$tgl_hitung[$i].'</span></font></strong></strong></td>';
                     $ip .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.$premi_ip[$i].'</span></font></strong></strong></td>';
