@@ -310,7 +310,7 @@
         <div class="content-calc custom-tab-item active" id="first">
             <div class="col-md-12">
 
-                <form class="form-horizontal" role="form" action="data-anggota">
+                <form class="form-horizontal" METHOD="POST" role="form" action="data-anggota">
 
                     <div class="form-group">
                         <div class="col-md-8">

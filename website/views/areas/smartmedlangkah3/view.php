@@ -318,7 +318,7 @@
 
             <div class="col-md-12">
 
-                <form class="form-horizontal" role="form">
+                <form class="form-horizontal" METHOD="POST" role="form">
 
                     <div class="form-group">
                         <div class="col-md-8">

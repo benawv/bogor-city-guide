@@ -315,7 +315,7 @@
         <div class="content-calc custom-tab-item active" id="first">
             <div class="col-md-12">
 
-                <form class="form-horizontal" action="pilih-manfaat">
+                <form class="form-horizontal" METHOD="POST" action="pilih-manfaat">
                     <div class="form-group">
                         <div class="col-md-8">
                             <label class="title"><strong>Metode Pembayaran dan Diskon</strong></label>
