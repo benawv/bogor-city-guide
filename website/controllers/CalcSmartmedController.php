@@ -112,7 +112,7 @@ class CalcSmartmedController extends Website_Controller_Action {
 		for($i=1;$i<=$jumlah_anggota;$i++){
 			$date1 = new Zend_Date($dob[$i]);
 			$date2 = new Zend_Date($cd[$i]);
-				$item = new Object_Fieldcollection_Data_smartmedDataKalkulasi();
+				$item = new Object_Fieldcollection_Data_SmartmedDataKalkulasi();
 			    $item->setnama($nama[$i]);
 			    $item->setsex($sex[$i]);
 			    $item->setdob($date1);
