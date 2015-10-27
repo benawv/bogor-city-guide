@@ -282,9 +282,6 @@
     .hide{
         display: none;
     }
-</style>
-
-<style>
     i.cursor-help {
        color: #4747FF;
        cursor: help;
