@@ -1177,31 +1177,34 @@ $(document).keyup(function(e){
 //        document.cookie = "regno='"$('#regno').value()"'";
 //        document.cookie = "tipe='"$('#tipe').value()"'";
 //        document.cookie = "wilayah='"$('#wilayah').value()"'";
-//        document.cookie = "kapasitas='"$('#kapasitas').value()"'";
-        var tahun_buat = $('#tahun_pembuatan').val();
-        var harga = $('#harga').val();
-        var merk = $('#merk').val();
-        var model = $('#model').val();
-        var regno = $('#regno').val();
-        var tipe = $('#tipe').val();
-        var wilayah = $('#wilayah').val();
-        var kapasitas = $('#kapasitas').val();
-        var merk_html = $('#merk option:selected').html().toLowerCase();
-        var model_html = $('#model option:selected').html().toLowerCase();
-        
-        setCookie('tahun_buat', tahun_buat,1);
-        setCookie('harga', harga,1);
-        setCookie('merk', merk,1);
-        setCookie('model', model,1);
-        setCookie('regno', regno,1);
-        setCookie('tipe', tipe,1);
-        setCookie('wilayah', wilayah,1);
-        setCookie('kapasitas', kapasitas,1);
-        setCookie('merk_html', merk_html,1);
-        setCookie('model_html', model_html,1);
-        
-        
-        document.location.href='/kalkulator/mobilku/mobil-jenis-asuransi';
+//        document.cookie = "kapasitas='"$('#kapasitas').value()"'";    
+
+		if($("#harga").val() !="" && $("#regno").val() != "" $("#merk").val() != "" $("#mobil").val() != ""){
+			var tahun_buat = $('#tahun_pembuatan').val();
+			var harga = $('#harga').val();
+			var merk = $('#merk').val();
+			var model = $('#model').val();
+			var regno = $('#regno').val();
+			var tipe = $('#tipe').val();
+			var wilayah = $('#wilayah').val();
+			var kapasitas = $('#kapasitas').val();
+			var merk_html = $('#merk option:selected').html().toLowerCase();
+			var model_html = $('#model option:selected').html().toLowerCase();
+			
+			setCookie('tahun_buat', tahun_buat,1);
+			setCookie('harga', harga,1);
+			setCookie('merk', merk,1);
+			setCookie('model', model,1);
+			setCookie('regno', regno,1);
+			setCookie('tipe', tipe,1);
+			setCookie('wilayah', wilayah,1);
+			setCookie('kapasitas', kapasitas,1);
+			setCookie('merk_html', merk_html,1);
+			setCookie('model_html', model_html,1);
+		
+			window.open("/kalkulator/mobilku/mobil-jenis-asuransi","_self");
+		}
+        // document.location.href='/kalkulator/mobilku/mobil-jenis-asuransi';
     });
     
     $('#telp').bind("input", function(){

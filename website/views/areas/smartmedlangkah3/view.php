@@ -369,7 +369,7 @@
                     </div><!--/ .form-group -->
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
-                            <button class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Add" name="next" tabindex="1">Kalkulasi</button>
+                            <button class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Add" name="next" tabindex="1">Tambah ke tabel</button>
                             <input type="submit" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="kirim" name="kirim" value="Kirim Email" tabindex="1">
                         </div><!--/ .col-md-12 -->
                         <div class="col-md-8 col-md-offset-4">
@@ -388,14 +388,14 @@
                         <thead>
                             <tr>
                                 <th rowspan="2">Pilihan</th>
-                                <th rowspan="2" width="">Nomor</th>
+                                <th rowspan="2" width="" class="hide">Nomor</th>
                                 <th rowspan="2" width="">Nama</th>
                                 <th rowspan="2" width="">Jenis Kelamin</th>
                                 <th rowspan="2" width="">Tanggal Lahir</th>
                                 <th rowspan="2" width="">Tanggal Kalkulasi</th>
                                 <th rowspan="2" width="" class="hide">Usia</th>
                                 <th rowspan="2" width="" class="hide">Status</th>
-                                <th rowspan="2" width="">Plan Rawat Inap</th>
+                                <th rowspan="2" width="">Plan</th>
                                 <th rowspan="2" width="" class="hide">Plan Melahirkan</th>
                                 <th rowspan="2" width="" class="hide">Plan Rawat Jalan & Rawat Gigi</th>
                                 <th rowspan="2" width="" class="hide">UW Loading</th>
@@ -439,7 +439,8 @@
                 <div class="col-md-12 note">
                     <h4 class="mb10"><strong>Note: </strong></h4>
                     <ul class="mb30">
-                        <li>UW Loading 0%</li>
+                        <li>Uw Loading yang tercantum dalam kalkulator ilustrasi ini sebesar 0%.</li>
+                        <li>Uw Loading akan dihitung oleh bagian Underwriter, karena berpengaruh terhadap jenis kelamin, usia dan risiko lainnya.</li>
                     </ul>
                 </div><!--/ .col-md-12 -->
             </div><!--/ .row -->
@@ -762,8 +763,13 @@
 
             $('table.table tbody tr').each(function(index){
                 no++;
+                if($(this).find("#sex").val() == "m"){
+                    var JK = "Laki-laki";
+                }else{
+                    var JK = "Perempuan";
+                }
                 nama.push($(this).find("input[name='nama']").val());
-                sex.push($(this).find("#sex").val());
+                sex.push(JK);
                 dob.push($(this).find("input[name='dob"+no+"']").val());
                 cd.push($(this).find("input[name='cd"+no+"']").val());
 
@@ -793,7 +799,7 @@
 
         // var storedAry = JSON.parse(getCookie('nama'));// to store array
         // console.log(storedAry);
-        window.location = "langkah4";
+        window.location = "data-diri";
     });
 
     $("#Add").click(function(){
@@ -897,7 +903,7 @@
 
         $("table.table tbody").append("<tr>"+
                 "<td class='tabletd'><a data-id='"+no+"' onclick='edit(this)'>Ubah</a> | <a data-id='"+no+"' onclick='delrow(this)'>Hapus</a></td>"+
-                "<td class='tabletd'>"+no+"</td>"+
+                "<td class='tabletd hide'>"+no+"</td>"+
                 "<td><input type='text' class='form-control' name='nama' placeholder='Nama' value='"+name+"' class='display'></td>"+
                 "<td class='sex'>"+form_sex(sex)+"</td>"+
                 "<td><input class='date dob2' type='text' placeholder='Tanggal Lahir' name='dob"+no+"' id='dob"+no+"' value='"+dob+"'></td>"+

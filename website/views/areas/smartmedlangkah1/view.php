@@ -315,7 +315,7 @@
         <div class="content-calc custom-tab-item active" id="first">
             <div class="col-md-12">
 
-                <form class="form-horizontal" action="langkah2">
+                <form class="form-horizontal" action="pilih-manfaat">
                     <div class="form-group">
                         <div class="col-md-8">
                             <label class="title"><strong>Metode Pembayaran dan Diskon</strong></label>
@@ -373,7 +373,7 @@
 
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
-                            <input type="submit" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next"  value="Kalkulasi" tabindex="1">
+                            <input type="submit" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next"  value="Selanjutnya" tabindex="1">
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
 
