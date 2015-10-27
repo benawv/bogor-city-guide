@@ -21,7 +21,7 @@ class CalcSmartmedController extends Website_Controller_Action {
 		//ALL premium_new
 		$entries = new Object_SmartmedPremium_List();
 		$entries->setLimit(1);
-		$entries->setCondition("o_path LIKE '/kalkulator-smartmed/premium/' AND nbc LIKE '".$nbc."' AND sex LIKE '".$sex."' AND age LIKE '".$age."' AND coshare LIKE '".$coshare."' AND kode LIKE '".$code."' AND plantype__id LIKE '".$plan."'");
+		$entries->setCondition("o_path LIKE '/kalkulator-smartmed/premium_new/' AND nbc LIKE '".$nbc."' AND sex LIKE '".$sex."' AND age LIKE '".$age."' AND coshare LIKE '".$coshare."' AND kode LIKE '".$code."' AND plantype__id LIKE '".$plan."'");
 		
 		// print_r($entries);
 		foreach ($entries as $row){
