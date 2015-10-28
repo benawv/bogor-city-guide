@@ -828,7 +828,7 @@
         var sex = $("#sex").val();
         var ip = getCookie("ip");
         var mat = getCookie("mat");
-        var outden = getCookie("out_den");
+        var outden = getCookie("op_den");
         var planipval = getCookie("planip");
         var planmatval = getCookie("planmat");
         var planop_denval = getCookie("planop_den");
@@ -858,11 +858,11 @@
             else ipp = ipp0;
             totalwithout = parseFloat(ipp0);
         }else{
-            if(planmelahirkan==true&&planrawatjalan==true){
+            if(planmelahirkan=="true"&&planrawatjalan=="true"){
                 totalwithout = parseFloat(ipp0)+parseFloat(matp0)+parseFloat(opdenp0);
-            }else if(planmelahirkan==true&&planrawatjalan==false){
+            }else if(planmelahirkan=="true"&&planrawatjalan=="false"){
                 totalwithout = parseFloat(ipp0)+parseFloat(matp0);
-            }else if(planmelahirkan==false&&planrawatjalan==true){
+            }else if(planmelahirkan=="false"&&planrawatjalan=="true"){
                 totalwithout = parseFloat(ipp0)+parseFloat(opdenp0);
             }else{
                 totalwithout = parseFloat(ipp0);
@@ -878,15 +878,16 @@
             }
         }
 
-        if(planmelahirkan==true&&planrawatjalan==true){
+        if(planmelahirkan=="true"&&planrawatjalan=="true"){
             total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
-        }else if(planmelahirkan==true&&planrawatjalan==false){
+        }else if(planmelahirkan=="true"&&planrawatjalan=="false"){
             total = parseFloat(ipp)+parseFloat(matp);
             opdenp = 0;
-        }else if(planmelahirkan==false&&planrawatjalan==true){
+        }else if(planmelahirkan=="false"&&planrawatjalan=="true"){
             total = parseFloat(ipp)+parseFloat(opdenp);
             matp = 0;
         }else{
+            console.log("false all");
             total = parseFloat(ipp);
             matp = 0;opdenp = 0;
         }
@@ -921,7 +922,9 @@
     function cekFamilyDiskon(){
         var rowCount = $('table.table tbody tr').length;
         var total = 0;
-        var fd = getCookie("fd");
+        var fd = getCookie("family_discount");
+        console.log("lengthdata="+rowCount);
+        console.log("fd="+fd);
         if(rowCount>1&&fd=="Y"){
             $('table.table tbody tr').each(function(index){
                 total += parseInt($(this).find(".towithout").html());
@@ -988,11 +991,11 @@
                 else ipp = ipp0;
                 totalwithout = parseFloat(ipp0);
             }else{
-                if(planmelahirkan==true&&planrawatjalan==true){
+                if(planmelahirkan=="true"&&planrawatjalan=="true"){
                     totalwithout = parseFloat(ipp0)+parseFloat(matp0)+parseFloat(opdenp0);
-                }else if(planmelahirkan==true&&planrawatjalan==false){
+                }else if(planmelahirkan=="true"&&planrawatjalan=="false"){
                     totalwithout = parseFloat(ipp0)+parseFloat(matp0);
-                }else if(planmelahirkan==false&&planrawatjalan==true){
+                }else if(planmelahirkan=="false"&&planrawatjalan=="true"){
                     totalwithout = parseFloat(ipp0)+parseFloat(opdenp0);
                 }else{
                     totalwithout = parseFloat(ipp0);
@@ -1009,12 +1012,12 @@
             }
             console.log("totalwithout="+totalwithout);
 
-            if(planmelahirkan==true&&planrawatjalan==true){
+            if(planmelahirkan=="true"&&planrawatjalan=="true"){
                 total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
-            }else if(planmelahirkan==true&&planrawatjalan==false){
+            }else if(planmelahirkan=="true"&&planrawatjalan=="false"){
                 total = parseFloat(ipp)+parseFloat(matp);
                 opdenp = 0;
-            }else if(planmelahirkan==false&&planrawatjalan==true){
+            }else if(planmelahirkan=="false"&&planrawatjalan=="true"){
                 total = parseFloat(ipp)+parseFloat(opdenp);
                 matp = 0;
             }else{

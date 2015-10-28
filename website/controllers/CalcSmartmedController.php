@@ -132,15 +132,15 @@ class CalcSmartmedController extends Website_Controller_Action {
 		$obj->setPublished(1);
 		$obj->save();
 		/*end save*/
-        
+        $jenkel="";
         for($i=1;$i<=$jumlah_anggota;$i++){
         	if($sex[$i]=="m")
-        		$JK = "Laki-laki";
+        		$jenkel = "Laki-laki";
         	else
-        		$JK = "Perempuan";
+        		$jenkel = "Perempuan";
                     $nomor .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$i.'</span></font></strong></strong></td>';
                     $name .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$nama[$i].'</span></font></strong></strong></td>';
-                    $JK .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$JK.'</span></font></strong></strong></td>';
+                    $JK .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$jenkel.'</span></font></strong></strong></td>';
                     $TTL .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$dob[$i].'</span></font></strong></strong></td>';
                     $TH .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$tgl_hitung[$i].'</span></font></strong></strong></td>';
                     $ip .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.$premi_ip[$i].'</span></font></strong></strong></td>';
