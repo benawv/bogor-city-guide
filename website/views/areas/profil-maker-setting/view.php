@@ -35,6 +35,13 @@
           #ava21 img, #off-change, #fillform { display: none; }
 
           label.valid { display: none !important; } 
+          input:focus,textarea:focus{
+              border-color: initial;
+             }
+
+             input.error, textarea.error{
+              border:1px solid #CA0404;
+             }
 
         @media only screen and (max-width : 480px) {
             .cropit1 {
@@ -498,7 +505,30 @@
                             // just for the demos, avoids form submit
                                 jQuery.validator.setDefaults({
                                   //debug: true,
-                                  success: "valid"
+                                  success: "valid",
+                                  //setting data-error
+                                   rules: {
+                                          headline: {
+                                                required: true
+                                          },
+                                          content: {
+                                                required: true
+                                          }
+                                        },
+                                        messages: {
+                                            headline: {
+                                                required: "Mohon isi field judul"
+                                          },
+                                          content: {
+                                                required: "Mohon isi field konten"
+                                          },
+                                          first_name: {
+                                                required: "Mohon isi field nama depan"
+                                          },
+                                          last_name: {
+                                                required: "Mohon isi field nama belakang"
+                                          }
+                                        }
                                 });
                                 var form = $( "#formx" );
                                 form.validate();
@@ -506,19 +536,13 @@
                                   form.valid();
                                 });
 
-                                //setting data-error
-                               $().ready(function() {
+                                    $('#formx').find('.error').val(' ');
+                                    $('input, textarea').click(function() {
+                                    $(this).removeClass('error').val('');
+                                   });
+
                                     
-                                    // validate signup form on keyup and submit
-                                    $("#formx").validate({
-                                        rules: {
-                                            headline: "required"
-                                        },
-                                        messages: {
-                                            headline: "Please enter your headline"
-                                        }
-                                    });
-                                });
+
                             </script>
 
 
