@@ -109,7 +109,7 @@ class CalcSmartmedController extends Website_Controller_Action {
 
 		//add img field collection
 		$items = new Object_Fieldcollection();
-		for($i=1;$i<=$jumlah_anggota;$i++){
+		for($i=1;$i<$jumlah_anggota;$i++){
 			$date1 = new Zend_Date($dob[$i]);
 			$date2 = new Zend_Date($cd[$i]);
 				$item = new Object_Fieldcollection_Data_SmartmedDataKalkulasi();
@@ -133,7 +133,7 @@ class CalcSmartmedController extends Website_Controller_Action {
 		$obj->save();
 		/*end save*/
         
-        for($i=1;$i<=$jumlah_anggota;$i++){
+        for($i=1;$i<$jumlah_anggota;$i++){
         	if($sex[$i]=="m")
         		$JK = "Laki-laki";
         	else
