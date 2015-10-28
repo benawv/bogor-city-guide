@@ -89,7 +89,7 @@ class CalcSmartmedController extends Website_Controller_Action {
 
 
         /*SAVE to object*/
-        $key = $namaDiri.date("dmYHis");
+        $key = "kalk".date("dmYHis");
 	    $idFolder=Object_Abstract::getByPath("/kalkulator-smartmed/data-kalkulasi")->o_id;//get folder id object
 	    $date = new Zend_Date(date("m/d/Y"));
 	    // echo "4=".$this->user;
