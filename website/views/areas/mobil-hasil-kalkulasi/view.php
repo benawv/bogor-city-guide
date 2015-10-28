@@ -74,6 +74,20 @@
             width: 120px !important;
         }
 
+        /* resize th:nth-child(3) */
+        /* Akbar Fachriansyah */
+        .tabScroll > table > thead > tr > th:nth-child(3),
+        .tabScroll > table > tbody > tr > td:nth-child(3),
+        .tabScroll > table > tfoot > tr > td:nth-child(3)
+        {
+            min-width: 210px;
+        }
+
+        /* Akbar Fachriansyah */
+        .tabScroll > table > thead > tr > th {
+            padding: 26px !important;
+        }
+
         .tabScroll > table
         {
             margin-left: 68px !important; /*  100px !important 120px !important; */
@@ -99,6 +113,19 @@
         /*.form-control {
             width: 142px !important;
         }*/
+    }
+
+    /* resize table th:nth-child(2) on mobile */
+    /* Akbar Fachriansyah */
+    @media ( max-width: 768px ) {
+        .tabScroll > table > thead > tr > th:nth-child(2), 
+        .tabScroll > table > tbody > tr > td:nth-child(2), 
+        .tabScroll > table > tfoot > tr > td:nth-child(2) {
+            min-width: 210px !important;
+        }
+        .tabScroll > table > thead > tr > th {
+            padding: 26px !important;
+        }
     }
 
     @media ( max-width: 991px )
