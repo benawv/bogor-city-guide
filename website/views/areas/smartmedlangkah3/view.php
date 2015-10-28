@@ -922,7 +922,7 @@
     function cekFamilyDiskon(){
         var rowCount = $('table.table tbody tr').length;
         var total = 0;
-        var fd = getCookie("fd");
+        var fd = getCookie("family_discount");
         if(rowCount>1&&fd=="Y"){
             $('table.table tbody tr').each(function(index){
                 total += parseInt($(this).find(".towithout").html());
