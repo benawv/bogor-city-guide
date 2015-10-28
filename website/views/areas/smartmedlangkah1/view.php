@@ -411,7 +411,7 @@
         ncd = $("#no_claim_discount").val();
 
         setCookie("pembayaran",pembayaran,5);
-        setCookie("fd",fd,5);
+        setCookie("family_discount",fd,5);
         setCookie("ncd",ncd,5);
     });
 

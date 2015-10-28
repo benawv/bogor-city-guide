@@ -923,6 +923,8 @@
         var rowCount = $('table.table tbody tr').length;
         var total = 0;
         var fd = getCookie("family_discount");
+        console.log("lengthdata="+rowCount);
+        console.log("fd="+fd);
         if(rowCount>1&&fd=="Y"){
             $('table.table tbody tr').each(function(index){
                 total += parseInt($(this).find(".towithout").html());
