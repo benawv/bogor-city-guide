@@ -55,6 +55,14 @@
         .tabcontent li a.menumobile:hover, .tabcontent li a.active{
             background: none !important;
         }
+
+        .tabScroll > table.tbl_ck > thead > tr > th:first-child, .tabScroll > table.tbl_ck > tbody > tr > td:first-child, .tabScroll > table.tbl_ck > tfoot > tr > td:first-child {
+            /*background: #f5f6f6;*/
+            font-weight: bold;
+            border-bottom: solid 1px #ddd;
+            padding: 26px;
+            width: 78px !important;
+        }
     }
 
     @media ( max-width: 480px )
@@ -68,7 +76,7 @@
 
         .tabScroll > table
         {
-            margin-left: 100px !important; /* 120px !important; */
+            margin-left: 68px !important; /*  100px !important 120px !important; */
         }
 
         .tabcontent li a.menumobile, .tabcontent li a.active{
@@ -79,6 +87,18 @@
         .tabcontent li a.menumobile:hover, .tabcontent li a.active{
             background: none !important;
         }
+
+        .tabScroll > table.tbl_ck > thead > tr > th:first-child, .tabScroll > table.tbl_ck > tbody > tr > td:first-child, .tabScroll > table.tbl_ck > tfoot > tr > td:first-child {
+            /*background: #f5f6f6;*/
+            font-weight: bold;
+            border-bottom: solid 1px #ddd;
+            padding: 26px;
+            width: 78px !important;
+        }
+
+        /*.form-control {
+            width: 142px !important;
+        }*/
     }
 
     @media ( max-width: 991px )
@@ -111,7 +131,7 @@
         .tabScroll > table
         {
             border-collapse: separate;
-            margin-left: 220px; /*240px;*/
+            margin-left: 64px !important; /*220px 240px;*/
         }
 
         .tabScroll > table > thead > tr > th:first-child,
@@ -133,6 +153,21 @@
 
         .tabcontent li a.menumobile:hover, .tabcontent li a.active{
             background: none !important;
+        }
+
+        .tabScroll > table > thead > tr > th {
+            background: #f5f6f6;
+            font-weight: bold;
+            border-bottom: solid 1px #ddd;
+            padding: 16px;
+        }
+
+        .tabScroll > table.tbl_ck > thead > tr > th:first-child, .tabScroll > table.tbl_ck > tbody > tr > td:first-child, .tabScroll > table.tbl_ck > tfoot > tr > td:first-child {
+            /*background: #f5f6f6;*/
+            font-weight: bold;
+            border-bottom: solid 1px #ddd;
+            padding: 26px;
+            width: 78px !important;
         }
     }
 
@@ -174,7 +209,7 @@
             width: 100%;
             background: none !important; 
         }
-        
+
 
         .tabcontent li a.menumobile, .tabcontent li a.active{
             background: none !important;
@@ -1237,77 +1272,77 @@ $(document).keyup(function(e){
                                                                                 <td id="no_terror" class='no_terror_prem position-text no_pack'>-</td>
                                                                                 <!-- <td class='no_terror_val'>-</td>
                                                                                 <td class='no_terror_persen'>-</td> -->
-                                                                                </tr>
+                                                                            </tr>
                                                                             <tr>
                                                                                 <td>
                                                                                     <input type="checkbox" class="no_passenger_is_calc" id="no_passenger_is_calc" name="no_passenger_is_calc" checked data-insured="no_passenger_val" data-angka="0" data-target="no_passenger_prem">
                                                                                     <?php
 
-                                                                            ?>
-                                                                        </td>
-                                                                        <td>PA Passenger</td>
-																		<td>
-																			<select  id="no_passenger" onchange="passengerVals();" class="form-control" tabindex="2">
-																				 <option value="1">10.000.000,00</option>
-																				  <option value="2">20.000.000,00</option>
-																				  <option value="3">30.000.000,00</option>
-																				  <option value="4">40.000.000,00</option>
-																				  <option value="5">50.000.000,00</option>
-																				</select>
-																				<input type="hidden" id ="no_passenger_hidden" value="">
-																				<input type="hidden" id ="no_passenger_temp" value="">
-																			</td>
-                                                                        <td id="no_passenger_prem" class='no_passenger_prem position-text no_pack'>-</td>
-                                                                        <!-- <td class=''><input type="text" name="no_passenger_val" class="no_passenger_val" id="nopassengerval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
-                                                                        </td>
-                                                                        <td class='no_passenger_persen'>-</td> -->
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <input type="checkbox" class="no_pa_is_calc" id="no_pa_is_calc" name="no_pa_is_calc" checked data-insured="no_pa_val" data-angka="0" data-target="no_pa_prem">
-                                                                        </td>
-                                                                        <td>PA Driver</td>
-																		<td>
-																			<select  id="no_pa" onchange="paVals();" class="form-control" tabindex="2">
-																				  <option value="1">10.000.000,00</option>
-																				  <option value="2">20.000.000,00</option>
-																				  <option value="3">30.000.000,00</option>
-																				  <option value="4">40.000.000,00</option>
-																				  <option value="5">50.000.000,00</option>
-																				</select>
-																				<input type="hidden" id ="no_pa_hidden" value="">
-																				<input type="hidden" id ="no_pa_temp" value="">
-																			</td>
-                                                                        <td id="no_pa_prem" class='no_pa_prem position-text no_pack'>-</td>
-                                                                        <!-- <td class=''>
-                                                                            <input type="text" name="no_pa_val" class="no_pa_val" id="nopaval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
-                                                                        </td>
-                                                                        <td class='no_pa_persen'>-</td> -->
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <input type="checkbox" class="no_workshop_is_calc" name="no_workshop_is_calc" checked data-angka="0" data-target="no_workshop_prem" value="FALSE">
-                                                                        </td>
-                                                                        <td>Authorized Workshop</td>
-																		<td></td>
-                                                                        <td class='no_workshop_prem position-text no_pack'>-</td>
-                                                                        <!-- <td class='no_workshop_val'>-</td>
-                                                                        <td class='no_workshop_persen'>-</td> -->
-                                                                    </tr>
-                                                                    <tfoot>
-                                                                        <tr>
-                                                                            <td></td>
-                                                                            <td style="background: #e2e3e3;">Total Premium*</td>
-																			<td style="background: #e2e3e3;"><input type="hidden" id ="no_totalPremium_hidden" value=""></td>
-                                                                            <td style="background: #e2e3e3;"id="no_totalPremium" class='no_totalPremium position-text no_pack'></td>
-                                                                            <!-- <td></td>
-                                                                            <td></td> -->
-                                                                        </tr>
-                                                                    </tfoot>
-                                                                </tbody>
-                                                            </table>
-                                                        </div><!--/ .tabScroll -->
-                                                    </div><!--/ .content_show -->
+                                                                                    ?>
+                                                                                </td>
+                                                                                <td>PA Passenger</td>
+        																		<td>
+        																			<select  id="no_passenger" onchange="passengerVals();" class="form-control" tabindex="2">
+        																				 <option value="1">10.000.000,00</option>
+        																				  <option value="2">20.000.000,00</option>
+        																				  <option value="3">30.000.000,00</option>
+        																				  <option value="4">40.000.000,00</option>
+        																				  <option value="5">50.000.000,00</option>
+        																				</select>
+        																				<input type="hidden" id ="no_passenger_hidden" value="">
+        																				<input type="hidden" id ="no_passenger_temp" value="">
+        																			</td>
+                                                                                <td id="no_passenger_prem" class='no_passenger_prem position-text no_pack'>-</td>
+                                                                                <!-- <td class=''><input type="text" name="no_passenger_val" class="no_passenger_val" id="nopassengerval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
+                                                                                </td>
+                                                                                <td class='no_passenger_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <input type="checkbox" class="no_pa_is_calc" id="no_pa_is_calc" name="no_pa_is_calc" checked data-insured="no_pa_val" data-angka="0" data-target="no_pa_prem">
+                                                                                </td>
+                                                                                <td>PA Driver</td>
+        																		<td>
+        																			<select  id="no_pa" onchange="paVals();" class="form-control" tabindex="2">
+        																				  <option value="1">10.000.000,00</option>
+        																				  <option value="2">20.000.000,00</option>
+        																				  <option value="3">30.000.000,00</option>
+        																				  <option value="4">40.000.000,00</option>
+        																				  <option value="5">50.000.000,00</option>
+        																				</select>
+        																				<input type="hidden" id ="no_pa_hidden" value="">
+        																				<input type="hidden" id ="no_pa_temp" value="">
+        																			</td>
+                                                                                <td id="no_pa_prem" class='no_pa_prem position-text no_pack'>-</td>
+                                                                                <!-- <td class=''>
+                                                                                    <input type="text" name="no_pa_val" class="no_pa_val" id="nopaval" value="" onkeypress="return isNumberKey(event)" style="border: none; background: transparent; width: 100%;">
+                                                                                </td>
+                                                                                <td class='no_pa_persen'>-</td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <input type="checkbox" class="no_workshop_is_calc" name="no_workshop_is_calc" checked data-angka="0" data-target="no_workshop_prem" value="FALSE">
+                                                                                </td>
+                                                                                <td>Authorized Workshop</td>
+        																		<td></td>
+                                                                                <td class='no_workshop_prem position-text no_pack'>-</td>
+                                                                                <!-- <td class='no_workshop_val'>-</td>
+                                                                                <td class='no_workshop_persen'>-</td> -->
+                                                                            </tr>
+                                                                        <tfoot>
+                                                                            <tr>
+                                                                                <td></td>
+                                                                                <td style="background: #e2e3e3;">Total Premium*</td>
+    																			<td style="background: #e2e3e3;"><input type="hidden" id ="no_totalPremium_hidden" value=""></td>
+                                                                                <td style="background: #e2e3e3;"id="no_totalPremium" class='no_totalPremium position-text no_pack'></td>
+                                                                                <!-- <td></td>
+                                                                                <td></td> -->
+                                                                            </tr>
+                                                                        </tfoot>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div><!--/ .tabScroll -->
+                                                        </div><!--/ .content_show -->
                                                     <div id= 'note_2'>
                                                         * Total premi yang tercantum belum termasuk biaya administrasi maksimal sebesar Rp. 32.000,- (harga disesuaikan dengan premi yang di ambil)
                                                     </div>
@@ -1441,9 +1476,11 @@ $(document).keyup(function(e){
     ?>
 
     $("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").hide();
+    $("#note_<?php echo $i ?>").hide();
 
     $("#open_tab_<?php echo $i ?>_<?php echo $j ?>_m").click(function(){
         $(".no_pack").removeClass("data");
+        $("#note_<?php echo $i ?>").show();
         $('.paketchecked').prop('checked',false);
         $("#tabcontent_<?php echo $i ?> li a").removeClass("active");
         $(".check_<?php echo $i ?>_<?php echo $j ?>").prop("checked",true);
@@ -1466,9 +1503,11 @@ $(document).keyup(function(e){
     ?>
 
     $("#tabcontent_<?php echo $i ?>_<?php echo $j ?>").hide();
+    $("#note_<?php echo $i ?>").hide();
 
     $("#open_tab_<?php echo $i ?>_<?php echo $j ?>_m").click(function(){
         $(".no_pack").addClass("data");
+        $("#note_<?php echo $i ?>").show();
         $('.paketchecked').prop('checked',false);
         $("#tabcontent_<?php echo $i ?> li a").removeClass("active");
         $(".check_<?php echo $i ?>_<?php echo $j ?>").prop("checked",true);
