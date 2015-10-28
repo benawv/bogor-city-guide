@@ -343,6 +343,7 @@ $(document).ready(function()
 			        $("#input1, #input2, #input3, #input4, #input5, #input6").css("display", "none");
 			        $("#fillform").show();
 			        $("#off-preview").hide();
+			        $("#off-change").show();
 			    }
 			    else if(temp == "template6") {
 			        //alert("ava1");
@@ -408,12 +409,13 @@ $(document).ready(function()
 						else {
 							
 						}
+
 	                	html2canvas(cropped, {
 							useCORS: true,
 							allowTaint: true,
 							letterRendering: true,
 	                    onrendered: function(canvas) {
-	                    	
+	                    		
 	                        	//$('#imaged').html(canvas);
 	                            var dataURL = canvas.toDataURL("image/png");
 								var ctx = canvas.getContext('2d');
