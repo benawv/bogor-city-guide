@@ -858,11 +858,11 @@
             else ipp = ipp0;
             totalwithout = parseFloat(ipp0);
         }else{
-            if(planmelahirkan==true&&planrawatjalan==true){
+            if(planmelahirkan=="true"&&planrawatjalan=="true"){
                 totalwithout = parseFloat(ipp0)+parseFloat(matp0)+parseFloat(opdenp0);
-            }else if(planmelahirkan==true&&planrawatjalan==false){
+            }else if(planmelahirkan=="true"&&planrawatjalan=="false"){
                 totalwithout = parseFloat(ipp0)+parseFloat(matp0);
-            }else if(planmelahirkan==false&&planrawatjalan==true){
+            }else if(planmelahirkan=="false"&&planrawatjalan=="true"){
                 totalwithout = parseFloat(ipp0)+parseFloat(opdenp0);
             }else{
                 totalwithout = parseFloat(ipp0);
@@ -878,15 +878,16 @@
             }
         }
 
-        if(planmelahirkan==true&&planrawatjalan==true){
+        if(planmelahirkan=="true"&&planrawatjalan=="true"){
             total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
-        }else if(planmelahirkan==true&&planrawatjalan==false){
+        }else if(planmelahirkan=="true"&&planrawatjalan=="false"){
             total = parseFloat(ipp)+parseFloat(matp);
-            matp = 0;
-        }else if(planmelahirkan==false&&planrawatjalan==true){
-            total = parseFloat(ipp)+parseFloat(opdenp);
             opdenp = 0;
+        }else if(planmelahirkan=="false"&&planrawatjalan=="true"){
+            total = parseFloat(ipp)+parseFloat(opdenp);
+            matp = 0;
         }else{
+            console.log("false all");
             total = parseFloat(ipp);
             matp = 0;opdenp = 0;
         }
@@ -988,11 +989,11 @@
                 else ipp = ipp0;
                 totalwithout = parseFloat(ipp0);
             }else{
-                if(planmelahirkan==true&&planrawatjalan==true){
+                if(planmelahirkan=="true"&&planrawatjalan=="true"){
                     totalwithout = parseFloat(ipp0)+parseFloat(matp0)+parseFloat(opdenp0);
-                }else if(planmelahirkan==true&&planrawatjalan==false){
+                }else if(planmelahirkan=="true"&&planrawatjalan=="false"){
                     totalwithout = parseFloat(ipp0)+parseFloat(matp0);
-                }else if(planmelahirkan==false&&planrawatjalan==true){
+                }else if(planmelahirkan=="false"&&planrawatjalan=="true"){
                     totalwithout = parseFloat(ipp0)+parseFloat(opdenp0);
                 }else{
                     totalwithout = parseFloat(ipp0);
@@ -1009,12 +1010,12 @@
             }
             console.log("totalwithout="+totalwithout);
 
-            if(planmelahirkan==true&&planrawatjalan==true){
+            if(planmelahirkan=="true"&&planrawatjalan=="true"){
                 total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
-            }else if(planmelahirkan==true&&planrawatjalan==false){
+            }else if(planmelahirkan=="true"&&planrawatjalan=="false"){
                 total = parseFloat(ipp)+parseFloat(matp);
                 opdenp = 0;
-            }else if(planmelahirkan==false&&planrawatjalan==true){
+            }else if(planmelahirkan=="false"&&planrawatjalan=="true"){
                 total = parseFloat(ipp)+parseFloat(opdenp);
                 matp = 0;
             }else{
