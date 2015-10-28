@@ -828,7 +828,7 @@
         var sex = $("#sex").val();
         var ip = getCookie("ip");
         var mat = getCookie("mat");
-        var outden = getCookie("out_den");
+        var outden = getCookie("op_den");
         var planipval = getCookie("planip");
         var planmatval = getCookie("planmat");
         var planop_denval = getCookie("planop_den");
@@ -882,10 +882,10 @@
             total = parseFloat(ipp)+parseFloat(matp)+parseFloat(opdenp);
         }else if(planmelahirkan==true&&planrawatjalan==false){
             total = parseFloat(ipp)+parseFloat(matp);
-            opdenp = 0;
+            matp = 0;
         }else if(planmelahirkan==false&&planrawatjalan==true){
             total = parseFloat(ipp)+parseFloat(opdenp);
-            matp = 0;
+            opdenp = 0;
         }else{
             total = parseFloat(ipp);
             matp = 0;opdenp = 0;
