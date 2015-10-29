@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" media="all" href="/website/static/mobilku/tasbih/tasbih.css" />
 <link rel="stylesheet" type="text/css" media="all" href="/website/static/mobilku/wizard-step.css" />
 
+
 <link rel="stylesheet" type="text/css" media="all" href="/website/ajfc/css/style.css" />
 
 <!--<link rel="stylesheet" type="text/css" media="screen" id="screen-css" href="_assets/css/flexslider.css">-->
@@ -450,6 +451,7 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="/website/static/inv/js/accounting.min.js" type="text/javascript"></script>
 
 <script>
     $(document).on('change',"#dob", function(){ //bind to all instances of class "date". 
@@ -773,26 +775,30 @@
         }
         //seluruh data di set cookie agar nanti tidak buat perhitungan ulang lagi
         //ini tabel tbody, jumlah anggota nya. berbentuk array
+        
+
+        
+        
         setCookie('nama', JSON.stringify(nama),5);
         setCookie('sex', JSON.stringify(sex),5);
         setCookie('dob', JSON.stringify(dob),5);
         setCookie('cd', JSON.stringify(cd),5);
 
-        setCookie('ipp', JSON.stringify(ipp),5);
-        setCookie('matp', JSON.stringify(matp),5);
-        setCookie('opdenp', JSON.stringify(opdenp),5);
-        setCookie('totalimo', JSON.stringify(totalimo),5);
+        setCookie('ipp', JSON.stringify(ippc),5);
+        setCookie('matp', JSON.stringify(matpc),5);
+        setCookie('opdenp', JSON.stringify(opdenpc),5);
+        setCookie('totalimo', JSON.stringify(totalimc),5);
 
         //total nya yg tfoot
-        setCookie('total', total,5);
-        setCookie('bpolish', bpolish,5);
-        setCookie('bmaterai', bmaterai,5);
-        setCookie('fd', fd,5);
-        setCookie('totalseluruh', totalseluruh,5);
+        setCookie('total', totalc,5);
+        setCookie('bpolish', bpolishc,5);
+        setCookie('bmaterai', bmateraic,5);
+        setCookie('fd', fdc,5);
+        setCookie('totalseluruh', totalseluruhc,5);
 
         // var storedAry = JSON.parse(getCookie('nama'));// to store array
         // console.log(storedAry);
-        window.location = "data-diri";
+//        window.location = "data-diri";
     });
 
     $("#Add").click(function(){
