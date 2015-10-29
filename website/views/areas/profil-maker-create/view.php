@@ -311,7 +311,8 @@
                         <div id="output"></div>
 
                         <div class="form-group" id="test">
-                            <input id="bar" type="submit" name="submit" value="Unggah" class="btn btn-primary" />
+                            <!-- <input id="bar" type="submit" name="submit" value="Unggah" class="btn btn-primary" /> -->
+                            <input type="submit" name="submit" value="Unggah" class="btn btn-primary" />
                             <!--<a href="/profil-maker/page3" class="btn btn-primary"></a>-->
                             <a href="javascript:history.go(-1);" class="btn btn-default">Kembali</a>
                             <br />
@@ -363,7 +364,7 @@
                     uploadProgress: OnProgress, //upload progress callback
                     success:function(){
                         //alert('Done, now reidrect.'); // change this line
-                        document.location.href = '<?php echo $this->link("link-template")?>'; // change the url
+                        document.location.href = '<?php echo $this->link("link-template")->getHref()?>'; // change the url
                     },
                     resetForm: true
                 });

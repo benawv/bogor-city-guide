@@ -955,6 +955,10 @@
     
     // Click Event on Ya button
     $('body').on('click','#download',function(){
+
+        var d = new Date();
+        var tgl = d.getFullYear()+""+d.getMonth()+""+d.getDay()+""+d.getHours()+""+d.getMinutes()+""+d.getSeconds();
+
         if(temp == "template4") {
 
             canvas.deactivateAll().renderAll();
@@ -971,6 +975,30 @@
             document.body.appendChild(link);
             link.click();
             
+            //trying to save directory
+            var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+            // output = output.replace("image/png", "image/octet-stream");
+                                    
+            var output = encodeURIComponent(dataURL);
+            var cur_path = 'upload';
+            // console.log(output);
+            // console.log(cur_path); 
+            var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
+            $.ajax({
+                    type: "POST",
+                    url: "/website/var/assets/profil-maker/save.php",
+                    //url: "/save-img/",
+                    data: Parameters,
+                    success: function(data) {
+                            //alert(data);
+                            //console.log(data);
+                            },
+                            error: function(data){
+                                //alert("fail");
+                            }
+                    });
+                    //saveNote(firstName,lastName, tgl);
+
             if(iOS == true) {
             	
             } else {
@@ -979,6 +1007,7 @@
             
         }
 		else if(temp == "template5") {
+
 			cvAva1.deactivateAll().renderAll();
 			
 			var dataURL = cvAva1.toDataURL({
@@ -992,6 +1021,30 @@
 			link.download = "Profil Picture Allianz.png";
 			document.body.appendChild(link);
 			link.click();
+
+            //trying to save directory
+            var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+            // output = output.replace("image/png", "image/octet-stream");
+                                    
+            var output = encodeURIComponent(dataURL);
+            var cur_path = 'upload';
+            // console.log(output);
+            // console.log(cur_path); 
+            var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
+            $.ajax({
+                    type: "POST",
+                    url: "/website/var/assets/profil-maker/save.php",
+                    //url: "/save-img/",
+                    data: Parameters,
+                    success: function(data) {
+                            //alert(data);
+                            //console.log(data);
+                            },
+                            error: function(data){
+                                //alert("fail");
+                            }
+                    });
+                    //saveNote(firstName,lastName, tgl);
 			
 			if(iOS == true) {
 				
@@ -1159,7 +1212,11 @@
 
     // Click Event on Ya button
     $('body').on('click','#download',function(){
+
         if(temp == "template6") {
+
+            var d = new Date();
+            var tgl = d.getFullYear()+""+d.getMonth()+""+d.getDay()+""+d.getHours()+""+d.getMinutes()+""+d.getSeconds();
 
             canvas.deactivateAll().renderAll();
 
@@ -1172,6 +1229,30 @@
             link.download = "Timeline Post Allianz.png";
             document.body.appendChild(link);
             link.click();
+
+            //trying to save directory
+            var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+            // output = output.replace("image/png", "image/octet-stream");
+                                    
+            var output = encodeURIComponent(dataURL);
+            var cur_path = 'upload';
+            // console.log(output);
+            // console.log(cur_path); 
+            var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
+            $.ajax({
+                    type: "POST",
+                    url: "/website/var/assets/profil-maker/save.php",
+                    //url: "/save-img/",
+                    data: Parameters,
+                    success: function(data) {
+                            //alert(data);
+                            //console.log(data);
+                            },
+                            error: function(data){
+                                //alert("fail");
+                            }
+                    });
+                    //saveNote(firstName,lastName, tgl);
             
             if(iOS == true) {
             	
