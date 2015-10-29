@@ -205,7 +205,7 @@ class CalcSmartmedController extends Website_Controller_Action {
                  .'</tr>'
                  .'<tr>'
                  .'<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Biaya Polis</span></font></strong></strong></td>'
-                 .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. 30000</span></font></strong></strong></td>'
+                 .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. 30,000</span></font></strong></strong></td>'
                  .'</tr>'
                  .'<tr>'
                  .'<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Family Discount</span></font></strong></strong></td>'
