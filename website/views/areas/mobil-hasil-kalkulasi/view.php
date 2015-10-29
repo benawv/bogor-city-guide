@@ -117,7 +117,7 @@
 
     /* resize table th:nth-child(2) on mobile */
     /* Akbar Fachriansyah */
-    @media ( max-width: 768px ) {
+    @media ( max-width: 990px ) {
         .tabScroll > table > thead > tr > th:nth-child(2), 
         .tabScroll > table > tbody > tr > td:nth-child(2), 
         .tabScroll > table > tfoot > tr > td:nth-child(2) {
@@ -125,6 +125,12 @@
         }
         .tabScroll > table > thead > tr > th {
             padding: 26px !important;
+        }
+
+        .tabScroll > table.tbl_ck > thead > tr > th:first-child, .tabScroll > table.tbl_ck > tbody > tr > td:first-child, .tabScroll > table.tbl_ck > tfoot > tr > td:first-child {
+            width: 100px;
+            padding: 26px !important;
+            padding-bottom: 52px !important;
         }
     }
 
@@ -1506,10 +1512,11 @@ $(document).keyup(function(e){
     $("#note_<?php echo $i ?>").hide();
 
     $("#open_tab_<?php echo $i ?>_<?php echo $j ?>_m").click(function(){
+        document.getElementById("note_1").style.float = "left";
         $(".no_pack").removeClass("data");
         $("#note_<?php echo $i ?>").show();
         $('.paketchecked').prop('checked',false);
-        $("#tabcontent_<?php echo $i ?> li a").removeClass("active");
+        $(".tabcontent li a").removeClass("active");
         $(".check_<?php echo $i ?>_<?php echo $j ?>").prop("checked",true);
         $(this).addClass("active");
         $(".show_<?php echo $i ?>").hide();
@@ -1536,7 +1543,7 @@ $(document).keyup(function(e){
         $(".no_pack").addClass("data");
         $("#note_<?php echo $i ?>").show();
         $('.paketchecked').prop('checked',false);
-        $("#tabcontent_<?php echo $i ?> li a").removeClass("active");
+        $(".tabcontent li a").removeClass("active");
         $(".check_<?php echo $i ?>_<?php echo $j ?>").prop("checked",true);
         $(this).addClass("active");
         $(".show_<?php echo $i ?>").hide();
