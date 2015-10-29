@@ -101,6 +101,89 @@
     {
         text-align: left;
     }
+    
+    @media screen and (max-width: 650px) {
+    
+        table{
+            overflow: auto;
+            margin: 0 35px;
+            background: #f5f6f6;
+            border-collapse: collapse;
+            -moz-box-sizing: border-box;
+        }
+        
+         table > tbody > tr > td > a
+        {
+            color: #666 !important;
+            text-decoration: none;
+        }
+        
+        table > tbody > tr > td > a:hover,
+        table > tbody > tr > td > a:focus
+        {
+            color: #666 !important;
+            text-decoration: underline;
+        }
+
+        table > tbody > tr > td > input,
+        table > tbody > tr > td > select
+        {
+            background: transparent;
+            border: none !important; /*solid 1px #ddd !important;*/
+            box-shadow: 0 0 0 transparent !important;
+            padding: 4px 8px;
+            font-size: small;
+            width: 100%;
+        }
+
+        table > tbody > tr > td > input::-webkit-input-placeholder {
+            color: #111 !important;
+            font-style: normal !important;
+        }
+
+        table > tbody > tr > td > input:-moz-placeholder { /* Firefox 18- */
+            color: #111 !important;
+            font-style: normal !important;
+        }
+
+        table > tbody > tr > td > input::-moz-placeholder {  /* Firefox 19+ */
+            color: #111 !important;
+            font-style: normal !important;
+        }
+
+        table > tbody > tr > td > input:-ms-input-placeholder {
+            color: #111 !important;
+            font-style: normal !important;
+        }
+
+        table th,
+        table td
+        {
+            white-space: nowrap !important;
+            padding: 4px 8px;
+            font-weight: normal;
+            font-size: 14px;
+            min-width: 72px;
+        }
+
+        table > thead > tr > th
+        {
+            text-align: left;
+            font-weight: bold !important;
+            vertical-align: middle !important;
+        }
+
+        table > tbody > tr:nth-child(odd) > td
+        {
+            background: #cdedf8;
+        }
+
+        table > tbody > tr > td:first-child
+        {
+            text-align: left;
+        }
+    
+    }
 </style>
 </head>
 <body style="font-size: 100%;background: none repeat scroll 0 0 #f5f6f6;color: #111;

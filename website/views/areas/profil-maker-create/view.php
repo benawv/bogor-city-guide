@@ -364,7 +364,7 @@
                     uploadProgress: OnProgress, //upload progress callback
                     success:function(){
                         //alert('Done, now reidrect.'); // change this line
-                        document.location.href = '<?php echo $this->link("link-template")->getHref()?>'; // change the url
+                        document.location.href = "http://"+window.location.host+'<?php echo $this->link("link-template")->getHref();?>'; // change the url
                     },
                     resetForm: true
                 });

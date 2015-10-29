@@ -109,7 +109,6 @@ class ProfilMakerController extends Website_Controller_Action {
 				"userOwner" => 1,
 				"userModification" => 1));
 		$asset->save();
-		die();
 	}
 }
 /*$assetFolder = "/static/upload-image"; //file direktori
