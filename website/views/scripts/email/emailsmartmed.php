@@ -116,7 +116,7 @@
 		</div> <!--Community-->
 		
 		<div id="community" class="clearfix padding no-margin" style="background: none repeat scroll 0 0 #fff;margin-bottom: 20px;padding: 15px;padding: 15px !important;margin: 0!important;float: left;width: 95%;">
-            <div class="table-responsive" style="margin: 0 auto;">
+            <div class="table-responsive" style="margin: 0 auto; overflow-y: auto;">
             	<?php echo $this->wysiwyg('description')?>
             </div>
             

@@ -498,6 +498,7 @@
                                             <input type="button" class="btn btn-default btn-block" value="Pilih Template">
                                     </a>
                                 </div><!--/ .col-xs-12 -->
+
                             </div><!--/ .row -->
                         </form>
 
@@ -520,7 +521,7 @@
                                                 required: "Mohon isi field judul"
                                           },
                                           content: {
-                                                required: "Mohon isi field konten"
+                                                required: "Mohon isi field deskripsi"
                                           },
                                           first_name: {
                                                 required: "Mohon isi field nama depan"
@@ -536,12 +537,11 @@
                                   form.valid();
                                 });
 
-                                    $('#formx').find('.error').val(' ');
-                                    $('input, textarea').click(function() {
-                                    $(this).removeClass('error').val('');
-                                   });
+                                //$('#formx').find('.error').val(' ');
+                                $('input, textarea').click(function() {
+                                    $(this).removeClass('error').val();
+                                });
 
-                                    
 
                             </script>
 
