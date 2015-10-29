@@ -117,7 +117,7 @@
 
     /* resize table th:nth-child(2) on mobile */
     /* Akbar Fachriansyah */
-    @media ( max-width: 990px ) {
+    @media ( max-width: 768px ) {
         .tabScroll > table > thead > tr > th:nth-child(2), 
         .tabScroll > table > tbody > tr > td:nth-child(2), 
         .tabScroll > table > tfoot > tr > td:nth-child(2) {
@@ -125,12 +125,6 @@
         }
         .tabScroll > table > thead > tr > th {
             padding: 26px !important;
-        }
-
-        .tabScroll > table.tbl_ck > thead > tr > th:first-child, .tabScroll > table.tbl_ck > tbody > tr > td:first-child, .tabScroll > table.tbl_ck > tfoot > tr > td:first-child {
-            width: 100px;
-            padding: 26px !important;
-            padding-bottom: 52px !important;
         }
     }
 
