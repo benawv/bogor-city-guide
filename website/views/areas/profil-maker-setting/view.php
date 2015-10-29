@@ -203,17 +203,17 @@
                             <div id="place" class="landscape facebook-caption leftside">
                                 <div id="notepad" class="facebook-caption--inner landscape-bg bg-blue">
 
-                                    <h3><span id="judul">&lt;Title&gt;</span></h3> <br />
+                                    <h3><span id="judul1">&lt;Judul&gt;</span></h3> <br />
 
-                                    <span id="konten">
-                                        &lt;Description&gt;
+                                    <span id="konten1">
+                                        &lt;Deskripsi&gt;
                                     </span> <br />
 
                                 </div><!--/ .facebook-caption--inner -->
                                 <!-- <div class="facebook-caption-trapezoid"></div> -->
 
                                 <div id="edge-note" class="edge e-blue">
-                                    <span id="nama">&lt;Name&gt;</span>
+                                    <span id="nama1">&lt;Nama&gt;</span>
                                 </div>
 
                             </div> <!--/ .facebook-caption -->
@@ -247,17 +247,17 @@
                             <div id="place" class="portrait facebook-caption leftside">
                                 <div id="notepad" class="facebook-caption--inner portrait-bg bg-blue" style="width: 80%;">
 
-                                    <h3><span id="judul">&lt;Title&gt;</span></h3> <br />
+                                    <h3><span id="judul2">&lt;Judul&gt;</span></h3> <br />
 
-                                    <span id="konten">
-                                        &lt;Description&gt;
+                                    <span id="konten2">
+                                        &lt;Deskripsi&gt;
                                     </span> <br />
 
                                 </div><!--/ .facebook-caption--inner -->
                                 <!-- <div class="facebook-caption-trapezoid"></div> -->
 
                                 <div id="edge-note" class="edge e-blue" style="width: 80%;">
-                                    <span id="nama">&lt;Name&gt;</span>
+                                    <span id="nama2">&lt;Nama&gt;</span>
                                 </div>
 
                             </div> <!--/ .facebook-caption -->
@@ -290,10 +290,10 @@
                             </div>
                             <div id="place" class="square facebook-caption leftside">
                                 <div id="notepad" class="facebook-caption--inner square-bg bg-blue">
+                                
+                                    <h3><span id="judul3">&lt;Judul&gt;</span></h3> <br />
 
-                                    <h3><span id="judul">&lt;Judul&gt;</span></h3> <br />
-
-                                    <span id="konten">
+                                    <span id="konten3">
                                         &lt;Deskripsi&gt;
                                     </span> <br />
 
@@ -301,7 +301,7 @@
                                 <!-- <div class="facebook-caption-trapezoid"></div> -->
 
                                 <div id="edge-note" class="edge e-blue">
-                                    <span id="nama">&lt;Nama&gt;</span>
+                                    <span id="nama3">&lt;Nama&gt;</span>
                                 </div>
 
                             </div> <!--/ .facebook-caption -->

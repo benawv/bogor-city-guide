@@ -165,15 +165,29 @@ $(document).ready(function()
 		            } 
 		          
 		        });
-				$("#judul").text(getCookie("head"));
-				$("#konten").text(getCookie("konten"));
-				$("#nama").text(getCookie("nama1")+" "+getCookie("nama2"));
+				$("#judul1, #judul2, #judul3").text(getCookie("head"));
+				$("#konten1, #konten2, #konten3").text(getCookie("konten"));
+				$("#nama1, #nama2, #nama3").text(getCookie("nama1")+" "+getCookie("nama2"));
 				$("#cname").text(getCookie("nama1")+" "+getCookie("nama2"));
 				
 				$(".headlineCover").val(getCookie("head"));
 				$(".contentCover").text(getCookie("konten"));
 				$(".nama1Cover").val(getCookie("nama1"));
 				$(".nama2Cover").val(getCookie("nama2"));
+
+				var cookie_head = getCookie("head");
+				var cookie_konten = getCookie("konten");
+				var cookie_nama1 = getCookie("nama1");
+				var cookie_nama2 = getCookie("nama2");
+
+				if (cookie_head != "" || cookie_konten != "" || cookie_nama1 != "" || cookie_nama2 != "") {
+			        console.log("Cookie notepad exist");
+			    }else {
+			        console.log("Cookie notepad doesn't exist");
+			        $("#judul1, #judul2, #judul3").html("&lt;Judul&gt;");
+			        $("#konten1, #konten2, #konten3").html("&lt;Deskripsi&gt;");
+			        $("#nama1, #nama2, #nama3").html("&lt;Nama&gt;");
+			    }
 				
 				$(".customHref").on("click",function(){
 					var srcLink = $(this).attr("href");
@@ -190,14 +204,14 @@ $(document).ready(function()
 						if(form.valid()){
 							//alert("all filled");
 							$("a#preview").attr("href", "#top");
-							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
+							$('#judul1, #judul2, #judul3, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
 	                        $headline = $('#atas').val();
 	                        $konten = $('#tengah').val();
 	                        $nama1 = $('#bawah1').val();
 	                        $nama2 = $('#bawah2').val();
-	                        $('#judul, #judul-m').html($headline);
-	                        $('#konten, #konten-m').html($konten);
-	                        $('#nama, #nama-m').html($nama1+" "+$nama2); //name at form cover
+	                        $('#judul1, #judul2, #judul3, #judul-m').html($headline);
+	                        $('#konten1, #konten2, #konten3, #konten-m').html($konten);
+	                        $('#nama1, #nama2, #nama3, #nama-m').html($nama1+" "+$nama2); //name at form cover
 	                        $('#cname, #cname-m').html($nama1+" "+$nama2); //name at form avatar
 	                        $("#place").css({display: "block"});
 	                        //anchor.href = null;
@@ -211,7 +225,7 @@ $(document).ready(function()
 						else {
 							//alert("no filled");
 							$("a#preview").attr("href", "#fillform");
-							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
+							$('#judul1, #judul2, #judul3, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
 							$("#off-change").hide();
 						}
                         
@@ -223,14 +237,14 @@ $(document).ready(function()
 						if(form.valid()) {
 							//alert("all filled");
 							$("a#save").attr("href", "#top");
-							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
+							$('#judul, #judul2, #judul3, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
 	                        $headline = $('#atas').val();
 	                        $konten = $('#tengah').val();
 	                        $nama1 = $('#bawah1').val();
 	                        $nama2 = $('#bawah2').val();
-	                        $('#judul, #judul-m').html($headline);
-	                        $('#konten, #konten-m').html($konten);
-	                        $('#nama, #nama-m').html($nama1+" "+$nama2); //name at form cover
+	                        $('#judul1, #judul2, #judul3, #judul-m').html($headline);
+	                        $('#konten1, #konten2, #konten3, #konten-m').html($konten);
+	                        $('#nama1, #nama2, #nama3, #nama-m').html($nama1+" "+$nama2); //name at form cover
 	                        $('#cname, #cname-m').html($nama1+" "+$nama2); //name at form avatar
 	                        $("#place").css({display: "block"});
 
@@ -240,7 +254,7 @@ $(document).ready(function()
 						else {
 							//alert("no filled");
 							$("a#save").attr("href", "#fillform");
-							$('#judul, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
+							$('#judul, #judul2, #judul3, #konten, #nama, #cname, #judul-m, #konten-m, #nama-m, #cname-m').empty();
 						}
 
 						//$("a").attr("href", "#top");

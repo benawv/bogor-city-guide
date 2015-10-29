@@ -87,7 +87,7 @@ label.error {
 }
 .override-width { width: 620px; max-width: 620px; }
 .override-width-805 { width: 805px; max-width: 805px; }
-span#nama { padding: 0 20px; font-size: 14px; word-wrap: break-word; }
+span#nama1, span#nama2, span#nama3 { padding: 0 20px; font-size: 14px; word-wrap: break-word; }
 span#nama-m { padding: 0 20px; font-size: 10px; word-wrap: break-word; }  
 span#konten-m { word-wrap: break-word; font-size: 9px; } 
 span#judul-m { font-size: 14px; } 
@@ -550,7 +550,9 @@ section.profile-maker {
         section.profile-maker .timelineContainer .facebook-caption > .facebook-caption--inner span {
           display: block;
           /*margin: 10px 0;*/ } 
-        section.profile-maker .timelineContainer .facebook-caption > .facebook-caption--inner span#konten {
+        section.profile-maker .timelineContainer .facebook-caption > .facebook-caption--inner span#konten1,
+        section.profile-maker .timelineContainer .facebook-caption > .facebook-caption--inner span#konten2,
+        section.profile-maker .timelineContainer .facebook-caption > .facebook-caption--inner span#konten3 {
           font-size: 12px;
           word-wrap: break-word;
         }   

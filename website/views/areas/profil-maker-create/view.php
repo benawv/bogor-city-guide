@@ -362,8 +362,8 @@
                     },
                     uploadProgress: OnProgress, //upload progress callback
                     success:function(){
-                        alert('Done, now reidrect.'); // change this line
-                        document.location.href = 'http://www.nyan.cat/'; // change the url
+                        //alert('Done, now reidrect.'); // change this line
+                        document.location.href = '<?php echo $this->link("link-template")?>'; // change the url
                     },
                     resetForm: true
                 });
