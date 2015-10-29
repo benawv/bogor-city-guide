@@ -35,13 +35,14 @@
           #ava21 img, #off-change, #fillform { display: none; }
 
           label.valid { display: none !important; } 
-          input:focus,textarea:focus{
+          input:focus, textarea:focus{
               border-color: initial;
-             }
-
-             input.error, textarea.error{
+          }
+          input.error, textarea.error{
               border:1px solid #CA0404;
-             }
+          }
+          #image-cropper #edge-note { margin-top: -1px; }
+
 
         @media only screen and (max-width : 480px) {
             .cropit1 {
@@ -513,6 +514,12 @@
                                                 required: true
                                           },
                                           content: {
+                                                required: true
+                                          },
+                                          first_name: {
+                                                required: true
+                                          },
+                                          last_name: {
                                                 required: true
                                           }
                                         },

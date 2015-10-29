@@ -143,10 +143,10 @@ class CalcSmartmedController extends Website_Controller_Action {
                     $JK .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$jenkel.'</span></font></strong></strong></td>';
                     $TTL .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$dob[$i].'</span></font></strong></strong></td>';
                     $TH .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$tgl_hitung[$i].'</span></font></strong></strong></td>';
-                    $ip .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.$premi_ip[$i].'</span></font></strong></strong></td>';
-                    $mat .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">RP. '.$premi_mat[$i].'</span></font></strong></strong></td>';
-                    $opden .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.$premi_opden[$i].'</span></font></strong></strong></td>';
-                    $premtot .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.$totalpremi[$i].'</span></font></strong></strong></td>';
+                    $ip .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($premi_ip[$i],1).'</span></font></strong></strong></td>';
+                    $mat .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">RP. '.substr($premi_mat[$i],1).'</span></font></strong></strong></td>';
+                    $opden .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($premi_opden[$i],1).'</span></font></strong></strong></td>';
+                    $premtot .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($totalpremi[$i],1).'</span></font></strong></strong></td>';
         };
         
 
@@ -197,11 +197,11 @@ class CalcSmartmedController extends Website_Controller_Action {
                  .'</tr>'
                  .'<tr>'
                  .'<td colspan="2" class="text-left"><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; line-height: 18px;">Biaya Materai</span></font></strong></td>'
-                 .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.$materai.'</span></font></strong></strong></td>'
+                 .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($materai,1).'</span></font></strong></strong></td>'
                  .'</tr>'                 
                  .'<tr>'
                  .'<td colspan="2" class="text-left"><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; line-height: 18px;">Jumlah Total Premi</span></font></strong></td>'
-                 .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.$total.'</span></font></strong></strong></td>'
+                 .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($total,1).'</span></font></strong></strong></td>'
                  .'</tr>'
                  .'<tr>'
                  .'<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Biaya Polis</span></font></strong></strong></td>'
@@ -209,11 +209,11 @@ class CalcSmartmedController extends Website_Controller_Action {
                  .'</tr>'
                  .'<tr>'
                  .'<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Family Discount</span></font></strong></strong></td>'
-                 .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.$familydiscount.'</span></font></strong></strong></td>'
+                 .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($familydiscount,1).'</span></font></strong></strong></td>'
                  .'</tr>'
                  .'<tr>'
                  .'<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Total Jumlah yang Dibayarkan</span></font></strong></strong></td>'
-                 .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.$totalseluruh.'</span></font></strong></strong></td>'
+                 .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($totalseluruh,1).'</span></font></strong></strong></td>'
                  .'</tr>'
                  .'</table>'
                  .'</div>';

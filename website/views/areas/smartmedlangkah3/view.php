@@ -776,7 +776,10 @@
         //seluruh data di set cookie agar nanti tidak buat perhitungan ulang lagi
         //ini tabel tbody, jumlah anggota nya. berbentuk array
         
-
+        ippc = accounting.formatMoney(ipp,0,",");
+        matpc = accounting.formatMoney(matp,0,",");
+        opdenpc = accounting.formatMoney(opdenp,0,",");
+        totalimoc = accounting.formatMoney(totalimo,0,",");
         
         
         setCookie('nama', JSON.stringify(nama),5);
@@ -787,9 +790,21 @@
         setCookie('ipp', JSON.stringify(ippc),5);
         setCookie('matp', JSON.stringify(matpc),5);
         setCookie('opdenp', JSON.stringify(opdenpc),5);
-        setCookie('totalimo', JSON.stringify(totalimc),5);
+        setCookie('totalimo', JSON.stringify(totalimoc),5);
 
         //total nya yg tfoot
+        setCookie('totalc', total,5);
+        setCookie('bpolishc', bpolish,5);
+        setCookie('bmateraic', bmaterai,5);
+        setCookie('fdc', fd,5);
+        setCookie('totalseluruhc', totalseluruh,5);
+        
+        totalseluruhc = accounting.formatMoney(getCookie("totalseluruhc"),0,",");
+        totalc = accounting.formatMoney(getCookie("totalc"),0,",");
+        bpolishc = accounting.formatMoney(getCookie("bpolishc"),0,",");
+        bmateraic = accounting.formatMoney(getCookie("bmateraic"),0,",");
+        fdc = accounting.formatMoney(getCookie("fdc"),0,",");
+//        
         setCookie('total', totalc,5);
         setCookie('bpolish', bpolishc,5);
         setCookie('bmaterai', bmateraic,5);
@@ -798,7 +813,7 @@
 
         // var storedAry = JSON.parse(getCookie('nama'));// to store array
         // console.log(storedAry);
-//        window.location = "data-diri";
+        window.location = "data-diri";
     });
 
     $("#Add").click(function(){
