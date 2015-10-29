@@ -776,15 +776,8 @@
         //seluruh data di set cookie agar nanti tidak buat perhitungan ulang lagi
         //ini tabel tbody, jumlah anggota nya. berbentuk array
         
-        ippc = accounting.formatMoney(ipp,0,",");
-        matpc = accounting.formatMoney(matp,0,",");
-        opdenpc = accounting.formatMoney(opdenp,0,",");
-        totalimoc = accounting.formatMoney(totalimo,0,",");
-        totalc = accounting.formatMoney(total,0,",");
-        bpolishc = accounting.formatMoney(bpolish,0,",");
-        bmateraic = accounting.formatMoney(bmaterai,0,",");
-        fdc = accounting.formatMoney(fd,0,",");
-        totalseluruhc = accounting.formatMoney(totalseluruh,0,",");
+
+        
         
         setCookie('nama', JSON.stringify(nama),5);
         setCookie('sex', JSON.stringify(sex),5);
@@ -805,7 +798,7 @@
 
         // var storedAry = JSON.parse(getCookie('nama'));// to store array
         // console.log(storedAry);
-        window.location = "data-diri";
+//        window.location = "data-diri";
     });
 
     $("#Add").click(function(){
