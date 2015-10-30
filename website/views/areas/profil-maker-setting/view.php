@@ -1030,12 +1030,13 @@
 							// alert(data);
                             //alert(data);
                             //console.log(data);
+							saveNote("","",firstName,lastName, tgl);
                             },
                             error: function(data){
                                 // alert("fail");
                             }
                     });
-                    saveNote("","",firstName,lastName, tgl);
+                    // saveNote("","",firstName,lastName, tgl);
 		
             if(iOS == true) {
             	
@@ -1078,12 +1079,13 @@
                     success: function(data) {
                             //alert(data);
                             //console.log(data);
+							saveNote("","","","", tgl);
                             },
                             error: function(data){
                                 //alert("fail");
                             }
                     });
-                    saveNote("","","","", tgl);
+                    // saveNote("","","","", tgl);
 			
 			if(iOS == true) {
 				
@@ -1287,12 +1289,13 @@
                     success: function(data) {
                             //alert(data);
                             //console.log(data);
+							 saveNote("","",firstName,lastName, tgl);
                             },
                             error: function(data){
                                 //alert("fail");
                             }
                     });
-                    saveNote("","",firstName,lastName, tgl);
+                    // saveNote("","",firstName,lastName, tgl);
             
             if(iOS == true) {
             	
