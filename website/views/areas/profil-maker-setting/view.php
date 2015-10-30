@@ -569,7 +569,7 @@
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div class="row" style="margin-top: 16px;">
-                                <div class="col-xs-6 col-sm-3">
+                                <div class="col-xs-6 col-sm-3 ask-hide">
                                     <a id="cancel" href="#fillform" class="btn btn-default btn-block">Ubah Konten</a>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-6 col-sm-3">
@@ -1030,13 +1030,13 @@
 							// alert(data);
                             //alert(data);
                             //console.log(data);
-							saveNote("","",firstName,lastName, tgl);
+							// saveNote("","",firstName,lastName, tgl);
                             },
                             error: function(data){
                                 // alert("fail");
                             }
                     });
-                    // saveNote("","",firstName,lastName, tgl);
+                    saveNote2("","",firstName,lastName, tgl);
 		
             if(iOS == true) {
             	
@@ -1079,13 +1079,13 @@
                     success: function(data) {
                             //alert(data);
                             //console.log(data);
-							saveNote("","","","", tgl);
+							// saveNote("","","","", tgl);
                             },
                             error: function(data){
                                 //alert("fail");
                             }
                     });
-                    // saveNote("","","","", tgl);
+                    saveNote2("","","","", tgl);
 			
 			if(iOS == true) {
 				
@@ -1095,6 +1095,22 @@
 		}
     });
     
+                function saveNote2(headline,description,firstName,lastName, filename) {
+                    $.ajax({
+                        url : '/save-note/',
+                        method : 'post',
+                        data : { headline : headline, description : description, firstName : firstName, lastName : lastName, filename : filename}, // format {variable , value}
+                        success : function(){
+                            //alert('Data Tersimpan');
+                            $('#atas').val('');
+                            $('#tengah').val('');
+                            $('#bawah1').val('');
+                            $('#bawah2').val('');
+                        }
+                       // data : {headline : headline, description : description, firstName : firstName, lastName : lastName}
+                    });
+                }
+
     //======================= End of template 4 ============================
 
     /*
@@ -1289,13 +1305,13 @@
                     success: function(data) {
                             //alert(data);
                             //console.log(data);
-							 saveNote("","",firstName,lastName, tgl);
+							 // saveNote("","",firstName,lastName, tgl);
                             },
                             error: function(data){
                                 //alert("fail");
                             }
                     });
-                    // saveNote("","",firstName,lastName, tgl);
+                    saveNote2("","",firstName,lastName, tgl);
             
             if(iOS == true) {
             	

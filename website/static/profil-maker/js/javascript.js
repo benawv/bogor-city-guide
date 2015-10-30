@@ -368,7 +368,7 @@ $(document).ready(function()
 			        $("#ava1").css("display", "block");
 			        $("#input1, #input2, #input3, #input4, #input5, #input6").css("display", "none");
 			        $("#fillform").show();
-			        $("#off-preview").hide();
+			        $("#off-preview, .ask-hide").hide();
 			        $("#off-change").show();
 			    }
 			    else if(temp == "template6") {
@@ -487,13 +487,13 @@ $(document).ready(function()
 								            success: function(data) {
 										        //alert(data);
 										        //console.log(data);
-												saveNote(headline,description,firstName,lastName, tgl);
+												// saveNote(headline,description,firstName,lastName, tgl);
 										    },
 										    error: function(data){
 										    	//alert("fail");
 										    }
 								        });
-									// saveNote(headline,description,firstName,lastName, tgl);
+									saveNote(headline,description,firstName,lastName, tgl);
 	                    		}
 
 		                	});
