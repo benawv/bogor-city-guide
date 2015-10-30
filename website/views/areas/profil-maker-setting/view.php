@@ -597,6 +597,41 @@
 
                 </div><!--/ .page-maker--form -->
 
+                <div id="ask-preview" class="page-maker--form" style="display: none">
+                    <div class="page-maker--form-title">
+                        <h3>Notepad Detail</h3>
+                    </div><!--/ .page-maker--form-title -->
+                    <div class="page-maker--form-inner">
+                        <form role="form">
+                            <div class="row" style="margin-top: 16px;">
+                                <div class="col-xs-6 col-sm-3">
+                                    <a id="cancel-preview" href="#fillform" class="btn btn-default btn-block">Ubah Konten</a>
+                                </div><!--/ .col-xs-12 -->
+                                <div class="col-xs-6 col-sm-3">
+                                    <a id="simpan-gambar" href="#top" class="btn btn-primary btn-block">Simpan Gambar</a>
+                                </div><!--/ .col-xs-12 -->
+                                <div class="col-xs-12 col-sm-3">
+                                    <?php 
+                                        $doc = Document::getById($this->document->getParentId());
+                                    ?>
+                                    <a href="<?php echo $doc->getFullPath()?>" class="customHref">
+                                            <input type="button" class="btn btn-default btn-block" value="Ganti Gambar">
+                                    </a>
+                                    <!--<input type="button" class="btn btn-default btn-block" value="Pilih Template">-->
+                                </div>
+                                <div class="col-xs-12 col-sm-3">
+                                    <a href="/template-maker" class="customHref">
+                                            <input type="button" class="btn btn-default btn-block" value="Pilih Template">
+                                    </a>
+                                    <!--<input type="button" class="btn btn-default btn-block" value="Pilih Template">-->
+                                </div><!--/ .col-xs-12 -->
+                            </div><!--/ .row -->
+                        </form>
+
+                    </div><!--/ .page-maker--form-inner -->
+
+                </div><!--/ .page-maker--form -->
+
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
 
