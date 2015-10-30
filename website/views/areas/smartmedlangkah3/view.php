@@ -774,6 +774,7 @@
 
     $("#kirim").click(function(){
 
+
         var rowCount = $('table.table tbody tr').length;
         setCookie("lengthAnggota",rowCount,5);
         var nama = [""];
@@ -851,6 +852,7 @@
         // var storedAry = JSON.parse(getCookie('nama'));// to store array
         // console.log(storedAry);
         window.location = "data-diri";
+        return false;
     });
 
     $("#Add").click(function(){

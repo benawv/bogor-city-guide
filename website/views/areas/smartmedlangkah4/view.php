@@ -410,12 +410,17 @@
 
 <script>
     $(document).ready(function(){
-        console.log("ipp"+getCookie("ipp"));
+        ipp = getCookie("ipp");
+        console.log("ipp="+ipp);
+        if(!ipp){
+            alert("xxx");
+            console.log("via");
+        }
         if(!getCookie("planip")||getCookie("planip")==""){
             window.location = "metode-pembayaran";
         }else if(!getCookie("planrawatjalan")||getCookie("planrawatjalan")==""){
             window.location = "pilih-manfaat";
-        }else if(!getCookie("ipp")||getCookie("ipp")==""){
+        }else if(!getCookie("ipp")||getCookie("ipp")==''){
             console.log("asd");
             window.location = "data-anggota";
         }
