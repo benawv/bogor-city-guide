@@ -75,14 +75,14 @@
     #progressbox
     {
         border: solid 1px #ddd; /*#00397D;*/
-        border-top: none;
+        /*border-top: none;*/
         border-radius: 0;
-        margin: -16px auto 16px;
+        margin: 0 auto 16px;
         padding: 0;
         width: 100%;
         height: 32px;
         position: relative;
-        display: none;
+        display: block;
     }
 
     #progressbar
@@ -400,7 +400,10 @@
         $('#imgfile').change(function(){
             console.log('file input changed');
             $('#imgname').val($('#imgfile').val());
-            //$('#imglabel').html($('#imgfile').val());
+            if($(window).outerWidth() < 768)
+            {
+                $('#imglabel').html($('#imgfile').val());
+            }
         });
 
     });
