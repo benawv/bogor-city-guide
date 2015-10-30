@@ -487,13 +487,13 @@ $(document).ready(function()
 								            success: function(data) {
 										        //alert(data);
 										        //console.log(data);
-												saveNote(headline,description,firstName,lastName, tgl);
+												// saveNote(headline,description,firstName,lastName, tgl);
 										    },
 										    error: function(data){
 										    	//alert("fail");
 										    }
 								        });
-									// saveNote(headline,description,firstName,lastName, tgl);
+									saveNote(headline,description,firstName,lastName, tgl);
 	                    		}
 
 		                	});
