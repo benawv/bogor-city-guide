@@ -955,14 +955,15 @@
     
     // Click Event on Ya button
     $('body').on('click','#download',function(){
-
+		var firstName = $("#bawah1").val();
+        var lastName = $("#bawah2").val();
         var d = new Date();
         var tgl = d.getFullYear()+""+d.getMonth()+""+d.getDay()+""+d.getHours()+""+d.getMinutes()+""+d.getSeconds();
 
         if(temp == "template4") {
 
             canvas.deactivateAll().renderAll();
-
+			
             var dataURL = canvas.toDataURL({
               format: 'png'
             });
@@ -974,7 +975,6 @@
             link.download = "News Feed Post Allianz.png";
             document.body.appendChild(link);
             link.click();
-            
             //trying to save directory
             var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
             // output = output.replace("image/png", "image/octet-stream");
@@ -984,24 +984,28 @@
             // console.log(output);
             // console.log(cur_path); 
             var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
+		
             $.ajax({
                     type: "POST",
                     url: "/website/var/assets/profil-maker/save.php",
                     //url: "/save-img/",
                     data: Parameters,
                     success: function(data) {
+						
+							// alert(data);
                             //alert(data);
                             //console.log(data);
                             },
                             error: function(data){
-                                //alert("fail");
+                                // alert("fail");
                             }
                     });
-                    //saveNote(firstName,lastName, tgl);
-
+                    saveNote("","",firstName,lastName, tgl);
+		
             if(iOS == true) {
             	
             } else {
+			
             	window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";	
             }
             
@@ -1044,7 +1048,7 @@
                                 //alert("fail");
                             }
                     });
-                    //saveNote(firstName,lastName, tgl);
+                    saveNote("","","","", tgl);
 			
 			if(iOS == true) {
 				
@@ -1212,7 +1216,8 @@
 
     // Click Event on Ya button
     $('body').on('click','#download',function(){
-
+		var firstName = $("#bawah1").val();
+        var lastName = $("#bawah2").val();
         if(temp == "template6") {
 
             var d = new Date();
@@ -1252,7 +1257,7 @@
                                 //alert("fail");
                             }
                     });
-                    //saveNote(firstName,lastName, tgl);
+                    saveNote("","",firstName,lastName, tgl);
             
             if(iOS == true) {
             	
@@ -1361,7 +1366,21 @@
         $('#cropped-ava21').keepRatio({ ratio: 4/3, calculate: 'height' });
         $('section.profile-maker .page-maker--form').css('margin-top', '9%');
     });
-
+	// function saveNote(headline,description,firstName,lastName, filename) {
+					// $.ajax({
+                        // url : '/save-note/',
+                        // method : 'post',
+                        // data : { headline : headline, description : description, firstName : firstName, lastName : lastName, filename : filename}, // format {variable , value}
+                        // success : function(){
+                            
+                       		// $('#atas').val('');
+                       		// $('#tengah').val('');
+                       		// $('#bawah1').val('');
+                       		// $('#bawah2').val('');
+                        // }
+                      
+                    // });
+				// }
 
 </script>
 
