@@ -25,7 +25,7 @@ class ProfilMakerController extends Website_Controller_Action {
 		Zend_Session::namespaceUnset('srcImage');
 		$session = new Zend_Session_Namespace('srcImage');
 		$session->src = $src;
-		$this->redirect($urlRedirect);
+		// $this->redirect($urlRedirect);
 	}
 
 	public function saveAction(){
