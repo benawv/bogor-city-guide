@@ -131,6 +131,9 @@ class CalcSmartmedController extends Website_Controller_Action {
 		$obj->setIndex(0);
 		$obj->setPublished(1);
 		$obj->save();
+        //get id after add object
+        $idObject=Object_Abstract::getByPath("/kalkulator-smartmed/data-kalkulasi/".$key)->o_id;//get folder id object
+        $_COOKIE["idObject"] = $idObject;
 		/*end save*/
         $jenkel="";
         for($i=1;$i<=$jumlah_anggota;$i++){
@@ -152,7 +155,7 @@ class CalcSmartmedController extends Website_Controller_Action {
 
         
         $tabler = '<table border="0" cellpadding="0" cellspacing="0" class="table table-bordered">'
-                 .'<tr style="background:#cccccc !important; overflow:auto !important;">'
+                 .'<tr style="background:#cdedf8 !important; overflow:auto !important;">'
                  .'<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Nomor</span></font></strong></strong></td>'
                  .$nomor
                  .'</tr>'
@@ -160,7 +163,7 @@ class CalcSmartmedController extends Website_Controller_Action {
                  .'<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Nama</span></font></strong></strong></td>'
                  .$name
                  .'</tr>'
-                 .'<tr style="background:#cccccc !important; overflow:auto !important;">'
+                 .'<tr style="background:#cdedf8 !important; overflow:auto !important;">'
                  .'<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Jenis Kelamin</span></font></strong></strong></td>'
                  .$JK
                  .'</tr>'
@@ -168,7 +171,7 @@ class CalcSmartmedController extends Website_Controller_Action {
                  .'<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Tanggal Lahir</span></font></strong></strong></td>'
                  .$TTL
                  .'</tr>'
-                 .'<tr style="background:#cccccc !important; overflow:auto !important;">'
+                 .'<tr style="background:#cdedf8 !important; overflow:auto !important;">'
                  .'<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Tanggal Hitung</span></font></strong></strong></td>'
                  .$TH
                  .'</tr>'
@@ -176,14 +179,14 @@ class CalcSmartmedController extends Website_Controller_Action {
                  .'<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Plan Rawat Inap,Plan Melahirkan,Plan Rawat Jalan dan Rawat Gigi</span></font></strong></strong></td>'
                  .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$planning.'</span></font></strong></strong></td>'
                  .'</tr>'
-                 .'<tr style="background:#cccccc !important; overflow:auto !important;">'
+                 .'<tr style="background:#cdedf8 !important; overflow:auto !important;">'
                  .'<td rowspan="4" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Premi</span></font></strong></strong></td>'
                  .'</tr>'
                  .'<tr style="background:#cccccc !important; overflow:auto !important;">'
                  .'<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Premi Rawat Inap</span></font></strong></strong></td>'
                  .$ip
                  .'</tr>'
-                 .'<tr style="background:#cccccc !important; overflow:auto !important;">'
+                 .'<tr style="background:#cdedf8 !important; overflow:auto !important;">'
                  .'<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Premi Melahirkan</span></font></strong></strong></td>'
                  .$mat
                  .'</tr>'
@@ -191,7 +194,7 @@ class CalcSmartmedController extends Website_Controller_Action {
                  .'<td class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Premi Rawat Jalan dan Rawat Gigi</span></font></strong></strong></td>'
                  .$opden
                  .'</tr>'
-                 .'<tr style="background:#cccccc !important; overflow:auto !important;">'
+                 .'<tr style="background:#cdedf8 !important; overflow:auto !important;">'
                  .'<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Total Premi</span></font></strong></strong></td>'
                  .$premtot
                  .'</tr>'
@@ -199,7 +202,7 @@ class CalcSmartmedController extends Website_Controller_Action {
                  .'<td colspan="2" class="text-left"><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; line-height: 18px;">Biaya Materai</span></font></strong></td>'
                  .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($materai,1).'</span></font></strong></strong></td>'
                  .'</tr>'                 
-                 .'<tr style="background:#cccccc !important; overflow:auto !important;">'
+                 .'<tr style="background:#cdedf8 !important; overflow:auto !important;">'
                  .'<td colspan="2" class="text-left"><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; line-height: 18px;">Jumlah Total Premi</span></font></strong></td>'
                  .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($total,1).'</span></font></strong></strong></td>'
                  .'</tr>'
@@ -207,7 +210,7 @@ class CalcSmartmedController extends Website_Controller_Action {
                  .'<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Biaya Polis</span></font></strong></strong></td>'
                  .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. 30,000</span></font></strong></strong></td>'
                  .'</tr>'
-                 .'<tr style="background:#cccccc !important; overflow:auto !important;">'
+                 .'<tr style="background:#cdedf8 !important; overflow:auto !important;">'
                  .'<td colspan="2" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Family Discount</span></font></strong></strong></td>'
                  .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($familydiscount,1).'</span></font></strong></strong></td>'
                  .'</tr>'
