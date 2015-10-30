@@ -368,6 +368,7 @@
                     uploadProgress: OnProgress, //upload progress callback
                     success:function(){
                         //alert('Done, now reidrect.'); // change this line
+                        $('#statustxt').html('Mengalihkan...');
                         document.location.href = "http://"+window.location.host+'<?php echo $this->link("link-template")->getHref();?>'; // change the url
                     },
                     resetForm: true,
@@ -385,6 +386,10 @@
             if(percentComplete>50)
             {
                 $('#statustxt').css('color','#fff'); //change status text to white after 50%
+            }
+            if(percentComplete > 99)
+            {
+                $('#statustxt').html('Harap tunggu...');
             }
             console.log('Uploading: ' + percentComplete + '%');
         }
