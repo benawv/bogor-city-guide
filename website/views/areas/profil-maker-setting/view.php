@@ -1036,7 +1036,7 @@
                                 // alert("fail");
                             }
                     });
-                    saveNote("","",firstName,lastName, tgl);
+                    saveNote2("","",firstName,lastName, tgl);
 		
             if(iOS == true) {
             	
@@ -1085,7 +1085,7 @@
                                 //alert("fail");
                             }
                     });
-                    saveNote("","","","", tgl);
+                    saveNote2("","","","", tgl);
 			
 			if(iOS == true) {
 				
@@ -1095,6 +1095,22 @@
 		}
     });
     
+                function saveNote2(headline,description,firstName,lastName, filename) {
+                    $.ajax({
+                        url : '/save-note/',
+                        method : 'post',
+                        data : { headline : headline, description : description, firstName : firstName, lastName : lastName, filename : filename}, // format {variable , value}
+                        success : function(){
+                            //alert('Data Tersimpan');
+                            $('#atas').val('');
+                            $('#tengah').val('');
+                            $('#bawah1').val('');
+                            $('#bawah2').val('');
+                        }
+                       // data : {headline : headline, description : description, firstName : firstName, lastName : lastName}
+                    });
+                }
+
     //======================= End of template 4 ============================
 
     /*
@@ -1295,7 +1311,7 @@
                                 //alert("fail");
                             }
                     });
-                    saveNote("","",firstName,lastName, tgl);
+                    saveNote2("","",firstName,lastName, tgl);
             
             if(iOS == true) {
             	
