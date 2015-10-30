@@ -569,7 +569,7 @@
                                 </div><!--/ .col-xs-12 -->
                             </div><!--/ .row -->
                             <div class="row" style="margin-top: 16px;">
-                                <div class="col-xs-6 col-sm-3">
+                                <div class="col-xs-6 col-sm-3 ask-hide">
                                     <a id="cancel" href="#fillform" class="btn btn-default btn-block">Ubah Konten</a>
                                 </div><!--/ .col-xs-12 -->
                                 <div class="col-xs-6 col-sm-3">
