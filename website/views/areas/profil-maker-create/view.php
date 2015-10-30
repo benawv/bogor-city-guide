@@ -75,14 +75,14 @@
     #progressbox
     {
         border: solid 1px #ddd; /*#00397D;*/
-        border-top: none;
+        /*border-top: none;*/
         border-radius: 0;
-        margin: -16px auto 16px;
+        margin: 0 auto 16px;
         padding: 0;
         width: 100%;
         height: 32px;
         position: relative;
-        display: none;
+        display: block;
     }
 
     #progressbar
@@ -311,7 +311,8 @@
                         <div id="output"></div>
 
                         <div class="form-group" id="test">
-                            <input id="bar" type="submit" name="submit" value="Unggah" class="btn btn-primary" />
+                            <!-- <input id="bar" type="submit" name="submit" value="Unggah" class="btn btn-primary" /> -->
+                            <input type="submit" name="submit" value="Unggah" class="btn btn-primary" />
                             <!--<a href="/profil-maker/page3" class="btn btn-primary"></a>-->
                             <a href="javascript:history.go(-1);" class="btn btn-default">Kembali</a>
                             <br />
@@ -356,6 +357,10 @@
             if(checkfiles() === true)
             {
                 $(this).ajaxSubmit({
+                    /*
+                     * More info about the options
+                     * http://malsup.com/jquery/form/#options-object
+                     */
                     target: '#output',
                     beforeSubmit: function(){
                         $('#progressbox').stop().slideDown('fast');
@@ -363,9 +368,11 @@
                     uploadProgress: OnProgress, //upload progress callback
                     success:function(){
                         //alert('Done, now reidrect.'); // change this line
+                        $('#statustxt').html('Mengalihkan...');
                         document.location.href = "http://"+window.location.host+'<?php echo $this->link("link-template")->getHref();?>'; // change the url
                     },
-                    resetForm: true
+                    resetForm: true,
+                    forceSync: true
                 });
             }
             return false;
@@ -380,6 +387,10 @@
             {
                 $('#statustxt').css('color','#fff'); //change status text to white after 50%
             }
+            if(percentComplete > 99)
+            {
+                $('#statustxt').html('Harap tunggu...');
+            }
             console.log('Uploading: ' + percentComplete + '%');
         }
 
@@ -389,7 +400,10 @@
         $('#imgfile').change(function(){
             console.log('file input changed');
             $('#imgname').val($('#imgfile').val());
-            //$('#imglabel').html($('#imgfile').val());
+            if($(window).outerWidth() < 768)
+            {
+                $('#imglabel').html($('#imgfile').val());
+            }
         });
 
     });

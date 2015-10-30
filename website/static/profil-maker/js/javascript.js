@@ -220,7 +220,7 @@ $(document).ready(function()
 							setCookie("nama1",$nama1);
 							setCookie("nama2",$nama2);
 							$('#fillform').hide();
-                			$('#ask').show(); 
+                			$('#ask-preview').show(); 
 						}
 						else {
 							//alert("no filled");
@@ -230,7 +230,7 @@ $(document).ready(function()
 						}
                         
                 	});
-					
+
 					$("#save").click(function(){
 
 						//preview and save
@@ -263,9 +263,21 @@ $(document).ready(function()
 
 	                //Back to fill form    
 	                $("#cancel").click(function(){
+	                	$("a#cancel").attr("href", "#fillform");
 		                $('#fillform').show();
 		                $('#ask').hide();      
 	                });
+
+	                $("#simpan-gambar").click(function() {
+						$("#ask-preview").hide();
+						$("#ask").show();
+					});
+					
+					$("#cancel-preview").click(function() {
+						$("#ask-preview").hide();
+						$('#fillform').show();
+					});
+
 
 	                $("#tutup").click(function(){
 		                window.location.href = "/template-maker";
@@ -273,7 +285,7 @@ $(document).ready(function()
 	                });
 	                
                     //Smooth scroll   
-                    $("#preview, #download, #square, #portrait, #landscape, #save, #ask, #fillform, #thankyou").click(function(event){
+                    $("#preview, #cancel-preview, #cancel, #download, #square, #portrait, #landscape, #save, #simpan-gambar, #ask, #fillform, #thankyou").click(function(event){
                     	//alert("scroll");
                         event.preventDefault();
 						$('html,body').animate({
@@ -475,12 +487,13 @@ $(document).ready(function()
 								            success: function(data) {
 										        //alert(data);
 										        //console.log(data);
+												saveNote(headline,description,firstName,lastName, tgl);
 										    },
 										    error: function(data){
 										    	//alert("fail");
 										    }
 								        });
-									saveNote(headline,description,firstName,lastName, tgl);
+									// saveNote(headline,description,firstName,lastName, tgl);
 	                    		}
 
 		                	});

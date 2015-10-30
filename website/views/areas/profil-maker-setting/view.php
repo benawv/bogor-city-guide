@@ -597,6 +597,41 @@
 
                 </div><!--/ .page-maker--form -->
 
+                <div id="ask-preview" class="page-maker--form" style="display: none">
+                    <div class="page-maker--form-title">
+                        <h3>Notepad Detail</h3>
+                    </div><!--/ .page-maker--form-title -->
+                    <div class="page-maker--form-inner">
+                        <form role="form">
+                            <div class="row" style="margin-top: 16px;">
+                                <div class="col-xs-6 col-sm-3">
+                                    <a id="cancel-preview" href="#fillform" class="btn btn-default btn-block">Ubah Konten</a>
+                                </div><!--/ .col-xs-12 -->
+                                <div class="col-xs-6 col-sm-3">
+                                    <a id="simpan-gambar" href="#top" class="btn btn-primary btn-block">Simpan Gambar</a>
+                                </div><!--/ .col-xs-12 -->
+                                <div class="col-xs-12 col-sm-3">
+                                    <?php 
+                                        $doc = Document::getById($this->document->getParentId());
+                                    ?>
+                                    <a href="<?php echo $doc->getFullPath()?>" class="customHref">
+                                            <input type="button" class="btn btn-default btn-block" value="Ganti Gambar">
+                                    </a>
+                                    <!--<input type="button" class="btn btn-default btn-block" value="Pilih Template">-->
+                                </div>
+                                <div class="col-xs-12 col-sm-3">
+                                    <a href="/template-maker" class="customHref">
+                                            <input type="button" class="btn btn-default btn-block" value="Pilih Template">
+                                    </a>
+                                    <!--<input type="button" class="btn btn-default btn-block" value="Pilih Template">-->
+                                </div><!--/ .col-xs-12 -->
+                            </div><!--/ .row -->
+                        </form>
+
+                    </div><!--/ .page-maker--form-inner -->
+
+                </div><!--/ .page-maker--form -->
+
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
 
@@ -955,10 +990,15 @@
     
     // Click Event on Ya button
     $('body').on('click','#download',function(){
+		var firstName = $("#bawah1").val();
+        var lastName = $("#bawah2").val();
+        var d = new Date();
+        var tgl = d.getFullYear()+""+d.getMonth()+""+d.getDay()+""+d.getHours()+""+d.getMinutes()+""+d.getSeconds();
+
         if(temp == "template4") {
 
             canvas.deactivateAll().renderAll();
-
+			
             var dataURL = canvas.toDataURL({
               format: 'png'
             });
@@ -970,15 +1010,44 @@
             link.download = "News Feed Post Allianz.png";
             document.body.appendChild(link);
             link.click();
-            
+            //trying to save directory
+            var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+            // output = output.replace("image/png", "image/octet-stream");
+                                    
+            var output = encodeURIComponent(dataURL);
+            var cur_path = 'upload';
+            // console.log(output);
+            // console.log(cur_path); 
+            var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
+		
+            $.ajax({
+                    type: "POST",
+                    url: "/website/var/assets/profil-maker/save.php",
+                    //url: "/save-img/",
+                    data: Parameters,
+                    success: function(data) {
+						
+							// alert(data);
+                            //alert(data);
+                            //console.log(data);
+							saveNote("","",firstName,lastName, tgl);
+                            },
+                            error: function(data){
+                                // alert("fail");
+                            }
+                    });
+                    // saveNote("","",firstName,lastName, tgl);
+		
             if(iOS == true) {
             	
             } else {
+			
             	window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";	
             }
             
         }
 		else if(temp == "template5") {
+
 			cvAva1.deactivateAll().renderAll();
 			
 			var dataURL = cvAva1.toDataURL({
@@ -992,6 +1061,31 @@
 			link.download = "Profil Picture Allianz.png";
 			document.body.appendChild(link);
 			link.click();
+
+            //trying to save directory
+            var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+            // output = output.replace("image/png", "image/octet-stream");
+                                    
+            var output = encodeURIComponent(dataURL);
+            var cur_path = 'upload';
+            // console.log(output);
+            // console.log(cur_path); 
+            var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
+            $.ajax({
+                    type: "POST",
+                    url: "/website/var/assets/profil-maker/save.php",
+                    //url: "/save-img/",
+                    data: Parameters,
+                    success: function(data) {
+                            //alert(data);
+                            //console.log(data);
+							saveNote("","","","", tgl);
+                            },
+                            error: function(data){
+                                //alert("fail");
+                            }
+                    });
+                    // saveNote("","","","", tgl);
 			
 			if(iOS == true) {
 				
@@ -1159,7 +1253,12 @@
 
     // Click Event on Ya button
     $('body').on('click','#download',function(){
+		var firstName = $("#bawah1").val();
+        var lastName = $("#bawah2").val();
         if(temp == "template6") {
+
+            var d = new Date();
+            var tgl = d.getFullYear()+""+d.getMonth()+""+d.getDay()+""+d.getHours()+""+d.getMinutes()+""+d.getSeconds();
 
             canvas.deactivateAll().renderAll();
 
@@ -1172,6 +1271,31 @@
             link.download = "Timeline Post Allianz.png";
             document.body.appendChild(link);
             link.click();
+
+            //trying to save directory
+            var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+            // output = output.replace("image/png", "image/octet-stream");
+                                    
+            var output = encodeURIComponent(dataURL);
+            var cur_path = 'upload';
+            // console.log(output);
+            // console.log(cur_path); 
+            var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
+            $.ajax({
+                    type: "POST",
+                    url: "/website/var/assets/profil-maker/save.php",
+                    //url: "/save-img/",
+                    data: Parameters,
+                    success: function(data) {
+                            //alert(data);
+                            //console.log(data);
+							 saveNote("","",firstName,lastName, tgl);
+                            },
+                            error: function(data){
+                                //alert("fail");
+                            }
+                    });
+                    // saveNote("","",firstName,lastName, tgl);
             
             if(iOS == true) {
             	
@@ -1280,7 +1404,21 @@
         $('#cropped-ava21').keepRatio({ ratio: 4/3, calculate: 'height' });
         $('section.profile-maker .page-maker--form').css('margin-top', '9%');
     });
-
+	// function saveNote(headline,description,firstName,lastName, filename) {
+					// $.ajax({
+                        // url : '/save-note/',
+                        // method : 'post',
+                        // data : { headline : headline, description : description, firstName : firstName, lastName : lastName, filename : filename}, // format {variable , value}
+                        // success : function(){
+                            
+                       		// $('#atas').val('');
+                       		// $('#tengah').val('');
+                       		// $('#bawah1').val('');
+                       		// $('#bawah2').val('');
+                        // }
+                      
+                    // });
+				// }
 
 </script>
 
