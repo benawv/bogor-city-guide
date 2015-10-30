@@ -303,11 +303,11 @@
                     Kalkulator Asuransi SmartMed Premier akan membantu Anda mengetahui perkiraan jumlah premi yang akan dibayarkan. Silakan isi kolom yang tersedia sesuai kebutuhan Anda.
                 </p>
                 <ul>
-                    <li><a href="#first" style="font-size:10px;">Pembayaran dan Diskon</a></li><!--  DON'T REMOVE THIS COMMENT
+                    <li class=""><a href="metode-pembayaran" style="font-size:10px;">Metode Pembayaran</a></li><!--  DON'T REMOVE THIS COMMENT
                     -->
-                    <li><a href="#second">Pilih Manfaat</a></li>
-                    <li><a href="#third">Data Anggota</a></li>
-                    <li class="active"><a href="#fourth">Data Diri</a></
+                    <li><a href="pilih-manfaat">Pilih Manfaat</a></li>
+                    <li><a href="data-anggota">Data Anggota</a></li>
+                    <li class="active"><a href="data-diri">Data Diri</a></
                 </ul><!--/ .custom-tab -->
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
@@ -319,7 +319,6 @@
 
                     <div class="form-group">
                         <div class="col-md-8">
-                            <label class="title"><strong>Data diri</strong></label>
                         </div><!--/ .col-md-4 -->
                     </div>
 
@@ -393,7 +392,7 @@
 
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
-                            <input type="submit" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="kirim" name="kirim"  value="Kirim" tabindex="1">
+                            <input type="submit" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="kirim" name="kirim"  value="Kirim email" tabindex="1">
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
 
@@ -411,13 +410,18 @@
 
 <script>
     $(document).ready(function(){
-        if(!getCookie("planip")){
-            window.location = "langkah1";
-        }else if(!getCookie("planrawatjalan")){
-            window.location = "langkah2";
-        }else if(!getCookie("ipp")){
-            window.location = "langkah3";
+        console.log("ipp"+getCookie("ipp"));
+        if(!getCookie("planip")||getCookie("planip")==""){
+            window.location = "metode-pembayaran";
+        }else if(!getCookie("planrawatjalan")||getCookie("planrawatjalan")==""){
+            window.location = "pilih-manfaat";
+        }else if(!getCookie("ipp")||getCookie("ipp")==""){
+            console.log("asd");
+            window.location = "data-anggota";
         }
+            console.log("xx");
+
+
     });
     
     $("#kirim").on("click",function(){

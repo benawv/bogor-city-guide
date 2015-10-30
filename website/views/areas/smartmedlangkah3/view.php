@@ -287,6 +287,10 @@
        color: #4747FF;
        cursor: help;
     }
+    .href-button{
+        padding-top: 10px;
+    }
+
 </style>
 
 <div id="newsletter-allianz" class="full-w bg-white nopadding">
@@ -303,11 +307,11 @@
                     Kalkulator Asuransi SmartMed Premier akan membantu Anda mengetahui perkiraan jumlah premi yang akan dibayarkan. Silakan isi kolom yang tersedia sesuai kebutuhan Anda.
                 </p>
                 <ul>
-                    <li><a href="#first" style="font-size:10px;">Pembayaran dan Diskon</a></li><!--  DON'T REMOVE THIS COMMENT
+                    <li class=""><a href="metode-pembayaran" style="font-size:10px;">Metode Pembayaran</a></li><!--  DON'T REMOVE THIS COMMENT
                     -->
-                    <li><a href="#second">Pilih Manfaat</a></li>
-                    <li class="active"><a href="#third">Data Anggota</a></li>
-                    <li><a href="#fourth">Data Diri</a></
+                    <li><a href="pilih-manfaat">Pilih Manfaat</a></li>
+                    <li class="active"><a href="data-anggota">Data Anggota</a></li>
+                    <li><a href="data-diri">Data Diri</a></
                 </ul><!--/ .custom-tab -->
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
@@ -320,7 +324,6 @@
 
                     <div class="form-group">
                         <div class="col-md-8">
-                            <label class="title"><strong>Data Anggota</strong></label>
                         </div><!--/ .col-md-4 -->
                     </div>
 
@@ -367,6 +370,7 @@
                     </div><!--/ .form-group -->
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
+                            <a class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih href-button" href="pilih-manfaat" tabindex="1">Kembali</a>
                             <button class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Add" name="next" tabindex="1">Tambah ke tabel</button>
                             <input type="submit" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="kirim" name="kirim" value="Kirim Email" tabindex="1">
                         </div><!--/ .col-md-12 -->
@@ -393,7 +397,7 @@
                                 <th rowspan="2" width="">Tanggal Kalkulasi</th>
                                 <th rowspan="2" width="" class="hide">Usia</th>
                                 <th rowspan="2" width="" class="hide">Status</th>
-                                <th rowspan="2" width="">Plan</th>
+                                <th rowspan="2" width="">PLAN</th>
                                 <th rowspan="2" width="" class="hide">Plan Melahirkan</th>
                                 <th rowspan="2" width="" class="hide">Plan Rawat Jalan & Rawat Gigi</th>
                                 <th rowspan="2" width="" class="hide">UW Loading</th>
@@ -487,14 +491,43 @@
             yearRange: "-100:+0",
             maxDate: new Date()
         });
+
     });
 
     $(document).ready(function(){
+        eraseCookie('nama', "",-1);
+        eraseCookie('sex', "",-1);
+        eraseCookie('dob', "",-1);
+        eraseCookie('cd', "",-1);
 
-        if(!getCookie("planip")){
-            window.location = "langkah1";
+        eraseCookie('ipp', "",-1);
+        eraseCookie('matp', "",-1);
+        eraseCookie('opdenp', "",-1);
+        eraseCookie('totalimo', "",-1);
+
+        //total nya yg tfoot
+        eraseCookie('totalc', "",-1);
+        eraseCookie('bpolishc', "",-1);
+        eraseCookie('bmateraic', "",-1);
+        eraseCookie('fdc', "",-1);
+        eraseCookie('totalseluruhc', "",-1);
+    
+        eraseCookie('total', "",-1);
+        eraseCookie('bpolish', "",-1);
+        eraseCookie('bmaterai', "",-1);
+        eraseCookie('fd', "",-1);
+        eraseCookie('totalseluruh', "",-1);
+
+
+        if(!getCookie("pembayaran")){
+            window.location = "metode-pembayaran";
         }else if(!getCookie("planrawatjalan")){
-            window.location = "langkah2";
+            window.location = "pilih-manfaat";
+        }
+
+        if(getCookie("pembayaran")!="Annually"&&(getCookie("planmelahirkan")=="true"||getCookie("planrawatjalan")=="true")){
+            alert("Data tidak valid, silahkan mulai dari langkah metode pembayaran");
+            window.location = "metode-pembayaran";
         }
     });
 
@@ -635,6 +668,10 @@
             if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
         }
         return "";
+    }
+    /*erase cookie*/
+    function eraseCookie(c_name) {
+        createCookie(cookie_name,"",-1);
     }
 
     /*set COOKIE 5 days*/
@@ -782,22 +819,22 @@
         totalimoc = accounting.formatMoney(totalimo,0,",");
         
         
-        setCookie('nama', JSON.stringify(nama),5);
-        setCookie('sex', JSON.stringify(sex),5);
-        setCookie('dob', JSON.stringify(dob),5);
-        setCookie('cd', JSON.stringify(cd),5);
+        setCookie('nama', JSON.stringify(nama),1);
+        setCookie('sex', JSON.stringify(sex),1);
+        setCookie('dob', JSON.stringify(dob),1);
+        setCookie('cd', JSON.stringify(cd),1);
 
-        setCookie('ipp', JSON.stringify(ippc),5);
-        setCookie('matp', JSON.stringify(matpc),5);
-        setCookie('opdenp', JSON.stringify(opdenpc),5);
-        setCookie('totalimo', JSON.stringify(totalimoc),5);
+        setCookie('ipp', JSON.stringify(ippc),1);
+        setCookie('matp', JSON.stringify(matpc),1);
+        setCookie('opdenp', JSON.stringify(opdenpc),1);
+        setCookie('totalimo', JSON.stringify(totalimoc),1);
 
         //total nya yg tfoot
-        setCookie('totalc', total,5);
-        setCookie('bpolishc', bpolish,5);
-        setCookie('bmateraic', bmaterai,5);
-        setCookie('fdc', fd,5);
-        setCookie('totalseluruhc', totalseluruh,5);
+        setCookie('totalc', total,1);
+        setCookie('bpolishc', bpolish,1);
+        setCookie('bmateraic', bmaterai,1);
+        setCookie('fdc', fd,1);
+        setCookie('totalseluruhc', totalseluruh,1);
         
         totalseluruhc = accounting.formatMoney(getCookie("totalseluruhc"),0,",");
         totalc = accounting.formatMoney(getCookie("totalc"),0,",");
@@ -805,11 +842,11 @@
         bmateraic = accounting.formatMoney(getCookie("bmateraic"),0,",");
         fdc = accounting.formatMoney(getCookie("fdc"),0,",");
 //        
-        setCookie('total', totalc,5);
-        setCookie('bpolish', bpolishc,5);
-        setCookie('bmaterai', bmateraic,5);
-        setCookie('fd', fdc,5);
-        setCookie('totalseluruh', totalseluruhc,5);
+        setCookie('total', totalc,1);
+        setCookie('bpolish', bpolishc,1);
+        setCookie('bmaterai', bmateraic,1);
+        setCookie('fd', fdc,1);
+        setCookie('totalseluruh', totalseluruhc,1);
 
         // var storedAry = JSON.parse(getCookie('nama'));// to store array
         // console.log(storedAry);
