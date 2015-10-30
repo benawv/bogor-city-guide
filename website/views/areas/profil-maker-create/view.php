@@ -357,6 +357,10 @@
             if(checkfiles() === true)
             {
                 $(this).ajaxSubmit({
+                    /*
+                     * More info about the options
+                     * http://malsup.com/jquery/form/#options-object
+                     */
                     target: '#output',
                     beforeSubmit: function(){
                         $('#progressbox').stop().slideDown('fast');
@@ -366,7 +370,8 @@
                         //alert('Done, now reidrect.'); // change this line
                         document.location.href = "http://"+window.location.host+'<?php echo $this->link("link-template")->getHref();?>'; // change the url
                     },
-                    resetForm: true
+                    resetForm: true,
+                    forceSync: true
                 });
             }
             return false;
