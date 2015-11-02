@@ -1043,7 +1043,7 @@
 							}
 					});
 					saveNote("","",firstName,lastName, tgl);
-					deleteImage("");
+					deleteImage();
 		
 			// if(iOS == true) {
 			
@@ -1096,7 +1096,7 @@
                             }
                     });
                     saveNote2("","","","", tgl);
-					deleteImage("");
+					deleteImage();
 			
 			// if(iOS == true) {
 				
@@ -1107,12 +1107,12 @@
 			
 		}
     });
-				function deleteImage(data){
+				function deleteImage(){
 					 $.ajax({
 					  type: "POST",
 								url: "/website/static/upload-image/delete.php",
 								//url: "/save-img/",
-								data: {data : data },
+								//data: {data : data },
 								success: function(data) {
 									   
 										},
@@ -1343,7 +1343,7 @@
                             }
                     });
                     saveNote2("","",firstName,lastName, tgl);
-					deleteImage("");
+					deleteImage();
             
             // if(iOS == true) {
             	

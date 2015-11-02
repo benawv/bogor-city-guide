@@ -494,7 +494,7 @@ $(document).ready(function()
 										    }
 								        });
 									saveNote(headline,description,firstName,lastName, tgl);
-									deleteImage("");
+									deleteImage();
 	                    		}
 
 		                	});
