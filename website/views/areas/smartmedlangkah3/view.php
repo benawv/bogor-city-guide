@@ -397,7 +397,7 @@
                                 <th rowspan="2" width="">Tanggal Kalkulasi</th>
                                 <th rowspan="2" width="" class="hide">Usia</th>
                                 <th rowspan="2" width="" class="hide">Status</th>
-                                <th rowspan="2" width="">PLAN</th>
+                                <th rowspan="2" width="">Plan</th>
                                 <th rowspan="2" width="" class="hide">Plan Melahirkan</th>
                                 <th rowspan="2" width="" class="hide">Plan Rawat Jalan & Rawat Gigi</th>
                                 <th rowspan="2" width="" class="hide">UW Loading</th>
@@ -964,7 +964,7 @@
                 "<td><input class='date cd2' type='text' placeholder='Tanggal Kalkulasi' name='cd"+no+"' id='cd"+no+"' value='"+cd+"'></td>"+
                 "<td class='tabletd age hide'>"+age+"</td>"+
                 "<td class='tabletd hide'>NEW BUSINESS</td>"+
-                "<td class='tabletd'>"+planipval.split("_")[1]+"</td>"+
+                "<td class='tabletd'>"+planipval.split("_")[1].toUpperCase()+"</td>"+
                 "<td class='tabletd hide'>"+planmatval.split("_")[1]+"</td>"+
                 "<td class='tabletd hide'>"+planop_denval.split("_")[1]+"</td>"+
                 "<td class='uwl hide'>0</td>"+
