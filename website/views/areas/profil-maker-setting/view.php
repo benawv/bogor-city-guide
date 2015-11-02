@@ -1043,6 +1043,7 @@
 							}
 					});
 					saveNote("","",firstName,lastName, tgl);
+					deleteImage("");
 		
 			// if(iOS == true) {
 			
@@ -1084,17 +1085,18 @@
                             //alert(data);
                             //console.log(data);
 							// saveNote("","","","", tgl);
-							if(iOS == true) {
-			
-							} else {
-									window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";	
-							}
+								if(iOS == true) {
+				
+								} else {
+										window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";	
+								}
                             },
                             error: function(data){
                                 //alert("fail");
                             }
                     });
                     saveNote2("","","","", tgl);
+					deleteImage("");
 			
 			// if(iOS == true) {
 				
@@ -1105,7 +1107,20 @@
 			
 		}
     });
-    
+				function deleteImage(data){
+					 $.ajax({
+					  type: "POST",
+								url: "/website/static/upload-image/delete.php",
+								//url: "/save-img/",
+								data: {data : data },
+								success: function(data) {
+									   
+										},
+										error: function(data){
+										   
+										}
+								});
+				}
                 function saveNote2(headline,description,firstName,lastName, filename) {
                     $.ajax({
                         url : '/save-note/',
@@ -1328,6 +1343,7 @@
                             }
                     });
                     saveNote2("","",firstName,lastName, tgl);
+					deleteImage("");
             
             // if(iOS == true) {
             	
