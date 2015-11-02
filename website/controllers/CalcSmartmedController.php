@@ -142,14 +142,14 @@ class CalcSmartmedController extends Website_Controller_Action {
         	else
         		$jenkel = "Perempuan";
                     $nomor .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$i.'</span></font></strong></strong></td>';
-                    $name .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$nama[$i].'</span></font></strong></strong></td>';
-                    $JK .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$jenkel.'</span></font></strong></strong></td>';
-                    $TTL .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$dob[$i].'</span></font></strong></strong></td>';
-                    $TH .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$tgl_hitung[$i].'</span></font></strong></strong></td>';
-                    $ip .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($premi_ip[$i],1).'</span></font></strong></strong></td>';
-                    $mat .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">RP. '.substr($premi_mat[$i],1).'</span></font></strong></strong></td>';
-                    $opden .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($premi_opden[$i],1).'</span></font></strong></strong></td>';
-                    $premtot .= '<td class="text-left nomor"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($totalpremi[$i],1).'</span></font></strong></strong></td>';
+                    $name .= '<td class="text-left nomor" style="background:#cccccc !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$nama[$i].'</span></font></strong></strong></td>';
+                    $JK .= '<td class="text-left nomor" style="background:#cccccc !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$jenkel.'</span></font></strong></strong></td>';
+                    $TTL .= '<td class="text-left nomor" style="background:#cccccc !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$dob[$i].'</span></font></strong></strong></td>';
+                    $TH .= '<td class="text-left nomor" style="background:#cccccc !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.$tgl_hitung[$i].'</span></font></strong></strong></td>';
+                    $ip .= '<td class="text-left nomor" style="background:#cccccc !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($premi_ip[$i],1).'</span></font></strong></strong></td>';
+                    $mat .= '<td class="text-left nomor" style="background:#cccccc !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">RP. '.substr($premi_mat[$i],1).'</span></font></strong></strong></td>';
+                    $opden .= '<td class="text-left nomor" style="background:#cccccc !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($premi_opden[$i],1).'</span></font></strong></strong></td>';
+                    $premtot .= '<td class="text-left nomor" style="background:#cccccc !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($totalpremi[$i],1).'</span></font></strong></strong></td>';
         };
         
 
@@ -159,64 +159,64 @@ class CalcSmartmedController extends Website_Controller_Action {
                  .'<td colspan="2" class="text-left" style="text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Jumlah</span></font></strong></strong></td>'
                  .$nomor
                  .'</tr>'
-                 .'<tr style="background:#cccccc !important; overflow:auto !important;">'
-                 .'<td colspan="2" class="text-left" style="text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Nama</span></font></strong></strong></td>'
+                 .'<tr style="background:#b5b5b5 !important; overflow:auto !important;">'
+                 .'<td colspan="2" class=" text-left" style="text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Nama</span></font></strong></strong></td>'
                  .$name
                  .'</tr>'
-                 .'<tr style="background:#cdedf8 !important; overflow:auto !important;">'
-                 .'<td colspan="2" class="text-left" style="text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Jenis Kelamin</span></font></strong></strong></td>'
+                 .'<tr style=" overflow:auto !important;">'
+                 .'<td colspan="2" class="text-left" style="background:#b5b5b5 !important; text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Jenis Kelamin</span></font></strong></strong></td>'
                  .$JK
                  .'</tr>'
-                 .'<tr style="background:#cccccc !important; overflow:auto !important;">'
-                 .'<td colspan="2" class="text-left" style="text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;text-align:left !important;">Tanggal Lahir</span></font></strong></strong></td>'
+                 .'<tr style=" overflow:auto !important;">'
+                 .'<td colspan="2" class="text-left" style="background:#b5b5b5 !important; text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;text-align:left !important;">Tanggal Lahir</span></font></strong></strong></td>'
                  .$TTL
                  .'</tr>'
-                 .'<tr style="background:#cdedf8 !important; overflow:auto !important;">'
-                 .'<td colspan="2" class="text-left" style="text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Tanggal Hitung</span></font></strong></strong></td>'
+                 .'<tr style=" overflow:auto !important;">'
+                 .'<td colspan="2" class="text-left" style="background:#b5b5b5 !important; text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Tanggal Hitung</span></font></strong></strong></td>'
                  .$TH
                  .'</tr>'
-                 .'<tr style="background:#cccccc !important; overflow:auto !important;">'
-                 .'<td colspan="2" class="text-left" style="text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Plan RI, M, RJ dan RG</span></font></strong></strong></td>'
-                 .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.substr($planning,5).'</span></font></strong></strong></td>'
+                 .'<tr style=" overflow:auto !important;">'
+                 .'<td colspan="2" class="text-left" style="background:#b5b5b5 !important; text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Plan RI, M, RJ dan RG</span></font></strong></strong></td>'
+                 .'<td colspan="'.$jumlah_anggota.'" class="text-left" style="background:#cccccc !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">'.substr($planning,5).'</span></font></strong></strong></td>'
                  .'</tr>'
-                 .'<tr style="background:#cdedf8 !important; overflow:auto !important;">'
-                 .'<td rowspan="4" class="text-left" style="text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Premi</span></font></strong></strong></td>'
+                 .'<tr style=" overflow:auto !important;">'
+                 .'<td rowspan="4" class="text-left" style="background:#b5b5b5 !important; text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Premi</span></font></strong></strong></td>'
                  .'</tr>'
-                 .'<tr style="background:#cccccc !important; overflow:auto !important;">'
-                 .'<td class="text-left" style="text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Premi Rawat Inap (RI)</span></font></strong></strong></td>'
+                 .'<tr style=" overflow:auto !important;">'
+                 .'<td class="text-left" style="background:#b5b5b5 !important; text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Premi Rawat Inap (RI)</span></font></strong></strong></td>'
                  .$ip
                  .'</tr>'
-                 .'<tr style="background:#cdedf8 !important; overflow:auto !important;">'
-                 .'<td class="text-left" style="text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Premi Melahirkan (M)</span></font></strong></strong></td>'
+                 .'<tr style="overflow:auto !important;">'
+                 .'<td class="text-left" style="background:#b5b5b5 !important; text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Premi Melahirkan (M)</span></font></strong></strong></td>'
                  .$mat
                  .'</tr>'
-                 .'<tr style="background:#cccccc !important; overflow:auto !important;">'
-                 .'<td class="text-left" style="text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Premi Rawat Jalan (RJ) dan Rawat Gigi (RG)</span></font></strong></strong></td>'
+                 .'<tr style="overflow:auto !important;">'
+                 .'<td class="text-left" style="background:#b5b5b5 !important; text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Premi Rawat Jalan (RJ) dan Rawat Gigi (RG)</span></font></strong></strong></td>'
                  .$opden
                  .'</tr>'
-                 .'<tr style="background:#cdedf8 !important; overflow:auto !important;">'
-                 .'<td colspan="2" class="text-left" style="text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Total Premi</span></font></strong></strong></td>'
+                 .'<tr style=" overflow:auto !important;">'
+                 .'<td colspan="2" class="text-left" style="background:#b5b5b5 !important; text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Total Premi</span></font></strong></strong></td>'
                  .$premtot
                  .'</tr>'
-                 .'<tr style="background:#cccccc !important; overflow:auto !important;">'
-                 .'<td colspan="2" class="text-left" style="text-align:left !important;"><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; line-height: 18px; text-align:left !important;">Biaya Materai</span></font></strong></td>'
-                 .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($materai,1).'</span></font></strong></strong></td>'
+                 .'<tr style=" overflow:auto !important;">'
+                 .'<td colspan="2" class="text-left" style="background:#b5b5b5 !important; text-align:left !important;"><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; line-height: 18px; text-align:left !important;">Biaya Materai</span></font></strong></td>'
+                 .'<td colspan="'.$jumlah_anggota.'" class="text-left" style="background:#cccccc !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($materai,1).'</span></font></strong></strong></td>'
                  .'</tr>'                 
-                 .'<tr style="background:#cdedf8 !important; overflow:auto !important;">'
-                 .'<td colspan="2" class="text-left" style="text-align:left !important;"><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; line-height: 18px; text-align:left !important;">Jumlah Total Premi</span></font></strong></td>'
-                 .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($total,1).'</span></font></strong></strong></td>'
+                 .'<tr style= overflow:auto !important;">'
+                 .'<td colspan="2" class="text-left" style="background:#b5b5b5 !important; text-align:left !important;"><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; line-height: 18px; text-align:left !important;">Jumlah Total Premi</span></font></strong></td>'
+                 .'<td colspan="'.$jumlah_anggota.'" class="text-left" style="background:#cccccc !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($total,1).'</span></font></strong></strong></td>'
                  .'</tr>'
-                 .'<tr style="background:#cccccc !important; overflow:auto !important;">'
-                 .'<td colspan="2" class="text-left" style="text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Biaya Polis</span></font></strong></strong></td>'
-                 .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. 30,000</span></font></strong></strong></td>'
+                 .'<tr style=" overflow:auto !important;">'
+                 .'<td colspan="2" class="text-left" style="background:#b5b5b5 !important; text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Biaya Polis</span></font></strong></strong></td>'
+                 .'<td colspan="'.$jumlah_anggota.'" class="text-left" style="background:#cccccc !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. 30,000</span></font></strong></strong></td>'
                  .'</tr>'
-                 .'<tr style="background:#cdedf8 !important; overflow:auto !important;">'
-                 .'<td colspan="2" class="text-left" style="text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Family Discount</span></font></strong></strong></td>'
-                 .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($familydiscount,1).'</span></font></strong></strong></td>'
+                 .'<tr style=" overflow:auto !important;">'
+                 .'<td colspan="2" class="text-left" style="background:#b5b5b5 !important; text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Family Discount</span></font></strong></strong></td>'
+                 .'<td colspan="'.$jumlah_anggota.'" class="text-left" style="background:#cccccc !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($familydiscount,1).'</span></font></strong></strong></td>'
                  .'</tr>'
-                 .'<tr style="background:#cccccc !important; overflow:auto !important;">'
-                 .'<td colspan="2" class="text-left" style="text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Total Jumlah yang dibayarkan</span></font></strong></strong></td>'
-                 .'<td colspan="'.$jumlah_anggota.'" class="text-left"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($totalseluruh,1).'</span></font></strong></strong></td>'
+                 .'<tr style=" overflow:auto !important;">'
+                 .'<td colspan="2" class="text-left" style="background:#b5b5b5 !important; text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Total Jumlah yang dibayarkan</span></font></strong></strong></td>'
+                 .'<td colspan="'.$jumlah_anggota.'" class="text-left" style="background:#cccccc !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px;">Rp. '.substr($totalseluruh,1).'</span></font></strong></strong></td>'
                  .'</tr>'
                  .'</table>'
                  .'</div>';
@@ -240,3 +240,4 @@ class CalcSmartmedController extends Website_Controller_Action {
 		$this->_redirect("/kalkulator/smartmed/thankyou");
 	}
 }
+
