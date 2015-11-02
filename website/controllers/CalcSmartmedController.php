@@ -162,7 +162,8 @@ class CalcSmartmedController extends Website_Controller_Action {
         
 
         
-        $tabler = '<table border="0" cellpadding="0" cellspacing="0" class="table table-bordered">'
+        $tabler = '<div class="table-responsive" style="margin: 0 auto;">'
+                 .'<table border="0" cellpadding="0" cellspacing="0" class="table table-bordered">'
                  .'<tr style="background:#cdedf8 !important; overflow:auto !important;">'
                  .'<td colspan="2" class="text-left" style="text-align:left !important;"><strong><strong><font color="#111111" face="Roboto, helvetica, arial, sans-serif"><span style="font-size: 12px; text-align:left !important;">Jumlah</span></font></strong></strong></td>'
                  .$nomor
