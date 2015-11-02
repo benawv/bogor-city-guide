@@ -997,54 +997,58 @@
 
         if(temp == "template4") {
 
-            canvas.deactivateAll().renderAll();
-			
-            var dataURL = canvas.toDataURL({
-              format: 'png'
-            });
+			canvas.deactivateAll().renderAll();
+			// alert("testing1");
+			var dataURL = canvas.toDataURL({
+			  format: 'png'
+			});
+			// alert("testing2");
+			//window.location.href = "/profil-maker/profil-thankyou";
 
-            //window.location.href = "/profil-maker/profil-thankyou";
-
-            var link = document.createElement('a');
-            link.href = dataURL;
-            link.download = "News Feed Post Allianz.png";
-            document.body.appendChild(link);
-            link.click();
-            //trying to save directory
-            var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-            // output = output.replace("image/png", "image/octet-stream");
-                                    
-            var output = encodeURIComponent(dataURL);
-            var cur_path = 'upload';
-            // console.log(output);
-            // console.log(cur_path); 
-            var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
-		
-            $.ajax({
-                    type: "POST",
-                    url: "/website/var/assets/profil-maker/save.php",
-                    //url: "/save-img/",
-                    data: Parameters,
-                    success: function(data) {
-						
+			var link = document.createElement('a');
+			link.href = dataURL;
+			link.download = "News Feed Post Allianz.png";
+			document.body.appendChild(link);
+			link.click();
+			// alert("testing3");
+			//trying to save directory
+			var output = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+			// output = output.replace("image/png", "image/octet-stream");
+			// alert("testing4");						
+			var output = encodeURIComponent(dataURL);
+			var cur_path = 'upload';
+			// console.log(output);
+			// console.log(cur_path); 
+			var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
+			// alert("testing5");
+			$.ajax({
+					type: "POST",
+					url: "/website/var/assets/profil-maker/save.php",
+					//url: "/save-img/",
+					data: Parameters,
+					success: function(data) {
+							// alert("testing6");
 							// alert(data);
-                            //alert(data);
-                            //console.log(data);
+							//alert(data);
+							//console.log(data);
 							// saveNote("","",firstName,lastName, tgl);
-                            },
-                            error: function(data){
-                                // alert("fail");
-                            }
-                    });
-                    saveNote2("","",firstName,lastName, tgl);
-		
-            if(iOS == true) {
-            	
-            } else {
+							if(iOS == true) {
 			
-            	window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";	
-            }
-            
+							} else {
+									window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";	
+							}
+							},
+							error: function(data){
+								// alert("fail");
+							}
+					});
+					saveNote("","",firstName,lastName, tgl);
+		
+			// if(iOS == true) {
+			
+			// } else {
+					// window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";	
+			// }
         }
 		else if(temp == "template5") {
 
@@ -1080,6 +1084,11 @@
                             //alert(data);
                             //console.log(data);
 							// saveNote("","","","", tgl);
+							if(iOS == true) {
+			
+							} else {
+									window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";	
+							}
                             },
                             error: function(data){
                                 //alert("fail");
@@ -1087,11 +1096,13 @@
                     });
                     saveNote2("","","","", tgl);
 			
-			if(iOS == true) {
+			// if(iOS == true) {
 				
-			} else {
-            			window.location.href = "/asn/allianz-social-media-for-sales/template-maker/profile-picture/thankyou";
-			}
+			// } else {
+				// alert("testing8");
+            			// window.location.href = "/asn/allianz-social-media-for-sales/template-maker/profile-picture/thankyou";
+			// }
+			
 		}
     });
     
@@ -1306,6 +1317,11 @@
                             //alert(data);
                             //console.log(data);
 							 // saveNote("","",firstName,lastName, tgl);
+								if(iOS == true) {
+			
+								} else {
+										window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";	
+								}
                             },
                             error: function(data){
                                 //alert("fail");
@@ -1313,11 +1329,12 @@
                     });
                     saveNote2("","",firstName,lastName, tgl);
             
-            if(iOS == true) {
+            // if(iOS == true) {
             	
-            } else {
-            	window.location.href = "/asn/allianz-social-media-for-sales/template-maker/timeline-post/thankyou";
-            }
+            // } else {
+				// alert("testing8");
+            	// window.location.href = "/asn/allianz-social-media-for-sales/template-maker/timeline-post/thankyou";
+            // }
         }
     });
     }

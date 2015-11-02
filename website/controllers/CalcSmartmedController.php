@@ -38,6 +38,14 @@ class CalcSmartmedController extends Website_Controller_Action {
 			echo $value*0.10;
 
 	}
+
+    function clearCookie(){
+        foreach ($_COOKIE as $key => $value) {
+            unset($value);
+            setcookie($key, '', time() - 3600);
+        }
+    }
+
 	public function emailAction(){
 //        $nama = $_COOKIE["nama"];
 //        
@@ -235,7 +243,7 @@ class CalcSmartmedController extends Website_Controller_Action {
 			$mail->addTo($email);
 			$mail->send();
 //        
-
+            $this->clearCookie();
         
 		$this->_redirect("/kalkulator/smartmed/thankyou");
 	}
