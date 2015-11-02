@@ -303,11 +303,11 @@
                     Kalkulator Asuransi SmartMed Premier akan membantu Anda mengetahui perkiraan jumlah premi yang akan dibayarkan. Silakan isi kolom yang tersedia sesuai kebutuhan Anda.
                 </p>
                 <ul>
-                    <li class="active"><a href="#first" style="font-size:10px;">Pembayaran dan Diskon</a></li><!--  DON'T REMOVE THIS COMMENT
+                    <li class="active"><a href="metode-pembayaran" style="font-size:10px;">Metode Pembayaran</a></li><!--  DON'T REMOVE THIS COMMENT
                     -->
-                    <li><a href="#second">Pilih Manfaat</a></li>
-                    <li><a href="#third">Data Anggota</a></li>
-                    <li><a href="#fourth">Data Diri</a></li>
+                    <li><a href="pilih-manfaat">Pilih Manfaat</a></li>
+                    <li><a href="data-anggota">Data Anggota</a></li>
+                    <li><a href="data-diri">Data Diri</a></li>
                 </ul><!--/ .custom-tab -->
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
@@ -318,7 +318,6 @@
                 <form class="form-horizontal" METHOD="POST" action="pilih-manfaat">
                     <div class="form-group">
                         <div class="col-md-8">
-                            <label class="title"><strong>Metode Pembayaran dan Diskon</strong></label>
                         </div><!--/ .col-md-4 -->
                     </div>
                     <div class="form-group">
@@ -328,17 +327,30 @@
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="1" name="payment_methods" id="payment_methods">
                             <?php
+                                $pembayaran = $_COOKIE["pembayaran"];
                                 $cat = new Object_SmartmedPaymentType_List();
                                 foreach($cat as $payment)
                                 {
                                     if ($payment->getPaymenttype() == "Annually"){
-                                        echo "<option value='".$payment->getPaymenttype()."'>Tahunan</option>";
+                                        if($pembayaran=="Annually")
+                                            echo "<option value='".$payment->getPaymenttype()."' selected>Tahunan</option>"; 
+                                        else
+                                            echo "<option value='".$payment->getPaymenttype()."'>Tahunan</option>";
                                     }else if ($payment->getPaymenttype() == "Semi-Annually"){
-                                        echo "<option value='".$payment->getPaymenttype()."'>Enam Bulanan</option>";
+                                        if($pembayaran=="Semi-Annually")
+                                            echo "<option value='".$payment->getPaymenttype()."' selected>Enam Bulanan</option>";
+                                        else
+                                            echo "<option value='".$payment->getPaymenttype()."'>Enam Bulanan</option>";
                                     }else if ($payment->getPaymenttype() == "Quarterly"){
-                                        echo "<option value='".$payment->getPaymenttype()."'>Tiga Bulanan</option>";
+                                        if($pembayaran=="Quarterly")
+                                            echo "<option value='".$payment->getPaymenttype()."' selected>Tiga Bulanan</option>";
+                                        else
+                                            echo "<option value='".$payment->getPaymenttype()."'>Tiga Bulanan</option>";
                                     }else if ($payment->getPaymenttype() == "Monthly"){
-                                        echo "<option value='".$payment->getPaymenttype()."'>Bulanan</option>";
+                                        if($pembayaran=="Monthly")
+                                            echo "<option value='".$payment->getPaymenttype()."' selected>Bulanan</option>";
+                                        else
+                                            echo "<option value='".$payment->getPaymenttype()."'>Bulanan</option>";
                                     }
                                     // echo "<option value='".$payment->getPaymenttype()."'>".$payment->getPaymenttype()."</option>";
                                 }
@@ -353,8 +365,8 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="1" id="family_discount">
-                                <option value="Y">Ya</option>
-                                <option value="N">Tidak</option>
+                                <option value="Y" <?php if($_COOKIE["family_discount"]=="Y") echo "selected"; ?>>Ya</option>
+                                <option value="N" <?php if($_COOKIE["family_discount"]=="N") echo "selected"; ?>>Tidak</option>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -365,8 +377,8 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="1" id="no_claim_discount">
-                                <option value="Y">Ya</option>
-                                <option value="N">Tidak</option>
+                                <option value="Y" <?php if($_COOKIE["ncd"]=="Y") echo "selected"; ?>>Ya</option>
+                                <option value="N" <?php if($_COOKIE["ncd"]=="N") echo "selected"; ?>>Tidak</option>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
@@ -410,12 +422,12 @@
         fd = $("#family_discount").val();
         ncd = $("#no_claim_discount").val();
 
-        setCookie("pembayaran",pembayaran,5);
-        setCookie("family_discount",fd,5);
-        setCookie("ncd",ncd,5);
+        setCookie("pembayaran",pembayaran,1);
+        setCookie("family_discount",fd,1);
+        setCookie("ncd",ncd,1);
     });
 
-    /*set COOKIE 5 days*/
+    /*set COOKIE 1 days*/
     function setCookie(cname, cvalue, exdays) {
         var d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));

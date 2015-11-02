@@ -274,6 +274,9 @@
         display: inline;
         margin: 0;
     }
+    .href-button{
+        padding-top: 10px;
+    }
 
 </style>
 
@@ -298,11 +301,11 @@
                     Kalkulator Asuransi SmartMed Premier akan membantu Anda mengetahui perkiraan jumlah premi yang akan dibayarkan. Silakan isi kolom yang tersedia sesuai kebutuhan Anda.
                 </p>
                 <ul>
-                    <li><a href="#first" style="font-size:10px;">Pembayaran dan Diskon</a></li><!--  DON'T REMOVE THIS COMMENT
+                    <li class=""><a href="metode-pembayaran" style="font-size:10px;">Metode Pembayaran</a></li><!--  DON'T REMOVE THIS COMMENT
                     -->
-                    <li class="active"><a href="#second">Pilih Manfaat</a></li>
-                    <li><a href="#third">Data Anggota</a></li>
-                    <li><a href="#fourth">Data Diri</a></
+                    <li class="active"><a href="pilih-manfaat">Pilih Manfaat</a></li>
+                    <li><a href="data-anggota">Data Anggota</a></li>
+                    <li><a href="data-diri">Data Diri</a></
                 </ul><!--/ .custom-tab -->
             </div><!--/ .col-xs-12 -->
         </div><!--/ .row -->
@@ -314,13 +317,12 @@
 
                     <div class="form-group">
                         <div class="col-md-8">
-                            <label class="title"><strong>Pilih Manfaat</strong></label>
                         </div><!--/ .col-md-4 -->
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Pilihan Plan Manfaat Rawat Inap</label>
+                            <label>Pilihan Plan Manfaat Rawat Inap (RI)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="1" id="planip" onChange="checkData();">
@@ -329,7 +331,10 @@
                                     echo "<option value=''>Pilih</option>";
                                     foreach($cat as $payment)
                                     {
-                                        echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."'>"."Plan"." ".strtoupper($payment->getPlanname())."</option>";
+                                        if($payment->getO_id()."_".$payment->getPlanname()==$_COOKIE["planip"])
+                                            echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."' selected>"."Plan"." ".strtoupper($payment->getPlanname())."</option>";
+                                        else
+                                            echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."'>"."Plan"." ".strtoupper($payment->getPlanname())."</option>";
                                     }
                                 ?>
                             </select>
@@ -559,16 +564,16 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" required tabindex="1" id="ip">
-                                <option value="0">0%</option>
-                                <option value="10">10%</option>
-                                <option value="20">20%</option>
+                                <option value="0" <?php if($_COOKIE["ip"]==0) echo "selected"; ?>>0%</option>
+                                <option value="10" <?php if($_COOKIE["ip"]==10) echo "selected"; ?>>10%</option>
+                                <option value="20" <?php if($_COOKIE["ip"]==20) echo "selected"; ?>>20%</option>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Pilihan Plan Manfaat Melahirkan</label>
+                            <label>Pilihan Plan Manfaat Melahirkan (M)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <!--<select class="form-control" required tabindex="1" id="planmat" onChange="checkData2();">-->
@@ -578,12 +583,16 @@
                                     $cat = new Object_SmartmedPlanType_List();
                                     foreach($cat as $payment)
                                     {
-                                        echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."'>"."Plan"." ".strtoupper($payment->getPlanname())."</option>";
+                                        if($payment->getO_id()."_".$payment->getPlanname()==$_COOKIE["planmat"])
+                                            echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."' selected>"."Plan"." ".strtoupper($payment->getPlanname())."</option>";
+                                        else
+                                            echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."'>"."Plan"." ".strtoupper($payment->getPlanname())."</option>";
                                     }
                                 ?>
                             </select>
                             <label id="notif2" style="display:none; color:red;">Manfaat Melahirkan Harus diisi.</label>
-                            <input class="form-control" type="checkbox" name="planmelahirkan" id="planmelahirkan" tabindex="1">&nbsp;Pilih plan manfaat melahirkan
+                            <input class="form-control" type="checkbox" name="planmelahirkan" id="planmelahirkan" tabindex="1" <?php if($_COOKIE["planmelahirkan"]==true&&$_COOKIE["pembayaran"]=="Annually") echo "checked" ?>>
+                            &nbsp;Pilih plan manfaat melahirkan
                             <a id="file2" style="visibility:hidden" target="_blank"></a>
                             <script>
                             function checkData2(){
@@ -657,16 +666,16 @@
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <select class="form-control" disabled required tabindex="1" id="mat">
-                                <option value="0">0%</option>
-                                <option value="10">10%</option>
-                                <option value="20">20%</option>
+                                <option value="0" <?php if($_COOKIE["mat"]==0) echo "selected"; ?>>0%</option>
+                                <option value="10" <?php if($_COOKIE["mat"]==10) echo "selected"; ?>>10%</option>
+                                <option value="20" <?php if($_COOKIE["mat"]==20) echo "selected"; ?>>20%</option>
                             </select>
                         </div><!--/ .col-md-4 -->
                     </div><!--/ .form-group -->
 
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label>Pilihan Plan Manfaat Rawat Jalan & rawat Gigi</label>
+                            <label>Pilihan Plan Manfaat Rawat Jalan (RJ) & Rawat Gigi (RG)</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
                             <!--<select class="form-control" required tabindex="1" id="planop_den" onChange="checkData3();">-->
@@ -676,12 +685,16 @@
                                     echo "<option value=''>Pilih</option>";
                                     foreach($cat as $payment)
                                     {
-                                        echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."'>"."Plan"." ".strtoupper($payment->getPlanname())."</option>";
+                                        if($payment->getO_id()."_".$payment->getPlanname()==$_COOKIE["planop_den"])
+                                            echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."' selected>"."Plan"." ".strtoupper($payment->getPlanname())."</option>";
+                                        else
+                                            echo "<option value='".$payment->getO_id()."_".$payment->getPlanname()."'>"."Plan"." ".strtoupper($payment->getPlanname())."</option>";
                                     }
                                 ?>
                             </select>                            
                             <label id="notif3" style="display:none; color:red;">Manfaat Rawat Jalan & Rawat Gigi Harus diisi.</label>
-                            <input class="form-control" type="checkbox" name="planrawatjalan" id="planrawatjalan" tabindex="1">&nbsp;Pilih manfaat rawat jalan & rawat gigi
+                            <input class="form-control" type="checkbox" name="planrawatjalan" id="planrawatjalan" tabindex="1" <?php if($_COOKIE["planrawatjalan"]==true&&$_COOKIE["pembayaran"]=="Annually") echo "checked" ?>>
+                            &nbsp;Pilih manfaat rawat jalan & rawat gigi
                             <a id="file3" style="visibility:hidden" target="_blank"></a>
                             <script>
                             function checkData3(){
@@ -763,6 +776,7 @@
 
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
+                            <a class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih href-button" href="metode-pembayaran" tabindex="1">Kembali</a>
                             <input type="submit" class="btn btn-next btn-fill btn-warning btn-wd btn-sm btn-tasbih" id="Kalkulasi" name="next"  value="Selanjutnya" tabindex="1">
                         </div><!--/ .col-md-12 -->
                     </div><!--/ .form-group -->
@@ -872,10 +886,25 @@
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 <script>
+    $(document).ready(function () {
+        var intputElements = document.getElementsByTagName("select");
+        for (var i = 0; i < intputElements.length; i++) {
+            intputElements[i].oninvalid = function (e) {
+                e.target.setCustomValidity("");
+                if (!e.target.validity.valid) {
+                    e.target.setCustomValidity("Silakan pilih Plan Manfaat sesuai kebutuhan Anda");
+                }
+            };
+        }
+    })
     $(document).ready(function(){
         if(!getCookie("pembayaran")){
-            window.location = "langkah1";
+            window.location = "metode-pembayaran";
         }
+        if(getCookie("planmelahirkan")=="true"&&getCookie("pembayaran")=="Annually")
+            $("#mat").removeAttr("disabled");
+        if(getCookie("planrawatjalan")=="true"&&getCookie("pembayaran")=="Annually")
+            $("#out_den").removeAttr("disabled");
     });
 
     /*GET COOKIE*/
@@ -909,21 +938,16 @@
         planmelahirkan = $("#planmelahirkan").is(":checked");
         planrawatjalan = $("#planrawatjalan").is(":checked");
 //        alert(planning);
-        /*set EXPIRED cookie*/
-        var d = new Date();
-        var exdays = 5;//set expired 5 days
-        d.setTime(d.getTime() + (exdays*24*60*60*1000));
-        var expires = "expires="+d.toUTCString();
         console.log("planmelahirkan="+planmelahirkan);
-        setCookie("planip",planip,5);
-        setCookie("planmat",planmat,5);
-        setCookie("planop_den",planop_den,5);
-        setCookie("ip",ip,5);
-        setCookie("mat",mat,5);
-        setCookie("op_den",op_den,5);
-        setCookie("planmelahirkan",planmelahirkan,5);
-        setCookie("planrawatjalan",planrawatjalan,5);
-        setCookie("planning",planning,5);
+        setCookie("planip",planip,1);
+        setCookie("planmat",planmat,1);
+        setCookie("planop_den",planop_den,1);
+        setCookie("ip",ip,1);
+        setCookie("mat",mat,1);
+        setCookie("op_den",op_den,1);
+        setCookie("planmelahirkan",planmelahirkan,1);
+        setCookie("planrawatjalan",planrawatjalan,1);
+        setCookie("planning",planning,1);
         console.log("fd="+getCookie("fd")+"-planip="+getCookie("planip")+"-op_den="+getCookie("op_den")+"-planmelahirkan="+getCookie("planrawatjalan"));
     });
 
