@@ -413,18 +413,15 @@
         ipp = getCookie("ipp");
         console.log("ipp="+ipp);
         if(!ipp){
-            alert("xxx");
-            console.log("via");
+            window.location = "metode-pembayaran";
         }
         if(!getCookie("planip")||getCookie("planip")==""){
             window.location = "metode-pembayaran";
         }else if(!getCookie("planrawatjalan")||getCookie("planrawatjalan")==""){
-            window.location = "pilih-manfaat";
+            window.location = "metode-pembayaran";
         }else if(!getCookie("ipp")||getCookie("ipp")==''){
-            console.log("asd");
-            window.location = "data-anggota";
+            window.location = "metode-pembayaran";
         }
-            console.log("xx");
 
 
     });
