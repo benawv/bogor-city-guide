@@ -5,6 +5,13 @@
 
 
 <style>
+	<?php if ($this->editmode) { ?>
+		.landing-tasbih-grid .landing-tasbih-grid--item {
+			display : 'block' !important;
+			min-height: 215px !important; 
+		}
+    <?php } ?>   
+	
     #agent-locator
     {
         position: relative;
