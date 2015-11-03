@@ -1037,16 +1037,17 @@
 							//console.log(data);
 							// saveNote("","",firstName,lastName, tgl);
 							if(iOS == true) {
-			
+								saveNote("","",firstName,lastName, tgl,"");
 							} else {
-									window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";	
+									// window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";	
+									saveNote("","",firstName,lastName, tgl,"/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou");
 							}
 							},
 							error: function(data){
 								// alert("fail");
 							}
 					});
-					saveNote("","",firstName,lastName, tgl);
+					// saveNote2("","",firstName,lastName, tgl,"/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou");
 					deleteImage(path);
 		
 			// if(iOS == true) {
@@ -1090,16 +1091,17 @@
                             //console.log(data);
 							// saveNote("","","","", tgl);
 								if(iOS == true) {
-				
+									 saveNote("","","","", tgl, "");
 								} else {
-										window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";	
+									// window.location.href = "/asn/allianz-social-media-for-sales/template-maker/profile-picture/thankyou";	
+									 saveNote("","","","", tgl, "/asn/allianz-social-media-for-sales/template-maker/profile-picture/thankyou");
 								}
                             },
                             error: function(data){
                                 //alert("fail");
                             }
                     });
-                    saveNote2("","","","", tgl);
+                    // saveNote("","","","", tgl, "/asn/allianz-social-media-for-sales/template-maker/profile-picture/thankyou");
 					deleteImage(path);
 			
 			// if(iOS == true) {
@@ -1126,21 +1128,22 @@
 										}
 								});
 				}
-                function saveNote2(headline,description,firstName,lastName, filename) {
-                    $.ajax({
-                        url : '/save-note/',
-                        method : 'post',
-                        data : { headline : headline, description : description, firstName : firstName, lastName : lastName, filename : filename}, // format {variable , value}
-                        success : function(){
-                            //alert('Data Tersimpan');
-                            $('#atas').val('');
-                            $('#tengah').val('');
-                            $('#bawah1').val('');
-                            $('#bawah2').val('');
-                        }
+                // function saveNote2(headline,description,firstName,lastName, filename) {
+                    // $.ajax({
+                        // url : '/save-note/',
+                        // method : 'post',
+                        // data : { headline : headline, description : description, firstName : firstName, lastName : lastName, filename : filename}, // format {variable , value}
+                        // success : function(){
+                            // alert('Data Tersimpan');
+                            // $('#atas').val('');
+                            // $('#tengah').val('');
+                            // $('#bawah1').val('');
+                            // $('#bawah2').val('');
+							// window.location.href = template;
+                        // }
                        // data : {headline : headline, description : description, firstName : firstName, lastName : lastName}
-                    });
-                }
+                    // });
+                // }
 
     //======================= End of template 4 ============================
 
@@ -1338,16 +1341,17 @@
                             //console.log(data);
 							 // saveNote("","",firstName,lastName, tgl);
 								if(iOS == true) {
-			
+										saveNote("","",firstName,lastName, tgl,"");
 								} else {
-										window.location.href = "/asn/allianz-social-media-for-sales/template-maker/news-feed-post/thankyou";	
+										// window.location.href = "/asn/allianz-social-media-for-sales/template-maker/timeline-post/thankyou";	
+										saveNote("","",firstName,lastName, tgl,"/asn/allianz-social-media-for-sales/template-maker/timeline-post/thankyou");
 								}
                             },
                             error: function(data){
                                 //alert("fail");
                             }
                     });
-                    saveNote2("","",firstName,lastName, tgl);
+                    // saveNote("","",firstName,lastName, tgl,"/asn/allianz-social-media-for-sales/template-maker/timeline-post/thankyou");
 					deleteImage(path);
             
             // if(iOS == true) {
