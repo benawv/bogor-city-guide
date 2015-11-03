@@ -764,7 +764,11 @@
 <script>
 	var temp = getCookie("template");
 	var iOS = /iPad|iPhone|iPod/.test(navigator.platform);
-	
+	<?php 
+			$sessionPath = new Zend_Session_Namespace('filename');
+			$filename = $sessionPath->filename;
+	?>
+	var path = "<?php echo $filename;  ?>";
 	/* 
 		Template 5 (Profile Picture Template) Profile maker using FabricJS
 		Added By Handri Pangestiaji
@@ -1043,7 +1047,7 @@
 							}
 					});
 					saveNote("","",firstName,lastName, tgl);
-					deleteImage();
+					deleteImage(path);
 		
 			// if(iOS == true) {
 			
@@ -1096,7 +1100,7 @@
                             }
                     });
                     saveNote2("","","","", tgl);
-					deleteImage();
+					deleteImage(path);
 			
 			// if(iOS == true) {
 				
@@ -1107,12 +1111,13 @@
 			
 		}
     });
-				function deleteImage(){
+	
+				function deleteImage(path){
 					 $.ajax({
 					  type: "POST",
 								url: "/website/static/upload-image/delete.php",
 								//url: "/save-img/",
-								//data: {data : data },
+								data: { data : path },
 								success: function(data) {
 									   
 										},
@@ -1343,7 +1348,7 @@
                             }
                     });
                     saveNote2("","",firstName,lastName, tgl);
-					deleteImage();
+					deleteImage(path);
             
             // if(iOS == true) {
             	
