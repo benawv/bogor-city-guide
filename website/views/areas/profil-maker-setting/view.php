@@ -1024,7 +1024,7 @@
 			// console.log(output);
 			// console.log(cur_path); 
 			var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
-			// alert("testing5");
+			$("body").prepend("<div id='dvLoading'></div>");
 			$.ajax({
 					type: "POST",
 					url: "/website/var/assets/profil-maker/save.php",
@@ -1081,6 +1081,7 @@
             // console.log(output);
             // console.log(cur_path); 
             var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
+			$("body").prepend("<div id='dvLoading'></div>");
             $.ajax({
                     type: "POST",
                     url: "/website/var/assets/profil-maker/save.php",
@@ -1331,6 +1332,7 @@
             // console.log(output);
             // console.log(cur_path); 
             var Parameters = "image=" + output + "&filedir=" + cur_path + "&name="+tgl;
+			$("body").prepend("<div id='dvLoading'></div>");
             $.ajax({
                     type: "POST",
                     url: "/website/var/assets/profil-maker/save.php",
