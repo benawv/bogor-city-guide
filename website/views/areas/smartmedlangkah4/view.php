@@ -361,7 +361,7 @@
                             <label>Provinsi</label>
                         </div><!--/ .col-md-4 -->
                         <div class="col-md-4">
-                            <select class="form-control" required name="provinsi" id="provinsi">
+                            <select class="form-control" required tabindex="1" name="provinsi" id="provinsi">
                                 <option value="">Pilih provinsi</option>
                                 <?php
                                     $getProv=new Object_Provinsi_List();
