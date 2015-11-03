@@ -146,16 +146,16 @@ $(document).ready(function()
 		        });
 
 				$("#position").change(function() {
-		            if($(this).val() == "Left"){
+		            if($(this).val() == "Kiri"){
 
-		            	// alert('left');
+		            	//alert('left');
 		    			var lastClass = $('#place, #place-m').attr('class').split(' ').pop();
 						$("#place, #place-m").removeClass(lastClass).addClass('leftside');
 						//console.log(lastClass);
                         
 		            } 
 
-		            if($(this).val() == "Right"){
+		            if($(this).val() == "Kanan"){
 
 		            	//alert('right');
 		            	var lastClass = $('#place, #place-m').attr('class').split(' ').pop();
