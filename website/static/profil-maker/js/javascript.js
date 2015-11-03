@@ -451,7 +451,8 @@ $(document).ready(function()
 	                            //$("a#download").attr("href", "#top");
 	                            
 	                            //window.location.href = "/profil-maker/profil-thankyou";
-								window.location.href = template;
+								
+								// window.location.href = template;
 
 								if($(window).width() < 640) {
 									//alert("after capture, back to cover1");
@@ -488,12 +489,14 @@ $(document).ready(function()
 										        //alert(data);
 										        //console.log(data);
 												// saveNote(headline,description,firstName,lastName, tgl);
+												// window.location.href = template;
+												saveNote(headline,description,firstName,lastName, tgl,template);
 										    },
 										    error: function(data){
 										    	//alert("fail");
 										    }
 								        });
-									saveNote(headline,description,firstName,lastName, tgl);
+									// saveNote(headline,description,firstName,lastName, tgl);
 									deleteImage(path);
 	                    		}
 
@@ -572,7 +575,7 @@ $(document).ready(function()
 
 				}
 				
-				function saveNote(headline,description,firstName,lastName, filename) {
+				function saveNote(headline,description,firstName,lastName, filename, template) {
 					$.ajax({
                         url : '/save-note/',
                         method : 'post',
@@ -583,6 +586,7 @@ $(document).ready(function()
                        		$('#tengah').val('');
                        		$('#bawah1').val('');
                        		$('#bawah2').val('');
+							window.location.href = template;
                         }
                        // data : {headline : headline, description : description, firstName : firstName, lastName : lastName}
                     });
