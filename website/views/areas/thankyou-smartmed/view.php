@@ -124,7 +124,7 @@
 <script>
     $(function(){
         $("#hitung-kembali").click(function(){
-            window.location = "/kalkulator/smartmed/metode-pembayaran-dan-diskon";
+            window.location = "/kalkulator/smartmed/";
         });
         $('#cari-agen').click(function() {
             
