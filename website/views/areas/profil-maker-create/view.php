@@ -377,7 +377,7 @@
             }
             return false;
         });
-
+        
         function OnProgress(event, position, total, percentComplete)
         {
             //Progress bar
@@ -406,6 +406,15 @@
             }
         });
 
-
     });
+
+        $(document).ready(function () {
+                var intputElements = document.getElementById("imgfile");
+                    intputElements.oninvalid = function (e) {
+                        e.target.setCustomValidity("");
+                        if (!e.target.validity.valid) {
+                            e.target.setCustomValidity("Silahkan pilih gambar");
+                        }
+                    };
+        })
 </script>
