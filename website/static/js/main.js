@@ -583,11 +583,11 @@ $(document).ready(function () {
     });
     if (window.location.pathname == "/") {
 	$(".slides").find("li").first().next().find("div.place-bg").find("div").first().addClass("notepadKiri");
-	$(".slides").find("li").first().next().find("div.place-bg").append("<div class='notepadKanan'><img src='/website/static/images/logo125/Allianz125_Standard_logo_White.png' /></div>");
+	// $(".slides").find("li").first().next().find("div.place-bg").append("<div class='notepadKanan'><img src='/website/static/images/logo125/Allianz125_Standard_logo_White.png' /></div>");
 	$(".clone").addClass("temp");
 	$(".clone:first").removeClass("temp");
 	$("li.temp").find("div.place-bg").find("div").addClass("notepadKiri");
-	$(".temp").find("div.place-bg").append("<div class='notepadKanan'><img src='/website/static/images/logo125/Allianz125_Standard_logo_White.png' /></div>");
+	// $(".temp").find("div.place-bg").append("<div class='notepadKanan'><img src='/website/static/images/logo125/Allianz125_Standard_logo_White.png' /></div>");
     }
 });
 //$(window).bind("load", function() {

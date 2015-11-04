@@ -27,9 +27,9 @@
 			<?php echo $this->areablock('layananKami', array(
 				'allowed' => array('layanankami-quicklinks', 'blank-tile-quicklinks-static','blank-animation-quicklinks')))?>
 		</div>
-		<div class="banner_products" style="min-height: 100px;">
-			<?php echo $this->areablock('static_banner', array('allowed' => array('static-banner-home','list-berita')))?>
-		</div>
+		<!-- <div class="banner_products" style="min-height: 100px;">
+			<?php //echo $this->areablock('static_banner', array('allowed' => array('static-banner-home','list-berita')))?>
+		</div> -->
 		
 	</div>
 	<?php
