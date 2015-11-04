@@ -7,14 +7,15 @@
 			<div>
 				<?php echo $this->areablock('container1', array('allowed' => array(
 					'container-box2',
-					'sections', 'sections-box-full', 'sections-tab', 'teks-tabs',
-					'sections-video', 'sections-gallery',
+					// 'sections', 'sections-box-full', 'sections-tab', 'teks-tabs',
+					// 'sections-video', 'sections-gallery',
 					'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
 					'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
 					'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
-					'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
-					'multi-video',
-					'container-box-static','container-box-carousel','container-box-carousel-text'))); ?>
+					'tekskanan40-videokiri60', 'tekskanan60-videokiri40'
+					// 'multi-video',
+					// 'container-box-static','container-box-carousel','container-box-carousel-text'
+					))); ?>
 			</div>
 		</div> <!-- .items-container -->
 	</div>
@@ -45,14 +46,15 @@
 		<div>
 			<?php echo $this->areablock('container', array('allowed' => array(
 				'container-box2',
-					'sections', 'sections-box-full', 'sections-tab', 'teks-tabs',
-					'sections-video', 'sections-gallery',
+					// 'sections', 'sections-box-full', 'sections-tab', 'teks-tabs',
+					// 'sections-video', 'sections-gallery',
 					'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
 					'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
 					'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
-					'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
-					'multi-video',
-					'container-box-static','container-box-carousel','container-box-carousel-text'))); ?>
+					'tekskanan40-videokiri60', 'tekskanan60-videokiri40'
+					// 'multi-video',
+					// 'container-box-static','container-box-carousel','container-box-carousel-text'
+					))); ?>
 		</div>
 	<!-- Community -->
 		<?php echo $this->areablock('jurnalAllianz', array(
