@@ -61,5 +61,5 @@
 );
 ?>
 
-<?php echo $this->areablock('container-tasbih',  array('allowed' => array('button-tasbih','kalender-tasbih'))); ?>
+<?php echo $this->areablock('container-tasbih',  array('allowed' => array('video-tasbih','button-tasbih','kalender-tasbih'))); ?>
 <?php echo $this->areablock('footer-tasbih',  array('allowed' => array('artikel-tasbih'))); ?>
