@@ -43,10 +43,12 @@
                                         $link = $this->link("link_".$loop)->getHref();
                                     }
 				    ?>
-                    <a href="<?php echo $link; ?>" class="nav-item <?php echo $col; ?> <?php echo $ic; ?>">
+                    
+                    <a <?php if(!($this->editmode)){ ?> href="<?php echo $link; ?>" <?php } ?> class="nav-item <?php echo $col; ?> <?php echo $ic; ?>">
+                    
                         <h4 style="font-size:18px"><small><?php echo $this->input("btn-".$loop, array("width" => 200)); ?></small></h4>
                     </a>
-                    
+
                     <?php 
                                             if($this->editmode) {
 			                        		echo "Icon: <br />";
@@ -68,11 +70,7 @@
 											    "store" => array(
 											        array("blue", "blue"),
 											        array("yellow", "yellow"),
-											        array("grey", "grey"),
-											        array("red", "red"),
-											        array("green", "green"),
-											        array("purple", "purple"),
-											        array("orange", "orange")
+											        array("purple", "purple")
 											    ),
 											    "reload" => true
 											)); 
