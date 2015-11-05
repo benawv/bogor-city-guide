@@ -75,7 +75,7 @@
 
 </style>
 
-
+<div style="margin-top:30px;">
                     <?php if($this->editmode) { ?>
                 How many box you want to show?
     
@@ -170,3 +170,4 @@
         
     </div><!--/ .container -->
 </section><!--/ .landing-tasbih-grid -->
+</div>
