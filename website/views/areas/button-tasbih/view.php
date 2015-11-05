@@ -44,7 +44,7 @@
                                     }
 				    ?>
                     <a href="<?php echo $link; ?>" class="nav-item <?php echo $col; ?> <?php echo $ic; ?>">
-                        <h4 style="font-size:18px"><small><?php echo $this->input("btn-".$loop, array("width" => 65)); ?></small></h4>
+                        <h4 style="font-size:18px"><small><?php echo $this->input("btn-".$loop, array("width" => 200)); ?></small></h4>
                     </a>
                     
                     <?php 
