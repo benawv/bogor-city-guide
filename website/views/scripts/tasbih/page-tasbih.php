@@ -78,13 +78,13 @@
 //            'pension-factsheet', 'saving-factsheet','multi-video',
 //            'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 
 //            'brosur','kalkulator-investasi','Tasbih-kedua','thankyou-tasbih','thankyou-inquiry',
-            'banner-tasbih','video-tasbih','button-tasbih','kalender-tasbih','artikel-tasbih')
+            'kalender-tasbih','banner-tasbih','video-tasbih','button-tasbih','kalender-tasbih','artikel-tasbih')
     )
 );
 ?>
 
-<?php echo $this->areablock('container-tasbih',  array('allowed' => array('banner-tasbih','video-tasbih','button-tasbih','kalender-tasbih','artikel-tasbih'))); ?>
-<?php echo $this->areablock('footer-tasbih',  array('allowed' => array('banner-tasbih','video-tasbih','button-tasbih','kalender-tasbih','artikel-tasbih',            'container-box2',
+<?php echo $this->areablock('container-tasbih',  array('allowed' => array('kalender-tasbih','banner-tasbih','video-tasbih','button-tasbih','kalender-tasbih','artikel-tasbih'))); ?>
+<?php echo $this->areablock('footer-tasbih',  array('allowed' => array('kalender-tasbih','banner-tasbih','video-tasbih','button-tasbih','kalender-tasbih','artikel-tasbih','container-box2',
             'community-tips2',
             'sections',
             'sections-box-full', 'sections-tab', 'teks-tabs',
