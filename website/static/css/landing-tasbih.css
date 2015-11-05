@@ -144,6 +144,13 @@
         .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.red .trapezoid::after {
           border-top-color: #e4002b;
           border-left-color: #e4002b; }
+      .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.white {
+        background: #FFFFFF; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.white .trapezoid::before {
+          background: #FFFFFF; }
+        .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box.white .trapezoid::after {
+          border-top-color: #FFFFFF;
+          border-left-color: #FFFFFF; }
       .landing-tasbih-header .landing-tasbih-header-caption .landing-tasbih-header-caption--box .trapezoid {
         position: absolute;
         left: 0;
@@ -190,7 +197,7 @@
       padding-right: 8px; } }
   .landing-tasbih-grid .landing-tasbih-grid--item {
     background: #003da5;
-    color: white;
+    color: #000000;
     min-height: 160px;
     margin-bottom: 16px;
     /* .landing-tasbih-grid--item-inner */
@@ -205,6 +212,8 @@
       background: #009a44; }
     .landing-tasbih-grid .landing-tasbih-grid--item.purple {
       background: #87189d; }
+    .landing-tasbih-grid .landing-tasbih-grid--item.white {
+      background: #FFFFFF; }
     .landing-tasbih-grid .landing-tasbih-grid--item h1, .landing-tasbih-grid .landing-tasbih-grid--item h2, .landing-tasbih-grid .landing-tasbih-grid--item h3, .landing-tasbih-grid .landing-tasbih-grid--item h4, .landing-tasbih-grid .landing-tasbih-grid--item h5, .landing-tasbih-grid .landing-tasbih-grid--item h6, .landing-tasbih-grid .landing-tasbih-grid--item p {
       margin: 0 auto;
       padding: 0; }
@@ -213,17 +222,20 @@
       line-height: 1.3; }
     .landing-tasbih-grid .landing-tasbih-grid--item p {
       line-height: 1.3;
-      margin: 8px auto; }
+      margin: 8px auto;
+      text-align: left;
+      padding: 10px 15px; }
     .landing-tasbih-grid .landing-tasbih-grid--item a {
       display: block;
       margin: 8px auto 0;
       color: inherit;
-      text-decoration: none; }
+      text-decoration: none;
+      padding: 11px 17px; }
       .landing-tasbih-grid .landing-tasbih-grid--item a:hover, .landing-tasbih-grid .landing-tasbih-grid--item a:focus {
         color: inherit;
         text-decoration: underline; }
     .landing-tasbih-grid .landing-tasbih-grid--item > .landing-tasbih-grid--item-inner {
-      padding: 20px 32px; }
+      padding: 20px 32px;}
     @media (min-width: 480px) {
       .landing-tasbih-grid .landing-tasbih-grid--item.inline {
         display: table;

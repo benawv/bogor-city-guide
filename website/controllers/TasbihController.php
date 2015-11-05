@@ -128,6 +128,17 @@ class TasbihController extends Website_Controller_Action {
             
             
         }
+
+    public function renderletAction() {
+        $id = $this->_getParam("id");
+        $entries = Object_Abstract::getById($id);
+        if($this->getParam("type") == "object") {
+            $id = $this->_getParam("id");
+            $entries = Object_Abstract::getById($id);
+            $this->view->artikel = $entries;
+        }
+        $this->renderScript('/landing/render.php');
+    }
 	
 	
 
