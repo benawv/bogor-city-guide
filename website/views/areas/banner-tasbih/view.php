@@ -177,7 +177,7 @@
                         ?>
                         <div class="slide <?php echo $hide;?>">
                             <div class="foto">
-                                <?php echo $this->image("image_".$i, ["thumbnail" => "galleryCarousel", "dropClass" => $id . "-" . $i, "title" => "Image Size 1020x400", "width" => "100%", "height" => "auto"])?>
+                                <?php echo $this->image("image_".$i, ["thumbnail" => "galleryCarousel", "dropClass" => $id . "-" . $i, "title" => "Image Size 1020x400", "width" => "960", "height" => "400"])?>
                             </div>
                             <?php
                                 $extra = $this->image("image_".$i)->getHotspots();
