@@ -1,3 +1,17 @@
+<link rel="stylesheet" href="/website/static/css/bootstrap-grid-only.css">
+<link rel="stylesheet" href="/website/static/css/css-ie8/isr.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<style>
+    .bg-yellow{background: #F16410 !important;}
+    .bg-purple{background: #850AA0 !important;}
+    .bg-lightgreen{background: #B3BE25 !important;}
+    .bg-green{background: #009B49 !important;}
+    .bg-red{background: #A40033 !important;}
+    .bg-blue{background: #113388 !important;}
+
+</style>
+
 <?php if($this->editmode) { ?>
     <div class="alert alert-info" style="height: 75px">
         <div class="col-xs-6">
@@ -43,10 +57,12 @@
                                         $link = $this->link("link_".$loop)->getHref();
                                     }
 				    ?>
-                    <a href="<?php echo $link; ?>" class="nav-item <?php echo $col; ?> <?php echo $ic; ?>">
+                    
+                    <a <?php if(!($this->editmode)){ ?> href="<?php echo $link; ?>" <?php } ?> class="nav-item bg-<?php echo $col; ?> <?php echo $ic; ?>">
+                    
                         <h4 style="font-size:18px"><small><?php echo $this->input("btn-".$loop, array("width" => 200)); ?></small></h4>
                     </a>
-                    
+
                     <?php 
                                             if($this->editmode) {
 			                        		echo "Icon: <br />";
@@ -68,11 +84,7 @@
 											    "store" => array(
 											        array("blue", "blue"),
 											        array("yellow", "yellow"),
-											        array("grey", "grey"),
-											        array("red", "red"),
-											        array("green", "green"),
-											        array("purple", "purple"),
-											        array("orange", "orange")
+											        array("purple", "purple")
 											    ),
 											    "reload" => true
 											)); 

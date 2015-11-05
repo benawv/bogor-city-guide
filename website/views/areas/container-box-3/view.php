@@ -114,7 +114,7 @@
 ">
                     <?php for($i=1;$i<$slides+1;$i++) { ?>
                     <?php
-//								$color = $this->select('color_'.$i)->getData();
+								$color = $this->select('color_'.$i)->getData();
                                 if($i%3 == 0)
                                 {
                                     $mR = "0px";
@@ -125,7 +125,7 @@
         }
                     ?>
                     <div class="col-xs-12 col-sm-4 col-md-1"  style="width: 300px !important; padding-left:3px !important; margin-right:<?php echo $mR; ?> !important">
-                        <div class="landing-tasbih-grid--item white" style="width: 300px !important;">
+                        <div class="landing-tasbih-grid--item <?php echo $color;?>" style="width: 300px !important;">
                             <div class="landing-tasbih-grid--item-inner" style="padding-left : 0px !important; padding-right:0px!important;">
                                                                 
                                     <h3><?= $this->input("headline_".$i) ?></h3>
@@ -152,28 +152,26 @@
                                             <?php } ?>
                                 <!--<a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>-->
                             </div><!--/ .landing-tasbih-grid--item-inner -->
-<!--
                             <?php if($this->editmode) { ?>
 			                        	
 			                        	<p>
 				                        <?php 
-//				                        	echo "Color: <br />";
-//			                        		echo $this->select("color_".$i,array(
-//											    "store" => array(
-//											        array("red", "Red"),
-//											        array("lightgreen", "Light Green"),
-//                                                    array("green", "Green"),
-//											        array("purple", "Purple"),
-//											        array("blue", "Blue"),
-//											        array("white", "White"),
-//											        array("orange", "Orange")
-//											    ),
-//											    "reload" => true
-//											)); 
+				                        	echo "Color: <br />";
+			                        		echo $this->select("color_".$i,array(
+											    "store" => array(
+											        array("red", "Red"),
+											        array("lightgreen", "Light Green"),
+                                                    array("green", "Green"),
+											        array("purple", "Purple"),
+											        array("blue", "Blue"),
+											        array("white", "White"),
+											        array("orange", "Orange")
+											    ),
+											    "reload" => true
+											)); 
 										?>
 			                        	</p>
 			                        <?php } ?>
--->
                         </div><!--/ .landing-tasbih-grid--item -->
                     </div><!--/ .col-xs-12 -->
 <?php }?>
