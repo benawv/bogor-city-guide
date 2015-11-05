@@ -99,14 +99,9 @@
 ?>
 
 <?php echo $this->areablock('container-tasbih',  array('allowed' => array('kalender-tasbih','banner-tasbih','video-tasbih','button-tasbih','kalender-tasbih','artikel-tasbih'))); ?>
-<?php echo $this->areablock('footer-tasbih',  array('allowed' => array('kalender-tasbih','banner-tasbih','video-tasbih','button-tasbih','kalender-tasbih','artikel-tasbih','container-box2',
-            'community-tips2',
-            'sections',
-            'sections-box-full', 'sections-tab', 'teks-tabs',
-            'sections-video', 'sections-gallery',
-            'sections-select', 'tekskanan60-imagekiri40_wizard',
+<?php echo $this->areablock('footer-tasbih',  array('allowed' => array('kalender-tasbih','banner-tasbih','video-tasbih','button-tasbih','kalender-tasbih','artikel-tasbih', 'tekskanan60-imagekiri40_wizard',
             'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
             'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
             'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
             'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
-            'tanya-jawab-tasbih','section-info','container-box-3'))); ?>
+            'section-info'))); ?>
