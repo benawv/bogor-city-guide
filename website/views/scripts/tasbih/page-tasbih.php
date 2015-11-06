@@ -67,7 +67,38 @@
     margin-left: 195px;
 
     }
+
+    .landing-tasbih-grid .landing-tasbih-grid--item > .landing-tasbih-grid--item-inner.heading {
+            padding: 10px 15px !important;
+            height: 55px;
+    }
+    .landing-tasbih-grid .landing-tasbih-grid--item > .landing-tasbih-grid--item-inner.descript {
+            padding: 10px 15px !important;
+    }
+    .landing-tasbih-grid .landing-tasbih-grid--item p {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .landing-tasbih-grid .landing-tasbih-grid--item a {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .landing-tasbih-grid--item-inner.descript a.linked {
+        margin-top: 10px !important;
+        margin-bottom: 20px !important;
+    }
     
+    /* easy slide hover */
+    nav.main-navigation a.nav-item.bg-blue::before {
+        background: #1946B5;
+    }
+    nav.main-navigation a.nav-item.bg-purple::before {
+        background: #9C0FBB;
+    }
+    nav.main-navigation a.nav-item.bg-yellow::before {
+        background: #D25C17;
+    }
+
     p{
         text-align : left !important;
     }   
