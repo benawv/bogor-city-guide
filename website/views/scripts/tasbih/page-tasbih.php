@@ -30,13 +30,25 @@
     
     .full-w.bg-white{
     
-    width: 960px;
-    height: 450px;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 0px;
-    margin-left: 195px;
+    /*width: 960px;
+        height: 450px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        margin-left: 195px;
+    */
 
+        /*revision akbar*/
+        width: 960px;
+        height: 450px;
+        /*padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;*/
+        /* margin-left: 195px; */
+        float: none;
+        margin: 0 auto;
+        margin-bottom: 32px;
+        padding: 33px;
     }    
     
     
