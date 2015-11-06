@@ -128,7 +128,7 @@
                         <div class="landing-tasbih-grid--item white" style="width: 300px !important;">
                             <div class="landing-tasbih-grid--item-inner" style="padding-left : 0px !important; padding-right:0px!important;">
                                                                 
-                                    <h3><?= $this->input("headline_".$i) ?></h3>
+                                    <h3><?= $this->link("headline_".$i) ?></h3>
                             </div>
                                     <?php
                                     if($this->editmode) { 
@@ -145,11 +145,6 @@
                             <?php } ?>
                             <div class="landing-tasbih-grid--item-inner" style="padding-left : 0px !important; padding-right:0px!important;">
                                     <div id="desc"><?php echo $this->wysiwyg('description_'.$i)?></div>
-                                    <?php if ($this->editmode) { ?>
-                                                <?= $this->link("linkProduk_".$i); ?>
-                                            <?php } else { ?>
-                                    <a href="<?php echo $this->link("linkProduk_".$i)->getHref(); ?>"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
-                                            <?php } ?>
                                 <!--<a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>-->
                             </div><!--/ .landing-tasbih-grid--item-inner -->
 <!--
