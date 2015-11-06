@@ -34,5 +34,6 @@
 		<div class="section-right-40">
 			<?php echo $this->wysiwyg('teks-kanan')?>
 		</div>
+		<div style="clear:both;"></div>
 	</div>
 </div>

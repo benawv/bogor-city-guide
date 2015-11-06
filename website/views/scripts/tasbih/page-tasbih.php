@@ -27,7 +27,12 @@
             padding-top: 10px;
         }
     }
-    
+    .main.noPaddingTop .full-w.bg-white{
+        height: auto !important;
+    }
+    .description.width-66 .section-left-60{
+        margin-left: -15px !important;
+    }
     .full-w.bg-white{
     
     /*width: 960px;
@@ -48,7 +53,7 @@
         float: none;
         margin: 0 auto;
         margin-bottom: 32px;
-        padding: 33px;
+        padding: 25px;
     }    
     
     
