@@ -19,6 +19,14 @@
             display: block !important;
         }
     }
+    @media only screen and (max-width:640px){
+        .full-w.bg-white{
+            width: 100% !important;
+        }
+        .full-w.bg-white .description.width-66 .section-left-60{
+            margin-left: 0px !important;
+        }
+    }
     @media only screen and (max-width:600px){
         .heading.clearfix.pagenav {
             display: none;
@@ -29,9 +37,6 @@
     }
     .main.noPaddingTop .full-w.bg-white{
         height: auto !important;
-    }
-    .description.width-66 .section-left-60{
-        margin-left: -15px !important;
     }
     .full-w.bg-white{
     
@@ -110,6 +115,7 @@
     }
 </style>
 
+<div class="container boxes-view">
 <?php echo $this->areablock(
     'halaman-tasbih',
     array(
@@ -145,11 +151,14 @@
     )
 );
 ?>
+</div>
 
 <?php echo $this->areablock('container-tasbih',  array('allowed' => array('kalender-tasbih','banner-tasbih','video-tasbih','button-tasbih','kalender-tasbih','artikel-tasbih'))); ?>
+<div class="container boxes-view">
 <?php echo $this->areablock('footer-tasbih',  array('allowed' => array('kalender-tasbih','banner-tasbih','video-tasbih','button-tasbih','kalender-tasbih','artikel-tasbih', 'tekskanan60-imagekiri40_wizard',
             'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
             'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
             'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
             'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
             'section-info'))); ?>
+</div>
