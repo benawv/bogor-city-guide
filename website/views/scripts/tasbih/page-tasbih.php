@@ -55,7 +55,6 @@
         padding-right: 0px;
         padding-top: 0px;*/
         /* margin-left: 195px; */
-        float: none;
         margin: 0 auto;
         margin-bottom: 32px;
         padding: 25px;
