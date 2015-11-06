@@ -126,7 +126,7 @@
                     ?>
                     <div class="col-xs-12 col-sm-4 col-md-1"  style="width: 300px !important; padding-left:3px !important; margin-right:<?php echo $mR; ?> !important">
                         <div class="landing-tasbih-grid--item white" style="width: 300px !important;">
-                            <div class="landing-tasbih-grid--item-inner" style="padding-left : 0px !important; padding-right:0px!important;">
+                            <div class="landing-tasbih-grid--item-inner heading">
                                                                 
                                     <h3><?= $this->input("headline_".$i) ?></h3>
                             </div>
@@ -143,12 +143,12 @@
                                 <img src="<?php echo $thumbnail ?>" width="300px" height="291px">
                             </div>
                             <?php } ?>
-                            <div class="landing-tasbih-grid--item-inner" style="padding-left : 0px !important; padding-right:0px!important;">
+                            <div class="landing-tasbih-grid--item-inner descript">
                                     <div id="desc"><?php echo $this->wysiwyg('description_'.$i)?></div>
                                     <?php if ($this->editmode) { ?>
                                                 <?= $this->link("linkProduk_".$i); ?>
                                             <?php } else { ?>
-                                    <a href="<?php echo $this->link("linkProduk_".$i)->getHref(); ?>"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
+                                    <a class="linked" href="<?php echo $this->link("linkProduk_".$i)->getHref(); ?>"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
                                             <?php } ?>
                                 <!--<a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>-->
                             </div><!--/ .landing-tasbih-grid--item-inner -->
