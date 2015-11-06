@@ -148,7 +148,7 @@
                                     <?php if ($this->editmode) { ?>
                                                 <?= $this->link("linkProduk_".$i); ?>
                                             <?php } else { ?>
-                                    <a href="<?php echo $this->link("linkProduk_".$i)->getHref(); ?>"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
+                                    <a class="linked" href="<?php echo $this->link("linkProduk_".$i)->getHref(); ?>"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
                                             <?php } ?>
                                 <!--<a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>-->
                             </div><!--/ .landing-tasbih-grid--item-inner -->
