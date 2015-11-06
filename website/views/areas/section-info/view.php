@@ -145,11 +145,7 @@
                             <?php } ?>
                             <div class="landing-tasbih-grid--item-inner descript">
                                     <div id="desc"><?php echo $this->wysiwyg('description_'.$i)?></div>
-                                    <?php if ($this->editmode) { ?>
-                                                <?= $this->link("linkProduk_".$i); ?>
-                                            <?php } else { ?>
-                                    <a class="linked" href="<?php echo $this->link("linkProduk_".$i)->getHref(); ?>"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
-                                            <?php } ?>
+                                    
                                 <!--<a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>-->
                             </div><!--/ .landing-tasbih-grid--item-inner -->
 <!--
