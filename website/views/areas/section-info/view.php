@@ -128,7 +128,7 @@
                         <div class="landing-tasbih-grid--item white" style="width: 300px !important;">
                             <div class="landing-tasbih-grid--item-inner heading">
                                                                 
-                                    <h3><?= $this->input("headline_".$i) ?></h3>
+                                    <h3><?= $this->link("headline_".$i) ?></h3>
                             </div>
                                     <?php
                                     if($this->editmode) { 
@@ -148,7 +148,7 @@
                                     <?php if ($this->editmode) { ?>
                                                 <?= $this->link("linkProduk_".$i); ?>
                                             <?php } else { ?>
-                                    <a class="linked" href="<?php echo $this->link("linkProduk_".$i)->getHref(); ?>"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
+                                    <a href="<?php echo $this->link("linkProduk_".$i)->getHref(); ?>"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>
                                             <?php } ?>
                                 <!--<a href="#"><i class="fa fa-chevron-circle-right"></i> Selengkapnya</a>-->
                             </div><!--/ .landing-tasbih-grid--item-inner -->
