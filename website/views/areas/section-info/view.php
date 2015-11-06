@@ -107,11 +107,7 @@
             <div class="col-xs-12 col-md-8 pr8">
 -->
 
-                <div class="row" style="
-    width: 960px !important;
-    margin-left: 88px !important;
-    margin-right: 0px !important;
-">
+                <div class="row row-box">
                     <?php for($i=1;$i<$slides+1;$i++) { ?>
                     <?php
 //								$color = $this->select('color_'.$i)->getData();

@@ -103,6 +103,28 @@
     nav.main-navigation a.nav-item.bg-yellow::before {
         background: #D25C17;
     }
+    section.landing-tasbih-grid .container {
+        margin: 0;
+        padding: 0;
+    }
+    .row.row-box {
+        width: 960px !important;
+        margin-left: 88px !important;
+        margin-right: 0px !important;
+    }
+    @media screen and (max-width: 768px) { 
+        .container.boxes-view {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        section.landing-tasbih-grid .container {
+            /*padding: 0 15px;*/
+        }
+        .row.row-box {
+            width: 100% !important;
+            margin: 0 !important;
+        } 
+    }
 
     p{
         text-align : left !important;
