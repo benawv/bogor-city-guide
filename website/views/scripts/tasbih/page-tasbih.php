@@ -140,7 +140,7 @@
            'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
            'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
            'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
-           'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
+           'tekskanan40-videokiri60-tasbih', 'tekskanan60-videokiri40',
            'tanya-jawab-tasbih',
            'smartlink-factsheet', 'syariah-factsheet',
            'pension-factsheet', 'saving-factsheet','multi-video',
@@ -158,6 +158,6 @@
             'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
             'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
             'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
-            'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
+            'tekskanan40-videokiri60-tasbih', 'tekskanan60-videokiri40',
             'section-info'))); ?>
 </div>
