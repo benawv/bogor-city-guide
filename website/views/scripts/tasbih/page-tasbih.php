@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="/website/static/css/bootstrap-grid-only.css">
+<link rel="stylesheet" href="/website/static/css/landing-tasbih.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" media="screen" id="normalize-css" href="/website/static/css-ajfc/hotspot/ajfc.hotspot.css">
 
 <!--<link rel="stylesheet" href="/website/ajfc/css/bootstrap.min.css">-->
@@ -23,6 +26,51 @@
         .backg{
             padding-top: 10px;
         }
+    }
+    
+    .full-w.bg-white{
+    
+    /*width: 960px;
+        height: 450px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        margin-left: 195px;
+    */
+
+        /*revision akbar*/
+        width: 960px;
+        height: 450px;
+        /*padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;*/
+        /* margin-left: 195px; */
+        float: none;
+        margin: 0 auto;
+        margin-bottom: 32px;
+        padding: 33px;
+    }    
+    
+    
+    .items-container{
+    
+    width: 960px;
+    height: 450px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    margin-left: 195px;
+
+    }
+    
+    p{
+        text-align : left !important;
+    }   
+    h2{
+        text-align : left !important;
+    }
+    h1{
+        text-align : left !important;
     }
 </style>
 
@@ -57,10 +105,15 @@
 //            'pension-factsheet', 'saving-factsheet','multi-video',
 //            'smartwealth-factsheet', 'imagekiri-tabelkanan', 'sitemap', 
 //            'brosur','kalkulator-investasi','Tasbih-kedua','thankyou-tasbih','thankyou-inquiry',
-            'banner-tasbih','video-tasbih','button-tasbih','kalender-tasbih','artikel-tasbih')
+            'kalender-tasbih','banner-tasbih','video-tasbih','button-tasbih','kalender-tasbih','artikel-tasbih')
     )
 );
 ?>
 
-<?php echo $this->areablock('container-tasbih',  array('allowed' => array('banner-tasbih','video-tasbih','button-tasbih','kalender-tasbih','artikel-tasbih'))); ?>
-<?php echo $this->areablock('footer-tasbih',  array('allowed' => array('banner-tasbih','video-tasbih','button-tasbih','kalender-tasbih','artikel-tasbih'))); ?>
+<?php echo $this->areablock('container-tasbih',  array('allowed' => array('kalender-tasbih','banner-tasbih','video-tasbih','button-tasbih','kalender-tasbih','artikel-tasbih'))); ?>
+<?php echo $this->areablock('footer-tasbih',  array('allowed' => array('kalender-tasbih','banner-tasbih','video-tasbih','button-tasbih','kalender-tasbih','artikel-tasbih', 'tekskanan60-imagekiri40_wizard',
+            'tekskiri60-imagekanan40', 'tekskiri40-imagekanan60',
+            'tekskanan40-imagekiri60', 'tekskanan60-imagekiri40',
+            'tekskiri60-videokanan40', 'tekskiri40-videokanan60',
+            'tekskanan40-videokiri60', 'tekskanan60-videokiri40',
+            'section-info'))); ?>
