@@ -120,8 +120,8 @@
             $mR = "27px";   
         }
                     ?>
-                    <div class="col-xs-12 col-sm-4 col-md-1"  style="width: 300px !important; padding-left:3px !important; margin-right:<?php echo $mR; ?> !important">
-                        <div class="landing-tasbih-grid--item white" style="width: 300px !important;">
+                    <div class="col-xs-12 col-sm-4 col-md-1 box-item"  style="margin-right:<?php echo $mR; ?>">
+                        <div class="landing-tasbih-grid--item white box-item--grid">
                             <div class="landing-tasbih-grid--item-inner heading">
                                                                 
                                     <h3><?= $this->link("headline_".$i) ?></h3>
